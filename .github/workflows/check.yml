@@ -35,12 +35,14 @@ jobs:
         run: node scripts/verify-build.mjs
       - name: Screenshots (main only)
         if: github.ref == 'refs/heads/main'
+        continue-on-error: true
         run: |
-          npm install --no-save --no-audit --no-fund playwright@1
-          npx playwright install --with-deps chromium
-          node scripts/screenshots.mjs / /browse /discover /discover/marvel-cinematic-universe /movies/$(node -e "console.log(require('./data/'+process.env.BRAND+'/movies.json')[0].slug)") /about /does-not-exist
+          scripts/ci-run.sh "Install Playwright" npm install --no-save --no-audit --no-fund playwright@1
+          scripts/ci-run.sh "Install Chromium" npx playwright install --with-deps chromium
+          MOVIE=$(node -e "console.log(require('./data/'+process.env.BRAND+'/movies.json')[0].slug)")
+          scripts/ci-run.sh "Take screenshots" node scripts/screenshots.mjs / /browse /discover /discover/marvel-cinematic-universe /movies/$MOVIE /about /does-not-exist
           cd screenshots
-          git init -q -b screenshots
+          git init -q -b shots
           git config user.name "ci" && git config user.email "ci@users.noreply.github.com"
           git add . && git commit -qm "Screenshots for ${GITHUB_SHA}"
-          git push -qf "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" screenshots:screenshots-$BRAND
+          ../scripts/ci-run.sh "Push screenshots" git push -f "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" shots:refs/heads/screenshots-$BRAND
