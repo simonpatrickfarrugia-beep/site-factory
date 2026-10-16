@@ -115,7 +115,7 @@ export function routes(): Route[] {
     ],
     props: {
       stream: movies.map((m) => ({ slug: m.slug, name: m.name, youtubeId: m.youtubeId })),
-      latest: newest.slice(0, 12).map(card),
+      latest: newest.slice(0, 10).map(card),
       featured: featured.map(collectionCard),
       totals: { movies: movies.length, collections: collections.length },
       allSlugs: movies.map((m) => m.slug),
@@ -127,7 +127,7 @@ export function routes(): Route[] {
     const inCollections = collections.filter((c) => c.movieSlugs.includes(m.slug)).map(collectionCard);
     const firstGenre = m.genres[0];
     const related = firstGenre
-      ? movies.filter((o) => o.slug !== m.slug && o.genres.includes(firstGenre)).sort(byNewest).slice(0, 6).map(card)
+      ? movies.filter((o) => o.slug !== m.slug && o.genres.includes(firstGenre)).sort(byNewest).slice(0, 10).map(card)
       : [];
     out.push({
       path: `movies/${m.slug}`,
