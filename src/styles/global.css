@@ -181,7 +181,6 @@ main { display: block; }
 
 .grid { display: grid; gap: var(--space-4) var(--space-3); }
 .grid--cards { grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr)); }
-@media (max-width: 30rem) { .grid--cards { grid-template-columns: 1fr 1fr; gap: var(--space-3) var(--space-2); } .movie-card__title { font-size: var(--step--1); } }
 .grid--collections { grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr)); }
 .grid--feature { grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); }
 
@@ -191,6 +190,7 @@ main { display: block; }
 .movie-card__year { color: var(--muted); font-size: var(--step--1); }
 .movie-card:hover .movie-card__title { color: var(--color-accent); }
 .movie-card:hover img { opacity: 0.9; }
+@media (max-width: 30rem) { .grid--cards { grid-template-columns: 1fr 1fr; gap: var(--space-3) var(--space-2); } .movie-card__title { font-size: var(--step--1); } }
 
 .collection-card {
   display: grid; text-decoration: none;
