@@ -1,0 +1,20 @@
+---
+import { brand } from '../lib/brand';
+const current = Astro.url.pathname;
+---
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="wordmark" href="/" aria-label={`${brand.name} home`}>{brand.domain}</a>
+    {brand.nav.length > 0 && (
+      <nav aria-label="Main">
+        <ul class="site-nav">
+          {brand.nav.map((item) => (
+            <li>
+              <a href={item.href} aria-current={current.startsWith(item.href) ? 'page' : undefined}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
+  </div>
+</header>

@@ -1,0 +1,26 @@
+# Builds every brand and verifies the output on each push.
+# Cloudflare does the real deploys; this is the safety net with readable logs.
+name: Check build
+on:
+  push:
+    branches: ['**']
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      matrix:
+        brand: [trailers]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npm run build
+        env:
+          BRAND: ${{ matrix.brand }}
+      - run: node scripts/verify-build.mjs
+        env:
+          BRAND: ${{ matrix.brand }}

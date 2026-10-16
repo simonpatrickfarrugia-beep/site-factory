@@ -1,0 +1,18 @@
+---
+interface Props {
+  slug: string;
+  name: string;
+  year: string | null;
+  youtubeId: string;
+  /** Heading level for the title inside the card. */
+  as?: 'h2' | 'h3';
+}
+const { slug, name, year, youtubeId, as: Tag = 'h3' } = Astro.props;
+---
+<a class="movie-card" href={`/movies/${slug}`}>
+  <span class="frame">
+    <img src={`https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg`} alt="" width="480" height="360" loading="lazy" decoding="async" />
+  </span>
+  <Tag class="movie-card__title">{name}</Tag>
+  {year && <span class="movie-card__year">{year}</span>}
+</a>

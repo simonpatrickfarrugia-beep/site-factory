@@ -1,0 +1,249 @@
+/**
+ * Every page on movietrailer.channel. URLs and SEO titles match the Webflow
+ * site exactly so the migration is invisible to Google.
+ */
+import { getCollection } from '../../src/lib/data';
+import type { Route } from '../../src/lib/routes';
+import { thumb, type Movie, type MovieCollection, type StaticPage } from './model';
+
+const SITE = 'https://movietrailer.channel';
+const SUFFIX = ' | MovieTrailer.Channel';
+
+const byNewest = (a: { created: string }, b: { created: string }) => b.created.localeCompare(a.created);
+const people = (names: string | string[] | null) =>
+  (Array.isArray(names) ? names : (names ?? '').split(','))
+    .map((n) => n.trim())
+    .filter(Boolean)
+    .map((name) => ({ '@type': 'Person', name }));
+
+function movieSchema(m: Movie) {
+  const url = `${SITE}/movies/${m.slug}`;
+  const movie: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'Movie',
+    name: m.name,
+    url,
+    image: thumb(m.youtubeId),
+    trailer: {
+      '@type': 'VideoObject',
+      name: m.trailerTitle ?? `${m.name} official trailer`,
+      description: m.synopsis ?? `Official trailer for ${m.name}.`,
+      thumbnailUrl: [thumb(m.youtubeId)],
+      uploadDate: m.created,
+      embedUrl: `https://www.youtube.com/embed/${m.youtubeId}`,
+    },
+  };
+  if (m.year) movie.dateCreated = m.year;
+  if (m.synopsis) movie.description = m.synopsis;
+  if (m.genres.length) movie.genre = m.genres;
+  if (m.director) movie.director = people(m.director);
+  if (m.cast.length) movie.actor = people(m.cast);
+  if (m.runtimeMinutes) movie.duration = `PT${m.runtimeMinutes}M`;
+  if (m.rating && m.rating !== 'Not Rated') movie.contentRating = m.rating;
+  return movie;
+}
+
+function breadcrumbs(items: { name: string; path: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((it, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: it.name,
+      item: `${SITE}/${it.path}`.replace(/\/$/, ''),
+    })),
+  };
+}
+
+function itemList(movies: Movie[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: movies.map((m, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: `${SITE}/movies/${m.slug}`,
+      name: m.name,
+    })),
+  };
+}
+
+export function routes(): Route[] {
+  const movies = getCollection<Movie>('movies');
+  const collections = getCollection<MovieCollection>('collections');
+  const pages = getCollection<StaticPage>('pages');
+
+  const movieBySlug = new Map(movies.map((m) => [m.slug, m]));
+  const moviesIn = (c: MovieCollection) =>
+    c.movieSlugs.map((s) => movieBySlug.get(s)).filter((m): m is Movie => !!m);
+  const collectionCard = (c: MovieCollection) => {
+    const list = moviesIn(c);
+    return { slug: c.slug, name: c.name, tagline: c.tagline, count: list.length, youtubeId: list[0]?.youtubeId ?? null };
+  };
+  const card = (m: Movie) => ({ slug: m.slug, name: m.name, year: m.year, youtubeId: m.youtubeId });
+
+  const newest = [...movies].sort(byNewest);
+  const featured = collections.filter((c) => c.featured);
+  const out: Route[] = [];
+
+  // Home
+  out.push({
+    path: '',
+    template: 'home',
+    seo: {
+      title: 'Movie Trailers & Where to Watch' + SUFFIX,
+      rawTitle: true,
+      description:
+        'Watch trailers for new releases, award winners, indie films, and hidden gems. Free 24/7 trailer stream, plus where to rent, buy, or stream each movie.',
+      image: thumb(newest[0].youtubeId),
+    },
+    schema: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'MovieTrailer.Channel',
+        url: SITE,
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: `${SITE}/browse?q={search_term_string}`,
+          'query-input': 'required name=search_term_string',
+        },
+      },
+    ],
+    props: {
+      spotlight: newest[0],
+      latest: newest.slice(1, 13).map(card),
+      featured: featured.map(collectionCard),
+      totals: { movies: movies.length, collections: collections.length },
+    },
+  });
+
+  // Movie pages: /movies/{slug}
+  for (const m of movies) {
+    const inCollections = collections.filter((c) => c.movieSlugs.includes(m.slug)).map(collectionCard);
+    const firstGenre = m.genres[0];
+    const related = firstGenre
+      ? movies.filter((o) => o.slug !== m.slug && o.genres.includes(firstGenre)).sort(byNewest).slice(0, 6).map(card)
+      : [];
+    out.push({
+      path: `movies/${m.slug}`,
+      template: 'movie',
+      seo: {
+        title: `${m.name}${m.year ? ` (${m.year})` : ''} Official Trailer & Where to Watch`,
+        rawTitle: true,
+        description: m.synopsis ? `Watch the trailer for ${m.name}: ${m.synopsis}` : `Watch the official trailer for ${m.name}.`,
+        image: thumb(m.youtubeId),
+      },
+      schema: [
+        movieSchema(m),
+        breadcrumbs([
+          { name: 'Home', path: '' },
+          { name: 'Browse', path: 'browse' },
+          { name: m.name, path: `movies/${m.slug}` },
+        ]),
+      ],
+      lastmod: m.updated,
+      props: { movie: m, inCollections, related, genre: firstGenre ?? null },
+    });
+  }
+
+  // Collection pages: /discover/{slug}
+  for (const c of collections) {
+    const list = moviesIn(c);
+    out.push({
+      path: `discover/${c.slug}`,
+      template: 'collection',
+      seo: {
+        title: `${c.name} – Watch Trailers & Underrated Picks` + SUFFIX,
+        rawTitle: true,
+        description:
+          c.metaDescription ??
+          `Watch trailers for ${list.length} films in ${c.name}, with where to rent, buy or stream each one.`,
+        image: list[0] ? thumb(list[0].youtubeId) : undefined,
+      },
+      schema: [
+        itemList(list),
+        breadcrumbs([
+          { name: 'Home', path: '' },
+          { name: 'Discover', path: 'discover' },
+          { name: c.name, path: `discover/${c.slug}` },
+        ]),
+      ],
+      lastmod: c.updated,
+      props: { heading: c.name, tagline: c.tagline, introHtml: c.introHtml, movies: list, backTo: { href: '/discover', label: 'All collections' } },
+    });
+  }
+
+  // Discover index
+  out.push({
+    path: 'discover',
+    template: 'discover',
+    seo: {
+      title: 'Discover Movie Collections' + SUFFIX,
+      rawTitle: true,
+      description: 'Browse curated collections of movie trailers — award winners, box office highlights, hidden gems, and more.',
+    },
+    props: {
+      featured: featured.map(collectionCard),
+      others: collections.filter((c) => !c.featured).map(collectionCard),
+    },
+  });
+
+  // Browse all
+  const decades = [...new Set(movies.map((m) => (m.year ? `${m.year.slice(0, 3)}0s` : null)).filter(Boolean))].sort() as string[];
+  const genres = [...new Set(movies.flatMap((m) => m.genres))].sort();
+  out.push({
+    path: 'browse',
+    template: 'browse',
+    seo: {
+      title: 'Browse All Movie Trailers' + SUFFIX,
+      rawTitle: true,
+      description: 'Browse every movie trailer in our catalog — search by title, filter by genre and year, or jump to a letter.',
+    },
+    props: {
+      movies: movies.map((m) => ({ ...card(m), genres: m.genres })),
+      genres,
+      decades,
+    },
+  });
+
+  // Studio Ghibli article (a Webflow static page backed by the Ghibli collection)
+  const ghibli = collections.find((c) => c.slug === 'studio-ghibli-where-to-watch');
+  if (ghibli) {
+    const list = moviesIn(ghibli);
+    out.push({
+      path: 'studio-ghibli-where-to-watch',
+      template: 'collection',
+      seo: {
+        title: 'Studio Ghibli Movies: Where to Watch Every Film' + SUFFIX,
+        rawTitle: true,
+        description:
+          'Where to stream, rent, or buy every Studio Ghibli movie — Spirited Away, My Neighbor Totoro, Princess Mononoke, and more, all in one place.',
+        image: list[0] ? thumb(list[0].youtubeId) : undefined,
+      },
+      schema: [itemList(list)],
+      lastmod: ghibli.updated,
+      props: {
+        heading: 'Studio Ghibli: Where to Watch Every Movie',
+        tagline:
+          "Every Ghibli film in our catalog, with a direct link to rent, buy, or find where it's streaming — no digging through five different apps.",
+        introHtml: null,
+        movies: list,
+        backTo: { href: '/discover', label: 'All collections' },
+      },
+    });
+  }
+
+  // Static pages
+  for (const p of pages) {
+    out.push({
+      path: p.slug,
+      template: 'page',
+      seo: { title: p.seoTitle, rawTitle: true, description: p.description },
+      props: { title: p.title, blocks: p.blocks },
+    });
+  }
+
+  return out;
+}

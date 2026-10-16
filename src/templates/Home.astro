@@ -1,0 +1,54 @@
+---
+import TrailerScreen from '../components/TrailerScreen.astro';
+import MovieCard from '../components/MovieCard.astro';
+import CollectionCard from '../components/CollectionCard.astro';
+import type { Movie } from '../../brands/trailers/model';
+
+interface Props {
+  spotlight: Movie;
+  latest: { slug: string; name: string; year: string | null; youtubeId: string }[];
+  featured: { slug: string; name: string; tagline: string | null; count: number; youtubeId: string | null }[];
+  totals: { movies: number; collections: number };
+}
+const { spotlight: s, latest, featured, totals } = Astro.props;
+---
+<section class="spotlight" aria-labelledby="spotlight-title">
+  <div class="wrap spotlight__inner">
+    <div class="spotlight__text">
+      <p class="spotlight__kicker">Newest on the channel</p>
+      <h1 id="spotlight-title" class="marquee">
+        <span class="marquee__title">{s.name}</span>
+        {s.year && <span class="marquee__year">{s.year}</span>}
+      </h1>
+      {(s.tagline || s.synopsis) && <p class="spotlight__blurb">{s.tagline ?? s.synopsis}</p>}
+      <p><a class="button" href={`/movies/${s.slug}`}>Where to watch</a></p>
+    </div>
+    <div class="spotlight__screen">
+      <TrailerScreen youtubeId={s.youtubeId} title={s.name} priority />
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="band" aria-labelledby="latest">
+    <div class="band__head">
+      <h2 id="latest">Just added</h2>
+      <a class="text-link" href="/browse">Browse all {totals.movies} trailers</a>
+    </div>
+    <div class="grid grid--cards">
+      {latest.map((m) => <MovieCard {...m} />)}
+    </div>
+  </section>
+
+  {featured.length > 0 && (
+    <section class="band" aria-labelledby="collections">
+      <div class="band__head">
+        <h2 id="collections">Collections worth a night in</h2>
+        <a class="text-link" href="/discover">See all {totals.collections}</a>
+      </div>
+      <div class="grid grid--collections">
+        {featured.map((c) => <CollectionCard {...c} />)}
+      </div>
+    </section>
+  )}
+</div>

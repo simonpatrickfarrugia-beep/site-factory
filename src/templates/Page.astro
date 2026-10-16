@@ -1,0 +1,22 @@
+---
+import type { PageBlock } from '../../brands/trailers/model';
+
+interface Props {
+  title: string;
+  blocks: PageBlock[];
+}
+const { title, blocks } = Astro.props;
+---
+<div class="wrap">
+  <article class="page prose">
+    <h1 class="display">{title}</h1>
+    {blocks.map((b) =>
+      b.type === 'h2' ? <h2>{b.text}</h2>
+      : b.type === 'links' ? (
+        <p class="button-row">{b.links.map((l) => <a class="button" href={l.href}>{l.label}</a>)}</p>
+      )
+      : b.html ? <p set:html={b.html} />
+      : <p>{b.text}</p>
+    )}
+  </article>
+</div>

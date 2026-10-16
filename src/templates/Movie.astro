@@ -1,0 +1,90 @@
+---
+import TrailerScreen from '../components/TrailerScreen.astro';
+import MovieCard from '../components/MovieCard.astro';
+import type { Movie } from '../../brands/trailers/model';
+
+interface Props {
+  movie: Movie;
+  inCollections: { slug: string; name: string; count: number }[];
+  related: { slug: string; name: string; year: string | null; youtubeId: string }[];
+  genre: string | null;
+}
+const { movie: m, inCollections, related, genre } = Astro.props;
+
+const runtime = m.runtimeMinutes
+  ? `${Math.floor(m.runtimeMinutes / 60)}h ${String(m.runtimeMinutes % 60).padStart(2, '0')}m`
+  : null;
+const facts = [
+  { label: 'Released', value: m.year },
+  { label: 'Rated', value: m.rating },
+  { label: 'Runtime', value: runtime },
+  { label: 'Directed by', value: m.director },
+  { label: 'Starring', value: m.cast.join(', ') || null },
+  { label: 'Genre', value: m.genres.join(', ') || null },
+  { label: 'Box office', value: m.boxOffice },
+].filter((f) => f.value);
+const searchQuery = encodeURIComponent(`${m.name} ${m.year ?? ''}`.trim());
+---
+<article class="movie">
+  <div class="movie__screen">
+    <TrailerScreen youtubeId={m.youtubeId} title={m.name} priority />
+  </div>
+
+  <div class="wrap">
+    <header class="movie__head">
+      <h1 class="marquee">
+        <span class="marquee__title">{m.name}</span>
+        {m.year && <span class="marquee__year">{m.year}</span>}
+      </h1>
+      {m.tagline && <p class="movie__tagline">{m.tagline}</p>}
+    </header>
+
+    <div class="movie__body">
+      <div class="movie__story prose">
+        {m.synopsis && <p class="lede">{m.synopsis}</p>}
+        {m.summary && m.summary !== m.synopsis && <p>{m.summary}</p>}
+
+        <section class="watch" aria-labelledby="watch-heading">
+          <h2 id="watch-heading">Where to watch {m.name}</h2>
+          {m.rentBuyUrl ? (
+            <p><a class="button" href={m.rentBuyUrl} rel="sponsored noopener" target="_blank">Rent or buy</a></p>
+          ) : (
+            <p>
+              We don't have a direct rental link for this one yet.{' '}
+              <a href={`https://www.justwatch.com/us/search?q=${searchQuery}`} rel="noopener" target="_blank">Check streaming services on JustWatch</a>.
+            </p>
+          )}
+        </section>
+      </div>
+
+      {facts.length > 0 && (
+        <dl class="facts">
+          {facts.map((f) => (
+            <div class="facts__row">
+              <dt>{f.label}</dt>
+              <dd>{f.value}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+    </div>
+
+    {inCollections.length > 0 && (
+      <section class="band" aria-labelledby="in-collections">
+        <h2 id="in-collections">Part of</h2>
+        <ul class="chip-list">
+          {inCollections.map((c) => <li><a class="chip" href={`/discover/${c.slug}`}>{c.name}</a></li>)}
+        </ul>
+      </section>
+    )}
+
+    {related.length > 0 && (
+      <section class="band" aria-labelledby="related">
+        <h2 id="related">More {genre?.toLowerCase()} trailers</h2>
+        <div class="grid grid--cards">
+          {related.map((r) => <MovieCard {...r} />)}
+        </div>
+      </section>
+    )}
+  </div>
+</article>

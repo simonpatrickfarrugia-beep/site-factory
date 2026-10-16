@@ -1,0 +1,32 @@
+---
+import CollectionCard from '../components/CollectionCard.astro';
+
+type Card = { slug: string; name: string; tagline: string | null; count: number; youtubeId: string | null };
+interface Props {
+  featured: Card[];
+  others: Card[];
+}
+const { featured, others } = Astro.props;
+---
+<div class="wrap">
+  <header class="page-head">
+    <h1 class="display">Discover</h1>
+    <p class="page-head__lede">Hand-picked lineups: franchises in order, directors' filmographies, award nominees and box office years.</p>
+  </header>
+
+  {featured.length > 0 && (
+    <section class="band" aria-labelledby="featured">
+      <h2 id="featured">Featured</h2>
+      <div class="grid grid--collections grid--feature">
+        {featured.map((c) => <CollectionCard {...c} />)}
+      </div>
+    </section>
+  )}
+
+  <section class="band" aria-labelledby="all-collections">
+    <h2 id="all-collections">All collections</h2>
+    <div class="grid grid--collections">
+      {others.map((c) => <CollectionCard {...c} />)}
+    </div>
+  </section>
+</div>

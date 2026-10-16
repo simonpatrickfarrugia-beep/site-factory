@@ -1,0 +1,29 @@
+---
+/**
+ * Renders every page of the current brand. The brand's site module
+ * (brands/<slug>/site.ts) decides which pages exist and which template each uses.
+ */
+import Base from '../layouts/Base.astro';
+import { templates } from '../templates';
+import { getRoutes } from '../lib/site';
+import type { Route } from '../lib/routes';
+
+export function getStaticPaths() {
+  return getRoutes().map((route) => ({
+    params: { path: route.path || undefined },
+    props: { route },
+  }));
+}
+
+const { route } = Astro.props as { route: Route };
+const Template = templates[route.template];
+---
+<Base
+  title={route.seo.title}
+  rawTitle={route.seo.rawTitle}
+  description={route.seo.description}
+  image={route.seo.image}
+  schema={route.schema}
+>
+  <Template {...route.props} />
+</Base>

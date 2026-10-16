@@ -23,8 +23,12 @@ export const brandSchema = z.object({
     defaultDescription: z.string().max(170, 'Keep meta descriptions under 170 characters'),
   }),
 
+  nav: z.array(z.object({ label: z.string(), href: z.string() })).default([]),
+  footer: z.array(z.object({ label: z.string(), href: z.string() })).default([]),
+
   data: z.object({
-    source: z.enum(['airtable', 'none']),
+    /** Where snapshots come from. 'snapshot' = JSON committed in data/<slug>/. */
+    source: z.enum(['snapshot', 'airtable', 'none']),
     base: z.string().regex(/^app[A-Za-z0-9]{14}$/).optional(),
   }).refine((d) => d.source !== 'airtable' || !!d.base, 'Airtable source needs a base ID'),
 

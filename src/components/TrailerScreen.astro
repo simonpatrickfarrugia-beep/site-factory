@@ -1,0 +1,45 @@
+---
+/**
+ * YouTube trailer with a lightweight facade: shows the thumbnail and loads the
+ * real player only when tapped. Keeps pages fast (no YouTube JS on load).
+ */
+interface Props {
+  youtubeId: string;
+  title: string;
+  /** Eager-load the thumbnail (use for the first screen on the page). */
+  priority?: boolean;
+}
+const { youtubeId, title, priority = false } = Astro.props;
+---
+<div class="screen" data-youtube={youtubeId}>
+  <button type="button" class="screen__play" aria-label={`Play trailer: ${title}`}>
+    <img
+      src={`https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg`}
+      alt=""
+      width="480"
+      height="360"
+      loading={priority ? 'eager' : 'lazy'}
+      fetchpriority={priority ? 'high' : undefined}
+      decoding="async"
+    />
+    <span class="screen__icon" aria-hidden="true"></span>
+    <span class="screen__label">Play trailer</span>
+  </button>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.screen[data-youtube]').forEach((screen) => {
+    const button = screen.querySelector('button');
+    button?.addEventListener('click', () => {
+      const id = screen.dataset.youtube;
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+      iframe.title = button.getAttribute('aria-label') ?? 'Trailer';
+      iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      iframe.allowFullscreen = true;
+      screen.replaceChildren(iframe);
+      screen.classList.add('is-playing');
+      iframe.focus();
+    });
+  });
+</script>

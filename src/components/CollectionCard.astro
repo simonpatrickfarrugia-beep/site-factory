@@ -1,0 +1,20 @@
+---
+interface Props {
+  slug: string;
+  name: string;
+  tagline: string | null;
+  count: number;
+  youtubeId: string | null;
+}
+const { slug, name, tagline, count, youtubeId } = Astro.props;
+---
+<a class="collection-card" href={`/discover/${slug}`}>
+  <span class="frame">
+    {youtubeId && <img src={`https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg`} alt="" width="480" height="360" loading="lazy" decoding="async" />}
+  </span>
+  <span class="collection-card__body">
+    <span class="collection-card__name">{name}</span>
+    {tagline && <span class="collection-card__tagline">{tagline}</span>}
+    <span class="collection-card__count">{count} {count === 1 ? 'trailer' : 'trailers'}</span>
+  </span>
+</a>

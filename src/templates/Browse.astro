@@ -1,0 +1,98 @@
+---
+import MovieCard from '../components/MovieCard.astro';
+
+interface Props {
+  movies: { slug: string; name: string; year: string | null; youtubeId: string; genres: string[] }[];
+  genres: string[];
+  decades: string[];
+}
+const { movies, genres, decades } = Astro.props;
+---
+<div class="wrap">
+  <header class="page-head">
+    <h1 class="display">Every trailer</h1>
+    <p class="page-head__lede">Search by title, or narrow it down by genre and decade.</p>
+  </header>
+
+  <form class="filters" role="search" data-filters>
+    <label class="field field--grow">
+      <span class="field__label">Title</span>
+      <input type="search" name="q" placeholder="Search titles" autocomplete="off" />
+    </label>
+    <label class="field">
+      <span class="field__label">Genre</span>
+      <select name="genre">
+        <option value="">All genres</option>
+        {genres.map((g) => <option value={g}>{g}</option>)}
+      </select>
+    </label>
+    <label class="field">
+      <span class="field__label">Decade</span>
+      <select name="decade">
+        <option value="">Any decade</option>
+        {decades.map((d) => <option value={d}>{d}</option>)}
+      </select>
+    </label>
+  </form>
+
+  <p class="results-count" aria-live="polite" data-count>{movies.length} trailers</p>
+
+  <div class="grid grid--cards" data-results>
+    {movies.map((m) => (
+      <div
+        class="grid__item"
+        data-title={m.name.toLowerCase()}
+        data-genres={m.genres.join('|')}
+        data-decade={m.year ? `${m.year.slice(0, 3)}0s` : ''}
+      >
+        <MovieCard slug={m.slug} name={m.name} year={m.year} youtubeId={m.youtubeId} as="h2" />
+      </div>
+    ))}
+  </div>
+  <p class="empty" data-empty hidden>No trailers match those filters. Try a different title or clear a filter.</p>
+</div>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-filters]');
+  const items = Array.from(document.querySelectorAll<HTMLElement>('[data-results] > .grid__item'));
+  const count = document.querySelector<HTMLElement>('[data-count]');
+  const empty = document.querySelector<HTMLElement>('[data-empty]');
+
+  if (form) {
+    const params = new URLSearchParams(location.search);
+    for (const name of ['q', 'genre', 'decade']) {
+      const el = form.elements.namedItem(name) as HTMLInputElement | HTMLSelectElement | null;
+      const value = params.get(name);
+      if (el && value) el.value = value;
+    }
+
+    const apply = () => {
+      const data = new FormData(form);
+      const q = String(data.get('q') ?? '').trim().toLowerCase();
+      const genre = String(data.get('genre') ?? '');
+      const decade = String(data.get('decade') ?? '');
+      let shown = 0;
+      for (const item of items) {
+        const match =
+          (!q || (item.dataset.title ?? '').includes(q)) &&
+          (!genre || (item.dataset.genres ?? '').split('|').includes(genre)) &&
+          (!decade || item.dataset.decade === decade);
+        item.hidden = !match;
+        if (match) shown++;
+      }
+      if (count) count.textContent = `${shown} ${shown === 1 ? 'trailer' : 'trailers'}`;
+      if (empty) empty.hidden = shown > 0;
+
+      const next = new URLSearchParams();
+      if (q) next.set('q', q);
+      if (genre) next.set('genre', genre);
+      if (decade) next.set('decade', decade);
+      const qs = next.toString();
+      history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
+    };
+
+    form.addEventListener('input', apply);
+    form.addEventListener('submit', (e) => { e.preventDefault(); apply(); });
+    apply();
+  }
+</script>

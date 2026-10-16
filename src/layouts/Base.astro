@@ -1,21 +1,34 @@
 ---
 import { brand } from '../lib/brand';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 
 interface Props {
-  /** Page title without the brand suffix. Omit on the home page to use the brand name. */
+  /** Page title. Brand suffix is added unless rawTitle is true. Omit for the brand name alone. */
   title?: string;
-  description?: string;
-  /** Use the exact title given, with no suffix (for pages carrying over a Webflow title). */
   rawTitle?: boolean;
+  description?: string;
   image?: string;
+  schema?: Record<string, unknown>[];
 }
 
-const { title, description = brand.seo.defaultDescription, rawTitle = false, image } = Astro.props;
+const { title, rawTitle = false, description = brand.seo.defaultDescription, image, schema = [] } = Astro.props;
 const fullTitle = !title ? brand.name : rawTitle ? title : `${title}${brand.seo.titleSuffix}`;
-const canonical = new URL(Astro.url.pathname, Astro.site).toString();
-const fontQuery = [brand.fonts.display, brand.fonts.body]
-  .map((f) => `family=${encodeURIComponent(f)}:wght@400;600;700`)
-  .join('&');
+const canonical = new URL(Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/'), Astro.site).toString();
+// Google Fonts rejects the whole request if a family lacks a requested weight,
+// so ask only for weights every family on the list is likely to have.
+const fontQuery = [
+  `family=${brand.fonts.display.replace(/ /g, '+')}:wght@700;800`,  // display font must offer 700 and 800
+  `family=${brand.fonts.body.replace(/ /g, '+')}:wght@400;600;700`,
+].join('&');
+const tokens = {
+  '--color-brand': brand.colors.brand,
+  '--color-accent': brand.colors.accent,
+  '--font-display': `'${brand.fonts.display}', 'Arial Narrow', sans-serif`,
+  '--font-body': `'${brand.fonts.body}', system-ui, sans-serif`,
+};
+const tokenCss = `:root{${Object.entries(tokens).map(([k, v]) => `${k}:${v}`).join(';')}}`;
 ---
 <!doctype html>
 <html lang="en" data-theme={brand.theme}>
@@ -26,6 +39,7 @@ const fontQuery = [brand.fonts.display, brand.fonts.body]
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {!brand.launched && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="theme-color" content={brand.colors.brand} />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={brand.name} />
@@ -38,27 +52,10 @@ const fontQuery = [brand.fonts.display, brand.fonts.body]
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href={`https://fonts.googleapis.com/css2?${fontQuery}&display=swap`} />
+    <link rel="preconnect" href="https://i.ytimg.com" />
+    <style is:inline set:html={tokenCss}></style>
 
-    <style define:vars={{
-      brand: brand.colors.brand,
-      accent: brand.colors.accent,
-      fontDisplay: `'${brand.fonts.display}', Georgia, serif`,
-      fontBody: `'${brand.fonts.body}', system-ui, sans-serif`,
-    }}>
-      :root { color-scheme: dark light; }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        font-family: var(--fontBody);
-        background: var(--brand);
-        color: #f4f1ea;
-        line-height: 1.6;
-        -webkit-font-smoothing: antialiased;
-      }
-      h1, h2, h3 { font-family: var(--fontDisplay); line-height: 1.1; }
-      a { color: var(--accent); }
-      main { max-width: 72rem; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
-    </style>
+    {schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
 
     {brand.analytics.cloudflareToken && (
       <script
@@ -69,8 +66,11 @@ const fontQuery = [brand.fonts.display, brand.fonts.body]
     )}
   </head>
   <body>
-    <main>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header />
+    <main id="main">
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
