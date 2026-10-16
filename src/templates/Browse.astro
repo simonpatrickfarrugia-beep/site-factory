@@ -7,6 +7,12 @@ interface Props {
   decades: string[];
 }
 const { movies, genres, decades } = Astro.props;
+const letterOf = (name: string) => {
+  const c = name.replace(/^(the|a|an)\s+/i, '').charAt(0).toUpperCase();
+  return /[A-Z]/.test(c) ? c : '#';
+};
+const present = new Set(movies.map((m) => letterOf(m.name)));
+const letters = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ', '#'];
 ---
 <div class="wrap">
   <header class="page-head">
@@ -33,6 +39,16 @@ const { movies, genres, decades } = Astro.props;
         {decades.map((d) => <option value={d}>{d}</option>)}
       </select>
     </label>
+    <fieldset class="letters">
+      <legend class="visually-hidden">First letter</legend>
+      <label class="letter"><input type="radio" name="letter" value="" checked /><span>All</span></label>
+      {letters.map((l) => (
+        <label class="letter">
+          <input type="radio" name="letter" value={l} disabled={!present.has(l)} />
+          <span>{l}</span>
+        </label>
+      ))}
+    </fieldset>
   </form>
 
   <p class="results-count" aria-live="polite" data-count>{movies.length} trailers</p>
@@ -44,6 +60,7 @@ const { movies, genres, decades } = Astro.props;
         data-title={m.name.toLowerCase()}
         data-genres={m.genres.join('|')}
         data-decade={m.year ? `${m.year.slice(0, 3)}0s` : ''}
+        data-letter={letterOf(m.name)}
       >
         <MovieCard slug={m.slug} name={m.name} year={m.year} youtubeId={m.youtubeId} as="h2" />
       </div>
@@ -65,18 +82,25 @@ const { movies, genres, decades } = Astro.props;
       const value = params.get(name);
       if (el && value) el.value = value;
     }
+    const startLetter = params.get('letter');
+    if (startLetter) {
+      const radio = form.querySelector<HTMLInputElement>(`input[name="letter"][value="${CSS.escape(startLetter)}"]`);
+      if (radio) radio.checked = true;
+    }
 
     const apply = () => {
       const data = new FormData(form);
       const q = String(data.get('q') ?? '').trim().toLowerCase();
       const genre = String(data.get('genre') ?? '');
       const decade = String(data.get('decade') ?? '');
+      const letter = String(data.get('letter') ?? '');
       let shown = 0;
       for (const item of items) {
         const match =
           (!q || (item.dataset.title ?? '').includes(q)) &&
           (!genre || (item.dataset.genres ?? '').split('|').includes(genre)) &&
-          (!decade || item.dataset.decade === decade);
+          (!decade || item.dataset.decade === decade) &&
+          (!letter || item.dataset.letter === letter);
         item.hidden = !match;
         if (match) shown++;
       }
@@ -87,6 +111,7 @@ const { movies, genres, decades } = Astro.props;
       if (q) next.set('q', q);
       if (genre) next.set('genre', genre);
       if (decade) next.set('decade', decade);
+      if (letter) next.set('letter', letter);
       const qs = next.toString();
       history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
     };

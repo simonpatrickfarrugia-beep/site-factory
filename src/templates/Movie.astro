@@ -8,8 +8,9 @@ interface Props {
   inCollections: { slug: string; name: string; count: number }[];
   related: { slug: string; name: string; year: string | null; youtubeId: string }[];
   genre: string | null;
+  amazonTag: string;
 }
-const { movie: m, inCollections, related, genre } = Astro.props;
+const { movie: m, inCollections, related, genre, amazonTag } = Astro.props;
 
 const runtime = m.runtimeMinutes
   ? `${Math.floor(m.runtimeMinutes / 60)}h ${String(m.runtimeMinutes % 60).padStart(2, '0')}m`
@@ -23,7 +24,20 @@ const facts = [
   { label: 'Genre', value: m.genres.join(', ') || null },
   { label: 'Box office', value: m.boxOffice },
 ].filter((f) => f.value);
-const searchQuery = encodeURIComponent(`${m.name} ${m.year ?? ''}`.trim());
+const withYear = `${m.name} ${m.year ?? ''}`.trim();
+const tagAmazon = (url: string) => {
+  try {
+    const u = new URL(url);
+    if (/(^|\.)amazon\./i.test(u.hostname)) u.searchParams.set('tag', amazonTag);
+    return u.toString();
+  } catch {
+    return url;
+  }
+};
+const amazonUrl = m.rentBuyUrl
+  ? tagAmazon(m.rentBuyUrl)
+  : `https://www.amazon.com/s?k=${encodeURIComponent(withYear)}&i=movies-tv&tag=${amazonTag}`;
+const justWatchUrl = `https://www.justwatch.com/us/search?q=${encodeURIComponent(m.name)}`;
 ---
 <article class="movie">
   <div class="movie__screen">
@@ -46,14 +60,10 @@ const searchQuery = encodeURIComponent(`${m.name} ${m.year ?? ''}`.trim());
 
         <section class="watch" aria-labelledby="watch-heading">
           <h2 id="watch-heading">Where to watch {m.name}</h2>
-          {m.rentBuyUrl ? (
-            <p><a class="button" href={m.rentBuyUrl} rel="sponsored noopener" target="_blank">Rent or buy</a></p>
-          ) : (
-            <p>
-              We don't have a direct rental link for this one yet.{' '}
-              <a href={`https://www.justwatch.com/us/search?q=${searchQuery}`} rel="noopener" target="_blank">Check streaming services on JustWatch</a>.
-            </p>
-          )}
+          <p class="button-row">
+            <a class="button" href={amazonUrl} rel="sponsored noopener" target="_blank">{m.rentBuyUrl ? 'Rent or buy' : 'Find on Amazon'}</a>
+            <a class="button button--quiet" href={justWatchUrl} rel="noopener" target="_blank">Find where to stream</a>
+          </p>
         </section>
       </div>
 
@@ -71,7 +81,7 @@ const searchQuery = encodeURIComponent(`${m.name} ${m.year ?? ''}`.trim());
 
     {inCollections.length > 0 && (
       <section class="band" aria-labelledby="in-collections">
-        <h2 id="in-collections">Part of</h2>
+        <h2 id="in-collections">Also featured in</h2>
         <ul class="chip-list">
           {inCollections.map((c) => <li><a class="chip" href={`/discover/${c.slug}`}>{c.name}</a></li>)}
         </ul>

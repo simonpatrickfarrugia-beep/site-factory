@@ -332,3 +332,17 @@ main { display: block; }
 .split__panel--accent { background: var(--color-accent); color: var(--ink); }
 .button--ink { background: var(--ink); color: var(--paper); }
 .button--ink:hover { color: var(--color-accent); filter: none; }
+
+/* ---------- Browse: letter strip ---------- */
+.letters { display: flex; flex-wrap: wrap; gap: var(--space-1); border: 0; padding: 0; margin: 0; flex-basis: 100%; }
+.letter { position: relative; }
+.letter input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.letter span {
+  display: grid; place-items: center; min-width: 2.5rem; min-height: 2.5rem; padding: 0 var(--space-2);
+  border-radius: var(--radius); box-shadow: inset 0 0 0 1px var(--line);
+  font-weight: 600; font-size: var(--step--1); color: var(--muted);
+}
+.letter input:checked + span { background: var(--color-accent); color: var(--ink); box-shadow: none; }
+.letter input:focus-visible + span { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.letter input:disabled + span { opacity: 0.3; }
+.letter input:disabled { cursor: default; }

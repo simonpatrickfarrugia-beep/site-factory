@@ -25,6 +25,8 @@ export const brandSchema = z.object({
 
   nav: z.array(z.object({ label: z.string(), href: z.string() })).default([]),
   footer: z.array(z.object({ label: z.string(), href: z.string() })).default([]),
+  /** Small print shown in every footer, e.g. an affiliate disclosure. */
+  footerNote: z.string().optional(),
 
   data: z.object({
     /** Where snapshots come from. 'snapshot' = JSON committed in data/<slug>/. */

@@ -20,6 +20,8 @@ export default defineBrand({
     { label: 'Privacy Policy', href: '/privacy-policy' },
     { label: 'Terms of Service', href: '/terms' },
   ],
+  // Required by the Amazon Associates programme. Carried over from Webflow.
+  footerNote: 'As an Amazon Associate, movietrailer.channel earns from qualifying purchases.',
 
   seo: {
     titleSuffix: ' | MovieTrailer.Channel',

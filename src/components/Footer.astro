@@ -10,6 +10,7 @@ const year = new Date().getFullYear();
         {brand.footer.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
       </ul>
     )}
+    {brand.footerNote && <p class="site-footer__fine">{brand.footerNote}</p>}
     <p class="site-footer__fine">© {year} {brand.name}</p>
   </div>
 </footer>

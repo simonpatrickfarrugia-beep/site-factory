@@ -8,6 +8,8 @@ import { thumb, type Movie, type MovieCollection, type StaticPage } from './mode
 
 const SITE = 'https://movietrailer.channel';
 const SUFFIX = ' | MovieTrailer.Channel';
+/** Amazon Associates tracking ID, carried over from the Webflow site's custom code. */
+const AMAZON_TAG = 'movietrailerc-20';
 
 const byNewest = (a: { created: string }, b: { created: string }) => b.created.localeCompare(a.created);
 const people = (names: string | string[] | null) =>
@@ -145,7 +147,7 @@ export function routes(): Route[] {
         ]),
       ],
       lastmod: m.updated,
-      props: { movie: m, inCollections, related, genre: firstGenre ?? null },
+      props: { movie: m, inCollections, related, genre: firstGenre ?? null, amazonTag: AMAZON_TAG },
     });
   }
 
