@@ -1,0 +1,76 @@
+---
+import { brand } from '../lib/brand';
+
+interface Props {
+  /** Page title without the brand suffix. Omit on the home page to use the brand name. */
+  title?: string;
+  description?: string;
+  /** Use the exact title given, with no suffix (for pages carrying over a Webflow title). */
+  rawTitle?: boolean;
+  image?: string;
+}
+
+const { title, description = brand.seo.defaultDescription, rawTitle = false, image } = Astro.props;
+const fullTitle = !title ? brand.name : rawTitle ? title : `${title}${brand.seo.titleSuffix}`;
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const fontQuery = [brand.fonts.display, brand.fonts.body]
+  .map((f) => `family=${encodeURIComponent(f)}:wght@400;600;700`)
+  .join('&');
+---
+<!doctype html>
+<html lang="en" data-theme={brand.theme}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {!brand.launched && <meta name="robots" content="noindex, nofollow" />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={brand.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {image && <meta property="og:image" content={image} />}
+    <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href={`https://fonts.googleapis.com/css2?${fontQuery}&display=swap`} />
+
+    <style define:vars={{
+      brand: brand.colors.brand,
+      accent: brand.colors.accent,
+      fontDisplay: `'${brand.fonts.display}', Georgia, serif`,
+      fontBody: `'${brand.fonts.body}', system-ui, sans-serif`,
+    }}>
+      :root { color-scheme: dark light; }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: var(--fontBody);
+        background: var(--brand);
+        color: #f4f1ea;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1, h2, h3 { font-family: var(--fontDisplay); line-height: 1.1; }
+      a { color: var(--accent); }
+      main { max-width: 72rem; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+    </style>
+
+    {brand.analytics.cloudflareToken && (
+      <script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={JSON.stringify({ token: brand.analytics.cloudflareToken })}
+      ></script>
+    )}
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
