@@ -1,0 +1,90 @@
+---
+/**
+ * The "24/7" channel: plays trailers back to back in a random order.
+ * Nothing from YouTube loads until the visitor presses play.
+ */
+interface Props {
+  items: { slug: string; name: string; youtubeId: string }[];
+  poster: { name: string; youtubeId: string };
+}
+const { items, poster } = Astro.props;
+---
+<div class="channel" data-channel>
+  <div class="screen">
+    <button type="button" class="screen__play" aria-label="Start the trailer channel" data-channel-start>
+      <img src={`https://i.ytimg.com/vi/${poster.youtubeId}/hqdefault.jpg`} alt="" width="480" height="360" fetchpriority="high" />
+      <span class="screen__icon" aria-hidden="true"></span>
+      <span class="screen__label">Start the channel</span>
+    </button>
+    <div class="channel__player" data-channel-player hidden></div>
+  </div>
+  <p class="channel__now" aria-live="polite">
+    <span class="channel__dot" aria-hidden="true"></span>
+    <span data-channel-now>Trailers back to back, all day</span>
+  </p>
+  <script type="application/json" data-channel-items set:html={JSON.stringify(items)} />
+</div>
+
+<script>
+  type Item = { slug: string; name: string; youtubeId: string };
+  const w = window as any;
+
+  const root = document.querySelector<HTMLElement>('[data-channel]');
+  const start = root?.querySelector<HTMLButtonElement>('[data-channel-start]');
+  const mount = root?.querySelector<HTMLElement>('[data-channel-player]');
+  const now = root?.querySelector<HTMLElement>('[data-channel-now]');
+  const raw = root?.querySelector('[data-channel-items]')?.textContent ?? '[]';
+
+  function shuffle<T>(list: T[]): T[] {
+    const a = [...list];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  const loadApi = () =>
+    new Promise<void>((resolve) => {
+      if (w.YT?.Player) return resolve();
+      w.onYouTubeIframeAPIReady = () => resolve();
+      const s = document.createElement('script');
+      s.src = 'https://www.youtube.com/iframe_api';
+      document.head.append(s);
+    });
+
+  start?.addEventListener('click', async () => {
+    if (!mount || !now) return;
+    // YouTube accepts up to ~50 videos in an inline playlist.
+    const queue: Item[] = shuffle(JSON.parse(raw) as Item[]).slice(0, 50);
+    if (!queue.length) return;
+    now.textContent = 'Tuning in…';
+    await loadApi();
+    start.remove();
+    mount.hidden = false;
+
+    const show = (index: number) => {
+      const item = queue[index];
+      if (!item) return;
+      now.innerHTML = '';
+      now.append('Now playing: ');
+      const a = document.createElement('a');
+      a.href = `/movies/${item.slug}`;
+      a.textContent = `${item.name}, where to watch`;
+      now.append(a);
+    };
+
+    new w.YT.Player(mount, {
+      host: 'https://www.youtube-nocookie.com',
+      videoId: queue[0].youtubeId,
+      playerVars: { autoplay: 1, rel: 0, modestbranding: 1, playsinline: 1, playlist: queue.slice(1).map((q) => q.youtubeId).join(',') },
+      events: {
+        onReady: (e: any) => { e.target.playVideo(); show(0); },
+        onStateChange: (e: any) => {
+          if (e.data === w.YT.PlayerState.PLAYING) show(e.target.getPlaylistIndex());
+        },
+        onError: (e: any) => e.target.nextVideo(),
+      },
+    });
+  });
+</script>
