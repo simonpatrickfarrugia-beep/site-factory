@@ -187,7 +187,7 @@ main { display: block; }
 
 .movie-card { display: grid; gap: var(--space-1); text-decoration: none; }
 .movie-card .frame { margin-bottom: var(--space-1); }
-.movie-card__title { font-size: var(--step-0); font-weight: 600; line-height: 1.3; }
+.movie-card__title { font-family: var(--font-body); font-size: var(--step-0); font-weight: 600; line-height: 1.3; letter-spacing: 0; }
 .movie-card__year { color: var(--muted); font-size: var(--step--1); }
 .movie-card:hover .movie-card__title { color: var(--color-accent); }
 .movie-card:hover img { opacity: 0.9; }

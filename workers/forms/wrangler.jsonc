@@ -1,0 +1,25 @@
+{
+  // Shared forms Worker for every brand. Stores submissions and poll votes in D1.
+  // Deploy: npx wrangler deploy --config workers/forms/wrangler.jsonc
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "forms",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-06-01",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "site-factory-forms",
+      "database_id": "5441b63f-1ab8-484f-a6c7-0a0af4302774",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "vars": {
+    // Every site allowed to post forms, mapped to its brand. Add preview hosts too.
+    "BRAND_ORIGINS": "{\"movietrailer.channel\":\"trailers\",\"site-factory.simonpatrickfarrugia.workers.dev\":\"trailers\"}",
+    // Forms each brand accepts.
+    "BRAND_FORMS": "{\"trailers\":[\"contact\",\"submission\",\"notify\"]}",
+    "NOTIFY_TO": "simonpatrickfarrugia@gmail.com",
+    "NOTIFY_FROM": "Site Factory <forms@movietrailer.channel>"
+  }
+  // Secrets (set in the Cloudflare dashboard, never here): TURNSTILE_SECRET, RESEND_API_KEY
+}
