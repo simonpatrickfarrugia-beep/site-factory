@@ -2,15 +2,16 @@
 // Used by CI so changes can be reviewed visually. Usage: node scripts/screenshots.mjs [paths...]
 import { createServer } from 'node:http';
 import { readFile, mkdir } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
+import { existsSync, statSync } from 'node:fs';
 import { extname, join } from 'node:path';
 import { chromium } from 'playwright';
 
 const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.xml': 'application/xml', '.txt': 'text/plain', '.svg': 'image/svg+xml', '.png': 'image/png', '.json': 'application/json' };
 const server = createServer(async (req, res) => {
   const path = decodeURIComponent(new URL(req.url, 'http://x').pathname);
-  const candidates = path === '/' ? ['dist/index.html'] : [join('dist', path), join('dist', `${path}.html`)];
-  const file = candidates.find((f) => existsSync(f) && !f.endsWith('/'));
+  // Same lookup order as Cloudflare: /discover -> discover.html before the discover/ folder.
+  const candidates = path === '/' ? ['dist/index.html'] : [join('dist', `${path}.html`), join('dist', path)];
+  const file = candidates.find((f) => existsSync(f) && statSync(f).isFile());
   if (!file) { res.writeHead(404, { 'content-type': 'text/html' }); res.end(await readFile('dist/404.html')); return; }
   res.writeHead(200, { 'content-type': types[extname(file)] ?? 'application/octet-stream' });
   res.end(await readFile(file));
