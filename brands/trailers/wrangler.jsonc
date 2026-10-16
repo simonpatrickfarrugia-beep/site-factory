@@ -3,7 +3,7 @@
   // Build:  BRAND=trailers npm run build
   // Deploy: npx wrangler deploy --config brands/trailers/wrangler.jsonc
   "$schema": "../../node_modules/wrangler/config-schema.json",
-  "name": "trailers",
+  "name": "site-factory", // must match the Worker name in Cloudflare
   "compatibility_date": "2026-06-01",
   "assets": {
     "directory": "../../dist",
