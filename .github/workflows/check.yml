@@ -2,6 +2,8 @@
 # Cloudflare does the real deploys; this is the safety net.
 # Results are written as annotations so they're readable without the raw logs.
 name: Check build
+permissions:
+  contents: write
 on:
   push:
     branches: ['**']
@@ -31,3 +33,14 @@ jobs:
           grep -E "page\(s\) built" build.log | sed "s/^/::notice title=Build ($BRAND)::/" || true
       - name: Verify
         run: node scripts/verify-build.mjs
+      - name: Screenshots (main only)
+        if: github.ref == 'refs/heads/main'
+        run: |
+          npm install --no-save --no-audit --no-fund playwright@1
+          npx playwright install --with-deps chromium
+          node scripts/screenshots.mjs / /browse /discover /discover/marvel-cinematic-universe /movies/$(node -e "console.log(require('./data/'+process.env.BRAND+'/movies.json')[0].slug)") /about /does-not-exist
+          cd screenshots
+          git init -q -b screenshots
+          git config user.name "ci" && git config user.email "ci@users.noreply.github.com"
+          git add . && git commit -qm "Screenshots for ${GITHUB_SHA}"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" screenshots:screenshots-$BRAND
