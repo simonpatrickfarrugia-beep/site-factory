@@ -7,6 +7,8 @@ const brand = process.env.BRAND;
 if (!brand) { console.error('BRAND is not set'); process.exit(1); }
 const dist = 'dist';
 const problems = [];
+const gh = !!process.env.GITHUB_ACTIONS;
+const notice = (msg) => console.log(gh ? `::notice title=Verify (${brand})::${msg}` : msg);
 
 const fileFor = (url) => (url === '/' ? join(dist, 'index.html') : join(dist, `${url.slice(1)}.html`));
 
@@ -14,7 +16,7 @@ const listPath = join('brands', brand, 'webflow-urls.txt');
 if (existsSync(listPath)) {
   const urls = readFileSync(listPath, 'utf8').split('\n').map((l) => l.trim()).filter((l) => l && !l.startsWith('#'));
   for (const url of urls) if (!existsSync(fileFor(url))) problems.push(`Missing page for ${url}`);
-  console.log(`Checked ${urls.length} required URLs`);
+  notice(`Checked ${urls.length} required URLs`);
 }
 
 const walk = (dir) => readdirSync(dir).flatMap((f) => {
@@ -28,11 +30,24 @@ for (const file of pages) {
   if (!/<meta name="description" content="[^"]+"/.test(html)) problems.push(`${file}: no meta description`);
   if (!file.endsWith('404.html') && !/<link rel="canonical"/.test(html)) problems.push(`${file}: no canonical`);
   if (/>undefined<|>null<|="undefined"/.test(html)) problems.push(`${file}: contains "undefined" or "null"`);
+  for (const [, json] of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+    try { JSON.parse(json); } catch { problems.push(`${file}: invalid JSON-LD`); }
+  }
 }
-console.log(`Checked ${pages.length} HTML pages`);
+
+const sitemap = join(dist, 'sitemap.xml');
+if (existsSync(sitemap)) {
+  const count = (readFileSync(sitemap, 'utf8').match(/<loc>/g) ?? []).length;
+  notice(`Sitemap lists ${count} URLs`);
+  if (count < pages.length - 1) problems.push(`Sitemap lists ${count} URLs but ${pages.length} pages were built`);
+} else {
+  problems.push('No sitemap.xml');
+}
+notice(`Checked ${pages.length} HTML pages`);
 
 if (problems.length) {
-  console.error(`\n${problems.length} problem(s):\n` + problems.slice(0, 50).map((p) => `  - ${p}`).join('\n'));
+  const list = problems.slice(0, 50).map((p) => `  - ${p}`).join('\n');
+  console.error(gh ? `::error title=Verify failed (${brand})::${problems.length} problem(s)%0A${list.replace(/\n/g, '%0A')}` : `\n${problems.length} problem(s):\n${list}`);
   process.exit(1);
 }
-console.log('Build verified');
+notice('Build verified');

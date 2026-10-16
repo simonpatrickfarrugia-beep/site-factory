@@ -1,5 +1,6 @@
 # Builds every brand and verifies the output on each push.
-# Cloudflare does the real deploys; this is the safety net with readable logs.
+# Cloudflare does the real deploys; this is the safety net.
+# Results are written as annotations so they're readable without the raw logs.
 name: Check build
 on:
   push:
@@ -12,15 +13,21 @@ jobs:
     strategy:
       matrix:
         brand: [trailers]
+    env:
+      BRAND: ${{ matrix.brand }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: npm install --no-audit --no-fund
-      - run: npm run build
-        env:
-          BRAND: ${{ matrix.brand }}
-      - run: node scripts/verify-build.mjs
-        env:
-          BRAND: ${{ matrix.brand }}
+      - name: Build
+        run: |
+          set -o pipefail
+          if ! npm run build 2>&1 | tee build.log; then
+            node -e "const l=require('fs').readFileSync('build.log','utf8').trim().split('\n').slice(-40).join('\n');console.log('::error title=Build failed ('+process.env.BRAND+')::'+l.replace(/%/g,'%25').replace(/\r?\n/g,'%0A'))"
+            exit 1
+          fi
+          grep -E "page\(s\) built" build.log | sed "s/^/::notice title=Build ($BRAND)::/" || true
+      - name: Verify
+        run: node scripts/verify-build.mjs
