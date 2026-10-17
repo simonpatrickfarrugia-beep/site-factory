@@ -1,0 +1,29 @@
+{
+  // Trailer pipeline for movietrailer.channel: finds new trailers, enriches them, publishes them.
+  // Deploy: npx wrangler deploy --config workers/pipeline/wrangler.jsonc
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "trailer-pipeline",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-06-01",
+  "triggers": {
+    // Times are UTC. Keep in sync with CRON_JOBS in src/index.ts.
+    "crons": [
+      "0 */12 * * *", // intake: every 12 hours
+      "0 19 * * *", // enrich: daily, 06:00 Melbourne (AEDT)
+      "0 18 1 * *" // recheck: monthly, 05:00 Melbourne on the 2nd (AEDT)
+    ]
+  },
+  "observability": { "enabled": true },
+  "vars": {
+    "REPO": "simonpatrickfarrugia-beep/site-factory",
+    "BRANCH": "main",
+    // Official studio channels watched for new trailers (same list as the old Make intake).
+    "CHANNELS": "[\"UCjmJDM5pRKbUlVIzDYYWb6g\",\"UCq0OueAsdxH6b8nyAspwViw\",\"UCF9imwPMSGz4Vq1NiTWCC7g\",\"UC_5niPa-d35gg88HaS7RrIw\",\"UCJ6nMHaJPZvsJ-HmUmj1SeA\",\"UCz97F7dMxBNOfGYu3rx8aCw\",\"UC2-BeLxzUBSs0uSrmzWhJuQ\",\"UCf5CjDJvsFvtVIhkfmKAwAA\",\"UCU4SM3j_9TNWaSu8KdGV50g\",\"UCuPivVjnfNo4mb3Oog_frZg\"]",
+    "ANTHROPIC_MODEL": "claude-haiku-5-5",
+    // Per run. Each item uses up to 2 of the 50 calls a free-plan Worker run allows.
+    "ENRICH_LIMIT": "15",
+    "RECHECK_LIMIT": "20"
+  }
+  // Secrets (set in the Cloudflare dashboard, never here):
+  //   GITHUB_TOKEN, OMDB_API_KEY, ANTHROPIC_API_KEY, RUN_KEY
+}
