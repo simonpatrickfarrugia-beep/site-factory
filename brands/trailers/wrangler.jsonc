@@ -10,7 +10,7 @@
     "html_handling": "drop-trailing-slash",
     "not_found_handling": "404-page"
   },
-  // Live domains. www is redirected to the apex by a Cloudflare Redirect Rule (dashboard).
+  // Live domains. www is canonical; the bare domain is redirected to www by a Cloudflare Redirect Rule (dashboard).
   "routes": [
     { "pattern": "movietrailer.channel", "custom_domain": true },
     { "pattern": "www.movietrailer.channel", "custom_domain": true }

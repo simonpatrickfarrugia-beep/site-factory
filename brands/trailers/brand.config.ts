@@ -3,7 +3,8 @@ import { defineBrand } from '../../src/lib/brand-schema';
 export default defineBrand({
   slug: 'trailers',
   name: 'MovieTrailer.Channel',
-  domain: 'movietrailer.channel',
+  // Canonical host. Webflow served www and Search Console tracks the www property, so keep it.
+  domain: 'www.movietrailer.channel',
   launched: true, // live on movietrailer.channel since the DNS cutover
 
   theme: 'cinematic',

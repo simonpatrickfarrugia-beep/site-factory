@@ -6,7 +6,7 @@ import { getCollection } from '../../src/lib/data';
 import type { Route } from '../../src/lib/routes';
 import { thumb, type Movie, type MovieCollection, type StaticPage } from './model';
 
-const SITE = 'https://movietrailer.channel';
+const SITE = 'https://www.movietrailer.channel'; // www is canonical (matches Webflow + Search Console)
 const SUFFIX = ' | MovieTrailer.Channel';
 /** Amazon Associates tracking ID, carried over from the Webflow site's custom code. */
 const AMAZON_TAG = 'movietrailerc-20';
