@@ -4,7 +4,7 @@ export default defineBrand({
   slug: 'trailers',
   name: 'MovieTrailer.Channel',
   domain: 'movietrailer.channel',
-  launched: false, // keep false until DNS cutover; previews stay out of Google
+  launched: true, // live on movietrailer.channel since the DNS cutover
 
   theme: 'cinematic',
   colors: { brand: '#12162B', accent: '#F2B53A' }, // late-night broadcast indigo, marquee amber

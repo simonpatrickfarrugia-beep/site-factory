@@ -9,6 +9,10 @@
     "directory": "../../dist",
     "html_handling": "drop-trailing-slash",
     "not_found_handling": "404-page"
-  }
-  // No custom domain yet. The site runs on its workers.dev preview URL until cutover.
+  },
+  // Live domains. www is redirected to the apex by a Cloudflare Redirect Rule (dashboard).
+  "routes": [
+    { "pattern": "movietrailer.channel", "custom_domain": true },
+    { "pattern": "www.movietrailer.channel", "custom_domain": true }
+  ]
 }
