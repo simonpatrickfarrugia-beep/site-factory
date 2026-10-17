@@ -39,6 +39,8 @@ export const brandSchema = z.object({
   analytics: z.object({
     /** Cloudflare Web Analytics site token (public, safe to commit). */
     cloudflareToken: z.string().optional(),
+    /** Google Analytics 4 Measurement ID (public, safe to commit). */
+    ga4Id: z.string().regex(/^G-[A-Z0-9]+$/, 'GA4 IDs look like G-XXXXXXXXXX').optional(),
   }).default({}),
 
   payments: z.object({ enabled: z.literal(false) }).default({ enabled: false }),

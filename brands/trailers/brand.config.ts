@@ -35,6 +35,6 @@ export default defineBrand({
   data: { source: 'snapshot' },
 
   forms: ['contact'],
-  analytics: {},
+  analytics: { ga4Id: 'G-RXGCJ51YWJ' }, // same property Webflow used, so traffic history continues
   payments: { enabled: false },
 });

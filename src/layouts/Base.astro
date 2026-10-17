@@ -57,6 +57,17 @@ const tokenCss = `:root{${Object.entries(tokens).map(([k, v]) => `${k}:${v}`).jo
 
     {schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
 
+    {brand.analytics.ga4Id && (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${brand.analytics.ga4Id}`}></script>
+        <script is:inline define:vars={{ ga4Id: brand.analytics.ga4Id }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', ga4Id);
+        </script>
+      </>
+    )}
     {brand.analytics.cloudflareToken && (
       <script
         defer
