@@ -125,7 +125,7 @@ export async function writeCopy(apiKey: string, model: string, m: OmdbMovie): Pr
     `Plot outline: ${m.Plot}`,
     '',
     'Write copy for a movie trailer website:',
-    '1. A tagline of at most 12 words. No quotation marks.',
+    '1. A tagline of at most 10 words. No quotation marks.',
     '2. An original summary of 2–3 sentences. Do not copy the plot outline wording, and no spoilers beyond the setup.',
     '',
     'Reply with JSON only: {"tagline": "...", "summary": "..."}',
@@ -141,7 +141,7 @@ export async function writeCopy(apiKey: string, model: string, m: OmdbMovie): Pr
   const tagline = copy.tagline?.trim().replace(/^["“]|["”]$/g, '');
   const summary = copy.summary?.trim();
   if (!tagline || !summary) throw new Error('Claude: reply missing tagline or summary');
-  if (tagline.split(/\s+/).length > 14) throw new Error('Claude: tagline too long');
+  if (tagline.split(/\s+/).length > 18) throw new Error('Claude: tagline too long');
   return { tagline, summary };
 }
 
