@@ -6,7 +6,7 @@ One Cloudflare Worker, `trailer-pipeline`, in `workers/pipeline/`. Replaces the 
 
 | Job | When (Melbourne time) | What it does |
 |---|---|---|
-| catalogue | weekly (Mon 07:00) | **Main growth engine.** Looks up Google search volumes (DataForSEO) for films in `data/trailers/candidates.json`, queues the 10 most-searched, and writes `reports/trailers/catalogue.md` (ranked list + demand by theme). |
+| catalogue | ~weekly (1st, 8th, 15th, 22nd, 29th UTC; 07:00 Melbourne next day) | **Main growth engine.** Looks up Google search volumes (DataForSEO) for films in `data/trailers/candidates.json`, queues the 10 most-searched, and writes `reports/trailers/catalogue.md` (ranked list + demand by theme). |
 | intake | every 12 hours | Newest 5 videos from classic and re-release label channels (Criterion, Kino Lorber, Vinegar Syndrome, Severin, Umbrella). Trailers for older films go into the queue; newer films are skipped. |
 | enrich | daily 06:00 | Up to 15 queued films: OMDb lookup → trailer found on YouTube if needed → Claude Haiku writes tagline + summary → added to `data/trailers/movies.json` → site rebuilds and the page goes live. |
 | collections | monthly (4th, 08:00) | **SEO collection pages.** Finds every theme the catalogue can fill (decade + genre, director, lead actor), looks up searches for "<theme>" + "best <theme>", and creates the 3 most-searched as **smart collections** (rule-based; new movies join automatically at each build). Claude writes tagline, intro and meta description. Report: `reports/trailers/collections.md`, incl. popular themes that need more films. Needs ≥ 6 films and ≥ 100 searches/mo. |
