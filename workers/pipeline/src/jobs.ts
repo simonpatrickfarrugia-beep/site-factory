@@ -40,10 +40,13 @@ export interface QueueItem {
   /** Film title worked out from the video title. */
   title: string;
   year: number | null;
-  youtubeId: string;
-  videoTitle: string;
-  channelId: string;
-  publishedAt: string;
+  /** Null for films added from the demand report or by chat: enrich finds a trailer on YouTube. */
+  youtubeId: string | null;
+  videoTitle: string | null;
+  channelId: string | null;
+  publishedAt: string | null;
+  /** Where it came from. Missing = studio feed (older items). */
+  source?: 'feed' | 'demand' | 'chat';
   /** new = not looked up yet; pending = upcoming film not in OMDb yet (rechecked monthly); review = needs a person. */
   status: 'new' | 'pending' | 'review';
   /** Why it is waiting, e.g. "NEEDS REVIEW: ...". */
@@ -61,6 +64,8 @@ export interface Services {
   feed(channelId: string): Promise<FeedVideo[]>;
   omdb(title: string, year: number | null): Promise<OmdbMovie | null>;
   copy(m: OmdbMovie): Promise<Copy>;
+  /** YouTube search for a film's trailer (only for queue items without a video). */
+  trailer(name: string, year: string | null): Promise<{ youtubeId: string; title: string } | null>;
   /** Network calls still allowed in this run (Workers free plan: 50 per run). */
   budget: { left: number };
   now: Date;
@@ -82,7 +87,10 @@ const newResult = (): Result => ({ log: [], added: [], queued: [], moviesChanged
 export async function intake(state: State, channels: string[], svc: Services): Promise<Result> {
   const r = newResult();
   const known = new Set<string>([...state.movies.map((m) => titleKey(m.name)), ...state.queue.map((q) => titleKey(q.title))]);
-  const knownVideos = new Set<string>([...state.movies.map((m) => m.youtubeId), ...state.queue.map((q) => q.youtubeId)]);
+  const knownVideos = new Set<string>([
+    ...state.movies.map((m) => m.youtubeId),
+    ...state.queue.flatMap((q) => (q.youtubeId ? [q.youtubeId] : [])),
+  ]);
 
   for (const channelId of channels) {
     if (svc.budget.left <= 0) {
@@ -112,6 +120,7 @@ export async function intake(state: State, channels: string[], svc: Services): P
         videoTitle: v.title,
         channelId,
         publishedAt: v.publishedAt,
+        source: 'feed',
         status: 'new',
         note: null,
         foundAt: svc.now.toISOString(),
@@ -148,8 +157,8 @@ async function process(state: State, svc: Services, limit: number, which: QueueI
   const thisYear = svc.now.getUTCFullYear();
 
   for (const item of items) {
-    // Each item needs up to 2 calls (OMDb, then Claude on a match).
-    if (svc.budget.left < 2) {
+    // Each item needs up to 2 calls (OMDb, then Claude on a match), 3 if we must find its trailer.
+    if (svc.budget.left < (item.youtubeId ? 2 : 3)) {
       r.log.push('Stopped early: call budget used up; the rest wait for the next run.');
       break;
     }
@@ -172,6 +181,27 @@ async function process(state: State, svc: Services, limit: number, which: QueueI
         r.queueChanged = true;
         continue;
       }
+      if (!item.youtubeId) {
+        svc.budget.left--;
+        let t: { youtubeId: string; title: string } | null = null;
+        try {
+          t = await svc.trailer(found.Title, yearOf(found));
+        } catch (e) {
+          r.log.push(`YouTube search failed for "${found.Title}": ${(e as Error).message} (will retry next run).`);
+          continue;
+        }
+        if (!t) {
+          item.status = 'review';
+          item.note = 'NEEDS REVIEW: no official trailer found on YouTube';
+          item.lastChecked = nowIso;
+          r.queued.push(`${item.title}: ${item.note}`);
+          r.queueChanged = true;
+          continue;
+        }
+        item.youtubeId = t.youtubeId;
+        item.videoTitle = t.title;
+        r.queueChanged = true;
+      }
       svc.budget.left--;
       let copy: Copy;
       try {
@@ -190,7 +220,7 @@ async function process(state: State, svc: Services, limit: number, which: QueueI
 
     // No usable match. A new film missing from OMDb just waits (rechecked monthly).
     // A wrong film, or an older film OMDb doesn't know, needs a person: it's left for review by chat.
-    const expectedYear = item.year ?? (Number(item.publishedAt.slice(0, 4)) || null);
+    const expectedYear = item.year ?? (Number(item.publishedAt?.slice(0, 4)) || null);
     const upcoming = !found && expectedYear !== null && expectedYear >= thisYear;
     const status: QueueItem['status'] = upcoming ? 'pending' : 'review';
     const note = upcoming ? 'Waiting for OMDb to list it' : `NEEDS REVIEW: ${why}`;
@@ -222,7 +252,7 @@ export function mismatch(item: QueueItem, m: OmdbMovie): string | null {
     if (Math.abs(y - item.year) > 1) return `OMDb film is from ${y}, trailer says ${item.year}`;
   } else {
     // A brand-new trailer with no year is for a new film, not an old one with the same name.
-    const posted = Number(item.publishedAt.slice(0, 4));
+    const posted = Number(item.publishedAt?.slice(0, 4));
     if (posted && y < posted - 2) return `OMDb film is from ${y}, trailer posted ${posted} (re-release or different film?)`;
   }
   return null;
@@ -249,7 +279,7 @@ function toMovie(item: QueueItem, m: OmdbMovie, copy: Copy, slug: string, nowIso
     synopsis: na(m.Plot),
     tagline: copy.tagline,
     summary: copy.summary,
-    youtubeId: item.youtubeId,
+    youtubeId: item.youtubeId!, // set above (feed item, or found by trailer search)
     trailerTitle: item.videoTitle,
     rentBuyUrl: null,
     airtableId: null,

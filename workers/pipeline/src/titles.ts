@@ -74,6 +74,18 @@ export function titleKey(title: string): string {
     .replace(/[^a-z0-9]/g, '');
 }
 
+/**
+ * Pick the official trailer from YouTube search results: a trailer whose title names the film.
+ * Prefers results that don't look like fan-made, reaction or "concept" videos.
+ */
+export function pickTrailer<T extends { title: string; channelTitle: string }>(results: T[], name: string): T | null {
+  const want = titleKey(name);
+  const ok = results.filter(
+    (r) => isTrailer(r.title) && titleKey(r.title).includes(want) && !/concept|fan[- ]made|fanmade|parody|recut|\bai\b/i.test(r.title),
+  );
+  return ok.find((r) => /official/i.test(r.title)) ?? ok[0] ?? null;
+}
+
 export function slugify(name: string, year: string | null): string {
   const base = name
     .normalize('NFKD')

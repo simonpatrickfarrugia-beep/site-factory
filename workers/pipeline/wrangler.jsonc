@@ -1,5 +1,6 @@
 {
-  // Trailer pipeline for movietrailer.channel: finds new trailers, enriches them, publishes them.
+  // Trailer pipeline for movietrailer.channel: finds new trailers, enriches them, publishes them,
+  // and writes a monthly Search Console demand report.
   // Deploy: npx wrangler deploy --config workers/pipeline/wrangler.jsonc
   "$schema": "../../node_modules/wrangler/config-schema.json",
   "name": "trailer-pipeline",
@@ -10,7 +11,8 @@
     "crons": [
       "0 */12 * * *", // intake: every 12 hours
       "0 19 * * *", // enrich: daily, 06:00 Melbourne (AEDT)
-      "0 18 1 * *" // recheck: monthly, 05:00 Melbourne on the 2nd (AEDT)
+      "0 18 1 * *", // recheck: monthly, 05:00 Melbourne on the 2nd (AEDT)
+      "0 21 2 * *" // demand report: monthly, 08:00 Melbourne on the 3rd (AEDT)
     ]
   },
   "observability": { "enabled": true },
@@ -22,8 +24,11 @@
     "ANTHROPIC_MODEL": "claude-haiku-5-5",
     // Per run. Each item uses up to 2 of the 50 calls a free-plan Worker run allows.
     "ENRICH_LIMIT": "15",
-    "RECHECK_LIMIT": "20"
+    "RECHECK_LIMIT": "20",
+    // Search Console property the demand report reads (URL-prefix property, with trailing slash).
+    "GSC_SITE": "https://www.movietrailer.channel/"
   }
   // Secrets (set in the Cloudflare dashboard, never here):
   //   GITHUB_TOKEN, OMDB_API_KEY, ANTHROPIC_API_KEY, RUN_KEY
+  //   YOUTUBE_API_KEY (trailer search for back-catalogue films), GSC_SERVICE_ACCOUNT (demand report)
 }
