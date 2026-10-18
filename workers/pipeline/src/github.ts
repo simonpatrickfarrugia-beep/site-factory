@@ -20,6 +20,7 @@ const api = (repo: Repo, path: string, init: RequestInit = {}) =>
       'x-github-api-version': '2022-11-28',
       'user-agent': 'site-factory-pipeline',
       ...(init.body ? { 'content-type': 'application/json' } : {}),
+      ...(init.headers as Record<string, string> | undefined), // e.g. the raw-file accept header in readFiles
     },
   });
 
