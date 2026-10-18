@@ -5,6 +5,7 @@ import Collection from './Collection.astro';
 import Discover from './Discover.astro';
 import Browse from './Browse.astro';
 import Page from './Page.astro';
+import Dashboard from './Dashboard.astro';
 
 export const templates = {
   home: Home,
@@ -13,4 +14,5 @@ export const templates = {
   discover: Discover,
   browse: Browse,
   page: Page,
+  dashboard: Dashboard,
 };

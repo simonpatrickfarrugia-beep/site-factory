@@ -13,7 +13,8 @@ import { enrich, intake, maxYear, recheck, type QueueItem, type Movie, type Resu
 import { commitFiles, readFiles, StaleError, type Repo } from './github';
 import { channelFeed, omdbLookup, omdbYearsForTitle, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
 import { buildCollections, type Idea, type MovieCollection } from './collections';
-import { googleAccessToken, searchAnalytics, youtubeSearch } from './google';
+import { ga4Report, googleAccessToken, searchAnalytics, youtubeSearch } from './google';
+import { buildStats } from './stats';
 import { buildDemandReport } from './demand';
 import { pickTrailer } from './titles';
 import { buildCatalogue, type Candidate } from './catalogue';
@@ -41,6 +42,7 @@ export interface Env {
   ENRICH_LIMIT: string;
   RECHECK_LIMIT: string;
   GSC_SITE: string; // Search Console property: sc-domain:movietrailer.channel (Domain property) or a URL-prefix property
+  GA4_PROPERTY?: string; // GA4 property ID (number) for the dashboard stats
   MIN_AGE_YEARS: string; // only films at least this old are added ("0" = no cutoff)
   AVAILABLE_AFTER_DAYS?: string; // publish only films out at least this many days (rentable/streamable)
   CATALOGUE_REFILL_BELOW?: string; // top up candidates when fewer than this are waiting
@@ -54,7 +56,7 @@ export interface Env {
   COLLECTION_MIN_VOLUME: string;
 }
 
-type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections';
+type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections' | 'stats';
 
 /**
  * Workers Free allows 5 cron schedules per ACCOUNT, so the pipeline uses two (see wrangler.jsonc)
@@ -72,7 +74,7 @@ function jobFor(cron: string, at: Date): Job | null {
   if (hour === 18) return day === 1 ? 'recheck' : null; // 2nd of the month, 05:00 Melbourne
   if (hour === 19) return 'enrich'; // daily, 06:00 Melbourne
   if (hour === 20) return CATALOGUE_DAYS.includes(day) ? 'catalogue' : null; // 07:00 Melbourne
-  if (hour === 21) return day === 2 ? 'demand' : day === 3 ? 'collections' : null; // 08:00 Melbourne, 3rd / 4th
+  if (hour === 21) return day === 2 ? 'demand' : day === 3 ? 'collections' : 'stats'; // 08:00 Melbourne: 3rd / 4th, else dashboard stats
   return null;
 }
 
@@ -83,6 +85,7 @@ const CANDIDATES = 'data/trailers/candidates.json';
 const CATALOGUE_REPORT = 'reports/trailers/catalogue.md';
 const IDEAS = 'data/trailers/collection-ideas.json';
 const COLLECTIONS_REPORT = 'reports/trailers/collections.md';
+const STATS = 'data/trailers/stats.json';
 
 /** Workers free plan allows 50 outgoing calls per run; GitHub reads/commit use up to 8. */
 const CALL_BUDGET = 50 - 9;
@@ -96,7 +99,7 @@ export default {
 
   async fetch(req: Request, env: Env): Promise<Response> {
     const url = new URL(req.url);
-    const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue|collections)$/);
+    const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue|collections|stats)$/);
     if (!m) return new Response('Trailer pipeline. Runs on a schedule.\n', { status: url.pathname === '/' ? 200 : 404 });
     if (!env.RUN_KEY || url.searchParams.get('key') !== env.RUN_KEY) return new Response('Forbidden\n', { status: 403 });
     try {
@@ -118,6 +121,7 @@ const NEEDS: Record<Job, (keyof Env)[]> = {
   demand: ['GITHUB_TOKEN', 'GSC_SERVICE_ACCOUNT'],
   catalogue: ['GITHUB_TOKEN'],
   collections: ['GITHUB_TOKEN', 'ANTHROPIC_API_KEY'],
+  stats: ['GITHUB_TOKEN', 'GSC_SERVICE_ACCOUNT'],
 };
 
 export async function run(job: Job, env: Env, dryRun: boolean) {
@@ -127,6 +131,9 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
   const repo: Repo = { token: env.GITHUB_TOKEN, owner, name, branch: env.BRANCH };
 
   const files =
+    job === 'stats'
+      ? [STATS]
+      :
     job === 'demand' || job === 'collections'
       ? [MOVIES, COLLECTIONS, ...(job === 'collections' ? [IDEAS] : [])]
       : job === 'catalogue'
@@ -138,6 +145,7 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
 
   if (job === 'demand') return demand(env, repo, snap, now, dryRun, maxYear({ now, minAgeYears }));
   if (job === 'catalogue') return catalogue(env, repo, snap, now, dryRun, maxYear({ now, minAgeYears }));
+  if (job === 'stats') return statsJob(env, repo, snap, now, dryRun);
   if (job === 'collections') return collectionsJob(env, repo, snap, now, dryRun, maxYear({ now, minAgeYears }));
 
   const state: State = {
@@ -294,6 +302,52 @@ async function demand(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boole
     callsLeft: null,
     report: report.markdown,
   };
+}
+
+async function statsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean) {
+  const day = (n: number) => new Date(now.getTime() - n * 86400000).toISOString().slice(0, 10);
+  const period = { start: day(28), end: day(1) };
+  const gscPeriod = { start: day(30), end: day(3) }; // Search Console lags ~3 days
+  const notes: string[] = [];
+  const log: string[] = [];
+
+  let ga4: Parameters<typeof buildStats>[0]['ga4'] = null;
+  const property = (env.GA4_PROPERTY ?? '').trim();
+  if (property) {
+    try {
+      const token = await googleAccessToken(env.GSC_SERVICE_ACCOUNT!, 'https://www.googleapis.com/auth/analytics.readonly');
+      const cur = [{ startDate: period.start, endDate: period.end }];
+      const [pages, prevPages, events, daily, dailyEvents] = await Promise.all([
+        ga4Report(token, property, { dateRanges: cur, dimensions: ['pagePath'], metrics: ['screenPageViews', 'activeUsers'] }),
+        ga4Report(token, property, { dateRanges: [{ startDate: day(56), endDate: day(29) }], dimensions: ['pagePath'], metrics: ['screenPageViews'] }),
+        ga4Report(token, property, { dateRanges: cur, dimensions: ['pagePath', 'eventName'], metrics: ['eventCount'], eventPrefix: 'cta_' }),
+        ga4Report(token, property, { dateRanges: cur, dimensions: ['date'], metrics: ['screenPageViews'] }),
+        ga4Report(token, property, { dateRanges: cur, dimensions: ['date', 'eventName'], metrics: ['eventCount'], eventPrefix: 'cta_' }),
+      ]);
+      ga4 = { pages, prevPages, events, daily, dailyEvents };
+      log.push(`GA4: ${pages.length} page(s), ${events.reduce((s, r) => s + r.mets[0], 0)} CTA click(s).`);
+    } catch (e) {
+      notes.push(`GA4 not read: ${(e as Error).message}`);
+      log.push(`GA4 failed: ${(e as Error).message}`);
+    }
+  } else {
+    notes.push('GA4 not connected yet (GA4_PROPERTY not set).');
+  }
+
+  let gsc: Parameters<typeof buildStats>[0]['gsc'] = null;
+  try {
+    const token = await googleAccessToken(env.GSC_SERVICE_ACCOUNT!, 'https://www.googleapis.com/auth/webmasters.readonly');
+    gsc = { pageQueries: await searchAnalytics(token, env.GSC_SITE, gscPeriod.start, gscPeriod.end, ['page', 'query'], 25000) };
+    log.push(`Search Console: ${gsc.pageQueries.length} page/search row(s).`);
+  } catch (e) {
+    notes.push(`Search Console not read: ${(e as Error).message}`);
+    log.push(`Search Console failed: ${(e as Error).message}`);
+  }
+
+  const stats = buildStats({ now, period: ga4 ? period : null, gscPeriod: gsc ? gscPeriod : null, notes, ga4, gsc });
+  log.unshift(`Stats: ${stats.totals.views} views, ${Object.values(stats.totals.cta).reduce((a, b) => a + b, 0)} CTA clicks, ${stats.totals.gscClicks} Google clicks.`);
+  const commit = await save(repo, snap.sha, { [STATS]: JSON.stringify(stats, null, 1) + '\n' }, `Pipeline: refresh dashboard stats\n\n${log.join('\n')}`, dryRun, log);
+  return { job: 'stats' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null };
 }
 
 async function save(repo: Repo, sha: string, changes: Record<string, string>, message: string, dryRun: boolean, log: string[]) {

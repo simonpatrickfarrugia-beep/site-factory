@@ -11,9 +11,11 @@ interface Props {
   description?: string;
   image?: string;
   schema?: Record<string, unknown>[];
+  /** Private page: noindex and no analytics. */
+  private?: boolean;
 }
 
-const { title, rawTitle = false, description = brand.seo.defaultDescription, image, schema = [] } = Astro.props;
+const { title, rawTitle = false, description = brand.seo.defaultDescription, image, schema = [], private: isPrivate = false } = Astro.props;
 const fullTitle = !title ? brand.name : rawTitle ? title : `${title}${brand.seo.titleSuffix}`;
 const canonical = new URL(Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/'), Astro.site).toString();
 // Google Fonts rejects the whole request if a family lacks a requested weight,
@@ -38,7 +40,7 @@ const tokenCss = `:root{${Object.entries(tokens).map(([k, v]) => `${k}:${v}`).jo
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    {!brand.launched && <meta name="robots" content="noindex, nofollow" />}
+    {(!brand.launched || isPrivate) && <meta name="robots" content="noindex, nofollow" />}
     <meta name="theme-color" content={brand.colors.brand} />
 
     <meta property="og:type" content="website" />
@@ -57,7 +59,7 @@ const tokenCss = `:root{${Object.entries(tokens).map(([k, v]) => `${k}:${v}`).jo
 
     {schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
 
-    {brand.analytics.ga4Id && (
+    {brand.analytics.ga4Id && !isPrivate && (
       <>
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${brand.analytics.ga4Id}`}></script>
         <script is:inline define:vars={{ ga4Id: brand.analytics.ga4Id }}>
@@ -81,7 +83,7 @@ const tokenCss = `:root{${Object.entries(tokens).map(([k, v]) => `${k}:${v}`).jo
         </script>
       </>
     )}
-    {brand.analytics.cloudflareToken && (
+    {brand.analytics.cloudflareToken && !isPrivate && (
       <script
         defer
         src="https://static.cloudflareinsights.com/beacon.min.js"

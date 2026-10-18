@@ -90,3 +90,39 @@ export async function youtubeSearch(apiKey: string, q: string): Promise<YtResult
 
 const decodeHtml = (s: string) =>
   s.replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+
+/** GA4 Data API report (free). The service account needs Viewer access on the GA4 property. */
+export interface Ga4Row {
+  dims: string[];
+  mets: number[];
+}
+
+export async function ga4Report(
+  token: string,
+  propertyId: string,
+  body: {
+    dateRanges: { startDate: string; endDate: string }[];
+    dimensions: string[];
+    metrics: string[];
+    /** Only events whose name starts with this. */
+    eventPrefix?: string;
+    limit?: number;
+  },
+): Promise<Ga4Row[]> {
+  const res = await fetch(`https://analyticsdata.googleapis.com/v1beta/properties/${propertyId}:runReport`, {
+    method: 'POST',
+    headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json' },
+    body: JSON.stringify({
+      dateRanges: body.dateRanges,
+      dimensions: body.dimensions.map((name) => ({ name })),
+      metrics: body.metrics.map((name) => ({ name })),
+      limit: body.limit ?? 10000,
+      ...(body.eventPrefix
+        ? { dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { matchType: 'BEGINS_WITH', value: body.eventPrefix } } } }
+        : {}),
+    }),
+  });
+  if (!res.ok) throw new Error(`GA4: HTTP ${res.status} ${(await res.text()).slice(0, 200)}`);
+  const data = (await res.json()) as { rows?: { dimensionValues: { value: string }[]; metricValues: { value: string }[] }[] };
+  return (data.rows ?? []).map((r) => ({ dims: r.dimensionValues.map((d) => d.value), mets: r.metricValues.map((m) => Number(m.value) || 0) }));
+}

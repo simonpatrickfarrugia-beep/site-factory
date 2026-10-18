@@ -22,5 +22,7 @@ export interface Route {
   lastmod?: string;
   /** Leave out of the sitemap (e.g. thin or duplicate pages). */
   noSitemap?: boolean;
+  /** Private page: noindex, no analytics, never in the sitemap (e.g. /hq/stats). */
+  private?: boolean;
   props: Record<string, unknown>;
 }

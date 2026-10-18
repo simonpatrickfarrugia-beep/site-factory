@@ -33,14 +33,14 @@ jobs:
           grep -E "page\(s\) built" build.log | sed "s/^/::notice title=Build ($BRAND)::/" || true
       - name: Verify
         run: node scripts/verify-build.mjs
-      - name: Screenshots (main only)
-        if: github.ref == 'refs/heads/main'
+      - name: Screenshots (main and preview/* branches)
+        if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/preview/')
         continue-on-error: true
         run: |
           scripts/ci-run.sh "Install Playwright" npm install --no-save --no-audit --no-fund playwright@1
           scripts/ci-run.sh "Install Chromium" npx playwright install --with-deps chromium
           MOVIE=$(node -e "console.log(require('./data/'+process.env.BRAND+'/movies.json')[0].slug)")
-          scripts/ci-run.sh "Take screenshots" node scripts/screenshots.mjs / /browse /discover /discover/marvel-cinematic-universe /movies/$MOVIE /about /does-not-exist
+          scripts/ci-run.sh "Take screenshots" node scripts/screenshots.mjs / /browse /discover /discover/marvel-cinematic-universe /movies/$MOVIE /about /does-not-exist /hq/stats
           cd screenshots
           git init -q -b shots
           git config user.name "ci" && git config user.email "ci@users.noreply.github.com"

@@ -10,6 +10,9 @@ const problems = [];
 const gh = !!process.env.GITHUB_ACTIONS;
 const notice = (msg) => console.log(gh ? `::notice title=Verify (${brand})::${msg}` : msg);
 
+// A launched brand's pages are indexable except private ones; before launch every page is noindex.
+const brandLaunched = () => /launched:\s*true/.test(readFileSync(join('brands', brand, 'brand.config.ts'), 'utf8'));
+
 const fileFor = (url) => (url === '/' ? join(dist, 'index.html') : join(dist, `${url.slice(1)}.html`));
 
 const listPath = join('brands', brand, 'webflow-urls.txt');
@@ -61,7 +64,9 @@ const sitemap = join(dist, 'sitemap.xml');
 if (existsSync(sitemap)) {
   const count = (readFileSync(sitemap, 'utf8').match(/<loc>/g) ?? []).length;
   notice(`Sitemap lists ${count} URLs`);
-  if (count < pages.length - 1) problems.push(`Sitemap lists ${count} URLs but ${pages.length} pages were built`);
+  // 404 and private (noindex) pages are left out of the sitemap on purpose.
+  const hidden = pages.filter((f) => f.endsWith('404.html') || (brandLaunched() && /<meta name="robots" content="noindex/.test(readFileSync(f, 'utf8')))).length;
+  if (count < pages.length - hidden) problems.push(`Sitemap lists ${count} URLs but ${pages.length - hidden} public pages were built`);
 } else {
   problems.push('No sitemap.xml');
 }

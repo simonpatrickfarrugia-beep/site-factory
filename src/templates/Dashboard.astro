@@ -1,0 +1,266 @@
+---
+/**
+ * Private stats dashboard (/hq/stats). Brand-generic: any site with data/<brand>/stats.json gets it.
+ * Data is refreshed daily by the pipeline's `stats` job (GA4 + Search Console).
+ */
+interface PageStats {
+  path: string;
+  views: number;
+  prevViews: number;
+  users: number;
+  cta: Record<string, number>;
+  gscClicks: number;
+  gscImpressions: number;
+  gscPosition: number | null;
+  topQuery: string | null;
+}
+interface Stats {
+  generatedAt: string | null;
+  period: { start: string; end: string } | null;
+  gscPeriod: { start: string; end: string } | null;
+  sources: { ga4: boolean; gsc: boolean; notes: string[] };
+  totals: { views: number; prevViews: number; users: number; cta: Record<string, number>; gscClicks: number; gscImpressions: number };
+  daily: { date: string; views: number; cta: number }[];
+  pages: PageStats[];
+}
+interface Props {
+  stats: Stats;
+  /** path -> human title, e.g. "/movies/halloween-1978" -> "Halloween (1978)". */
+  titles: Record<string, string>;
+  /** CTA names that earn money (count as "Amazon clicks"). */
+  moneyCtas: string[];
+  ctaLabels: Record<string, string>;
+}
+const { stats, titles, moneyCtas, ctaLabels } = Astro.props;
+
+const n = (v: number) => v.toLocaleString('en-AU');
+const pct = (v: number) => `${(v * 100).toFixed(v > 0 && v < 0.1 ? 1 : 0)}%`;
+const money = (cta: Record<string, number>) => moneyCtas.reduce((s, k) => s + (cta[k] ?? 0), 0);
+const allCta = (cta: Record<string, number>) => Object.values(cta).reduce((s, v) => s + v, 0);
+const fmtDate = (iso: string) => new Date(iso + 'T00:00:00Z').toLocaleDateString('en-AU', { day: 'numeric', month: 'short', timeZone: 'UTC' });
+
+const t = stats.totals;
+const amazon = money(t.cta);
+const movieViews = stats.pages.filter((p) => p.path.startsWith('/movies/')).reduce((s, p) => s + p.views, 0);
+const change = t.prevViews ? (t.views - t.prevViews) / t.prevViews : null;
+
+const kindOf = (path: string) => (path.startsWith('/movies/') ? 'movie' : path.startsWith('/discover/') ? 'collection' : 'other');
+const rows = stats.pages
+  .filter((p) => p.views > 0 || p.gscImpressions > 0 || allCta(p.cta) > 0)
+  .map((p) => {
+    const a = money(p.cta);
+    const kind = kindOf(p.path);
+    return {
+      ...p,
+      kind,
+      title: titles[p.path] ?? (p.path === '/' ? 'Home page' : p.path),
+      amazon: a,
+      rate: p.views ? a / p.views : 0,
+      growth: p.views - p.prevViews,
+      fix: kind === 'movie' && p.views >= 10 && a === 0,
+    };
+  });
+
+const maxViews = Math.max(1, ...stats.daily.map((d) => d.views));
+const W = 600, H = 120, gap = 2;
+const bw = stats.daily.length ? (W - gap * (stats.daily.length - 1)) / stats.daily.length : 0;
+const updated = stats.generatedAt
+  ? new Date(stats.generatedAt).toLocaleString('en-AU', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Australia/Melbourne' })
+  : null;
+---
+<div class="wrap hq">
+  <header class="hq__head">
+    <p class="hq__eyebrow">Private dashboard</p>
+    <h1 class="display hq__title">How the site is doing</h1>
+    <p class="hq__meta">
+      {stats.period ? `Last 28 days (${fmtDate(stats.period.start)} – ${fmtDate(stats.period.end)})` : 'Waiting for the first data'}
+      {updated && <> · updated {updated}</>}
+    </p>
+    {stats.sources.notes.length > 0 && (
+      <ul class="hq__notes">{stats.sources.notes.map((x) => <li>{x}</li>)}</ul>
+    )}
+  </header>
+
+  <section class="hq__kpis" aria-label="Totals">
+    <div class="kpi">
+      <span class="kpi__label">Visits</span>
+      <span class="kpi__value">{n(t.views)}</span>
+      <span class="kpi__sub">
+        {change === null ? `${n(t.users)} people` : <span class={change >= 0 ? 'up' : 'down'}>{change >= 0 ? '▲' : '▼'} {pct(Math.abs(change))} vs previous 28 days</span>}
+      </span>
+    </div>
+    <div class="kpi kpi--money">
+      <span class="kpi__label">Amazon clicks</span>
+      <span class="kpi__value">{n(amazon)}</span>
+      <span class="kpi__sub">{moneyCtas.map((k) => `${ctaLabels[k] ?? k} ${n(t.cta[k] ?? 0)}`).join(' · ')}</span>
+    </div>
+    <div class="kpi">
+      <span class="kpi__label">Click rate</span>
+      <span class="kpi__value">{movieViews ? pct(amazon / movieViews) : '—'}</span>
+      <span class="kpi__sub">Amazon clicks per movie-page visit</span>
+    </div>
+    <div class="kpi">
+      <span class="kpi__label">From Google</span>
+      <span class="kpi__value">{n(t.gscClicks)}</span>
+      <span class="kpi__sub">clicks from {n(t.gscImpressions)} appearances</span>
+    </div>
+  </section>
+
+  {stats.daily.length > 0 && (
+    <section class="hq__panel" aria-label="Visits per day">
+      <h2 class="hq__h2">Visits per day <span class="legend"><i class="sw sw--v"></i>visits <i class="sw sw--c"></i>days with Amazon clicks</span></h2>
+      <svg viewBox={`0 0 ${W} ${H + 18}`} class="chart" role="img" aria-label="Visits per day">
+        {stats.daily.map((d, i) => {
+          const h = Math.max(1, (d.views / maxViews) * H);
+          const x = i * (bw + gap);
+          return (
+            <g>
+              <title>{`${fmtDate(d.date)}: ${d.views} visits, ${d.cta} clicks`}</title>
+              <rect x={x} y={H - h} width={bw} height={h} rx="1.5" class="bar" />
+              {d.cta > 0 && <circle cx={x + bw / 2} cy={H - h - 5} r="2.6" class="dot" />}
+            </g>
+          );
+        })}
+        <text x="0" y={H + 14} class="axis">{fmtDate(stats.daily[0].date)}</text>
+        <text x={W} y={H + 14} class="axis" text-anchor="end">{fmtDate(stats.daily[stats.daily.length - 1].date)}</text>
+      </svg>
+    </section>
+  )}
+
+  <section class="hq__panel" aria-label="Pages">
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-tab="movie">Movies</button>
+      <button role="tab" aria-selected="false" data-tab="fix">Fix first <span class="count">{rows.filter((r) => r.fix).length}</span></button>
+      <button role="tab" aria-selected="false" data-tab="rising">Rising</button>
+      <button role="tab" aria-selected="false" data-tab="google">Google</button>
+      <button role="tab" aria-selected="false" data-tab="all">All pages</button>
+    </div>
+    <p class="tab-help" data-help="movie">Every movie page, most visited first.</p>
+    <p class="tab-help" data-help="fix" hidden>Visited 10+ times but no Amazon clicks yet. Better copy, a stronger trailer or a "where to watch" note can turn these around.</p>
+    <p class="tab-help" data-help="rising" hidden>Pages gaining the most visits compared with the 28 days before.</p>
+    <p class="tab-help" data-help="google" hidden>How often Google shows each page, its average position and the search it shows up for most. Position 4–20 = close to page 1.</p>
+    <p class="tab-help" data-help="all" hidden>Every page with any visits or Google appearances.</p>
+
+    <div class="controls">
+      <input type="search" placeholder="Search titles…" aria-label="Search titles" data-search />
+      <select aria-label="Sort by" data-sort>
+        <option value="views">Most visits</option>
+        <option value="amazon">Most Amazon clicks</option>
+        <option value="rate">Best click rate</option>
+        <option value="growth">Fastest rising</option>
+        <option value="impr">Most Google appearances</option>
+      </select>
+    </div>
+
+    {rows.length === 0 ? (
+      <p class="empty">No page data yet. It fills in after the first daily refresh.</p>
+    ) : (
+      <ol class="rows" data-rows>
+        {rows.map((r) => (
+          <li
+            class="row"
+            data-kind={r.kind}
+            data-fix={r.fix ? '1' : '0'}
+            data-name={r.title.toLowerCase()}
+            data-views={r.views}
+            data-amazon={r.amazon}
+            data-rate={r.rate}
+            data-growth={r.growth}
+            data-impr={r.gscImpressions}
+          >
+            <a class="row__title" href={r.path} target="_blank" rel="noopener">{r.title}</a>
+            <div class="row__stats">
+              <span><b>{n(r.views)}</b> visits{r.growth !== 0 && r.prevViews > 0 && <em class={r.growth > 0 ? 'up' : 'down'}> {r.growth > 0 ? '+' : ''}{n(r.growth)}</em>}</span>
+              <span class={r.amazon ? 'hot' : ''}><b>{n(r.amazon)}</b> Amazon</span>
+              {r.views > 0 && <span><b>{pct(r.rate)}</b> rate</span>}
+              {Object.entries(r.cta).filter(([k]) => !moneyCtas.includes(k)).map(([k, v]) => <span><b>{n(v)}</b> {ctaLabels[k] ?? k}</span>)}
+              {r.gscImpressions > 0 && (
+                <span class="g">Google <b>{n(r.gscImpressions)}</b> seen · <b>{n(r.gscClicks)}</b> clicks{r.gscPosition !== null && <> · pos <b>{r.gscPosition}</b></>}</span>
+              )}
+            </div>
+            {r.topQuery && <p class="row__query">“{r.topQuery}”</p>}
+          </li>
+        ))}
+      </ol>
+    )}
+  </section>
+
+  <p class="hq__foot">Visits and clicks: Google Analytics. Searches: Google Search Console (about 3 days behind). Refreshed every morning. Amazon earnings aren't per page; see your Associates reports for those.</p>
+</div>
+
+<script is:inline>
+  (function () {
+    var list = document.querySelector('[data-rows]');
+    if (!list) return;
+    var items = Array.prototype.slice.call(list.children);
+    var tab = 'movie', q = '', sort = 'views';
+    var sortFor = { fix: 'views', rising: 'growth', google: 'impr' };
+    function apply() {
+      var shown = items.filter(function (li) {
+        var d = li.dataset;
+        var inTab = tab === 'all' ? true : tab === 'fix' ? d.fix === '1' : tab === 'rising' ? Number(d.growth) > 0 : tab === 'google' ? Number(d.impr) > 0 : d.kind === tab;
+        return inTab && (!q || d.name.indexOf(q) !== -1);
+      });
+      shown.sort(function (a, b) { return Number(b.dataset[sort]) - Number(a.dataset[sort]); });
+      items.forEach(function (li) { li.hidden = true; });
+      shown.forEach(function (li) { li.hidden = false; list.appendChild(li); });
+    }
+    document.querySelectorAll('[data-tab]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        tab = b.dataset.tab;
+        document.querySelectorAll('[data-tab]').forEach(function (x) { x.setAttribute('aria-selected', String(x === b)); });
+        document.querySelectorAll('[data-help]').forEach(function (p) { p.hidden = p.dataset.help !== tab; });
+        if (sortFor[tab]) { sort = sortFor[tab]; document.querySelector('[data-sort]').value = sort; }
+        apply();
+      });
+    });
+    document.querySelector('[data-search]').addEventListener('input', function (e) { q = e.target.value.trim().toLowerCase(); apply(); });
+    document.querySelector('[data-sort]').addEventListener('change', function (e) { sort = e.target.value; apply(); });
+    apply();
+  })();
+</script>
+
+<style>
+  .hq { padding-block: var(--space-5) var(--space-6); }
+  .hq__eyebrow { color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.12em; font-size: var(--step--1); font-weight: 700; margin: 0; }
+  .hq__title { font-size: var(--step-3); margin: var(--space-1) 0 var(--space-2); }
+  .hq__meta { color: var(--muted); margin: 0; font-size: var(--step--1); }
+  .hq__notes { margin: var(--space-3) 0 0; padding: var(--space-2) var(--space-3); border: 1px solid var(--line); border-radius: var(--radius); color: var(--muted); font-size: var(--step--1); list-style: none; }
+  .hq__kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); margin-block: var(--space-4); }
+  @media (min-width: 52rem) { .hq__kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  .kpi { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--space-3); display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .kpi--money { box-shadow: inset 0 3px 0 var(--color-accent); }
+  .kpi__label { color: var(--muted); font-size: var(--step--1); }
+  .kpi__value { font-family: var(--font-display); font-size: var(--step-3); font-weight: 800; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .kpi__sub { color: var(--muted); font-size: 0.78rem; overflow-wrap: anywhere; }
+  .up { color: #7fd49b; font-style: normal; }
+  .down { color: #f08a7e; font-style: normal; }
+  .hq__panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--space-3); margin-bottom: var(--space-4); }
+  .hq__h2 { font-size: var(--step-0); margin: 0 0 var(--space-2); display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: baseline; justify-content: space-between; }
+  .legend { color: var(--muted); font-size: 0.78rem; font-weight: 400; display: inline-flex; gap: 6px; align-items: center; }
+  .sw { display: inline-block; width: 9px; height: 9px; border-radius: 2px; }
+  .sw--v { background: color-mix(in srgb, var(--paper) 55%, transparent); }
+  .sw--c { background: var(--color-accent); border-radius: 50%; margin-left: 6px; }
+  .chart { width: 100%; height: auto; display: block; }
+  .bar { fill: color-mix(in srgb, var(--paper) 55%, transparent); }
+  .dot { fill: var(--color-accent); }
+  .axis { fill: var(--muted); font-size: 11px; }
+  .tabs { display: flex; gap: var(--space-1); overflow-x: auto; padding-bottom: var(--space-2); scrollbar-width: none; }
+  .tabs button { flex: none; font: inherit; font-size: var(--step--1); font-weight: 600; color: var(--paper); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 0.45rem 0.85rem; cursor: pointer; }
+  .tabs button[aria-selected='true'] { background: var(--color-accent); color: var(--ink); border-color: var(--color-accent); }
+  .count { opacity: 0.75; margin-left: 2px; }
+  .tab-help { color: var(--muted); font-size: var(--step--1); margin: 0 0 var(--space-2); }
+  .controls { display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-2); }
+  .controls input, .controls select { font: inherit; font-size: 16px; color: var(--paper); background: var(--ink); border: 1px solid var(--line); border-radius: var(--radius); padding: 0.5rem 0.65rem; }
+  .controls input { flex: 1 1 12rem; min-width: 0; }
+  .rows { list-style: none; margin: 0; padding: 0; }
+  .row { border-top: 1px solid var(--line); padding: var(--space-2) 0; }
+  .row__title { color: var(--paper); font-weight: 700; text-decoration: none; }
+  .row__title:hover { color: var(--color-accent); }
+  .row__stats { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: var(--step--1); color: var(--muted); margin-top: 2px; font-variant-numeric: tabular-nums; }
+  .row__stats b { color: var(--paper); }
+  .row__stats .hot b { color: var(--color-accent); }
+  .row__query { margin: 2px 0 0; font-size: 0.8rem; color: var(--muted); font-style: italic; overflow-wrap: anywhere; }
+  .empty { color: var(--muted); }
+  .hq__foot { color: var(--muted); font-size: 0.78rem; }
+</style>

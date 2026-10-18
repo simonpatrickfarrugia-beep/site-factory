@@ -2,7 +2,7 @@
  * Every page on movietrailer.channel. URLs and SEO titles match the Webflow
  * site exactly so the migration is invisible to Google.
  */
-import { getCollection } from '../../src/lib/data';
+import { getCollection, getSingleton } from '../../src/lib/data';
 import type { Route } from '../../src/lib/routes';
 import { matchesRule, thumb, type Movie, type MovieCollection, type StaticPage } from './model';
 
@@ -247,6 +247,25 @@ export function routes(): Route[] {
       },
     });
   }
+
+  // Private dashboard (noindex, no analytics, not in the sitemap). Data: data/trailers/stats.json, refreshed daily.
+  const titles: Record<string, string> = { '/': 'Home page', '/browse': 'Browse all', '/discover': 'Discover (collections)' };
+  for (const m of movies) titles[`/movies/${m.slug}`] = `${m.name}${m.year ? ` (${m.year})` : ''}`;
+  for (const c of collections) titles[`/discover/${c.slug}`] = `Collection: ${c.name}`;
+  for (const p of pages) titles[`/${p.slug}`] = p.title;
+  if (ghibli) titles['/studio-ghibli-where-to-watch'] = 'Studio Ghibli: where to watch';
+  out.push({
+    path: 'hq/stats',
+    template: 'dashboard',
+    private: true,
+    seo: { title: 'Dashboard' + SUFFIX, rawTitle: true, description: 'Private site stats: visits, Amazon clicks and Google searches per page.' },
+    props: {
+      stats: getSingleton('stats'),
+      titles,
+      moneyCtas: ['prime', 'disc'],
+      ctaLabels: { prime: 'Prime Video', disc: 'DVD/Blu-ray', justwatch: 'JustWatch' },
+    },
+  });
 
   // Static pages
   for (const p of pages) {
