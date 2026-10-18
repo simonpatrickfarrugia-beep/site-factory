@@ -13,7 +13,7 @@
       "0 19 * * *", // enrich: daily, 06:00 Melbourne (AEDT)
       "0 18 1 * *", // recheck: monthly, 05:00 Melbourne on the 2nd (AEDT)
       "0 21 2 * *", // demand report: monthly, 08:00 Melbourne on the 3rd (AEDT)
-      "0 20 * * SUN", // catalogue: weekly, Mondays 07:00 Melbourne (AEDT)
+      "0 20 1,8,15,22,29 * *", // catalogue: ~weekly, 07:00 Melbourne (AEDT) the next day
       "0 21 3 * *" // collections: monthly, 08:00 Melbourne on the 4th (AEDT)
     ]
   },

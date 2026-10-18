@@ -58,7 +58,7 @@ const CRON_JOBS: Record<string, Job> = {
   '0 19 * * *': 'enrich', // 06:00 Melbourne (AEDT)
   '0 18 1 * *': 'recheck', // 2nd of the month, 05:00 Melbourne (AEDT)
   '0 21 2 * *': 'demand', // 3rd of the month, 08:00 Melbourne (AEDT)
-  '0 20 * * SUN': 'catalogue', // Mondays, 07:00 Melbourne (AEDT)
+  '0 20 1,8,15,22,29 * *': 'catalogue', // ~weekly, 07:00 Melbourne (AEDT); no weekday field — Cloudflare's weekday parsing is unreliable
   '0 21 3 * *': 'collections', // 4th of the month, 08:00 Melbourne (AEDT)
 };
 
