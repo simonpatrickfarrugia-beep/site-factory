@@ -25,6 +25,7 @@
     // Only films at least this many years old are added. "0" turns the cutoff off.
     "MIN_AGE_YEARS": "10",
     "ANTHROPIC_MODEL": "claude-haiku-5-5",
+    "ANTHROPIC_WORKSPACE_ID": "wrkspc_01W5t4awRcfjkeb1NKxyPo8i", // Anthropic Console > Default workspace (key is not workspace-scoped)
     // Per run. Each item uses up to 3 of the 50 calls a free-plan Worker run allows.
     "ENRICH_LIMIT": "15",
     "RECHECK_LIMIT": "20",
