@@ -17,7 +17,7 @@ const STUDIO_PREFIXES = [
 
 /** The first of these words marks where the film name ends. */
 const CUT_WORDS =
-  /\b(official|trailer|teaser|red ?band|tv spot|final trailer|first look|sneak peek|exclusive|clip|original|domestic|international|(?:3d )?re-?release|\d+(?:st|nd|rd|th) anniversary)\b/i;
+  /\b(official|trailer|teaser|red ?band|tv spot|final trailer|first look|sneak peek|exclusive|clip|original|domestic|international|(?:3d )?re-?release|\d+(?:st|nd|rd|th) anniversary|4k|uhd|ultra hd|blu-?ray|restoration|restored|remastered|limited edition|collector'?s edition|special edition)\b/i;
 
 /** True if a video looks like a trailer worth considering (same rule as the old Make scenario, plus no Shorts). */
 export function isTrailer(videoTitle: string): boolean {
@@ -30,8 +30,18 @@ export function extractYear(videoTitle: string): number | null {
   return m ? Number(m[1]) : null;
 }
 
+/** Only a year in brackets, e.g. "(1983)". Used on video descriptions, where bare years are often release dates. */
+export function extractBracketYear(text: string): number | null {
+  const m = text.match(/[([]\s*((?:19|20)\d{2})\s*[)\]]/);
+  return m ? Number(m[1]) : null;
+}
+
 export function cleanTitle(videoTitle: string): string {
-  let t = videoTitle.replace(/[“”"]/g, '').trim();
+  let t = videoTitle
+    .replace(/[“”"]/g, '')
+    // "(4K UHD)", "[Restored]", "(Blu-ray)": format notes in brackets go first, so they don't cut the title mid-bracket.
+    .replace(/[([][^)\]]*\b(4k|uhd|hd|ultra hd|blu-?ray|restor\w*|remaster\w*)\b[^)\]]*[)\]]/gi, ' ')
+    .trim();
 
   const lower = t.toLowerCase();
   for (const p of STUDIO_PREFIXES) {
@@ -50,7 +60,7 @@ export function cleanTitle(videoTitle: string): string {
   t = t
     .replace(/[([]\s*(?:19|20)\d{2}\s*[)\]]/g, '') // (1986) [1997]
     .replace(/[([](?:hd|4k|uhd)[)\]]/gi, '')
-    .replace(/[\s|:\-–—,#]+$/g, '')
+    .replace(/[\s|:\-–—,#([]+$/g, '')
     .replace(/\s+(movie|film)$/i, '') // "Selma Movie"
     .replace(/\s{2,}/g, ' ')
     .trim();

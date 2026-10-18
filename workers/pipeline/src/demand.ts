@@ -89,9 +89,9 @@ const pct = (n: number) => `${(n * 100).toFixed(1)}%`;
 const pos = (n: number) => n.toFixed(1);
 const titleCase = (s: string) => s.replace(/(^|\s)(\p{L})/gu, (_, a, b) => a + b.toUpperCase());
 
-export function buildDemandReport(input: DemandInput, opts = { minImpressions: 20 }): DemandReport {
+export function buildDemandReport(input: DemandInput, opts: { minImpressions?: number; maxYear?: number | null } = {}): DemandReport {
   const { queries, pageQueries, movies, collections } = input;
-  const min = opts.minImpressions;
+  const min = opts.minImpressions ?? 20;
   const movieKeys = new Map(movies.map((m) => [titleKey(m.name), m]));
 
   const totalClicks = queries.reduce((s, r) => s + r.clicks, 0);
@@ -145,7 +145,8 @@ export function buildDemandReport(input: DemandInput, opts = { minImpressions: 2
       themes.set(key, t);
     }
   }
-  const filmIdeas = [...films.values()].filter((f) => f.impressions >= min / 2).sort((a, b) => b.impressions - a.impressions).slice(0, 25);
+  const filmIdeas = [...films.values()]
+    .filter((f) => f.impressions >= min / 2 && !(opts.maxYear && f.year && f.year > opts.maxYear)).sort((a, b) => b.impressions - a.impressions).slice(0, 25);
   const themeIdeas = [...themes.values()].filter((t) => t.impressions >= min / 2).sort((a, b) => b.impressions - a.impressions).slice(0, 25);
 
   // Markdown.
@@ -173,7 +174,7 @@ export function buildDemandReport(input: DemandInput, opts = { minImpressions: 2
     for (const r of lowCtr) L.push(`| ${r.keys[0]} | ${r.impressions} | ${pct(r.ctr)} | ${pos(r.position)} |`);
   }
 
-  L.push('', '## Films people search for that we don\'t have', '', 'Google already shows the site for these. Approve the real films and they go into the pipeline queue.', '');
+  L.push('', '## Films people search for that we don\'t have', '', 'Google already shows the site for these. Films newer than the catalogue cutoff are left out. Approve the real films and they go into the pipeline queue.', '');
   if (!filmIdeas.length) L.push('_None yet._');
   else {
     L.push('| Film (guessed from searches) | Impressions | Example searches |', '|---|---:|---|');

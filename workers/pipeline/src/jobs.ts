@@ -8,7 +8,7 @@
  * Jobs work on plain data (movies + queue) and never touch the network directly,
  * so they can be tested with fake services.
  */
-import { cleanTitle, extractYear, isTrailer, slugify, titleKey } from './titles';
+import { cleanTitle, extractBracketYear, extractYear, isTrailer, slugify, titleKey } from './titles';
 import type { Copy, FeedVideo, OmdbMovie } from './sources';
 
 /** Same shape as brands/trailers/model.ts (kept separate so the Worker has no Astro imports). */
@@ -46,8 +46,8 @@ export interface QueueItem {
   channelId: string | null;
   publishedAt: string | null;
   /** Where it came from. Missing = studio feed (older items). */
-  source?: 'feed' | 'demand' | 'chat';
-  /** new = not looked up yet; pending = upcoming film not in OMDb yet (rechecked monthly); review = needs a person. */
+  source?: 'feed' | 'demand' | 'chat' | 'catalogue';
+  /** new = not looked up yet; pending = not in OMDb yet (rechecked monthly); review = needs a person. */
   status: 'new' | 'pending' | 'review';
   /** Why it is waiting, e.g. "NEEDS REVIEW: ...". */
   note: string | null;
@@ -64,8 +64,12 @@ export interface Services {
   feed(channelId: string): Promise<FeedVideo[]>;
   omdb(title: string, year: number | null): Promise<OmdbMovie | null>;
   copy(m: OmdbMovie): Promise<Copy>;
+  /** Every OMDb film with this title (to catch remakes when the trailer gives no year). */
+  sameTitle(title: string): Promise<{ Title: string; Year: string }[]>;
   /** YouTube search for a film's trailer (only for queue items without a video). */
   trailer(name: string, year: string | null): Promise<{ youtubeId: string; title: string } | null>;
+  /** Only films at least this many years old are added (rental catalogue = older films). 0 = no cutoff. */
+  minAgeYears: number;
   /** Network calls still allowed in this run (Workers free plan: 50 per run). */
   budget: { left: number };
   now: Date;
@@ -80,6 +84,10 @@ export interface Result {
   queueChanged: boolean;
 }
 
+/** Newest release year allowed in the catalogue, or null for no cutoff. "10 years" in 2026 -> 2015. */
+export const maxYear = (svc: Pick<Services, 'now' | 'minAgeYears'>) =>
+  svc.minAgeYears > 0 ? svc.now.getUTCFullYear() - svc.minAgeYears - 1 : null;
+
 const newResult = (): Result => ({ log: [], added: [], queued: [], moviesChanged: false, queueChanged: false });
 
 // ---------------------------------------------------------------- intake
@@ -92,6 +100,8 @@ export async function intake(state: State, channels: string[], svc: Services): P
     ...state.queue.flatMap((q) => (q.youtubeId ? [q.youtubeId] : [])),
   ]);
 
+  const newest = maxYear(svc);
+  let tooNew = 0;
   for (const channelId of channels) {
     if (svc.budget.left <= 0) {
       r.log.push(`Stopped early: call budget used up (channels left unchecked).`);
@@ -108,6 +118,12 @@ export async function intake(state: State, channels: string[], svc: Services): P
     // Newest 5 per channel, as before.
     for (const v of videos.slice(0, 5)) {
       if (!isTrailer(v.title) || knownVideos.has(v.youtubeId)) continue;
+      // Labels rarely put the year in the title, but usually in the description: "Videodrome (1983) ...".
+      const year = extractYear(v.title) ?? extractBracketYear(v.description ?? '');
+      if (newest !== null && year !== null && year > newest) {
+        tooNew++;
+        continue;
+      }
       const title = cleanTitle(v.title);
       const key = titleKey(title);
       if (key.length < 2 || known.has(key)) continue;
@@ -115,7 +131,7 @@ export async function intake(state: State, channels: string[], svc: Services): P
       knownVideos.add(v.youtubeId);
       state.queue.push({
         title,
-        year: extractYear(v.title),
+        year,
         youtubeId: v.youtubeId,
         videoTitle: v.title,
         channelId,
@@ -130,7 +146,10 @@ export async function intake(state: State, channels: string[], svc: Services): P
       r.queueChanged = true;
     }
   }
-  r.log.unshift(`Intake: ${r.queued.length} new trailer(s) queued${r.queued.length ? ': ' + r.queued.join(', ') : ''}.`);
+  r.log.unshift(
+    `Intake: ${r.queued.length} new trailer(s) queued${r.queued.length ? ': ' + r.queued.join(', ') : ''}.` +
+      (tooNew ? ` ${tooNew} skipped as newer than the ${svc.minAgeYears}-year cutoff.` : ''),
+  );
   return r;
 }
 
@@ -154,11 +173,11 @@ async function process(state: State, svc: Services, limit: number, which: QueueI
   const done = new Set<QueueItem>();
   const slugs = new Set(state.movies.map((m) => m.slug));
   const nowIso = svc.now.toISOString();
-  const thisYear = svc.now.getUTCFullYear();
+  const newest = maxYear(svc);
 
   for (const item of items) {
-    // Each item needs up to 2 calls (OMDb, then Claude on a match), 3 if we must find its trailer.
-    if (svc.budget.left < (item.youtubeId ? 2 : 3)) {
+    // Each item needs up to 2 calls (OMDb, then Claude), +1 to find its trailer, +1 to check remakes when it has no year.
+    if (svc.budget.left < 2 + (item.youtubeId ? 0 : 1) + (item.year ? 0 : 1)) {
       r.log.push('Stopped early: call budget used up; the rest wait for the next run.');
       break;
     }
@@ -173,6 +192,31 @@ async function process(state: State, svc: Services, limit: number, which: QueueI
     }
 
     const why = found ? mismatch(item, found) : 'no OMDb match';
+    if (found && !why && newest !== null && Number(yearOf(found)) > newest) {
+      r.log.push(`Skipped "${found.Title}" (${yearOf(found)}): newer than the ${svc.minAgeYears}-year cutoff.`);
+      done.add(item);
+      r.queueChanged = true;
+      continue;
+    }
+    // No year from the trailer and several films share the title (remakes): a person picks.
+    if (found && !why && !item.year && svc.budget.left >= 2) {
+      svc.budget.left--;
+      try {
+        const twins = (await svc.sameTitle(item.title)).filter((m) => titleKey(m.Title) === titleKey(found!.Title));
+        const years = [...new Set(twins.map((m) => m.Year.slice(0, 4)))];
+        if (years.length > 1) {
+          item.status = 'review';
+          item.note = `NEEDS REVIEW: several films called "${found.Title}" (${years.join(', ')}); which one is the trailer for?`;
+          item.lastChecked = nowIso;
+          r.queued.push(`${item.title}: ${item.note}`);
+          r.queueChanged = true;
+          continue;
+        }
+      } catch (e) {
+        r.log.push(`OMDb search failed for "${item.title}": ${(e as Error).message} (will retry next run).`);
+        continue;
+      }
+    }
     if (found && !why) {
       const slug = slugify(found.Title, yearOf(found));
       if (slugs.has(slug)) {
@@ -218,10 +262,16 @@ async function process(state: State, svc: Services, limit: number, which: QueueI
       continue;
     }
 
-    // No usable match. A new film missing from OMDb just waits (rechecked monthly).
+    // No usable match. A recent film is outside the catalogue anyway: drop it.
     // A wrong film, or an older film OMDb doesn't know, needs a person: it's left for review by chat.
-    const expectedYear = item.year ?? (Number(item.publishedAt?.slice(0, 4)) || null);
-    const upcoming = !found && expectedYear !== null && expectedYear >= thisYear;
+    // (With no cutoff, a new film OMDb doesn't list yet waits and is rechecked monthly.)
+    if (!found && item.year !== null && newest !== null && item.year > newest) {
+      r.log.push(`Dropped "${item.title}" (${item.year}): newer than the ${svc.minAgeYears}-year cutoff.`);
+      done.add(item);
+      r.queueChanged = true;
+      continue;
+    }
+    const upcoming = newest === null && !found && (item.year ?? 0) >= svc.now.getUTCFullYear();
     const status: QueueItem['status'] = upcoming ? 'pending' : 'review';
     const note = upcoming ? 'Waiting for OMDb to list it' : `NEEDS REVIEW: ${why}`;
     if (item.status !== status || item.note !== note) r.queued.push(`${item.title}: ${note}`);
@@ -248,13 +298,8 @@ export function mismatch(item: QueueItem, m: OmdbMovie): string | null {
   if (titleKey(m.Title) !== titleKey(item.title)) return `OMDb returned "${m.Title}"`;
   const y = Number(yearOf(m));
   if (!y) return 'OMDb has no year';
-  if (item.year) {
-    if (Math.abs(y - item.year) > 1) return `OMDb film is from ${y}, trailer says ${item.year}`;
-  } else {
-    // A brand-new trailer with no year is for a new film, not an old one with the same name.
-    const posted = Number(item.publishedAt?.slice(0, 4));
-    if (posted && y < posted - 2) return `OMDb film is from ${y}, trailer posted ${posted} (re-release or different film?)`;
-  }
+  // Classic labels post new trailers for old films, so the upload date says nothing about the film's year.
+  if (item.year && Math.abs(y - item.year) > 1) return `OMDb film is from ${y}, trailer says ${item.year}`;
   return null;
 }
 

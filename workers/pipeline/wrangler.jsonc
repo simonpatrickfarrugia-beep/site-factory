@@ -12,23 +12,35 @@
       "0 */12 * * *", // intake: every 12 hours
       "0 19 * * *", // enrich: daily, 06:00 Melbourne (AEDT)
       "0 18 1 * *", // recheck: monthly, 05:00 Melbourne on the 2nd (AEDT)
-      "0 21 2 * *" // demand report: monthly, 08:00 Melbourne on the 3rd (AEDT)
+      "0 21 2 * *", // demand report: monthly, 08:00 Melbourne on the 3rd (AEDT)
+      "0 20 * * 0" // catalogue: weekly, Mondays 07:00 Melbourne (AEDT)
     ]
   },
   "observability": { "enabled": true },
   "vars": {
     "REPO": "simonpatrickfarrugia-beep/site-factory",
     "BRANCH": "main",
-    // Official studio channels watched for new trailers (same list as the old Make intake).
-    "CHANNELS": "[\"UCjmJDM5pRKbUlVIzDYYWb6g\",\"UCq0OueAsdxH6b8nyAspwViw\",\"UCF9imwPMSGz4Vq1NiTWCC7g\",\"UC_5niPa-d35gg88HaS7RrIw\",\"UCJ6nMHaJPZvsJ-HmUmj1SeA\",\"UCz97F7dMxBNOfGYu3rx8aCw\",\"UC2-BeLxzUBSs0uSrmzWhJuQ\",\"UCf5CjDJvsFvtVIhkfmKAwAA\",\"UCU4SM3j_9TNWaSu8KdGV50g\",\"UCuPivVjnfNo4mb3Oog_frZg\"]",
+    // Classic and re-release labels watched for new trailers of OLDER films (rental catalogue):
+    // Criterion, Kino Lorber, Vinegar Syndrome, Severin Films, Umbrella Entertainment (AU).
+    // The old new-release studio list is in backups/make/TRAILER-AUTOMATIONS.md.
+    "CHANNELS": "[\"UCAP57cF-FSjJKzzXg7ntPlQ\",\"UCtlPYzQ188v4gHQ5VyikNiw\",\"UCotn1stsIkEHTGv7pFSGtVA\",\"UCYhdlIRe1CbpeWrpdfr46gw\",\"UCadhU_V17tZia6mvQSYn-tg\"]",
+    // Only films at least this many years old are added. "0" turns the cutoff off.
+    "MIN_AGE_YEARS": "10",
     "ANTHROPIC_MODEL": "claude-haiku-5-5",
-    // Per run. Each item uses up to 2 of the 50 calls a free-plan Worker run allows.
+    // Per run. Each item uses up to 3 of the 50 calls a free-plan Worker run allows.
     "ENRICH_LIMIT": "15",
     "RECHECK_LIMIT": "20",
     // Search Console property the demand report reads (URL-prefix property, with trailing slash).
-    "GSC_SITE": "https://www.movietrailer.channel/"
+    "GSC_SITE": "https://www.movietrailer.channel/",
+    // Catalogue builder (weekly): queue this many of the most-searched candidates per run.
+    "CATALOGUE_PER_RUN": "10",
+    "CATALOGUE_MIN_VOLUME": "50",
+    // Google Ads location for search volumes: 2036 = Australia, 2840 = United States.
+    "DATAFORSEO_LOCATION": "2036",
+    "DATAFORSEO_LOCATION_NAME": "Australia"
   }
   // Secrets (set in the Cloudflare dashboard, never here):
   //   GITHUB_TOKEN, OMDB_API_KEY, ANTHROPIC_API_KEY, RUN_KEY
   //   YOUTUBE_API_KEY (trailer search for back-catalogue films), GSC_SERVICE_ACCOUNT (demand report)
+  //   DATAFORSEO_LOGIN, DATAFORSEO_PASSWORD (search volumes for catalogue candidates)
 }

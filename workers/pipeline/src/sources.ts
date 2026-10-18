@@ -5,6 +5,7 @@ export interface FeedVideo {
   title: string;
   channelId: string;
   publishedAt: string;
+  description?: string;
 }
 
 /**
@@ -25,7 +26,9 @@ export function parseFeed(xml: string, channelId: string): FeedVideo[] {
     const id = entry.match(/<yt:videoId>([^<]+)<\/yt:videoId>/)?.[1];
     const title = entry.match(/<title>([^<]*)<\/title>/)?.[1];
     const published = entry.match(/<published>([^<]+)<\/published>/)?.[1];
-    if (id && title) out.push({ youtubeId: id, title: decodeXml(title), channelId, publishedAt: published ?? '' });
+    const description = entry.match(/<media:description>([^<]*)<\/media:description>/)?.[1];
+    if (id && title)
+      out.push({ youtubeId: id, title: decodeXml(title), channelId, publishedAt: published ?? '', description: decodeXml(description ?? '') });
   }
   return out;
 }
@@ -54,6 +57,15 @@ export interface OmdbMovie {
   imdbRating: string;
   imdbID: string;
   Type: string;
+}
+
+/** Years of every film OMDb has with this title (OMDb search, first page). Used to spot remakes. */
+export async function omdbYearsForTitle(apiKey: string, title: string): Promise<{ Title: string; Year: string }[]> {
+  const q = new URLSearchParams({ apikey: apiKey, s: title, type: 'movie' });
+  const res = await fetch(`https://www.omdbapi.com/?${q}`);
+  if (!res.ok) throw new Error(`OMDb search: HTTP ${res.status}`);
+  const body = (await res.json()) as { Response: string; Search?: { Title: string; Year: string }[] };
+  return body.Response === 'True' ? (body.Search ?? []) : [];
 }
 
 /** OMDb lookup by exact title (and year when known). Free key: 1,000 lookups a day. */
