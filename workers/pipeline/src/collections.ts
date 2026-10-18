@@ -49,6 +49,8 @@ export interface Idea {
   films: number;
   volume: number | null;
   volumeCheckedAt: string | null;
+  /** Market the volume is for; a different market means it's looked up again. */
+  volumeLocation?: string | null;
   /** existing = a collection already covers it; created = made by this job; open = not made yet. */
   status: 'open' | 'created' | 'existing';
   existingSlug?: string | null;
@@ -195,13 +197,15 @@ export async function buildCollections(
       ...i,
       volume: old?.volume ?? null,
       volumeCheckedAt: old?.volumeCheckedAt ?? null,
+      volumeLocation: old?.volumeLocation ?? null,
       status: old?.status === 'created' ? 'created' : existingSlug ? 'existing' : 'open',
       existingSlug,
     };
   });
 
   // Volumes for open ideas that are new or stale (one task = up to 1,000 keywords).
-  const stale = (i: Idea) => !i.volumeCheckedAt || opt.now.getTime() - Date.parse(i.volumeCheckedAt) > STALE_DAYS * 86400000;
+  const stale = (i: Idea) =>
+    !i.volumeCheckedAt || (i.volumeLocation ?? 'Australia') !== opt.location || opt.now.getTime() - Date.parse(i.volumeCheckedAt) > STALE_DAYS * 86400000;
   const toCheck = ideas.filter((i) => i.status === 'open' && stale(i)).slice(0, 500);
   if (toCheck.length && opt.volumes && opt.budget.left > 0) {
     opt.budget.left--;
@@ -211,6 +215,7 @@ export async function buildCollections(
         const v = i.keywords.map((k) => vols.get(k));
         i.volume = v.every((x) => x == null) ? null : v.reduce<number>((s, x) => s + (x ?? 0), 0);
         i.volumeCheckedAt = nowIso;
+        i.volumeLocation = opt.location;
       }
       log.push(`Looked up search volumes for ${toCheck.length} collection idea(s).`);
     } catch (e) {

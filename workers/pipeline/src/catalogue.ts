@@ -1,6 +1,6 @@
 /**
- * Catalogue builder: grows the site with OLDER films people actually search for
- * (the future business rents older movies).
+ * Catalogue builder: grows the site with films people actually search for (US Google searches).
+ * Any year, as long as the film can be rented or streamed (enrich holds back films still in cinemas).
  *
  *   data/trailers/candidates.json   films we might add (seeded by chat, by theme)
  *   weekly job:
@@ -22,6 +22,8 @@ export interface Candidate {
   /** Monthly Google searches for "<title> movie" + "<title> trailer" (null = not looked up / no data). */
   volume: number | null;
   volumeCheckedAt: string | null;
+  /** Market the volume is for, e.g. "United States". A different market means it's looked up again. */
+  volumeLocation?: string | null;
   /** candidate = waiting; queued = sent to the pipeline; have = already on the site; skipped = too new or rejected. */
   status: 'candidate' | 'queued' | 'have' | 'skipped';
   note?: string | null;
@@ -34,7 +36,11 @@ export interface CatalogueOptions {
   now: Date;
   /** Look up volumes; null when DataForSEO isn't set up (then ranking uses volumes already stored). */
   volumes: ((keywords: string[]) => Promise<Map<string, number | null>>) | null;
-  location: string; // shown in the report, e.g. "Australia"
+  location: string; // market for volumes and the report, e.g. "United States"
+  /** Claude film suggestions to top the list up; null = no refill. */
+  suggest: ((themes: { theme: string; volume: number }[], known: string[], count: number) => Promise<{ title: string; year: number | null; theme: string }[]>) | null;
+  refillBelow: number; // top up when fewer candidates than this are waiting
+  refillCount: number; // how many films to ask for
 }
 
 export const keywordsFor = (c: Pick<Candidate, 'title'>) => [cleanKeyword(`${c.title} movie`), cleanKeyword(`${c.title} trailer`)];
@@ -60,6 +66,12 @@ export async function buildCatalogue(
       c.status = 'have';
       changed = true;
     }
+    // The age cutoff was lifted: films skipped only for being too new become candidates again.
+    if (c.status === 'skipped' && /^newer than/.test(c.note ?? '') && !(opt.maxYear && c.year && c.year > opt.maxYear)) {
+      c.status = 'candidate';
+      c.note = null;
+      changed = true;
+    }
     if (c.status === 'candidate' && opt.maxYear && c.year && c.year > opt.maxYear) {
       c.status = 'skipped';
       c.note = `newer than ${opt.maxYear}`;
@@ -67,9 +79,37 @@ export async function buildCatalogue(
     }
   }
 
+  // 0. Self-refill: when the waiting list runs low, Claude suggests more films for the strongest themes.
+  //    They only get queued if their search volume (step 1) clears the minimum.
+  const waitingBefore = candidates.filter((c) => c.status === 'candidate').length;
+  if (opt.suggest && waitingBefore < opt.refillBelow) {
+    const themeVolume = new Map<string, number>();
+    for (const c of candidates) if (c.theme) themeVolume.set(c.theme, (themeVolume.get(c.theme) ?? 0) + (c.volume ?? 0));
+    const themes = [...themeVolume].sort((a, b) => b[1] - a[1]).slice(0, 8).map(([theme, volume]) => ({ theme, volume }));
+    const known = new Set([...have, ...candidates.map((c) => titleKey(c.title)), ...inQueue]);
+    const knownNames = [...new Set([...movies.map((m) => m.name), ...candidates.map((c) => c.title)])];
+    try {
+      const ideas = await opt.suggest(themes, knownNames, opt.refillCount);
+      let added = 0;
+      for (const s of ideas) {
+        const key = titleKey(s.title);
+        if (!key || known.has(key)) continue;
+        known.add(key);
+        candidates.push({ title: s.title, year: s.year, theme: s.theme, volume: null, volumeCheckedAt: null, volumeLocation: null, status: 'candidate', note: 'auto-suggested' });
+        added++;
+      }
+      if (added) changed = true;
+      log.push(`Refill: ${waitingBefore} waiting (< ${opt.refillBelow}), so Claude suggested ${ideas.length}; ${added} new film(s) added to the candidate list.`);
+    } catch (e) {
+      log.push(`Refill failed: ${(e as Error).message} (will try again next run).`);
+    }
+  }
+
   // 1. Volumes for up to 500 candidates (2 keywords each = one 1,000-keyword task).
   const stale = (c: Candidate) =>
-    !c.volumeCheckedAt || opt.now.getTime() - Date.parse(c.volumeCheckedAt) > STALE_DAYS * 86400000;
+    !c.volumeCheckedAt ||
+    (c.volumeLocation ?? 'Australia') !== opt.location ||
+    opt.now.getTime() - Date.parse(c.volumeCheckedAt) > STALE_DAYS * 86400000;
   const toCheck = candidates.filter((c) => c.status === 'candidate' && stale(c)).slice(0, 500);
   if (toCheck.length && opt.volumes) {
     try {
@@ -78,6 +118,7 @@ export async function buildCatalogue(
         const v = keywordsFor(c).map((k) => vols.get(k));
         c.volume = v.every((x) => x == null) ? null : v.reduce<number>((s, x) => s + (x ?? 0), 0);
         c.volumeCheckedAt = nowIso;
+        c.volumeLocation = opt.location;
       }
       changed = true;
       log.push(`Looked up search volumes for ${toCheck.length} film(s).`);
@@ -123,7 +164,7 @@ function report(candidates: Candidate[], opt: CatalogueOptions): string {
     '# Trailer channel catalogue candidates',
     '',
     `Updated ${opt.now.toISOString().slice(0, 10)}. Monthly Google searches in ${opt.location} for "<film> movie" + "<film> trailer". ` +
-      `Films after ${opt.maxYear ?? 'any year'} are left out.`,
+      (opt.maxYear ? `Films after ${opt.maxYear} are left out.` : 'Any year; films still in cinemas wait until they can be rented or streamed.'),
     '',
     `${count('candidate')} waiting · ${count('queued')} sent to the pipeline · ${count('have')} already on the site · ${count('skipped')} skipped.`,
     '',

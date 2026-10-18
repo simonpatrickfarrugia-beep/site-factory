@@ -57,6 +57,8 @@ export interface OmdbMovie {
   imdbRating: string;
   imdbID: string;
   Type: string;
+  /** e.g. "17 Oct 2025" (US release) or "N/A". */
+  Released?: string;
 }
 
 /** Years of every film OMDb has with this title (OMDb search, first page). Used to spot remakes. */
@@ -175,4 +177,52 @@ export async function writeCollectionCopy(
   const intro = (c.intro ?? []).map((p) => p.trim()).filter(Boolean);
   if (!c.tagline?.trim() || intro.length === 0 || !c.metaDescription?.trim()) throw new Error('Claude: reply missing fields');
   return { tagline: c.tagline.trim().replace(/^["“]|["”]$/g, ''), intro: intro.slice(0, 3), metaDescription: c.metaDescription.trim().slice(0, 160) };
+}
+
+export interface Suggestion {
+  title: string;
+  year: number | null;
+  theme: string;
+}
+
+/**
+ * Claude suggests films to add to the catalogue candidate list. Every suggestion still has its
+ * search volume checked before it can be queued, so only films with real demand get published.
+ */
+export async function suggestCandidates(
+  apiKey: string,
+  model: string,
+  themes: { theme: string; volume: number }[],
+  known: string[],
+  count: number,
+): Promise<Suggestion[]> {
+  const prompt = [
+    'You help grow a movie trailer website for a US audience. Each film page links to rent or stream it (Prime Video, JustWatch).',
+    '',
+    'Themes we already cover, most searched first (monthly US Google searches):',
+    ...themes.map((t) => `- ${t.theme}: ${t.volume.toLocaleString()}`),
+    '',
+    `Suggest ${count} more feature films people in the USA actively search for and can rent or stream in the USA today.`,
+    '- About three quarters for the themes above (strongest themes first); the rest for up to 2 NEW themes close to them.',
+    '- Any decade, including recent films, but only films already released digitally (no films still only in cinemas).',
+    '- Exact original release title and year as IMDb lists it. Theatrical feature films only: no TV series, shorts or documentaries.',
+    '- Do NOT suggest any film in this list (we already have or track it):',
+    known.join('; '),
+    '',
+    'Reply with JSON only: {"films": [{"title": "...", "year": 1999, "theme": "..."}]}',
+  ].join('\n');
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: claudeHeaders(apiKey),
+    body: JSON.stringify({ model, max_tokens: 6000, messages: [{ role: 'user', content: prompt }] }),
+  });
+  const json = await claudeJson(res);
+  const parsed = JSON.parse(json) as { films?: { title?: unknown; year?: unknown; theme?: unknown }[] };
+  return (parsed.films ?? [])
+    .filter((f) => typeof f.title === 'string' && f.title.trim())
+    .map((f) => ({
+      title: String(f.title).trim(),
+      year: Number.isInteger(Number(f.year)) && Number(f.year) > 1900 ? Number(f.year) : null,
+      theme: typeof f.theme === 'string' && f.theme.trim() ? f.theme.trim() : 'Suggested',
+    }));
 }

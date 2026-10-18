@@ -1,13 +1,13 @@
 # Trailer pipeline (movietrailer.channel)
 
-Builds the trailer catalogue for the future business: **renting older movies**.
+Builds the trailer catalogue from what people in the **USA** search for. **Any year**, as long as the film can be rented or streamed (films still in cinemas wait until they've been out 90 days, `AVAILABLE_AFTER_DAYS`). *(Until 18 Oct evening: older films only, Australian volumes.)*
 Only films at least 10 years old are added (`MIN_AGE_YEARS`), chosen by what people search for.
 One Cloudflare Worker, `trailer-pipeline`, in `workers/pipeline/`. Replaces the Make.com scenarios.
 
 | Job | When (Melbourne time) | What it does |
 |---|---|---|
 | catalogue | ~weekly (1st, 8th, 15th, 22nd, 29th UTC; 07:00 Melbourne next day) | **Main growth engine.** Looks up Google search volumes (DataForSEO) for films in `data/trailers/candidates.json`, queues the 10 most-searched, and writes `reports/trailers/catalogue.md` (ranked list + demand by theme). |
-| intake | every 12 hours | Newest 5 videos from classic and re-release label channels (Criterion, Kino Lorber, Vinegar Syndrome, Severin, Umbrella). Trailers for older films go into the queue; newer films are skipped. |
+| intake | every 12 hours | Newest 5 videos from classic and re-release label channels (Criterion, Kino Lorber, Vinegar Syndrome, Severin, Umbrella). Trailers go into the queue. |
 | enrich | daily 06:00 | Up to 15 queued films: OMDb lookup → trailer found on YouTube if needed → Claude Haiku writes tagline + summary → added to `data/trailers/movies.json` → site rebuilds and the page goes live. |
 | collections | monthly (4th, 08:00) | **SEO collection pages.** Finds every theme the catalogue can fill (decade + genre, director, lead actor), looks up searches for "<theme>" + "best <theme>", and creates the 3 most-searched as **smart collections** (rule-based; new movies join automatically at each build). Claude writes tagline, intro and meta description. Report: `reports/trailers/collections.md`, incl. popular themes that need more films. Needs ≥ 6 films and ≥ 100 searches/mo. |
 | demand | monthly (3rd, 08:00) | Last 28 days from Search Console → `reports/trailers/demand-YYYY-MM.md`: top searches, quick-win pages (ranking 4–20), low click-through titles, missing films, collection ideas. |
@@ -18,6 +18,9 @@ One Cloudflare Worker, `trailer-pipeline`, in `workers/pipeline/`. Replaces the 
 - **Candidates** are added by chat, by theme: "add candidates: 80s Australian horror", "add candidates: every Hitchcock film".
   Claude adds them to `candidates.json` with the theme; the weekly run ranks them by searches and queues the top ones.
   The first seed (18 Oct) is 227 films in 16 themes (80s action, Classic Hollywood, Australian classics, cult classics, …).
+- **Self-refilling:** when fewer than 50 candidates are waiting (`CATALOGUE_REFILL_BELOW`), the catalogue run asks Claude for 60 more
+  (mostly the strongest themes, plus up to 2 new nearby themes), skips anything already on the site or listed, then checks US search
+  volumes. Only films with ≥ 50 searches/mo can be queued. Auto-added films carry the note `auto-suggested`.
 - **Monthly**, say "show the catalogue report" and "show the demand report". Take the decisions (which themes, which collections)
   to the Movie Trailer Channel Project, then come back and say "act on the reports": Claude builds collections from the
   strongest themes, adds candidates and rewrites weak titles/descriptions.

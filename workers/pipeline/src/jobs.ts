@@ -68,8 +68,10 @@ export interface Services {
   sameTitle(title: string): Promise<{ Title: string; Year: string }[]>;
   /** YouTube search for a film's trailer (only for queue items without a video). */
   trailer(name: string, year: string | null): Promise<{ youtubeId: string; title: string } | null>;
-  /** Only films at least this many years old are added (rental catalogue = older films). 0 = no cutoff. */
+  /** Only films at least this many years old are added. 0 = no cutoff. */
   minAgeYears: number;
+  /** A film is published only once it has been out this many days (so it can be rented or streamed). 0 = no check. */
+  availableAfterDays: number;
   /** Network calls still allowed in this run (Workers free plan: 50 per run). */
   budget: { left: number };
   now: Date;
@@ -198,6 +200,16 @@ async function process(state: State, svc: Services, limit: number, which: QueueI
       r.queueChanged = true;
       continue;
     }
+    // Only publish films people can already rent or stream: still in cinemas (or not out yet) -> wait, rechecked monthly.
+    if (found && !why && notYetAvailable(found, svc)) {
+      const note = `Waiting for digital release (released ${na(found.Released) ?? yearOf(found)}); rechecked monthly`;
+      if (item.status !== 'pending' || item.note !== note) r.queued.push(`${item.title}: ${note}`);
+      item.status = 'pending';
+      item.note = note;
+      item.lastChecked = nowIso;
+      r.queueChanged = true;
+      continue;
+    }
     // No year from the trailer and several films share the title (remakes): a person picks.
     if (found && !why && !item.year && svc.budget.left >= 2) {
       svc.budget.left--;
@@ -292,6 +304,14 @@ async function process(state: State, svc: Services, limit: number, which: QueueI
 }
 
 const yearOf = (m: OmdbMovie) => m.Year.match(/\d{4}/)?.[0] ?? null;
+
+/** True when the film came out too recently to rent or stream (or OMDb has no date and it's from this year or later). */
+export function notYetAvailable(m: OmdbMovie, svc: Pick<Services, 'now' | 'availableAfterDays'>): boolean {
+  if (svc.availableAfterDays <= 0) return false;
+  const released = Date.parse(na(m.Released) ?? '');
+  if (!Number.isNaN(released)) return svc.now.getTime() - released < svc.availableAfterDays * 86400000;
+  return Number(yearOf(m)) >= svc.now.getUTCFullYear();
+}
 
 /** Returns why an OMDb result is the wrong film, or null if it's right. */
 export function mismatch(item: QueueItem, m: OmdbMovie): string | null {

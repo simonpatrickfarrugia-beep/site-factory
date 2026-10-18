@@ -11,7 +11,7 @@
  */
 import { enrich, intake, maxYear, recheck, type QueueItem, type Movie, type Result, type State } from './jobs';
 import { commitFiles, readFiles, StaleError, type Repo } from './github';
-import { channelFeed, omdbLookup, omdbYearsForTitle, setAnthropicWorkspace, writeCollectionCopy, writeCopy } from './sources';
+import { channelFeed, omdbLookup, omdbYearsForTitle, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
 import { buildCollections, type Idea, type MovieCollection } from './collections';
 import { googleAccessToken, searchAnalytics, youtubeSearch } from './google';
 import { buildDemandReport } from './demand';
@@ -42,6 +42,9 @@ export interface Env {
   RECHECK_LIMIT: string;
   GSC_SITE: string; // Search Console property: sc-domain:movietrailer.channel (Domain property) or a URL-prefix property
   MIN_AGE_YEARS: string; // only films at least this old are added ("0" = no cutoff)
+  AVAILABLE_AFTER_DAYS?: string; // publish only films out at least this many days (rentable/streamable)
+  CATALOGUE_REFILL_BELOW?: string; // top up candidates when fewer than this are waiting
+  CATALOGUE_REFILL_COUNT?: string; // films Claude suggests per top-up
   CATALOGUE_PER_RUN: string; // candidates queued per weekly run
   CATALOGUE_MIN_VOLUME: string; // ignore candidates with fewer monthly searches
   DATAFORSEO_LOCATION: string; // Google Ads location code, e.g. 2036 = Australia
@@ -155,6 +158,7 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
     budget: { left: CALL_BUDGET },
     now,
     minAgeYears,
+    availableAfterDays: Number(env.AVAILABLE_AFTER_DAYS ?? '90') || 0,
   };
 
   let result: Result;
@@ -185,8 +189,8 @@ async function collectionsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRu
       minFilms: Number(env.COLLECTION_MIN_FILMS) || 6,
       minFilmsForIdea: 3,
       minVolume: Number(env.COLLECTION_MIN_VOLUME) || 100,
-      location: env.DATAFORSEO_LOCATION_NAME || 'Australia',
-      volumes: login && password ? (kw) => searchVolumes(login, password, kw, Number(env.DATAFORSEO_LOCATION) || 2036) : null,
+      location: env.DATAFORSEO_LOCATION_NAME || 'United States',
+      volumes: login && password ? (kw) => searchVolumes(login, password, kw, Number(env.DATAFORSEO_LOCATION) || 2840) : null,
       copy: (name, films) => writeCollectionCopy(env.ANTHROPIC_API_KEY, env.ANTHROPIC_MODEL, name, films),
       budget: { left: CALL_BUDGET },
       maxYear: newest,
@@ -224,9 +228,14 @@ async function catalogue(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: bo
       perRun: Number(env.CATALOGUE_PER_RUN) || 10,
       minVolume: Number(env.CATALOGUE_MIN_VOLUME) || 0,
       now,
-      location: env.DATAFORSEO_LOCATION_NAME || 'Australia',
+      location: env.DATAFORSEO_LOCATION_NAME || 'United States',
       volumes:
-        login && password ? (kw) => searchVolumes(login, password, kw, Number(env.DATAFORSEO_LOCATION) || 2036) : null,
+        login && password ? (kw) => searchVolumes(login, password, kw, Number(env.DATAFORSEO_LOCATION) || 2840) : null,
+      suggest: env.ANTHROPIC_API_KEY
+        ? (themes, known, count) => suggestCandidates(env.ANTHROPIC_API_KEY, env.ANTHROPIC_MODEL, themes, known, count)
+        : null,
+      refillBelow: Number(env.CATALOGUE_REFILL_BELOW ?? '50') || 0,
+      refillCount: Number(env.CATALOGUE_REFILL_COUNT ?? '60') || 60,
     },
   );
   const changes: Record<string, string> = { [CATALOGUE_REPORT]: out.report };

@@ -18,25 +18,28 @@
   "vars": {
     "REPO": "simonpatrickfarrugia-beep/site-factory",
     "BRANCH": "main",
-    // Classic and re-release labels watched for new trailers of OLDER films (rental catalogue):
+    // Classic and re-release labels watched for new trailers:
     // Criterion, Kino Lorber, Vinegar Syndrome, Severin Films, Umbrella Entertainment (AU).
     // The old new-release studio list is in backups/make/TRAILER-AUTOMATIONS.md.
     "CHANNELS": "[\"UCAP57cF-FSjJKzzXg7ntPlQ\",\"UCtlPYzQ188v4gHQ5VyikNiw\",\"UCotn1stsIkEHTGv7pFSGtVA\",\"UCYhdlIRe1CbpeWrpdfr46gw\",\"UCadhU_V17tZia6mvQSYn-tg\"]",
-    // Only films at least this many years old are added. "0" turns the cutoff off.
-    "MIN_AGE_YEARS": "10",
+    // Which films get published: any age, once out long enough to rent or stream. Catalogue self-refills below 50 waiting.
+    "AVAILABLE_AFTER_DAYS": "90", // publish only once a film has been out 90 days (rent/stream)
+    "CATALOGUE_REFILL_BELOW": "50",
+    "CATALOGUE_REFILL_COUNT": "60",
+    "MIN_AGE_YEARS": "0", // no age limit (changed 18 Oct); films must be rentable/streamable instead
     "ANTHROPIC_MODEL": "claude-haiku-5-5",
     "ANTHROPIC_WORKSPACE_ID": "wrkspc_01W5t4awRcfjkeb1NKxyPo8i", // Anthropic Console > Default workspace (key is not workspace-scoped)
     // Per run. Each item uses up to 3 of the 50 calls a free-plan Worker run allows.
     "ENRICH_LIMIT": "15",
     "RECHECK_LIMIT": "20",
-    // Search Console property the demand report reads (URL-prefix property, with trailing slash).
+    // Search Console property the demand report reads (Domain property).
     "GSC_SITE": "sc-domain:movietrailer.channel",
     // Catalogue builder (weekly): queue this many of the most-searched candidates per run.
     "CATALOGUE_PER_RUN": "10",
     "CATALOGUE_MIN_VOLUME": "50",
     // Google Ads location for search volumes: 2036 = Australia, 2840 = United States.
-    "DATAFORSEO_LOCATION": "2036",
-    "DATAFORSEO_LOCATION_NAME": "Australia",
+    "DATAFORSEO_LOCATION": "2840", // United States
+    "DATAFORSEO_LOCATION_NAME": "United States",
     // Collections builder (monthly): new smart collection pages from the most-searched themes.
     "COLLECTIONS_PER_RUN": "3",
     "COLLECTION_MIN_FILMS": "6",
