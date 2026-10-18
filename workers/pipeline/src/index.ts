@@ -58,7 +58,7 @@ const CRON_JOBS: Record<string, Job> = {
   '0 19 * * *': 'enrich', // 06:00 Melbourne (AEDT)
   '0 18 1 * *': 'recheck', // 2nd of the month, 05:00 Melbourne (AEDT)
   '0 21 2 * *': 'demand', // 3rd of the month, 08:00 Melbourne (AEDT)
-  '0 20 * * 0': 'catalogue', // Mondays, 07:00 Melbourne (AEDT)
+  '0 20 * * SUN': 'catalogue', // Mondays, 07:00 Melbourne (AEDT)
   '0 21 3 * *': 'collections', // 4th of the month, 08:00 Melbourne (AEDT)
 };
 
