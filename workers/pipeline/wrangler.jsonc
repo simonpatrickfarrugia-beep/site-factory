@@ -30,7 +30,7 @@
     "ENRICH_LIMIT": "15",
     "RECHECK_LIMIT": "20",
     // Search Console property the demand report reads (URL-prefix property, with trailing slash).
-    "GSC_SITE": "https://www.movietrailer.channel/",
+    "GSC_SITE": "sc-domain:movietrailer.channel",
     // Catalogue builder (weekly): queue this many of the most-searched candidates per run.
     "CATALOGUE_PER_RUN": "10",
     "CATALOGUE_MIN_VOLUME": "50",

@@ -40,7 +40,7 @@ export interface Env {
   ANTHROPIC_WORKSPACE_ID?: string; // only needed when the API key isn't scoped to a workspace
   ENRICH_LIMIT: string;
   RECHECK_LIMIT: string;
-  GSC_SITE: string; // Search Console property, e.g. https://www.movietrailer.channel/
+  GSC_SITE: string; // Search Console property: sc-domain:movietrailer.channel (Domain property) or a URL-prefix property
   MIN_AGE_YEARS: string; // only films at least this old are added ("0" = no cutoff)
   CATALOGUE_PER_RUN: string; // candidates queued per weekly run
   CATALOGUE_MIN_VOLUME: string; // ignore candidates with fewer monthly searches
