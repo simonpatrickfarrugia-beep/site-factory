@@ -65,6 +65,19 @@ const tokenCss = `:root{${Object.entries(tokens).map(([k, v]) => `${k}:${v}`).jo
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', ga4Id);
+          // Count clicks on call-to-action links (data-cta="prime" etc.) as GA4 events named cta_<name>,
+          // e.g. cta_prime. Event name x page path gives clicks per page without any GA4 custom-dimension setup.
+          document.addEventListener('click', function (e) {
+            var a = e.target instanceof Element ? e.target.closest('a[data-cta]') : null;
+            if (!a) return;
+            var cta = String(a.getAttribute('data-cta') || 'link').toLowerCase().replace(/[^a-z0-9_]/g, '_').slice(0, 30);
+            gtag('event', 'cta_' + cta, {
+              cta: cta,
+              sponsored: /\bsponsored\b/.test(a.getAttribute('rel') || ''),
+              link_domain: a.hostname,
+              transport_type: 'beacon',
+            });
+          });
         </script>
       </>
     )}
