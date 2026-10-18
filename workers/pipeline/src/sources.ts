@@ -60,12 +60,15 @@ export interface OmdbMovie {
 }
 
 /** Years of every film OMDb has with this title (OMDb search, first page). Used to spot remakes. */
+/** OMDb sometimes puts the year inside the title ("Mad Max (1979)"); the year has its own field. */
+const stripYear = (title: string) => title.replace(/\s*\(\d{4}\)\s*$/, '');
+
 export async function omdbYearsForTitle(apiKey: string, title: string): Promise<{ Title: string; Year: string }[]> {
   const q = new URLSearchParams({ apikey: apiKey, s: title, type: 'movie' });
   const res = await fetch(`https://www.omdbapi.com/?${q}`);
   if (!res.ok) throw new Error(`OMDb search: HTTP ${res.status}`);
   const body = (await res.json()) as { Response: string; Search?: { Title: string; Year: string }[] };
-  return body.Response === 'True' ? (body.Search ?? []) : [];
+  return body.Response === 'True' ? (body.Search ?? []).map((m) => ({ ...m, Title: stripYear(m.Title) })) : [];
 }
 
 /** OMDb lookup by exact title (and year when known). Free key: 1,000 lookups a day. */
@@ -79,7 +82,7 @@ export async function omdbLookup(apiKey: string, title: string, year: number | n
     if (body.Error && !/not found/i.test(body.Error)) throw new Error(`OMDb: ${body.Error}`);
     return null;
   }
-  return body;
+  return { ...body, Title: stripYear(body.Title) };
 }
 
 export interface Copy {
