@@ -7,14 +7,11 @@
   "main": "src/index.ts",
   "compatibility_date": "2026-06-01",
   "triggers": {
-    // Times are UTC. Keep in sync with CRON_JOBS in src/index.ts.
+    // Times are UTC. Keep in sync with INTAKE_CRON / DAILY_CRON in src/index.ts.
     "crons": [
+      // Workers Free allows 5 crons per ACCOUNT. Two here; src/index.ts (jobFor) picks the job by hour and day.
       "0 */12 * * *", // intake: every 12 hours
-      "0 19 * * *", // enrich: daily, 06:00 Melbourne (AEDT)
-      "0 18 1 * *", // recheck: monthly, 05:00 Melbourne on the 2nd (AEDT)
-      "0 21 2 * *", // demand report: monthly, 08:00 Melbourne on the 3rd (AEDT)
-      "0 20 1,8,15,22,29 * *", // catalogue: ~weekly, 07:00 Melbourne (AEDT) the next day
-      "0 21 3 * *" // collections: monthly, 08:00 Melbourne on the 4th (AEDT)
+      "0 18-21 * * *" // daily slots: recheck (2nd), enrich (daily), catalogue (~weekly), demand (3rd), collections (4th)
     ]
   },
   "observability": { "enabled": true },

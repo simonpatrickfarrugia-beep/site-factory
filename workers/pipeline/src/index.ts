@@ -52,15 +52,25 @@ export interface Env {
 
 type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections';
 
-/** Must match the crons in wrangler.jsonc. */
-const CRON_JOBS: Record<string, Job> = {
-  '0 */12 * * *': 'intake',
-  '0 19 * * *': 'enrich', // 06:00 Melbourne (AEDT)
-  '0 18 1 * *': 'recheck', // 2nd of the month, 05:00 Melbourne (AEDT)
-  '0 21 2 * *': 'demand', // 3rd of the month, 08:00 Melbourne (AEDT)
-  '0 20 1,8,15,22,29 * *': 'catalogue', // ~weekly, 07:00 Melbourne (AEDT); no weekday field — Cloudflare's weekday parsing is unreliable
-  '0 21 3 * *': 'collections', // 4th of the month, 08:00 Melbourne (AEDT)
-};
+/**
+ * Workers Free allows 5 cron schedules per ACCOUNT, so the pipeline uses two (see wrangler.jsonc)
+ * and picks the job from the UTC hour and day. One job per run keeps each run inside the 50-call budget.
+ */
+const INTAKE_CRON = '0 */12 * * *';
+const DAILY_CRON = '0 18-21 * * *'; // fires 18:00, 19:00, 20:00, 21:00 UTC (05:00–08:00 Melbourne, AEDT)
+const CATALOGUE_DAYS = [1, 8, 15, 22, 29]; // ~weekly
+
+function jobFor(cron: string, at: Date): Job | null {
+  if (cron === INTAKE_CRON) return 'intake';
+  if (cron !== DAILY_CRON) throw new Error(`Unknown cron "${cron}"`);
+  const hour = at.getUTCHours();
+  const day = at.getUTCDate();
+  if (hour === 18) return day === 1 ? 'recheck' : null; // 2nd of the month, 05:00 Melbourne
+  if (hour === 19) return 'enrich'; // daily, 06:00 Melbourne
+  if (hour === 20) return CATALOGUE_DAYS.includes(day) ? 'catalogue' : null; // 07:00 Melbourne
+  if (hour === 21) return day === 2 ? 'demand' : day === 3 ? 'collections' : null; // 08:00 Melbourne, 3rd / 4th
+  return null;
+}
 
 const MOVIES = 'data/trailers/movies.json';
 const QUEUE = 'data/trailers/queue.json';
@@ -75,8 +85,8 @@ const CALL_BUDGET = 50 - 9;
 
 export default {
   async scheduled(event: ScheduledController, env: Env, ctx: ExecutionContext) {
-    const job = CRON_JOBS[event.cron];
-    if (!job) throw new Error(`No job for cron "${event.cron}"`);
+    const job = jobFor(event.cron, new Date(event.scheduledTime));
+    if (!job) return; // nothing scheduled in this slot today
     ctx.waitUntil(run(job, env, false).then((out) => console.log(JSON.stringify({ ...out, report: undefined }))));
   },
 
