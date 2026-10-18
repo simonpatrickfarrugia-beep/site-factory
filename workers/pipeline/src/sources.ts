@@ -103,6 +103,19 @@ const claudeHeaders = (apiKey: string): Record<string, string> => ({
   ...(anthropicWorkspace ? { 'anthropic-workspace-id': anthropicWorkspace } : {}),
 });
 
+/** Pull the JSON object out of a Claude reply; on failure say what came back so the log is useful. */
+async function claudeJson(res: Response): Promise<string> {
+  if (!res.ok) throw new Error(`Claude: HTTP ${res.status} ${(await res.text()).slice(0, 200)}`);
+  const body = (await res.json()) as { stop_reason?: string; content?: { type: string; text?: string }[] };
+  const text = (body.content ?? []).filter((c) => c.type === 'text').map((c) => c.text ?? '').join('');
+  const json = text.replace(/```(?:json)?/g, '').match(/\{[\s\S]*\}/)?.[0];
+  if (!json) {
+    const types = (body.content ?? []).map((c) => c.type).join(',') || 'none';
+    throw new Error(`Claude: no JSON in reply (stop=${body.stop_reason}, blocks=${types}, text="${text.slice(0, 120)}")`);
+  }
+  return json;
+}
+
 export async function writeCopy(apiKey: string, model: string, m: OmdbMovie): Promise<Copy> {
   const prompt = [
     `Film: ${m.Title} (${m.Year})`,
@@ -121,13 +134,9 @@ export async function writeCopy(apiKey: string, model: string, m: OmdbMovie): Pr
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: claudeHeaders(apiKey),
-    body: JSON.stringify({ model, max_tokens: 400, messages: [{ role: 'user', content: prompt }] }),
+    body: JSON.stringify({ model, max_tokens: 2000, messages: [{ role: 'user', content: prompt }] }),
   });
-  if (!res.ok) throw new Error(`Claude: HTTP ${res.status} ${(await res.text()).slice(0, 200)}`);
-  const body = (await res.json()) as { content: { type: string; text?: string }[] };
-  const text = body.content.map((c) => c.text ?? '').join('');
-  const json = text.match(/\{[\s\S]*\}/)?.[0];
-  if (!json) throw new Error('Claude: no JSON in reply');
+  const json = await claudeJson(res);
   const copy = JSON.parse(json) as Partial<Copy>;
   const tagline = copy.tagline?.trim().replace(/^["“]|["”]$/g, '');
   const summary = copy.summary?.trim();
@@ -159,12 +168,9 @@ export async function writeCollectionCopy(
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: claudeHeaders(apiKey),
-    body: JSON.stringify({ model, max_tokens: 700, messages: [{ role: 'user', content: prompt }] }),
+    body: JSON.stringify({ model, max_tokens: 3000, messages: [{ role: 'user', content: prompt }] }),
   });
-  if (!res.ok) throw new Error(`Claude: HTTP ${res.status} ${(await res.text()).slice(0, 200)}`);
-  const body = (await res.json()) as { content: { type: string; text?: string }[] };
-  const json = body.content.map((c) => c.text ?? '').join('').match(/\{[\s\S]*\}/)?.[0];
-  if (!json) throw new Error('Claude: no JSON in reply');
+  const json = await claudeJson(res);
   const c = JSON.parse(json) as { tagline?: string; intro?: string[]; metaDescription?: string };
   const intro = (c.intro ?? []).map((p) => p.trim()).filter(Boolean);
   if (!c.tagline?.trim() || intro.length === 0 || !c.metaDescription?.trim()) throw new Error('Claude: reply missing fields');
