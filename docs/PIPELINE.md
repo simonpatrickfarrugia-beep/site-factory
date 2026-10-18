@@ -110,3 +110,13 @@ Matching is strict: the cleaned title must equal OMDb's title, and the years mus
 Ask Claude in chat ("publish more films now", "run the demand report"). Claude starts the `pipeline-run` GitHub Action
 (`.github/workflows/pipeline-run.yml`, job + dry-run inputs), which calls the Worker with the `PIPELINE_RUN_KEY` repo secret
 and reports the result as an annotation. Nobody needs to open `/run/...` links by hand.
+
+## Dashboard (/hq/stats)
+
+Private page at `https://www.movietrailer.channel/hq/stats` (noindex, no analytics, not in the sitemap, `Disallow: /hq/`).
+The `stats` job (daily 08:00 Melbourne slot, except the 3rd/4th) writes `data/trailers/stats.json` from:
+- **GA4 Data API**: visits per page (28 days vs the 28 before), daily trend, and CTA click events. The site sends
+  `cta_prime`, `cta_disc`, `cta_justwatch` for every `a[data-cta]` click (Base.astro). Needs `GA4_PROPERTY` (wrangler var),
+  the Analytics Data API enabled in the Google Cloud project, and the service account as Viewer on the GA4 property.
+- **Search Console**: appearances, clicks, average position and top search per page.
+To lock the page behind a login: Cloudflare Zero Trust → Access → self-hosted app for `www.movietrailer.channel/hq` (free ≤ 50 users).
