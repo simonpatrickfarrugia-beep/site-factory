@@ -13,7 +13,8 @@
       "0 19 * * *", // enrich: daily, 06:00 Melbourne (AEDT)
       "0 18 1 * *", // recheck: monthly, 05:00 Melbourne on the 2nd (AEDT)
       "0 21 2 * *", // demand report: monthly, 08:00 Melbourne on the 3rd (AEDT)
-      "0 20 * * 0" // catalogue: weekly, Mondays 07:00 Melbourne (AEDT)
+      "0 20 * * 0", // catalogue: weekly, Mondays 07:00 Melbourne (AEDT)
+      "0 21 3 * *" // collections: monthly, 08:00 Melbourne on the 4th (AEDT)
     ]
   },
   "observability": { "enabled": true },
@@ -37,7 +38,11 @@
     "CATALOGUE_MIN_VOLUME": "50",
     // Google Ads location for search volumes: 2036 = Australia, 2840 = United States.
     "DATAFORSEO_LOCATION": "2036",
-    "DATAFORSEO_LOCATION_NAME": "Australia"
+    "DATAFORSEO_LOCATION_NAME": "Australia",
+    // Collections builder (monthly): new smart collection pages from the most-searched themes.
+    "COLLECTIONS_PER_RUN": "3",
+    "COLLECTION_MIN_FILMS": "6",
+    "COLLECTION_MIN_VOLUME": "100"
   }
   // Secrets (set in the Cloudflare dashboard, never here):
   //   GITHUB_TOKEN, OMDB_API_KEY, ANTHROPIC_API_KEY, RUN_KEY

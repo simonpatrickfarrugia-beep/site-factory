@@ -35,6 +35,28 @@ for (const file of pages) {
   }
 }
 
+// Affiliate links: every Amazon link carries the one tracking tag and is marked sponsored,
+// pages with Amazon links show the Associates disclosure, and every movie page offers Prime Video.
+const amazonTags = new Map();
+let amazonLinks = 0;
+for (const file of pages) {
+  const html = readFileSync(file, 'utf8');
+  const links = [...html.matchAll(/<a\b[^>]*href="(https?:\/\/(?:www\.)?amazon\.[^"]+)"[^>]*>/g)];
+  for (const [tag, href] of links) {
+    amazonLinks++;
+    let t = null;
+    try { t = new URL(href.replace(/&amp;/g, '&')).searchParams.get('tag'); } catch { /* bad URL */ }
+    if (!t) problems.push(`${file}: Amazon link without a tracking tag: ${href}`);
+    else amazonTags.set(t, (amazonTags.get(t) ?? 0) + 1);
+    if (!/rel="[^"]*sponsored/.test(tag)) problems.push(`${file}: Amazon link not marked rel="sponsored"`);
+  }
+  if (links.length && !/As an Amazon Associate/.test(html)) problems.push(`${file}: Amazon links but no Associates disclosure`);
+  if (/[\\/]movies[\\/]/.test(file) && !/amazon\.[^"]*[?&](?:amp;)?i=instant-video|data-cta="prime"/.test(html))
+    problems.push(`${file}: no Prime Video link`);
+}
+if (amazonTags.size > 1) problems.push(`More than one Amazon tag in use: ${[...amazonTags.keys()].join(', ')}`);
+if (amazonLinks) notice(`Checked ${amazonLinks} Amazon links (tag: ${[...amazonTags.keys()].join(', ')})`);
+
 const sitemap = join(dist, 'sitemap.xml');
 if (existsSync(sitemap)) {
   const count = (readFileSync(sitemap, 'utf8').match(/<loc>/g) ?? []).length;

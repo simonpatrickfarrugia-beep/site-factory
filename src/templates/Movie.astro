@@ -34,9 +34,12 @@ const tagAmazon = (url: string) => {
     return url;
   }
 };
-const amazonUrl = m.rentBuyUrl
-  ? tagAmazon(m.rentBuyUrl)
-  : `https://www.amazon.com/s?k=${encodeURIComponent(withYear)}&i=movies-tv&tag=${amazonTag}`;
+// Prime Video first: digital rentals/purchases earn 5% in Amazon Associates (US), DVD/Blu-ray 2.5%.
+// i=instant-video searches Prime Video; i=movies-tv searches discs. Both carry the tracking tag.
+const amazonSearch = (dept: 'instant-video' | 'movies-tv') =>
+  `https://www.amazon.com/s?k=${encodeURIComponent(withYear)}&i=${dept}&tag=${amazonTag}`;
+const primeUrl = m.rentBuyUrl ? tagAmazon(m.rentBuyUrl) : amazonSearch('instant-video');
+const discUrl = amazonSearch('movies-tv');
 const justWatchUrl = `https://www.justwatch.com/us/search?q=${encodeURIComponent(m.name)}`;
 ---
 <article class="movie">
@@ -61,8 +64,9 @@ const justWatchUrl = `https://www.justwatch.com/us/search?q=${encodeURIComponent
         <section class="watch" aria-labelledby="watch-heading">
           <h2 id="watch-heading">Where to watch {m.name}</h2>
           <p class="button-row">
-            <a class="button" href={amazonUrl} rel="sponsored noopener" target="_blank">{m.rentBuyUrl ? 'Rent or buy' : 'Find on Amazon'}</a>
-            <a class="button button--quiet" href={justWatchUrl} rel="noopener" target="_blank">Find where to stream</a>
+            <a class="button" href={primeUrl} rel="sponsored noopener" target="_blank" data-cta="prime">Rent on Prime Video</a>
+            <a class="button button--quiet" href={discUrl} rel="sponsored noopener" target="_blank" data-cta="disc">Buy on DVD &amp; Blu-ray</a>
+            <a class="button button--quiet" href={justWatchUrl} rel="noopener" target="_blank" data-cta="justwatch">Where else to stream</a>
           </p>
         </section>
       </div>

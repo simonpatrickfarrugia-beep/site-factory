@@ -23,6 +23,17 @@ export interface Movie {
   updated: string;
 }
 
+/**
+ * A rule-based ("smart") collection fills itself: every movie matching ALL the given fields joins it,
+ * so new movies appear in the right collections at the next build. Within a field, any value matches.
+ */
+export interface CollectionRule {
+  decades?: number[]; // e.g. [1980] = 1980–1989
+  genres?: string[]; // OMDb genres, e.g. ["Horror"]
+  directors?: string[];
+  actors?: string[];
+}
+
 export interface MovieCollection {
   id: string;
   slug: string;
@@ -31,7 +42,12 @@ export interface MovieCollection {
   introHtml: string | null;
   metaDescription: string | null;
   featured: boolean;
+  /** Hand-picked movies, shown first in this order. */
   movieSlugs: string[];
+  /** Optional rule; matching movies are added after the hand-picked ones, oldest first. */
+  rule?: CollectionRule | null;
+  /** Created by the pipeline's collections job. */
+  auto?: boolean;
   created: string;
   updated: string;
 }
@@ -47,6 +63,18 @@ export interface StaticPage {
   seoTitle: string;
   description: string;
   blocks: PageBlock[];
+}
+
+const has = (list: string[] | undefined, value: string) => !list?.length || list.some((v) => v.toLowerCase() === value.toLowerCase());
+const hasAny = (list: string[] | undefined, values: string[]) => !list?.length || values.some((v) => has(list, v));
+
+export function matchesRule(m: Movie, r: CollectionRule): boolean {
+  const year = Number(m.year);
+  if (r.decades?.length && !(year && r.decades.includes(Math.floor(year / 10) * 10))) return false;
+  if (!hasAny(r.genres, m.genres)) return false;
+  if (!hasAny(r.directors, (m.director ?? '').split(',').map((s) => s.trim()).filter(Boolean))) return false;
+  if (!hasAny(r.actors, m.cast)) return false;
+  return true;
 }
 
 /** YouTube thumbnail. hqdefault always exists; it is 4:3 with letterbox bars, so display it cropped to 16:9. */

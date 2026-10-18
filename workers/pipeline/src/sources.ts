@@ -120,3 +120,38 @@ export async function writeCopy(apiKey: string, model: string, m: OmdbMovie): Pr
   if (tagline.split(/\s+/).length > 14) throw new Error('Claude: tagline too long');
   return { tagline, summary };
 }
+
+/** Claude writes copy for a new collection page: tagline, a two-paragraph intro and a meta description. */
+export async function writeCollectionCopy(
+  apiKey: string,
+  model: string,
+  name: string,
+  films: { name: string; year: string | null }[],
+): Promise<{ tagline: string; intro: string[]; metaDescription: string }> {
+  const list = films.slice(0, 40).map((f) => `${f.name}${f.year ? ` (${f.year})` : ''}`).join('; ');
+  const prompt = [
+    `Collection page on a movie trailer website: "${name}".`,
+    `Films in it: ${list}.`,
+    '',
+    'Write:',
+    '1. tagline: at most 10 words, no quotation marks.',
+    '2. intro: two short paragraphs (2–3 sentences each) for film fans. Say what ties these films together and name a few of them.',
+    '   Natural language a person would search for (e.g. the theme name), no keyword stuffing, no claims about prices or availability.',
+    `3. metaDescription: one sentence, 130–155 characters, for Google results. Mention "${name}" and trailers.`,
+    '',
+    'Reply with JSON only: {"tagline": "...", "intro": ["...", "..."], "metaDescription": "..."}',
+  ].join('\n');
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: { 'x-api-key': apiKey, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
+    body: JSON.stringify({ model, max_tokens: 700, messages: [{ role: 'user', content: prompt }] }),
+  });
+  if (!res.ok) throw new Error(`Claude: HTTP ${res.status} ${(await res.text()).slice(0, 200)}`);
+  const body = (await res.json()) as { content: { type: string; text?: string }[] };
+  const json = body.content.map((c) => c.text ?? '').join('').match(/\{[\s\S]*\}/)?.[0];
+  if (!json) throw new Error('Claude: no JSON in reply');
+  const c = JSON.parse(json) as { tagline?: string; intro?: string[]; metaDescription?: string };
+  const intro = (c.intro ?? []).map((p) => p.trim()).filter(Boolean);
+  if (!c.tagline?.trim() || intro.length === 0 || !c.metaDescription?.trim()) throw new Error('Claude: reply missing fields');
+  return { tagline: c.tagline.trim().replace(/^["“]|["”]$/g, ''), intro: intro.slice(0, 3), metaDescription: c.metaDescription.trim().slice(0, 160) };
+}

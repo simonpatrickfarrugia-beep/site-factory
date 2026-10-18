@@ -4,7 +4,7 @@
  */
 import { getCollection } from '../../src/lib/data';
 import type { Route } from '../../src/lib/routes';
-import { thumb, type Movie, type MovieCollection, type StaticPage } from './model';
+import { matchesRule, thumb, type Movie, type MovieCollection, type StaticPage } from './model';
 
 const SITE = 'https://www.movietrailer.channel'; // www is canonical (matches Webflow + Search Console)
 const SUFFIX = ' | MovieTrailer.Channel';
@@ -77,8 +77,18 @@ export function routes(): Route[] {
   const pages = getCollection<StaticPage>('pages');
 
   const movieBySlug = new Map(movies.map((m) => [m.slug, m]));
-  const moviesIn = (c: MovieCollection) =>
-    c.movieSlugs.map((s) => movieBySlug.get(s)).filter((m): m is Movie => !!m);
+  const byYear = (a: Movie, b: Movie) => (a.year ?? '9999').localeCompare(b.year ?? '9999') || a.name.localeCompare(b.name);
+  // Hand-picked movies first, then (for smart collections) every other movie matching the rule, oldest first.
+  const membership = new Map<string, Movie[]>(
+    collections.map((c) => {
+      const picked = c.movieSlugs.map((s) => movieBySlug.get(s)).filter((m): m is Movie => !!m);
+      const pickedSet = new Set(picked);
+      const rule = c.rule;
+      const matched = rule ? movies.filter((m) => !pickedSet.has(m) && matchesRule(m, rule)).sort(byYear) : [];
+      return [c.slug, [...picked, ...matched]];
+    }),
+  );
+  const moviesIn = (c: MovieCollection) => membership.get(c.slug) ?? [];
   const collectionCard = (c: MovieCollection) => {
     const list = moviesIn(c);
     return { slug: c.slug, name: c.name, tagline: c.tagline, count: list.length, youtubeId: list[0]?.youtubeId ?? null };
@@ -124,7 +134,7 @@ export function routes(): Route[] {
 
   // Movie pages: /movies/{slug}
   for (const m of movies) {
-    const inCollections = collections.filter((c) => c.movieSlugs.includes(m.slug)).map(collectionCard);
+    const inCollections = collections.filter((c) => moviesIn(c).includes(m)).map(collectionCard);
     const firstGenre = m.genres[0];
     const related = firstGenre
       ? movies.filter((o) => o.slug !== m.slug && o.genres.includes(firstGenre)).sort(byNewest).slice(0, 10).map(card)

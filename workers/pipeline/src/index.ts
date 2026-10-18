@@ -7,11 +7,12 @@
  *
  * Manual run (handy for testing from a phone):
  *   https://trailer-pipeline.<account>.workers.dev/run/intake?key=RUN_KEY&dry=1
- *   jobs: intake | enrich | recheck | demand | catalogue ;  dry=1 shows what would change without committing.
+ *   jobs: intake | enrich | recheck | demand | catalogue | collections ;  dry=1 shows what would change without committing.
  */
 import { enrich, intake, maxYear, recheck, type QueueItem, type Movie, type Result, type State } from './jobs';
 import { commitFiles, readFiles, StaleError, type Repo } from './github';
-import { channelFeed, omdbLookup, omdbYearsForTitle, writeCopy } from './sources';
+import { channelFeed, omdbLookup, omdbYearsForTitle, writeCollectionCopy, writeCopy } from './sources';
+import { buildCollections, type Idea, type MovieCollection } from './collections';
 import { googleAccessToken, searchAnalytics, youtubeSearch } from './google';
 import { buildDemandReport } from './demand';
 import { pickTrailer } from './titles';
@@ -44,9 +45,12 @@ export interface Env {
   CATALOGUE_MIN_VOLUME: string; // ignore candidates with fewer monthly searches
   DATAFORSEO_LOCATION: string; // Google Ads location code, e.g. 2036 = Australia
   DATAFORSEO_LOCATION_NAME: string;
+  COLLECTIONS_PER_RUN: string; // new collection pages per monthly run
+  COLLECTION_MIN_FILMS: string;
+  COLLECTION_MIN_VOLUME: string;
 }
 
-type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue';
+type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections';
 
 /** Must match the crons in wrangler.jsonc. */
 const CRON_JOBS: Record<string, Job> = {
@@ -55,6 +59,7 @@ const CRON_JOBS: Record<string, Job> = {
   '0 18 1 * *': 'recheck', // 2nd of the month, 05:00 Melbourne (AEDT)
   '0 21 2 * *': 'demand', // 3rd of the month, 08:00 Melbourne (AEDT)
   '0 20 * * 0': 'catalogue', // Mondays, 07:00 Melbourne (AEDT)
+  '0 21 3 * *': 'collections', // 4th of the month, 08:00 Melbourne (AEDT)
 };
 
 const MOVIES = 'data/trailers/movies.json';
@@ -62,6 +67,8 @@ const QUEUE = 'data/trailers/queue.json';
 const COLLECTIONS = 'data/trailers/collections.json';
 const CANDIDATES = 'data/trailers/candidates.json';
 const CATALOGUE_REPORT = 'reports/trailers/catalogue.md';
+const IDEAS = 'data/trailers/collection-ideas.json';
+const COLLECTIONS_REPORT = 'reports/trailers/collections.md';
 
 /** Workers free plan allows 50 outgoing calls per run; GitHub reads/commit use up to 8. */
 const CALL_BUDGET = 50 - 9;
@@ -75,7 +82,7 @@ export default {
 
   async fetch(req: Request, env: Env): Promise<Response> {
     const url = new URL(req.url);
-    const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue)$/);
+    const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue|collections)$/);
     if (!m) return new Response('Trailer pipeline. Runs on a schedule.\n', { status: url.pathname === '/' ? 200 : 404 });
     if (!env.RUN_KEY || url.searchParams.get('key') !== env.RUN_KEY) return new Response('Forbidden\n', { status: 403 });
     try {
@@ -96,6 +103,7 @@ const NEEDS: Record<Job, (keyof Env)[]> = {
   recheck: ['GITHUB_TOKEN', 'OMDB_API_KEY', 'ANTHROPIC_API_KEY'],
   demand: ['GITHUB_TOKEN', 'GSC_SERVICE_ACCOUNT'],
   catalogue: ['GITHUB_TOKEN'],
+  collections: ['GITHUB_TOKEN', 'ANTHROPIC_API_KEY'],
 };
 
 export async function run(job: Job, env: Env, dryRun: boolean) {
@@ -103,13 +111,19 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
   const [owner, name] = env.REPO.split('/');
   const repo: Repo = { token: env.GITHUB_TOKEN, owner, name, branch: env.BRANCH };
 
-  const files = job === 'demand' ? [MOVIES, COLLECTIONS] : job === 'catalogue' ? [MOVIES, QUEUE, CANDIDATES] : [MOVIES, QUEUE];
+  const files =
+    job === 'demand' || job === 'collections'
+      ? [MOVIES, COLLECTIONS, ...(job === 'collections' ? [IDEAS] : [])]
+      : job === 'catalogue'
+        ? [MOVIES, QUEUE, CANDIDATES]
+        : [MOVIES, QUEUE];
   const snap = await readFiles(repo, files);
   const now = new Date();
   const minAgeYears = Number(env.MIN_AGE_YEARS ?? '10') || 0;
 
   if (job === 'demand') return demand(env, repo, snap, now, dryRun, maxYear({ now, minAgeYears }));
   if (job === 'catalogue') return catalogue(env, repo, snap, now, dryRun, maxYear({ now, minAgeYears }));
+  if (job === 'collections') return collectionsJob(env, repo, snap, now, dryRun, maxYear({ now, minAgeYears }));
 
   const state: State = {
     movies: JSON.parse(snap.files[MOVIES]) as Movie[],
@@ -145,6 +159,46 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
 }
 
 type Snap = { sha: string; files: Record<string, string> };
+
+async function collectionsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean, newest: number | null) {
+  const login = env.DATAFORSEO_LOGIN;
+  const password = env.DATAFORSEO_PASSWORD;
+  const out = await buildCollections(
+    JSON.parse(snap.files[MOVIES]) as Movie[],
+    JSON.parse(snap.files[COLLECTIONS]) as MovieCollection[],
+    snap.files[IDEAS] ? (JSON.parse(snap.files[IDEAS]) as Idea[]) : [],
+    {
+      now,
+      perRun: Number(env.COLLECTIONS_PER_RUN) || 3,
+      minFilms: Number(env.COLLECTION_MIN_FILMS) || 6,
+      minFilmsForIdea: 3,
+      minVolume: Number(env.COLLECTION_MIN_VOLUME) || 100,
+      location: env.DATAFORSEO_LOCATION_NAME || 'Australia',
+      volumes: login && password ? (kw) => searchVolumes(login, password, kw, Number(env.DATAFORSEO_LOCATION) || 2036) : null,
+      copy: (name, films) => writeCollectionCopy(env.ANTHROPIC_API_KEY, env.ANTHROPIC_MODEL, name, films),
+      budget: { left: CALL_BUDGET },
+      maxYear: newest,
+    },
+  );
+  const changes: Record<string, string> = { [COLLECTIONS_REPORT]: out.report };
+  if (out.changed) changes[IDEAS] = JSON.stringify(out.ideas, null, 1) + '\n';
+  if (out.created.length) changes[COLLECTIONS] = JSON.stringify(out.collections, null, 1) + '\n';
+  // New collection pages change the site, so those commits run CI; report-only commits skip it.
+  const title = out.created.length ? `Pipeline: add ${out.created.length} collection page(s)` : `Pipeline (collections): update ideas [skip ci]`;
+  const commit = await save(repo, snap.sha, changes, `${title}\n\n${out.log.join('\n')}`, dryRun, out.log);
+  return {
+    job: 'collections' as const,
+    dryRun,
+    commit,
+    log: out.log,
+    added: out.created,
+    queued: [] as string[],
+    moviesChanged: false,
+    queueChanged: false,
+    callsLeft: null,
+    report: out.report,
+  };
+}
 
 async function catalogue(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean, newest: number | null) {
   const login = env.DATAFORSEO_LOGIN;
