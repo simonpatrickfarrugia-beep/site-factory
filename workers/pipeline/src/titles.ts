@@ -86,14 +86,30 @@ export function titleKey(title: string): string {
 
 /**
  * Pick the official trailer from YouTube search results: a trailer whose title names the film.
- * Prefers results that don't look like fan-made, reaction or "concept" videos.
+ * Skips fan-made, concept and parody videos. For older films it guards against remakes and re-releases
+ * that share the title (e.g. Aladdin 1992 vs 2019): a result naming a different year, or with
+ * "in theaters" release wording for a film that's years old, is rejected. Prefers titles with the film's
+ * year, then classic-trailer channels, then "official".
  */
-export function pickTrailer<T extends { title: string; channelTitle: string }>(results: T[], name: string): T | null {
+export function pickTrailer<T extends { title: string; channelTitle: string }>(results: T[], name: string, year?: string | number | null): T | null {
   const want = titleKey(name);
-  const ok = results.filter(
-    (r) => isTrailer(r.title) && titleKey(r.title).includes(want) && !/concept|fan[- ]made|fanmade|parody|recut|\bai\b/i.test(r.title),
-  );
-  return ok.find((r) => /official/i.test(r.title)) ?? ok[0] ?? null;
+  const y = Number(year) || null;
+  const thisYear = new Date().getUTCFullYear();
+  const ok = results.filter((r) => {
+    if (!isTrailer(r.title) || !titleKey(r.title).includes(want)) return false;
+    if (/concept|fan[- ]made|fanmade|parody|recut|\bai\b|live[- ]action/i.test(r.title)) return false;
+    if (y) {
+      const years = [...r.title.matchAll(/\b(19[2-9]\d|20[0-4]\d)\b/g)].map((m) => Number(m[1]));
+      if (years.length && !years.some((x) => Math.abs(x - y) <= 1)) return false;
+      if (thisYear - y > 3 && /in theat(?:re|er)s|coming soon|now playing/i.test(r.title)) return false;
+    }
+    return true;
+  });
+  const score = (r: T) =>
+    (y && new RegExp(`\\b${y}\\b`).test(r.title) ? 4 : 0) +
+    (/classic trailers/i.test(`${r.title} ${r.channelTitle}`) ? 2 : 0) +
+    (/official/i.test(r.title) ? 1 : 0);
+  return [...ok].sort((a, b) => score(b) - score(a))[0] ?? null;
 }
 
 export function slugify(name: string, year: string | null): string {

@@ -160,7 +160,7 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
     copy: (m: Parameters<typeof writeCopy>[2]) => writeCopy(env.ANTHROPIC_API_KEY, env.ANTHROPIC_MODEL, m),
     trailer: async (title: string, year: string | null) => {
       if (!env.YOUTUBE_API_KEY) throw new Error('Secret YOUTUBE_API_KEY is not set');
-      const hit = pickTrailer(await youtubeSearch(env.YOUTUBE_API_KEY, `${title} ${year ?? ''} official trailer`), title);
+      const hit = pickTrailer(await youtubeSearch(env.YOUTUBE_API_KEY, `${title} ${year ?? ''} official trailer`), title, year);
       return hit ? { youtubeId: hit.youtubeId, title: hit.title } : null;
     },
     budget: { left: CALL_BUDGET },
@@ -347,7 +347,7 @@ async function statsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boo
   const stats = buildStats({ now, period: ga4 ? period : null, gscPeriod: gsc ? gscPeriod : null, notes, ga4, gsc });
   log.unshift(`Stats: ${stats.totals.views} views, ${Object.values(stats.totals.cta).reduce((a, b) => a + b, 0)} CTA clicks, ${stats.totals.gscClicks} Google clicks.`);
   const commit = await save(repo, snap.sha, { [STATS]: JSON.stringify(stats, null, 1) + '\n' }, `Pipeline: refresh dashboard stats\n\n${log.join('\n')}`, dryRun, log);
-  return { job: 'stats' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null };
+  return { job: 'stats' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report: undefined as string | undefined };
 }
 
 async function save(repo: Repo, sha: string, changes: Record<string, string>, message: string, dryRun: boolean, log: string[]) {
