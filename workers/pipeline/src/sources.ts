@@ -91,6 +91,18 @@ export interface Copy {
 }
 
 /** Claude writes an original tagline and summary (same brief the Make scenario used). */
+/** Set when the API key isn't scoped to a workspace (Anthropic then needs the workspace named on each request). */
+let anthropicWorkspace: string | undefined;
+export const setAnthropicWorkspace = (id: string | undefined) => {
+  anthropicWorkspace = id?.trim() || undefined;
+};
+const claudeHeaders = (apiKey: string): Record<string, string> => ({
+  'x-api-key': apiKey,
+  'anthropic-version': '2023-06-01',
+  'content-type': 'application/json',
+  ...(anthropicWorkspace ? { 'anthropic-workspace-id': anthropicWorkspace } : {}),
+});
+
 export async function writeCopy(apiKey: string, model: string, m: OmdbMovie): Promise<Copy> {
   const prompt = [
     `Film: ${m.Title} (${m.Year})`,
@@ -108,7 +120,7 @@ export async function writeCopy(apiKey: string, model: string, m: OmdbMovie): Pr
 
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
-    headers: { 'x-api-key': apiKey, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
+    headers: claudeHeaders(apiKey),
     body: JSON.stringify({ model, max_tokens: 400, messages: [{ role: 'user', content: prompt }] }),
   });
   if (!res.ok) throw new Error(`Claude: HTTP ${res.status} ${(await res.text()).slice(0, 200)}`);
@@ -146,7 +158,7 @@ export async function writeCollectionCopy(
   ].join('\n');
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
-    headers: { 'x-api-key': apiKey, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
+    headers: claudeHeaders(apiKey),
     body: JSON.stringify({ model, max_tokens: 700, messages: [{ role: 'user', content: prompt }] }),
   });
   if (!res.ok) throw new Error(`Claude: HTTP ${res.status} ${(await res.text()).slice(0, 200)}`);

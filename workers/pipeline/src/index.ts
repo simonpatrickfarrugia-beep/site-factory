@@ -11,7 +11,7 @@
  */
 import { enrich, intake, maxYear, recheck, type QueueItem, type Movie, type Result, type State } from './jobs';
 import { commitFiles, readFiles, StaleError, type Repo } from './github';
-import { channelFeed, omdbLookup, omdbYearsForTitle, writeCollectionCopy, writeCopy } from './sources';
+import { channelFeed, omdbLookup, omdbYearsForTitle, setAnthropicWorkspace, writeCollectionCopy, writeCopy } from './sources';
 import { buildCollections, type Idea, type MovieCollection } from './collections';
 import { googleAccessToken, searchAnalytics, youtubeSearch } from './google';
 import { buildDemandReport } from './demand';
@@ -37,6 +37,7 @@ export interface Env {
   BRANCH: string;
   CHANNELS: string; // JSON array of YouTube channel IDs
   ANTHROPIC_MODEL: string;
+  ANTHROPIC_WORKSPACE_ID?: string; // only needed when the API key isn't scoped to a workspace
   ENRICH_LIMIT: string;
   RECHECK_LIMIT: string;
   GSC_SITE: string; // Search Console property, e.g. https://www.movietrailer.channel/
@@ -118,6 +119,7 @@ const NEEDS: Record<Job, (keyof Env)[]> = {
 
 export async function run(job: Job, env: Env, dryRun: boolean) {
   for (const k of NEEDS[job]) if (!env[k]) throw new Error(`Secret ${k} is not set`);
+  setAnthropicWorkspace(env.ANTHROPIC_WORKSPACE_ID);
   const [owner, name] = env.REPO.split('/');
   const repo: Repo = { token: env.GITHUB_TOKEN, owner, name, branch: env.BRANCH };
 
