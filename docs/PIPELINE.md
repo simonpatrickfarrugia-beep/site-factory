@@ -101,3 +101,9 @@ Matching is strict: the cleaned title must equal OMDb's title, and the years mus
 - Label channels: `CHANNELS` in `workers/pipeline/wrangler.jsonc` (Arrow and Shout! Factory still to add once their channel IDs are confirmed).
 - Writing brief for taglines/summaries: `writeCopy` in `workers/pipeline/src/sources.ts`.
 - Logs: trailer-pipeline → Observability (each run logs a one-line summary).
+
+## Running a job on demand
+
+Ask Claude in chat ("publish more films now", "run the demand report"). Claude starts the `pipeline-run` GitHub Action
+(`.github/workflows/pipeline-run.yml`, job + dry-run inputs), which calls the Worker with the `PIPELINE_RUN_KEY` repo secret
+and reports the result as an annotation. Nobody needs to open `/run/...` links by hand.
