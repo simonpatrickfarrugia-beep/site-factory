@@ -108,8 +108,8 @@ const updated = stats.generatedAt
 
   {stats.daily.length > 0 && (
     <section class="hq__panel" aria-label="Visits per day">
-      <h2 class="hq__h2">Visits per day <span class="legend"><i class="sw sw--v"></i>visits <i class="sw sw--c"></i>days with Amazon clicks</span></h2>
-      <svg viewBox={`0 0 ${W} ${H + 18}`} class="chart" role="img" aria-label="Visits per day">
+      <h2 class="hq__h2">Visits per day <span class="legend"><i class="sw sw--v"></i>visits <i class="sw sw--c"></i>day had Amazon clicks</span></h2>
+      <svg viewBox={`0 0 ${W} ${H + 8}`} preserveAspectRatio="none" class="chart" role="img" aria-label="Visits per day">
         {stats.daily.map((d, i) => {
           const h = Math.max(1, (d.views / maxViews) * H);
           const x = i * (bw + gap);
@@ -117,13 +117,12 @@ const updated = stats.generatedAt
             <g>
               <title>{`${fmtDate(d.date)}: ${d.views} visits, ${d.cta} clicks`}</title>
               <rect x={x} y={H - h} width={bw} height={h} rx="1.5" class="bar" />
-              {d.cta > 0 && <circle cx={x + bw / 2} cy={H - h - 5} r="2.6" class="dot" />}
+              {d.cta > 0 && <rect x={x} y={H + 3} width={bw} height="4" rx="1" class="dot" />}
             </g>
           );
         })}
-        <text x="0" y={H + 14} class="axis">{fmtDate(stats.daily[0].date)}</text>
-        <text x={W} y={H + 14} class="axis" text-anchor="end">{fmtDate(stats.daily[stats.daily.length - 1].date)}</text>
       </svg>
+      <div class="axis"><span>{fmtDate(stats.daily[0].date)}</span><span>{fmtDate(stats.daily[stats.daily.length - 1].date)}</span></div>
     </section>
   )}
 
@@ -183,6 +182,7 @@ const updated = stats.generatedAt
         ))}
       </ol>
     )}
+    <button class="more" type="button" data-more hidden>Show more</button>
   </section>
 
   <p class="hq__foot">Visits and clicks: Google Analytics. Searches: Google Search Console (about 3 days behind). Refreshed every morning. Amazon earnings aren't per page; see your Associates reports for those.</p>
@@ -193,7 +193,8 @@ const updated = stats.generatedAt
     var list = document.querySelector('[data-rows]');
     if (!list) return;
     var items = Array.prototype.slice.call(list.children);
-    var tab = 'movie', q = '', sort = 'views';
+    var tab = 'movie', q = '', sort = 'views', limit = 40;
+    var more = document.querySelector('[data-more]');
     var sortFor = { fix: 'views', rising: 'growth', google: 'impr' };
     function apply() {
       var shown = items.filter(function (li) {
@@ -203,18 +204,21 @@ const updated = stats.generatedAt
       });
       shown.sort(function (a, b) { return Number(b.dataset[sort]) - Number(a.dataset[sort]); });
       items.forEach(function (li) { li.hidden = true; });
-      shown.forEach(function (li) { li.hidden = false; list.appendChild(li); });
+      shown.forEach(function (li, i) { li.hidden = i >= limit; list.appendChild(li); });
+      more.hidden = shown.length <= limit;
+      more.textContent = 'Show more (' + (shown.length - limit) + ' left)';
     }
+    more.addEventListener('click', function () { limit += 40; apply(); });
     document.querySelectorAll('[data-tab]').forEach(function (b) {
       b.addEventListener('click', function () {
-        tab = b.dataset.tab;
+        tab = b.dataset.tab; limit = 40;
         document.querySelectorAll('[data-tab]').forEach(function (x) { x.setAttribute('aria-selected', String(x === b)); });
         document.querySelectorAll('[data-help]').forEach(function (p) { p.hidden = p.dataset.help !== tab; });
         if (sortFor[tab]) { sort = sortFor[tab]; document.querySelector('[data-sort]').value = sort; }
         apply();
       });
     });
-    document.querySelector('[data-search]').addEventListener('input', function (e) { q = e.target.value.trim().toLowerCase(); apply(); });
+    document.querySelector('[data-search]').addEventListener('input', function (e) { q = e.target.value.trim().toLowerCase(); limit = 40; apply(); });
     document.querySelector('[data-sort]').addEventListener('change', function (e) { sort = e.target.value; apply(); });
     apply();
   })();
@@ -240,11 +244,13 @@ const updated = stats.generatedAt
   .legend { color: var(--muted); font-size: 0.78rem; font-weight: 400; display: inline-flex; gap: 6px; align-items: center; }
   .sw { display: inline-block; width: 9px; height: 9px; border-radius: 2px; }
   .sw--v { background: color-mix(in srgb, var(--paper) 55%, transparent); }
-  .sw--c { background: var(--color-accent); border-radius: 50%; margin-left: 6px; }
-  .chart { width: 100%; height: auto; display: block; }
+  .sw--c { background: var(--color-accent); height: 4px; margin-left: 6px; }
+  .chart { width: 100%; height: 140px; display: block; }
+  @media (min-width: 52rem) { .chart { height: 180px; } }
   .bar { fill: color-mix(in srgb, var(--paper) 55%, transparent); }
   .dot { fill: var(--color-accent); }
-  .axis { fill: var(--muted); font-size: 11px; }
+  .axis { display: flex; justify-content: space-between; color: var(--muted); font-size: 0.75rem; margin-top: 4px; }
+  .more { margin-top: var(--space-2); width: 100%; font: inherit; font-weight: 600; color: var(--paper); background: transparent; border: 1px solid var(--line); border-radius: var(--radius); padding: 0.6rem; cursor: pointer; }
   .tabs { display: flex; gap: var(--space-1); overflow-x: auto; padding-bottom: var(--space-2); scrollbar-width: none; }
   .tabs button { flex: none; font: inherit; font-size: var(--step--1); font-weight: 600; color: var(--paper); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 0.45rem 0.85rem; cursor: pointer; }
   .tabs button[aria-selected='true'] { background: var(--color-accent); color: var(--ink); border-color: var(--color-accent); }
