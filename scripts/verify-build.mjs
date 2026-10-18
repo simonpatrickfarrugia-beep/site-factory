@@ -22,6 +22,19 @@ if (existsSync(listPath)) {
   notice(`Checked ${urls.length} required URLs`);
 }
 
+// Permanent redirects (dist/_redirects): each target must be a real page, so no old URL ends in a 404.
+const redirectsPath = join(dist, '_redirects');
+if (existsSync(redirectsPath)) {
+  const rules = readFileSync(redirectsPath, 'utf8').split('\n').map((l) => l.trim()).filter((l) => l && !l.startsWith('#'));
+  for (const rule of rules) {
+    const [from, to, code] = rule.split(/\s+/);
+    if (!to || !['301', '308'].includes(code ?? '')) problems.push(`_redirects: "${rule}" must be "from to 301"`);
+    else if (to.startsWith('/') && !existsSync(fileFor(to))) problems.push(`_redirects: ${from} points to missing page ${to}`);
+    if (from && existsSync(fileFor(from))) problems.push(`_redirects: ${from} still has its own page (the redirect would never run)`);
+  }
+  notice(`Checked ${rules.length} redirect(s)`);
+}
+
 const walk = (dir) => readdirSync(dir).flatMap((f) => {
   const p = join(dir, f);
   return statSync(p).isDirectory() ? walk(p) : p.endsWith('.html') ? [p] : [];
