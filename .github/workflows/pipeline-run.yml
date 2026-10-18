@@ -1,0 +1,42 @@
+# Run a trailer-pipeline job on demand (Claude triggers this from chat with `gh workflow run`).
+# The schedules in workers/pipeline/wrangler.jsonc still do the regular runs.
+name: pipeline-run
+on:
+  workflow_dispatch:
+    inputs:
+      job:
+        description: Job to run
+        type: choice
+        options: [intake, enrich, recheck, demand, catalogue, collections]
+        default: enrich
+      dry:
+        description: Dry run (nothing saved)
+        type: boolean
+        default: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Run ${{ inputs.job }}
+        env:
+          KEY: ${{ secrets.PIPELINE_RUN_KEY }}
+          JOB: ${{ inputs.job }}
+          DRY: ${{ inputs.dry && '1' || '0' }}
+        run: |
+          url="https://trailer-pipeline.simonpatrickfarrugia.workers.dev/run/${JOB}?key=${KEY}&format=json"
+          [ "$DRY" = "1" ] && url="${url}&dry=1"
+          code=$(curl -sS -o out.json -w '%{http_code}' --max-time 240 "$url")
+          python3 - <<'PY'
+          import json
+          try:
+              d = json.load(open('out.json'))
+          except Exception:
+              d = {'error': open('out.json').read()[:500]}
+          d.pop('report', None)
+          msg = d.get('error') or ' | '.join(d.get('log', []))
+          print(json.dumps(d, indent=1))
+          level = 'error' if d.get('error') else 'notice'
+          print(f"::{level} title=pipeline::" + msg.replace('\n', ' ')[:900])
+          PY
+          [ "$code" = "200" ]
