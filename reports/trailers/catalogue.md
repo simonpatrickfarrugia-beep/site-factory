@@ -1,8 +1,8 @@
 # Trailer channel catalogue candidates
 
-Updated 2026-10-18. Monthly Google searches in United States for "<film> movie" + "<film> trailer". Any year; films still in cinemas wait until they can be rented or streamed.
+Updated 2026-10-19. Monthly Google searches in United States for "<film> movie" + "<film> trailer". Any year; films still in cinemas wait until they can be rented or streamed.
 
-206 waiting · 20 sent to the pipeline · 1 already on the site · 0 skipped.
+176 waiting · 50 sent to the pipeline · 1 already on the site · 0 skipped.
 
 Add films by chat: "add candidates: <theme or list>". The weekly run queues the most-searched ones.
 
@@ -31,36 +31,6 @@ Add films by chat: "add candidates: <theme or list>". The weekly run queues the 
 
 | Film | Searches/mo | Theme |
 |---|---:|---|
-| Apocalypse Now (1979) | 246,720 | 70s New Hollywood |
-| Mary Poppins (1964) | 246,720 | Family classics |
-| The Sandlot (1993) | 246,720 | Family classics |
-| Casino Royale (2006) | 246,480 | 2000s crowd-pleasers |
-| The Exorcist (1973) | 202,600 | 70s horror |
-| Finding Nemo (2003) | 202,300 | 2000s crowd-pleasers |
-| The Big Lebowski (1998) | 202,000 | 90s comedy |
-| Ocean's Eleven (2001) | 201,880 | 2000s crowd-pleasers |
-| The Wizard of Oz (1939) | 201,720 | Classic Hollywood |
-| Taxi Driver (1976) | 201,590 | 70s New Hollywood |
-| Willy Wonka & the Chocolate Factory (1971) | 201,590 | Family classics |
-| National Lampoon's Christmas Vacation (1989) | 201,320 | 80s comedy |
-| Scream (1996) | 167,400 | 90s thrillers |
-| The Usual Suspects (1995) | 166,000 | 90s thrillers |
-| Fargo (1996) | 165,720 | 90s thrillers |
-| Jerry Maguire (1996) | 165,720 | 90s favourites |
-| Braveheart (1995) | 165,720 | 90s favourites |
-| Gone with the Wind (1939) | 165,720 | Classic Hollywood |
-| Planes, Trains & Automobiles (1987) | 165,590 | 80s comedy |
-| The Godfather (1972) | 165,590 | 70s New Hollywood |
-| Raiders of the Lost Ark (1981) | 165,480 | 80s action |
-| 12 Angry Men (1957) | 165,390 | Classic Hollywood |
-| The Good, the Bad and the Ugly (1966) | 165,260 | Westerns |
-| High Noon (1952) | 165,090 | Westerns |
-| Predator (1987) | 137,900 | 80s action |
-| Ratatouille (2007) | 136,600 | Family classics |
-| They Live (1988) | 136,300 | 80s horror |
-| Psycho (1960) | 136,300 | Classic Hollywood |
-| 2001: A Space Odyssey (1968) | 135,880 | Classic Hollywood |
-| Ace Ventura: Pet Detective (1994) | 135,720 | 90s comedy |
 | Sleepless in Seattle (1993) | 135,590 | 90s favourites |
 | Shaun of the Dead (2004) | 135,590 | 2000s crowd-pleasers |
 | Citizen Kane (1941) | 135,480 | Classic Hollywood |
@@ -91,3 +61,33 @@ Add films by chat: "add candidates: <theme or list>". The weekly run queues the 
 | Carrie (1976) | 91,380 | 70s horror |
 | Escape from New York (1981) | 91,220 | 80s action |
 | Weird Science (1985) | 91,220 | 80s comedy |
+| The Dark Crystal (1982) | 91,090 | 80s sci-fi & fantasy |
+| Galaxy Quest (1999) | 90,980 | 90s comedy |
+| The Great Escape (1963) | 90,980 | Classic Hollywood |
+| Crouching Tiger, Hidden Dragon (2000) | 90,980 | Hong Kong action |
+| Wayne's World (1992) | 90,890 | 90s comedy |
+| Austin Powers: International Man of Mystery (1997) | 90,760 | 90s comedy |
+| Harry Potter and the Sorcerer's Stone (2001) | 90,760 | 2000s crowd-pleasers |
+| Vertigo (1958) | 90,760 | Classic Hollywood |
+| Some Like It Hot (1959) | 90,710 | Classic Hollywood |
+| Dune (1984) | 78,400 | 80s sci-fi & fantasy |
+| Shrek (2001) | 76,400 | 2000s crowd-pleasers |
+| The Notebook (2004) | 76,400 | 2000s crowd-pleasers |
+| E.T. the Extra-Terrestrial (1982) | 75,900 | 80s sci-fi & fantasy |
+| Clueless (1995) | 75,600 | 90s comedy |
+| Tombstone (1993) | 75,600 | Westerns |
+| The Game (1997) | 74,880 | 90s thrillers |
+| Gladiator (2000) | 74,880 | 90s favourites |
+| Happy Gilmore (1996) | 74,720 | 90s comedy |
+| Hot Fuzz (2007) | 74,590 | 2000s crowd-pleasers |
+| Army of Darkness (1992) | 74,390 | Cult classics |
+| The Deer Hunter (1978) | 74,320 | 70s New Hollywood |
+| Dr. Strangelove (1964) | 74,260 | Classic Hollywood |
+| The Bourne Identity (2002) | 74,140 | 2000s crowd-pleasers |
+| A Nightmare on Elm Street (1984) | 74,110 | 80s horror |
+| The Lord of the Rings: The Two Towers (2002) | 74,090 | 2000s crowd-pleasers |
+| Jumanji (1995) | 62,400 | Family classics |
+| Fight Club (1999) | 61,800 | 90s favourites |
+| Matilda (1996) | 61,800 | Family classics |
+| Friday the 13th (1980) | 61,380 | 80s horror |
+| Akira (1988) | 61,220 | Cult classics |
