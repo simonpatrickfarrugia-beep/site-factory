@@ -9,6 +9,10 @@
     "directory": "../../dist",
     "html_handling": "drop-trailing-slash",
     "not_found_handling": "404-page"
-  }
-  // Preview on victours.<subdomain>.workers.dev. Custom domain added at launch.
+  },
+  // Live domains. The bare domain is canonical; www is redirected to it by a Cloudflare Redirect Rule (dashboard).
+  "routes": [
+    { "pattern": "victours.com.au", "custom_domain": true },
+    { "pattern": "www.victours.com.au", "custom_domain": true }
+  ]
 }

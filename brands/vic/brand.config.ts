@@ -4,7 +4,7 @@ export default defineBrand({
   slug: 'vic',
   name: 'Vic Tours',
   domain: 'victours.com.au',
-  launched: false, // preview only: noindex + robots Disallow until launch
+  launched: true, // live on victours.com.au since 20 Oct 2026
 
   theme: 'roadtrip',
   // Australian road signage: highway-sign green for places, tourist-sign brown for things to do.
