@@ -1737,7 +1737,7 @@
      "/soundtrack/[film-slug] (tracklist, composer, label, Discogs pressings with live price data)",
      "/composer/[name] (filmography plus soundtrack releases per film)",
      "/composer/[name]/[format] for vinyl, CD and digital editions where data exists",
-     "/label/[label-name] (soundtrack catalogue by label, e.g. Var\u00e8se Sarabande, Intrada)",
+     "/label/[label-name] (soundtrack catalogue by label, e.g. Varèse Sarabande, Intrada)",
      "/soundtracks-by-year/[year] (release year indexes built from MusicBrainz dates)"
     ],
     "risks": [
@@ -1772,13 +1772,13 @@
    "name": "Australia"
   },
   "addedAt": "2026-10-19T11:30:00Z",
-  "status": "new",
+  "status": "scored",
   "score": {
-   "overall": 59,
+   "overall": 60,
    "demand": 52,
    "money": 47,
    "ease": 95,
-   "fit": 38,
+   "fit": 42,
    "totalVolume": 353780,
    "keywords": 246,
    "medianCpc": 0.63,
@@ -1950,43 +1950,44 @@
     }
    ],
    "judgement": {
-    "fit": 38,
-    "verdict": "The data and affiliate pieces exist, but the keyword set covers only about four towns, and the volumes are US figures that look inflated and duplicated across variants, so the real Australian demand is probably much smaller. Build it only as a small, curated Melbourne day-trip site, not as hundreds of programmatic town pages.",
-    "angle": "victours.com.au as a 'day trips from Melbourne' guide: 15-25 hand-verified destination hubs (Ballarat, Daylesford, Phillip Island, Great Ocean Road, Bellarine, Mornington, Yarra Valley, Grampians), each with a curated 'things to do' list enriched from OSM and open data, then tour and accommodation links. Add the long-tail town pages only after the flagship hubs earn traffic and show that the data quality holds.",
+    "fit": 42,
+    "verdict": "The demand is real but concentrated: most of the volume sits in three towns (Ballarat, Phillip Island, Daylesford), and the Ballarat variants share one figure, so the true unique volume is lower than the list suggests. Hundreds of small-town hub pages will mostly be thin, since OSM and open data have sparse, often unnamed POIs in small towns, so this only works as a small, curated set of pages.",
+    "angle": "vicours.com.au-style 'Melbourne day trips' site, or vic tours: 30-60 deep hub pages for the towns where data is rich (Ballarat, Phillip Island, Daylesford, Great Ocean Road towns, Mornington Peninsula, Yarra Valley), each with verified attractions, opening info, and a route map. Do not build a page for every Victorian town. Add a Melbourne-departure filter and drive times, which generic lists lack and where your local knowledge helps.",
     "dataSources": [
-     "OpenStreetMap via Overpass API (tourism=attraction/viewpoint/museum/zoo, leisure=park/nature_reserve, natural=*; ODbL attribution and share-alike obligations apply)",
-     "Victorian open data portal (data.vic.gov.au): parks, trails, heritage and public facility datasets (check each dataset's licence, typically CC BY)",
-     "Wikidata/Wikipedia for town descriptions and notable-site cross-checks",
-     "Manual founder verification of opening hours, prices and access, since OSM is patchy on hours and pricing"
+     "OpenStreetMap via Overpass (tourism=*, historic=*, natural=* tags; ODbL, attribution and share-alike required)",
+     "data.vic.gov.au open datasets (check each licence, typically CC BY 4.0)",
+     "Parks Victoria and Phillip Island Nature Parks published visitor info (manual verification, not scraping)",
+     "ABS/town population and location data for town selection",
+     "Viator Partner API and GetYourGuide Partner API (product feeds, not scraped descriptions)"
     ],
     "monetisation": [
-     "Viator Partner Program (commission on tours; API access requires approval and terms restrict some product-data reuse)",
-     "GetYourGuide Partner Program (commission on activities)",
-     "Klook affiliate programme (Asia-Pacific activities, useful for some Victorian attractions)",
-     "Booking.com or Expedia affiliate for accommodation near each destination",
-     "Display ads (AdSense first; premium networks only after sustained traffic)",
-     "Direct listing or lead-gen deals with local operators, such as day-tour or winery bookings, if they can be negotiated"
+     "Viator affiliate tours and tickets (Great Ocean Road and Phillip Island products fit best)",
+     "GetYourGuide partner programme",
+     "Klook affiliate programme for Victoria attractions",
+     "Booking.com or similar affiliate for accommodation on town pages",
+     "Direct booking links to Phillip Island Nature Parks or similar operators where an affiliate is unavailable",
+     "Display ads only after sustained traffic; at roughly USD 0.63 CPC, display RPM will be low"
     ],
     "pageTypes": [
-     "/day-trips-from-melbourne/[destination]/ hub: overview, getting there, verified top 10, tour widget, accommodation",
-     "/[destination]/things-to-do/ and /[destination]/[category]/ (e.g. /phillip-island/wildlife/) only where there are 8+ verified items",
-     "/tours/[tour-type]/ comparison pages (e.g. Great Ocean Road tours) with clearly labelled affiliate links",
-     "/[destination]/getting-there/ utility pages built from timetables and distance data"
+     "/[town]/ hub: top attractions, day-trip options, drive time from Melbourne, map",
+     "/[town]/[attraction]/ for attractions with enough verified data (hours, address, price, one local tip written by the founder)",
+     "/day-trips-from-melbourne/[destination]/ for tours and itineraries",
+     "/things-to-do-in-[town]-[month]/ only where seasonal content is real (e.g. penguin parade seasons, not generated filler)"
     ],
     "risks": [
-     "The keyword volumes are US-based, identical across many variants (e.g. 8100/mo for every Ballarat variant), and likely reflect parent-topic clustering, not real AU demand. Verify with Australian Google Ads data before building.",
-     "Phillip Island Penguin Parade is run by Phillip Island Nature Parks, which controls its booking, pricing and branding. Affiliate potential there is narrow and the brand is hard to rank against.",
-     "The SERPs for 'things to do in X' are dominated by Viator, GetYourGuide, TripAdvisor, Lonely Planet and council sites. Thin lists will not beat them.",
-     "Google's scaled content abuse and helpful-content systems will penalise mass-generated AI copy with no unique data; each page needs verified, locally specific content.",
-     "OSM data quality varies: unnamed features, closed businesses, wrong categories and stale hours. Without manual verification, pages will be inaccurate and possibly misleading.",
-     "Licence obligations: OSM requires ODbL attribution and share-alike for derived databases; Viator and GYG terms restrict scraping and reuse of product data; check every source's terms before automating.",
-     "Affiliate disclosure must be clear under ACCC and Australian Consumer Law expectations, and any price or hours claims must be accurate.",
-     "Seasonality and tourism shocks (bushfires, COVID-style closures) hit traffic and commissions sharply."
+     "Thin or near-empty town pages risk Google's scaled content and helpful-content penalties, even with real data behind them",
+     "Keyword volumes are duplicated across variants and kd figures are inconsistent (e.g. same term shows kd 4 and kd 14); verify in a live tool before committing",
+     "OSM ODbL share-alike and attribution obligations may constrain how you combine or license the data",
+     "Google Places and some tourism APIs restrict caching and storage; check terms before storing any content",
+     "Viator, GetYourGuide and Klook affiliate terms restrict scraped or reused descriptions and prohibit some placement styles; use only official feed fields",
+     "Hours, prices and closures change; stale listings damage trust and can cause users to arrive at closed attractions",
+     "Penguin Parade and Great Ocean Road intent is transactional and well served by operators and OTAs, so ranking against them needs strong differentiation",
+     "Low CPC means display ads will earn little; affiliate conversion rates on day-trip content are the real test"
     ]
    },
    "costUsd": 0.114
   },
-  "scoredAt": "2026-10-19T11:27:40.895Z",
+  "scoredAt": "2026-10-19T11:29:41.104Z",
   "location": "Australia",
   "error": null
  },
@@ -2007,7 +2008,7 @@
    "name": "Australia"
   },
   "addedAt": "2026-10-19T11:30:00Z",
-  "status": "new",
+  "status": "scored",
   "score": {
    "overall": 66,
    "demand": 63,
@@ -2186,42 +2187,44 @@
    ],
    "judgement": {
     "fit": 38,
-    "verdict": "The keyword list is mostly branded hotel names (Yarra Valley Lodge, Mantra Lorne, Lake House) that Google will send to the hotels and big OTAs, so it isn't a real opportunity. The generic town terms (Daylesford, Phillip Island, Lorne) are winnable but small, and the volumes are US-search figures that overstate Australian demand. Only a narrow, data-differentiated town guide has a chance.",
-    "angle": "A Victoria 'stays near' guide covering about 25-30 towns that each have 10+ accommodation listings. Each page is /stay/[town-vic] with a computed table of properties and attributes (distance to beach, winery, station or town centre, bed count, property type) from OSM, plus live Booking/Expedia prices and ratings where the feed allows. Skip hotel-brand pages entirely.",
+    "verdict": "Most of the volume is branded hotel names (Yarra Valley Lodge, Mantra Lorne, Lake House, Balgownie), which a generic town site can't win, and the same figures repeat across close variants, so real unique demand is lower than it looks. The only workable opportunity is generic 'accommodation in [town]' queries in smaller towns, where you'd compete with Booking.com, Expedia and TripAdvisor on thin affiliate margins.",
+    "angle": "A 'Places to stay in [town], Victoria' guide covering about 60-100 Victorian towns with 5+ OSM accommodation entries, each page showing a live-priced, filterable list by type (hotel, motel, B&B, guesthouse, caravan park, holiday rental) with a local context block (distance to attractions, nearest train or bus, seasonal notes). Target the 'accommodation [town]' and 'places to stay [town]' head terms and skip branded hotel pages entirely.",
     "dataSources": [
-     "OpenStreetMap via Overpass API (tourism=hotel/motel/guest_house/caravan_site/alpine_hut; ODbL, attribution required)",
-     "Booking.com Affiliate Partner / Demand API (approval required; prices, ratings, availability)",
-     "Expedia Group Rapid/EPS affiliate feed (approval required)",
-     "Victorian open data (data.vic.gov.au) for town boundaries and locality points",
-     "Wikidata/Wikipedia for town descriptions (CC BY-SA; attribution required)"
+     "OpenStreetMap via Overpass API (tourism=hotel, motel, guest_house, hostel, chalet, caravan_site, alpine_hut; ODbL, so attribute and share-alike the database)",
+     "Booking.com Affiliate Partner API (prices, availability, review scores; approval required and display limits apply)",
+     "Expedia Group Rapid/affiliate feed (prices and property IDs)",
+     "Parks Victoria open data and campground datasets (CC BY)",
+     "data.vic.gov.au datasets for town boundaries and population (CC BY)",
+     "ABS census population by suburb/locality for town size and sorting"
     ],
     "monetisation": [
-     "Booking.com affiliate commission (Booking Partner programme)",
-     "Expedia Group affiliate commission",
-     "Agoda affiliate programme as a secondary feed",
-     "Display ads (Mediavine or Ezoic once traffic thresholds are met; low RPM for travel at small scale)",
-     "Direct referral or lead forms for holiday rental management companies, if local ones exist"
+     "Booking.com Affiliate Partner programme (commission on bookings made through your links)",
+     "Expedia Group affiliate programme (Hotels.com, Expedia links)",
+     "Agoda affiliate programme for lower-cost stays",
+     "Viator or GetYourGuide affiliate links for tours and day trips, which suits the Vic Tours angle",
+     "Display ads (Ezoic, Raptive or Mediavine) only once traffic is high enough to qualify; not a realistic early revenue source"
     ],
     "pageTypes": [
-     "/stay/[town]-vic: all accommodation in a town, with the computed attribute table",
-     "/stay/[town]-vic/[type]: e.g. hotels, B&Bs, cabins, caravan parks, per town (only where 10+ listings exist)",
-     "/stay-near/[landmark]-vic: e.g. stays near Great Ocean Road, Phillip Island Penguin Parade, Grampians (only where data is genuinely distinct)",
-     "Index hub /victoria/ with town list ranked by listing count and distance data"
+     "/places-to-stay/[town]/ for each town with enough OSM entries",
+     "/places-to-stay/[town]/[type]/ for example /lorne/motels/, /daylesford/bnb/, /phillip-island/caravan-parks/",
+     "/[town]/pet-friendly/ or /[town]/family/ filtered views, only where the API supplies the attribute",
+     "/[region]/ hub pages (Gippsland, Goldfields, Great Ocean Road) linking to town pages",
+     "Avoid /[hotel-name]/ pages: they're branded, you won't rank, and they invite trademark issues"
     ],
     "risks": [
-     "Thin-content and scaled-content penalties: a list plus affiliate links with AI copy is exactly what Google's spam policies target; each page needs unique computed facts, not just generated prose",
-     "Booking.com and Expedia feed approval can take weeks and may reject a new site with little traffic",
-     "US search volume and USD CPC do not reflect Australian search; validate with Google Keyword Planner set to Australia",
-     "Brand-name queries (Lake House, Balgownie, Mantra) are controlled by the hotels and OTAs; targeting them invites trademark issues and gives no ranking chance",
-     "OSM data quality varies by town; rural listings can be stale or missing, causing empty or wrong pages",
-     "Crowded affiliate SERPs with Booking, Expedia, TripAdvisor, Wotif and Hotels.com; a small site competes on specificity, not authority",
-     "Seasonal demand (Victorian ski, coast and wine peaks) and low RPM make revenue lumpy",
-     "Booking.com affiliate terms restrict displaying prices or data outside their approved formats and can require caching limits; check before automating"
+     "Branded search volume (Yarra Valley Lodge, Mantra Lorne, Lake House, Balgownie) is largely unreachable for a third-party site and inflates the apparent opportunity; the duplicated volume figures across variants make the totals unreliable",
+     "Booking.com and Expedia API terms restrict caching, display and resale of rates and reviews; violating them can lose the affiliate account",
+     "Thin-content risk: pages built from OSM names plus AI copy look mass-produced unless each town has real local data and unique content",
+     "OSM's ODbL attribution and share-alike obligations must be met or the database use is non-compliant",
+     "Price and availability claims under Australian Consumer Law (ACCC) and misleading-conduct rules; prices must be clearly dated and disclaimed",
+     "Affiliate disclosure must be clear under ACCC guidance on influencer and paid-promotion conduct",
+     "Strong incumbents (Booking, Expedia, TripAdvisor, Stayz, Airbnb) with much higher domain authority; expect slow ranking for 12+ months",
+     "Low commission rates on accommodation mean you need substantial organic traffic before revenue covers hosting and time"
     ]
    },
    "costUsd": 0.114
   },
-  "scoredAt": "2026-10-19T11:27:40.895Z",
+  "scoredAt": "2026-10-19T11:29:41.104Z",
   "location": "Australia",
   "error": null
  },
@@ -2241,13 +2244,13 @@
    "name": "Australia"
   },
   "addedAt": "2026-10-19T11:30:00Z",
-  "status": "new",
+  "status": "scored",
   "score": {
-   "overall": 52,
+   "overall": 51,
    "demand": 40,
    "money": 41,
    "ease": 96,
-   "fit": 27,
+   "fit": 22,
    "totalVolume": 155710,
    "keywords": 128,
    "medianCpc": 0.5,
@@ -2419,42 +2422,40 @@
     }
    ],
    "judgement": {
-    "fit": 27,
-    "verdict": "Victorian restaurant data is thin and generic: OSM gives cuisine and hours, but no ratings, prices, menus or reviews, so pages would look like a directory that Google Maps already beats. The search volumes are US figures, which are unreliable for AU local intent, and the CPCs are low ($0.2\u20131.5), so revenue per page is tiny unless the site converts through affiliate tours or accommodation.",
-    "angle": "A narrow Yarra Valley and Macedon Ranges winery-lunch guide (/winery-restaurants/[region]/ and /[winery]/ pages) built on OSM craft=winery and amenity=restaurant data, with a short factual card per venue and affiliate links for wine tours and stays. Skip general Geelong and Lorne 'best restaurants' pages until you have a real differentiator.",
+    "fit": 22,
+    "verdict": "The data can produce hundreds of venue pages, but OSM gives names, cuisine and hours only, with no ratings, menus or quality signal. The high-volume queries ask for judgement ('best', 'nice', 'good'), which generated lists can't honestly answer, and the commercial value is low (CPC about $0.50, weak affiliates).",
+    "angle": "Skip the statewide 'where to eat' build. If you test anything, make one narrow Geelong-and-Yarra-Valley site that targets 'winery lunch yarra valley' and 'giant steps winery restaurant' style intent. Each page should be a hand-checked venue or winery with a verified menu, booking link and a real opinion, and the site should stay under about 60 pages.",
     "dataSources": [
-     "OpenStreetMap via Overpass API (amenity=restaurant/cafe, craft=winery, cuisine, opening_hours, website)",
-     "Victorian open data portals (data.vic.gov.au) for council and tourism datasets",
-     "Winery websites and official Yarra Valley / Macedon tourism listings (manual verification, not scraped at scale)",
-     "Google Places API only if you can afford its caching and display terms"
+     "OpenStreetMap via Overpass (amenity=restaurant/cafe/winery, cuisine, opening_hours; ODbL attribution and share-alike apply)",
+     "Victorian council food premises registers, where published (check each council's licence terms)",
+     "data.vic.gov.au datasets, if any venue or tourism layers are usable",
+     "Venue websites and menus, scraped or checked manually with permission"
     ],
     "monetisation": [
-     "Viator (Tripadvisor affiliate) wine and food tours in the Yarra Valley",
-     "GetYourGuide Partner Program for experiences",
-     "Booking.com or Agoda affiliate (check current AU network) for accommodation near wineries",
-     "Klook for day trips and transfers",
-     "Display ads only once traffic justifies it; expect very low RPM at these CPCs",
-     "Lead-gen to private dining or group bookings, sold per enquiry to restaurants"
+     "Booking-referral or lead-gen partners for AU restaurants (verify current programmes; OpenTable and Dimmi-type affiliate or partner terms change often)",
+     "Winery and cellar-door tour bookings where the venue offers an affiliate or referral arrangement",
+     "Display ads only once traffic justifies them; food and local RPM is modest"
     ],
     "pageTypes": [
-     "/yarra-valley/[winery]/ (one page per winery, with real OSM facts and a verified lunch menu link)",
-     "/yarra-valley/lunch/[town]/ (Yarra Glen, Healesville, Lilydale, Coldstream)",
-     "/macedon-ranges/[town]-restaurants/ (Woodend, Hanging Rock, Daylesford hub links)",
-     "/tours/[region]/ tour comparison pages with affiliate tables"
+     "/restaurants/[town]/ for towns with enough verified venues (Geelong, Lorne, Daylesford, Yarra Valley)",
+     "/[cuisine]/[town]/ only where at least 8 to 10 venues are verified",
+     "/venue/[slug]/ with verified hours, cuisine, address and a human-written note",
+     "/wineries/[region]/lunch/ for winery-dining intent",
+     "Avoid /best-[x]/ pages generated from data alone"
     ],
     "risks": [
-     "US keyword volumes do not reflect Australian search demand; validate with AU keyword tools before building",
-     "OSM hours and cuisine tags are often missing or stale in regional Victoria; pages will look empty without manual checks",
-     "Thin AI-written copy over generic data is exactly what Google's helpful-content and spam policies target",
-     "ODbL licence: OSM data requires attribution and share-alike for any derived database you publish; check how your page output is treated",
-     "Google Places API terms restrict storing and caching place data, which undermines a bulk-generated site",
-     "Restaurants close or change hands often, so unmaintained pages decay quickly and can mislead diners",
-     "Low CPCs and small volumes mean the niche supports maybe a few thousand visits a month at best"
+     "Thin or duplicate pages: OSM-only lists without real judgement are the pattern Google's helpful-content and spam policies target",
+     "Stale or wrong data: venues close or change hours often, and OSM coverage is uneven across small towns",
+     "Allergy, gluten-free or dietary claims in AI copy create consumer-safety and misleading-information exposure",
+     "ODbL share-alike obligations if you publish a derived database",
+     "Google Places and Yelp API terms restrict caching and display of ratings, so don't build on them",
+     "Weak affiliates and low ad RPM mean many pages must earn very little each",
+     "Brand queries like 'ezard at levantine hill' are one-venue traffic, not repeatable demand"
     ]
    },
    "costUsd": 0.114
   },
-  "scoredAt": "2026-10-19T11:27:40.895Z",
+  "scoredAt": "2026-10-19T11:29:41.104Z",
   "location": "Australia",
   "error": null
  }
