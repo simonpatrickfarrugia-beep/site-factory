@@ -1,0 +1,702 @@
+{
+ "town": "Daylesford",
+ "slug": "daylesford",
+ "centre": [
+  -37.3414775,
+  144.1465866
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-10-19T11:49:21+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n1013006008",
+   "name": "Pioneer Memorial Tower",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -37.3432568,
+   "lon": 144.1513596,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n1013037027",
+   "name": "Harvest Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.3412366,
+   "lon": 144.1418112,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n1240758430",
+   "name": "Winespeake Cellar + Deli",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.3413337,
+   "lon": 144.1425573,
+   "tags": {
+    "website": "https://winespeake.com.au/",
+    "phone": "+61 480 286 838",
+    "addr:housenumber": "26",
+    "addr:street": "Vincent Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n1240761013",
+   "name": "Daylesford Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.3413503,
+   "lon": 144.1435601,
+   "tags": {
+    "website": "https://daylesfordhotel.com.au/",
+    "phone": "+61 3 5348 2335",
+    "addr:housenumber": "2",
+    "addr:street": "Burke Square",
+    "tourism": "hotel",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n1240783219",
+   "name": "The Boathouse Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.3478628,
+   "lon": 144.1371111,
+   "tags": {
+    "website": "http://www.urbanspoon.com/r/346/1493625/restaurant/Victoria/The-Boathouse-Daylesford",
+    "cuisine": "coffee_shop",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n1409849914",
+   "name": "Twin Bridges",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.346252,
+   "lon": 144.1264652,
+   "tags": {
+    "tourism": "attraction",
+    "amenity": "parking"
+   }
+  },
+  {
+   "id": "n2635707324",
+   "name": "2 Dukes",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -37.3418817,
+   "lon": 144.144107,
+   "tags": {
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "n2692338223",
+   "name": "Ambleside on the Lake",
+   "group": "stay",
+   "type": "camp_site",
+   "lat": -37.3515862,
+   "lon": 144.1374976,
+   "tags": {
+    "tourism": "camp_site"
+   }
+  },
+  {
+   "id": "n2692338226",
+   "name": "Daylesford by the Lake",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.3521984,
+   "lon": 144.1370391,
+   "tags": {
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n2941485301",
+   "name": "Albert Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.3420632,
+   "lon": 144.1453527,
+   "tags": {
+    "tourism": "hotel",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n2941485302",
+   "name": "Central Springs Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.3407763,
+   "lon": 144.1454836,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n2941485303",
+   "name": "Daylesford Central Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.3412637,
+   "lon": 144.1383889,
+   "tags": {
+    "internet_access": "wlan",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n2941485304",
+   "name": "Impressions of Daylsford",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -37.3419702,
+   "lon": 144.1448085,
+   "tags": {
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "n2941485305",
+   "name": "RSL",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.3409297,
+   "lon": 144.1425148,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2941485306",
+   "name": "Royal Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.3417451,
+   "lon": 144.1431905,
+   "tags": {
+    "tourism": "hotel",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n2941485307",
+   "name": "Town View Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.3406668,
+   "lon": 144.1448223,
+   "tags": {
+    "tourism": "hotel",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n4403814794",
+   "name": "Larder",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.342778,
+   "lon": 144.1426706,
+   "tags": {
+    "website": "https://www.larderdaylesford.com.au/",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n4658624090",
+   "name": "The Amazing Mill Markets",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.3417167,
+   "lon": 144.1320928,
+   "tags": {
+    "website": "https://www.millmarkets.com.au/daylesford/",
+    "opening_hours": "Mo-Su 10:00-18:00",
+    "addr:housenumber": "105",
+    "addr:street": "Central Springs Road",
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n4658667290",
+   "name": "Convent Gallery",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.342214,
+   "lon": 144.1483716,
+   "tags": {
+    "website": "https://conventgallery.com.au/",
+    "opening_hours": "Mo-Su 10:00-16:00",
+    "addr:housenumber": "7",
+    "addr:street": "Daly Street",
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n5040169824",
+   "name": "Wombat Hill House",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.3434833,
+   "lon": 144.1491515,
+   "tags": {
+    "website": "https://wombathillhouse.com.au",
+    "opening_hours": "Fr-Tu 08:00-15:00",
+    "cuisine": "austrian",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n5597847478",
+   "name": "Himalaya",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.343045,
+   "lon": 144.142651,
+   "tags": {
+    "website": "https://himalayabakery.com/",
+    "addr:housenumber": "73",
+    "addr:street": "Vincent Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9398448171",
+   "name": "Dawn",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.3442607,
+   "lon": 144.1434383,
+   "tags": {
+    "website": "https://www.guestbuddy.me",
+    "phone": "+61 3 5608 1032",
+    "description": "Dawn's is a Daylesford Bnb holiday home - the cute and cosy rooms will welcome you back from a day spent exploring the quaint downtown area of Daylesford. Guests enjoy 2 Queen bedrooms each with a private ensuite bathroom.",
+    "internet_access": "yes",
+    "addr:housenumber": "20",
+    "addr:street": "Duke Street",
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "n9513337099",
+   "name": "Rubens @ Hepburn",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.3168954,
+   "lon": 144.1380481,
+   "tags": {
+    "website": "https://www.rubensrestaurant.com/",
+    "phone": "+61 3 5348 2843",
+    "cuisine": "mediterranean",
+    "addr:housenumber": "70",
+    "addr:street": "Main Road",
+    "addr:suburb": "Hepburn Springs",
+    "addr:postcode": "3461",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n10290719910",
+   "name": "Walters",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.3482099,
+   "lon": 144.1377154,
+   "tags": {
+    "cuisine": "coffee_shop;ice_cream;sandwich",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12416866412",
+   "name": "Taj Mahal",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.339581,
+   "lon": 144.1464059,
+   "tags": {
+    "addr:housenumber": "51",
+    "addr:street": "Raglan Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12416866914",
+   "name": "Daylesford Spirit",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.3423281,
+   "lon": 144.1427866,
+   "tags": {
+    "website": "https://daylesfordspirit.com.au/pages/cellar-door",
+    "addr:housenumber": "45",
+    "addr:street": "Vincent Street",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n12420836523",
+   "name": "Red Ginger Thai",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.341221,
+   "lon": 144.1416984,
+   "tags": {
+    "cuisine": "thai",
+    "addr:housenumber": "31",
+    "addr:street": "Albert Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12420836611",
+   "name": "Bistro Terroir",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.3403717,
+   "lon": 144.1453272,
+   "tags": {
+    "website": "https://bistroterroir.com.au/",
+    "addr:housenumber": "6-8",
+    "addr:street": "Howe Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12420836714",
+   "name": "The Daylesford Hot Chocolate Company",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.3407194,
+   "lon": 144.1516473,
+   "tags": {
+    "website": "https://www.daylesfordhotchocolate.com/",
+    "addr:housenumber": "22",
+    "addr:street": "Raglan Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12420836943",
+   "name": "Los Fridays",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.3409824,
+   "lon": 144.1420495,
+   "tags": {
+    "website": "http://losfridayscocina.com.au/",
+    "cuisine": "mexican",
+    "addr:housenumber": "27",
+    "addr:street": "Albert Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12420836955",
+   "name": "Cliffy's Emporium",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.3406064,
+   "lon": 144.1510204,
+   "tags": {
+    "website": "https://www.cliffysemporium.com.au/",
+    "phone": "+61 3 5348 3279",
+    "addr:housenumber": "30",
+    "addr:street": "Raglan Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12420836974",
+   "name": "Back Bar",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.340104,
+   "lon": 144.1449672,
+   "tags": {
+    "website": "https://www.backbar77.com/",
+    "addr:housenumber": "3",
+    "addr:street": "Howe Street",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n12420837011",
+   "name": "Hotel Frangos",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.3432495,
+   "lon": 144.1421611,
+   "tags": {
+    "website": "https://hotelfrangos.com.au/",
+    "phone": "+61 3 5348 2363",
+    "addr:housenumber": "82",
+    "addr:street": "Vincent Street",
+    "tourism": "hotel",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12420837160",
+   "name": "Dilworth & Allain Studio & Cellar Door",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.3402185,
+   "lon": 144.1447369,
+   "tags": {
+    "website": "https://www.dilworthandallain.com.au/",
+    "addr:housenumber": "5",
+    "addr:street": "Howe Street",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n13396672125",
+   "name": "The Maze",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.3418814,
+   "lon": 144.131898,
+   "tags": {
+    "website": "https://www.millmarkets.com.au/cafes/",
+    "opening_hours": "Mo-Fr 10:00-16:00; Sa-Su 10:00-15:00",
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13441299701",
+   "name": "Boomerang Ranch Holiday Park",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.3367577,
+   "lon": 144.1279689,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "n13507963447",
+   "name": "Grain",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.3440157,
+   "lon": 144.1424394,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n14195635660",
+   "name": "Ream Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.3425502,
+   "lon": 144.1427663,
+   "tags": {
+    "website": "https://reamcafe.com.au",
+    "phone": "+61 467 940 066",
+    "opening_hours": "Mo-Fr 06:30-18:00; Sa-Su 07:30-18:00; PH open",
+    "cuisine": "coffee_shop;cambodian;coffee",
+    "wheelchair": "yes",
+    "addr:housenumber": "47-53",
+    "addr:street": "Vincent Street",
+    "addr:suburb": "Daylesford",
+    "addr:postcode": "3460",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w53051823",
+   "name": "Hepburn Regional Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.3145931,
+   "lon": 144.1535816,
+   "tags": {
+    "website": "https://parkweb.vic.gov.au/explore/parks/hepburn-r.p",
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w58883260",
+   "name": "Daylesford Railway Station",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.3415577,
+   "lon": 144.1534641,
+   "tags": {
+    "wikidata": "Q5243177",
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "w73533898",
+   "name": "Hepburn Springs Golf Club",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -37.3173766,
+   "lon": 144.1306383,
+   "tags": {
+    "website": "https://hepburngolf.com.au/",
+    "phone": "+61 401 128 964;+61 3 5348 2185",
+    "description": "18 hole Par 66",
+    "addr:street": "Hepburn Springs",
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w108220058",
+   "name": "Daylesford Spa Country Railway",
+   "group": "do",
+   "type": "museum",
+   "lat": -37.3421671,
+   "lon": 144.1536488,
+   "tags": {
+    "website": "www.dscr.com.au",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "w131942765",
+   "name": "Daylesford Victoria Caravan Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -37.356543,
+   "lon": 144.1377998,
+   "tags": {
+    "website": "www.daylesfordvictoriacaravanpark.com.au",
+    "phone": "+61 3 5348 3821",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w336016470",
+   "name": "Burke Square",
+   "group": "do",
+   "type": "park",
+   "lat": -37.341292,
+   "lon": 144.142972,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w336016473",
+   "name": "Wills Square",
+   "group": "do",
+   "type": "park",
+   "lat": -37.3415767,
+   "lon": 144.1430358,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w442379153",
+   "name": "Food forest",
+   "group": "do",
+   "type": "park",
+   "lat": -37.3512443,
+   "lon": 144.1513221,
+   "tags": {
+    "description": "good north, west facing, sunny dry slopes, on rich red soil",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w442379154",
+   "name": "Potential planting site",
+   "group": "do",
+   "type": "park",
+   "lat": -37.3501739,
+   "lon": 144.1531357,
+   "tags": {
+    "description": "Dry ground",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w442379652",
+   "name": "Resident tree planting",
+   "group": "do",
+   "type": "park",
+   "lat": -37.352238,
+   "lon": 144.1510961,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w463193827",
+   "name": "Hepburn Pool",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.3160101,
+   "lon": 144.1406592,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "w993362828",
+   "name": "Savoia Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.3173567,
+   "lon": 144.1385267,
+   "tags": {
+    "addr:housenumber": "69",
+    "addr:street": "Main Road",
+    "addr:suburb": "Hepburn Springs",
+    "addr:postcode": "3461",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w1211573580",
+   "name": "The Three Lost Children Memorial Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.3421146,
+   "lon": 144.1296628,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1238258093",
+   "name": "Jubilee Lake Holiday Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -37.366724,
+   "lon": 144.1502001,
+   "tags": {
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w1300875100",
+   "name": "The Block 2025 Heartland",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.340017,
+   "lon": 144.1561438,
+   "tags": {
+    "description": "The location of the 2025 Season of \"The Block\" renovation/building TV series.",
+    "tourism": "attraction"
+   }
+  }
+ ]
+}

@@ -1,0 +1,956 @@
+{
+ "town": "Bright",
+ "slug": "bright",
+ "centre": [
+  -36.7285335,
+  146.9607724
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-10-19T11:52:55+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n602437386",
+   "name": "allBright Views",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -36.7316715,
+   "lon": 146.956218,
+   "tags": {
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "n604327489",
+   "name": "Huggins Lookout",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -36.7396305,
+   "lon": 146.9630145,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n610539343",
+   "name": "The Riverdeck Kitchen",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.7264466,
+   "lon": 146.9613945,
+   "tags": {
+    "website": "https://www.theriverdeck.com.au/",
+    "phone": "+61 3 5755 2199",
+    "opening_hours": "Mo-Su 08:00-15:00",
+    "cuisine": "regional",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "16",
+    "addr:street": "Howitt Lane",
+    "addr:suburb": "Bright",
+    "addr:postcode": "3741",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n734788024",
+   "name": "Tower Hill Lookout",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -36.7274572,
+   "lon": 146.9360768,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n1068987886",
+   "name": "Bright Splash Park",
+   "group": "do",
+   "type": "water_park",
+   "lat": -36.7259157,
+   "lon": 146.9630137,
+   "tags": {
+    "leisure": "water_park"
+   }
+  },
+  {
+   "id": "n1076273493",
+   "name": "Le Blanche Ice Creamery",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.7270801,
+   "lon": 146.9603393,
+   "tags": {
+    "cuisine": "ice_cream",
+    "addr:housenumber": "109",
+    "addr:street": "Gavan Street",
+    "addr:suburb": "Bright",
+    "addr:postcode": "3741",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n1863797077",
+   "name": "Bright Backpackers",
+   "group": "stay",
+   "type": "hostel",
+   "lat": -36.7298616,
+   "lon": 146.9614844,
+   "tags": {
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "n2091467287",
+   "name": "Bright on Track",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.7303894,
+   "lon": 146.9527633,
+   "tags": {
+    "website": "https://www.brightontrack.com.au/",
+    "phone": "+61 3 5750 1421",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n2950123728",
+   "name": "Jackie's Tea Room",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.7296279,
+   "lon": 146.9615219,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3409930067",
+   "name": "Simone's Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.7271684,
+   "lon": 146.9611336,
+   "tags": {
+    "website": "www.simonesrestaurant.com.au",
+    "phone": "+61 3 5755 2266",
+    "addr:housenumber": "98",
+    "addr:street": "Gavan Street",
+    "addr:suburb": "Bright",
+    "addr:postcode": "3741",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3409959079",
+   "name": "Cafe Chulo",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.726789,
+   "lon": 146.9620562,
+   "tags": {
+    "phone": "+61 3 7056 8427",
+    "opening_hours": "We-Su 09:00-15:00",
+    "cuisine": "indian;cafe",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "106",
+    "addr:street": "Gavan Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3409967193",
+   "name": "Sir Loin's Bar and Grill",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.7273694,
+   "lon": 146.9607339,
+   "tags": {
+    "website": "https://www.sirloins.com.au/",
+    "opening_hours": "Th-Mo 17:00-23:00",
+    "cuisine": "regional",
+    "addr:housenumber": "14",
+    "addr:street": "Barnard Street",
+    "addr:suburb": "Bright",
+    "addr:postcode": "3741",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4242799571",
+   "name": "Bright Art Gallery",
+   "group": "do",
+   "type": "museum",
+   "lat": -36.726718,
+   "lon": 146.9683297,
+   "tags": {
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "n4242802176",
+   "name": "Wombat's Retreat",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -36.7244923,
+   "lon": 146.9610825,
+   "tags": {
+    "addr:housenumber": "28",
+    "addr:street": "Toorak Road",
+    "addr:postcode": "3741",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n4888703921",
+   "name": "Cherry Walk",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.7285414,
+   "lon": 146.9603619,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n5517815163",
+   "name": "Tomahawks",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.7270548,
+   "lon": 146.9624712,
+   "tags": {
+    "website": "https://www.tomahawksbright.com.au/",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6167318286",
+   "name": "Bright Chalet",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -36.7291013,
+   "lon": 146.9794733,
+   "tags": {
+    "phone": "+61 3 5755 1833",
+    "addr:housenumber": "113",
+    "addr:street": "Great Alpine Road",
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "n7149548144",
+   "name": "Bright Colonial Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.7290484,
+   "lon": 146.9555017,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n7149548655",
+   "name": "Katsu",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.7275451,
+   "lon": 146.9605502,
+   "tags": {
+    "cuisine": "japanese",
+    "addr:suburb": "Bright",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n7149548662",
+   "name": "Riverbank Park Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.7285083,
+   "lon": 146.9558664,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n7149548668",
+   "name": "Food Made By Hand",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.7277371,
+   "lon": 146.9609074,
+   "tags": {
+    "addr:suburb": "Bright",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n7149548677",
+   "name": "Couples On The Park",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -36.7289301,
+   "lon": 146.9570298,
+   "tags": {
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "n7149548678",
+   "name": "Mr Pom",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.7287961,
+   "lon": 146.9619473,
+   "tags": {
+    "addr:suburb": "Bright",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n7149589594",
+   "name": "The Star Bar & Bistro",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.7274632,
+   "lon": 146.9594227,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n7149589596",
+   "name": "Our Place @ Bright",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -36.7284794,
+   "lon": 146.9552283,
+   "tags": {
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "n8095246876",
+   "name": "Suganya's Thai Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.7294146,
+   "lon": 146.9609275,
+   "tags": {
+    "website": "https://www.facebook.com/Suganyas-Thai-restaurant-310042572490152/",
+    "phone": "+61 3 5755 2380",
+    "opening_hours": "Mo-Sa 17:30+",
+    "cuisine": "thai",
+    "addr:housenumber": "11",
+    "addr:street": "Ireland Street",
+    "addr:suburb": "Bright",
+    "addr:postcode": "3741",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11021093715",
+   "name": "Abbeville in Bright",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -36.7274127,
+   "lon": 146.9678402,
+   "tags": {
+    "website": "https://alpinevalleygetaways.com.au/properties/abbeville-bright",
+    "phone": "+61 3 5759 2555",
+    "addr:housenumber": "12",
+    "addr:street": "Claret Court",
+    "addr:suburb": "Bright",
+    "addr:postcode": "3741",
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "n11223505855",
+   "name": "Adina Lodge Holiday Units",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.7224222,
+   "lon": 146.9462962,
+   "tags": {
+    "website": "https://www.adinalodge.com.au/",
+    "phone": "+61 3 5755 1531",
+    "internet_access": "wlan",
+    "addr:housenumber": "1",
+    "addr:street": "Ashwood Avenue",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n11572261052",
+   "name": "The Bike Shed Bright",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -36.7314109,
+   "lon": 146.9575465,
+   "tags": {
+    "website": "https://www.airbnb.com.au/rooms/11809827",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "n12420751767",
+   "name": "Hometown",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.7275084,
+   "lon": 146.9620674,
+   "tags": {
+    "website": "https://www.hometownbright.com.au/",
+    "phone": "+61 3 5750 1571",
+    "opening_hours": "Tu 17:00-21:00; We-Sa 17:00-21:30",
+    "cuisine": "pizza;regional;burger",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "5",
+    "addr:street": "Camp Street",
+    "addr:suburb": "Bright",
+    "addr:postcode": "3741",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12521474948",
+   "name": "Sixpence",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.7287232,
+   "lon": 146.9617358,
+   "tags": {
+    "addr:housenumber": "15",
+    "addr:street": "Wills Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12521474949",
+   "name": "Reed & Co. Distillery",
+   "group": "do",
+   "type": "distillery",
+   "lat": -36.7286664,
+   "lon": 146.9617289,
+   "tags": {
+    "craft": "distillery"
+   }
+  },
+  {
+   "id": "n13999930265",
+   "name": "45",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -36.7435796,
+   "lon": 146.9760175,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w164326814",
+   "name": "Bright Arboretum",
+   "group": "do",
+   "type": "park",
+   "lat": -36.7257104,
+   "lon": 146.9709908,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w180524225",
+   "name": "Bright Golf Course",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -36.7113875,
+   "lon": 146.934218,
+   "tags": {
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w194709296",
+   "name": "The Alpine Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.7279782,
+   "lon": 146.9604847,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w203304052",
+   "name": "Bright Museum",
+   "group": "do",
+   "type": "museum",
+   "lat": -36.7301326,
+   "lon": 146.9566441,
+   "tags": {
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "w236666240",
+   "name": "NRMA Bright Holiday Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -36.7293734,
+   "lon": 146.964836,
+   "tags": {
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w236667122",
+   "name": "Velo Bright",
+   "group": "stay",
+   "type": "apartment",
+   "lat": -36.7300466,
+   "lon": 146.9615034,
+   "tags": {
+    "tourism": "apartment"
+   }
+  },
+  {
+   "id": "w236802980",
+   "name": "Bright Cabin & Caravan Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -36.742788,
+   "lon": 146.9749913,
+   "tags": {
+    "addr:housenumber": "106",
+    "addr:street": "Coronation Avenue",
+    "addr:suburb": "Bright",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w246707822",
+   "name": "Bright Chinese Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.7267,
+   "lon": 146.9625002,
+   "tags": {
+    "cuisine": "chinese",
+    "addr:housenumber": "108",
+    "addr:street": "Gavan Street",
+    "addr:suburb": "Bright",
+    "addr:postcode": "3741",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w246707823",
+   "name": "Riff Raff",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.7262877,
+   "lon": 146.9624591,
+   "tags": {
+    "opening_hours": "Mo-Su 07:00-14:00",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "127",
+    "addr:street": "Great Alpine Road",
+    "addr:suburb": "Bright",
+    "addr:postcode": "3741",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w280718593",
+   "name": "Big 4 Bright Holiday Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -36.7254237,
+   "lon": 146.9663617,
+   "tags": {
+    "website": "https://www.big4.com.au/",
+    "brand": "Big 4 Holiday Parks",
+    "addr:housenumber": "1-11",
+    "addr:street": "Mountbatten Avenue",
+    "addr:suburb": "Bright",
+    "addr:postcode": "3741",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w280718595",
+   "name": "Memorial Gardens",
+   "group": "do",
+   "type": "park",
+   "lat": -36.7260781,
+   "lon": 146.9642224,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w280718596",
+   "name": "Centenary Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.7261374,
+   "lon": 146.9620154,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w280718597",
+   "name": "Motel Sierra",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.7280394,
+   "lon": 146.96861,
+   "tags": {
+    "addr:housenumber": "35-41",
+    "addr:street": "Delany Avenue",
+    "addr:suburb": "Bright",
+    "addr:postcode": "3741",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w280718598",
+   "name": "Bright Riverside Holiday Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -36.7253296,
+   "lon": 146.9602114,
+   "tags": {
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w283911144",
+   "name": "The Alpine Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.7281717,
+   "lon": 146.960606,
+   "tags": {
+    "phone": "+61 3 5755 1366",
+    "opening_hours": "Mo-Su 08:00-01:00",
+    "addr:housenumber": "7-9",
+    "addr:street": "Anderson Street",
+    "addr:suburb": "Bright",
+    "addr:postcode": "3741",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w283911146",
+   "name": "Star Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.7275317,
+   "lon": 146.9592017,
+   "tags": {
+    "phone": "+61 3 5755 1277",
+    "opening_hours": "Mo-Fr 08:00-23:00;Sa 08:00-00:00;Su 08:00-23:00",
+    "addr:housenumber": "91",
+    "addr:street": "Gavan Street",
+    "addr:suburb": "Bright",
+    "addr:postcode": "3741",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w291431792",
+   "name": "Apex Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.7288165,
+   "lon": 146.9574917,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w291434529",
+   "name": "High Country Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.7257838,
+   "lon": 146.9498276,
+   "tags": {
+    "website": "https://www.highcountrymotorinn.com.au/",
+    "phone": "+61 3 5755 1244",
+    "addr:housenumber": "13-17",
+    "addr:street": "Great Alpine Road",
+    "addr:suburb": "Bright",
+    "addr:postcode": "3741",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w291545459",
+   "name": "Bright Brewery",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.7264478,
+   "lon": 146.961757,
+   "tags": {
+    "website": "https://www.brightbrewery.com.au/",
+    "phone": "+61 3 5755 1301",
+    "opening_hours": "Mo-Su 11:30-22:30",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "121",
+    "addr:street": "Great Alpine Road",
+    "addr:suburb": "Bright",
+    "addr:postcode": "3741",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w357951917",
+   "name": "Dorry Lester Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.7301573,
+   "lon": 146.9694885,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w357951924",
+   "name": "Bright Pine Valley Tourist Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -36.7309489,
+   "lon": 146.9713109,
+   "tags": {
+    "stars": "4",
+    "internet_access": "wlan",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w369243473",
+   "name": "John Bright Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.7290816,
+   "lon": 146.959044,
+   "tags": {
+    "website": "https://www.johnbrightmotorinn.com.au/",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w379479192",
+   "name": "Mystic Flight Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.7462183,
+   "lon": 146.9783934,
+   "tags": {
+    "addr:street": "Morses Creek Road",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w666585540",
+   "name": "Centenary Park Streamside Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -36.7261066,
+   "lon": 146.9601748,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w666585596",
+   "name": "Ovens River J16 Streamside Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -36.7200862,
+   "lon": 146.947286,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w667104995",
+   "name": "Wandiligong Education Area",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -36.7419342,
+   "lon": 146.9864683,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w688891375",
+   "name": "Edlin House",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -36.7296667,
+   "lon": 146.9807601,
+   "tags": {
+    "website": "https://www.edlinhouse.com.au/",
+    "addr:housenumber": "123-125",
+    "addr:street": "Delany Avenue",
+    "addr:suburb": "Bright",
+    "addr:postcode": "3741",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "w868479134",
+   "name": "Wild Thyme",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.7297675,
+   "lon": 146.9608503,
+   "tags": {
+    "website": "https://what-you-eat-cafe.business.site/",
+    "phone": "+61 3 5755 2001",
+    "opening_hours": "Mo-Sa 08:00-14:00; Su off",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "3",
+    "addr:street": "Ireland Street",
+    "addr:suburb": "Bright",
+    "addr:postcode": "3741",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w1345310038",
+   "name": "Bright Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.7263269,
+   "lon": 146.9648612,
+   "tags": {
+    "website": "www.brightmotorinn.com.au",
+    "phone": "+61 3 5750 1433",
+    "addr:housenumber": "1",
+    "addr:street": "Delany Avenue",
+    "addr:suburb": "Bright",
+    "addr:postcode": "3741",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w1491389888",
+   "name": "29",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -36.7436978,
+   "lon": 146.9757994,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w1491389889",
+   "name": "30",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -36.7436949,
+   "lon": 146.9757772,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w1491389890",
+   "name": "31",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -36.7436888,
+   "lon": 146.9757361,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w1491389891",
+   "name": "32",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -36.7436844,
+   "lon": 146.9757136,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w1491389892",
+   "name": "33",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -36.7436746,
+   "lon": 146.9756663,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w1491389893",
+   "name": "34",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -36.7436732,
+   "lon": 146.9756412,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w1491389898",
+   "name": "48",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -36.7434267,
+   "lon": 146.9760794,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w1491389899",
+   "name": "47",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -36.7434768,
+   "lon": 146.9760587,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w1491389900",
+   "name": "46",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -36.7435282,
+   "lon": 146.9760381,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "r9267185",
+   "name": "Ovens River J15 Streamside Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -36.7326161,
+   "lon": 146.9935127,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}

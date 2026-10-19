@@ -1,0 +1,4580 @@
+{
+ "town": "Docklands",
+ "slug": "docklands",
+ "centre": [
+  -37.8175423,
+  144.9394923
+ ],
+ "radiusM": 1500,
+ "fetchedAt": "2026-10-19T12:00:57+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n145193705",
+   "name": "Vibe Savoy Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8178023,
+   "lon": 144.9539372,
+   "tags": {
+    "website": "https://www.tfehotels.com/brands/vibe-hotels/vibe-savoy-hotel-melbourne",
+    "phone": "+61 3 9622 8888",
+    "internet_access": "wlan",
+    "addr:housenumber": "630",
+    "addr:street": "Little Collins Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n163378510",
+   "name": "Hotel Sophia",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8137769,
+   "lon": 144.9542371,
+   "tags": {
+    "website": "https://www.hotelsophia.com.au/",
+    "phone": "+61 3 9670 1342",
+    "addr:housenumber": "287",
+    "addr:street": "King Street",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n164077659",
+   "name": "Melbourne CBD Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8154676,
+   "lon": 144.9546001,
+   "tags": {
+    "website": "https://www.accorhotels.com/gb/hotel-3030-ibis-melbourne-little-bourke-street/index.shtml",
+    "phone": "+61 3 9672 0000",
+    "wheelchair": "limited",
+    "brand": "Ibis",
+    "addr:housenumber": "600",
+    "addr:street": "Little Bourke Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n164086401",
+   "name": "Melbourne City Backpackers",
+   "group": "stay",
+   "type": "hostel",
+   "lat": -37.8155762,
+   "lon": 144.955062,
+   "tags": {
+    "website": "http://www.kingstreetbackpackers.com.au",
+    "phone": "+61 3 9670 1111",
+    "addr:housenumber": "197-199",
+    "addr:street": "King Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "n415276361",
+   "name": "Capricho",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.818113,
+   "lon": 144.948094,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n441172500",
+   "name": "Puzzle Coffee",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8190192,
+   "lon": 144.953659,
+   "tags": {
+    "website": "https://degani.com.au/locations/southern-cross-station/",
+    "phone": "+61 3 9670 2897",
+    "opening_hours": "Mo-Su 06:15-18:15",
+    "description": "Previously Velluto",
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n450395142",
+   "name": "Grand Hotel Melbourne",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8200975,
+   "lon": 144.9542549,
+   "tags": {
+    "website": "https://www.grandhotelmelbourne.com.au/",
+    "phone": "+61 3 9611 4567",
+    "addr:housenumber": "33",
+    "addr:street": "Spencer Street",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n570616542",
+   "name": "Espresso Bar International",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8191459,
+   "lon": 144.9551442,
+   "tags": {
+    "wheelchair": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n588178960",
+   "name": "Royal Melbourne Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8167994,
+   "lon": 144.9552063,
+   "tags": {
+    "website": "https://www.rmh.com.au/",
+    "phone": "+61 3 9629 2400",
+    "wheelchair": "yes",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "629",
+    "addr:street": "Bourke Street",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n595501879",
+   "name": "Best Western Melbourne City Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8205345,
+   "lon": 144.9551367,
+   "tags": {
+    "website": "https://www.bestwesternmelbourne.com.au",
+    "phone": "+61 3 9621 3333",
+    "wheelchair": "designated",
+    "internet_access": "wlan",
+    "brand": "Best Western",
+    "addr:housenumber": "16",
+    "addr:street": "Spencer Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n622803015",
+   "name": "Hotel Indigo Melbourne on Flinders",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8201786,
+   "lon": 144.9550026,
+   "tags": {
+    "website": "https://www.ihg.com/hotelindigo/hotels/us/en/melbourne/melsf/hoteldetail",
+    "phone": "+61 3 9629 4111",
+    "brand": "Hotel Indigo",
+    "addr:housenumber": "575",
+    "addr:street": "Flinders Lane",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n622819429",
+   "name": "Alto Hotel on Bourke",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8163983,
+   "lon": 144.9547964,
+   "tags": {
+    "website": "https://www.altohotel.com.au/",
+    "phone": "+61 3 8608 5500",
+    "wheelchair": "yes",
+    "addr:housenumber": "636",
+    "addr:street": "Bourke Street",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n622821208",
+   "name": "Chaf's Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8170742,
+   "lon": 144.9540347,
+   "tags": {
+    "phone": "+61 3 9629 2296",
+    "addr:housenumber": "669-671",
+    "addr:street": "Bourke Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n633912829",
+   "name": "Nando's",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8158129,
+   "lon": 144.955797,
+   "tags": {
+    "website": "https://www.nandos.com.au/",
+    "cuisine": "chicken;portuguese",
+    "brand": "Nando's",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n633912832",
+   "name": "La Di Da",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.8155125,
+   "lon": 144.9556539,
+   "tags": {
+    "website": "https://www.ladidapeople.com/",
+    "phone": "+61 3 9670 7680",
+    "addr:housenumber": "577",
+    "addr:street": "Little Bourke Street",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n634777815",
+   "name": "Scugnizzo Ristorante",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8150375,
+   "lon": 144.955935,
+   "tags": {
+    "website": "https://scugnizzo.com.au/",
+    "phone": "+61 3 9670 5622",
+    "cuisine": "italian",
+    "addr:housenumber": "558",
+    "addr:street": "Little Bourke Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n634778962",
+   "name": "Colonial Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8145327,
+   "lon": 144.9552096,
+   "tags": {
+    "website": "http://www.colonialhotel.info",
+    "phone": "+61 3 9670 8599",
+    "addr:housenumber": "585",
+    "addr:street": "Lonsdale Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n642420346",
+   "name": "Restaurant 1903",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8196288,
+   "lon": 144.9546916,
+   "tags": {
+    "phone": "+61 3 9629 5255",
+    "cuisine": "steak_house",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n642431951",
+   "name": "Platform 66",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8193137,
+   "lon": 144.9545464,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n659635763",
+   "name": "Ibis Styles Kingsgate Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8169709,
+   "lon": 144.9557516,
+   "tags": {
+    "contact:website": "http://www.kingsgatehotel.com.au",
+    "phone": "+61 3 9629 4171",
+    "brand": "Ibis Styles",
+    "addr:housenumber": "131",
+    "addr:street": "King Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n659636271",
+   "name": "Saint & Rogue",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8174116,
+   "lon": 144.9553584,
+   "tags": {
+    "website": "https://www.saintandrogue.com.au/",
+    "phone": "+61 3 9620 9720",
+    "opening_hours": "Mo-Fr 12:00+",
+    "addr:housenumber": "582",
+    "addr:street": "Little Collins Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n660024090",
+   "name": "Brightside",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8162882,
+   "lon": 144.9554509,
+   "tags": {
+    "opening_hours": "Mo-Fr 07:00-14:00",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n660027389",
+   "name": "Ssam Korean BBQ",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8157535,
+   "lon": 144.9552079,
+   "tags": {
+    "website": "http://www.hanabishi.com.au",
+    "phone": "+61 3 9670 1167",
+    "cuisine": "barbecue;korean",
+    "wheelchair": "yes",
+    "outdoor_seating": "no",
+    "addr:housenumber": "187",
+    "addr:street": "King Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n660027524",
+   "name": "Punjabwala",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.816134,
+   "lon": 144.955385,
+   "tags": {
+    "cuisine": "indian",
+    "outdoor_seating": "no",
+    "addr:housenumber": "169",
+    "addr:street": "King Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n660027669",
+   "name": "Torimatsu",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8159306,
+   "lon": 144.9552854,
+   "tags": {
+    "website": "https://plus.google.com/107140372180475975803/about?gl=au&hl=en",
+    "phone": "+61 3 9670 9683",
+    "cuisine": "japanese",
+    "addr:housenumber": "179",
+    "addr:street": "King Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n660508725",
+   "name": "Itoya",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8163389,
+   "lon": 144.9530961,
+   "tags": {
+    "cuisine": "japanese",
+    "addr:housenumber": "200",
+    "addr:street": "Spencer Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n664321499",
+   "name": "Melbourne Connection Travellers Hostel",
+   "group": "stay",
+   "type": "hostel",
+   "lat": -37.8153727,
+   "lon": 144.9550159,
+   "tags": {
+    "website": "http://www.melbourneconnection.com/",
+    "phone": "+61 3 9642 4464",
+    "addr:housenumber": "205",
+    "addr:street": "King Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "n664326819",
+   "name": "Bar Hum Bug",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.81543,
+   "lon": 144.9549167,
+   "tags": {
+    "addr:housenumber": "586",
+    "addr:street": "Little Bourke Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n667222174",
+   "name": "The Golden Age",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8136605,
+   "lon": 144.9541782,
+   "tags": {
+    "website": "https://www.hotelsophia.com.au/the_golden_age",
+    "addr:housenumber": "287",
+    "addr:street": "King Street",
+    "addr:postcode": "3000",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n667225620",
+   "name": "Michel's Patisserie",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8150653,
+   "lon": 144.952021,
+   "tags": {
+    "website": "https://www.michels.com.au/",
+    "opening_hours": "Mo-Sa 06:00-23:00,07:00-23:00",
+    "cuisine": "coffee_shop",
+    "brand": "Michel's Patisserie",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n667232796",
+   "name": "Taj India",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.813856,
+   "lon": 144.9543083,
+   "tags": {
+    "phone": "+61 3 9670 7550",
+    "cuisine": "indian",
+    "addr:housenumber": "273",
+    "addr:street": "King Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n793892420",
+   "name": "V Wine Salon",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.8170723,
+   "lon": 144.9539481,
+   "tags": {
+    "website": "http://www.kinfolk.com.au/",
+    "wheelchair": "yes",
+    "addr:housenumber": "673",
+    "addr:street": "Bourke Street",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n962499829",
+   "name": "Mail Exchange Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.816779,
+   "lon": 144.953527,
+   "tags": {
+    "website": "https://www.mailexchangehotel.com.au/",
+    "outdoor_seating": "no",
+    "addr:housenumber": "688",
+    "addr:street": "Bourke Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n990015902",
+   "name": "Travelodge",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8190635,
+   "lon": 144.9502814,
+   "tags": {
+    "brand": "Travelodge",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n1044600771",
+   "name": "Rab Bar & Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.82061,
+   "lon": 144.954534,
+   "tags": {
+    "website": "https://www.grandhotelmelbourne.com.au/restaurant-and-bar",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n1224832129",
+   "name": "Penny",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8143231,
+   "lon": 144.9382726,
+   "tags": {
+    "brand": "Trek",
+    "addr:housenumber": "442-446",
+    "addr:street": "Docklands Drive",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n1420650994",
+   "name": "Starbucks",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8171266,
+   "lon": 144.9525788,
+   "tags": {
+    "website": "https://www.starbucks.com.au/find-a-store?searchtext=spencer%20&id=22",
+    "phone": "+61 3 9642 4701",
+    "opening_hours": "Mo-We 06:30-19:00; Th-Fr 06:30-20:00; Sa 07:30-20:00; Su 07:30-19:00",
+    "cuisine": "coffee_shop",
+    "brand": "Starbucks",
+    "addr:housenumber": "201",
+    "addr:street": "Spencer Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n1514732869",
+   "name": "Punch Bowl",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.829828,
+   "lon": 144.93597,
+   "tags": {
+    "cuisine": "australian",
+    "wheelchair": "yes",
+    "outdoor_seating": "yes",
+    "internet_access": "wlan",
+    "addr:housenumber": "1",
+    "addr:street": "Fennell Street",
+    "addr:suburb": "Port Melbourne",
+    "addr:postcode": "3207",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n1664153160",
+   "name": "Potto",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8169468,
+   "lon": 144.9526354,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n1793754253",
+   "name": "Espresso Hub",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8195035,
+   "lon": 144.9537038,
+   "tags": {
+    "website": "http://www.espressohub.com.au",
+    "addr:housenumber": "655",
+    "addr:street": "Collins Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n1931420320",
+   "name": "Nero Bar",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.8184563,
+   "lon": 144.9557352,
+   "tags": {
+    "addr:housenumber": "546",
+    "addr:street": "Collins Street",
+    "addr:postcode": "3000",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n1931428928",
+   "name": "The Wharf Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8229006,
+   "lon": 144.9543843,
+   "tags": {
+    "addr:housenumber": "18-38",
+    "addr:street": "Siddeley",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n1996463726",
+   "name": "Man Mo",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8230611,
+   "lon": 144.9538584,
+   "tags": {
+    "website": "https://www.manmowtc.com.au",
+    "phone": "+61 3 9329 9173",
+    "cuisine": "chinese",
+    "wheelchair": "yes",
+    "outdoor_seating": "no",
+    "addr:housenumber": "38",
+    "addr:street": "Siddeley Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2021115598",
+   "name": "Angliss Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8137755,
+   "lon": 144.9524759,
+   "tags": {
+    "website": "https://www.angliss.edu.au/locations-facilities/restaurant",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2345084297",
+   "name": "Inzone Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8180385,
+   "lon": 144.9543399,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "internet_access": "no",
+    "addr:housenumber": "625",
+    "addr:street": "Little Collins Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2345084460",
+   "name": "Japanese Organic Cafe",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.81784,
+   "lon": 144.954904,
+   "tags": {
+    "cuisine": "japanese",
+    "addr:housenumber": "601",
+    "addr:street": "Little Collins Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2345084887",
+   "name": "Spicy Korea",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.817827,
+   "lon": 144.954952,
+   "tags": {
+    "opening_hours": "Mo-Fr 11:00-24:00; Sa-Su 18:00-24:00",
+    "cuisine": "korean",
+    "outdoor_seating": "no",
+    "addr:housenumber": "601",
+    "addr:street": "Little Collins Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2345088728",
+   "name": "Pho N Roll",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8177387,
+   "lon": 144.955428,
+   "tags": {
+    "cuisine": "vietnamese",
+    "outdoor_seating": "no",
+    "internet_access": "no",
+    "addr:housenumber": "585",
+    "addr:street": "Little Collins Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2345089322",
+   "name": "The Bottom End",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8176673,
+   "lon": 144.9555369,
+   "tags": {
+    "opening_hours": "Tu-Th 12:00-22:00; Fr 12:00-23:00",
+    "outdoor_seating": "no",
+    "addr:housenumber": "579",
+    "addr:street": "Little Collins Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n2345090410",
+   "name": "The Alexander Bar",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.817874,
+   "lon": 144.954052,
+   "tags": {
+    "outdoor_seating": "yes",
+    "addr:street": "Little Collins Street",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n2372889093",
+   "name": "Pizza Hut",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.819789,
+   "lon": 144.948288,
+   "tags": {
+    "website": "https://www.pizzahut.com.au/",
+    "cuisine": "pizza",
+    "outdoor_seating": "no",
+    "brand": "Pizza Hut",
+    "addr:housenumber": "57",
+    "addr:street": "Batmans Hill Drive",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2372890199",
+   "name": "Degani",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.819121,
+   "lon": 144.948331,
+   "tags": {
+    "website": "https://www.degani.com.au/",
+    "phone": "+61 3 9606 0655",
+    "cuisine": "coffee_shop",
+    "outdoor_seating": "no",
+    "addr:street": "Batmans Hill Drive",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2372890746",
+   "name": "The Hof Downtown",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.8186914,
+   "lon": 144.9488565,
+   "tags": {
+    "description": "German Gastropub",
+    "outdoor_seating": "yes",
+    "internet_access": "no",
+    "addr:housenumber": "737",
+    "addr:street": "Bourke Street",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n2372891529",
+   "name": "Platform 28",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.818575,
+   "lon": 144.949135,
+   "tags": {
+    "website": "https://www.platform28.com.au/",
+    "phone": "+61 3 9670 9933",
+    "opening_hours": "Mo-Sa 12:00-23:00; Su 11:00-17:00",
+    "cuisine": "diner",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "82",
+    "addr:street": "Village Street",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2382183715",
+   "name": "Bev & Mick's McMahon's Hotel",
+   "group": "stay",
+   "type": "hostel",
+   "lat": -37.8073796,
+   "lon": 144.9470005,
+   "tags": {
+    "addr:housenumber": "575",
+    "addr:street": "Spencer Street",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "n2411587804",
+   "name": "Network Public Bar & Pizzeria",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.8178056,
+   "lon": 144.9532602,
+   "tags": {
+    "website": "https://networkpublicbar.com.au/",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n2441155777",
+   "name": "Kedai Satay",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8156962,
+   "lon": 144.9556204,
+   "tags": {
+    "phone": "+61 3 9640 0371",
+    "cuisine": "indonesian",
+    "outdoor_seating": "no",
+    "addr:housenumber": "186",
+    "addr:street": "King Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2664379145",
+   "name": "Shanghai Dumpling House",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.816047,
+   "lon": 144.9553518,
+   "tags": {
+    "phone": "+61 3 9077 0919",
+    "cuisine": "chinese",
+    "addr:housenumber": "171-173",
+    "addr:street": "King Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2690754173",
+   "name": "Cafenatics",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8141621,
+   "lon": 144.9470999,
+   "tags": {
+    "website": "https://www.cafenatics.com.au/locations/990-la-trobe",
+    "phone": "+61 3 9670 4442",
+    "opening_hours": "Mo-Fr 06:00-16:30",
+    "cuisine": "coffee_shop",
+    "wheelchair": "yes",
+    "internet_access": "no",
+    "addr:housenumber": "990",
+    "addr:street": "La Trobe Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2702382458",
+   "name": "PappaRich",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.819341,
+   "lon": 144.952417,
+   "tags": {
+    "website": "https://www.papparich.net.au",
+    "cuisine": "malaysian",
+    "brand": "PappaRich",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2849821022",
+   "name": "Foremost",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8132871,
+   "lon": 144.9410614,
+   "tags": {
+    "addr:housenumber": "380",
+    "addr:street": "Docklands Drive",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3012090064",
+   "name": "HiRize Bakery Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8161514,
+   "lon": 144.9530143,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "internet_access": "no",
+    "addr:housenumber": "200",
+    "addr:street": "Spencer Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3012129851",
+   "name": "In a Rush",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.817511,
+   "lon": 144.9529383,
+   "tags": {
+    "opening_hours": "Mo-Su 08:00-20:00",
+    "cuisine": "coffee_shop",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3046064445",
+   "name": "New Quay Buffet & Bar",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8140216,
+   "lon": 144.9439195,
+   "tags": {
+    "website": "https://newquaybuffet.com.au/",
+    "addr:housenumber": "6",
+    "addr:street": "Newquay Promenade",
+    "addr:suburb": "Docklands",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3058383419",
+   "name": "O-Bento",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8136677,
+   "lon": 144.9463008,
+   "tags": {
+    "website": "https://www.o-bento.com.au/",
+    "phone": "+61 3 9642 8181",
+    "opening_hours": "09:00-16:00",
+    "cuisine": "japanese",
+    "addr:housenumber": "990",
+    "addr:street": "La Trobe Street",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3072718452",
+   "name": "The Boatbuilders Yard",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.82414,
+   "lon": 144.9529795,
+   "tags": {
+    "wheelchair": "yes",
+    "outdoor_seating": "yes",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n3259282307",
+   "name": "Asuka Sushi",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8182508,
+   "lon": 144.9500152,
+   "tags": {
+    "cuisine": "japanese",
+    "addr:housenumber": "717",
+    "addr:street": "Bourke Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3259282308",
+   "name": "Grain 717",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8182232,
+   "lon": 144.9501342,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "addr:housenumber": "717",
+    "addr:street": "Bourke Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3259282312",
+   "name": "Café Cavallino",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8184335,
+   "lon": 144.95028,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "addr:housenumber": "717",
+    "addr:street": "Bourke Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3291840662",
+   "name": "Hugo's Express",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8178619,
+   "lon": 144.9548526,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3375917193",
+   "name": "Steakhouse Grill 66",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8152334,
+   "lon": 144.940694,
+   "tags": {
+    "website": "https://steakhouse66.com.au/",
+    "phone": "+61 3 9640 0808",
+    "opening_hours": "Mo-Su 12:00-15:00,17:30-22:00",
+    "cuisine": "steak_house",
+    "addr:housenumber": "66",
+    "addr:street": "Newquay Promenade",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3375917893",
+   "name": "Cargo",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8153633,
+   "lon": 144.9414726,
+   "tags": {
+    "website": "https://cargorestaurant.com.au/",
+    "phone": "+61 3 9670 0999",
+    "opening_hours": "Mo-Th 12:00-23:00; Fr 12:00-23:30; Sa 11:00-23:30; Su 11:00-23:00",
+    "cuisine": "international;italian;pizza",
+    "wheelchair": "yes",
+    "addr:housenumber": "55A",
+    "addr:street": "Newquay Promenade",
+    "addr:suburb": "Docklands",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3375918793",
+   "name": "Berth",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8152072,
+   "lon": 144.9418582,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3375918893",
+   "name": "Chase Docklands",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8148552,
+   "lon": 144.9415241,
+   "tags": {
+    "website": "https://www.chasedocklands.com.au",
+    "phone": "+61 3 9996 8753",
+    "opening_hours": "Mo-Su 02:00-00:00",
+    "cuisine": "middle_eastern",
+    "addr:housenumber": "50",
+    "addr:street": "Newquay Promenade",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3375919549",
+   "name": "Chia chia",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8213026,
+   "lon": 144.9450117,
+   "tags": {
+    "wheelchair": "limited",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3375919551",
+   "name": "Pho & Bakery",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8213354,
+   "lon": 144.9452234,
+   "tags": {
+    "wheelchair": "yes",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3375919561",
+   "name": "Little Bean Dockside",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.821252,
+   "lon": 144.944619,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3375923620",
+   "name": "Achelya",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8142338,
+   "lon": 144.9426755,
+   "tags": {
+    "cuisine": "turkish",
+    "addr:housenumber": "23",
+    "addr:street": "Aquitania Way",
+    "addr:suburb": "Docklands",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3375923628",
+   "name": "Docklands Lotus",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8141616,
+   "lon": 144.9435093,
+   "tags": {
+    "opening_hours": "Su,Mo 16:30-21:00; We-Sa 11:30-14:30,16:30-21:00; Tu off",
+    "cuisine": "chinese",
+    "addr:housenumber": "16",
+    "addr:street": "Newquay Promenade",
+    "addr:suburb": "Docklands",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3375923629",
+   "name": "Capri",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8140397,
+   "lon": 144.9428674,
+   "tags": {
+    "opening_hours": "Mo-Sa 07:00-13:30",
+    "addr:housenumber": "28",
+    "addr:street": "Aquitania Way",
+    "addr:suburb": "Docklands",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3408627870",
+   "name": "Alma Doepel Restoration Project",
+   "group": "do",
+   "type": "museum",
+   "lat": -37.8193359,
+   "lon": 144.9356712,
+   "tags": {
+    "website": "https://www.almadoepel.com.au/",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "n3442391203",
+   "name": "Lyns Kitchen",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8126448,
+   "lon": 144.9542217,
+   "tags": {
+    "addr:housenumber": "324",
+    "addr:street": "King Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3509536711",
+   "name": "Pizze Société",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8234463,
+   "lon": 144.9407593,
+   "tags": {
+    "cuisine": "pizza",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3769980120",
+   "name": "Kebab & Gözleme Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8190181,
+   "lon": 144.9473459,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3808190239",
+   "name": "Melbourne Central YHA",
+   "group": "stay",
+   "type": "hostel",
+   "lat": -37.8206547,
+   "lon": 144.9556598,
+   "tags": {
+    "website": "https://www.yha.com.au/hostels/vic/melbourne-hostels/melbourne-central-hostel/",
+    "phone": "+61 3 9621 2523",
+    "addr:housenumber": "562",
+    "addr:street": "Flinders Street",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "n3861896957",
+   "name": "Yatra of Lenny's",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8089246,
+   "lon": 144.9488687,
+   "tags": {
+    "website": "http://www.yatraoflennys.com.au",
+    "phone": "+61 3 9329 9737",
+    "cuisine": "indian",
+    "addr:housenumber": "495",
+    "addr:street": "Spencer Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3861897057",
+   "name": "The Spencer Backpackers",
+   "group": "stay",
+   "type": "hostel",
+   "lat": -37.809605,
+   "lon": 144.949142,
+   "tags": {
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "n3905530349",
+   "name": "St. Brew",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8196739,
+   "lon": 144.9511872,
+   "tags": {
+    "phone": "+61 3 9670 1883",
+    "cuisine": "coffee_shop",
+    "outdoor_seating": "no",
+    "addr:housenumber": "700",
+    "addr:street": "Collins Street",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3905904432",
+   "name": "Degani Bakery Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8199126,
+   "lon": 144.9505437,
+   "tags": {
+    "website": "https://www.degani.com.au/",
+    "addr:housenumber": "710",
+    "addr:street": "Collins Street",
+    "addr:suburb": "Docklands",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3905908767",
+   "name": "Bar Nacional",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.8204444,
+   "lon": 144.9501923,
+   "tags": {
+    "website": "https://www.barnacional.com.au/",
+    "phone": "+61 3 9252 7999",
+    "addr:housenumber": "727",
+    "addr:street": "Collins Street",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n3952949231",
+   "name": "TAP831",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8200567,
+   "lon": 144.9436768,
+   "tags": {
+    "website": "https://www.tap831.com.au/",
+    "phone": "+61 3 8592 1220",
+    "addr:housenumber": "831",
+    "addr:street": "Bourke Street",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4065854690",
+   "name": "Ginger Leaf Thai",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8189845,
+   "lon": 144.9474351,
+   "tags": {
+    "website": "https://www.gingerleafthai.com.au/",
+    "phone": "+61 3 9600 4166",
+    "cuisine": "thai",
+    "addr:housenumber": "763",
+    "addr:street": "Bourke Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4065854692",
+   "name": "Nixon Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.818769,
+   "lon": 144.9482517,
+   "tags": {
+    "website": "https://www.nixonhotel.com.au/",
+    "phone": "+61 3 9642 3272",
+    "addr:housenumber": "757",
+    "addr:street": "Bourke Street",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n4103887541",
+   "name": "EARL Canteen",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8191106,
+   "lon": 144.9558503,
+   "tags": {
+    "opening_hours": "Mo-Fr",
+    "cuisine": "coffee_shop",
+    "addr:housenumber": "567",
+    "addr:street": "Collins Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n4274574356",
+   "name": "Sidearm",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8279891,
+   "lon": 144.9497198,
+   "tags": {
+    "website": "http://sidearm.com.au/",
+    "addr:housenumber": "200",
+    "addr:street": "Normanby Road",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n4407728007",
+   "name": "Plenary Café",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8251369,
+   "lon": 144.9531076,
+   "tags": {
+    "website": "https://mcec.com.au/plan-an-event/food-and-beverage/retail",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n4637139110",
+   "name": "Melbourne Goods Yard Viewing Platform",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -37.8087933,
+   "lon": 144.9436842,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n4677281000",
+   "name": "Cherry & Twigs Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.82004,
+   "lon": 144.9557185,
+   "tags": {
+    "website": "https://cherryandtwigs.com.au/",
+    "phone": "+61 3 9614 7096",
+    "opening_hours": "Mo-Fr 06:30-14:30; Sa-Su 07:30-14:00",
+    "addr:housenumber": "555",
+    "addr:street": "Flinders Lane",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n4698675573",
+   "name": "CBCo Brewing",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8286656,
+   "lon": 144.9368688,
+   "tags": {
+    "website": "https://cbco.beer/",
+    "phone": "+61 3 8644 4044",
+    "opening_hours": "We 15:00-19:00; Th 12:00-21:30; Fr-Sa 12:00-23:00; Su 12:00-18:00",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "89",
+    "addr:street": "Bertie Street",
+    "addr:suburb": "Port Melbourne",
+    "addr:postcode": "3207",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n4709328190",
+   "name": "Chilli Padi",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8122137,
+   "lon": 144.9381535,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4709336389",
+   "name": "The Coffee Club",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8122596,
+   "lon": 144.9379903,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "brand": "The Coffee Club",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n4795093767",
+   "name": "ArtVo",
+   "group": "do",
+   "type": "gallery",
+   "lat": -37.8128018,
+   "lon": 144.9377306,
+   "tags": {
+    "website": "https://artvo.com.au/",
+    "phone": "+61 3 9600 1118",
+    "opening_hours": "Mo-Su 10:00-18:00",
+    "addr:housenumber": "26",
+    "addr:street": "Star Crescent",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "n4913804145",
+   "name": "Bon Bon Boy",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8159143,
+   "lon": 144.9529592,
+   "tags": {
+    "cuisine": "vietnamese",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4957928429",
+   "name": "Higher Ground Melbourne",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8158967,
+   "lon": 144.9531574,
+   "tags": {
+    "website": "https://www.highergroundmelbourne.com.au/",
+    "phone": "+61 3 8899 6219",
+    "opening_hours": "Mo-We 07:00-16:00; Th-Fr 07:00-00:00; Sa 08:00-00:00; Su 08:00-16:00",
+    "cuisine": "local",
+    "addr:housenumber": "650",
+    "addr:street": "Little Bourke Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5061484675",
+   "name": "Rana’s Bakery",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8186255,
+   "lon": 144.9473022,
+   "tags": {
+    "opening_hours": "Mo-Fr 08:00-15:00; Sa 09:00-16:00",
+    "addr:housenumber": "768",
+    "addr:street": "Bourke Street",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n5330134572",
+   "name": "B Club Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8147622,
+   "lon": 144.9402819,
+   "tags": {
+    "website": "http://www.bclubcafe.com.au/",
+    "opening_hours": "Mo-Sa 06:00-14:45; Su 07:00-15:30",
+    "addr:housenumber": "43",
+    "addr:street": "Caravel Lane",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n5433712321",
+   "name": "The School of Life",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8170674,
+   "lon": 144.9541163,
+   "tags": {
+    "website": "https://www.theschooloflife.com/melbourne/",
+    "opening_hours": "Tu-Sa 11:00-17:00",
+    "addr:housenumber": "669",
+    "addr:street": "Bourke Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n5483855676",
+   "name": "Holey Moley",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.8154549,
+   "lon": 144.9547648,
+   "tags": {
+    "website": "https://www.holeymoley.com.au/",
+    "brand": "Holey Moley",
+    "addr:housenumber": "590",
+    "addr:street": "Little Bourke Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "bar",
+    "leisure": "miniature_golf"
+   }
+  },
+  {
+   "id": "n5485479579",
+   "name": "Squires Loft",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8188954,
+   "lon": 144.9440559,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5536843521",
+   "name": "Hooks at the Yarra",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8240816,
+   "lon": 144.947699,
+   "tags": {
+    "addr:street": "Main Yarra Trail",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n5565502254",
+   "name": "Docklands Den",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8140951,
+   "lon": 144.9403455,
+   "tags": {
+    "outdoor_seating": "yes",
+    "addr:housenumber": "5",
+    "addr:street": "Rakaia Way",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5800134854",
+   "name": "Billy barista",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8204349,
+   "lon": 144.9422792,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5965841703",
+   "name": "Urban Alley Brewery",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8120561,
+   "lon": 144.9368031,
+   "tags": {
+    "website": "https://urbanalley.com.au/",
+    "phone": "+61 3 8080 9800",
+    "opening_hours": "Mo-Fr 11:00-00:00; Sa-Su 11:00-01:00",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "12",
+    "addr:street": "Star Circus",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n6002364870",
+   "name": "Almina",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8156359,
+   "lon": 144.9388687,
+   "tags": {
+    "website": "http://almina.com.au/",
+    "phone": "+61 3 9090 7280",
+    "opening_hours": "12:00+",
+    "cuisine": "lebanese;mediterranean",
+    "addr:housenumber": "439",
+    "addr:street": "Docklands Drive",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6145038455",
+   "name": "Foglia di Fico",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8132804,
+   "lon": 144.9517693,
+   "tags": {
+    "phone": "+61 3 9642 4394",
+    "cuisine": "italian",
+    "addr:housenumber": "585",
+    "addr:street": "La Trobe Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6678532330",
+   "name": "Merchant Society",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8203231,
+   "lon": 144.9437965,
+   "tags": {
+    "cuisine": "asian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6678532337",
+   "name": "Indi Hots",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8200954,
+   "lon": 144.9434537,
+   "tags": {
+    "cuisine": "indian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6678532354",
+   "name": "Kenny’s Bakery Cafe",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8209125,
+   "lon": 144.9441018,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6678532421",
+   "name": "D.G. Expresso",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8205603,
+   "lon": 144.9438715,
+   "tags": {
+    "outdoor_seating": "no",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6680787313",
+   "name": "Saluministi",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8204154,
+   "lon": 144.9411899,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6699781951",
+   "name": "Coffee Gauge",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8199191,
+   "lon": 144.9440603,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6699795692",
+   "name": "Go Green Raw Foods",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8197361,
+   "lon": 144.9447912,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6699795711",
+   "name": "Vintam’s Bakery",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8193314,
+   "lon": 144.943274,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6699795735",
+   "name": "Blended Beard",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8195432,
+   "lon": 144.9441992,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6699795736",
+   "name": "Cafe Bambino",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8200506,
+   "lon": 144.9449768,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6699795763",
+   "name": "Assaggia",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8199394,
+   "lon": 144.9428648,
+   "tags": {
+    "cuisine": "italian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6699795777",
+   "name": "Min The Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8201789,
+   "lon": 144.9420594,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6699795811",
+   "name": "Tsukino Shizuku",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8198396,
+   "lon": 144.944412,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6725404938",
+   "name": "Russell's Old Corner Shop",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.8125507,
+   "lon": 144.954225,
+   "tags": {
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n6741639503",
+   "name": "365",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.821841,
+   "lon": 144.9449468,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6741639519",
+   "name": "Charlie Bit Me",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8207115,
+   "lon": 144.94503,
+   "tags": {
+    "outdoor_seating": "yes",
+    "addr:housenumber": "838",
+    "addr:street": "Collins Street",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6741639603",
+   "name": "The Other Brother",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8217377,
+   "lon": 144.9442624,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6741639604",
+   "name": "O Bento",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.820754,
+   "lon": 144.9448368,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6741639613",
+   "name": "Caffé ESC",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8216918,
+   "lon": 144.9462505,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6741639644",
+   "name": "iBean",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8212385,
+   "lon": 144.9453255,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6743436191",
+   "name": "MMS",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8198827,
+   "lon": 144.9482263,
+   "tags": {
+    "cuisine": "indian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6760874969",
+   "name": "Rhumba’s",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8191324,
+   "lon": 144.9454241,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6760874974",
+   "name": "Watermark",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8187687,
+   "lon": 144.9443736,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6760877828",
+   "name": "Pok Pok",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8195468,
+   "lon": 144.9453683,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6760877858",
+   "name": "BITO Beans Bourke",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8186934,
+   "lon": 144.9445761,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6775859683",
+   "name": "The Pancake Parlour",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8115273,
+   "lon": 144.9372648,
+   "tags": {
+    "cuisine": "dessert;pancakes",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6856256776",
+   "name": "Sushi Nori",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8210544,
+   "lon": 144.9498179,
+   "tags": {
+    "cuisine": "sushi",
+    "addr:housenumber": "727",
+    "addr:street": "Collins Street",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6856350987",
+   "name": "Upstanding Citizens",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8211524,
+   "lon": 144.9492866,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n7005735913",
+   "name": "Miss Ping's",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8125668,
+   "lon": 144.9374474,
+   "tags": {
+    "website": "https://www.misspings.com.au/",
+    "cuisine": "thai",
+    "outdoor_seating": "yes",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n7005747984",
+   "name": "Sushi Yuzen",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8122021,
+   "lon": 144.9388428,
+   "tags": {
+    "cuisine": "sushi",
+    "outdoor_seating": "no",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n7113057724",
+   "name": "China Bar",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8127619,
+   "lon": 144.9391958,
+   "tags": {
+    "cuisine": "chinese",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n7244201679",
+   "name": "Coffee Rush",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8153071,
+   "lon": 144.9522179,
+   "tags": {
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n7648256385",
+   "name": "Byblos",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8231828,
+   "lon": 144.9534292,
+   "tags": {
+    "website": "https://www.byblosbar.com.au",
+    "phone": "+61 3 9614 6400",
+    "cuisine": "lebanese",
+    "wheelchair": "yes",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "G12",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n7655518028",
+   "name": "Anchor Eatery",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8217715,
+   "lon": 144.9363723,
+   "tags": {
+    "opening_hours": "Tu-Su 07:00-14:00",
+    "cuisine": "coffee;breakfast;lunch",
+    "wheelchair": "yes",
+    "outdoor_seating": "yes",
+    "internet_access": "no",
+    "addr:housenumber": "196",
+    "addr:street": "River Esplanade",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n8653731449",
+   "name": "Quest NewQuay",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8142398,
+   "lon": 144.9407241,
+   "tags": {
+    "brand": "Quest",
+    "addr:housenumber": "26",
+    "addr:street": "Caravel Lane",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n8723586416",
+   "name": "Tap 831",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.8200496,
+   "lon": 144.9436337,
+   "tags": {
+    "addr:housenumber": "831",
+    "addr:street": "Bourke Street",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n9026510342",
+   "name": "Di Parsia Pasticceria Caffe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8209984,
+   "lon": 144.9559432,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9050119925",
+   "name": "Sassy Italian Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8069825,
+   "lon": 144.9425344,
+   "tags": {
+    "cuisine": "italian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n9140188717",
+   "name": "Gloria Jean's",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8175896,
+   "lon": 144.951687,
+   "tags": {
+    "website": "https://www.gloriajeanscoffees.com.au/",
+    "phone": "+61 451 950 166",
+    "opening_hours": "Mo-Fr 05:30-18:30; Sa 07:30-14:00; Su 08:00-13:00",
+    "cuisine": "coffee_shop",
+    "brand": "Gloria Jean's",
+    "addr:housenumber": "BSB01",
+    "addr:street": "Bourke Street Footbridge",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9141577034",
+   "name": "Sensory Lab",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8219299,
+   "lon": 144.9264746,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9141577046",
+   "name": "Hall St. Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8227748,
+   "lon": 144.9265493,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9294887249",
+   "name": "Mövenpick Hotel Melbourne on Spencer",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8173086,
+   "lon": 144.9537168,
+   "tags": {
+    "wheelchair": "yes",
+    "brand": "Mövenpick",
+    "addr:housenumber": "160",
+    "addr:street": "Spencer Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n9858416824",
+   "name": "The Perch Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8123945,
+   "lon": 144.9549224,
+   "tags": {
+    "addr:housenumber": "485",
+    "addr:street": "La Trobe Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n10065595255",
+   "name": "Daybreak Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8129813,
+   "lon": 144.9392926,
+   "tags": {
+    "website": "https://www.daybreakcafe.com.au/",
+    "opening_hours": "Mo-Fr 07:00-16:00; Sa,Su 07:30-16:00; PH 07:30-16:00",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "90",
+    "addr:street": "Waterfront Way",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n10187943551",
+   "name": "Teej Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8185302,
+   "lon": 144.9476112,
+   "tags": {
+    "description": "the exact location of this Cafe needs to be further improved given that my entry is only an estimate probably within a 10 m radius",
+    "addr:housenumber": "760",
+    "addr:street": "Bourke Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n10187961039",
+   "name": "Fuumi Fuumi",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.808816,
+   "lon": 144.9506766,
+   "tags": {
+    "addr:housenumber": "113",
+    "addr:street": "Rosslyn Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n10279661116",
+   "name": "Renzo's Bar",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.8148125,
+   "lon": 144.941645,
+   "tags": {
+    "outdoor_seating": "yes",
+    "addr:housenumber": "46",
+    "addr:street": "Newquay Promenade",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n10575862599",
+   "name": "Common Place Coffee Brewers",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8151033,
+   "lon": 144.9541949,
+   "tags": {
+    "opening_hours": "Mo-Fr 06:00-16:00; Sa 07:00-16:00; PH 08:00-15:00 open; Su 08:00-15:00",
+    "wheelchair": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n10575862601",
+   "name": "Salero Kito Padang Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8154166,
+   "lon": 144.9541691,
+   "tags": {
+    "cuisine": "indonesian",
+    "wheelchair": "yes",
+    "outdoor_seating": "yes",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n10575862602",
+   "name": "Korean Table",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8150482,
+   "lon": 144.9539824,
+   "tags": {
+    "cuisine": "korean",
+    "wheelchair": "yes",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n10575862603",
+   "name": "Onsen Domburi",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.814854,
+   "lon": 144.9541007,
+   "tags": {
+    "cuisine": "japanese",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n10575862605",
+   "name": "I Love Chicken",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8148888,
+   "lon": 144.9539312,
+   "tags": {
+    "opening_hours": "Mo-Su 12:00-04:00",
+    "cuisine": "korean",
+    "wheelchair": "yes",
+    "addr:housenumber": "34",
+    "addr:street": "Rose Lane",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n10575891366",
+   "name": "My Goodness Bar & Eatery",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8149639,
+   "lon": 144.9535724,
+   "tags": {
+    "wheelchair": "limited",
+    "outdoor_seating": "yes",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n10872162615",
+   "name": "Brunos",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8178155,
+   "lon": 144.9491093,
+   "tags": {
+    "addr:housenumber": "720",
+    "addr:street": "Bourke Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11031787359",
+   "name": "Chatime",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8170799,
+   "lon": 144.9526664,
+   "tags": {
+    "cuisine": "bubble_tea",
+    "brand": "Chatime",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11133479238",
+   "name": "Code Black Coffee",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8178741,
+   "lon": 144.9538677,
+   "tags": {
+    "website": "https://codeblackcoffee.com.au/",
+    "opening_hours": "Mo-Fr 07:00-17:00; Sa-Su 08:00-16:00",
+    "wheelchair": "yes",
+    "addr:housenumber": "630",
+    "addr:street": "Little Collins Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11133479239",
+   "name": "Movenpick",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.8172324,
+   "lon": 144.953582,
+   "tags": {
+    "wheelchair": "yes",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n11133502125",
+   "name": "Oli & Levi Espresso",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8160083,
+   "lon": 144.9562443,
+   "tags": {
+    "wheelchair": "limited",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11133502133",
+   "name": "Miss Mi",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8171322,
+   "lon": 144.953778,
+   "tags": {
+    "wheelchair": "yes",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11168844123",
+   "name": "Batman's Hill",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.8193858,
+   "lon": 144.9539139,
+   "tags": {
+    "wikidata": "Q4869331",
+    "wikipedia": "en:Batman's Hill",
+    "addr:street": "Collins Street",
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n11182252759",
+   "name": "Citizen",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.8244764,
+   "lon": 144.9506856,
+   "tags": {
+    "wheelchair": "yes",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n11182252767",
+   "name": "Tessie Pearl Hotel",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.8242892,
+   "lon": 144.9496905,
+   "tags": {
+    "wheelchair": "yes",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n11182252768",
+   "name": "Melbourne Public Bar",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.8244383,
+   "lon": 144.9510073,
+   "tags": {
+    "wheelchair": "yes",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n11182252774",
+   "name": "Billie's Bites & Bar",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8242324,
+   "lon": 144.9491505,
+   "tags": {
+    "outdoor_seating": "yes",
+    "addr:housenumber": "39",
+    "addr:street": "Dukes Walk",
+    "addr:suburb": "South Wharf",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11182252777",
+   "name": "The Summit Club",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8242605,
+   "lon": 144.949431,
+   "tags": {
+    "cuisine": "indian",
+    "wheelchair": "yes",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11182252784",
+   "name": "Melbourne Cellar Door",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.8243161,
+   "lon": 144.9499358,
+   "tags": {
+    "wheelchair": "yes",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n11182281880",
+   "name": "Stockroom 567",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.818908,
+   "lon": 144.9553914,
+   "tags": {
+    "wheelchair": "yes",
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11182281886",
+   "name": "Namoo Japanese Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8186883,
+   "lon": 144.956086,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11182281890",
+   "name": "Namoo",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8187461,
+   "lon": 144.9561264,
+   "tags": {
+    "cuisine": "japanese;sushi",
+    "wheelchair": "yes",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11182281892",
+   "name": "Sushi Hub",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.81884,
+   "lon": 144.9543564,
+   "tags": {
+    "cuisine": "sushi",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11182281895",
+   "name": "Palm Sugar",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8190138,
+   "lon": 144.9549495,
+   "tags": {
+    "wheelchair": "yes",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11182281896",
+   "name": "Schmucks Bagels",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8189599,
+   "lon": 144.9551873,
+   "tags": {
+    "website": "https://schmucksbagels.com.au/",
+    "phone": "+61 3 9614 3238",
+    "opening_hours": "Mo-Fr 06:30-17:30; Sa-Su 07:30-15:00",
+    "wheelchair": "yes",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "567",
+    "addr:street": "Collins Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11182281898",
+   "name": "Chilli Everest",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8190291,
+   "lon": 144.9548843,
+   "tags": {
+    "cuisine": "indian",
+    "wheelchair": "yes",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11185870783",
+   "name": "Old Man Pho",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.812316,
+   "lon": 144.9378368,
+   "tags": {
+    "website": "https://oldmanpho.com.au/",
+    "cuisine": "vietnamese",
+    "addr:housenumber": "4",
+    "addr:street": "Star Circus",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11529651169",
+   "name": "Story Coffee",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8176,
+   "lon": 144.9493274,
+   "tags": {
+    "addr:housenumber": "700",
+    "addr:street": "Bourke Street",
+    "addr:postcode": "3008",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11576193213",
+   "name": "The Sebel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8138153,
+   "lon": 144.9426452,
+   "tags": {
+    "brand": "The Sebel",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n11576362214",
+   "name": "Bhoj",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8149243,
+   "lon": 144.9413359,
+   "tags": {
+    "cuisine": "indian",
+    "wheelchair": "yes",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "54",
+    "addr:street": "Newquay Promenade",
+    "addr:suburb": "Docklands",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11576362215",
+   "name": "Butcher's Prime",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8147794,
+   "lon": 144.9418824,
+   "tags": {
+    "cuisine": "steak;seafood",
+    "addr:housenumber": "42",
+    "addr:street": "Newquay Promenade",
+    "addr:suburb": "Docklands",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11576362216",
+   "name": "Dock 18",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8151974,
+   "lon": 144.9379932,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11577816994",
+   "name": "Cocobei",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8142896,
+   "lon": 144.9396203,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11577816998",
+   "name": "Evergreen Pizzeria",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8144958,
+   "lon": 144.9401288,
+   "tags": {
+    "cuisine": "pizza",
+    "addr:housenumber": "42",
+    "addr:street": "Caravel Lane",
+    "addr:suburb": "Docklands",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11585574169",
+   "name": "Melbourne Ferry Terminal",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.816902,
+   "lon": 144.9450767,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11591086853",
+   "name": "BITO",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.814192,
+   "lon": 144.9450348,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11594695428",
+   "name": "Café Orr",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8250565,
+   "lon": 144.9512029,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11607743505",
+   "name": "18 Pence Lane",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.824583,
+   "lon": 144.9452578,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11607743514",
+   "name": "Corniche",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8244089,
+   "lon": 144.9440834,
+   "tags": {
+    "cuisine": "lebanese",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11607743515",
+   "name": "The Espressionist",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.824162,
+   "lon": 144.9433732,
+   "tags": {
+    "website": "https://www.the-espressonist.com/",
+    "addr:housenumber": "108",
+    "addr:street": "River Esplanade",
+    "addr:suburb": "Docklands",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11629438767",
+   "name": "My Koala Café",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8140423,
+   "lon": 144.944826,
+   "tags": {
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11629632220",
+   "name": "Dock 37 Bar & Kitchen",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8246302,
+   "lon": 144.9514059,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11629632221",
+   "name": "Goldfields Café + Bar",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8257505,
+   "lon": 144.951849,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11674918646",
+   "name": "Boost Juice",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8189151,
+   "lon": 144.9536169,
+   "tags": {
+    "cuisine": "juice",
+    "brand": "Boost Juice",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11747692470",
+   "name": "Meriton Suites Melbourne",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.816883,
+   "lon": 144.9561904,
+   "tags": {
+    "addr:housenumber": "140",
+    "addr:street": "King Street",
+    "addr:postcode": "3000",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n11776359097",
+   "name": "The King Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8172086,
+   "lon": 144.9563587,
+   "tags": {
+    "wheelchair": "yes",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n11776494395",
+   "name": "Delhi Rocks",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8154029,
+   "lon": 144.9550444,
+   "tags": {
+    "cuisine": "indian",
+    "wheelchair": "limited",
+    "outdoor_seating": "no",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11776494396",
+   "name": "Dosa Hut",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8152772,
+   "lon": 144.9550066,
+   "tags": {
+    "cuisine": "indian",
+    "wheelchair": "no",
+    "outdoor_seating": "no",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12278015063",
+   "name": "Biryani House",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8123561,
+   "lon": 144.9536805,
+   "tags": {
+    "cuisine": "indian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12278029869",
+   "name": "Hansang",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8121354,
+   "lon": 144.9535347,
+   "tags": {
+    "website": "https://www.hansang.com.au/",
+    "phone": "+61 3 9995 0867",
+    "opening_hours": "Th-Tu 11:30-15:00,17:30-22:00",
+    "cuisine": "korean",
+    "addr:housenumber": "349",
+    "addr:street": "King Street",
+    "addr:suburb": "West Melbourne",
+    "addr:postcode": "3003",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12278050712",
+   "name": "Impresso Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8122817,
+   "lon": 144.953649,
+   "tags": {
+    "phone": "+61 3 9329 4699",
+    "opening_hours": "Mo-Fr 06:30-15:30,Sa 06:30-11:00",
+    "cuisine": "coffee_shop",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "341",
+    "addr:street": "King Street",
+    "addr:suburb": "West Melbourne",
+    "addr:postcode": "3003",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12353180567",
+   "name": "Groovy Mamas",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8212431,
+   "lon": 144.9431617,
+   "tags": {
+    "cuisine": "thai;american;fusion",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12405718301",
+   "name": "Lan Pa Long",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8185765,
+   "lon": 144.9448216,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12503155564",
+   "name": "Meals With Impact",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8207203,
+   "lon": 144.9490086,
+   "tags": {
+    "outdoor_seating": "no",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12503162378",
+   "name": "Meister",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8211991,
+   "lon": 144.9499187,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12503162379",
+   "name": "Pure Pie",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.821147,
+   "lon": 144.9498822,
+   "tags": {
+    "website": "https://www.purepie.com.au",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12511018155",
+   "name": "IS Artworks",
+   "group": "do",
+   "type": "gallery",
+   "lat": -37.8136152,
+   "lon": 144.9388302,
+   "tags": {
+    "wheelchair": "yes",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "n12511025142",
+   "name": "DansDelusion",
+   "group": "do",
+   "type": "gallery",
+   "lat": -37.8135292,
+   "lon": 144.9387988,
+   "tags": {
+    "wheelchair": "yes",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "n12511094930",
+   "name": "30ml",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.8151628,
+   "lon": 144.9409157,
+   "tags": {
+    "outdoor_seating": "yes",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n12511122652",
+   "name": "BBQ King",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8134914,
+   "lon": 144.9547627,
+   "tags": {
+    "cuisine": "barbecue;korean",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12588785480",
+   "name": "Project Zero Coffee",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8167704,
+   "lon": 144.9563295,
+   "tags": {
+    "opening_hours": "07:00-15:00",
+    "cuisine": "coffee_shop",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12686718233",
+   "name": "Holiday Inn Express",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8178642,
+   "lon": 144.9552939,
+   "tags": {
+    "brand": "Holiday Inn Express",
+    "addr:housenumber": "589-599",
+    "addr:street": "Little Collins Street",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n12771391268",
+   "name": "Fukutontei Ramen",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8116682,
+   "lon": 144.9370121,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12886912369",
+   "name": "Crane Bar & Lounge",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.8229567,
+   "lon": 144.9504207,
+   "tags": {
+    "website": "https://www.1hotels.com/melbourne/taste/crane-bar-lounge",
+    "addr:housenumber": "9",
+    "addr:street": "Maritime Place",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n12886912370",
+   "name": "Upstairs",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.8229874,
+   "lon": 144.950572,
+   "tags": {
+    "website": "https://www.1hotels.com/melbourne/taste/upstairs",
+    "addr:housenumber": "9",
+    "addr:street": "Maritime Place",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n12886912371",
+   "name": "From Here by Mike",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8230041,
+   "lon": 144.9504247,
+   "tags": {
+    "website": "https://www.1hotels.com/melbourne/taste/from-here-by-mike",
+    "addr:housenumber": "9",
+    "addr:street": "Maritime Place",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12886912372",
+   "name": "Neighbours",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8230233,
+   "lon": 144.9506963,
+   "tags": {
+    "website": "https://www.1hotels.com/melbourne/taste/neighbours",
+    "addr:housenumber": "9",
+    "addr:street": "Maritime Place",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13048074544",
+   "name": "Little Sparrow",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8188098,
+   "lon": 144.9557921,
+   "tags": {
+    "website": "https://littlesparrow.com/",
+    "opening_hours": "Mo-Fr 06:00-15:30",
+    "addr:housenumber": "567",
+    "addr:street": "Collins Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13073456560",
+   "name": "Cheers Coffee",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8202277,
+   "lon": 144.9418163,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13152032426",
+   "name": "The Laneway by Urban Alley Brewery",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8119293,
+   "lon": 144.9363063,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n13240106621",
+   "name": "Pun Pun Desserts",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8154443,
+   "lon": 144.9532573,
+   "tags": {
+    "cuisine": "dessert",
+    "outdoor_seating": "no",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n13240120401",
+   "name": "My Lost Piece",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8153816,
+   "lon": 144.9532317,
+   "tags": {
+    "cuisine": "taiwanese",
+    "outdoor_seating": "no",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n13264537422",
+   "name": "Gold Leaf",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8153974,
+   "lon": 144.9397677,
+   "tags": {
+    "cuisine": "chinese;barbecue",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n13264537423",
+   "name": "Fish Market",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8153884,
+   "lon": 144.9396125,
+   "tags": {
+    "cuisine": "chinese;fish;seafood",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n13377192605",
+   "name": "Dropout Chaiwala",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8189172,
+   "lon": 144.9528226,
+   "tags": {
+    "cuisine": "tea;indian",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13481530489",
+   "name": "Angliss Bistro",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8131201,
+   "lon": 144.9526798,
+   "tags": {
+    "cuisine": "bistro",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n13481539325",
+   "name": "Cafe 555",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8127526,
+   "lon": 144.9538333,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13523301370",
+   "name": "Omo",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8141843,
+   "lon": 144.9537523,
+   "tags": {
+    "cuisine": "japanese",
+    "wheelchair": "yes",
+    "addr:housenumber": "18",
+    "addr:street": "Merriman Lane",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13536350503",
+   "name": "Royal Stacks",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8166785,
+   "lon": 144.9541106,
+   "tags": {
+    "website": "https://www.royalstacks.com.au/",
+    "phone": "+61 3 9967 8894",
+    "opening_hours": "Mo-We 07:30-24:00; Th-Su 07:30-03:00",
+    "cuisine": "american",
+    "addr:housenumber": "670",
+    "addr:street": "Bourke Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n13555867027",
+   "name": "Lau’s Café 888",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8198952,
+   "lon": 144.9558822,
+   "tags": {
+    "wheelchair": "limited",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "535",
+    "addr:street": "Flinders Lane",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13595005586",
+   "name": "Sher Singh Docklands",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8196012,
+   "lon": 144.945133,
+   "tags": {
+    "website": "https://shersingh.com.au/",
+    "phone": "+61 451 984 484",
+    "cuisine": "indian",
+    "addr:housenumber": "807-809",
+    "addr:street": "Bourke Street",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n13722451189",
+   "name": "Quarterhouse",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8198169,
+   "lon": 144.9522733,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n13724734800",
+   "name": "gökotta KAFFE",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8216276,
+   "lon": 144.9511189,
+   "tags": {
+    "outdoor_seating": "yes",
+    "addr:housenumber": "1",
+    "addr:street": "Village Street",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13734118202",
+   "name": "Sergy Boy",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8199965,
+   "lon": 144.951593,
+   "tags": {
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13770192822",
+   "name": "Sevenstar Grill & Pocha",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8132916,
+   "lon": 144.9556506,
+   "tags": {
+    "cuisine": "korean",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n13783336411",
+   "name": "Fox Classic Car Museum",
+   "group": "do",
+   "type": "museum",
+   "lat": -37.821252,
+   "lon": 144.948532,
+   "tags": {
+    "website": "https://www.foxcollection.org.au/",
+    "opening_hours": "Th-Sa 10:00-14:00",
+    "addr:housenumber": "749-755",
+    "addr:street": "Collins Street",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "n13784203271",
+   "name": "Only Coffee Project",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8202298,
+   "lon": 144.9527202,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "addr:housenumber": "22",
+    "addr:street": "Ti Tree Walk",
+    "addr:suburb": "Docklands",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13784611110",
+   "name": "DOKUTOKU",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8186561,
+   "lon": 144.9471129,
+   "tags": {
+    "phone": "+61 478 542 024",
+    "cuisine": "japanese",
+    "addr:housenumber": "768",
+    "addr:street": "Bourke Street",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n13784611111",
+   "name": "Biryani and Curries by Jannat",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8186037,
+   "lon": 144.9473588,
+   "tags": {
+    "phone": "+61 451 299 151",
+    "opening_hours": "Mo-Fr 11:00-21:00",
+    "cuisine": "indian",
+    "addr:housenumber": "764",
+    "addr:street": "Bourke Street",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n13784611113",
+   "name": "Quest Docklands Apartment Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8184705,
+   "lon": 144.9478236,
+   "tags": {
+    "website": "https://www.questapartments.com.au/properties/vic/docklands/quest-docklands",
+    "phone": "+61 3 9630 1000",
+    "internet_access": "wlan",
+    "brand": "Quest",
+    "addr:housenumber": "750",
+    "addr:street": "Bourke Street",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n13789122317",
+   "name": "The Simple Foodie",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8215274,
+   "lon": 144.9548675,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13800561437",
+   "name": "Milkbar",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8149443,
+   "lon": 144.9460851,
+   "tags": {
+    "website": "https://www.milkbardocklands.com.au/",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13800561440",
+   "name": "Peppers Docklands",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8146279,
+   "lon": 144.947075,
+   "tags": {
+    "brand": "Accor",
+    "addr:housenumber": "679",
+    "addr:street": "La Trobe Street",
+    "addr:suburb": "Docklands",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n13800561468",
+   "name": "Ilza Japanese Cafe",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8150793,
+   "lon": 144.9477959,
+   "tags": {
+    "cuisine": "japanese",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n13810403216",
+   "name": "Yarra Dragon",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.822747,
+   "lon": 144.9538192,
+   "tags": {
+    "website": "https://www.wtcmelbourne.com.au/yarra-dragon/",
+    "cuisine": "asian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n13813380620",
+   "name": "C9 Chocolate & Gelato",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8118156,
+   "lon": 144.9372063,
+   "tags": {
+    "website": "https://www.c9gelato.com.au/",
+    "cuisine": "dessert",
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13898092226",
+   "name": "Sett Coffee",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8077404,
+   "lon": 144.943212,
+   "tags": {
+    "outdoor_seating": "no",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13979581501",
+   "name": "Bobby Stop Stealing Our Camping Chairs",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8158366,
+   "lon": 144.952404,
+   "tags": {
+    "website": "https://bybobby.com.au/",
+    "phone": "+61 415 657 094",
+    "opening_hours": "Mo-Sa 07:00-16:00",
+    "addr:housenumber": "99",
+    "addr:street": "Spencer Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n14084696802",
+   "name": "FOMO Bar & Grill",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8242827,
+   "lon": 144.9434477,
+   "tags": {
+    "website": "https://www.the-espressonist.com/",
+    "addr:housenumber": "108",
+    "addr:street": "River Esplanade",
+    "addr:suburb": "Docklands",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n14084735341",
+   "name": "The Ritz-Carlton",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8146263,
+   "lon": 144.9526687,
+   "tags": {
+    "website": "https://www.ritzcarlton.com/en/hotels/melrz-the-ritz-carlton-melbourne",
+    "brand": "The Ritz-Carlton",
+    "addr:housenumber": "650",
+    "addr:street": "Lonsdale Street",
+    "addr:suburb": "Melbourne",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n14084735342",
+   "name": "Dorsett Melbourne",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8139784,
+   "lon": 144.9532411,
+   "tags": {
+    "website": "https://www.dorsetthotels.com/dorsett-melbourne/",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n14098082295",
+   "name": "Cotti Coffee",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8174491,
+   "lon": 144.9529828,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n14111610345",
+   "name": "Gongcha",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8144957,
+   "lon": 144.9524806,
+   "tags": {
+    "website": "https://gongchatea.com.au/store-finder/",
+    "opening_hours": "11:00-22:00",
+    "cuisine": "bubble_tea",
+    "wheelchair": "yes",
+    "addr:housenumber": "260",
+    "addr:street": "Spencer Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n14145433401",
+   "name": "Shaak Veg Cafe",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8151285,
+   "lon": 144.9549149,
+   "tags": {
+    "cuisine": "indian",
+    "addr:housenumber": "219",
+    "addr:street": "King Street",
+    "addr:postcode": "3000",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n14212256001",
+   "name": "Chilli India",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.819172,
+   "lon": 144.948332,
+   "tags": {
+    "website": "https://chilliindia.com.au/",
+    "phone": "+61 3 8383 1008",
+    "opening_hours": "Mo-Th 11:30-21:30; Fr 11:30-22:00; Sa-Su 12:00-16:00,17:30-21:30",
+    "cuisine": "indian",
+    "addr:housenumber": "77",
+    "addr:street": "Batmans Hill Drive",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n14236735069",
+   "name": "Supagrino",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.819496,
+   "lon": 144.9520826,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w4817082",
+   "name": "Flagstaff Gardens",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.8104878,
+   "lon": 144.9544241,
+   "tags": {
+    "wikidata": "Q5457014",
+    "wikipedia": "en:Flagstaff Gardens",
+    "tourism": "attraction",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w14664549",
+   "name": "Batman’s Hill on Collins",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8192093,
+   "lon": 144.9546504,
+   "tags": {
+    "website": "https://www.batmanshill.com.au",
+    "phone": "+61 3 9614 6344",
+    "brand": "Quality Hotel",
+    "addr:housenumber": "623",
+    "addr:street": "Collins Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w16157901",
+   "name": "Harbour View Apartments",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8133827,
+   "lon": 144.9518872,
+   "tags": {
+    "addr:housenumber": "583 - 585",
+    "addr:street": "La Trobe Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w26262196",
+   "name": "Hawke Street Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8060831,
+   "lon": 144.9477378,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w26322931",
+   "name": "Port Melbourne Cricket Ground",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8306822,
+   "lon": 144.9424231,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w27462510",
+   "name": "Batman Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8217951,
+   "lon": 144.9566004,
+   "tags": {
+    "wikidata": "Q2191993",
+    "wikipedia": "en:Batman Park",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w27787489",
+   "name": "Hawke and Adderley Street Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8086868,
+   "lon": 144.9448875,
+   "tags": {
+    "website": "https://www.melbourne.vic.gov.au/community/parks-open-spaces/guide-to-parks/pages/hawke-adderley-street-park.aspx",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w33106429",
+   "name": "Crowne Plaza",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8226595,
+   "lon": 144.9549894,
+   "tags": {
+    "website": "http://www.crowneplaza.com",
+    "brand": "Crowne Plaza",
+    "addr:housenumber": "1 - 5",
+    "addr:street": "Spencer St7",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w41374335",
+   "name": "Point Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8234758,
+   "lon": 144.9420095,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w44158378",
+   "name": "Docklands Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8201719,
+   "lon": 144.9465833,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w44158773",
+   "name": "Victoria Green",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8204454,
+   "lon": 144.945002,
+   "tags": {
+    "addr:housenumber": "70",
+    "addr:street": "Import Lane",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w50504748",
+   "name": "The Great Southern Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8196906,
+   "lon": 144.9548883,
+   "tags": {
+    "website": "http://www.greatsouthernhotel.com.au/Melbourne/",
+    "phone": "+61 3 9629 6991",
+    "addr:housenumber": "44",
+    "addr:street": "Spencer Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w106472437",
+   "name": "Melbourne Star Observation Wheel",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.8118724,
+   "lon": 144.93763,
+   "tags": {
+    "website": "https://www.melbournestar.com/",
+    "wheelchair": "yes",
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "w133247027",
+   "name": "Bolte Cafe and Kebab",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8221176,
+   "lon": 144.9309913,
+   "tags": {
+    "addr:housenumber": "816",
+    "addr:street": "Lorimer Street",
+    "addr:suburb": "Port Melbourne",
+    "addr:postcode": "3207",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w142569748",
+   "name": "Quay Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8156537,
+   "lon": 144.9375882,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w154296947",
+   "name": "1 Hotel Melbourne",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8228752,
+   "lon": 144.9502883,
+   "tags": {
+    "website": "https://www.1hotels.com/melbourne",
+    "phone": "+61 3 7053 0888",
+    "stars": "5",
+    "wheelchair": "yes",
+    "internet_access": "wlan",
+    "brand": "1 Hotels",
+    "addr:housenumber": "9",
+    "addr:street": "Maritime Place",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w154297021",
+   "name": "Polly Woodside Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8242101,
+   "lon": 144.9546728,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w168117453",
+   "name": "Atlantis Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8136272,
+   "lon": 144.9520121,
+   "tags": {
+    "website": "https://www.atlantishotel.com.au/",
+    "wheelchair": "yes",
+    "addr:housenumber": "300",
+    "addr:street": "Spencer Street",
+    "addr:suburb": "Melbourne",
+    "addr:postcode": "3000",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w314944029",
+   "name": "Junie Moon's",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.808723,
+   "lon": 144.9485906,
+   "tags": {
+    "cuisine": "sandwich",
+    "addr:housenumber": "511",
+    "addr:street": "Spencer Street",
+    "addr:suburb": "West Melbourne",
+    "addr:postcode": "3003",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w314944179",
+   "name": "Embassy Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8080932,
+   "lon": 144.9478478,
+   "tags": {
+    "phone": "+61 3 9328 1830",
+    "opening_hours": "24/7",
+    "cuisine": "burger",
+    "wheelchair": "yes",
+    "addr:housenumber": "547",
+    "addr:street": "Spencer Street",
+    "addr:suburb": "West Melbourne",
+    "addr:postcode": "3003",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w314944266",
+   "name": "The Royal Mail",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8084431,
+   "lon": 144.9482734,
+   "tags": {
+    "website": "http://www.theroyalmail.com.au/",
+    "phone": "+61 3 9329 6955",
+    "addr:housenumber": "519",
+    "addr:street": "Spencer Street",
+    "addr:suburb": "West Melbourne",
+    "addr:postcode": "3003",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w314945026",
+   "name": "McMahon's Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8073787,
+   "lon": 144.9469899,
+   "tags": {
+    "website": "http://www.bevandmicks.com.au/mcmahons.htm",
+    "phone": "+61 3 9328 2423",
+    "addr:housenumber": "575",
+    "addr:street": "Spencer Street",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w314945360",
+   "name": "Miami Hotel Melbourne",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8060985,
+   "lon": 144.9485452,
+   "tags": {
+    "website": "https://www.themiami.com.au/",
+    "phone": "+61 3 9321 2444",
+    "internet_access": "wlan",
+    "addr:housenumber": "13",
+    "addr:street": "Hawke Street",
+    "addr:suburb": "West Melbourne",
+    "addr:postcode": "3003",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w314945600",
+   "name": "6six 5fifty 5five",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8064205,
+   "lon": 144.9449095,
+   "tags": {
+    "addr:housenumber": "655-657",
+    "addr:street": "Spencer Street",
+    "addr:suburb": "West Melbourne",
+    "addr:postcode": "3003",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w315127168",
+   "name": "Hotel Spencer",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.80955,
+   "lon": 144.9492601,
+   "tags": {
+    "website": "https://www.hotelspencer.com.au/",
+    "phone": "+61 3 9329 9116",
+    "addr:housenumber": "475",
+    "addr:street": "Spencer Street",
+    "addr:suburb": "West Melbourne",
+    "addr:postcode": "3003",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w373560335",
+   "name": "Ron Barassi Senior Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8164122,
+   "lon": 144.9347889,
+   "tags": {
+    "addr:housenumber": "509-529",
+    "addr:street": "Docklands Drive",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w405461615",
+   "name": "Pan Pacific Melbourne",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8248052,
+   "lon": 144.9507906,
+   "tags": {
+    "brand": "Pan Pacific",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w468919256",
+   "name": "Railway Place and Miller Street Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8056702,
+   "lon": 144.9418974,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w469594757",
+   "name": "Toasta & Co.",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8093369,
+   "lon": 144.9461003,
+   "tags": {
+    "addr:housenumber": "179-183",
+    "addr:street": "Adderley Street",
+    "addr:suburb": "West Melbourne",
+    "addr:postcode": "3003",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w478465677",
+   "name": "Mixue",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.819125,
+   "lon": 144.9529876,
+   "tags": {
+    "cuisine": "ice_cream;bubble_tea",
+    "brand": "Mixue Ice Cream & Tea",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w481756982",
+   "name": "Polly Woodside",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.8247024,
+   "lon": 144.9534263,
+   "tags": {
+    "website": "http://www.pollywoodside.com.au",
+    "phone": "+61 3 9699 9760",
+    "opening_hours": "10:00-16:00",
+    "wikidata": "Q2102199",
+    "addr:housenumber": "21",
+    "addr:street": "South Wharf Promenade",
+    "addr:postcode": "3006",
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "w511178429",
+   "name": "Flagstaff City Inn",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8100924,
+   "lon": 144.9510259,
+   "tags": {
+    "website": "https://www.flagstaffcityinn.com.au/",
+    "phone": "+61 3 9329 5788",
+    "stars": "3",
+    "internet_access": "wlan",
+    "addr:housenumber": "45",
+    "addr:street": "Dudley Street",
+    "addr:suburb": "West Melbourne",
+    "addr:postcode": "3003",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w511414365",
+   "name": "Mercure Melbourne La Trobe Street",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8125108,
+   "lon": 144.9523997,
+   "tags": {
+    "website": "https://all.accor.com/hotel/B6L6/index.en.shtml",
+    "phone": "+61 3 9022 8333",
+    "brand": "Mercure",
+    "addr:housenumber": "492",
+    "addr:street": "La Trobe Street",
+    "addr:suburb": "West Melbourne",
+    "addr:postcode": "3003",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w518765640",
+   "name": "Newquay Central Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.814943,
+   "lon": 144.9389173,
+   "tags": {
+    "dog": "leashed",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w531822344",
+   "name": "Vibe Hotel Melbourne Docklands",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8149789,
+   "lon": 144.9380154,
+   "tags": {
+    "website": "https://vibehotels.com/book-accommodation/melbourne/hotel-melbourne-docklands/",
+    "addr:housenumber": "443",
+    "addr:street": "Docklands Drive",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w710677667",
+   "name": "Buluk Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.820367,
+   "lon": 144.9406959,
+   "tags": {
+    "addr:housenumber": "898",
+    "addr:street": "Bourke Street",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w725995551",
+   "name": "Melbourne Marriott Hotel Docklands",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8137153,
+   "lon": 144.9391816,
+   "tags": {
+    "internet_access": "yes",
+    "brand": "Marriott",
+    "addr:housenumber": "15",
+    "addr:street": "Waterfront Way",
+    "addr:suburb": "Docklands",
+    "addr:postcode": "3008",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w795507734",
+   "name": "Wharf Landing Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8219761,
+   "lon": 144.936421,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w966104714",
+   "name": "Miller Street Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8056219,
+   "lon": 144.942701,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w977468210",
+   "name": "Wominjeka Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8098623,
+   "lon": 144.9486986,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1155194826",
+   "name": "Butcher Shop Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8080149,
+   "lon": 144.9456153,
+   "tags": {
+    "addr:housenumber": "72",
+    "addr:street": "Hawke Street",
+    "addr:suburb": "West Melbourne",
+    "addr:postcode": "3003",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w1247247639",
+   "name": "Novotel South Wharf",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8258496,
+   "lon": 144.9501502,
+   "tags": {
+    "brand": "Novotel",
+    "addr:housenumber": "7",
+    "addr:street": "Convention Centre Place",
+    "addr:suburb": "South Wharf",
+    "addr:postcode": "3006",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w1251054128",
+   "name": "The General Assembly",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8242123,
+   "lon": 144.9518419,
+   "tags": {
+    "website": "https://thegeneralassembly.com.au/",
+    "opening_hours": "Mo-Su 11:30-21:00; Fr,Sa 11:30-23:00",
+    "wheelchair": "yes",
+    "outdoor_seating": "yes",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w1251054129",
+   "name": "BangPop",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8242013,
+   "lon": 144.9514922,
+   "tags": {
+    "website": "https://bangpop.com.au/",
+    "phone": "+61 3 9245 9800",
+    "opening_hours": "Mo-Su 12:00-24:00; PH closed",
+    "cuisine": "thai",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "35",
+    "addr:street": "South Wharf Promenade",
+    "addr:suburb": "South Wharf",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w1251054130",
+   "name": "Plus 5",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.8241915,
+   "lon": 144.9511803,
+   "tags": {
+    "cuisine": "pizza;spanish",
+    "wheelchair": "yes",
+    "outdoor_seating": "yes",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "w1251054132",
+   "name": "Lala's Kitchen",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8241754,
+   "lon": 144.9505983,
+   "tags": {
+    "cuisine": "indian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w1251054133",
+   "name": "Munich Brauhaus",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.82413,
+   "lon": 144.9500314,
+   "tags": {
+    "website": "https://munichbrauhaus.com.au/locations/melbourne/",
+    "cuisine": "german",
+    "wheelchair": "yes",
+    "outdoor_seating": "yes",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w1251054134",
+   "name": "Ruby Riviera",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8240775,
+   "lon": 144.9495513,
+   "tags": {
+    "website": "https://rubyriviera.com.au/",
+    "opening_hours": "Mo-We 17:00-21:00; Th,Su 11:30-21:00; Fr,Sa 11:30-22:00",
+    "cuisine": "mediterranean",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w1470001597",
+   "name": "Angliss Rain Garden",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8134374,
+   "lon": 144.9525477,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1470001598",
+   "name": "Tram Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8129343,
+   "lon": 144.952866,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "internet_access": "no",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w1494569679",
+   "name": "Seafarers Rest Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8229345,
+   "lon": 144.9513792,
+   "tags": {
+    "website": "https://www.melbourne.vic.gov.au/seafarers-rest-park",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1495382909",
+   "name": "Monument Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8143434,
+   "lon": 144.9431938,
+   "tags": {
+    "website": "https://www.newquay.com.au/attraction/monument-park/",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1498379390",
+   "name": "TiTree Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8210081,
+   "lon": 144.9532039,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1511273068",
+   "name": "Skyline Precinct Melbourne",
+   "group": "do",
+   "type": "theme_park",
+   "lat": -37.824054,
+   "lon": 144.9548454,
+   "tags": {
+    "website": "https://www.skylinemelbourne.com.au/",
+    "tourism": "theme_park"
+   }
+  },
+  {
+   "id": "r20445760",
+   "name": "Sky Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8199956,
+   "lon": 144.9519072,
+   "tags": {
+    "leisure": "park"
+   }
+  }
+ ]
+}

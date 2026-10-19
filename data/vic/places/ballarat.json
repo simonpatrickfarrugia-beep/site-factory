@@ -1,0 +1,2589 @@
+{
+ "town": "Ballarat",
+ "slug": "ballarat",
+ "centre": [
+  -37.5623013,
+  143.8605645
+ ],
+ "radiusM": 4000,
+ "fetchedAt": "2026-10-19T11:43:32+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n436208142",
+   "name": "Ballaarat Observatory",
+   "group": "do",
+   "type": "museum",
+   "lat": -37.5803817,
+   "lon": 143.8605954,
+   "tags": {
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "n436208157",
+   "name": "Sovereign Hill Lookout",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -37.5787488,
+   "lon": 143.8654906,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n731720729",
+   "name": "The Peter Lalor Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.5596325,
+   "lon": 143.8554813,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n731739572",
+   "name": "Ballarat Mid City Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.5602572,
+   "lon": 143.854313,
+   "tags": {
+    "website": "http://www.midcity.biz",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n733999758",
+   "name": "Black Hill Lookout",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -37.5539222,
+   "lon": 143.873273,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n1594018594",
+   "name": "Irish Murphy's",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.561878,
+   "lon": 143.8593606,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n1594018599",
+   "name": "Griller's Mark",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5601625,
+   "lon": 143.8583074,
+   "tags": {
+    "website": "https://grillersmark.com.au/",
+    "phone": "+61 3 5332 2650",
+    "opening_hours": "Mo-Fr 11:00-21:00; Sa, Su 09:00-21:00",
+    "addr:housenumber": "58 - 60",
+    "addr:street": "Lydiard Street North",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n1594018600",
+   "name": "Masala Valley",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5590001,
+   "lon": 143.8583696,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n1594018601",
+   "name": "Mr Rice",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.56157,
+   "lon": 143.8567982,
+   "tags": {
+    "cuisine": "chinese;thai",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n1594018630",
+   "name": "Thai Fusion",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5617486,
+   "lon": 143.8582332,
+   "tags": {
+    "cuisine": "thai",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n1594018631",
+   "name": "The Swallow's Nest",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5608843,
+   "lon": 143.8581384,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n1638352248",
+   "name": "The Mallow Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.5674478,
+   "lon": 143.8543069,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n1638352255",
+   "name": "Eastern Station Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.5590198,
+   "lon": 143.8675248,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n1638352272",
+   "name": "The Main Bar",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5634678,
+   "lon": 143.8647889,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n1638352305",
+   "name": "Open Pantry",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5633997,
+   "lon": 143.8647568,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n1638352311",
+   "name": "The Grapes Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.5683428,
+   "lon": 143.8606771,
+   "tags": {
+    "phone": "+61 3 5331 5687",
+    "opening_hours": "Mo-Sa 12:00-00:00; Su 12:00-23:00",
+    "addr:housenumber": "121",
+    "addr:street": "Grant Street",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n1665506764",
+   "name": "The Bended Elbow",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.5590644,
+   "lon": 143.858404,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n2193743544",
+   "name": "Market Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.569811,
+   "lon": 143.820777,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n2193745753",
+   "name": "Eclectic Tastes",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5489138,
+   "lon": 143.8473657,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2193750959",
+   "name": "Mason's Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5587544,
+   "lon": 143.8481432,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2193756770",
+   "name": "Sails",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5553222,
+   "lon": 143.8386323,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2194163861",
+   "name": "Racers",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5555678,
+   "lon": 143.8426917,
+   "tags": {
+    "website": "https://racersbar.com.au/",
+    "opening_hours": "Mo-Su 07:00-18:00",
+    "cuisine": "coffee_shop",
+    "wheelchair": "limited",
+    "outdoor_seating": "yes",
+    "dog": "outside",
+    "addr:housenumber": "2",
+    "addr:street": "Wendouree Parade",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2194170130",
+   "name": "Mondegreen Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5465855,
+   "lon": 143.8457414,
+   "tags": {
+    "website": "https://mondegreencafe.com.au",
+    "phone": "+61 431 902 155;+61 467 513 203",
+    "opening_hours": "Mo off; Tu-Su 08:00-15:00",
+    "cuisine": "coffee_shop",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "31",
+    "addr:street": "Burnbank Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2271226909",
+   "name": "Blue Bell Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.5396922,
+   "lon": 143.8296632,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n2272589517",
+   "name": "Brown Hill Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.552369,
+   "lon": 143.8993874,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n2388108334",
+   "name": "The Sporting Globe",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.5599389,
+   "lon": 143.8578661,
+   "tags": {
+    "outdoor_seating": "no",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n2407597895",
+   "name": "The Bean Barn",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.562136,
+   "lon": 143.856719,
+   "tags": {
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3011541127",
+   "name": "Ansonia on Lydiard",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.5630583,
+   "lon": 143.8571657,
+   "tags": {
+    "website": "http://www.theansoniaonlydiard.com.au",
+    "phone": "+61 3 5332 4678",
+    "addr:housenumber": "32",
+    "addr:street": "Lydiard Street South",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n3011541128",
+   "name": "Craig's Royal Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.5628435,
+   "lon": 143.8572622,
+   "tags": {
+    "website": "https://craigsroyal.com.au/",
+    "phone": "+61 3 5331 1377",
+    "wikidata": "Q55758943",
+    "addr:housenumber": "10",
+    "addr:street": "Lydiard Street South",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n3011541129",
+   "name": "Brown Grain",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5615806,
+   "lon": 143.8568975,
+   "tags": {
+    "website": "https://www.browngrain.com.au/",
+    "phone": "+61 3 5340 0517",
+    "cuisine": "thai",
+    "addr:housenumber": "212",
+    "addr:street": "Sturt Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3353197893",
+   "name": "Cat's Whiskers Cottage",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -37.5655515,
+   "lon": 143.8731047,
+   "tags": {
+    "addr:housenumber": "129C",
+    "addr:street": "Eureka Street",
+    "addr:suburb": "Ballarat East",
+    "addr:postcode": "3350",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "n4431922643",
+   "name": "Gloria Jean's",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5631653,
+   "lon": 143.8553438,
+   "tags": {
+    "phone": "+61 3 5331 9566",
+    "opening_hours": "Mo-Fr 08:00-17:30; Sa 09:00-17:00; Su 10:30-16:00",
+    "cuisine": "coffee_shop",
+    "brand": "Gloria Jean's",
+    "addr:housenumber": "18",
+    "addr:street": "Armstrong Street South",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n4436265280",
+   "name": "Furlong Pizza & Kebabs",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5609357,
+   "lon": 143.8464549,
+   "tags": {
+    "cuisine": "pizza",
+    "addr:housenumber": "919",
+    "addr:street": "Sturt Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4436265281",
+   "name": "Cafe 921",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5609287,
+   "lon": 143.8464098,
+   "tags": {
+    "phone": "+61 3 5331 6208",
+    "addr:housenumber": "921",
+    "addr:street": "Sturt Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n4440525074",
+   "name": "Boost Juice",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5633707,
+   "lon": 143.855472,
+   "tags": {
+    "phone": "+61 3 5332 1565",
+    "cuisine": "juice",
+    "description": "Juice Bar",
+    "brand": "Boost Juice",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n4443293405",
+   "name": "CS Cafe",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5634703,
+   "lon": 143.8553063,
+   "tags": {
+    "phone": "+61 3 5332 4785",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4443293406",
+   "name": "Chequers",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5634758,
+   "lon": 143.8553507,
+   "tags": {
+    "phone": "+61 3 5333 2788",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4443293407",
+   "name": "Sandwich Chefs",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.563399,
+   "lon": 143.8552949,
+   "tags": {
+    "cuisine": "sandwich",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4721565289",
+   "name": "Tandoor",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5622304,
+   "lon": 143.8610449,
+   "tags": {
+    "cuisine": "indian",
+    "internet_access": "wlan",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4938375625",
+   "name": "Regent Café Lounge",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5600548,
+   "lon": 143.8578874,
+   "tags": {
+    "cuisine": "coffee_shop;chicken;fish_and_chips",
+    "outdoor_seating": "no",
+    "addr:housenumber": "49",
+    "addr:street": "Lydiard Street North",
+    "addr:postcode": "3350",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n5168644501",
+   "name": "Carboni's Italian Kitchen",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5658492,
+   "lon": 143.8740888,
+   "tags": {
+    "website": "https://www.carbonis-online.com.au/",
+    "cuisine": "italian",
+    "wheelchair": "yes",
+    "internet_access": "no",
+    "addr:housenumber": "152",
+    "addr:street": "Eureka Street",
+    "addr:postcode": "3350",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5301689823",
+   "name": "ripon cottage",
+   "group": "stay",
+   "type": "apartment",
+   "lat": -37.5694468,
+   "lon": 143.8396451,
+   "tags": {
+    "addr:street": "Ripon Street South",
+    "tourism": "apartment"
+   }
+  },
+  {
+   "id": "n5385101177",
+   "name": "Cafe Merkama",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5604128,
+   "lon": 143.8553318,
+   "tags": {
+    "cuisine": "Ethopian",
+    "addr:housenumber": "30",
+    "addr:street": "Doveton Street North",
+    "addr:postcode": "3350",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5514627580",
+   "name": "Freight Bar & Restaurant",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.560228,
+   "lon": 143.8640302,
+   "tags": {
+    "website": "https://www.athleticclubbrewery.com.au/",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n5514627581",
+   "name": "Athletic Club Brewery",
+   "group": "do",
+   "type": "brewery",
+   "lat": -37.5602067,
+   "lon": 143.8638425,
+   "tags": {
+    "website": "https://www.athleticclubbrewery.com.au/",
+    "craft": "brewery"
+   }
+  },
+  {
+   "id": "n5514627582",
+   "name": "Hop Temple",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.560565,
+   "lon": 143.8570981,
+   "tags": {
+    "website": "https://hoptemple.com.au/",
+    "phone": "+61 3 5317 7158",
+    "opening_hours": "We-Fr 16:00-23:00; Sa 12:00-23:00; Su 12:00-21:00",
+    "addr:street": "Armstrong Street North",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n5514627583",
+   "name": "Forge Pizza",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5609418,
+   "lon": 143.8566577,
+   "tags": {
+    "cuisine": "pizza",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5855919163",
+   "name": "Dyers Steak Stable",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.562954,
+   "lon": 143.8617321,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5855919200",
+   "name": "Treloar",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5630383,
+   "lon": 143.8623834,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n5911445687",
+   "name": "Aroma of India",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5612053,
+   "lon": 143.8537506,
+   "tags": {
+    "phone": "+61 3 5340 0844",
+    "cuisine": "indian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5967714788",
+   "name": "Websters Market & Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5568362,
+   "lon": 143.84985,
+   "tags": {
+    "cuisine": "breakfast;coffee_shop",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n7357463704",
+   "name": "Queen's Head",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.5570321,
+   "lon": 143.8755476,
+   "tags": {
+    "phone": "+61 3 5384 5514",
+    "opening_hours": "Mo-Su 11:30-23:00",
+    "addr:housenumber": "146",
+    "addr:street": "Humffray Street North",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n7357463705",
+   "name": "The Provincial Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.5583993,
+   "lon": 143.858006,
+   "tags": {
+    "wikidata": "Q55762397",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n7357463706",
+   "name": "Lola",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5584354,
+   "lon": 143.858073,
+   "tags": {
+    "website": "https://theprovincialballarat.com.au/dine-with-lola/",
+    "phone": "+61 3 5331 3399",
+    "cuisine": "french",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n7659656385",
+   "name": "Steam Coffee Ballarat",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5366601,
+   "lon": 143.8595489,
+   "tags": {
+    "opening_hours": "Mo-Fr 05:00-15:00; Sa 07:00-14:30; Su 08:00-14:30",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11158509834",
+   "name": "Espresso District",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.55925,
+   "lon": 143.8851895,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11158509835",
+   "name": "The Forge Pizza",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5592705,
+   "lon": 143.8850188,
+   "tags": {
+    "cuisine": "pizza",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11436638728",
+   "name": "Shep St.",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5608183,
+   "lon": 143.8627814,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12198139820",
+   "name": "Royal Oak Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.5692806,
+   "lon": 143.8486461,
+   "tags": {
+    "website": "https://www.royaloakhotelballarat.com/",
+    "phone": "+61 3 5331 5373",
+    "opening_hours": "Mo-Tu off; We-Su 12:00-23:00",
+    "addr:housenumber": "402",
+    "addr:street": "South Street",
+    "addr:suburb": "Ballarat Central",
+    "addr:postcode": "3350",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n12366442547",
+   "name": "Bliss Cafe & Shakes",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5626027,
+   "lon": 143.8624197,
+   "tags": {
+    "wheelchair": "yes",
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12417174591",
+   "name": "Cornerstone Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5695604,
+   "lon": 143.8505481,
+   "tags": {
+    "website": "https://cornerstonecafe.com.au",
+    "opening_hours": "Mo off; Tu-Fr 06:30-15:00; Sa-Su 08:00-14:00",
+    "cuisine": "coffee_shop",
+    "outdoor_seating": "yes",
+    "dog": "outside",
+    "addr:housenumber": "206",
+    "addr:street": "South Street",
+    "addr:suburb": "Ballarat Central",
+    "addr:postcode": "3350",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12848154330",
+   "name": "Drive",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5692018,
+   "lon": 143.8628489,
+   "tags": {
+    "opening_hours": "08:00-15:00",
+    "addr:housenumber": "227",
+    "addr:street": "Grant Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12979318660",
+   "name": "Naomi & i",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5510486,
+   "lon": 143.8565692,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12982052220",
+   "name": "EAST QTR. Coffee Bar",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5648216,
+   "lon": 143.8614952,
+   "tags": {
+    "opening_hours": "Mo-Fr 06:00-14:00; Sa 08:00-12:00",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13040850580",
+   "name": "Sebastopol Noodle Bar",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5827335,
+   "lon": 143.8405688,
+   "tags": {
+    "opening_hours": "Mo-Su 11:00-21:00",
+    "cuisine": "noodle",
+    "wheelchair": "no",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n13232158778",
+   "name": "Cafe Brewster",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5407375,
+   "lon": 143.8398461,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13540641602",
+   "name": "Cobb's Coffee",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5622842,
+   "lon": 143.8574787,
+   "tags": {
+    "website": "https://cobbscoffee.com.au/",
+    "opening_hours": "Mo-Fr 06:30-14:00; Sa 07:30-12:00; Su,PH off",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "2",
+    "addr:street": "Lydiard Street South",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13654045509",
+   "name": "The Hardware Cafe, Ballarat",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.550993,
+   "lon": 143.8526873,
+   "tags": {
+    "opening_hours": "Mo-Su 08:00-16:00",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w42180358",
+   "name": "Ballarat Fine Art Gallery",
+   "group": "do",
+   "type": "museum",
+   "lat": -37.5604518,
+   "lon": 143.8584034,
+   "tags": {
+    "website": "https://artgalleryofballarat.com.au/visit/",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "wheelchair": "yes",
+    "wikidata": "Q2881135",
+    "wikipedia": "en:Art Gallery of Ballarat",
+    "addr:housenumber": "40",
+    "addr:street": "Lydiard Street North",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "w50275702",
+   "name": "Ballarat Tramway Museum",
+   "group": "do",
+   "type": "museum",
+   "lat": -37.551523,
+   "lon": 143.8203831,
+   "tags": {
+    "website": "https://www.btm.org.au/",
+    "phone": "+61 3 5334 1580",
+    "opening_hours": "Sa,Su,PH 11:30-16:00",
+    "wikidata": "Q4851483",
+    "wikipedia": "en:Ballarat Tramway Museum",
+    "addr:housenumber": "401A",
+    "addr:street": "Wendouree Parade",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "w56435989",
+   "name": "Victoria Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5631831,
+   "lon": 143.8248962,
+   "tags": {
+    "wikidata": "Q21971014",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w56637900",
+   "name": "Pauls Wetland",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5305054,
+   "lon": 143.8443549,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w58404079",
+   "name": "Drummond Street North Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5529149,
+   "lon": 143.8485464,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w58698362",
+   "name": "South Gardens Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5520102,
+   "lon": 143.8210696,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w58698422",
+   "name": "North Gardens Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5437465,
+   "lon": 143.8242939,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w89180679",
+   "name": "Mt Xavier Golf Course and Lawn Bowls Club",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -37.5640047,
+   "lon": 143.8998792,
+   "tags": {
+    "website": "http://www.mtxavier.com.au/",
+    "phone": "+61 3 5331 3691",
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w98617054",
+   "name": "Eureka Swimming Complex",
+   "group": "do",
+   "type": "water_park",
+   "lat": -37.5641994,
+   "lon": 143.885218,
+   "tags": {
+    "website": "http://ballarataquatic.ymca.org.au/outdoorpools/Pages/Eureka.aspx",
+    "phone": "+61 3 5331 2820",
+    "addr:street": "Stawell Street South",
+    "leisure": "water_park"
+   }
+  },
+  {
+   "id": "w126473133",
+   "name": "Midlands Gold Course",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -37.5295907,
+   "lon": 143.8555063,
+   "tags": {
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w126473148",
+   "name": "Black Hill",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5528018,
+   "lon": 143.8726498,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w126547302",
+   "name": "Bunch of Grapes Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.568561,
+   "lon": 143.8378313,
+   "tags": {
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w126549430",
+   "name": "Best Western Lake Inn",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.5579649,
+   "lon": 143.8398179,
+   "tags": {
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w126639297",
+   "name": "Pipers by the Lake",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5471856,
+   "lon": 143.8231903,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w127679197",
+   "name": "Len T Frazer Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5661664,
+   "lon": 143.8674471,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w127907189",
+   "name": "Saint Georges Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5915598,
+   "lon": 143.8385502,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w127958218",
+   "name": "Ballarat Wildlife Park",
+   "group": "do",
+   "type": "zoo",
+   "lat": -37.5693316,
+   "lon": 143.8911945,
+   "tags": {
+    "wikidata": "Q4851486",
+    "wikipedia": "en:Ballarat Wildlife Park",
+    "tourism": "zoo"
+   }
+  },
+  {
+   "id": "w127958576",
+   "name": "Pax Hill Activity Centre",
+   "group": "stay",
+   "type": "camp_site",
+   "lat": -37.580624,
+   "lon": 143.892992,
+   "tags": {
+    "tourism": "camp_site"
+   }
+  },
+  {
+   "id": "w127958811",
+   "name": "Pennyweight Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5710349,
+   "lon": 143.8758317,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w127960600",
+   "name": "Lake Esmond Botanical Gardens",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5748387,
+   "lon": 143.8739322,
+   "tags": {
+    "wikidata": "Q21970193",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w127960606",
+   "name": "BIG4 Ballarat Goldfield Holiday Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -37.5729924,
+   "lon": 143.871558,
+   "tags": {
+    "website": "https://www.ballaratgoldfields.com.au/",
+    "phone": "+61 3 5332 7888",
+    "brand": "Big 4 Holiday Parks",
+    "addr:housenumber": "108",
+    "addr:street": "Clayton Street",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w127970027",
+   "name": "Eureka Stockade",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.5651199,
+   "lon": 143.8846851,
+   "tags": {
+    "description": "Celebrates the Battle of the Eureka Stockade, 1854-12-03. The actual battle site is now believed to be further west at 29 St Pauls Way . The museum houses the Eureka Flag, an Australian national icon.",
+    "tourism": "attraction",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w127971180",
+   "name": "McKenzie Reserve Recreational Environmental Project",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5634422,
+   "lon": 143.8722307,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w127975057",
+   "name": "Ballarat Gold Museum",
+   "group": "do",
+   "type": "museum",
+   "lat": -37.5736733,
+   "lon": 143.8670138,
+   "tags": {
+    "website": "https://sovereignhill.com.au",
+    "opening_hours": "Mo-Su 09:30-17:20",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "w127977082",
+   "name": "Kowree Crescent Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.583441,
+   "lon": 143.8291274,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w127979362",
+   "name": "Peal Street Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.549311,
+   "lon": 143.8669653,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w127979468",
+   "name": "Binney Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5489388,
+   "lon": 143.8719261,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w127980434",
+   "name": "Chisholm Street Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5497616,
+   "lon": 143.8791867,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w127987002",
+   "name": "BIG4 Ballarat Welcome Stranger Holiday Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -37.5561241,
+   "lon": 143.8920365,
+   "tags": {
+    "website": "www.welcomestranger.com.au",
+    "brand": "Big 4 Holiday Parks",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w128228038",
+   "name": "Vale Street Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5577543,
+   "lon": 143.815612,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w128278247",
+   "name": "Jack Toohey Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5300041,
+   "lon": 143.8585577,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w128282371",
+   "name": "Bullock Gully Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5389974,
+   "lon": 143.8714698,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w128365149",
+   "name": "Pearces Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5740903,
+   "lon": 143.8584513,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w128838907",
+   "name": "Sovereign Hill",
+   "group": "do",
+   "type": "museum",
+   "lat": -37.5789711,
+   "lon": 143.865143,
+   "tags": {
+    "website": "https://sovereignhill.com.au",
+    "wikidata": "Q7571604",
+    "wikipedia": "en:Sovereign Hill",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "w147588394",
+   "name": "The Olive Grove",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5603566,
+   "lon": 143.8410326,
+   "tags": {
+    "phone": "+61 3 5331 4455",
+    "cuisine": "deli",
+    "addr:housenumber": "1303",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3350",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w148116870",
+   "name": "City Oval Hotel",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5577952,
+   "lon": 143.8396608,
+   "tags": {
+    "addr:housenumber": "1317",
+    "addr:street": "Mair Street",
+    "addr:postcode": "3350",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w148833805",
+   "name": "Walton Street Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5294509,
+   "lon": 143.8414494,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w149140845",
+   "name": "Boatshed Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5532763,
+   "lon": 143.8428744,
+   "tags": {
+    "website": "http://www.boatshed-restaurant.com/",
+    "dog": "outside",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w149140846",
+   "name": "Golden City Steamer Museum",
+   "group": "do",
+   "type": "museum",
+   "lat": -37.553202,
+   "lon": 143.8429304,
+   "tags": {
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "w149141367",
+   "name": "Lake View Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.5539571,
+   "lon": 143.843097,
+   "tags": {
+    "website": "https://www.thelakeview.com.au/",
+    "phone": "+61 3 5331 4592",
+    "addr:housenumber": "22",
+    "addr:street": "Wendouree Parade",
+    "addr:suburb": "Lake Wendouree",
+    "addr:postcode": "3350",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w149631160",
+   "name": "Don Chichio's Pizza and Pasta",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5419955,
+   "lon": 143.8416591,
+   "tags": {
+    "phone": "+61 3 5339 6100",
+    "cuisine": "italian",
+    "addr:housenumber": "907",
+    "addr:street": "Howitt Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w149770306",
+   "name": "Marks Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5428133,
+   "lon": 143.8626298,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w149770760",
+   "name": "Gregory Street Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5443852,
+   "lon": 143.8562675,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w149776199",
+   "name": "Inkerman Gully Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5421183,
+   "lon": 143.8724,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w149788174",
+   "name": "Webb Avenue Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5566886,
+   "lon": 143.8707296,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w149792004",
+   "name": "Brown Hill Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.552209,
+   "lon": 143.8971442,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w149849126",
+   "name": "Boulevard Estate Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5317218,
+   "lon": 143.8375819,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w150009020",
+   "name": "Eureka Stockade Holiday Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -37.5638657,
+   "lon": 143.8846836,
+   "tags": {
+    "website": "https://www.eurekaholidaypark.com.au/",
+    "phone": "+61 3 5331 2281",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w150055221",
+   "name": "Jack Greville Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5761646,
+   "lon": 143.8679646,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w150090571",
+   "name": "Kenworthy Place Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5828971,
+   "lon": 143.852811,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w150091813",
+   "name": "Redan Wetlands/Yuilles Wetlands",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5900733,
+   "lon": 143.8476383,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w150114699",
+   "name": "Victory Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5931546,
+   "lon": 143.8374868,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w150262502",
+   "name": "Midlands Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5406237,
+   "lon": 143.8595777,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w150409592",
+   "name": "Sovereign Park Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.5691221,
+   "lon": 143.8704065,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w150415912",
+   "name": "Apex Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5706823,
+   "lon": 143.8713542,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w150686215",
+   "name": "Alex Mills Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5795198,
+   "lon": 143.8784,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w150690614",
+   "name": "Best Western Ballarat",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.5775975,
+   "lon": 143.8685931,
+   "tags": {
+    "brand": "Best Western",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w150690891",
+   "name": "Ballarat Lodge Hotel and Convention Centre",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.579987,
+   "lon": 143.8694244,
+   "tags": {
+    "website": "https://www.mercureballarat.com.au/",
+    "phone": "+61 3 5327 1200",
+    "addr:housenumber": "613",
+    "addr:street": "Main Road",
+    "addr:postcode": "3350",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w150691297",
+   "name": "Zagame's Family Bistro",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5812532,
+   "lon": 143.8684934,
+   "tags": {
+    "outdoor_seating": "no",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w150694406",
+   "name": "Canadian Gully Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5879028,
+   "lon": 143.8688284,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w150891955",
+   "name": "Banh Mi Kings",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5609078,
+   "lon": 143.8455196,
+   "tags": {
+    "wheelchair": "yes",
+    "outdoor_seating": "sidewalk",
+    "addr:housenumber": "1007",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3350",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w150893655",
+   "name": "Country Casseroles",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5607602,
+   "lon": 143.8445994,
+   "tags": {
+    "website": "https://countrycasseroles.com.au/",
+    "phone": "+61 3 5333 4438",
+    "opening_hours": "Mo-Fr 11:00-20:00; Su 15:00-20:00",
+    "addr:housenumber": "1031",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3350",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w150898093",
+   "name": "Western Hotel",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5605046,
+   "lon": 143.8416304,
+   "tags": {
+    "phone": "+61 3 5332 2218",
+    "addr:housenumber": "1221",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3350",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w151065936",
+   "name": "Golden Up",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5403945,
+   "lon": 143.8276001,
+   "tags": {
+    "phone": "+61 3 5339 3028",
+    "cuisine": "chinese",
+    "addr:housenumber": "1231",
+    "addr:street": "Howitt Street",
+    "addr:postcode": "3355",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w151224743",
+   "name": "Bibo Cafe + Restaurant",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5607696,
+   "lon": 143.851248,
+   "tags": {
+    "website": "https://bibocafe.com.au",
+    "opening_hours": "Mo-Su 08:00-17:00",
+    "wheelchair": "yes",
+    "outdoor_seating": "garden",
+    "internet_access": "wlan",
+    "addr:housenumber": "614",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3350",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w151224744",
+   "name": "Thai Sala Pavilion",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5608403,
+   "lon": 143.8508489,
+   "tags": {
+    "cuisine": "thai",
+    "addr:housenumber": "624",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3350",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w151225329",
+   "name": "Brunches Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5613953,
+   "lon": 143.8492006,
+   "tags": {
+    "phone": "+61 3 5332 2977",
+    "addr:housenumber": "735",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3350",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w151225334",
+   "name": "Noble Dragon",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5614041,
+   "lon": 143.8490766,
+   "tags": {
+    "phone": "+61 3 5331 3891",
+    "cuisine": "chinese",
+    "addr:housenumber": "739",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3350",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w151225356",
+   "name": "CBD",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5614972,
+   "lon": 143.8499405,
+   "tags": {
+    "phone": "+61 3 5334 4707",
+    "opening_hours": "Mo-Fr 08:30-16:00; Sa 08:30-12:30",
+    "cuisine": "coffee_shop",
+    "addr:housenumber": "707",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3350",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w151225612",
+   "name": "Such N Such",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5613485,
+   "lon": 143.8483425,
+   "tags": {
+    "website": "http://suchnsuch.com.au/",
+    "phone": "+61 3 5332 4024",
+    "cuisine": "coffee_shop",
+    "addr:housenumber": "809-811",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3350",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w151225613",
+   "name": "La Porchetta",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5611746,
+   "lon": 143.8476459,
+   "tags": {
+    "website": "https://www.laporchetta.com/",
+    "phone": "+61 3 5331 1902",
+    "opening_hours": "Mo-Su 11:00-21:45",
+    "cuisine": "pizza",
+    "wheelchair": "no",
+    "outdoor_seating": "no",
+    "addr:housenumber": "825",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3350",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w151225710",
+   "name": "The Turret",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5605252,
+   "lon": 143.8487531,
+   "tags": {
+    "phone": "+61 3 5334 4744",
+    "wikidata": "Q56729606",
+    "addr:housenumber": "802",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3350",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w151228859",
+   "name": "Country Roasts Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.561347,
+   "lon": 143.8486635,
+   "tags": {
+    "phone": "+61 3 5331 7946",
+    "addr:housenumber": "801",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3350",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w151284109",
+   "name": "Tin Roof Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5509017,
+   "lon": 143.8595974,
+   "tags": {
+    "description": "Single Storey brick shop with cast iron verandah.",
+    "addr:housenumber": "302",
+    "addr:street": "Macarthur Street",
+    "addr:suburb": "Soldiers Hill",
+    "addr:postcode": "3350",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w151284375",
+   "name": "North Britain Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.5505796,
+   "lon": 143.8571531,
+   "tags": {
+    "addr:housenumber": "416",
+    "addr:street": "Macarthur Street",
+    "addr:suburb": "Soldiers Hill",
+    "addr:postcode": "3350",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w153188840",
+   "name": "Millers Arms Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.5465496,
+   "lon": 143.8578685,
+   "tags": {
+    "phone": "+61 3 5331 2798",
+    "addr:housenumber": "411",
+    "addr:street": "Howard Street",
+    "addr:postcode": "3350",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w153207649",
+   "name": "Soldiers Woodfired Pizzeria",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5509364,
+   "lon": 143.8565466,
+   "tags": {
+    "addr:housenumber": "451",
+    "addr:street": "Doveton Street North",
+    "addr:suburb": "Soldiers Hill",
+    "addr:postcode": "3350",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w153207753",
+   "name": "Macarthur Street Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5512611,
+   "lon": 143.8546795,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w153213231",
+   "name": "Lydiard General Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5550027,
+   "lon": 143.858762,
+   "tags": {
+    "addr:housenumber": "313",
+    "addr:street": "Lydiard Street North",
+    "addr:suburb": "Soldiers Hill",
+    "addr:postcode": "3350",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w153214482",
+   "name": "North Star Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.5555063,
+   "lon": 143.8592058,
+   "tags": {
+    "description": "Brick building with two storey verandah.",
+    "addr:housenumber": "302",
+    "addr:street": "Lydiard Street North",
+    "addr:suburb": "Soldiers Hill",
+    "addr:postcode": "3350",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w153222615",
+   "name": "Walter Jones Memorial Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5522357,
+   "lon": 143.8643407,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w156110593",
+   "name": "Common Ground Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5435078,
+   "lon": 143.8605032,
+   "tags": {
+    "outdoor_seating": "yes",
+    "addr:housenumber": "306",
+    "addr:street": "Howitt Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w173271721",
+   "name": "Morshead Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5786057,
+   "lon": 143.8316947,
+   "tags": {
+    "wikidata": "Q21971134",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w202866164",
+   "name": "Ballarat Steakhouse",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5634314,
+   "lon": 143.8601324,
+   "tags": {
+    "website": "http://www.ballaratsteakhouse.com.au",
+    "phone": "+61 3 5332 6777",
+    "wheelchair": "no",
+    "addr:housenumber": "10",
+    "addr:street": "Grenville Street South",
+    "addr:postcode": "3350",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w202867719",
+   "name": "The Unicorn Hotel",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5623464,
+   "lon": 143.8582169,
+   "tags": {
+    "addr:housenumber": "127",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3350",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w202931093",
+   "name": "Latrobe Street Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5723962,
+   "lon": 143.8402471,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w202944567",
+   "name": "College Street Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.537491,
+   "lon": 143.8369254,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w202947641",
+   "name": "Sawyer Avenue Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5852874,
+   "lon": 143.8692183,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w202948184",
+   "name": "Craig Court Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5880041,
+   "lon": 143.8646941,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w202948795",
+   "name": "Mansfield Avenue Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.596778,
+   "lon": 143.8666267,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w204006309",
+   "name": "Nibble on Sturt",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5622659,
+   "lon": 143.8570587,
+   "tags": {
+    "addr:housenumber": "215",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3350",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w204007646",
+   "name": "Ballarat Gourmet Buffet",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5621021,
+   "lon": 143.8551086,
+   "tags": {
+    "website": "https://www.facebook.com/ballaratgourmet/",
+    "phone": "+61 3 5332 9760",
+    "opening_hours": "11:30-14:30,17:30-21:00",
+    "cuisine": "asian",
+    "addr:housenumber": "323",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3350",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w204008902",
+   "name": "L'espresso",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5618472,
+   "lon": 143.8538418,
+   "tags": {
+    "phone": "+61 3 5333 1789",
+    "opening_hours": "Mo-Su 07:00-15:00; PH closed",
+    "wheelchair": "limited",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "417",
+    "addr:street": "Sturt Street",
+    "addr:suburb": "Ballarat Central",
+    "addr:postcode": "3350",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w204008906",
+   "name": "Midtown Cellars",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.5619277,
+   "lon": 143.8543054,
+   "tags": {
+    "website": "https://www.midtowncellars.com.au/",
+    "phone": "+61 3 5312 7525",
+    "opening_hours": "Fr-Su 12:00-22:00; Mo-Th 15:00-21:00",
+    "wheelchair": "yes",
+    "outdoor_seating": "yes",
+    "internet_access": "no",
+    "addr:housenumber": "405",
+    "addr:street": "Sturt Street",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "w204008911",
+   "name": "Europa",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5619456,
+   "lon": 143.8540489,
+   "tags": {
+    "phone": "+61 3 5331 2486",
+    "opening_hours": "07:00-18:00",
+    "addr:housenumber": "411",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3350",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w204008916",
+   "name": "Ballarat Wholefoods Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5619377,
+   "lon": 143.8539814,
+   "tags": {
+    "website": "https://ballaratwholefoodscafe.com.au/",
+    "phone": "+61 3 5331 1573",
+    "opening_hours": "Mo-Fr 07:00-16:00; Sa 08:00-16:00; Su 08:00-15:00",
+    "outdoor_seating": "sidewalk",
+    "addr:housenumber": "413",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3350",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w204009304",
+   "name": "Oscar's",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.5627123,
+   "lon": 143.8542546,
+   "tags": {
+    "website": "https://www.oscarshotel.com.au/",
+    "addr:housenumber": "18",
+    "addr:street": "Doveton Street South",
+    "addr:postcode": "3350",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w204016952",
+   "name": "Cafe 14",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5609913,
+   "lon": 143.8551976,
+   "tags": {
+    "addr:housenumber": "14",
+    "addr:street": "Doveton Street North",
+    "addr:postcode": "3350",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w204017759",
+   "name": "Holy Smokes",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.561432,
+   "lon": 143.8557133,
+   "tags": {
+    "cuisine": "barbecue",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w204017762",
+   "name": "Bottom of the Heart",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5614063,
+   "lon": 143.8555526,
+   "tags": {
+    "website": "https://www.bottomoftheheart.com.au",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w204017766",
+   "name": "9S Food",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5614402,
+   "lon": 143.8557818,
+   "tags": {
+    "website": "https://www.9sfood.com.au/",
+    "cuisine": "chinese",
+    "addr:housenumber": "308",
+    "addr:street": "Sturt Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w204017772",
+   "name": "Gor Gai",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5613037,
+   "lon": 143.8553727,
+   "tags": {
+    "cuisine": "thai",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w204017773",
+   "name": "Somethin' Wit Soul Diner",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5613888,
+   "lon": 143.8556367,
+   "tags": {
+    "cuisine": "diner",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w204017776",
+   "name": "Caffè Eureka",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5612968,
+   "lon": 143.8555119,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w204267258",
+   "name": "The Rusty Spud",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.56174,
+   "lon": 143.8637833,
+   "tags": {
+    "phone": "+61 407 547 234",
+    "opening_hours": "Mo-Fr 09:00-20:00",
+    "addr:housenumber": "21",
+    "addr:street": "Peel Street North",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w204274413",
+   "name": "Nando's",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5625983,
+   "lon": 143.8646512,
+   "tags": {
+    "cuisine": "chicken;portuguese",
+    "brand": "Nando's",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w204433125",
+   "name": "The Pancake Kitchen",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5628287,
+   "lon": 143.8603006,
+   "tags": {
+    "website": "https://www.pancakeparlour.com.au/locations/ballarat/",
+    "opening_hours": "Sa,Su 08:00-21:00; Mo-Fr 09:00-21:00",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w294992970",
+   "name": "Prospector's Table Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5759829,
+   "lon": 143.8649883,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w294996856",
+   "name": "Charlie Napier Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.5766374,
+   "lon": 143.865697,
+   "tags": {
+    "tourism": "hotel",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w294997285",
+   "name": "Universal Transit Office",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5765124,
+   "lon": 143.8656616,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w294997294",
+   "name": "United States Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.5765078,
+   "lon": 143.8660529,
+   "tags": {
+    "tourism": "hotel",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w295120136",
+   "name": "Comfort Inn Sovereign Hill",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.5780623,
+   "lon": 143.8651139,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w295130624",
+   "name": "Eureka Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.5813715,
+   "lon": 143.8646121,
+   "tags": {
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w295214462",
+   "name": "Gold Commissioner's Camp",
+   "group": "stay",
+   "type": "camp_site",
+   "lat": -37.5756518,
+   "lon": 143.8662875,
+   "tags": {
+    "tourism": "camp_site"
+   }
+  },
+  {
+   "id": "w295214628",
+   "name": "Chinese Camp",
+   "group": "stay",
+   "type": "camp_site",
+   "lat": -37.5758893,
+   "lon": 143.8670732,
+   "tags": {
+    "tourism": "camp_site"
+   }
+  },
+  {
+   "id": "w392891729",
+   "name": "Ballarat Specialist School Bakery/Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.5343006,
+   "lon": 143.8550434,
+   "tags": {
+    "opening_hours": "Mo-Fr 09:00-14:30",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w411382681",
+   "name": "Park Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.55515,
+   "lon": 143.8167193,
+   "tags": {
+    "addr:housenumber": "1615",
+    "addr:street": "Sturt Street",
+    "addr:suburb": "Alfredton",
+    "addr:postcode": "3350",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w443035397",
+   "name": "Leawarra Crescent Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5826529,
+   "lon": 143.823537,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w446335703",
+   "name": "Ballarat Sushi Plus",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.5615139,
+   "lon": 143.8506775,
+   "tags": {
+    "phone": "+61 3 5332 6369",
+    "opening_hours": "Mo-Fr 10:00-17:00",
+    "cuisine": "sushi",
+    "addr:housenumber": "623",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3350",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w447699370",
+   "name": "Golden City Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.561891,
+   "lon": 143.8534917,
+   "tags": {
+    "website": "https://goldencityhotel.com.au/",
+    "phone": "+61 3 5331 6211",
+    "opening_hours": "Mo-Th 08:00-22:00, Fr,Sa 08:00-01:00, Su 08:00-23:00",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "427",
+    "addr:street": "Sturt Street",
+    "addr:postcode": "3350",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w666623198",
+   "name": "Howitt Street Trig Station Natural Features Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.5448534,
+   "lon": 143.8747515,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w837847426",
+   "name": "Harry Lavery Bushland Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5961235,
+   "lon": 143.8729976,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w838398522",
+   "name": "Canadian Creek Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5984712,
+   "lon": 143.8710559,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1050715782",
+   "name": "Quest Ballarat Station",
+   "group": "stay",
+   "type": "apartment",
+   "lat": -37.5568337,
+   "lon": 143.8593591,
+   "tags": {
+    "tourism": "apartment"
+   }
+  },
+  {
+   "id": "w1340719871",
+   "name": "Bishop’s Palace",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.5578506,
+   "lon": 143.831075,
+   "tags": {
+    "website": "https://bishopspalace.com.au",
+    "addr:housenumber": "1444",
+    "addr:street": "Sturt Street",
+    "addr:suburb": "Lake Wendouree",
+    "addr:postcode": "3350",
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "r2011075",
+   "name": "Lake Wendouree Gardens",
+   "group": "do",
+   "type": "park",
+   "lat": -37.5502979,
+   "lon": 143.8336104,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "r9261552",
+   "name": "Ballarat North Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.5320806,
+   "lon": 143.8809029,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r15688778",
+   "name": "Ballarat Miners Retreat Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.5660603,
+   "lon": 143.8872959,
+   "tags": {
+    "website": "https://minersretreat.com.au",
+    "phone": "+61 3 5331 6900",
+    "opening_hours": "Mo-Sa 08:45-21:00; Su 08:00-18:00",
+    "internet_access": "wlan",
+    "addr:housenumber": "604",
+    "addr:street": "Eureka Street",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "r20174703",
+   "name": "Woowookarung Regional Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.5947898,
+   "lon": 143.8905891,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}

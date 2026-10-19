@@ -1,0 +1,926 @@
+{
+ "town": "Torquay",
+ "slug": "torquay",
+ "centre": [
+  -38.3266551,
+  144.3134076
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-10-19T11:59:31+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n515910921",
+   "name": "Little Rock Lookout",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -38.3476455,
+   "lon": 144.3040557,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n515911438",
+   "name": "Bird Rock Lookout",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -38.3497823,
+   "lon": 144.3020255,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n665499014",
+   "name": "Jashin Courtyard",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3375529,
+   "lon": 144.3209536,
+   "tags": {
+    "contact:phone": "+61 3 5261 6326",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n822479550",
+   "name": "Bob Sugar",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3358076,
+   "lon": 144.3245513,
+   "tags": {
+    "website": "https://bobsugar.com.au",
+    "phone": "+61 3 5261 6032",
+    "addr:housenumber": "17",
+    "addr:street": "The Esplanade",
+    "addr:postcode": "3228",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n822479571",
+   "name": "Samesyn",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3375733,
+   "lon": 144.3210963,
+   "tags": {
+    "contact:phone": "+61 3 5261 3100",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n822479585",
+   "name": "Italo's Wood Fired Pizza",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3323679,
+   "lon": 144.3254666,
+   "tags": {
+    "website": "https://italos.com.au/",
+    "phone": "+61 3 5261 6339",
+    "cuisine": "pizza",
+    "addr:housenumber": "7",
+    "addr:street": "Gilbert Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n822479593",
+   "name": "Torquay Hotel Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -38.3369622,
+   "lon": 144.319728,
+   "tags": {
+    "contact:website": "www.torquayhotel.com.au",
+    "contact:phone": "+61 3 5261 2001",
+    "cuisine": "modern australian",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n822479598",
+   "name": "Point Danger Beach House",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3362283,
+   "lon": 144.324437,
+   "tags": {
+    "cuisine": "modern australian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n846538562",
+   "name": "Torquay Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -38.3372531,
+   "lon": 144.3193346,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n846538770",
+   "name": "Sandbah Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.332201,
+   "lon": 144.3238182,
+   "tags": {
+    "contact:phone": "+61 3 5261 6414",
+    "cuisine": "coffee_shop",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n846538886",
+   "name": "La Porchetta",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3263808,
+   "lon": 144.3165526,
+   "tags": {
+    "website": "https://laporchetta.com.au/",
+    "cuisine": "italian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n848692430",
+   "name": "Bomboras",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3270051,
+   "lon": 144.3177553,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n848692436",
+   "name": "Villa & Hutt",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3314583,
+   "lon": 144.3205758,
+   "tags": {
+    "website": "www.villaandhutkafe.com.au",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n848692513",
+   "name": "Torquay Thai",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3374991,
+   "lon": 144.3183672,
+   "tags": {
+    "contact:phone": "+61 3 5261 4203",
+    "cuisine": "thai",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n848692720",
+   "name": "Surf Break",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3281779,
+   "lon": 144.3167054,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n848692782",
+   "name": "Panache",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3316237,
+   "lon": 144.3241087,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n1160662180",
+   "name": "Zeally's Bar & Grill",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.332928,
+   "lon": 144.3257179,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3893085738",
+   "name": "Sizzling Indian Tandoori",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3375406,
+   "lon": 144.3182987,
+   "tags": {
+    "cuisine": "indian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5625624723",
+   "name": "Ginger Monkey",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3279533,
+   "lon": 144.315703,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6219686988",
+   "name": "The Pond Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3322142,
+   "lon": 144.326172,
+   "tags": {
+    "opening_hours": "Mo-Su 07:00-15:00",
+    "wheelchair": "limited",
+    "addr:housenumber": "39",
+    "addr:street": "The Esplanade",
+    "addr:postcode": "3228",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6315227489",
+   "name": "Swell Foods & Coastal Catering",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3496242,
+   "lon": 144.2991963,
+   "tags": {
+    "website": "https://swellfoodscafe.com.au/",
+    "phone": "+61 3 5261 6033",
+    "opening_hours": "Mo-Su 06:00-16:00",
+    "cuisine": "burger;tea;coffee_shop;asian;chicken;breakfast;seafood;juice;salad",
+    "outdoor_seating": "yes",
+    "internet_access": "wlan",
+    "addr:street": "Stuart Avenue",
+    "addr:suburb": "Jan Juc",
+    "addr:postcode": "3228",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n7547115085",
+   "name": "Pholklore",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3325048,
+   "lon": 144.3259695,
+   "tags": {
+    "website": "https://www.pholklore.com.au/",
+    "phone": "+61 457 464 663",
+    "cuisine": "vietnamese",
+    "addr:housenumber": "38",
+    "addr:street": "The Esplanade",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n8530429523",
+   "name": "Squires Loft",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3379788,
+   "lon": 144.321762,
+   "tags": {
+    "website": "https://squiresloft.com.au/",
+    "addr:housenumber": "15",
+    "addr:street": "Bell Street",
+    "addr:suburb": "Torquay",
+    "addr:postcode": "3228",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n8530447412",
+   "name": "Fisho's Torquay",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3328256,
+   "lon": 144.3258742,
+   "tags": {
+    "cuisine": "fish_and_chips",
+    "addr:housenumber": "36",
+    "addr:street": "The Esplanade",
+    "addr:suburb": "Torquay",
+    "addr:postcode": "3228",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n8530507683",
+   "name": "Las Olas",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3325669,
+   "lon": 144.3234846,
+   "tags": {
+    "cuisine": "mexican",
+    "addr:housenumber": "10",
+    "addr:street": "Pearl Street",
+    "addr:suburb": "Torquay",
+    "addr:postcode": "3228",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n9704772331",
+   "name": "Torquay Larder",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3323741,
+   "lon": 144.3255343,
+   "tags": {
+    "website": "https://www.facebook.com/torqlarder/",
+    "phone": "+61 3 5261 3309",
+    "opening_hours": "Mo-Su 08:00-15:00",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "5",
+    "addr:street": "Gilbert Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9704780688",
+   "name": "Mavis Mavis",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3323224,
+   "lon": 144.3250798,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9704781650",
+   "name": "9grams",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3321751,
+   "lon": 144.3257068,
+   "tags": {
+    "website": "https://www.9gramscafe.com.au/",
+    "phone": "+61 3 5221 7301",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9706642006",
+   "name": "Blackman's Brewery",
+   "group": "eat",
+   "type": "pub",
+   "lat": -38.3375128,
+   "lon": 144.320785,
+   "tags": {
+    "website": "https://www.blackmansbrewery.com.au/",
+    "phone": "+61 3 5261 5310",
+    "addr:housenumber": "26",
+    "addr:street": "Bell Street",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n10152838534",
+   "name": "The Salty Dog Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3277774,
+   "lon": 144.3267059,
+   "tags": {
+    "website": "https://thesaltydogcafetorquay.com.au/",
+    "phone": "+61 3 5261 9410",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "50",
+    "addr:street": "The Esplanade",
+    "addr:suburb": "Torquay",
+    "addr:postcode": "3228",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n10152838535",
+   "name": "Bomboras Beach Bar",
+   "group": "eat",
+   "type": "bar",
+   "lat": -38.3278731,
+   "lon": 144.3267152,
+   "tags": {
+    "website": "https://www.bomboras.com.au/",
+    "addr:housenumber": "47",
+    "addr:street": "The Esplanade",
+    "addr:suburb": "Torquay",
+    "addr:postcode": "3228",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n12164647615",
+   "name": "Dough Bros",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.328233,
+   "lon": 144.3166972,
+   "tags": {
+    "cuisine": "pizza",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12164647616",
+   "name": "Mikro Coffee Roasters",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3280673,
+   "lon": 144.316723,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12183313946",
+   "name": "Rokuden",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3374343,
+   "lon": 144.320069,
+   "tags": {
+    "cuisine": "japanese",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12415816407",
+   "name": "Bells Beach Brewing",
+   "group": "do",
+   "type": "brewery",
+   "lat": -38.3274335,
+   "lon": 144.3143016,
+   "tags": {
+    "website": "https://bellsbeachbrewing.com.au/",
+    "addr:housenumber": "22",
+    "addr:street": "Baines Crescent",
+    "craft": "brewery"
+   }
+  },
+  {
+   "id": "n13513468753",
+   "name": "Il Matto",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.338004,
+   "lon": 144.3219748,
+   "tags": {
+    "website": "https://ilmatto.com.au/",
+    "addr:housenumber": "15",
+    "addr:street": "Bell Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n13569139801",
+   "name": "Quicksilver Bar 61",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3267031,
+   "lon": 144.3168844,
+   "tags": {
+    "phone": "+61 3 5261 7544",
+    "opening_hours": "Mo-Fr 08:00-17:30; Sa-Su 09:00-23:00",
+    "cuisine": "burger;cake;coffee_shop",
+    "addr:housenumber": "61",
+    "addr:street": "Surf Coast Highway",
+    "addr:postcode": "3228",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13769609049",
+   "name": "Solhouse Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3312598,
+   "lon": 144.3262194,
+   "tags": {
+    "website": "https://solhousecafe.com",
+    "cuisine": "coffee_shop",
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w41694788",
+   "name": "Torquay Golf Club",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -38.3417333,
+   "lon": 144.3122291,
+   "tags": {
+    "website": "https://www.torquaygolfclub.com.au/",
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w41803135",
+   "name": "Torquay Meaby Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3406389,
+   "lon": 144.3021187,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w41803141",
+   "name": "Ocean Acres Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3152681,
+   "lon": 144.2862969,
+   "tags": {
+    "addr:housenumber": "15",
+    "addr:street": "Ocean Acres Drive",
+    "addr:suburb": "Torquay",
+    "addr:postcode": "3228",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w41808035",
+   "name": "Great Ocean Views Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3349877,
+   "lon": 144.3087298,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w41901991",
+   "name": "Taylor Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3288142,
+   "lon": 144.3247942,
+   "tags": {
+    "wikidata": "Q21971022",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w68313039",
+   "name": "St. Annes Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3159426,
+   "lon": 144.3450034,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w68313042",
+   "name": "Hilltop Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.311378,
+   "lon": 144.3295935,
+   "tags": {
+    "addr:housenumber": "177A",
+    "addr:street": "Fischer Street",
+    "addr:suburb": "Torquay",
+    "addr:postcode": "3228",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w71071337",
+   "name": "Torquay Holiday Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -38.3288654,
+   "lon": 144.3154414,
+   "tags": {
+    "website": "https://www.torquayholidaypark.com.au/",
+    "internet_access": "wlan",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w71071344",
+   "name": "Australian National Surfing Museum",
+   "group": "do",
+   "type": "museum",
+   "lat": -38.3266116,
+   "lon": 144.3159766,
+   "tags": {
+    "website": "https://ansmtorquay.wordpress.com/",
+    "contact:phone": "+61 3 5261 4606",
+    "opening_hours": "Mo-Su,PH 09:00-17:00; Dec 25 off",
+    "wikidata": "Q6528667",
+    "wikipedia": "en:Australian National Surfing Museum",
+    "addr:housenumber": "77",
+    "addr:street": "Beach Road",
+    "addr:suburb": "Torquay",
+    "addr:postcode": "3228",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "w71088981",
+   "name": "The Beach Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -38.3495158,
+   "lon": 144.298822,
+   "tags": {
+    "contact:website": "https://beachhoteljanjuc.com/",
+    "contact:phone": "+61 3 5261 5111",
+    "opening_hours": "Mo-Th 11:30-14:00, 17:30-20:00; Fr-Su 11:30-14:30, 17:30-20:30",
+    "addr:housenumber": "3-9",
+    "addr:street": "Stuart Avenue",
+    "addr:suburb": "Jan Juc",
+    "addr:postcode": "3228",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w112530284",
+   "name": "Torquay Foreshore Caravan Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -38.339758,
+   "lon": 144.3207155,
+   "tags": {
+    "website": "https://www.torquaycaravanpark.com.au/",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w189986731",
+   "name": "Jan Juc Caravan Park",
+   "group": "stay",
+   "type": "camp_site",
+   "lat": -38.3476733,
+   "lon": 144.2913406,
+   "tags": {
+    "website": "https://www.janjucpark.com.au/",
+    "addr:housenumber": "93",
+    "addr:street": "Sunset Strip",
+    "addr:postcode": "3228",
+    "tourism": "camp_site"
+   }
+  },
+  {
+   "id": "w300897044",
+   "name": "RACV Torquay Resort",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -38.3406758,
+   "lon": 144.3112569,
+   "tags": {
+    "website": "http://www.racv.com.au/wps/wcm/connect/Resorts/RACV+Resorts/racv-torquay-resort",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w363251256",
+   "name": "Bob Pettitt Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3482664,
+   "lon": 144.2938421,
+   "tags": {
+    "wheelchair": "yes",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w385955980",
+   "name": "Deep Creek Nature Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.318996,
+   "lon": 144.325393,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w419468972",
+   "name": "Third Wave Kiosk",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3410583,
+   "lon": 144.3211146,
+   "tags": {
+    "website": "https://thirdwavekiosk.com.au",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w428132503",
+   "name": "Seaview Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.341215,
+   "lon": 144.2951906,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w470057294",
+   "name": "Grasstree Park Nature Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3043673,
+   "lon": 144.317429,
+   "tags": {
+    "addr:housenumber": "45",
+    "addr:street": "Messmate Road",
+    "addr:suburb": "Torquay",
+    "addr:postcode": "3228",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w484645972",
+   "name": "Torquay Tropicana Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -38.321643,
+   "lon": 144.3173265,
+   "tags": {
+    "website": "https://torquaytropicanamotel.com.au/",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w484646164",
+   "name": "Wyndham Resort Torquay",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -38.322839,
+   "lon": 144.3304074,
+   "tags": {
+    "website": "https://www.wyndhamhotels.com/wyndham/torquay-australia/wyndham-resort-torquay/overview",
+    "phone": "+61 3 5261 1500",
+    "wheelchair": "yes",
+    "brand": "Wyndham",
+    "addr:housenumber": "100",
+    "addr:street": "The Esplanade",
+    "addr:suburb": "Torquay",
+    "addr:postcode": "3228",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w784166835",
+   "name": "Ocean Acres Nature Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.3157655,
+   "lon": 144.2873503,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w827823736",
+   "name": "Frog Hollow Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3152561,
+   "lon": 144.3008694,
+   "tags": {
+    "addr:housenumber": "1A",
+    "addr:street": "Frog Hollow Drive",
+    "addr:suburb": "Torquay",
+    "addr:postcode": "3228",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1222415308",
+   "name": "Lentil's Indian Cuisine",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3310614,
+   "lon": 144.3248909,
+   "tags": {
+    "website": "https://lentilsindiancuisine.co/",
+    "cuisine": "indian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w1237684732",
+   "name": "Ela",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3348868,
+   "lon": 144.3245573,
+   "tags": {
+    "cuisine": "greek",
+    "addr:housenumber": "23",
+    "addr:street": "The Esplanade",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w1337946254",
+   "name": "Maple Bakery & Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3097157,
+   "lon": 144.3174312,
+   "tags": {
+    "website": "https://maplebakery.com.au",
+    "phone": "+61 476 421 051",
+    "opening_hours": "Mo-Fr 07:00-14:00; Sa,Su 08:00-14:00",
+    "addr:housenumber": "10",
+    "addr:street": "Cylinders Drive",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w1414201134",
+   "name": "Torquay Boulevard Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3432119,
+   "lon": 144.30163,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1464293980",
+   "name": "Murnong Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.32299,
+   "lon": 144.3095958,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "r6592912",
+   "name": "Great Ocean Road",
+   "group": "do",
+   "type": "attraction",
+   "lat": -38.5607579,
+   "lon": 143.4679704,
+   "tags": {
+    "website": "https://www.visitgreatoceanroad.org.au/",
+    "wikidata": "Q74046",
+    "wikipedia": "en:Great Ocean Road",
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "r9212148",
+   "name": "Lorne - Queenscliff Coastal Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.4248715,
+   "lon": 144.2744862,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r9212167",
+   "name": "Point Danger Marine Sanctuary",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.3407383,
+   "lon": 144.33033,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}
