@@ -11,7 +11,7 @@
   "notes": "Sister site to the trailer channel. Data: TMDB TV + watch providers.",
   "addedAt": "2026-10-19T04:00:00Z",
   "status": "failed",
-  "error": "Unterminated string in JSON at position 987 (line 1 column 988)"
+  "error": "DataForSEO keywords_data/google_ads/keywords_for_keywords/live: HTTP 402 Payment Required."
  },
  {
   "idea": "Book series in reading order",
@@ -25,7 +25,7 @@
   "notes": "Data: Open Library API. Amazon/Kindle affiliate.",
   "addedAt": "2026-10-19T04:00:00Z",
   "status": "failed",
-  "error": "Claude: no JSON in reply (stop=max_tokens, blocks=thinking,text, text=\"{\"fit\": 46, \"verdict\": \"The demand is real and the reading-order problem suits structured data, but Open Library's serie\")"
+  "error": "DataForSEO keywords_data/google_ads/keywords_for_keywords/live: HTTP 402 Payment Required."
  },
  {
   "idea": "Board games",
@@ -39,7 +39,7 @@
   "notes": "Data: BoardGameGeek XML API. Amazon affiliate.",
   "addedAt": "2026-10-19T04:00:00Z",
   "status": "failed",
-  "error": "Claude: no JSON in reply (stop=max_tokens, blocks=thinking,text, text=\"{\"fit\": 42, \"verdict\": \"Only the co-op cluster fits your model: BGG's structured fields (player count, playtime, weight,\")"
+  "error": "DataForSEO keywords_data/google_ads/keywords_for_keywords/live: HTTP 402 Payment Required."
  },
  {
   "idea": "Video games: release dates and trailers",
@@ -513,7 +513,7 @@
   "notes": "Data: NPS API + open trail data. Gear and booking affiliates.",
   "addedAt": "2026-10-19T04:00:00Z",
   "status": "failed",
-  "error": "DataForSEO dataforseo_labs/google/bulk_keyword_difficulty/live: HTTP 402 {\"version\":\"0.1.20260917\",\"status_code\":20000,\"status_message\":\"Ok.\",\"time\":\"0 sec.\",\"cost\":0,\"tasks_count\":1,\"tasks_error\":1,\""
+  "error": "DataForSEO keywords_data/google_ads/keywords_for_keywords/live: HTTP 402 Payment Required."
  },
  {
   "idea": "Dog breeds",
@@ -526,7 +526,8 @@
   ],
   "notes": "Data: open dog breed datasets. Pet product affiliates.",
   "addedAt": "2026-10-19T04:00:00Z",
-  "status": "new"
+  "status": "failed",
+  "error": "DataForSEO keywords_data/google_ads/keywords_for_keywords/live: We noticed some unusual activity in your DataForSEO account, so we’ve temporarily paused access as a precaution. Please, reach out to ou"
  },
  {
   "idea": "Movie soundtracks and film music",
@@ -539,6 +540,7 @@
   ],
   "notes": "Data: MusicBrainz / Discogs APIs. Vinyl and streaming affiliates.",
   "addedAt": "2026-10-19T04:00:00Z",
-  "status": "new"
+  "status": "failed",
+  "error": "DataForSEO keywords_data/google_ads/keywords_for_keywords/live: We noticed some unusual activity in your DataForSEO account, so we’ve temporarily paused access as a precaution. Please, reach out to ou"
  }
 ]
