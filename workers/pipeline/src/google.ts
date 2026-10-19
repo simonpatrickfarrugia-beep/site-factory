@@ -133,7 +133,7 @@ export async function ga4Report(
  */
 export async function indexNow(host: string, key: string, urls: string[]): Promise<number> {
   if (!urls.length) return 200;
-  const res = await fetch('https://api.indexnow.org/indexnow', {
+  const res = await fetch('https://www.bing.com/indexnow', {
     method: 'POST',
     headers: { 'content-type': 'application/json; charset=utf-8' },
     body: JSON.stringify({ host, key, keyLocation: `https://${host}/${key}.txt`, urlList: urls.slice(0, 10000) }),
