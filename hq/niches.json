@@ -1737,7 +1737,7 @@
      "/soundtrack/[film-slug] (tracklist, composer, label, Discogs pressings with live price data)",
      "/composer/[name] (filmography plus soundtrack releases per film)",
      "/composer/[name]/[format] for vinyl, CD and digital editions where data exists",
-     "/label/[label-name] (soundtrack catalogue by label, e.g. Varèse Sarabande, Intrada)",
+     "/label/[label-name] (soundtrack catalogue by label, e.g. Var\u00e8se Sarabande, Intrada)",
      "/soundtracks-by-year/[year] (release year indexes built from MusicBrainz dates)"
     ],
     "risks": [
@@ -1772,7 +1772,7 @@
    "name": "Australia"
   },
   "addedAt": "2026-10-19T11:30:00Z",
-  "status": "scored",
+  "status": "new",
   "score": {
    "overall": 59,
    "demand": 52,
@@ -2007,7 +2007,7 @@
    "name": "Australia"
   },
   "addedAt": "2026-10-19T11:30:00Z",
-  "status": "scored",
+  "status": "new",
   "score": {
    "overall": 66,
    "demand": 63,
@@ -2241,7 +2241,7 @@
    "name": "Australia"
   },
   "addedAt": "2026-10-19T11:30:00Z",
-  "status": "scored",
+  "status": "new",
   "score": {
    "overall": 52,
    "demand": 40,
@@ -2420,7 +2420,7 @@
    ],
    "judgement": {
     "fit": 27,
-    "verdict": "Victorian restaurant data is thin and generic: OSM gives cuisine and hours, but no ratings, prices, menus or reviews, so pages would look like a directory that Google Maps already beats. The search volumes are US figures, which are unreliable for AU local intent, and the CPCs are low ($0.2–1.5), so revenue per page is tiny unless the site converts through affiliate tours or accommodation.",
+    "verdict": "Victorian restaurant data is thin and generic: OSM gives cuisine and hours, but no ratings, prices, menus or reviews, so pages would look like a directory that Google Maps already beats. The search volumes are US figures, which are unreliable for AU local intent, and the CPCs are low ($0.2\u20131.5), so revenue per page is tiny unless the site converts through affiliate tours or accommodation.",
     "angle": "A narrow Yarra Valley and Macedon Ranges winery-lunch guide (/winery-restaurants/[region]/ and /[winery]/ pages) built on OSM craft=winery and amenity=restaurant data, with a short factual card per venue and affiliate links for wine tours and stays. Skip general Geelong and Lorne 'best restaurants' pages until you have a real differentiator.",
     "dataSources": [
      "OpenStreetMap via Overpass API (amenity=restaurant/cafe, craft=winery, cuisine, opening_hours, website)",

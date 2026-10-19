@@ -424,7 +424,8 @@ async function nichesJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: bo
         env.ANTHROPIC_API_KEY,
         env.ANTHROPIC_MODEL,
         n.idea,
-        `${n.notes ?? ''} Market: ${n.market?.name ?? location}.`,
+        n.notes,
+        n.market?.name ?? location,
         top.map((k) => ({ keyword: k.keyword, volume: k.volume, cpc: k.cpc, kd: diff.kd.get(k.keyword) ?? null })),
       );
       n.score = scoreNiche(ideas.items, diff.kd, judgement, ideas.cost + diff.cost);

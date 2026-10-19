@@ -233,6 +233,7 @@ export async function judgeNiche(
   model: string,
   idea: string,
   notes: string | null | undefined,
+  market: string,
   keywords: { keyword: string; volume: number; cpc: number | null; kd: number | null }[],
 ): Promise<import('./niches').FitJudgement> {
   const prompt = [
@@ -243,7 +244,7 @@ export async function judgeNiche(
     '',
     `Niche: ${idea}`,
     notes ? `Founder's notes: ${notes}` : '',
-    'Biggest related US Google searches (monthly volume, CPC USD, SEO difficulty 0-100):',
+    `Biggest related Google searches in ${market} (monthly volume in ${market}, CPC USD, SEO difficulty 0-100). Google Ads groups close variants, so near-identical searches can share one volume figure:`,
     ...keywords.slice(0, 30).map((k) => `- ${k.keyword}: ${k.volume}/mo, cpc ${k.cpc ?? '?'}, kd ${k.kd ?? '?'}`),
     '',
     'Score "fit" 0-100: is there a usable data source that can generate hundreds of useful pages automatically,',
