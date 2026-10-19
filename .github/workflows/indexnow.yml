@@ -20,7 +20,12 @@ jobs:
       - uses: actions/checkout@v4
         with: { fetch-depth: 2 }
       - name: Wait for the site deploy
+        if: github.event_name == 'push'
         run: sleep 200
+      - name: Check the key file is live
+        run: |
+          code=$(curl -sS -o key.txt -w '%{http_code}' "https://www.movietrailer.channel/d8f03bdd0f45a76ce44c030bea08ea85.txt")
+          echo "::notice title=indexnow-key::HTTP $code, content: $(head -c 60 key.txt | tr -d '\n')"
       - name: Submit
         env:
           MODE: ${{ inputs.mode || 'changed' }}
