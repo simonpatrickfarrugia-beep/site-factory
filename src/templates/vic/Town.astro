@@ -1,0 +1,54 @@
+---
+import RoadSign from '../../components/vic/RoadSign.astro';
+import PlaceRow from '../../components/vic/PlaceRow.astro';
+import { GROUP_LABEL, type Group, type Place } from '../../../brands/vic/model';
+interface Props {
+  town: { name: string; slug: string; km: number; region: string; intro: string; tips: string[] };
+  sections: { group: Group; total: number; places: Place[] }[];
+  nearby: { slug: string; name: string; km: number }[];
+  collections: { slug: string; name: string }[];
+}
+const { town, sections, nearby, collections } = Astro.props;
+---
+<div class="wrap town">
+  <p class="crumb"><a href="/towns">All towns</a></p>
+  <RoadSign name={town.name} km={town.km} size="hero" as="h1" sub={`${town.region}, ${town.km} km from Melbourne`} />
+  <div class="town__intro">
+    <p class="town__lede">{town.intro}</p>
+    {town.tips.map((tip) => <p class="tip"><strong>Local tip:</strong> {tip}</p>)}
+  </div>
+
+  <nav class="jump" aria-label="On this page">
+    {sections.map((s) => <a class={`jump__chip jump__chip--${s.group}`} href={`#${s.group}`}>{GROUP_LABEL[s.group].short} <span>{s.total}</span></a>)}
+  </nav>
+
+  {sections.map((s) => (
+    <section class="town__section" id={s.group}>
+      <h2 class={`section-head section-head--${s.group}`}>{GROUP_LABEL[s.group].title(town.name)}</h2>
+      {s.total === 0 ? (
+        <p class="empty">No {GROUP_LABEL[s.group].noun} listed yet.</p>
+      ) : (
+        <>
+          <ul class="places">{s.places.map((p) => <PlaceRow place={p} />)}</ul>
+          {s.total > s.places.length && (
+            <p class="more"><a href={`/${town.slug}/${s.group}`}>See all {s.total} {GROUP_LABEL[s.group].noun} in {town.name}</a></p>
+          )}
+        </>
+      )}
+    </section>
+  ))}
+
+  {collections.length > 0 && (
+    <section class="town__section">
+      <h2>Part of these trip ideas</h2>
+      <ul class="inline-list">{collections.map((c) => <li><a href={`/collections/${c.slug}`}>{c.name}</a></li>)}</ul>
+    </section>
+  )}
+
+  {nearby.length > 0 && (
+    <section class="town__section">
+      <h2>Nearby on the list</h2>
+      <ul class="signpost">{nearby.map((t) => <li><RoadSign name={t.name} km={t.km} href={`/${t.slug}`} /></li>)}</ul>
+    </section>
+  )}
+</div>

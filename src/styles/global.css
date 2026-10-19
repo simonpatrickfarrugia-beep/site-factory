@@ -347,3 +347,77 @@ main { display: block; }
 .letter input:focus-visible + span { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 .letter input:disabled + span { opacity: 0.3; }
 .letter input:disabled { cursor: default; }
+
+/* ======================================================================
+   Theme: roadtrip (Vic Tours). Australian road signage on a pale
+   gum-leaf ground: highway green = places, tourist brown = things to do.
+   ====================================================================== */
+[data-theme='roadtrip'] {
+  color-scheme: light;
+  --sign-green: #00653B;   /* AS 1743 guide-sign green */
+  --sign-brown: #8A4B26;   /* tourist-attraction sign brown */
+  --wattle: #F2C12E;       /* golden wattle: focus rings only */
+  --ink: #EEF2EC;          /* page ground: pale gum-leaf grey */
+  --paper: #1E2A24;        /* text: bluestone-green black */
+  --muted: #55625A;
+  --panel: #FFFFFF;
+  --line: #C9D3CB;
+  --wrap: 62rem;
+  --radius: 10px;
+}
+[data-theme='roadtrip'] body { line-height: 1.65; }
+[data-theme='roadtrip'] :focus-visible { outline-color: var(--wattle); }
+[data-theme='roadtrip'] .site-header { background: var(--sign-green); border-bottom: 0; }
+[data-theme='roadtrip'] .site-header .wordmark,
+[data-theme='roadtrip'] .site-header .site-nav a { color: #fff; }
+[data-theme='roadtrip'] .site-header .site-nav a:hover,
+[data-theme='roadtrip'] .site-header .site-nav a[aria-current='page'] { color: var(--wattle); }
+[data-theme='roadtrip'] .site-nav { gap: var(--space-3); font-family: var(--font-display); }
+@media (max-width: 30rem) {
+  [data-theme='roadtrip'] .site-header__inner { flex-wrap: wrap; padding-block: var(--space-2); gap: 0 var(--space-3); }
+  [data-theme='roadtrip'] .site-nav { gap: var(--space-3); font-size: 0.95rem; }
+}
+[data-theme='roadtrip'] .wordmark { font-size: 1.3rem; }
+[data-theme='roadtrip'] h2 { font-size: var(--step-2); font-weight: 800; letter-spacing: -0.005em; }
+
+[data-theme='roadtrip'] .town { padding-block: var(--space-4) var(--space-6); }
+[data-theme='roadtrip'] .crumb { margin: 0 0 var(--space-3); font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; }
+[data-theme='roadtrip'] .crumb a { color: var(--sign-green); }
+[data-theme='roadtrip'] .town__intro { max-width: 40rem; margin-top: var(--space-4); }
+[data-theme='roadtrip'] .town__lede { font-size: 1.15rem; max-width: 40rem; }
+[data-theme='roadtrip'] .tip { border-left: 4px solid var(--wattle); padding-left: var(--space-3); }
+[data-theme='roadtrip'] .page-title { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.9rem, 6vw, 2.8rem); line-height: 1.05; margin: var(--space-4) 0 var(--space-2); }
+[data-theme='roadtrip'] .page-title--big { font-size: clamp(2.2rem, 8vw, 3.6rem); margin-top: 0; }
+[data-theme='roadtrip'] .count { color: var(--muted); font-family: var(--font-display); }
+
+[data-theme='roadtrip'] .jump { display: flex; gap: var(--space-2); flex-wrap: wrap; margin: var(--space-4) 0 0; }
+[data-theme='roadtrip'] .jump__chip { font-family: var(--font-display); font-weight: 800; color: #fff; text-decoration: none; border-radius: 8px; padding: 0.4rem 0.8rem; background: var(--sign-green); }
+[data-theme='roadtrip'] .jump__chip--do { background: var(--sign-brown); }
+[data-theme='roadtrip'] .jump__chip span { font-weight: 600; opacity: 0.85; margin-left: 0.25em; }
+[data-theme='roadtrip'] .jump__chip:hover { color: #fff; filter: brightness(1.12); }
+
+[data-theme='roadtrip'] .town__section { margin-top: var(--space-5); scroll-margin-top: var(--space-3); }
+[data-theme='roadtrip'] .section-head { padding-bottom: var(--space-2); border-bottom: 4px solid var(--sign-green); }
+[data-theme='roadtrip'] .section-head--do { border-color: var(--sign-brown); }
+[data-theme='roadtrip'] .places { margin: 0; padding: 0; }
+@media (min-width: 52rem) {
+  [data-theme='roadtrip'] .places { display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--space-5); }
+}
+[data-theme='roadtrip'] .more { margin-top: var(--space-3); font-family: var(--font-display); font-weight: 800; }
+[data-theme='roadtrip'] .more a { color: var(--sign-green); }
+[data-theme='roadtrip'] .empty { color: var(--muted); }
+[data-theme='roadtrip'] .signpost { list-style: none; margin: var(--space-3) 0 0; padding: 0; display: grid; gap: 0.6rem; max-width: 34rem; }
+[data-theme='roadtrip'] .inline-list { list-style: none; padding: 0; margin: var(--space-2) 0 0; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); font-family: var(--font-display); font-weight: 700; }
+[data-theme='roadtrip'] .inline-list a { color: var(--sign-brown); }
+
+[data-theme='roadtrip'] .filters { display: flex; gap: var(--space-2); flex-wrap: wrap; margin: var(--space-3) 0; }
+[data-theme='roadtrip'] .filters button { font: 700 0.92rem var(--font-display); color: var(--paper); background: var(--panel); border: 2px solid var(--line); border-radius: 999px; padding: 0.35rem 0.8rem; cursor: pointer; }
+[data-theme='roadtrip'] .filters button span { color: var(--muted); font-weight: 600; }
+[data-theme='roadtrip'] .filters button[aria-pressed='true'] { background: var(--sign-green); border-color: var(--sign-green); color: #fff; }
+[data-theme='roadtrip'] .filters button[aria-pressed='true'] span { color: #fff; }
+
+[data-theme='roadtrip'] .stops { list-style: none; padding: 0; margin: var(--space-4) 0 0; display: grid; gap: var(--space-4); max-width: 40rem; }
+[data-theme='roadtrip'] .stop__intro { margin: var(--space-2) 0 0.2rem; }
+[data-theme='roadtrip'] .stop__counts { display: flex; gap: var(--space-3); flex-wrap: wrap; font-family: var(--font-display); font-weight: 700; margin: 0; }
+[data-theme='roadtrip'] .stop__counts a { color: var(--sign-green); }
+[data-theme='roadtrip'] .site-footer__name { color: var(--paper); }

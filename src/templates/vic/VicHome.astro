@@ -1,0 +1,57 @@
+---
+import RoadSign from '../../components/vic/RoadSign.astro';
+interface SignTown { slug: string; name: string; km: number; region: string }
+interface Props {
+  towns: SignTown[];
+  neighbourhoods: SignTown[];
+  collections: { slug: string; name: string; intro: string; towns: string[] }[];
+}
+const { towns, neighbourhoods, collections } = Astro.props;
+---
+<div class="wrap home">
+  <section class="home__hero">
+    <h1 class="home__title">Victoria, town by town.</h1>
+    <p class="home__lede">Where to stay, where to eat and what to do, for every town on the list. Distances are from Melbourne’s CBD.</p>
+    <ul class="signpost" aria-label="Towns, nearest first">
+      {towns.map((t) => <li><RoadSign name={t.name} km={t.km} href={`/${t.slug}`} /></li>)}
+    </ul>
+  </section>
+
+  <section class="home__section">
+    <h2>Trip ideas</h2>
+    <ul class="trips">
+      {collections.map((c) => (
+        <li class="trip">
+          <a class="trip__name" href={`/collections/${c.slug}`}>{c.name}</a>
+          <p class="trip__intro">{c.intro}</p>
+          <p class="trip__towns">{c.towns.length} towns</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  {neighbourhoods.length > 0 && (
+    <section class="home__section">
+      <h2>Melbourne neighbourhoods</h2>
+      <ul class="signpost signpost--tight">
+        {neighbourhoods.map((t) => <li><RoadSign name={t.name} km={t.km} href={`/${t.slug}`} /></li>)}
+      </ul>
+    </section>
+  )}
+</div>
+<style>
+  .home { padding-block: var(--space-5) var(--space-6); }
+  .home__title { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.4rem, 8vw, 4.2rem); line-height: 1; letter-spacing: -0.015em; margin-bottom: var(--space-3); max-width: 14ch; }
+  .home__lede { font-size: var(--step-1); max-width: 38ch; color: var(--muted); }
+  .signpost { list-style: none; margin: var(--space-4) 0 0; padding: 0; display: grid; gap: 0.6rem; max-width: 34rem; }
+  .signpost--tight { margin-top: var(--space-3); }
+  .home__section { margin-top: var(--space-6); }
+  .home__section h2 { font-size: var(--step-2); }
+  .trips { list-style: none; margin: var(--space-3) 0 0; padding: 0; display: grid; gap: 0; }
+  @media (min-width: 52rem) { .trips { grid-template-columns: 1fr 1fr; column-gap: var(--space-5); } }
+  .trip { border-top: 2px solid var(--paper); padding: var(--space-3) 0; }
+  .trip__name { font-family: var(--font-display); font-weight: 800; font-size: 1.4rem; text-decoration: none; color: var(--sign-brown); }
+  .trip__name:hover { text-decoration: underline; }
+  .trip__intro { margin: 0.3rem 0 0.2rem; }
+  .trip__towns { margin: 0; color: var(--muted); font-family: var(--font-display); font-size: 0.9rem; }
+</style>

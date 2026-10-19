@@ -1,0 +1,18 @@
+---
+import RoadSign from '../../components/vic/RoadSign.astro';
+interface Props {
+  groups: { region: string; towns: { slug: string; name: string; km: number }[] }[];
+  comingSoon: number;
+}
+const { groups, comingSoon } = Astro.props;
+---
+<div class="wrap town">
+  <h1 class="page-title page-title--big">All towns</h1>
+  <p class="town__lede">Grouped by region, nearest to Melbourne first. {comingSoon > 0 && `${comingSoon} more towns and suburbs are on the way.`}</p>
+  {groups.map((g) => (
+    <section class="town__section">
+      <h2>{g.region}</h2>
+      <ul class="signpost">{g.towns.map((t) => <li><RoadSign name={t.name} km={t.km} href={`/${t.slug}`} /></li>)}</ul>
+    </section>
+  ))}
+</div>

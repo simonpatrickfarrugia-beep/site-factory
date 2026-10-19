@@ -1,0 +1,131 @@
+{
+ "towns": {
+  "geelong": {
+   "intro": "Victoria’s second-largest city wraps around Corio Bay, an hour down the highway from Melbourne. The waterfront is the place to start: a long, walkable foreshore with the painted Baywalk Bollards, swimming enclosures and bay views. It’s also the gateway to the Bellarine Peninsula and the start of the Great Ocean Road country, so it works as a base or a first stop.",
+   "region": "Barwon South West"
+  },
+  "ballarat": {
+   "intro": "Ballarat grew rich in the 1850s gold rush, and it shows: grand Victorian streetscapes along Lydiard and Sturt streets, ornate arcades and old hotels. Sovereign Hill, the outdoor museum recreating a gold-rush town, is the big drawcard, and Lake Wendouree with its botanical gardens is made for an easy afternoon.",
+   "region": "Goldfields"
+  },
+  "bendigo": {
+   "intro": "Another gold-rush city, Bendigo pairs grand 19th-century architecture with a serious arts scene. The Bendigo Art Gallery punches well above its weight with touring exhibitions, the Golden Dragon Museum tells the story of the city’s Chinese community, and you can head underground at the Central Deborah Gold Mine.",
+   "region": "Goldfields"
+  },
+  "daylesford": {
+   "intro": "Daylesford and neighbouring Hepburn Springs sit in Victoria’s spa country, on the largest concentration of mineral springs in Australia. Come for the bathhouses and a slow weekend: Lake Daylesford, Wombat Hill Botanic Gardens, galleries, produce stores and long lunches in the surrounding hills.",
+   "region": "Spa Country"
+  },
+  "bright": {
+   "intro": "Bright sits in the Ovens Valley at the foot of Mount Buffalo, the classic High Country base. Autumn turns the town’s European trees gold and red, the Murray to Mountains Rail Trail runs right through it, and the alpine resorts at Falls Creek and Mount Hotham are within a short drive in winter.",
+   "region": "High Country"
+  },
+  "phillip-island": {
+   "intro": "Phillip Island is famous for the Penguin Parade at dusk, when little penguins come ashore at Summerland Beach. There’s plenty more: surf beaches, the Nobbies boardwalk and its seal colony views, koalas, and the Grand Prix motorcycle circuit. Cowes is the main town, with the cafés and most of the places to stay.",
+   "region": "Gippsland"
+  },
+  "warrnambool": {
+   "intro": "Warrnambool sits at the western end of the Great Ocean Road. From roughly May to September, southern right whales come close to shore to calve, often visible from the viewing platform at Logans Beach. Flagstaff Hill Maritime Village tells the story of the Shipwreck Coast, and the beaches and river walks are right on the doorstep.",
+   "region": "Great Ocean Road"
+  },
+  "torquay": {
+   "intro": "Torquay is where the Great Ocean Road begins and where Australian surf culture took off: Rip Curl and Quiksilver both started here, and world-famous Bells Beach is just down the road. Expect surf beaches, the Australian National Surfing Museum and plenty of places to fuel up before the drive west.",
+   "region": "Great Ocean Road"
+  },
+  "st-kilda": {
+   "intro": "St Kilda is Melbourne’s bayside playground: the palm-lined Esplanade, Luna Park’s famous face, the cake shops of Acland Street and long sunset walks on the pier, where a colony of little penguins lives in the breakwater. It’s busy, a little scruffy and full of places to eat and drink.",
+   "region": "Melbourne"
+  },
+  "mornington": {
+   "intro": "Mornington is the Mornington Peninsula’s main-street town, with a weekly Wednesday street market, a historic pier and the sheltered swimming at Mothers Beach. It’s the easy gateway to the peninsula’s wineries, hot springs and back beaches further south.",
+   "region": "Mornington Peninsula"
+  }
+ },
+ "collections": [
+  {
+   "slug": "day-trips-from-melbourne",
+   "name": "Day trips from Melbourne",
+   "intro": "Places close enough to see in a day and be home for dinner, all within about two hours of the city.",
+   "towns": [
+    "mornington",
+    "geelong",
+    "torquay",
+    "phillip-island",
+    "daylesford",
+    "ballarat",
+    "bendigo"
+   ]
+  },
+  {
+   "slug": "weekend-getaways",
+   "name": "Weekend getaways from Melbourne",
+   "intro": "Worth a night or two: further afield, or simply too good to rush.",
+   "towns": [
+    "daylesford",
+    "bright",
+    "phillip-island",
+    "warrnambool",
+    "ballarat",
+    "bendigo",
+    "torquay"
+   ]
+  },
+  {
+   "slug": "beaches-and-coast",
+   "name": "Beaches and coast",
+   "intro": "Surf breaks, sheltered bays and coastal walks, from the city’s edge to the Shipwreck Coast.",
+   "towns": [
+    "torquay",
+    "phillip-island",
+    "warrnambool",
+    "mornington",
+    "geelong",
+    "st-kilda"
+   ]
+  },
+  {
+   "slug": "goldfields-towns",
+   "name": "Gold rush towns",
+   "intro": "The 1850s gold rush built some of Victoria’s grandest towns. Come for the streetscapes, museums and history.",
+   "towns": [
+    "ballarat",
+    "bendigo",
+    "daylesford"
+   ]
+  },
+  {
+   "slug": "food-and-wine-weekends",
+   "name": "Food and wine weekends",
+   "intro": "Long lunches, cellar doors and produce stores. Towns where eating well is the main event.",
+   "towns": [
+    "daylesford",
+    "bright",
+    "mornington",
+    "geelong"
+   ]
+  }
+ ],
+ "pages": [
+  {
+   "slug": "about",
+   "title": "About Vic Tours",
+   "description": "Vic Tours is a town-by-town guide to Victoria, made in Melbourne.",
+   "paragraphs": [
+    "Vic Tours is a town-by-town guide to Victoria: where to stay, where to eat and what to do, in one place for each town and Melbourne neighbourhood.",
+    "It’s made in Melbourne by Independent Media Network Pty Ltd. We start with open data, so every listing is a real place, and add local knowledge on top.",
+    "Spotted something wrong or missing? Most listings come from OpenStreetMap, which anyone can improve, and fixes there flow back into our guides."
+   ]
+  },
+  {
+   "slug": "how-we-build-our-guides",
+   "title": "How we build our guides",
+   "description": "Where Vic Tours’ listings come from, how we order them and how to correct them.",
+   "paragraphs": [
+    "Listings come from OpenStreetMap, the free, community-edited map of the world (© OpenStreetMap contributors, available under the Open Database Licence).",
+    "Places with more complete details (website, opening hours, address) are shown first, and chain restaurants are listed last. We don’t accept payment for placement.",
+    "Distances are measured in a straight line from Melbourne’s CBD, so the drive is longer. Opening hours change, so check with the venue before you go.",
+    "Some links may become booking links in future. If they do, we’ll say so clearly on the page."
+   ]
+  }
+ ]
+}

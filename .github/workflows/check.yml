@@ -14,7 +14,7 @@ jobs:
     timeout-minutes: 10
     strategy:
       matrix:
-        brand: [trailers]
+        brand: [trailers, vic]
     env:
       BRAND: ${{ matrix.brand }}
     steps:
@@ -39,8 +39,10 @@ jobs:
         run: |
           scripts/ci-run.sh "Install Playwright" npm install --no-save --no-audit --no-fund playwright@1
           scripts/ci-run.sh "Install Chromium" npx playwright install --with-deps chromium
-          MOVIE=$(node -e "console.log(require('./data/'+process.env.BRAND+'/movies.json')[0].slug)")
-          scripts/ci-run.sh "Take screenshots" node scripts/screenshots.mjs / /browse /discover /discover/marvel-cinematic-universe /movies/$MOVIE /about /does-not-exist /hq/stats
+          # Pages to screenshot are listed per brand in brands/<slug>/screenshots.txt (__MOVIE__ = first movie, trailers only).
+          MOVIE=$(node -e "try{console.log(require('./data/'+process.env.BRAND+'/movies.json')[0].slug)}catch{console.log('')}")
+          PATHS=$(sed "s#__MOVIE__#$MOVIE#" brands/$BRAND/screenshots.txt | tr '\n' ' ')
+          scripts/ci-run.sh "Take screenshots" node scripts/screenshots.mjs $PATHS
           cd screenshots
           git init -q -b shots
           git config user.name "ci" && git config user.email "ci@users.noreply.github.com"

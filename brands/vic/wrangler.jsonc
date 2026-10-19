@@ -1,0 +1,14 @@
+{
+  // Cloudflare Worker for Vic Tours (victours.com.au).
+  // Build:  BRAND=vic npm run build
+  // Deploy: npx wrangler deploy --config brands/vic/wrangler.jsonc
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "victours",
+  "compatibility_date": "2026-06-01",
+  "assets": {
+    "directory": "../../dist",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+  // Preview on victours.<subdomain>.workers.dev. Custom domain added at launch.
+}

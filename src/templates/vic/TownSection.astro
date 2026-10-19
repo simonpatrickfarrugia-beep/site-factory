@@ -1,0 +1,39 @@
+---
+import RoadSign from '../../components/vic/RoadSign.astro';
+import PlaceRow from '../../components/vic/PlaceRow.astro';
+import { GROUP_LABEL, TYPE_LABEL, type Group, type Place } from '../../../brands/vic/model';
+interface Props {
+  town: { name: string; slug: string; km: number };
+  group: Group;
+  places: Place[];
+}
+const { town, group, places } = Astro.props;
+const types = Object.entries(places.reduce<Record<string, number>>((a, p) => ((a[p.type] = (a[p.type] ?? 0) + 1), a), {})).sort((a, b) => b[1] - a[1]);
+---
+<div class="wrap town">
+  <p class="crumb"><a href={`/${town.slug}`}>{town.name}</a></p>
+  <RoadSign name={town.name} km={town.km} tone={group === 'do' ? 'brown' : 'green'} />
+  <h1 class="page-title">{GROUP_LABEL[group].title(town.name)}</h1>
+  <p class="count">{places.length} {GROUP_LABEL[group].noun}, best-documented first.</p>
+  {types.length > 1 && (
+    <div class="filters" role="group" aria-label="Filter by type">
+      <button type="button" aria-pressed="true" data-filter="">All <span>{places.length}</span></button>
+      {types.map(([t, n]) => <button type="button" aria-pressed="false" data-filter={t}>{TYPE_LABEL[t] ?? t} <span>{n}</span></button>)}
+    </div>
+  )}
+  <ul class="places" data-places>{places.map((p) => <PlaceRow place={p} />)}</ul>
+  <p class="more"><a href={`/${town.slug}`}>Back to {town.name}: stay, eat and do</a></p>
+</div>
+<script is:inline>
+  (function () {
+    var list = document.querySelector('[data-places]');
+    var buttons = document.querySelectorAll('[data-filter]');
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var f = b.getAttribute('data-filter');
+        buttons.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+        Array.prototype.forEach.call(list.children, function (li) { li.hidden = !!f && li.getAttribute('data-type') !== f; });
+      });
+    });
+  })();
+</script>

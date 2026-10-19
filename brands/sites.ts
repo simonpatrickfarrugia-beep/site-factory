@@ -4,7 +4,9 @@
  */
 import type { Route } from '../src/lib/routes';
 import { routes as trailers } from './trailers/site';
+import { routes as vic } from './vic/site';
 
 export const sites: Record<string, () => Route[]> = {
   trailers,
+  vic,
 };

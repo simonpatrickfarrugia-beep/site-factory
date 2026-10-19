@@ -1,0 +1,39 @@
+---
+import { TYPE_LABEL, address, cuisine, mapUrl, phone, prettyHours, website, type Place } from '../../../brands/vic/model';
+interface Props { place: Place }
+const { place: p } = Astro.props;
+const t = p.tags;
+const kind = [TYPE_LABEL[p.type] ?? p.type, cuisine(t.cuisine), t.stars ? `${t.stars}★` : null].filter(Boolean).join(', ');
+const addr = address(t);
+const hours = prettyHours(t.opening_hours);
+const site = website(t);
+const tel = phone(t);
+const flags = [
+  t.outdoor_seating === 'yes' ? 'Outdoor seating' : null,
+  t.dog === 'yes' || t.dog === 'leashed' ? 'Dogs welcome' : null,
+  t.wheelchair === 'yes' ? 'Wheelchair accessible' : null,
+].filter(Boolean);
+---
+<li class="place" data-type={p.type}>
+  <h3 class="place__name">{p.name}</h3>
+  <p class="place__kind">{kind}</p>
+  {addr && <p class="place__line">{addr}</p>}
+  {hours && <p class="place__line place__hours">{hours}</p>}
+  {flags.length > 0 && <p class="place__flags">{flags.join(', ')}</p>}
+  <p class="place__links">
+    {site && <a href={site} rel="nofollow noopener" target="_blank">Website</a>}
+    <a href={mapUrl(p)} rel="nofollow noopener" target="_blank">Map</a>
+    {tel && <a href={`tel:${tel.replace(/[^+\d]/g, '')}`}>Call</a>}
+  </p>
+</li>
+<style>
+  .place { padding: 0.9rem 0; border-top: 1px solid var(--line); list-style: none; }
+  .place__name { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; line-height: 1.2; }
+  .place__kind { margin: 0.1rem 0 0.25rem; font-family: var(--font-display); font-size: 0.92rem; color: var(--muted); }
+  .place__line { margin: 0; font-size: 0.95rem; }
+  .place__hours { color: var(--muted); font-size: 0.88rem; }
+  .place__flags { margin: 0.2rem 0 0; font-size: 0.85rem; color: var(--sign-green); font-family: var(--font-display); font-weight: 600; }
+  .place__links { margin: 0.45rem 0 0; display: flex; gap: 1.1rem; font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; }
+  .place__links a { color: var(--sign-green); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.18em; }
+  .place__links a:hover { color: var(--sign-brown); }
+</style>

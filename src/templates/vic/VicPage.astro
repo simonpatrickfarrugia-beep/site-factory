@@ -1,0 +1,8 @@
+---
+interface Props { title: string; paragraphs: string[] }
+const { title, paragraphs } = Astro.props;
+---
+<div class="wrap town">
+  <h1 class="page-title page-title--big">{title}</h1>
+  <div class="prose">{paragraphs.map((p) => <p>{p}</p>)}</div>
+</div>

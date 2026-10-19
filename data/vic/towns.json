@@ -25,7 +25,8 @@
    "withWebsite": 1108,
    "withHours": 702,
    "total": 3046
-  }
+  },
+  "published": false
  },
  {
   "name": "Geelong",
@@ -53,6 +54,17 @@
    "withWebsite": 205,
    "withHours": 94,
    "total": 409
+  },
+  "published": true,
+  "centre": [
+   -38.1493248,
+   144.3598241
+  ],
+  "kmFromMelbourne": 65,
+  "counts": {
+   "stay": 31,
+   "eat": 274,
+   "do": 104
   }
  },
  {
@@ -81,7 +93,8 @@
    "withWebsite": 421,
    "withHours": 231,
    "total": 1034
-  }
+  },
+  "published": false
  },
  {
   "name": "Ballarat",
@@ -109,6 +122,17 @@
    "withWebsite": 42,
    "withHours": 33,
    "total": 197
+  },
+  "published": true,
+  "centre": [
+   -37.5623013,
+   143.8605645
+  ],
+  "kmFromMelbourne": 101,
+  "counts": {
+   "stay": 26,
+   "eat": 108,
+   "do": 63
   }
  },
  {
@@ -137,7 +161,8 @@
    "withWebsite": 20,
    "withHours": 5,
    "total": 200
-  }
+  },
+  "published": false
  },
  {
   "name": "Bendigo",
@@ -165,6 +190,17 @@
    "withWebsite": 57,
    "withHours": 22,
    "total": 200
+  },
+  "published": true,
+  "centre": [
+   -36.7590183,
+   144.2826718
+  ],
+  "kmFromMelbourne": 132,
+  "counts": {
+   "stay": 21,
+   "eat": 105,
+   "do": 74
   }
  },
  {
@@ -193,6 +229,17 @@
    "withWebsite": 24,
    "withHours": 5,
    "total": 53
+  },
+  "published": true,
+  "centre": [
+   -37.3414775,
+   144.1465866
+  ],
+  "kmFromMelbourne": 89,
+  "counts": {
+   "stay": 16,
+   "eat": 21,
+   "do": 16
   }
  },
  {
@@ -221,6 +268,17 @@
    "withWebsite": 16,
    "withHours": 13,
    "total": 128
+  },
+  "published": true,
+  "centre": [
+   -38.2202151,
+   145.0411089
+  ],
+  "kmFromMelbourne": 46,
+  "counts": {
+   "stay": 7,
+   "eat": 71,
+   "do": 50
   }
  },
  {
@@ -249,6 +307,17 @@
    "withWebsite": 17,
    "withHours": 10,
    "total": 72
+  },
+  "published": true,
+  "centre": [
+   -36.7285335,
+   146.9607724
+  ],
+  "kmFromMelbourne": 214,
+  "counts": {
+   "stay": 34,
+   "eat": 21,
+   "do": 17
   }
  },
  {
@@ -277,6 +346,17 @@
    "withWebsite": 27,
    "withHours": 16,
    "total": 113
+  },
+  "published": true,
+  "centre": [
+   -38.3826242,
+   142.4814199
+  ],
+  "kmFromMelbourne": 226,
+  "counts": {
+   "stay": 26,
+   "eat": 47,
+   "do": 40
   }
  },
  {
@@ -305,6 +385,17 @@
    "withWebsite": 53,
    "withHours": 25,
    "total": 207
+  },
+  "published": true,
+  "centre": [
+   -37.8638261,
+   144.981637
+  ],
+  "kmFromMelbourne": 6,
+  "counts": {
+   "stay": 20,
+   "eat": 151,
+   "do": 36
   }
  },
  {
@@ -333,6 +424,17 @@
    "withWebsite": 29,
    "withHours": 7,
    "total": 68
+  },
+  "published": true,
+  "centre": [
+   -38.3266551,
+   144.3134076
+  ],
+  "kmFromMelbourne": 81,
+  "counts": {
+   "stay": 7,
+   "eat": 39,
+   "do": 22
   }
  },
  {
@@ -361,7 +463,8 @@
    "withWebsite": 108,
    "withHours": 48,
    "total": 323
-  }
+  },
+  "published": false
  },
  {
   "name": "Phillip Island",
@@ -389,6 +492,17 @@
    "withWebsite": 53,
    "withHours": 27,
    "total": 168
+  },
+  "published": true,
+  "centre": [
+   -38.5071813,
+   145.2400038
+  ],
+  "kmFromMelbourne": 81,
+  "counts": {
+   "stay": 32,
+   "eat": 71,
+   "do": 65
   }
  },
  {
@@ -405,7 +519,8 @@
   "probe": {
    "at": "2026-10-19T12:07:00+00:00",
    "error": "Overpass unavailable"
-  }
+  },
+  "published": false
  },
  {
   "name": "Echuca",
@@ -418,7 +533,8 @@
    "eat": 4400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "South Yarra",
@@ -431,7 +547,8 @@
    "eat": 12100
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Lakes Entrance",
@@ -444,7 +561,8 @@
    "eat": 2900
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Sorrento",
@@ -457,7 +575,8 @@
    "eat": 6600
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Apollo Bay",
@@ -470,7 +589,8 @@
    "eat": 4400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Fitzroy",
@@ -483,7 +603,8 @@
    "eat": 9900
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Shepparton",
@@ -496,7 +617,8 @@
    "eat": 5400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Lorne",
@@ -509,7 +631,8 @@
    "eat": 1900
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Port Fairy",
@@ -522,7 +645,8 @@
    "eat": 2900
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Brunswick",
@@ -535,7 +659,8 @@
    "eat": 8100
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Yarra Valley",
@@ -548,7 +673,8 @@
    "eat": 4400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Halls Gap",
@@ -561,7 +687,8 @@
    "eat": 1900
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Healesville",
@@ -574,7 +701,8 @@
    "eat": 4400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Beechworth",
@@ -587,7 +715,8 @@
    "eat": 2400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Williamstown",
@@ -600,7 +729,8 @@
    "eat": 6600
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Inverloch",
@@ -613,7 +743,8 @@
    "eat": 2400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Castlemaine",
@@ -626,7 +757,8 @@
    "eat": 2400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Footscray",
@@ -639,7 +771,8 @@
    "eat": 5400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Ocean Grove",
@@ -652,7 +785,8 @@
    "eat": 3600
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Cowes",
@@ -665,7 +799,8 @@
    "eat": 3600
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Wangaratta",
@@ -678,7 +813,8 @@
    "eat": 2400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Swan Hill",
@@ -691,7 +827,8 @@
    "eat": 1300
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Richmond",
@@ -704,7 +841,8 @@
    "eat": 3600
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Carlton",
@@ -717,7 +855,8 @@
    "eat": 4400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Falls Creek",
@@ -730,7 +869,8 @@
    "eat": 880
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Port Melbourne",
@@ -743,7 +883,8 @@
    "eat": 4400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Queenscliff",
@@ -756,7 +897,8 @@
    "eat": 2400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Rye",
@@ -769,7 +911,8 @@
    "eat": 2900
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Collingwood",
@@ -782,7 +925,8 @@
    "eat": 4400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Great Ocean Road",
@@ -795,7 +939,8 @@
    "eat": 140
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Anglesea",
@@ -808,7 +953,8 @@
    "eat": 2400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Kyneton",
@@ -821,7 +967,8 @@
    "eat": 2900
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Port Campbell",
@@ -834,7 +981,8 @@
    "eat": 1600
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Mansfield",
@@ -847,7 +995,8 @@
    "eat": 1300
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Warburton",
@@ -860,7 +1009,8 @@
    "eat": 1000
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Dandenong Ranges",
@@ -873,7 +1023,8 @@
    "eat": 2400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Dromana",
@@ -886,7 +1037,8 @@
    "eat": 2900
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Barwon Heads",
@@ -899,7 +1051,8 @@
    "eat": 2400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Mount Hotham",
@@ -912,7 +1065,8 @@
    "eat": 170
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Grampians",
@@ -925,7 +1079,8 @@
    "eat": 210
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Marysville",
@@ -938,7 +1093,8 @@
    "eat": 1000
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Brighton",
@@ -951,7 +1107,8 @@
    "eat": 2400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Metung",
@@ -964,7 +1121,8 @@
    "eat": 720
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Rutherglen",
@@ -977,7 +1135,8 @@
    "eat": 1000
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Mallacoota",
@@ -990,7 +1149,8 @@
    "eat": 320
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Red Hill",
@@ -1003,7 +1163,8 @@
    "eat": 1600
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Hepburn Springs",
@@ -1016,7 +1177,8 @@
    "eat": 880
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Belgrave",
@@ -1029,7 +1191,8 @@
    "eat": 1900
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Olinda",
@@ -1042,7 +1205,8 @@
    "eat": 1600
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Mount Buller",
@@ -1055,7 +1219,8 @@
    "eat": 390
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Woodend",
@@ -1068,7 +1233,8 @@
    "eat": 1300
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Myrtleford",
@@ -1081,7 +1247,8 @@
    "eat": 720
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Walhalla",
@@ -1094,7 +1261,8 @@
    "eat": 110
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Trentham",
@@ -1107,7 +1275,8 @@
    "eat": 880
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Yarra Glen",
@@ -1120,7 +1289,8 @@
    "eat": 880
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Flinders",
@@ -1133,7 +1303,8 @@
    "eat": 1000
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Portsea",
@@ -1146,7 +1317,8 @@
    "eat": 720
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Aireys Inlet",
@@ -1159,7 +1331,8 @@
    "eat": 880
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "San Remo",
@@ -1172,7 +1345,8 @@
    "eat": 720
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Point Lonsdale",
@@ -1185,7 +1359,8 @@
    "eat": 590
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Foster",
@@ -1198,7 +1373,8 @@
    "eat": 210
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Creswick",
@@ -1211,7 +1387,8 @@
    "eat": 480
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Wilsons Promontory",
@@ -1224,7 +1401,8 @@
    "eat": null
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Gippsland",
@@ -1237,7 +1415,8 @@
    "eat": 140
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Macedon Ranges",
@@ -1250,7 +1429,8 @@
    "eat": 480
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Dunkeld",
@@ -1263,7 +1443,8 @@
    "eat": 320
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Bellarine Peninsula",
@@ -1276,7 +1457,8 @@
    "eat": 590
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Maldon",
@@ -1289,7 +1471,8 @@
    "eat": 210
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Lake Eildon",
@@ -1302,7 +1485,8 @@
    "eat": 10
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Wye River",
@@ -1315,7 +1499,8 @@
    "eat": null
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Harrietville",
@@ -1328,7 +1513,8 @@
    "eat": null
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Sassafras",
@@ -1341,7 +1527,8 @@
    "eat": 320
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Mount Macedon",
@@ -1354,7 +1541,8 @@
    "eat": 30
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Clunes",
@@ -1367,7 +1555,8 @@
    "eat": 10
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "High Country",
@@ -1380,7 +1569,8 @@
    "eat": null
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Jindivick",
@@ -1393,7 +1583,8 @@
    "eat": null
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  },
  {
   "name": "Tarra Bulga",
@@ -1406,6 +1597,7 @@
    "eat": null
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null
+  "probe": null,
+  "published": false
  }
 ]

@@ -1,0 +1,46 @@
+---
+/**
+ * Australian road-sign treatment: highway green for places, tourist brown for things to do.
+ * The sign is the site's one signature element; keep everything around it quiet.
+ */
+interface Props {
+  name: string;
+  km?: number | null;
+  href?: string;
+  tone?: 'green' | 'brown';
+  size?: 'hero' | 'row';
+  sub?: string | null;
+  as?: 'h1' | 'p' | 'span';
+}
+const { name, km = null, href, tone = 'green', size = 'row', sub = null, as = 'p' } = Astro.props;
+const Tag = href ? 'a' : 'div';
+const Name = as;
+---
+<Tag class={`sign sign--${tone} sign--${size}`} href={href}>
+  <span class="sign__face">
+    <Name class="sign__name">{name}</Name>
+    {km !== null && <span class="sign__km" aria-label={`${km} kilometres from Melbourne`}>{km}<small>km</small></span>}
+  </span>
+  {sub && <span class="sign__sub">{sub}</span>}
+</Tag>
+<style>
+  .sign { display: block; text-decoration: none; color: #fff; border-radius: 10px; padding: 4px; }
+  .sign--green { background: var(--sign-green); }
+  .sign--brown { background: var(--sign-brown); }
+  .sign__face {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.92); border-radius: 7px; padding: 0.55rem 0.9rem 0.45rem;
+  }
+  .sign__name { margin: 0; font-family: var(--font-display); font-weight: 800; line-height: 1.05; letter-spacing: 0.005em; color: #fff; }
+  .sign__km { font-family: var(--font-display); font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .sign__km small { font-size: 0.6em; font-weight: 600; margin-left: 0.15em; }
+  .sign__sub { display: block; font-family: var(--font-display); font-size: 0.85rem; font-weight: 600; padding: 0.35rem 0.9rem 0.25rem; opacity: 0.92; }
+  .sign--row .sign__name { font-size: 1.35rem; }
+  .sign--row .sign__km { font-size: 1.35rem; }
+  .sign--hero { padding: 6px; border-radius: 14px; }
+  .sign--hero .sign__face { border-width: 3px; border-radius: 10px; padding: 0.9rem 1.2rem 0.7rem; }
+  .sign--hero .sign__name { font-size: clamp(2.2rem, 9vw, 4.6rem); }
+  .sign--hero .sign__km { font-size: clamp(1.6rem, 6vw, 3rem); }
+  a.sign:hover, a.sign:focus-visible { color: #fff; filter: brightness(1.12); }
+  a.sign:focus-visible { outline: 3px solid var(--wattle); outline-offset: 3px; }
+</style>

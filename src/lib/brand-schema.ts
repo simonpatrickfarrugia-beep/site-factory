@@ -14,7 +14,7 @@ export const brandSchema = z.object({
   /** false = every page gets noindex, so previews never leak into Google. Flip at cutover. */
   launched: z.boolean().default(false),
 
-  theme: z.enum(['cinematic', 'editorial', 'coastal']),
+  theme: z.enum(['cinematic', 'editorial', 'coastal', 'roadtrip']),
   colors: z.object({ brand: hex, accent: hex }),
   fonts: z.object({ display: z.string(), body: z.string() }),
 
