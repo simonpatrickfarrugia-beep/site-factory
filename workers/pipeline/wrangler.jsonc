@@ -34,6 +34,8 @@
     "RECHECK_LIMIT": "20",
     // Search Console property the demand report reads (Domain property).
     "GSC_SITE": "sc-domain:movietrailer.channel",
+    // GA4 property the dashboard stats read (Admin > Property details). Service account is a Viewer on it.
+    "GA4_PROPERTY": "553854970",
     // Catalogue builder (weekly): queue this many of the most-searched candidates per run.
     "CATALOGUE_PER_RUN": "10",
     "CATALOGUE_MIN_VOLUME": "50",
