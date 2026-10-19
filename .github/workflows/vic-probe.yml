@@ -1,0 +1,25 @@
+# Vic Tours: pull free OpenStreetMap data for the next most-searched places and commit it.
+name: vic-probe
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: How many places to probe
+        default: '15'
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe OpenStreetMap
+        run: python3 scripts/vic/osm_probe.py "${{ inputs.count }}"
+      - name: Commit
+        run: |
+          git config user.name "Vic Tours probe" && git config user.email "pipeline@victours.com.au"
+          git add data/vic
+          git diff --cached --quiet && exit 0
+          git commit -qm "Vic Tours: OpenStreetMap probe [skip ci]"
+          for i in 1 2 3; do git pull -q --rebase && git push -q && exit 0; sleep 5; done; exit 1

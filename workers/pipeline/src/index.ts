@@ -19,7 +19,7 @@ import { nicheReport, scoreNiche, type Niche } from './niches';
 import { buildDemandReport } from './demand';
 import { pickTrailer } from './titles';
 import { buildCatalogue, type Candidate } from './catalogue';
-import { keywordDifficulty, keywordIdeas, searchVolumes } from './dataforseo';
+import { cleanKeyword, keywordDifficulty, keywordIdeas, searchVolumes } from './dataforseo';
 
 export interface Env {
   /** Fine-grained GitHub token: Contents read & write on the site-factory repo only. */
@@ -60,7 +60,7 @@ export interface Env {
   COLLECTION_MIN_VOLUME: string;
 }
 
-type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections' | 'stats' | 'niches';
+type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections' | 'stats' | 'niches' | 'towns';
 
 /**
  * Workers Free allows 5 cron schedules per ACCOUNT, so the pipeline uses two (see wrangler.jsonc)
@@ -91,6 +91,8 @@ const IDEAS = 'data/trailers/collection-ideas.json';
 const COLLECTIONS_REPORT = 'reports/trailers/collections.md';
 const STATS = 'data/trailers/stats.json';
 const NICHES = 'hq/niches.json';
+const VIC_TOWNS = 'data/vic/towns.json';
+const VIC_TOWNS_REPORT = 'reports/vic/towns.md';
 const NICHES_REPORT = 'hq/reports/niches.md';
 
 /** Workers free plan allows 50 outgoing calls per run; GitHub reads/commit use up to 8. */
@@ -105,7 +107,7 @@ export default {
 
   async fetch(req: Request, env: Env): Promise<Response> {
     const url = new URL(req.url);
-    const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue|collections|stats|niches)$/);
+    const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue|collections|stats|niches|towns)$/);
     if (!m) return new Response('Trailer pipeline. Runs on a schedule.\n', { status: url.pathname === '/' ? 200 : 404 });
     if (!env.RUN_KEY || url.searchParams.get('key') !== env.RUN_KEY) return new Response('Forbidden\n', { status: 403 });
     try {
@@ -129,6 +131,7 @@ const NEEDS: Record<Job, (keyof Env)[]> = {
   collections: ['GITHUB_TOKEN', 'ANTHROPIC_API_KEY'],
   stats: ['GITHUB_TOKEN', 'GSC_SERVICE_ACCOUNT'],
   niches: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD', 'ANTHROPIC_API_KEY'],
+  towns: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD'],
 };
 
 export async function run(job: Job, env: Env, dryRun: boolean) {
@@ -138,7 +141,9 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
   const repo: Repo = { token: env.GITHUB_TOKEN, owner, name, branch: env.BRANCH };
 
   const files =
-    job === 'niches'
+    job === 'towns'
+      ? [VIC_TOWNS]
+      : job === 'niches'
       ? [NICHES]
       : job === 'stats'
       ? [STATS, MOVIES, COLLECTIONS]
@@ -156,6 +161,7 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
   if (job === 'catalogue') return catalogue(env, repo, snap, now, dryRun, maxYear({ now, minAgeYears }));
   if (job === 'stats') return statsJob(env, repo, snap, now, dryRun);
   if (job === 'niches') return nichesJob(env, repo, snap, now, dryRun);
+  if (job === 'towns') return townsJob(env, repo, snap, now, dryRun);
   if (job === 'collections') return collectionsJob(env, repo, snap, now, dryRun, maxYear({ now, minAgeYears }));
 
   const state: State = {
@@ -452,6 +458,67 @@ async function nichesJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: bo
     log,
   );
   return { job: 'niches' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report };
+}
+
+/**
+ * Vic Tours: Australian search demand per town ("things to do in X", "X accommodation", "restaurants X").
+ * Ranks data/vic/towns.json so the most-searched places get built first. Re-checks volumes older than 180 days.
+ */
+interface VicTown {
+  name: string;
+  slug: string;
+  kind: string;
+  volume: number | null;
+  volumes: { do: number | null; stay: number | null; eat: number | null } | null;
+  volumeCheckedAt: string | null;
+  probe: unknown;
+}
+async function townsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean) {
+  const towns = JSON.parse(snap.files[VIC_TOWNS] || '[]') as VicTown[];
+  const kw = (t: VicTown) => {
+    const n = t.name.toLowerCase();
+    return { do: `things to do in ${n}`, stay: `${n} accommodation`, eat: `restaurants ${n}` };
+  };
+  const stale = (t: VicTown) => !t.volumeCheckedAt || now.getTime() - Date.parse(t.volumeCheckedAt) > 180 * 86400000;
+  const todo = towns.filter(stale).slice(0, 330); // 3 keywords each, one 1,000-keyword task
+  const log: string[] = [];
+  if (todo.length) {
+    const vols = await searchVolumes(env.DATAFORSEO_LOGIN!, env.DATAFORSEO_PASSWORD!, todo.flatMap((t) => Object.values(kw(t))), 2036);
+    for (const t of todo) {
+      const k = kw(t);
+      const v = { do: vols.get(cleanKeyword(k.do)) ?? null, stay: vols.get(cleanKeyword(k.stay)) ?? null, eat: vols.get(cleanKeyword(k.eat)) ?? null };
+      t.volumes = v;
+      t.volume = (v.do ?? 0) + (v.stay ?? 0) + (v.eat ?? 0);
+      t.volumeCheckedAt = now.toISOString();
+    }
+    log.push(`Looked up Australian searches for ${todo.length} place(s).`);
+  }
+  towns.sort((a, b) => (b.volume ?? -1) - (a.volume ?? -1));
+  const L = [
+    '# Vic Tours: places by search demand',
+    '',
+    `Updated ${now.toISOString().slice(0, 10)}. Monthly Google searches in Australia for "things to do in X", "X accommodation" and "restaurants X". Build order = this order.`,
+    '',
+    '| # | Place | Kind | Total | Do | Stay | Eat | Data probe |',
+    '|---:|---|---|---:|---:|---:|---:|---|',
+    ...towns.map((t, i) => {
+      const p = t.probe as { counts?: Record<string, number> } | null;
+      const probe = p?.counts ? Object.entries(p.counts).map(([k, v]) => `${k} ${v}`).join(', ') : '—';
+      const f = (n: number | null | undefined) => (n == null ? '—' : n.toLocaleString());
+      return `| ${i + 1} | ${t.name} | ${t.kind} | **${f(t.volume)}** | ${f(t.volumes?.do)} | ${f(t.volumes?.stay)} | ${f(t.volumes?.eat)} | ${probe} |`;
+    }),
+    '',
+  ];
+  log.unshift(`Towns: top 5 by searches: ${towns.slice(0, 5).map((t) => `${t.name} ${t.volume?.toLocaleString() ?? '?'}`).join(', ')}.`);
+  const commit = await save(
+    repo,
+    snap.sha,
+    { [VIC_TOWNS]: JSON.stringify(towns, null, 1) + '\n', [VIC_TOWNS_REPORT]: L.join('\n') },
+    `Vic Tours: town search demand [skip ci]\n\n${log.join('\n')}`,
+    dryRun,
+    log,
+  );
+  return { job: 'towns' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null };
 }
 
 async function save(repo: Repo, sha: string, changes: Record<string, string>, message: string, dryRun: boolean, log: string[]) {
