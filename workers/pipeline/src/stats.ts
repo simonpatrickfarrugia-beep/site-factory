@@ -28,6 +28,8 @@ export interface SiteStats {
   totals: { views: number; prevViews: number; users: number; cta: Record<string, number>; gscClicks: number; gscImpressions: number };
   daily: { date: string; views: number; cta: number }[];
   pages: PageStats[];
+  /** Last IndexNow submission (new pages since then are submitted on the next run). */
+  indexNowAt?: string | null;
 }
 
 const pathOf = (url: string) => {

@@ -126,3 +126,17 @@ export async function ga4Report(
   const data = (await res.json()) as { rows?: { dimensionValues: { value: string }[]; metricValues: { value: string }[] }[] };
   return (data.rows ?? []).map((r) => ({ dims: r.dimensionValues.map((d) => d.value), mets: r.metricValues.map((m) => Number(m.value) || 0) }));
 }
+
+/**
+ * IndexNow: tells Bing, Yandex, Seznam, Naver (and Bing-powered DuckDuckGo / ChatGPT search) about new or changed URLs.
+ * The key file https://<host>/<key>.txt must contain the key. Returns the HTTP status (200/202 = accepted).
+ */
+export async function indexNow(host: string, key: string, urls: string[]): Promise<number> {
+  if (!urls.length) return 200;
+  const res = await fetch('https://api.indexnow.org/indexnow', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json; charset=utf-8' },
+    body: JSON.stringify({ host, key, keyLocation: `https://${host}/${key}.txt`, urlList: urls.slice(0, 10000) }),
+  });
+  return res.status;
+}

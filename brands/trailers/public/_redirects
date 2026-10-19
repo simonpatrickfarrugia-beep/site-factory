@@ -1,3 +1,5 @@
 # Permanent redirects (served by Cloudflare Workers static assets). One per line: from to 301
 # 19 Oct 2026: the making-of documentary page became the real Kill Bill: Vol. 2 page.
 /movies/the-making-of-kill-bill-volume-2-2004 /movies/kill-bill-vol-2-2004 301
+# 19 Oct 2026: old Webflow URL with the wrong year still ranks on Google (pos ~9); the film is the 2026 one.
+/movies/ghost-soldier-2006 /movies/ghost-soldier-2026 301

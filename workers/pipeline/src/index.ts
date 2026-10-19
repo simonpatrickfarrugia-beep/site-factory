@@ -13,7 +13,7 @@ import { enrich, intake, maxYear, recheck, type QueueItem, type Movie, type Resu
 import { commitFiles, readFiles, StaleError, type Repo } from './github';
 import { channelFeed, omdbLookup, omdbYearsForTitle, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
 import { buildCollections, type Idea, type MovieCollection } from './collections';
-import { ga4Report, googleAccessToken, searchAnalytics, youtubeSearch } from './google';
+import { ga4Report, googleAccessToken, indexNow, searchAnalytics, youtubeSearch } from './google';
 import { buildStats } from './stats';
 import { buildDemandReport } from './demand';
 import { pickTrailer } from './titles';
@@ -43,6 +43,8 @@ export interface Env {
   RECHECK_LIMIT: string;
   GSC_SITE: string; // Search Console property: sc-domain:movietrailer.channel (Domain property) or a URL-prefix property
   GA4_PROPERTY?: string; // GA4 property ID (number) for the dashboard stats
+  INDEXNOW_KEY?: string; // public key; brands/<slug>/public/<key>.txt holds the same value
+  SITE_HOST?: string; // e.g. www.movietrailer.channel
   MIN_AGE_YEARS: string; // only films at least this old are added ("0" = no cutoff)
   AVAILABLE_AFTER_DAYS?: string; // publish only films out at least this many days (rentable/streamable)
   CATALOGUE_REFILL_BELOW?: string; // top up candidates when fewer than this are waiting
@@ -132,7 +134,7 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
 
   const files =
     job === 'stats'
-      ? [STATS]
+      ? [STATS, MOVIES, COLLECTIONS]
       :
     job === 'demand' || job === 'collections'
       ? [MOVIES, COLLECTIONS, ...(job === 'collections' ? [IDEAS] : [])]
@@ -352,6 +354,38 @@ async function statsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boo
   }
 
   const stats = buildStats({ now, period: ga4 ? period : null, gscPeriod: gsc ? gscPeriod : null, notes, ga4, gsc });
+
+  // IndexNow: first run submits every page; after that, pages created or updated since the last submission.
+  let prev: { indexNowAt?: string | null } = {};
+  try {
+    prev = JSON.parse(snap.files[STATS] || '{}');
+  } catch {
+    /* first run */
+  }
+  stats.indexNowAt = prev.indexNowAt ?? null;
+  if (env.INDEXNOW_KEY && env.SITE_HOST) {
+    const since = prev.indexNowAt ?? null;
+    const fresh = (x: { created?: string; updated?: string }) => !since || (x.updated ?? x.created ?? '') > since || (x.created ?? '') > since;
+    const base = `https://${env.SITE_HOST}`;
+    const movies = JSON.parse(snap.files[MOVIES] || '[]') as { slug: string; created?: string; updated?: string }[];
+    const cols = JSON.parse(snap.files[COLLECTIONS] || '[]') as { slug: string; created?: string; updated?: string }[];
+    const urls = [
+      ...(since ? [] : [base, `${base}/browse`, `${base}/discover`]),
+      ...movies.filter(fresh).map((m) => `${base}/movies/${m.slug}`),
+      ...cols.filter(fresh).map((c) => `${base}/discover/${c.slug}`),
+    ];
+    if (urls.length) {
+      try {
+        const status = dryRun ? 0 : await indexNow(env.SITE_HOST, env.INDEXNOW_KEY, urls);
+        if (status === 200 || status === 202) stats.indexNowAt = now.toISOString();
+        log.push(`IndexNow: ${dryRun ? 'would submit' : 'submitted'} ${urls.length} URL(s)${dryRun ? '' : ` (HTTP ${status})`}.`);
+      } catch (e) {
+        log.push(`IndexNow failed: ${(e as Error).message}`);
+      }
+    } else {
+      stats.indexNowAt = now.toISOString();
+    }
+  }
   log.unshift(`Stats: ${stats.totals.views} views, ${Object.values(stats.totals.cta).reduce((a, b) => a + b, 0)} CTA clicks, ${stats.totals.gscClicks} Google clicks.`);
   const commit = await save(repo, snap.sha, { [STATS]: JSON.stringify(stats, null, 1) + '\n' }, `Pipeline: refresh dashboard stats\n\n${log.join('\n')}`, dryRun, log);
   return { job: 'stats' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report: undefined as string | undefined };
