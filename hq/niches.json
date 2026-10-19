@@ -10,7 +10,8 @@
   ],
   "notes": "Sister site to the trailer channel. Data: TMDB TV + watch providers.",
   "addedAt": "2026-10-19T04:00:00Z",
-  "status": "new"
+  "status": "failed",
+  "error": "Unterminated string in JSON at position 987 (line 1 column 988)"
  },
  {
   "idea": "Book series in reading order",
@@ -23,7 +24,8 @@
   ],
   "notes": "Data: Open Library API. Amazon/Kindle affiliate.",
   "addedAt": "2026-10-19T04:00:00Z",
-  "status": "new"
+  "status": "failed",
+  "error": "Claude: no JSON in reply (stop=max_tokens, blocks=thinking,text, text=\"{\"fit\": 46, \"verdict\": \"The demand is real and the reading-order problem suits structured data, but Open Library's serie\")"
  },
  {
   "idea": "Board games",
@@ -36,7 +38,8 @@
   ],
   "notes": "Data: BoardGameGeek XML API. Amazon affiliate.",
   "addedAt": "2026-10-19T04:00:00Z",
-  "status": "new"
+  "status": "failed",
+  "error": "Claude: no JSON in reply (stop=max_tokens, blocks=thinking,text, text=\"{\"fit\": 42, \"verdict\": \"Only the co-op cluster fits your model: BGG's structured fields (player count, playtime, weight,\")"
  },
  {
   "idea": "Video games: release dates and trailers",
@@ -49,7 +52,224 @@
   ],
   "notes": "Data: IGDB API (free with Twitch account). Retailer affiliates.",
   "addedAt": "2026-10-19T04:00:00Z",
-  "status": "new"
+  "status": "scored",
+  "score": {
+   "overall": 62,
+   "demand": 100,
+   "money": 32,
+   "ease": 62,
+   "fit": 40,
+   "totalVolume": 14104000,
+   "keywords": 3620,
+   "medianCpc": 0.35,
+   "avgDifficulty": 38,
+   "easyWins": [
+    {
+     "keyword": "inside nintendo switch",
+     "volume": 1220000,
+     "kd": 8,
+     "cpc": 0.36
+    },
+    {
+     "keyword": "nintendo switch lite",
+     "volume": 246000,
+     "kd": 15,
+     "cpc": 0.27
+    },
+    {
+     "keyword": "ps5 games",
+     "volume": 246000,
+     "kd": 30,
+     "cpc": 0.34
+    },
+    {
+     "keyword": "nintendo eshop",
+     "volume": 201000,
+     "kd": 28,
+     "cpc": 0.74
+    },
+    {
+     "keyword": "playstation 6 release date",
+     "volume": 135000,
+     "kd": 1,
+     "cpc": 0.49
+    },
+    {
+     "keyword": "mario kart 8 deluxe nintendo switch",
+     "volume": 110000,
+     "kd": 28,
+     "cpc": 0.39
+    },
+    {
+     "keyword": "gameboy nintendo",
+     "volume": 110000,
+     "kd": 16,
+     "cpc": 0.52
+    },
+    {
+     "keyword": "nintendo switch pro controller",
+     "volume": 74000,
+     "kd": 17,
+     "cpc": 0.27
+    },
+    {
+     "keyword": "switchlite",
+     "volume": 74000,
+     "kd": 11,
+     "cpc": 0.23
+    },
+    {
+     "keyword": "luigi and mario",
+     "volume": 74000,
+     "kd": 30,
+     "cpc": 0.21
+    },
+    {
+     "keyword": "nintendo switch controller",
+     "volume": 60500,
+     "kd": 20,
+     "cpc": 0.32
+    },
+    {
+     "keyword": "nintendo switch online expansion pack",
+     "volume": 49500,
+     "kd": 22,
+     "cpc": 0.56
+    }
+   ],
+   "topKeywords": [
+    {
+     "keyword": "nintendo switch",
+     "volume": 1220000,
+     "kd": 88,
+     "cpc": 0.36
+    },
+    {
+     "keyword": "nintendogs switch",
+     "volume": 1220000,
+     "kd": 88,
+     "cpc": 0.36
+    },
+    {
+     "keyword": "inside nintendo switch",
+     "volume": 1220000,
+     "kd": 8,
+     "cpc": 0.36
+    },
+    {
+     "keyword": "nintendo switch games",
+     "volume": 1000000,
+     "kd": 57,
+     "cpc": 0.36
+    },
+    {
+     "keyword": "nintendo",
+     "volume": 1000000,
+     "kd": 91,
+     "cpc": 0.99
+    },
+    {
+     "keyword": "release date gta 6",
+     "volume": 1000000,
+     "kd": 57,
+     "cpc": 0.43
+    },
+    {
+     "keyword": "nintendo switch lite",
+     "volume": 246000,
+     "kd": 15,
+     "cpc": 0.27
+    },
+    {
+     "keyword": "ps5 games",
+     "volume": 246000,
+     "kd": 30,
+     "cpc": 0.34
+    },
+    {
+     "keyword": "nintendo eshop",
+     "volume": 201000,
+     "kd": 28,
+     "cpc": 0.74
+    },
+    {
+     "keyword": "playstation 6 release date",
+     "volume": 135000,
+     "kd": 1,
+     "cpc": 0.49
+    },
+    {
+     "keyword": "mario kart 8 deluxe nintendo switch",
+     "volume": 110000,
+     "kd": 28,
+     "cpc": 0.39
+    },
+    {
+     "keyword": "metroid prime 4",
+     "volume": 110000,
+     "kd": 37,
+     "cpc": 0.23
+    },
+    {
+     "keyword": "gameboy nintendo",
+     "volume": 110000,
+     "kd": 16,
+     "cpc": 0.52
+    },
+    {
+     "keyword": "switch games",
+     "volume": 90500,
+     "kd": 31,
+     "cpc": 0.39
+    },
+    {
+     "keyword": "animal crossing new horizons",
+     "volume": 90500,
+     "kd": 51,
+     "cpc": 0.29
+    }
+   ],
+   "judgement": {
+    "fit": 40,
+    "verdict": "The data is free, large and genuinely refreshes, so per-game pages can be useful. But the high-volume terms are brand or navigational queries owned by Nintendo, publishers and fast news sites, the CPCs are low (about $0.30 typical), and display ads will take a long time to reach.",
+    "angle": "A per-game 'release date, platforms and trailer' reference site for upcoming and recent games, with one page per title (/game/[slug]) and hubs by platform and release month (/upcoming/[platform]/[month-year]). Each page shows the confirmed or tentative date with its source and last-checked timestamp, the platforms, the trailer embed, and current prices at the stores. Avoid brand-head terms like 'nintendo switch' and 'nintendo eshop' and target long-tail 'release date' and 'upcoming on [platform]' queries.",
+    "dataSources": [
+     "IGDB API (free via Twitch developer account; check its commercial-use and attribution terms before launch)",
+     "IGDB video entries (YouTube video IDs for trailers)",
+     "Steam Store API (appdetails for release dates, prices and platform flags; check its terms)",
+     "IsThereAnyDeal API (free key, for cross-store price comparison; check terms)",
+     "RAWG API (free key, as a fallback for coverage gaps)"
+    ],
+    "monetisation": [
+     "Amazon Associates (games, consoles, controllers; needs 3 qualifying sales in 180 days to stay active)",
+     "Humble Bundle affiliate programme",
+     "Fanatical affiliate programme",
+     "Green Man Gaming affiliate programme",
+     "Display ads (Mediavine or Raptive) only after roughly 50k monthly sessions"
+    ],
+    "pageTypes": [
+     "/game/[slug] for each game with release date, platforms, trailer and store links",
+     "/upcoming/[platform]/[month-year] hub pages listing dated releases",
+     "/platform/[platform]/release-dates year-by-year archives",
+     "/game/[slug]/price-history pages built from ITAD data where available",
+     "/delayed/ pages listing titles whose dates have moved, with the change log"
+    ],
+    "risks": [
+     "IGDB and Steam terms may restrict commercial use, redistribution or caching of data; check before building",
+     "Cover art, screenshots and trailers belong to publishers; embed only official YouTube trailers and never rehost images",
+     "Release dates shift often; stale pages hurt trust and rankings unless the data refreshes automatically with timestamps",
+     "Big outlets (IGN, GameSpot, Game Rant, Nintendo Life) dominate news-style date queries and can outrank a small site",
+     "AI-written copy on thin pages risks Google's helpful-content and spam policies; each page needs unique structured facts, not generic blurbs",
+     "Low CPCs (about $0.20-0.50) mean weak RPM for display ads and modest affiliate income",
+     "Keyword data is Nintendo-heavy and includes ambiguous or speculative queries (e.g. 'playstation 6 release date', 'inside nintendo switch'); demand for rumour-based pages is volatile",
+     "Trademarked platform and brand names in URLs and titles may draw complaints; use descriptive, non-brand-led page titles"
+    ]
+   },
+   "costUsd": 0.114
+  },
+  "scoredAt": "2026-10-19T03:38:57.034Z",
+  "location": "United States",
+  "error": null
  },
  {
   "idea": "Anime: where to watch and watch order",
@@ -62,7 +282,224 @@
   ],
   "notes": "Data: AniList API. Crunchyroll affiliate.",
   "addedAt": "2026-10-19T04:00:00Z",
-  "status": "new"
+  "status": "scored",
+  "score": {
+   "overall": 70,
+   "demand": 100,
+   "money": 66,
+   "ease": 60,
+   "fit": 42,
+   "totalVolume": 20483800,
+   "keywords": 6606,
+   "medianCpc": 1.31,
+   "avgDifficulty": 40,
+   "easyWins": [
+    {
+     "keyword": "kissanime",
+     "volume": 1500000,
+     "kd": 13,
+     "cpc": 4.76
+    },
+    {
+     "keyword": "berserk",
+     "volume": 201000,
+     "kd": 30,
+     "cpc": 1
+    },
+    {
+     "keyword": "gogoanime",
+     "volume": 201000,
+     "kd": 11,
+     "cpc": 4.03
+    },
+    {
+     "keyword": "hulu anime",
+     "volume": 201000,
+     "kd": 5,
+     "cpc": 2.75
+    },
+    {
+     "keyword": "hulu animes",
+     "volume": 201000,
+     "kd": 5,
+     "cpc": 2.75
+    },
+    {
+     "keyword": "free anime websites",
+     "volume": 165000,
+     "kd": 12,
+     "cpc": 3.95
+    },
+    {
+     "keyword": "anime shows on netflix",
+     "volume": 165000,
+     "kd": 15,
+     "cpc": 0.12
+    },
+    {
+     "keyword": "crunchyroll one piece",
+     "volume": 135000,
+     "kd": 12,
+     "cpc": 5.85
+    },
+    {
+     "keyword": "watch cartoon online",
+     "volume": 135000,
+     "kd": 0,
+     "cpc": 3.11
+    },
+    {
+     "keyword": "one punch man season 3",
+     "volume": 110000,
+     "kd": 15,
+     "cpc": 2.24
+    },
+    {
+     "keyword": "anime series",
+     "volume": 90500,
+     "kd": 30,
+     "cpc": 0.82
+    },
+    {
+     "keyword": "kamisama kiss",
+     "volume": 90500,
+     "kd": 30,
+     "cpc": 2.7
+    }
+   ],
+   "topKeywords": [
+    {
+     "keyword": "kissanime",
+     "volume": 1500000,
+     "kd": 13,
+     "cpc": 4.76
+    },
+    {
+     "keyword": "naruto",
+     "volume": 673000,
+     "kd": 66,
+     "cpc": 0.91
+    },
+    {
+     "keyword": "my hero academia",
+     "volume": 450000,
+     "kd": 64,
+     "cpc": 0.98
+    },
+    {
+     "keyword": "dragon ball z",
+     "volume": 301000,
+     "kd": 63,
+     "cpc": 0.65
+    },
+    {
+     "keyword": "sailor moon",
+     "volume": 301000,
+     "kd": 50,
+     "cpc": 0.29
+    },
+    {
+     "keyword": "dragonball z",
+     "volume": 301000,
+     "kd": 84,
+     "cpc": 0.65
+    },
+    {
+     "keyword": "death note",
+     "volume": 301000,
+     "kd": 48,
+     "cpc": 1.35
+    },
+    {
+     "keyword": "jojo's bizarre adventure",
+     "volume": 301000,
+     "kd": 41,
+     "cpc": 0.95
+    },
+    {
+     "keyword": "dbz",
+     "volume": 301000,
+     "kd": 55,
+     "cpc": 0.65
+    },
+    {
+     "keyword": "dragon ballz",
+     "volume": 301000,
+     "kd": 63,
+     "cpc": 0.65
+    },
+    {
+     "keyword": "one punch man",
+     "volume": 201000,
+     "kd": 58,
+     "cpc": 2.27
+    },
+    {
+     "keyword": "hunter x hunter",
+     "volume": 201000,
+     "kd": 46,
+     "cpc": 1.29
+    },
+    {
+     "keyword": "berserk",
+     "volume": 201000,
+     "kd": 30,
+     "cpc": 1
+    },
+    {
+     "keyword": "high school dxd",
+     "volume": 201000,
+     "kd": 42,
+     "cpc": 3.52
+    },
+    {
+     "keyword": "gogoanime",
+     "volume": 201000,
+     "kd": 11,
+     "cpc": 4.03
+    }
+   ],
+   "judgement": {
+    "fit": 42,
+    "verdict": "The data is usable: AniList gives clean, free, structured anime metadata, and streaming availability can be layered on. But the highest-volume and highest-CPC terms are piracy queries (kissanime, gogoanime, free anime websites) you should avoid, and 'where to watch' is already dominated by JustWatch, Reelgood and the platforms themselves, so the pages need a regional or watch-order angle to earn a place.",
+    "angle": "A country-specific 'where to watch [anime] in [country]' directory built from AniList IDs and streaming-availability data, plus a 'watch order' page for each franchise that covers sequels, prequels, movies and OVAs. Start with 3 to 5 English-speaking markets (US, UK, CA, AU) and only expand if the first set gets impressions. Do not target piracy terms.",
+    "dataSources": [
+     "AniList GraphQL API (free, non-commercial rate limits; check current commercial terms and attribution requirements)",
+     "Jikan API (unofficial MyAnimeList REST wrapper, free, rate-limited) for cross-checking titles and episode counts",
+     "Watchmode API (free tier with call limits, paid tiers for scale) for streaming availability by country",
+     "TMDB API (free, includes watch-provider data sourced from JustWatch; commercial use requires checking their terms)",
+     "Wikidata (CC0) for franchise and character relationships"
+    ],
+    "monetisation": [
+     "Amazon Associates for Blu-ray, manga and merchandise links (low commission but reliable)",
+     "Crunchyroll affiliate, only if you can confirm an active program; do not assume it exists",
+     "JustWatch or Watchmode partner/affiliate programs, if available in your target markets (verify)",
+     "Display ads (Mediavine or Raptive once traffic thresholds are met; expect low RPM on anime pages)",
+     "Email lead capture for a 'what to watch next' newsletter, if the traffic justifies it"
+    ],
+    "pageTypes": [
+     "/where-to-watch/[anime-slug]/[country] pages: availability per service, price tier, subtitle/dub status",
+     "/watch-order/[franchise-slug] pages: chronological and release order built from AniList relations, with movies and OVAs placed by date",
+     "/service/[streaming-service]/anime pages: list of anime available on that service in each country",
+     "/genre/[genre]/[country] pages: top-rated titles with current availability (AniList score and popularity)",
+     "/compare/[franchise-a]-vs-[franchise-b] pages only where you can add real differences in data"
+    ],
+    "risks": [
+     "Piracy-adjacent head terms (kissanime, gogoanime, free anime websites) carry legal exposure and ad networks often reject them; exclude them and do not link to pirate sites",
+     "Streaming availability changes often and varies by region; stale data will produce wrong 'where to watch' answers, so you need a refresh pipeline and visible last-updated dates",
+     "Watch-order information is partly editorial (fillers, recaps, what counts as canon); AniList relations alone are not enough, and scraping filler lists may breach their terms",
+     "Crunchyroll's affiliate availability is unverified, so the main revenue assumption may fail",
+     "Anime fan audiences are concentrated on Reddit, Discord and YouTube, so organic traffic from search alone may be modest",
+     "Many franchise keywords (naruto, dragon ball z, dbz, dragonball z) are duplicates or variants, so you must consolidate them to avoid cannibalisation",
+     "Poster and key-art images are copyrighted; use AniList or TMDB image endpoints under their terms or skip imagery",
+     "Thin pages risk: if the copy is only templated 'X is available on Y', Google may treat the site as low value, so each page needs unique data such as dub availability, price changes or regional differences"
+    ]
+   },
+   "costUsd": 0.114
+  },
+  "scoredAt": "2026-10-19T03:38:57.034Z",
+  "location": "United States",
+  "error": null
  },
  {
   "idea": "US national parks and hiking trails",
@@ -75,7 +512,8 @@
   ],
   "notes": "Data: NPS API + open trail data. Gear and booking affiliates.",
   "addedAt": "2026-10-19T04:00:00Z",
-  "status": "new"
+  "status": "failed",
+  "error": "DataForSEO dataforseo_labs/google/bulk_keyword_difficulty/live: HTTP 402 {\"version\":\"0.1.20260917\",\"status_code\":20000,\"status_message\":\"Ok.\",\"time\":\"0 sec.\",\"cost\":0,\"tasks_count\":1,\"tasks_error\":1,\""
  },
  {
   "idea": "Dog breeds",
