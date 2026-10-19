@@ -11,14 +11,15 @@
  */
 import { enrich, intake, maxYear, recheck, type QueueItem, type Movie, type Result, type State } from './jobs';
 import { commitFiles, readFiles, StaleError, type Repo } from './github';
-import { channelFeed, omdbLookup, omdbYearsForTitle, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
+import { channelFeed, omdbLookup, omdbYearsForTitle, judgeNiche, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
 import { buildCollections, type Idea, type MovieCollection } from './collections';
 import { ga4Report, googleAccessToken, indexNow, searchAnalytics, youtubeSearch } from './google';
 import { buildStats } from './stats';
+import { nicheReport, scoreNiche, type Niche } from './niches';
 import { buildDemandReport } from './demand';
 import { pickTrailer } from './titles';
 import { buildCatalogue, type Candidate } from './catalogue';
-import { searchVolumes } from './dataforseo';
+import { keywordDifficulty, keywordIdeas, searchVolumes } from './dataforseo';
 
 export interface Env {
   /** Fine-grained GitHub token: Contents read & write on the site-factory repo only. */
@@ -42,6 +43,7 @@ export interface Env {
   ENRICH_LIMIT: string;
   RECHECK_LIMIT: string;
   GSC_SITE: string; // Search Console property: sc-domain:movietrailer.channel (Domain property) or a URL-prefix property
+  NICHES_PER_RUN?: string; // ideas scored per niche-finder run
   GA4_PROPERTY?: string; // GA4 property ID (number) for the dashboard stats
   INDEXNOW_KEY?: string; // public key; brands/<slug>/public/<key>.txt holds the same value
   SITE_HOST?: string; // e.g. www.movietrailer.channel
@@ -58,7 +60,7 @@ export interface Env {
   COLLECTION_MIN_VOLUME: string;
 }
 
-type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections' | 'stats';
+type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections' | 'stats' | 'niches';
 
 /**
  * Workers Free allows 5 cron schedules per ACCOUNT, so the pipeline uses two (see wrangler.jsonc)
@@ -88,6 +90,8 @@ const CATALOGUE_REPORT = 'reports/trailers/catalogue.md';
 const IDEAS = 'data/trailers/collection-ideas.json';
 const COLLECTIONS_REPORT = 'reports/trailers/collections.md';
 const STATS = 'data/trailers/stats.json';
+const NICHES = 'hq/niches.json';
+const NICHES_REPORT = 'hq/reports/niches.md';
 
 /** Workers free plan allows 50 outgoing calls per run; GitHub reads/commit use up to 8. */
 const CALL_BUDGET = 50 - 9;
@@ -101,7 +105,7 @@ export default {
 
   async fetch(req: Request, env: Env): Promise<Response> {
     const url = new URL(req.url);
-    const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue|collections|stats)$/);
+    const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue|collections|stats|niches)$/);
     if (!m) return new Response('Trailer pipeline. Runs on a schedule.\n', { status: url.pathname === '/' ? 200 : 404 });
     if (!env.RUN_KEY || url.searchParams.get('key') !== env.RUN_KEY) return new Response('Forbidden\n', { status: 403 });
     try {
@@ -124,6 +128,7 @@ const NEEDS: Record<Job, (keyof Env)[]> = {
   catalogue: ['GITHUB_TOKEN'],
   collections: ['GITHUB_TOKEN', 'ANTHROPIC_API_KEY'],
   stats: ['GITHUB_TOKEN', 'GSC_SERVICE_ACCOUNT'],
+  niches: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD', 'ANTHROPIC_API_KEY'],
 };
 
 export async function run(job: Job, env: Env, dryRun: boolean) {
@@ -133,7 +138,9 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
   const repo: Repo = { token: env.GITHUB_TOKEN, owner, name, branch: env.BRANCH };
 
   const files =
-    job === 'stats'
+    job === 'niches'
+      ? [NICHES]
+      : job === 'stats'
       ? [STATS, MOVIES, COLLECTIONS]
       :
     job === 'demand' || job === 'collections'
@@ -148,6 +155,7 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
   if (job === 'demand') return demand(env, repo, snap, now, dryRun, maxYear({ now, minAgeYears }));
   if (job === 'catalogue') return catalogue(env, repo, snap, now, dryRun, maxYear({ now, minAgeYears }));
   if (job === 'stats') return statsJob(env, repo, snap, now, dryRun);
+  if (job === 'niches') return nichesJob(env, repo, snap, now, dryRun);
   if (job === 'collections') return collectionsJob(env, repo, snap, now, dryRun, maxYear({ now, minAgeYears }));
 
   const state: State = {
@@ -389,6 +397,53 @@ async function statsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boo
   log.unshift(`Stats: ${stats.totals.views} views, ${Object.values(stats.totals.cta).reduce((a, b) => a + b, 0)} CTA clicks, ${stats.totals.gscClicks} Google clicks.`);
   const commit = await save(repo, snap.sha, { [STATS]: JSON.stringify(stats, null, 1) + '\n' }, `Pipeline: refresh dashboard stats\n\n${log.join('\n')}`, dryRun, log);
   return { job: 'stats' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report: undefined as string | undefined };
+}
+
+async function nichesJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean) {
+  const niches = snap.files[NICHES] ? (JSON.parse(snap.files[NICHES]) as Niche[]) : [];
+  const location = env.DATAFORSEO_LOCATION_NAME || 'United States';
+  const code = Number(env.DATAFORSEO_LOCATION) || 2840;
+  const login = env.DATAFORSEO_LOGIN!;
+  const password = env.DATAFORSEO_PASSWORD!;
+  const log: string[] = [];
+  // 3 calls per idea (keywords, difficulty, Claude); Google Ads data allows 12 calls a minute.
+  const todo = niches.filter((n) => n.status !== 'scored').slice(0, Number(env.NICHES_PER_RUN) || 6);
+  for (const n of todo) {
+    try {
+      const ideas = await keywordIdeas(login, password, n.seeds.length ? n.seeds : [n.idea], code);
+      const top = [...ideas.items].sort((a, b) => b.volume - a.volume).slice(0, 100);
+      const diff = await keywordDifficulty(login, password, top.map((k) => k.keyword), code);
+      const judgement = await judgeNiche(
+        env.ANTHROPIC_API_KEY,
+        env.ANTHROPIC_MODEL,
+        n.idea,
+        n.notes,
+        top.map((k) => ({ keyword: k.keyword, volume: k.volume, cpc: k.cpc, kd: diff.kd.get(k.keyword) ?? null })),
+      );
+      n.score = scoreNiche(ideas.items, diff.kd, judgement, ideas.cost + diff.cost);
+      n.status = 'scored';
+      n.scoredAt = now.toISOString();
+      n.location = location;
+      n.error = null;
+      log.push(`${n.idea}: ${n.score.overall}/100 (demand ${n.score.demand}, money ${n.score.money}, ease ${n.score.ease}, fit ${n.score.fit}).`);
+    } catch (e) {
+      n.status = 'failed';
+      n.error = (e as Error).message.slice(0, 200);
+      log.push(`${n.idea}: failed: ${n.error}`);
+    }
+  }
+  const left = niches.filter((n) => n.status === 'new').length;
+  log.unshift(`Niches: scored ${todo.filter((n) => n.status === 'scored').length} of ${todo.length}${left ? `; ${left} still waiting (run again)` : ''}.`);
+  const report = nicheReport(niches, now, location);
+  const commit = await save(
+    repo,
+    snap.sha,
+    { [NICHES]: JSON.stringify(niches, null, 1) + '\n', [NICHES_REPORT]: report },
+    `HQ: niche finder [skip ci]\n\n${log.join('\n')}`,
+    dryRun,
+    log,
+  );
+  return { job: 'niches' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report };
 }
 
 async function save(repo: Repo, sha: string, changes: Record<string, string>, message: string, dryRun: boolean, log: string[]) {

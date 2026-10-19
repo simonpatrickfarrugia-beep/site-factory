@@ -1,0 +1,106 @@
+[
+ {
+  "idea": "TV shows: where to watch",
+  "seeds": [
+   "where to watch",
+   "what streaming service has",
+   "is it on netflix",
+   "tv show streaming guide",
+   "where can i watch"
+  ],
+  "notes": "Sister site to the trailer channel. Data: TMDB TV + watch providers.",
+  "addedAt": "2026-10-19T04:00:00Z",
+  "status": "new"
+ },
+ {
+  "idea": "Book series in reading order",
+  "seeds": [
+   "books in order",
+   "book series in order",
+   "reading order",
+   "kindle series",
+   "best book series"
+  ],
+  "notes": "Data: Open Library API. Amazon/Kindle affiliate.",
+  "addedAt": "2026-10-19T04:00:00Z",
+  "status": "new"
+ },
+ {
+  "idea": "Board games",
+  "seeds": [
+   "best board games",
+   "board games for adults",
+   "board game rules",
+   "2 player board games",
+   "family board games"
+  ],
+  "notes": "Data: BoardGameGeek XML API. Amazon affiliate.",
+  "addedAt": "2026-10-19T04:00:00Z",
+  "status": "new"
+ },
+ {
+  "idea": "Video games: release dates and trailers",
+  "seeds": [
+   "game release date",
+   "upcoming games",
+   "video game trailer",
+   "best ps5 games",
+   "switch games"
+  ],
+  "notes": "Data: IGDB API (free with Twitch account). Retailer affiliates.",
+  "addedAt": "2026-10-19T04:00:00Z",
+  "status": "new"
+ },
+ {
+  "idea": "Anime: where to watch and watch order",
+  "seeds": [
+   "anime watch order",
+   "where to watch anime",
+   "best anime",
+   "anime streaming",
+   "anime series"
+  ],
+  "notes": "Data: AniList API. Crunchyroll affiliate.",
+  "addedAt": "2026-10-19T04:00:00Z",
+  "status": "new"
+ },
+ {
+  "idea": "US national parks and hiking trails",
+  "seeds": [
+   "national parks",
+   "hiking trails near me",
+   "best hikes",
+   "national park camping",
+   "state parks"
+  ],
+  "notes": "Data: NPS API + open trail data. Gear and booking affiliates.",
+  "addedAt": "2026-10-19T04:00:00Z",
+  "status": "new"
+ },
+ {
+  "idea": "Dog breeds",
+  "seeds": [
+   "dog breeds",
+   "best dog breeds",
+   "dog breed temperament",
+   "hypoallergenic dogs",
+   "small dog breeds"
+  ],
+  "notes": "Data: open dog breed datasets. Pet product affiliates.",
+  "addedAt": "2026-10-19T04:00:00Z",
+  "status": "new"
+ },
+ {
+  "idea": "Movie soundtracks and film music",
+  "seeds": [
+   "movie soundtrack",
+   "film score",
+   "soundtrack vinyl",
+   "best movie soundtracks",
+   "song from movie"
+  ],
+  "notes": "Data: MusicBrainz / Discogs APIs. Vinyl and streaming affiliates.",
+  "addedAt": "2026-10-19T04:00:00Z",
+  "status": "new"
+ }
+]

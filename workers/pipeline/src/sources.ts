@@ -226,3 +226,49 @@ export async function suggestCandidates(
       theme: typeof f.theme === 'string' && f.theme.trim() ? f.theme.trim() : 'Suggested',
     }));
 }
+
+/** Claude judges how well a niche suits the Site Factory model (automated pages built on real data). */
+export async function judgeNiche(
+  apiKey: string,
+  model: string,
+  idea: string,
+  notes: string | null | undefined,
+  keywords: { keyword: string; volume: number; cpc: number | null; kd: number | null }[],
+): Promise<import('./niches').FitJudgement> {
+  const prompt = [
+    'You assess website niches for a solo founder who runs many small sites from one codebase.',
+    'His model: pages are generated automatically from a FREE or cheap structured data source (APIs, open data, feeds),',
+    'enriched with short AI-written copy, and monetised with affiliate links, display ads or leads. Google penalises thin,',
+    'mass-produced AI text, so a niche only works if real data makes every page genuinely useful.',
+    '',
+    `Niche: ${idea}`,
+    notes ? `Founder's notes: ${notes}` : '',
+    'Biggest related US Google searches (monthly volume, CPC USD, SEO difficulty 0-100):',
+    ...keywords.slice(0, 30).map((k) => `- ${k.keyword}: ${k.volume}/mo, cpc ${k.cpc ?? '?'}, kd ${k.kd ?? '?'}`),
+    '',
+    'Score "fit" 0-100: is there a usable data source that can generate hundreds of useful pages automatically,',
+    'clear ways to earn (name real affiliate programs or ad potential), low legal/YMYL/copyright risk, and room for a small site.',
+    'Be blunt; most niches should score under 60.',
+    '',
+    'Reply with JSON only: {"fit": 0-100, "verdict": "one or two sentences", "angle": "the specific site to build",',
+    '"dataSources": ["..."], "monetisation": ["..."], "pageTypes": ["e.g. /[thing]/[city] pages ..."], "risks": ["..."]}',
+  ]
+    .filter((l) => l !== '')
+    .join('\n');
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: claudeHeaders(apiKey),
+    body: JSON.stringify({ model, max_tokens: 2500, messages: [{ role: 'user', content: prompt }] }),
+  });
+  const j = JSON.parse(await claudeJson(res)) as Partial<import('./niches').FitJudgement>;
+  const list = (v: unknown) => (Array.isArray(v) ? v.map(String).slice(0, 8) : []);
+  return {
+    fit: Number(j.fit) || 0,
+    verdict: String(j.verdict ?? ''),
+    angle: String(j.angle ?? ''),
+    dataSources: list(j.dataSources),
+    monetisation: list(j.monetisation),
+    pageTypes: list(j.pageTypes),
+    risks: list(j.risks),
+  };
+}
