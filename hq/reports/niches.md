@@ -1,21 +1,24 @@
 # Niche finder
 
-Updated 2026-10-19. Google searches in the United States. Score = 30% demand + 25% money (CPC) + 25% ease (SEO difficulty) + 20% fit (Claude: data source, automation, monetisation, risk).
+Updated 2026-10-19. Google searches in the United States unless an idea says otherwise (Market column). Score = 30% demand + 25% money (CPC) + 25% ease (SEO difficulty) + 20% fit (Claude: data source, automation, monetisation, risk).
 
 Add ideas by chat: "score these niches: …". Rules: launch at most one new site a month, only while the last one is on track.
 
 ## Ranking
 
-| # | Idea | Score | Demand | Money | Ease | Fit | Searches/mo | Median CPC | Avg difficulty |
-|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| 1 | Dog breeds | **75** | 100 | 66 | 78 | 46 | 54,904,000 | $1.34 | 22 |
-| 2 | US national parks and hiking trails | **74** | 100 | 66 | 78 | 42 | 17,831,200 | $1.33 | 22 |
-| 3 | TV shows: where to watch | **73** | 91 | 91 | 68 | 30 | 5,543,800 | $3.55 | 32 |
-| 4 | Anime: where to watch and watch order | **70** | 100 | 66 | 60 | 42 | 20,483,800 | $1.31 | 40 |
-| 5 | Video games: release dates and trailers | **62** | 100 | 32 | 62 | 40 | 14,104,000 | $0.35 | 38 |
-| 6 | Board games | **61** | 78 | 32 | 84 | 42 | 2,245,200 | $0.35 | 16 |
-| 7 | Book series in reading order | **53** | 90 | 25 | 50 | 38 | 4,912,700 | $0.27 | — |
-| 8 | Movie soundtracks and film music | **53** | 79 | 0 | 81 | 45 | 2,377,600 | $0.08 | 19 |
+| # | Idea | Market | Score | Demand | Money | Ease | Fit | Searches/mo | Median CPC | Avg difficulty |
+|---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| 1 | Dog breeds | United States | **75** | 100 | 66 | 78 | 46 | 54,904,000 | $1.34 | 22 |
+| 2 | US national parks and hiking trails | United States | **74** | 100 | 66 | 78 | 42 | 17,831,200 | $1.33 | 22 |
+| 3 | TV shows: where to watch | United States | **73** | 91 | 91 | 68 | 30 | 5,543,800 | $3.55 | 32 |
+| 4 | Anime: where to watch and watch order | United States | **70** | 100 | 66 | 60 | 42 | 20,483,800 | $1.31 | 40 |
+| 5 | Victoria: where to stay by town | Australia | **66** | 63 | 69 | 90 | 38 | 780,660 | $1.51 | 10 |
+| 6 | Video games: release dates and trailers | United States | **62** | 100 | 32 | 62 | 40 | 14,104,000 | $0.35 | 38 |
+| 7 | Board games | United States | **61** | 78 | 32 | 84 | 42 | 2,245,200 | $0.35 | 16 |
+| 8 | Victoria: things to do by town | Australia | **59** | 52 | 47 | 95 | 38 | 353,780 | $0.63 | 5 |
+| 9 | Book series in reading order | United States | **53** | 90 | 25 | 50 | 38 | 4,912,700 | $0.27 | — |
+| 10 | Movie soundtracks and film music | United States | **53** | 79 | 0 | 81 | 45 | 2,377,600 | $0.08 | 19 |
+| 11 | Victoria: where to eat by town | Australia | **52** | 40 | 41 | 96 | 27 | 155,710 | $0.50 | 4 |
 
 ## Dog breeds: 75/100
 
@@ -229,6 +232,59 @@ _Seeds: where to watch, what streaming service has, is it on netflix, tv show st
 
 _Seeds: anime watch order, where to watch anime, best anime, anime streaming, anime series. Data cost: US$0.114._
 
+## Victoria: where to stay by town: 66/100
+
+**Verdict:** The keyword list is mostly branded hotel names (Yarra Valley Lodge, Mantra Lorne, Lake House) that Google will send to the hotels and big OTAs, so it isn't a real opportunity. The generic town terms (Daylesford, Phillip Island, Lorne) are winnable but small, and the volumes are US-search figures that overstate Australian demand. Only a narrow, data-differentiated town guide has a chance.
+
+**Site angle:** A Victoria 'stays near' guide covering about 25-30 towns that each have 10+ accommodation listings. Each page is /stay/[town-vic] with a computed table of properties and attributes (distance to beach, winery, station or town centre, bed count, property type) from OSM, plus live Booking/Expedia prices and ratings where the feed allows. Skip hotel-brand pages entirely.
+
+**Data sources:** OpenStreetMap via Overpass API (tourism=hotel/motel/guest_house/caravan_site/alpine_hut; ODbL, attribution required); Booking.com Affiliate Partner / Demand API (approval required; prices, ratings, availability); Expedia Group Rapid/EPS affiliate feed (approval required); Victorian open data (data.vic.gov.au) for town boundaries and locality points; Wikidata/Wikipedia for town descriptions (CC BY-SA; attribution required)
+
+**Money:** Booking.com affiliate commission (Booking Partner programme); Expedia Group affiliate commission; Agoda affiliate programme as a secondary feed; Display ads (Mediavine or Ezoic once traffic thresholds are met; low RPM for travel at small scale); Direct referral or lead forms for holiday rental management companies, if local ones exist
+
+**Page types:** /stay/[town]-vic: all accommodation in a town, with the computed attribute table; /stay/[town]-vic/[type]: e.g. hotels, B&Bs, cabins, caravan parks, per town (only where 10+ listings exist); /stay-near/[landmark]-vic: e.g. stays near Great Ocean Road, Phillip Island Penguin Parade, Grampians (only where data is genuinely distinct); Index hub /victoria/ with town list ranked by listing count and distance data
+
+**Risks:** Thin-content and scaled-content penalties: a list plus affiliate links with AI copy is exactly what Google's spam policies target; each page needs unique computed facts, not just generated prose; Booking.com and Expedia feed approval can take weeks and may reject a new site with little traffic; US search volume and USD CPC do not reflect Australian search; validate with Google Keyword Planner set to Australia; Brand-name queries (Lake House, Balgownie, Mantra) are controlled by the hotels and OTAs; targeting them invites trademark issues and gives no ranking chance; OSM data quality varies by town; rural listings can be stale or missing, causing empty or wrong pages; Crowded affiliate SERPs with Booking, Expedia, TripAdvisor, Wotif and Hotels.com; a small site competes on specificity, not authority; Seasonal demand (Victorian ski, coast and wine peaks) and low RPM make revenue lumpy; Booking.com affiliate terms restrict displaying prices or data outside their approved formats and can require caching limits; check before automating
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| yarra valley lodge | 14,800 | 13 | $1.03 |
+| mantra lorne accommodation | 14,800 | 0 | $1.93 |
+| yarra valley lodge accommodation | 14,800 | 13 | $1.03 |
+| accommodation lorne mantra | 14,800 | 0 | $1.93 |
+| yarra valley lodge hotel | 14,800 | 13 | $1.03 |
+| balgownie yarra valley accommodation | 14,800 | 0 | $0.68 |
+| balgownie estate yarra valley accommodation | 14,800 | 0 | $0.68 |
+| balgownie estate vineyard resort & spa yarra valley | 14,800 | 0 | $0.68 |
+| lake house daylesford accommodation | 9,900 | 3 | $0.72 |
+| accommodation daylesford lake house | 9,900 | 3 | $0.72 |
+| lake house daylesford hotel | 9,900 | 3 | $0.72 |
+| phillip island accommodation | 8,100 | 0 | $1.69 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| yarra valley lodge | 14,800 | 13 | $1.03 |
+| mantra lorne accommodation | 14,800 | 0 | $1.93 |
+| yarra valley lodge accommodation | 14,800 | 13 | $1.03 |
+| accommodation lorne mantra | 14,800 | 0 | $1.93 |
+| yarra valley lodge hotel | 14,800 | 13 | $1.03 |
+| balgownie yarra valley accommodation | 14,800 | 0 | $0.68 |
+| balgownie estate yarra valley accommodation | 14,800 | 0 | $0.68 |
+| balgownie estate vineyard resort & spa yarra valley | 14,800 | 0 | $0.68 |
+| lake house daylesford accommodation | 9,900 | 3 | $0.72 |
+| accommodation daylesford lake house | 9,900 | 3 | $0.72 |
+| lake house daylesford hotel | 9,900 | 3 | $0.72 |
+| lakehouse at daylesford | 9,900 | — | $0.72 |
+| phillip island accommodation | 8,100 | 0 | $1.69 |
+| daylesford hotel | 8,100 | 2 | $1.10 |
+| lorne hotels | 8,100 | 0 | $1.44 |
+
+_Seeds: accommodation daylesford, where to stay in bright, phillip island accommodation, lorne accommodation, yarra valley accommodation, weekend getaways victoria, romantic getaways victoria. Data cost: US$0.114._
+
 ## Video games: release dates and trailers: 62/100
 
 **Verdict:** The data is free, large and genuinely refreshes, so per-game pages can be useful. But the high-volume terms are brand or navigational queries owned by Nintendo, publishers and fast news sites, the CPCs are low (about $0.30 typical), and display ads will take a long time to reach.
@@ -335,6 +391,59 @@ _Seeds: game release date, upcoming games, video game trailer, best ps5 games, s
 
 _Seeds: best board games, board games for adults, board game rules, 2 player board games, family board games. Data cost: US$0.114._
 
+## Victoria: things to do by town: 59/100
+
+**Verdict:** The data and affiliate pieces exist, but the keyword set covers only about four towns, and the volumes are US figures that look inflated and duplicated across variants, so the real Australian demand is probably much smaller. Build it only as a small, curated Melbourne day-trip site, not as hundreds of programmatic town pages.
+
+**Site angle:** victours.com.au as a 'day trips from Melbourne' guide: 15-25 hand-verified destination hubs (Ballarat, Daylesford, Phillip Island, Great Ocean Road, Bellarine, Mornington, Yarra Valley, Grampians), each with a curated 'things to do' list enriched from OSM and open data, then tour and accommodation links. Add the long-tail town pages only after the flagship hubs earn traffic and show that the data quality holds.
+
+**Data sources:** OpenStreetMap via Overpass API (tourism=attraction/viewpoint/museum/zoo, leisure=park/nature_reserve, natural=*; ODbL attribution and share-alike obligations apply); Victorian open data portal (data.vic.gov.au): parks, trails, heritage and public facility datasets (check each dataset's licence, typically CC BY); Wikidata/Wikipedia for town descriptions and notable-site cross-checks; Manual founder verification of opening hours, prices and access, since OSM is patchy on hours and pricing
+
+**Money:** Viator Partner Program (commission on tours; API access requires approval and terms restrict some product-data reuse); GetYourGuide Partner Program (commission on activities); Klook affiliate programme (Asia-Pacific activities, useful for some Victorian attractions); Booking.com or Expedia affiliate for accommodation near each destination; Display ads (AdSense first; premium networks only after sustained traffic); Direct listing or lead-gen deals with local operators, such as day-tour or winery bookings, if they can be negotiated
+
+**Page types:** /day-trips-from-melbourne/[destination]/ hub: overview, getting there, verified top 10, tour widget, accommodation; /[destination]/things-to-do/ and /[destination]/[category]/ (e.g. /phillip-island/wildlife/) only where there are 8+ verified items; /tours/[tour-type]/ comparison pages (e.g. Great Ocean Road tours) with clearly labelled affiliate links; /[destination]/getting-there/ utility pages built from timetables and distance data
+
+**Risks:** The keyword volumes are US-based, identical across many variants (e.g. 8100/mo for every Ballarat variant), and likely reflect parent-topic clustering, not real AU demand. Verify with Australian Google Ads data before building.; Phillip Island Penguin Parade is run by Phillip Island Nature Parks, which controls its booking, pricing and branding. Affiliate potential there is narrow and the brand is hard to rank against.; The SERPs for 'things to do in X' are dominated by Viator, GetYourGuide, TripAdvisor, Lonely Planet and council sites. Thin lists will not beat them.; Google's scaled content abuse and helpful-content systems will penalise mass-generated AI copy with no unique data; each page needs verified, locally specific content.; OSM data quality varies: unnamed features, closed businesses, wrong categories and stale hours. Without manual verification, pages will be inaccurate and possibly misleading.; Licence obligations: OSM requires ODbL attribution and share-alike for derived databases; Viator and GYG terms restrict scraping and reuse of product data; check every source's terms before automating.; Affiliate disclosure must be clear under ACCC and Australian Consumer Law expectations, and any price or hours claims must be accurate.; Seasonality and tourism shocks (bushfires, COVID-style closures) hit traffic and commissions sharply.
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| melbourne great ocean road tour | 12,100 | 13 | $3.62 |
+| things to do in ballarat | 8,100 | 14 | $0.63 |
+| ballarat attractions | 8,100 | 14 | $0.63 |
+| ballarat tourist attractions | 8,100 | 4 | $0.63 |
+| ballarat sightseeing | 8,100 | 14 | $0.63 |
+| to do in ballarat | 8,100 | 14 | $0.63 |
+| ballarat things to see | 8,100 | 14 | $0.63 |
+| ballarat what to see | 8,100 | 14 | $0.63 |
+| things to do in ballarat australia | 8,100 | 14 | $0.63 |
+| things to do in ballarat vic | 8,100 | 14 | $0.63 |
+| things to do in ballarat victoria | 8,100 | 14 | $0.63 |
+| things to do in phillip island | 5,400 | 0 | $0.63 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| penguin parade in phillip island | 18,100 | 35 | $1.40 |
+| melbourne great ocean road tour | 12,100 | 13 | $3.62 |
+| things to do in ballarat | 8,100 | 14 | $0.63 |
+| ballarat attractions | 8,100 | 14 | $0.63 |
+| ballarat tourist attractions | 8,100 | 4 | $0.63 |
+| ballarat sightseeing | 8,100 | 14 | $0.63 |
+| to do in ballarat | 8,100 | 14 | $0.63 |
+| ballarat attractions victoria | 8,100 | — | $0.63 |
+| ballarat things to see | 8,100 | 14 | $0.63 |
+| ballarat what to see | 8,100 | 14 | $0.63 |
+| stuff to do in ballarat | 8,100 | — | $0.63 |
+| things to do in ballarat australia | 8,100 | 14 | $0.63 |
+| things to do in ballarat vic | 8,100 | 14 | $0.63 |
+| things to do in ballarat victoria | 8,100 | 14 | $0.63 |
+| things to visit in ballarat | 8,100 | — | $0.63 |
+
+_Seeds: things to do in daylesford, things to do in bright, things to do in phillip island, things to do in ballarat, things to do in the yarra valley, day trips from melbourne, things to do in victoria. Data cost: US$0.114._
+
 ## Book series in reading order: 53/100
 
 **Verdict:** The data is free and workable, since Wikidata has series membership and ordinals for thousands of series, but these are mostly franchise-level queries with weak monetisation (CPCs around $0.20-0.45, and books pay low affiliate commissions) and strong incumbents such as Wikipedia, Fandom wikis, publisher sites and Reddit. It only makes sense as a long-tail utility site, not a head-term play.
@@ -423,3 +532,56 @@ _Seeds: books in order, book series in order, reading order, kindle series, best
 | songs from the movie frozen | 27,100 | 15 | $0.14 |
 
 _Seeds: movie soundtrack, film score, soundtrack vinyl, best movie soundtracks, song from movie. Data cost: US$0.114._
+
+## Victoria: where to eat by town: 52/100
+
+**Verdict:** Victorian restaurant data is thin and generic: OSM gives cuisine and hours, but no ratings, prices, menus or reviews, so pages would look like a directory that Google Maps already beats. The search volumes are US figures, which are unreliable for AU local intent, and the CPCs are low ($0.2–1.5), so revenue per page is tiny unless the site converts through affiliate tours or accommodation.
+
+**Site angle:** A narrow Yarra Valley and Macedon Ranges winery-lunch guide (/winery-restaurants/[region]/ and /[winery]/ pages) built on OSM craft=winery and amenity=restaurant data, with a short factual card per venue and affiliate links for wine tours and stays. Skip general Geelong and Lorne 'best restaurants' pages until you have a real differentiator.
+
+**Data sources:** OpenStreetMap via Overpass API (amenity=restaurant/cafe, craft=winery, cuisine, opening_hours, website); Victorian open data portals (data.vic.gov.au) for council and tourism datasets; Winery websites and official Yarra Valley / Macedon tourism listings (manual verification, not scraped at scale); Google Places API only if you can afford its caching and display terms
+
+**Money:** Viator (Tripadvisor affiliate) wine and food tours in the Yarra Valley; GetYourGuide Partner Program for experiences; Booking.com or Agoda affiliate (check current AU network) for accommodation near wineries; Klook for day trips and transfers; Display ads only once traffic justifies it; expect very low RPM at these CPCs; Lead-gen to private dining or group bookings, sold per enquiry to restaurants
+
+**Page types:** /yarra-valley/[winery]/ (one page per winery, with real OSM facts and a verified lunch menu link); /yarra-valley/lunch/[town]/ (Yarra Glen, Healesville, Lilydale, Coldstream); /macedon-ranges/[town]-restaurants/ (Woodend, Hanging Rock, Daylesford hub links); /tours/[region]/ tour comparison pages with affiliate tables
+
+**Risks:** US keyword volumes do not reflect Australian search demand; validate with AU keyword tools before building; OSM hours and cuisine tags are often missing or stale in regional Victoria; pages will look empty without manual checks; Thin AI-written copy over generic data is exactly what Google's helpful-content and spam policies target; ODbL licence: OSM data requires attribution and share-alike for any derived database you publish; check how your page output is treated; Google Places API terms restrict storing and caching place data, which undermines a bulk-generated site; Restaurants close or change hands often, so unmaintained pages decay quickly and can mislead diners; Low CPCs and small volumes mean the niche supports maybe a few thousand visits a month at best
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| restaurants in geelong cbd | 22,200 | 21 | $0.50 |
+| best restaurants geelong | 6,600 | 6 | $0.50 |
+| nice restaurants geelong | 6,600 | 6 | $0.50 |
+| geelong good restaurants | 6,600 | 6 | $0.50 |
+| geelong's best restaurants | 6,600 | 6 | $0.50 |
+| restaurants bright | 5,400 | 0 | $0.65 |
+| ezard at levantine hill | 5,400 | 0 | $0.88 |
+| yarra valley restaurants | 4,400 | 3 | $0.50 |
+| dining in the yarra valley | 4,400 | 3 | $0.50 |
+| yarra valley eateries | 4,400 | 3 | $0.50 |
+| restaurant geelong waterfront | 2,400 | 5 | $0.50 |
+| restaurants lorne | 1,900 | 0 | $0.23 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| restaurants in geelong cbd | 22,200 | 21 | $0.50 |
+| best restaurants geelong | 6,600 | 6 | $0.50 |
+| nice restaurants geelong | 6,600 | 6 | $0.50 |
+| geelong good restaurants | 6,600 | 6 | $0.50 |
+| geelong's best restaurants | 6,600 | 6 | $0.50 |
+| great restaurants in geelong | 6,600 | — | $0.50 |
+| restaurants bright | 5,400 | 0 | $0.65 |
+| ezard at levantine hill | 5,400 | 0 | $0.88 |
+| yarra valley restaurants | 4,400 | 3 | $0.50 |
+| dining in the yarra valley | 4,400 | 3 | $0.50 |
+| yarra valley eateries | 4,400 | 3 | $0.50 |
+| pier restaurant lorne | 2,900 | — | $1.54 |
+| restaurant geelong waterfront | 2,400 | 5 | $0.50 |
+| restaurants lorne | 1,900 | 0 | $0.23 |
+| breakfast places geelong | 1,900 | 3 | $0.24 |
+
+_Seeds: best restaurants daylesford, restaurants bright, restaurants lorne, best restaurants geelong, yarra valley restaurants, winery lunch yarra valley. Data cost: US$0.114._

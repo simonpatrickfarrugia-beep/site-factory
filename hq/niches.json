@@ -1737,7 +1737,7 @@
      "/soundtrack/[film-slug] (tracklist, composer, label, Discogs pressings with live price data)",
      "/composer/[name] (filmography plus soundtrack releases per film)",
      "/composer/[name]/[format] for vinyl, CD and digital editions where data exists",
-     "/label/[label-name] (soundtrack catalogue by label, e.g. Var\u00e8se Sarabande, Intrada)",
+     "/label/[label-name] (soundtrack catalogue by label, e.g. Varèse Sarabande, Intrada)",
      "/soundtracks-by-year/[year] (release year indexes built from MusicBrainz dates)"
     ],
     "risks": [
@@ -1772,7 +1772,223 @@
    "name": "Australia"
   },
   "addedAt": "2026-10-19T11:30:00Z",
-  "status": "new"
+  "status": "scored",
+  "score": {
+   "overall": 59,
+   "demand": 52,
+   "money": 47,
+   "ease": 95,
+   "fit": 38,
+   "totalVolume": 353780,
+   "keywords": 246,
+   "medianCpc": 0.63,
+   "avgDifficulty": 5,
+   "easyWins": [
+    {
+     "keyword": "melbourne great ocean road tour",
+     "volume": 12100,
+     "kd": 13,
+     "cpc": 3.62
+    },
+    {
+     "keyword": "things to do in ballarat",
+     "volume": 8100,
+     "kd": 14,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "ballarat attractions",
+     "volume": 8100,
+     "kd": 14,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "ballarat tourist attractions",
+     "volume": 8100,
+     "kd": 4,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "ballarat sightseeing",
+     "volume": 8100,
+     "kd": 14,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "to do in ballarat",
+     "volume": 8100,
+     "kd": 14,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "ballarat things to see",
+     "volume": 8100,
+     "kd": 14,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "ballarat what to see",
+     "volume": 8100,
+     "kd": 14,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "things to do in ballarat australia",
+     "volume": 8100,
+     "kd": 14,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "things to do in ballarat vic",
+     "volume": 8100,
+     "kd": 14,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "things to do in ballarat victoria",
+     "volume": 8100,
+     "kd": 14,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "things to do in phillip island",
+     "volume": 5400,
+     "kd": 0,
+     "cpc": 0.63
+    }
+   ],
+   "topKeywords": [
+    {
+     "keyword": "penguin parade in phillip island",
+     "volume": 18100,
+     "kd": 35,
+     "cpc": 1.4
+    },
+    {
+     "keyword": "melbourne great ocean road tour",
+     "volume": 12100,
+     "kd": 13,
+     "cpc": 3.62
+    },
+    {
+     "keyword": "things to do in ballarat",
+     "volume": 8100,
+     "kd": 14,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "ballarat attractions",
+     "volume": 8100,
+     "kd": 14,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "ballarat tourist attractions",
+     "volume": 8100,
+     "kd": 4,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "ballarat sightseeing",
+     "volume": 8100,
+     "kd": 14,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "to do in ballarat",
+     "volume": 8100,
+     "kd": 14,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "ballarat attractions victoria",
+     "volume": 8100,
+     "kd": null,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "ballarat things to see",
+     "volume": 8100,
+     "kd": 14,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "ballarat what to see",
+     "volume": 8100,
+     "kd": 14,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "stuff to do in ballarat",
+     "volume": 8100,
+     "kd": null,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "things to do in ballarat australia",
+     "volume": 8100,
+     "kd": 14,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "things to do in ballarat vic",
+     "volume": 8100,
+     "kd": 14,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "things to do in ballarat victoria",
+     "volume": 8100,
+     "kd": 14,
+     "cpc": 0.63
+    },
+    {
+     "keyword": "things to visit in ballarat",
+     "volume": 8100,
+     "kd": null,
+     "cpc": 0.63
+    }
+   ],
+   "judgement": {
+    "fit": 38,
+    "verdict": "The data and affiliate pieces exist, but the keyword set covers only about four towns, and the volumes are US figures that look inflated and duplicated across variants, so the real Australian demand is probably much smaller. Build it only as a small, curated Melbourne day-trip site, not as hundreds of programmatic town pages.",
+    "angle": "victours.com.au as a 'day trips from Melbourne' guide: 15-25 hand-verified destination hubs (Ballarat, Daylesford, Phillip Island, Great Ocean Road, Bellarine, Mornington, Yarra Valley, Grampians), each with a curated 'things to do' list enriched from OSM and open data, then tour and accommodation links. Add the long-tail town pages only after the flagship hubs earn traffic and show that the data quality holds.",
+    "dataSources": [
+     "OpenStreetMap via Overpass API (tourism=attraction/viewpoint/museum/zoo, leisure=park/nature_reserve, natural=*; ODbL attribution and share-alike obligations apply)",
+     "Victorian open data portal (data.vic.gov.au): parks, trails, heritage and public facility datasets (check each dataset's licence, typically CC BY)",
+     "Wikidata/Wikipedia for town descriptions and notable-site cross-checks",
+     "Manual founder verification of opening hours, prices and access, since OSM is patchy on hours and pricing"
+    ],
+    "monetisation": [
+     "Viator Partner Program (commission on tours; API access requires approval and terms restrict some product-data reuse)",
+     "GetYourGuide Partner Program (commission on activities)",
+     "Klook affiliate programme (Asia-Pacific activities, useful for some Victorian attractions)",
+     "Booking.com or Expedia affiliate for accommodation near each destination",
+     "Display ads (AdSense first; premium networks only after sustained traffic)",
+     "Direct listing or lead-gen deals with local operators, such as day-tour or winery bookings, if they can be negotiated"
+    ],
+    "pageTypes": [
+     "/day-trips-from-melbourne/[destination]/ hub: overview, getting there, verified top 10, tour widget, accommodation",
+     "/[destination]/things-to-do/ and /[destination]/[category]/ (e.g. /phillip-island/wildlife/) only where there are 8+ verified items",
+     "/tours/[tour-type]/ comparison pages (e.g. Great Ocean Road tours) with clearly labelled affiliate links",
+     "/[destination]/getting-there/ utility pages built from timetables and distance data"
+    ],
+    "risks": [
+     "The keyword volumes are US-based, identical across many variants (e.g. 8100/mo for every Ballarat variant), and likely reflect parent-topic clustering, not real AU demand. Verify with Australian Google Ads data before building.",
+     "Phillip Island Penguin Parade is run by Phillip Island Nature Parks, which controls its booking, pricing and branding. Affiliate potential there is narrow and the brand is hard to rank against.",
+     "The SERPs for 'things to do in X' are dominated by Viator, GetYourGuide, TripAdvisor, Lonely Planet and council sites. Thin lists will not beat them.",
+     "Google's scaled content abuse and helpful-content systems will penalise mass-generated AI copy with no unique data; each page needs verified, locally specific content.",
+     "OSM data quality varies: unnamed features, closed businesses, wrong categories and stale hours. Without manual verification, pages will be inaccurate and possibly misleading.",
+     "Licence obligations: OSM requires ODbL attribution and share-alike for derived databases; Viator and GYG terms restrict scraping and reuse of product data; check every source's terms before automating.",
+     "Affiliate disclosure must be clear under ACCC and Australian Consumer Law expectations, and any price or hours claims must be accurate.",
+     "Seasonality and tourism shocks (bushfires, COVID-style closures) hit traffic and commissions sharply."
+    ]
+   },
+   "costUsd": 0.114
+  },
+  "scoredAt": "2026-10-19T11:27:40.895Z",
+  "location": "Australia",
+  "error": null
  },
  {
   "idea": "Victoria: where to stay by town",
@@ -1791,7 +2007,223 @@
    "name": "Australia"
   },
   "addedAt": "2026-10-19T11:30:00Z",
-  "status": "new"
+  "status": "scored",
+  "score": {
+   "overall": 66,
+   "demand": 63,
+   "money": 69,
+   "ease": 90,
+   "fit": 38,
+   "totalVolume": 780660,
+   "keywords": 442,
+   "medianCpc": 1.51,
+   "avgDifficulty": 10,
+   "easyWins": [
+    {
+     "keyword": "yarra valley lodge",
+     "volume": 14800,
+     "kd": 13,
+     "cpc": 1.03
+    },
+    {
+     "keyword": "mantra lorne accommodation",
+     "volume": 14800,
+     "kd": 0,
+     "cpc": 1.93
+    },
+    {
+     "keyword": "yarra valley lodge accommodation",
+     "volume": 14800,
+     "kd": 13,
+     "cpc": 1.03
+    },
+    {
+     "keyword": "accommodation lorne mantra",
+     "volume": 14800,
+     "kd": 0,
+     "cpc": 1.93
+    },
+    {
+     "keyword": "yarra valley lodge hotel",
+     "volume": 14800,
+     "kd": 13,
+     "cpc": 1.03
+    },
+    {
+     "keyword": "balgownie yarra valley accommodation",
+     "volume": 14800,
+     "kd": 0,
+     "cpc": 0.68
+    },
+    {
+     "keyword": "balgownie estate yarra valley accommodation",
+     "volume": 14800,
+     "kd": 0,
+     "cpc": 0.68
+    },
+    {
+     "keyword": "balgownie estate vineyard resort & spa yarra valley",
+     "volume": 14800,
+     "kd": 0,
+     "cpc": 0.68
+    },
+    {
+     "keyword": "lake house daylesford accommodation",
+     "volume": 9900,
+     "kd": 3,
+     "cpc": 0.72
+    },
+    {
+     "keyword": "accommodation daylesford lake house",
+     "volume": 9900,
+     "kd": 3,
+     "cpc": 0.72
+    },
+    {
+     "keyword": "lake house daylesford hotel",
+     "volume": 9900,
+     "kd": 3,
+     "cpc": 0.72
+    },
+    {
+     "keyword": "phillip island accommodation",
+     "volume": 8100,
+     "kd": 0,
+     "cpc": 1.69
+    }
+   ],
+   "topKeywords": [
+    {
+     "keyword": "yarra valley lodge",
+     "volume": 14800,
+     "kd": 13,
+     "cpc": 1.03
+    },
+    {
+     "keyword": "mantra lorne accommodation",
+     "volume": 14800,
+     "kd": 0,
+     "cpc": 1.93
+    },
+    {
+     "keyword": "yarra valley lodge accommodation",
+     "volume": 14800,
+     "kd": 13,
+     "cpc": 1.03
+    },
+    {
+     "keyword": "accommodation lorne mantra",
+     "volume": 14800,
+     "kd": 0,
+     "cpc": 1.93
+    },
+    {
+     "keyword": "yarra valley lodge hotel",
+     "volume": 14800,
+     "kd": 13,
+     "cpc": 1.03
+    },
+    {
+     "keyword": "balgownie yarra valley accommodation",
+     "volume": 14800,
+     "kd": 0,
+     "cpc": 0.68
+    },
+    {
+     "keyword": "balgownie estate yarra valley accommodation",
+     "volume": 14800,
+     "kd": 0,
+     "cpc": 0.68
+    },
+    {
+     "keyword": "balgownie estate vineyard resort & spa yarra valley",
+     "volume": 14800,
+     "kd": 0,
+     "cpc": 0.68
+    },
+    {
+     "keyword": "lake house daylesford accommodation",
+     "volume": 9900,
+     "kd": 3,
+     "cpc": 0.72
+    },
+    {
+     "keyword": "accommodation daylesford lake house",
+     "volume": 9900,
+     "kd": 3,
+     "cpc": 0.72
+    },
+    {
+     "keyword": "lake house daylesford hotel",
+     "volume": 9900,
+     "kd": 3,
+     "cpc": 0.72
+    },
+    {
+     "keyword": "lakehouse at daylesford",
+     "volume": 9900,
+     "kd": null,
+     "cpc": 0.72
+    },
+    {
+     "keyword": "phillip island accommodation",
+     "volume": 8100,
+     "kd": 0,
+     "cpc": 1.69
+    },
+    {
+     "keyword": "daylesford hotel",
+     "volume": 8100,
+     "kd": 2,
+     "cpc": 1.1
+    },
+    {
+     "keyword": "lorne hotels",
+     "volume": 8100,
+     "kd": 0,
+     "cpc": 1.44
+    }
+   ],
+   "judgement": {
+    "fit": 38,
+    "verdict": "The keyword list is mostly branded hotel names (Yarra Valley Lodge, Mantra Lorne, Lake House) that Google will send to the hotels and big OTAs, so it isn't a real opportunity. The generic town terms (Daylesford, Phillip Island, Lorne) are winnable but small, and the volumes are US-search figures that overstate Australian demand. Only a narrow, data-differentiated town guide has a chance.",
+    "angle": "A Victoria 'stays near' guide covering about 25-30 towns that each have 10+ accommodation listings. Each page is /stay/[town-vic] with a computed table of properties and attributes (distance to beach, winery, station or town centre, bed count, property type) from OSM, plus live Booking/Expedia prices and ratings where the feed allows. Skip hotel-brand pages entirely.",
+    "dataSources": [
+     "OpenStreetMap via Overpass API (tourism=hotel/motel/guest_house/caravan_site/alpine_hut; ODbL, attribution required)",
+     "Booking.com Affiliate Partner / Demand API (approval required; prices, ratings, availability)",
+     "Expedia Group Rapid/EPS affiliate feed (approval required)",
+     "Victorian open data (data.vic.gov.au) for town boundaries and locality points",
+     "Wikidata/Wikipedia for town descriptions (CC BY-SA; attribution required)"
+    ],
+    "monetisation": [
+     "Booking.com affiliate commission (Booking Partner programme)",
+     "Expedia Group affiliate commission",
+     "Agoda affiliate programme as a secondary feed",
+     "Display ads (Mediavine or Ezoic once traffic thresholds are met; low RPM for travel at small scale)",
+     "Direct referral or lead forms for holiday rental management companies, if local ones exist"
+    ],
+    "pageTypes": [
+     "/stay/[town]-vic: all accommodation in a town, with the computed attribute table",
+     "/stay/[town]-vic/[type]: e.g. hotels, B&Bs, cabins, caravan parks, per town (only where 10+ listings exist)",
+     "/stay-near/[landmark]-vic: e.g. stays near Great Ocean Road, Phillip Island Penguin Parade, Grampians (only where data is genuinely distinct)",
+     "Index hub /victoria/ with town list ranked by listing count and distance data"
+    ],
+    "risks": [
+     "Thin-content and scaled-content penalties: a list plus affiliate links with AI copy is exactly what Google's spam policies target; each page needs unique computed facts, not just generated prose",
+     "Booking.com and Expedia feed approval can take weeks and may reject a new site with little traffic",
+     "US search volume and USD CPC do not reflect Australian search; validate with Google Keyword Planner set to Australia",
+     "Brand-name queries (Lake House, Balgownie, Mantra) are controlled by the hotels and OTAs; targeting them invites trademark issues and gives no ranking chance",
+     "OSM data quality varies by town; rural listings can be stale or missing, causing empty or wrong pages",
+     "Crowded affiliate SERPs with Booking, Expedia, TripAdvisor, Wotif and Hotels.com; a small site competes on specificity, not authority",
+     "Seasonal demand (Victorian ski, coast and wine peaks) and low RPM make revenue lumpy",
+     "Booking.com affiliate terms restrict displaying prices or data outside their approved formats and can require caching limits; check before automating"
+    ]
+   },
+   "costUsd": 0.114
+  },
+  "scoredAt": "2026-10-19T11:27:40.895Z",
+  "location": "Australia",
+  "error": null
  },
  {
   "idea": "Victoria: where to eat by town",
@@ -1809,6 +2241,221 @@
    "name": "Australia"
   },
   "addedAt": "2026-10-19T11:30:00Z",
-  "status": "new"
+  "status": "scored",
+  "score": {
+   "overall": 52,
+   "demand": 40,
+   "money": 41,
+   "ease": 96,
+   "fit": 27,
+   "totalVolume": 155710,
+   "keywords": 128,
+   "medianCpc": 0.5,
+   "avgDifficulty": 4,
+   "easyWins": [
+    {
+     "keyword": "restaurants in geelong cbd",
+     "volume": 22200,
+     "kd": 21,
+     "cpc": 0.5
+    },
+    {
+     "keyword": "best restaurants geelong",
+     "volume": 6600,
+     "kd": 6,
+     "cpc": 0.5
+    },
+    {
+     "keyword": "nice restaurants geelong",
+     "volume": 6600,
+     "kd": 6,
+     "cpc": 0.5
+    },
+    {
+     "keyword": "geelong good restaurants",
+     "volume": 6600,
+     "kd": 6,
+     "cpc": 0.5
+    },
+    {
+     "keyword": "geelong's best restaurants",
+     "volume": 6600,
+     "kd": 6,
+     "cpc": 0.5
+    },
+    {
+     "keyword": "restaurants bright",
+     "volume": 5400,
+     "kd": 0,
+     "cpc": 0.65
+    },
+    {
+     "keyword": "ezard at levantine hill",
+     "volume": 5400,
+     "kd": 0,
+     "cpc": 0.88
+    },
+    {
+     "keyword": "yarra valley restaurants",
+     "volume": 4400,
+     "kd": 3,
+     "cpc": 0.5
+    },
+    {
+     "keyword": "dining in the yarra valley",
+     "volume": 4400,
+     "kd": 3,
+     "cpc": 0.5
+    },
+    {
+     "keyword": "yarra valley eateries",
+     "volume": 4400,
+     "kd": 3,
+     "cpc": 0.5
+    },
+    {
+     "keyword": "restaurant geelong waterfront",
+     "volume": 2400,
+     "kd": 5,
+     "cpc": 0.5
+    },
+    {
+     "keyword": "restaurants lorne",
+     "volume": 1900,
+     "kd": 0,
+     "cpc": 0.23
+    }
+   ],
+   "topKeywords": [
+    {
+     "keyword": "restaurants in geelong cbd",
+     "volume": 22200,
+     "kd": 21,
+     "cpc": 0.5
+    },
+    {
+     "keyword": "best restaurants geelong",
+     "volume": 6600,
+     "kd": 6,
+     "cpc": 0.5
+    },
+    {
+     "keyword": "nice restaurants geelong",
+     "volume": 6600,
+     "kd": 6,
+     "cpc": 0.5
+    },
+    {
+     "keyword": "geelong good restaurants",
+     "volume": 6600,
+     "kd": 6,
+     "cpc": 0.5
+    },
+    {
+     "keyword": "geelong's best restaurants",
+     "volume": 6600,
+     "kd": 6,
+     "cpc": 0.5
+    },
+    {
+     "keyword": "great restaurants in geelong",
+     "volume": 6600,
+     "kd": null,
+     "cpc": 0.5
+    },
+    {
+     "keyword": "restaurants bright",
+     "volume": 5400,
+     "kd": 0,
+     "cpc": 0.65
+    },
+    {
+     "keyword": "ezard at levantine hill",
+     "volume": 5400,
+     "kd": 0,
+     "cpc": 0.88
+    },
+    {
+     "keyword": "yarra valley restaurants",
+     "volume": 4400,
+     "kd": 3,
+     "cpc": 0.5
+    },
+    {
+     "keyword": "dining in the yarra valley",
+     "volume": 4400,
+     "kd": 3,
+     "cpc": 0.5
+    },
+    {
+     "keyword": "yarra valley eateries",
+     "volume": 4400,
+     "kd": 3,
+     "cpc": 0.5
+    },
+    {
+     "keyword": "pier restaurant lorne",
+     "volume": 2900,
+     "kd": null,
+     "cpc": 1.54
+    },
+    {
+     "keyword": "restaurant geelong waterfront",
+     "volume": 2400,
+     "kd": 5,
+     "cpc": 0.5
+    },
+    {
+     "keyword": "restaurants lorne",
+     "volume": 1900,
+     "kd": 0,
+     "cpc": 0.23
+    },
+    {
+     "keyword": "breakfast places geelong",
+     "volume": 1900,
+     "kd": 3,
+     "cpc": 0.24
+    }
+   ],
+   "judgement": {
+    "fit": 27,
+    "verdict": "Victorian restaurant data is thin and generic: OSM gives cuisine and hours, but no ratings, prices, menus or reviews, so pages would look like a directory that Google Maps already beats. The search volumes are US figures, which are unreliable for AU local intent, and the CPCs are low ($0.2–1.5), so revenue per page is tiny unless the site converts through affiliate tours or accommodation.",
+    "angle": "A narrow Yarra Valley and Macedon Ranges winery-lunch guide (/winery-restaurants/[region]/ and /[winery]/ pages) built on OSM craft=winery and amenity=restaurant data, with a short factual card per venue and affiliate links for wine tours and stays. Skip general Geelong and Lorne 'best restaurants' pages until you have a real differentiator.",
+    "dataSources": [
+     "OpenStreetMap via Overpass API (amenity=restaurant/cafe, craft=winery, cuisine, opening_hours, website)",
+     "Victorian open data portals (data.vic.gov.au) for council and tourism datasets",
+     "Winery websites and official Yarra Valley / Macedon tourism listings (manual verification, not scraped at scale)",
+     "Google Places API only if you can afford its caching and display terms"
+    ],
+    "monetisation": [
+     "Viator (Tripadvisor affiliate) wine and food tours in the Yarra Valley",
+     "GetYourGuide Partner Program for experiences",
+     "Booking.com or Agoda affiliate (check current AU network) for accommodation near wineries",
+     "Klook for day trips and transfers",
+     "Display ads only once traffic justifies it; expect very low RPM at these CPCs",
+     "Lead-gen to private dining or group bookings, sold per enquiry to restaurants"
+    ],
+    "pageTypes": [
+     "/yarra-valley/[winery]/ (one page per winery, with real OSM facts and a verified lunch menu link)",
+     "/yarra-valley/lunch/[town]/ (Yarra Glen, Healesville, Lilydale, Coldstream)",
+     "/macedon-ranges/[town]-restaurants/ (Woodend, Hanging Rock, Daylesford hub links)",
+     "/tours/[region]/ tour comparison pages with affiliate tables"
+    ],
+    "risks": [
+     "US keyword volumes do not reflect Australian search demand; validate with AU keyword tools before building",
+     "OSM hours and cuisine tags are often missing or stale in regional Victoria; pages will look empty without manual checks",
+     "Thin AI-written copy over generic data is exactly what Google's helpful-content and spam policies target",
+     "ODbL licence: OSM data requires attribution and share-alike for any derived database you publish; check how your page output is treated",
+     "Google Places API terms restrict storing and caching place data, which undermines a bulk-generated site",
+     "Restaurants close or change hands often, so unmaintained pages decay quickly and can mislead diners",
+     "Low CPCs and small volumes mean the niche supports maybe a few thousand visits a month at best"
+    ]
+   },
+   "costUsd": 0.114
+  },
+  "scoredAt": "2026-10-19T11:27:40.895Z",
+  "location": "Australia",
+  "error": null
  }
 ]
