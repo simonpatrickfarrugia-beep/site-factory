@@ -331,7 +331,14 @@ async function statsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boo
       log.push(`GA4 failed: ${(e as Error).message}`);
     }
   } else {
-    notes.push('GA4 not connected yet (GA4_PROPERTY not set).');
+    let email = 'the service account';
+    try {
+      email = (JSON.parse(env.GSC_SERVICE_ACCOUNT!) as { client_email: string }).client_email;
+    } catch {
+      /* keep the generic name */
+    }
+    notes.push(`GA4 not connected yet: add ${email} as a Viewer on the GA4 property, then set GA4_PROPERTY.`);
+    log.push(`Robot account: ${email}`);
   }
 
   let gsc: Parameters<typeof buildStats>[0]['gsc'] = null;
