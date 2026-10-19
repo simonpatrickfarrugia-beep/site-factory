@@ -136,7 +136,7 @@ export async function writeCopy(apiKey: string, model: string, m: OmdbMovie): Pr
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: claudeHeaders(apiKey),
-    body: JSON.stringify({ model, max_tokens: 2000, messages: [{ role: 'user', content: prompt }] }),
+    body: JSON.stringify({ model, max_tokens: 6000, messages: [{ role: 'user', content: prompt }] }),
   });
   const json = await claudeJson(res);
   const copy = JSON.parse(json) as Partial<Copy>;
@@ -170,7 +170,7 @@ export async function writeCollectionCopy(
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: claudeHeaders(apiKey),
-    body: JSON.stringify({ model, max_tokens: 3000, messages: [{ role: 'user', content: prompt }] }),
+    body: JSON.stringify({ model, max_tokens: 8000, messages: [{ role: 'user', content: prompt }] }),
   });
   const json = await claudeJson(res);
   const c = JSON.parse(json) as { tagline?: string; intro?: string[]; metaDescription?: string };
@@ -214,7 +214,7 @@ export async function suggestCandidates(
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: claudeHeaders(apiKey),
-    body: JSON.stringify({ model, max_tokens: 6000, messages: [{ role: 'user', content: prompt }] }),
+    body: JSON.stringify({ model, max_tokens: 12000, messages: [{ role: 'user', content: prompt }] }),
   });
   const json = await claudeJson(res);
   const parsed = JSON.parse(json) as { films?: { title?: unknown; year?: unknown; theme?: unknown }[] };
@@ -258,7 +258,7 @@ export async function judgeNiche(
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: claudeHeaders(apiKey),
-    body: JSON.stringify({ model, max_tokens: 2500, messages: [{ role: 'user', content: prompt }] }),
+    body: JSON.stringify({ model, max_tokens: 8000, messages: [{ role: 'user', content: prompt }] }),
   });
   const j = JSON.parse(await claudeJson(res)) as Partial<import('./niches').FitJudgement>;
   const list = (v: unknown) => (Array.isArray(v) ? v.map(String).slice(0, 8) : []);

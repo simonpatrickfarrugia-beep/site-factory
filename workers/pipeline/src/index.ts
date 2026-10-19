@@ -412,7 +412,13 @@ async function nichesJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: bo
     try {
       const ideas = await keywordIdeas(login, password, n.seeds.length ? n.seeds : [n.idea], code);
       const top = [...ideas.items].sort((a, b) => b.volume - a.volume).slice(0, 100);
-      const diff = await keywordDifficulty(login, password, top.map((k) => k.keyword), code);
+      // SEO difficulty is a nice-to-have: without it, "ease" defaults to 50 and the report says so.
+      let diff: { kd: Map<string, number>; cost: number } = { kd: new Map(), cost: 0 };
+      try {
+        diff = await keywordDifficulty(login, password, top.map((k) => k.keyword), code);
+      } catch (e) {
+        log.push(`${n.idea}: no difficulty data (${(e as Error).message.slice(0, 120)}).`);
+      }
       const judgement = await judgeNiche(
         env.ANTHROPIC_API_KEY,
         env.ANTHROPIC_MODEL,

@@ -56,7 +56,16 @@ async function dfsTask<T>(login: string, password: string, path: string, task: R
     headers: { authorization: auth(login, password), 'content-type': 'application/json' },
     body: JSON.stringify([task]),
   });
-  if (!res.ok) throw new Error(`DataForSEO ${path}: HTTP ${res.status} ${(await res.text()).slice(0, 200)}`);
+  if (!res.ok) {
+    const text = await res.text();
+    let why = text.slice(0, 200);
+    try {
+      why = (JSON.parse(text) as { tasks?: { status_message?: string }[] }).tasks?.[0]?.status_message ?? why;
+    } catch {
+      /* not JSON */
+    }
+    throw new Error(`DataForSEO ${path}: HTTP ${res.status} ${why}`);
+  }
   const body = (await res.json()) as { status_code: number; status_message: string; tasks?: { status_code: number; status_message: string; cost?: number; result?: T }[] };
   const t = body.tasks?.[0];
   if (body.status_code !== 20000 || !t || t.status_code !== 20000) throw new Error(`DataForSEO ${path}: ${t?.status_message ?? body.status_message}`);
