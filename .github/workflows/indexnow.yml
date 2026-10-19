@@ -1,0 +1,56 @@
+# Tells Bing & co (IndexNow) about new or changed pages once the site has deployed.
+# Runs on pushes that change content data; "all" mode (manual) submits every page.
+# (Submitted from GitHub's runners: IndexNow rate-limits requests coming from Cloudflare Workers.)
+name: indexnow
+on:
+  push:
+    branches: [main]
+    paths: ['data/trailers/movies.json', 'data/trailers/collections.json']
+  workflow_dispatch:
+    inputs:
+      mode:
+        type: choice
+        options: [changed, all]
+        default: all
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 2 }
+      - name: Wait for the site deploy
+        run: sleep 200
+      - name: Submit
+        env:
+          MODE: ${{ inputs.mode || 'changed' }}
+          HOST: www.movietrailer.channel
+          KEY: d8f03bdd0f45a76ce44c030bea08ea85
+        run: |
+          python3 - <<'PY'
+          import json, os, subprocess, urllib.request
+          host, key, mode = os.environ['HOST'], os.environ['KEY'], os.environ['MODE']
+          def load(path, rev=None):
+              try:
+                  raw = subprocess.check_output(['git', 'show', f'{rev}:{path}']) if rev else open(path, 'rb').read()
+                  return {x['slug']: x for x in json.loads(raw)}
+              except Exception:
+                  return {}
+          urls = []
+          for path, prefix in (('data/trailers/movies.json', 'movies'), ('data/trailers/collections.json', 'discover')):
+              now, before = load(path), ({} if mode == 'all' else load(path, 'HEAD~1'))
+              urls += [f'https://{host}/{prefix}/{s}' for s, x in now.items() if before.get(s) != x]
+          if mode == 'all':
+              urls = [f'https://{host}', f'https://{host}/browse', f'https://{host}/discover'] + urls
+          if not urls:
+              print('::notice title=indexnow::Nothing new to submit'); raise SystemExit
+          body = json.dumps({'host': host, 'key': key, 'keyLocation': f'https://{host}/{key}.txt', 'urlList': urls[:10000]}).encode()
+          for endpoint in ('https://api.indexnow.org/indexnow', 'https://www.bing.com/indexnow'):
+              req = urllib.request.Request(endpoint, data=body, headers={'content-type': 'application/json; charset=utf-8'})
+              try:
+                  code = urllib.request.urlopen(req, timeout=30).status
+              except urllib.error.HTTPError as e:
+                  code = e.code
+              print(f'::notice title=indexnow::{endpoint}: HTTP {code} for {len(urls)} URL(s)')
+              if code in (200, 202): break
+          PY

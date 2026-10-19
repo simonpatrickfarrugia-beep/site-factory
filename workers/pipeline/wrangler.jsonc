@@ -36,8 +36,7 @@
     "GSC_SITE": "sc-domain:movietrailer.channel",
     // GA4 property the dashboard stats read (Admin > Property details). Service account is a Viewer on it.
     "GA4_PROPERTY": "553854970",
-    // IndexNow (public key; brands/trailers/public/<key>.txt holds the same value). New pages are submitted daily by the stats job.
-    "INDEXNOW_KEY": "d8f03bdd0f45a76ce44c030bea08ea85",
+    // IndexNow is submitted by .github/workflows/indexnow.yml (Workers egress gets HTTP 429), so no INDEXNOW_KEY here.
     "SITE_HOST": "www.movietrailer.channel",
     // Catalogue builder (weekly): queue this many of the most-searched candidates per run.
     "CATALOGUE_PER_RUN": "30", // raised from 10 on 19 Oct to grow faster (enrich publishes ~10/day)
