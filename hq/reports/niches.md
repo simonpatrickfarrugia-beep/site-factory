@@ -8,10 +8,173 @@ Add ideas by chat: "score these niches: …". Rules: launch at most one new site
 
 | # | Idea | Score | Demand | Money | Ease | Fit | Searches/mo | Median CPC | Avg difficulty |
 |---:|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| 1 | Anime: where to watch and watch order | **70** | 100 | 66 | 60 | 42 | 20,483,800 | $1.31 | 40 |
-| 2 | Video games: release dates and trailers | **62** | 100 | 32 | 62 | 40 | 14,104,000 | $0.35 | 38 |
+| 1 | Dog breeds | **75** | 100 | 66 | 78 | 46 | 54,904,000 | $1.34 | 22 |
+| 2 | US national parks and hiking trails | **74** | 100 | 66 | 78 | 42 | 17,831,200 | $1.33 | 22 |
+| 3 | TV shows: where to watch | **73** | 91 | 91 | 68 | 30 | 5,543,800 | $3.55 | 32 |
+| 4 | Anime: where to watch and watch order | **70** | 100 | 66 | 60 | 42 | 20,483,800 | $1.31 | 40 |
+| 5 | Video games: release dates and trailers | **62** | 100 | 32 | 62 | 40 | 14,104,000 | $0.35 | 38 |
+| 6 | Board games | **61** | 78 | 32 | 84 | 42 | 2,245,200 | $0.35 | 16 |
+| 7 | Book series in reading order | **53** | 90 | 25 | 50 | 38 | 4,912,700 | $0.27 | — |
+| 8 | Movie soundtracks and film music | **53** | 79 | 0 | 81 | 45 | 2,377,600 | $0.08 | 19 |
 
-Not scored yet: TV shows: where to watch (failed: DataForSEO keywords_data/google_ads/keywords_for_keywords/live: HTTP 402 Payment Required.); Book series in reading order (failed: DataForSEO keywords_data/google_ads/keywords_for_keywords/live: HTTP 402 Payment Required.); Board games (failed: DataForSEO keywords_data/google_ads/keywords_for_keywords/live: HTTP 402 Payment Required.); US national parks and hiking trails (failed: DataForSEO keywords_data/google_ads/keywords_for_keywords/live: HTTP 402 Payment Required.); Dog breeds (failed: DataForSEO keywords_data/google_ads/keywords_for_keywords/live: We noticed some unusual activity in your DataForSEO account, so we’ve temporarily paused access as a precaution. Please, reach out to ou); Movie soundtracks and film music (failed: DataForSEO keywords_data/google_ads/keywords_for_keywords/live: We noticed some unusual activity in your DataForSEO account, so we’ve temporarily paused access as a precaution. Please, reach out to ou).
+## Dog breeds: 75/100
+
+**Verdict:** Breed data is free and easy to structure, but the same facts already sit on AKC, Wikipedia and Dogtime, so generic breed pages would be thin. It only works if the site becomes a breed-matching and sizing tool, where the data drives decisions and product fit.
+
+**Site angle:** A breed-matching and fit-guide site: one page per breed with data-driven tables (adult weight, lifespan, grooming, energy, apartment suitability), plus comparison pages and product guides where the recommended size comes from the breed's adult weight range (crate, harness and bed sizes), not generic copy.
+
+**Data sources:** The Dog API (thedogapi.com): free key, breed attributes (weight, height, life span, temperament, group). Check image licences before reuse.; Wikidata (CC0): breed entities, country of origin, breed group, aliases for deduplicating keyword variants; Wikipedia summaries (CC BY-SA): attribute with link-back, do not copy wholesale; Kaggle dog breed datasets: verify each licence individually before use; Your own derived fields: size band, grooming tier and apartment-suitability score, computed from the raw attributes and documented as your methodology
+
+**Money:** Amazon Associates: crates, harnesses and beds filtered by breed size band (note the 3-sales-in-180-days rule to stay active); Chewy and Petco affiliate programmes via Impact or CJ, for food and supplies by life stage and size; Pet insurance lead or CPA offers (e.g., Healthy Paws, Trupanion, Embrace), which pay well per lead but have strict disclosure and advertising rules; Display ads (Mediavine or Raptive) only after you reach their traffic thresholds, which a small site may take a long time to hit
+
+**Page types:** /breeds/[breed]: data table plus short fit summary, unique per breed; /compare/[breedA]-vs-[breedB]: generated from the attribute diff, which is the strongest thin-content defence; /breeds/for/[lifestyle]: e.g., apartment-friendly, low-shedding, under-20kg, good-with-kids, filtered from the data; /crates/[breed] or /harness/[breed]: product guides sized from adult weight range; /breeds/group/[group]: hub pages linking the breeds in each AKC group
+
+**Risks:** Thin, near-duplicate pages if the template is filled with generic copy; the comparison and filter pages are your main defence; Keyword list is noisy: typos (belgium malawa, belgian malamute), duplicates (german shepherd vs german shepherd dog, great pyrenees vs great pyrenees dog) and synonyms (aussie shepherd vs australian shepherd). Dedupe to canonical breeds before generating anything; Health and lifespan claims edge toward pet-health advice; keep them sourced, dated and non-prescriptive; Breed controversy (pit bull, bully breeds, greyhound welfare) needs careful, neutral framing and can attract complaints or outrage traffic; Image copyright: breed photos from The Dog API or stock may not be reusable; use licensed or self-sourced images; Heavy competition from AKC, Wikipedia, Dogtime, Dogster and PetMD on head terms; the head terms are mostly informational and earn little, so the revenue case rests on lower-volume transactional long-tail pages; Insurance lead programmes are strict about disclosure and claims, so a mis-stated coverage claim can get the account closed; The CPC numbers are for the head terms; the money is in product-intent queries, which need verifying in your own keyword tool
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| greyhounds | 1,220,000 | 18 | $0.32 |
+| cane corso | 1,000,000 | 27 | $0.42 |
+| dachshund | 673,000 | 29 | $1.59 |
+| chihuahua | 673,000 | 27 | $1.76 |
+| australian shepherds | 673,000 | 27 | $1.31 |
+| aussie shepherd | 673,000 | 30 | $1.31 |
+| shih tzu | 550,000 | 28 | $1.26 |
+| belgian malinois | 550,000 | 16 | $0.94 |
+| doberman | 550,000 | 18 | $1.23 |
+| belgium malawa | 550,000 | 16 | $0.94 |
+| belgian malamute | 550,000 | 16 | $0.94 |
+| dog breed shih tzu | 550,000 | 10 | $1.26 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| greyhounds | 1,220,000 | 18 | $0.32 |
+| cane corso | 1,000,000 | 27 | $0.42 |
+| pit bull | 823,000 | 37 | $0.89 |
+| golden retriever | 673,000 | 58 | $1.91 |
+| dachshund | 673,000 | 29 | $1.59 |
+| chihuahua | 673,000 | 27 | $1.76 |
+| australian shepherds | 673,000 | 27 | $1.31 |
+| aussie shepherd | 673,000 | 30 | $1.31 |
+| shih tzu | 550,000 | 28 | $1.26 |
+| german shepherd | 550,000 | 39 | $1.59 |
+| belgian malinois | 550,000 | 16 | $0.94 |
+| doberman | 550,000 | 18 | $1.23 |
+| german shepherd dog | 550,000 | 39 | $1.59 |
+| belgium malawa | 550,000 | 16 | $0.94 |
+| belgian malamute | 550,000 | 16 | $0.94 |
+
+_Seeds: dog breeds, best dog breeds, dog breed temperament, hypoallergenic dogs, small dog breeds. Data cost: US$0.114._
+
+## US national parks and hiking trails: 74/100
+
+**Verdict:** The data is excellent (NPS API plus open trail geometry supports thousands of genuinely distinct park, trail and waterfall pages), but most of the big volume sits in "near me" queries that are map-pack and app driven and that a static site rarely wins. The realistic prize is the long tail of park, trail and state pages, and the competition there (NPS.gov, AllTrails, Hiking Project-style aggregators) is stiff.
+
+**Site angle:** A data-first trail directory: /parks/[park-slug]/trails/[trail-slug] for NPS units plus /waterfalls/[state]/[name] and /hikes/[state]/[length-or-difficulty] hubs, each page built from NPS fields and trail geometry (length, elevation gain, loop or out-and-back, nearest campground, permit requirements, seasonal closures). Target 'waterfalls near me' and state-level hike lists rather than the 'near me' head terms. Keep AI copy to short intros, and let the computed stats do most of the work.
+
+**Data sources:** NPS Developer API (developer.nps.gov, free key): parks, alerts, campgrounds, activities, places, public-domain imagery; USGS National Map / 3DEP elevation data (free) for elevation profiles; OpenStreetMap trail and waterway extracts via Overpass or Geofabrik (ODbL: attribution and share-alike obligations on the database); Recreation.gov data where licence terms allow (check before scraping; prefer documented access); USGS NHD for waterfall and stream points, cross-checked with GNIS names
+
+**Money:** Amazon Associates (outdoor gear, low commission but high volume); REI affiliate programme, if still open to new applicants when you apply; Booking.com or Expedia affiliate for lodging near parks; GetYourGuide or Viator partner programmes for guided tours near parks; Hipcamp affiliate, if accepted, for campsites; Display ads via Mediavine or Raptive only after they accept you (traffic thresholds apply)
+
+**Page types:** /parks/[park]/trails/[trail]: distance, elevation, loop type, trailhead coordinates, NPS alerts, nearby campgrounds; /waterfalls/[state]/[waterfall]: height, flow data where available, access trail length, nearest park; /hikes/[state]/[length-band]: filtered lists generated from the same trail table; /parks/[park]: hub page linking trails, campgrounds and alerts; /[state]/state-parks/[park]: state-level park pages, only if state datasets are actually consistent
+
+**Risks:** Hiking safety and YMYL-adjacent liability: trail conditions, weather, wildlife and rescue information can be dangerous if stale. Show data timestamps, avoid advice beyond the source, and carry a clear disclaimer.; Licence risk: OSM is ODbL (share-alike and attribution). NPS content is generally public domain, but NPS-branded logos, trademarks and some photos may not be. Check each source's terms.; Keyword data is suspicious: many 'near me' terms show KD 0 at 550k volume, which doesn't match SERP reality. Validate with live SERPs before committing.; 'Near me' intent is mostly local-pack and app intent (Google Maps, AllTrails, phone location), so a static site will struggle to rank for it.; Competition from NPS.gov, AllTrails, Hipcamp and Gaia GPS on the head terms, and from Google's own features on park pages.; Thin-content penalty if trail pages differ only by name and coordinates. Each page needs a computed, non-generic data set (elevation, loop shape, closures, nearby services).; Affiliate income depends on seasonality (summer peaks) and on gear and lodging conversion rates that are typically low for content sites.; Park-related data can change quickly (closures, fire restrictions, permit rules), so you need a refresh pipeline and alerting or pages will go stale.
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| hiking trails near me | 550,000 | 0 | $1.33 |
+| trails near me | 550,000 | 11 | $1.74 |
+| hiking spots near me | 550,000 | 11 | $1.33 |
+| hiking areas near me | 550,000 | 13 | $1.33 |
+| hiking paths near me | 550,000 | 14 | $1.33 |
+| trekking trails near me | 550,000 | 0 | $1.33 |
+| hikes and trails near me | 550,000 | 29 | $1.33 |
+| areas to hike near me | 550,000 | 0 | $1.33 |
+| hiking destinations near me | 550,000 | 0 | $1.33 |
+| trail paths near me | 550,000 | 11 | $1.74 |
+| spots to hike near me | 550,000 | 11 | $1.33 |
+| hiking grounds near me | 550,000 | 0 | $1.33 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| national parks | 550,000 | 87 | $1.06 |
+| hiking trails near me | 550,000 | 0 | $1.33 |
+| trails near me | 550,000 | 11 | $1.74 |
+| hiking spots near me | 550,000 | 11 | $1.33 |
+| hiking areas near me | 550,000 | 13 | $1.33 |
+| hiking paths near me | 550,000 | 14 | $1.33 |
+| trekking trails near me | 550,000 | 0 | $1.33 |
+| hikes and trails near me | 550,000 | 29 | $1.33 |
+| areas to hike near me | 550,000 | 0 | $1.33 |
+| hiking destinations near me | 550,000 | 0 | $1.33 |
+| trail paths near me | 550,000 | 11 | $1.74 |
+| spots to hike near me | 550,000 | 11 | $1.33 |
+| hiking grounds near me | 550,000 | 0 | $1.33 |
+| local hiking spots near me | 550,000 | 0 | $1.33 |
+| near me hiking trails | 550,000 | 0 | $1.33 |
+
+_Seeds: national parks, hiking trails near me, best hikes, national park camping, state parks. Data cost: US$0.114._
+
+## TV shows: where to watch: 73/100
+
+**Verdict:** The head terms ('where to watch', 'where can i watch') are high-CPC but dominated by Google's own streaming panel, JustWatch, Reelgood and big publishers, and TMDB watch-provider data is commodity information that many sites already republish. Viable only as a narrow, data-rich long tail, and TMDB's commercial-use terms for watch-provider data must be checked first.
+
+**Site angle:** A US-only 'where to watch [TV show]' site with one page per show and season, built around what the free data can't show: season-by-season availability, free-with-ads (FAST/AVOD) options vs paid tiers, which service is cheapest for a full binge, and buy/rent prices from Watchmode. Use a 'where to watch [show] for free' sub-page only where a free provider actually carries it. Start with 200-300 currently airing or recently popular shows, not the whole catalogue.
+
+**Data sources:** TMDB API /tv/{id}/watch/providers (JustWatch-sourced, US region) plus /tv/{id} for seasons, episode counts and air dates (check TMDB commercial-use terms first); Watchmode API (sources, prices, free-tier availability; check current free-tier limits and terms); Wikidata for show IDs and cross-referencing; Google Trends / Search Console for prioritising which shows to generate
+
+**Money:** Amazon Associates links for Prime Video and rentals (Amazon Associates program); Affiliate programmes for streamers and vPNs/bundles via Impact, CJ or Partnerize, where they exist and are current (verify each one); Display ads once traffic justifies it (Ezoic early on; Mediavine or Raptive later, both with traffic thresholds); Sponsored YouTube-embed or trailer-channel cross-promotion from the sister site
+
+**Page types:** /tv/[show]/ (canonical availability page per show, US only); /tv/[show]/free/ (only where a free or FAST provider carries it); /tv/[show]/season-[n]/ (only where provider differs by season); /where-to-stream/[service]/ (hub listing shows on that service, with real counts); /free-tv/ and /free-movies/ hubs, with real provider counts and last-checked dates
+
+**Risks:** Google's own 'where to watch' SERP panel and big incumbents (JustWatch, Reelgood, Rotten Tomatoes, Decider) will absorb most clicks on the head terms; TMDB and JustWatch data licensing: commercial use of watch-provider data may require a separate agreement, and a takedown would kill the whole site; Thin-content risk: a page that only lists providers is exactly the mass-produced pattern Google penalises unless the extra data is real; Staleness: availability changes weekly and wrong 'where to watch' answers hurt trust and user satisfaction; Much of the listed volume is for movies (e.g., The Grinch, Twilight films), outside a TV-only scope; Affiliate programme terms for streamers change often and many have no public programme; Low CPC-to-RPM after affiliate rules, and display ads won't pay until traffic is large; Some keywords, e.g. 'where can you watch schitt's creek', have no KD value, so keyword data is incomplete
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| where to watch twilight | 60,500 | 30 | $3.55 |
+| where can i watch the grinch | 60,500 | 1 | $4.64 |
+| where can i watch the twilight movies | 60,500 | 18 | $3.55 |
+| where can you watch twilight | 60,500 | 30 | $3.55 |
+| where can you watch the grinch | 60,500 | 0 | $4.64 |
+| where can i watch the grinch who stole christmas | 60,500 | 1 | $4.64 |
+| where can i watch the twilight saga | 60,500 | 30 | $3.55 |
+| where to watch modern family | 49,500 | 26 | $5.07 |
+| where can i watch modern family | 49,500 | 26 | $5.07 |
+| where can i watch the notebook | 49,500 | 14 | $2.51 |
+| where can you watch modern family | 49,500 | 26 | $5.07 |
+| where to watch from tv series | 49,500 | 13 | $4.24 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| where to watch | 301,000 | 90 | $6.26 |
+| where can you watch | 301,000 | 100 | $6.26 |
+| where can i watch it | 135,000 | 64 | $3.64 |
+| where can you watch it | 135,000 | 64 | $3.64 |
+| where can i watch | 90,500 | 47 | $8.43 |
+| where to stream | 90,500 | 100 | $2.98 |
+| where can i stream | 90,500 | 89 | $2.98 |
+| where to watch twilight | 60,500 | 30 | $3.55 |
+| where can i watch the grinch | 60,500 | 1 | $4.64 |
+| where can i watch the twilight movies | 60,500 | 18 | $3.55 |
+| where can you watch twilight | 60,500 | 30 | $3.55 |
+| where can you watch the grinch | 60,500 | 0 | $4.64 |
+| where can i watch the grinch who stole christmas | 60,500 | 1 | $4.64 |
+| where can i watch the twilight saga | 60,500 | 30 | $3.55 |
+| where to watch modern family | 49,500 | 26 | $5.07 |
+
+_Seeds: where to watch, what streaming service has, is it on netflix, tv show streaming guide, where can i watch. Data cost: US$0.114._
 
 ## Anime: where to watch and watch order: 70/100
 
@@ -118,3 +281,145 @@ _Seeds: anime watch order, where to watch anime, best anime, anime streaming, an
 | animal crossing new horizons | 90,500 | 51 | $0.29 |
 
 _Seeds: game release date, upcoming games, video game trailer, best ps5 games, switch games. Data cost: US$0.114._
+
+## Board games: 61/100
+
+**Verdict:** Only a narrow slice works: co-op and party-game discovery pages built from BGG's structured game metadata can be genuinely useful, but most of the listed volume is chess and mancala rules queries that BGG data cannot answer, and Amazon's commission on games is thin. Commercial use of BGG data also needs checking before you build anything.
+
+**Site angle:** A co-op and party board game finder. Each page is a filter combination (player count, playtime, weight band, age, mechanic) populated from BGG's cooperative-mechanic and category data, with each game linked to its own stats page (players, time, weight, rating, year). Skip chess, mancala and checkers entirely; those need rules content, not this dataset.
+
+**Data sources:** BoardGameGeek XML API2 (thing, search, and mechanic/category fields), subject to its terms and any required API token; confirm commercial-use permission in writing before launch; Wikidata (CC0) for game metadata as a fallback or supplement, which avoids BGG licensing issues but has thinner game-mechanic coverage; Your own snapshot of BGG data refreshed on a schedule, cached within the terms you agree to
+
+**Money:** Amazon Associates links (games sit in Toys & Games, which typically pays about 3%; verify current rate and whether you qualify for PA-API); Miniature Market or other hobby-retailer affiliate programmes (verify availability and rates); Target or Walmart affiliate feeds via Impact or similar networks (verify); Display ads only once traffic is substantial; RPM on game-discovery pages will be low
+
+**Page types:** /co-op-board-games-for-[n]-players/; /co-op-board-games-under-[n]-minutes/; /co-op-board-games-[weight-band]/ (e.g. light, medium, heavy); /party-board-games-for-[n]-players/; /game/[bgg-slug]/ with per-game stats and short factual summary; /best-[mechanic]-board-games/ where mechanic has enough titles to fill a useful list
+
+**Risks:** BGG API terms may restrict commercial use, and access rules have changed; a licensing or ban problem could kill the whole site; Amazon PA-API access requires qualifying sales, and product-data caching rules limit how you can store prices; Monetisation per visit is low: about 3% on games means many visits are needed to earn meaningful money; Keyword mismatch: the chess, mancala and checkers rules queries (most of the volume) need instructional content, which templated data pages will not satisfy; Thin or near-duplicate filter pages when a combination has only a few titles; enforce minimum item counts or noindex them; Box art and publisher images carry copyright risk; use only what the licence allows, or none; Competition from BGG itself, Board Game Arena, and established blogs on high-volume co-op queries
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| co op board games | 40,500 | 1 | $0.66 |
+| co operative board games | 40,500 | 4 | $0.66 |
+| mancala rules | 33,100 | 5 | $0.02 |
+| chess game 2 player | 33,100 | 30 | $0.30 |
+| two player chess game | 33,100 | 30 | $0.30 |
+| mancala game rules | 33,100 | 3 | $0.02 |
+| best codenames game | 33,100 | 25 | $0.30 |
+| chess board game 2 player | 33,100 | 30 | $0.30 |
+| chess two | 33,100 | 30 | $0.30 |
+| mancala official rules | 33,100 | 5 | $0.02 |
+| table top games | 27,100 | 21 | $0.83 |
+| party board games | 27,100 | 0 | $0.40 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| co op board games | 40,500 | 1 | $0.66 |
+| chess free game | 40,500 | 97 | $0.27 |
+| co operative board games | 40,500 | 4 | $0.66 |
+| mancala rules | 33,100 | 5 | $0.02 |
+| chess game 2 player | 33,100 | 30 | $0.30 |
+| two player chess game | 33,100 | 30 | $0.30 |
+| mancala game rules | 33,100 | 3 | $0.02 |
+| best codenames game | 33,100 | 25 | $0.30 |
+| chess board game 2 player | 33,100 | 30 | $0.30 |
+| chess board two player | 33,100 | — | $0.30 |
+| chess two | 33,100 | 30 | $0.30 |
+| mancala official rules | 33,100 | 5 | $0.02 |
+| play chess two player | 33,100 | 31 | $0.30 |
+| rules for playing mancala | 33,100 | — | $0.02 |
+| two player chess board | 33,100 | — | $0.30 |
+
+_Seeds: best board games, board games for adults, board game rules, 2 player board games, family board games. Data cost: US$0.114._
+
+## Book series in reading order: 53/100
+
+**Verdict:** The data is free and workable, since Wikidata has series membership and ordinals for thousands of series, but these are mostly franchise-level queries with weak monetisation (CPCs around $0.20-0.45, and books pay low affiliate commissions) and strong incumbents such as Wikipedia, Fandom wikis, publisher sites and Reddit. It only makes sense as a long-tail utility site, not a head-term play.
+
+**Site angle:** A 'Reading order' site with one canonical URL per series (e.g. /series/percy-jackson-and-the-olympians/), listing books by publication order and by in-world/chronological order where they differ, with publication years, POV or spin-off flags, and 'where to start' notes. Consolidate keyword variants like 'throne of glass order' and 'throne of glass books in order' onto a single page rather than building separate ones. Target series with at least 3 books and no official reading-order page, not the top franchises.
+
+**Data sources:** Wikidata SPARQL: P179 (part of the series) with P1545 (series ordinal), CC0 licence; Open Library API: editions, ISBNs, publish dates, author IDs (series metadata is patchy, so use it for enrichment only); Open Library Covers API (check per-image rights before use; text-only pages are safer); Wikipedia/Wikidata author and series descriptions via CC BY-SA attribution, or your own short factual notes
+
+**Money:** Amazon Associates (books and Kindle, low single-digit percent commission; verify the current rate and the 3-sales-in-180-days eligibility rule); Bookshop.org affiliate programme (typically a higher rate than Amazon for print; verify); Audible/Libro.fm affiliate links for audiobook editions where available; Display ads only once traffic is large enough for Mediavine/Raptive-style thresholds; at these CPCs RPM will be modest
+
+**Page types:** /series/[series-slug]/ (reading order, one page per series with 3+ books); /author/[author-slug]/ (author hub listing all series, linking to each reading order); /series/[series-slug]/chronological/ only where in-world order differs from publication order; /start-here/[genre]/ (curated entry points by genre, e.g. romantic fantasy)
+
+**Risks:** Thin content: a bare list of titles is exactly what Google's helpful-content and scaled-content rules target; each page needs verified, series-specific notes that generic AI copy cannot fake; Incumbents: Wikipedia, Fandom wikis, Goodreads-style lists and publisher sites already rank for many of the head queries; Low earnings per visitor: book affiliate commissions are small and CPCs are under $0.50, so you need very high traffic to earn much; Wikidata series data is incomplete and sometimes wrong, so ordinals and series membership need validation and a corrections path; Copyright: titles and order are facts, but blurbs, cover art and editorial reading-order text from publishers or fan wikis may not be reusable; Amazon Associates: account can be closed for low sales or disclosure violations, and the Product Advertising API has its own eligibility conditions; Keyword cannibalisation from many near-duplicate variants (HP, PJO, GOT) if you build separate pages per query
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| percy jackson novel series | 246,000 | — | $0.28 |
+| books by rick riordan | 165,000 | — | $0.41 |
+| throne of glass series order | 110,000 | — | $0.22 |
+| throne of glass order | 110,000 | — | $0.22 |
+| throne of glass books in order | 110,000 | — | $0.22 |
+| the new york times best seller | 110,000 | — | $0.44 |
+| scholastic book club | 74,000 | — | $0.28 |
+| harry potter books in order | 60,500 | — | $0.31 |
+| harry potter book series order | 60,500 | — | $0.31 |
+| joe pickett book series | 60,500 | — | $0.27 |
+| hp books in order | 60,500 | — | $0.31 |
+| joe pickett cj box | 60,500 | — | $0.27 |
+| romantic fantasy series | 49,500 | — | $0.32 |
+| percy jackson books in order | 40,500 | — | $0.27 |
+| percy jackson series in order | 40,500 | — | $0.27 |
+
+_Seeds: books in order, book series in order, reading order, kindle series, best book series. Data cost: US$0.09._
+
+## Movie soundtracks and film music: 53/100
+
+**Verdict:** The data is usable: TMDB, MusicBrainz and Discogs can produce real per-film and per-composer pages. But the monetisation is weak (vinyl and streaming affiliate payouts are small, and music display RPMs are low), and most high-volume queries are movie-title searches that IMDb and Wikipedia already own, so this only works as a modest, narrowly focused site.
+
+**Site angle:** soundtrackindex.com: one page per film soundtrack (/soundtrack/[film-slug]) showing the verified tracklist, composer and credited musicians, label and release history, and live Discogs vinyl pressings with lowest price and copies for sale. Add /composer/[name] pages listing scored films and their soundtrack releases. Skip song-by-song pages for films that have no real release data.
+
+**Data sources:** TMDB API (film metadata, crew with job 'Original Music Composer', release dates; check commercial-use terms before launch); MusicBrainz API (soundtrack release groups, recordings, composer and performer relationships; rate-limited to about 1 request/second); Discogs API (soundtrack pressings, tracklists, formats, marketplace stats: lowest price and num_for_sale; check the API terms on commercial use and attribution); Wikidata SPARQL (film-to-composer links and IDs for joining sources)
+
+**Money:** Amazon Associates (vinyl and CD links; low commission, roughly 1-4%); Apple Music / iTunes via Apple Performance Partners; Bandcamp affiliate program, where soundtracks are sold direct; eBay Partner Network for used vinyl listings; Display ads via Mediavine or Raptive once traffic thresholds are met (music RPMs are modest)
+
+**Page types:** /soundtrack/[film-slug] (tracklist, composer, label, Discogs pressings with live price data); /composer/[name] (filmography plus soundtrack releases per film); /composer/[name]/[format] for vinyl, CD and digital editions where data exists; /label/[label-name] (soundtrack catalogue by label, e.g. Varèse Sarabande, Intrada); /soundtracks-by-year/[year] (release year indexes built from MusicBrainz dates)
+
+**Risks:** Intent mismatch: queries like 'across the universe movie' or 'chariots of fire' want the film, so IMDb, Wikipedia and streaming services will outrank a soundtrack site; Commercial licensing: TMDB and Discogs API terms may restrict commercial use or require attribution, and Discogs images are copyrighted, so avoid hotlinking them; Lyrics and sheet-music copyright: never publish lyrics; keep to titles, credits and facts; Affiliate payouts are small: vinyl commissions and display RPMs will not cover much traffic, so volume has to be large before this pays; Thin-content risk if pages with no real release (e.g. films with no soundtrack album) are generated; noindex them; Competition from Discogs, MusicBrainz and Spotify's own pages for soundtrack queries; Low CPC on most terms (Dirty Dancing, Lion King, Frozen at $0.01-0.14) means only the composer and high-CPC pages carry real revenue
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| composer hans zimmer | 135,000 | 26 | $3.84 |
+| across the universe movie | 40,500 | 20 | $3.37 |
+| hans zimmer films | 33,100 | 27 | $6.44 |
+| movies scored by hans zimmer | 33,100 | 21 | $6.44 |
+| purple rain movie | 27,100 | 22 | $0.39 |
+| songs in guardians of the galaxy | 27,100 | 12 | $0.20 |
+| mamma mia movie songs | 27,100 | 24 | $0.79 |
+| mamma mia movie soundtrack | 27,100 | 8 | $0.79 |
+| songs from the movie frozen | 27,100 | 15 | $0.14 |
+| danny elfman films | 18,100 | 14 | $0.05 |
+| danny elfman movies | 18,100 | 14 | $0.05 |
+| songs from the lion king movie | 18,100 | 4 | $0.08 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| composer hans zimmer | 135,000 | 26 | $3.84 |
+| across the universe | 40,500 | 39 | $3.37 |
+| across the universe movie | 40,500 | 20 | $3.37 |
+| hans zimmer movies | 33,100 | 36 | $6.44 |
+| chariots of fire | 33,100 | 35 | $1.49 |
+| hans zimmer films | 33,100 | 27 | $6.44 |
+| movies scored by hans zimmer | 33,100 | 21 | $6.44 |
+| purple rain movie | 27,100 | 22 | $0.39 |
+| songs in guardians of the galaxy | 27,100 | 12 | $0.20 |
+| soundtrack from guardians of the galaxy | 27,100 | — | $0.20 |
+| mamma mia movie songs | 27,100 | 24 | $0.79 |
+| mamma mia movie soundtrack | 27,100 | 8 | $0.79 |
+| ost guardian of the galaxy | 27,100 | — | $0.20 |
+| rocket man film | 27,100 | 35 | $0.18 |
+| songs from the movie frozen | 27,100 | 15 | $0.14 |
+
+_Seeds: movie soundtrack, film score, soundtrack vinyl, best movie soundtracks, song from movie. Data cost: US$0.114._

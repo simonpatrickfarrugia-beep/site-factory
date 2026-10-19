@@ -10,8 +10,222 @@
   ],
   "notes": "Sister site to the trailer channel. Data: TMDB TV + watch providers.",
   "addedAt": "2026-10-19T04:00:00Z",
-  "status": "failed",
-  "error": "DataForSEO keywords_data/google_ads/keywords_for_keywords/live: HTTP 402 Payment Required."
+  "status": "scored",
+  "error": null,
+  "score": {
+   "overall": 73,
+   "demand": 91,
+   "money": 91,
+   "ease": 68,
+   "fit": 30,
+   "totalVolume": 5543800,
+   "keywords": 2071,
+   "medianCpc": 3.55,
+   "avgDifficulty": 32,
+   "easyWins": [
+    {
+     "keyword": "where to watch twilight",
+     "volume": 60500,
+     "kd": 30,
+     "cpc": 3.55
+    },
+    {
+     "keyword": "where can i watch the grinch",
+     "volume": 60500,
+     "kd": 1,
+     "cpc": 4.64
+    },
+    {
+     "keyword": "where can i watch the twilight movies",
+     "volume": 60500,
+     "kd": 18,
+     "cpc": 3.55
+    },
+    {
+     "keyword": "where can you watch twilight",
+     "volume": 60500,
+     "kd": 30,
+     "cpc": 3.55
+    },
+    {
+     "keyword": "where can you watch the grinch",
+     "volume": 60500,
+     "kd": 0,
+     "cpc": 4.64
+    },
+    {
+     "keyword": "where can i watch the grinch who stole christmas",
+     "volume": 60500,
+     "kd": 1,
+     "cpc": 4.64
+    },
+    {
+     "keyword": "where can i watch the twilight saga",
+     "volume": 60500,
+     "kd": 30,
+     "cpc": 3.55
+    },
+    {
+     "keyword": "where to watch modern family",
+     "volume": 49500,
+     "kd": 26,
+     "cpc": 5.07
+    },
+    {
+     "keyword": "where can i watch modern family",
+     "volume": 49500,
+     "kd": 26,
+     "cpc": 5.07
+    },
+    {
+     "keyword": "where can i watch the notebook",
+     "volume": 49500,
+     "kd": 14,
+     "cpc": 2.51
+    },
+    {
+     "keyword": "where can you watch modern family",
+     "volume": 49500,
+     "kd": 26,
+     "cpc": 5.07
+    },
+    {
+     "keyword": "where to watch from tv series",
+     "volume": 49500,
+     "kd": 13,
+     "cpc": 4.24
+    }
+   ],
+   "topKeywords": [
+    {
+     "keyword": "where to watch",
+     "volume": 301000,
+     "kd": 90,
+     "cpc": 6.26
+    },
+    {
+     "keyword": "where can you watch",
+     "volume": 301000,
+     "kd": 100,
+     "cpc": 6.26
+    },
+    {
+     "keyword": "where can i watch it",
+     "volume": 135000,
+     "kd": 64,
+     "cpc": 3.64
+    },
+    {
+     "keyword": "where can you watch it",
+     "volume": 135000,
+     "kd": 64,
+     "cpc": 3.64
+    },
+    {
+     "keyword": "where can i watch",
+     "volume": 90500,
+     "kd": 47,
+     "cpc": 8.43
+    },
+    {
+     "keyword": "where to stream",
+     "volume": 90500,
+     "kd": 100,
+     "cpc": 2.98
+    },
+    {
+     "keyword": "where can i stream",
+     "volume": 90500,
+     "kd": 89,
+     "cpc": 2.98
+    },
+    {
+     "keyword": "where to watch twilight",
+     "volume": 60500,
+     "kd": 30,
+     "cpc": 3.55
+    },
+    {
+     "keyword": "where can i watch the grinch",
+     "volume": 60500,
+     "kd": 1,
+     "cpc": 4.64
+    },
+    {
+     "keyword": "where can i watch the twilight movies",
+     "volume": 60500,
+     "kd": 18,
+     "cpc": 3.55
+    },
+    {
+     "keyword": "where can you watch twilight",
+     "volume": 60500,
+     "kd": 30,
+     "cpc": 3.55
+    },
+    {
+     "keyword": "where can you watch the grinch",
+     "volume": 60500,
+     "kd": 0,
+     "cpc": 4.64
+    },
+    {
+     "keyword": "where can i watch the grinch who stole christmas",
+     "volume": 60500,
+     "kd": 1,
+     "cpc": 4.64
+    },
+    {
+     "keyword": "where can i watch the twilight saga",
+     "volume": 60500,
+     "kd": 30,
+     "cpc": 3.55
+    },
+    {
+     "keyword": "where to watch modern family",
+     "volume": 49500,
+     "kd": 26,
+     "cpc": 5.07
+    }
+   ],
+   "judgement": {
+    "fit": 30,
+    "verdict": "The head terms ('where to watch', 'where can i watch') are high-CPC but dominated by Google's own streaming panel, JustWatch, Reelgood and big publishers, and TMDB watch-provider data is commodity information that many sites already republish. Viable only as a narrow, data-rich long tail, and TMDB's commercial-use terms for watch-provider data must be checked first.",
+    "angle": "A US-only 'where to watch [TV show]' site with one page per show and season, built around what the free data can't show: season-by-season availability, free-with-ads (FAST/AVOD) options vs paid tiers, which service is cheapest for a full binge, and buy/rent prices from Watchmode. Use a 'where to watch [show] for free' sub-page only where a free provider actually carries it. Start with 200-300 currently airing or recently popular shows, not the whole catalogue.",
+    "dataSources": [
+     "TMDB API /tv/{id}/watch/providers (JustWatch-sourced, US region) plus /tv/{id} for seasons, episode counts and air dates (check TMDB commercial-use terms first)",
+     "Watchmode API (sources, prices, free-tier availability; check current free-tier limits and terms)",
+     "Wikidata for show IDs and cross-referencing",
+     "Google Trends / Search Console for prioritising which shows to generate"
+    ],
+    "monetisation": [
+     "Amazon Associates links for Prime Video and rentals (Amazon Associates program)",
+     "Affiliate programmes for streamers and vPNs/bundles via Impact, CJ or Partnerize, where they exist and are current (verify each one)",
+     "Display ads once traffic justifies it (Ezoic early on; Mediavine or Raptive later, both with traffic thresholds)",
+     "Sponsored YouTube-embed or trailer-channel cross-promotion from the sister site"
+    ],
+    "pageTypes": [
+     "/tv/[show]/ (canonical availability page per show, US only)",
+     "/tv/[show]/free/ (only where a free or FAST provider carries it)",
+     "/tv/[show]/season-[n]/ (only where provider differs by season)",
+     "/where-to-stream/[service]/ (hub listing shows on that service, with real counts)",
+     "/free-tv/ and /free-movies/ hubs, with real provider counts and last-checked dates"
+    ],
+    "risks": [
+     "Google's own 'where to watch' SERP panel and big incumbents (JustWatch, Reelgood, Rotten Tomatoes, Decider) will absorb most clicks on the head terms",
+     "TMDB and JustWatch data licensing: commercial use of watch-provider data may require a separate agreement, and a takedown would kill the whole site",
+     "Thin-content risk: a page that only lists providers is exactly the mass-produced pattern Google penalises unless the extra data is real",
+     "Staleness: availability changes weekly and wrong 'where to watch' answers hurt trust and user satisfaction",
+     "Much of the listed volume is for movies (e.g., The Grinch, Twilight films), outside a TV-only scope",
+     "Affiliate programme terms for streamers change often and many have no public programme",
+     "Low CPC-to-RPM after affiliate rules, and display ads won't pay until traffic is large",
+     "Some keywords, e.g. 'where can you watch schitt's creek', have no KD value, so keyword data is incomplete"
+    ]
+   },
+   "costUsd": 0.114
+  },
+  "scoredAt": "2026-10-19T03:51:19.186Z",
+  "location": "United States"
  },
  {
   "idea": "Book series in reading order",
@@ -24,8 +238,147 @@
   ],
   "notes": "Data: Open Library API. Amazon/Kindle affiliate.",
   "addedAt": "2026-10-19T04:00:00Z",
-  "status": "failed",
-  "error": "DataForSEO keywords_data/google_ads/keywords_for_keywords/live: HTTP 402 Payment Required."
+  "status": "scored",
+  "error": null,
+  "score": {
+   "overall": 53,
+   "demand": 90,
+   "money": 25,
+   "ease": 50,
+   "fit": 38,
+   "totalVolume": 4912700,
+   "keywords": 3917,
+   "medianCpc": 0.27,
+   "avgDifficulty": null,
+   "easyWins": [],
+   "topKeywords": [
+    {
+     "keyword": "percy jackson novel series",
+     "volume": 246000,
+     "kd": null,
+     "cpc": 0.28
+    },
+    {
+     "keyword": "books by rick riordan",
+     "volume": 165000,
+     "kd": null,
+     "cpc": 0.41
+    },
+    {
+     "keyword": "throne of glass series order",
+     "volume": 110000,
+     "kd": null,
+     "cpc": 0.22
+    },
+    {
+     "keyword": "throne of glass order",
+     "volume": 110000,
+     "kd": null,
+     "cpc": 0.22
+    },
+    {
+     "keyword": "throne of glass books in order",
+     "volume": 110000,
+     "kd": null,
+     "cpc": 0.22
+    },
+    {
+     "keyword": "the new york times best seller",
+     "volume": 110000,
+     "kd": null,
+     "cpc": 0.44
+    },
+    {
+     "keyword": "scholastic book club",
+     "volume": 74000,
+     "kd": null,
+     "cpc": 0.28
+    },
+    {
+     "keyword": "harry potter books in order",
+     "volume": 60500,
+     "kd": null,
+     "cpc": 0.31
+    },
+    {
+     "keyword": "harry potter book series order",
+     "volume": 60500,
+     "kd": null,
+     "cpc": 0.31
+    },
+    {
+     "keyword": "joe pickett book series",
+     "volume": 60500,
+     "kd": null,
+     "cpc": 0.27
+    },
+    {
+     "keyword": "hp books in order",
+     "volume": 60500,
+     "kd": null,
+     "cpc": 0.31
+    },
+    {
+     "keyword": "joe pickett cj box",
+     "volume": 60500,
+     "kd": null,
+     "cpc": 0.27
+    },
+    {
+     "keyword": "romantic fantasy series",
+     "volume": 49500,
+     "kd": null,
+     "cpc": 0.32
+    },
+    {
+     "keyword": "percy jackson books in order",
+     "volume": 40500,
+     "kd": null,
+     "cpc": 0.27
+    },
+    {
+     "keyword": "percy jackson series in order",
+     "volume": 40500,
+     "kd": null,
+     "cpc": 0.27
+    }
+   ],
+   "judgement": {
+    "fit": 38,
+    "verdict": "The data is free and workable, since Wikidata has series membership and ordinals for thousands of series, but these are mostly franchise-level queries with weak monetisation (CPCs around $0.20-0.45, and books pay low affiliate commissions) and strong incumbents such as Wikipedia, Fandom wikis, publisher sites and Reddit. It only makes sense as a long-tail utility site, not a head-term play.",
+    "angle": "A 'Reading order' site with one canonical URL per series (e.g. /series/percy-jackson-and-the-olympians/), listing books by publication order and by in-world/chronological order where they differ, with publication years, POV or spin-off flags, and 'where to start' notes. Consolidate keyword variants like 'throne of glass order' and 'throne of glass books in order' onto a single page rather than building separate ones. Target series with at least 3 books and no official reading-order page, not the top franchises.",
+    "dataSources": [
+     "Wikidata SPARQL: P179 (part of the series) with P1545 (series ordinal), CC0 licence",
+     "Open Library API: editions, ISBNs, publish dates, author IDs (series metadata is patchy, so use it for enrichment only)",
+     "Open Library Covers API (check per-image rights before use; text-only pages are safer)",
+     "Wikipedia/Wikidata author and series descriptions via CC BY-SA attribution, or your own short factual notes"
+    ],
+    "monetisation": [
+     "Amazon Associates (books and Kindle, low single-digit percent commission; verify the current rate and the 3-sales-in-180-days eligibility rule)",
+     "Bookshop.org affiliate programme (typically a higher rate than Amazon for print; verify)",
+     "Audible/Libro.fm affiliate links for audiobook editions where available",
+     "Display ads only once traffic is large enough for Mediavine/Raptive-style thresholds; at these CPCs RPM will be modest"
+    ],
+    "pageTypes": [
+     "/series/[series-slug]/ (reading order, one page per series with 3+ books)",
+     "/author/[author-slug]/ (author hub listing all series, linking to each reading order)",
+     "/series/[series-slug]/chronological/ only where in-world order differs from publication order",
+     "/start-here/[genre]/ (curated entry points by genre, e.g. romantic fantasy)"
+    ],
+    "risks": [
+     "Thin content: a bare list of titles is exactly what Google's helpful-content and scaled-content rules target; each page needs verified, series-specific notes that generic AI copy cannot fake",
+     "Incumbents: Wikipedia, Fandom wikis, Goodreads-style lists and publisher sites already rank for many of the head queries",
+     "Low earnings per visitor: book affiliate commissions are small and CPCs are under $0.50, so you need very high traffic to earn much",
+     "Wikidata series data is incomplete and sometimes wrong, so ordinals and series membership need validation and a corrections path",
+     "Copyright: titles and order are facts, but blurbs, cover art and editorial reading-order text from publishers or fan wikis may not be reusable",
+     "Amazon Associates: account can be closed for low sales or disclosure violations, and the Product Advertising API has its own eligibility conditions",
+     "Keyword cannibalisation from many near-duplicate variants (HP, PJO, GOT) if you build separate pages per query"
+    ]
+   },
+   "costUsd": 0.09
+  },
+  "scoredAt": "2026-10-19T03:51:19.186Z",
+  "location": "United States"
  },
  {
   "idea": "Board games",
@@ -38,8 +391,221 @@
   ],
   "notes": "Data: BoardGameGeek XML API. Amazon affiliate.",
   "addedAt": "2026-10-19T04:00:00Z",
-  "status": "failed",
-  "error": "DataForSEO keywords_data/google_ads/keywords_for_keywords/live: HTTP 402 Payment Required."
+  "status": "scored",
+  "error": null,
+  "score": {
+   "overall": 61,
+   "demand": 78,
+   "money": 32,
+   "ease": 84,
+   "fit": 42,
+   "totalVolume": 2245200,
+   "keywords": 1545,
+   "medianCpc": 0.35,
+   "avgDifficulty": 16,
+   "easyWins": [
+    {
+     "keyword": "co op board games",
+     "volume": 40500,
+     "kd": 1,
+     "cpc": 0.66
+    },
+    {
+     "keyword": "co operative board games",
+     "volume": 40500,
+     "kd": 4,
+     "cpc": 0.66
+    },
+    {
+     "keyword": "mancala rules",
+     "volume": 33100,
+     "kd": 5,
+     "cpc": 0.02
+    },
+    {
+     "keyword": "chess game 2 player",
+     "volume": 33100,
+     "kd": 30,
+     "cpc": 0.3
+    },
+    {
+     "keyword": "two player chess game",
+     "volume": 33100,
+     "kd": 30,
+     "cpc": 0.3
+    },
+    {
+     "keyword": "mancala game rules",
+     "volume": 33100,
+     "kd": 3,
+     "cpc": 0.02
+    },
+    {
+     "keyword": "best codenames game",
+     "volume": 33100,
+     "kd": 25,
+     "cpc": 0.3
+    },
+    {
+     "keyword": "chess board game 2 player",
+     "volume": 33100,
+     "kd": 30,
+     "cpc": 0.3
+    },
+    {
+     "keyword": "chess two",
+     "volume": 33100,
+     "kd": 30,
+     "cpc": 0.3
+    },
+    {
+     "keyword": "mancala official rules",
+     "volume": 33100,
+     "kd": 5,
+     "cpc": 0.02
+    },
+    {
+     "keyword": "table top games",
+     "volume": 27100,
+     "kd": 21,
+     "cpc": 0.83
+    },
+    {
+     "keyword": "party board games",
+     "volume": 27100,
+     "kd": 0,
+     "cpc": 0.4
+    }
+   ],
+   "topKeywords": [
+    {
+     "keyword": "co op board games",
+     "volume": 40500,
+     "kd": 1,
+     "cpc": 0.66
+    },
+    {
+     "keyword": "chess free game",
+     "volume": 40500,
+     "kd": 97,
+     "cpc": 0.27
+    },
+    {
+     "keyword": "co operative board games",
+     "volume": 40500,
+     "kd": 4,
+     "cpc": 0.66
+    },
+    {
+     "keyword": "mancala rules",
+     "volume": 33100,
+     "kd": 5,
+     "cpc": 0.02
+    },
+    {
+     "keyword": "chess game 2 player",
+     "volume": 33100,
+     "kd": 30,
+     "cpc": 0.3
+    },
+    {
+     "keyword": "two player chess game",
+     "volume": 33100,
+     "kd": 30,
+     "cpc": 0.3
+    },
+    {
+     "keyword": "mancala game rules",
+     "volume": 33100,
+     "kd": 3,
+     "cpc": 0.02
+    },
+    {
+     "keyword": "best codenames game",
+     "volume": 33100,
+     "kd": 25,
+     "cpc": 0.3
+    },
+    {
+     "keyword": "chess board game 2 player",
+     "volume": 33100,
+     "kd": 30,
+     "cpc": 0.3
+    },
+    {
+     "keyword": "chess board two player",
+     "volume": 33100,
+     "kd": null,
+     "cpc": 0.3
+    },
+    {
+     "keyword": "chess two",
+     "volume": 33100,
+     "kd": 30,
+     "cpc": 0.3
+    },
+    {
+     "keyword": "mancala official rules",
+     "volume": 33100,
+     "kd": 5,
+     "cpc": 0.02
+    },
+    {
+     "keyword": "play chess two player",
+     "volume": 33100,
+     "kd": 31,
+     "cpc": 0.3
+    },
+    {
+     "keyword": "rules for playing mancala",
+     "volume": 33100,
+     "kd": null,
+     "cpc": 0.02
+    },
+    {
+     "keyword": "two player chess board",
+     "volume": 33100,
+     "kd": null,
+     "cpc": 0.3
+    }
+   ],
+   "judgement": {
+    "fit": 42,
+    "verdict": "Only a narrow slice works: co-op and party-game discovery pages built from BGG's structured game metadata can be genuinely useful, but most of the listed volume is chess and mancala rules queries that BGG data cannot answer, and Amazon's commission on games is thin. Commercial use of BGG data also needs checking before you build anything.",
+    "angle": "A co-op and party board game finder. Each page is a filter combination (player count, playtime, weight band, age, mechanic) populated from BGG's cooperative-mechanic and category data, with each game linked to its own stats page (players, time, weight, rating, year). Skip chess, mancala and checkers entirely; those need rules content, not this dataset.",
+    "dataSources": [
+     "BoardGameGeek XML API2 (thing, search, and mechanic/category fields), subject to its terms and any required API token; confirm commercial-use permission in writing before launch",
+     "Wikidata (CC0) for game metadata as a fallback or supplement, which avoids BGG licensing issues but has thinner game-mechanic coverage",
+     "Your own snapshot of BGG data refreshed on a schedule, cached within the terms you agree to"
+    ],
+    "monetisation": [
+     "Amazon Associates links (games sit in Toys & Games, which typically pays about 3%; verify current rate and whether you qualify for PA-API)",
+     "Miniature Market or other hobby-retailer affiliate programmes (verify availability and rates)",
+     "Target or Walmart affiliate feeds via Impact or similar networks (verify)",
+     "Display ads only once traffic is substantial; RPM on game-discovery pages will be low"
+    ],
+    "pageTypes": [
+     "/co-op-board-games-for-[n]-players/",
+     "/co-op-board-games-under-[n]-minutes/",
+     "/co-op-board-games-[weight-band]/ (e.g. light, medium, heavy)",
+     "/party-board-games-for-[n]-players/",
+     "/game/[bgg-slug]/ with per-game stats and short factual summary",
+     "/best-[mechanic]-board-games/ where mechanic has enough titles to fill a useful list"
+    ],
+    "risks": [
+     "BGG API terms may restrict commercial use, and access rules have changed; a licensing or ban problem could kill the whole site",
+     "Amazon PA-API access requires qualifying sales, and product-data caching rules limit how you can store prices",
+     "Monetisation per visit is low: about 3% on games means many visits are needed to earn meaningful money",
+     "Keyword mismatch: the chess, mancala and checkers rules queries (most of the volume) need instructional content, which templated data pages will not satisfy",
+     "Thin or near-duplicate filter pages when a combination has only a few titles; enforce minimum item counts or noindex them",
+     "Box art and publisher images carry copyright risk; use only what the licence allows, or none",
+     "Competition from BGG itself, Board Game Arena, and established blogs on high-volume co-op queries"
+    ]
+   },
+   "costUsd": 0.114
+  },
+  "scoredAt": "2026-10-19T03:51:19.186Z",
+  "location": "United States"
  },
  {
   "idea": "Video games: release dates and trailers",
@@ -512,8 +1078,225 @@
   ],
   "notes": "Data: NPS API + open trail data. Gear and booking affiliates.",
   "addedAt": "2026-10-19T04:00:00Z",
-  "status": "failed",
-  "error": "DataForSEO keywords_data/google_ads/keywords_for_keywords/live: HTTP 402 Payment Required."
+  "status": "scored",
+  "error": null,
+  "score": {
+   "overall": 74,
+   "demand": 100,
+   "money": 66,
+   "ease": 78,
+   "fit": 42,
+   "totalVolume": 17831200,
+   "keywords": 1797,
+   "medianCpc": 1.33,
+   "avgDifficulty": 22,
+   "easyWins": [
+    {
+     "keyword": "hiking trails near me",
+     "volume": 550000,
+     "kd": 0,
+     "cpc": 1.33
+    },
+    {
+     "keyword": "trails near me",
+     "volume": 550000,
+     "kd": 11,
+     "cpc": 1.74
+    },
+    {
+     "keyword": "hiking spots near me",
+     "volume": 550000,
+     "kd": 11,
+     "cpc": 1.33
+    },
+    {
+     "keyword": "hiking areas near me",
+     "volume": 550000,
+     "kd": 13,
+     "cpc": 1.33
+    },
+    {
+     "keyword": "hiking paths near me",
+     "volume": 550000,
+     "kd": 14,
+     "cpc": 1.33
+    },
+    {
+     "keyword": "trekking trails near me",
+     "volume": 550000,
+     "kd": 0,
+     "cpc": 1.33
+    },
+    {
+     "keyword": "hikes and trails near me",
+     "volume": 550000,
+     "kd": 29,
+     "cpc": 1.33
+    },
+    {
+     "keyword": "areas to hike near me",
+     "volume": 550000,
+     "kd": 0,
+     "cpc": 1.33
+    },
+    {
+     "keyword": "hiking destinations near me",
+     "volume": 550000,
+     "kd": 0,
+     "cpc": 1.33
+    },
+    {
+     "keyword": "trail paths near me",
+     "volume": 550000,
+     "kd": 11,
+     "cpc": 1.74
+    },
+    {
+     "keyword": "spots to hike near me",
+     "volume": 550000,
+     "kd": 11,
+     "cpc": 1.33
+    },
+    {
+     "keyword": "hiking grounds near me",
+     "volume": 550000,
+     "kd": 0,
+     "cpc": 1.33
+    }
+   ],
+   "topKeywords": [
+    {
+     "keyword": "national parks",
+     "volume": 550000,
+     "kd": 87,
+     "cpc": 1.06
+    },
+    {
+     "keyword": "hiking trails near me",
+     "volume": 550000,
+     "kd": 0,
+     "cpc": 1.33
+    },
+    {
+     "keyword": "trails near me",
+     "volume": 550000,
+     "kd": 11,
+     "cpc": 1.74
+    },
+    {
+     "keyword": "hiking spots near me",
+     "volume": 550000,
+     "kd": 11,
+     "cpc": 1.33
+    },
+    {
+     "keyword": "hiking areas near me",
+     "volume": 550000,
+     "kd": 13,
+     "cpc": 1.33
+    },
+    {
+     "keyword": "hiking paths near me",
+     "volume": 550000,
+     "kd": 14,
+     "cpc": 1.33
+    },
+    {
+     "keyword": "trekking trails near me",
+     "volume": 550000,
+     "kd": 0,
+     "cpc": 1.33
+    },
+    {
+     "keyword": "hikes and trails near me",
+     "volume": 550000,
+     "kd": 29,
+     "cpc": 1.33
+    },
+    {
+     "keyword": "areas to hike near me",
+     "volume": 550000,
+     "kd": 0,
+     "cpc": 1.33
+    },
+    {
+     "keyword": "hiking destinations near me",
+     "volume": 550000,
+     "kd": 0,
+     "cpc": 1.33
+    },
+    {
+     "keyword": "trail paths near me",
+     "volume": 550000,
+     "kd": 11,
+     "cpc": 1.74
+    },
+    {
+     "keyword": "spots to hike near me",
+     "volume": 550000,
+     "kd": 11,
+     "cpc": 1.33
+    },
+    {
+     "keyword": "hiking grounds near me",
+     "volume": 550000,
+     "kd": 0,
+     "cpc": 1.33
+    },
+    {
+     "keyword": "local hiking spots near me",
+     "volume": 550000,
+     "kd": 0,
+     "cpc": 1.33
+    },
+    {
+     "keyword": "near me hiking trails",
+     "volume": 550000,
+     "kd": 0,
+     "cpc": 1.33
+    }
+   ],
+   "judgement": {
+    "fit": 42,
+    "verdict": "The data is excellent (NPS API plus open trail geometry supports thousands of genuinely distinct park, trail and waterfall pages), but most of the big volume sits in \"near me\" queries that are map-pack and app driven and that a static site rarely wins. The realistic prize is the long tail of park, trail and state pages, and the competition there (NPS.gov, AllTrails, Hiking Project-style aggregators) is stiff.",
+    "angle": "A data-first trail directory: /parks/[park-slug]/trails/[trail-slug] for NPS units plus /waterfalls/[state]/[name] and /hikes/[state]/[length-or-difficulty] hubs, each page built from NPS fields and trail geometry (length, elevation gain, loop or out-and-back, nearest campground, permit requirements, seasonal closures). Target 'waterfalls near me' and state-level hike lists rather than the 'near me' head terms. Keep AI copy to short intros, and let the computed stats do most of the work.",
+    "dataSources": [
+     "NPS Developer API (developer.nps.gov, free key): parks, alerts, campgrounds, activities, places, public-domain imagery",
+     "USGS National Map / 3DEP elevation data (free) for elevation profiles",
+     "OpenStreetMap trail and waterway extracts via Overpass or Geofabrik (ODbL: attribution and share-alike obligations on the database)",
+     "Recreation.gov data where licence terms allow (check before scraping; prefer documented access)",
+     "USGS NHD for waterfall and stream points, cross-checked with GNIS names"
+    ],
+    "monetisation": [
+     "Amazon Associates (outdoor gear, low commission but high volume)",
+     "REI affiliate programme, if still open to new applicants when you apply",
+     "Booking.com or Expedia affiliate for lodging near parks",
+     "GetYourGuide or Viator partner programmes for guided tours near parks",
+     "Hipcamp affiliate, if accepted, for campsites",
+     "Display ads via Mediavine or Raptive only after they accept you (traffic thresholds apply)"
+    ],
+    "pageTypes": [
+     "/parks/[park]/trails/[trail]: distance, elevation, loop type, trailhead coordinates, NPS alerts, nearby campgrounds",
+     "/waterfalls/[state]/[waterfall]: height, flow data where available, access trail length, nearest park",
+     "/hikes/[state]/[length-band]: filtered lists generated from the same trail table",
+     "/parks/[park]: hub page linking trails, campgrounds and alerts",
+     "/[state]/state-parks/[park]: state-level park pages, only if state datasets are actually consistent"
+    ],
+    "risks": [
+     "Hiking safety and YMYL-adjacent liability: trail conditions, weather, wildlife and rescue information can be dangerous if stale. Show data timestamps, avoid advice beyond the source, and carry a clear disclaimer.",
+     "Licence risk: OSM is ODbL (share-alike and attribution). NPS content is generally public domain, but NPS-branded logos, trademarks and some photos may not be. Check each source's terms.",
+     "Keyword data is suspicious: many 'near me' terms show KD 0 at 550k volume, which doesn't match SERP reality. Validate with live SERPs before committing.",
+     "'Near me' intent is mostly local-pack and app intent (Google Maps, AllTrails, phone location), so a static site will struggle to rank for it.",
+     "Competition from NPS.gov, AllTrails, Hipcamp and Gaia GPS on the head terms, and from Google's own features on park pages.",
+     "Thin-content penalty if trail pages differ only by name and coordinates. Each page needs a computed, non-generic data set (elevation, loop shape, closures, nearby services).",
+     "Affiliate income depends on seasonality (summer peaks) and on gear and lodging conversion rates that are typically low for content sites.",
+     "Park-related data can change quickly (closures, fire restrictions, permit rules), so you need a refresh pipeline and alerting or pages will go stale."
+    ]
+   },
+   "costUsd": 0.114
+  },
+  "scoredAt": "2026-10-19T03:51:19.186Z",
+  "location": "United States"
  },
  {
   "idea": "Dog breeds",
@@ -526,8 +1309,223 @@
   ],
   "notes": "Data: open dog breed datasets. Pet product affiliates.",
   "addedAt": "2026-10-19T04:00:00Z",
-  "status": "failed",
-  "error": "DataForSEO keywords_data/google_ads/keywords_for_keywords/live: We noticed some unusual activity in your DataForSEO account, so we’ve temporarily paused access as a precaution. Please, reach out to ou"
+  "status": "scored",
+  "error": null,
+  "score": {
+   "overall": 75,
+   "demand": 100,
+   "money": 66,
+   "ease": 78,
+   "fit": 46,
+   "totalVolume": 54904000,
+   "keywords": 5287,
+   "medianCpc": 1.34,
+   "avgDifficulty": 22,
+   "easyWins": [
+    {
+     "keyword": "greyhounds",
+     "volume": 1220000,
+     "kd": 18,
+     "cpc": 0.32
+    },
+    {
+     "keyword": "cane corso",
+     "volume": 1000000,
+     "kd": 27,
+     "cpc": 0.42
+    },
+    {
+     "keyword": "dachshund",
+     "volume": 673000,
+     "kd": 29,
+     "cpc": 1.59
+    },
+    {
+     "keyword": "chihuahua",
+     "volume": 673000,
+     "kd": 27,
+     "cpc": 1.76
+    },
+    {
+     "keyword": "australian shepherds",
+     "volume": 673000,
+     "kd": 27,
+     "cpc": 1.31
+    },
+    {
+     "keyword": "aussie shepherd",
+     "volume": 673000,
+     "kd": 30,
+     "cpc": 1.31
+    },
+    {
+     "keyword": "shih tzu",
+     "volume": 550000,
+     "kd": 28,
+     "cpc": 1.26
+    },
+    {
+     "keyword": "belgian malinois",
+     "volume": 550000,
+     "kd": 16,
+     "cpc": 0.94
+    },
+    {
+     "keyword": "doberman",
+     "volume": 550000,
+     "kd": 18,
+     "cpc": 1.23
+    },
+    {
+     "keyword": "belgium malawa",
+     "volume": 550000,
+     "kd": 16,
+     "cpc": 0.94
+    },
+    {
+     "keyword": "belgian malamute",
+     "volume": 550000,
+     "kd": 16,
+     "cpc": 0.94
+    },
+    {
+     "keyword": "dog breed shih tzu",
+     "volume": 550000,
+     "kd": 10,
+     "cpc": 1.26
+    }
+   ],
+   "topKeywords": [
+    {
+     "keyword": "greyhounds",
+     "volume": 1220000,
+     "kd": 18,
+     "cpc": 0.32
+    },
+    {
+     "keyword": "cane corso",
+     "volume": 1000000,
+     "kd": 27,
+     "cpc": 0.42
+    },
+    {
+     "keyword": "pit bull",
+     "volume": 823000,
+     "kd": 37,
+     "cpc": 0.89
+    },
+    {
+     "keyword": "golden retriever",
+     "volume": 673000,
+     "kd": 58,
+     "cpc": 1.91
+    },
+    {
+     "keyword": "dachshund",
+     "volume": 673000,
+     "kd": 29,
+     "cpc": 1.59
+    },
+    {
+     "keyword": "chihuahua",
+     "volume": 673000,
+     "kd": 27,
+     "cpc": 1.76
+    },
+    {
+     "keyword": "australian shepherds",
+     "volume": 673000,
+     "kd": 27,
+     "cpc": 1.31
+    },
+    {
+     "keyword": "aussie shepherd",
+     "volume": 673000,
+     "kd": 30,
+     "cpc": 1.31
+    },
+    {
+     "keyword": "shih tzu",
+     "volume": 550000,
+     "kd": 28,
+     "cpc": 1.26
+    },
+    {
+     "keyword": "german shepherd",
+     "volume": 550000,
+     "kd": 39,
+     "cpc": 1.59
+    },
+    {
+     "keyword": "belgian malinois",
+     "volume": 550000,
+     "kd": 16,
+     "cpc": 0.94
+    },
+    {
+     "keyword": "doberman",
+     "volume": 550000,
+     "kd": 18,
+     "cpc": 1.23
+    },
+    {
+     "keyword": "german shepherd dog",
+     "volume": 550000,
+     "kd": 39,
+     "cpc": 1.59
+    },
+    {
+     "keyword": "belgium malawa",
+     "volume": 550000,
+     "kd": 16,
+     "cpc": 0.94
+    },
+    {
+     "keyword": "belgian malamute",
+     "volume": 550000,
+     "kd": 16,
+     "cpc": 0.94
+    }
+   ],
+   "judgement": {
+    "fit": 46,
+    "verdict": "Breed data is free and easy to structure, but the same facts already sit on AKC, Wikipedia and Dogtime, so generic breed pages would be thin. It only works if the site becomes a breed-matching and sizing tool, where the data drives decisions and product fit.",
+    "angle": "A breed-matching and fit-guide site: one page per breed with data-driven tables (adult weight, lifespan, grooming, energy, apartment suitability), plus comparison pages and product guides where the recommended size comes from the breed's adult weight range (crate, harness and bed sizes), not generic copy.",
+    "dataSources": [
+     "The Dog API (thedogapi.com): free key, breed attributes (weight, height, life span, temperament, group). Check image licences before reuse.",
+     "Wikidata (CC0): breed entities, country of origin, breed group, aliases for deduplicating keyword variants",
+     "Wikipedia summaries (CC BY-SA): attribute with link-back, do not copy wholesale",
+     "Kaggle dog breed datasets: verify each licence individually before use",
+     "Your own derived fields: size band, grooming tier and apartment-suitability score, computed from the raw attributes and documented as your methodology"
+    ],
+    "monetisation": [
+     "Amazon Associates: crates, harnesses and beds filtered by breed size band (note the 3-sales-in-180-days rule to stay active)",
+     "Chewy and Petco affiliate programmes via Impact or CJ, for food and supplies by life stage and size",
+     "Pet insurance lead or CPA offers (e.g., Healthy Paws, Trupanion, Embrace), which pay well per lead but have strict disclosure and advertising rules",
+     "Display ads (Mediavine or Raptive) only after you reach their traffic thresholds, which a small site may take a long time to hit"
+    ],
+    "pageTypes": [
+     "/breeds/[breed]: data table plus short fit summary, unique per breed",
+     "/compare/[breedA]-vs-[breedB]: generated from the attribute diff, which is the strongest thin-content defence",
+     "/breeds/for/[lifestyle]: e.g., apartment-friendly, low-shedding, under-20kg, good-with-kids, filtered from the data",
+     "/crates/[breed] or /harness/[breed]: product guides sized from adult weight range",
+     "/breeds/group/[group]: hub pages linking the breeds in each AKC group"
+    ],
+    "risks": [
+     "Thin, near-duplicate pages if the template is filled with generic copy; the comparison and filter pages are your main defence",
+     "Keyword list is noisy: typos (belgium malawa, belgian malamute), duplicates (german shepherd vs german shepherd dog, great pyrenees vs great pyrenees dog) and synonyms (aussie shepherd vs australian shepherd). Dedupe to canonical breeds before generating anything",
+     "Health and lifespan claims edge toward pet-health advice; keep them sourced, dated and non-prescriptive",
+     "Breed controversy (pit bull, bully breeds, greyhound welfare) needs careful, neutral framing and can attract complaints or outrage traffic",
+     "Image copyright: breed photos from The Dog API or stock may not be reusable; use licensed or self-sourced images",
+     "Heavy competition from AKC, Wikipedia, Dogtime, Dogster and PetMD on head terms; the head terms are mostly informational and earn little, so the revenue case rests on lower-volume transactional long-tail pages",
+     "Insurance lead programmes are strict about disclosure and claims, so a mis-stated coverage claim can get the account closed",
+     "The CPC numbers are for the head terms; the money is in product-intent queries, which need verifying in your own keyword tool"
+    ]
+   },
+   "costUsd": 0.114
+  },
+  "scoredAt": "2026-10-19T03:51:19.186Z",
+  "location": "United States"
  },
  {
   "idea": "Movie soundtracks and film music",
@@ -540,7 +1538,221 @@
   ],
   "notes": "Data: MusicBrainz / Discogs APIs. Vinyl and streaming affiliates.",
   "addedAt": "2026-10-19T04:00:00Z",
-  "status": "failed",
-  "error": "DataForSEO keywords_data/google_ads/keywords_for_keywords/live: We noticed some unusual activity in your DataForSEO account, so we’ve temporarily paused access as a precaution. Please, reach out to ou"
+  "status": "scored",
+  "error": null,
+  "score": {
+   "overall": 53,
+   "demand": 79,
+   "money": 0,
+   "ease": 81,
+   "fit": 45,
+   "totalVolume": 2377600,
+   "keywords": 1934,
+   "medianCpc": 0.08,
+   "avgDifficulty": 19,
+   "easyWins": [
+    {
+     "keyword": "composer hans zimmer",
+     "volume": 135000,
+     "kd": 26,
+     "cpc": 3.84
+    },
+    {
+     "keyword": "across the universe movie",
+     "volume": 40500,
+     "kd": 20,
+     "cpc": 3.37
+    },
+    {
+     "keyword": "hans zimmer films",
+     "volume": 33100,
+     "kd": 27,
+     "cpc": 6.44
+    },
+    {
+     "keyword": "movies scored by hans zimmer",
+     "volume": 33100,
+     "kd": 21,
+     "cpc": 6.44
+    },
+    {
+     "keyword": "purple rain movie",
+     "volume": 27100,
+     "kd": 22,
+     "cpc": 0.39
+    },
+    {
+     "keyword": "songs in guardians of the galaxy",
+     "volume": 27100,
+     "kd": 12,
+     "cpc": 0.2
+    },
+    {
+     "keyword": "mamma mia movie songs",
+     "volume": 27100,
+     "kd": 24,
+     "cpc": 0.79
+    },
+    {
+     "keyword": "mamma mia movie soundtrack",
+     "volume": 27100,
+     "kd": 8,
+     "cpc": 0.79
+    },
+    {
+     "keyword": "songs from the movie frozen",
+     "volume": 27100,
+     "kd": 15,
+     "cpc": 0.14
+    },
+    {
+     "keyword": "danny elfman films",
+     "volume": 18100,
+     "kd": 14,
+     "cpc": 0.05
+    },
+    {
+     "keyword": "danny elfman movies",
+     "volume": 18100,
+     "kd": 14,
+     "cpc": 0.05
+    },
+    {
+     "keyword": "songs from the lion king movie",
+     "volume": 18100,
+     "kd": 4,
+     "cpc": 0.08
+    }
+   ],
+   "topKeywords": [
+    {
+     "keyword": "composer hans zimmer",
+     "volume": 135000,
+     "kd": 26,
+     "cpc": 3.84
+    },
+    {
+     "keyword": "across the universe",
+     "volume": 40500,
+     "kd": 39,
+     "cpc": 3.37
+    },
+    {
+     "keyword": "across the universe movie",
+     "volume": 40500,
+     "kd": 20,
+     "cpc": 3.37
+    },
+    {
+     "keyword": "hans zimmer movies",
+     "volume": 33100,
+     "kd": 36,
+     "cpc": 6.44
+    },
+    {
+     "keyword": "chariots of fire",
+     "volume": 33100,
+     "kd": 35,
+     "cpc": 1.49
+    },
+    {
+     "keyword": "hans zimmer films",
+     "volume": 33100,
+     "kd": 27,
+     "cpc": 6.44
+    },
+    {
+     "keyword": "movies scored by hans zimmer",
+     "volume": 33100,
+     "kd": 21,
+     "cpc": 6.44
+    },
+    {
+     "keyword": "purple rain movie",
+     "volume": 27100,
+     "kd": 22,
+     "cpc": 0.39
+    },
+    {
+     "keyword": "songs in guardians of the galaxy",
+     "volume": 27100,
+     "kd": 12,
+     "cpc": 0.2
+    },
+    {
+     "keyword": "soundtrack from guardians of the galaxy",
+     "volume": 27100,
+     "kd": null,
+     "cpc": 0.2
+    },
+    {
+     "keyword": "mamma mia movie songs",
+     "volume": 27100,
+     "kd": 24,
+     "cpc": 0.79
+    },
+    {
+     "keyword": "mamma mia movie soundtrack",
+     "volume": 27100,
+     "kd": 8,
+     "cpc": 0.79
+    },
+    {
+     "keyword": "ost guardian of the galaxy",
+     "volume": 27100,
+     "kd": null,
+     "cpc": 0.2
+    },
+    {
+     "keyword": "rocket man film",
+     "volume": 27100,
+     "kd": 35,
+     "cpc": 0.18
+    },
+    {
+     "keyword": "songs from the movie frozen",
+     "volume": 27100,
+     "kd": 15,
+     "cpc": 0.14
+    }
+   ],
+   "judgement": {
+    "fit": 45,
+    "verdict": "The data is usable: TMDB, MusicBrainz and Discogs can produce real per-film and per-composer pages. But the monetisation is weak (vinyl and streaming affiliate payouts are small, and music display RPMs are low), and most high-volume queries are movie-title searches that IMDb and Wikipedia already own, so this only works as a modest, narrowly focused site.",
+    "angle": "soundtrackindex.com: one page per film soundtrack (/soundtrack/[film-slug]) showing the verified tracklist, composer and credited musicians, label and release history, and live Discogs vinyl pressings with lowest price and copies for sale. Add /composer/[name] pages listing scored films and their soundtrack releases. Skip song-by-song pages for films that have no real release data.",
+    "dataSources": [
+     "TMDB API (film metadata, crew with job 'Original Music Composer', release dates; check commercial-use terms before launch)",
+     "MusicBrainz API (soundtrack release groups, recordings, composer and performer relationships; rate-limited to about 1 request/second)",
+     "Discogs API (soundtrack pressings, tracklists, formats, marketplace stats: lowest price and num_for_sale; check the API terms on commercial use and attribution)",
+     "Wikidata SPARQL (film-to-composer links and IDs for joining sources)"
+    ],
+    "monetisation": [
+     "Amazon Associates (vinyl and CD links; low commission, roughly 1-4%)",
+     "Apple Music / iTunes via Apple Performance Partners",
+     "Bandcamp affiliate program, where soundtracks are sold direct",
+     "eBay Partner Network for used vinyl listings",
+     "Display ads via Mediavine or Raptive once traffic thresholds are met (music RPMs are modest)"
+    ],
+    "pageTypes": [
+     "/soundtrack/[film-slug] (tracklist, composer, label, Discogs pressings with live price data)",
+     "/composer/[name] (filmography plus soundtrack releases per film)",
+     "/composer/[name]/[format] for vinyl, CD and digital editions where data exists",
+     "/label/[label-name] (soundtrack catalogue by label, e.g. Varèse Sarabande, Intrada)",
+     "/soundtracks-by-year/[year] (release year indexes built from MusicBrainz dates)"
+    ],
+    "risks": [
+     "Intent mismatch: queries like 'across the universe movie' or 'chariots of fire' want the film, so IMDb, Wikipedia and streaming services will outrank a soundtrack site",
+     "Commercial licensing: TMDB and Discogs API terms may restrict commercial use or require attribution, and Discogs images are copyrighted, so avoid hotlinking them",
+     "Lyrics and sheet-music copyright: never publish lyrics; keep to titles, credits and facts",
+     "Affiliate payouts are small: vinyl commissions and display RPMs will not cover much traffic, so volume has to be large before this pays",
+     "Thin-content risk if pages with no real release (e.g. films with no soundtrack album) are generated; noindex them",
+     "Competition from Discogs, MusicBrainz and Spotify's own pages for soundtrack queries",
+     "Low CPC on most terms (Dirty Dancing, Lion King, Frozen at $0.01-0.14) means only the composer and high-CPC pages carry real revenue"
+    ]
+   },
+   "costUsd": 0.114
+  },
+  "scoredAt": "2026-10-19T03:51:19.186Z",
+  "location": "United States"
  }
 ]
