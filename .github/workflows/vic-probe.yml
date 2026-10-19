@@ -16,6 +16,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Probe OpenStreetMap
         run: python3 scripts/vic/osm_probe.py "${{ inputs.count }}"
+      - name: Rebuild the site snapshot (published towns only)
+        run: python3 scripts/vic/build_data.py
       - name: Commit
         run: |
           git config user.name "Vic Tours probe" && git config user.email "pipeline@victours.com.au"
