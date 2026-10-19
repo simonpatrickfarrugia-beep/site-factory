@@ -1737,7 +1737,7 @@
      "/soundtrack/[film-slug] (tracklist, composer, label, Discogs pressings with live price data)",
      "/composer/[name] (filmography plus soundtrack releases per film)",
      "/composer/[name]/[format] for vinyl, CD and digital editions where data exists",
-     "/label/[label-name] (soundtrack catalogue by label, e.g. Varèse Sarabande, Intrada)",
+     "/label/[label-name] (soundtrack catalogue by label, e.g. Var\u00e8se Sarabande, Intrada)",
      "/soundtracks-by-year/[year] (release year indexes built from MusicBrainz dates)"
     ],
     "risks": [
@@ -1754,5 +1754,61 @@
   },
   "scoredAt": "2026-10-19T03:51:19.186Z",
   "location": "United States"
+ },
+ {
+  "idea": "Victoria: things to do by town",
+  "seeds": [
+   "things to do in daylesford",
+   "things to do in bright",
+   "things to do in phillip island",
+   "things to do in ballarat",
+   "things to do in the yarra valley",
+   "day trips from melbourne",
+   "things to do in victoria"
+  ],
+  "notes": "Vic Tours (victours.com.au, owned). Town/suburb hub pages: activities, day trips. Data: OpenStreetMap + Victorian open data; Viator/GetYourGuide/Klook affiliate. Founder lives in Melbourne (local knowledge).",
+  "market": {
+   "code": 2036,
+   "name": "Australia"
+  },
+  "addedAt": "2026-10-19T11:30:00Z",
+  "status": "new"
+ },
+ {
+  "idea": "Victoria: where to stay by town",
+  "seeds": [
+   "accommodation daylesford",
+   "where to stay in bright",
+   "phillip island accommodation",
+   "lorne accommodation",
+   "yarra valley accommodation",
+   "weekend getaways victoria",
+   "romantic getaways victoria"
+  ],
+  "notes": "Vic Tours. Accommodation by town. Data: OpenStreetMap hotels + Booking.com/Expedia affiliate feeds.",
+  "market": {
+   "code": 2036,
+   "name": "Australia"
+  },
+  "addedAt": "2026-10-19T11:30:00Z",
+  "status": "new"
+ },
+ {
+  "idea": "Victoria: where to eat by town",
+  "seeds": [
+   "best restaurants daylesford",
+   "restaurants bright",
+   "restaurants lorne",
+   "best restaurants geelong",
+   "yarra valley restaurants",
+   "winery lunch yarra valley"
+  ],
+  "notes": "Vic Tours. Restaurants by town. Data: OpenStreetMap (cuisine, hours). Weak affiliates; ads/leads.",
+  "market": {
+   "code": 2036,
+   "name": "Australia"
+  },
+  "addedAt": "2026-10-19T11:30:00Z",
+  "status": "new"
  }
 ]

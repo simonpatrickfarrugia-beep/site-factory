@@ -410,12 +410,13 @@ async function nichesJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: bo
   const todo = niches.filter((n) => n.status !== 'scored').slice(0, Number(env.NICHES_PER_RUN) || 6);
   for (const n of todo) {
     try {
-      const ideas = await keywordIdeas(login, password, n.seeds.length ? n.seeds : [n.idea], code);
+      const mCode = n.market?.code ?? code;
+      const ideas = await keywordIdeas(login, password, n.seeds.length ? n.seeds : [n.idea], mCode);
       const top = [...ideas.items].sort((a, b) => b.volume - a.volume).slice(0, 100);
       // SEO difficulty is a nice-to-have: without it, "ease" defaults to 50 and the report says so.
       let diff: { kd: Map<string, number>; cost: number } = { kd: new Map(), cost: 0 };
       try {
-        diff = await keywordDifficulty(login, password, top.map((k) => k.keyword), code);
+        diff = await keywordDifficulty(login, password, top.map((k) => k.keyword), mCode);
       } catch (e) {
         log.push(`${n.idea}: no difficulty data (${(e as Error).message.slice(0, 120)}).`);
       }
@@ -423,13 +424,13 @@ async function nichesJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: bo
         env.ANTHROPIC_API_KEY,
         env.ANTHROPIC_MODEL,
         n.idea,
-        n.notes,
+        `${n.notes ?? ''} Market: ${n.market?.name ?? location}.`,
         top.map((k) => ({ keyword: k.keyword, volume: k.volume, cpc: k.cpc, kd: diff.kd.get(k.keyword) ?? null })),
       );
       n.score = scoreNiche(ideas.items, diff.kd, judgement, ideas.cost + diff.cost);
       n.status = 'scored';
       n.scoredAt = now.toISOString();
-      n.location = location;
+      n.location = n.market?.name ?? location;
       n.error = null;
       log.push(`${n.idea}: ${n.score.overall}/100 (demand ${n.score.demand}, money ${n.score.money}, ease ${n.score.ease}, fit ${n.score.fit}).`);
     } catch (e) {

@@ -42,6 +42,8 @@ export interface Niche {
   idea: string;
   seeds: string[];
   notes?: string | null;
+  /** Market to measure, e.g. { code: 2036, name: 'Australia' }. Default: the pipeline's market (USA). */
+  market?: { code: number; name: string } | null;
   addedAt: string;
   status: 'new' | 'scored' | 'failed';
   scoredAt?: string | null;
@@ -104,18 +106,18 @@ export function nicheReport(niches: Niche[], now: Date, location: string): strin
   const L: string[] = [
     '# Niche finder',
     '',
-    `Updated ${now.toISOString().slice(0, 10)}. Google searches in the ${location}. Score = 30% demand + 25% money (CPC) + 25% ease (SEO difficulty) + 20% fit (Claude: data source, automation, monetisation, risk).`,
+    `Updated ${now.toISOString().slice(0, 10)}. Google searches in the ${location} unless an idea says otherwise (Market column). Score = 30% demand + 25% money (CPC) + 25% ease (SEO difficulty) + 20% fit (Claude: data source, automation, monetisation, risk).`,
     '',
     'Add ideas by chat: "score these niches: …". Rules: launch at most one new site a month, only while the last one is on track.',
     '',
     '## Ranking',
     '',
-    '| # | Idea | Score | Demand | Money | Ease | Fit | Searches/mo | Median CPC | Avg difficulty |',
-    '|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|',
+    '| # | Idea | Market | Score | Demand | Money | Ease | Fit | Searches/mo | Median CPC | Avg difficulty |',
+    '|---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|',
   ];
   scored.forEach((n, i) => {
     const s = n.score!;
-    L.push(`| ${i + 1} | ${n.idea} | **${s.overall}** | ${s.demand} | ${s.money} | ${s.ease} | ${s.fit} | ${s.totalVolume.toLocaleString()} | ${money(s.medianCpc)} | ${s.avgDifficulty ?? '—'} |`);
+    L.push(`| ${i + 1} | ${n.idea} | ${n.location ?? location} | **${s.overall}** | ${s.demand} | ${s.money} | ${s.ease} | ${s.fit} | ${s.totalVolume.toLocaleString()} | ${money(s.medianCpc)} | ${s.avgDifficulty ?? '—'} |`);
   });
   const waiting = niches.filter((n) => n.status !== 'scored');
   if (waiting.length) L.push('', `Not scored yet: ${waiting.map((n) => `${n.idea}${n.error ? ` (failed: ${n.error})` : ''}`).join('; ')}.`);
