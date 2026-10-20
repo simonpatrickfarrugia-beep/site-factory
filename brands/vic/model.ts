@@ -53,6 +53,7 @@ export interface Loop {
   summary: string;
   intro: string;
   days: LoopDay[];
+  draft?: boolean; // hidden until its towns are published
 }
 
 export interface Content {

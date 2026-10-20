@@ -66,7 +66,7 @@ export function routes(): Route[] {
       towns: byKm.filter((t) => !isNeighbourhood(t)).map(info),
       neighbourhoods: byKm.filter(isNeighbourhood).map(info),
       collections: content.collections,
-      loops: (content.loops ?? []).map((l) => ({ slug: l.slug, name: l.name, summary: l.summary, days: l.days.length })),
+      loops: (content.loops ?? []).filter((l) => !l.draft).map((l) => ({ slug: l.slug, name: l.name, summary: l.summary, days: l.days.length })),
     },
   });
 
@@ -122,7 +122,7 @@ export function routes(): Route[] {
         sections,
         nearby,
         collections: [
-          ...(content.loops ?? []).filter((l) => l.days.some((d) => d.stops.includes(t.slug))).map((l) => ({ href: `/road-trips/${l.slug}`, name: `Road trip: ${l.name}` })),
+          ...(content.loops ?? []).filter((l) => !l.draft && l.days.some((d) => d.stops.includes(t.slug))).map((l) => ({ href: `/road-trips/${l.slug}`, name: `Road trip: ${l.name}` })),
           ...content.collections.filter((col) => col.towns.includes(t.slug)).map(({ slug, name }) => ({ href: `/collections/${slug}`, name })),
         ],
       },
@@ -178,7 +178,7 @@ export function routes(): Route[] {
   }
 
   // Road trips (loops)
-  const loops = content.loops ?? [];
+  const loops = (content.loops ?? []).filter((l) => !l.draft); // drafts wait until their towns are published
   const townName = (s: string) => townBySlug.get(s)?.name ?? null;
   const loopRoute = (l: (typeof loops)[number]) => ['Melbourne', ...new Set(l.days.flatMap((d) => d.stops).map(townName).filter(Boolean)), 'Melbourne'].join(' → ');
   if (loops.length) {

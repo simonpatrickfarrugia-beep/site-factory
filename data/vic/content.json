@@ -63,6 +63,62 @@
   "lorne": {
    "intro": "Lorne is the classic Great Ocean Road beach town, where the forest of the Otways comes right down to the sand. Swim or surf the main beach, walk out on the pier, then drive up to Teddy’s Lookout for the famous view of the road snaking along the coast, or into the hills to Erskine Falls.",
    "region": "Great Ocean Road"
+  },
+  "wangaratta": {
+   "intro": "Wangaratta sits where the Ovens and King rivers meet, at the start of the Great Alpine Road. It’s the gateway to the King Valley’s Italian-heritage wineries and home to a well-known jazz and blues festival in spring.",
+   "region": "High Country"
+  },
+  "myrtleford": {
+   "intro": "Myrtleford is a relaxed Ovens Valley town on the Great Alpine Road and the Murray to Mountains Rail Trail, with tobacco-kiln heritage, walnut and hop country around it, and Mount Buffalo looming to the south.",
+   "region": "High Country"
+  },
+  "harrietville": {
+   "intro": "Harrietville is a tiny old gold-mining village at the foot of Mount Hotham, the last stop before the Great Alpine Road climbs into the mountains. It’s the start of the Razorback and Mount Feathertop walks for keen hikers.",
+   "region": "High Country"
+  },
+  "mount-hotham": {
+   "intro": "Mount Hotham is one of Victoria’s highest alpine resorts, right on the Great Alpine Road. In winter it’s a ski and snowboard village; in summer the high plains open up for walking, wildflowers and huge views across the Alps. Carry chains in winter, as alpine road rules apply.",
+   "region": "High Country"
+  },
+  "omeo": {
+   "intro": "Omeo is a remote high-country town on the Great Alpine Road between Hotham and Gippsland, with gold-rush history, a historic courthouse precinct and the Oriental Claims walk through old sluicing sites.",
+   "region": "High Country"
+  },
+  "bairnsdale": {
+   "intro": "Bairnsdale is East Gippsland’s main town, where the Great Alpine Road meets the Princes Highway. It’s known for the painted ceiling of St Mary’s Church and makes an easy base for the Gippsland Lakes.",
+   "region": "Gippsland"
+  },
+  "lakes-entrance": {
+   "intro": "Lakes Entrance is a seaside fishing town where the Gippsland Lakes meet Bass Strait. Walk the footbridge to Ninety Mile Beach, eat fish and chips off the trawlers and take a cruise on the lakes.",
+   "region": "Gippsland"
+  },
+  "metung": {
+   "intro": "Metung is a small, pretty village on the shores of the Gippsland Lakes, made for boating, waterfront lunches and doing very little. It’s a short drive from Lakes Entrance and Bairnsdale.",
+   "region": "Gippsland"
+  },
+  "sorrento": {
+   "intro": "Sorrento sits near the tip of the Mornington Peninsula, with calm bay beaches on one side and wild ocean back beaches on the other. Swim with the dolphins in summer, catch the ferry across to Queenscliff, or walk the coastal tracks of Point Nepean.",
+   "region": "Mornington Peninsula"
+  },
+  "red-hill": {
+   "intro": "Red Hill is the peninsula’s wine and food heartland: rolling hills of cool-climate vineyards, cellar doors, orchards and a monthly community market. It’s the place for a long lunch.",
+   "region": "Mornington Peninsula"
+  },
+  "dromana": {
+   "intro": "Dromana is a bayside town at the foot of Arthurs Seat. Ride the Eagle chairlift to the summit for views across Port Phillip Bay, then cool off at the beach.",
+   "region": "Mornington Peninsula"
+  },
+  "flinders": {
+   "intro": "Flinders is a quiet village on Western Port with a historic pier, golf on the clifftops and some of the best rock-pool walks on the peninsula at Mushroom Reef.",
+   "region": "Mornington Peninsula"
+  },
+  "healesville": {
+   "intro": "Healesville is the Yarra Valley’s main town, home to Healesville Sanctuary’s native wildlife and surrounded by wineries, a distillery and a chocolate factory. It’s an easy base for a valley day out.",
+   "region": "Yarra Valley"
+  },
+  "yarra-glen": {
+   "intro": "Yarra Glen sits in the middle of the Yarra Valley wine country, close to some of the region’s best-known cellar doors, with hot-air balloon flights over the vineyards at dawn.",
+   "region": "Yarra Valley"
   }
  },
  "collections": [
@@ -77,7 +133,10 @@
     "phillip-island",
     "daylesford",
     "ballarat",
-    "bendigo"
+    "bendigo",
+    "healesville",
+    "red-hill",
+    "sorrento"
    ]
   },
   {
@@ -283,6 +342,92 @@
      "text": "Cross the bridge at San Remo, where pelicans gather at the jetty around midday. Spend the afternoon at the Nobbies boardwalk looking out to Seal Rocks, the Koala Conservation Reserve or Churchill Island’s heritage farm, with a late lunch in Cowes. Then head to Summerland Beach for the Penguin Parade as the little penguins come ashore at sunset, and drive home after dark."
     }
    ]
+  },
+  {
+   "slug": "great-alpine-road",
+   "name": "The Great Alpine Road",
+   "summary": "Wangaratta to the Gippsland Lakes over the top of Mount Hotham, one of Australia’s highest sealed roads.",
+   "intro": "The Great Alpine Road runs over 300 km from Wangaratta to Bairnsdale, climbing through the Ovens Valley and over Mount Hotham before dropping through the high country to the Gippsland Lakes. Allow four days with time for walks and long lunches. In winter, carry snow chains between Harrietville and Omeo, as alpine road rules apply.",
+   "days": [
+    {
+     "title": "Melbourne to Bright",
+     "stops": [
+      "wangaratta",
+      "myrtleford",
+      "bright"
+     ],
+     "overnight": "bright",
+     "text": "Head up the Hume to Wangaratta, then turn onto the Great Alpine Road through the Ovens Valley. Stop in Myrtleford, and arrive in Bright in time for a walk along the river."
+    },
+    {
+     "title": "A day around Bright",
+     "stops": [
+      "bright"
+     ],
+     "overnight": "bright",
+     "text": "Hire a bike for the rail trail, drive up Mount Buffalo for the gorge lookouts, or work your way through the valley’s breweries and wineries."
+    },
+    {
+     "title": "Over the mountain to Omeo",
+     "stops": [
+      "harrietville",
+      "mount-hotham",
+      "omeo"
+     ],
+     "overnight": "omeo",
+     "text": "The big day. Climb from Harrietville over Mount Hotham, stopping at the lookouts along the way (check road conditions in winter), then wind down through the high plains to Omeo."
+    },
+    {
+     "title": "Omeo to the Gippsland Lakes",
+     "stops": [
+      "bairnsdale",
+      "metung",
+      "lakes-entrance"
+     ],
+     "overnight": "lakes-entrance",
+     "text": "Follow the Tambo Valley down to Bairnsdale, then lunch on the water at Metung and finish at Lakes Entrance for fish and chips and a sunset walk on Ninety Mile Beach. Melbourne is about 4 hours home the next day."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "slug": "mornington-peninsula-day-trip",
+   "name": "Mornington Peninsula day trip",
+   "summary": "Bay beaches, a chairlift ride, a winery lunch and the wild back beaches, about an hour from Melbourne.",
+   "intro": "The Mornington Peninsula packs bay beaches, wine country and wild ocean coastline into one easy loop from Melbourne. Drive down the bay side, cross the hills for lunch, and come home via Western Port.",
+   "days": [
+    {
+     "title": "A loop around the peninsula",
+     "stops": [
+      "mornington",
+      "dromana",
+      "red-hill",
+      "sorrento",
+      "flinders"
+     ],
+     "overnight": null,
+     "text": "Coffee and a wander on Mornington’s Main Street, then ride the Eagle at Arthurs Seat above Dromana. Lunch at a Red Hill cellar door, then head to Sorrento for the bay and a walk at the back beach. Come home via Flinders for the pier and Mushroom Reef rock pools at low tide."
+    }
+   ],
+   "draft": true
+  },
+  {
+   "slug": "yarra-valley-day-trip",
+   "name": "Yarra Valley day trip",
+   "summary": "Native wildlife, cellar doors and a long lunch, about an hour from Melbourne.",
+   "intro": "The Yarra Valley is Melbourne’s closest wine region, and it’s easy to fill a day with wildlife, wineries and food. If you’re tasting, book a driver or tour.",
+   "days": [
+    {
+     "title": "Healesville and the valley",
+     "stops": [
+      "healesville",
+      "yarra-glen"
+     ],
+     "overnight": null,
+     "text": "Start early at Healesville Sanctuary for koalas, platypus and the birds of prey show. Then work your way through the valley’s cellar doors around Yarra Glen for a long winery lunch, with a chocolate or cheese stop on the way home."
+    }
+   ],
+   "draft": true
   }
  ]
 }
