@@ -19,7 +19,8 @@ import { estimateMoney, moneyReport, nicheReport, scoreNiche, type AffiliateCata
 import { buildDemandReport } from './demand';
 import { pickTrailer } from './titles';
 import { buildCatalogue, type Candidate } from './catalogue';
-import { cleanKeyword, keywordDifficulty, keywordIdeas, searchVolumes } from './dataforseo';
+import { cleanKeyword, domainTraffic, keywordDifficulty, keywordIdeas, searchVolumes, serpTop10, type SerpResult } from './dataforseo';
+import { competitionReport, pickKeywords, scoreCompetition, type Competition } from './competition';
 
 export interface Env {
   /** Fine-grained GitHub token: Contents read & write on the site-factory repo only. */
@@ -44,6 +45,7 @@ export interface Env {
   RECHECK_LIMIT: string;
   GSC_SITE: string; // Search Console property: sc-domain:movietrailer.channel (Domain property) or a URL-prefix property
   NICHES_PER_RUN?: string; // ideas scored per niche-finder run
+  COMPETITION_PER_RUN?: string; // niches per competition-check run
   STATS_SITES?: string; // JSON list of { name, path, ga4, gsc } for the dashboards
   GA4_PROPERTY?: string; // GA4 property ID (number) for the dashboard stats
   INDEXNOW_KEY?: string; // public key; brands/<slug>/public/<key>.txt holds the same value
@@ -61,7 +63,7 @@ export interface Env {
   COLLECTION_MIN_VOLUME: string;
 }
 
-type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections' | 'stats' | 'niches' | 'towns' | 'keywords';
+type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections' | 'stats' | 'niches' | 'towns' | 'keywords' | 'competition';
 
 /**
  * Workers Free allows 5 cron schedules per ACCOUNT, so the pipeline uses two (see wrangler.jsonc)
@@ -97,6 +99,7 @@ const KEYWORDS = 'hq/keywords.json';
 const KEYWORDS_REPORT = 'hq/reports/keywords.md';
 const VIC_TOWNS_REPORT = 'reports/vic/towns.md';
 const NICHES_REPORT = 'hq/reports/niches.md';
+const COMPETITION_REPORT = 'hq/reports/competition.md';
 const AFFILIATES = 'hq/affiliate-programs.json';
 
 /** Workers free plan allows 50 outgoing calls per run; GitHub reads/commit use up to 8. */
@@ -137,6 +140,7 @@ const NEEDS: Record<Job, (keyof Env)[]> = {
   niches: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD', 'ANTHROPIC_API_KEY'],
   towns: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD'],
   keywords: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD'],
+  competition: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD'],
 };
 
 export async function run(job: Job, env: Env, dryRun: boolean) {
@@ -150,7 +154,7 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
       ? [KEYWORDS]
       : job === 'towns'
       ? [VIC_TOWNS]
-      : job === 'niches'
+      : job === 'niches' || job === 'competition'
       ? [NICHES, AFFILIATES]
       : job === 'stats'
       ? [STATS, MOVIES, COLLECTIONS]
@@ -168,6 +172,7 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
   if (job === 'catalogue') return catalogue(env, repo, snap, now, dryRun, maxYear({ now, minAgeYears }));
   if (job === 'stats') return statsJob(env, repo, snap, now, dryRun);
   if (job === 'niches') return nichesJob(env, repo, snap, now, dryRun);
+  if (job === 'competition') return competitionJob(env, repo, snap, now, dryRun);
   if (job === 'towns') return townsJob(env, repo, snap, now, dryRun);
   if (job === 'keywords') return keywordsJob(env, repo, snap, now, dryRun);
   if (job === 'collections') return collectionsJob(env, repo, snap, now, dryRun, maxYear({ now, minAgeYears }));
@@ -549,6 +554,52 @@ async function keywordsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: 
   }
   const commit = await save(repo, snap.sha, { [KEYWORDS_REPORT]: L.join('\n') }, `HQ: keyword research [skip ci]\n\n${log.join('\n')}`, dryRun, log);
   return { job: 'keywords' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null };
+}
+
+/**
+ * Competition check (on demand): for scored niches never checked (or checked 90+ days ago), pull Google's
+ * top 10 for up to 6 distinct best keywords and the estimated traffic of every ranking domain.
+ * ~7 DataForSEO calls (about US$0.03) per niche; COMPETITION_PER_RUN niches per run (default 4).
+ */
+async function competitionJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean) {
+  const niches = JSON.parse(snap.files[NICHES] || '[]') as (Niche & { competition?: Competition | null })[];
+  const login = env.DATAFORSEO_LOGIN!, password = env.DATAFORSEO_PASSWORD!;
+  const code = Number(env.DATAFORSEO_LOCATION) || 2840;
+  const stale = (n: (typeof niches)[number]) => !n.competition || now.getTime() - Date.parse(n.competition.checkedAt) > 90 * 86400000;
+  const todo = niches.filter((n) => n.status === 'scored' && n.score && stale(n)).slice(0, Number(env.COMPETITION_PER_RUN) || 4);
+  const log: string[] = [];
+  for (const n of todo) {
+    try {
+      const market = n.market?.code ?? code;
+      const sc = n.score as unknown as { easyWins?: { keyword: string; volume: number }[]; topKeywords?: { keyword: string; volume: number }[] };
+      const pool = sc.easyWins?.length ? sc.easyWins : sc.topKeywords ?? [];
+      const kws = pickKeywords(pool, 6);
+      let cost = 0;
+      const serps: { keyword: string; volume: number; items: SerpResult[] }[] = [];
+      for (const kw of kws) {
+        const r = await serpTop10(login, password, kw.keyword, market);
+        cost += r.cost;
+        serps.push({ ...kw, items: r.items });
+      }
+      const t = await domainTraffic(login, password, serps.flatMap((s) => s.items.map((i) => i.domain)), market);
+      cost += t.cost;
+      n.competition = scoreCompetition(serps, t.etv, market, now, cost);
+      log.push(`${n.idea}: openness ${n.competition.openness}/100; big players ${n.competition.giants.slice(0, 3).map((g) => g.domain).join(', ') || 'none'} (US$${n.competition.costUsd}).`);
+    } catch (e) {
+      log.push(`${n.idea}: competition check failed: ${(e as Error).message.slice(0, 160)}`);
+    }
+  }
+  const left = niches.filter((n) => n.status === 'scored' && stale(n)).length;
+  log.unshift(`Competition: checked ${todo.length}${left ? `; ${left} still to check (run again)` : ''}.`);
+  const commit = await save(
+    repo,
+    snap.sha,
+    { [NICHES]: JSON.stringify(niches, null, 1) + '\n', [COMPETITION_REPORT]: competitionReport(niches, now) },
+    `HQ: competition check [skip ci]\n\n${log.join('\n')}`,
+    dryRun,
+    log,
+  );
+  return { job: 'competition' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report: undefined as string | undefined };
 }
 
 async function save(repo: Repo, sha: string, changes: Record<string, string>, message: string, dryRun: boolean, log: string[]) {

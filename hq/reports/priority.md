@@ -18,19 +18,19 @@ Risk-adjusted expected revenue over 24 months, divided by build days. Inputs: mo
 
 ## Odds breakdown (rank × fit × data × affiliate approval)
 
-| Idea | Rank | Fit | Data | Approval | 24-mo range (10th–90th pct) |
-|---|---:|---:|---:|---:|---|
-| Dog breeds | 0.78 | 0.73 | 0.80 | 0.60 | $0 – $395,591 |
-| US national parks and hiking trails | 0.78 | 0.71 | 0.90 | 0.75 | $0 – $79,193 |
-| Victoria: where to stay by town | 0.90 | 0.69 | 0.95 | 0.81 | $0 – $5,901 |
-| Anime: where to watch and watch order | 0.60 | 0.71 | 0.65 | 0.89 | $0 – $29,161 |
-| Video games: release dates and trailers | 0.62 | 0.70 | 0.85 | 0.91 | $0 – $12,472 |
-| Victoria: things to do by town | 0.95 | 0.71 | 0.95 | 0.81 | $0 – $2,435 |
-| TV shows: where to watch | 0.68 | 0.65 | 0.60 | 0.89 | $0 – $13,497 |
-| Movie soundtracks and film music | 0.81 | 0.72 | 0.90 | 0.96 | $0 – $3,667 |
-| Book series in reading order | 0.50 | 0.69 | 0.90 | 0.96 | $0 – $3,932 |
-| Victoria: where to eat by town | 0.96 | 0.61 | 0.95 | 0.75 | $0 – $830 |
-| Board games | 0.84 | 0.71 | 0.90 | 0.89 | $0 – $2,848 |
+| Idea | Competition openness | Rank | Fit | Data | Approval | 24-mo range (10th–90th pct) |
+|---|---:|---:|---:|---:|---:|---|
+| Dog breeds | — | 0.78 | 0.73 | 0.80 | 0.60 | $0 – $395,591 |
+| US national parks and hiking trails | — | 0.78 | 0.71 | 0.90 | 0.75 | $0 – $79,193 |
+| Victoria: where to stay by town | — | 0.90 | 0.69 | 0.95 | 0.81 | $0 – $5,901 |
+| Anime: where to watch and watch order | — | 0.60 | 0.71 | 0.65 | 0.89 | $0 – $29,161 |
+| Video games: release dates and trailers | — | 0.62 | 0.70 | 0.85 | 0.91 | $0 – $12,472 |
+| Victoria: things to do by town | — | 0.95 | 0.71 | 0.95 | 0.81 | $0 – $2,435 |
+| TV shows: where to watch | — | 0.68 | 0.65 | 0.60 | 0.89 | $0 – $13,497 |
+| Movie soundtracks and film music | — | 0.81 | 0.72 | 0.90 | 0.96 | $0 – $3,667 |
+| Book series in reading order | — | 0.50 | 0.69 | 0.90 | 0.96 | $0 – $3,932 |
+| Victoria: where to eat by town | — | 0.96 | 0.61 | 0.95 | 0.75 | $0 – $830 |
+| Board games | — | 0.84 | 0.71 | 0.90 | 0.89 | $0 – $2,848 |
 
 ## By site (sections combined)
 

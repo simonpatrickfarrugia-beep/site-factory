@@ -110,3 +110,40 @@ export async function keywordDifficulty(login: string, password: string, keyword
   for (const i of result?.[0]?.items ?? []) if (i.keyword_difficulty != null) kd.set(cleanKeyword(i.keyword), i.keyword_difficulty);
   return { kd, cost };
 }
+
+export interface SerpResult {
+  rank: number;
+  domain: string;
+  url: string;
+  title: string;
+}
+
+/** Google top-10 organic results for one keyword (SERP API, live/regular, ~US$0.002 per keyword). */
+export async function serpTop10(login: string, password: string, keyword: string, locationCode: number): Promise<{ items: SerpResult[]; cost: number }> {
+  const { result, cost } = await dfsTask<{ items?: { type: string; rank_group: number; domain?: string; url?: string; title?: string }[] }[]>(
+    login,
+    password,
+    'serp/google/organic/live/regular',
+    { keyword: cleanKeyword(keyword), location_code: locationCode, language_code: 'en', depth: 10 },
+  );
+  const items = (result?.[0]?.items ?? [])
+    .filter((i) => i.type === 'organic' && i.domain)
+    .slice(0, 10)
+    .map((i) => ({ rank: i.rank_group, domain: i.domain!.replace(/^www\./, ''), url: i.url ?? '', title: (i.title ?? '').slice(0, 90) }));
+  return { items, cost };
+}
+
+/** Estimated monthly organic search visits per domain (DataForSEO Labs bulk traffic, ~US$0.01 + US$0.0001 per domain). */
+export async function domainTraffic(login: string, password: string, domains: string[], locationCode: number): Promise<{ etv: Map<string, number>; cost: number }> {
+  const list = [...new Set(domains)].slice(0, 1000);
+  const etv = new Map<string, number>();
+  if (!list.length) return { etv, cost: 0 };
+  const { result, cost } = await dfsTask<{ items?: { target: string; metrics?: { organic?: { etv?: number } } }[] }[]>(
+    login,
+    password,
+    'dataforseo_labs/google/bulk_traffic_estimation/live',
+    { targets: list, location_code: locationCode, language_code: 'en', item_types: ['organic'] },
+  );
+  for (const i of result?.[0]?.items ?? []) etv.set(i.target.replace(/^www\./, ''), Math.round(i.metrics?.organic?.etv ?? 0));
+  return { etv, cost };
+}

@@ -2,7 +2,8 @@
 
 For each scored niche:
   R      = mid monthly revenue at maturity (money map: traffic x clicks x conversion x payout + ads)
-  P_rank = ease/100                      (keyword difficulty: can a small site rank?)
+  P_rank = ease/100, blended 40/60 with competition openness/100 once checked
+           (keyword difficulty + who actually holds Google's top 10; see hq/reports/competition.md)
   P_fit  = 0.5 + fit/200                 (Claude's judgement of data, automation and monetisation fit)
   P_data = 1 - dataRisk                  (licence or source could block us)
   P_pay  = approval odds of the top 3 programmes (verified terms only count fully)
@@ -38,7 +39,9 @@ for n in niches:
     if not a: continue
     s, m = n['score'], n['money']
     lo, mid, hi = m['revenueUsd']
-    P_rank, P_fit, P_data, P_pay = s['ease'] / 100, 0.5 + s['fit'] / 200, 1 - a['dataRisk'], p_pay(m.get('programs') or [])
+    comp = n.get('competition')
+    P_rank = s['ease'] / 100 if not comp else 0.4 * s['ease'] / 100 + 0.6 * comp['openness'] / 100
+    _, P_fit, P_data, P_pay = s['ease'] / 100, 0.5 + s['fit'] / 200, 1 - a['dataRisk'], p_pay(m.get('programs') or [])
     P = P_rank * P_fit * P_data * P_pay
     ev = sum(mid * P * ramp(t, a['monthsToFirst']) for t in range(1, H + 1))
     # Monte Carlo
@@ -51,7 +54,7 @@ for n in niches:
         evs.append(sum(r * ramp(t, t0) for t in range(1, H + 1)))
         if r * ramp(18, t0) >= 500: hits += 1
     evs.sort()
-    rows.append(dict(idea=n['idea'], site=a['shared'], R=mid, P=P, parts=(P_rank, P_fit, P_data, P_pay), ev=ev,
+    rows.append(dict(open=(comp or {}).get('openness'), idea=n['idea'], site=a['shared'], R=mid, P=P, parts=(P_rank, P_fit, P_data, P_pay), ev=ev,
                      days=a['effortDays'], prio=ev / a['effortDays'], p500=hits / 5000, p10=evs[500], p90=evs[4500]))
 
 rows.sort(key=lambda r: -r['prio'])
@@ -64,10 +67,10 @@ out = ['# Where to start: niche × affiliate priority', '',
 for i, r in enumerate(rows, 1):
     out.append(f"| {i} | {r['idea']} | {r['site']} | ${r['R']:,.0f} | {r['P']*100:.0f}% | ${r['ev']:,.0f} | {r['days']} | **${r['prio']:,.0f}** | {r['p500']*100:.0f}% |")
 out += ['', '## Odds breakdown (rank × fit × data × affiliate approval)', '',
-        '| Idea | Rank | Fit | Data | Approval | 24-mo range (10th–90th pct) |', '|---|---:|---:|---:|---:|---|']
+        '| Idea | Competition openness | Rank | Fit | Data | Approval | 24-mo range (10th–90th pct) |', '|---|---:|---:|---:|---:|---:|---|']
 for r in rows:
     a, b, c, d = r['parts']
-    out.append(f"| {r['idea']} | {a:.2f} | {b:.2f} | {c:.2f} | {d:.2f} | ${r['p10']:,.0f} – ${r['p90']:,.0f} |")
+    out.append(f"| {r['idea']} | {'—' if r['open'] is None else r['open']} | {a:.2f} | {b:.2f} | {c:.2f} | {d:.2f} | ${r['p10']:,.0f} – ${r['p90']:,.0f} |")
 # grouped by site (sections share build effort)
 g = {}
 for r in rows:
