@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-19T21:00:11.431Z",
+ "generatedAt": "2026-10-20T11:27:56.326Z",
  "period": {
-  "start": "2026-09-21",
-  "end": "2026-10-18"
+  "start": "2026-09-22",
+  "end": "2026-10-19"
  },
  "gscPeriod": {
-  "start": "2026-09-19",
-  "end": "2026-10-16"
+  "start": "2026-09-20",
+  "end": "2026-10-17"
  },
  "sources": {
   "ga4": true,
@@ -14,19 +14,14 @@
   "notes": []
  },
  "totals": {
-  "views": 273,
-  "prevViews": 42,
-  "users": 182,
+  "views": 279,
+  "prevViews": 47,
+  "users": 184,
   "cta": {},
   "gscClicks": 7,
-  "gscImpressions": 627
+  "gscImpressions": 647
  },
  "daily": [
-  {
-   "date": "2026-09-21",
-   "views": 5,
-   "cta": 0
-  },
   {
    "date": "2026-09-22",
    "views": 10,
@@ -156,14 +151,19 @@
    "date": "2026-10-18",
    "views": 15,
    "cta": 0
+  },
+  {
+   "date": "2026-10-19",
+   "views": 11,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
    "views": 119,
-   "prevViews": 30,
-   "users": 48,
+   "prevViews": 34,
+   "users": 47,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 0,
@@ -182,10 +182,10 @@
    "topQuery": "schindler's list trailer"
   },
   {
-   "path": "/movies/star-wars-episode-v---the-empire-strikes-back-1980",
-   "views": 9,
+   "path": "/browse",
+   "views": 10,
    "prevViews": 0,
-   "users": 4,
+   "users": 1,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 0,
@@ -193,10 +193,10 @@
    "topQuery": null
   },
   {
-   "path": "/browse",
-   "views": 7,
+   "path": "/movies/star-wars-episode-v---the-empire-strikes-back-1980",
+   "views": 9,
    "prevViews": 0,
-   "users": 1,
+   "users": 4,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 0,
@@ -221,8 +221,8 @@
    "users": 3,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 6,
-   "gscPosition": 43.8,
+   "gscImpressions": 7,
+   "gscPosition": 46.6,
    "topQuery": "true lies trailer"
   },
   {
@@ -265,8 +265,8 @@
    "users": 1,
    "cta": {},
    "gscClicks": 2,
-   "gscImpressions": 27,
-   "gscPosition": 40.6,
+   "gscImpressions": 29,
+   "gscPosition": 41.2,
    "topQuery": "home alone trailer"
   },
   {
@@ -688,6 +688,28 @@
    "topQuery": "star wars episode 1 trailer"
   },
   {
+   "path": "/movies/the-hateful-eight-2015",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 13,
+   "gscPosition": 54.5,
+   "topQuery": "the hateful 8 trailer"
+  },
+  {
+   "path": "/movies/basic-instinct-1992",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 9,
+   "gscPosition": 37.9,
+   "topQuery": "basic instinct trailer"
+  },
+  {
    "path": "/movies/inglourious-basterds-2009",
    "views": 1,
    "prevViews": 0,
@@ -699,15 +721,15 @@
    "topQuery": "inglourious basterds trailer"
   },
   {
-   "path": "/movies/the-hateful-eight-2015",
+   "path": "/movies/platoon-1986",
    "views": 1,
    "prevViews": 0,
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 9,
-   "gscPosition": 44.1,
-   "topQuery": "trailer for the hateful eight"
+   "gscImpressions": 7,
+   "gscPosition": 54.6,
+   "topQuery": "platoon movie trailer"
   },
   {
    "path": "/movies/the-fugitive-1993",
@@ -730,17 +752,6 @@
    "gscImpressions": 5,
    "gscPosition": 41.8,
    "topQuery": "aliens 1986 trailer"
-  },
-  {
-   "path": "/movies/platoon-1986",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 52,
-   "topQuery": "platoon movie trailer"
   },
   {
    "path": "/movies/seabiscuit-2003",
@@ -798,6 +809,28 @@
    "topQuery": null
   },
   {
+   "path": "/discover/marvel-cinematic-universe",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
+   "path": "/movies/anora-2024",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
    "path": "/movies/castle-in-the-sky-1986",
    "views": 1,
    "prevViews": 0,
@@ -821,17 +854,6 @@
   },
   {
    "path": "/movies/ghost-soldier-2026",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null
-  },
-  {
-   "path": "/movies/good-will-hunting-1998",
    "views": 1,
    "prevViews": 0,
    "users": 1,
@@ -941,6 +963,17 @@
    "topQuery": null
   },
   {
+   "path": "/movies/the-sandlot-1993",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
    "path": "/movies/the-tale-of-the-princess-kaguya-2013",
    "views": 1,
    "prevViews": 0,
@@ -974,6 +1007,17 @@
    "topQuery": "ferris bueller trailer"
   },
   {
+   "path": "/movies/the-silence-of-the-lambs-1991",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 18,
+   "gscPosition": 33.4,
+   "topQuery": "silence of the lambs trailer"
+  },
+  {
    "path": "/movies/dunkirk-2017",
    "views": 0,
    "prevViews": 0,
@@ -985,25 +1029,14 @@
    "topQuery": "dunkirk 2017 trailer"
   },
   {
-   "path": "/movies/the-silence-of-the-lambs-1991",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 17,
-   "gscPosition": 32.5,
-   "topQuery": "silence of the lambs preview"
-  },
-  {
    "path": "/movies/district-9-2009",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 11,
-   "gscPosition": 36.2,
+   "gscImpressions": 14,
+   "gscPosition": 42.6,
    "topQuery": "district 9 trailer"
   },
   {
@@ -1029,15 +1062,15 @@
    "topQuery": "pulp fiction trailer"
   },
   {
-   "path": "/movies/basic-instinct-1992",
+   "path": "/movies/the-dark-knight-rises-2012",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 9,
-   "gscPosition": 37.9,
-   "topQuery": "basic instinct trailer"
+   "gscImpressions": 10,
+   "gscPosition": 36.8,
+   "topQuery": "the dark knight rises 2012 trailer"
   },
   {
    "path": "/movies/insomnia-2002",
@@ -1062,6 +1095,17 @@
    "topQuery": "home alone 2 lost in new york trailer"
   },
   {
+   "path": "/movies/the-blind-side-2009",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 8,
+   "gscPosition": 55.3,
+   "topQuery": "the blind side 2009 trailer"
+  },
+  {
    "path": "/movies/back-to-school-1986",
    "views": 0,
    "prevViews": 0,
@@ -1082,17 +1126,6 @@
    "gscImpressions": 7,
    "gscPosition": 53.6,
    "topQuery": "memento film trailer"
-  },
-  {
-   "path": "/movies/the-dark-knight-rises-2012",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 7,
-   "gscPosition": 28.9,
-   "topQuery": "the dark knight rises 2012 trailer"
   },
   {
    "path": "/movies/the-rock-1996",
@@ -1126,17 +1159,6 @@
    "gscImpressions": 6,
    "gscPosition": 35.7,
    "topQuery": "spirited away trailer"
-  },
-  {
-   "path": "/movies/the-blind-side-2009",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 6,
-   "gscPosition": 50.8,
-   "topQuery": "the blind side 2009 trailer"
   },
   {
    "path": "/movies/howls-moving-castle-2004",
@@ -1304,6 +1326,17 @@
    "topQuery": "trailer capitan america 2014"
   },
   {
+   "path": "/movies/goldeneye-1995",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 40,
+   "topQuery": "goldeneye trailer"
+  },
+  {
    "path": "/movies/kikis-delivery-service-1989",
    "views": 0,
    "prevViews": 0,
@@ -1401,17 +1434,6 @@
    "gscImpressions": 1,
    "gscPosition": 72,
    "topQuery": "from up on poppy hill trailer"
-  },
-  {
-   "path": "/movies/goldeneye-1995",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 35,
-   "topQuery": "goldeneye trailer"
   },
   {
    "path": "/movies/mission-impossible---ghost-protocol-2011",
@@ -1525,6 +1547,17 @@
   },
   {
    "path": "/movies/every-80s-ever",
+   "views": 0,
+   "prevViews": 1,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
+   "path": "/movies/good-will-hunting-1998",
    "views": 0,
    "prevViews": 1,
    "users": 0,
