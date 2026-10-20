@@ -114,7 +114,7 @@ export default {
 
   async fetch(req: Request, env: Env): Promise<Response> {
     const url = new URL(req.url);
-    const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue|collections|stats|niches|towns|keywords)$/);
+    const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue|collections|stats|niches|competition|towns|keywords)$/);
     if (!m) return new Response('Trailer pipeline. Runs on a schedule.\n', { status: url.pathname === '/' ? 200 : 404 });
     if (!env.RUN_KEY || url.searchParams.get('key') !== env.RUN_KEY) return new Response('Forbidden\n', { status: 403 });
     try {
