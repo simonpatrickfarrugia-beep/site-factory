@@ -5,8 +5,9 @@ interface Props {
   towns: SignTown[];
   neighbourhoods: SignTown[];
   collections: { slug: string; name: string; intro: string; towns: string[] }[];
+  loops: { slug: string; name: string; summary: string; days: number }[];
 }
-const { towns, neighbourhoods, collections } = Astro.props;
+const { towns, neighbourhoods, collections, loops } = Astro.props;
 ---
 <div class="wrap home">
   <section class="home__hero">
@@ -16,6 +17,21 @@ const { towns, neighbourhoods, collections } = Astro.props;
       {towns.map((t) => <li><RoadSign name={t.name} km={t.km} href={`/${t.slug}`} /></li>)}
     </ul>
   </section>
+
+  {loops.length > 0 && (
+    <section class="home__section">
+      <h2>Road trips</h2>
+      <ul class="trips">
+        {loops.map((l) => (
+          <li class="trip">
+            <a class="trip__name trip__name--loop" href={`/road-trips/${l.slug}`}>{l.name}</a>
+            <p class="trip__intro">{l.summary}</p>
+            <p class="trip__towns">{l.days} days, planned day by day</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
 
   <section class="home__section">
     <h2>Trip ideas</h2>
@@ -52,6 +68,7 @@ const { towns, neighbourhoods, collections } = Astro.props;
   .trip { border-top: 2px solid var(--paper); padding: var(--space-3) 0; }
   .trip__name { font-family: var(--font-display); font-weight: 800; font-size: 1.4rem; text-decoration: none; color: var(--sign-brown); }
   .trip__name:hover { text-decoration: underline; }
+  .trip__name--loop { color: var(--sign-green); }
   .trip__intro { margin: 0.3rem 0 0.2rem; }
   .trip__towns { margin: 0; color: var(--muted); font-family: var(--font-display); font-size: 0.9rem; }
 </style>

@@ -1,0 +1,17 @@
+---
+interface Props { loops: { slug: string; name: string; summary: string; route: string; days: number }[] }
+const { loops } = Astro.props;
+---
+<div class="wrap town">
+  <h1 class="page-title page-title--big">Road trips</h1>
+  <p class="town__lede">Self-drive loops from Melbourne, planned day by day, with where to stay, eat and what to do at every overnight stop.</p>
+  <ul class="stops">
+    {loops.map((l) => (
+      <li class="loop-card">
+        <a class="loop-card__name" href={`/road-trips/${l.slug}`}>{l.name}</a>
+        <p class="loop-card__route">{l.days} days · {l.route}</p>
+        <p>{l.summary}</p>
+      </li>
+    ))}
+  </ul>
+</div>

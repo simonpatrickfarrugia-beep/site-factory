@@ -40,9 +40,25 @@ export interface VicCollection {
   towns: string[];
 }
 
+export interface LoopDay {
+  title: string;
+  stops: string[]; // town slugs visited that day
+  overnight: string | null;
+  text: string;
+}
+
+export interface Loop {
+  slug: string;
+  name: string;
+  summary: string;
+  intro: string;
+  days: LoopDay[];
+}
+
 export interface Content {
   towns: Record<string, TownContent>;
   collections: VicCollection[];
+  loops?: Loop[];
   pages: { slug: string; title: string; description: string; paragraphs: string[] }[];
 }
 

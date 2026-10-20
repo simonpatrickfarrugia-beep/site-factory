@@ -39,6 +39,30 @@
   "mornington": {
    "intro": "Mornington is the Mornington Peninsula’s main-street town, with a weekly Wednesday street market, a historic pier and the sheltered swimming at Mothers Beach. It’s the easy gateway to the peninsula’s wineries, hot springs and back beaches further south.",
    "region": "Mornington Peninsula"
+  },
+  "halls-gap": {
+   "intro": "Halls Gap is the village at the heart of the Grampians (Gariwerd) National Park, ringed by sandstone ranges. It’s the base for the park’s best-known walks and lookouts: the Pinnacle, MacKenzie Falls, and Boroka and Reed lookouts. Kangaroos graze the town oval at dusk, and the Brambuk cultural centre tells the story of the Jardwadjali and Djab Wurrung peoples.",
+   "region": "Grampians"
+  },
+  "dunkeld": {
+   "intro": "Dunkeld is a small town at the southern tip of the Grampians, under the peaks of Mount Sturgeon and Mount Abrupt. It punches far above its size for food, and the climb up Mount Sturgeon rewards you with views back across the range. It’s an easy stop between the Grampians and the coast.",
+   "region": "Grampians"
+  },
+  "port-fairy": {
+   "intro": "Port Fairy is a historic fishing village of whalers’ cottages, stone churches and a working harbour on the Moyne River. Walk out to the lighthouse on Griffiths Island, home to a shearwater colony, and time a visit for the Port Fairy Folk Festival in March if you like a crowd.",
+   "region": "Great Ocean Road"
+  },
+  "port-campbell": {
+   "intro": "Port Campbell is the small coastal town closest to the Twelve Apostles. Loch Ard Gorge, the Arch and London Bridge are all a short drive away along the Port Campbell National Park coastline. Stay the night so you can see the limestone stacks at sunset and again at sunrise, without the daytime crowds.",
+   "region": "Great Ocean Road"
+  },
+  "apollo-bay": {
+   "intro": "Apollo Bay is a fishing town where the Great Ocean Road meets the Otway Ranges. Head inland for rainforest walks and waterfalls in the Great Otway National Park, drive out to the Cape Otway Lightstation, or climb to Mariners Lookout for the view back over the bay.",
+   "region": "Great Ocean Road"
+  },
+  "lorne": {
+   "intro": "Lorne is the classic Great Ocean Road beach town, where the forest of the Otways comes right down to the sand. Swim or surf the main beach, walk out on the pier, then drive up to Teddy’s Lookout for the famous view of the road snaking along the coast, or into the hills to Erskine Falls.",
+   "region": "Great Ocean Road"
   }
  },
  "collections": [
@@ -125,6 +149,75 @@
     "Places with more complete details (website, opening hours, address) are shown first, and chain restaurants are listed last. We don’t accept payment for placement.",
     "Distances are measured in a straight line from Melbourne’s CBD, so the drive is longer. Opening hours change, so check with the venue before you go.",
     "Some links may become booking links in future. If they do, we’ll say so clearly on the page."
+   ]
+  }
+ ],
+ "loops": [
+  {
+   "slug": "western-victoria-loop",
+   "name": "Western Victoria Loop",
+   "summary": "Seven days from Melbourne: the goldfields, the Grampians and the Great Ocean Road, home along the coast.",
+   "intro": "A week-long self-drive loop through three of Victoria’s best regions. You head out through the gold-rush city of Ballarat, spend two nights among the Grampians’ ranges and waterfalls, then drop south to the Shipwreck Coast and drive the Great Ocean Road back towards Melbourne. Each day is a comfortable drive with plenty of time for walks, long lunches and lookouts.",
+   "days": [
+    {
+     "title": "Melbourne to Ballarat",
+     "stops": [
+      "ballarat"
+     ],
+     "overnight": "ballarat",
+     "text": "An easy drive west to Ballarat. Spend the afternoon at Sovereign Hill or wander Lydiard and Sturt streets, then walk around Lake Wendouree as the sun goes down."
+    },
+    {
+     "title": "Ballarat to the Grampians",
+     "stops": [
+      "halls-gap"
+     ],
+     "overnight": "halls-gap",
+     "text": "Head west into the Grampians. Settle into Halls Gap, then catch the late light from Boroka or Reed Lookout, and look for kangaroos on the town oval at dusk."
+    },
+    {
+     "title": "A day in the Grampians",
+     "stops": [
+      "halls-gap"
+     ],
+     "overnight": "halls-gap",
+     "text": "Walk to the Pinnacle in the morning, then visit MacKenzie Falls in the afternoon. Brambuk is worth an hour for the region’s Aboriginal history and culture."
+    },
+    {
+     "title": "The Grampians to Port Fairy",
+     "stops": [
+      "dunkeld",
+      "port-fairy"
+     ],
+     "overnight": "port-fairy",
+     "text": "Drive south through the range to Dunkeld for lunch beneath Mount Sturgeon, then continue down to the coast and into Port Fairy. Walk the Griffiths Island loop to the lighthouse before dinner."
+    },
+    {
+     "title": "The Shipwreck Coast",
+     "stops": [
+      "warrnambool",
+      "port-campbell"
+     ],
+     "overnight": "port-campbell",
+     "text": "Stop in Warrnambool (whale season runs roughly May to September), then follow the coast east past the Bay of Islands to Port Campbell. Be at the Twelve Apostles or Loch Ard Gorge for sunset."
+    },
+    {
+     "title": "Through the Otways",
+     "stops": [
+      "apollo-bay",
+      "lorne"
+     ],
+     "overnight": "lorne",
+     "text": "Catch the Apostles at sunrise, then wind through the Otways to Apollo Bay for lunch, with a detour to Cape Otway or a rainforest waterfall. Finish the day on the beach at Lorne."
+    },
+    {
+     "title": "Lorne to Melbourne",
+     "stops": [
+      "torquay"
+     ],
+     "overnight": null,
+     "text": "Drive the most famous stretch of the Great Ocean Road, stopping at Teddy’s Lookout and the Memorial Arch, then surf-town Torquay and Bells Beach on the way back to Melbourne."
+    }
    ]
   }
  ]

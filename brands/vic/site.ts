@@ -66,6 +66,7 @@ export function routes(): Route[] {
       towns: byKm.filter((t) => !isNeighbourhood(t)).map(info),
       neighbourhoods: byKm.filter(isNeighbourhood).map(info),
       collections: content.collections,
+      loops: (content.loops ?? []).map((l) => ({ slug: l.slug, name: l.name, summary: l.summary, days: l.days.length })),
     },
   });
 
@@ -120,7 +121,10 @@ export function routes(): Route[] {
         town: { name: t.name, slug: t.slug, km, region: c.region, intro: c.intro, tips: c.tips ?? [] },
         sections,
         nearby,
-        collections: content.collections.filter((col) => col.towns.includes(t.slug)).map(({ slug, name }) => ({ slug, name })),
+        collections: [
+          ...(content.loops ?? []).filter((l) => l.days.some((d) => d.stops.includes(t.slug))).map((l) => ({ href: `/road-trips/${l.slug}`, name: `Road trip: ${l.name}` })),
+          ...content.collections.filter((col) => col.towns.includes(t.slug)).map(({ slug, name }) => ({ href: `/collections/${slug}`, name })),
+        ],
       },
     });
     for (const g of GROUPS) {
@@ -170,6 +174,55 @@ export function routes(): Route[] {
         intro: col.intro,
         towns: list.map((t) => ({ ...info(t), intro: content.towns[t.slug].intro, counts: Object.fromEntries(GROUPS.map((g) => [g, inGroup(t.slug, g).length])) })),
       },
+    });
+  }
+
+  // Road trips (loops)
+  const loops = content.loops ?? [];
+  const townName = (s: string) => townBySlug.get(s)?.name ?? null;
+  const loopRoute = (l: (typeof loops)[number]) => ['Melbourne', ...new Set(l.days.flatMap((d) => d.stops).map(townName).filter(Boolean)), 'Melbourne'].join(' → ');
+  if (loops.length) {
+    out.push({
+      path: 'road-trips',
+      template: 'vicLoops',
+      seo: { title: 'Road trips from Melbourne' + SUFFIX, rawTitle: true, description: 'Self-drive road trips from Melbourne, planned day by day, with where to stay, eat and what to do at every stop.' },
+      props: { loops: loops.map((l) => ({ slug: l.slug, name: l.name, summary: l.summary, route: loopRoute(l), days: l.days.length })) },
+    });
+  }
+  for (const l of loops) {
+    const top = (s: string, g: Group, n: number) => inGroup(s, g).slice(0, n);
+    const days = l.days.map((d) => ({
+      title: d.title,
+      text: d.text,
+      stops: d.stops.filter((s) => townBySlug.has(s)).map((s) => ({ slug: s, name: townName(s)! })),
+      overnight:
+        d.overnight && townBySlug.has(d.overnight)
+          ? { slug: d.overnight, name: townName(d.overnight)!, stay: top(d.overnight, 'stay', 3), eat: top(d.overnight, 'eat', 3), do: top(d.overnight, 'do', 3) }
+          : null,
+    }));
+    const nights = l.days.filter((d) => d.overnight).length;
+    out.push({
+      path: `road-trips/${l.slug}`,
+      template: 'vicLoop',
+      seo: {
+        title: `${l.name}: ${l.days.length}-day road trip from Melbourne` + SUFFIX,
+        rawTitle: true,
+        description: `${l.summary} Day-by-day plan with where to stay, eat and what to do.`.slice(0, 165),
+      },
+      schema: [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'TouristTrip',
+          name: l.name,
+          description: l.intro,
+          itinerary: {
+            '@type': 'ItemList',
+            itemListElement: days.flatMap((d) => d.stops).map((s, i) => ({ '@type': 'ListItem', position: i + 1, item: { '@type': 'TouristDestination', name: `${s.name}, Victoria`, url: `${SITE}/${s.slug}` } })),
+          },
+        },
+        crumbs([{ name: 'Home', path: '' }, { name: 'Road trips', path: 'road-trips' }, { name: l.name, path: `road-trips/${l.slug}` }]),
+      ],
+      props: { name: l.name, intro: l.intro, nights, route: loopRoute(l), days },
     });
   }
 

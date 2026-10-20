@@ -8,6 +8,13 @@ interface Props {
   places: Place[];
 }
 const { town, group, places } = Astro.props;
+const has = (k: string) => places.filter((p) => (k === 'dog' ? ['yes', 'leashed'].includes(p.tags.dog) : k === 'outdoor' ? p.tags.outdoor_seating === 'yes' : k === 'access' ? p.tags.wheelchair === 'yes' : !!p.tags.opening_hours)).length;
+const situations = [
+  { key: 'dog', label: 'Dogs welcome' },
+  { key: 'outdoor', label: 'Outdoor seating' },
+  { key: 'access', label: 'Wheelchair accessible' },
+  { key: 'hours', label: 'Hours listed' },
+].map((s) => ({ ...s, n: has(s.key) })).filter((s) => s.n > 0);
 const types = Object.entries(places.reduce<Record<string, number>>((a, p) => ((a[p.type] = (a[p.type] ?? 0) + 1), a), {})).sort((a, b) => b[1] - a[1]);
 ---
 <div class="wrap town">
@@ -21,18 +28,46 @@ const types = Object.entries(places.reduce<Record<string, number>>((a, p) => ((a
       {types.map(([t, n]) => <button type="button" aria-pressed="false" data-filter={t}>{TYPE_LABEL[t] ?? t} <span>{n}</span></button>)}
     </div>
   )}
+  {situations.length > 0 && (
+    <div class="filters filters--situations" role="group" aria-label="Only show places that are">
+      {situations.map((s) => <button type="button" aria-pressed="false" data-flag={s.key}>{s.label} <span>{s.n}</span></button>)}
+    </div>
+  )}
+  <p class="count" data-shown hidden></p>
   <ul class="places" data-places>{places.map((p) => <PlaceRow place={p} />)}</ul>
   <p class="more"><a href={`/${town.slug}`}>Back to {town.name}: stay, eat and do</a></p>
 </div>
 <script is:inline>
   (function () {
     var list = document.querySelector('[data-places]');
+    var shown = document.querySelector('[data-shown]');
     var buttons = document.querySelectorAll('[data-filter]');
+    var flags = document.querySelectorAll('[data-flag]');
+    var type = '', need = {};
+    function apply() {
+      var n = 0;
+      Array.prototype.forEach.call(list.children, function (li) {
+        var f = ' ' + (li.getAttribute('data-flags') || '') + ' ';
+        var ok = (!type || li.getAttribute('data-type') === type) && Object.keys(need).every(function (k) { return f.indexOf(' ' + k + ' ') !== -1; });
+        li.hidden = !ok; if (ok) n++;
+      });
+      var filtered = type || Object.keys(need).length;
+      shown.hidden = !filtered;
+      shown.textContent = n ? 'Showing ' + n + (n === 1 ? ' place' : ' places') : 'Nothing matches all of those. Try removing a filter.';
+    }
     buttons.forEach(function (b) {
       b.addEventListener('click', function () {
-        var f = b.getAttribute('data-filter');
+        type = b.getAttribute('data-filter');
         buttons.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
-        Array.prototype.forEach.call(list.children, function (li) { li.hidden = !!f && li.getAttribute('data-type') !== f; });
+        apply();
+      });
+    });
+    flags.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var k = b.getAttribute('data-flag');
+        if (need[k]) delete need[k]; else need[k] = true;
+        b.setAttribute('aria-pressed', String(!!need[k]));
+        apply();
       });
     });
   })();

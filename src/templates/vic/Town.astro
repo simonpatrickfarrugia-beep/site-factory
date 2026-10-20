@@ -6,7 +6,7 @@ interface Props {
   town: { name: string; slug: string; km: number; region: string; intro: string; tips: string[] };
   sections: { group: Group; total: number; places: Place[] }[];
   nearby: { slug: string; name: string; km: number }[];
-  collections: { slug: string; name: string }[];
+  collections: { href: string; name: string }[];
 }
 const { town, sections, nearby, collections } = Astro.props;
 ---
@@ -40,8 +40,8 @@ const { town, sections, nearby, collections } = Astro.props;
 
   {collections.length > 0 && (
     <section class="town__section">
-      <h2>Part of these trip ideas</h2>
-      <ul class="inline-list">{collections.map((c) => <li><a href={`/collections/${c.slug}`}>{c.name}</a></li>)}</ul>
+      <h2>Part of these trips</h2>
+      <ul class="inline-list">{collections.map((c) => <li><a href={c.href}>{c.name}</a></li>)}</ul>
     </section>
   )}
 

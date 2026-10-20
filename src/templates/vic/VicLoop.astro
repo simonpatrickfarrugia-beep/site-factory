@@ -1,0 +1,44 @@
+---
+import RoadSign from '../../components/vic/RoadSign.astro';
+import type { Place } from '../../../brands/vic/model';
+interface DayView {
+  title: string;
+  text: string;
+  stops: { slug: string; name: string }[];
+  overnight: { slug: string; name: string; stay: Place[]; eat: Place[]; do: Place[] } | null;
+}
+interface Props { name: string; intro: string; nights: number; route: string; days: DayView[] }
+const { name, intro, nights, route, days } = Astro.props;
+const names = (ps: Place[]) => ps.map((p) => p.name).join(', ');
+---
+<div class="wrap town">
+  <p class="crumb"><a href="/road-trips">Road trips</a></p>
+  <RoadSign name={name} size="hero" as="h1" sub={`${days.length} days, ${nights} nights · self-drive from Melbourne`} />
+  <div class="town__intro">
+    <p class="town__lede">{intro}</p>
+    <p class="count">{route}</p>
+  </div>
+  <ol class="loop-days">
+    {days.map((d, i) => (
+      <li class="loop-day">
+        <span class="loop-day__num" aria-hidden="true">{i + 1}</span>
+        <h2 class="loop-day__title">Day {i + 1}: {d.title}</h2>
+        <p>{d.text}</p>
+        {d.stops.length > 0 && (
+          <ul class="loop-day__stops" aria-label="Stops">
+            {d.stops.map((s) => <li><RoadSign name={s.name} href={`/${s.slug}`} /></li>)}
+          </ul>
+        )}
+        {d.overnight && (
+          <div class="picks">
+            <h3>Overnight in <a href={`/${d.overnight.slug}`}>{d.overnight.name}</a></h3>
+            {d.overnight.stay.length > 0 && <p><span class="picks__label">Stay</span>{names(d.overnight.stay)} · <a href={`/${d.overnight.slug}#stay`}>all options</a></p>}
+            {d.overnight.eat.length > 0 && <p><span class="picks__label">Eat</span>{names(d.overnight.eat)} · <a href={`/${d.overnight.slug}#eat`}>all options</a></p>}
+            {d.overnight.do.length > 0 && <p><span class="picks__label picks__label--do">Do</span>{names(d.overnight.do)} · <a href={`/${d.overnight.slug}#do`}>all options</a></p>}
+          </div>
+        )}
+      </li>
+    ))}
+  </ol>
+  <p class="count">Listings come from open data and are ordered by how complete their details are, not by payment. Check opening hours before you go.</p>
+</div>

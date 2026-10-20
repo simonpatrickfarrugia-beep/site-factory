@@ -13,8 +13,8 @@ export default defineBrand({
 
   nav: [
     { label: 'Towns', href: '/towns' },
+    { label: 'Road trips', href: '/road-trips' },
     { label: 'Day trips', href: '/collections/day-trips-from-melbourne' },
-    { label: 'Weekends', href: '/collections/weekend-getaways' },
   ],
   footer: [
     { label: 'About', href: '/about' },

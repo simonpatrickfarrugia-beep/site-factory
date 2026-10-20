@@ -14,7 +14,11 @@ const flags = [
   t.wheelchair === 'yes' ? 'Wheelchair accessible' : null,
 ].filter(Boolean);
 ---
-<li class="place" data-type={p.type}>
+<li
+  class="place"
+  data-type={p.type}
+  data-flags={[t.dog === 'yes' || t.dog === 'leashed' ? 'dog' : '', t.outdoor_seating === 'yes' ? 'outdoor' : '', t.wheelchair === 'yes' ? 'access' : '', t.opening_hours ? 'hours' : ''].filter(Boolean).join(' ')}
+>
   <h3 class="place__name">{p.name}</h3>
   <p class="place__kind">{kind}</p>
   {addr && <p class="place__line">{addr}</p>}
