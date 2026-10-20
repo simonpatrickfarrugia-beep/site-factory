@@ -3992,14 +3992,15 @@
    ]
   },
   "competition": {
-   "checkedAt": "2026-10-20T19:51:42.289Z",
+   "checkedAt": "2026-10-20T19:59:16.301Z",
+   "v": 2,
    "market": 2036,
-   "openness": 44,
+   "openness": 28,
    "keywords": [
     {
      "keyword": "melbourne great ocean road tour",
      "volume": 12100,
-     "openness": 53,
+     "openness": 47,
      "beatable": [
       {
        "rank": 1,
@@ -4014,11 +4015,6 @@
       {
        "rank": 5,
        "domain": "gowest.com.au",
-       "why": "small site"
-      },
-      {
-       "rank": 8,
-       "domain": "activities.marriott.com",
        "why": "small site"
       },
       {
@@ -4058,7 +4054,7 @@
     {
      "keyword": "ballarat attractions",
      "volume": 8100,
-     "openness": 42,
+     "openness": 37,
      "beatable": [
       {
        "rank": 2,
@@ -4071,12 +4067,12 @@
        "why": "small site"
       },
       {
-       "rank": 6,
+       "rank": 7,
        "domain": "expedia.co.uk",
        "why": "small site"
       },
       {
-       "rank": 9,
+       "rank": 10,
        "domain": "ballaratchocolateexperiencestore.com.au",
        "why": "small site"
       }
@@ -4090,120 +4086,95 @@
     {
      "keyword": "ballarat sightseeing",
      "volume": 8100,
-     "openness": 37,
+     "openness": 16,
      "beatable": [
       {
-       "rank": 1,
-       "domain": "hotelballarat.com.au",
-       "why": "small site"
-      },
-      {
-       "rank": 2,
-       "domain": "ballaratbudgetmotel.com.au",
+       "rank": 4,
+       "domain": "vetlifeinballarat.com.au",
        "why": "small site"
       },
       {
        "rank": 8,
-       "domain": "autopiatours.com.au",
+       "domain": "culturalattractionsofaustralia.com",
        "why": "small site"
       }
      ],
      "top3": [
-      "hotelballarat.com.au",
-      "ballaratbudgetmotel.com.au",
-      "visitballarat.com.au"
+      "visitballarat.com.au",
+      "visitmelbourne.com",
+      "tripadvisor.com.au"
      ]
     },
     {
      "keyword": "ballarat things to see",
      "volume": 8100,
-     "openness": 84,
+     "openness": 16,
      "beatable": [
       {
-       "rank": 1,
-       "domain": "culturalattractionsofaustralia.com",
-       "why": "small site"
-      },
-      {
-       "rank": 2,
-       "domain": "autopiatours.com.au",
-       "why": "small site"
-      },
-      {
-       "rank": 3,
-       "domain": "expedia.co.uk",
-       "why": "small site"
-      },
-      {
-       "rank": 4,
-       "domain": "mercure.accor.com",
-       "why": "small site"
-      },
-      {
        "rank": 5,
-       "domain": "ballaratbudgetmotel.com.au",
+       "domain": "vetlifeinballarat.com.au",
        "why": "small site"
       },
       {
-       "rank": 6,
-       "domain": "bestswines.com",
-       "why": "small site"
-      },
-      {
-       "rank": 8,
-       "domain": "ballaratchocolateexperiencestore.com.au",
+       "rank": 9,
+       "domain": "culturalattractionsofaustralia.com",
        "why": "small site"
       }
      ],
      "top3": [
-      "culturalattractionsofaustralia.com",
-      "autopiatours.com.au",
-      "expedia.co.uk"
+      "visitballarat.com.au",
+      "tripadvisor.com.au",
+      "visitmelbourne.com"
      ]
     },
     {
      "keyword": "things to do in phillip island",
      "volume": 5400,
-     "openness": 16,
+     "openness": 26,
      "beatable": [
       {
+       "rank": 4,
+       "domain": "facebook.com",
+       "why": "forum"
+      },
+      {
        "rank": 6,
-       "domain": "wildlifetours.com.au",
+       "domain": "melbournecitytour.com.au",
        "why": "small site"
       },
       {
-       "rank": 9,
-       "domain": "facebook.com",
-       "why": "forum"
+       "rank": 7,
+       "domain": "wildlifetours.com.au",
+       "why": "small site"
       }
      ],
      "top3": [
-      "youtube.com",
+      "visitphillipisland.com.au",
       "tripadvisor.com.au",
-      "visitphillipisland.com.au"
+      "klook.com"
      ]
     }
    ],
    "giants": [
     {
      "domain": "visitballarat.com.au",
-     "slots": 8,
+     "slots": 6,
      "etv": 41801
     },
     {
-     "domain": "youtube.com",
-     "slots": 3,
-     "etv": 38017851
-    },
-    {
      "domain": "tripadvisor.com.au",
-     "slots": 3,
+     "slots": 5,
      "etv": 19338086
     },
     {
-     "domain": "au.trip.com",
+     "domain": "visitmelbourne.com",
      "slots": 3,
-     "etv": 970590
+     "etv": 1125892
+    },
+    {
+     "domain": "experienceoz.com.au",
+     "slots": 3,
+     "etv": 82224
     },
     {
      "domain": "bookme.com.au",
@@ -4211,19 +4182,19 @@
      "etv": 69236
     },
     {
-     "domain": "tothotornot.com",
+     "domain": "youtube.com",
      "slots": 2,
-     "etv": 53873
+     "etv": 38017851
     },
     {
-     "domain": "booking.com",
-     "slots": 1,
-     "etv": 3801834
+     "domain": "trip.com",
+     "slots": 2,
+     "etv": 1483273
     },
     {
-     "domain": "tripadvisor.com",
-     "slots": 1,
-     "etv": 1992759
+     "domain": "expedia.com.au",
+     "slots": 2,
+     "etv": 1178028
     }
    ],
    "costUsd": 0.028
@@ -4563,35 +4534,41 @@
    ]
   },
   "competition": {
-   "checkedAt": "2026-10-20T19:51:42.289Z",
+   "checkedAt": "2026-10-20T19:59:16.301Z",
+   "v": 2,
    "market": 2036,
-   "openness": 43,
+   "openness": 47,
    "keywords": [
     {
      "keyword": "yarra valley lodge",
      "volume": 14800,
-     "openness": 32,
+     "openness": 53,
      "beatable": [
       {
-       "rank": 3,
+       "rank": 1,
+       "domain": "yarravalleylodge.com",
+       "why": "small site"
+      },
+      {
+       "rank": 2,
        "domain": "independentcollection.com.au",
        "why": "small site"
       },
       {
-       "rank": 6,
-       "domain": "independentcollection.com.au",
-       "why": "small site"
+       "rank": 4,
+       "domain": "facebook.com",
+       "why": "forum"
       },
       {
-       "rank": 8,
-       "domain": "2aussietravellers.com",
+       "rank": 5,
+       "domain": "evtstays.com",
        "why": "small site"
       }
      ],
      "top3": [
-      "hotelsone.com",
-      "tripadvisor.com",
-      "independentcollection.com.au"
+      "yarravalleylodge.com",
+      "independentcollection.com.au",
+      "tripadvisor.com.au"
      ]
     },
     {
@@ -4615,7 +4592,7 @@
        "why": "small site"
       },
       {
-       "rank": 8,
+       "rank": 7,
        "domain": "facebook.com",
        "why": "forum"
       }
@@ -4629,7 +4606,7 @@
     {
      "keyword": "balgownie yarra valley accommodation",
      "volume": 14800,
-     "openness": 37,
+     "openness": 32,
      "beatable": [
       {
        "rank": 1,
@@ -4642,7 +4619,7 @@
        "why": "small site"
       },
       {
-       "rank": 6,
+       "rank": 7,
        "domain": "balgownie.com",
        "why": "small site"
       }
@@ -4725,7 +4702,7 @@
     {
      "keyword": "lake house daylesford hotel",
      "volume": 9900,
-     "openness": 26,
+     "openness": 32,
      "beatable": [
       {
        "rank": 1,
@@ -4734,47 +4711,52 @@
       },
       {
        "rank": 6,
-       "domain": "luxurylodgesofaustralia.com.au",
+       "domain": "lakehouse.com.au",
+       "why": "small site"
+      },
+      {
+       "rank": 9,
+       "domain": "luxurytravelmag.com.au",
        "why": "small site"
       }
      ],
      "top3": [
       "lakehouse.com.au",
-      "tripadvisor.com.au",
+      "gourmettraveller.com.au",
       "instagram.com"
      ]
     }
    ],
    "giants": [
     {
-     "domain": "tripadvisor.com.au",
-     "slots": 5,
-     "etv": 19338086
-    },
-    {
      "domain": "instagram.com",
-     "slots": 4,
+     "slots": 5,
      "etv": 61725712
     },
     {
+     "domain": "tripadvisor.com.au",
+     "slots": 4,
+     "etv": 19338086
+    },
+    {
      "domain": "tripadvisor.com",
-     "slots": 3,
+     "slots": 2,
      "etv": 1992759
     },
     {
      "domain": "visitvictoria.com",
-     "slots": 3,
-     "etv": 598406
-    },
-    {
-     "domain": "luxuryescapes.com",
      "slots": 2,
-     "etv": 302725
+     "etv": 598406
     },
     {
      "domain": "youtube.com",
      "slots": 1,
      "etv": 38017851
+    },
+    {
+     "domain": "google.com",
+     "slots": 1,
+     "etv": 33225393
     },
     {
      "domain": "booking.com",
@@ -5107,14 +5089,15 @@
    ]
   },
   "competition": {
-   "checkedAt": "2026-10-20T19:51:42.289Z",
+   "checkedAt": "2026-10-20T19:59:16.301Z",
+   "v": 2,
    "market": 2036,
-   "openness": 49,
+   "openness": 54,
    "keywords": [
     {
      "keyword": "restaurants in geelong cbd",
      "volume": 22200,
-     "openness": 47,
+     "openness": 53,
      "beatable": [
       {
        "rank": 1,
@@ -5127,46 +5110,56 @@
        "why": "small site"
       },
       {
-       "rank": 6,
-       "domain": "meetmeatmarys.com.au",
-       "why": "small site"
+       "rank": 3,
+       "domain": "reddit.com",
+       "why": "forum"
       },
       {
        "rank": 7,
-       "domain": "paviliongeelong.com.au",
+       "domain": "meetmeatmarys.com.au",
        "why": "small site"
       }
      ],
      "top3": [
       "barwonedge.com.au",
       "baahlahdining.com",
-      "instagram.com"
+      "reddit.com"
      ]
     },
     {
      "keyword": "nice restaurants geelong",
      "volume": 6600,
-     "openness": 42,
+     "openness": 47,
      "beatable": [
       {
-       "rank": 1,
+       "rank": 2,
+       "domain": "sailorsrestgeelong.com.au",
+       "why": "small site"
+      },
+      {
+       "rank": 4,
+       "domain": "austinswines.com.au",
+       "why": "small site"
+      },
+      {
+       "rank": 6,
        "domain": "nectargeelong.com.au",
        "why": "small site"
       },
       {
-       "rank": 2,
-       "domain": "reddit.com",
-       "why": "forum"
+       "rank": 7,
+       "domain": "felixgeelong.com.au",
+       "why": "small site"
       },
       {
-       "rank": 5,
-       "domain": "meetmeatmarys.com.au",
+       "rank": 8,
+       "domain": "blacksheepgeelong.com.au",
        "why": "small site"
       }
      ],
      "top3": [
-      "nectargeelong.com.au",
-      "reddit.com",
+      "agfg.com.au",
+      "sailorsrestgeelong.com.au",
       "tripadvisor.com.au"
      ]
     },
@@ -5205,33 +5198,38 @@
     {
      "keyword": "geelong's best restaurants",
      "volume": 6600,
-     "openness": 42,
+     "openness": 53,
      "beatable": [
       {
-       "rank": 2,
-       "domain": "sailorsrestgeelong.com.au",
+       "rank": 1,
+       "domain": "eatability.com.au",
        "why": "small site"
       },
       {
-       "rank": 4,
-       "domain": "almarestaurant.com.au",
-       "why": "small site"
-      },
-      {
-       "rank": 6,
+       "rank": 3,
        "domain": "nectargeelong.com.au",
        "why": "small site"
       },
       {
+       "rank": 4,
+       "domain": "reddit.com",
+       "why": "forum"
+      },
+      {
        "rank": 8,
-       "domain": "felixgeelong.com.au",
+       "domain": "meetmeatmarys.com.au",
+       "why": "small site"
+      },
+      {
+       "rank": 9,
+       "domain": "paviliongeelong.com.au",
        "why": "small site"
       }
      ],
      "top3": [
-      "agfg.com.au",
-      "sailorsrestgeelong.com.au",
-      "broadsheet.com.au"
+      "eatability.com.au",
+      "opentable.com.au",
+      "nectargeelong.com.au"
      ]
     },
     {
@@ -5284,43 +5282,48 @@
     {
      "keyword": "ezard at levantine hill",
      "volume": 5400,
-     "openness": 63,
+     "openness": 68,
      "beatable": [
       {
-       "rank": 1,
-       "domain": "levantinehill.com.au",
-       "why": "small site"
-      },
-      {
        "rank": 2,
-       "domain": "levantinehill.com.au",
+       "domain": "doorexplorer.com",
        "why": "small site"
       },
       {
        "rank": 3,
-       "domain": "levantinehill.com.au",
+       "domain": "facebook.com",
+       "why": "forum"
+      },
+      {
+       "rank": 4,
+       "domain": "taufulou.com",
+       "why": "small site"
+      },
+      {
+       "rank": 5,
+       "domain": "restaurantsyarravalley.com.au",
        "why": "small site"
       },
       {
        "rank": 7,
-       "domain": "levantinehill.com.au",
+       "domain": "yarravalleylodge.com",
        "why": "small site"
       },
       {
-       "rank": 9,
-       "domain": "yarravalleywineries.com.au",
-       "why": "small site"
+       "rank": 8,
+       "domain": "facebook.com",
+       "why": "forum"
       },
       {
        "rank": 10,
-       "domain": "mindyourtablemanners.wordpress.com",
+       "domain": "halal-navi.com",
        "why": "small site"
       }
      ],
      "top3": [
-      "levantinehill.com.au",
-      "levantinehill.com.au",
-      "levantinehill.com.au"
+      "tripadvisor.in",
+      "doorexplorer.com",
+      "facebook.com"
      ]
     }
    ],
@@ -5331,24 +5334,19 @@
      "etv": 19338086
     },
     {
-     "domain": "instagram.com",
-     "slots": 3,
-     "etv": 61725712
-    },
-    {
-     "domain": "agfg.com.au",
-     "slots": 3,
-     "etv": 2540750
-    },
-    {
      "domain": "visitmelbourne.com",
      "slots": 3,
      "etv": 1125892
     },
     {
-     "domain": "broadsheet.com.au",
+     "domain": "instagram.com",
      "slots": 2,
-     "etv": 1372649
+     "etv": 61725712
+    },
+    {
+     "domain": "agfg.com.au",
+     "slots": 2,
+     "etv": 2540750
     },
     {
      "domain": "visitgeelongbellarine.com.au",
@@ -5356,14 +5354,19 @@
      "etv": 36490
     },
     {
-     "domain": "tripadvisor.com",
+     "domain": "smh.com.au",
      "slots": 1,
-     "etv": 1992759
+     "etv": 2084125
     },
     {
-     "domain": "theage.com.au",
+     "domain": "opentable.com.au",
      "slots": 1,
-     "etv": 738140
+     "etv": 1766965
+    },
+    {
+     "domain": "broadsheet.com.au",
+     "slots": 1,
+     "etv": 1372649
     }
    ],
    "costUsd": 0.028
