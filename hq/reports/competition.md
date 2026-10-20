@@ -5,16 +5,16 @@ Updated 2026-10-20. Google top 10 for each niche's best keywords. A slot is **be
 | Idea | Openness | Keywords checked | Biggest players |
 |---|---:|---:|---|
 | Victoria: where to eat by town | **49** | 6 | tripadvisor.com.au (19.3M), instagram.com (61.7M), agfg.com.au (2.5M), visitmelbourne.com (1.1M) |
+| Board games | **48** | 6 | youtube.com (625.8M), boardgamegeek.com (1.3M), google.com (551.5M), chess.com (1.2M) |
 | Victoria: things to do by town | **44** | 6 | visitballarat.com.au (42k), youtube.com (38.0M), tripadvisor.com.au (19.3M), au.trip.com (971k) |
 | Victoria: where to stay by town | **43** | 6 | tripadvisor.com.au (19.3M), instagram.com (61.7M), tripadvisor.com (2.0M), visitvictoria.com (598k) |
 | Anime: where to watch and watch order | **42** | 6 | youtube.com (625.8M), play.google.com (165.4M), hulu.com (8.8M), en.wikipedia.org (1923.1M) |
 | Movie soundtracks and film music | **41** | 6 | youtube.com (625.8M), tv.apple.com (19.4M), en.wikipedia.org (1923.1M), imdb.com (385.1M) |
-| Board games | **40** | 6 | boardgamegeek.com (1.3M), en.wikipedia.org (1923.1M), youtube.com (625.8M), play.google.com (165.4M) |
+| Book series in reading order | **37** | 6 | goodreads.com (10.5M), scholastic.com (657k), amazon.com (251.6M), nytimes.com (54.6M) |
 | Dog breeds | **35** | 6 | youtube.com (625.8M), akc.org (4.5M), marketplace.akc.org (395k), en.wikipedia.org (1923.1M) |
-| Book series in reading order | **32** | 6 | goodreads.com (10.5M), amazon.com (251.6M), en.wikipedia.org (1923.1M), barnesandnoble.com (5.6M) |
 | US national parks and hiking trails | **25** | 6 | yelp.com (439.8M), myhikes.org (74k), tripadvisor.com (136.6M), alltrails.com (6.1M) |
-| TV shows: where to watch | **24** | 5 | amazon.com (251.6M), netflix.com (52.3M), rottentomatoes.com (62.9M), tv.apple.com (19.4M) |
-| Video games: release dates and trailers | **19** | 6 | youtube.com (625.8M), nintendo.com (5.3M), amazon.com (251.6M), bestbuy.com (19.6M) |
+| TV shows: where to watch | **19** | 5 | youtube.com (625.8M), apple.com (162.5M), netflix.com (52.3M), hulu.com (8.8M) |
+| Video games: release dates and trailers | **18** | 6 | youtube.com (625.8M), bestbuy.com (19.6M), amazon.com (251.6M), yahoo.com (144.2M) |
 
 ## Victoria: where to eat by town (openness 49)
 
@@ -26,6 +26,17 @@ Updated 2026-10-20. Google top 10 for each niche's best keywords. A slot is **be
 | geelong's best restaurants | 6,600 | 42 | #2 sailorsrestgeelong.com.au, #4 almarestaurant.com.au, #6 nectargeelong.com.au, #8 felixgeelong.com.au | agfg.com.au, sailorsrestgeelong.com.au, broadsheet.com.au |
 | restaurants bright | 5,400 | 79 | #1 starhotelbright.com.au, #2 tomahawksbright.com.au, #3 visitbright.com.au, #5 alpinevalleygetaways.com.au, #6 theriverdeck.com.au, #8 visitbright.com.au, #9 facebook.com (forum) | starhotelbright.com.au, tomahawksbright.com.au, visitbright.com.au |
 | ezard at levantine hill | 5,400 | 63 | #1 levantinehill.com.au, #2 levantinehill.com.au, #3 levantinehill.com.au, #7 levantinehill.com.au, #9 yarravalleywineries.com.au, #10 mindyourtablemanners.wordpress.com | levantinehill.com.au, levantinehill.com.au, levantinehill.com.au |
+
+## Board games (openness 48)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| co op board games | 40,500 | 58 | #1 shutupandsitdown.com, #2 whatboardgame.com, #5 facebook.com (forum), #6 reddit.com (forum), #9 facebook.com (forum) | shutupandsitdown.com, whatboardgame.com, boardgamegeek.com |
+| co operative board games | 40,500 | 58 | #2 coopgestalt.com, #3 reddit.com (forum), #4 tabletopbellhop.com, #5 whatsericplaying.com, #7 shutupandsitdown.com | boardgamegeek.com, coopgestalt.com, reddit.com |
+| mancala rules | 33,100 | 63 | #2 clubpenguin.fandom.com (forum), #3 mancalagames.net, #4 facebook.com (forum), #5 brainking.com, #6 pinterest.com (forum) | youtube.com, clubpenguin.fandom.com, mancalagames.net |
+| chess game 2 player | 33,100 | 26 | #2 plainchess.timwoelfle.de, #5 foony.com | mathsisfun.com, plainchess.timwoelfle.de, chess.com |
+| two player chess game | 33,100 | 11 | #6 reddit.com (forum) | play.google.com, buddyboardgames.com, chess.com |
+| best codenames game | 33,100 | 68 | #2 facebook.com (forum), #3 facebook.com (forum), #4 reddit.com (forum), #5 thetabletopfamily.com, #6 facebook.com (forum), #7 facebook.com (forum) | youtube.com, facebook.com, facebook.com |
 
 ## Victoria: things to do by town (openness 44)
 
@@ -71,16 +82,16 @@ Updated 2026-10-20. Google top 10 for each niche's best keywords. A slot is **be
 | purple rain movie | 27,100 | 16 | #4 reddit.com (forum), #8 facebook.com (forum) | imdb.com, youtube.com, tvguide.com |
 | songs in guardians of the galaxy | 27,100 | 16 | #2 reddit.com (forum) | open.spotify.com, reddit.com, en.wikipedia.org |
 
-## Board games (openness 40)
+## Book series in reading order (openness 37)
 
 | Keyword | /mo | Openness | Beatable slots | Top 3 |
 |---|---:|---:|---|---|
-| co op board games | 40,500 | 58 | #1 shutupandsitdown.com, #2 whatboardgame.com, #5 facebook.com (forum), #7 reddit.com (forum), #8 amightygirl.com, #9 facebook.com (forum) | shutupandsitdown.com, whatboardgame.com, boardgamegeek.com |
-| co operative board games | 40,500 | 79 | #1 shutupandsitdown.com, #2 rolltoreview.com, #3 coopgestalt.com, #4 reddit.com (forum), #6 thehobhub.com, #7 facebook.com (forum), #8 facebook.com (forum) | shutupandsitdown.com, rolltoreview.com, coopgestalt.com |
-| mancala rules | 33,100 | 26 | #3 gamescrafters.berkeley.edu, #6 ymimports.com | scholastic.com, ospi.k12.wa.us, gamescrafters.berkeley.edu |
-| chess game 2 player | 33,100 | 26 | #2 plainchess.timwoelfle.de, #5 foony.com | mathsisfun.com, plainchess.timwoelfle.de, chess.com |
-| two player chess game | 33,100 | 11 | #6 reddit.com (forum) | play.google.com, buddyboardgames.com, chess.com |
-| best codenames game | 33,100 | 26 | #1 reddit.com (forum), #7 czechgames.com, #8 facebook.com (forum) | reddit.com, ign.com, boardgamegeek.com |
+| percy jackson novel series | 246,000 | 37 | #2 reddit.com (forum), #5 quora.com (forum), #6 tertulia.com | penguinrandomhouse.com, reddit.com, ign.com |
+| books by rick riordan | 165,000 | 32 | #1 reddit.com (forum), #8 reddit.com (forum), #9 reddit.com (forum), #10 bulkbooks.com | reddit.com, books.disney.com, goodreads.com |
+| throne of glass series order | 110,000 | 53 | #2 facebook.com (forum), #3 reddit.com (forum), #5 novelrochester.com, #6 estapinto.com | sarahjmaas.com, facebook.com, reddit.com |
+| the new york times best seller | 110,000 | 11 | #5 reddit.com (forum) | nytimes.com, nytimes.com, en.wikipedia.org |
+| scholastic book club | 74,000 | 42 | #1 mybookclubs.scholastic.com.au, #2 reddit.com (forum), #5 reddit.com (forum) | mybookclubs.scholastic.com.au, reddit.com, teacher.scholastic.com |
+| harry potter books in order | 60,500 | 58 | #1 reddit.com (forum), #2 harrypotter.fandom.com (forum), #4 facebook.com (forum), #6 thehappybookstack.com, #7 harrypotter.fandom.com (forum) | reddit.com, harrypotter.fandom.com, ign.com |
 
 ## Dog breeds (openness 35)
 
@@ -93,17 +104,6 @@ Updated 2026-10-20. Google top 10 for each niche's best keywords. A slot is **be
 | australian shepherds | 673,000 | 32 | #2 karenshanley.com, #3 reddit.com (forum) | rover.com, karenshanley.com, reddit.com |
 | aussie shepherd | 673,000 | 47 | #3 facebook.com (forum), #5 reddit.com (forum), #6 southtexasaussierescue.org, #7 facebook.com (forum), #8 northeasternvetcare.com | akc.org, en.wikipedia.org, facebook.com |
 
-## Book series in reading order (openness 32)
-
-| Keyword | /mo | Openness | Beatable slots | Top 3 |
-|---|---:|---:|---|---|
-| percy jackson novel series | 246,000 | 26 | #3 reddit.com (forum), #6 blog.libro.fm | en.wikipedia.org, rickriordan.com, reddit.com |
-| books by rick riordan | 165,000 | 32 | #1 reddit.com (forum), #6 reddit.com (forum), #7 bulkbooks.com | reddit.com, books.disney.com, goodreads.com |
-| throne of glass series order | 110,000 | 32 | #2 reddit.com (forum), #4 facebook.com (forum), #7 throneofglass.fandom.com (forum) | sarahjmaas.com, reddit.com, goodreads.com |
-| the new york times best seller | 110,000 | 21 | #4 mhl.org, #5 reddit.com (forum) | nytimes.com, en.wikipedia.org, barnesandnoble.com |
-| scholastic book club | 74,000 | 74 | #1 mybookclubs.scholastic.com.au, #2 reddit.com (forum), #3 teacher.scholastic.com, #4 scholasticcrm.my.site.com, #5 reddit.com (forum), #8 teacher.scholastic.com | mybookclubs.scholastic.com.au, reddit.com, teacher.scholastic.com |
-| harry potter books in order | 60,500 | 21 | #5 reddit.com (forum), #8 maryandblake.com, #9 calgary.bibliocommons.com | reedsy.com, en.wikipedia.org, harrypotter.com |
-
 ## US national parks and hiking trails (openness 25)
 
 | Keyword | /mo | Openness | Beatable slots | Top 3 |
@@ -115,23 +115,23 @@ Updated 2026-10-20. Google top 10 for each niche's best keywords. A slot is **be
 | trekking trails near me | 550,000 | 16 | #6 cremedelacreme.com, #8 treesandtents.com | yelp.com, myhikes.org, yelp.com |
 | hikes and trails near me | 550,000 | 16 | #4 exploringalabama.org, #7 cremedelacreme.com | yelp.com, myhikes.org, yelp.com |
 
-## TV shows: where to watch (openness 24)
+## TV shows: where to watch (openness 19)
 
 | Keyword | /mo | Openness | Beatable slots | Top 3 |
 |---|---:|---:|---|---|
-| where to watch twilight | 60,500 | 21 | #3 facebook.com (forum), #8 reddit.com (forum) | netflix.com, play.google.com, facebook.com |
-| where can i watch the grinch | 60,500 | 21 | #5 reddit.com (forum), #6 facebook.com (forum) | roku.com, decider.com, azcentral.com |
+| where to watch twilight | 60,500 | 16 | #5 reddit.com (forum), #9 facebook.com (forum) | netflix.com, tv.apple.com, peacocktv.com |
+| where can i watch the grinch | 60,500 | 0 | — | netflix.com, hbomax.com, peacocktv.com |
 | where to watch modern family | 49,500 | 21 | #3 reddit.com (forum), #7 facebook.com (forum) | netflix.com, hulu.com, reddit.com |
-| where can i watch the notebook | 49,500 | 0 | — | netflix.com, amazon.com, hbomax.com |
-| where to watch from tv series | 49,500 | 58 | #1 reddit.com (forum), #2 facebook.com (forum), #3 facebook.com (forum), #6 facebook.com (forum) | reddit.com, facebook.com, facebook.com |
+| where can i watch the notebook | 49,500 | 32 | #2 reddit.com (forum), #3 streamwithvpn.com | netflix.com, reddit.com, streamwithvpn.com |
+| where to watch from tv series | 49,500 | 32 | #1 reddit.com (forum), #5 facebook.com (forum), #9 facebook.com (forum) | reddit.com, mgmplus.com, justwatch.com |
 
-## Video games: release dates and trailers (openness 19)
+## Video games: release dates and trailers (openness 18)
 
 | Keyword | /mo | Openness | Beatable slots | Top 3 |
 |---|---:|---:|---|---|
-| inside nintendo switch | 1,220,000 | 21 | #3 reddit.com (forum), #8 savingcontent.com | ign.com, m.youtube.com, reddit.com |
-| nintendo switch lite | 246,000 | 0 | — | nintendo.com, nintendo.com, amazon.com |
-| ps5 games | 246,000 | 26 | #2 reddit.com (forum), #5 gamingdeals.com | youtube.com, reddit.com, youtube.com |
-| nintendo eshop | 201,000 | 26 | #1 reddit.com (forum), #7 nintendo.fandom.com (forum), #8 eshop-prices.com | reddit.com, amazon.com, nintendo.com |
-| playstation 6 release date | 135,000 | 26 | #1 reddit.com (forum), #4 facebook.com (forum) | reddit.com, youtube.com, polygon.com |
-| mario kart 8 deluxe nintendo switch | 110,000 | 0 | — | ebay.com, youtube.com, amazon.com |
+| inside nintendo switch | 1,220,000 | 26 | #3 reddit.com (forum), #8 rocketchainsaw.com.au, #9 purenintendo.com | ign.com, m.youtube.com, reddit.com |
+| nintendo switch lite | 246,000 | 0 | — | youtube.com, ebay.com, pcmag.com |
+| ps5 games | 246,000 | 16 | #2 reddit.com (forum) | youtube.com, reddit.com, youtube.com |
+| nintendo eshop | 201,000 | 16 | #6 nintendo.fandom.com (forum), #7 eshop-prices.com | amazon.com, nintendo.com, youtube.com |
+| playstation 6 release date | 135,000 | 0 | — | gamerant.com, youtube.com, gadgets360.com |
+| mario kart 8 deluxe nintendo switch | 110,000 | 0 | — | ebay.com, amazon.com, youtube.com |

@@ -277,36 +277,15 @@
    ]
   },
   "competition": {
-   "checkedAt": "2026-10-20T19:46:27.094Z",
+   "checkedAt": "2026-10-20T19:54:46.373Z",
+   "v": 2,
    "market": 2840,
-   "openness": 24,
+   "openness": 19,
    "keywords": [
     {
      "keyword": "where to watch twilight",
      "volume": 60500,
-     "openness": 21,
-     "beatable": [
-      {
-       "rank": 3,
-       "domain": "facebook.com",
-       "why": "forum"
-      },
-      {
-       "rank": 8,
-       "domain": "reddit.com",
-       "why": "forum"
-      }
-     ],
-     "top3": [
-      "netflix.com",
-      "play.google.com",
-      "facebook.com"
-     ]
-    },
-    {
-     "keyword": "where can i watch the grinch",
-     "volume": 60500,
-     "openness": 21,
+     "openness": 16,
      "beatable": [
       {
        "rank": 5,
@@ -314,15 +293,26 @@
        "why": "forum"
       },
       {
-       "rank": 6,
+       "rank": 9,
        "domain": "facebook.com",
        "why": "forum"
       }
      ],
      "top3": [
-      "roku.com",
-      "decider.com",
-      "azcentral.com"
+      "netflix.com",
+      "tv.apple.com",
+      "peacocktv.com"
+     ]
+    },
+    {
+     "keyword": "where can i watch the grinch",
+     "volume": 60500,
+     "openness": 0,
+     "beatable": [],
+     "top3": [
+      "netflix.com",
+      "hbomax.com",
+      "peacocktv.com"
      ]
     },
     {
@@ -350,18 +340,29 @@
     {
      "keyword": "where can i watch the notebook",
      "volume": 49500,
-     "openness": 0,
-     "beatable": [],
+     "openness": 32,
+     "beatable": [
+      {
+       "rank": 2,
+       "domain": "reddit.com",
+       "why": "forum"
+      },
+      {
+       "rank": 3,
+       "domain": "streamwithvpn.com",
+       "why": "small site"
+      }
+     ],
      "top3": [
       "netflix.com",
-      "amazon.com",
-      "hbomax.com"
+      "reddit.com",
+      "streamwithvpn.com"
      ]
     },
     {
      "keyword": "where to watch from tv series",
      "volume": 49500,
-     "openness": 58,
+     "openness": 32,
      "beatable": [
       {
        "rank": 1,
@@ -369,71 +370,66 @@
        "why": "forum"
       },
       {
-       "rank": 2,
+       "rank": 5,
        "domain": "facebook.com",
        "why": "forum"
       },
       {
-       "rank": 3,
-       "domain": "facebook.com",
-       "why": "forum"
-      },
-      {
-       "rank": 6,
+       "rank": 9,
        "domain": "facebook.com",
        "why": "forum"
       }
      ],
      "top3": [
       "reddit.com",
-      "facebook.com",
-      "facebook.com"
+      "mgmplus.com",
+      "justwatch.com"
      ]
     }
    ],
    "giants": [
     {
-     "domain": "amazon.com",
-     "slots": 3,
-     "etv": 251612011
+     "domain": "youtube.com",
+     "slots": 4,
+     "etv": 625780804
+    },
+    {
+     "domain": "apple.com",
+     "slots": 4,
+     "etv": 162502501
     },
     {
      "domain": "netflix.com",
-     "slots": 3,
+     "slots": 4,
      "etv": 52257866
     },
     {
-     "domain": "rottentomatoes.com",
+     "domain": "hulu.com",
+     "slots": 3,
+     "etv": 8780740
+    },
+    {
+     "domain": "peacocktv.com",
+     "slots": 3,
+     "etv": 5497477
+    },
+    {
+     "domain": "justwatch.com",
+     "slots": 3,
+     "etv": 3320570
+    },
+    {
+     "domain": "amazon.com",
      "slots": 2,
-     "etv": 62949890
+     "etv": 251612011
     },
     {
-     "domain": "tv.apple.com",
+     "domain": "people.com",
      "slots": 2,
-     "etv": 19418723
-    },
-    {
-     "domain": "tvguide.com",
-     "slots": 2,
-     "etv": 19383979
-    },
-    {
-     "domain": "decider.com",
-     "slots": 2,
-     "etv": 1224440
-    },
-    {
-     "domain": "instagram.com",
-     "slots": 1,
-     "etv": 718341881
-    },
-    {
-     "domain": "imdb.com",
-     "slots": 1,
-     "etv": 385082458
+     "etv": 18982294
     }
    ],
-   "costUsd": 0.026
+   "costUsd": 0.025
   }
  },
  {
@@ -648,30 +644,36 @@
    ]
   },
   "competition": {
-   "checkedAt": "2026-10-20T19:46:27.094Z",
+   "checkedAt": "2026-10-20T19:54:46.373Z",
+   "v": 2,
    "market": 2840,
-   "openness": 32,
+   "openness": 37,
    "keywords": [
     {
      "keyword": "percy jackson novel series",
      "volume": 246000,
-     "openness": 26,
+     "openness": 37,
      "beatable": [
       {
-       "rank": 3,
+       "rank": 2,
        "domain": "reddit.com",
        "why": "forum"
       },
       {
+       "rank": 5,
+       "domain": "quora.com",
+       "why": "forum"
+      },
+      {
        "rank": 6,
-       "domain": "blog.libro.fm",
+       "domain": "tertulia.com",
        "why": "small site"
       }
      ],
      "top3": [
-      "en.wikipedia.org",
-      "rickriordan.com",
-      "reddit.com"
+      "penguinrandomhouse.com",
+      "reddit.com",
+      "ign.com"
      ]
     },
     {
@@ -685,12 +687,17 @@
        "why": "forum"
       },
       {
-       "rank": 6,
+       "rank": 8,
        "domain": "reddit.com",
        "why": "forum"
       },
       {
-       "rank": 7,
+       "rank": 9,
+       "domain": "reddit.com",
+       "why": "forum"
+      },
+      {
+       "rank": 10,
        "domain": "bulkbooks.com",
        "why": "small site"
       }
@@ -704,40 +711,40 @@
     {
      "keyword": "throne of glass series order",
      "volume": 110000,
-     "openness": 32,
+     "openness": 53,
      "beatable": [
       {
        "rank": 2,
-       "domain": "reddit.com",
-       "why": "forum"
-      },
-      {
-       "rank": 4,
        "domain": "facebook.com",
        "why": "forum"
       },
       {
-       "rank": 7,
-       "domain": "throneofglass.fandom.com",
+       "rank": 3,
+       "domain": "reddit.com",
        "why": "forum"
+      },
+      {
+       "rank": 5,
+       "domain": "novelrochester.com",
+       "why": "small site"
+      },
+      {
+       "rank": 6,
+       "domain": "estapinto.com",
+       "why": "small site"
       }
      ],
      "top3": [
       "sarahjmaas.com",
-      "reddit.com",
-      "goodreads.com"
+      "facebook.com",
+      "reddit.com"
      ]
     },
     {
      "keyword": "the new york times best seller",
      "volume": 110000,
-     "openness": 21,
+     "openness": 11,
      "beatable": [
-      {
-       "rank": 4,
-       "domain": "mhl.org",
-       "why": "small site"
-      },
       {
        "rank": 5,
        "domain": "reddit.com",
@@ -746,14 +753,14 @@
      ],
      "top3": [
       "nytimes.com",
-      "en.wikipedia.org",
-      "barnesandnoble.com"
+      "nytimes.com",
+      "en.wikipedia.org"
      ]
     },
     {
      "keyword": "scholastic book club",
      "volume": 74000,
-     "openness": 74,
+     "openness": 42,
      "beatable": [
       {
        "rank": 1,
@@ -766,24 +773,9 @@
        "why": "forum"
       },
       {
-       "rank": 3,
-       "domain": "teacher.scholastic.com",
-       "why": "small site"
-      },
-      {
-       "rank": 4,
-       "domain": "scholasticcrm.my.site.com",
-       "why": "small site"
-      },
-      {
        "rank": 5,
        "domain": "reddit.com",
        "why": "forum"
-      },
-      {
-       "rank": 8,
-       "domain": "teacher.scholastic.com",
-       "why": "small site"
       }
      ],
      "top3": [
@@ -795,74 +787,84 @@
     {
      "keyword": "harry potter books in order",
      "volume": 60500,
-     "openness": 21,
+     "openness": 58,
      "beatable": [
       {
-       "rank": 5,
+       "rank": 1,
        "domain": "reddit.com",
        "why": "forum"
       },
       {
-       "rank": 8,
-       "domain": "maryandblake.com",
+       "rank": 2,
+       "domain": "harrypotter.fandom.com",
+       "why": "forum"
+      },
+      {
+       "rank": 4,
+       "domain": "facebook.com",
+       "why": "forum"
+      },
+      {
+       "rank": 6,
+       "domain": "thehappybookstack.com",
        "why": "small site"
       },
       {
-       "rank": 9,
-       "domain": "calgary.bibliocommons.com",
-       "why": "small site"
+       "rank": 7,
+       "domain": "harrypotter.fandom.com",
+       "why": "forum"
       }
      ],
      "top3": [
-      "reedsy.com",
-      "en.wikipedia.org",
-      "harrypotter.com"
+      "reddit.com",
+      "harrypotter.fandom.com",
+      "ign.com"
      ]
     }
    ],
    "giants": [
     {
      "domain": "goodreads.com",
-     "slots": 6,
+     "slots": 5,
      "etv": 10543208
     },
     {
-     "domain": "amazon.com",
+     "domain": "scholastic.com",
      "slots": 5,
+     "etv": 656531
+    },
+    {
+     "domain": "amazon.com",
+     "slots": 2,
      "etv": 251612011
     },
     {
-     "domain": "en.wikipedia.org",
-     "slots": 3,
-     "etv": 1923066705
-    },
-    {
-     "domain": "barnesandnoble.com",
-     "slots": 2,
-     "etv": 5603568
-    },
-    {
      "domain": "nytimes.com",
-     "slots": 1,
+     "slots": 2,
      "etv": 54634399
     },
     {
-     "domain": "abcnews.com",
-     "slots": 1,
-     "etv": 7912482
+     "domain": "ign.com",
+     "slots": 2,
+     "etv": 9795525
     },
     {
      "domain": "penguinrandomhouse.com",
-     "slots": 1,
+     "slots": 2,
      "etv": 1273840
     },
     {
-     "domain": "bookshop.org",
+     "domain": "wikipedia.org",
      "slots": 1,
-     "etv": 1016961
+     "etv": 1937849137
+    },
+    {
+     "domain": "youtube.com",
+     "slots": 1,
+     "etv": 625780804
     }
    ],
-   "costUsd": 0.028
+   "costUsd": 0.027
   }
  },
  {
@@ -1160,9 +1162,10 @@
    ]
   },
   "competition": {
-   "checkedAt": "2026-10-20T19:46:27.094Z",
+   "checkedAt": "2026-10-20T19:54:46.373Z",
+   "v": 2,
    "market": 2840,
-   "openness": 40,
+   "openness": 48,
    "keywords": [
     {
      "keyword": "co op board games",
@@ -1185,14 +1188,9 @@
        "why": "forum"
       },
       {
-       "rank": 7,
+       "rank": 6,
        "domain": "reddit.com",
        "why": "forum"
-      },
-      {
-       "rank": 8,
-       "domain": "amightygirl.com",
-       "why": "small site"
       },
       {
        "rank": 9,
@@ -1209,70 +1207,75 @@
     {
      "keyword": "co operative board games",
      "volume": 40500,
-     "openness": 79,
+     "openness": 58,
      "beatable": [
       {
-       "rank": 1,
-       "domain": "shutupandsitdown.com",
-       "why": "small site"
-      },
-      {
        "rank": 2,
-       "domain": "rolltoreview.com",
-       "why": "small site"
-      },
-      {
-       "rank": 3,
        "domain": "coopgestalt.com",
        "why": "small site"
       },
       {
-       "rank": 4,
+       "rank": 3,
        "domain": "reddit.com",
        "why": "forum"
       },
       {
-       "rank": 6,
-       "domain": "thehobhub.com",
+       "rank": 4,
+       "domain": "tabletopbellhop.com",
+       "why": "small site"
+      },
+      {
+       "rank": 5,
+       "domain": "whatsericplaying.com",
        "why": "small site"
       },
       {
        "rank": 7,
-       "domain": "facebook.com",
-       "why": "forum"
-      },
-      {
-       "rank": 8,
-       "domain": "facebook.com",
-       "why": "forum"
+       "domain": "shutupandsitdown.com",
+       "why": "small site"
       }
      ],
      "top3": [
-      "shutupandsitdown.com",
-      "rolltoreview.com",
-      "coopgestalt.com"
+      "boardgamegeek.com",
+      "coopgestalt.com",
+      "reddit.com"
      ]
     },
     {
      "keyword": "mancala rules",
      "volume": 33100,
-     "openness": 26,
+     "openness": 63,
      "beatable": [
       {
+       "rank": 2,
+       "domain": "clubpenguin.fandom.com",
+       "why": "forum"
+      },
+      {
        "rank": 3,
-       "domain": "gamescrafters.berkeley.edu",
+       "domain": "mancalagames.net",
+       "why": "small site"
+      },
+      {
+       "rank": 4,
+       "domain": "facebook.com",
+       "why": "forum"
+      },
+      {
+       "rank": 5,
+       "domain": "brainking.com",
        "why": "small site"
       },
       {
        "rank": 6,
-       "domain": "ymimports.com",
-       "why": "small site"
+       "domain": "pinterest.com",
+       "why": "forum"
       }
      ],
      "top3": [
-      "scholastic.com",
-      "ospi.k12.wa.us",
-      "gamescrafters.berkeley.edu"
+      "youtube.com",
+      "clubpenguin.fandom.com",
+      "mancalagames.net"
      ]
     },
     {
@@ -1317,51 +1320,61 @@
     {
      "keyword": "best codenames game",
      "volume": 33100,
-     "openness": 26,
+     "openness": 68,
      "beatable": [
       {
-       "rank": 1,
+       "rank": 2,
+       "domain": "facebook.com",
+       "why": "forum"
+      },
+      {
+       "rank": 3,
+       "domain": "facebook.com",
+       "why": "forum"
+      },
+      {
+       "rank": 4,
        "domain": "reddit.com",
        "why": "forum"
       },
       {
-       "rank": 7,
-       "domain": "czechgames.com",
+       "rank": 5,
+       "domain": "thetabletopfamily.com",
        "why": "small site"
       },
       {
-       "rank": 8,
+       "rank": 6,
+       "domain": "facebook.com",
+       "why": "forum"
+      },
+      {
+       "rank": 7,
        "domain": "facebook.com",
        "why": "forum"
       }
      ],
      "top3": [
-      "reddit.com",
-      "ign.com",
-      "boardgamegeek.com"
+      "youtube.com",
+      "facebook.com",
+      "facebook.com"
      ]
     }
    ],
    "giants": [
+    {
+     "domain": "youtube.com",
+     "slots": 3,
+     "etv": 625780804
+    },
     {
      "domain": "boardgamegeek.com",
      "slots": 3,
      "etv": 1279578
     },
     {
-     "domain": "en.wikipedia.org",
+     "domain": "google.com",
      "slots": 2,
-     "etv": 1923066705
-    },
-    {
-     "domain": "youtube.com",
-     "slots": 2,
-     "etv": 625780804
-    },
-    {
-     "domain": "play.google.com",
-     "slots": 2,
-     "etv": 165444653
+     "etv": 551542012
     },
     {
      "domain": "chess.com",
@@ -1369,19 +1382,24 @@
      "etv": 1242643
     },
     {
+     "domain": "habausa.com",
+     "slots": 2,
+     "etv": 41090
+    },
+    {
+     "domain": "wikipedia.org",
+     "slots": 1,
+     "etv": 1937849137
+    },
+    {
      "domain": "instagram.com",
      "slots": 1,
      "etv": 718341881
     },
     {
-     "domain": "amazon.com",
+     "domain": "crazygames.com",
      "slots": 1,
-     "etv": 251612011
-    },
-    {
-     "domain": "walmart.com",
-     "slots": 1,
-     "etv": 85983904
+     "etv": 8550834
     }
    ],
    "costUsd": 0.028
@@ -1685,14 +1703,15 @@
    ]
   },
   "competition": {
-   "checkedAt": "2026-10-20T19:46:27.094Z",
+   "checkedAt": "2026-10-20T19:54:46.373Z",
+   "v": 2,
    "market": 2840,
-   "openness": 19,
+   "openness": 18,
    "keywords": [
     {
      "keyword": "inside nintendo switch",
      "volume": 1220000,
-     "openness": 21,
+     "openness": 26,
      "beatable": [
       {
        "rank": 3,
@@ -1701,7 +1720,12 @@
       },
       {
        "rank": 8,
-       "domain": "savingcontent.com",
+       "domain": "rocketchainsaw.com.au",
+       "why": "small site"
+      },
+      {
+       "rank": 9,
+       "domain": "purenintendo.com",
        "why": "small site"
       }
      ],
@@ -1717,25 +1741,20 @@
      "openness": 0,
      "beatable": [],
      "top3": [
-      "nintendo.com",
-      "nintendo.com",
-      "amazon.com"
+      "youtube.com",
+      "ebay.com",
+      "pcmag.com"
      ]
     },
     {
      "keyword": "ps5 games",
      "volume": 246000,
-     "openness": 26,
+     "openness": 16,
      "beatable": [
       {
        "rank": 2,
        "domain": "reddit.com",
        "why": "forum"
-      },
-      {
-       "rank": 5,
-       "domain": "gamingdeals.com",
-       "why": "small site"
       }
      ],
      "top3": [
@@ -1747,50 +1766,34 @@
     {
      "keyword": "nintendo eshop",
      "volume": 201000,
-     "openness": 26,
+     "openness": 16,
      "beatable": [
       {
-       "rank": 1,
-       "domain": "reddit.com",
-       "why": "forum"
-      },
-      {
-       "rank": 7,
+       "rank": 6,
        "domain": "nintendo.fandom.com",
        "why": "forum"
       },
       {
-       "rank": 8,
+       "rank": 7,
        "domain": "eshop-prices.com",
        "why": "small site"
       }
      ],
      "top3": [
-      "reddit.com",
       "amazon.com",
-      "nintendo.com"
+      "nintendo.com",
+      "youtube.com"
      ]
     },
     {
      "keyword": "playstation 6 release date",
      "volume": 135000,
-     "openness": 26,
-     "beatable": [
-      {
-       "rank": 1,
-       "domain": "reddit.com",
-       "why": "forum"
-      },
-      {
-       "rank": 4,
-       "domain": "facebook.com",
-       "why": "forum"
-      }
-     ],
+     "openness": 0,
+     "beatable": [],
      "top3": [
-      "reddit.com",
+      "gamerant.com",
       "youtube.com",
-      "polygon.com"
+      "gadgets360.com"
      ]
     },
     {
@@ -1800,31 +1803,36 @@
      "beatable": [],
      "top3": [
       "ebay.com",
-      "youtube.com",
-      "amazon.com"
+      "amazon.com",
+      "youtube.com"
      ]
     }
    ],
    "giants": [
     {
      "domain": "youtube.com",
-     "slots": 13,
+     "slots": 17,
      "etv": 625780804
-    },
-    {
-     "domain": "nintendo.com",
-     "slots": 6,
-     "etv": 5302660
-    },
-    {
-     "domain": "amazon.com",
-     "slots": 3,
-     "etv": 251612011
     },
     {
      "domain": "bestbuy.com",
      "slots": 3,
      "etv": 19567255
+    },
+    {
+     "domain": "amazon.com",
+     "slots": 2,
+     "etv": 251612011
+    },
+    {
+     "domain": "yahoo.com",
+     "slots": 2,
+     "etv": 144212461
+    },
+    {
+     "domain": "walmart.com",
+     "slots": 2,
+     "etv": 85983904
     },
     {
      "domain": "ebay.com",
@@ -1837,14 +1845,9 @@
      "etv": 9795525
     },
     {
-     "domain": "walmart.com",
-     "slots": 1,
-     "etv": 85983904
-    },
-    {
-     "domain": "gamestop.com",
-     "slots": 1,
-     "etv": 4667635
+     "domain": "nintendo.com",
+     "slots": 2,
+     "etv": 5302660
     }
    ],
    "costUsd": 0.027
