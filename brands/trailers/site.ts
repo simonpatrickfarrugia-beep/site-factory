@@ -3,6 +3,7 @@
  * site exactly so the migration is invisible to Google.
  */
 import { getCollection, getSingleton } from '../../src/lib/data';
+import { hqProps } from '../../src/lib/hq';
 import type { Route } from '../../src/lib/routes';
 import { matchesRule, thumb, type Movie, type MovieCollection, type StaticPage } from './model';
 
@@ -265,6 +266,15 @@ export function routes(): Route[] {
       moneyCtas: ['prime', 'disc'],
       ctaLabels: { prime: 'Prime Video', disc: 'DVD/Blu-ray', justwatch: 'JustWatch' },
     },
+  });
+
+  // IMN HQ: the whole portfolio on one private page.
+  out.push({
+    path: 'hq',
+    template: 'hq',
+    private: true,
+    seo: { title: 'IMN HQ', rawTitle: true, description: 'Independent Media Network portfolio: sites, engines, money and next actions.' },
+    props: hqProps(),
   });
 
   // Static pages

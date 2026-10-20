@@ -1,0 +1,158 @@
+{
+ "_note": "Edited by Claude from chat. status: live | building | idea | paused. Each node belongs to one group.",
+ "owner": "Independent Media Network Pty Ltd",
+ "groups": [
+  {
+   "id": "sites",
+   "name": "Websites"
+  },
+  {
+   "id": "engines",
+   "name": "Engines"
+  },
+  {
+   "id": "business",
+   "name": "Businesses"
+  },
+  {
+   "id": "ideas",
+   "name": "Ideas"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "trailers",
+   "group": "sites",
+   "name": "movietrailer.channel",
+   "status": "live",
+   "url": "https://www.movietrailer.channel",
+   "stats": "data/trailers/stats.json",
+   "money": "Amazon Associates (US)"
+  },
+  {
+   "id": "vic",
+   "group": "sites",
+   "name": "victours.com.au",
+   "status": "live",
+   "url": "https://victours.com.au",
+   "stats": "data/vic/stats.json",
+   "money": "Booking.com, Viator (applying)"
+  },
+  {
+   "id": "factory",
+   "group": "engines",
+   "name": "Site Factory",
+   "status": "live",
+   "note": "One codebase, every site"
+  },
+  {
+   "id": "pipeline",
+   "group": "engines",
+   "name": "Trailer pipeline",
+   "status": "live",
+   "note": "Publishes films daily"
+  },
+  {
+   "id": "vicdata",
+   "group": "engines",
+   "name": "Vic data probe",
+   "status": "live",
+   "note": "OpenStreetMap towns"
+  },
+  {
+   "id": "niches",
+   "group": "engines",
+   "name": "Niche finder",
+   "status": "live",
+   "note": "Scores new site ideas"
+  },
+  {
+   "id": "dashboards",
+   "group": "engines",
+   "name": "Dashboards",
+   "status": "live",
+   "note": "Daily GA4 + Search Console"
+  },
+  {
+   "id": "chc",
+   "group": "business",
+   "name": "Community Help Co",
+   "status": "live",
+   "note": "Life goals and mentoring"
+  },
+  {
+   "id": "hub",
+   "group": "ideas",
+   "name": "Entertainment hub",
+   "status": "idea",
+   "note": "Needs a name + .com"
+  },
+  {
+   "id": "boardgames",
+   "group": "ideas",
+   "name": "Board games",
+   "status": "idea",
+   "note": "Hub section"
+  },
+  {
+   "id": "tvwhere",
+   "group": "ideas",
+   "name": "TV where-to-watch",
+   "status": "idea",
+   "note": "Hub section, $3.55 CPC"
+  },
+  {
+   "id": "dogs",
+   "group": "ideas",
+   "name": "Dog breeds",
+   "status": "idea",
+   "note": "Score 75"
+  },
+  {
+   "id": "parks",
+   "group": "ideas",
+   "name": "National parks",
+   "status": "idea",
+   "note": "Score 74"
+  },
+  {
+   "id": "journal",
+   "group": "ideas",
+   "name": "Daily journal PDF",
+   "status": "idea",
+   "note": "Etsy / Gumroad"
+  }
+ ],
+ "actions": [
+  {
+   "who": "Simon",
+   "what": "Finish Booking.com (CJ) tax form + payment method, then send the publisher ID",
+   "site": "vic"
+  },
+  {
+   "who": "Simon",
+   "what": "Apply to Viator and GetYourGuide",
+   "site": "vic"
+  },
+  {
+   "who": "Simon",
+   "what": "Review the 6 road trips; send 3 local picks per town",
+   "site": "vic"
+  },
+  {
+   "who": "Simon",
+   "what": "Name the entertainment hub",
+   "site": "hub"
+  },
+  {
+   "who": "Claude",
+   "what": "Switch on affiliate buttons as each programme approves",
+   "site": "vic"
+  },
+  {
+   "who": "Claude",
+   "what": "Keep adding towns (most-searched first) and road trips",
+   "site": "vic"
+  }
+ ]
+}

@@ -6,6 +6,7 @@ import Discover from './Discover.astro';
 import Browse from './Browse.astro';
 import Page from './Page.astro';
 import Dashboard from './Dashboard.astro';
+import Hq from './Hq.astro';
 import VicHome from './vic/VicHome.astro';
 import VicTowns from './vic/Towns.astro';
 import VicTown from './vic/Town.astro';
@@ -23,6 +24,7 @@ export const templates = {
   browse: Browse,
   page: Page,
   dashboard: Dashboard,
+  hq: Hq,
   vicHome: VicHome,
   vicTowns: VicTowns,
   vicTown: VicTown,

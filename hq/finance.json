@@ -1,0 +1,32 @@
+{
+ "_note": "A$ unless noted. Revenue is entered by Claude when Simon reports payouts (affiliate networks don't offer free automatic feeds at this size).",
+ "revenue": [],
+ "costs": [
+  {
+   "month": "2026-10",
+   "item": "DataForSEO prepaid credit (US$50)",
+   "amount": 78,
+   "kind": "one-off"
+  },
+  {
+   "month": "2026-10",
+   "item": "Anthropic API credit (US$5)",
+   "amount": 8,
+   "kind": "one-off"
+  }
+ ],
+ "monthlyRunning": [
+  {
+   "item": "Hosting, DNS, pipelines, analytics (Cloudflare, GitHub, Google)",
+   "amount": 0
+  },
+  {
+   "item": "Claude API usage (taglines, write-ups)",
+   "amount": 1
+  },
+  {
+   "item": "Domains (yearly, averaged)",
+   "amount": 5
+  }
+ ]
+}

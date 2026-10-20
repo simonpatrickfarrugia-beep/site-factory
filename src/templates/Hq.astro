@@ -1,0 +1,207 @@
+---
+/**
+ * IMN HQ: one private page for the whole portfolio. Built from repo data at each build:
+ * hq/portfolio.json (nodes, actions), hq/finance.json, every site's stats.json, pipeline data, hq/niches.json.
+ */
+interface Node { id: string; group: string; name: string; status: string; url?: string; note?: string; money?: string; kpi?: { label: string; value: string }[] }
+interface Props {
+  owner: string;
+  groups: { id: string; name: string }[];
+  nodes: Node[];
+  actions: { who: string; what: string; site?: string }[];
+  sites: { name: string; url: string; views: number; prevViews: number; users: number; gscClicks: number; gscImpressions: number; cta: number; money: number; updated: string | null; dashboard: string }[];
+  engines: { name: string; lines: string[] }[];
+  finance: { revenue: { month: string; source: string; amount: number }[]; costs: { month: string; item: string; amount: number; kind: string }[]; monthlyRunning: { item: string; amount: number }[] };
+  niches: { idea: string; score: number; market: string }[];
+  builtAt: string;
+}
+const p = Astro.props;
+const n = (v: number) => v.toLocaleString('en-AU');
+const STATUS: Record<string, string> = { live: 'Live', building: 'Building', idea: 'Idea', paused: 'Paused' };
+
+// Portfolio web: IMN in the middle, four groups on a ring, each group's nodes fanned out around it.
+const W = 760, H = 560, cx = W / 2, cy = H / 2;
+const groupAngle: Record<string, number> = { sites: -150, engines: -30, business: 150, ideas: 30 };
+const pos: Record<string, { x: number; y: number }> = {};
+const rad = (d: number) => (d * Math.PI) / 180;
+const gpos = p.groups.map((g, i) => {
+  const a = rad(groupAngle[g.id] ?? (i * 90 - 135));
+  const x = cx + Math.cos(a) * 150, y = cy + Math.sin(a) * 120;
+  pos[g.id] = { x, y };
+  return { ...g, x, y, a };
+});
+for (const g of gpos) {
+  const kids = p.nodes.filter((nd) => nd.group === g.id);
+  const spread = Math.min(110, 30 * kids.length);
+  kids.forEach((nd, i) => {
+    const off = kids.length === 1 ? 0 : -spread / 2 + (spread * i) / (kids.length - 1);
+    const a = g.a + rad(off);
+    pos[nd.id] = { x: g.x + Math.cos(a) * 150, y: g.y + Math.sin(a) * 105 };
+  });
+}
+const revTotal = p.finance.revenue.reduce((s, r) => s + r.amount, 0);
+const oneOff = p.finance.costs.reduce((s, c) => s + c.amount, 0);
+const running = p.finance.monthlyRunning.reduce((s, c) => s + c.amount, 0);
+const live = p.nodes.filter((x) => x.status === 'live').length;
+---
+<div class="wrap hq">
+  <header class="hq__head">
+    <p class="hq__owner">{p.owner}</p>
+    <h1 class="display hq__title">HQ</h1>
+    <p class="hq__meta">Built {new Date(p.builtAt).toLocaleString('en-AU', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Australia/Melbourne' })}. Site numbers are the last 28 days and refresh every morning.</p>
+  </header>
+
+  <section class="kpis" aria-label="Portfolio totals">
+    <div class="kpi"><span class="kpi__label">Projects live</span><span class="kpi__value">{live}</span><span class="kpi__sub">of {p.nodes.length} on the map</span></div>
+    <div class="kpi"><span class="kpi__label">Visits, all sites</span><span class="kpi__value">{n(p.sites.reduce((s, x) => s + x.views, 0))}</span><span class="kpi__sub">last 28 days</span></div>
+    <div class="kpi kpi--money"><span class="kpi__label">Revenue to date</span><span class="kpi__value">${n(revTotal)}</span><span class="kpi__sub">{p.finance.revenue.length ? `${p.finance.revenue.length} payout(s) logged` : 'First payout pending'}</span></div>
+    <div class="kpi"><span class="kpi__label">Running costs</span><span class="kpi__value">${n(running)}<small>/mo</small></span><span class="kpi__sub">${n(oneOff)} one-off so far</span></div>
+  </section>
+
+  <section class="panel">
+    <h2>Portfolio</h2>
+    <div class="web">
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Portfolio map of Independent Media Network projects">
+        {gpos.map((g) => <line x1={cx} y1={cy} x2={g.x} y2={g.y} class="edge edge--main" />)}
+        {p.nodes.map((nd) => pos[nd.id] && pos[nd.group] && <line x1={pos[nd.group].x} y1={pos[nd.group].y} x2={pos[nd.id].x} y2={pos[nd.id].y} class={`edge edge--${nd.status}`} />)}
+        <circle cx={cx} cy={cy} r="44" class="hub" />
+        <text x={cx} y={cy + 6} class="hub__label">IMN</text>
+        {gpos.map((g) => (
+          <g>
+            <circle cx={g.x} cy={g.y} r="30" class="group" />
+            <text x={g.x} y={g.y + 4} class="group__label">{g.name}</text>
+          </g>
+        ))}
+        {p.nodes.map((nd) => pos[nd.id] && (
+          <g>
+            <title>{`${nd.name} (${STATUS[nd.status] ?? nd.status})${nd.note ? `: ${nd.note}` : ''}`}</title>
+            <circle cx={pos[nd.id].x} cy={pos[nd.id].y} r="9" class={`dot dot--${nd.status}`} />
+            <text x={pos[nd.id].x} y={pos[nd.id].y - 14} class="node__label">{nd.name}</text>
+          </g>
+        ))}
+      </svg>
+    </div>
+    <p class="legend"><span class="key key--live"></span>Live <span class="key key--building"></span>Building <span class="key key--idea"></span>Idea <span class="key key--paused"></span>Paused</p>
+  </section>
+
+  <section class="panel">
+    <h2>Websites</h2>
+    <div class="cards">
+      {p.sites.map((s) => {
+        const ch = s.prevViews ? Math.round(((s.views - s.prevViews) / s.prevViews) * 100) : null;
+        return (
+          <article class="card">
+            <h3><a href={s.url} target="_blank" rel="noopener">{s.name}</a></h3>
+            <dl>
+              <div><dt>Visits</dt><dd>{n(s.views)}{ch !== null && <em class={ch >= 0 ? 'up' : 'down'}> {ch >= 0 ? '+' : ''}{ch}%</em>}</dd></div>
+              <div><dt>People</dt><dd>{n(s.users)}</dd></div>
+              <div><dt>Money clicks</dt><dd>{n(s.money)}</dd></div>
+              <div><dt>Google clicks</dt><dd>{n(s.gscClicks)} <small>of {n(s.gscImpressions)} seen</small></dd></div>
+            </dl>
+            <p class="card__foot"><a href={s.dashboard} target="_blank" rel="noopener">Open the site dashboard</a>{s.updated && ` · data ${new Date(s.updated).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' })}`}</p>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Engines</h2>
+    <div class="cards">
+      {p.engines.map((e) => (
+        <article class="card">
+          <h3>{e.name}</h3>
+          <ul>{e.lines.map((l) => <li>{l}</li>)}</ul>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="panel two">
+    <div>
+      <h2>Next actions</h2>
+      <ul class="actions">
+        {p.actions.map((a) => <li><span class={`who who--${a.who.toLowerCase()}`}>{a.who}</span>{a.what}</li>)}
+      </ul>
+    </div>
+    <div>
+      <h2>Money</h2>
+      {p.finance.revenue.length === 0 ? <p class="muted">No payouts yet. Tell Claude when Amazon, Booking.com or Viator pay, and they’ll show here by month.</p> : (
+        <table><tbody>{p.finance.revenue.map((r) => <tr><td>{r.month}</td><td>{r.source}</td><td class="num">${n(r.amount)}</td></tr>)}</tbody></table>
+      )}
+      <h3 class="sub">Costs</h3>
+      <table><tbody>
+        {p.finance.monthlyRunning.map((c) => <tr><td>{c.item}</td><td class="num">${n(c.amount)}/mo</td></tr>)}
+        {p.finance.costs.map((c) => <tr><td>{c.item} <small>({c.month}, {c.kind})</small></td><td class="num">${n(c.amount)}</td></tr>)}
+      </tbody></table>
+    </div>
+  </section>
+
+  {p.niches.length > 0 && (
+    <section class="panel">
+      <h2>Idea scores</h2>
+      <ol class="niches">{p.niches.map((x) => <li><span class="bar" style={`--w:${x.score}%`}></span><b>{x.score}</b> {x.idea} <small>{x.market}</small></li>)}</ol>
+    </section>
+  )}
+</div>
+<style>
+  .hq { padding-block: var(--space-5) var(--space-6); }
+  .hq__owner { color: var(--color-accent); font-weight: 700; margin: 0; }
+  .hq__title { margin: 0.2rem 0 0.4rem; }
+  .hq__meta { color: var(--muted); font-size: var(--step--1); }
+  .kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); margin: var(--space-4) 0; }
+  @media (min-width: 52rem) { .kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  .kpi, .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--space-3); min-width: 0; }
+  .kpi { display: flex; flex-direction: column; gap: 2px; }
+  .kpi--money { box-shadow: inset 0 3px 0 var(--color-accent); }
+  .kpi__label { color: var(--muted); font-size: var(--step--1); }
+  .kpi__value { font-family: var(--font-display); font-size: var(--step-3); font-weight: 800; line-height: 1.1; }
+  .kpi__value small { font-size: 0.45em; font-weight: 600; margin-left: 2px; }
+  .kpi__sub { color: var(--muted); font-size: 0.78rem; }
+  .panel { margin-top: var(--space-5); }
+  .panel h2 { margin-bottom: var(--space-3); }
+  .web { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow-x: auto; }
+  .web svg { display: block; width: 100%; min-width: 640px; height: auto; }
+  .edge { stroke: var(--line); stroke-width: 1.5; }
+  .edge--main { stroke: color-mix(in srgb, var(--paper) 35%, transparent); stroke-width: 2.5; }
+  .edge--live { stroke: color-mix(in srgb, #7fd49b 55%, transparent); }
+  .hub { fill: var(--color-accent); }
+  .hub__label { fill: var(--ink); font: 800 20px var(--font-display); text-anchor: middle; }
+  .group { fill: var(--ink); stroke: var(--paper); stroke-width: 1.5; }
+  .group__label { fill: var(--paper); font: 700 10.5px var(--font-body); text-anchor: middle; }
+  .dot { stroke: var(--ink); stroke-width: 2; }
+  .dot--live { fill: #7fd49b; } .dot--building { fill: var(--color-accent); } .dot--idea { fill: #8d90ad; } .dot--paused { fill: #f08a7e; }
+  .node__label { fill: var(--paper); font: 600 11.5px var(--font-body); text-anchor: middle; }
+  .legend { color: var(--muted); font-size: var(--step--1); display: flex; gap: 0.4rem 1rem; flex-wrap: wrap; align-items: center; }
+  .key { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; }
+  .key--live { background: #7fd49b; } .key--building { background: var(--color-accent); } .key--idea { background: #8d90ad; } .key--paused { background: #f08a7e; }
+  .cards { display: grid; gap: var(--space-3); }
+  @media (min-width: 52rem) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .card h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: var(--space-2); }
+  .card h3 a { color: var(--paper); }
+  .card dl { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1rem; margin: 0; }
+  .card dt { color: var(--muted); font-size: 0.8rem; }
+  .card dd { margin: 0; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .card dd small { color: var(--muted); font-weight: 400; }
+  .card ul { margin: 0; padding-left: 1.1rem; }
+  .card li { margin: 0.15rem 0; }
+  .card__foot { margin: var(--space-2) 0 0; font-size: 0.85rem; color: var(--muted); }
+  .card__foot a { color: var(--color-accent); }
+  .up { color: #7fd49b; font-style: normal; } .down { color: #f08a7e; font-style: normal; }
+  .two { display: grid; gap: var(--space-5); }
+  @media (min-width: 52rem) { .two { grid-template-columns: 1fr 1fr; } }
+  .actions { list-style: none; padding: 0; margin: 0; }
+  .actions li { padding: 0.55rem 0; border-top: 1px solid var(--line); }
+  .who { display: inline-block; font-size: 0.75rem; font-weight: 700; border-radius: 999px; padding: 0.1rem 0.5rem; margin-right: 0.5rem; background: var(--color-accent); color: var(--ink); }
+  .who--claude { background: #8d90ad; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  td { padding: 0.4rem 0; border-top: 1px solid var(--line); vertical-align: top; }
+  td small { color: var(--muted); }
+  .num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .sub { font-size: 1rem; margin: var(--space-3) 0 var(--space-2); }
+  .muted { color: var(--muted); }
+  .niches { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.35rem; }
+  .niches li { position: relative; isolation: isolate; padding: 0.35rem 0.6rem; border-radius: 6px; overflow: hidden; }
+  .niches .bar { position: absolute; inset: 0 auto 0 0; width: var(--w); background: color-mix(in srgb, var(--color-accent) 18%, transparent); z-index: -1; }
+  .niches small { color: var(--muted); margin-left: 0.3rem; }
+</style>
