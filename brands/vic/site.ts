@@ -11,6 +11,7 @@ const SITE = 'https://victours.com.au';
 const SUFFIX = ' | Vic Tours';
 const GROUPS: Group[] = ['stay', 'eat', 'do'];
 const ON_HUB = 6; // places shown per section on a town page
+const MAX_LIST = 300; // full list pages show the best-documented 300 (keeps big-city pages fast on phones)
 
 const SCHEMA_TYPE: Record<string, string> = {
   hotel: 'Hotel', motel: 'Motel', guest_house: 'BedAndBreakfast', hostel: 'Hostel', apartment: 'LodgingBusiness', chalet: 'LodgingBusiness',
@@ -152,7 +153,7 @@ export function routes(): Route[] {
           },
           crumbs([{ name: 'Home', path: '' }, { name: t.name, path: t.slug }, { name: GROUP_LABEL[g].short, path: `${t.slug}/${g}` }]),
         ],
-        props: { town: { name: t.name, slug: t.slug, km }, group: g, places: all, affiliates: content.affiliates ?? null, placePhotos: Object.fromEntries(all.filter((p) => photos.places[p.id]).map((p) => [p.id, photos.places[p.id]])) },
+        props: { town: { name: t.name, slug: t.slug, km }, group: g, places: all.slice(0, MAX_LIST), total: all.length, affiliates: content.affiliates ?? null, placePhotos: Object.fromEntries(all.slice(0, MAX_LIST).filter((p) => photos.places[p.id]).map((p) => [p.id, photos.places[p.id]])) },
       });
     }
   }
