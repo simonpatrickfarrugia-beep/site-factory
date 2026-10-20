@@ -1,13 +1,16 @@
 ---
 import RoadSign from '../../components/vic/RoadSign.astro';
 import PlaceRow from '../../components/vic/PlaceRow.astro';
+import AffiliateLink from '../../components/vic/AffiliateLink.astro';
 import { GROUP_LABEL, TYPE_LABEL, type Group, type Place } from '../../../brands/vic/model';
 interface Props {
   town: { name: string; slug: string; km: number };
   group: Group;
   places: Place[];
+  affiliates?: Record<string, any> | null;
+  placePhotos?: Record<string, any>;
 }
-const { town, group, places } = Astro.props;
+const { town, group, places, affiliates = null, placePhotos = {} } = Astro.props;
 const has = (k: string) => places.filter((p) => (k === 'dog' ? ['yes', 'leashed'].includes(p.tags.dog) : k === 'outdoor' ? p.tags.outdoor_seating === 'yes' : k === 'access' ? p.tags.wheelchair === 'yes' : !!p.tags.opening_hours)).length;
 const situations = [
   { key: 'dog', label: 'Dogs welcome' },
@@ -22,6 +25,8 @@ const types = Object.entries(places.reduce<Record<string, number>>((a, p) => ((a
   <RoadSign name={town.name} km={town.km} tone={group === 'do' ? 'brown' : 'green'} />
   <h1 class="page-title">{GROUP_LABEL[group].title(town.name)}</h1>
   <p class="count">{places.length} {GROUP_LABEL[group].noun}, best-documented first.</p>
+  {group === 'stay' && <AffiliateLink aff={affiliates?.stay} place={town.name} kind="stay" />}
+  {group === 'do' && <AffiliateLink aff={affiliates?.tours} place={town.name} kind="tours" />}
   {types.length > 1 && (
     <div class="filters" role="group" aria-label="Filter by type">
       <button type="button" aria-pressed="true" data-filter="">All <span>{places.length}</span></button>
@@ -34,7 +39,7 @@ const types = Object.entries(places.reduce<Record<string, number>>((a, p) => ((a
     </div>
   )}
   <p class="count" data-shown hidden></p>
-  <ul class="places" data-places>{places.map((p) => <PlaceRow place={p} />)}</ul>
+  <ul class="places" data-places>{places.map((p) => <PlaceRow place={p} photo={placePhotos[p.id]} />)}</ul>
   <p class="more"><a href={`/${town.slug}`}>Back to {town.name}: stay, eat and do</a></p>
 </div>
 <script is:inline>

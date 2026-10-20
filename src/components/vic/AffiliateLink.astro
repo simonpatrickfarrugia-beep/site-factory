@@ -1,0 +1,28 @@
+---
+/**
+ * Affiliate button (Booking.com, Viator, ...). Renders nothing until the programme is switched on
+ * in data/vic/content.json -> affiliates.<kind> (enabled + template). Always rel="sponsored" with a disclosure.
+ */
+interface Aff { enabled: boolean; label: string; partner: string; template: string; target?: string }
+interface Props { aff?: Aff | null; place: string; kind: 'stay' | 'tours' }
+const { aff, place, kind } = Astro.props;
+let href: string | null = null;
+if (aff?.enabled && aff.template) {
+  const q = encodeURIComponent(`${place}, Victoria, Australia`);
+  const target = aff.target ? aff.target.replace('{q}', q) : '';
+  href = aff.template.replace('{q}', q).replace('{url}', encodeURIComponent(target));
+}
+---
+{href && (
+  <p class={`aff aff--${kind}`}>
+    <a class="aff__button" href={href} rel="sponsored noopener" target="_blank" data-cta={kind === 'stay' ? 'book_stay' : 'book_tour'}>{aff!.label} in {place}</a>
+    <span class="aff__note">on {aff!.partner}. We may earn a commission if you book, at no extra cost to you.</span>
+  </p>
+)}
+<style>
+  .aff { margin: var(--space-3) 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.8rem; }
+  .aff__button { font: 800 1rem var(--font-display); color: #fff; background: var(--sign-green); border-radius: 8px; padding: 0.65rem 1rem; text-decoration: none; }
+  .aff--tours .aff__button { background: var(--sign-brown); }
+  .aff__button:hover { color: #fff; filter: brightness(1.12); }
+  .aff__note { font-size: 0.82rem; color: var(--muted); }
+</style>

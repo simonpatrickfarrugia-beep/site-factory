@@ -1,0 +1,20 @@
+# Vic Tours: fetch free, credited photos (Wikipedia / Wikimedia Commons) for published towns and places.
+name: vic-photos
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  photos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/vic/photos.py
+      - name: Commit
+        run: |
+          git config user.name "Vic Tours photos" && git config user.email "pipeline@victours.com.au"
+          git add data/vic/photos.json
+          git diff --cached --quiet && exit 0
+          git commit -qm "Vic Tours: photos from Wikimedia Commons"
+          for i in 1 2 3; do git pull -q --rebase && git push -q && exit 0; sleep 5; done; exit 1

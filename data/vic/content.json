@@ -119,6 +119,98 @@
   "yarra-glen": {
    "intro": "Yarra Glen sits in the middle of the Yarra Valley wine country, close to some of the region’s best-known cellar doors, with hot-air balloon flights over the vineyards at dawn.",
    "region": "Yarra Valley"
+  },
+  "melbourne-cbd": {
+   "intro": "Melbourne’s city centre is a grid of laneways, arcades and rooftop bars, built on gold-rush money and best explored on foot. Get lost in Degraves Street and Hosier Lane, see the State Library’s domed reading room, then cross Federation Square to the river. The free tram zone covers the whole grid.",
+   "region": "Melbourne"
+  },
+  "southbank": {
+   "intro": "Southbank runs along the south side of the Yarra opposite the city, home to the Arts Centre, the NGV International, the Melbourne Recital Centre and a riverside promenade lined with restaurants and bars. It’s Melbourne’s culture strip, an easy walk across the bridges from Flinders Street.",
+   "region": "Melbourne"
+  },
+  "docklands": {
+   "intro": "Docklands is Melbourne’s modern waterfront on the western edge of the city, with marinas, the Marvel Stadium, a big Ferris wheel at Melbourne Star and waterside restaurants. It’s quieter than the CBD and an easy tram ride away.",
+   "region": "Melbourne"
+  },
+  "south-yarra": {
+   "intro": "South Yarra is one of Melbourne’s busiest dining and shopping neighbourhoods, centred on Chapel Street and Toorak Road. It borders the Royal Botanic Gardens, the Prahran Market is just down the road, and evenings run late.",
+   "region": "Melbourne"
+  },
+  "fitzroy": {
+   "intro": "Fitzroy is Melbourne’s original bohemian inner suburb: Brunswick and Gertrude streets are packed with cafés, bars, vintage shops, galleries and live music. Come hungry and wander.",
+   "region": "Melbourne"
+  },
+  "brunswick": {
+   "intro": "Brunswick stretches up Sydney Road, Lygon Street and Barkly Square, mixing Middle Eastern bakeries, old Italian cafés, breweries and live-music pubs. It’s laid-back, local and full of good cheap eats.",
+   "region": "Melbourne"
+  },
+  "williamstown": {
+   "intro": "Williamstown is a historic seaport on Port Phillip Bay, with bluestone buildings, a waterfront of fish-and-chip shops and views straight back across the water to the city skyline. Arrive by ferry from Southbank for the full effect.",
+   "region": "Melbourne"
+  },
+  "footscray": {
+   "intro": "Footscray is Melbourne’s most multicultural food suburb, famous for Vietnamese and East African eating around the market and Hopkins Street. It’s on the Maribyrnong River, a quick train from the city.",
+   "region": "Melbourne"
+  },
+  "richmond": {
+   "intro": "Richmond is known for Victoria Street’s Vietnamese restaurants, the Swan Street pub strip and Bridge Road shopping. It sits right next to the MCG and the sporting precinct, so expect crowds on game days.",
+   "region": "Melbourne"
+  },
+  "carlton": {
+   "intro": "Carlton is Melbourne’s Little Italy, centred on Lygon Street’s cafés and restaurants. It’s also home to the World Heritage-listed Royal Exhibition Building, the Melbourne Museum and the leafy Carlton Gardens.",
+   "region": "Melbourne"
+  },
+  "port-melbourne": {
+   "intro": "Port Melbourne is a bayside suburb with a long, sandy beach, Station Pier where the Spirit of Tasmania docks, and Bay Street’s cafés and pubs. It’s a breezy walk or ride along the foreshore to St Kilda.",
+   "region": "Melbourne"
+  },
+  "collingwood": {
+   "intro": "Collingwood is Fitzroy’s grittier neighbour, with Smith Street and Johnston Street bars, warehouse breweries, the Collingwood Yards arts precinct and plenty of places to eat late.",
+   "region": "Melbourne"
+  },
+  "mildura": {
+   "intro": "Mildura is the Murray River’s big oasis town in Victoria’s far north-west, with year-round sunshine, paddlesteamers, irrigated vineyards and citrus groves. It’s a base for Mungo National Park and the Murray’s houseboats.",
+   "region": "Murray"
+  },
+  "echuca": {
+   "intro": "Echuca was once Australia’s largest inland port, and its historic wharf still runs the world’s largest fleet of paddlesteamers. Cruise the Murray, explore the port precinct and stay a night on a houseboat.",
+   "region": "Murray"
+  },
+  "shepparton": {
+   "intro": "Shepparton is the main city of the Goulburn Valley food bowl, known for orchards, the Shepparton Art Museum (SAM) on Victoria Park Lake and its colourful public cows. It’s a handy stop between Melbourne and the Murray.",
+   "region": "Goulburn Valley"
+  },
+  "swan-hill": {
+   "intro": "Swan Hill sits on the Murray in Victoria’s north, home to the Pioneer Settlement, a living-history recreation of a river town, and a sound-and-light show by night.",
+   "region": "Murray"
+  },
+  "beechworth": {
+   "intro": "Beechworth is one of Victoria’s best-preserved gold-rush towns, with honey-coloured granite buildings, a famous bakery, Ned Kelly history at the old courthouse and gaol, and excellent wineries close by.",
+   "region": "High Country"
+  },
+  "falls-creek": {
+   "intro": "Falls Creek is a ski-in, ski-out alpine village on the Bogong High Plains. Winters bring snow sports; summers bring mountain biking, walking on the high plains and the Rocky Valley lakes.",
+   "region": "High Country"
+  },
+  "castlemaine": {
+   "intro": "Castlemaine is a creative goldfields town of galleries, op shops, the Theatre Royal and the old Mill precinct, with the heritage steam train running to Maldon at weekends.",
+   "region": "Goldfields"
+  },
+  "inverloch": {
+   "intro": "Inverloch is a relaxed South Gippsland beach town on Anderson Inlet, with safe swimming, surf at the main beach, rock pools and the dinosaur fossil site at Flat Rocks. It’s the gateway to the Bunurong coast drive.",
+   "region": "Gippsland"
+  },
+  "ocean-grove": {
+   "intro": "Ocean Grove is a surf and family beach town on the Bellarine Peninsula, with patrolled beaches, the Barwon River estuary and easy access to Barwon Heads and the Bellarine wineries.",
+   "region": "Bellarine Peninsula"
+  },
+  "queenscliff": {
+   "intro": "Queenscliff is a heritage seaside town at the tip of the Bellarine Peninsula, with grand Victorian hotels, Fort Queenscliff and the car ferry across the bay to Sorrento.",
+   "region": "Bellarine Peninsula"
+  },
+  "rye": {
+   "intro": "Rye is a classic Mornington Peninsula beach town with calm bay beaches and a long pier on one side and the wild ocean back beach on the other. The Peninsula Hot Springs are a short drive away.",
+   "region": "Mornington Peninsula"
   }
  },
  "collections": [
@@ -426,5 +518,21 @@
     }
    ]
   }
- ]
+ ],
+ "affiliates": {
+  "_note": "Fill in a link template and set enabled: true when a programme approves. {q} = search text (e.g. 'Ballarat, Victoria'), {url} = encoded destination URL (for networks like CJ that wrap a target URL).",
+  "stay": {
+   "enabled": false,
+   "label": "Check accommodation prices",
+   "partner": "Booking.com",
+   "template": "",
+   "target": "https://www.booking.com/searchresults.html?ss={q}"
+  },
+  "tours": {
+   "enabled": false,
+   "label": "Find tours and activities",
+   "partner": "Viator",
+   "template": ""
+  }
+ }
 }

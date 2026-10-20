@@ -1,7 +1,8 @@
 ---
 import { TYPE_LABEL, address, cuisine, mapUrl, phone, prettyHours, website, type Place } from '../../../brands/vic/model';
-interface Props { place: Place }
-const { place: p } = Astro.props;
+import PhotoFig from './Photo.astro';
+interface Props { place: Place; photo?: any }
+const { place: p, photo = null } = Astro.props;
 const t = p.tags;
 const kind = [TYPE_LABEL[p.type] ?? p.type, cuisine(t.cuisine), t.stars ? `${t.stars}★` : null].filter(Boolean).join(', ');
 const addr = address(t);
@@ -19,6 +20,7 @@ const flags = [
   data-type={p.type}
   data-flags={[t.dog === 'yes' || t.dog === 'leashed' ? 'dog' : '', t.outdoor_seating === 'yes' ? 'outdoor' : '', t.wheelchair === 'yes' ? 'access' : '', t.opening_hours ? 'hours' : ''].filter(Boolean).join(' ')}
 >
+  {photo && <PhotoFig photo={photo} alt={p.name} size="thumb" />}
   <h3 class="place__name">{p.name}</h3>
   <p class="place__kind">{kind}</p>
   {addr && <p class="place__line">{addr}</p>}
@@ -31,7 +33,7 @@ const flags = [
   </p>
 </li>
 <style>
-  .place { padding: 0.9rem 0; border-top: 1px solid var(--line); list-style: none; }
+  .place { padding: 0.9rem 0; border-top: 1px solid var(--line); list-style: none; overflow: hidden; }
   .place__name { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; line-height: 1.2; }
   .place__kind { margin: 0.1rem 0 0.25rem; font-family: var(--font-display); font-size: 0.92rem; color: var(--muted); }
   .place__line { margin: 0; font-size: 0.95rem; }

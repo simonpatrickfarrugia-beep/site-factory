@@ -1,5 +1,6 @@
 ---
 import RoadSign from '../../components/vic/RoadSign.astro';
+import AffiliateLink from '../../components/vic/AffiliateLink.astro';
 import type { Place } from '../../../brands/vic/model';
 interface DayView {
   title: string;
@@ -7,8 +8,8 @@ interface DayView {
   stops: { slug: string; name: string }[];
   overnight: { slug: string; name: string; stay: Place[]; eat: Place[]; do: Place[] } | null;
 }
-interface Props { name: string; intro: string; nights: number; route: string; days: DayView[] }
-const { name, intro, nights, route, days } = Astro.props;
+interface Props { name: string; intro: string; nights: number; route: string; days: DayView[]; affiliates?: Record<string, any> | null }
+const { name, intro, nights, route, days, affiliates = null } = Astro.props;
 const names = (ps: Place[]) => ps.map((p) => p.name).join(', ');
 ---
 <div class="wrap town">
@@ -35,6 +36,7 @@ const names = (ps: Place[]) => ps.map((p) => p.name).join(', ');
             {d.overnight.stay.length > 0 && <p><span class="picks__label">Stay</span>{names(d.overnight.stay)} · <a href={`/${d.overnight.slug}#stay`}>all options</a></p>}
             {d.overnight.eat.length > 0 && <p><span class="picks__label">Eat</span>{names(d.overnight.eat)} · <a href={`/${d.overnight.slug}#eat`}>all options</a></p>}
             {d.overnight.do.length > 0 && <p><span class="picks__label picks__label--do">Do</span>{names(d.overnight.do)} · <a href={`/${d.overnight.slug}#do`}>all options</a></p>}
+            <AffiliateLink aff={affiliates?.stay} place={d.overnight.name} kind="stay" />
           </div>
         )}
       </li>

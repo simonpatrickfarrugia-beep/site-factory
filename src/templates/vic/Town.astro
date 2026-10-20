@@ -1,18 +1,24 @@
 ---
 import RoadSign from '../../components/vic/RoadSign.astro';
 import PlaceRow from '../../components/vic/PlaceRow.astro';
+import AffiliateLink from '../../components/vic/AffiliateLink.astro';
+import PhotoFig from '../../components/vic/Photo.astro';
 import { GROUP_LABEL, type Group, type Place } from '../../../brands/vic/model';
 interface Props {
   town: { name: string; slug: string; km: number; region: string; intro: string; tips: string[] };
   sections: { group: Group; total: number; places: Place[] }[];
   nearby: { slug: string; name: string; km: number }[];
   collections: { href: string; name: string }[];
+  affiliates?: Record<string, any> | null;
+  photo?: any;
+  placePhotos?: Record<string, any>;
 }
-const { town, sections, nearby, collections } = Astro.props;
+const { town, sections, nearby, collections, affiliates = null, photo = null, placePhotos = {} } = Astro.props;
 ---
 <div class="wrap town">
   <p class="crumb"><a href="/towns">All towns</a></p>
-  <RoadSign name={town.name} km={town.km} size="hero" as="h1" sub={`${town.region}, ${town.km} km from Melbourne`} />
+  <RoadSign name={town.name} km={town.km} size="hero" as="h1" sub={town.km < 3 ? `${town.region}, central Melbourne` : `${town.region}, ${town.km} km from Melbourne`} />
+  {photo && <PhotoFig photo={photo} alt={`${town.name}, Victoria`} />}
   <div class="town__intro">
     <p class="town__lede">{town.intro}</p>
     {town.tips.map((tip) => <p class="tip"><strong>Local tip:</strong> {tip}</p>)}
@@ -25,11 +31,13 @@ const { town, sections, nearby, collections } = Astro.props;
   {sections.map((s) => (
     <section class="town__section" id={s.group}>
       <h2 class={`section-head section-head--${s.group}`}>{GROUP_LABEL[s.group].title(town.name)}</h2>
+      {s.group === 'stay' && <AffiliateLink aff={affiliates?.stay} place={town.name} kind="stay" />}
+      {s.group === 'do' && <AffiliateLink aff={affiliates?.tours} place={town.name} kind="tours" />}
       {s.total === 0 ? (
         <p class="empty">No {GROUP_LABEL[s.group].noun} listed yet.</p>
       ) : (
         <>
-          <ul class="places">{s.places.map((p) => <PlaceRow place={p} />)}</ul>
+          <ul class="places">{s.places.map((p) => <PlaceRow place={p} photo={placePhotos[p.id]} />)}</ul>
           {s.total > s.places.length && (
             <p class="more"><a href={`/${town.slug}/${s.group}`}>See all {s.total} {GROUP_LABEL[s.group].noun} in {town.name}</a></p>
           )}

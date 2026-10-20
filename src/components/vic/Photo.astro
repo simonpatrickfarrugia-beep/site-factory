@@ -1,0 +1,21 @@
+---
+import type { Photo } from '../../../brands/vic/model';
+interface Props { photo: Photo; alt: string; size?: 'hero' | 'thumb' }
+const { photo, alt, size = 'hero' } = Astro.props;
+---
+<figure class={`photo photo--${size}`}>
+  <img src={photo.url} alt={alt} width={photo.width} height={photo.height} loading={size === 'hero' ? 'eager' : 'lazy'} decoding="async" referrerpolicy="no-referrer" />
+  {size === 'hero' && (
+    <figcaption>Photo: <a href={photo.page} rel="nofollow noopener" target="_blank">{photo.artist}</a>, {photo.license}, via Wikimedia Commons</figcaption>
+  )}
+</figure>
+<style>
+  .photo { margin: 0; }
+  .photo img { width: 100%; height: auto; display: block; object-fit: cover; background: var(--line); }
+  .photo--hero { margin-top: var(--space-3); max-width: 44rem; }
+  .photo--hero img { aspect-ratio: 16 / 9; border-radius: var(--radius); }
+  .photo--hero figcaption { font-size: 0.75rem; color: var(--muted); margin-top: 0.3rem; }
+  .photo--hero figcaption a { color: inherit; }
+  .photo--thumb { float: right; width: 96px; margin: 0 0 0.4rem 0.8rem; }
+  .photo--thumb img { aspect-ratio: 1; border-radius: 8px; }
+</style>

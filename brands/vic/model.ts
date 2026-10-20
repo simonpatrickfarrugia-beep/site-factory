@@ -56,10 +56,21 @@ export interface Loop {
   draft?: boolean; // hidden until its towns are published
 }
 
+export interface Photo {
+  url: string;
+  width?: number;
+  height?: number;
+  file: string;
+  page: string;
+  artist: string;
+  license: string;
+}
+
 export interface Content {
   towns: Record<string, TownContent>;
   collections: VicCollection[];
   loops?: Loop[];
+  affiliates?: Record<'stay' | 'tours', { enabled: boolean; label: string; partner: string; template: string; target?: string }>;
   pages: { slug: string; title: string; description: string; paragraphs: string[] }[];
 }
 

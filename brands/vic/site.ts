@@ -44,6 +44,7 @@ export function routes(): Route[] {
   const content = getSingleton<Content>('content');
   const towns = getCollection<Town>('towns').filter((t) => t.published && t.centre && content.towns[t.slug]);
   const places = getCollection<Place>('places');
+  const photos = getSingleton<{ towns: Record<string, unknown>; places: Record<string, unknown> }>('photos');
   const byTown = new Map<string, Place[]>();
   for (const p of places) (byTown.get(p.town) ?? byTown.set(p.town, []).get(p.town)!).push(p);
   const inGroup = (slug: string, g: Group) => (byTown.get(slug) ?? []).filter((p) => p.group === g); // already best-first
@@ -104,7 +105,7 @@ export function routes(): Route[] {
       seo: {
         title: `${t.name}: where to stay, eat and things to do` + SUFFIX,
         rawTitle: true,
-        description: `${t.name}, ${km} km from Melbourne: ${totals.stay} places to stay, ${totals.eat} places to eat and drink and ${totals.do} things to do, with addresses, hours and maps.`,
+        description: `${t.name}, ${km < 3 ? 'in central Melbourne' : `${km} km from Melbourne`}: ${totals.stay} places to stay, ${totals.eat} places to eat and drink and ${totals.do} things to do, with addresses, hours and maps.`,
       },
       schema: [
         {
@@ -119,6 +120,9 @@ export function routes(): Route[] {
       ],
       props: {
         town: { name: t.name, slug: t.slug, km, region: c.region, intro: c.intro, tips: c.tips ?? [] },
+        affiliates: content.affiliates ?? null,
+        photo: photos.towns[t.slug] ?? null,
+        placePhotos: Object.fromEntries(sections.flatMap((x) => x.places).filter((p) => photos.places[p.id]).map((p) => [p.id, photos.places[p.id]])),
         sections,
         nearby,
         collections: [
@@ -148,7 +152,7 @@ export function routes(): Route[] {
           },
           crumbs([{ name: 'Home', path: '' }, { name: t.name, path: t.slug }, { name: GROUP_LABEL[g].short, path: `${t.slug}/${g}` }]),
         ],
-        props: { town: { name: t.name, slug: t.slug, km }, group: g, places: all },
+        props: { town: { name: t.name, slug: t.slug, km }, group: g, places: all, affiliates: content.affiliates ?? null, placePhotos: Object.fromEntries(all.filter((p) => photos.places[p.id]).map((p) => [p.id, photos.places[p.id]])) },
       });
     }
   }
@@ -222,7 +226,7 @@ export function routes(): Route[] {
         },
         crumbs([{ name: 'Home', path: '' }, { name: 'Road trips', path: 'road-trips' }, { name: l.name, path: `road-trips/${l.slug}` }]),
       ],
-      props: { name: l.name, intro: l.intro, nights, route: loopRoute(l), days },
+      props: { name: l.name, intro: l.intro, nights, route: loopRoute(l), days, affiliates: content.affiliates ?? null },
     });
   }
 

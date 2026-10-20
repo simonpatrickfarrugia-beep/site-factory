@@ -12,7 +12,9 @@ interface Props {
   sub?: string | null;
   as?: 'h1' | 'p' | 'span';
 }
-const { name, km = null, href, tone = 'green', size = 'row', sub = null, as = 'p' } = Astro.props;
+const { name, href, tone = 'green', size = 'row', sub = null, as = 'p' } = Astro.props;
+// Central Melbourne places (under 3 km from the CBD) don't get a distance: "0 km" reads oddly on a sign.
+const km = Astro.props.km != null && Astro.props.km >= 3 ? Astro.props.km : null;
 const Tag = href ? 'a' : 'div';
 const Name = as;
 ---
