@@ -60,7 +60,7 @@ export interface Env {
   COLLECTION_MIN_VOLUME: string;
 }
 
-type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections' | 'stats' | 'niches' | 'towns';
+type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections' | 'stats' | 'niches' | 'towns' | 'keywords';
 
 /**
  * Workers Free allows 5 cron schedules per ACCOUNT, so the pipeline uses two (see wrangler.jsonc)
@@ -92,6 +92,8 @@ const COLLECTIONS_REPORT = 'reports/trailers/collections.md';
 const STATS = 'data/trailers/stats.json';
 const NICHES = 'hq/niches.json';
 const VIC_TOWNS = 'data/vic/towns.json';
+const KEYWORDS = 'hq/keywords.json';
+const KEYWORDS_REPORT = 'hq/reports/keywords.md';
 const VIC_TOWNS_REPORT = 'reports/vic/towns.md';
 const NICHES_REPORT = 'hq/reports/niches.md';
 
@@ -107,7 +109,7 @@ export default {
 
   async fetch(req: Request, env: Env): Promise<Response> {
     const url = new URL(req.url);
-    const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue|collections|stats|niches|towns)$/);
+    const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue|collections|stats|niches|towns|keywords)$/);
     if (!m) return new Response('Trailer pipeline. Runs on a schedule.\n', { status: url.pathname === '/' ? 200 : 404 });
     if (!env.RUN_KEY || url.searchParams.get('key') !== env.RUN_KEY) return new Response('Forbidden\n', { status: 403 });
     try {
@@ -132,6 +134,7 @@ const NEEDS: Record<Job, (keyof Env)[]> = {
   stats: ['GITHUB_TOKEN', 'GSC_SERVICE_ACCOUNT'],
   niches: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD', 'ANTHROPIC_API_KEY'],
   towns: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD'],
+  keywords: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD'],
 };
 
 export async function run(job: Job, env: Env, dryRun: boolean) {
@@ -141,7 +144,9 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
   const repo: Repo = { token: env.GITHUB_TOKEN, owner, name, branch: env.BRANCH };
 
   const files =
-    job === 'towns'
+    job === 'keywords'
+      ? [KEYWORDS]
+      : job === 'towns'
       ? [VIC_TOWNS]
       : job === 'niches'
       ? [NICHES]
@@ -162,6 +167,7 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
   if (job === 'stats') return statsJob(env, repo, snap, now, dryRun);
   if (job === 'niches') return nichesJob(env, repo, snap, now, dryRun);
   if (job === 'towns') return townsJob(env, repo, snap, now, dryRun);
+  if (job === 'keywords') return keywordsJob(env, repo, snap, now, dryRun);
   if (job === 'collections') return collectionsJob(env, repo, snap, now, dryRun, maxYear({ now, minAgeYears }));
 
   const state: State = {
@@ -519,6 +525,25 @@ async function townsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boo
     log,
   );
   return { job: 'towns' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null };
+}
+
+/**
+ * Ad-hoc keyword research: hq/keywords.json = [{ "list": "name", "market": 2036, "keywords": [...] }].
+ * Writes monthly search volumes per list to hq/reports/keywords.md (most searched first).
+ */
+async function keywordsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean) {
+  const lists = JSON.parse(snap.files[KEYWORDS] || '[]') as { list: string; market?: number; keywords: string[] }[];
+  const L = ['# Keyword research', '', `Updated ${now.toISOString().slice(0, 10)}. Monthly Google searches (Google Ads data via DataForSEO).`, ''];
+  const log: string[] = [];
+  for (const l of lists.slice(0, 5)) {
+    const market = l.market ?? 2840;
+    const vols = await searchVolumes(env.DATAFORSEO_LOGIN!, env.DATAFORSEO_PASSWORD!, l.keywords, market);
+    const rows = l.keywords.map((k) => ({ k, v: vols.get(cleanKeyword(k)) ?? null })).sort((a, b) => (b.v ?? -1) - (a.v ?? -1));
+    L.push(`## ${l.list} (${market === 2036 ? 'Australia' : market === 2840 ? 'USA' : market})`, '', '| Search | /mo |', '|---|---:|', ...rows.map((r) => `| ${r.k} | ${r.v == null ? '—' : r.v.toLocaleString()} |`), '');
+    log.push(`${l.list}: ${rows.slice(0, 8).map((r) => `${r.k} ${r.v ?? '—'}`).join(', ')}`);
+  }
+  const commit = await save(repo, snap.sha, { [KEYWORDS_REPORT]: L.join('\n') }, `HQ: keyword research [skip ci]\n\n${log.join('\n')}`, dryRun, log);
+  return { job: 'keywords' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null };
 }
 
 async function save(repo: Repo, sha: string, changes: Record<string, string>, message: string, dryRun: boolean, log: string[]) {
