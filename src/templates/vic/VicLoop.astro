@@ -13,7 +13,7 @@ const names = (ps: Place[]) => ps.map((p) => p.name).join(', ');
 ---
 <div class="wrap town">
   <p class="crumb"><a href="/road-trips">Road trips</a></p>
-  <RoadSign name={name} size="hero" as="h1" sub={`${days.length} days, ${nights} nights · self-drive from Melbourne`} />
+  <RoadSign name={name} size="hero" as="h1" sub={nights === 0 ? 'Day trip · self-drive from Melbourne' : `${days.length} days, ${nights} ${nights === 1 ? 'night' : 'nights'} · self-drive from Melbourne`} />
   <div class="town__intro">
     <p class="town__lede">{intro}</p>
     <p class="count">{route}</p>
@@ -22,7 +22,7 @@ const names = (ps: Place[]) => ps.map((p) => p.name).join(', ');
     {days.map((d, i) => (
       <li class="loop-day">
         <span class="loop-day__num" aria-hidden="true">{i + 1}</span>
-        <h2 class="loop-day__title">Day {i + 1}: {d.title}</h2>
+        <h2 class="loop-day__title">{days.length > 1 ? `Day ${i + 1}: ` : ''}{d.title}</h2>
         <p>{d.text}</p>
         {d.stops.length > 0 && (
           <ul class="loop-day__stops" aria-label="Stops">

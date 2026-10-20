@@ -127,6 +127,19 @@
     "mornington",
     "geelong"
    ]
+  },
+  {
+   "slug": "romantic-getaways",
+   "name": "Romantic getaways in Victoria",
+   "intro": "Spa towns, beach towns and mountain villages made for a weekend for two.",
+   "towns": [
+    "daylesford",
+    "lorne",
+    "bright",
+    "port-fairy",
+    "apollo-bay",
+    "mornington"
+   ]
   }
  ],
  "pages": [
@@ -217,6 +230,57 @@
      ],
      "overnight": null,
      "text": "Drive the most famous stretch of the Great Ocean Road, stopping at Teddy’s Lookout and the Memorial Arch, then surf-town Torquay and Bells Beach on the way back to Melbourne."
+    }
+   ]
+  },
+  {
+   "slug": "great-ocean-road-3-day-itinerary",
+   "name": "Great Ocean Road in 3 days",
+   "summary": "The classic coastal drive from Torquay to the Twelve Apostles and Port Fairy, with two nights on the road.",
+   "intro": "Three days is the sweet spot for the Great Ocean Road: enough time to stop at the lookouts, walk into the Otways and see the Twelve Apostles at sunset, without rushing. You drive west along the coast and come home on the faster inland highway.",
+   "days": [
+    {
+     "title": "Melbourne to Lorne",
+     "stops": [
+      "torquay",
+      "lorne"
+     ],
+     "overnight": "lorne",
+     "text": "Start in Torquay for a coffee and a look at Bells Beach, then pass under the Memorial Arch onto the coast road proper. Stop at Split Point Lighthouse at Aireys Inlet, then roll into Lorne for a swim and Teddy’s Lookout at the end of the day."
+    },
+    {
+     "title": "Lorne to the Twelve Apostles",
+     "stops": [
+      "apollo-bay",
+      "port-campbell"
+     ],
+     "overnight": "port-campbell",
+     "text": "The most dramatic stretch of the road. Lunch in Apollo Bay, then head into the Otways for a rainforest walk or out to Cape Otway. Keep driving to Port Campbell and be at the Twelve Apostles or Loch Ard Gorge for sunset."
+    },
+    {
+     "title": "Port Campbell to Port Fairy and home",
+     "stops": [
+      "warrnambool",
+      "port-fairy"
+     ],
+     "overnight": null,
+     "text": "See the Apostles again at sunrise without the crowds, then follow the coast past London Bridge and the Bay of Islands to Warrnambool. Finish in Port Fairy with a walk around Griffiths Island before taking the inland highway back to Melbourne (about 3.5 hours)."
+    }
+   ]
+  },
+  {
+   "slug": "phillip-island-day-trip",
+   "name": "Phillip Island day trip",
+   "summary": "Pelicans, seals, koalas and the Penguin Parade at dusk, in one big day from Melbourne.",
+   "intro": "Phillip Island is about two hours from Melbourne, and the best day there ends at dusk with the Penguin Parade. Plan the day backwards from that: arrive late morning, take it slow, and book your penguin viewing ahead in busy seasons.",
+   "days": [
+    {
+     "title": "Melbourne to Phillip Island and back",
+     "stops": [
+      "phillip-island"
+     ],
+     "overnight": null,
+     "text": "Cross the bridge at San Remo, where pelicans gather at the jetty around midday. Spend the afternoon at the Nobbies boardwalk looking out to Seal Rocks, the Koala Conservation Reserve or Churchill Island’s heritage farm, with a late lunch in Cowes. Then head to Summerland Beach for the Penguin Parade as the little penguins come ashore at sunset, and drive home after dark."
     }
    ]
   }

@@ -9,7 +9,7 @@ const { loops } = Astro.props;
     {loops.map((l) => (
       <li class="loop-card">
         <a class="loop-card__name" href={`/road-trips/${l.slug}`}>{l.name}</a>
-        <p class="loop-card__route">{l.days} days · {l.route}</p>
+        <p class="loop-card__route">{l.days === 1 ? 'Day trip' : `${l.days} days`} · {l.route}</p>
         <p>{l.summary}</p>
       </li>
     ))}
