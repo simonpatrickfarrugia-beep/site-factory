@@ -1,0 +1,616 @@
+{
+ "town": "Port Fairy",
+ "slug": "port-fairy",
+ "centre": [
+  -38.3855117,
+  142.2366722
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-10-20T06:42:23+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n597178567",
+   "name": "Merrijig Inn",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3881095,
+   "lon": 142.2401258,
+   "tags": {
+    "wheelchair": "no",
+    "wikidata": "Q56501485",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n597178612",
+   "name": "Gipps St Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3879138,
+   "lon": 142.2408946,
+   "tags": {
+    "opening_hours": "Mo-Tu,Fr-Su 10:00-20:00",
+    "cuisine": "seafood",
+    "wheelchair": "yes",
+    "outdoor_seating": "yes",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n597205864",
+   "name": "Caledonian Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -38.3833696,
+   "lon": 142.2341315,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n597205870",
+   "name": "The Stag",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3856907,
+   "lon": 142.2364619,
+   "tags": {
+    "wheelchair": "no",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n597205874",
+   "name": "Rebecas Cafe & Ice Creamery",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3837077,
+   "lon": 142.2368065,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n597205875",
+   "name": "Zest Cafe & Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3835807,
+   "lon": 142.2368214,
+   "tags": {
+    "phone": "+61 435 073 106",
+    "opening_hours": "Mo-Su 08:00-16:00",
+    "addr:housenumber": "15",
+    "addr:street": "Bank Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n597205876",
+   "name": "Four Seasons Chinese Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3840894,
+   "lon": 142.2367435,
+   "tags": {
+    "cuisine": "chinese",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n597205880",
+   "name": "West Beach Cantina",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3846465,
+   "lon": 142.2370608,
+   "tags": {
+    "website": "https://www.westbeachcantina.com/",
+    "opening_hours": "Mo, Fr-Su 11:00-20:00",
+    "cuisine": "mexican",
+    "addr:housenumber": "43",
+    "addr:street": "Sackville Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n597205887",
+   "name": "Royal Oak Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -38.3836615,
+   "lon": 142.2378896,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n597205891",
+   "name": "The Star Of The West",
+   "group": "eat",
+   "type": "pub",
+   "lat": -38.3831951,
+   "lon": 142.2368506,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n2713421317",
+   "name": "Port Fairy Gardens Caravan Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -38.3789283,
+   "lon": 142.2415349,
+   "tags": {
+    "website": "https://www.portfairycaravanparks.com/",
+    "phone": "+61 3 5568 1060",
+    "wheelchair": "yes",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "n3444472993",
+   "name": "Douglas Riverside",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -38.382692,
+   "lon": 142.240172,
+   "tags": {
+    "addr:housenumber": "85",
+    "addr:street": "Gibbs Street",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n3582055342",
+   "name": "Bank St + Co",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3831646,
+   "lon": 142.2358548,
+   "tags": {
+    "website": "https://bankstandco.com.au/",
+    "addr:housenumber": "28",
+    "addr:street": "Bank Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3750383632",
+   "name": "54 on Bank",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -38.3827044,
+   "lon": 142.2331771,
+   "tags": {
+    "addr:housenumber": "54",
+    "addr:street": "Bank Street",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n3802206625",
+   "name": "Port Fairy YHA",
+   "group": "stay",
+   "type": "hostel",
+   "lat": -38.3855061,
+   "lon": 142.2384388,
+   "tags": {
+    "website": "https://www.yha.com.au/hostels/vic/great-ocean-road/port-fairy/",
+    "phone": "+61 3 5568 2468",
+    "opening_hours": "Mo-Su 09:00-11:00,17:00-21:00",
+    "addr:housenumber": "8",
+    "addr:street": "Cox Street",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "n4244636392",
+   "name": "Oscars Waterfront Boutique Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -38.3860726,
+   "lon": 142.2399243,
+   "tags": {
+    "addr:housenumber": "41b",
+    "addr:street": "Gipps Street",
+    "addr:postcode": "3284",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n5214727121",
+   "name": "Rock pool",
+   "group": "do",
+   "type": "attraction",
+   "lat": -38.3918583,
+   "lon": 142.2273434,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n5340605147",
+   "name": "Cannon",
+   "group": "do",
+   "type": "attraction",
+   "lat": -38.388245,
+   "lon": 142.2432625,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n6282427265",
+   "name": "Hearns Beach House",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -38.3916136,
+   "lon": 142.2118899,
+   "tags": {
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "n7142093886",
+   "name": "Griffiths Island Lighthouse",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -38.3909091,
+   "lon": 142.2538751,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n10705629008",
+   "name": "Farmers Wife Harvest Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3845369,
+   "lon": 142.2372764,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n10705648805",
+   "name": "The Mill",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3845932,
+   "lon": 142.2366371,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11143207305",
+   "name": "Lemongrass Thai",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3832343,
+   "lon": 142.2327925,
+   "tags": {
+    "cuisine": "thai",
+    "addr:housenumber": "55",
+    "addr:street": "Bank Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11145213545",
+   "name": "Port Fairy Coffee Roasters",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3832039,
+   "lon": 142.2325538,
+   "tags": {
+    "website": "https://portfairycoffeeroasters.com/",
+    "cuisine": "coffee_shop",
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11155967209",
+   "name": "Charlie's on East",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3799258,
+   "lon": 142.243159,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11733365563",
+   "name": "Central Motel Port Fairy",
+   "group": "stay",
+   "type": "motel",
+   "lat": -38.3840592,
+   "lon": 142.2363526,
+   "tags": {
+    "website": "https://portfairymotel.com.au/",
+    "phone": "+61 3 5568 1800",
+    "wheelchair": "limited",
+    "internet_access": "wlan",
+    "addr:housenumber": "56",
+    "addr:street": "Sackville Street",
+    "addr:suburb": "Port Fairy",
+    "addr:postcode": "3284",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n11735918668",
+   "name": "Short-Tailed Shearwater Colony",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -38.3902158,
+   "lon": 142.2474005,
+   "tags": {
+    "wheelchair": "yes",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n11736435505",
+   "name": "Alexo Pizza & Bistro",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3845895,
+   "lon": 142.2370693,
+   "tags": {
+    "website": "https://www.alexopizzabistro.com/",
+    "phone": "+61 3 5568 1756",
+    "opening_hours": "Tu-Su 16:00-21:00",
+    "addr:housenumber": "45",
+    "addr:street": "Sackville Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11736449039",
+   "name": "Coffin Sally",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3849555,
+   "lon": 142.2370163,
+   "tags": {
+    "website": "https://www.coffinsally.com.au/",
+    "phone": "+61 3 5568 2618",
+    "opening_hours": "Tu-Th 16:30-20:00; Fr, Sa 16:30-20:30",
+    "cuisine": "pizza",
+    "addr:housenumber": "33",
+    "addr:street": "Sackville Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12417268150",
+   "name": "Bottega Toscana",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3831699,
+   "lon": 142.2359201,
+   "tags": {
+    "website": "https://www.bottegatoscana.com.au/",
+    "addr:housenumber": "26",
+    "addr:street": "Bank Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12417268956",
+   "name": "Blakes",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3832147,
+   "lon": 142.2326935,
+   "tags": {
+    "addr:housenumber": "57",
+    "addr:street": "Bank Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12417268987",
+   "name": "Borough Chambers",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3831792,
+   "lon": 142.2364293,
+   "tags": {
+    "website": "https://www.boroughchambers.com/",
+    "addr:housenumber": "20",
+    "addr:street": "Bank Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12421003724",
+   "name": "Koda Deli & Rotisserie",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.384728,
+   "lon": 142.2370476,
+   "tags": {
+    "addr:housenumber": "41",
+    "addr:street": "Sackville Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n14023509301",
+   "name": "The Victoria Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -38.3830305,
+   "lon": 142.2340354,
+   "tags": {
+    "phone": "+61 3 5568 2891",
+    "opening_hours": "We-Su 11:00-00:00",
+    "addr:housenumber": "42",
+    "addr:street": "Bank Street",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w46706929",
+   "name": "Russell Clark Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3894458,
+   "lon": 142.2306742,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w46706931",
+   "name": "George Dodds Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3918537,
+   "lon": 142.2402651,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w46706940",
+   "name": "Southcombe By The Sea Caravan Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -38.3907912,
+   "lon": 142.2361928,
+   "tags": {
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w166899138",
+   "name": "Eclectic Designs",
+   "group": "do",
+   "type": "attraction",
+   "lat": -38.3808498,
+   "lon": 142.2327184,
+   "tags": {
+    "addr:housenumber": "62",
+    "addr:street": "Regent Street",
+    "addr:postcode": "3284",
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "w189986742",
+   "name": "Gardens By East Beach Caravan Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -38.3780746,
+   "lon": 142.2411982,
+   "tags": {
+    "website": "https://www.portfairycaravanparks.com/",
+    "phone": "+61 3 5568 1060",
+    "addr:housenumber": "111",
+    "addr:street": "Griffiths Street",
+    "addr:suburb": "Port Fairy",
+    "addr:postcode": "3284",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w361384395",
+   "name": "Fiddlers Green",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3836819,
+   "lon": 142.2374776,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w361384878",
+   "name": "Port Fairy Botanic Gardens",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3795614,
+   "lon": 142.2413345,
+   "tags": {
+    "wikidata": "Q69303111",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w553238427",
+   "name": "Array of cannons",
+   "group": "do",
+   "type": "attraction",
+   "lat": -38.3886345,
+   "lon": 142.2430292,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "w670877610",
+   "name": "Limestone Gallery",
+   "group": "do",
+   "type": "gallery",
+   "lat": -38.3844912,
+   "lon": 142.2235644,
+   "tags": {
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "w940380070",
+   "name": "Wetland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.3880005,
+   "lon": 142.2254484,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w1275098973",
+   "name": "Ashmont Motor Inn & Apartments",
+   "group": "stay",
+   "type": "motel",
+   "lat": -38.3833952,
+   "lon": 142.2334103,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "r9278049",
+   "name": "Port Fairy Coastal Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.3754193,
+   "lon": 142.2728537,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r9278056",
+   "name": "Belfast Coastal Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.3671643,
+   "lon": 142.3411641,
+   "tags": {
+    "wikipedia": "en:Belfast Coastal Reserve",
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}

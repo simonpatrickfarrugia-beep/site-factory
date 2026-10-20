@@ -1,0 +1,763 @@
+{
+ "town": "Halls Gap",
+ "slug": "halls-gap",
+ "centre": [
+  -37.1417687,
+  142.520244
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-10-20T06:37:44+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n523442510",
+   "name": "Venus Baths",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.1391428,
+   "lon": 142.5090333,
+   "tags": {
+    "wheelchair": "no",
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n595572866",
+   "name": "Spirit Of Punjab",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.1452594,
+   "lon": 142.521999,
+   "tags": {
+    "cuisine": "indian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n595572941",
+   "name": "Kookaburra Bar & Bistro",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.142227,
+   "lon": 142.5193497,
+   "tags": {
+    "website": "https://www.kookaburrahotel.com.au/",
+    "opening_hours": "Tu-Fr 15:00-21:00; Sa,Su 12:00-21:00",
+    "wheelchair": "yes",
+    "addr:housenumber": "125-127",
+    "addr:street": "Grampians Road",
+    "addr:suburb": "Halls Gap",
+    "addr:postcode": "3381",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n595572962",
+   "name": "Halls Gap Caravan Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -37.1412361,
+   "lon": 142.5185052,
+   "tags": {
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "n672990485",
+   "name": "Halls Gap Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.1301757,
+   "lon": 142.5340854,
+   "tags": {
+    "website": "https://www.hallsgaphotel.com.au/",
+    "addr:housenumber": "2262",
+    "addr:street": "Grampians Road",
+    "addr:suburb": "Halls Gap",
+    "addr:postcode": "3381",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n746321061",
+   "name": "Boroka Lookout",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -37.1223985,
+   "lon": 142.5035428,
+   "tags": {
+    "wheelchair": "yes",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n1864193455",
+   "name": "Clematis Falls",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.1265195,
+   "lon": 142.5153488,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n2271271839",
+   "name": "Brambuk Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.1574088,
+   "lon": 142.5303765,
+   "tags": {
+    "opening_hours": "Mo-Su 09:00-17:00",
+    "cuisine": "coffee_shop",
+    "wheelchair": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2271271840",
+   "name": "Brambuk Cultural Centre",
+   "group": "do",
+   "type": "museum",
+   "lat": -37.1579676,
+   "lon": 142.5315001,
+   "tags": {
+    "wheelchair": "yes",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "n2495575443",
+   "name": "Grampians Motel Bar",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.1651749,
+   "lon": 142.5312785,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n2495579164",
+   "name": "Black Panther Cafe Bar",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.1388695,
+   "lon": 142.5199068,
+   "tags": {
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2495583336",
+   "name": "Livefast Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.1388905,
+   "lon": 142.5197188,
+   "tags": {
+    "website": "https://www.livefast.com.au/",
+    "phone": "+61 3 5356 4400",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "97",
+    "addr:street": "Grampians Road",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2755498659",
+   "name": "Boronia Peak",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -37.1490291,
+   "lon": 142.536916,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n2808070001",
+   "name": "Darcy",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.143765,
+   "lon": 142.521032,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3164223821",
+   "name": "Geriwerd Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.1333,
+   "lon": 142.5214109,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n3446105693",
+   "name": "Grampians Chalets",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1498077,
+   "lon": 142.5251827,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "n4904993123",
+   "name": "Grand Canyon",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.1516546,
+   "lon": 142.5051433,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n5018066426",
+   "name": "Golton on the Gap",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -37.1488006,
+   "lon": 142.5237925,
+   "tags": {
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "n5623765697",
+   "name": "Marwood Luxury Villas",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.1270335,
+   "lon": 142.5205349,
+   "tags": {
+    "website": "https://www.marwood.net.au/",
+    "phone": "+61 438 688 500",
+    "addr:housenumber": "31",
+    "addr:street": "Mt Zero Road",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n6282618515",
+   "name": "Grampians Villas",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -37.1429652,
+   "lon": 142.5205159,
+   "tags": {
+    "addr:housenumber": "151",
+    "addr:street": "Grampians Road",
+    "addr:suburb": "Halls Gap",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "n7012936058",
+   "name": "paper scissors rock brew co.",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.1407597,
+   "lon": 142.519278,
+   "tags": {
+    "website": "https://paperscissorsrock.beer/",
+    "opening_hours": "Mo-Su 12:00-20:00; Tu off",
+    "addr:housenumber": "119",
+    "addr:street": "Grampians Road",
+    "addr:suburb": "Halls Gap",
+    "addr:postcode": "3381",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n7775130502",
+   "name": "Gate of the West Wind",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -37.1585312,
+   "lon": 142.5142998,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n8850054446",
+   "name": "Silent Street",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.1586892,
+   "lon": 142.5133901,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n8989639009",
+   "name": "Wonderland Cottages",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1472762,
+   "lon": 142.5207612,
+   "tags": {
+    "website": "https://www.wonderlandcottages.com/",
+    "phone": "+61 484 272 999",
+    "internet_access": "wlan",
+    "addr:housenumber": "5-17",
+    "addr:street": "Ellis Street",
+    "addr:suburb": "Halls Gap",
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "n9773901453",
+   "name": "Elephant Hide Rock",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.1402069,
+   "lon": 142.5093077,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n9773901454",
+   "name": "The Pinnacle",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -37.1601464,
+   "lon": 142.5156917,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n11778297789",
+   "name": "The Town Fryer Fish & Chips",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.1398781,
+   "lon": 142.5192781,
+   "tags": {
+    "cuisine": "fish_and_chips",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n13411764120",
+   "name": "Nerve Test",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.1607027,
+   "lon": 142.5147599,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n13411767812",
+   "name": "Ladys Hat",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.1591152,
+   "lon": 142.5108532,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n13426096101",
+   "name": "Raccolto",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.1413272,
+   "lon": 142.5196686,
+   "tags": {
+    "website": "https://www.raccoltopizza.com.au/",
+    "phone": "+61 3 5356 4782",
+    "opening_hours": "Mo-Tu, Th-Fr 15:00-20:00; Sa-Su 10:00-20:00",
+    "cuisine": "italian_pizza",
+    "addr:housenumber": "2",
+    "addr:street": "Heath Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n13426120801",
+   "name": "Grampians Wine Cellar",
+   "group": "do",
+   "type": "winery",
+   "lat": -37.1414128,
+   "lon": 142.519567,
+   "tags": {
+    "website": "https://www.grampianswinecellar.com.au/",
+    "opening_hours": "Fr 14:00-19:00; Sa 13:00-19:00; Su 13:00-18:00; Mo 14:00-18:00",
+    "addr:housenumber": "2",
+    "addr:street": "Heath Street",
+    "craft": "winery"
+   }
+  },
+  {
+   "id": "w240893804",
+   "name": "Kookaburra Motor Lodge",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.1393673,
+   "lon": 142.5214967,
+   "tags": {
+    "website": "https://kookaburralodge.com.au/",
+    "phone": "+61 3 5356 4395",
+    "addr:housenumber": "26-28",
+    "addr:street": "Heath Street",
+    "addr:suburb": "Halls Gap",
+    "addr:postcode": "3381",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w241387990",
+   "name": "Halls Gap Holiday Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -37.1283693,
+   "lon": 142.5253781,
+   "tags": {
+    "website": "https://www.nrmaparksandresorts.com.au/halls-gap/",
+    "phone": "+61 3 5356 4215",
+    "opening_hours": "Mo-Su 08:00-18:00",
+    "brand": "Big4;NRMA",
+    "addr:housenumber": "2372",
+    "addr:street": "Grampians Road",
+    "addr:suburb": "Halls Gap",
+    "addr:postcode": "3381",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w298169504",
+   "name": "Country Plaza Halls Gap",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.1434728,
+   "lon": 142.5205002,
+   "tags": {
+    "stars": "3",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w298169508",
+   "name": "Halls Gap Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.1443826,
+   "lon": 142.5213222,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w304926569",
+   "name": "Comfort Inn Country Plaza",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.1434126,
+   "lon": 142.5211515,
+   "tags": {
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w304926574",
+   "name": "D'Altons Resort",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.1456885,
+   "lon": 142.5199893,
+   "tags": {
+    "addr:housenumber": "8",
+    "addr:street": "Glen Street",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w305408943",
+   "name": "Silverband Lodge",
+   "group": "stay",
+   "type": "camp_site",
+   "lat": -37.1488548,
+   "lon": 142.5225643,
+   "tags": {
+    "tourism": "camp_site"
+   }
+  },
+  {
+   "id": "w305408944",
+   "name": "Norval Lodge and House",
+   "group": "stay",
+   "type": "camp_site",
+   "lat": -37.149502,
+   "lon": 142.5232202,
+   "tags": {
+    "tourism": "camp_site"
+   }
+  },
+  {
+   "id": "w310917887",
+   "name": "Gariwerd Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.1330132,
+   "lon": 142.521251,
+   "tags": {
+    "stars": "3",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w313107437",
+   "name": "Flame Brothers",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.1383729,
+   "lon": 142.5198434,
+   "tags": {
+    "website": "https://www.flamebrothers.com.au/",
+    "cuisine": "regional",
+    "wheelchair": "yes",
+    "addr:street": "Grampians Road",
+    "addr:suburb": "Halls Gap",
+    "addr:postcode": "3381",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w325187706",
+   "name": "Halls Gap Picnic Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.1400964,
+   "lon": 142.5182385,
+   "tags": {
+    "tourism": "picnic_site",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w463856093",
+   "name": "The Grampians Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.1652087,
+   "lon": 142.5313867,
+   "tags": {
+    "phone": "+61 3 4320 0957",
+    "wheelchair": "yes",
+    "internet_access": "yes",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w515114840",
+   "name": "Grampians YHA Eco Hostel",
+   "group": "stay",
+   "type": "hostel",
+   "lat": -37.1319889,
+   "lon": 142.5209081,
+   "tags": {
+    "website": "https://www.yha.com.au/hostels/vic/regional-victoria/grampians-halls-gap/",
+    "phone": "+61 3 5356 4544",
+    "internet_access": "wlan",
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "w675577138",
+   "name": "Pinnacle Holiday Lodge",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.138809,
+   "lon": 142.5207848,
+   "tags": {
+    "website": "https://www.pinnacleholiday.com.au/",
+    "phone": "+61 3 5356 4249",
+    "addr:housenumber": "21",
+    "addr:street": "Heath Street",
+    "addr:suburb": "Halls Gap",
+    "addr:postcode": "3381",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w729925216",
+   "name": "Breeze Holiday Parks - Grampians",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -37.1299849,
+   "lon": 142.5400054,
+   "tags": {
+    "website": "https://breezeholidayparks.com.au/parks/grampians/",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w951339582",
+   "name": "Halls Gap Baptist Centre",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1369064,
+   "lon": 142.5208283,
+   "tags": {
+    "website": "https://baptistcamping.com.au/locations/halls-gap/",
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w951339583",
+   "name": "Stoney Creek Lodge",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1365258,
+   "lon": 142.5214076,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w971316603",
+   "name": "Acacia",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.147177,
+   "lon": 142.5205027,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w971316604",
+   "name": "Banksia",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1472038,
+   "lon": 142.5203202,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w971316605",
+   "name": "Casuarina",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1471674,
+   "lon": 142.5201307,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w971316606",
+   "name": "Grevillea",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1470207,
+   "lon": 142.5201499,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w971316607",
+   "name": "Manuka",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1467977,
+   "lon": 142.5200153,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w971316608",
+   "name": "Thryptomene",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1468254,
+   "lon": 142.5202191,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w1485596871",
+   "name": "The Kingfisher Lodge 111",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1565089,
+   "lon": 142.5273514,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w1485596872",
+   "name": "The Blue Wren Lodge 111",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1566307,
+   "lon": 142.5271361,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "r2703380",
+   "name": "Grampians (Gariwerd) National Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.2536508,
+   "lon": 142.4326999,
+   "tags": {
+    "wikidata": "Q515047",
+    "wikipedia": "en:Grampians National Park",
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r9216408",
+   "name": "Brambuk - The National Park and Cultural Centre Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.1571308,
+   "lon": 142.5296512,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r18476272",
+   "name": "Halls Gap Tavern",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.1420066,
+   "lon": 142.5183505,
+   "tags": {
+    "website": "https://hallsgaptavern.com.au/",
+    "wheelchair": "no",
+    "internet_access": "wlan",
+    "addr:housenumber": "124-126",
+    "addr:street": "Grampians Road",
+    "tourism": "hotel"
+   }
+  }
+ ]
+}
