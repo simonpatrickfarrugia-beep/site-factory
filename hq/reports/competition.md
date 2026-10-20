@@ -4,6 +4,9 @@ Updated 2026-10-20. Google top 10 for each niche's best keywords. A slot is **be
 
 | Idea | Openness | Keywords checked | Biggest players |
 |---|---:|---:|---|
+| Victoria: where to eat by town | **49** | 6 | tripadvisor.com.au (19.3M), instagram.com (61.7M), agfg.com.au (2.5M), visitmelbourne.com (1.1M) |
+| Victoria: things to do by town | **44** | 6 | visitballarat.com.au (42k), youtube.com (38.0M), tripadvisor.com.au (19.3M), au.trip.com (971k) |
+| Victoria: where to stay by town | **43** | 6 | tripadvisor.com.au (19.3M), instagram.com (61.7M), tripadvisor.com (2.0M), visitvictoria.com (598k) |
 | Anime: where to watch and watch order | **42** | 6 | youtube.com (625.8M), play.google.com (165.4M), hulu.com (8.8M), en.wikipedia.org (1923.1M) |
 | Movie soundtracks and film music | **41** | 6 | youtube.com (625.8M), tv.apple.com (19.4M), en.wikipedia.org (1923.1M), imdb.com (385.1M) |
 | Board games | **40** | 6 | boardgamegeek.com (1.3M), en.wikipedia.org (1923.1M), youtube.com (625.8M), play.google.com (165.4M) |
@@ -12,6 +15,39 @@ Updated 2026-10-20. Google top 10 for each niche's best keywords. A slot is **be
 | US national parks and hiking trails | **25** | 6 | yelp.com (439.8M), myhikes.org (74k), tripadvisor.com (136.6M), alltrails.com (6.1M) |
 | TV shows: where to watch | **24** | 5 | amazon.com (251.6M), netflix.com (52.3M), rottentomatoes.com (62.9M), tv.apple.com (19.4M) |
 | Video games: release dates and trailers | **19** | 6 | youtube.com (625.8M), nintendo.com (5.3M), amazon.com (251.6M), bestbuy.com (19.6M) |
+
+## Victoria: where to eat by town (openness 49)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| restaurants in geelong cbd | 22,200 | 47 | #1 barwonedge.com.au, #2 baahlahdining.com, #6 meetmeatmarys.com.au, #7 paviliongeelong.com.au | barwonedge.com.au, baahlahdining.com, instagram.com |
+| nice restaurants geelong | 6,600 | 42 | #1 nectargeelong.com.au, #2 reddit.com (forum), #5 meetmeatmarys.com.au | nectargeelong.com.au, reddit.com, tripadvisor.com.au |
+| geelong good restaurants | 6,600 | 37 | #3 reddit.com (forum), #5 eatability.com.au, #7 meetmeatmarys.com.au, #8 paviliongeelong.com.au | agfg.com.au, firsttable.com.au, reddit.com |
+| geelong's best restaurants | 6,600 | 42 | #2 sailorsrestgeelong.com.au, #4 almarestaurant.com.au, #6 nectargeelong.com.au, #8 felixgeelong.com.au | agfg.com.au, sailorsrestgeelong.com.au, broadsheet.com.au |
+| restaurants bright | 5,400 | 79 | #1 starhotelbright.com.au, #2 tomahawksbright.com.au, #3 visitbright.com.au, #5 alpinevalleygetaways.com.au, #6 theriverdeck.com.au, #8 visitbright.com.au, #9 facebook.com (forum) | starhotelbright.com.au, tomahawksbright.com.au, visitbright.com.au |
+| ezard at levantine hill | 5,400 | 63 | #1 levantinehill.com.au, #2 levantinehill.com.au, #3 levantinehill.com.au, #7 levantinehill.com.au, #9 yarravalleywineries.com.au, #10 mindyourtablemanners.wordpress.com | levantinehill.com.au, levantinehill.com.au, levantinehill.com.au |
+
+## Victoria: things to do by town (openness 44)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| melbourne great ocean road tour | 12,100 | 53 | #1 happytravels.com.au, #2 greatoceanroadtour.com.au, #5 gowest.com.au, #8 activities.marriott.com, #9 mel365.com | happytravels.com.au, greatoceanroadtour.com.au, tripadvisor.com.au |
+| things to do in ballarat | 8,100 | 16 | #5 vetlifeinballarat.com.au, #8 ballaratchocolateexperiencestore.com.au | visitballarat.com.au, tothotornot.com, visitmelbourne.com |
+| ballarat attractions | 8,100 | 42 | #2 hotelballarat.com.au, #5 wheressharon.com, #6 expedia.co.uk, #9 ballaratchocolateexperiencestore.com.au | bookme.com.au, hotelballarat.com.au, youtube.com |
+| ballarat sightseeing | 8,100 | 37 | #1 hotelballarat.com.au, #2 ballaratbudgetmotel.com.au, #8 autopiatours.com.au | hotelballarat.com.au, ballaratbudgetmotel.com.au, visitballarat.com.au |
+| ballarat things to see | 8,100 | 84 | #1 culturalattractionsofaustralia.com, #2 autopiatours.com.au, #3 expedia.co.uk, #4 mercure.accor.com, #5 ballaratbudgetmotel.com.au, #6 bestswines.com, #8 ballaratchocolateexperiencestore.com.au | culturalattractionsofaustralia.com, autopiatours.com.au, expedia.co.uk |
+| things to do in phillip island | 5,400 | 16 | #6 wildlifetours.com.au, #9 facebook.com (forum) | youtube.com, tripadvisor.com.au, visitphillipisland.com.au |
+
+## Victoria: where to stay by town (openness 43)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| yarra valley lodge | 14,800 | 32 | #3 independentcollection.com.au, #6 independentcollection.com.au, #8 2aussietravellers.com | hotelsone.com, tripadvisor.com, independentcollection.com.au |
+| mantra lorne accommodation | 14,800 | 47 | #1 mantralorne.net.au, #3 mantralorne.com.au, #4 ytravelblog.com, #8 facebook.com (forum) | mantralorne.net.au, jetstar.com, mantralorne.com.au |
+| balgownie yarra valley accommodation | 14,800 | 37 | #1 balgownie.com, #4 balgownie.com, #6 balgownie.com | balgownie.com, tripadvisor.com.au, booking.com |
+| balgownie estate vineyard resort & spa yarra valley | 14,800 | 79 | #1 balgownie.com, #2 balgownie.com, #3 balgownie.com, #4 balgownie.com, #6 gobeyondmelbourne.com, #7 facebook.com (forum), #8 balgownie.com | balgownie.com, balgownie.com, balgownie.com |
+| lake house daylesford accommodation | 9,900 | 26 | #1 lakehouse.com.au, #6 luxurylodgesofaustralia.com.au | lakehouse.com.au, tripadvisor.com.au, visitvictoria.com |
+| lake house daylesford hotel | 9,900 | 26 | #1 lakehouse.com.au, #6 luxurylodgesofaustralia.com.au | lakehouse.com.au, tripadvisor.com.au, instagram.com |
 
 ## Anime: where to watch and watch order (openness 42)
 
