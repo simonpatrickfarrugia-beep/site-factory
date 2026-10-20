@@ -14,7 +14,7 @@ Updated 2026-10-20. Google top 10 for each niche's best keywords. A slot is **be
 | Movie soundtracks and film music | **20** | 6 | apple.com (162.5M), youtube.com (625.8M), wikipedia.org (1937.8M), imdb.com (385.1M) |
 | TV shows: where to watch | **19** | 5 | youtube.com (625.8M), apple.com (162.5M), netflix.com (52.3M), hulu.com (8.8M) |
 | Video games: release dates and trailers | **18** | 6 | youtube.com (625.8M), bestbuy.com (19.6M), amazon.com (251.6M), yahoo.com (144.2M) |
-| US national parks and hiking trails | **0** | 0 | — |
+| US national parks and hiking trails | **11** | 1 | britannica.com (39.9M), hilton.com (16.4M), aaa.com (5.1M), maryland.gov (4.9M) |
 
 ## Victoria: where to eat by town (openness 54)
 
@@ -125,7 +125,8 @@ Updated 2026-10-20. Google top 10 for each niche's best keywords. A slot is **be
 | playstation 6 release date | 135,000 | 0 | — | gamerant.com, youtube.com, gadgets360.com |
 | mario kart 8 deluxe nintendo switch | 110,000 | 0 | — | ebay.com, amazon.com, youtube.com |
 
-## US national parks and hiking trails (openness 0)
+## US national parks and hiking trails (openness 11)
 
 | Keyword | /mo | Openness | Beatable slots | Top 3 |
 |---|---:|---:|---|---|
+| national parks | 550,000 | 11 | #6 explore.usparkpass.com | nationalparks.org, americasnationalparks.org, nationalgeographic.com |

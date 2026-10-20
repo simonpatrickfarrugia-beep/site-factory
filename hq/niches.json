@@ -2649,13 +2649,67 @@
    ]
   },
   "competition": {
-   "checkedAt": "2026-10-20T19:57:22.187Z",
+   "checkedAt": "2026-10-20T20:02:05.825Z",
    "v": 2,
    "market": 2840,
-   "openness": 0,
-   "keywords": [],
-   "giants": [],
-   "costUsd": 0
+   "openness": 11,
+   "keywords": [
+    {
+     "keyword": "national parks",
+     "volume": 550000,
+     "openness": 11,
+     "beatable": [
+      {
+       "rank": 6,
+       "domain": "explore.usparkpass.com",
+       "why": "small site"
+      }
+     ],
+     "top3": [
+      "nationalparks.org",
+      "americasnationalparks.org",
+      "nationalgeographic.com"
+     ]
+    }
+   ],
+   "giants": [
+    {
+     "domain": "britannica.com",
+     "slots": 1,
+     "etv": 39878365
+    },
+    {
+     "domain": "hilton.com",
+     "slots": 1,
+     "etv": 16420050
+    },
+    {
+     "domain": "aaa.com",
+     "slots": 1,
+     "etv": 5135718
+    },
+    {
+     "domain": "maryland.gov",
+     "slots": 1,
+     "etv": 4883789
+    },
+    {
+     "domain": "nationalgeographic.com",
+     "slots": 1,
+     "etv": 4125464
+    },
+    {
+     "domain": "nationalparks.org",
+     "slots": 1,
+     "etv": 286541
+    },
+    {
+     "domain": "americasnationalparks.org",
+     "slots": 1,
+     "etv": 30853
+    }
+   ],
+   "costUsd": 0.015
   }
  },
  {
