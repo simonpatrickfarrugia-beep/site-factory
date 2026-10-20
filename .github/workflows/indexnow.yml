@@ -5,13 +5,18 @@ name: indexnow
 on:
   push:
     branches: [main]
-    paths: ['data/trailers/movies.json', 'data/trailers/collections.json']
+    paths: ['data/trailers/movies.json', 'data/trailers/collections.json', 'data/vic/places.json', 'data/vic/content.json']
   workflow_dispatch:
     inputs:
       mode:
         type: choice
         options: [changed, all]
         default: all
+      site:
+        description: Which site (vic submits every URL in its live sitemap)
+        type: choice
+        options: [trailers, vic]
+        default: trailers
 jobs:
   ping:
     runs-on: ubuntu-latest
@@ -22,11 +27,30 @@ jobs:
       - name: Wait for the site deploy
         if: github.event_name == 'push'
         run: sleep 200
+      - name: Vic Tours (sitemap-based)
+        if: inputs.site == 'vic' || (github.event_name == 'push' && contains(join(github.event.commits.*.modified, ' '), 'data/vic/'))
+        run: |
+          python3 - <<'PY'
+          import json, re, urllib.request
+          host, key = 'victours.com.au', '6c1f961ff6f1023985f899a7bbd06282'
+          xml = urllib.request.urlopen(urllib.request.Request(f'https://{host}/sitemap.xml', headers={'User-Agent': 'SiteFactory-IndexNow'}), timeout=30).read().decode()
+          urls = re.findall(r'<loc>([^<]+)</loc>', xml)
+          body = json.dumps({'host': host, 'key': key, 'keyLocation': f'https://{host}/{key}.txt', 'urlList': urls[:10000]}).encode()
+          for endpoint in ('https://api.indexnow.org/indexnow', 'https://www.bing.com/indexnow'):
+              try:
+                  code = urllib.request.urlopen(urllib.request.Request(endpoint, data=body, headers={'content-type': 'application/json; charset=utf-8'}), timeout=30).status
+              except urllib.error.HTTPError as e:
+                  code = e.code
+              print(f'::notice title=indexnow::vic {endpoint}: HTTP {code} for {len(urls)} URL(s)')
+              if code in (200, 202): break
+          PY
       - name: Check the key file is live
+        if: inputs.site != 'vic'
         run: |
           code=$(curl -sS -o key.txt -w '%{http_code}' "https://www.movietrailer.channel/d8f03bdd0f45a76ce44c030bea08ea85.txt")
           echo "::notice title=indexnow-key::HTTP $code, content: $(head -c 60 key.txt | tr -d '\n')"
       - name: Submit
+        if: inputs.site != 'vic'
         env:
           MODE: ${{ inputs.mode || 'changed' }}
           HOST: www.movietrailer.channel
