@@ -1,0 +1,473 @@
+{
+ "town": "Myrtleford",
+ "slug": "myrtleford",
+ "centre": [
+  -36.5609628,
+  146.7236797
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-10-20T06:56:35+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n2409846200",
+   "name": "Railway Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.5581893,
+   "lon": 146.7261826,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n2409846307",
+   "name": "Buffalo Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.5619553,
+   "lon": 146.7265527,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n2409860939",
+   "name": "Motel on Alpine",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.5542767,
+   "lon": 146.7141663,
+   "tags": {
+    "addr:housenumber": "258",
+    "addr:street": "Myrtle Street",
+    "addr:suburb": "Myrtleford",
+    "addr:postcode": "3737",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n2410482131",
+   "name": "Golden Leaf Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.5584506,
+   "lon": 146.7205667,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n2614541068",
+   "name": "The Old School Museum",
+   "group": "do",
+   "type": "museum",
+   "lat": -36.5623963,
+   "lon": 146.7290037,
+   "tags": {
+    "addr:housenumber": "29",
+    "addr:street": "Elgin Street",
+    "addr:suburb": "Myrtleford",
+    "addr:postcode": "3737",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "n3406333075",
+   "name": "Bastoni",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.5610725,
+   "lon": 146.7248688,
+   "tags": {
+    "cuisine": "pizza",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3406567296",
+   "name": "Ruby's Takeaway Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.5597223,
+   "lon": 146.7247305,
+   "tags": {
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3406567297",
+   "name": "Jade House Chinese",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.560221,
+   "lon": 146.7251316,
+   "tags": {
+    "addr:housenumber": "11",
+    "addr:street": "Clyde Street",
+    "addr:suburb": "Myrtleford",
+    "addr:postcode": "3737",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3406567298",
+   "name": "Alpine Gate Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.561596,
+   "lon": 146.7256032,
+   "tags": {
+    "phone": "+61 3 5752 1375",
+    "opening_hours": "Mo-Fr 07:00-15:00; Fr-Sa 08:00-15:00",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "38",
+    "addr:street": "Myrtle Street",
+    "addr:suburb": "Myrtleford",
+    "addr:postcode": "3737",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3406567300",
+   "name": "Tu Vietnamese Street Food",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.5622894,
+   "lon": 146.7259618,
+   "tags": {
+    "website": "https://www.tuvietnamese.com/",
+    "phone": "+61 415 995 041",
+    "opening_hours": "Mo-Su 11:00-23:00",
+    "cuisine": "vietnamese",
+    "addr:housenumber": "109",
+    "addr:street": "Myrtle Street",
+    "addr:suburb": "Myrtleford",
+    "addr:postcode": "3737",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3406567301",
+   "name": "Coffee Chakra",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.5623583,
+   "lon": 146.7261454,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3406567302",
+   "name": "Myrtleford Pizza & Pasta",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.5623331,
+   "lon": 146.7260546,
+   "tags": {
+    "cuisine": "pizza;italian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3406567303",
+   "name": "Cafe Fez",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.5612292,
+   "lon": 146.7240989,
+   "tags": {
+    "website": "https://www.redramia.com.au/cafe-fez",
+    "phone": "+61 3 5751 1155",
+    "opening_hours": "Fr 08:30-21:00; Sa-Th 08:30-16:00",
+    "cuisine": "middle_eastern",
+    "outdoor_seating": "yes",
+    "internet_access": "no",
+    "addr:housenumber": "145",
+    "addr:street": "Myrtle Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n4286933852",
+   "name": "Roma Pizzeria Kafe",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.5606479,
+   "lon": 146.7243585,
+   "tags": {
+    "website": "https://www.facebook.com/romapizzeriakafe",
+    "phone": "+61 3 5752 1867",
+    "opening_hours": "Fr-Tu 17:00-20:30",
+    "cuisine": "pizza;ice_cream;pasta;fish_and_chips",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "56",
+    "addr:street": "Standish Street",
+    "addr:suburb": "Myrtleford",
+    "addr:postcode": "3737",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6277864333",
+   "name": "Reclaim Winebar & Cafe",
+   "group": "eat",
+   "type": "bar",
+   "lat": -36.5604987,
+   "lon": 146.7239465,
+   "tags": {
+    "website": "https://www.reclaimwinebar.cafe/",
+    "phone": "+61 3 5751 5609",
+    "opening_hours": "Mo-Th 09:00-21:00, Fr-Su 08:00-23:00",
+    "addr:housenumber": "55a",
+    "addr:street": "Standish Street",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n6510995414",
+   "name": "Nosh Deli Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.5645285,
+   "lon": 146.7280225,
+   "tags": {
+    "website": "https://www.facebook.com/profile.php?id=100092712108242",
+    "phone": "+61 3 5753 5216",
+    "opening_hours": "Mo-Fr 07:00-15:00",
+    "outdoor_seating": "yes",
+    "internet_access": "no",
+    "addr:housenumber": "65-67",
+    "addr:street": "Myrtle Street",
+    "addr:suburb": "Myrtleford",
+    "addr:postcode": "3737",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w161728132",
+   "name": "Myrtleford Golf Course",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -36.5417634,
+   "lon": 146.7283463,
+   "tags": {
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w232598275",
+   "name": "Rotary Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.5542393,
+   "lon": 146.712482,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w232634610",
+   "name": "Cundy Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.5564398,
+   "lon": 146.7281493,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w232643419",
+   "name": "Marconi Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.5503835,
+   "lon": 146.7307693,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w232718086",
+   "name": "Ross Court Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -36.5512911,
+   "lon": 146.7230432,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w232718087",
+   "name": "Clarrie Ardern Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -36.5512389,
+   "lon": 146.7277151,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w232718088",
+   "name": "Swinburne Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.5528062,
+   "lon": 146.7298079,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w284348726",
+   "name": "Myrtleford Plaza",
+   "group": "do",
+   "type": "park",
+   "lat": -36.5612796,
+   "lon": 146.7252972,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w303572135",
+   "name": "Myrtleford Holiday Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -36.5630464,
+   "lon": 146.7234561,
+   "tags": {
+    "addr:housenumber": "8",
+    "addr:street": "Lewis Avenue",
+    "addr:suburb": "Myrtleford",
+    "addr:postcode": "3737",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w303572142",
+   "name": "Jubilee Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.563123,
+   "lon": 146.7246954,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w317603836",
+   "name": "Myrtleford Hospital Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -36.5537662,
+   "lon": 146.7285985,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w333516295",
+   "name": "Memorial Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.5559103,
+   "lon": 146.7239116,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w333522073",
+   "name": "Myrtleford Show Grounds",
+   "group": "do",
+   "type": "park",
+   "lat": -36.5443922,
+   "lon": 146.7270869,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w333556073",
+   "name": "Arderns Caravan Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -36.5688817,
+   "lon": 146.7290341,
+   "tags": {
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w333556074",
+   "name": "The Old Factory",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.5689486,
+   "lon": 146.7302834,
+   "tags": {
+    "cuisine": "american",
+    "addr:housenumber": "15",
+    "addr:street": "Myrtle Street",
+    "addr:suburb": "Myrtleford",
+    "addr:postcode": "3737",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w429543485",
+   "name": "Myrtleford Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.5600235,
+   "lon": 146.7242021,
+   "tags": {
+    "addr:housenumber": "67",
+    "addr:street": "Standish Street",
+    "addr:suburb": "Myrtleford",
+    "addr:postcode": "3737",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w545381399",
+   "name": "Jaycees Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.562627,
+   "lon": 146.7218783,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w545950969",
+   "name": "Apex Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.5677056,
+   "lon": 146.7152527,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1369925800",
+   "name": "Reform Hill State Forest",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -36.5637919,
+   "lon": 146.7353585,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}

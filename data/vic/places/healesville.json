@@ -1,0 +1,652 @@
+{
+ "town": "Healesville",
+ "slug": "healesville",
+ "centre": [
+  -37.6537218,
+  145.5161533
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-10-20T07:21:11+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n747819346",
+   "name": "Grand Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.6541164,
+   "lon": 145.5172438,
+   "tags": {
+    "website": "https://healesvillegrandhotel.com.au/eat/",
+    "opening_hours": "Mo-Th 11:00-22:00; Fr,Su 11:00+; Sa 10:00+",
+    "outdoor_seating": "yes",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n747820712",
+   "name": "Healesville Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.6543221,
+   "lon": 145.5159318,
+   "tags": {
+    "website": "https://healesvillehotel.com.au/",
+    "phone": "+61 3 5962 4002",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "256",
+    "addr:street": "Maroondah Highway",
+    "addr:suburb": "Healesville",
+    "addr:postcode": "3777",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n843327155",
+   "name": "Dosa Hut",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.6526237,
+   "lon": 145.5197118,
+   "tags": {
+    "website": "https://www.dosahut.net.au/indian-restaurant-healesville/",
+    "cuisine": "indian",
+    "addr:housenumber": "271-273",
+    "addr:street": "Maroondah Highway",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2560501495",
+   "name": "Allmoto Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.6497773,
+   "lon": 145.5234915,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3565547530",
+   "name": "Sammy's Charcoal Chicken",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.6528074,
+   "lon": 145.5185917,
+   "tags": {
+    "cuisine": "chicken",
+    "outdoor_seating": "yes",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4056116747",
+   "name": "Healesville R.S.L.",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.6517122,
+   "lon": 145.5210865,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4056214466",
+   "name": "Four Pillars Gin Distillery",
+   "group": "do",
+   "type": "distillery",
+   "lat": -37.6573641,
+   "lon": 145.5099131,
+   "tags": {
+    "website": "https://www.fourpillarsgin.com/",
+    "opening_hours": "Su-Th 10:30-17:30; Fr-Sa 10:30-21:00",
+    "wheelchair": "yes",
+    "internet_access": "wlan",
+    "addr:housenumber": "2",
+    "addr:street": "Lilydale Road",
+    "addr:suburb": "Healesville",
+    "addr:postcode": "3777",
+    "craft": "distillery"
+   }
+  },
+  {
+   "id": "n4658624089",
+   "name": "The Splendid Wren Bed and Breakfast",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -37.6269937,
+   "lon": 145.5163672,
+   "tags": {
+    "website": "http://www.splendidwren.com.au",
+    "phone": "+61 3 5962 4061",
+    "internet_access": "wlan",
+    "addr:housenumber": "194",
+    "addr:street": "Myers Creek Road",
+    "addr:postcode": "3777",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "n4936370557",
+   "name": "Innocent Bystander",
+   "group": "do",
+   "type": "winery",
+   "lat": -37.6520876,
+   "lon": 145.5221728,
+   "tags": {
+    "website": "https://www.innocentbystander.com.au/",
+    "phone": "+61 3 5999 9222",
+    "opening_hours": "Mo-Su 10:00-22:00",
+    "addr:housenumber": "334",
+    "addr:street": "Maroondah Highway",
+    "craft": "winery"
+   }
+  },
+  {
+   "id": "n4957929622",
+   "name": "Mocha & Lime",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.6536693,
+   "lon": 145.5164226,
+   "tags": {
+    "website": "https://www.mochaandlime.com.au",
+    "phone": "+61 3 5962 2288",
+    "opening_hours": "Mo-We 08:15-15:00; Th-Su 08:15-16:00",
+    "cuisine": "burger;noodles;breakfast;asian;local",
+    "addr:housenumber": "11",
+    "addr:street": "Green Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n5330872947",
+   "name": "Healesville Maroondah View",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.6475193,
+   "lon": 145.5469723,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n5659644322",
+   "name": "Giant Steps",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.6532608,
+   "lon": 145.5192651,
+   "tags": {
+    "website": "https://www.habituel.com.au/",
+    "opening_hours": "Mo-Su 08:00-15:00",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "314",
+    "addr:street": "Maroondah Highway",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n7738540140",
+   "name": "Herd Bar & Grill",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.6540328,
+   "lon": 145.5142556,
+   "tags": {
+    "website": "https://herdbar.com.au/",
+    "phone": "+61 3 5913 7709",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "177-179",
+    "addr:street": "Maroondah Highway",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n7738540144",
+   "name": "Watts River Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.6541025,
+   "lon": 145.5151323,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n7893366592",
+   "name": "Natures Cakes",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.6544296,
+   "lon": 145.5147908,
+   "tags": {
+    "website": "https://naturescakes.com.au",
+    "phone": "+61 412 823 161",
+    "opening_hours": "Mo-Su 08:30-17:00",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "232",
+    "addr:street": "Maroondah Highway",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n8178005828",
+   "name": "Payten & Jones Wines",
+   "group": "do",
+   "type": "winery",
+   "lat": -37.6573419,
+   "lon": 145.5090759,
+   "tags": {
+    "website": "https://paytenandjoneswine.com.au/",
+    "phone": "+61 3 5913 7699",
+    "addr:street": "Lilydale Road",
+    "craft": "winery"
+   }
+  },
+  {
+   "id": "n8282247817",
+   "name": "Cherry Tree Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.6544002,
+   "lon": 145.5153502,
+   "tags": {
+    "website": "https://www.facebook.com/CherryTreeCafe246",
+    "phone": "+61 3 5962 1885",
+    "cuisine": "breakfast;burger;cake;coffee_shop;international;local",
+    "outdoor_seating": "no",
+    "addr:housenumber": "246",
+    "addr:street": "Maroondah Highway",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9270810448",
+   "name": "Watts River Brewing",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.6581218,
+   "lon": 145.5068055,
+   "tags": {
+    "website": "https://wattsriverbrewing.com.au/",
+    "phone": "+61 3 5962 1409",
+    "addr:housenumber": "7",
+    "addr:street": "Hunter Road",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n9270819440",
+   "name": "Spinner's Souvlaki Bar & Grill",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.654454,
+   "lon": 145.5168202,
+   "tags": {
+    "website": "https://www.facebook.com/spinnersouvlaki/",
+    "phone": "+61 3 5962 3960",
+    "cuisine": "greek",
+    "outdoor_seating": "yes",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n9270913385",
+   "name": "The Mare Coffee Co",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.6542071,
+   "lon": 145.5166747,
+   "tags": {
+    "outdoor_seating": "no",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9271060552",
+   "name": "Hearth Galleries",
+   "group": "do",
+   "type": "gallery",
+   "lat": -37.654634,
+   "lon": 145.5136672,
+   "tags": {
+    "website": "https://www.christinejoycuration.com.au/hearth-galleries.html",
+    "phone": "+61 423 902 934",
+    "opening_hours": "We-Su 10:00-17:00; Mo-Tu closed",
+    "addr:housenumber": "208",
+    "addr:street": "Maroondah Highway",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "n11465179424",
+   "name": "Kang's Woks Asian Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.6539641,
+   "lon": 145.517598,
+   "tags": {
+    "cuisine": "asian",
+    "outdoor_seating": "no",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11465179453",
+   "name": "My Little Kitchen",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.6539895,
+   "lon": 145.5175004,
+   "tags": {
+    "website": "https://mylittlekitchen.com.au/",
+    "opening_hours": "Mo-Fr 08:00-14:30; Sa,Su 08:00-15:00",
+    "addr:housenumber": "274",
+    "addr:street": "Maroondah Highway",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12179309536",
+   "name": "Tommy's Toasties",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.654311,
+   "lon": 145.5132095,
+   "tags": {
+    "cuisine": "sandwich",
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12203290263",
+   "name": "Yarra Gables Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.6638553,
+   "lon": 145.5126054,
+   "tags": {
+    "website": "https://www.yarragables.com.au/",
+    "phone": "+61 3 5962 1323",
+    "addr:housenumber": "55",
+    "addr:street": "Maroondah Highway",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n14098892311",
+   "name": "Montesanto Coffee Roasters",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.6510778,
+   "lon": 145.5221671,
+   "tags": {
+    "website": "https://montesantocoffee.com.au/",
+    "phone": "+61 417 610 005",
+    "opening_hours": "Mo 10:00-14:30; Th-Su 09:00-15:30",
+    "addr:housenumber": "299",
+    "addr:street": "Maroondah Highway",
+    "addr:suburb": "Healesville",
+    "addr:postcode": "3777",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w113780457",
+   "name": "RACV Healesville Country Club",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -37.6479829,
+   "lon": 145.5022987,
+   "tags": {
+    "website": "https://www.racv.com.au/wps/wcm/connect/Internet/Primary/RACV+club/healesville+country+club",
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w126462719",
+   "name": "Healesville Showgrounds and Sporting Complex",
+   "group": "do",
+   "type": "park",
+   "lat": -37.6690914,
+   "lon": 145.5386406,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w131391420",
+   "name": "Railway Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.655596,
+   "lon": 145.5091601,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w131391422",
+   "name": "Labyrinth Gardens",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.6555739,
+   "lon": 145.5096587,
+   "tags": {
+    "tourism": "attraction",
+    "leisure": "garden"
+   }
+  },
+  {
+   "id": "w293839020",
+   "name": "Queens Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.6549178,
+   "lon": 145.5235339,
+   "tags": {
+    "wikidata": "Q21971070",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w484867074",
+   "name": "RACV Healesville Country Club",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.649906,
+   "lon": 145.503465,
+   "tags": {
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w552092267",
+   "name": "Wattles Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.6476885,
+   "lon": 145.5275352,
+   "tags": {
+    "wikidata": "Q21970353",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w666394530",
+   "name": "Healesville G157 Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.6462622,
+   "lon": 145.5374999,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w666394536",
+   "name": "Healesville G156 Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.6470395,
+   "lon": 145.5151216,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w666394537",
+   "name": "Healesville G154 Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.6539979,
+   "lon": 145.4845189,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w666394629",
+   "name": "Maroondah Aqueduct Tunnel Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.6342281,
+   "lon": 145.487949,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w666869764",
+   "name": "Healesville Sanctuary",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.6860922,
+   "lon": 145.5233434,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w1040497103",
+   "name": "Apex Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.6553336,
+   "lon": 145.5111816,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1232396309",
+   "name": "RACV Healsville Country Club - Four-hole Short Course",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -37.6516962,
+   "lon": 145.5048318,
+   "tags": {
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "r5891684",
+   "name": "Yarra Ranges National Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.6099519,
+   "lon": 145.8429733,
+   "tags": {
+    "website": "https://www.parks.vic.gov.au/places-to-see/parks/yarra-ranges-national-park",
+    "wikidata": "Q1333875",
+    "wikipedia": "en:Yarra Ranges National Park",
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r14080862",
+   "name": "Black Spur Drive",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.602431,
+   "lon": 145.5870269,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "r15635571",
+   "name": "Watts River Streamside Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.6506691,
+   "lon": 145.5189124,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r15635572",
+   "name": "Coronation Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.6522078,
+   "lon": 145.5157324,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "r15968005",
+   "name": "Sanctuary House Resort Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.6779078,
+   "lon": 145.5313966,
+   "tags": {
+    "website": "https://sanctuaryhouse.com.au/",
+    "addr:housenumber": "326",
+    "addr:street": "Badger Creek Road",
+    "addr:postcode": "3777",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "r15968006",
+   "name": "Sanctuary House Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.6779408,
+   "lon": 145.5308555,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "r16357927",
+   "name": "Yarra River Heritage River",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.7172331,
+   "lon": 145.4756766,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r19851351",
+   "name": "Coranderrk Nature Conservation Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.6860922,
+   "lon": 145.5250896,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}

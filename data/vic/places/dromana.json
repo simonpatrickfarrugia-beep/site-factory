@@ -1,0 +1,782 @@
+{
+ "town": "Dromana",
+ "slug": "dromana",
+ "centre": [
+  -38.3418285,
+  144.9655838
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-10-20T07:17:49+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n110919044",
+   "name": "Franklin Point",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -38.3507071,
+   "lon": 144.9474975,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n110919115",
+   "name": "Murrays Lookout",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -38.3510965,
+   "lon": 144.9486381,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n110919163",
+   "name": "Chapmans Point",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -38.3540309,
+   "lon": 144.94711,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n357080092",
+   "name": "Arthurs Seat Lookout",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -38.3531424,
+   "lon": 144.9510593,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n1662130008",
+   "name": "Matthew Flinders Cairn",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -38.3535603,
+   "lon": 144.9468055,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n1726401466",
+   "name": "Northern Lookout",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -38.3555,
+   "lon": 144.9453139,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n2405783281",
+   "name": "Heronswood",
+   "group": "do",
+   "type": "attraction",
+   "lat": -38.3441659,
+   "lon": 144.9438825,
+   "tags": {
+    "website": "https://www.diggers.com.au/",
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n3909127036",
+   "name": "Charcoal Chicken",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3329266,
+   "lon": 144.9647631,
+   "tags": {
+    "addr:housenumber": "233",
+    "addr:street": "Point Nepean Road",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3909127052",
+   "name": "Teresita's",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3328465,
+   "lon": 144.9648701,
+   "tags": {
+    "website": "https://teresitas.com.au/",
+    "cuisine": "italian;vietnamese;filipino",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5017134442",
+   "name": "Eagle Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3538802,
+   "lon": 144.9505992,
+   "tags": {
+    "website": "https://www.aseagle.com.au",
+    "opening_hours": "Mo-Fr 10:00-17:00; Sa,Su 10:00-18:00",
+    "cuisine": "coffee_shop",
+    "outdoor_seating": "yes",
+    "internet_access": "no",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n5302929941",
+   "name": "Deadwood",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.335785,
+   "lon": 144.958874,
+   "tags": {
+    "website": "https://www.deadwooddromana.com.au/",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5302929943",
+   "name": "Dromana Beach Getaway Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -38.3292472,
+   "lon": 144.9725741,
+   "tags": {
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n5302929945",
+   "name": "Oh My Juice",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3327888,
+   "lon": 144.9650579,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n5922299791",
+   "name": "Minister's Lookout",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -38.3572873,
+   "lon": 144.94293,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n6232076132",
+   "name": "Bay Lookout",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -38.3566168,
+   "lon": 144.9445527,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n6904342474",
+   "name": "JimmyRum",
+   "group": "do",
+   "type": "distillery",
+   "lat": -38.3317175,
+   "lon": 144.9881507,
+   "tags": {
+    "website": "https://jimmyrum.com.au/",
+    "phone": "+61 3 5987 3338",
+    "addr:housenumber": "6",
+    "addr:street": "Brasser Avenue",
+    "craft": "distillery"
+   }
+  },
+  {
+   "id": "n6904342476",
+   "name": "Bass & Flinders Distillery",
+   "group": "do",
+   "type": "distillery",
+   "lat": -38.3361568,
+   "lon": 144.9886215,
+   "tags": {
+    "website": "https://www.bassandflindersdistillery.com/",
+    "phone": "+61 3 5989 3154",
+    "addr:housenumber": "40",
+    "addr:street": "Collins Road",
+    "craft": "distillery"
+   }
+  },
+  {
+   "id": "n7527816675",
+   "name": "Pier Street Kitchen",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3331075,
+   "lon": 144.9660383,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11106001911",
+   "name": "Laneway Espresso",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3317766,
+   "lon": 144.9671469,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12177693953",
+   "name": "The Bodega",
+   "group": "eat",
+   "type": "bar",
+   "lat": -38.3310817,
+   "lon": 144.9685782,
+   "tags": {
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n12177693954",
+   "name": "Kacha Thai Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3311169,
+   "lon": 144.9685187,
+   "tags": {
+    "cuisine": "thai",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12177693956",
+   "name": "Tandoor Mahal",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3311755,
+   "lon": 144.968396,
+   "tags": {
+    "cuisine": "indian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12177693957",
+   "name": "Dromana Dumpling",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3312072,
+   "lon": 144.9683294,
+   "tags": {
+    "cuisine": "asian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12177707034",
+   "name": "Wombat Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3440113,
+   "lon": 144.9802403,
+   "tags": {
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12566708644",
+   "name": "Wok's N Dumpling",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3323439,
+   "lon": 144.9659324,
+   "tags": {
+    "phone": "+61 3 5903 5286",
+    "opening_hours": "Mo-Sa 11:00-21:00",
+    "wheelchair": "yes",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12566754408",
+   "name": "Two Buoys",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3324283,
+   "lon": 144.965803,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12566770061",
+   "name": "Hapi",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3322696,
+   "lon": 144.9661351,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12566952058",
+   "name": "Ours",
+   "group": "eat",
+   "type": "bar",
+   "lat": -38.3323739,
+   "lon": 144.9658788,
+   "tags": {
+    "wheelchair": "yes",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n12861817171",
+   "name": "Ice Cream a la Copenhagen",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3329702,
+   "lon": 144.9646375,
+   "tags": {
+    "website": "https://www.facebook.com/icecreamalacopenhagen/",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12876437933",
+   "name": "The Blackthorne Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3337015,
+   "lon": 144.9647043,
+   "tags": {
+    "website": "https://www.facebook.com/theblackthorncafe",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13481211985",
+   "name": "ChillPit",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3330316,
+   "lon": 144.9659648,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13897772275",
+   "name": "Fiorello Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3352159,
+   "lon": 144.9603054,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w26428245",
+   "name": "Dromana Holiday Village",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -38.3287514,
+   "lon": 144.9936594,
+   "tags": {
+    "website": "https://dromanaholidayvillage.com.au",
+    "addr:housenumber": "131",
+    "addr:street": "Nepean Highway",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w36927256",
+   "name": "Dromana Recreation Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3345227,
+   "lon": 144.9684851,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w160097957",
+   "name": "Arthurs Hotel",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3533624,
+   "lon": 144.9513434,
+   "tags": {
+    "website": "www.arthurs.net.au",
+    "phone": "+61 3 5981 4444",
+    "addr:housenumber": "790",
+    "addr:street": "Arthurs seat scenic road",
+    "addr:postcode": "3936",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w185937469",
+   "name": "Shaw McKeown Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3438783,
+   "lon": 144.9565806,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w202053771",
+   "name": "Hillview Community Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3459492,
+   "lon": 144.9799509,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w231790916",
+   "name": "Dromana Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -38.3316586,
+   "lon": 144.9676974,
+   "tags": {
+    "addr:street": "Point Nepean Road",
+    "addr:suburb": "Dromana",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w232305381",
+   "name": "Embros & Co",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.3322998,
+   "lon": 144.9663135,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w232305385",
+   "name": "Zero95 Dromana Pizza Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3324037,
+   "lon": 144.9660623,
+   "tags": {
+    "website": "https://zero95.com.au/zero95-pizza-dromana/",
+    "cuisine": "pizza",
+    "addr:housenumber": "199-201",
+    "addr:street": "Point Nepean Road",
+    "addr:suburb": "Dromana",
+    "addr:postcode": "3936",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w232329103",
+   "name": "Thai Beach House",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3339132,
+   "lon": 144.9628772,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w315235749",
+   "name": "Bay Motel Safety Beach",
+   "group": "stay",
+   "type": "motel",
+   "lat": -38.3282989,
+   "lon": 144.9780463,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w669260886",
+   "name": "Stan Williams Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.3469085,
+   "lon": 144.9572251,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w669260887",
+   "name": "Bracken Ridge Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.3460161,
+   "lon": 144.9560571,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w751522321",
+   "name": "TWØBAYS Brewing Co",
+   "group": "do",
+   "type": "brewery",
+   "lat": -38.337129,
+   "lon": 144.9876468,
+   "tags": {
+    "addr:housenumber": "2",
+    "addr:street": "Trewhitt Court",
+    "addr:suburb": "Dromana",
+    "addr:postcode": "3936",
+    "craft": "brewery"
+   }
+  },
+  {
+   "id": "w1023159978",
+   "name": "Dromana Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3375511,
+   "lon": 144.9563175,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1196916950",
+   "name": "Latrobe Parade bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.3388376,
+   "lon": 144.9529558,
+   "tags": {
+    "addr:street": "Latrobe Parade",
+    "addr:suburb": "Dromana",
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w1209258242",
+   "name": "Latrobe Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.3408029,
+   "lon": 144.9478138,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w1367434019",
+   "name": "Dromana and District Historical Society Museum",
+   "group": "do",
+   "type": "museum",
+   "lat": -38.3363362,
+   "lon": 144.957942,
+   "tags": {
+    "website": "http://home.vicnet.net.au/~dromana/",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "w1388948788",
+   "name": "The Peninsula Club",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.3341451,
+   "lon": 144.9657468,
+   "tags": {
+    "website": "https://peninsulaclub.com.au/",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w1393412137",
+   "name": "Peninsula Holiday Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -38.3317051,
+   "lon": 144.9832988,
+   "tags": {
+    "website": "https://www.peninsulaholidaypark.com.au/",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w1427948329",
+   "name": "Catalina Avenue Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3346284,
+   "lon": 144.9814105,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1452559934",
+   "name": "Enchanted Adventure",
+   "group": "do",
+   "type": "attraction",
+   "lat": -38.3579193,
+   "lon": 144.9530741,
+   "tags": {
+    "website": "https://www.enchantedadventure.com.au/",
+    "phone": "+61 3 5981 8449",
+    "opening_hours": "Sep-Apr 09:00-17:00, May-Aug 10:00-17:00; Dec 25 off",
+    "addr:housenumber": "55",
+    "addr:street": "Purves Road",
+    "addr:suburb": "Arthurs Seat",
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "w1536503397",
+   "name": "The Boulevard Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3500811,
+   "lon": 144.939978,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1536503399",
+   "name": "Seamists Drive Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.3674514,
+   "lon": 144.944797,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w1536697852",
+   "name": "Don Bosco Camp",
+   "group": "stay",
+   "type": "camp_site",
+   "lat": -38.3244307,
+   "lon": 144.9850068,
+   "tags": {
+    "tourism": "camp_site"
+   }
+  },
+  {
+   "id": "w1536697857",
+   "name": "Brasser Avenue Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3356181,
+   "lon": 144.9847218,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1536697866",
+   "name": "Fig Street Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.3374399,
+   "lon": 144.9744305,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1536697868",
+   "name": "Dorothea Crescent Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.3457683,
+   "lon": 144.9640268,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w1536697869",
+   "name": "Jackson Way Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.3477736,
+   "lon": 144.9697549,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r7634905",
+   "name": "Safety Beach Golf Club",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -38.3239049,
+   "lon": 144.9963398,
+   "tags": {
+    "website": "https://safetybeachcountryclub.com.au/",
+    "phone": "+61 3 5981 0100",
+    "addr:housenumber": "10B",
+    "addr:street": "Country Club Drive",
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "r9249590",
+   "name": "Arthurs Seat State Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.3610272,
+   "lon": 144.965037,
+   "tags": {
+    "wikidata": "Q21973023",
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r9249591",
+   "name": "Arthurs Seat State Park (Parkdale Estate)",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.3478689,
+   "lon": 144.9847416,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r9278055",
+   "name": "Port Phillip Bay Coastal Reserve (COM)",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.1755989,
+   "lon": 144.6997687,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}

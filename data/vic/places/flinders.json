@@ -1,0 +1,149 @@
+{
+ "town": "Flinders",
+ "slug": "flinders",
+ "centre": [
+  -38.473312,
+  145.0187057
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-10-20T07:19:31+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n1712199940",
+   "name": "Flinders Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -38.4735952,
+   "lon": 145.019703,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n1737228347",
+   "name": "Flinders Hotel",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.4744742,
+   "lon": 145.0193352,
+   "tags": {
+    "cuisine": "regional",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n10188210997",
+   "name": "Georgie Bass",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.4737547,
+   "lon": 145.0193885,
+   "tags": {
+    "website": "https://www.georgiebass.com.au/",
+    "cuisine": "sandwich;regional",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "30",
+    "addr:street": "Cook Street",
+    "addr:suburb": "Flinders",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w177828408",
+   "name": "Flinders Golf Club",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -38.4787369,
+   "lon": 145.0183593,
+   "tags": {
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w178089089",
+   "name": "Flinders Somers Coastal Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.4571913,
+   "lon": 145.0351883,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w871036051",
+   "name": "Surf Break",
+   "group": "do",
+   "type": "attraction",
+   "lat": -38.4860391,
+   "lon": 145.0277644,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "w918268681",
+   "name": "Flinders Township Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.4743379,
+   "lon": 145.0154672,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1486439993",
+   "name": "Village Cafe & Wine Bar",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.4741409,
+   "lon": 145.0166605,
+   "tags": {
+    "website": "https://www.villagecafeflinders.com/menu",
+    "phone": "+61 3 5989 0700",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "49",
+    "addr:street": "Cook Street",
+    "addr:suburb": "Flinders",
+    "addr:postcode": "3929",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "r3361243",
+   "name": "Mornington Peninsula National Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.4136582,
+   "lon": 144.8584364,
+   "tags": {
+    "wikidata": "Q1534934",
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r9212323",
+   "name": "Mushroom Reef Marine Sanctuary",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.4855084,
+   "lon": 145.0161568,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r9278065",
+   "name": "Flinders - Somers Coastal Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.4343827,
+   "lon": 145.0896573,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}

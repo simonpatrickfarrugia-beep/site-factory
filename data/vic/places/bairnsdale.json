@@ -1,0 +1,622 @@
+{
+ "town": "Bairnsdale",
+ "slug": "bairnsdale",
+ "centre": [
+  -37.8254509,
+  147.6304752
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-10-20T07:06:33+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n528557555",
+   "name": "The Wy Yung Pub",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8067194,
+   "lon": 147.6185471,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n1772111980",
+   "name": "Bairnsdale RSL",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8318191,
+   "lon": 147.6106041,
+   "tags": {
+    "website": "http://www.bairnsdale.rslvic.com.au/",
+    "cuisine": "regional",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n1779986111",
+   "name": "Lantern Palace",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8258676,
+   "lon": 147.6363926,
+   "tags": {
+    "cuisine": "chinese",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n1818434857",
+   "name": "Bairnsdale Bowls Club",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8237533,
+   "lon": 147.6199735,
+   "tags": {
+    "opening_hours": "Mo-Sa 11:30-14:00, 17:30-20:00; Su 11:30-14:00",
+    "cuisine": "local",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n1818441695",
+   "name": "War memorial gate",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.8259323,
+   "lon": 147.6386642,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n1818522130",
+   "name": "Cinnamon Thai",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8245718,
+   "lon": 147.6339897,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n1818522139",
+   "name": "Sixty 2 Degrees",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8247986,
+   "lon": 147.6312134,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n1818522140",
+   "name": "The Club Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.82493,
+   "lon": 147.6341077,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n1821020063",
+   "name": "Oak Tree",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8250958,
+   "lon": 147.6352916,
+   "tags": {
+    "cuisine": "international",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2059366319",
+   "name": "Main Motel Bairnsdale",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.8341069,
+   "lon": 147.6035871,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n2082806292",
+   "name": "New Leaf Cafe and House of Bloom",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.826673,
+   "lon": 147.6265328,
+   "tags": {
+    "website": "https://jacquiscatering.com.au/",
+    "opening_hours": "Mo-Fr 06:30-17:00; Sa 07:30-15:30; Su 07:30-15:00",
+    "cuisine": "brunch;coffee_shop",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "270",
+    "addr:street": "Main Street",
+    "addr:suburb": "Bairnsdale",
+    "addr:postcode": "3875",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2082812357",
+   "name": "Mitchell River Tavern",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8258065,
+   "lon": 147.6347082,
+   "tags": {
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n2082824281",
+   "name": "East Gippsland Art Gallery",
+   "group": "do",
+   "type": "gallery",
+   "lat": -37.8242133,
+   "lon": 147.6326,
+   "tags": {
+    "website": "https://www.eastgippslandartgallery.org.au/",
+    "phone": "+61 3 5153 1988",
+    "opening_hours": "Tu-Fr 10:00-16:00; Sa 10:00-14:00",
+    "addr:housenumber": "2",
+    "addr:street": "Nicholson Street",
+    "addr:suburb": "Bairnsdale",
+    "addr:postcode": "3875",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "n2085426384",
+   "name": "Kim Long",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8289373,
+   "lon": 147.6161909,
+   "tags": {
+    "cuisine": "asian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2174219150",
+   "name": "Mitchell On Main",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.8282168,
+   "lon": 147.622911,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n2174232055",
+   "name": "Town Central Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.8256809,
+   "lon": 147.6252526,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n2202608765",
+   "name": "Bairnsdale Sporting & Convention Centre",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.809261,
+   "lon": 147.6475119,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2390212994",
+   "name": "Kansas City Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.8269633,
+   "lon": 147.6251604,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n2390213860",
+   "name": "Tanjil Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.8280819,
+   "lon": 147.6196996,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n4290854411",
+   "name": "Punjabi Garden",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8250873,
+   "lon": 147.6351924,
+   "tags": {
+    "cuisine": "indian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4819926390",
+   "name": "Cells Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8259232,
+   "lon": 147.6261943,
+   "tags": {
+    "website": "cellscafe.com.au",
+    "phone": "+61 3 5152 2000",
+    "opening_hours": "Mo-Fr 07:30-15:30",
+    "addr:housenumber": "155",
+    "addr:street": "Nicholson Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n5312753385",
+   "name": "The Old Grain Store",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8268962,
+   "lon": 147.6344759,
+   "tags": {
+    "opening_hours": "Mo-Su 08:00-23:00",
+    "cuisine": "regional",
+    "addr:housenumber": "21",
+    "addr:street": "Wood Street",
+    "addr:suburb": "Bairnsdale",
+    "addr:postcode": "3875",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6202750623",
+   "name": "Krowathunkoolong Keeping Place",
+   "group": "do",
+   "type": "museum",
+   "lat": -37.8298378,
+   "lon": 147.6280975,
+   "tags": {
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "n6422274182",
+   "name": "Mexican Grill",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8288903,
+   "lon": 147.616387,
+   "tags": {
+    "phone": "+61 3 5152 3079",
+    "opening_hours": "Mo-Su 11:30-20:15",
+    "cuisine": "mexican",
+    "addr:housenumber": "412",
+    "addr:street": "Main Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n8313482817",
+   "name": "Grand Terminus Hotel",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.8274874,
+   "lon": 147.6294976,
+   "tags": {
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n12300526341",
+   "name": "The Stables East. 1889",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.827209,
+   "lon": 147.629254,
+   "tags": {
+    "wheelchair": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13095832090",
+   "name": "Pika Sushi Bairnsdale",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8247736,
+   "lon": 147.63117,
+   "tags": {
+    "website": "https://pikasushi.com.au/store/bairnsdale/",
+    "phone": "+61 3 5152 6829",
+    "opening_hours": "Mo-Sa 07:00-15:00",
+    "cuisine": "sushi",
+    "addr:street": "Nicholson Street",
+    "addr:suburb": "Bairnsdale",
+    "addr:postcode": "3875",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n14282929669",
+   "name": "Quest Bairnsdale",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8286321,
+   "lon": 147.6319934,
+   "tags": {
+    "website": "https://www.questapartments.com.au/properties/vic/bairnsdale/quest-bairnsdale",
+    "phone": "+61 3 4139 8900",
+    "wheelchair": "yes",
+    "brand": "Quest Apartment Hotels",
+    "addr:housenumber": "11",
+    "addr:street": "Dalmahoy Street",
+    "addr:suburb": "Bairnsdale",
+    "addr:postcode": "3875",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n14286750236",
+   "name": "Benjamin's House",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8256754,
+   "lon": 147.6310736,
+   "tags": {
+    "phone": "+61 3 9119 0659",
+    "opening_hours": "Mo-Sa 10:00-21:00",
+    "cuisine": "asian;cafe",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "142-144",
+    "addr:street": "Main Street",
+    "addr:suburb": "Bairnsdale",
+    "addr:postcode": "3875",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w42342162",
+   "name": "The Wy Yung Pub",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.806621,
+   "lon": 147.618766,
+   "tags": {
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w42391801",
+   "name": "Mitchell Gardens Caravan Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -37.8249926,
+   "lon": 147.6379467,
+   "tags": {
+    "website": "https://www.bairnsdalerhp.com.au/",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w47062546",
+   "name": "Bairnsdale Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.8156707,
+   "lon": 147.6489676,
+   "tags": {
+    "website": "https://bairnsdalemotel.com.au/",
+    "phone": "+61 3 5152 1933",
+    "addr:housenumber": "42",
+    "addr:street": "Great Alpine Road",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w168094110",
+   "name": "Howitt Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.823916,
+   "lon": 147.6420602,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w168094164",
+   "name": "Bairnsdale Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8251775,
+   "lon": 147.6435229,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w170693276",
+   "name": "Bairnsdale Holiday Park: Big 4",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -37.8175081,
+   "lon": 147.6570949,
+   "tags": {
+    "website": "https://www.big4.com.au/caravan-parks/vic/bairnsdale",
+    "brand": "Big 4",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w207249011",
+   "name": "Rotary Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8240249,
+   "lon": 147.6190558,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w209483704",
+   "name": "Bairnsdale Museum",
+   "group": "do",
+   "type": "museum",
+   "lat": -37.8328161,
+   "lon": 147.6258538,
+   "tags": {
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "w209484768",
+   "name": "City Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8319795,
+   "lon": 147.6243905,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w391305524",
+   "name": "Lake Whadie Café & Indian Restaurant",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8232326,
+   "lon": 147.643888,
+   "tags": {
+    "contact:phone": "+61 3 5152 6060",
+    "opening_hours": "Mo-Sa 08:00-22:00; Tu 08:00-16:00",
+    "cuisine": "indian",
+    "addr:housenumber": "1a",
+    "addr:street": "Princes Highway",
+    "addr:postcode": "3875",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w430021229",
+   "name": "Balmoral Crescent Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8151826,
+   "lon": 147.6283872,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w430024978",
+   "name": "Bullumwaal Road Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8138359,
+   "lon": 147.6206001,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w443683083",
+   "name": "Bairnsdale International",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.8300471,
+   "lon": 147.6162857,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w443683128",
+   "name": "Best Western Colonial Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.8293599,
+   "lon": 147.6180384,
+   "tags": {
+    "brand": "Best Western",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w540862555",
+   "name": "Dennison Oval",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8264988,
+   "lon": 147.6382173,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "r9267597",
+   "name": "Jones Bay Wildlife Reserve (hunting)",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.8460649,
+   "lon": 147.6544475,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r9267601",
+   "name": "Macleod Morass Wildlife Reserve (hunting)",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.8616126,
+   "lon": 147.6392705,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r16570361",
+   "name": "Mitchell and Wonnangatta Rivers Heritage River",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.5153343,
+   "lon": 147.2122753,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r19872400",
+   "name": "Goose Gully Golf Course",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -37.800671,
+   "lon": 147.6463207,
+   "tags": {
+    "phone": "+61 3 5152 4822",
+    "description": "9 hole Par 30",
+    "addr:street": "Balfours Road",
+    "addr:postcode": "3875",
+    "leisure": "golf_course"
+   }
+  }
+ ]
+}
