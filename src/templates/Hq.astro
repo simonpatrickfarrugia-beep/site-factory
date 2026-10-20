@@ -20,7 +20,7 @@ const n = (v: number) => v.toLocaleString('en-AU');
 const STATUS: Record<string, string> = { live: 'Live', building: 'Building', idea: 'Idea', paused: 'Paused' };
 
 // Portfolio web: IMN in the middle, four groups on a ring, each group's nodes fanned out around it.
-const W = 760, H = 560, cx = W / 2, cy = H / 2;
+const W = 860, H = 600, cx = W / 2, cy = H / 2;
 const groupAngle: Record<string, number> = { sites: -150, engines: -30, business: 150, ideas: 30 };
 const pos: Record<string, { x: number; y: number }> = {};
 const rad = (d: number) => (d * Math.PI) / 180;
@@ -32,11 +32,12 @@ const gpos = p.groups.map((g, i) => {
 });
 for (const g of gpos) {
   const kids = p.nodes.filter((nd) => nd.group === g.id);
-  const spread = Math.min(110, 30 * kids.length);
+  const spread = Math.min(150, 32 * kids.length);
   kids.forEach((nd, i) => {
     const off = kids.length === 1 ? 0 : -spread / 2 + (spread * i) / (kids.length - 1);
     const a = g.a + rad(off);
-    pos[nd.id] = { x: g.x + Math.cos(a) * 150, y: g.y + Math.sin(a) * 105 };
+    const r = kids.length > 4 && i % 2 ? 1.35 : 1; // stagger crowded groups so labels don't collide
+    pos[nd.id] = { x: g.x + Math.cos(a) * 140 * r, y: g.y + Math.sin(a) * 110 * r };
   });
 }
 const revTotal = p.finance.revenue.reduce((s, r) => s + r.amount, 0);
