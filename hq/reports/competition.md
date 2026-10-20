@@ -8,13 +8,13 @@ Updated 2026-10-20. Google top 10 for each niche's best keywords. A slot is **be
 | Board games | **48** | 6 | youtube.com (625.8M), boardgamegeek.com (1.3M), google.com (551.5M), chess.com (1.2M) |
 | Victoria: things to do by town | **44** | 6 | visitballarat.com.au (42k), youtube.com (38.0M), tripadvisor.com.au (19.3M), au.trip.com (971k) |
 | Victoria: where to stay by town | **43** | 6 | tripadvisor.com.au (19.3M), instagram.com (61.7M), tripadvisor.com (2.0M), visitvictoria.com (598k) |
-| Anime: where to watch and watch order | **42** | 6 | youtube.com (625.8M), play.google.com (165.4M), hulu.com (8.8M), en.wikipedia.org (1923.1M) |
-| Movie soundtracks and film music | **41** | 6 | youtube.com (625.8M), tv.apple.com (19.4M), en.wikipedia.org (1923.1M), imdb.com (385.1M) |
 | Book series in reading order | **37** | 6 | goodreads.com (10.5M), scholastic.com (657k), amazon.com (251.6M), nytimes.com (54.6M) |
-| Dog breeds | **35** | 6 | youtube.com (625.8M), akc.org (4.5M), marketplace.akc.org (395k), en.wikipedia.org (1923.1M) |
-| US national parks and hiking trails | **25** | 6 | yelp.com (439.8M), myhikes.org (74k), tripadvisor.com (136.6M), alltrails.com (6.1M) |
+| Anime: where to watch and watch order | **33** | 6 | google.com (551.5M), hulu.com (8.8M), wikipedia.org (1937.8M), imdb.com (385.1M) |
+| Dog breeds | **31** | 6 | youtube.com (625.8M), akc.org (4.5M), wikipedia.org (1937.8M), petfinder.com (2.2M) |
+| Movie soundtracks and film music | **20** | 6 | apple.com (162.5M), youtube.com (625.8M), wikipedia.org (1937.8M), imdb.com (385.1M) |
 | TV shows: where to watch | **19** | 5 | youtube.com (625.8M), apple.com (162.5M), netflix.com (52.3M), hulu.com (8.8M) |
 | Video games: release dates and trailers | **18** | 6 | youtube.com (625.8M), bestbuy.com (19.6M), amazon.com (251.6M), yahoo.com (144.2M) |
+| US national parks and hiking trails | **0** | 0 | — |
 
 ## Victoria: where to eat by town (openness 49)
 
@@ -60,28 +60,6 @@ Updated 2026-10-20. Google top 10 for each niche's best keywords. A slot is **be
 | lake house daylesford accommodation | 9,900 | 26 | #1 lakehouse.com.au, #6 luxurylodgesofaustralia.com.au | lakehouse.com.au, tripadvisor.com.au, visitvictoria.com |
 | lake house daylesford hotel | 9,900 | 26 | #1 lakehouse.com.au, #6 luxurylodgesofaustralia.com.au | lakehouse.com.au, tripadvisor.com.au, instagram.com |
 
-## Anime: where to watch and watch order (openness 42)
-
-| Keyword | /mo | Openness | Beatable slots | Top 3 |
-|---|---:|---:|---|---|
-| kissanime | 1,500,000 | 53 | #1 kissanime.tv.in, #2 reddit.com (forum), #5 kissanimetv.to, #6 democreator.wondershare.com | kissanime.tv.in, reddit.com, en.wikipedia.org |
-| berserk | 201,000 | 21 | #1 berserk.fandom.com (forum), #8 darkhorsedirect.com | berserk.fandom.com, youtube.com, youtube.com |
-| gogoanime | 201,000 | 21 | #6 facebook.com (forum), #8 gogoanime.or.at, #9 facebook.com (forum) | appbrain.com, play.google.com, x.com |
-| hulu anime | 201,000 | 21 | #1 reddit.com (forum), #8 facebook.com (forum) | reddit.com, hulu.com, imdb.com |
-| hulu animes | 201,000 | 21 | #4 facebook.com (forum), #5 reddit.com (forum) | en.wikipedia.org, hulu.com, cbr.com |
-| free anime websites | 165,000 | 42 | #2 quora.com (forum), #3 reddit.com (forum), #5 9anime.si | instagram.com, quora.com, reddit.com |
-
-## Movie soundtracks and film music (openness 41)
-
-| Keyword | /mo | Openness | Beatable slots | Top 3 |
-|---|---:|---:|---|---|
-| composer hans zimmer | 135,000 | 53 | #1 hans-zimmer.com, #2 roli.com, #6 reddit.com (forum), #8 ascap.com, #9 exepose.com | hans-zimmer.com, roli.com, classical.music.apple.com |
-| across the universe movie | 40,500 | 37 | #2 reddit.com (forum), #4 beatles.fandom.com (forum), #6 revolutionstudios.com | en.wikipedia.org, reddit.com, play.google.com |
-| hans zimmer films | 33,100 | 32 | #3 facebook.com (forum), #5 quora.com (forum), #7 exepose.com | tv.apple.com, grammy.com, facebook.com |
-| movies scored by hans zimmer | 33,100 | 47 | #1 hans-zimmer.com, #2 exepose.com, #3 quora.com (forum) | hans-zimmer.com, exepose.com, quora.com |
-| purple rain movie | 27,100 | 16 | #4 reddit.com (forum), #8 facebook.com (forum) | imdb.com, youtube.com, tvguide.com |
-| songs in guardians of the galaxy | 27,100 | 16 | #2 reddit.com (forum) | open.spotify.com, reddit.com, en.wikipedia.org |
-
 ## Book series in reading order (openness 37)
 
 | Keyword | /mo | Openness | Beatable slots | Top 3 |
@@ -93,27 +71,38 @@ Updated 2026-10-20. Google top 10 for each niche's best keywords. A slot is **be
 | scholastic book club | 74,000 | 42 | #1 mybookclubs.scholastic.com.au, #2 reddit.com (forum), #5 reddit.com (forum) | mybookclubs.scholastic.com.au, reddit.com, teacher.scholastic.com |
 | harry potter books in order | 60,500 | 58 | #1 reddit.com (forum), #2 harrypotter.fandom.com (forum), #4 facebook.com (forum), #6 thehappybookstack.com, #7 harrypotter.fandom.com (forum) | reddit.com, harrypotter.fandom.com, ign.com |
 
-## Dog breeds (openness 35)
+## Anime: where to watch and watch order (openness 33)
 
 | Keyword | /mo | Openness | Beatable slots | Top 3 |
 |---|---:|---:|---|---|
-| greyhounds | 1,220,000 | 16 | #1 candypet.es | candypet.es, youtube.com, akc.org |
-| cane corso | 1,000,000 | 47 | #1 canecorso.org, #2 fenrircanineleaders.com, #6 sanroccocanecorso.com, #7 aprpets.org | canecorso.org, fenrircanineleaders.com, wisdompanel.com |
-| dachshund | 673,000 | 32 | #3 vidavetcare.com, #6 youdidwhatwithyourweiner.com, #7 mwdr.org | omlet.us, petfinder.com, vidavetcare.com |
-| chihuahua | 673,000 | 47 | #1 facebook.com (forum), #3 petcenternj.com, #6 zigly.com, #8 mywaggle.com | facebook.com, shutterstock.com, petcenternj.com |
-| australian shepherds | 673,000 | 32 | #2 karenshanley.com, #3 reddit.com (forum) | rover.com, karenshanley.com, reddit.com |
-| aussie shepherd | 673,000 | 47 | #3 facebook.com (forum), #5 reddit.com (forum), #6 southtexasaussierescue.org, #7 facebook.com (forum), #8 northeasternvetcare.com | akc.org, en.wikipedia.org, facebook.com |
+| kissanime | 1,500,000 | 42 | #1 kissanime.tv.in, #2 reddit.com (forum), #5 kissanimetv.to | kissanime.tv.in, reddit.com, en.wikipedia.org |
+| berserk | 201,000 | 26 | #3 reddit.com (forum), #6 berserk.fandom.com (forum) | en.wikipedia.org, imdb.com, reddit.com |
+| gogoanime | 201,000 | 16 | #6 facebook.com (forum), #9 facebook.com (forum) | play.google.com, sites.google.com, imdb.com |
+| hulu anime | 201,000 | 16 | #4 reddit.com (forum), #8 redditanime.fandom.com (forum) | hulu.com, hulu.com, hulu.com |
+| hulu animes | 201,000 | 11 | #4 reddit.com (forum) | en.wikipedia.org, hulu.com, cbr.com |
+| free anime websites | 165,000 | 32 | #2 reddit.com (forum), #4 9anime.si, #8 facebook.com (forum) | youtube.com, reddit.com, filmora.wondershare.com |
 
-## US national parks and hiking trails (openness 25)
+## Dog breeds (openness 31)
 
 | Keyword | /mo | Openness | Beatable slots | Top 3 |
 |---|---:|---:|---|---|
-| hiking trails near me | 550,000 | 11 | #6 behlerhomesspokane.com | yelp.com, yelp.com, explorewashingtonstate.com |
-| hiking spots near me | 550,000 | 47 | #2 sandkeyvacationrentals.com, #3 crainfordoflittlerock.net, #4 talent.byu.edu, #8 exploringalabama.org | yelp.com, sandkeyvacationrentals.com, crainfordoflittlerock.net |
-| hiking areas near me | 550,000 | 53 | #1 near.org, #3 near.com, #5 near.ngo, #7 doc.esri.com, #8 dplyr.tidyverse.org | near.org, coinmarketcap.com, near.com |
-| hiking paths near me | 550,000 | 5 | #7 visitnampa.org | alltrails.com, clevelandmetroparks.com, sctrails.net |
-| trekking trails near me | 550,000 | 16 | #6 cremedelacreme.com, #8 treesandtents.com | yelp.com, myhikes.org, yelp.com |
-| hikes and trails near me | 550,000 | 16 | #4 exploringalabama.org, #7 cremedelacreme.com | yelp.com, myhikes.org, yelp.com |
+| greyhounds | 1,220,000 | 47 | #4 reddit.com (forum), #5 igrescuetx.org, #6 fastfriends.org, #8 greyhoundsonly.com, #9 greyhoundpetsinc.org, #10 greyhoundsmusic.com | akc.org, en.wikipedia.org, greyhound.com |
+| cane corso | 1,000,000 | 32 | #2 facebook.com (forum), #3 canecorso.org | tasteofthewildpetfood.com, facebook.com, canecorso.org |
+| dachshund | 673,000 | 26 | #3 vidavetcare.com, #6 youdidwhatwithyourweiner.com | omlet.us, petfinder.com, vidavetcare.com |
+| chihuahua | 673,000 | 16 | #3 reddit.com (forum) | en.wikipedia.org, akc.org, reddit.com |
+| australian shepherds | 673,000 | 26 | #4 asca.org, #6 southtexasaussierescue.org, #7 australianshepherds.org | akc.org, en.wikipedia.org, orvis.com |
+| aussie shepherd | 673,000 | 26 | #5 riverridgeaussies.com, #6 sitmeanssitwaukesha.com, #7 zooplus.ie | youtube.com, youtube.com, chewy.com |
+
+## Movie soundtracks and film music (openness 20)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| composer hans zimmer | 135,000 | 16 | #4 ascap.com, #7 exepose.com | classical.music.apple.com, youtube.com, windrep.org |
+| across the universe movie | 40,500 | 53 | #2 reddit.com (forum), #4 reddit.com (forum), #5 beatles.fandom.com (forum), #6 revolutionstudios.com, #8 reddit.com (forum) | en.wikipedia.org, reddit.com, play.google.com |
+| hans zimmer films | 33,100 | 26 | #5 quora.com (forum), #6 facebook.com (forum), #8 exepose.com | tv.apple.com, youtube.com, grammy.com |
+| movies scored by hans zimmer | 33,100 | 0 | — | en.wikipedia.org, imdb.com, imdb.com |
+| purple rain movie | 27,100 | 11 | #4 reddit.com (forum) | tv.apple.com, youtube.com, imdb.com |
+| songs in guardians of the galaxy | 27,100 | 16 | #3 reddit.com (forum) | music.apple.com, youtube.com, reddit.com |
 
 ## TV shows: where to watch (openness 19)
 
@@ -135,3 +124,8 @@ Updated 2026-10-20. Google top 10 for each niche's best keywords. A slot is **be
 | nintendo eshop | 201,000 | 16 | #6 nintendo.fandom.com (forum), #7 eshop-prices.com | amazon.com, nintendo.com, youtube.com |
 | playstation 6 release date | 135,000 | 0 | — | gamerant.com, youtube.com, gadgets360.com |
 | mario kart 8 deluxe nintendo switch | 110,000 | 0 | — | ebay.com, amazon.com, youtube.com |
+
+## US national parks and hiking trails (openness 0)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
