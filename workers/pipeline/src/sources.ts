@@ -273,3 +273,23 @@ export async function judgeNiche(
     risks: list(j.risks),
   };
 }
+
+/** Claude picks which affiliate categories fit a niche (from the catalogue's list). */
+export async function pickCategories(apiKey: string, model: string, idea: string, notes: string | null | undefined, categories: Record<string, string>): Promise<string[]> {
+  const prompt = [
+    `Website idea: ${idea}`,
+    notes ? `Notes: ${notes}` : '',
+    '',
+    'Which of these affiliate categories would this site realistically earn from? Pick 1 to 3, most relevant first.',
+    ...Object.entries(categories).map(([id, label]) => `- ${id}: ${label}`),
+    '',
+    'Reply with JSON only: {"categories": ["id", "id"]}',
+  ].filter((l) => l !== '').join('\n');
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: claudeHeaders(apiKey),
+    body: JSON.stringify({ model, max_tokens: 3000, messages: [{ role: 'user', content: prompt }] }),
+  });
+  const j = JSON.parse(await claudeJson(res)) as { categories?: unknown };
+  return (Array.isArray(j.categories) ? j.categories.map(String) : []).filter((c) => c in categories).slice(0, 3);
+}

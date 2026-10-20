@@ -11,11 +11,11 @@
  */
 import { enrich, intake, maxYear, recheck, type QueueItem, type Movie, type Result, type State } from './jobs';
 import { commitFiles, readFiles, StaleError, type Repo } from './github';
-import { channelFeed, omdbLookup, omdbYearsForTitle, judgeNiche, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
+import { channelFeed, omdbLookup, omdbYearsForTitle, judgeNiche, pickCategories, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
 import { buildCollections, type Idea, type MovieCollection } from './collections';
 import { ga4Report, googleAccessToken, searchAnalytics, youtubeSearch } from './google';
 import { buildStats } from './stats';
-import { nicheReport, scoreNiche, type Niche } from './niches';
+import { estimateMoney, moneyReport, nicheReport, scoreNiche, type AffiliateCatalog, type Niche } from './niches';
 import { buildDemandReport } from './demand';
 import { pickTrailer } from './titles';
 import { buildCatalogue, type Candidate } from './catalogue';
@@ -97,6 +97,7 @@ const KEYWORDS = 'hq/keywords.json';
 const KEYWORDS_REPORT = 'hq/reports/keywords.md';
 const VIC_TOWNS_REPORT = 'reports/vic/towns.md';
 const NICHES_REPORT = 'hq/reports/niches.md';
+const AFFILIATES = 'hq/affiliate-programs.json';
 
 /** Workers free plan allows 50 outgoing calls per run; GitHub reads/commit use up to 8. */
 const CALL_BUDGET = 50 - 9;
@@ -442,9 +443,23 @@ async function nichesJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: bo
       log.push(`${n.idea}: failed: ${n.error}`);
     }
   }
+  // Money overlay: match each scored idea to affiliate programmes and estimate revenue at maturity.
+  // Categories are picked once by Claude (cheap); estimates are recomputed every run from the catalogue.
+  const cat = snap.files[AFFILIATES] ? (JSON.parse(snap.files[AFFILIATES]) as AffiliateCatalog) : null;
+  if (cat) {
+    for (const n of niches as (Niche & { categories?: string[] })[]) {
+      if (n.status !== 'scored' || !n.score) continue;
+      try {
+        if (!n.categories?.length) n.categories = await pickCategories(env.ANTHROPIC_API_KEY, env.ANTHROPIC_MODEL, n.idea, n.notes, cat.categories);
+        n.money = estimateMoney(cat, n.score.totalVolume, n.categories, n.location ?? location);
+      } catch (e) {
+        log.push(`${n.idea}: money estimate failed: ${(e as Error).message.slice(0, 120)}`);
+      }
+    }
+  }
   const left = niches.filter((n) => n.status === 'new').length;
   log.unshift(`Niches: scored ${todo.filter((n) => n.status === 'scored').length} of ${todo.length}${left ? `; ${left} still waiting (run again)` : ''}.`);
-  const report = nicheReport(niches, now, location);
+  const report = nicheReport(niches, now, location) + (cat ? moneyReport(niches, cat) : '');
   const commit = await save(
     repo,
     snap.sha,

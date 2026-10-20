@@ -1,0 +1,656 @@
+{
+ "updated": "2026-10-21",
+ "categories": {
+  "travel-stays": "Accommodation bookings",
+  "travel-tours": "Tours and activities",
+  "travel-car": "Car hire",
+  "travel-insurance": "Travel insurance",
+  "movies-tv": "Movies and TV (rent, buy, stream)",
+  "books": "Books",
+  "board-games": "Board games",
+  "video-games": "Video games",
+  "pets": "Pets (food, gear, insurance, services)",
+  "outdoors": "Outdoor gear",
+  "anime": "Anime streaming and merch"
+ },
+ "programs": [
+  {
+   "id": "booking",
+   "name": "Booking.com Affiliate Partner",
+   "network": "CJ (Booking.com)",
+   "categories": [
+    "travel-stays"
+   ],
+   "markets": [
+    "Global",
+    "AU"
+   ],
+   "commission": "Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay)",
+   "estPerSaleUsd": 10,
+   "cookie": "Session (cleared on booking)",
+   "approval": "moderate",
+   "requirements": "Content site about travel; tax form + payment details (W-8BEN-E for AU companies)",
+   "status": "applying",
+   "source": "https://track360.io/blog/best-travel-affiliate-programs-2026-operator-rate-card-benchmark",
+   "verified": "2026-10-21",
+   "note": "Simon set up the CJ account 20 Oct"
+  },
+  {
+   "id": "expedia",
+   "name": "Expedia Group Affiliate",
+   "network": "Expedia (direct)",
+   "categories": [
+    "travel-stays",
+    "travel-car"
+   ],
+   "markets": [
+    "Global",
+    "AU"
+   ],
+   "commission": "~2–6% by product",
+   "estPerSaleUsd": 8,
+   "cookie": "~7 days",
+   "approval": "moderate",
+   "requirements": "Travel content site",
+   "status": "not applied",
+   "source": "https://track360.io/blog/best-travel-affiliate-programs-2026-operator-rate-card-benchmark",
+   "verified": "2026-10-21",
+   "note": ""
+  },
+  {
+   "id": "viator",
+   "name": "Viator Partner Program",
+   "network": "Viator (direct)",
+   "categories": [
+    "travel-tours"
+   ],
+   "markets": [
+    "Global",
+    "AU"
+   ],
+   "commission": "~8% of booking value",
+   "estPerSaleUsd": 8,
+   "cookie": "~30 days",
+   "approval": "easy",
+   "requirements": "Website with travel content",
+   "status": "not applied",
+   "source": "https://track360.io/blog/best-travel-affiliate-programs-2026-operator-rate-card-benchmark",
+   "verified": "2026-10-21",
+   "note": ""
+  },
+  {
+   "id": "getyourguide",
+   "name": "GetYourGuide Partner Program",
+   "network": "GetYourGuide (direct)",
+   "categories": [
+    "travel-tours"
+   ],
+   "markets": [
+    "Global",
+    "AU"
+   ],
+   "commission": "~8% baseline, tiered up for volume",
+   "estPerSaleUsd": 7,
+   "cookie": "~31 days",
+   "approval": "easy",
+   "requirements": "Website with travel content",
+   "status": "not applied",
+   "source": "https://track360.io/blog/best-travel-affiliate-programs-2026-operator-rate-card-benchmark",
+   "verified": "2026-10-21",
+   "note": ""
+  },
+  {
+   "id": "klook",
+   "name": "Klook Affiliate",
+   "network": "Klook (direct)",
+   "categories": [
+    "travel-tours"
+   ],
+   "markets": [
+    "Global",
+    "AU"
+   ],
+   "commission": "check",
+   "estPerSaleUsd": 4,
+   "cookie": "check",
+   "approval": "easy",
+   "requirements": "check",
+   "status": "not applied",
+   "source": null,
+   "verified": null,
+   "note": "Strong in Asia-Pacific; confirm current rate"
+  },
+  {
+   "id": "discovercars",
+   "name": "Discover Cars / Rentalcars (car hire)",
+   "network": "various",
+   "categories": [
+    "travel-car"
+   ],
+   "markets": [
+    "Global",
+    "AU"
+   ],
+   "commission": "~4–8%",
+   "estPerSaleUsd": 12,
+   "cookie": "~30 days",
+   "approval": "easy",
+   "requirements": "check",
+   "status": "not applied",
+   "source": "https://track360.io/blog/best-travel-affiliate-programs-2026-operator-rate-card-benchmark",
+   "verified": "2026-10-21",
+   "note": ""
+  },
+  {
+   "id": "hotelgroups",
+   "name": "Hotel groups (Marriott, Hilton, IHG)",
+   "network": "networks (various)",
+   "categories": [
+    "travel-stays"
+   ],
+   "markets": [
+    "Global"
+   ],
+   "commission": "~3–7%",
+   "estPerSaleUsd": 9,
+   "cookie": "~7–30 days",
+   "approval": "moderate",
+   "requirements": "check",
+   "status": "not applied",
+   "source": "https://track360.io/blog/best-travel-affiliate-programs-2026-operator-rate-card-benchmark",
+   "verified": "2026-10-21",
+   "note": ""
+  },
+  {
+   "id": "insurance",
+   "name": "Travel insurance (World Nomads, SafetyWing, Allianz)",
+   "network": "various",
+   "categories": [
+    "travel-insurance"
+   ],
+   "markets": [
+    "Global"
+   ],
+   "commission": "~10–40%",
+   "estPerSaleUsd": 8,
+   "cookie": "~30–60 days",
+   "approval": "moderate",
+   "requirements": "check",
+   "status": "not applied",
+   "source": "https://track360.io/blog/best-travel-affiliate-programs-2026-operator-rate-card-benchmark",
+   "verified": "2026-10-21",
+   "note": "Better for overseas trips than domestic Victoria"
+  },
+  {
+   "id": "amazon-us-video",
+   "name": "Amazon Associates US: digital video (Prime Video)",
+   "network": "Amazon Associates (US)",
+   "categories": [
+    "movies-tv"
+   ],
+   "markets": [
+    "US"
+   ],
+   "commission": "5% (digital video); bounties: $3 Prime trial, $5 first Prime Video stream",
+   "estPerSaleUsd": 1.5,
+   "cookie": "24-hour session (cart items count for 89 days)",
+   "approval": "easy",
+   "requirements": "3 qualifying sales within 180 days of joining, or the account is closed",
+   "status": "approved",
+   "source": "https://gauravtiwari.org/amazon-affiliate-program/",
+   "verified": "2026-10-21",
+   "note": "Tag movietrailerc-20"
+  },
+  {
+   "id": "amazon-us-dvd",
+   "name": "Amazon Associates US: DVD and Blu-ray",
+   "network": "Amazon Associates (US)",
+   "categories": [
+    "movies-tv"
+   ],
+   "markets": [
+    "US"
+   ],
+   "commission": "2.5%",
+   "estPerSaleUsd": 0.6,
+   "cookie": "24-hour session",
+   "approval": "easy",
+   "requirements": "Same Associates account",
+   "status": "approved",
+   "source": "https://gauravtiwari.org/amazon-affiliate-program/",
+   "verified": "2026-10-21",
+   "note": ""
+  },
+  {
+   "id": "amazon-us-books",
+   "name": "Amazon Associates US: physical books",
+   "network": "Amazon Associates (US)",
+   "categories": [
+    "books"
+   ],
+   "markets": [
+    "US"
+   ],
+   "commission": "4.5%",
+   "estPerSaleUsd": 0.8,
+   "cookie": "24-hour session",
+   "approval": "easy",
+   "requirements": "Same Associates account",
+   "status": "approved",
+   "source": "https://gauravtiwari.org/amazon-affiliate-program/",
+   "verified": "2026-10-21",
+   "note": ""
+  },
+  {
+   "id": "amazon-us-toys",
+   "name": "Amazon Associates US: toys and games",
+   "network": "Amazon Associates (US)",
+   "categories": [
+    "board-games"
+   ],
+   "markets": [
+    "US"
+   ],
+   "commission": "3%",
+   "estPerSaleUsd": 1.2,
+   "cookie": "24-hour session",
+   "approval": "easy",
+   "requirements": "Same Associates account",
+   "status": "approved",
+   "source": "https://gauravtiwari.org/amazon-affiliate-program/",
+   "verified": "2026-10-21",
+   "note": ""
+  },
+  {
+   "id": "amazon-us-pets",
+   "name": "Amazon Associates US: pet supplies",
+   "network": "Amazon Associates (US)",
+   "categories": [
+    "pets"
+   ],
+   "markets": [
+    "US"
+   ],
+   "commission": "3%",
+   "estPerSaleUsd": 1.2,
+   "cookie": "24-hour session",
+   "approval": "easy",
+   "requirements": "Same Associates account",
+   "status": "approved",
+   "source": "https://gauravtiwari.org/amazon-affiliate-program/",
+   "verified": "2026-10-21",
+   "note": ""
+  },
+  {
+   "id": "amazon-us-outdoors",
+   "name": "Amazon Associates US: sports and outdoors",
+   "network": "Amazon Associates (US)",
+   "categories": [
+    "outdoors"
+   ],
+   "markets": [
+    "US"
+   ],
+   "commission": "3%",
+   "estPerSaleUsd": 1.8,
+   "cookie": "24-hour session",
+   "approval": "easy",
+   "requirements": "Same Associates account",
+   "status": "approved",
+   "source": "https://gauravtiwari.org/amazon-affiliate-program/",
+   "verified": "2026-10-21",
+   "note": ""
+  },
+  {
+   "id": "amazon-us-games",
+   "name": "Amazon Associates US: video games",
+   "network": "Amazon Associates (US)",
+   "categories": [
+    "video-games"
+   ],
+   "markets": [
+    "US"
+   ],
+   "commission": "1% physical / 2% digital",
+   "estPerSaleUsd": 0.6,
+   "cookie": "24-hour session",
+   "approval": "easy",
+   "requirements": "Same Associates account",
+   "status": "approved",
+   "source": "https://gauravtiwari.org/amazon-affiliate-program/",
+   "verified": "2026-10-21",
+   "note": ""
+  },
+  {
+   "id": "amazon-au",
+   "name": "Amazon Associates Australia",
+   "network": "Amazon Associates (AU)",
+   "categories": [
+    "movies-tv",
+    "board-games",
+    "pets",
+    "outdoors",
+    "books",
+    "video-games"
+   ],
+   "markets": [
+    "AU"
+   ],
+   "commission": "check (category rates differ from US)",
+   "estPerSaleUsd": 1,
+   "cookie": "24-hour session",
+   "approval": "easy",
+   "requirements": "Separate AU account; check qualifying-sales rule",
+   "status": "not applied",
+   "source": null,
+   "verified": null,
+   "note": "Captures Australian visitors who buy on amazon.com.au"
+  },
+  {
+   "id": "chewy",
+   "name": "Chewy",
+   "network": "check",
+   "categories": [
+    "pets"
+   ],
+   "markets": [
+    "US"
+   ],
+   "commission": "~$20 per new customer",
+   "estPerSaleUsd": 20,
+   "cookie": "~15 days",
+   "approval": "moderate",
+   "requirements": "check",
+   "status": "not applied",
+   "source": "https://articles.hepper.com/best-pet-affiliate-programs/",
+   "verified": "2026-10-21",
+   "note": ""
+  },
+  {
+   "id": "barkbox",
+   "name": "BarkBox",
+   "network": "check",
+   "categories": [
+    "pets"
+   ],
+   "markets": [
+    "US"
+   ],
+   "commission": "~$18 per subscription",
+   "estPerSaleUsd": 18,
+   "cookie": "check",
+   "approval": "moderate",
+   "requirements": "check",
+   "status": "not applied",
+   "source": "https://articles.hepper.com/best-pet-affiliate-programs/",
+   "verified": "2026-10-21",
+   "note": ""
+  },
+  {
+   "id": "embrace",
+   "name": "Embrace Pet Insurance",
+   "network": "check",
+   "categories": [
+    "pets"
+   ],
+   "markets": [
+    "US"
+   ],
+   "commission": "~$36 per lead",
+   "estPerSaleUsd": 36,
+   "cookie": "~60 days",
+   "approval": "moderate",
+   "requirements": "check",
+   "status": "not applied",
+   "source": "https://articles.hepper.com/best-pet-affiliate-programs/",
+   "verified": "2026-10-21",
+   "note": "Lead (not sale) payout: strong for breed pages"
+  },
+  {
+   "id": "ruffwear",
+   "name": "Ruffwear (dog gear)",
+   "network": "check",
+   "categories": [
+    "pets",
+    "outdoors"
+   ],
+   "markets": [
+    "US",
+    "Global"
+   ],
+   "commission": "~8%",
+   "estPerSaleUsd": 6,
+   "cookie": "~30 days",
+   "approval": "easy",
+   "requirements": "check",
+   "status": "not applied",
+   "source": "https://articles.hepper.com/best-pet-affiliate-programs/",
+   "verified": "2026-10-21",
+   "note": ""
+  },
+  {
+   "id": "rover",
+   "name": "Rover (pet sitting)",
+   "network": "FlexOffers",
+   "categories": [
+    "pets"
+   ],
+   "markets": [
+    "US"
+   ],
+   "commission": "~15% per referral",
+   "estPerSaleUsd": 8,
+   "cookie": "~30 days",
+   "approval": "moderate",
+   "requirements": "check",
+   "status": "not applied",
+   "source": "https://articles.hepper.com/best-pet-affiliate-programs/",
+   "verified": "2026-10-21",
+   "note": ""
+  },
+  {
+   "id": "rei",
+   "name": "REI",
+   "network": "check",
+   "categories": [
+    "outdoors"
+   ],
+   "markets": [
+    "US"
+   ],
+   "commission": "check (commonly quoted ~5%)",
+   "estPerSaleUsd": 5,
+   "cookie": "check",
+   "approval": "moderate",
+   "requirements": "check",
+   "status": "not applied",
+   "source": null,
+   "verified": null,
+   "note": "Verify current terms"
+  },
+  {
+   "id": "greenmangaming",
+   "name": "Green Man Gaming",
+   "network": "check",
+   "categories": [
+    "video-games"
+   ],
+   "markets": [
+    "Global"
+   ],
+   "commission": "check",
+   "estPerSaleUsd": 1,
+   "cookie": "check",
+   "approval": "easy",
+   "requirements": "check",
+   "status": "not applied",
+   "source": null,
+   "verified": null,
+   "note": "Verify current terms"
+  },
+  {
+   "id": "humble",
+   "name": "Humble Bundle partner",
+   "network": "Humble (direct)",
+   "categories": [
+    "video-games"
+   ],
+   "markets": [
+    "Global"
+   ],
+   "commission": "check",
+   "estPerSaleUsd": 1,
+   "cookie": "check",
+   "approval": "easy",
+   "requirements": "check",
+   "status": "not applied",
+   "source": null,
+   "verified": null,
+   "note": "Verify current terms"
+  },
+  {
+   "id": "bookshop",
+   "name": "Bookshop.org affiliates",
+   "network": "Bookshop.org (direct)",
+   "categories": [
+    "books"
+   ],
+   "markets": [
+    "US",
+    "UK"
+   ],
+   "commission": "check (commonly quoted ~10%)",
+   "estPerSaleUsd": 2,
+   "cookie": "check",
+   "approval": "easy",
+   "requirements": "check",
+   "status": "not applied",
+   "source": null,
+   "verified": null,
+   "note": "Verify current terms"
+  },
+  {
+   "id": "boardgame-retailers",
+   "name": "Board game retailers (e.g. Miniature Market)",
+   "network": "check",
+   "categories": [
+    "board-games"
+   ],
+   "markets": [
+    "US"
+   ],
+   "commission": "check",
+   "estPerSaleUsd": 2,
+   "cookie": "check",
+   "approval": "moderate",
+   "requirements": "check",
+   "status": "not applied",
+   "source": null,
+   "verified": null,
+   "note": "Shortlist and verify"
+  },
+  {
+   "id": "anime-streaming",
+   "name": "Anime streaming (e.g. Crunchyroll)",
+   "network": "check",
+   "categories": [
+    "anime"
+   ],
+   "markets": [
+    "Global"
+   ],
+   "commission": "check (may not run an open programme)",
+   "estPerSaleUsd": 3,
+   "cookie": "check",
+   "approval": "hard",
+   "requirements": "check",
+   "status": "not applied",
+   "source": null,
+   "verified": null,
+   "note": "Verify whether a public programme exists"
+  },
+  {
+   "id": "commissionfactory",
+   "name": "Commission Factory (Australian network)",
+   "network": "Commission Factory",
+   "categories": [
+    "travel-stays",
+    "travel-tours",
+    "outdoors",
+    "pets"
+   ],
+   "markets": [
+    "AU"
+   ],
+   "commission": "varies by brand",
+   "estPerSaleUsd": null,
+   "cookie": "varies",
+   "approval": "easy",
+   "requirements": "Australian publishers welcome; join once, then apply to brands",
+   "status": "not applied",
+   "source": null,
+   "verified": null,
+   "note": "Main AU affiliate network: Australian outdoor, travel and pet brands"
+  }
+ ],
+ "adNetworks": [
+  {
+   "name": "Google AdSense",
+   "minMonthly": "None",
+   "notes": "Easy to join; lower earnings than premium networks",
+   "source": "https://newormedia.com/blog/?p=1434",
+   "verified": "2026-10-21"
+  },
+  {
+   "name": "Newor Media",
+   "minMonthly": "Low (no figure published)",
+   "notes": "No niche restrictions",
+   "source": "https://newormedia.com/blog/?p=1434",
+   "verified": "2026-10-21"
+  },
+  {
+   "name": "Raptive",
+   "minMonthly": "25,000 pageviews",
+   "notes": "Reviews content quality and niche fit",
+   "source": "https://newormedia.com/blog/?p=1434",
+   "verified": "2026-10-21"
+  },
+  {
+   "name": "Mediavine",
+   "minMonthly": "50,000 sessions",
+   "notes": "Strong in lifestyle; check Journey (smaller-site tier) terms",
+   "source": "https://newormedia.com/blog/?p=1434",
+   "verified": "2026-10-21"
+  },
+  {
+   "name": "Ezoic",
+   "minMonthly": "250,000 users (raised Feb 2026)",
+   "notes": "",
+   "source": "https://newormedia.com/blog/?p=1434",
+   "verified": "2026-10-21"
+  }
+ ],
+ "model": {
+  "_note": "Revenue estimate at maturity, per month: visits x (affiliate click rate x conversion x per-sale payout) + visits/1000 x ad RPM. visits = related monthly searches x capture share. Low/mid/high. Replaced by our own measured rates once sites have data.",
+  "captureShare": [
+   0.002,
+   0.005,
+   0.015
+  ],
+  "clickRate": [
+   0.02,
+   0.05,
+   0.1
+  ],
+  "conversion": [
+   0.03,
+   0.06,
+   0.1
+  ],
+  "adRpmUsd": [
+   3,
+   8,
+   15
+  ]
+ }
+}

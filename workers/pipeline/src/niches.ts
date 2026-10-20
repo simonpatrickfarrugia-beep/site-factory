@@ -50,6 +50,7 @@ export interface Niche {
   location?: string | null;
   score?: NicheScore | null;
   error?: string | null;
+  money?: MoneyEstimate | null;
 }
 
 const clamp = (n: number) => Math.max(0, Math.min(100, Math.round(n)));
@@ -143,5 +144,98 @@ export function nicheReport(niches: Niche[], now: Date, location: string): strin
     L.push('', `_Seeds: ${n.seeds.join(', ')}. Data cost: US$${s.costUsd}._`);
   }
   L.push('');
+  return L.join('\n');
+}
+
+// ---------------------------------------------------------------- affiliate money overlay
+
+export interface AffiliateProgram {
+  id: string;
+  name: string;
+  network: string;
+  categories: string[];
+  markets: string[];
+  commission: string;
+  estPerSaleUsd: number | null;
+  cookie: string;
+  approval: 'easy' | 'moderate' | 'hard';
+  requirements: string;
+  status: string;
+  source: string | null;
+  verified: string | null;
+  note?: string;
+}
+
+export interface AffiliateCatalog {
+  updated: string;
+  categories: Record<string, string>;
+  programs: AffiliateProgram[];
+  adNetworks: { name: string; minMonthly: string; notes: string }[];
+  model: { captureShare: number[]; clickRate: number[]; conversion: number[]; adRpmUsd: number[] };
+}
+
+export interface MoneyEstimate {
+  categories: string[];
+  visits: [number, number, number]; // monthly visits at maturity: low / mid / high
+  revenueUsd: [number, number, number]; // monthly revenue at maturity: low / mid / high
+  bestPerSaleUsd: number;
+  programs: { id: string; name: string; commission: string; approval: string; requirements: string; status: string; verified: boolean }[];
+}
+
+/** Programmes that fit the niche's categories and market, best payout first. */
+export function matchPrograms(cat: AffiliateCatalog, categories: string[], market: string): AffiliateProgram[] {
+  const m = /australia/i.test(market) ? 'AU' : /united states|usa/i.test(market) ? 'US' : market;
+  return cat.programs
+    .filter((p) => p.categories.some((c) => categories.includes(c)))
+    .filter((p) => p.markets.includes(m) || p.markets.includes('Global'))
+    .sort((a, b) => (b.estPerSaleUsd ?? 0) - (a.estPerSaleUsd ?? 0));
+}
+
+export function estimateMoney(cat: AffiliateCatalog, totalVolume: number, categories: string[], market: string): MoneyEstimate {
+  const progs = matchPrograms(cat, categories, market);
+  // A page earns from its best few programmes, not just the single best: average the top 3 payouts.
+  const payouts = progs.map((p) => p.estPerSaleUsd ?? 0).filter((x) => x > 0).slice(0, 3);
+  const perSale = payouts.length ? payouts.reduce((a, b) => a + b, 0) / payouts.length : 0;
+  const m = cat.model;
+  const visits = [0, 1, 2].map((i) => Math.round(totalVolume * m.captureShare[i])) as [number, number, number];
+  const revenueUsd = [0, 1, 2].map((i) => Math.round(visits[i] * m.clickRate[i] * m.conversion[i] * perSale + (visits[i] / 1000) * m.adRpmUsd[i])) as [number, number, number];
+  return {
+    categories,
+    visits,
+    revenueUsd,
+    bestPerSaleUsd: Math.round(perSale * 100) / 100,
+    programs: progs.slice(0, 8).map((p) => ({ id: p.id, name: p.name, commission: p.commission, approval: p.approval, requirements: p.requirements, status: p.status, verified: !!p.verified })),
+  };
+}
+
+const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
+
+/** Extra report sections: money ranking + programmes to consider per idea + programme catalogue. */
+export function moneyReport(niches: (Niche & { money?: MoneyEstimate | null })[], cat: AffiliateCatalog): string {
+  const withMoney = niches.filter((n) => n.status === 'scored' && n.money).sort((a, b) => b.money!.revenueUsd[1] - a.money!.revenueUsd[1]);
+  const L: string[] = [
+    '',
+    '## Money map: estimated revenue at maturity',
+    '',
+    `Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits × affiliate clicks × conversion × payout (average of the top 3 matching programmes), plus display ads. These numbers rank ideas against each other; they are not forecasts. They get replaced by our own measured rates as our sites earn.`,
+    '',
+    '| Idea | Market | Visits/mo (mid) | Est. revenue/mo (low · mid · high) | Avg payout per sale | Score |',
+    '|---|---|---:|---|---:|---:|',
+    ...withMoney.map((n) => {
+      const m = n.money!;
+      return `| ${n.idea} | ${n.location ?? ''} | ${m.visits[1].toLocaleString('en-US')} | ${usd(m.revenueUsd[0])} · **${usd(m.revenueUsd[1])}** · ${usd(m.revenueUsd[2])} | ${usd(m.bestPerSaleUsd)} | ${n.score?.overall ?? '—'} |`;
+    }),
+    '',
+    '## Programmes to consider, by idea',
+    '',
+  ];
+  for (const n of withMoney) {
+    L.push(`### ${n.idea}`, '', '| Programme | Pays | Approval | To qualify | Status |', '|---|---|---|---|---|');
+    for (const p of n.money!.programs) L.push(`| ${p.name}${p.verified ? '' : ' *(check)*'} | ${p.commission} | ${p.approval} | ${p.requirements} | ${p.status} |`);
+    if (!n.money!.programs.length) L.push('| _No programme in the catalogue yet: research needed_ | | | | |');
+    L.push('');
+  }
+  L.push('## Ad networks (when traffic qualifies)', '', '| Network | Minimum traffic | Notes |', '|---|---|---|', ...cat.adNetworks.map((a) => `| ${a.name} | ${a.minMonthly} | ${a.notes} |`), '');
+  L.push(`_Catalogue: hq/affiliate-programs.json (${cat.programs.length} programmes, updated ${cat.updated}). "(check)" = terms not yet verified from a current source._`, '');
   return L.join('\n');
 }
