@@ -27,6 +27,16 @@ def strip(html):
     return re.sub(r'<[^>]+>', '', html or '').strip()
 
 
+def clean_artist(a):
+    a = (a or '').split('\n')[0]
+    a = re.sub(r'\(talk\s*·\s*contribs\)', '', a)
+    a = re.sub(r'\s+at English Wikipedia', '', a)
+    a = re.sub(r'\s+', ' ', a).strip(' ,;:-')
+    if not a or a.lower().startswith(('file:', 'unknown')):
+        return 'Wikimedia Commons contributor'
+    return a[:60]
+
+
 def file_info(filename, width):
     d = get('https://commons.wikimedia.org/w/api.php', {
         'action': 'query', 'titles': f'File:{filename}', 'prop': 'imageinfo',
@@ -45,7 +55,7 @@ def file_info(filename, width):
         'height': ii.get('thumbheight'),
         'file': filename,
         'page': ii.get('descriptionurl'),
-        'artist': strip(meta.get('Artist', {}).get('value'))[:80] or 'Unknown',
+        'artist': clean_artist(strip(meta.get('Artist', {}).get('value'))),
         'license': lic,
     }
 
