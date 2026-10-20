@@ -1,0 +1,20 @@
+{
+  "_about": "Hand-set inputs for scripts/hq/prioritise.py. effortDays = build days to a first useful version. monthsToFirst = months until search traffic starts paying. shared = which site it would live on (sections of one site share build effort and authority). dataRisk 0-1 = chance the data source or licence blocks us.",
+  "horizonMonths": 24,
+  "rampMonths": 12,
+  "approval": { "approved": 1.0, "applying": 0.8, "easy": 0.85, "moderate": 0.6, "hard": 0.25 },
+  "unverifiedPenalty": 0.8,
+  "niches": {
+    "Victoria: where to stay by town":         { "effortDays": 1,  "monthsToFirst": 3, "shared": "victours.com.au (live)", "dataRisk": 0.05 },
+    "Victoria: things to do by town":          { "effortDays": 1,  "monthsToFirst": 3, "shared": "victours.com.au (live)", "dataRisk": 0.05 },
+    "Victoria: where to eat by town":          { "effortDays": 1,  "monthsToFirst": 3, "shared": "victours.com.au (live)", "dataRisk": 0.05 },
+    "US national parks and hiking trails":     { "effortDays": 8,  "monthsToFirst": 6, "shared": "new domain", "dataRisk": 0.1 },
+    "Dog breeds":                              { "effortDays": 10, "monthsToFirst": 7, "shared": "new domain", "dataRisk": 0.2 },
+    "TV shows: where to watch":                { "effortDays": 6,  "monthsToFirst": 5, "shared": "entertainment hub", "dataRisk": 0.4 },
+    "Anime: where to watch and watch order":   { "effortDays": 6,  "monthsToFirst": 5, "shared": "entertainment hub", "dataRisk": 0.35 },
+    "Video games: release dates and trailers": { "effortDays": 5,  "monthsToFirst": 5, "shared": "entertainment hub", "dataRisk": 0.15 },
+    "Board games":                             { "effortDays": 6,  "monthsToFirst": 5, "shared": "entertainment hub", "dataRisk": 0.1 },
+    "Book series in reading order":            { "effortDays": 5,  "monthsToFirst": 6, "shared": "new domain", "dataRisk": 0.1 },
+    "Movie soundtracks and film music":        { "effortDays": 3,  "monthsToFirst": 4, "shared": "movietrailer.channel (live)", "dataRisk": 0.1 }
+  }
+}
