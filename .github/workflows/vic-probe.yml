@@ -14,14 +14,17 @@ permissions:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - name: Probe OpenStreetMap
         run: python3 scripts/vic/osm_probe.py "${{ inputs.count }}" "${{ inputs.slugs }}"
+        timeout-minutes: 100
       - name: Rebuild the site snapshot (published towns only)
+        if: always()
         run: python3 scripts/vic/build_data.py
-      - name: Commit
+      - name: Commit (also after a timeout, so finished towns are kept)
+        if: always()
         run: |
           git config user.name "Vic Tours probe" && git config user.email "pipeline@victours.com.au"
           git add data/vic

@@ -8,7 +8,8 @@ Usage: python3 scripts/vic/osm_probe.py [count] [slug,slug,...]   (run by .githu
 import json, os, sys, time, urllib.parse, urllib.request
 from datetime import datetime, timezone
 
-OVERPASS = 'https://overpass-api.de/api/interpreter'
+# Public Overpass servers, tried in turn when one is busy.
+OVERPASS_SERVERS = ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass.private.coffee/api/interpreter']
 UA = 'SiteFactory-VicTours-probe/1.0 (contact: owner of victours.com.au)'
 TOWNS = 'data/vic/towns.json'
 ALIASES = {'Melbourne CBD': 'Melbourne', 'High Country': 'Alpine Shire', 'Gippsland': 'Gippsland'}
@@ -27,14 +28,15 @@ KEEP = ['website', 'contact:website', 'phone', 'contact:phone', 'opening_hours',
 
 def overpass(q):
     data = urllib.parse.urlencode({'data': q}).encode()
-    for attempt in range(4):
+    for attempt in range(6):
+        server = OVERPASS_SERVERS[attempt % len(OVERPASS_SERVERS)]
         try:
-            req = urllib.request.Request(OVERPASS, data=data, headers={'User-Agent': UA})
-            with urllib.request.urlopen(req, timeout=120) as r:
+            req = urllib.request.Request(server, data=data, headers={'User-Agent': UA})
+            with urllib.request.urlopen(req, timeout=90) as r:
                 return json.load(r)
-        except Exception as e:  # 429 / 504 from a busy public server: back off
-            print(f'  overpass retry {attempt + 1}: {e}')
-            time.sleep(20 * (attempt + 1))
+        except Exception as e:  # 429 / 504 from a busy public server: try the next one, then back off
+            print(f'  overpass retry {attempt + 1} ({server}): {e}')
+            time.sleep(10 * (attempt + 1))
     raise RuntimeError('Overpass unavailable')
 
 
@@ -143,8 +145,8 @@ def main():
         else:
             lines.append(f"{t['name']}: {summary.get('error')}")
         t['probe'] = summary
-        time.sleep(8)  # be polite to the public Overpass server
-    json.dump(towns, open(TOWNS, 'w'), indent=1, ensure_ascii=False)
+        json.dump(towns, open(TOWNS, 'w'), indent=1, ensure_ascii=False)  # save progress after every town
+        time.sleep(8)  # be polite to the public Overpass servers
     msg = ' | '.join(lines) or 'Nothing to probe'
     print(f'::notice title=vic-probe::{msg[:3500]}')
 
