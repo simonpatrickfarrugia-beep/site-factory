@@ -1,0 +1,882 @@
+{
+ "town": "Shepparton",
+ "slug": "shepparton",
+ "centre": [
+  -36.3831633,
+  145.3988874
+ ],
+ "radiusM": 4000,
+ "fetchedAt": "2026-10-20T13:40:42+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n493143941",
+   "name": "Quest Shepparton",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -36.3841387,
+   "lon": 145.3975349,
+   "tags": {
+    "website": "https://www.questapartments.com.au/Accommodation/102/Australia/Victoria_Regional/Quest_Shepparton/Welcome.aspx",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n493148773",
+   "name": "Wyndhamere Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.3725346,
+   "lon": 145.4014326,
+   "tags": {
+    "website": "https://www.wyndhamere.com.au/",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n1475706802",
+   "name": "RT's Restro",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.3940508,
+   "lon": 145.3961891,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6357501787",
+   "name": "Shepparton Observatory Tower",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -36.3804395,
+   "lon": 145.4002791,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n8072722882",
+   "name": "The Deck",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.3797389,
+   "lon": 145.4009299,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n8548532975",
+   "name": "Murray River Caravans",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -36.405708,
+   "lon": 145.369336,
+   "tags": {
+    "website": "https://www.murrayrivercaravanhire.com.au",
+    "phone": "+61 406 255 229",
+    "opening_hours": "Mo-Fr 08:00-17:00",
+    "addr:housenumber": "255",
+    "addr:street": "Riverview Drive",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "n9555452177",
+   "name": "Wild Life Brewing Co",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.3787539,
+   "lon": 145.4010842,
+   "tags": {
+    "website": "https://www.wildlifebrewing.co/",
+    "addr:housenumber": "172",
+    "addr:street": "Maude Street",
+    "addr:postcode": "3630",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n9576656547",
+   "name": "Shepparton Art Museum",
+   "group": "do",
+   "type": "gallery",
+   "lat": -36.3912762,
+   "lon": 145.3967786,
+   "tags": {
+    "website": "https://sheppartonartmuseum.com.au/",
+    "phone": "+61 3 4804 5000",
+    "opening_hours": "Mo-Su 10:00-16:00",
+    "wikidata": "Q96405527",
+    "wikipedia": "en:Shepparton Art Museum",
+    "addr:housenumber": "530",
+    "addr:street": "Wyndham Street",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "n9908419568",
+   "name": "Degani",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.4083395,
+   "lon": 145.3922495,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11541807221",
+   "name": "Courtyard Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.3719077,
+   "lon": 145.4008474,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n11542183091",
+   "name": "Eco Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.378169,
+   "lon": 145.3996414,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12698059291",
+   "name": "Country Home Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.3677421,
+   "lon": 145.4023868,
+   "tags": {
+    "addr:housenumber": "11",
+    "addr:street": "Wyndham Street",
+    "addr:suburb": "Shepparton",
+    "addr:postcode": "3630",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n12698059297",
+   "name": "Addison Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.3698554,
+   "lon": 145.4019352,
+   "tags": {
+    "internet_access": "wlan",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n12698075819",
+   "name": "Riviera Pizza",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.37615,
+   "lon": 145.4005603,
+   "tags": {
+    "phone": "+61 3 5821 4402",
+    "cuisine": "pizza",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12698075829",
+   "name": "Pho Viet",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.3784971,
+   "lon": 145.4000036,
+   "tags": {
+    "cuisine": "vietnamese",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12698075833",
+   "name": "La Porchetta",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.3787136,
+   "lon": 145.3999591,
+   "tags": {
+    "cuisine": "italian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12698075839",
+   "name": "Smokin' Joe's Pizza & Grill",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.3798478,
+   "lon": 145.3997678,
+   "tags": {
+    "cuisine": "pizza",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12698075841",
+   "name": "Gloria Jean's",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.3799819,
+   "lon": 145.3997383,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "brand": "Gloria Jean's",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12698075844",
+   "name": "Barca Love",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.3806845,
+   "lon": 145.3995463,
+   "tags": {
+    "phone": "+61 3 5858 4070",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12698075845",
+   "name": "Aloi Thai",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.3807396,
+   "lon": 145.3995352,
+   "tags": {
+    "cuisine": "thai",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12698075859",
+   "name": "Karz Coffee Shop Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.3947818,
+   "lon": 145.3600867,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12698075861",
+   "name": "Mondi Kitchen",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.3948054,
+   "lon": 145.3599084,
+   "tags": {
+    "phone": "+61 3 4804 6668",
+    "cuisine": "filipino",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w28692760",
+   "name": "Queen's Gardens",
+   "group": "do",
+   "type": "park",
+   "lat": -36.37734,
+   "lon": 145.3993226,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w40722837",
+   "name": "Monash Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.3797388,
+   "lon": 145.397104,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w50130696",
+   "name": "Pines Country Club Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.3589439,
+   "lon": 145.4030018,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w50636755",
+   "name": "Mooroopna Golf Club",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -36.3856122,
+   "lon": 145.3655438,
+   "tags": {
+    "website": "https://www.mooroopnagolfclub.com/",
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w51338994",
+   "name": "Allinga Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.4064347,
+   "lon": 145.4130115,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w51653219",
+   "name": "Royal Mail Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.3947088,
+   "lon": 145.3619718,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w51653230",
+   "name": "The Commercial Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.3941572,
+   "lon": 145.3595565,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w51653309",
+   "name": "Rodney Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.3943923,
+   "lon": 145.3569733,
+   "tags": {
+    "website": "https://rodneymotorinn.com.au",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w91357366",
+   "name": "Canterbury Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.3604887,
+   "lon": 145.3726736,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w91358062",
+   "name": "Jack Findlay Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.3947737,
+   "lon": 145.358213,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w95908040",
+   "name": "Goulburn Valley Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.3816313,
+   "lon": 145.4063326,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w134185986",
+   "name": "Vibert Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -36.4017348,
+   "lon": 145.407363,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w134189793",
+   "name": "Big Valley Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.3941317,
+   "lon": 145.3958123,
+   "tags": {
+    "website": "http://www.bigvalley.com.au/",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w134191736",
+   "name": "Victoria Lake Holiday Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -36.3931186,
+   "lon": 145.3931319,
+   "tags": {
+    "website": "https://www.viclakeholidaypark.com.au//",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w134876004",
+   "name": "Victory Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.3869591,
+   "lon": 145.4062698,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w143795602",
+   "name": "C & D Howe Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.3840915,
+   "lon": 145.358614,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w144052739",
+   "name": "WB Ferrari Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.3926996,
+   "lon": 145.3508587,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w150169933",
+   "name": "Chas Johnson Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.3640385,
+   "lon": 145.3926151,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w150409267",
+   "name": "Hanlon Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.396145,
+   "lon": 145.4074799,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w283272043",
+   "name": "Kalinga Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.4015472,
+   "lon": 145.3872894,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w311063825",
+   "name": "Sherbourne Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.3659999,
+   "lon": 145.3998907,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w331328091",
+   "name": "Baldwyn Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.357904,
+   "lon": 145.409444,
+   "tags": {
+    "addr:housenumber": "3-5",
+    "addr:street": "Dunstan Court",
+    "addr:suburb": "Shepparton",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w389347699",
+   "name": "Riverside Cabin Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -36.4057845,
+   "lon": 145.3932885,
+   "tags": {
+    "website": "https://www.riversidecabinpark.com.au/",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w391126028",
+   "name": "Strayleaves Caravan Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -36.3783221,
+   "lon": 145.4212536,
+   "tags": {
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w461981338",
+   "name": "Southgate",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.4000247,
+   "lon": 145.3944649,
+   "tags": {
+    "brand": "Golden Chain",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w461981339",
+   "name": "Shepparton Bell Tower Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.3965862,
+   "lon": 145.3966126,
+   "tags": {
+    "website": "https://www.belltowermotorinn.biz/",
+    "brand": "Budget Motel Chain",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w547524840",
+   "name": "Dogshun Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.3580599,
+   "lon": 145.4049089,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w547525551",
+   "name": "Shepparton Memorial Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.3777404,
+   "lon": 145.398129,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w551566136",
+   "name": "Shepparton Lake",
+   "group": "do",
+   "type": "park",
+   "lat": -36.3892712,
+   "lon": 145.3969569,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w551566138",
+   "name": "Skate Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.3864819,
+   "lon": 145.3974789,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w605157836",
+   "name": "BAILEY PARK",
+   "group": "do",
+   "type": "park",
+   "lat": -36.3650379,
+   "lon": 145.4179552,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w605160994",
+   "name": "Kidstown",
+   "group": "do",
+   "type": "theme_park",
+   "lat": -36.3848467,
+   "lon": 145.3800169,
+   "tags": {
+    "tourism": "theme_park"
+   }
+  },
+  {
+   "id": "w892652739",
+   "name": "Shepparton Heritage Centre",
+   "group": "do",
+   "type": "museum",
+   "lat": -36.3811172,
+   "lon": 145.3974126,
+   "tags": {
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "w892655027",
+   "name": "The Aussie",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.3789443,
+   "lon": 145.4015536,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w893962720",
+   "name": "The Connection",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.3860874,
+   "lon": 145.3810792,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w894035146",
+   "name": "Terminus",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.3822241,
+   "lon": 145.4054288,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w894037328",
+   "name": "Friars Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.3790834,
+   "lon": 145.4029181,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w894037333",
+   "name": "Victoria Hotel(The Vic)",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.3786972,
+   "lon": 145.3990692,
+   "tags": {
+    "addr:housenumber": "272",
+    "addr:street": "Wyndham Street",
+    "addr:suburb": "Shepparton",
+    "addr:postcode": "3630",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w894037334",
+   "name": "Flanagans Irish bar",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.3787868,
+   "lon": 145.3995005,
+   "tags": {
+    "addr:street": "Wyndham Street",
+    "addr:suburb": "Shepparton",
+    "addr:postcode": "3630",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w980161945",
+   "name": "The Overlander",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.3854278,
+   "lon": 145.4237134,
+   "tags": {
+    "addr:housenumber": "97",
+    "addr:street": "Benalla Road",
+    "addr:suburb": "Shepparton",
+    "addr:postcode": "3630",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w980161954",
+   "name": "The Overlander",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.3850557,
+   "lon": 145.4238218,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w984505081",
+   "name": "Parklake",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -36.3869457,
+   "lon": 145.3988558,
+   "tags": {
+    "phone": "+61 3 5821 5822",
+    "brand": "Quality Hotel",
+    "addr:housenumber": "481",
+    "addr:street": "Wyndham Street",
+    "addr:suburb": "Shepparton",
+    "addr:postcode": "3630",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w984944691",
+   "name": "Shepparton Brewery",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.3781434,
+   "lon": 145.4032623,
+   "tags": {
+    "addr:housenumber": "15",
+    "addr:street": "Edward Street",
+    "addr:suburb": "Shepparton",
+    "addr:postcode": "3630",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w1134206739",
+   "name": "The Carrington",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -36.3886591,
+   "lon": 145.3985141,
+   "tags": {
+    "website": "https://www.thecarrington.net.au/",
+    "phone": "+61 3 5821 3355",
+    "internet_access": "wlan",
+    "addr:housenumber": "505",
+    "addr:street": "Wyndham Street",
+    "addr:suburb": "Shepparton",
+    "addr:postcode": "3630",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w1134207885",
+   "name": "Central Shepparton Apartments",
+   "group": "stay",
+   "type": "apartment",
+   "lat": -36.3889292,
+   "lon": 145.3984697,
+   "tags": {
+    "tourism": "apartment"
+   }
+  },
+  {
+   "id": "r11275923",
+   "name": "Shepparton Golf Club",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -36.358576,
+   "lon": 145.3650482,
+   "tags": {
+    "website": "https://www.sheppartongolf.net.au/",
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "r11276003",
+   "name": "Aspen Lodge Caravan Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -36.3979984,
+   "lon": 145.3611061,
+   "tags": {
+    "phone": "+61 3 5825 2245",
+    "addr:housenumber": "1",
+    "addr:street": "Lawson Street",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "r16354532",
+   "name": "Gemmill Swamp Wildlife Reserve (no hunting)",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -36.3717439,
+   "lon": 145.3581192,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r16354539",
+   "name": "Goulburn River Heritage River",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -36.6781421,
+   "lon": 145.3641008,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r20174844",
+   "name": "Shepparton Regional Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -36.4173305,
+   "lon": 145.3675486,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}

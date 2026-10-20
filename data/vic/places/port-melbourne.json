@@ -1,0 +1,517 @@
+{
+ "town": "Port Melbourne",
+ "slug": "port-melbourne",
+ "centre": [
+  -37.8333613,
+  144.9219203
+ ],
+ "radiusM": 1500,
+ "fetchedAt": "2026-10-20T14:40:25+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n973260570",
+   "name": "G&S Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8326651,
+   "lon": 144.923936,
+   "tags": {
+    "phone": "+61 3 9645 1611",
+    "opening_hours": "Mo-Fr 04:30-14:00; Sa-Su off",
+    "outdoor_seating": "no",
+    "addr:housenumber": "391",
+    "addr:street": "Plummer Street",
+    "addr:postcode": "3207",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n973329117",
+   "name": "Port Xpresso",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.830267,
+   "lon": 144.9231635,
+   "tags": {
+    "cuisine": "sandwich",
+    "addr:housenumber": "95",
+    "addr:street": "Salmon Street",
+    "addr:postcode": "3207",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n1514732869",
+   "name": "Punch Bowl",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.829828,
+   "lon": 144.93597,
+   "tags": {
+    "cuisine": "australian",
+    "wheelchair": "yes",
+    "outdoor_seating": "yes",
+    "internet_access": "wlan",
+    "addr:housenumber": "1",
+    "addr:street": "Fennell Street",
+    "addr:suburb": "Port Melbourne",
+    "addr:postcode": "3207",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2509158838",
+   "name": "Mr Hobson",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8412753,
+   "lon": 144.9317964,
+   "tags": {
+    "addr:housenumber": "9",
+    "addr:street": "Waterfront Place",
+    "addr:suburb": "Port Melbourne",
+    "addr:postcode": "3207",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3741103893",
+   "name": "Caps Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8397691,
+   "lon": 144.9154689,
+   "tags": {
+    "website": "http://www.lifesavingvictoria.com.au/www/html/1720-caps-cafe.asp",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "200",
+    "addr:street": "The Boulevard",
+    "addr:suburb": "Port Melbourne",
+    "addr:postcode": "3207",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n4698675573",
+   "name": "CBCo Brewing",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8286656,
+   "lon": 144.9368688,
+   "tags": {
+    "website": "https://cbco.beer/",
+    "phone": "+61 3 8644 4044",
+    "opening_hours": "We 15:00-19:00; Th 12:00-21:30; Fr-Sa 12:00-23:00; Su 12:00-18:00",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "89",
+    "addr:street": "Bertie Street",
+    "addr:suburb": "Port Melbourne",
+    "addr:postcode": "3207",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n8246996900",
+   "name": "Pie Face",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8309599,
+   "lon": 144.9187474,
+   "tags": {
+    "opening_hours": "24/7",
+    "cuisine": "coffee_shop",
+    "brand": "Pie Face",
+    "addr:housenumber": "1",
+    "addr:street": "West Gate Freeway",
+    "addr:suburb": "Port Melbourne",
+    "addr:postcode": "3207",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9141577034",
+   "name": "Sensory Lab",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8219299,
+   "lon": 144.9264746,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9141577046",
+   "name": "Hall St. Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8227748,
+   "lon": 144.9265493,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n10780791363",
+   "name": "Dusty Fox Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8312907,
+   "lon": 144.9305393,
+   "tags": {
+    "phone": "+61 3 9028 2340",
+    "opening_hours": "08:00-16:00",
+    "wheelchair": "yes",
+    "addr:housenumber": "477-481",
+    "addr:street": "Plummer Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11607279150",
+   "name": "Q Tea Kitchen",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8252155,
+   "lon": 144.9216871,
+   "tags": {
+    "cuisine": "vietnamese",
+    "addr:housenumber": "1",
+    "addr:street": "Phillip Court",
+    "addr:suburb": "Port Melbourne",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11607279152",
+   "name": "24 Atoms",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8253647,
+   "lon": 144.921733,
+   "tags": {
+    "addr:housenumber": "1",
+    "addr:street": "Phillip Court",
+    "addr:suburb": "Port Melbourne",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11607279153",
+   "name": "Ootoro",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8254355,
+   "lon": 144.9217385,
+   "tags": {
+    "cuisine": "japanese",
+    "addr:housenumber": "1",
+    "addr:street": "Phillip Court",
+    "addr:suburb": "Port Melbourne",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11607279154",
+   "name": "Black Jack Cafe & Kitchen",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8255037,
+   "lon": 144.9217177,
+   "tags": {
+    "addr:housenumber": "1",
+    "addr:street": "Phillip Court",
+    "addr:suburb": "Port Melbourne",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13503247476",
+   "name": "Wharf Bake House",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8267452,
+   "lon": 144.9091744,
+   "tags": {
+    "addr:housenumber": "34",
+    "addr:street": "Wirraway Drive",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w27612949",
+   "name": "R. F. Julier Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8376715,
+   "lon": 144.92298,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w27727760",
+   "name": "Garden City Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8364766,
+   "lon": 144.9313563,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w27772268",
+   "name": "Westgate Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8313284,
+   "lon": 144.9075888,
+   "tags": {
+    "website": "https://parkweb.vic.gov.au/explore/parks/westgate-park",
+    "wikidata": "Q21970989",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w32773563",
+   "name": "Hester Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8363169,
+   "lon": 144.9390282,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w32773607",
+   "name": "Turner Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8359612,
+   "lon": 144.9386399,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w34060829",
+   "name": "Marina Bay",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8417719,
+   "lon": 144.9314941,
+   "tags": {
+    "cuisine": "middle_eastern",
+    "addr:housenumber": "11",
+    "addr:street": "Waterfront Place",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w34060831",
+   "name": "Waterfront",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8417098,
+   "lon": 144.9309525,
+   "tags": {
+    "addr:housenumber": "1",
+    "addr:street": "Station Pier",
+    "addr:suburb": "Port Melbourne",
+    "addr:postcode": "3207",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w34060838",
+   "name": "Park Square Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8399842,
+   "lon": 144.9346776,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w83580713",
+   "name": "Cyril Letts Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8360672,
+   "lon": 144.9243712,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w83581567",
+   "name": "Fred Jackson Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8383406,
+   "lon": 144.9197788,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w133247027",
+   "name": "Bolte Cafe and Kebab",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8221176,
+   "lon": 144.9309913,
+   "tags": {
+    "addr:housenumber": "816",
+    "addr:street": "Lorimer Street",
+    "addr:suburb": "Port Melbourne",
+    "addr:postcode": "3207",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w365652010",
+   "name": "The Clare Castle",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8365506,
+   "lon": 144.9361235,
+   "tags": {
+    "website": "http://clarecastle.com.au/",
+    "addr:housenumber": "356",
+    "addr:street": "Graham Street",
+    "addr:suburb": "Port Melbourne",
+    "addr:postcode": "3207",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w374886571",
+   "name": "White Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8407958,
+   "lon": 144.9150227,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w384644234",
+   "name": "JL Murphy Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8330757,
+   "lon": 144.9292749,
+   "tags": {
+    "website": "https://www.portphillip.vic.gov.au/explore-the-city/beaches-parks-and-playgrounds/find-parks-and-playgrounds/jl-murphy-reserve",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w444987651",
+   "name": "Buckingham Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8377907,
+   "lon": 144.9173859,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w907971763",
+   "name": "Local Rules",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8363501,
+   "lon": 144.9197063,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w907971764",
+   "name": "The Avenue Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8367035,
+   "lon": 144.9197517,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w948577173",
+   "name": "Morley Mews Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8391122,
+   "lon": 144.9330847,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1006008861",
+   "name": "Hibernian Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8362944,
+   "lon": 144.9358731,
+   "tags": {
+    "opening_hours": "\"it's closed\"",
+    "addr:housenumber": "358",
+    "addr:street": "Graham Street",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w1019024053",
+   "name": "Morris Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8366834,
+   "lon": 144.9352683,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1019024055",
+   "name": "Byrne Street Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8371447,
+   "lon": 144.9332379,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1019024063",
+   "name": "Australis Circuit Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8382245,
+   "lon": 144.9342769,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1168962132",
+   "name": "Westport Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8396003,
+   "lon": 144.9210686,
+   "tags": {
+    "leisure": "park"
+   }
+  }
+ ]
+}

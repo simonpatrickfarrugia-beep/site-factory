@@ -1,0 +1,844 @@
+{
+ "town": "Swan Hill",
+ "slug": "swan-hill",
+ "centre": [
+  -35.3390784,
+  143.5588436
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-10-20T13:55:45+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n462236816",
+   "name": "Java Spice",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -35.3346732,
+   "lon": 143.5572215,
+   "tags": {
+    "website": "https://javaspice.com.au/",
+    "cuisine": "thai",
+    "wheelchair": "yes",
+    "addr:housenumber": "17",
+    "addr:street": "Beveridge Street",
+    "addr:postcode": "3585",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2071057012",
+   "name": "Spoons Riverside",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -35.348782,
+   "lon": 143.5650269,
+   "tags": {
+    "contact:website": "http://www.spoonsriverside.com.au/",
+    "contact:phone": "+61 3 5032 2601",
+    "addr:housenumber": "125",
+    "addr:street": "Monash Drive",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2506727484",
+   "name": "Australian Settlers Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -35.3440593,
+   "lon": 143.5606819,
+   "tags": {
+    "addr:housenumber": "354",
+    "addr:street": "Campbell Street",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n2506727488",
+   "name": "Burke and Wills Motor Inn",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -35.3443906,
+   "lon": 143.5608207,
+   "tags": {
+    "brand": "Best Western",
+    "addr:housenumber": "370",
+    "addr:street": "Campbell Street",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n2506727492",
+   "name": "Comfort Inn Campbell",
+   "group": "stay",
+   "type": "motel",
+   "lat": -35.3454269,
+   "lon": 143.5610514,
+   "tags": {
+    "addr:housenumber": "396",
+    "addr:street": "Campbell Street",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n2506727517",
+   "name": "Paruna Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -35.3446616,
+   "lon": 143.5608597,
+   "tags": {
+    "addr:housenumber": "390",
+    "addr:street": "Campbell Street",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n2930986024",
+   "name": "Lady Augusta",
+   "group": "stay",
+   "type": "motel",
+   "lat": -35.3449953,
+   "lon": 143.5614427,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n2930986025",
+   "name": "Quo vadis",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -35.3416175,
+   "lon": 143.5604899,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4744269654",
+   "name": "Swan Hill Waterslide",
+   "group": "do",
+   "type": "water_park",
+   "lat": -35.3383656,
+   "lon": 143.5620751,
+   "tags": {
+    "leisure": "water_park"
+   }
+  },
+  {
+   "id": "n4744287214",
+   "name": "Giant Murray Cod",
+   "group": "do",
+   "type": "attraction",
+   "lat": -35.3412588,
+   "lon": 143.5619165,
+   "tags": {
+    "addr:housenumber": "139",
+    "addr:street": "Curlewis Street",
+    "addr:suburb": "Swan Hill",
+    "addr:postcode": "3585",
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n4921925221",
+   "name": "Federal Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -35.3369997,
+   "lon": 143.5645071,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n5357826321",
+   "name": "Niko Niko",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -35.3393053,
+   "lon": 143.5594129,
+   "tags": {
+    "opening_hours": "Mo-Su 11:30-14:30, 17:30-20:30",
+    "cuisine": "japanese;korean",
+    "addr:housenumber": "174",
+    "addr:street": "Campbell Street",
+    "addr:postcode": "3585",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5874532285",
+   "name": "Murray Downs Homestead",
+   "group": "do",
+   "type": "attraction",
+   "lat": -35.3415494,
+   "lon": 143.5852757,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n6053726866",
+   "name": "The Mira",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -35.3409371,
+   "lon": 143.5602856,
+   "tags": {
+    "addr:housenumber": "223-225",
+    "addr:street": "Campbell Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6298872056",
+   "name": "Barrels",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -35.3378257,
+   "lon": 143.5594425,
+   "tags": {
+    "cuisine": "pizza",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6298884694",
+   "name": "Heartbeat Of The Murray Laser Spectacular Viewing Area",
+   "group": "do",
+   "type": "attraction",
+   "lat": -35.3470384,
+   "lon": 143.5654807,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n6300942055",
+   "name": "Swan Hill Club",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -35.3390036,
+   "lon": 143.5604937,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6300961369",
+   "name": "Jacaranda Motel & Holiday Units",
+   "group": "stay",
+   "type": "motel",
+   "lat": -35.3457116,
+   "lon": 143.5624619,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n6300968280",
+   "name": "Ibis Styles Swan Hill",
+   "group": "stay",
+   "type": "motel",
+   "lat": -35.3463298,
+   "lon": 143.5619223,
+   "tags": {
+    "brand": "Ibis Styles",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n6300973786",
+   "name": "Pioneer Station Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -35.347433,
+   "lon": 143.562202,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n6300974824",
+   "name": "Murray River Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -35.3532969,
+   "lon": 143.5624503,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n6300974979",
+   "name": "Sun Centre Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -35.3543065,
+   "lon": 143.562726,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n6301024786",
+   "name": "Moreton Bay Fig Tree (The Burke & Wills Tree)",
+   "group": "do",
+   "type": "attraction",
+   "lat": -35.3369771,
+   "lon": 143.5602651,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n9796132325",
+   "name": "Lazy River Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -35.323028,
+   "lon": 143.5521939,
+   "tags": {
+    "website": "http://www.lazyrivermotorinn.com.au/",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n12082553704",
+   "name": "Commercial Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -35.337059,
+   "lon": 143.5592644,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n12120707704",
+   "name": "Logan Street Corner Store",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -35.3374228,
+   "lon": 143.5454041,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12137417668",
+   "name": "Tan's Tuckerbox",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -35.335293,
+   "lon": 143.5516038,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12420882455",
+   "name": "Kam's Chinese Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -35.34251,
+   "lon": 143.5602813,
+   "tags": {
+    "phone": "+61 3 5033 0168",
+    "opening_hours": "Mo-Su 11:30-14:30,17:00-21:00",
+    "cuisine": "chinese",
+    "addr:housenumber": "302-304",
+    "addr:street": "Campbell Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12420882464",
+   "name": "Royal Indian Club",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -35.3420894,
+   "lon": 143.5601638,
+   "tags": {
+    "phone": "+61 3 5033 0405",
+    "opening_hours": "Tu-Su 11:00-21:00; Mo closed",
+    "cuisine": "indian",
+    "addr:housenumber": "284",
+    "addr:street": "Campbell Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12420882505",
+   "name": "Princess of Ming",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -35.3410314,
+   "lon": 143.5603104,
+   "tags": {
+    "phone": "+61 3 5032 4092",
+    "opening_hours": "Mo-Sa 11:30-14:30,17:00-21:00; Su 17:00-21:00",
+    "cuisine": "chinese",
+    "addr:housenumber": "227",
+    "addr:street": "Campbell Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12420883151",
+   "name": "Boo's Place",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -35.3403944,
+   "lon": 143.5609351,
+   "tags": {
+    "addr:housenumber": "12",
+    "addr:street": "McCrae Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12708684305",
+   "name": "Bowser Bean",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -35.3468105,
+   "lon": 143.5614518,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13279093787",
+   "name": "Cafe 202",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -35.34012,
+   "lon": 143.5586058,
+   "tags": {
+    "website": "https://www.cafe202.com.au/",
+    "phone": "+61 3 5032 1200",
+    "addr:housenumber": "187",
+    "addr:street": "Beveridge Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13288171251",
+   "name": "Arc Espresso",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -35.3417075,
+   "lon": 143.5600876,
+   "tags": {
+    "website": "https://www.arcespresso.com.au/",
+    "opening_hours": "Mo-Fr 06:00-15:00; Sa-Su 07:00-15:00",
+    "addr:housenumber": "264",
+    "addr:street": "Campbell Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13288202616",
+   "name": "Jilarty Gelato Bar & Café",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -35.3412019,
+   "lon": 143.5603552,
+   "tags": {
+    "opening_hours": "Mo-Fr 06:00-17:00; Sa 08:00-16:00; Su 09:00-16:00",
+    "addr:housenumber": "233",
+    "addr:street": "Campbell Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13288228381",
+   "name": "Tea Time",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -35.3413109,
+   "lon": 143.5603855,
+   "tags": {
+    "addr:housenumber": "239",
+    "addr:street": "Campbell Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w38909887",
+   "name": "Michael J. Holmes Park",
+   "group": "do",
+   "type": "park",
+   "lat": -35.3512951,
+   "lon": 143.5642265,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w193420478",
+   "name": "Guastalegname Park",
+   "group": "do",
+   "type": "park",
+   "lat": -35.3586303,
+   "lon": 143.5580038,
+   "tags": {
+    "wikidata": "Q21970256",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w193458068",
+   "name": "George Lay Park",
+   "group": "do",
+   "type": "park",
+   "lat": -35.3342217,
+   "lon": 143.5459331,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w193458235",
+   "name": "Apex Park",
+   "group": "do",
+   "type": "park",
+   "lat": -35.3423356,
+   "lon": 143.5461095,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w194423243",
+   "name": "Mundarra Park",
+   "group": "do",
+   "type": "park",
+   "lat": -35.3318467,
+   "lon": 143.5513253,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w194428238",
+   "name": "Jaycee Park",
+   "group": "do",
+   "type": "park",
+   "lat": -35.3513565,
+   "lon": 143.5465204,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w194428496",
+   "name": "Wilhaven Park",
+   "group": "do",
+   "type": "park",
+   "lat": -35.3296236,
+   "lon": 143.547418,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w194429184",
+   "name": "Norton Park",
+   "group": "do",
+   "type": "park",
+   "lat": -35.3509664,
+   "lon": 143.5502231,
+   "tags": {
+    "wikidata": "Q21971112",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w194612403",
+   "name": "Slater Park",
+   "group": "do",
+   "type": "park",
+   "lat": -35.3395753,
+   "lon": 143.549749,
+   "tags": {
+    "wikidata": "Q21971038",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w194613206",
+   "name": "Sharam Park",
+   "group": "do",
+   "type": "park",
+   "lat": -35.3367129,
+   "lon": 143.5396528,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w194729992",
+   "name": "Adams Park",
+   "group": "do",
+   "type": "park",
+   "lat": -35.3287137,
+   "lon": 143.5579283,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w194730224",
+   "name": "Barry Steggall Park",
+   "group": "do",
+   "type": "park",
+   "lat": -35.3393235,
+   "lon": 143.5368714,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w194872720",
+   "name": "Swan Hill Holiday Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -35.3654877,
+   "lon": 143.5608172,
+   "tags": {
+    "website": "https://www.swanhillholidaypark.com.au/",
+    "phone": "+61 3 5032 4112",
+    "addr:housenumber": "5587",
+    "addr:street": "Murray Valley Highway",
+    "addr:suburb": "Swan Hill",
+    "addr:postcode": "3585",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w196809011",
+   "name": "Swan Hill Pioneer Settlement",
+   "group": "do",
+   "type": "theme_park",
+   "lat": -35.347413,
+   "lon": 143.5648973,
+   "tags": {
+    "contact:website": "http://www.pioneersettlement.com.au/",
+    "contact:phone": "+61 3 5036 2410",
+    "wikidata": "Q53889787",
+    "wikipedia": "en:Pioneer Settlement",
+    "tourism": "theme_park"
+   }
+  },
+  {
+   "id": "w208053788",
+   "name": "BIG4 Riverside Swan Hill",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -35.342944,
+   "lon": 143.5645606,
+   "tags": {
+    "website": "https://www.big4riversideswanhill.com.au/",
+    "phone": "+61 3 5032 1494",
+    "internet_access": "wlan",
+    "brand": "Big 4 Holiday Parks",
+    "addr:housenumber": "45",
+    "addr:street": "Monash Drive",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w225772455",
+   "name": "James Belsar Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -35.334199,
+   "lon": 143.5628551,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w225772526",
+   "name": "Feldtmann Park",
+   "group": "do",
+   "type": "park",
+   "lat": -35.3341448,
+   "lon": 143.5602531,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w225916709",
+   "name": "Swan Hill Regional Art Gallery",
+   "group": "do",
+   "type": "gallery",
+   "lat": -35.3493123,
+   "lon": 143.5647866,
+   "tags": {
+    "contact:website": "https://www.swanhillregionalartgallery.com.au/",
+    "contact:phone": "+61 3 5036 2430",
+    "wikidata": "Q17026874",
+    "wikipedia": "en:Swan Hill Regional Art Gallery",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "w264244160",
+   "name": "Gillian Day Park",
+   "group": "do",
+   "type": "park",
+   "lat": -35.3384712,
+   "lon": 143.5306223,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w455880882",
+   "name": "Swan Hill City Golf and Bowls Club",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -35.3549739,
+   "lon": 143.558746,
+   "tags": {
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w480576174",
+   "name": "Riverside Park",
+   "group": "do",
+   "type": "park",
+   "lat": -35.3400338,
+   "lon": 143.5634344,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w480576530",
+   "name": "Greenham Park",
+   "group": "do",
+   "type": "park",
+   "lat": -35.3396854,
+   "lon": 143.529924,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w480577364",
+   "name": "Swan Hill Rotary Park",
+   "group": "do",
+   "type": "park",
+   "lat": -35.3309295,
+   "lon": 143.563414,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w481498284",
+   "name": "Jane Eliza Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -35.3418134,
+   "lon": 143.5610775,
+   "tags": {
+    "website": "https://www.janeeliza.com.au/",
+    "addr:housenumber": "263",
+    "addr:street": "Campbell Street",
+    "addr:suburb": "Swan Hill",
+    "addr:postcode": "3585",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w643084858",
+   "name": "Joe Crowe Park",
+   "group": "do",
+   "type": "park",
+   "lat": -35.3457504,
+   "lon": 143.5592197,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1303224260",
+   "name": "Cafe on Karinie",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -35.3264333,
+   "lon": 143.5491102,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w1313771092",
+   "name": "Palaroo Park",
+   "group": "do",
+   "type": "park",
+   "lat": -35.3289476,
+   "lon": 143.5618127,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1334954924",
+   "name": "GEM Paddle Boat",
+   "group": "do",
+   "type": "attraction",
+   "lat": -35.3487045,
+   "lon": 143.5645695,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "r5539963",
+   "name": "Proposed Murray River Park (part)",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -35.1221416,
+   "lon": 144.3566925,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r7115294",
+   "name": "River Murray Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -35.2318708,
+   "lon": 144.9177166,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r14219889",
+   "name": "Big 4 Holiday Park Swan Hill",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -35.324051,
+   "lon": 143.5532293,
+   "tags": {
+    "website": "https://www.big4.com.au/caravan-parks/vic/murray/swan-hill-holiday-park",
+    "brand": "Big 4 Holiday Parks",
+    "tourism": "caravan_site"
+   }
+  }
+ ]
+}

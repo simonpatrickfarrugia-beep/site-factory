@@ -624,7 +624,10 @@
    "eat": 12100
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null,
+  "probe": {
+   "at": "2026-10-20T14:09:56+00:00",
+   "error": "Overpass unavailable"
+  },
   "published": false
  },
  {
@@ -755,7 +758,10 @@
    "eat": 9900
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null,
+  "probe": {
+   "at": "2026-10-20T14:19:36+00:00",
+   "error": "Overpass unavailable"
+  },
   "published": false
  },
  {
@@ -770,8 +776,20 @@
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
   "probe": {
-   "at": "2026-10-20T12:51:48+00:00",
-   "error": "Overpass unavailable"
+   "at": "2026-10-20T13:40:42+00:00",
+   "radiusM": 4000,
+   "centre": [
+    -36.3831633,
+    145.3988874
+   ],
+   "counts": {
+    "stay": 19,
+    "eat": 25,
+    "do": 28
+   },
+   "withWebsite": 13,
+   "withHours": 2,
+   "total": 72
   },
   "published": false
  },
@@ -864,7 +882,22 @@
    "eat": 8100
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null,
+  "probe": {
+   "at": "2026-10-20T14:21:22+00:00",
+   "radiusM": 1500,
+   "centre": [
+    -37.7664715,
+    144.9613103
+   ],
+   "counts": {
+    "stay": 4,
+    "eat": 263,
+    "do": 45
+   },
+   "withWebsite": 162,
+   "withHours": 113,
+   "total": 312
+  },
   "published": false
  },
  {
@@ -1009,7 +1042,22 @@
    "eat": 6600
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null,
+  "probe": {
+   "at": "2026-10-20T14:26:43+00:00",
+   "radiusM": 1500,
+   "centre": [
+    -37.8611788,
+    144.8898569
+   ],
+   "counts": {
+    "stay": 4,
+    "eat": 44,
+    "do": 26
+   },
+   "withWebsite": 26,
+   "withHours": 20,
+   "total": 74
+  },
   "published": false
  },
  {
@@ -1024,7 +1072,7 @@
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
   "probe": {
-   "at": "2026-10-20T13:03:38+00:00",
+   "at": "2026-10-20T13:50:22+00:00",
    "error": "Overpass unavailable"
   },
   "published": false
@@ -1079,7 +1127,22 @@
    "eat": 5400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null,
+  "probe": {
+   "at": "2026-10-20T14:28:00+00:00",
+   "radiusM": 1500,
+   "centre": [
+    -37.7981339,
+    144.897345
+   ],
+   "counts": {
+    "stay": 3,
+    "eat": 158,
+    "do": 48
+   },
+   "withWebsite": 36,
+   "withHours": 41,
+   "total": 209
+  },
   "published": false
  },
  {
@@ -1186,8 +1249,20 @@
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
   "probe": {
-   "at": "2026-10-20T13:20:49+00:00",
-   "error": "Overpass unavailable"
+   "at": "2026-10-20T13:55:45+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -35.3390784,
+    143.5588436
+   ],
+   "counts": {
+    "stay": 15,
+    "eat": 21,
+    "do": 31
+   },
+   "withWebsite": 11,
+   "withHours": 6,
+   "total": 67
   },
   "published": false
  },
@@ -1202,7 +1277,10 @@
    "eat": 3600
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null,
+  "probe": {
+   "at": "2026-10-20T14:37:36+00:00",
+   "error": "Overpass unavailable"
+  },
   "published": false
  },
  {
@@ -1216,7 +1294,22 @@
    "eat": 4400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null,
+  "probe": {
+   "at": "2026-10-20T14:39:00+00:00",
+   "radiusM": 1500,
+   "centre": [
+    -37.8004228,
+    144.9684343
+   ],
+   "counts": {
+    "stay": 76,
+    "eat": 1007,
+    "do": 103
+   },
+   "withWebsite": 425,
+   "withHours": 313,
+   "total": 1186
+  },
   "published": false
  },
  {
@@ -1231,8 +1324,20 @@
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
   "probe": {
-   "at": "2026-10-20T13:30:54+00:00",
-   "error": "Overpass unavailable"
+   "at": "2026-10-20T13:57:02+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -36.8634985,
+    147.2815865
+   ],
+   "counts": {
+    "stay": 3,
+    "eat": 3,
+    "do": 4
+   },
+   "withWebsite": 5,
+   "withHours": 0,
+   "total": 10
   },
   "published": false
  },
@@ -1247,7 +1352,22 @@
    "eat": 4400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null,
+  "probe": {
+   "at": "2026-10-20T14:40:25+00:00",
+   "radiusM": 1500,
+   "centre": [
+    -37.8333613,
+    144.9219203
+   ],
+   "counts": {
+    "stay": 0,
+    "eat": 22,
+    "do": 16
+   },
+   "withWebsite": 5,
+   "withHours": 5,
+   "total": 38
+  },
   "published": false
  },
  {
@@ -1300,7 +1420,22 @@
    "eat": 2900
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null,
+  "probe": {
+   "at": "2026-10-20T14:49:45+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -38.3821684,
+    144.8099264
+   ],
+   "counts": {
+    "stay": 8,
+    "eat": 16,
+    "do": 18
+   },
+   "withWebsite": 2,
+   "withHours": 2,
+   "total": 42
+  },
   "published": false
  },
  {
@@ -1314,7 +1449,22 @@
    "eat": 4400
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null,
+  "probe": {
+   "at": "2026-10-20T14:44:24+00:00",
+   "radiusM": 1500,
+   "centre": [
+    -37.802104,
+    144.9881387
+   ],
+   "counts": {
+    "stay": 23,
+    "eat": 416,
+    "do": 84
+   },
+   "withWebsite": 240,
+   "withHours": 125,
+   "total": 523
+  },
   "published": false
  },
  {
