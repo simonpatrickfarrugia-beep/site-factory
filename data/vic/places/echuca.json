@@ -1,0 +1,827 @@
+{
+ "town": "Echuca",
+ "slug": "echuca",
+ "centre": [
+  -36.1281405,
+  144.7516955
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-10-20T12:41:13+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n1808394843",
+   "name": "Wharparilla Flora Reserve Rest Area",
+   "group": "stay",
+   "type": "camp_site",
+   "lat": -36.1222937,
+   "lon": 144.7191861,
+   "tags": {
+    "tourism": "camp_site"
+   }
+  },
+  {
+   "id": "n2708673657",
+   "name": "The Caledonian Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.1306296,
+   "lon": 144.7505122,
+   "tags": {
+    "website": "https://www.thecal.com.au/",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n2930971368",
+   "name": "Big River Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.1377124,
+   "lon": 144.750165,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n2930971369",
+   "name": "Henry's Bridge Hotel",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.1199394,
+   "lon": 144.7464091,
+   "tags": {
+    "website": "http://www.henrysbridgehotel.com.au/",
+    "phone": "+61 3 5480 1000",
+    "opening_hours": "Mo-Th 09:00-15:00; Fr 09:00-23:00; Sa 15:00-23:00; Su 09:00-16:00",
+    "wikidata": "Q55820561",
+    "addr:housenumber": "1",
+    "addr:street": "Hopwood Place",
+    "addr:suburb": "Echuca",
+    "addr:postcode": "3564",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2930971373",
+   "name": "Port of Echuca",
+   "group": "do",
+   "type": "museum",
+   "lat": -36.1208319,
+   "lon": 144.7470325,
+   "tags": {
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "n2930971375",
+   "name": "Riverboat Lodge Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.1260089,
+   "lon": 144.747762,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n2930971376",
+   "name": "Star Hotel",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.1207705,
+   "lon": 144.7467047,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2930971377",
+   "name": "Steampacket Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.1215307,
+   "lon": 144.746836,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n4610868590",
+   "name": "Roma",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.1260223,
+   "lon": 144.7488037,
+   "tags": {
+    "website": "https://www.romapizza.com.au/",
+    "phone": "+61 3 5482 1546",
+    "cuisine": "pizza",
+    "addr:housenumber": "191",
+    "addr:street": "Hare Street",
+    "addr:suburb": "Echuca",
+    "addr:postcode": "3564",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6378014486",
+   "name": "OPT Bar",
+   "group": "eat",
+   "type": "bar",
+   "lat": -36.1250121,
+   "lon": 144.7490655,
+   "tags": {
+    "website": "https://www.optbar.com.au/",
+    "opening_hours": "Sa 21:30-04:00",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "272",
+    "addr:street": "Hare Street",
+    "addr:suburb": "Echuca",
+    "addr:postcode": "3564",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n9863404538",
+   "name": "The Caledonian Hotel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.1305636,
+   "lon": 144.7508866,
+   "tags": {
+    "website": "https://www.thecal.com.au/",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n10692127809",
+   "name": "Shamrock Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.1206449,
+   "lon": 144.7458123,
+   "tags": {
+    "website": "https://shamrockhotel.com.au/",
+    "phone": "+61 3 5482 1036",
+    "addr:housenumber": "579",
+    "addr:street": "High Street",
+    "addr:suburb": "Echuca",
+    "addr:postcode": "3564",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n10695825505",
+   "name": "Odd Captain Cafe & Bar",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.1199238,
+   "lon": 144.7455531,
+   "tags": {
+    "phone": "+61 3 5480 1131",
+    "opening_hours": "Mo-Fr 06:30-15:00; Sa-Su 07:00-15:00",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "609",
+    "addr:street": "High Street",
+    "addr:suburb": "Echuca",
+    "addr:postcode": "3564",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n10695825506",
+   "name": "3 Galahs Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.1200954,
+   "lon": 144.7456874,
+   "tags": {
+    "opening_hours": "Mo-Fr 07:00-15:00",
+    "addr:housenumber": "601",
+    "addr:street": "High Street",
+    "addr:suburb": "Echuca",
+    "addr:postcode": "3564",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n10695839784",
+   "name": "The Wren Courtyard",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.1204439,
+   "lon": 144.7457883,
+   "tags": {
+    "phone": "+61 3 4400 7233",
+    "opening_hours": "Tu-Fr 07:00-15:00; Sa-Su 08:00-15:00",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "591",
+    "addr:street": "High Street",
+    "addr:suburb": "Echuca",
+    "addr:postcode": "3564",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n10695866611",
+   "name": "American Hotel Echuca",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.1241836,
+   "lon": 144.7483448,
+   "tags": {
+    "website": "https://www.americanhotelechuca.com.au/",
+    "phone": "+61 3 4416 3010",
+    "addr:housenumber": "239-249",
+    "addr:street": "Hare Street",
+    "addr:suburb": "Echuca",
+    "addr:postcode": "3564",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n10695913622",
+   "name": "Quest Echuca Apartment Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -36.1245521,
+   "lon": 144.7493382,
+   "tags": {
+    "website": "https://www.questapartments.com.au/properties/vic/echuca/quest-echuca",
+    "phone": "+61 3 5481 3900",
+    "brand": "Quest",
+    "addr:housenumber": "25-29",
+    "addr:street": "Heygarth Street",
+    "addr:suburb": "Echuca",
+    "addr:postcode": "3564",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n10695974349",
+   "name": "1895 The Royal",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.1262098,
+   "lon": 144.7487637,
+   "tags": {
+    "website": "https://www.1895theroyal.com.au/",
+    "phone": "+61 3 5480 7626",
+    "addr:housenumber": "183",
+    "addr:street": "Hare Street",
+    "addr:suburb": "Echuca",
+    "addr:postcode": "3564",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n10695974356",
+   "name": "Office 3564 Cafe & Wine Bar",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.12603,
+   "lon": 144.7492943,
+   "tags": {
+    "website": "https://www.cafe3564.com/",
+    "phone": "+61 3 5407 3241",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "252",
+    "addr:street": "Hare Street",
+    "addr:suburb": "Echuca",
+    "addr:postcode": "3564",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n10696029201",
+   "name": "Johnny & Lyle's",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.1275824,
+   "lon": 144.7476158,
+   "tags": {
+    "phone": "+61 3 5480 3113",
+    "opening_hours": "Mo-Fr 06:00-15:00; Sa-Su 07:00-15:00",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "433",
+    "addr:street": "High Street",
+    "addr:suburb": "Echuca",
+    "addr:postcode": "3564",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n10696044182",
+   "name": "The Mill Echuca",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.1300613,
+   "lon": 144.7514529,
+   "tags": {
+    "website": "https://www.themillechuca.com",
+    "phone": "+61 3 5480 1619",
+    "addr:housenumber": "2",
+    "addr:street": "Nish Street",
+    "addr:suburb": "Echuca",
+    "addr:postcode": "3564",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12415480253",
+   "name": "The Foundry Arts Space",
+   "group": "do",
+   "type": "gallery",
+   "lat": -36.1224644,
+   "lon": 144.7475745,
+   "tags": {
+    "website": "https://thefoundryartsspace.org.au/",
+    "addr:housenumber": "13-17",
+    "addr:street": "Murray Esplanade",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "n12415480787",
+   "name": "Opa",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.1232091,
+   "lon": 144.7470504,
+   "tags": {
+    "website": "https://www.opaechuca.com/",
+    "cuisine": "greek",
+    "addr:housenumber": "554",
+    "addr:street": "High Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12420670474",
+   "name": "Port of Echuca Discovery Centre",
+   "group": "do",
+   "type": "museum",
+   "lat": -36.1197085,
+   "lon": 144.7467136,
+   "tags": {
+    "website": "https://www.portofechuca.com.au/discovery-centre/",
+    "opening_hours": "Mo-Su 09:00-17:00",
+    "addr:housenumber": "74",
+    "addr:street": "Murray Esplanade",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "n12420670651",
+   "name": "Beekeeper's Table",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.1205268,
+   "lon": 144.7466333,
+   "tags": {
+    "website": "https://www.mydadshoney.com.au/beekeepers-table",
+    "addr:housenumber": "51-53",
+    "addr:street": "Murray Esplanade",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12420671765",
+   "name": "Essen",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.1238229,
+   "lon": 144.7472054,
+   "tags": {
+    "website": "https://www.essenfoodandwine.com.au/",
+    "addr:housenumber": "542",
+    "addr:street": "High Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12420672003",
+   "name": "Customs House Gallery",
+   "group": "do",
+   "type": "gallery",
+   "lat": -36.1211918,
+   "lon": 144.7468149,
+   "tags": {
+    "addr:housenumber": "2",
+    "addr:street": "Leslie Street",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "n12420672097",
+   "name": "Echuca Distillery",
+   "group": "eat",
+   "type": "bar",
+   "lat": -36.1219109,
+   "lon": 144.7461497,
+   "tags": {
+    "website": "https://echucadistillery.com.au/",
+    "addr:housenumber": "555",
+    "addr:street": "High Street",
+    "amenity": "bar",
+    "craft": "distillery"
+   }
+  },
+  {
+   "id": "n13120639483",
+   "name": "BP 24hr Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -36.1324906,
+   "lon": 144.7275716,
+   "tags": {
+    "cuisine": "burger;sandwich",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n13238383344",
+   "name": "Gypsy Bar",
+   "group": "eat",
+   "type": "bar",
+   "lat": -36.1210322,
+   "lon": 144.7465766,
+   "tags": {
+    "website": "https://gypsybar.com.au/",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n13238438575",
+   "name": "The Sweet Meadow",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -36.120348,
+   "lon": 144.7463409,
+   "tags": {
+    "website": "https://thesweetmeadow.com/",
+    "addr:housenumber": "640",
+    "addr:street": "High Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13238506062",
+   "name": "Echuca Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.1211188,
+   "lon": 144.7459701,
+   "tags": {
+    "website": "https://www.echucahotel.com.au/",
+    "addr:housenumber": "569",
+    "addr:street": "High Street",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n13909132289",
+   "name": "Clocktower Suites",
+   "group": "stay",
+   "type": "apartment",
+   "lat": -36.1260873,
+   "lon": 144.7493161,
+   "tags": {
+    "tourism": "apartment"
+   }
+  },
+  {
+   "id": "w255862392",
+   "name": "Murray River Holiday Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -36.114203,
+   "lon": 144.7545916,
+   "tags": {
+    "website": "https://www.murrayriverholidaypark.com.au/",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w255862579",
+   "name": "Moama Riverside Holiday and Tourist Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -36.1182608,
+   "lon": 144.7555719,
+   "tags": {
+    "website": "https://www.moamariverside.com.au/",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w351278701",
+   "name": "Hopwood Gardens",
+   "group": "do",
+   "type": "park",
+   "lat": -36.1194639,
+   "lon": 144.7459233,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w375884205",
+   "name": "The Georgian Motorlodge",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.132155,
+   "lon": 144.7485502,
+   "tags": {
+    "website": "https://www.georgianmotorlodge.com.au/",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w446942961",
+   "name": "Nirebo",
+   "group": "stay",
+   "type": "motel",
+   "lat": -36.1238716,
+   "lon": 144.7477499,
+   "tags": {
+    "website": "https://www.nirebo.com.au/",
+    "addr:housenumber": "542",
+    "addr:street": "High Street",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w462463212",
+   "name": "Merool on the Murray",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -36.1142321,
+   "lon": 144.730016,
+   "tags": {
+    "website": "https://tasmanholidayparks.com/au/caravan-parks/merool-on-the-murray",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w509768965",
+   "name": "Echuca East Recreation Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -36.1360356,
+   "lon": 144.7621482,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w510063134",
+   "name": "Alton Gardens",
+   "group": "do",
+   "type": "park",
+   "lat": -36.1292347,
+   "lon": 144.7491134,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w598667910",
+   "name": "Holden Museum",
+   "group": "do",
+   "type": "museum",
+   "lat": -36.1202318,
+   "lon": 144.7452013,
+   "tags": {
+    "website": "https://www.holdenmuseum.com.au/",
+    "phone": "+61 3 5480 2033",
+    "addr:housenumber": "7-11",
+    "addr:street": "Warren Street",
+    "addr:suburb": "Echuca",
+    "addr:postcode": "3564",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "w897338676",
+   "name": "Murray Glenn Lodge",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -36.1445366,
+   "lon": 144.7285781,
+   "tags": {
+    "contact:phone": "+61 407 775 672",
+    "addr:housenumber": "9",
+    "addr:street": "McSwain Road",
+    "addr:suburb": "Echuca",
+    "addr:postcode": "3564",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w1025386212",
+   "name": "Border Inn Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -36.113134,
+   "lon": 144.7565862,
+   "tags": {
+    "website": "https://www.borderinn.com.au/",
+    "phone": "+61 3 5480 9966",
+    "opening_hours": "Mo 08:00-23:00, Fr-Sa 08:00-01:00, Su 08:00-22:00",
+    "addr:housenumber": "19-21",
+    "addr:street": "Meninya Street",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w1069829193",
+   "name": "Rich River Tourist Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -36.1277484,
+   "lon": 144.7713572,
+   "tags": {
+    "website": "https://richrivertouristpark.com.au/",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w1073767692",
+   "name": "Echuca Lions Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.1395545,
+   "lon": 144.7400558,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1075455093",
+   "name": "Redgum Memorial Arch",
+   "group": "do",
+   "type": "attraction",
+   "lat": -36.1162657,
+   "lon": 144.7425948,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "w1149798981",
+   "name": "Piazza Area",
+   "group": "do",
+   "type": "park",
+   "lat": -36.1323467,
+   "lon": 144.7330228,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1232312620",
+   "name": "Mercure Port of Echuca",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -36.1257432,
+   "lon": 144.7467032,
+   "tags": {
+    "website": "https://all.accor.com/hotel/9177/index.en.shtml",
+    "phone": "+61 3 5482 5666",
+    "internet_access": "yes",
+    "brand": "Mercure",
+    "addr:housenumber": "465",
+    "addr:street": "High Street",
+    "addr:suburb": "Echuca",
+    "addr:postcode": "3564",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w1442767022",
+   "name": "River Country Inn",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -36.1071158,
+   "lon": 144.7526474,
+   "tags": {
+    "addr:housenumber": "79-81",
+    "addr:street": "Meninya Street",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w1442767450",
+   "name": "Madison Spa Resort Moama",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -36.1090796,
+   "lon": 144.7523537,
+   "tags": {
+    "website": "https://www.madisonspa.com.au/",
+    "phone": "+61 3 5482 3011",
+    "addr:housenumber": "80",
+    "addr:street": "Meninya Street",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "r1778325",
+   "name": "Aquatic Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -36.1232138,
+   "lon": 144.7509279,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "r5539963",
+   "name": "Proposed Murray River Park (part)",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -35.1221416,
+   "lon": 144.3566925,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r5836868",
+   "name": "Murray Valley Regional Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -35.5250401,
+   "lon": 145.0268607,
+   "tags": {
+    "website": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/Murray-Valley-Regional-Park",
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r13981247",
+   "name": "Victoria Park",
+   "group": "do",
+   "type": "park",
+   "lat": -36.114721,
+   "lon": 144.7357451,
+   "tags": {
+    "wikidata": "Q21971012",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "r14229617",
+   "name": "Maidens Inn Moama",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -36.1187706,
+   "lon": 144.774068,
+   "tags": {
+    "website": "https://www.discoveryholidayparks.com.au/caravan-parks/new-south-wales/murray-maidens-inn-moama/info#content",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "r14317600",
+   "name": "NRMA Echuca Holiday Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -36.1151324,
+   "lon": 144.7424284,
+   "tags": {
+    "website": "https://www.nrmaparksandresorts.com.au/echuca/",
+    "phone": "+61 3 5482 2157",
+    "internet_access": "wlan",
+    "addr:housenumber": "8",
+    "addr:street": "Crofton Street",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "r14320287",
+   "name": "Echuca Back Nine Golf Course",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -36.1329129,
+   "lon": 144.7412441,
+   "tags": {
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "r16328528",
+   "name": "River Murray Reserve (non-PV)",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -35.1480222,
+   "lon": 144.9668285,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}

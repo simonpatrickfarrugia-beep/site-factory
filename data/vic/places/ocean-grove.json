@@ -1,0 +1,520 @@
+{
+ "town": "Ocean Grove",
+ "slug": "ocean-grove",
+ "centre": [
+  -38.267045,
+  144.52487
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-10-20T13:11:09+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n789294466",
+   "name": "Ocean Grove Bowls Club",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.2664181,
+   "lon": 144.5165857,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2005938579",
+   "name": "Ocean Grove",
+   "group": "stay",
+   "type": "camp_site",
+   "lat": -38.2783736,
+   "lon": 144.5005905,
+   "tags": {
+    "tourism": "camp_site"
+   }
+  },
+  {
+   "id": "n2083866691",
+   "name": "The Mex",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.2569874,
+   "lon": 144.536079,
+   "tags": {
+    "cuisine": "mexican",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2708664234",
+   "name": "Ocean Grove Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -38.270119,
+   "lon": 144.549987,
+   "tags": {
+    "opening_hours": "Mo-Fr 12:00-22:00; Sa,Su 12:00-24:00",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n4314137439",
+   "name": "Ocean Grove Pizza and Pasta",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.2680945,
+   "lon": 144.523971,
+   "tags": {
+    "cuisine": "pizza",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6985968485",
+   "name": "Parade Espresso Bar",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.2668492,
+   "lon": 144.5227745,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n8292592763",
+   "name": "Kiosk",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.2724374,
+   "lon": 144.5147965,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n8340561050",
+   "name": "The Dunes Ocean Grove",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.2725327,
+   "lon": 144.5148522,
+   "tags": {
+    "website": "https://thedunesoceangrove.com/weddingsatthedunes",
+    "internet_access": "wlan",
+    "addr:housenumber": "30",
+    "addr:street": "Surf Beach Road",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11815972635",
+   "name": "Ming Terrace",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.2680563,
+   "lon": 144.5220063,
+   "tags": {
+    "website": "https://mingterrace.whoods.com.au",
+    "phone": "+61 3 5255 2207",
+    "opening_hours": "Tu-Su 12:00-14:00,17:00-21:00",
+    "cuisine": "chinese",
+    "addr:housenumber": "62",
+    "addr:street": "The Terrace",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11815972636",
+   "name": "King Koi Sushi Bar & Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.2680574,
+   "lon": 144.5221491,
+   "tags": {
+    "phone": "+61 3 4202 2273",
+    "cuisine": "japanese",
+    "addr:housenumber": "62",
+    "addr:street": "The Terrace",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11815972637",
+   "name": "The Dill",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.267994,
+   "lon": 144.5221857,
+   "tags": {
+    "website": "https://thedillseafood.com.au",
+    "phone": "+61 3 5251 2287",
+    "opening_hours": "Tu-Th 17:00-22:00; Fr,Sa 12:00-15:00,17:00-22:00; Su 12:00-15:00,17:00-21:00",
+    "cuisine": "seafood",
+    "addr:housenumber": "62",
+    "addr:street": "The Terrace",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11815972640",
+   "name": "The Covenant Wine Bar",
+   "group": "eat",
+   "type": "bar",
+   "lat": -38.2679919,
+   "lon": 144.5220559,
+   "tags": {
+    "website": "https://thecovenantwinebar.com.au",
+    "phone": "+61 3 5256 3590",
+    "opening_hours": "Th-Sa 16:00+; Su 15:00+",
+    "addr:housenumber": "62",
+    "addr:street": "The Terrace",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n12415170295",
+   "name": "Woodies Pizza on Madeley",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.2622117,
+   "lon": 144.5300191,
+   "tags": {
+    "cuisine": "pizza",
+    "addr:housenumber": "73",
+    "addr:street": "Madeley Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12879881963",
+   "name": "Betty Blue Coffee Van",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.2621155,
+   "lon": 144.5296603,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w41107786",
+   "name": "Kingston Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2560582,
+   "lon": 144.5390659,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w49090540",
+   "name": "Ocean Grove Park",
+   "group": "do",
+   "type": "attraction",
+   "lat": -38.2652529,
+   "lon": 144.5236378,
+   "tags": {
+    "wheelchair": "yes",
+    "tourism": "attraction",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w49090733",
+   "name": "Ocean Grove Memorial Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2650613,
+   "lon": 144.5299522,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w77967048",
+   "name": "Riverview Family Caravan Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -38.2703871,
+   "lon": 144.5114903,
+   "tags": {
+    "phone": "+61 3 5256 1600",
+    "addr:street": "Barwon Heads Road",
+    "addr:suburb": "Ocean Grove",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w77967050",
+   "name": "Lookout Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2705929,
+   "lon": 144.5227267,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w87848860",
+   "name": "Begola Wetlands",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2683107,
+   "lon": 144.5358586,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w87902201",
+   "name": "Oakdean Boulevard Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2513145,
+   "lon": 144.5502638,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w95911869",
+   "name": "Ocean Grove Nature Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.2459043,
+   "lon": 144.5284535,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w142104735",
+   "name": "Barwon Heads Community Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2730242,
+   "lon": 144.4924416,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w142107316",
+   "name": "Collendina Caravan Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -38.2714392,
+   "lon": 144.5566024,
+   "tags": {
+    "website": "https://hampshireholidays.com.au/parks/vic/collendina-caravan-park",
+    "internet_access": "no",
+    "addr:housenumber": "177",
+    "addr:street": "Bonnyvale Road",
+    "addr:suburb": "Ocean Grove",
+    "addr:postcode": "3226",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w158235395",
+   "name": "Seahaven Village",
+   "group": "stay",
+   "type": "motel",
+   "lat": -38.2751465,
+   "lon": 144.4918119,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w158472458",
+   "name": "Groove",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.2616706,
+   "lon": 144.5112601,
+   "tags": {
+    "opening_hours": "06:00-18:00",
+    "cuisine": "Takeaway,_Coffee,_Pies",
+    "addr:housenumber": "56",
+    "addr:street": "Wallington Road",
+    "addr:suburb": "Ocean Grove",
+    "addr:postcode": "3226",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w158472464",
+   "name": "Riverside Ocean Grove",
+   "group": "stay",
+   "type": "motel",
+   "lat": -38.2612849,
+   "lon": 144.5103293,
+   "tags": {
+    "website": "http://www.riversideoceangrove.com.au/",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w158472468",
+   "name": "Boat Ramp Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -38.2633922,
+   "lon": 144.5111432,
+   "tags": {
+    "website": "https://plus.google.com/104199556002793347136/about?gl=au&hl=en",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w158472469",
+   "name": "Ocean Grove Holiday Park",
+   "group": "stay",
+   "type": "motel",
+   "lat": -38.2596581,
+   "lon": 144.5096509,
+   "tags": {
+    "website": "http://www.oghp.com.au/",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w266340902",
+   "name": "Hello Birdie",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.2536421,
+   "lon": 144.5369452,
+   "tags": {
+    "outdoor_seating": "yes",
+    "addr:housenumber": "52",
+    "addr:street": "Grubb Road",
+    "addr:suburb": "Ocean Grove",
+    "addr:postcode": "3226",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w266346760",
+   "name": "Chang Noi Thai",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.2680444,
+   "lon": 144.5223496,
+   "tags": {
+    "website": "https://changnoithai.com.au",
+    "phone": "+61 3 4202 0229",
+    "opening_hours": "Tu-Su 17:30-21:00",
+    "cuisine": "thai",
+    "addr:housenumber": "64B",
+    "addr:street": "The Terrace",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w266346765",
+   "name": "The Driftwood Café",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.2680462,
+   "lon": 144.5225229,
+   "tags": {
+    "website": "https://thedriftwoodcafe.com.au",
+    "phone": "+61 3 5255 1832",
+    "opening_hours": "Mo-Su 07:30-15:45; Fr,Sa 07:30-15:45,17:30-20:00",
+    "addr:housenumber": "64D",
+    "addr:street": "The Terrace",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w305671720",
+   "name": "The Lookout",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2708963,
+   "lon": 144.5232061,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w319662949",
+   "name": "Ocean Grove Golf Course",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -38.2599871,
+   "lon": 144.5069529,
+   "tags": {
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w424047800",
+   "name": "The Mews",
+   "group": "do",
+   "type": "park",
+   "lat": -38.26858,
+   "lon": 144.4937132,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w976174644",
+   "name": "Arthur Powell Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2629216,
+   "lon": 144.5321925,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1390605521",
+   "name": "Blue Waters Lake Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2597762,
+   "lon": 144.515515,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "r9212148",
+   "name": "Lorne - Queenscliff Coastal Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.4248715,
+   "lon": 144.2744862,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r9212149",
+   "name": "Barwon Bluff Marine Sanctuary",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.2911481,
+   "lon": 144.50131,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r9212151",
+   "name": "Lake Connewarre Wildlife Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.2383663,
+   "lon": 144.4484807,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}

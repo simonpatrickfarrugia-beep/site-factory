@@ -1,0 +1,910 @@
+{
+ "town": "Castlemaine",
+ "slug": "castlemaine",
+ "centre": [
+  -37.0664778,
+  144.2200032
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-10-20T13:05:38+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n270424594",
+   "name": "Buda Historic Home and Garden",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.0583378,
+   "lon": 144.2239474,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n270424603",
+   "name": "Tandoori Cuizine",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0645715,
+   "lon": 144.2162886,
+   "tags": {
+    "cuisine": "indian",
+    "addr:housenumber": "16",
+    "addr:street": "Lyttleton Street",
+    "addr:postcode": "3450",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n270424604",
+   "name": "Cumberland Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.0645997,
+   "lon": 144.2167375,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n294087787",
+   "name": "Pannini",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0656116,
+   "lon": 144.2183312,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n318537522",
+   "name": "Bold Garden Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0743927,
+   "lon": 144.2386638,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n332791158",
+   "name": "Railway Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.0625593,
+   "lon": 144.2129482,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n4168483727",
+   "name": "Boomtown",
+   "group": "do",
+   "type": "winery",
+   "lat": -37.0564707,
+   "lon": 144.2138602,
+   "tags": {
+    "website": "https://www.boomtownwine.com.au/",
+    "phone": "+61 417 237 155",
+    "addr:housenumber": "9",
+    "addr:street": "Walker Street",
+    "craft": "winery"
+   }
+  },
+  {
+   "id": "n4168483728",
+   "name": "Das Kaffeehaus",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0562458,
+   "lon": 144.2136412,
+   "tags": {
+    "website": "https://coffeebasics.com/",
+    "phone": "+61 3 5470 6270",
+    "opening_hours": "Mo-Su 08:00-16:00",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "9",
+    "addr:street": "Walker Street",
+    "addr:suburb": "Castlemaine",
+    "addr:postcode": "3450",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n7579578465",
+   "name": "Forest Creek Gold Workings Heritage Walk",
+   "group": "do",
+   "type": "park",
+   "lat": -37.0757771,
+   "lon": 144.2401766,
+   "tags": {
+    "opening_hours": "24/7",
+    "description": "Forest Creek Gold Workings Heritage Walk start point.",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "n8318252859",
+   "name": "Lunchbox Sushi",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0656849,
+   "lon": 144.2188731,
+   "tags": {
+    "phone": "+61 484 625 339",
+    "opening_hours": "Tu-Fr 10:00-16:00",
+    "cuisine": "sushi",
+    "addr:housenumber": "85",
+    "addr:street": "Mostyn Street",
+    "addr:suburb": "Castlemaine",
+    "addr:postcode": "3450",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n8909335388",
+   "name": "The Bridge Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.0556395,
+   "lon": 144.2121528,
+   "tags": {
+    "website": "https://thebridgehotelcastlemaine.com/",
+    "phone": "+61 3 4406 6730",
+    "addr:housenumber": "21",
+    "addr:street": "Walker Street",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n9125031531",
+   "name": "Maine Foodstore",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0564952,
+   "lon": 144.2185694,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9231709243",
+   "name": "Northern Arts Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.0553045,
+   "lon": 144.218401,
+   "tags": {
+    "website": "https://northernartshotel.com.au/",
+    "phone": "+61 491 074 340",
+    "addr:housenumber": "359",
+    "addr:street": "Barker Street",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n9231729701",
+   "name": "Fig Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0629924,
+   "lon": 144.2164624,
+   "tags": {
+    "website": "http://figcastlemaine.com.au/",
+    "phone": "+61 3 5472 5311",
+    "addr:housenumber": "31",
+    "addr:street": "Templeton Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11634015899",
+   "name": "Anticlinal Fold",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.0650377,
+   "lon": 144.2229201,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n11699200332",
+   "name": "Wild Food + Wine",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0635212,
+   "lon": 144.2180808,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11699200334",
+   "name": "Saint Florian",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.063504,
+   "lon": 144.2179756,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11699200335",
+   "name": "Nira",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0633677,
+   "lon": 144.2169181,
+   "tags": {
+    "website": "https://www.instagram.com/nira.castlemaine/",
+    "opening_hours": "We-Sa 08:00-14:00",
+    "cuisine": "coffee_shop",
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11699205328",
+   "name": "Bella Fresca Pizzeria",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0636857,
+   "lon": 144.2169275,
+   "tags": {
+    "cuisine": "pizza",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11699205330",
+   "name": "Nem",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0648226,
+   "lon": 144.2171348,
+   "tags": {
+    "cuisine": "vietnamese",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11699205335",
+   "name": "Origini",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0637846,
+   "lon": 144.216911,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11699205341",
+   "name": "Castlemaine Noodle",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0636351,
+   "lon": 144.2169442,
+   "tags": {
+    "cuisine": "noodle",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11699205342",
+   "name": "Klua Sathorn",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0653059,
+   "lon": 144.2170523,
+   "tags": {
+    "cuisine": "thai",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11699205345",
+   "name": "Taste Of The Orient Yum Cha House",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0635901,
+   "lon": 144.2169605,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11699208638",
+   "name": "Castlemaine Colonial Motel and Apartments",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.0616572,
+   "lon": 144.2178299,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n11699208644",
+   "name": "New China Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0577477,
+   "lon": 144.2178831,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11699208654",
+   "name": "Blackbird",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0575593,
+   "lon": 144.2179531,
+   "tags": {
+    "opening_hours": "We-Su 07:00-15:00",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11699209589",
+   "name": "Castlemaine CASPA",
+   "group": "do",
+   "type": "gallery",
+   "lat": -37.0656321,
+   "lon": 144.2197648,
+   "tags": {
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "n11699209596",
+   "name": "Togs Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0648223,
+   "lon": 144.2186911,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11699233860",
+   "name": "The Dove Country Eats",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0609871,
+   "lon": 144.2200073,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11699271590",
+   "name": "Firebean Coffee",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0515551,
+   "lon": 144.2213327,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11735383821",
+   "name": "Love Shack Brewing",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.0665693,
+   "lon": 144.2194519,
+   "tags": {
+    "website": "https://loveshackbrewingco.beer/",
+    "opening_hours": "Su-Th 11:00-22:00; Fr-Sa 11:00-00:00",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "26",
+    "addr:street": "Hargraves Street",
+    "addr:suburb": "Castlemaine",
+    "addr:postcode": "3450",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n11735383827",
+   "name": "Tortoise Espresso",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0668429,
+   "lon": 144.2194282,
+   "tags": {
+    "addr:housenumber": "14",
+    "addr:street": "Hargraves Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11735383828",
+   "name": "Lola",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0662958,
+   "lon": 144.2195039,
+   "tags": {
+    "cuisine": "pizza",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11735383833",
+   "name": "The Royal Sultan",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0658146,
+   "lon": 144.2199775,
+   "tags": {
+    "website": "https://theroyalsultan.com.au",
+    "cuisine": "indian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11735383835",
+   "name": "A Table Bistro And Bar Á Vin",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0662199,
+   "lon": 144.2203344,
+   "tags": {
+    "website": "https://atablebistro.com",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11735383836",
+   "name": "Temperance House",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.0661935,
+   "lon": 144.2203256,
+   "tags": {
+    "website": "https://temperancehouse.com.au",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n11735383839",
+   "name": "SAFFS Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0661674,
+   "lon": 144.2202264,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11934078464",
+   "name": "Lazy Bones",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.062982,
+   "lon": 144.2164808,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12651710472",
+   "name": "Shedshaker Brewing",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.0568048,
+   "lon": 144.2147551,
+   "tags": {
+    "website": "https://shedshakerbrewing.com/",
+    "phone": "+61 487 860 060",
+    "opening_hours": "Tu-We 12:00-21:00; Th 12:00-22:00; Fr-Sa 12:00-23:00; Su 12:00-20:00",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "9",
+    "addr:street": "Walker Street",
+    "addr:suburb": "Castlemaine",
+    "addr:postcode": "3450",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n12740901493",
+   "name": "Frankie Espresso",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0566616,
+   "lon": 144.2146204,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13954997201",
+   "name": "Aitken‘s Corner",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0702085,
+   "lon": 144.2115086,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13955454928",
+   "name": "The Albion Motel Castlemaine",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.075003,
+   "lon": 144.2392735,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w26807306",
+   "name": "Charles Fleay Memorial Playground",
+   "group": "do",
+   "type": "park",
+   "lat": -37.0549457,
+   "lon": 144.2131455,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w26807369",
+   "name": "Castlemaine Botanic Garden",
+   "group": "do",
+   "type": "park",
+   "lat": -37.0520208,
+   "lon": 144.2154079,
+   "tags": {
+    "wikidata": "Q6451246",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w26807372",
+   "name": "BIG4 Castlemaine Gardens Holiday Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -37.0528526,
+   "lon": 144.2137867,
+   "tags": {
+    "website": "https://www.big4.com.au/caravan-parks/vic/goldfields/castlemaine-gardens-holiday-park",
+    "phone": "+61 3 5472 1125",
+    "wheelchair": "yes",
+    "addr:housenumber": "1",
+    "addr:street": "Doran Avenue",
+    "addr:suburb": "Castlemaine",
+    "addr:postcode": "3450",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w26808203",
+   "name": "Mount Alexander Golf Club",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -37.0555613,
+   "lon": 144.2291368,
+   "tags": {
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w29475217",
+   "name": "Victory Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.0662945,
+   "lon": 144.2172498,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w29475396",
+   "name": "Camp Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.0647887,
+   "lon": 144.2122824,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w31877509",
+   "name": "Morrissey Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.0607728,
+   "lon": 144.2075345,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w31877538",
+   "name": "West End Playground",
+   "group": "do",
+   "type": "park",
+   "lat": -37.061585,
+   "lon": 144.2064672,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w31878456",
+   "name": "McDonalds Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.065131,
+   "lon": 144.2040602,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w31878464",
+   "name": "Lawrence Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.0658763,
+   "lon": 144.1978788,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w31929425",
+   "name": "Western Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.0678769,
+   "lon": 144.2176728,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w31929741",
+   "name": "Norwood Hill Progress Association Recreation Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.0757296,
+   "lon": 144.2087396,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w31935467",
+   "name": "A.C. Sinclair Sanctuary",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.0767002,
+   "lon": 144.2170113,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w41889093",
+   "name": "Kaweka Nature Conservation Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.0533487,
+   "lon": 144.2231738,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w41892100",
+   "name": "Kalimna Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.0522905,
+   "lon": 144.2381727,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w46095234",
+   "name": "Kalimna Point",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.0635091,
+   "lon": 144.2267975,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w61956291",
+   "name": "Castlemaine Diggings National Heritage Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.0598832,
+   "lon": 144.2591419,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w246089118",
+   "name": "Old Castlemaine Gaol",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.0620599,
+   "lon": 144.2115396,
+   "tags": {
+    "website": "https://www.oldcastlemainegaol.com.au/",
+    "wikipedia": "en:Old Castlemaine Gaol",
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "w292154739",
+   "name": "Castle Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.06815,
+   "lon": 144.223642,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w292383005",
+   "name": "Lindsay Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.0824791,
+   "lon": 144.2031422,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w315282073",
+   "name": "Naam Pla",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0662334,
+   "lon": 144.2195434,
+   "tags": {
+    "wheelchair": "limited",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w315282081",
+   "name": "Gaia's Goodness",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0657523,
+   "lon": 144.2198063,
+   "tags": {
+    "wheelchair": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w315282083",
+   "name": "Kebabs",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0657144,
+   "lon": 144.2199905,
+   "tags": {
+    "cuisine": "kebab",
+    "wheelchair": "limited",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w315282090",
+   "name": "Hero",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.0669318,
+   "lon": 144.2195846,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w666839457",
+   "name": "Castlemaine H80 Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.0724454,
+   "lon": 144.1918322,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w666839516",
+   "name": "Castlemaine H84 Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.0563045,
+   "lon": 144.2253644,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w666847609",
+   "name": "Diamond Gully H8A Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.0765361,
+   "lon": 144.1935718,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w973239618",
+   "name": "The Green Folly Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0723387,
+   "lon": 144.2361068,
+   "tags": {
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w1531182124",
+   "name": "The Albion Castlemaine",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0747493,
+   "lon": 144.2393634,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "r9269330",
+   "name": "Clinkers Hill Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.0802686,
+   "lon": 144.2211395,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r17100713",
+   "name": "Walmer State Forest",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.0325301,
+   "lon": 144.205647,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}
