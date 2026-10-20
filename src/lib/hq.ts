@@ -47,6 +47,7 @@ export function hqProps() {
   const places = read<any[]>('data/vic/places.json', []);
   const content = read<any>('data/vic/content.json', { loops: [] });
   const niches = read<any[]>('hq/niches.json', []);
+  const catalog = read<any>('hq/affiliate-programs.json', { programs: [] });
   const count = (xs: any[], f: (x: any) => boolean) => xs.filter(f).length;
   const newest = movies.map((m) => m.created).sort().pop();
   const engines = [
@@ -79,6 +80,13 @@ export function hqProps() {
       .filter((x: any) => x.status === 'scored' && x.score)
       .map((x: any) => ({ idea: x.idea, score: x.score.overall, market: x.location ?? 'United States' }))
       .sort((a: any, b: any) => b.score - a.score),
+    moneyMap: niches
+      .filter((x: any) => x.status === 'scored' && x.money)
+      .map((x: any) => ({ idea: x.idea, market: x.location ?? 'United States', low: x.money.revenueUsd[0], mid: x.money.revenueUsd[1], high: x.money.revenueUsd[2], perSale: x.money.bestPerSaleUsd }))
+      .sort((a: any, b: any) => b.mid - a.mid),
+    programs: (catalog.programs ?? [])
+      .map((pr: any) => ({ name: pr.name, commission: pr.commission, approval: pr.approval, requirements: pr.requirements, status: pr.status, verified: !!pr.verified, markets: pr.markets.join(', ') }))
+      .sort((a: any, b: any) => ['approved', 'applying', 'not applied'].indexOf(a.status) - ['approved', 'applying', 'not applied'].indexOf(b.status)),
     builtAt: new Date().toISOString(),
   };
 }

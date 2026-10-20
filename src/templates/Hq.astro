@@ -13,6 +13,8 @@ interface Props {
   engines: { name: string; lines: string[] }[];
   finance: { revenue: { month: string; source: string; amount: number }[]; costs: { month: string; item: string; amount: number; kind: string }[]; monthlyRunning: { item: string; amount: number }[] };
   niches: { idea: string; score: number; market: string }[];
+  moneyMap?: { idea: string; market: string; low: number; mid: number; high: number; perSale: number }[];
+  programs?: { name: string; commission: string; approval: string; requirements: string; status: string; verified: boolean; markets: string }[];
   builtAt: string;
 }
 const p = Astro.props;
@@ -138,6 +140,42 @@ const live = p.nodes.filter((x) => x.status === 'live').length;
     </div>
   </section>
 
+  {(p.moneyMap ?? []).length > 0 && (
+    <section class="panel">
+      <h2>Money map</h2>
+      <p class="muted">Estimated revenue per month once a site ranks (US$, low · <b>mid</b> · high). For ranking ideas, not a forecast. Replaced by our own measured rates as the sites earn.</p>
+      <table>
+        <tbody>
+          {p.moneyMap!.map((m) => (
+            <tr><td>{m.idea} <small>{m.market}</small></td><td class="num">${n(m.low)} · <b>${n(m.mid)}</b> · ${n(m.high)}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  )}
+
+  {(p.programs ?? []).length > 0 && (
+    <section class="panel">
+      <h2>Affiliate programmes</h2>
+      <p class="muted">What exists, what it pays and what it takes to qualify. "check" = terms not yet verified.</p>
+      <div class="scroll">
+        <table class="programs">
+          <thead><tr><th>Programme</th><th>Pays</th><th>To qualify</th><th>Status</th></tr></thead>
+          <tbody>
+            {p.programs!.map((pr) => (
+              <tr>
+                <td>{pr.name}{!pr.verified && <small> (check)</small>}<br /><small>{pr.markets} · {pr.approval} approval</small></td>
+                <td>{pr.commission}</td>
+                <td>{pr.requirements}</td>
+                <td><span class={`st st--${pr.status.replace(/\s+/g, '-')}`}>{pr.status}</span></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
+
   {p.niches.length > 0 && (
     <section class="panel">
       <h2>Idea scores</h2>
@@ -201,6 +239,13 @@ const live = p.nodes.filter((x) => x.status === 'live').length;
   .num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
   .sub { font-size: 1rem; margin: var(--space-3) 0 var(--space-2); }
   .muted { color: var(--muted); }
+  .scroll { overflow-x: auto; }
+  .programs { min-width: 640px; }
+  .programs th { text-align: left; font-size: 0.8rem; color: var(--muted); font-weight: 600; padding-bottom: 0.3rem; }
+  .programs td { padding-right: 0.8rem; }
+  .st { display: inline-block; font-size: 0.75rem; font-weight: 700; border-radius: 999px; padding: 0.1rem 0.5rem; background: var(--line); white-space: nowrap; }
+  .st--approved { background: #7fd49b; color: var(--ink); }
+  .st--applying { background: var(--color-accent); color: var(--ink); }
   .niches { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.35rem; }
   .niches li { position: relative; isolation: isolate; padding: 0.35rem 0.6rem; border-radius: 6px; overflow: hidden; }
   .niches .bar { position: absolute; inset: 0 auto 0 0; width: var(--w); background: color-mix(in srgb, var(--color-accent) 18%, transparent); z-index: -1; }
