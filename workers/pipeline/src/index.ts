@@ -61,6 +61,8 @@ export interface Env {
   COLLECTIONS_PER_RUN: string; // new collection pages per monthly run
   COLLECTION_MIN_FILMS: string;
   COLLECTION_MIN_VOLUME: string;
+  /** KV namespace holding the last runs of each job (read by the daily health check via /status). */
+  STATUS?: KVNamespace;
 }
 
 type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections' | 'stats' | 'niches' | 'towns' | 'keywords' | 'competition';
@@ -109,16 +111,21 @@ export default {
   async scheduled(event: ScheduledController, env: Env, ctx: ExecutionContext) {
     const job = jobFor(event.cron, new Date(event.scheduledTime));
     if (!job) return; // nothing scheduled in this slot today
-    ctx.waitUntil(run(job, env, false).then((out) => console.log(JSON.stringify({ ...out, report: undefined }))));
+    ctx.waitUntil(tracked(job, env, false, 'schedule').then((out) => console.log(JSON.stringify({ ...out, report: undefined }))).catch((e) => console.error(e)));
   },
 
   async fetch(req: Request, env: Env): Promise<Response> {
     const url = new URL(req.url);
     const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue|collections|stats|niches|competition|towns|keywords)$/);
+    if (url.pathname === '/status') {
+      if (!env.RUN_KEY || url.searchParams.get('key') !== env.RUN_KEY) return new Response('Forbidden\n', { status: 403 });
+      const status = (await env.STATUS?.get('runs', 'json')) ?? {};
+      return Response.json(status, { headers: { 'cache-control': 'no-store' } });
+    }
     if (!m) return new Response('Trailer pipeline. Runs on a schedule.\n', { status: url.pathname === '/' ? 200 : 404 });
     if (!env.RUN_KEY || url.searchParams.get('key') !== env.RUN_KEY) return new Response('Forbidden\n', { status: 403 });
     try {
-      const out = await run(m[1] as Job, env, url.searchParams.get('dry') === '1');
+      const out = await tracked(m[1] as Job, env, url.searchParams.get('dry') === '1', 'manual');
       // The demand report reads better as text than inside JSON.
       if (out.report && url.searchParams.get('format') !== 'json')
         return new Response(out.report, { headers: { 'content-type': 'text/markdown; charset=utf-8', 'cache-control': 'no-store' } });
@@ -128,6 +135,30 @@ export default {
     }
   },
 };
+
+/** One stored line per run: when, how it was started, ok or not, and a short summary. */
+interface RunRecord { at: string; via: 'schedule' | 'manual'; ok: boolean; summary: string }
+async function record(env: Env, job: Job, rec: RunRecord) {
+  if (!env.STATUS) return;
+  try {
+    const all = ((await env.STATUS.get('runs', 'json')) ?? {}) as Record<string, RunRecord[]>;
+    all[job] = [rec, ...(all[job] ?? [])].slice(0, 5);
+    await env.STATUS.put('runs', JSON.stringify(all));
+  } catch (e) {
+    console.error('status write failed', e);
+  }
+}
+async function tracked(job: Job, env: Env, dryRun: boolean, via: 'schedule' | 'manual') {
+  const at = new Date().toISOString();
+  try {
+    const out = await run(job, env, dryRun);
+    if (!dryRun) await record(env, job, { at, via, ok: true, summary: (out.log ?? []).join(' | ').slice(0, 300) });
+    return out;
+  } catch (e) {
+    if (!dryRun) await record(env, job, { at, via, ok: false, summary: (e as Error).message.slice(0, 300) });
+    throw e;
+  }
+}
 
 const NEEDS: Record<Job, (keyof Env)[]> = {
   intake: ['GITHUB_TOKEN'],
@@ -534,7 +565,7 @@ async function townsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boo
     dryRun,
     log,
   );
-  return { job: 'towns' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null };
+  return { job: 'towns' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report: undefined as string | undefined };
 }
 
 /**
@@ -553,7 +584,7 @@ async function keywordsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: 
     log.push(`${l.list}: ${rows.slice(0, 8).map((r) => `${r.k} ${r.v ?? '—'}`).join(', ')}`);
   }
   const commit = await save(repo, snap.sha, { [KEYWORDS_REPORT]: L.join('\n') }, `HQ: keyword research [skip ci]\n\n${log.join('\n')}`, dryRun, log);
-  return { job: 'keywords' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null };
+  return { job: 'keywords' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report: undefined as string | undefined };
 }
 
 /**

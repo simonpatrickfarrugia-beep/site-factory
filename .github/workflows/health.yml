@@ -1,0 +1,41 @@
+# Daily health check (09:40 Melbourne summer time). Problems open or update an issue labelled "health"
+# (GitHub emails the repo owner); the issue closes itself when everything passes again.
+name: health
+on:
+  schedule:
+    - cron: '40 22 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+  issues: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - name: Check
+        id: check
+        continue-on-error: true
+        env:
+          RUN_KEY: ${{ secrets.PIPELINE_RUN_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/health.py
+      - name: Report
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FAILED: ${{ steps.check.outcome == 'failure' }}
+        run: |
+          cat health.md >> "$GITHUB_STEP_SUMMARY"
+          gh label create health --color B60205 --description "Daily health check" 2>/dev/null || true
+          open=$(gh issue list --label health --state open --json number --jq '.[0].number // empty')
+          if [ "$FAILED" = "true" ]; then
+            if [ -n "$open" ]; then gh issue comment "$open" --body-file health.md
+            else gh issue create --title "Site Factory health check: something needs attention" --label health --body-file health.md; fi
+            echo "::error title=health::$(grep '^- ' health.md | head -5 | tr '\n' ' ')"
+            exit 1
+          elif [ -n "$open" ]; then
+            gh issue close "$open" --comment "All checks passing again ✅"
+          fi
+          echo "::notice title=health::All good"

@@ -6,6 +6,7 @@
   "name": "trailer-pipeline",
   "main": "src/index.ts",
   "compatibility_date": "2026-06-01",
+  "kv_namespaces": [{ "binding": "STATUS", "id": "55838af4d43d4ea8957763e45d68e78e" }],
   "triggers": {
     // Times are UTC. Keep in sync with INTAKE_CRON / DAILY_CRON in src/index.ts.
     "crons": [

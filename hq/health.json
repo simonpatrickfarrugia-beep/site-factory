@@ -1,0 +1,15 @@
+{
+  "_about": "Read by .github/workflows/health.yml every morning. Any problem opens (or updates) a GitHub issue labelled 'health'; it closes itself when all is well.",
+  "trackingSince": "2026-10-21",
+  "sites": [
+    "https://www.movietrailer.channel/",
+    "https://www.movietrailer.channel/sitemap.xml",
+    "https://victours.com.au/",
+    "https://victours.com.au/sitemap.xml"
+  ],
+  "jobsMaxAgeDays": { "intake": 1.5, "enrich": 2, "stats": 3, "catalogue": 8, "recheck": 33, "demand": 33, "collections": 33 },
+  "freshFiles": [
+    { "path": "data/trailers/stats.json", "field": "generatedAt", "maxAgeDays": 3 },
+    { "path": "data/vic/stats.json", "field": "generatedAt", "maxAgeDays": 3 }
+  ]
+}

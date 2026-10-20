@@ -9,6 +9,21 @@ on:
     branches: ['**']
   pull_request:
 jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: npm install --no-save --no-audit --no-fund typescript@5 @cloudflare/workers-types@4
+      - name: Typecheck the pipeline Worker
+        run: |
+          if ! npx tsc -p workers/pipeline > tsc.log; then
+            node -e "const l=require('fs').readFileSync('tsc.log','utf8').trim().split('\n').slice(0,30).join('\n');console.log('::error title=Pipeline typecheck::'+l.replace(/%/g,'%25').replace(/\r?\n/g,'%0A'))"
+            exit 1
+          fi
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 10
