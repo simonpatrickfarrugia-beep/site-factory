@@ -3,7 +3,7 @@ Vic Tours data probe: pulls free OpenStreetMap data (stay / eat / do) for the mo
 in data/vic/towns.json that haven't been probed yet, saves data/vic/places/<slug>.json and records
 coverage counts on each town. Data © OpenStreetMap contributors (ODbL): attribution required on the site.
 
-Usage: python3 scripts/vic/osm_probe.py [count]   (run by .github/workflows/vic-probe.yml)
+Usage: python3 scripts/vic/osm_probe.py [count] [slug,slug,...]   (run by .github/workflows/vic-probe.yml)
 """
 import json, os, sys, time, urllib.parse, urllib.request
 from datetime import datetime, timezone
@@ -121,9 +121,13 @@ def now():
 
 
 def main():
-    count = int(sys.argv[1]) if len(sys.argv) > 1 else 15
+    count = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].strip() else 15
+    only = [s.strip() for s in (sys.argv[2] if len(sys.argv) > 2 else '').split(',') if s.strip()]
     towns = json.load(open(TOWNS))
-    todo = [t for t in sorted(towns, key=lambda t: -(t.get('volume') or 0)) if not (t.get('probe') or {}).get('counts')][:count]
+    if only:  # probe these slugs (re-probing allowed), in the given order
+        todo = [t for s in only for t in towns if t['slug'] == s]
+    else:
+        todo = [t for t in sorted(towns, key=lambda t: -(t.get('volume') or 0)) if not (t.get('probe') or {}).get('counts')][:count]
     os.makedirs('data/vic/places', exist_ok=True)
     lines = []
     for t in todo:

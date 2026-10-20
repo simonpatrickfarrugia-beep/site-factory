@@ -6,6 +6,9 @@ on:
       count:
         description: How many places to probe
         default: '15'
+      slugs:
+        description: Optional comma-separated town slugs to probe instead (e.g. halls-gap,lorne)
+        default: ''
 permissions:
   contents: write
 jobs:
@@ -15,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Probe OpenStreetMap
-        run: python3 scripts/vic/osm_probe.py "${{ inputs.count }}"
+        run: python3 scripts/vic/osm_probe.py "${{ inputs.count }}" "${{ inputs.slugs }}"
       - name: Rebuild the site snapshot (published towns only)
         run: python3 scripts/vic/build_data.py
       - name: Commit
