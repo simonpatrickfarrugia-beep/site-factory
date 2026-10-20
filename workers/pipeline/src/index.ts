@@ -565,15 +565,16 @@ async function competitionJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRu
   const niches = JSON.parse(snap.files[NICHES] || '[]') as (Niche & { competition?: Competition | null })[];
   const login = env.DATAFORSEO_LOGIN!, password = env.DATAFORSEO_PASSWORD!;
   const code = Number(env.DATAFORSEO_LOCATION) || 2840;
-  const stale = (n: (typeof niches)[number]) => !n.competition || n.competition.v !== COMPETITION_VERSION || now.getTime() - Date.parse(n.competition.checkedAt) > 90 * 86400000;
+  const stale = (n: (typeof niches)[number]) => !n.competition || n.competition.v !== COMPETITION_VERSION || !n.competition.keywords.length || now.getTime() - Date.parse(n.competition.checkedAt) > 90 * 86400000;
   const todo = niches.filter((n) => n.status === 'scored' && n.score && stale(n)).slice(0, Number(env.COMPETITION_PER_RUN) || 4);
   const log: string[] = [];
   for (const n of todo) {
     try {
       const market = n.market?.code ?? code;
       const sc = n.score as unknown as { easyWins?: { keyword: string; volume: number }[]; topKeywords?: { keyword: string; volume: number }[] };
-      const pool = sc.easyWins?.length ? sc.easyWins : sc.topKeywords ?? [];
-      const kws = pickKeywords(pool, 6);
+      // Easy wins first; top up from the main keywords when easy wins are few (or all location-based).
+      const first = pickKeywords(sc.easyWins ?? [], 6);
+      const kws = first.length >= 4 ? first : pickKeywords([...first, ...(sc.topKeywords ?? [])], 6);
       let cost = 0;
       const serps: { keyword: string; volume: number; items: SerpResult[] }[] = [];
       for (const kw of kws) {
