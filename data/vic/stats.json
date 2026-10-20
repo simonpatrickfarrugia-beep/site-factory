@@ -1,13 +1,17 @@
 {
- "generatedAt": null,
- "period": null,
- "gscPeriod": null,
+ "generatedAt": "2026-10-20T11:30:07.948Z",
+ "period": {
+  "start": "2026-09-22",
+  "end": "2026-10-19"
+ },
+ "gscPeriod": {
+  "start": "2026-09-20",
+  "end": "2026-10-17"
+ },
  "sources": {
-  "ga4": false,
-  "gsc": false,
-  "notes": [
-   "No stats yet: the first daily refresh fills this in."
-  ]
+  "ga4": true,
+  "gsc": true,
+  "notes": []
  },
  "totals": {
   "views": 0,
