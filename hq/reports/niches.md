@@ -590,19 +590,21 @@ _Seeds: best restaurants daylesford, restaurants bright, restaurants lorne, best
 
 Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits × affiliate clicks × conversion × payout (average of the top 3 matching programmes), plus display ads. These numbers rank ideas against each other; they are not forecasts. They get replaced by our own measured rates as our sites earn.
 
+**Model:** Calibrated from 279 page views, 0 affiliate clicks and 0 reported sales (trailers): click rate 4.4% (assumed 5.0%), conversion 5.0% (assumed 5.0%). The assumption weighs as much as 2,000 views / 200 clicks, so real data takes over as it grows.
+
 | Idea | Market | Visits/mo (mid) | Est. revenue/mo (low · mid · high) | Avg payout per sale | Score |
 |---|---|---:|---|---:|---:|
-| Dog breeds | United States | 274,520 | $2,067 · **$19,872** · $97,711 | $24.67 | 75 |
-| US national parks and hiking trails | United States | 89,156 | $335 · **$2,955** · $13,828 | $9 | 74 |
-| Anime: where to watch and watch order | United States | 102,419 | $203 · **$1,509** · $6,254 | $1.7 | 70 |
-| TV shows: where to watch | United States | 27,719 | $111 · **$783** · $3,098 | $1.7 | 73 |
-| Video games: release dates and trailers | United States | 70,520 | $62 · **$488** · $2,111 | $1.17 | 62 |
-| Book series in reading order | United States | 24,564 | $23 · **$186** · $819 | $1.43 | 53 |
-| Victoria: where to stay by town | Australia | 3,903 | $17 · **$148** · $693 | $10.33 | 66 |
-| Movie soundtracks and film music | United States | 11,888 | $11 · **$90** · $396 | $1.43 | 53 |
-| Board games | United States | 11,226 | $11 · **$84** · $370 | $1.4 | 61 |
-| Victoria: things to do by town | Australia | 1,769 | $6 · **$55** · $267 | $10.33 | 60 |
-| Victoria: where to eat by town | Australia | 779 | $2 · **$21** · $101 | $9 | 51 |
+| Dog breeds | United States | 274,520 | $1,868 · **$17,799** · $87,100 | $24.67 | 75 |
+| US national parks and hiking trails | United States | 89,156 | $311 · **$2,709** · $12,571 | $9 | 74 |
+| Anime: where to watch and watch order | United States | 102,419 | $198 · **$1,455** · $5,981 | $1.7 | 70 |
+| TV shows: where to watch | United States | 27,719 | $110 · **$769** · $3,024 | $1.7 | 73 |
+| Video games: release dates and trailers | United States | 70,520 | $60 · **$463** · $1,982 | $1.17 | 62 |
+| Book series in reading order | United States | 24,564 | $22 · **$176** · $764 | $1.43 | 53 |
+| Victoria: where to stay by town | Australia | 3,903 | $16 · **$136** · $630 | $10.33 | 66 |
+| Movie soundtracks and film music | United States | 11,888 | $11 · **$85** · $370 | $1.43 | 53 |
+| Board games | United States | 11,226 | $10 · **$79** · $345 | $1.4 | 61 |
+| Victoria: things to do by town | Australia | 1,769 | $5 · **$49** · $239 | $10.33 | 60 |
+| Victoria: where to eat by town | Australia | 779 | $2 · **$18** · $90 | $9 | 51 |
 
 ## Programmes to consider, by idea
 
