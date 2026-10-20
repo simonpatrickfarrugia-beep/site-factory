@@ -30,6 +30,6 @@ export default defineBrand({
 
   data: { source: 'snapshot' },
   forms: [],
-  analytics: {},
+  analytics: { ga4Id: 'G-4FYB501KJ1' }, // same property as the old victours.com.au site
   payments: { enabled: false },
 });
