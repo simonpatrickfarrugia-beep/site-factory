@@ -36,6 +36,8 @@
     "GSC_SITE": "sc-domain:movietrailer.channel",
     // GA4 property the dashboard stats read (Admin > Property details). Service account is a Viewer on it.
     "GA4_PROPERTY": "553854970",
+    // Dashboards refreshed by the daily stats job (/hq/stats on each site). The service account needs Viewer on each GA4 property and a user on each Search Console property.
+    "STATS_SITES": "[{\"name\":\"trailers\",\"path\":\"data/trailers/stats.json\",\"ga4\":\"553854970\",\"gsc\":\"sc-domain:movietrailer.channel\"},{\"name\":\"vic\",\"path\":\"data/vic/stats.json\",\"ga4\":\"535259398\",\"gsc\":\"sc-domain:victours.com.au\"}]",
     // IndexNow is submitted by .github/workflows/indexnow.yml (Workers egress gets HTTP 429), so no INDEXNOW_KEY here.
     "SITE_HOST": "www.movietrailer.channel",
     // Catalogue builder (weekly): queue this many of the most-searched candidates per run.

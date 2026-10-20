@@ -13,7 +13,7 @@ import { enrich, intake, maxYear, recheck, type QueueItem, type Movie, type Resu
 import { commitFiles, readFiles, StaleError, type Repo } from './github';
 import { channelFeed, omdbLookup, omdbYearsForTitle, judgeNiche, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
 import { buildCollections, type Idea, type MovieCollection } from './collections';
-import { ga4Report, googleAccessToken, indexNow, searchAnalytics, youtubeSearch } from './google';
+import { ga4Report, googleAccessToken, searchAnalytics, youtubeSearch } from './google';
 import { buildStats } from './stats';
 import { nicheReport, scoreNiche, type Niche } from './niches';
 import { buildDemandReport } from './demand';
@@ -44,6 +44,7 @@ export interface Env {
   RECHECK_LIMIT: string;
   GSC_SITE: string; // Search Console property: sc-domain:movietrailer.channel (Domain property) or a URL-prefix property
   NICHES_PER_RUN?: string; // ideas scored per niche-finder run
+  STATS_SITES?: string; // JSON list of { name, path, ga4, gsc } for the dashboards
   GA4_PROPERTY?: string; // GA4 property ID (number) for the dashboard stats
   INDEXNOW_KEY?: string; // public key; brands/<slug>/public/<key>.txt holds the same value
   SITE_HOST?: string; // e.g. www.movietrailer.channel
@@ -326,88 +327,77 @@ async function demand(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boole
   };
 }
 
+/** Sites whose dashboards the daily `stats` job refreshes (STATS_SITES in wrangler.jsonc). */
+interface StatsSite {
+  name: string;
+  path: string; // e.g. data/vic/stats.json
+  ga4?: string; // GA4 property ID (number); the service account must be a Viewer
+  gsc?: string; // Search Console property, e.g. sc-domain:victours.com.au
+}
+const statsSites = (env: Env): StatsSite[] => {
+  try {
+    const list = JSON.parse(env.STATS_SITES ?? '') as StatsSite[];
+    if (Array.isArray(list) && list.length) return list;
+  } catch {
+    /* fall back to the trailer site */
+  }
+  return [{ name: 'trailers', path: STATS, ga4: env.GA4_PROPERTY, gsc: env.GSC_SITE }];
+};
+
 async function statsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean) {
   const day = (n: number) => new Date(now.getTime() - n * 86400000).toISOString().slice(0, 10);
   const period = { start: day(28), end: day(1) };
   const gscPeriod = { start: day(30), end: day(3) }; // Search Console lags ~3 days
-  const notes: string[] = [];
   const log: string[] = [];
-
-  let ga4: Parameters<typeof buildStats>[0]['ga4'] = null;
-  const property = (env.GA4_PROPERTY ?? '').trim();
-  if (property) {
-    try {
-      const token = await googleAccessToken(env.GSC_SERVICE_ACCOUNT!, 'https://www.googleapis.com/auth/analytics.readonly');
-      const cur = [{ startDate: period.start, endDate: period.end }];
-      const [pages, prevPages, events, daily, dailyEvents] = await Promise.all([
-        ga4Report(token, property, { dateRanges: cur, dimensions: ['pagePath'], metrics: ['screenPageViews', 'activeUsers'] }),
-        ga4Report(token, property, { dateRanges: [{ startDate: day(56), endDate: day(29) }], dimensions: ['pagePath'], metrics: ['screenPageViews'] }),
-        ga4Report(token, property, { dateRanges: cur, dimensions: ['pagePath', 'eventName'], metrics: ['eventCount'], eventPrefix: 'cta_' }),
-        ga4Report(token, property, { dateRanges: cur, dimensions: ['date'], metrics: ['screenPageViews'] }),
-        ga4Report(token, property, { dateRanges: cur, dimensions: ['date', 'eventName'], metrics: ['eventCount'], eventPrefix: 'cta_' }),
-      ]);
-      ga4 = { pages, prevPages, events, daily, dailyEvents };
-      log.push(`GA4: ${pages.length} page(s), ${events.reduce((s, r) => s + r.mets[0], 0)} CTA click(s).`);
-    } catch (e) {
-      notes.push(`GA4 not read: ${(e as Error).message}`);
-      log.push(`GA4 failed: ${(e as Error).message}`);
-    }
-  } else {
-    let email = 'the service account';
-    try {
-      email = (JSON.parse(env.GSC_SERVICE_ACCOUNT!) as { client_email: string }).client_email;
-    } catch {
-      /* keep the generic name */
-    }
-    notes.push(`GA4 not connected yet: add ${email} as a Viewer on the GA4 property, then set GA4_PROPERTY.`);
-    log.push(`Robot account: ${email}`);
-  }
-
-  let gsc: Parameters<typeof buildStats>[0]['gsc'] = null;
+  const changes: Record<string, string> = {};
+  let email = 'the service account';
   try {
-    const token = await googleAccessToken(env.GSC_SERVICE_ACCOUNT!, 'https://www.googleapis.com/auth/webmasters.readonly');
-    gsc = { pageQueries: await searchAnalytics(token, env.GSC_SITE, gscPeriod.start, gscPeriod.end, ['page', 'query'], 25000) };
-    log.push(`Search Console: ${gsc.pageQueries.length} page/search row(s).`);
-  } catch (e) {
-    notes.push(`Search Console not read: ${(e as Error).message}`);
-    log.push(`Search Console failed: ${(e as Error).message}`);
-  }
-
-  const stats = buildStats({ now, period: ga4 ? period : null, gscPeriod: gsc ? gscPeriod : null, notes, ga4, gsc });
-
-  // IndexNow: first run submits every page; after that, pages created or updated since the last submission.
-  let prev: { indexNowAt?: string | null } = {};
-  try {
-    prev = JSON.parse(snap.files[STATS] || '{}');
+    email = (JSON.parse(env.GSC_SERVICE_ACCOUNT!) as { client_email: string }).client_email;
   } catch {
-    /* first run */
+    /* keep the generic name */
   }
-  stats.indexNowAt = prev.indexNowAt ?? null;
-  if (env.INDEXNOW_KEY && env.SITE_HOST) {
-    const since = prev.indexNowAt ?? null;
-    const fresh = (x: { created?: string; updated?: string }) => !since || (x.updated ?? x.created ?? '') > since || (x.created ?? '') > since;
-    const base = `https://${env.SITE_HOST}`;
-    const movies = JSON.parse(snap.files[MOVIES] || '[]') as { slug: string; created?: string; updated?: string }[];
-    const cols = JSON.parse(snap.files[COLLECTIONS] || '[]') as { slug: string; created?: string; updated?: string }[];
-    const urls = [
-      ...(since ? [] : [base, `${base}/browse`, `${base}/discover`]),
-      ...movies.filter(fresh).map((m) => `${base}/movies/${m.slug}`),
-      ...cols.filter(fresh).map((c) => `${base}/discover/${c.slug}`),
-    ];
-    if (urls.length) {
+  const gaToken = await googleAccessToken(env.GSC_SERVICE_ACCOUNT!, 'https://www.googleapis.com/auth/analytics.readonly').catch(() => null);
+  const gscToken = await googleAccessToken(env.GSC_SERVICE_ACCOUNT!, 'https://www.googleapis.com/auth/webmasters.readonly').catch(() => null);
+
+  for (const site of statsSites(env)) {
+    const notes: string[] = [];
+    let ga4: Parameters<typeof buildStats>[0]['ga4'] = null;
+    const property = (site.ga4 ?? '').trim();
+    if (property && gaToken) {
       try {
-        const status = dryRun ? 0 : await indexNow(env.SITE_HOST, env.INDEXNOW_KEY, urls);
-        if (status === 200 || status === 202) stats.indexNowAt = now.toISOString();
-        log.push(`IndexNow: ${dryRun ? 'would submit' : 'submitted'} ${urls.length} URL(s)${dryRun ? '' : ` (HTTP ${status})`}.`);
+        const cur = [{ startDate: period.start, endDate: period.end }];
+        const [pages, prevPages, events, daily, dailyEvents] = await Promise.all([
+          ga4Report(gaToken, property, { dateRanges: cur, dimensions: ['pagePath'], metrics: ['screenPageViews', 'activeUsers'] }),
+          ga4Report(gaToken, property, { dateRanges: [{ startDate: day(56), endDate: day(29) }], dimensions: ['pagePath'], metrics: ['screenPageViews'] }),
+          ga4Report(gaToken, property, { dateRanges: cur, dimensions: ['pagePath', 'eventName'], metrics: ['eventCount'], eventPrefix: 'cta_' }),
+          ga4Report(gaToken, property, { dateRanges: cur, dimensions: ['date'], metrics: ['screenPageViews'] }),
+          ga4Report(gaToken, property, { dateRanges: cur, dimensions: ['date', 'eventName'], metrics: ['eventCount'], eventPrefix: 'cta_' }),
+        ]);
+        ga4 = { pages, prevPages, events, daily, dailyEvents };
+        log.push(`${site.name} GA4: ${pages.length} page(s), ${events.reduce((t, r) => t + r.mets[0], 0)} CTA click(s).`);
       } catch (e) {
-        log.push(`IndexNow failed: ${(e as Error).message}`);
+        notes.push(`GA4 not read: ${(e as Error).message}. Is ${email} a Viewer on property ${property}?`);
+        log.push(`${site.name} GA4 failed: ${(e as Error).message}`);
       }
     } else {
-      stats.indexNowAt = now.toISOString();
+      notes.push(`GA4 not connected yet: add ${email} as a Viewer on the GA4 property, then set its ID in STATS_SITES.`);
     }
+
+    let gsc: Parameters<typeof buildStats>[0]['gsc'] = null;
+    if (site.gsc && gscToken) {
+      try {
+        gsc = { pageQueries: await searchAnalytics(gscToken, site.gsc, gscPeriod.start, gscPeriod.end, ['page', 'query'], 25000) };
+        log.push(`${site.name} Search Console: ${gsc.pageQueries.length} row(s).`);
+      } catch (e) {
+        notes.push(`Search Console not read: ${(e as Error).message}. Is ${email} a user on ${site.gsc}?`);
+        log.push(`${site.name} Search Console failed: ${(e as Error).message}`);
+      }
+    }
+    const stats = buildStats({ now, period: ga4 ? period : null, gscPeriod: gsc ? gscPeriod : null, notes, ga4, gsc });
+    changes[site.path] = JSON.stringify(stats, null, 1) + '\n';
+    log.unshift(`${site.name}: ${stats.totals.views} views, ${Object.values(stats.totals.cta).reduce((x, y) => x + y, 0)} CTA clicks, ${stats.totals.gscClicks} Google clicks.`);
   }
-  log.unshift(`Stats: ${stats.totals.views} views, ${Object.values(stats.totals.cta).reduce((a, b) => a + b, 0)} CTA clicks, ${stats.totals.gscClicks} Google clicks.`);
-  const commit = await save(repo, snap.sha, { [STATS]: JSON.stringify(stats, null, 1) + '\n' }, `Pipeline: refresh dashboard stats\n\n${log.join('\n')}`, dryRun, log);
+  const commit = await save(repo, snap.sha, changes, `Pipeline: refresh dashboard stats\n\n${log.join('\n')}`, dryRun, log);
   return { job: 'stats' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report: undefined as string | undefined };
 }
 

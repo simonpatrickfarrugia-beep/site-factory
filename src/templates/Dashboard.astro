@@ -30,8 +30,25 @@ interface Props {
   /** CTA names that earn money (count as "Amazon clicks"). */
   moneyCtas: string[];
   ctaLabels: Record<string, string>;
+  /** Wording and the site's main page type. Defaults are the trailer site's. */
+  labels?: Partial<typeof DEFAULT_LABELS>;
+  /** Main pages: everything under this prefix, plus any listed paths. */
+  primaryPrefix?: string;
+  primaryPaths?: string[];
 }
-const { stats, titles, moneyCtas, ctaLabels } = Astro.props;
+const DEFAULT_LABELS = {
+  primaryTab: 'Movies',
+  primaryHelp: 'Every movie page, most visited first.',
+  money: 'Amazon clicks',
+  moneyShort: 'Amazon',
+  rateSub: 'Amazon clicks per movie-page visit',
+  fixHelp: 'Visited 10+ times but no Amazon clicks yet. Better copy, a stronger trailer or a "where to watch" note can turn these around.',
+  foot: "Visits and clicks: Google Analytics. Searches: Google Search Console (about 3 days behind). Refreshed every morning. Amazon earnings aren't per page; see your Associates reports for those.",
+};
+const { stats, titles, moneyCtas, ctaLabels, primaryPrefix = '/movies/', primaryPaths = [] } = Astro.props;
+const L = { ...DEFAULT_LABELS, ...(Astro.props.labels ?? {}) };
+const primarySet = new Set(primaryPaths);
+const isPrimary = (path: string) => primarySet.has(path) || (!!primaryPrefix && path.startsWith(primaryPrefix));
 
 const n = (v: number) => v.toLocaleString('en-AU');
 const pct = (v: number) => `${(v * 100).toFixed(v > 0 && v < 0.1 ? 1 : 0)}%`;
@@ -41,10 +58,10 @@ const fmtDate = (iso: string) => new Date(iso + 'T00:00:00Z').toLocaleDateString
 
 const t = stats.totals;
 const amazon = money(t.cta);
-const movieViews = stats.pages.filter((p) => p.path.startsWith('/movies/')).reduce((s, p) => s + p.views, 0);
+const movieViews = stats.pages.filter((p) => isPrimary(p.path)).reduce((s, p) => s + p.views, 0);
 const change = t.prevViews ? (t.views - t.prevViews) / t.prevViews : null;
 
-const kindOf = (path: string) => (path.startsWith('/movies/') ? 'movie' : path.startsWith('/discover/') ? 'collection' : 'other');
+const kindOf = (path: string) => (isPrimary(path) ? 'movie' : path.startsWith('/discover/') ? 'collection' : 'other');
 const rows = stats.pages
   .filter((p) => p.views > 0 || p.gscImpressions > 0 || allCta(p.cta) > 0)
   .map((p) => {
@@ -90,14 +107,14 @@ const updated = stats.generatedAt
       </span>
     </div>
     <div class="kpi kpi--money">
-      <span class="kpi__label">Amazon clicks</span>
+      <span class="kpi__label">{L.money}</span>
       <span class="kpi__value">{n(amazon)}</span>
       <span class="kpi__sub">{moneyCtas.map((k) => `${ctaLabels[k] ?? k} ${n(t.cta[k] ?? 0)}`).join(' · ')}</span>
     </div>
     <div class="kpi">
       <span class="kpi__label">Click rate</span>
       <span class="kpi__value">{movieViews ? pct(amazon / movieViews) : '—'}</span>
-      <span class="kpi__sub">Amazon clicks per movie-page visit</span>
+      <span class="kpi__sub">{L.rateSub}</span>
     </div>
     <div class="kpi">
       <span class="kpi__label">From Google</span>
@@ -108,7 +125,7 @@ const updated = stats.generatedAt
 
   {stats.daily.length > 0 && (
     <section class="hq__panel" aria-label="Visits per day">
-      <h2 class="hq__h2">Visits per day <span class="legend"><i class="sw sw--v"></i>visits <i class="sw sw--c"></i>day had Amazon clicks</span></h2>
+      <h2 class="hq__h2">Visits per day <span class="legend"><i class="sw sw--v"></i>visits <i class="sw sw--c"></i>day had {L.money.toLowerCase()}</span></h2>
       <svg viewBox={`0 0 ${W} ${H + 8}`} preserveAspectRatio="none" class="chart" role="img" aria-label="Visits per day">
         {stats.daily.map((d, i) => {
           const h = Math.max(1, (d.views / maxViews) * H);
@@ -128,14 +145,14 @@ const updated = stats.generatedAt
 
   <section class="hq__panel" aria-label="Pages">
     <div class="tabs" role="tablist">
-      <button role="tab" aria-selected="true" data-tab="movie">Movies</button>
+      <button role="tab" aria-selected="true" data-tab="movie">{L.primaryTab}</button>
       <button role="tab" aria-selected="false" data-tab="fix">Fix first <span class="count">{rows.filter((r) => r.fix).length}</span></button>
       <button role="tab" aria-selected="false" data-tab="rising">Rising</button>
       <button role="tab" aria-selected="false" data-tab="google">Google</button>
       <button role="tab" aria-selected="false" data-tab="all">All pages</button>
     </div>
-    <p class="tab-help" data-help="movie">Every movie page, most visited first.</p>
-    <p class="tab-help" data-help="fix" hidden>Visited 10+ times but no Amazon clicks yet. Better copy, a stronger trailer or a "where to watch" note can turn these around.</p>
+    <p class="tab-help" data-help="movie">{L.primaryHelp}</p>
+    <p class="tab-help" data-help="fix" hidden>{L.fixHelp}</p>
     <p class="tab-help" data-help="rising" hidden>Pages gaining the most visits compared with the 28 days before.</p>
     <p class="tab-help" data-help="google" hidden>How often Google shows each page, its average position and the search it shows up for most. Position 4–20 = close to page 1.</p>
     <p class="tab-help" data-help="all" hidden>Every page with any visits or Google appearances.</p>
@@ -144,7 +161,7 @@ const updated = stats.generatedAt
       <input type="search" placeholder="Search titles…" aria-label="Search titles" data-search />
       <select aria-label="Sort by" data-sort>
         <option value="views">Most visits</option>
-        <option value="amazon">Most Amazon clicks</option>
+        <option value="amazon">Most {L.money.toLowerCase()}</option>
         <option value="rate">Best click rate</option>
         <option value="growth">Fastest rising</option>
         <option value="impr">Most Google appearances</option>
@@ -170,7 +187,7 @@ const updated = stats.generatedAt
             <a class="row__title" href={r.path} target="_blank" rel="noopener">{r.title}</a>
             <div class="row__stats">
               <span><b>{n(r.views)}</b> visits{r.growth !== 0 && r.prevViews > 0 && <em class={r.growth > 0 ? 'up' : 'down'}> {r.growth > 0 ? '+' : ''}{n(r.growth)}</em>}</span>
-              <span class={r.amazon ? 'hot' : ''}><b>{n(r.amazon)}</b> Amazon</span>
+              <span class={r.amazon ? 'hot' : ''}><b>{n(r.amazon)}</b> {L.moneyShort}</span>
               {r.views > 0 && <span><b>{pct(r.rate)}</b> rate</span>}
               {Object.entries(r.cta).filter(([k]) => !moneyCtas.includes(k)).map(([k, v]) => <span><b>{n(v)}</b> {ctaLabels[k] ?? k}</span>)}
               {r.gscImpressions > 0 && (
@@ -185,7 +202,7 @@ const updated = stats.generatedAt
     <button class="more" type="button" data-more hidden>Show more</button>
   </section>
 
-  <p class="hq__foot">Visits and clicks: Google Analytics. Searches: Google Search Console (about 3 days behind). Refreshed every morning. Amazon earnings aren't per page; see your Associates reports for those.</p>
+  <p class="hq__foot">{L.foot}</p>
 </div>
 
 <script is:inline>

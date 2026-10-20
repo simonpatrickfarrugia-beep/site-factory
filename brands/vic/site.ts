@@ -226,6 +226,43 @@ export function routes(): Route[] {
     });
   }
 
+  // Private dashboard (noindex, no analytics, not in the sitemap). Data: data/vic/stats.json, refreshed daily.
+  const titles: Record<string, string> = { '/': 'Home page', '/towns': 'All towns', '/road-trips': 'Road trips' };
+  const primaryPaths: string[] = [];
+  for (const t of towns) {
+    titles[`/${t.slug}`] = t.name;
+    primaryPaths.push(`/${t.slug}`);
+    for (const g of GROUPS) {
+      titles[`/${t.slug}/${g}`] = `${t.name}: ${GROUP_LABEL[g].short}`;
+      primaryPaths.push(`/${t.slug}/${g}`);
+    }
+  }
+  for (const l of loops) titles[`/road-trips/${l.slug}`] = `Road trip: ${l.name}`;
+  for (const col of content.collections) titles[`/collections/${col.slug}`] = `Collection: ${col.name}`;
+  out.push({
+    path: 'hq/stats',
+    template: 'dashboard',
+    private: true,
+    seo: { title: 'Dashboard' + SUFFIX, rawTitle: true, description: 'Private site stats: visits, place clicks and Google searches per page.' },
+    props: {
+      stats: getSingleton('stats'),
+      titles,
+      moneyCtas: ['website', 'call'],
+      ctaLabels: { website: 'Website', call: 'Call', map: 'Map' },
+      primaryPrefix: '',
+      primaryPaths,
+      labels: {
+        primaryTab: 'Towns',
+        primaryHelp: 'Every town and its stay / eat / do pages, most visited first.',
+        money: 'Business clicks',
+        moneyShort: 'clicks',
+        rateSub: 'Website and call clicks per town-page visit',
+        fixHelp: 'Visited 10+ times but nobody clicked through to a business yet. Better local picks or photos can turn these around.',
+        foot: 'Visits and clicks: Google Analytics. Searches: Google Search Console (about 3 days behind). Refreshed every morning. Business clicks = taps on a place’s Website or Call link (Map taps are shown separately).',
+      },
+    },
+  });
+
   // Static pages
   for (const p of content.pages) {
     out.push({ path: p.slug, template: 'vicPage', seo: { title: p.title + SUFFIX, rawTitle: true, description: p.description }, props: { title: p.title, paragraphs: p.paragraphs } });
