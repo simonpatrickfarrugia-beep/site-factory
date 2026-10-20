@@ -151,7 +151,7 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
       : job === 'towns'
       ? [VIC_TOWNS]
       : job === 'niches'
-      ? [NICHES]
+      ? [NICHES, AFFILIATES]
       : job === 'stats'
       ? [STATS, MOVIES, COLLECTIONS]
       :
