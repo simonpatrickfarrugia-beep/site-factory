@@ -191,14 +191,16 @@ export function matchPrograms(cat: AffiliateCatalog, categories: string[], marke
     .sort((a, b) => (b.estPerSaleUsd ?? 0) - (a.estPerSaleUsd ?? 0));
 }
 
-export function estimateMoney(cat: AffiliateCatalog, totalVolume: number, categories: string[], market: string): MoneyEstimate {
+export function estimateMoney(cat: AffiliateCatalog, totalVolume: number, categories: string[], market: string, medianCpc: number | null = null): MoneyEstimate {
   const progs = matchPrograms(cat, categories, market);
   // A page earns from its best few programmes, not just the single best: average the top 3 payouts.
   const payouts = progs.map((p) => p.estPerSaleUsd ?? 0).filter((x) => x > 0).slice(0, 3);
   const perSale = payouts.length ? payouts.reduce((a, b) => a + b, 0) / payouts.length : 0;
   const m = cat.model;
   const visits = [0, 1, 2].map((i) => Math.round(totalVolume * m.captureShare[i])) as [number, number, number];
-  const revenueUsd = [0, 1, 2].map((i) => Math.round(visits[i] * m.clickRate[i] * m.conversion[i] * perSale + (visits[i] / 1000) * m.adRpmUsd[i])) as [number, number, number];
+  // Display ads earn more where advertisers pay more per click: scale the base RPM by the niche's CPC (0.5x to 3x).
+  const rpmScale = Math.max(0.5, Math.min(3, (medianCpc ?? 1) / 1));
+  const revenueUsd = [0, 1, 2].map((i) => Math.round(visits[i] * m.clickRate[i] * m.conversion[i] * perSale + (visits[i] / 1000) * m.adRpmUsd[i] * rpmScale)) as [number, number, number];
   return {
     categories,
     visits,

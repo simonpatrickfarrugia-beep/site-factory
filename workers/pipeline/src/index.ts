@@ -451,7 +451,7 @@ async function nichesJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: bo
       if (n.status !== 'scored' || !n.score) continue;
       try {
         if (!n.categories?.length) n.categories = await pickCategories(env.ANTHROPIC_API_KEY, env.ANTHROPIC_MODEL, n.idea, n.notes, cat.categories);
-        n.money = estimateMoney(cat, n.score.totalVolume, n.categories, n.location ?? location);
+        n.money = estimateMoney(cat, n.score.totalVolume, n.categories, n.location ?? location, n.score.medianCpc);
       } catch (e) {
         log.push(`${n.idea}: money estimate failed: ${(e as Error).message.slice(0, 120)}`);
       }

@@ -631,21 +631,21 @@
   }
  ],
  "model": {
-  "_note": "Revenue estimate at maturity, per month: visits x (affiliate click rate x conversion x per-sale payout) + visits/1000 x ad RPM. visits = related monthly searches x capture share. Low/mid/high. Replaced by our own measured rates once sites have data.",
+  "_note": "Revenue estimate at maturity, per month: visits x (affiliate click rate x conversion x payout) + visits/1000 x ad RPM. visits = related monthly searches x capture share. Ad RPM scales with the niche's median CPC (x0.5 to x3 of base, base = $1 CPC). Low/mid/high. Replaced by our own measured rates once sites have data.",
   "captureShare": [
    0.002,
    0.005,
-   0.015
+   0.01
   ],
   "clickRate": [
    0.02,
    0.05,
-   0.1
+   0.08
   ],
   "conversion": [
    0.03,
-   0.06,
-   0.1
+   0.05,
+   0.08
   ],
   "adRpmUsd": [
    3,
