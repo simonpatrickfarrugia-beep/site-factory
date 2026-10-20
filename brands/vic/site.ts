@@ -191,12 +191,12 @@ export function routes(): Route[] {
   }
   for (const l of loops) {
     const top = (s: string, g: Group, n: number) => inGroup(s, g).slice(0, n);
-    const days = l.days.map((d) => ({
+    const days = l.days.map((d, i) => ({
       title: d.title,
       text: d.text,
       stops: d.stops.filter((s) => townBySlug.has(s)).map((s) => ({ slug: s, name: townName(s)! })),
       overnight:
-        d.overnight && townBySlug.has(d.overnight)
+        d.overnight && townBySlug.has(d.overnight) && l.days[i - 1]?.overnight !== d.overnight // second night in the same town: don't repeat
           ? { slug: d.overnight, name: townName(d.overnight)!, stay: top(d.overnight, 'stay', 3), eat: top(d.overnight, 'eat', 3), do: top(d.overnight, 'do', 3) }
           : null,
     }));
