@@ -20,7 +20,7 @@ import { buildDemandReport } from './demand';
 import { pickTrailer } from './titles';
 import { buildCatalogue, type Candidate } from './catalogue';
 import { cleanKeyword, domainTraffic, keywordDifficulty, keywordIdeas, searchVolumes, serpTop10, type SerpResult } from './dataforseo';
-import { competitionReport, pickKeywords, scoreCompetition, type Competition } from './competition';
+import { COMPETITION_VERSION, competitionReport, pickKeywords, rootDomain, scoreCompetition, type Competition } from './competition';
 
 export interface Env {
   /** Fine-grained GitHub token: Contents read & write on the site-factory repo only. */
@@ -565,7 +565,7 @@ async function competitionJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRu
   const niches = JSON.parse(snap.files[NICHES] || '[]') as (Niche & { competition?: Competition | null })[];
   const login = env.DATAFORSEO_LOGIN!, password = env.DATAFORSEO_PASSWORD!;
   const code = Number(env.DATAFORSEO_LOCATION) || 2840;
-  const stale = (n: (typeof niches)[number]) => !n.competition || now.getTime() - Date.parse(n.competition.checkedAt) > 90 * 86400000;
+  const stale = (n: (typeof niches)[number]) => !n.competition || n.competition.v !== COMPETITION_VERSION || now.getTime() - Date.parse(n.competition.checkedAt) > 90 * 86400000;
   const todo = niches.filter((n) => n.status === 'scored' && n.score && stale(n)).slice(0, Number(env.COMPETITION_PER_RUN) || 4);
   const log: string[] = [];
   for (const n of todo) {
@@ -581,7 +581,7 @@ async function competitionJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRu
         cost += r.cost;
         serps.push({ ...kw, items: r.items });
       }
-      const t = await domainTraffic(login, password, serps.flatMap((s) => s.items.map((i) => i.domain)), market);
+      const t = await domainTraffic(login, password, serps.flatMap((s) => s.items.map((i) => rootDomain(i.domain))), market);
       cost += t.cost;
       n.competition = scoreCompetition(serps, t.etv, market, now, cost);
       log.push(`${n.idea}: openness ${n.competition.openness}/100; big players ${n.competition.giants.slice(0, 3).map((g) => g.domain).join(', ') || 'none'} (US$${n.competition.costUsd}).`);

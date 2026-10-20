@@ -9,6 +9,15 @@ import type { SerpResult } from './dataforseo';
 export const SMALL_SITE = 30_000; // est. monthly organic visits in the market
 const FORUMS = [/(^|\.)reddit\.com$/, /(^|\.)quora\.com$/, /(^|\.)fandom\.com$/, /(^|\.)pinterest\./, /(^|\.)medium\.com$/, /(^|\.)facebook\.com$/, /(^|\.)stackexchange\.com$/, /(^|\.)tiktok\.com$/];
 export const isForum = (d: string) => FORUMS.some((r) => r.test(d));
+/** Registrable domain: teacher.scholastic.com -> scholastic.com, visit.vic.gov.au -> vic.gov.au. */
+export function rootDomain(d: string) {
+  const p = d.toLowerCase().replace(/^www\./, '').split('.');
+  const n = p.length >= 3 && /^(com|net|org|co|gov|edu|asn|id)$/.test(p[p.length - 2]) && p[p.length - 1].length === 2 ? 3 : 2;
+  return p.slice(-n).join('.');
+}
+/** Searches Google answers from the searcher's location give meaningless results from a data centre. */
+export const isLocal = (k: string) => /\bnear me\b|\bnearby\b|\bopen now\b/i.test(k);
+export const COMPETITION_VERSION = 2;
 
 export interface KeywordCompetition {
   keyword: string;
@@ -19,6 +28,7 @@ export interface KeywordCompetition {
 }
 export interface Competition {
   checkedAt: string;
+  v?: number;
   market: number;
   openness: number; // 0-100, volume-weighted across checked keywords
   keywords: KeywordCompetition[];
@@ -34,7 +44,7 @@ export function pickKeywords(cands: { keyword: string; volume: number }[], n: nu
   const stop = new Set(['where', 'can', 'i', 'you', 'to', 'the', 'a', 'in', 'of', 'what', 'how', 'is', 'for', 'and', 'best', 'watch', 'order', 'series', 'books']);
   const toks = (k: string) => new Set(k.toLowerCase().split(/\s+/).filter((w) => !stop.has(w)));
   const out: { keyword: string; volume: number }[] = [];
-  for (const c of [...cands].sort((a, b) => b.volume - a.volume)) {
+  for (const c of [...cands].filter((c) => !isLocal(c.keyword)).sort((a, b) => b.volume - a.volume)) {
     const t = toks(c.keyword);
     const dup = out.some((o) => {
       const u = toks(o.keyword);
@@ -56,7 +66,7 @@ export function scoreCompetition(
 ): Competition {
   const keywords: KeywordCompetition[] = serps.map((s) => {
     const beatable = s.items
-      .map((i) => ({ rank: i.rank, domain: i.domain, why: isForum(i.domain) ? ('forum' as const) : (etv.get(i.domain) ?? 0) < SMALL_SITE ? ('small site' as const) : null }))
+      .map((i) => ({ rank: i.rank, domain: i.domain, why: isForum(i.domain) ? ('forum' as const) : (etv.get(rootDomain(i.domain)) ?? 0) < SMALL_SITE ? ('small site' as const) : null }))
       .filter((b): b is KeywordCompetition['beatable'][number] => b.why !== null);
     const score = beatable.reduce((a, b) => a + weight(b.rank), 0);
     return { keyword: s.keyword, volume: s.volume, openness: Math.round((score / MAX) * 100), beatable, top3: s.items.slice(0, 3).map((i) => i.domain) };
@@ -64,13 +74,13 @@ export function scoreCompetition(
   const vol = keywords.reduce((a, k) => a + Math.max(1, k.volume), 0);
   const openness = keywords.length ? Math.round(keywords.reduce((a, k) => a + k.openness * Math.max(1, k.volume), 0) / vol) : 0;
   const slots = new Map<string, number>();
-  for (const s of serps) for (const i of s.items) slots.set(i.domain, (slots.get(i.domain) ?? 0) + 1);
+  for (const s of serps) for (const i of s.items) if (!isForum(i.domain)) slots.set(rootDomain(i.domain), (slots.get(rootDomain(i.domain)) ?? 0) + 1);
   const giants = [...slots.entries()]
     .map(([domain, n]) => ({ domain, slots: n, etv: etv.get(domain) ?? 0 }))
     .filter((g) => !isForum(g.domain) && g.etv >= SMALL_SITE)
     .sort((a, b) => b.slots - a.slots || b.etv - a.etv)
     .slice(0, 8);
-  return { checkedAt: now.toISOString(), market, openness, keywords, giants, costUsd: Math.round(costUsd * 1000) / 1000 };
+  return { checkedAt: now.toISOString(), v: COMPETITION_VERSION, market, openness, keywords, giants, costUsd: Math.round(costUsd * 1000) / 1000 };
 }
 
 const k = (n: number) => (n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${Math.round(n / 1e3)}k` : String(n));
