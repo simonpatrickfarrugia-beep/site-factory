@@ -592,17 +592,17 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 
 | Idea | Market | Visits/mo (mid) | Est. revenue/mo (low · mid · high) | Avg payout per sale | Score |
 |---|---|---:|---|---:|---:|
-| Dog breeds | United States | 274,520 | $1,955 · **$22,511** · $215,498 | $24.67 | 75 |
-| US national parks and hiking trails | United States | 89,156 | $300 · **$3,120** · $28,084 | $9 | 74 |
-| Anime: where to watch and watch order | United States | 102,419 | $165 · **$1,342** · $9,832 | $1.7 | 70 |
-| Video games: release dates and trailers | United States | 70,520 | $104 · **$811** · $5,642 | $1.17 | 62 |
-| TV shows: where to watch | United States | 27,719 | $45 · **$363** · $2,661 | $1.7 | 73 |
-| Book series in reading order | United States | 24,564 | $38 · **$302** · $2,162 | $1.43 | 53 |
-| Victoria: where to stay by town | Australia | 3,903 | $14 · **$152** · $1,386 | $10.33 | 66 |
-| Movie soundtracks and film music | United States | 11,888 | $18 · **$146** · $1,046 | $1.43 | 53 |
-| Board games | United States | 11,226 | $17 · **$137** · $977 | $1.4 | 61 |
-| Victoria: things to do by town | Australia | 1,769 | $7 · **$69** · $628 | $10.33 | 60 |
-| Victoria: where to eat by town | Australia | 779 | $3 · **$27** · $245 | $9 | 51 |
+| Dog breeds | United States | 274,520 | $2,067 · **$19,872** · $97,711 | $24.67 | 75 |
+| US national parks and hiking trails | United States | 89,156 | $335 · **$2,955** · $13,828 | $9 | 74 |
+| Anime: where to watch and watch order | United States | 102,419 | $203 · **$1,509** · $6,254 | $1.7 | 70 |
+| TV shows: where to watch | United States | 27,719 | $111 · **$783** · $3,098 | $1.7 | 73 |
+| Video games: release dates and trailers | United States | 70,520 | $62 · **$488** · $2,111 | $1.17 | 62 |
+| Book series in reading order | United States | 24,564 | $23 · **$186** · $819 | $1.43 | 53 |
+| Victoria: where to stay by town | Australia | 3,903 | $17 · **$148** · $693 | $10.33 | 66 |
+| Movie soundtracks and film music | United States | 11,888 | $11 · **$90** · $396 | $1.43 | 53 |
+| Board games | United States | 11,226 | $11 · **$84** · $370 | $1.4 | 61 |
+| Victoria: things to do by town | Australia | 1,769 | $6 · **$55** · $267 | $10.33 | 60 |
+| Victoria: where to eat by town | Australia | 779 | $2 · **$21** · $101 | $9 | 51 |
 
 ## Programmes to consider, by idea
 
@@ -640,6 +640,14 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Amazon Associates US: digital video (Prime Video) | 5% (digital video); bounties: $3 Prime trial, $5 first Prime Video stream | easy | 3 qualifying sales within 180 days of joining, or the account is closed | approved |
 | Amazon Associates US: DVD and Blu-ray | 2.5% | easy | Same Associates account | approved |
 
+### TV shows: where to watch
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Anime streaming (e.g. Crunchyroll) *(check)* | check (may not run an open programme) | hard | check | not applied |
+| Amazon Associates US: digital video (Prime Video) | 5% (digital video); bounties: $3 Prime trial, $5 first Prime Video stream | easy | 3 qualifying sales within 180 days of joining, or the account is closed | approved |
+| Amazon Associates US: DVD and Blu-ray | 2.5% | easy | Same Associates account | approved |
+
 ### Video games: release dates and trailers
 
 | Programme | Pays | Approval | To qualify | Status |
@@ -649,14 +657,6 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Humble Bundle partner *(check)* | check | easy | check | not applied |
 | Amazon Associates US: DVD and Blu-ray | 2.5% | easy | Same Associates account | approved |
 | Amazon Associates US: video games | 1% physical / 2% digital | easy | Same Associates account | approved |
-
-### TV shows: where to watch
-
-| Programme | Pays | Approval | To qualify | Status |
-|---|---|---|---|---|
-| Anime streaming (e.g. Crunchyroll) *(check)* | check (may not run an open programme) | hard | check | not applied |
-| Amazon Associates US: digital video (Prime Video) | 5% (digital video); bounties: $3 Prime trial, $5 first Prime Video stream | easy | 3 qualifying sales within 180 days of joining, or the account is closed | approved |
-| Amazon Associates US: DVD and Blu-ray | 2.5% | easy | Same Associates account | approved |
 
 ### Book series in reading order
 
