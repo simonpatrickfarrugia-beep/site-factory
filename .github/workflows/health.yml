@@ -22,6 +22,11 @@ jobs:
           RUN_KEY: ${{ secrets.PIPELINE_RUN_KEY }}
           GH_TOKEN: ${{ github.token }}
         run: python3 scripts/health.py
+      - name: 90-day reviews
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/review.py
       - name: Report
         env:
           GH_TOKEN: ${{ github.token }}

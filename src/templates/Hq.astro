@@ -101,6 +101,18 @@ const live = p.nodes.filter((x) => x.status === 'live').length;
               <div><dt>Money clicks</dt><dd>{n(s.money)}</dd></div>
               <div><dt>Google clicks</dt><dd>{n(s.gscClicks)} <small>of {n(s.gscImpressions)} seen</small></dd></div>
             </dl>
+            {s.station && (
+              <div class="gate">
+                <p><b>Station: {s.station}</b>{s.day !== null && <> · day {Math.min(s.day, 90)} of 90{s.day >= 90 && ' · review due'}</>}</p>
+                {s.target && (
+                  <>
+                    <p class="muted">90-day target{s.targetSet === 'provisional' && ' (provisional)'}: {n(s.target.views)} visits and {n(s.target.moneyClicks)} money clicks per 28 days</p>
+                    <div class="bar"><span style={`width:${Math.min(100, Math.round((s.views / s.target.views) * 100))}%`}></span></div>
+                    <p class="muted">Visits {Math.round((s.views / s.target.views) * 100)}% · money clicks {Math.round((s.money / s.target.moneyClicks) * 100)}% of target</p>
+                  </>
+                )}
+              </div>
+            )}
             <p class="card__foot"><a href={s.dashboard} target="_blank" rel="noopener">Open the site dashboard</a>{s.updated && ` · data ${new Date(s.updated).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' })}`}</p>
           </article>
         );
@@ -239,6 +251,10 @@ const live = p.nodes.filter((x) => x.status === 'live').length;
   .num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
   .sub { font-size: 1rem; margin: var(--space-3) 0 var(--space-2); }
   .muted { color: var(--muted); }
+  .gate { border-top: 1px solid var(--line); margin-top: 0.6rem; padding-top: 0.5rem; }
+  .gate p { margin: 0.2rem 0; font-size: 0.85rem; }
+  .bar { height: 8px; border-radius: 999px; background: var(--line); overflow: hidden; margin: 0.3rem 0; }
+  .bar span { display: block; height: 100%; background: var(--color-accent); }
   .scroll { overflow-x: auto; }
   .programs { min-width: 640px; }
   .programs th { text-align: left; font-size: 0.8rem; color: var(--muted); font-weight: 600; padding-bottom: 0.3rem; }

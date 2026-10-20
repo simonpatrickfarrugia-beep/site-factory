@@ -103,8 +103,8 @@ const VIC_TOWNS_REPORT = 'reports/vic/towns.md';
 const NICHES_REPORT = 'hq/reports/niches.md';
 const COMPETITION_REPORT = 'hq/reports/competition.md';
 const FINANCE = 'hq/finance.json';
-/** Outbound clicks that aren't affiliate links (no commission) don't count toward the click rate. */
-const NON_AFFILIATE_CTA = new Set(['justwatch']);
+/** Only affiliate-link clicks count toward the click rate (not website, map, call or JustWatch clicks). */
+const AFFILIATE_CTA = new Set(['prime', 'disc', 'book_stay', 'book_tour']);
 const statsPaths = (env: Env) => (JSON.parse(env.STATS_SITES || '[]') as { path: string }[]).map((s) => s.path);
 const AFFILIATES = 'hq/affiliate-programs.json';
 
@@ -495,7 +495,7 @@ async function nichesJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: bo
       const st = JSON.parse(snap.files[path] || 'null') as { totals?: { views: number; cta: Record<string, number> } } | null;
       if (!st?.totals) continue;
       measured.views += st.totals.views;
-      measured.clicks += Object.entries(st.totals.cta).filter(([k]) => !NON_AFFILIATE_CTA.has(k)).reduce((a, [, v]) => a + v, 0);
+      measured.clicks += Object.entries(st.totals.cta).filter(([k]) => AFFILIATE_CTA.has(k)).reduce((a, [, v]) => a + v, 0);
       if (st.totals.views) measured.sites.push(path.split('/')[1]);
     } catch { /* unreadable stats file: skip */ }
   }

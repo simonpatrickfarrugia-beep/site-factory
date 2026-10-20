@@ -20,7 +20,7 @@ interface Stats { generatedAt: string | null; totals: { views: number; prevViews
 export function hqProps() {
   const portfolio = read<any>('hq/portfolio.json', { owner: 'IMN', groups: [], nodes: [], actions: [] });
   const finance = read<any>('hq/finance.json', { revenue: [], costs: [], monthlyRunning: [] });
-  const money: Record<string, string[]> = { trailers: ['prime', 'disc'], vic: ['website', 'call', 'book_stay', 'book_tour'] };
+  const money: Record<string, string[]> = { trailers: ['prime', 'disc'], vic: ['book_stay', 'book_tour'] };
   const sites = portfolio.nodes
     .filter((nd: any) => nd.stats)
     .map((nd: any) => {
@@ -38,6 +38,11 @@ export function hqProps() {
         money: (money[nd.id] ?? []).reduce((a, k) => a + (t.cta[k] ?? 0), 0),
         updated: s?.generatedAt ?? null,
         dashboard: `${nd.url}/hq/stats`,
+        station: nd.station ?? null,
+        launched: nd.launched ?? null,
+        day: nd.launched ? Math.floor((Date.now() - Date.parse(nd.launched)) / 86400000) : null,
+        target: nd.target90 ?? null,
+        targetSet: nd.targetSet ?? null,
       };
     });
   const movies = read<any[]>('data/trailers/movies.json', []);

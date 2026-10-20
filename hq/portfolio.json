@@ -27,7 +27,14 @@
    "status": "live",
    "url": "https://www.movietrailer.channel",
    "stats": "data/trailers/stats.json",
-   "money": "Amazon Associates (US)"
+   "money": "Amazon Associates (US)",
+   "station": "Measure",
+   "launched": "2026-10-17",
+   "target90": {
+    "views": 3000,
+    "moneyClicks": 30
+   },
+   "targetSet": "provisional"
   },
   {
    "id": "vic",
@@ -36,7 +43,14 @@
    "status": "live",
    "url": "https://victours.com.au",
    "stats": "data/vic/stats.json",
-   "money": "Booking.com, Viator (applying)"
+   "money": "Booking.com, Viator (applying)",
+   "station": "Launch",
+   "launched": "2026-10-20",
+   "target90": {
+    "views": 1000,
+    "moneyClicks": 20
+   },
+   "targetSet": "provisional"
   },
   {
    "id": "factory",
@@ -164,5 +178,17 @@
    "what": "Verify the 'check' programmes in the affiliate catalogue",
    "site": "hq"
   }
- ]
+ ],
+ "_stations": [
+  "Research",
+  "Brief",
+  "Build",
+  "Content",
+  "Quality",
+  "Launch",
+  "Promote",
+  "Measure",
+  "Review"
+ ],
+ "_review": "At day 90 (launched + 90): visits and money clicks over the last 28 days vs target90. Both >= 100% -> double down; average >= 50% -> fix and give it one more 90 days; below 50% -> kill or merge. Targets are provisional until Simon confirms."
 }
