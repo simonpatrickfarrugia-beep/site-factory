@@ -5,10 +5,12 @@ interface Props {
   tagline: string | null;
   count: number;
   youtubeId: string | null;
+  /** Where the card links (defaults to /discover/{slug}). */
+  href?: string;
 }
-const { slug, name, tagline, count, youtubeId } = Astro.props;
+const { slug, name, tagline, count, youtubeId, href } = Astro.props;
 ---
-<a class="collection-card" href={`/discover/${slug}`}>
+<a class="collection-card" href={href ?? `/discover/${slug}`}>
   <span class="frame">
     {youtubeId && <img src={`https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg`} alt="" width="480" height="360" loading="lazy" decoding="async" />}
   </span>

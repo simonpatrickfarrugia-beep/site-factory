@@ -13,9 +13,11 @@ interface Props {
   schema?: Record<string, unknown>[];
   /** Private page: noindex and no analytics. */
   private?: boolean;
+  /** Public page kept out of Google for now (thin): noindex, follow. Analytics still on. */
+  noindex?: boolean;
 }
 
-const { title, rawTitle = false, description = brand.seo.defaultDescription, image, schema = [], private: isPrivate = false } = Astro.props;
+const { title, rawTitle = false, description = brand.seo.defaultDescription, image, schema = [], private: isPrivate = false, noindex = false } = Astro.props;
 const fullTitle = !title ? brand.name : rawTitle ? title : `${title}${brand.seo.titleSuffix}`;
 const canonical = new URL(Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/'), Astro.site).toString();
 // Google Fonts rejects the whole request if a family lacks a requested weight,
@@ -41,6 +43,7 @@ const tokenCss = `:root{${Object.entries(tokens).map(([k, v]) => `${k}:${v}`).jo
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {(!brand.launched || isPrivate) && <meta name="robots" content="noindex, nofollow" />}
+    {brand.launched && !isPrivate && noindex && <meta name="robots" content="noindex, follow" />}
     <meta name="theme-color" content={brand.colors.brand} />
 
     <meta property="og:type" content="website" />

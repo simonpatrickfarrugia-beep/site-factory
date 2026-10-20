@@ -87,7 +87,7 @@ const justWatchUrl = `https://www.justwatch.com/us/search?q=${encodeURIComponent
       <section class="band" aria-labelledby="in-collections">
         <h2 id="in-collections">Also featured in</h2>
         <ul class="chip-list">
-          {inCollections.map((c) => <li><a class="chip" href={`/discover/${c.slug}`}>{c.name}</a></li>)}
+          {inCollections.map((c) => <li><a class="chip" href={c.href ?? `/discover/${c.slug}`}>{c.name}</a></li>)}
         </ul>
       </section>
     )}

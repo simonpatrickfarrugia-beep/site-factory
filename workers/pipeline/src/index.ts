@@ -15,7 +15,7 @@ import { channelFeed, omdbLookup, omdbYearsForTitle, judgeNiche, pickCategories,
 import { buildCollections, type Idea, type MovieCollection } from './collections';
 import { ga4Report, googleAccessToken, searchAnalytics, youtubeSearch } from './google';
 import { buildStats } from './stats';
-import { estimateMoney, moneyReport, nicheReport, scoreNiche, type AffiliateCatalog, type Niche } from './niches';
+import { calibrate, estimateMoney, moneyReport, type Measured, nicheReport, scoreNiche, type AffiliateCatalog, type Niche } from './niches';
 import { buildDemandReport } from './demand';
 import { pickTrailer } from './titles';
 import { buildCatalogue, type Candidate } from './catalogue';
@@ -102,6 +102,10 @@ const KEYWORDS_REPORT = 'hq/reports/keywords.md';
 const VIC_TOWNS_REPORT = 'reports/vic/towns.md';
 const NICHES_REPORT = 'hq/reports/niches.md';
 const COMPETITION_REPORT = 'hq/reports/competition.md';
+const FINANCE = 'hq/finance.json';
+/** Outbound clicks that aren't affiliate links (no commission) don't count toward the click rate. */
+const NON_AFFILIATE_CTA = new Set(['justwatch']);
+const statsPaths = (env: Env) => (JSON.parse(env.STATS_SITES || '[]') as { path: string }[]).map((s) => s.path);
 const AFFILIATES = 'hq/affiliate-programs.json';
 
 /** Workers free plan allows 50 outgoing calls per run; GitHub reads/commit use up to 8. */
@@ -185,7 +189,9 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
       ? [KEYWORDS]
       : job === 'towns'
       ? [VIC_TOWNS]
-      : job === 'niches' || job === 'competition'
+      : job === 'niches'
+      ? [NICHES, AFFILIATES, FINANCE, ...statsPaths(env)]
+      : job === 'competition'
       ? [NICHES, AFFILIATES]
       : job === 'stats'
       ? [STATS, MOVIES, COLLECTIONS]
@@ -482,12 +488,29 @@ async function nichesJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: bo
   // Money overlay: match each scored idea to affiliate programmes and estimate revenue at maturity.
   // Categories are picked once by Claude (cheap); estimates are recomputed every run from the catalogue.
   const cat = snap.files[AFFILIATES] ? (JSON.parse(snap.files[AFFILIATES]) as AffiliateCatalog) : null;
+  // Learn from our own sites: affiliate clicks per page view (GA4) and sales Simon reports (hq/finance.json revenue[].sales).
+  const measured: Measured = { views: 0, clicks: 0, sales: 0, sites: [] };
+  for (const path of statsPaths(env)) {
+    try {
+      const st = JSON.parse(snap.files[path] || 'null') as { totals?: { views: number; cta: Record<string, number> } } | null;
+      if (!st?.totals) continue;
+      measured.views += st.totals.views;
+      measured.clicks += Object.entries(st.totals.cta).filter(([k]) => !NON_AFFILIATE_CTA.has(k)).reduce((a, [, v]) => a + v, 0);
+      if (st.totals.views) measured.sites.push(path.split('/')[1]);
+    } catch { /* unreadable stats file: skip */ }
+  }
+  try {
+    const fin = JSON.parse(snap.files[FINANCE] || '{}') as { revenue?: { sales?: number }[] };
+    measured.sales = (fin.revenue ?? []).reduce((a, r) => a + (r.sales ?? 0), 0);
+  } catch { /* no finance file */ }
+  const cal = cat ? calibrate(cat.model, measured) : null;
+  if (cal) log.push(cal.note);
   if (cat) {
     for (const n of niches as (Niche & { categories?: string[] })[]) {
       if (n.status !== 'scored' || !n.score) continue;
       try {
         if (!n.categories?.length) n.categories = await pickCategories(env.ANTHROPIC_API_KEY, env.ANTHROPIC_MODEL, n.idea, n.notes, cat.categories);
-        n.money = estimateMoney(cat, n.score.totalVolume, n.categories, n.location ?? location, n.score.medianCpc);
+        n.money = estimateMoney(cat, n.score.totalVolume, n.categories, n.location ?? location, n.score.medianCpc, cal);
       } catch (e) {
         log.push(`${n.idea}: money estimate failed: ${(e as Error).message.slice(0, 120)}`);
       }
@@ -495,7 +518,7 @@ async function nichesJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: bo
   }
   const left = niches.filter((n) => n.status === 'new').length;
   log.unshift(`Niches: scored ${todo.filter((n) => n.status === 'scored').length} of ${todo.length}${left ? `; ${left} still waiting (run again)` : ''}.`);
-  const report = nicheReport(niches, now, location) + (cat ? moneyReport(niches, cat) : '');
+  const report = nicheReport(niches, now, location) + (cat ? moneyReport(niches, cat, cal) : '');
   const commit = await save(
     repo,
     snap.sha,

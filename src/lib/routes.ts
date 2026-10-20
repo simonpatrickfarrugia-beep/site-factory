@@ -22,6 +22,8 @@ export interface Route {
   lastmod?: string;
   /** Leave out of the sitemap (e.g. thin or duplicate pages). */
   noSitemap?: boolean;
+  /** Public but kept out of Google for now (e.g. a collection with too few films): noindex, follow; not in the sitemap. */
+  noindex?: boolean;
   /** Private page: noindex, no analytics, never in the sitemap (e.g. /hq/stats). */
   private?: boolean;
   props: Record<string, unknown>;

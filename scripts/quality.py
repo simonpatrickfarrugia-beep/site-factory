@@ -6,7 +6,7 @@ Hard fails (block the deploy check):
   - missing or duplicate <title>, missing meta description
 Warnings (listed, don't block):
   - thin pages: fewer than 80 words that aren't shared template text (boilerplate = phrases on 50%+ of pages in the same section)
-  - near-duplicates: same section, 85%+ of 5-word phrases shared
+  - near-duplicates: any two pages sharing 85%+ of their 5-word phrases
 Usage: python3 scripts/quality.py [dist]   (writes quality.md)
 """
 import hashlib, html, os, re, sys
@@ -56,13 +56,14 @@ for sec, ps in groups.items():
     for p in ps:
         p['unique'] = sum(1 for x in p['sh'] if df[x] < cut) if len(ps) >= 4 else len(p['words'])
         if p['unique'] < 80: thin.append(p)
-    if len(ps) <= 600:
-        for i in range(len(ps)):
-            for j in range(i + 1, len(ps)):
-                a, b = ps[i]['sh'], ps[j]['sh']
-                if not a or not b: continue
-                sim = len(a & b) / min(len(a), len(b))
-                if sim >= 0.85: near.append((sim, ps[i]['url'], ps[j]['url']))
+# Near-duplicates anywhere on the site (pairs sharing 85%+ of their 5-word phrases)
+if len(pages) <= 2000:
+    for i in range(len(pages)):
+        for j in range(i + 1, len(pages)):
+            a, b = pages[i]['sh'], pages[j]['sh']
+            if len(a) < 20 or len(b) < 20: continue
+            sim = len(a & b) / min(len(a), len(b))
+            if sim >= 0.85: near.append((sim, pages[i]['url'], pages[j]['url']))
 thin.sort(key=lambda p: p['unique'])
 near.sort(reverse=True)
 if thin: warns.append(f"{len(thin)} thin page(s) (< 80 words of their own): " + ', '.join(f"{p['url']} ({p['unique']})" for p in thin[:12]))

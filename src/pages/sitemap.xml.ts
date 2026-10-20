@@ -5,7 +5,7 @@ const escape = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').rep
 
 export const GET: APIRoute = ({ site }) => {
   const urls = getRoutes()
-    .filter((r) => !r.noSitemap && !r.private)
+    .filter((r) => !r.noSitemap && !r.private && !r.noindex)
     .map((r) => {
       const loc = new URL(r.path ? `/${r.path}` : '/', site).toString();
       const lastmod = r.lastmod ? `<lastmod>${r.lastmod.slice(0, 10)}</lastmod>` : '';

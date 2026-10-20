@@ -18,7 +18,9 @@ const fileFor = (url) => (url === '/' ? join(dist, 'index.html') : join(dist, `$
 const listPath = join('brands', brand, 'webflow-urls.txt');
 if (existsSync(listPath)) {
   const urls = readFileSync(listPath, 'utf8').split('\n').map((l) => l.trim()).filter((l) => l && !l.startsWith('#'));
-  for (const url of urls) if (!existsSync(fileFor(url))) problems.push(`Missing page for ${url}`);
+  // An old URL is covered by its own page or by a 301 in _redirects (checked below).
+  const redirected = new Set(existsSync(join(dist, '_redirects')) ? readFileSync(join(dist, '_redirects'), 'utf8').split('\n').map((l) => l.trim().split(/\s+/)[0]) : []);
+  for (const url of urls) if (!existsSync(fileFor(url)) && !redirected.has(url)) problems.push(`Missing page for ${url}`);
   notice(`Checked ${urls.length} required URLs`);
 }
 

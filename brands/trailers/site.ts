@@ -90,9 +90,15 @@ export function routes(): Route[] {
     }),
   );
   const moviesIn = (c: MovieCollection) => membership.get(c.slug) ?? [];
+  // Collections merged into another page: their old URLs 301 there (brands/trailers/public/_redirects).
+  const MERGED: Record<string, string> = { 'studio-ghibli-collection': '/studio-ghibli-where-to-watch', 'studio-ghibli-where-to-watch': '/studio-ghibli-where-to-watch' };
+  // Collections with fewer films than this stay live (old links work) but are kept out of Google until they grow.
+  const MIN_INDEXED_FILMS = 4;
+  /** Every Ghibli film from both Ghibli collections, without repeats. */
+  const ghibliFilms = () => [...new Set(collections.filter((c) => c.slug.startsWith('studio-ghibli')).flatMap((c) => moviesIn(c)))];
   const collectionCard = (c: MovieCollection) => {
-    const list = moviesIn(c);
-    return { slug: c.slug, name: c.name, tagline: c.tagline, count: list.length, youtubeId: list[0]?.youtubeId ?? null };
+    const list = c.slug.startsWith('studio-ghibli') ? ghibliFilms() : moviesIn(c);
+    return { slug: c.slug, name: c.name, tagline: c.tagline, count: list.length, youtubeId: list[0]?.youtubeId ?? null, href: MERGED[c.slug] };
   };
   const card = (m: Movie) => ({ slug: m.slug, name: m.name, year: m.year, youtubeId: m.youtubeId });
 
@@ -164,8 +170,10 @@ export function routes(): Route[] {
 
   // Collection pages: /discover/{slug}
   for (const c of collections) {
+    if (MERGED[c.slug]) continue;
     const list = moviesIn(c);
     out.push({
+      noindex: list.length < MIN_INDEXED_FILMS,
       path: `discover/${c.slug}`,
       template: 'collection',
       seo: {
@@ -225,7 +233,7 @@ export function routes(): Route[] {
   // Studio Ghibli article (a Webflow static page backed by the Ghibli collection)
   const ghibli = collections.find((c) => c.slug === 'studio-ghibli-where-to-watch');
   if (ghibli) {
-    const list = moviesIn(ghibli);
+    const list = ghibliFilms();
     out.push({
       path: 'studio-ghibli-where-to-watch',
       template: 'collection',

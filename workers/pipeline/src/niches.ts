@@ -191,7 +191,30 @@ export function matchPrograms(cat: AffiliateCatalog, categories: string[], marke
     .sort((a, b) => (b.estPerSaleUsd ?? 0) - (a.estPerSaleUsd ?? 0));
 }
 
-export function estimateMoney(cat: AffiliateCatalog, totalVolume: number, categories: string[], market: string, medianCpc: number | null = null): MoneyEstimate {
+/** What our own sites have measured so far (last 28 days of GA4 + reported affiliate sales). */
+export interface Measured { views: number; clicks: number; sales: number; sites: string[] }
+export interface Calibration { clickRate: number[]; conversion: number[]; note: string }
+
+/**
+ * Blend the assumed rates with our measured ones (Bayesian shrinkage): the assumption counts as
+ * 2,000 page views (click rate) and 200 clicks (conversion) of evidence, so a little data nudges the
+ * model and a lot of data takes it over. Low/mid/high keep their spread around the new mid.
+ */
+export function calibrate(model: AffiliateCatalog['model'], m: Measured | null): Calibration {
+  const pct = (x: number) => `${(x * 100).toFixed(1)}%`;
+  if (!m || m.views <= 0) return { clickRate: model.clickRate, conversion: model.conversion, note: 'No measured data yet: using assumed rates.' };
+  const K_VIEWS = 2000, K_CLICKS = 200;
+  const cr = (m.clicks + model.clickRate[1] * K_VIEWS) / (m.views + K_VIEWS);
+  const cv = m.clicks > 0 || m.sales > 0 ? (m.sales + model.conversion[1] * K_CLICKS) / (m.clicks + K_CLICKS) : model.conversion[1];
+  const scale = (arr: number[], mid: number) => arr.map((x) => (x * mid) / arr[1]);
+  return {
+    clickRate: scale(model.clickRate, cr),
+    conversion: scale(model.conversion, cv),
+    note: `Calibrated from ${m.views.toLocaleString('en-US')} page views, ${m.clicks} affiliate clicks and ${m.sales} reported sales (${m.sites.join(', ')}): click rate ${pct(cr)} (assumed ${pct(model.clickRate[1])}), conversion ${pct(cv)} (assumed ${pct(model.conversion[1])}). The assumption weighs as much as 2,000 views / 200 clicks, so real data takes over as it grows.`,
+  };
+}
+
+export function estimateMoney(cat: AffiliateCatalog, totalVolume: number, categories: string[], market: string, medianCpc: number | null = null, cal: Calibration | null = null): MoneyEstimate {
   const progs = matchPrograms(cat, categories, market);
   // A page earns from its best few programmes, not just the single best: average the top 3 payouts.
   const payouts = progs.map((p) => p.estPerSaleUsd ?? 0).filter((x) => x > 0).slice(0, 3);
@@ -200,7 +223,7 @@ export function estimateMoney(cat: AffiliateCatalog, totalVolume: number, catego
   const visits = [0, 1, 2].map((i) => Math.round(totalVolume * m.captureShare[i])) as [number, number, number];
   // Display ads earn more where advertisers pay more per click: scale the base RPM by the niche's CPC (0.5x to 3x).
   const rpmScale = Math.max(0.5, Math.min(3, (medianCpc ?? 1) / 1));
-  const revenueUsd = [0, 1, 2].map((i) => Math.round(visits[i] * m.clickRate[i] * m.conversion[i] * perSale + (visits[i] / 1000) * m.adRpmUsd[i] * rpmScale)) as [number, number, number];
+  const revenueUsd = [0, 1, 2].map((i) => Math.round(visits[i] * (cal ?? m).clickRate[i] * (cal ?? m).conversion[i] * perSale + (visits[i] / 1000) * m.adRpmUsd[i] * rpmScale)) as [number, number, number];
   return {
     categories,
     visits,
@@ -213,13 +236,15 @@ export function estimateMoney(cat: AffiliateCatalog, totalVolume: number, catego
 const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
 
 /** Extra report sections: money ranking + programmes to consider per idea + programme catalogue. */
-export function moneyReport(niches: (Niche & { money?: MoneyEstimate | null })[], cat: AffiliateCatalog): string {
+export function moneyReport(niches: (Niche & { money?: MoneyEstimate | null })[], cat: AffiliateCatalog, cal: Calibration | null = null): string {
   const withMoney = niches.filter((n) => n.status === 'scored' && n.money).sort((a, b) => b.money!.revenueUsd[1] - a.money!.revenueUsd[1]);
   const L: string[] = [
     '',
     '## Money map: estimated revenue at maturity',
     '',
     `Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits × affiliate clicks × conversion × payout (average of the top 3 matching programmes), plus display ads. These numbers rank ideas against each other; they are not forecasts. They get replaced by our own measured rates as our sites earn.`,
+    '',
+    `**Model:** ${cal?.note ?? 'assumed rates.'}`,
     '',
     '| Idea | Market | Visits/mo (mid) | Est. revenue/mo (low · mid · high) | Avg payout per sale | Score |',
     '|---|---|---:|---|---:|---:|',
