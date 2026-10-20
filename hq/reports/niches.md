@@ -585,3 +585,153 @@ _Seeds: movie soundtrack, film score, soundtrack vinyl, best movie soundtracks, 
 | breakfast places geelong | 1,900 | 3 | $0.24 |
 
 _Seeds: best restaurants daylesford, restaurants bright, restaurants lorne, best restaurants geelong, yarra valley restaurants, winery lunch yarra valley. Data cost: US$0.114._
+
+## Money map: estimated revenue at maturity
+
+Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits × affiliate clicks × conversion × payout (average of the top 3 matching programmes), plus display ads. These numbers rank ideas against each other; they are not forecasts. They get replaced by our own measured rates as our sites earn.
+
+| Idea | Market | Visits/mo (mid) | Est. revenue/mo (low · mid · high) | Avg payout per sale | Score |
+|---|---|---:|---|---:|---:|
+| Dog breeds | United States | 274,520 | $1,955 · **$22,511** · $215,498 | $24.67 | 75 |
+| US national parks and hiking trails | United States | 89,156 | $300 · **$3,120** · $28,084 | $9 | 74 |
+| Anime: where to watch and watch order | United States | 102,419 | $165 · **$1,342** · $9,832 | $1.7 | 70 |
+| Video games: release dates and trailers | United States | 70,520 | $104 · **$811** · $5,642 | $1.17 | 62 |
+| TV shows: where to watch | United States | 27,719 | $45 · **$363** · $2,661 | $1.7 | 73 |
+| Book series in reading order | United States | 24,564 | $38 · **$302** · $2,162 | $1.43 | 53 |
+| Victoria: where to stay by town | Australia | 3,903 | $14 · **$152** · $1,386 | $10.33 | 66 |
+| Movie soundtracks and film music | United States | 11,888 | $18 · **$146** · $1,046 | $1.43 | 53 |
+| Board games | United States | 11,226 | $17 · **$137** · $977 | $1.4 | 61 |
+| Victoria: things to do by town | Australia | 1,769 | $7 · **$69** · $628 | $10.33 | 60 |
+| Victoria: where to eat by town | Australia | 779 | $3 · **$27** · $245 | $9 | 51 |
+
+## Programmes to consider, by idea
+
+### Dog breeds
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Embrace Pet Insurance | ~$36 per lead | moderate | check | not applied |
+| Chewy | ~$20 per new customer | moderate | check | not applied |
+| BarkBox | ~$18 per subscription | moderate | check | not applied |
+| Rover (pet sitting) | ~15% per referral | moderate | check | not applied |
+| Ruffwear (dog gear) | ~8% | easy | check | not applied |
+| Bookshop.org affiliates *(check)* | check (commonly quoted ~10%) | easy | check | not applied |
+| Amazon Associates US: pet supplies | 3% | easy | Same Associates account | approved |
+| Amazon Associates US: physical books | 4.5% | easy | Same Associates account | approved |
+
+### US national parks and hiking trails
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
+| Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
+| Viator Partner Program | ~8% of booking value | easy | Website with travel content | not applied |
+| GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | not applied |
+| Ruffwear (dog gear) | ~8% | easy | check | not applied |
+| REI *(check)* | check (commonly quoted ~5%) | moderate | check | not applied |
+| Klook Affiliate *(check)* | check | easy | check | not applied |
+
+### Anime: where to watch and watch order
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Anime streaming (e.g. Crunchyroll) *(check)* | check (may not run an open programme) | hard | check | not applied |
+| Amazon Associates US: digital video (Prime Video) | 5% (digital video); bounties: $3 Prime trial, $5 first Prime Video stream | easy | 3 qualifying sales within 180 days of joining, or the account is closed | approved |
+| Amazon Associates US: DVD and Blu-ray | 2.5% | easy | Same Associates account | approved |
+
+### Video games: release dates and trailers
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Amazon Associates US: digital video (Prime Video) | 5% (digital video); bounties: $3 Prime trial, $5 first Prime Video stream | easy | 3 qualifying sales within 180 days of joining, or the account is closed | approved |
+| Green Man Gaming *(check)* | check | easy | check | not applied |
+| Humble Bundle partner *(check)* | check | easy | check | not applied |
+| Amazon Associates US: DVD and Blu-ray | 2.5% | easy | Same Associates account | approved |
+| Amazon Associates US: video games | 1% physical / 2% digital | easy | Same Associates account | approved |
+
+### TV shows: where to watch
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Anime streaming (e.g. Crunchyroll) *(check)* | check (may not run an open programme) | hard | check | not applied |
+| Amazon Associates US: digital video (Prime Video) | 5% (digital video); bounties: $3 Prime trial, $5 first Prime Video stream | easy | 3 qualifying sales within 180 days of joining, or the account is closed | approved |
+| Amazon Associates US: DVD and Blu-ray | 2.5% | easy | Same Associates account | approved |
+
+### Book series in reading order
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Bookshop.org affiliates *(check)* | check (commonly quoted ~10%) | easy | check | not applied |
+| Amazon Associates US: digital video (Prime Video) | 5% (digital video); bounties: $3 Prime trial, $5 first Prime Video stream | easy | 3 qualifying sales within 180 days of joining, or the account is closed | approved |
+| Amazon Associates US: physical books | 4.5% | easy | Same Associates account | approved |
+| Amazon Associates US: DVD and Blu-ray | 2.5% | easy | Same Associates account | approved |
+
+### Victoria: where to stay by town
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Discover Cars / Rentalcars (car hire) | ~4–8% | easy | check | not applied |
+| Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
+| Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
+| Viator Partner Program | ~8% of booking value | easy | Website with travel content | not applied |
+| GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | not applied |
+| Klook Affiliate *(check)* | check | easy | check | not applied |
+| Commission Factory (Australian network) *(check)* | varies by brand | easy | Australian publishers welcome; join once, then apply to brands | not applied |
+
+### Movie soundtracks and film music
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Bookshop.org affiliates *(check)* | check (commonly quoted ~10%) | easy | check | not applied |
+| Amazon Associates US: digital video (Prime Video) | 5% (digital video); bounties: $3 Prime trial, $5 first Prime Video stream | easy | 3 qualifying sales within 180 days of joining, or the account is closed | approved |
+| Amazon Associates US: physical books | 4.5% | easy | Same Associates account | approved |
+| Amazon Associates US: DVD and Blu-ray | 2.5% | easy | Same Associates account | approved |
+
+### Board games
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Board game retailers (e.g. Miniature Market) *(check)* | check | moderate | check | not applied |
+| Amazon Associates US: toys and games | 3% | easy | Same Associates account | approved |
+| Green Man Gaming *(check)* | check | easy | check | not applied |
+| Humble Bundle partner *(check)* | check | easy | check | not applied |
+| Amazon Associates US: video games | 1% physical / 2% digital | easy | Same Associates account | approved |
+
+### Victoria: things to do by town
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Discover Cars / Rentalcars (car hire) | ~4–8% | easy | check | not applied |
+| Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
+| Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
+| Viator Partner Program | ~8% of booking value | easy | Website with travel content | not applied |
+| GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | not applied |
+| Klook Affiliate *(check)* | check | easy | check | not applied |
+| Commission Factory (Australian network) *(check)* | varies by brand | easy | Australian publishers welcome; join once, then apply to brands | not applied |
+
+### Victoria: where to eat by town
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
+| Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
+| Viator Partner Program | ~8% of booking value | easy | Website with travel content | not applied |
+| GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | not applied |
+| Klook Affiliate *(check)* | check | easy | check | not applied |
+| Commission Factory (Australian network) *(check)* | varies by brand | easy | Australian publishers welcome; join once, then apply to brands | not applied |
+
+## Ad networks (when traffic qualifies)
+
+| Network | Minimum traffic | Notes |
+|---|---|---|
+| Google AdSense | None | Easy to join; lower earnings than premium networks |
+| Newor Media | Low (no figure published) | No niche restrictions |
+| Raptive | 25,000 pageviews | Reviews content quality and niche fit |
+| Mediavine | 50,000 sessions | Strong in lifestyle; check Journey (smaller-site tier) terms |
+| Ezoic | 250,000 users (raised Feb 2026) |  |
+
+_Catalogue: hq/affiliate-programs.json (28 programmes, updated 2026-10-21). "(check)" = terms not yet verified from a current source._

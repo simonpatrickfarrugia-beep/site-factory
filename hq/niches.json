@@ -225,7 +225,57 @@
    "costUsd": 0.114
   },
   "scoredAt": "2026-10-19T03:51:19.186Z",
-  "location": "United States"
+  "location": "United States",
+  "categories": [
+   "movies-tv",
+   "anime"
+  ],
+  "money": {
+   "categories": [
+    "movies-tv",
+    "anime"
+   ],
+   "visits": [
+    11088,
+    27719,
+    83157
+   ],
+   "revenueUsd": [
+    45,
+    363,
+    2661
+   ],
+   "bestPerSaleUsd": 1.7,
+   "programs": [
+    {
+     "id": "anime-streaming",
+     "name": "Anime streaming (e.g. Crunchyroll)",
+     "commission": "check (may not run an open programme)",
+     "approval": "hard",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": false
+    },
+    {
+     "id": "amazon-us-video",
+     "name": "Amazon Associates US: digital video (Prime Video)",
+     "commission": "5% (digital video); bounties: $3 Prime trial, $5 first Prime Video stream",
+     "approval": "easy",
+     "requirements": "3 qualifying sales within 180 days of joining, or the account is closed",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "amazon-us-dvd",
+     "name": "Amazon Associates US: DVD and Blu-ray",
+     "commission": "2.5%",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    }
+   ]
+  }
  },
  {
   "idea": "Book series in reading order",
@@ -378,7 +428,66 @@
    "costUsd": 0.09
   },
   "scoredAt": "2026-10-19T03:51:19.186Z",
-  "location": "United States"
+  "location": "United States",
+  "categories": [
+   "books",
+   "movies-tv"
+  ],
+  "money": {
+   "categories": [
+    "books",
+    "movies-tv"
+   ],
+   "visits": [
+    9825,
+    24564,
+    73691
+   ],
+   "revenueUsd": [
+    38,
+    302,
+    2162
+   ],
+   "bestPerSaleUsd": 1.43,
+   "programs": [
+    {
+     "id": "bookshop",
+     "name": "Bookshop.org affiliates",
+     "commission": "check (commonly quoted ~10%)",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": false
+    },
+    {
+     "id": "amazon-us-video",
+     "name": "Amazon Associates US: digital video (Prime Video)",
+     "commission": "5% (digital video); bounties: $3 Prime trial, $5 first Prime Video stream",
+     "approval": "easy",
+     "requirements": "3 qualifying sales within 180 days of joining, or the account is closed",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "amazon-us-books",
+     "name": "Amazon Associates US: physical books",
+     "commission": "4.5%",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "amazon-us-dvd",
+     "name": "Amazon Associates US: DVD and Blu-ray",
+     "commission": "2.5%",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    }
+   ]
+  }
  },
  {
   "idea": "Board games",
@@ -605,7 +714,75 @@
    "costUsd": 0.114
   },
   "scoredAt": "2026-10-19T03:51:19.186Z",
-  "location": "United States"
+  "location": "United States",
+  "categories": [
+   "board-games",
+   "video-games"
+  ],
+  "money": {
+   "categories": [
+    "board-games",
+    "video-games"
+   ],
+   "visits": [
+    4490,
+    11226,
+    33678
+   ],
+   "revenueUsd": [
+    17,
+    137,
+    977
+   ],
+   "bestPerSaleUsd": 1.4,
+   "programs": [
+    {
+     "id": "boardgame-retailers",
+     "name": "Board game retailers (e.g. Miniature Market)",
+     "commission": "check",
+     "approval": "moderate",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": false
+    },
+    {
+     "id": "amazon-us-toys",
+     "name": "Amazon Associates US: toys and games",
+     "commission": "3%",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "greenmangaming",
+     "name": "Green Man Gaming",
+     "commission": "check",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": false
+    },
+    {
+     "id": "humble",
+     "name": "Humble Bundle partner",
+     "commission": "check",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": false
+    },
+    {
+     "id": "amazon-us-games",
+     "name": "Amazon Associates US: video games",
+     "commission": "1% physical / 2% digital",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    }
+   ]
+  }
  },
  {
   "idea": "Video games: release dates and trailers",
@@ -835,7 +1012,75 @@
   },
   "scoredAt": "2026-10-19T03:38:57.034Z",
   "location": "United States",
-  "error": null
+  "error": null,
+  "categories": [
+   "video-games",
+   "movies-tv"
+  ],
+  "money": {
+   "categories": [
+    "video-games",
+    "movies-tv"
+   ],
+   "visits": [
+    28208,
+    70520,
+    211560
+   ],
+   "revenueUsd": [
+    104,
+    811,
+    5642
+   ],
+   "bestPerSaleUsd": 1.17,
+   "programs": [
+    {
+     "id": "amazon-us-video",
+     "name": "Amazon Associates US: digital video (Prime Video)",
+     "commission": "5% (digital video); bounties: $3 Prime trial, $5 first Prime Video stream",
+     "approval": "easy",
+     "requirements": "3 qualifying sales within 180 days of joining, or the account is closed",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "greenmangaming",
+     "name": "Green Man Gaming",
+     "commission": "check",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": false
+    },
+    {
+     "id": "humble",
+     "name": "Humble Bundle partner",
+     "commission": "check",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": false
+    },
+    {
+     "id": "amazon-us-dvd",
+     "name": "Amazon Associates US: DVD and Blu-ray",
+     "commission": "2.5%",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "amazon-us-games",
+     "name": "Amazon Associates US: video games",
+     "commission": "1% physical / 2% digital",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    }
+   ]
+  }
  },
  {
   "idea": "Anime: where to watch and watch order",
@@ -1065,7 +1310,57 @@
   },
   "scoredAt": "2026-10-19T03:38:57.034Z",
   "location": "United States",
-  "error": null
+  "error": null,
+  "categories": [
+   "anime",
+   "movies-tv"
+  ],
+  "money": {
+   "categories": [
+    "anime",
+    "movies-tv"
+   ],
+   "visits": [
+    40968,
+    102419,
+    307257
+   ],
+   "revenueUsd": [
+    165,
+    1342,
+    9832
+   ],
+   "bestPerSaleUsd": 1.7,
+   "programs": [
+    {
+     "id": "anime-streaming",
+     "name": "Anime streaming (e.g. Crunchyroll)",
+     "commission": "check (may not run an open programme)",
+     "approval": "hard",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": false
+    },
+    {
+     "id": "amazon-us-video",
+     "name": "Amazon Associates US: digital video (Prime Video)",
+     "commission": "5% (digital video); bounties: $3 Prime trial, $5 first Prime Video stream",
+     "approval": "easy",
+     "requirements": "3 qualifying sales within 180 days of joining, or the account is closed",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "amazon-us-dvd",
+     "name": "Amazon Associates US: DVD and Blu-ray",
+     "commission": "2.5%",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    }
+   ]
+  }
  },
  {
   "idea": "US national parks and hiking trails",
@@ -1296,7 +1591,104 @@
    "costUsd": 0.114
   },
   "scoredAt": "2026-10-19T03:51:19.186Z",
-  "location": "United States"
+  "location": "United States",
+  "categories": [
+   "outdoors",
+   "travel-stays",
+   "travel-tours"
+  ],
+  "money": {
+   "categories": [
+    "outdoors",
+    "travel-stays",
+    "travel-tours"
+   ],
+   "visits": [
+    35662,
+    89156,
+    267468
+   ],
+   "revenueUsd": [
+    300,
+    3120,
+    28084
+   ],
+   "bestPerSaleUsd": 9,
+   "programs": [
+    {
+     "id": "booking",
+     "name": "Booking.com Affiliate Partner",
+     "commission": "Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay)",
+     "approval": "moderate",
+     "requirements": "Content site about travel; tax form + payment details (W-8BEN-E for AU companies)",
+     "status": "applying",
+     "verified": true
+    },
+    {
+     "id": "hotelgroups",
+     "name": "Hotel groups (Marriott, Hilton, IHG)",
+     "commission": "~3–7%",
+     "approval": "moderate",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "expedia",
+     "name": "Expedia Group Affiliate",
+     "commission": "~2–6% by product",
+     "approval": "moderate",
+     "requirements": "Travel content site",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "viator",
+     "name": "Viator Partner Program",
+     "commission": "~8% of booking value",
+     "approval": "easy",
+     "requirements": "Website with travel content",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "getyourguide",
+     "name": "GetYourGuide Partner Program",
+     "commission": "~8% baseline, tiered up for volume",
+     "approval": "easy",
+     "requirements": "Website with travel content",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "ruffwear",
+     "name": "Ruffwear (dog gear)",
+     "commission": "~8%",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "rei",
+     "name": "REI",
+     "commission": "check (commonly quoted ~5%)",
+     "approval": "moderate",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": false
+    },
+    {
+     "id": "klook",
+     "name": "Klook Affiliate",
+     "commission": "check",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": false
+    }
+   ]
+  }
  },
  {
   "idea": "Dog breeds",
@@ -1525,7 +1917,102 @@
    "costUsd": 0.114
   },
   "scoredAt": "2026-10-19T03:51:19.186Z",
-  "location": "United States"
+  "location": "United States",
+  "categories": [
+   "pets",
+   "books"
+  ],
+  "money": {
+   "categories": [
+    "pets",
+    "books"
+   ],
+   "visits": [
+    109808,
+    274520,
+    823560
+   ],
+   "revenueUsd": [
+    1955,
+    22511,
+    215498
+   ],
+   "bestPerSaleUsd": 24.67,
+   "programs": [
+    {
+     "id": "embrace",
+     "name": "Embrace Pet Insurance",
+     "commission": "~$36 per lead",
+     "approval": "moderate",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "chewy",
+     "name": "Chewy",
+     "commission": "~$20 per new customer",
+     "approval": "moderate",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "barkbox",
+     "name": "BarkBox",
+     "commission": "~$18 per subscription",
+     "approval": "moderate",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "rover",
+     "name": "Rover (pet sitting)",
+     "commission": "~15% per referral",
+     "approval": "moderate",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "ruffwear",
+     "name": "Ruffwear (dog gear)",
+     "commission": "~8%",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "bookshop",
+     "name": "Bookshop.org affiliates",
+     "commission": "check (commonly quoted ~10%)",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": false
+    },
+    {
+     "id": "amazon-us-pets",
+     "name": "Amazon Associates US: pet supplies",
+     "commission": "3%",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "amazon-us-books",
+     "name": "Amazon Associates US: physical books",
+     "commission": "4.5%",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    }
+   ]
+  }
  },
  {
   "idea": "Movie soundtracks and film music",
@@ -1753,7 +2240,66 @@
    "costUsd": 0.114
   },
   "scoredAt": "2026-10-19T03:51:19.186Z",
-  "location": "United States"
+  "location": "United States",
+  "categories": [
+   "movies-tv",
+   "books"
+  ],
+  "money": {
+   "categories": [
+    "movies-tv",
+    "books"
+   ],
+   "visits": [
+    4755,
+    11888,
+    35664
+   ],
+   "revenueUsd": [
+    18,
+    146,
+    1046
+   ],
+   "bestPerSaleUsd": 1.43,
+   "programs": [
+    {
+     "id": "bookshop",
+     "name": "Bookshop.org affiliates",
+     "commission": "check (commonly quoted ~10%)",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": false
+    },
+    {
+     "id": "amazon-us-video",
+     "name": "Amazon Associates US: digital video (Prime Video)",
+     "commission": "5% (digital video); bounties: $3 Prime trial, $5 first Prime Video stream",
+     "approval": "easy",
+     "requirements": "3 qualifying sales within 180 days of joining, or the account is closed",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "amazon-us-books",
+     "name": "Amazon Associates US: physical books",
+     "commission": "4.5%",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "amazon-us-dvd",
+     "name": "Amazon Associates US: DVD and Blu-ray",
+     "commission": "2.5%",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    }
+   ]
+  }
  },
  {
   "idea": "Victoria: things to do by town",
@@ -1989,7 +2535,104 @@
   },
   "scoredAt": "2026-10-19T11:29:41.104Z",
   "location": "Australia",
-  "error": null
+  "error": null,
+  "categories": [
+   "travel-tours",
+   "travel-stays",
+   "travel-car"
+  ],
+  "money": {
+   "categories": [
+    "travel-tours",
+    "travel-stays",
+    "travel-car"
+   ],
+   "visits": [
+    708,
+    1769,
+    5307
+   ],
+   "revenueUsd": [
+    7,
+    69,
+    628
+   ],
+   "bestPerSaleUsd": 10.33,
+   "programs": [
+    {
+     "id": "discovercars",
+     "name": "Discover Cars / Rentalcars (car hire)",
+     "commission": "~4–8%",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "booking",
+     "name": "Booking.com Affiliate Partner",
+     "commission": "Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay)",
+     "approval": "moderate",
+     "requirements": "Content site about travel; tax form + payment details (W-8BEN-E for AU companies)",
+     "status": "applying",
+     "verified": true
+    },
+    {
+     "id": "hotelgroups",
+     "name": "Hotel groups (Marriott, Hilton, IHG)",
+     "commission": "~3–7%",
+     "approval": "moderate",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "expedia",
+     "name": "Expedia Group Affiliate",
+     "commission": "~2–6% by product",
+     "approval": "moderate",
+     "requirements": "Travel content site",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "viator",
+     "name": "Viator Partner Program",
+     "commission": "~8% of booking value",
+     "approval": "easy",
+     "requirements": "Website with travel content",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "getyourguide",
+     "name": "GetYourGuide Partner Program",
+     "commission": "~8% baseline, tiered up for volume",
+     "approval": "easy",
+     "requirements": "Website with travel content",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "klook",
+     "name": "Klook Affiliate",
+     "commission": "check",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": false
+    },
+    {
+     "id": "commissionfactory",
+     "name": "Commission Factory (Australian network)",
+     "commission": "varies by brand",
+     "approval": "easy",
+     "requirements": "Australian publishers welcome; join once, then apply to brands",
+     "status": "not applied",
+     "verified": false
+    }
+   ]
+  }
  },
  {
   "idea": "Victoria: where to stay by town",
@@ -2226,7 +2869,104 @@
   },
   "scoredAt": "2026-10-19T11:29:41.104Z",
   "location": "Australia",
-  "error": null
+  "error": null,
+  "categories": [
+   "travel-stays",
+   "travel-tours",
+   "travel-car"
+  ],
+  "money": {
+   "categories": [
+    "travel-stays",
+    "travel-tours",
+    "travel-car"
+   ],
+   "visits": [
+    1561,
+    3903,
+    11710
+   ],
+   "revenueUsd": [
+    14,
+    152,
+    1386
+   ],
+   "bestPerSaleUsd": 10.33,
+   "programs": [
+    {
+     "id": "discovercars",
+     "name": "Discover Cars / Rentalcars (car hire)",
+     "commission": "~4–8%",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "booking",
+     "name": "Booking.com Affiliate Partner",
+     "commission": "Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay)",
+     "approval": "moderate",
+     "requirements": "Content site about travel; tax form + payment details (W-8BEN-E for AU companies)",
+     "status": "applying",
+     "verified": true
+    },
+    {
+     "id": "hotelgroups",
+     "name": "Hotel groups (Marriott, Hilton, IHG)",
+     "commission": "~3–7%",
+     "approval": "moderate",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "expedia",
+     "name": "Expedia Group Affiliate",
+     "commission": "~2–6% by product",
+     "approval": "moderate",
+     "requirements": "Travel content site",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "viator",
+     "name": "Viator Partner Program",
+     "commission": "~8% of booking value",
+     "approval": "easy",
+     "requirements": "Website with travel content",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "getyourguide",
+     "name": "GetYourGuide Partner Program",
+     "commission": "~8% baseline, tiered up for volume",
+     "approval": "easy",
+     "requirements": "Website with travel content",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "klook",
+     "name": "Klook Affiliate",
+     "commission": "check",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": false
+    },
+    {
+     "id": "commissionfactory",
+     "name": "Commission Factory (Australian network)",
+     "commission": "varies by brand",
+     "approval": "easy",
+     "requirements": "Australian publishers welcome; join once, then apply to brands",
+     "status": "not applied",
+     "verified": false
+    }
+   ]
+  }
  },
  {
   "idea": "Victoria: where to eat by town",
@@ -2457,6 +3197,92 @@
   },
   "scoredAt": "2026-10-19T11:29:41.104Z",
   "location": "Australia",
-  "error": null
+  "error": null,
+  "categories": [
+   "travel-tours",
+   "travel-stays"
+  ],
+  "money": {
+   "categories": [
+    "travel-tours",
+    "travel-stays"
+   ],
+   "visits": [
+    311,
+    779,
+    2336
+   ],
+   "revenueUsd": [
+    3,
+    27,
+    245
+   ],
+   "bestPerSaleUsd": 9,
+   "programs": [
+    {
+     "id": "booking",
+     "name": "Booking.com Affiliate Partner",
+     "commission": "Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay)",
+     "approval": "moderate",
+     "requirements": "Content site about travel; tax form + payment details (W-8BEN-E for AU companies)",
+     "status": "applying",
+     "verified": true
+    },
+    {
+     "id": "hotelgroups",
+     "name": "Hotel groups (Marriott, Hilton, IHG)",
+     "commission": "~3–7%",
+     "approval": "moderate",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "expedia",
+     "name": "Expedia Group Affiliate",
+     "commission": "~2–6% by product",
+     "approval": "moderate",
+     "requirements": "Travel content site",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "viator",
+     "name": "Viator Partner Program",
+     "commission": "~8% of booking value",
+     "approval": "easy",
+     "requirements": "Website with travel content",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "getyourguide",
+     "name": "GetYourGuide Partner Program",
+     "commission": "~8% baseline, tiered up for volume",
+     "approval": "easy",
+     "requirements": "Website with travel content",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "klook",
+     "name": "Klook Affiliate",
+     "commission": "check",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": false
+    },
+    {
+     "id": "commissionfactory",
+     "name": "Commission Factory (Australian network)",
+     "commission": "varies by brand",
+     "approval": "easy",
+     "requirements": "Australian publishers welcome; join once, then apply to brands",
+     "status": "not applied",
+     "verified": false
+    }
+   ]
+  }
  }
 ]
