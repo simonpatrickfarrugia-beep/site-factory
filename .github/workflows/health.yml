@@ -33,7 +33,7 @@ jobs:
           if [ "$FAILED" = "true" ]; then
             if [ -n "$open" ]; then gh issue comment "$open" --body-file health.md
             else gh issue create --title "Site Factory health check: something needs attention" --label health --body-file health.md; fi
-            echo "::error title=health::$(grep '^- ' health.md | head -5 | tr '\n' ' ')"
+            echo "::error title=health::$(sed -n '/Problems/,/^$/p' health.md | grep '^- ' | head -5 | tr '\n' ' ')"
             exit 1
           elif [ -n "$open" ]; then
             gh issue close "$open" --comment "All checks passing again ✅"

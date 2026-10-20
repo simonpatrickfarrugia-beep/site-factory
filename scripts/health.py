@@ -52,16 +52,20 @@ for f in cfg['freshFiles']:
     except Exception as e:
         problems.append(f"{f['path']}: unreadable ({str(e)[:100]})")
 
-# 4. No failed GitHub workflow runs in the last 26 hours
+# 4. Each workflow's latest run on main (in the last 26 hours) didn't fail; a later success clears an earlier failure
 try:
-    out = subprocess.run(['gh', 'api', f"repos/{os.environ['GITHUB_REPOSITORY']}/actions/runs?per_page=100&status=failure",
-                          '--jq', '.workflow_runs[] | [.name, .created_at, .html_url] | @tsv'], capture_output=True, text=True, check=True).stdout
-    failed = [l.split('\t') for l in out.strip().splitlines() if l]
-    recent = [f for f in failed if age_days(f[1]) <= 26 / 24 and f[0] != 'health']
-    for name, at, url in recent:
+    out = subprocess.run(['gh', 'api', f"repos/{os.environ['GITHUB_REPOSITORY']}/actions/runs?per_page=100&branch=main",
+                          '--jq', '.workflow_runs[] | [.name, .created_at, (.conclusion // .status), .html_url] | @tsv'], capture_output=True, text=True, check=True).stdout
+    latest = {}
+    for l in out.strip().splitlines():
+        name, at, result, url = l.split('\t')
+        if name not in latest and result not in ('in_progress', 'queued', 'cancelled', 'skipped'):
+            latest[name] = (at, result, url)  # newest first
+    bad = [(n, at, url) for n, (at, r, url) in latest.items() if r == 'failure' and n != 'health' and age_days(at) <= 26 / 24]
+    for name, at, url in bad:
         problems.append(f'GitHub workflow **{name}** failed {at[:16].replace("T", " ")} UTC: {url}')
-    if not recent:
-        ok.append('No failed GitHub workflows in the last 26 hours')
+    if not bad:
+        ok.append('No GitHub workflow is currently failing')
 except Exception as e:
     problems.append(f'Could not read GitHub workflow runs ({str(e)[:120]})')
 
