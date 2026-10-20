@@ -50,6 +50,11 @@ jobs:
           grep -E "page\(s\) built" build.log | sed "s/^/::notice title=Build ($BRAND)::/" || true
       - name: Verify
         run: node scripts/verify-build.mjs
+      - name: Quality gate
+        run: |
+          python3 scripts/quality.py dist; rc=$?
+          cat quality.md >> "$GITHUB_STEP_SUMMARY"
+          exit $rc
       - name: Screenshots (main and preview/* branches)
         if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/preview/')
         continue-on-error: true
