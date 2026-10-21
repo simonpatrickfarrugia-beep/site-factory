@@ -1,0 +1,484 @@
+{
+ "town": "Warburton",
+ "slug": "warburton",
+ "centre": [
+  -37.7536223,
+  145.6887265
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-10-21T03:04:09+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n849566976",
+   "name": "River View Lookout",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -37.750102,
+   "lon": 145.7006525,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n1114498963",
+   "name": "Warburton Spa",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -37.7508247,
+   "lon": 145.70637,
+   "tags": {
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "n2283963042",
+   "name": "Oscar's",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.7509734,
+   "lon": 145.6682519,
+   "tags": {
+    "website": "https://www.oscarsontheyarra.com.au/",
+    "phone": "+61 3 5966 9166",
+    "addr:housenumber": "3185",
+    "addr:street": "Warburton Highway",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n2283966929",
+   "name": "Cog Bike Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.75461,
+   "lon": 145.6888418,
+   "tags": {
+    "website": "http://cogbikecafe.com.au/",
+    "phone": "+61 3 5966 2213",
+    "opening_hours": "Th-Su 09:00-16:00",
+    "addr:housenumber": "42",
+    "addr:street": "Station Road",
+    "addr:suburb": "Warburton",
+    "addr:postcode": "3799",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2292080861",
+   "name": "Oscar's",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.7508035,
+   "lon": 145.6681538,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2469662265",
+   "name": "Alpine Retreat Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.7550444,
+   "lon": 145.6837506,
+   "tags": {
+    "website": "https://www.alpineretreat.com.au/",
+    "addr:housenumber": "3340",
+    "addr:street": "Warburton Highway",
+    "tourism": "hotel",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n2469666380",
+   "name": "B.T. Dubs",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.7538221,
+   "lon": 145.6883491,
+   "tags": {
+    "opening_hours": "Mo-Fr 09:00-15:00; Sa,Su 08:30-16:00",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2469666381",
+   "name": "The Old Tea Shop",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.7536272,
+   "lon": 145.6885295,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2469666385",
+   "name": "Warburton Bakery",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.7532086,
+   "lon": 145.6902696,
+   "tags": {
+    "addr:housenumber": "3415",
+    "addr:street": "Warburton Highway",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2469666386",
+   "name": "Little Joe",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.7535182,
+   "lon": 145.6902475,
+   "tags": {
+    "addr:housenumber": "3416",
+    "addr:street": "Warburton Highway",
+    "addr:postcode": "3799",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2477271452",
+   "name": "Babaji's Kerala Kitchen",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.7549763,
+   "lon": 145.6804064,
+   "tags": {
+    "website": "https://www.babajiskitchen.com.au/",
+    "addr:housenumber": "3305",
+    "addr:street": "Warburton Highway",
+    "addr:suburb": "Warburton",
+    "addr:postcode": "3799",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5007270317",
+   "name": "CJ's Pizza Cafe",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.7530326,
+   "lon": 145.6966267,
+   "tags": {
+    "website": "https://cjs-pizza-cafe.menu-world.com/",
+    "phone": "+61 3 5966 2280",
+    "opening_hours": "Mo-Tu off; We-Th,Su 16:00-20:30; Fr-Sa 16:00-21:00",
+    "cuisine": "pizza",
+    "addr:housenumber": "3463",
+    "addr:street": "Warburton Highway",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5759925213",
+   "name": "Warburton RSL",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.7548948,
+   "lon": 145.681797,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n5759927121",
+   "name": "Story Restaurant",
+   "group": "do",
+   "type": "park",
+   "lat": -37.7542943,
+   "lon": 145.686437,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "n6328180285",
+   "name": "The River View Cafe & Wine Bar",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.7541632,
+   "lon": 145.6872823,
+   "tags": {
+    "website": "http://www.theriverview.com.au",
+    "phone": "+61 3 5966 5888",
+    "cuisine": "fish;burger;breakfast;grill;coffee_shop;pasta;italian;chicken",
+    "internet_access": "wlan",
+    "addr:housenumber": "3373",
+    "addr:street": "Warburton Highway",
+    "addr:postcode": "3799",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n10900907710",
+   "name": "Silva Coffee Roasters",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.753748,
+   "lon": 145.6896634,
+   "tags": {
+    "website": "https://www.silvacoffee.com.au/",
+    "opening_hours": "Mo-Su 08:00-16:00",
+    "addr:housenumber": "3400",
+    "addr:street": "Warburton Highway",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11789584810",
+   "name": "Yarra Valley Wine Co.",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.7542068,
+   "lon": 145.6871827,
+   "tags": {
+    "addr:housenumber": "3371",
+    "addr:street": "Warburton Highway",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n11789661523",
+   "name": "Warburton Lodge",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.754592,
+   "lon": 145.6969312,
+   "tags": {
+    "website": "https://warburtonlodge.com.au/",
+    "phone": "+61 3 5966 2037",
+    "addr:housenumber": "18",
+    "addr:street": "Park Road",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n12420440930",
+   "name": "Green Gables",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.7571413,
+   "lon": 145.6981701,
+   "tags": {
+    "website": "https://greengables.net.au/",
+    "addr:housenumber": "16",
+    "addr:street": "La La Avenue",
+    "addr:suburb": "Warburton",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n13704568014",
+   "name": "Camon Co.",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.7535744,
+   "lon": 145.6890583,
+   "tags": {
+    "cuisine": "vietnamese",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n13704651693",
+   "name": "All Trancio",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.7540527,
+   "lon": 145.6876214,
+   "tags": {
+    "opening_hours": "Mo-Tu off; We-Fr 10:00-14:30; Sa-Su 10:00-15:30",
+    "cuisine": "italian",
+    "wheelchair": "yes",
+    "addr:housenumber": "3379",
+    "addr:street": "Warburton Highway",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13704988012",
+   "name": "Thai Food Truck",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.7527877,
+   "lon": 145.6954038,
+   "tags": {
+    "cuisine": "thai",
+    "wheelchair": "yes",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n13707407592",
+   "name": "Roxy's Kitchen",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.7530792,
+   "lon": 145.6964666,
+   "tags": {
+    "opening_hours": "Mo,Sa-Su 08:00-15:00; Tu-Fr 06:00-15:00",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w104223486",
+   "name": "Warburton Water World",
+   "group": "do",
+   "type": "water_park",
+   "lat": -37.7536427,
+   "lon": 145.7040481,
+   "tags": {
+    "leisure": "water_park"
+   }
+  },
+  {
+   "id": "w104223612",
+   "name": "Warburton Golf Club",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -37.7506205,
+   "lon": 145.6804153,
+   "tags": {
+    "website": "https://www.warburtongolf.com.au/",
+    "phone": "+61 3 5966 2306",
+    "description": "18 hole Par 69",
+    "addr:housenumber": "17",
+    "addr:street": "Dammans Road",
+    "addr:suburb": "Warburton",
+    "addr:postcode": "3799",
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w221339395",
+   "name": "Gee N' Tees",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.7538713,
+   "lon": 145.6878596,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w221339415",
+   "name": "Three Sugars Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.7537997,
+   "lon": 145.6882017,
+   "tags": {
+    "opening_hours": "08:30-16:30",
+    "outdoor_seating": "yes",
+    "internet_access": "wlan",
+    "addr:housenumber": "3389",
+    "addr:street": "Warburton Highway",
+    "addr:suburb": "Warburton",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w236970549",
+   "name": "Warburton Holiday Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -37.753368,
+   "lon": 145.7069116,
+   "tags": {
+    "website": "https://hampshireholidays.com.au/parks/vic/warburton-holiday-park",
+    "addr:housenumber": "30",
+    "addr:street": "Woods Point Road",
+    "addr:suburb": "Warburton",
+    "addr:postcode": "3799",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w477799181",
+   "name": "Warburton Recreation Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.7517311,
+   "lon": 145.6956227,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w666394562",
+   "name": "Warburton Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.7572569,
+   "lon": 145.6738223,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w1044409173",
+   "name": "Mckenzie King Drive Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.7522188,
+   "lon": 145.6580785,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1417167705",
+   "name": "Warburton Trails Scout Adventure Centre",
+   "group": "stay",
+   "type": "camp_site",
+   "lat": -37.7438492,
+   "lon": 145.7080856,
+   "tags": {
+    "addr:housenumber": "71",
+    "addr:street": "Donna Buang Road",
+    "tourism": "camp_site"
+   }
+  },
+  {
+   "id": "r5891684",
+   "name": "Yarra Ranges National Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.6099519,
+   "lon": 145.8429733,
+   "tags": {
+    "website": "https://www.parks.vic.gov.au/places-to-see/parks/yarra-ranges-national-park",
+    "wikidata": "Q1333875",
+    "wikipedia": "en:Yarra Ranges National Park",
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r16357927",
+   "name": "Yarra River Heritage River",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.7172331,
+   "lon": 145.4756766,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r20302009",
+   "name": "Yarra State Forest",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.7672627,
+   "lon": 145.7853117,
+   "tags": {
+    "wikidata": "Q115804184",
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}

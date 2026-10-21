@@ -1,0 +1,381 @@
+{
+ "town": "Barwon Heads",
+ "slug": "barwon-heads",
+ "centre": [
+  -38.2747705,
+  144.4881352
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-10-21T03:09:18+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n600392857",
+   "name": "Starfish Bakery",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.2793776,
+   "lon": 144.4921968,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n600598671",
+   "name": "Barwon Heads Caravan Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -38.2836949,
+   "lon": 144.4938483,
+   "tags": {
+    "phone": "+61 3 5254 1115",
+    "addr:housenumber": "1",
+    "addr:street": "Ewing Blyth Drive",
+    "addr:postcode": "3227",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "n600598691",
+   "name": "At The Heads",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.2843684,
+   "lon": 144.4956262,
+   "tags": {
+    "website": "https://attheheads.com.au/",
+    "phone": "+61 3 5254 1298",
+    "opening_hours": "Mo-Fr 10:00-20:00; Sa-Su 08:00-22:00",
+    "cuisine": "contemporary",
+    "addr:street": "Jetty Road",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n600621361",
+   "name": "Annie's Provedore & Produce Store",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.2816511,
+   "lon": 144.491842,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n600621364",
+   "name": "Bakery Bar Lounge",
+   "group": "eat",
+   "type": "bar",
+   "lat": -38.2813302,
+   "lon": 144.4915664,
+   "tags": {
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n600621369",
+   "name": "Bacman Orange",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.2808721,
+   "lon": 144.4919984,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n789294466",
+   "name": "Ocean Grove Bowls Club",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.2664181,
+   "lon": 144.5165857,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2005938579",
+   "name": "Ocean Grove",
+   "group": "stay",
+   "type": "camp_site",
+   "lat": -38.2783736,
+   "lon": 144.5005905,
+   "tags": {
+    "tourism": "camp_site"
+   }
+  },
+  {
+   "id": "n3269704878",
+   "name": "Shack Dining Co.",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.2822054,
+   "lon": 144.4913922,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n8292592763",
+   "name": "Kiosk",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.2724374,
+   "lon": 144.5147965,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n8340561050",
+   "name": "The Dunes Ocean Grove",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.2725327,
+   "lon": 144.5148522,
+   "tags": {
+    "website": "https://thedunesoceangrove.com/weddingsatthedunes",
+    "internet_access": "wlan",
+    "addr:housenumber": "30",
+    "addr:street": "Surf Beach Road",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w40120491",
+   "name": "13th Beach Golf Links",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -38.2758117,
+   "lon": 144.4565013,
+   "tags": {
+    "website": "http://www.13thbeach.net/",
+    "phone": "+61 3 5254 2922",
+    "description": "18 hole Par 72 Beach Course & 18 hole Par 73 Creek Course",
+    "addr:street": "Barwon Heads Road",
+    "addr:postcode": "3227",
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w77967048",
+   "name": "Riverview Family Caravan Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -38.2703871,
+   "lon": 144.5114903,
+   "tags": {
+    "phone": "+61 3 5256 1600",
+    "addr:street": "Barwon Heads Road",
+    "addr:suburb": "Ocean Grove",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w87927229",
+   "name": "Barwon Heads Hotel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -38.2828092,
+   "lon": 144.4930135,
+   "tags": {
+    "website": "https://www.barwonheadshotel.com.au/",
+    "tourism": "motel",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w142104735",
+   "name": "Barwon Heads Community Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2730242,
+   "lon": 144.4924416,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w158235395",
+   "name": "Seahaven Village",
+   "group": "stay",
+   "type": "motel",
+   "lat": -38.2751465,
+   "lon": 144.4918119,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w158472458",
+   "name": "Groove",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.2616706,
+   "lon": 144.5112601,
+   "tags": {
+    "opening_hours": "06:00-18:00",
+    "cuisine": "Takeaway,_Coffee,_Pies",
+    "addr:housenumber": "56",
+    "addr:street": "Wallington Road",
+    "addr:suburb": "Ocean Grove",
+    "addr:postcode": "3226",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w158472464",
+   "name": "Riverside Ocean Grove",
+   "group": "stay",
+   "type": "motel",
+   "lat": -38.2612849,
+   "lon": 144.5103293,
+   "tags": {
+    "website": "http://www.riversideoceangrove.com.au/",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w158472468",
+   "name": "Boat Ramp Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -38.2633922,
+   "lon": 144.5111432,
+   "tags": {
+    "website": "https://plus.google.com/104199556002793347136/about?gl=au&hl=en",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w158472469",
+   "name": "Ocean Grove Holiday Park",
+   "group": "stay",
+   "type": "motel",
+   "lat": -38.2596581,
+   "lon": 144.5096509,
+   "tags": {
+    "website": "http://www.oghp.com.au/",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w266307031",
+   "name": "Barwon Heads Resort",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -38.2781816,
+   "lon": 144.4541162,
+   "tags": {
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w319662949",
+   "name": "Ocean Grove Golf Course",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -38.2599871,
+   "lon": 144.5069529,
+   "tags": {
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w424047800",
+   "name": "The Mews",
+   "group": "do",
+   "type": "park",
+   "lat": -38.26858,
+   "lon": 144.4937132,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w462065526",
+   "name": "Seabanks Estate",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2770284,
+   "lon": 144.4863736,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1390605521",
+   "name": "Blue Waters Lake Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2597762,
+   "lon": 144.515515,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1524240183",
+   "name": "Moonah Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2615608,
+   "lon": 144.4875068,
+   "tags": {
+    "website": "https://www.geelongcity.vic.gov.au/services/parks-and-outdoor-spaces/parks-and-reserves/moonah-park",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "r4180836",
+   "name": "Barwon Heads Golf Course",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -38.2847812,
+   "lon": 144.4809034,
+   "tags": {
+    "website": "http://www.bhgc.com.au/",
+    "phone": "+61 3 5255 6255",
+    "description": "18 hole Par 70",
+    "addr:street": "Golf Links Road",
+    "addr:postcode": "3227",
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "r9212148",
+   "name": "Lorne - Queenscliff Coastal Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.4248715,
+   "lon": 144.2744862,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r9212149",
+   "name": "Barwon Bluff Marine Sanctuary",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.2911481,
+   "lon": 144.50131,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r9212151",
+   "name": "Lake Connewarre Wildlife Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.2383663,
+   "lon": 144.4484807,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}

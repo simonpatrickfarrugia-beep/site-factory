@@ -1,0 +1,552 @@
+{
+ "town": "Mansfield",
+ "slug": "mansfield",
+ "centre": [
+  -37.0521129,
+  146.0881495
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-10-21T03:02:52+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n841469057",
+   "name": "Tarts",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0519849,
+   "lon": 146.0893058,
+   "tags": {
+    "wheelchair": "no",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n1199763181",
+   "name": "Mansfield Valley Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.0518635,
+   "lon": 146.0808597,
+   "tags": {
+    "website": "www.mansfieldvalley.com.au",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n2057587424",
+   "name": "Mansfield Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.0524994,
+   "lon": 146.0884564,
+   "tags": {
+    "website": "https://www.mansfieldhotel.com.au/",
+    "phone": "+61 3 5775 2101",
+    "opening_hours": "Mo-Su 11:00-23:00",
+    "wheelchair": "yes",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "86",
+    "addr:street": "High Street",
+    "addr:suburb": "Mansfield",
+    "addr:postcode": "3722",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n6429342186",
+   "name": "The Produce Store",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0525786,
+   "lon": 146.0892638,
+   "tags": {
+    "website": "http://www.theproducestore.com.au/",
+    "phone": "+61 3 5779 1404",
+    "opening_hours": "Mo-Su 08:30-17:00",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "68",
+    "addr:street": "High Street",
+    "addr:suburb": "Mansfield",
+    "addr:postcode": "3722",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n7008911327",
+   "name": "Mansfield Coffee Merchant",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0512728,
+   "lon": 146.0879272,
+   "tags": {
+    "addr:housenumber": "23",
+    "addr:street": "Highett Street",
+    "addr:postcode": "3722",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n7008911328",
+   "name": "Bangkok Corner Thai Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0512225,
+   "lon": 146.0889967,
+   "tags": {
+    "opening_hours": "Tu-Su 11:30-21:30",
+    "cuisine": "thai",
+    "addr:housenumber": "20",
+    "addr:street": "Highett Street",
+    "addr:postcode": "3722",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n7100701591",
+   "name": "Witches Brew",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0527762,
+   "lon": 146.0911825,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n7100701620",
+   "name": "Mansfield Pizza",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0527803,
+   "lon": 146.0909856,
+   "tags": {
+    "cuisine": "pizza",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n7100701636",
+   "name": "Bos Taurus",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0522104,
+   "lon": 146.0912524,
+   "tags": {
+    "cuisine": "steak_house",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n7147608670",
+   "name": "Campfire Bistro",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0519244,
+   "lon": 146.0888866,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n7147608674",
+   "name": "Camille In The Kitchen",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0517568,
+   "lon": 146.0892445,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n7147608676",
+   "name": "Commercial Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.0518766,
+   "lon": 146.0889573,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n7147608677",
+   "name": "George & Al Roy",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0520096,
+   "lon": 146.0894629,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n7147608679",
+   "name": "Mansfield Noodle House",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0520345,
+   "lon": 146.0898324,
+   "tags": {
+    "opening_hours": "Mo,We-Su 11:00-20:30; Tu off",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n7147612007",
+   "name": "Curry Garden @ Mansfield",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0511001,
+   "lon": 146.087964,
+   "tags": {
+    "cuisine": "indian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n9432303669",
+   "name": "Police Memorial",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.0521126,
+   "lon": 146.0881497,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n11489674460",
+   "name": "The Delatite Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.0516685,
+   "lon": 146.0877887,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n12305987453",
+   "name": "Mansfield Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.0499522,
+   "lon": 146.0879102,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n12309253644",
+   "name": "ANVIL",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0522187,
+   "lon": 146.0913771,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n13246739833",
+   "name": "Bowser Bean",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.0600286,
+   "lon": 146.0981457,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13987670024",
+   "name": "The Fields",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0528656,
+   "lon": 146.0914589,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n14026402768",
+   "name": "Merrilea",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -37.0526126,
+   "lon": 146.0717296,
+   "tags": {
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "n14026427210",
+   "name": "Mansfield Travellers Lodge",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.0522108,
+   "lon": 146.0857321,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n14026441122",
+   "name": "All Seasons Mansfield",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.0632793,
+   "lon": 146.1056419,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n14026441123",
+   "name": "Greenvale Holiday Units",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.0616972,
+   "lon": 146.106235,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n14026441508",
+   "name": "The Deck Quarters Boutique Accommodation",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.0517617,
+   "lon": 146.0885722,
+   "tags": {
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n14028469730",
+   "name": "Highton Manor Bnb and Motel",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -37.0745375,
+   "lon": 146.0942252,
+   "tags": {
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "n14028507847",
+   "name": "The Ranges",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0529834,
+   "lon": 146.0720974,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n14028539164",
+   "name": "Stallion",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.0533295,
+   "lon": 146.0882685,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w70516886",
+   "name": "Davies Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.0554038,
+   "lon": 146.0888911,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w70516889",
+   "name": "Mansfield Holiday Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -37.0619061,
+   "lon": 146.1028647,
+   "tags": {
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w70516902",
+   "name": "Alzburg Resort",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.0577772,
+   "lon": 146.0880608,
+   "tags": {
+    "website": "https://www.alzburg.com.au/",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w103598592",
+   "name": "Mansfield Golf Course",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -37.0538696,
+   "lon": 146.0753198,
+   "tags": {
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w110854333",
+   "name": "Lords Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.0568949,
+   "lon": 146.0833907,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w110855001",
+   "name": "Mansfield Recreation Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.0544127,
+   "lon": 146.0861953,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w166410437",
+   "name": "The Delatite Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.0516763,
+   "lon": 146.087771,
+   "tags": {
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w200373066",
+   "name": "Mansfield Botanic Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.0508505,
+   "lon": 146.0932131,
+   "tags": {
+    "wikidata": "Q69290568",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w575483277",
+   "name": "Social Bandit Brewing Company",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.0632037,
+   "lon": 146.1033147,
+   "tags": {
+    "website": "http://www.socialbandit.com.au/",
+    "phone": "+61 3 5775 3281",
+    "opening_hours": "Th-Su 11:00-21:00",
+    "cuisine": "pizza",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "223",
+    "addr:street": "Mount Buller Road",
+    "addr:suburb": "Mansfield",
+    "addr:postcode": "3722",
+    "amenity": "pub",
+    "craft": "brewery"
+   }
+  },
+  {
+   "id": "w696059607",
+   "name": "Mullum Mullum Wetlands",
+   "group": "do",
+   "type": "park",
+   "lat": -37.0499434,
+   "lon": 146.0786476,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1249399387",
+   "name": "High Country Holiday Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -37.0531768,
+   "lon": 146.0821321,
+   "tags": {
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w1330379067",
+   "name": "Cummins Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.053838,
+   "lon": 146.0814531,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1332566338",
+   "name": "Stewart Street Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.063513,
+   "lon": 146.0922767,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1332566340",
+   "name": "Mansfield Riverside Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.0535068,
+   "lon": 146.0958945,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1332566342",
+   "name": "College Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.0608608,
+   "lon": 146.0916007,
+   "tags": {
+    "opening_hours": "24/7",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1540731793",
+   "name": "Mansfield Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.0525504,
+   "lon": 146.0884951,
+   "tags": {
+    "tourism": "hotel"
+   }
+  }
+ ]
+}

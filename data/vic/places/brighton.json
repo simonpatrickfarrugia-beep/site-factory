@@ -1,0 +1,983 @@
+{
+ "town": "Brighton",
+ "slug": "brighton",
+ "centre": [
+  -37.9081962,
+  144.9957991
+ ],
+ "radiusM": 1500,
+ "fetchedAt": "2026-10-21T03:11:39+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n577984611",
+   "name": "Hotel Brighton",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.9055835,
+   "lon": 145.0017218,
+   "tags": {
+    "website": "https://www.hotelbrighton.com.au/",
+    "addr:housenumber": "286",
+    "addr:street": "Bay Street",
+    "addr:suburb": "Brighton",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n577989714",
+   "name": "Two Many Chefs",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.905337,
+   "lon": 145.0023136,
+   "tags": {
+    "website": "https://www.toomanychiefs.org/",
+    "cuisine": "health_food",
+    "addr:housenumber": "305",
+    "addr:street": "Bay Street",
+    "addr:suburb": "Brighton",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n580800471",
+   "name": "The Baths",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.9100535,
+   "lon": 144.9854448,
+   "tags": {
+    "website": "https://www.middlebrightonbaths.com.au/",
+    "outdoor_seating": "yes",
+    "addr:suburb": "Brighton",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n705056468",
+   "name": "Brighton International",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.9042175,
+   "lon": 144.9944445,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n737239925",
+   "name": "Olympic Bar",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.9092435,
+   "lon": 144.9860751,
+   "tags": {
+    "website": "https://www.rbyc.org.au/",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n740367334",
+   "name": "North Point Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8977326,
+   "lon": 144.986409,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n1798015076",
+   "name": "Dendi Deli",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.9131767,
+   "lon": 144.9933147,
+   "tags": {
+    "opening_hours": "Tu-Su 08:00-15:00;Sa 08:00-12:00",
+    "cuisine": "italian",
+    "stars": "5",
+    "wheelchair": "yes",
+    "internet_access": "no",
+    "addr:street": "Church Street",
+    "addr:suburb": "Brighton",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n1798015628",
+   "name": "Florinetine",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.913041,
+   "lon": 144.9931374,
+   "tags": {
+    "opening_hours": "Tu-Su 08:00-15:00;Sa 08:00-12:00",
+    "cuisine": "italian",
+    "stars": "5",
+    "wheelchair": "yes",
+    "internet_access": "no",
+    "addr:street": "Church Street",
+    "addr:suburb": "Brighton",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n1798018720",
+   "name": "Indian Palace",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.9155252,
+   "lon": 144.9963842,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n1798019174",
+   "name": "Akiya Japanese Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.9155887,
+   "lon": 144.9964539,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2263474975",
+   "name": "Brighton Schoolhouse",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.9120422,
+   "lon": 144.9928294,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3278270652",
+   "name": "Wild Bean Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.9006615,
+   "lon": 145.0071149,
+   "tags": {
+    "website": "https://www.bp.com/en_au/australia/products-services/service-stations/shops/wild-bean-cafes.html",
+    "cuisine": "coffee_shop",
+    "brand": "Wild Bean Cafe",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n4224984497",
+   "name": "Espresso Apartments Brighten 3",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8972094,
+   "lon": 145.0017132,
+   "tags": {
+    "addr:housenumber": "110",
+    "addr:street": "Martin Street",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n4542675056",
+   "name": "10 Greek Plates",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8976081,
+   "lon": 145.0045993,
+   "tags": {
+    "cuisine": "greek",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4778028023",
+   "name": "Brighton Bathing Boxes",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -37.9175618,
+   "lon": 144.9864144,
+   "tags": {
+    "website": "http://www.brightonbathingbox.org.au",
+    "opening_hours": "24/7",
+    "description": "Brightly painted traditional individual wooden bathing sheds.",
+    "wikidata": "Q113714856",
+    "wikipedia": "en:Brighton Bathing Boxes",
+    "addr:street": "Esplanade",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n5321130185",
+   "name": "Bistro La Provence",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.9094997,
+   "lon": 144.9866309,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5382493730",
+   "name": "Brighton Serviced Apartments",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.906661,
+   "lon": 145.0075656,
+   "tags": {
+    "website": "www.brightonapartment.com.au",
+    "addr:housenumber": "408",
+    "addr:street": "Bay Street",
+    "addr:suburb": "Brighton",
+    "addr:postcode": "3186",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n6125963531",
+   "name": "Buffalo Boy",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.9048224,
+   "lon": 145.0014571,
+   "tags": {
+    "website": "https://www.buffaloboy.com.au/",
+    "cuisine": "vietnamese",
+    "addr:housenumber": "279",
+    "addr:street": "Bay Street",
+    "addr:suburb": "Brighton",
+    "addr:postcode": "3186",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6125967444",
+   "name": "Akaba",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.905214,
+   "lon": 145.0022242,
+   "tags": {
+    "cuisine": "japanese",
+    "addr:housenumber": "293",
+    "addr:street": "Bay Street",
+    "addr:suburb": "Brighton",
+    "addr:postcode": "3186",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6125994182",
+   "name": "Takers",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.9090887,
+   "lon": 144.9861337,
+   "tags": {
+    "website": "https://www.rbyc.org.au/",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6804362682",
+   "name": "Osteriya",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.9187803,
+   "lon": 145.0062067,
+   "tags": {
+    "cuisine": "italian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6970781350",
+   "name": "Vivace Ristorante",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.9054359,
+   "lon": 145.0030338,
+   "tags": {
+    "website": "https://www.vivace.com.au/",
+    "cuisine": "italian",
+    "addr:housenumber": "317",
+    "addr:street": "Bay Street",
+    "addr:suburb": "Brighton",
+    "addr:postcode": "3186",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6970781356",
+   "name": "Dumpling Parlour",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.9057808,
+   "lon": 145.0061773,
+   "tags": {
+    "website": "https://www.dumplingparlour.com.au/",
+    "cuisine": "asian",
+    "addr:housenumber": "423",
+    "addr:street": "Bay Street",
+    "addr:postcode": "3186",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6970781364",
+   "name": "Ro",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.905749,
+   "lon": 145.0055873,
+   "tags": {
+    "cuisine": "japanese",
+    "addr:housenumber": "411",
+    "addr:street": "Bay Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6970781372",
+   "name": "Siriphren Thai",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.9054739,
+   "lon": 145.0033637,
+   "tags": {
+    "website": "https://www.siriphenthai.com.au/",
+    "cuisine": "thai",
+    "addr:housenumber": "325",
+    "addr:street": "Bay Street",
+    "addr:suburb": "Brighton",
+    "addr:postcode": "3186",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6978739338",
+   "name": "Fujiyama",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.9055836,
+   "lon": 145.0019114,
+   "tags": {
+    "website": "https://www.fujiyama.com.au/",
+    "cuisine": "japanese",
+    "addr:housenumber": "292",
+    "addr:street": "Bay Street",
+    "addr:suburb": "Brighton",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6978751650",
+   "name": "Shalimar Indian Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.9055117,
+   "lon": 145.0036894,
+   "tags": {
+    "website": "www.shalimar.com.au",
+    "cuisine": "indian",
+    "addr:housenumber": "343",
+    "addr:street": "Bay Street",
+    "addr:suburb": "Brighton",
+    "addr:postcode": "3186",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6978808710",
+   "name": "rocksalt",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.9058439,
+   "lon": 145.0040434,
+   "tags": {
+    "website": "https://rocksalt.net.au/",
+    "addr:housenumber": "364",
+    "addr:street": "Bay Street",
+    "addr:suburb": "Brighton",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6978808711",
+   "name": "Zeppelin",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.9058567,
+   "lon": 145.0041512,
+   "tags": {
+    "website": "www.zeppelinbakehouse.com",
+    "cuisine": "bakery",
+    "addr:housenumber": "368",
+    "addr:street": "Bay Street",
+    "addr:suburb": "Brighton",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6978816737",
+   "name": "Hachi Kichi",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.9058693,
+   "lon": 145.0042446,
+   "tags": {
+    "cuisine": "japanese",
+    "addr:housenumber": "370",
+    "addr:street": "Bay Street",
+    "addr:suburb": "Brighton",
+    "addr:postcode": "3186",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n6979116824",
+   "name": "Little Sister",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.9058312,
+   "lon": 145.0039154,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "addr:housenumber": "350",
+    "addr:street": "Bay Street",
+    "addr:suburb": "Brighton",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6981742693",
+   "name": "Back 2 Nature",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.905704,
+   "lon": 145.0052138,
+   "tags": {
+    "website": "https://back2natureorganic.com/",
+    "addr:housenumber": "393",
+    "addr:street": "Bay Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6981746180",
+   "name": "Hecho En Mexico",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.9053252,
+   "lon": 145.0021802,
+   "tags": {
+    "website": "https://hechoenmexico.com.au/",
+    "cuisine": "mexican",
+    "addr:housenumber": "299",
+    "addr:street": "Bay Street",
+    "addr:suburb": "Brighton",
+    "addr:postcode": "3186",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6981761199",
+   "name": "Le Cinque Terre",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.9052955,
+   "lon": 145.0019979,
+   "tags": {
+    "website": "https://www.lecinqueterre.com.au/",
+    "cuisine": "tapas",
+    "addr:housenumber": "289",
+    "addr:street": "Bay Street",
+    "addr:suburb": "Brighton",
+    "addr:postcode": "3186",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6981761200",
+   "name": "mothersMilk Brighton",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.9052871,
+   "lon": 145.0019147,
+   "tags": {
+    "addr:street": "Bay Street",
+    "addr:suburb": "Brighton",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n6981781586",
+   "name": "Pearl on Bay",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.9056067,
+   "lon": 145.0021212,
+   "tags": {
+    "website": "https://www.pearlonbay.com.au/",
+    "addr:housenumber": "300",
+    "addr:street": "Bay Street",
+    "addr:suburb": "Brighton",
+    "addr:postcode": "3186",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6981781587",
+   "name": "Bay Street Grill and Paste",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.9055982,
+   "lon": 145.0020488,
+   "tags": {
+    "website": "baystreetgrillandpasta.com",
+    "cuisine": "italian",
+    "addr:housenumber": "296",
+    "addr:street": "Bay Street",
+    "addr:suburb": "Brighton",
+    "addr:postcode": "3186",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n8519134690",
+   "name": "Superrandom",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8959839,
+   "lon": 144.9948871,
+   "tags": {
+    "cuisine": "coffee_shop;brunch",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "416",
+    "addr:street": "New Street",
+    "addr:suburb": "Brighton",
+    "addr:postcode": "3186",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n8519134691",
+   "name": "Bowl Me Over",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8960853,
+   "lon": 144.9948771,
+   "tags": {
+    "cuisine": "coffee_shop;brunch",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "414",
+    "addr:street": "New Street",
+    "addr:suburb": "Brighton",
+    "addr:postcode": "3186",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n10907603636",
+   "name": "Ten Greek Plates",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8974246,
+   "lon": 145.0036879,
+   "tags": {
+    "addr:housenumber": "136 - 138",
+    "addr:street": "Martin Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11917099701",
+   "name": "Ichika",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.9145106,
+   "lon": 144.9948393,
+   "tags": {
+    "cuisine": "japanese",
+    "outdoor_seating": "yes",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11917099703",
+   "name": "Bright 'N' Fresh",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.9147099,
+   "lon": 144.9950038,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "outdoor_seating": "no",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w27859175",
+   "name": "William Street Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.9131996,
+   "lon": 145.0044906,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w28256452",
+   "name": "Landcox Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.9060635,
+   "lon": 145.0125641,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w28256948",
+   "name": "Hurlingham Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.9102278,
+   "lon": 145.0138561,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w28918301",
+   "name": "Wilson Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.9090216,
+   "lon": 144.9946303,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w59525647",
+   "name": "Cora Lynn Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.9025125,
+   "lon": 144.9973004,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w59526236",
+   "name": "Brighton Savoy",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.9153709,
+   "lon": 144.987591,
+   "tags": {
+    "website": "https://brightonsavoy.com.au/",
+    "phone": "+61 3 9592 8233",
+    "wikidata": "Q19871572",
+    "addr:housenumber": "150",
+    "addr:street": "Esplanade",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w88145837",
+   "name": "Robert Grieve V.C. Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.9183967,
+   "lon": 144.9940601,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w666797975",
+   "name": "Brighton Library Gardens",
+   "group": "do",
+   "type": "park",
+   "lat": -37.9108101,
+   "lon": 144.9983548,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w770849218",
+   "name": "Glen Edward Rice Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.9154467,
+   "lon": 145.0100215,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1031065780",
+   "name": "Botticelli of Brighton",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.913386,
+   "lon": 144.9933993,
+   "tags": {
+    "opening_hours": "Tu-Su 08:00-15:00; Sa 08:00-12:00",
+    "cuisine": "italian",
+    "stars": "6",
+    "wheelchair": "yes",
+    "internet_access": "no",
+    "addr:housenumber": "40A",
+    "addr:street": "Church Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w1031530167",
+   "name": "Humble House",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.912539,
+   "lon": 144.993262,
+   "tags": {
+    "addr:housenumber": "11",
+    "addr:street": "Church Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w1031530182",
+   "name": "Pantry",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.9124238,
+   "lon": 144.9931005,
+   "tags": {
+    "website": "https://www.pantry.com.au/",
+    "addr:housenumber": "1",
+    "addr:street": "Church Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w1031530211",
+   "name": "Waterfront Brighton",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.9129609,
+   "lon": 144.9937504,
+   "tags": {
+    "opening_hours": "We-Su 12:00-15:00,17:30-20:00",
+    "addr:housenumber": "25-27",
+    "addr:street": "Church Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w1031541535",
+   "name": "Kokoro Sushi",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.9133913,
+   "lon": 144.9942901,
+   "tags": {
+    "cuisine": "sushi",
+    "addr:housenumber": "39A",
+    "addr:street": "Church Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w1031859137",
+   "name": "Brighton Coastal Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.9052609,
+   "lon": 144.9845732,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1031903273",
+   "name": "Mylk",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.9139568,
+   "lon": 144.9946784,
+   "tags": {
+    "addr:housenumber": "65",
+    "addr:street": "Church Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w1031903275",
+   "name": "The Beanery",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.9140191,
+   "lon": 144.9947505,
+   "tags": {
+    "website": "https://thebeanery.com.au",
+    "phone": "+61 3 9592 8666",
+    "addr:housenumber": "69",
+    "addr:street": "Church Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w1031903276",
+   "name": "Raw Galore",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.9139385,
+   "lon": 144.9947855,
+   "tags": {
+    "addr:housenumber": "21",
+    "addr:street": "Carpenter Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w1033655045",
+   "name": "Holy Grounds Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.9150374,
+   "lon": 144.9952682,
+   "tags": {
+    "outdoor_seating": "yes",
+    "addr:housenumber": "90",
+    "addr:street": "Church Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w1033660888",
+   "name": "White Rabbit",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.9154497,
+   "lon": 144.9957724,
+   "tags": {
+    "outdoor_seating": "yes",
+    "addr:housenumber": "118",
+    "addr:street": "Church Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w1037859796",
+   "name": "House of Pan",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.9150583,
+   "lon": 144.996228,
+   "tags": {
+    "cuisine": "greek",
+    "addr:housenumber": "121A",
+    "addr:street": "Church Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w1037859865",
+   "name": "Thaicoon",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.9150824,
+   "lon": 144.9960095,
+   "tags": {
+    "cuisine": "thai",
+    "addr:housenumber": "119",
+    "addr:street": "Church Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w1038101153",
+   "name": "Half Moon",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.9156949,
+   "lon": 144.9959795,
+   "tags": {
+    "outdoor_seating": "yes",
+    "addr:street": "Church Street",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w1279524012",
+   "name": "Well Street Neighbourhood Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.9138284,
+   "lon": 144.9929772,
+   "tags": {
+    "addr:housenumber": "7",
+    "addr:street": "Well Street",
+    "addr:suburb": "Brighton",
+    "addr:postcode": "3186",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1287994570",
+   "name": "Beach House Brighton",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.9174011,
+   "lon": 144.9866672,
+   "tags": {
+    "website": "https://www.beachhousebrighton.com.au/",
+    "phone": "+61 3 9534 2402",
+    "opening_hours": "Mo-Fr 07:00-16:00; Sa-Su 07:00-17:00",
+    "cuisine": "coffee_shop;fish_and_chips;ice_cream",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "133",
+    "addr:street": "Esplanade",
+    "addr:suburb": "Brighton",
+    "addr:postcode": "3186",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w1312935421",
+   "name": "Old Dairy Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.9109191,
+   "lon": 145.0090611,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1365124987",
+   "name": "Hotel New Bay",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.9046149,
+   "lon": 144.9929063,
+   "tags": {
+    "opening_hours": "Mo-Sa 09:00-01:00, Su 10:00-01:00",
+    "amenity": "pub"
+   }
+  }
+ ]
+}
