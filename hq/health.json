@@ -10,7 +10,7 @@
  "jobsMaxAgeDays": {
   "intake": 1.5,
   "enrich": 2,
-  "stats": 3,
+  "stats": 1.5,
   "catalogue": 8,
   "recheck": 33,
   "demand": 33,
@@ -20,12 +20,12 @@
   {
    "path": "data/trailers/stats.json",
    "field": "generatedAt",
-   "maxAgeDays": 3
+   "maxAgeDays": 1.5
   },
   {
    "path": "data/vic/stats.json",
    "field": "generatedAt",
-   "maxAgeDays": 3
+   "maxAgeDays": 1.5
   }
  ],
  "versionSites": [

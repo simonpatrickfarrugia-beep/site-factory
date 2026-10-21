@@ -80,10 +80,10 @@ function jobFor(cron: string, at: Date): Job | null {
   if (cron !== DAILY_CRON) throw new Error(`Unknown cron "${cron}"`);
   const hour = at.getUTCHours();
   const day = at.getUTCDate();
-  if (hour === 18) return day === 1 ? 'recheck' : null; // 2nd of the month, 05:00 Melbourne
+  if (hour === 18) return day === 1 ? 'recheck' : day === 2 ? 'demand' : day === 3 ? 'collections' : null; // 05:00 Melbourne on the 2nd / 3rd / 4th
   if (hour === 19) return 'enrich'; // daily, 06:00 Melbourne
   if (hour === 20) return CATALOGUE_DAYS.includes(day) ? 'catalogue' : null; // 07:00 Melbourne
-  if (hour === 21) return day === 2 ? 'demand' : day === 3 ? 'collections' : 'stats'; // 08:00 Melbourne: 3rd / 4th, else dashboard stats
+  if (hour === 21) return 'stats'; // 08:00 Melbourne, every day (feeds the daily traffic report)
   return null;
 }
 
