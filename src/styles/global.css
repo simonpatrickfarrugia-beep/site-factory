@@ -595,3 +595,12 @@ main { display: block; }
 .chc-hint { background: var(--mint-soft); border-radius: 10px; padding: 0.75rem 1rem; margin: 0; font-size: 1rem; }
 .chc-hp { position: absolute; left: -9999px; width: 1px; height: 1px; }
 .chc-form__status { min-height: 1.5em; font-weight: 700; margin: 0; }
+/* calm header on phones: logo row, then the menu on its own row (no squashing, no sideways scroll) */
+[data-theme='calm'] .site-header__inner { flex-wrap: wrap; row-gap: 0.6rem; }
+[data-theme='calm'] .wordmark--logo { white-space: nowrap; }
+[data-theme='calm'] .site-nav { flex-wrap: wrap; gap: 0.35rem 1.25rem; }
+[data-theme='calm'] .site-nav a { white-space: nowrap; }
+@media (max-width: 47.99rem) {
+  [data-theme='calm'] .site-header nav { width: 100%; }
+  [data-theme='calm'] .site-nav { font-size: 1rem; }
+}
