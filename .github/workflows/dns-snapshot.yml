@@ -1,0 +1,30 @@
+# Snapshot a domain's current DNS records before moving it to Cloudflare (so email records are never lost).
+name: dns-snapshot
+on:
+  workflow_dispatch:
+    inputs:
+      domain:
+        description: Domain to snapshot
+        required: true
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Look up records
+        env:
+          D: ${{ inputs.domain }}
+        run: |
+          sudo apt-get install -y -qq dnsutils whois >/dev/null 2>&1 || true
+          {
+          echo "## DNS snapshot for $D ($(date -u +%F))"
+          echo; echo '```'
+          echo "NAMESERVERS:"; dig +short NS $D
+          for t in A AAAA MX TXT CAA; do echo; echo "$t $D:"; dig +short $t $D; done
+          for h in www autodiscover selector1._domainkey selector2._domainkey enterpriseregistration enterpriseenrollment lyncdiscover sip msoid _dmarc; do echo; echo "$h.$D:"; dig +short CNAME $h.$D; dig +short TXT $h.$D; dig +short A $h.$D; done
+          for s in _sip._tls _sipfederationtls._tcp _autodiscover._tcp; do echo; echo "SRV $s.$D:"; dig +short SRV $s.$D; done
+          echo; echo "REGISTRAR (whois):"; whois $D 2>/dev/null | grep -iE "registrar name|registrar:|status|name server|registrant:" | head -12
+          echo '```'
+          } > dns.md
+          cat dns.md >> "$GITHUB_STEP_SUMMARY"
+          echo "::notice title=dns::$(tr '\n' ' ' < dns.md | cut -c1-3500)"
