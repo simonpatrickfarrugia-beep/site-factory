@@ -92,6 +92,8 @@ export function hqProps() {
     programs: (catalog.programs ?? [])
       .map((pr: any) => ({ name: pr.name, commission: pr.commission, approval: pr.approval, requirements: pr.requirements, status: pr.status, verified: !!pr.verified, markets: pr.markets.join(', ') }))
       .sort((a: any, b: any) => ['approved', 'applying', 'not applied'].indexOf(a.status) - ['approved', 'applying', 'not applied'].indexOf(b.status)),
+    todo: portfolio.todo ?? [],
+    notes: portfolio.notes ?? [],
     goal: (() => {
       const g = portfolio.goal;
       if (!g) return null;

@@ -139,36 +139,6 @@
  ],
  "actions": [
   {
-   "who": "Simon",
-   "what": "Amazon Associates: 3 qualifying sales needed by ~29 Mar 2027 or the account closes",
-   "site": "trailers"
-  },
-  {
-   "who": "Simon",
-   "what": "Bing Webmaster Tools: import both sites from Search Console",
-   "site": "hq"
-  },
-  {
-   "who": "Simon",
-   "what": "Cloudflare Access: put a login on /hq pages (both domains)",
-   "site": "hq"
-  },
-  {
-   "who": "Simon",
-   "what": "Join Impact and Awin (one-time, unlocks many programmes)",
-   "site": "hq"
-  },
-  {
-   "who": "Simon",
-   "what": "Confirm 90-day targets (trailers 3,000 visits + 30 money clicks; Vic 1,000 + 20)",
-   "site": "hq"
-  },
-  {
-   "who": "Simon",
-   "what": "Dog breeds: go / no-go for November",
-   "site": "dogs"
-  },
-  {
    "who": "Claude",
    "what": "Switch on affiliate buttons as each programme approves",
    "site": "vic"
@@ -225,44 +195,150 @@
   "sprint": {
    "name": "First $1",
    "deadline": "2026-10-31",
-   "why": "Prove the loop: a real visitor clicks an affiliate link and buys.",
-   "moves": [
-    {
-     "who": "Simon",
-     "what": "Share the Halloween movie-night page and one Vic Tours road trip (SHARE-POSTS.md)",
-     "done": false
-    },
-    {
-     "who": "Simon",
-     "what": "Cloudflare Email Routing: hello@victours.com.au → Gmail (2 min)",
-     "done": false
-    },
-    {
-     "who": "Simon",
-     "what": "Affiliate sitting (~45 min, AFFILIATE-SIGNUP-KIT.md): finish CJ, apply to Booking.com + Klook in CJ, Discover Cars, Viator, GetYourGuide, Commission Factory",
-     "done": false
-    },
-    {
-     "who": "Simon",
-     "what": "Check Amazon Associates reports every few days",
-     "done": false
-    },
-    {
-     "who": "Claude",
-     "what": "Halloween collection featured on the trailer home page",
-     "done": true
-    },
-    {
-     "who": "Claude",
-     "what": "Both sites affiliate-ready (about, contact, privacy, disclosure; checked in CI)",
-     "done": true
-    },
-    {
-     "who": "Claude",
-     "what": "Inbox watcher switches on buttons when approval emails arrive",
-     "done": true
-    }
-   ]
+   "why": "Prove the loop: a real visitor clicks an affiliate link and buys."
   }
- }
+ },
+ "_todo": "Simon's to-do list shown at the top of HQ. kind: do | decide. sprint: true = counts toward the current sprint. Claude (or the daily coach / weekly autopilot) sets done: true + doneAt when Simon says 'done' or an approval email arrives.",
+ "todo": [
+  {
+   "id": "share",
+   "kind": "do",
+   "sprint": true,
+   "mins": 5,
+   "what": "Send the Halloween movie-night page and a Vic Tours road trip to a few group chats (posts in SHARE-POSTS.md)",
+   "why": "Real visitors are the only way to a first sale this month",
+   "done": false
+  },
+  {
+   "id": "email",
+   "kind": "do",
+   "sprint": true,
+   "mins": 2,
+   "what": "Cloudflare Email Routing: hello@victours.com.au → your Gmail",
+   "why": "The Vic contact page uses it, and affiliate reviewers check it",
+   "link": "https://dash.cloudflare.com",
+   "linkLabel": "Cloudflare",
+   "done": false
+  },
+  {
+   "id": "cj",
+   "kind": "do",
+   "sprint": true,
+   "mins": 15,
+   "what": "CJ: tax form (W-8BEN-E) + payment method",
+   "why": "Unlocks Booking.com and Klook",
+   "link": "https://members.cj.com",
+   "linkLabel": "CJ",
+   "done": false
+  },
+  {
+   "id": "cj-apply",
+   "kind": "do",
+   "sprint": true,
+   "mins": 3,
+   "what": "In CJ, apply to Booking.com and Klook",
+   "why": "Stay and tour buttons on every Vic town",
+   "link": "https://members.cj.com",
+   "linkLabel": "CJ",
+   "done": false
+  },
+  {
+   "id": "discovercars",
+   "kind": "do",
+   "sprint": true,
+   "mins": 5,
+   "what": "Sign up to Discover Cars",
+   "why": "No traffic minimum, 365-day cookie; car hire on every road trip",
+   "link": "https://www.discovercars.com/affiliate",
+   "linkLabel": "Discover Cars",
+   "done": false
+  },
+  {
+   "id": "viator",
+   "kind": "do",
+   "sprint": true,
+   "mins": 5,
+   "what": "Apply to Viator",
+   "why": "Tours on every Vic 'Things to do' page",
+   "link": "https://partnerresources.viator.com",
+   "linkLabel": "Viator",
+   "done": false
+  },
+  {
+   "id": "gyg",
+   "kind": "do",
+   "sprint": true,
+   "mins": 5,
+   "what": "Apply to GetYourGuide",
+   "why": "Second tour partner",
+   "link": "https://partner.getyourguide.com",
+   "linkLabel": "GetYourGuide",
+   "done": false
+  },
+  {
+   "id": "cf",
+   "kind": "do",
+   "sprint": true,
+   "mins": 10,
+   "what": "Join Commission Factory (ABN + AU$5 refundable pre-auth)",
+   "why": "Australian travel brands in one place",
+   "link": "https://www.commissionfactory.com",
+   "linkLabel": "Commission Factory",
+   "done": false
+  },
+  {
+   "id": "bing",
+   "kind": "do",
+   "sprint": false,
+   "mins": 2,
+   "what": "Bing Webmaster Tools: import both sites from Search Console",
+   "why": "Adds Bing, DuckDuckGo and ChatGPT search",
+   "link": "https://www.bing.com/webmasters",
+   "linkLabel": "Bing",
+   "done": false
+  },
+  {
+   "id": "access",
+   "kind": "do",
+   "sprint": false,
+   "mins": 10,
+   "what": "Cloudflare Access: login on /hq pages (both domains)",
+   "why": "This page is public to anyone with the link",
+   "link": "https://one.dash.cloudflare.com",
+   "linkLabel": "Zero Trust",
+   "done": false
+  },
+  {
+   "id": "networks",
+   "kind": "do",
+   "sprint": false,
+   "mins": 10,
+   "what": "Join Impact and Awin",
+   "why": "Ready for dog breeds (Embrace pet insurance is on Impact)",
+   "link": "https://impact.com",
+   "linkLabel": "Impact",
+   "done": false
+  },
+  {
+   "id": "targets",
+   "kind": "decide",
+   "sprint": false,
+   "mins": 1,
+   "what": "OK the 90-day targets? Trailers 3,000 visits + 30 money clicks; Vic 1,000 + 20 (per 28 days)",
+   "why": "They set the keep / fix / kill call in January",
+   "done": false
+  },
+  {
+   "id": "dogs",
+   "kind": "decide",
+   "sprint": false,
+   "mins": 1,
+   "what": "Dog breeds for November: go or no-go? Domain: breedpicker.com?",
+   "why": "#1 idea on the priority model",
+   "done": false
+  }
+ ],
+ "notes": [
+  "Amazon Associates needs 3 qualifying sales by ~29 Mar 2027 or the account closes."
+ ]
 }

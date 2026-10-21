@@ -13,12 +13,19 @@ interface Props {
   engines: { name: string; lines: string[] }[];
   finance: { revenue: { month: string; source: string; amount: number }[]; costs: { month: string; item: string; amount: number; kind: string }[]; monthlyRunning: { item: string; amount: number }[] };
   niches: { idea: string; score: number; market: string }[];
+  todo?: { id: string; kind: string; sprint?: boolean; mins: number; what: string; why?: string; link?: string; linkLabel?: string; done: boolean; doneAt?: string }[];
+  notes?: string[];
   goal?: { level: number; next: any; total: number; thisMonth: number; sprint: any; daysLeft: number | null; levels: any[] } | null;
   moneyMap?: { idea: string; market: string; low: number; mid: number; high: number; perSale: number }[];
   programs?: { name: string; commission: string; approval: string; requirements: string; status: string; verified: boolean; markets: string }[];
   builtAt: string;
 }
 const p = Astro.props;
+const todo = p.todo ?? [];
+const open = todo.filter((t) => !t.done);
+const done = todo.filter((t) => t.done);
+const openMins = open.reduce((a, t) => a + (t.mins ?? 0), 0);
+const sprintTodo = todo.filter((t) => t.sprint);
 const n = (v: number) => v.toLocaleString('en-AU');
 const STATUS: Record<string, string> = { live: 'Live', building: 'Building', idea: 'Idea', paused: 'Paused' };
 
@@ -62,6 +69,42 @@ const live = p.nodes.filter((x) => x.status === 'live').length;
     <div class="kpi"><span class="kpi__label">Running costs</span><span class="kpi__value">${n(running)}<small>/mo</small></span><span class="kpi__sub">${n(oneOff)} one-off so far</span></div>
   </section>
 
+  <section class="panel todo" id="todo">
+    <h2>Simon: still to do <small>· {open.length} left · about {openMins} min</small></h2>
+    {open.length === 0 && <p>All clear. Nice work.</p>}
+    {['decide', 'do'].map((kind) => {
+      const items = open.filter((t) => t.kind === kind);
+      return items.length > 0 && (
+        <>
+          <h3>{kind === 'decide' ? 'Decide (one word each)' : 'Do'}</h3>
+          <ol class="todo__list">
+            {items.map((t) => (
+              <li>
+                <span class="todo__box" aria-hidden="true"></span>
+                <span class="todo__main">
+                  <span class="todo__what">{t.what}</span>
+                  {t.why && <span class="todo__why">{t.why}</span>}
+                </span>
+                <span class="todo__side">
+                  <span class="todo__mins">{t.mins} min</span>
+                  {t.link && <a class="todo__go" href={t.link} target="_blank" rel="noopener">{t.linkLabel ?? 'Open'}</a>}
+                </span>
+              </li>
+            ))}
+          </ol>
+        </>
+      );
+    })}
+    {(p.notes ?? []).map((note) => <p class="todo__note">⚠️ {note}</p>)}
+    <p class="muted">Reply "done" in the Site Factory chat and it gets ticked. Approvals are ticked automatically from your inbox.</p>
+    {done.length > 0 && (
+      <details>
+        <summary>Done ({done.length})</summary>
+        <ul class="todo__done">{done.map((t) => <li>{t.what}</li>)}</ul>
+      </details>
+    )}
+  </section>
+
   {p.goal && (
     <section class="panel goal">
       <p class="goal__level">Level {p.goal.level}{p.goal.next && <> → next: <b>{p.goal.next.name}</b></>}</p>
@@ -72,9 +115,7 @@ const live = p.nodes.filter((x) => x.status === 'live').length;
         <>
           <h2>Sprint: {p.goal.sprint.name} by {new Date(p.goal.sprint.deadline).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' })}{p.goal.daysLeft !== null && p.goal.daysLeft >= 0 && <small> · {p.goal.daysLeft} days left</small>}</h2>
           <p class="muted">{p.goal.sprint.why} Revenue so far: ${n(p.goal.total)}.</p>
-          <ul class="moves">
-            {p.goal.sprint.moves.map((m: any) => <li class={m.done ? 'done' : ''}><span class="who">{m.who}</span> {m.what}</li>)}
-          </ul>
+          {sprintTodo.length > 0 && <p><b>{sprintTodo.filter((t) => t.done).length} of {sprintTodo.length}</b> sprint steps done. They're in your list above.</p>}
         </>
       )}
     </section>
@@ -153,7 +194,7 @@ const live = p.nodes.filter((x) => x.status === 'live').length;
 
   <section class="panel two">
     <div>
-      <h2>Next actions</h2>
+      <h2>Claude is on</h2>
       <ul class="actions">
         {p.actions.map((a) => <li><span class={`who who--${a.who.toLowerCase()}`}>{a.who}</span>{a.what}</li>)}
       </ul>
@@ -270,6 +311,19 @@ const live = p.nodes.filter((x) => x.status === 'live').length;
   .num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
   .sub { font-size: 1rem; margin: var(--space-3) 0 var(--space-2); }
   .muted { color: var(--muted); }
+  .todo { border: 2px solid var(--color-accent); }
+  .todo h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 0.9rem 0 0.3rem; }
+  .todo__list { list-style: none; padding: 0; margin: 0; }
+  .todo__list li { display: flex; gap: 0.7rem; align-items: flex-start; padding: 0.6rem 0; border-top: 1px solid var(--line); }
+  .todo__box { flex: none; width: 1.1rem; height: 1.1rem; margin-top: 0.15rem; border: 2px solid var(--muted); border-radius: 4px; }
+  .todo__main { flex: 1; display: flex; flex-direction: column; gap: 0.15rem; }
+  .todo__what { font-weight: 600; }
+  .todo__why { font-size: 0.85rem; color: var(--muted); }
+  .todo__side { flex: none; display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem; }
+  .todo__mins { font-size: 0.75rem; color: var(--muted); white-space: nowrap; }
+  .todo__go { font-size: 0.8rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 999px; background: var(--color-accent); color: var(--ink); text-decoration: none; white-space: nowrap; }
+  .todo__note { margin: 0.8rem 0 0.2rem; font-size: 0.9rem; }
+  .todo__done li { text-decoration: line-through; opacity: 0.6; }
   .goal__level { font-size: 1.4rem; font-weight: 800; margin: 0 0 0.5rem; }
   .goal__steps { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; padding: 0; margin: 0 0 0.8rem; }
   .goal__steps li { padding: 0.25rem 0.6rem; border-radius: 999px; background: var(--line); font-size: 0.8rem; }
