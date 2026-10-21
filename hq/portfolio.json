@@ -92,8 +92,10 @@
    "group": "business",
    "name": "Community Help Co",
    "status": "live",
-   "note": "Website preview built 21 Oct (lead gen)",
-   "station": "Build"
+   "note": "Website live 22 Oct (lead gen + free journal)",
+   "station": "Launch",
+   "url": "https://communityhelp.com.au",
+   "launched": "2026-10-22"
   },
   {
    "id": "hub",
@@ -347,7 +349,8 @@
    "why": "Gives you a preview link to check on your phone",
    "link": "https://dash.cloudflare.com",
    "linkLabel": "Cloudflare",
-   "done": false
+   "done": true,
+   "doneAt": "2026-10-22"
   },
   {
    "id": "chc-about",
@@ -367,7 +370,8 @@
    "why": "Needed to launch the site; done in this order, email never drops",
    "link": "https://dash.cloudflare.com",
    "linkLabel": "Cloudflare",
-   "done": false
+   "done": true,
+   "doneAt": "2026-10-22"
   }
  ],
  "notes": [

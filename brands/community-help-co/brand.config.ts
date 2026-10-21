@@ -4,7 +4,7 @@ export default defineBrand({
   slug: 'community-help-co',
   name: 'Community Help Co',
   domain: 'communityhelp.com.au',
-  launched: false, // preview only until the domain moves to Cloudflare (keep the Microsoft 365 email records!)
+  launched: true, // live on communityhelp.com.au since 22 Oct 2026 (Microsoft 365 email records kept in Cloudflare DNS)
 
   theme: 'calm',
   // Logo mint (#9EF5CF) and a deep forest ink; sunny yellow is only for "done" ticks.

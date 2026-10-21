@@ -41,7 +41,10 @@ if (existsSync(redirectsPath)) {
 if (brandLaunched()) {
   for (const need of ['/about', '/contact', '/privacy-policy']) if (!existsSync(fileFor(need))) problems.push(`Affiliate-ready: missing ${need} page`);
   const cfg = readFileSync(join('brands', brand, 'brand.config.ts'), 'utf8');
-  if (!existsSync(fileFor('/affiliate-disclosure')) && !/footerNote:[\s\S]{0,40}(Amazon Associate|commission|affiliate)/i.test(cfg)) problems.push('Affiliate-ready: no affiliate disclosure (a /affiliate-disclosure page or a footer note)');
+  // A disclosure is only needed once the site carries paid links (rel="sponsored").
+  const listHtml = (dir) => readdirSync(dir).flatMap((f) => { const p = join(dir, f); return statSync(p).isDirectory() ? listHtml(p) : p.endsWith('.html') ? [p] : []; });
+  const hasSponsored = listHtml(dist).some((f) => /rel="[^"]*sponsored/.test(readFileSync(f, 'utf8')));
+  if (hasSponsored && !existsSync(fileFor('/affiliate-disclosure')) && !/footerNote:[\s\S]{0,40}(Amazon Associate|commission|affiliate)/i.test(cfg)) problems.push('Affiliate-ready: no affiliate disclosure (a /affiliate-disclosure page or a footer note)');
   notice('Affiliate-ready pages checked');
 }
 
