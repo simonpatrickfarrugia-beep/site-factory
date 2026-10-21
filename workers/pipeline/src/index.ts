@@ -12,7 +12,7 @@
 import { enrich, intake, maxYear, recheck, type QueueItem, type Movie, type Result, type State } from './jobs';
 import { commitFiles, readFiles, StaleError, type Repo } from './github';
 import { channelFeed, omdbLookup, omdbYearsForTitle, judgeNiche, pickCategories, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
-import { buildCollections, type Idea, type MovieCollection } from './collections';
+import { buildCollections, minFilmsFor, winnable, MIN_OPENNESS, PERSON_MIN_FILMS, type Idea, type MovieCollection } from './collections';
 import { ga4Report, googleAccessToken, searchAnalytics, youtubeSearch } from './google';
 import { buildStats } from './stats';
 import { calibrate, estimateMoney, moneyReport, type Measured, nicheReport, scoreNiche, type AffiliateCatalog, type Niche } from './niches';
@@ -45,7 +45,8 @@ export interface Env {
   RECHECK_LIMIT: string;
   GSC_SITE: string; // Search Console property: sc-domain:movietrailer.channel (Domain property) or a URL-prefix property
   NICHES_PER_RUN?: string; // ideas scored per niche-finder run
-  COMPETITION_PER_RUN?: string; // niches per competition-check run
+  COMPETITION_PER_RUN?: string;
+  COLLCHECK_PER_RUN?: string; // collection ideas checked per collcheck run
   STATS_SITES?: string; // JSON list of { name, path, ga4, gsc } for the dashboards
   GA4_PROPERTY?: string; // GA4 property ID (number) for the dashboard stats
   INDEXNOW_KEY?: string; // public key; brands/<slug>/public/<key>.txt holds the same value
@@ -65,7 +66,7 @@ export interface Env {
   STATUS?: KVNamespace;
 }
 
-type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections' | 'stats' | 'niches' | 'towns' | 'keywords' | 'competition';
+type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections' | 'stats' | 'niches' | 'towns' | 'keywords' | 'competition' | 'collcheck';
 
 /**
  * Workers Free allows 5 cron schedules per ACCOUNT, so the pipeline uses two (see wrangler.jsonc)
@@ -82,7 +83,7 @@ function jobFor(cron: string, at: Date): Job | null {
   const day = at.getUTCDate();
   if (hour === 18) return day === 1 ? 'recheck' : day === 2 ? 'demand' : day === 3 ? 'collections' : null; // 05:00 Melbourne on the 2nd / 3rd / 4th
   if (hour === 19) return 'enrich'; // daily, 06:00 Melbourne
-  if (hour === 20) return CATALOGUE_DAYS.includes(day) ? 'catalogue' : null; // 07:00 Melbourne
+  if (hour === 20) return CATALOGUE_DAYS.includes(day) ? 'catalogue' : day === 2 ? 'collcheck' : null; // 07:00 Melbourne (collcheck on the 3rd, before collections on the 4th)
   if (hour === 21) return 'stats'; // 08:00 Melbourne, every day (feeds the daily traffic report)
   return null;
 }
@@ -94,6 +95,7 @@ const CANDIDATES = 'data/trailers/candidates.json';
 const CATALOGUE_REPORT = 'reports/trailers/catalogue.md';
 const IDEAS = 'data/trailers/collection-ideas.json';
 const COLLECTIONS_REPORT = 'reports/trailers/collections.md';
+const COLLCHECK_REPORT = 'reports/trailers/collection-competition.md';
 const STATS = 'data/trailers/stats.json';
 const NICHES = 'hq/niches.json';
 const VIC_TOWNS = 'data/vic/towns.json';
@@ -120,7 +122,7 @@ export default {
 
   async fetch(req: Request, env: Env): Promise<Response> {
     const url = new URL(req.url);
-    const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue|collections|stats|niches|competition|towns|keywords)$/);
+    const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue|collections|stats|niches|competition|collcheck|towns|keywords)$/);
     if (url.pathname === '/status') {
       if (!env.RUN_KEY || url.searchParams.get('key') !== env.RUN_KEY) return new Response('Forbidden\n', { status: 403 });
       const status = (await env.STATUS?.get('runs', 'json')) ?? {};
@@ -176,6 +178,7 @@ const NEEDS: Record<Job, (keyof Env)[]> = {
   towns: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD'],
   keywords: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD'],
   competition: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD'],
+  collcheck: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD'],
 };
 
 export async function run(job: Job, env: Env, dryRun: boolean) {
@@ -193,6 +196,8 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
       ? [NICHES, AFFILIATES, FINANCE, ...statsPaths(env)]
       : job === 'competition'
       ? [NICHES, AFFILIATES]
+      : job === 'collcheck'
+      ? [IDEAS]
       : job === 'stats'
       ? [STATS, MOVIES, COLLECTIONS]
       :
@@ -210,6 +215,7 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
   if (job === 'stats') return statsJob(env, repo, snap, now, dryRun);
   if (job === 'niches') return nichesJob(env, repo, snap, now, dryRun);
   if (job === 'competition') return competitionJob(env, repo, snap, now, dryRun);
+  if (job === 'collcheck') return collcheckJob(env, repo, snap, now, dryRun);
   if (job === 'towns') return townsJob(env, repo, snap, now, dryRun);
   if (job === 'keywords') return keywordsJob(env, repo, snap, now, dryRun);
   if (job === 'collections') return collectionsJob(env, repo, snap, now, dryRun, maxYear({ now, minAgeYears }));
@@ -655,6 +661,56 @@ async function competitionJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRu
     log,
   );
   return { job: 'competition' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report: undefined as string | undefined };
+}
+
+/**
+ * Collection competition check (on demand; also needed before the monthly collections job creates a theme):
+ * Google top 10 for each idea's main keyword + traffic of the ranking domains -> idea.competition.openness.
+ * Checks ideas big enough to be built (or already built), most-searched first; ~US$0.002 per idea. Rechecks after 90 days.
+ */
+async function collcheckJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean) {
+  const ideas = JSON.parse(snap.files[IDEAS] || '[]') as Idea[];
+  const login = env.DATAFORSEO_LOGIN!, password = env.DATAFORSEO_PASSWORD!;
+  const market = Number(env.DATAFORSEO_LOCATION) || 2840;
+  const minFilms = Number(env.COLLECTION_MIN_FILMS) || 6;
+  const stale = (i: Idea) => !i.competition || now.getTime() - Date.parse(i.competition.checkedAt) > 90 * 86400000;
+  const eligible = (i: Idea) => (i.volume ?? 0) >= 100 && (i.status !== 'open' || i.films >= minFilmsFor(i, minFilms));
+  const todo = ideas.filter((i) => eligible(i) && stale(i)).sort((a, b) => (b.volume ?? 0) - (a.volume ?? 0)).slice(0, Number(env.COLLCHECK_PER_RUN) || 35);
+  const log: string[] = [];
+  const serps: { idea: Idea; keyword: string; volume: number; items: SerpResult[] }[] = [];
+  let cost = 0;
+  for (const i of todo) {
+    try {
+      const r = await serpTop10(login, password, i.keywords[0], market);
+      cost += r.cost;
+      serps.push({ idea: i, keyword: i.keywords[0], volume: i.volume ?? 0, items: r.items });
+    } catch (e) {
+      log.push(`${i.name}: SERP failed (${(e as Error).message.slice(0, 100)})`);
+    }
+  }
+  if (serps.length) {
+    const t = await domainTraffic(login, password, serps.flatMap((s) => s.items.map((x) => rootDomain(x.domain))), market);
+    cost += t.cost;
+    for (const s of serps) {
+      const c = scoreCompetition([s], t.etv, market, now, 0);
+      s.idea.competition = { openness: c.openness, giants: c.giants.slice(0, 3).map((g) => g.domain), checkedAt: now.toISOString() };
+    }
+  }
+  const checked = ideas.filter((i) => i.competition).sort((a, b) => winnable(b) - winnable(a));
+  const left = ideas.filter((i) => eligible(i) && stale(i)).length;
+  log.unshift(`Collection check: ${serps.length} idea(s) checked (US$${cost.toFixed(3)})${left ? `, ${left} still to check (run again)` : ''}. Most winnable: ${checked.slice(0, 5).map((i) => `${i.name} ${i.volume}/mo × ${i.competition!.openness}%`).join('; ')}.`);
+  const L = [
+    '# Collection ideas: can we win them?',
+    '',
+    `Updated ${now.toISOString().slice(0, 10)}. Google top 10 for each idea's main keyword (US). **Openness** = share of the top 10 a new site could take (forums or small sites), top spots weighted most. **Winnable** = searches × openness. The monthly collections job only builds ideas with openness ≥ ${MIN_OPENNESS}, and actor/director lists only with ${PERSON_MIN_FILMS}+ of their films in our catalogue.`,
+    '',
+    '| Idea | Status | Films | Searches/mo | Openness | Winnable | Big players |',
+    '|---|---|---:|---:|---:|---:|---|',
+    ...checked.map((i) => `| ${i.name} | ${i.status} | ${i.films} | ${(i.volume ?? 0).toLocaleString()} | ${i.competition!.openness} | ${Math.round(winnable(i)).toLocaleString()} | ${i.competition!.giants.join(', ')} |`),
+    '',
+  ];
+  const commit = await save(repo, snap.sha, { [IDEAS]: JSON.stringify(ideas, null, 1) + '\n', [COLLCHECK_REPORT]: L.join('\n') }, `Pipeline (collcheck): collection competition [skip ci]\n\n${log.join('\n')}`, dryRun, log);
+  return { job: 'collcheck' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report: undefined as string | undefined };
 }
 
 async function save(repo: Repo, sha: string, changes: Record<string, string>, message: string, dryRun: boolean, log: string[]) {

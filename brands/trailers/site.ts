@@ -177,11 +177,11 @@ export function routes(): Route[] {
       path: `discover/${c.slug}`,
       template: 'collection',
       seo: {
-        title: `${c.name} – Watch Trailers & Underrated Picks` + SUFFIX,
+        title: `${c.name}: Trailers & Where to Stream or Rent Each One` + SUFFIX,
         rawTitle: true,
         description:
           c.metaDescription ??
-          `Watch trailers for ${list.length} films in ${c.name}, with where to rent, buy or stream each one.`,
+          `${c.name}: watch the trailer for each of ${list.length} films, then see where to stream, rent or buy it in the US, with a direct Prime Video link.`,
         image: list[0] ? thumb(list[0].youtubeId) : undefined,
       },
       schema: [
@@ -193,7 +193,7 @@ export function routes(): Route[] {
         ]),
       ],
       lastmod: c.updated,
-      props: { heading: c.name, tagline: c.tagline, introHtml: c.introHtml, movies: list, backTo: { href: '/discover', label: 'All collections' } },
+      props: { heading: c.name, tagline: c.tagline, introHtml: c.introHtml, movies: list, backTo: { href: '/discover', label: 'All collections' }, amazonTag: AMAZON_TAG },
     });
   }
 
@@ -253,6 +253,7 @@ export function routes(): Route[] {
         introHtml: null,
         movies: list,
         backTo: { href: '/discover', label: 'All collections' },
+        amazonTag: AMAZON_TAG,
       },
     });
   }

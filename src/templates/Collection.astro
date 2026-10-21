@@ -8,8 +8,17 @@ interface Props {
   introHtml: string | null;
   movies: Movie[];
   backTo?: { href: string; label: string };
+  amazonTag?: string;
 }
-const { heading, tagline, introHtml, movies, backTo } = Astro.props;
+const { heading, tagline, introHtml, movies, backTo, amazonTag } = Astro.props;
+// Where to watch, right on the list: Prime Video rental link per film (same rules as the movie page).
+const primeUrl = (m: Movie) => {
+  if (!amazonTag) return null;
+  if (m.rentBuyUrl) {
+    try { const u = new URL(m.rentBuyUrl); if (/(^|\.)amazon\./i.test(u.hostname)) { u.searchParams.set('tag', amazonTag); return u.toString(); } } catch { /* fall through */ }
+  }
+  return `https://www.amazon.com/s?k=${encodeURIComponent(m.year ? `${m.name} ${m.year}` : m.name)}&i=instant-video&tag=${amazonTag}`;
+};
 ---
 <div class="wrap collection">
   <header class="page-head">
@@ -32,7 +41,10 @@ const { heading, tagline, introHtml, movies, backTo } = Astro.props;
             {[m.year, m.rating, m.genres.slice(0, 2).join(', ')].filter(Boolean).join(', ')}
           </p>
           {(m.tagline || m.synopsis) && <p class="lineup__blurb">{m.tagline ?? m.synopsis}</p>}
-          <p><a class="text-link" href={`/movies/${m.slug}`}>Where to watch {m.name}</a></p>
+          <p class="lineup__watch">
+            {primeUrl(m) && <a class="button button--small" href={primeUrl(m)!} rel="sponsored noopener" target="_blank" data-cta="prime">Rent on Prime Video</a>}
+            <a class="text-link" href={`/movies/${m.slug}`}>All ways to watch {m.name}</a>
+          </p>
         </div>
       </li>
     ))}

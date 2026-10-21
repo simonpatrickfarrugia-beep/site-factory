@@ -54,7 +54,18 @@ export interface Idea {
   /** existing = a collection already covers it; created = made by this job; open = not made yet. */
   status: 'open' | 'created' | 'existing';
   existingSlug?: string | null;
+  /** Who owns Google's top 10 for the main keyword (collcheck job). openness 0-100: higher = more beatable slots. */
+  competition?: { openness: number; giants: string[]; checkedAt: string } | null;
 }
+
+/**
+ * A page of an actor's or director's films only competes if it covers a real share of their work;
+ * 3 of Tom Hanks's 60+ films loses to IMDb's complete list. Decade/genre "best of" lists don't need completeness.
+ */
+export const PERSON_MIN_FILMS = 12;
+export const MIN_OPENNESS = 25;
+export const minFilmsFor = (i: Pick<Idea, 'kind'>, base: number) => (i.kind === 'decade-genre' ? base : Math.max(base, PERSON_MIN_FILMS));
+export const winnable = (i: Pick<Idea, 'volume' | 'competition'>) => (i.volume ?? 0) * ((i.competition?.openness ?? 0) / 100);
 
 export interface CollectionCopy {
   tagline: string;
@@ -226,8 +237,11 @@ export async function buildCollections(
   // Create the best open ideas. Without volumes, fall back to the ideas with the most films.
   const haveVolumes = ideas.some((i) => i.volume != null);
   const ranked = ideas
-    .filter((i) => i.status === 'open' && i.films >= opt.minFilms && (!haveVolumes || (i.volume ?? 0) >= opt.minVolume))
-    .sort((a, b) => (haveVolumes ? (b.volume ?? 0) - (a.volume ?? 0) : 0) || b.films - a.films);
+    .filter((i) => i.status === 'open' && i.films >= minFilmsFor(i, opt.minFilms) && (!haveVolumes || (i.volume ?? 0) >= opt.minVolume))
+    // Only themes we can win: checked and open enough. Unchecked ideas wait for the collcheck job.
+    .filter((i) => i.competition != null && i.competition.openness >= MIN_OPENNESS)
+    // Winnable demand = searches x share of Google's top 10 that's beatable.
+    .sort((a, b) => winnable(b) - winnable(a) || b.films - a.films);
 
   const created: string[] = [];
   const out = [...collections];

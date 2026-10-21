@@ -448,3 +448,7 @@ main { display: block; }
 [data-theme='roadtrip'] .loop-card__name { font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; color: var(--sign-green); text-decoration: none; }
 [data-theme='roadtrip'] .loop-card__name:hover { text-decoration: underline; }
 [data-theme='roadtrip'] .loop-card__route { font-family: var(--font-display); color: var(--muted); font-size: 0.95rem; margin: 0.2rem 0; }
+
+/* Collection lists: watch links under each film */
+.lineup__watch { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; }
+.button--small { padding: 0.45rem 0.9rem; font-size: 0.9rem; }
