@@ -200,5 +200,74 @@
   "Measure",
   "Review"
  ],
- "_review": "At day 90 (launched + 90): visits and money clicks over the last 28 days vs target90. Both >= 100% -> double down; average >= 50% -> fix and give it one more 90 days; below 50% -> kill or merge. Targets are provisional until Simon confirms."
+ "_review": "At day 90 (launched + 90): visits and money clicks over the last 28 days vs target90. Both >= 100% -> double down; average >= 50% -> fix and give it one more 90 days; below 50% -> kill or merge. Targets are provisional until Simon confirms.",
+ "goal": {
+  "levels": [
+   {
+    "level": 1,
+    "name": "First $1",
+    "target": 1
+   },
+   {
+    "level": 2,
+    "name": "First $100 month",
+    "target": 100,
+    "monthly": true
+   },
+   {
+    "level": 3,
+    "name": "One site at $1k a month",
+    "target": 1000,
+    "monthly": true
+   },
+   {
+    "level": 4,
+    "name": "Portfolio at $5k a month",
+    "target": 5000,
+    "monthly": true
+   }
+  ],
+  "sprint": {
+   "name": "First $1",
+   "deadline": "2026-10-31",
+   "why": "Prove the loop: a real visitor clicks an affiliate link and buys.",
+   "moves": [
+    {
+     "who": "Simon",
+     "what": "Share the Halloween movie-night page and one Vic Tours road trip with friends and family (posts are ready in SHARE-POSTS.md)",
+     "done": false
+    },
+    {
+     "who": "Simon",
+     "what": "Sign up to Discover Cars (5 min, no traffic minimum), then send Claude your affiliate ID",
+     "done": false
+    },
+    {
+     "who": "Simon",
+     "what": "Finish Booking.com in CJ (tax form + payment method), then send the CJ website ID",
+     "done": false
+    },
+    {
+     "who": "Simon",
+     "what": "Apply to Viator and GetYourGuide (answers in AFFILIATE-SIGNUP-KIT.md)",
+     "done": false
+    },
+    {
+     "who": "Simon",
+     "what": "Check Amazon Associates reports every few days and tell Claude the first earnings",
+     "done": false
+    },
+    {
+     "who": "Claude",
+     "what": "Halloween collection featured on the trailer home page",
+     "done": true
+    },
+    {
+     "who": "Claude",
+     "what": "Switch on each affiliate button within a day of getting its ID",
+     "done": false
+    }
+   ]
+  }
+ }
 }

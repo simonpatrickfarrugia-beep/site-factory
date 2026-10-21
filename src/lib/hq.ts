@@ -92,6 +92,17 @@ export function hqProps() {
     programs: (catalog.programs ?? [])
       .map((pr: any) => ({ name: pr.name, commission: pr.commission, approval: pr.approval, requirements: pr.requirements, status: pr.status, verified: !!pr.verified, markets: pr.markets.join(', ') }))
       .sort((a: any, b: any) => ['approved', 'applying', 'not applied'].indexOf(a.status) - ['approved', 'applying', 'not applied'].indexOf(b.status)),
+    goal: (() => {
+      const g = portfolio.goal;
+      if (!g) return null;
+      const all = (finance.revenue ?? []).reduce((a: number, r: any) => a + (r.amount ?? 0), 0);
+      const month = new Date().toISOString().slice(0, 7);
+      const thisMonth = (finance.revenue ?? []).filter((r: any) => r.month === month).reduce((a: number, r: any) => a + (r.amount ?? 0), 0);
+      const reached = g.levels.filter((l: any) => (l.monthly ? thisMonth : all) >= l.target);
+      const next = g.levels.find((l: any) => !reached.includes(l)) ?? null;
+      const daysLeft = g.sprint ? Math.ceil((Date.parse(g.sprint.deadline + 'T23:59:59+11:00') - Date.now()) / 86400000) : null;
+      return { level: reached.length, next, total: all, thisMonth, sprint: g.sprint ?? null, daysLeft, levels: g.levels };
+    })(),
     builtAt: new Date().toISOString(),
   };
 }

@@ -13,6 +13,7 @@ interface Props {
   engines: { name: string; lines: string[] }[];
   finance: { revenue: { month: string; source: string; amount: number }[]; costs: { month: string; item: string; amount: number; kind: string }[]; monthlyRunning: { item: string; amount: number }[] };
   niches: { idea: string; score: number; market: string }[];
+  goal?: { level: number; next: any; total: number; thisMonth: number; sprint: any; daysLeft: number | null; levels: any[] } | null;
   moneyMap?: { idea: string; market: string; low: number; mid: number; high: number; perSale: number }[];
   programs?: { name: string; commission: string; approval: string; requirements: string; status: string; verified: boolean; markets: string }[];
   builtAt: string;
@@ -60,6 +61,24 @@ const live = p.nodes.filter((x) => x.status === 'live').length;
     <div class="kpi kpi--money"><span class="kpi__label">Revenue to date</span><span class="kpi__value">${n(revTotal)}</span><span class="kpi__sub">{p.finance.revenue.length ? `${p.finance.revenue.length} payout(s) logged` : 'First payout pending'}</span></div>
     <div class="kpi"><span class="kpi__label">Running costs</span><span class="kpi__value">${n(running)}<small>/mo</small></span><span class="kpi__sub">${n(oneOff)} one-off so far</span></div>
   </section>
+
+  {p.goal && (
+    <section class="panel goal">
+      <p class="goal__level">Level {p.goal.level}{p.goal.next && <> → next: <b>{p.goal.next.name}</b></>}</p>
+      <ol class="goal__steps">
+        {p.goal.levels.map((l: any) => <li class={l.level <= p.goal!.level ? 'done' : l === p.goal!.next ? 'now' : ''}>{l.name}</li>)}
+      </ol>
+      {p.goal.sprint && (
+        <>
+          <h2>Sprint: {p.goal.sprint.name} by {new Date(p.goal.sprint.deadline).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' })}{p.goal.daysLeft !== null && p.goal.daysLeft >= 0 && <small> · {p.goal.daysLeft} days left</small>}</h2>
+          <p class="muted">{p.goal.sprint.why} Revenue so far: ${n(p.goal.total)}.</p>
+          <ul class="moves">
+            {p.goal.sprint.moves.map((m: any) => <li class={m.done ? 'done' : ''}><span class="who">{m.who}</span> {m.what}</li>)}
+          </ul>
+        </>
+      )}
+    </section>
+  )}
 
   <section class="panel">
     <h2>Portfolio</h2>
@@ -251,6 +270,15 @@ const live = p.nodes.filter((x) => x.status === 'live').length;
   .num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
   .sub { font-size: 1rem; margin: var(--space-3) 0 var(--space-2); }
   .muted { color: var(--muted); }
+  .goal__level { font-size: 1.4rem; font-weight: 800; margin: 0 0 0.5rem; }
+  .goal__steps { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; padding: 0; margin: 0 0 0.8rem; }
+  .goal__steps li { padding: 0.25rem 0.6rem; border-radius: 999px; background: var(--line); font-size: 0.8rem; }
+  .goal__steps li.done { background: #7fd49b; color: var(--ink); }
+  .goal__steps li.now { background: var(--color-accent); color: var(--ink); font-weight: 700; }
+  .moves { list-style: none; padding: 0; margin: 0; }
+  .moves li { padding: 0.4rem 0; border-bottom: 1px solid var(--line); }
+  .moves li.done { opacity: 0.55; text-decoration: line-through; }
+  .moves .who { display: inline-block; min-width: 4.2rem; font-size: 0.75rem; font-weight: 700; color: var(--muted); }
   .gate { border-top: 1px solid var(--line); margin-top: 0.6rem; padding-top: 0.5rem; }
   .gate p { margin: 0.2rem 0; font-size: 0.85rem; }
   .bar { height: 8px; border-radius: 999px; background: var(--line); overflow: hidden; margin: 0.3rem 0; }
