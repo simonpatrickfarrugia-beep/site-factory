@@ -1,0 +1,15 @@
+# Check which domain names are unregistered (RDAP). Claude runs this from chat when shortlisting names.
+name: domain-check
+on:
+  workflow_dispatch:
+    inputs:
+      names:
+        description: Comma-separated domain names
+        required: true
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - run: python3 scripts/domain_check.py "${{ inputs.names }}" && cat domains.md >> "$GITHUB_STEP_SUMMARY"
