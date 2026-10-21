@@ -354,8 +354,19 @@
    "kind": "decide",
    "sprint": false,
    "mins": 3,
-   "what": "Community Help Co: send 3–4 lines of real background for the About page, and confirm the Calendly link",
+   "what": "Community Help Co: send 3–4 lines of real background for the About page",
    "why": "People book a mentor they trust; nothing gets invented",
+   "done": false
+  },
+  {
+   "id": "chc-dns",
+   "kind": "do",
+   "sprint": false,
+   "mins": 10,
+   "what": "Community Help Co: add communityhelp.com.au to Cloudflare, check the 5 email records came across (COMMUNITY-HELP-CO.md), then switch nameservers at Web Address Registration",
+   "why": "Needed to launch the site; done in this order, email never drops",
+   "link": "https://dash.cloudflare.com",
+   "linkLabel": "Cloudflare",
    "done": false
   }
  ],
