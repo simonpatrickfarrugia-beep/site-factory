@@ -106,3 +106,56 @@ Updated 2026-10-21. Monthly Google searches (Google Ads data via DataForSEO).
 | pet insurance for husky | 20 |
 | pet insurance for poodle | — |
 | pet insurance for bernese mountain dog | — |
+
+## Community Help Co: tools and guides (Australia) (Australia)
+
+| Search | /mo |
+|---|---:|
+| jobs near me | 40,500 |
+| part time jobs | 6,600 |
+| gratitude journal | 6,600 |
+| resume template australia | 4,400 |
+| cover letter template australia | 3,600 |
+| free resume builder | 2,400 |
+| disability employment services | 2,400 |
+| journal prompts | 2,400 |
+| resume examples australia | 1,600 |
+| daily affirmations | 1,600 |
+| common interview questions | 1,300 |
+| interview questions and answers | 1,000 |
+| free resume template australia | 880 |
+| how to write a cover letter australia | 720 |
+| resume for first job | 590 |
+| interview tips | 590 |
+| life coach melbourne | 590 |
+| resume builder australia | 480 |
+| ndis employment support | 480 |
+| how to write a resume australia | 390 |
+| how to prepare for a job interview | 390 |
+| how to find a job | 390 |
+| career coach melbourne | 390 |
+| resume with no experience | 320 |
+| retail resume | 260 |
+| selection criteria examples | 260 |
+| employment coach | 260 |
+| support worker resume | 210 |
+| hospitality resume | 210 |
+| aged care resume | 170 |
+| job application tracker | 170 |
+| cover letter for support worker | 140 |
+| disability support worker resume | 140 |
+| job search tips | 140 |
+| how to get a job with no experience | 140 |
+| habit tracker printable | 140 |
+| daily planner printable | 110 |
+| warehouse resume | 70 |
+| daily journal template | 70 |
+| gratitude journal template | 50 |
+| first job resume australia | 10 |
+| how to explain a gap in your resume | 10 |
+| career gap resume | 10 |
+| returning to work after a break | 10 |
+| free daily journal template | 10 |
+| free printable journal | 10 |
+| morning routine journal | 10 |
+| how to build good habits | 10 |
