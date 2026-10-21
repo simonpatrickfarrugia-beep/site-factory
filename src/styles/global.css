@@ -385,7 +385,7 @@ main { display: block; }
 [data-theme='roadtrip'] .crumb a { color: var(--sign-green); }
 [data-theme='roadtrip'] .town__intro { max-width: 40rem; margin-top: var(--space-4); }
 [data-theme='roadtrip'] .town__lede { font-size: 1.15rem; max-width: 40rem; }
-[data-theme='roadtrip'] .town__body { max-width: 40rem; color: var(--ink); line-height: 1.6; }
+[data-theme='roadtrip'] .town__body { max-width: 40rem; color: inherit; line-height: 1.6; }
 [data-theme='roadtrip'] .tip { border-left: 4px solid var(--wattle); padding-left: var(--space-3); }
 [data-theme='roadtrip'] .page-title { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.9rem, 6vw, 2.8rem); line-height: 1.05; margin: var(--space-4) 0 var(--space-2); }
 [data-theme='roadtrip'] .page-title--big { font-size: clamp(2.2rem, 8vw, 3.6rem); margin-top: 0; }
