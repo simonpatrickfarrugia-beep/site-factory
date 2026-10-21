@@ -1,6 +1,6 @@
 /**
  * Every page on communityhelp.com.au. Content lives in data/community-help-co/*.json (edited by chat).
- * Lead generation only: "Book a free chat" (Calendly) and enquiry / referral forms. No payments.
+ * Lead generation only: "Email Simon for a free chat" (mailto) and enquiry / referral forms. No payments.
  */
 import { getCollection, getSingleton } from '../../src/lib/data';
 import type { Route } from '../../src/lib/routes';
@@ -28,7 +28,7 @@ export function routes(): Route[] {
     // No street address on purpose: sessions are online.
     address: { '@type': 'PostalAddress', addressLocality: 'Melbourne', addressRegion: 'VIC', addressCountry: 'AU' },
     areaServed: [{ '@type': 'City', name: 'Melbourne' }, { '@type': 'Country', name: 'Australia' }],
-    description: 'Practical 1:1 life goals mentoring, employment coaching and advocacy support for NDIS participants, online.',
+    description: 'Practical 1:1 life goals mentoring, employment coaching and advocacy support, online. NDIS (self-managed and plan-managed) or private clients.',
   };
   const crumbs = (items: { name: string; path: string }[]) => ({
     '@context': 'https://schema.org',
@@ -40,13 +40,13 @@ export function routes(): Route[] {
     '@type': 'FAQPage',
     mainEntity: list.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
   });
-  const common = { calendly: site.calendly };
+  const common = { book: site.book };
   const out: Route[] = [];
 
   out.push({
     path: '',
     template: 'chcHome',
-    seo: { title: 'Community Help Co: NDIS life goals mentoring and job coaching, online', rawTitle: true, description: 'Practical 1:1 NDIS mentoring and employment coaching, online from Melbourne. Weekly sessions with written notes on your progress. Book a free chat.' },
+    seo: { title: 'Community Help Co: life goals mentoring and job coaching, online (NDIS or private)', rawTitle: true, description: 'Practical 1:1 life goals mentoring and employment coaching, online from Melbourne. NDIS or private. Weekly sessions with written notes. Email for a free chat.' },
     schema: [org, { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Community Help Co', url: SITE }],
     props: { ...common, hero: site.hero, audiences: site.audiences, services: services.map(({ slug, name, short }) => ({ slug, name, short })), steps: pages['how-it-works'].steps, testimonials, faqs: faqs.slice(0, 4) },
   });
@@ -96,7 +96,7 @@ export function routes(): Route[] {
   out.push({
     path: 'contact',
     template: 'chcContact',
-    seo: { title: 'Contact or refer someone' + SUFFIX, rawTitle: true, description: 'Book a free chat, send an enquiry, or refer a participant to Community Help Co. Support coordinators and plan managers welcome.' },
+    seo: { title: 'Contact or refer someone' + SUFFIX, rawTitle: true, description: 'Email Simon for a free chat, send an enquiry, or refer someone to Community Help Co. Support coordinators and plan managers welcome.' },
     schema: [crumbs([{ name: 'Home', path: '' }, { name: 'Contact', path: 'contact' }])],
     props: { ...common, email: site.email, endpoint: site.formsEndpoint, services: services.map(({ slug, name }) => ({ slug, name })) },
   });

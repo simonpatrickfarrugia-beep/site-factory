@@ -1,8 +1,8 @@
 ---
 import BookCta from './BookCta.astro';
-interface Props { calendly: string; faqs: { q: string; a: string }[] }
-const { calendly, faqs } = Astro.props;
+interface Props { book: string; faqs: { q: string; a: string }[] }
+const { book, faqs } = Astro.props;
 ---
 <section class="chc-pagehead"><div class="chc-wrap"><h1>Questions</h1><p class="chc-lede">Straight answers about how mentoring works, funding and getting started.</p></div></section>
 <div class="chc-wrap chc-section chc-faq">{faqs.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}</div>
-<BookCta calendly={calendly} heading="Still wondering?" text="Ask anything in a free chat. No cost, no commitment." />
+<BookCta book={book} heading="Still wondering?" text="Ask anything in a free chat. No cost, no commitment." />

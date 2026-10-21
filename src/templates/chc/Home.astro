@@ -2,7 +2,7 @@
 import NoteCard from './NoteCard.astro';
 import BookCta from './BookCta.astro';
 interface Props {
-  calendly: string;
+  book: string;
   hero: { title: string; lede: string; note: any };
   audiences: { t: string; d: string; href?: string; link?: string }[];
   services: { slug: string; name: string; short: string }[];
@@ -10,7 +10,7 @@ interface Props {
   testimonials: { quote: string; name: string; context: string }[];
   faqs: { q: string; a: string }[];
 }
-const { calendly, hero, audiences, services, steps, testimonials, faqs } = Astro.props;
+const { book, hero, audiences, services, steps, testimonials, faqs } = Astro.props;
 ---
 <section class="chc-hero">
   <div class="chc-wrap chc-hero__grid">
@@ -18,10 +18,10 @@ const { calendly, hero, audiences, services, steps, testimonials, faqs } = Astro
       <h1>{hero.title}</h1>
       <p class="chc-lede">{hero.lede}</p>
       <p class="chc-hero__actions">
-        <a class="chc-btn" href={calendly} target="_blank" rel="noopener" data-cta="book_chat">Book a free chat</a>
+        <a class="chc-btn" href={book} data-cta="email_chat">Email Simon for a free chat</a>
         <a class="chc-link" href="/how-it-works">How it works</a>
       </p>
-      <p class="chc-small">Sessions are online on Microsoft Teams. For NDIS self-managed and plan-managed participants.</p>
+      <p class="chc-small">Sessions are online on Microsoft Teams. NDIS (self-managed and plan-managed) or private.</p>
     </div>
     <NoteCard note={hero.note} />
   </div>
@@ -76,4 +76,4 @@ const { calendly, hero, audiences, services, steps, testimonials, faqs } = Astro
   <p><a class="chc-link" href="/faq">All questions</a></p>
 </section>
 
-<BookCta calendly={calendly} />
+<BookCta book={book} />

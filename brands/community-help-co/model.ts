@@ -17,7 +17,8 @@ export interface Faq { q: string; a: string; service: string | null }
 /** Only real quotes with written consent. Never invent. First name or initials only. */
 export interface Testimonial { quote: string; name: string; context: string; consent: boolean; published: boolean }
 export interface SiteInfo {
-  calendly: string;
+  /** Primary call to action: mailto link for a free chat. */
+  book: string;
   email: string;
   abn: string;
   formsEndpoint: string;

@@ -15,7 +15,7 @@ export default defineBrand({
   favicon: '/favicon.png',
 
   nav: [
-    { label: 'Life goals (NDIS)', href: '/life-goals-mentoring-ndis' },
+    { label: 'Life goals', href: '/life-goals-mentoring' },
     { label: 'Job Catalyst', href: '/job-catalyst' },
     { label: 'How it works', href: '/how-it-works' },
     { label: 'Contact', href: '/contact' },
@@ -27,11 +27,11 @@ export default defineBrand({
     { label: 'Refer someone', href: '/contact#refer' },
     { label: 'Privacy policy', href: '/privacy-policy' },
   ],
-  footerNote: 'ABN 89 640 199 935. An unregistered NDIS provider working with self-managed and plan-managed participants. Based in Melbourne, with sessions online across Australia.',
+  footerNote: 'ABN 89 640 199 935. Private clients welcome. For NDIS, we are an unregistered provider working with self-managed and plan-managed participants. Based in Melbourne, with sessions online across Australia.',
 
   seo: {
     titleSuffix: ' | Community Help Co',
-    defaultDescription: 'Practical 1:1 NDIS life goals mentoring and employment coaching, online from Melbourne. Weekly sessions with written notes. Book a free chat.',
+    defaultDescription: 'Practical 1:1 life goals mentoring and employment coaching, online from Melbourne. NDIS or private. Weekly sessions with written notes.',
   },
 
   data: { source: 'snapshot' },
