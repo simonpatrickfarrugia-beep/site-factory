@@ -140,13 +140,8 @@
  "actions": [
   {
    "who": "Simon",
-   "what": "Finish Booking.com (CJ) tax form + payment method, then send the publisher ID",
-   "site": "vic"
-  },
-  {
-   "who": "Simon",
-   "what": "Apply to Viator, GetYourGuide and Discover Cars; join Commission Factory",
-   "site": "vic"
+   "what": "Amazon Associates: 3 qualifying sales needed by ~29 Mar 2027 or the account closes",
+   "site": "trailers"
   },
   {
    "who": "Simon",
@@ -234,27 +229,22 @@
    "moves": [
     {
      "who": "Simon",
-     "what": "Share the Halloween movie-night page and one Vic Tours road trip with friends and family (posts are ready in SHARE-POSTS.md)",
+     "what": "Share the Halloween movie-night page and one Vic Tours road trip (SHARE-POSTS.md)",
      "done": false
     },
     {
      "who": "Simon",
-     "what": "Sign up to Discover Cars (5 min, no traffic minimum), then send Claude your affiliate ID",
+     "what": "Cloudflare Email Routing: hello@victours.com.au → Gmail (2 min)",
      "done": false
     },
     {
      "who": "Simon",
-     "what": "Finish Booking.com in CJ (tax form + payment method), then send the CJ website ID",
+     "what": "Affiliate sitting (~45 min, AFFILIATE-SIGNUP-KIT.md): finish CJ, apply to Booking.com + Klook in CJ, Discover Cars, Viator, GetYourGuide, Commission Factory",
      "done": false
     },
     {
      "who": "Simon",
-     "what": "Apply to Viator and GetYourGuide (answers in AFFILIATE-SIGNUP-KIT.md)",
-     "done": false
-    },
-    {
-     "who": "Simon",
-     "what": "Check Amazon Associates reports every few days and tell Claude the first earnings",
+     "what": "Check Amazon Associates reports every few days",
      "done": false
     },
     {
@@ -264,8 +254,13 @@
     },
     {
      "who": "Claude",
-     "what": "Switch on each affiliate button within a day of getting its ID",
-     "done": false
+     "what": "Both sites affiliate-ready (about, contact, privacy, disclosure; checked in CI)",
+     "done": true
+    },
+    {
+     "who": "Claude",
+     "what": "Inbox watcher switches on buttons when approval emails arrive",
+     "done": true
     }
    ]
   }
