@@ -85,6 +85,20 @@ export function routes(): Route[] {
     });
   }
 
+  const j = (pages as unknown as Record<string, any>)['free-daily-journal'];
+  if (j) {
+    out.push({
+      path: 'free-daily-journal',
+      template: 'chcJournal',
+      seo: { title: j.seoTitle + SUFFIX, rawTitle: true, description: j.description, image: `${SITE}${j.preview}` },
+      schema: [
+        { '@context': 'https://schema.org', '@type': 'DigitalDocument', name: 'Daily Intentions & Reflections: free 90-day gratitude journal', description: j.description, encodingFormat: 'application/pdf', isAccessibleForFree: true, url: `${SITE}${j.files.full.href}`, author: { '@type': 'Person', name: 'Simon Farrugia' }, publisher: { '@id': `${SITE}/#org` } },
+        crumbs([{ name: 'Home', path: '' }, { name: 'Free daily journal', path: 'free-daily-journal' }]),
+      ],
+      props: { ...common, page: j },
+    });
+  }
+
   out.push({
     path: 'faq',
     template: 'chcFaq',

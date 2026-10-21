@@ -1,0 +1,69 @@
+---
+import BookCta from './BookCta.astro';
+interface Props {
+  book: string;
+  page: {
+    title: string; lede: string; quote: string; quoteBy: string; morning: string[]; evening: string[];
+    howTo: { t: string; d: string }[]; prompts: Record<string, string[]>; affirmations: string[];
+    files: { full: { href: string; label: string; note: string }; one: { href: string; label: string; note: string } };
+    preview: string;
+  };
+}
+const { book, page: j } = Astro.props;
+---
+<section class="chc-pagehead">
+  <div class="chc-wrap chc-journal-head">
+    <div>
+      <h1>{j.title}</h1>
+      <p class="chc-lede">{j.lede}</p>
+      <p class="chc-hero__actions">
+        <a class="chc-btn" href={j.files.full.href} download data-cta="journal_90">{j.files.full.label}</a>
+        <a class="chc-link" href={j.files.one.href} download data-cta="journal_1">{j.files.one.label}</a>
+      </p>
+      <p class="chc-small">{j.files.full.note}. Print it, or fill it in on a tablet.</p>
+    </div>
+    <img class="chc-journal-preview" src={j.preview} width="350" height="497" alt="A page from the journal: morning intentions (grateful for, what will make today great, affirmation) and evening reflection (amazing things, lesson learnt, daily win)." />
+  </div>
+</section>
+
+<section class="chc-wrap chc-section chc-two">
+  <div>
+    <h2 class="chc-h2">Each morning</h2>
+    <ul class="chc-list chc-list--ticks">{j.morning.map((m) => <li>{m}</li>)}</ul>
+  </div>
+  <div>
+    <h2 class="chc-h2">Each evening</h2>
+    <ul class="chc-list chc-list--ticks">{j.evening.map((m) => <li>{m}</li>)}</ul>
+  </div>
+</section>
+
+<section class="chc-section chc-band">
+  <div class="chc-wrap">
+    <h2 class="chc-h2">How to use it</h2>
+    <ol class="chc-steps">{j.howTo.map((s) => <li><h3>{s.t}</h3><p>{s.d}</p></li>)}</ol>
+  </div>
+</section>
+
+<section class="chc-wrap chc-section">
+  <blockquote class="chc-quote"><p>{j.quote}</p><footer>{j.quoteBy}</footer></blockquote>
+</section>
+
+<section class="chc-wrap chc-section chc-section--tight">
+  <h2 class="chc-h2">Journal prompts for when the page stares back</h2>
+  <div class="chc-audiences">
+    {Object.entries(j.prompts).map(([group, list]) => (
+      <div>
+        <h3>{group}</h3>
+        <ul class="chc-list">{list.map((q) => <li>{q}</li>)}</ul>
+      </div>
+    ))}
+  </div>
+</section>
+
+<section class="chc-wrap chc-section chc-section--tight">
+  <h2 class="chc-h2">Daily affirmation ideas</h2>
+  <p>Pick one that feels true enough, and write the same one every day for a week. Repetition is the point.</p>
+  <ul class="chc-affirmations">{j.affirmations.map((a) => <li>{a}</li>)}</ul>
+</section>
+
+<BookCta book={book} heading="Want help turning daily goals into weekly progress?" text="That's what mentoring is for: small goals, weekly check-ins and written notes. Email Simon for a free chat." />

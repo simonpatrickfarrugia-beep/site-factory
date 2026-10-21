@@ -21,6 +21,7 @@ import ChcSteps from './chc/Steps.astro';
 import ChcPage from './chc/Page.astro';
 import ChcFaq from './chc/Faq.astro';
 import ChcContact from './chc/Contact.astro';
+import ChcJournal from './chc/Journal.astro';
 
 export const templates = {
   home: Home,
@@ -45,4 +46,5 @@ export const templates = {
   chcPage: ChcPage,
   chcFaq: ChcFaq,
   chcContact: ChcContact,
+  chcJournal: ChcJournal,
 };

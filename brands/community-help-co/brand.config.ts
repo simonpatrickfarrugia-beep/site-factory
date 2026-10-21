@@ -17,10 +17,11 @@ export default defineBrand({
   nav: [
     { label: 'Life goals', href: '/life-goals-mentoring' },
     { label: 'Job Catalyst', href: '/job-catalyst' },
-    { label: 'How it works', href: '/how-it-works' },
+    { label: 'Free journal', href: '/free-daily-journal' },
     { label: 'Contact', href: '/contact' },
   ],
   footer: [
+    { label: 'How it works', href: '/how-it-works' },
     { label: 'Advocacy support', href: '/advocacy-support' },
     { label: 'About Simon', href: '/about' },
     { label: 'FAQ', href: '/faq' },
