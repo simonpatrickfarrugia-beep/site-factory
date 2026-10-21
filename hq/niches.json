@@ -2631,20 +2631,20 @@
     {
      "id": "rei",
      "name": "REI",
-     "commission": "check (commonly quoted ~5%)",
+     "commission": "5% per sale",
      "approval": "moderate",
-     "requirements": "check",
+     "requirements": "Apply via AvantLink with site + audience details; $50 payout threshold",
      "status": "not applied",
-     "verified": false
+     "verified": true
     },
     {
      "id": "klook",
      "name": "Klook Affiliate",
-     "commission": "check",
+     "commission": "2–5% per booking",
      "approval": "easy",
-     "requirements": "check",
+     "requirements": "Application via CJ with site + audience details; $50 payout threshold",
      "status": "not applied",
-     "verified": false
+     "verified": true
     }
    ]
   },
@@ -2955,36 +2955,36 @@
     549040
    ],
    "revenueUsd": [
-    1868,
-    17799,
-    87100
+    1501,
+    13985,
+    67570
    ],
-   "bestPerSaleUsd": 24.67,
+   "bestPerSaleUsd": 18.33,
    "programs": [
+    {
+     "id": "barkbox",
+     "name": "BarkBox",
+     "commission": "$20.80 per sale",
+     "approval": "moderate",
+     "requirements": "Application (likely via FlexOffers) with site + audience details; a website expected",
+     "status": "not applied",
+     "verified": true
+    },
     {
      "id": "embrace",
      "name": "Embrace Pet Insurance",
-     "commission": "~$36 per lead",
+     "commission": "Listed as $36 per lead; one listing says ~$5 per lead / $36 per policy sale (confirm in Impact)",
      "approval": "moderate",
-     "requirements": "check",
+     "requirements": "Join via Impact; traffic must be US-based (US pets only); no adult, religious or political content",
      "status": "not applied",
      "verified": true
     },
     {
      "id": "chewy",
      "name": "Chewy",
-     "commission": "~$20 per new customer",
+     "commission": "$15 per new-customer order (Chewy says ~8% equivalent)",
      "approval": "moderate",
-     "requirements": "check",
-     "status": "not applied",
-     "verified": true
-    },
-    {
-     "id": "barkbox",
-     "name": "BarkBox",
-     "commission": "~$18 per subscription",
-     "approval": "moderate",
-     "requirements": "check",
+     "requirements": "Join via Partnerize; no coupon/deal sites; required disclosure line; no \"Chewy\" in domain",
      "status": "not applied",
      "verified": true
     },
@@ -3965,18 +3965,18 @@
     3538
    ],
    "revenueUsd": [
-    5,
-    49,
-    239
+    6,
+    53,
+    259
    ],
-   "bestPerSaleUsd": 10.33,
+   "bestPerSaleUsd": 11.33,
    "programs": [
     {
      "id": "discovercars",
      "name": "Discover Cars / Rentalcars (car hire)",
-     "commission": "~4–8%",
+     "commission": "70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire)",
      "approval": "easy",
-     "requirements": "check",
+     "requirements": "Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire.",
      "status": "not applied",
      "verified": true
     },
@@ -4028,20 +4028,20 @@
     {
      "id": "klook",
      "name": "Klook Affiliate",
-     "commission": "check",
+     "commission": "2–5% per booking",
      "approval": "easy",
-     "requirements": "check",
+     "requirements": "Application via CJ with site + audience details; $50 payout threshold",
      "status": "not applied",
-     "verified": false
+     "verified": true
     },
     {
      "id": "commissionfactory",
      "name": "Commission Factory (Australian network)",
      "commission": "varies by brand",
      "approval": "easy",
-     "requirements": "Australian publishers welcome; join once, then apply to brands",
+     "requirements": "Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network.",
      "status": "not applied",
-     "verified": false
+     "verified": true
     }
    ]
   },
@@ -4508,17 +4508,17 @@
    ],
    "revenueUsd": [
     16,
-    136,
-    630
+    144,
+    674
    ],
-   "bestPerSaleUsd": 10.33,
+   "bestPerSaleUsd": 11.33,
    "programs": [
     {
      "id": "discovercars",
      "name": "Discover Cars / Rentalcars (car hire)",
-     "commission": "~4–8%",
+     "commission": "70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire)",
      "approval": "easy",
-     "requirements": "check",
+     "requirements": "Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire.",
      "status": "not applied",
      "verified": true
     },
@@ -4570,20 +4570,20 @@
     {
      "id": "klook",
      "name": "Klook Affiliate",
-     "commission": "check",
+     "commission": "2–5% per booking",
      "approval": "easy",
-     "requirements": "check",
+     "requirements": "Application via CJ with site + audience details; $50 payout threshold",
      "status": "not applied",
-     "verified": false
+     "verified": true
     },
     {
      "id": "commissionfactory",
      "name": "Commission Factory (Australian network)",
      "commission": "varies by brand",
      "approval": "easy",
-     "requirements": "Australian publishers welcome; join once, then apply to brands",
+     "requirements": "Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network.",
      "status": "not applied",
-     "verified": false
+     "verified": true
     }
    ]
   },
@@ -5125,20 +5125,20 @@
     {
      "id": "klook",
      "name": "Klook Affiliate",
-     "commission": "check",
+     "commission": "2–5% per booking",
      "approval": "easy",
-     "requirements": "check",
+     "requirements": "Application via CJ with site + audience details; $50 payout threshold",
      "status": "not applied",
-     "verified": false
+     "verified": true
     },
     {
      "id": "commissionfactory",
      "name": "Commission Factory (Australian network)",
      "commission": "varies by brand",
      "approval": "easy",
-     "requirements": "Australian publishers welcome; join once, then apply to brands",
+     "requirements": "Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network.",
      "status": "not applied",
-     "verified": false
+     "verified": true
     }
    ]
   },

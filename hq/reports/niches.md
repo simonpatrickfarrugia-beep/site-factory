@@ -1,6 +1,6 @@
 # Niche finder
 
-Updated 2026-10-20. Google searches in the United States unless an idea says otherwise (Market column). Score = 30% demand + 25% money (CPC) + 25% ease (SEO difficulty) + 20% fit (Claude: data source, automation, monetisation, risk).
+Updated 2026-10-21. Google searches in the United States unless an idea says otherwise (Market column). Score = 30% demand + 25% money (CPC) + 25% ease (SEO difficulty) + 20% fit (Claude: data source, automation, monetisation, risk).
 
 Add ideas by chat: "score these niches: …". Rules: launch at most one new site a month, only while the last one is on track.
 
@@ -594,16 +594,16 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 
 | Idea | Market | Visits/mo (mid) | Est. revenue/mo (low · mid · high) | Avg payout per sale | Score |
 |---|---|---:|---|---:|---:|
-| Dog breeds | United States | 274,520 | $1,868 · **$17,799** · $87,100 | $24.67 | 75 |
+| Dog breeds | United States | 274,520 | $1,501 · **$13,985** · $67,570 | $18.33 | 75 |
 | US national parks and hiking trails | United States | 89,156 | $311 · **$2,709** · $12,571 | $9 | 74 |
 | Anime: where to watch and watch order | United States | 102,419 | $198 · **$1,455** · $5,981 | $1.7 | 70 |
 | TV shows: where to watch | United States | 27,719 | $110 · **$769** · $3,024 | $1.7 | 73 |
 | Video games: release dates and trailers | United States | 70,520 | $60 · **$463** · $1,982 | $1.17 | 62 |
 | Book series in reading order | United States | 24,564 | $22 · **$176** · $764 | $1.43 | 53 |
-| Victoria: where to stay by town | Australia | 3,903 | $16 · **$136** · $630 | $10.33 | 66 |
+| Victoria: where to stay by town | Australia | 3,903 | $16 · **$144** · $674 | $11.33 | 66 |
 | Movie soundtracks and film music | United States | 11,888 | $11 · **$85** · $370 | $1.43 | 53 |
 | Board games | United States | 11,226 | $10 · **$79** · $345 | $1.4 | 61 |
-| Victoria: things to do by town | Australia | 1,769 | $5 · **$49** · $239 | $10.33 | 60 |
+| Victoria: things to do by town | Australia | 1,769 | $6 · **$53** · $259 | $11.33 | 60 |
 | Victoria: where to eat by town | Australia | 779 | $2 · **$18** · $90 | $9 | 51 |
 
 ## Programmes to consider, by idea
@@ -612,9 +612,9 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 
 | Programme | Pays | Approval | To qualify | Status |
 |---|---|---|---|---|
-| Embrace Pet Insurance | ~$36 per lead | moderate | check | not applied |
-| Chewy | ~$20 per new customer | moderate | check | not applied |
-| BarkBox | ~$18 per subscription | moderate | check | not applied |
+| BarkBox | $20.80 per sale | moderate | Application (likely via FlexOffers) with site + audience details; a website expected | not applied |
+| Embrace Pet Insurance | Listed as $36 per lead; one listing says ~$5 per lead / $36 per policy sale (confirm in Impact) | moderate | Join via Impact; traffic must be US-based (US pets only); no adult, religious or political content | not applied |
+| Chewy | $15 per new-customer order (Chewy says ~8% equivalent) | moderate | Join via Partnerize; no coupon/deal sites; required disclosure line; no "Chewy" in domain | not applied |
 | Rover (pet sitting) | ~15% per referral | moderate | check | not applied |
 | Ruffwear (dog gear) | ~8% | easy | check | not applied |
 | Bookshop.org affiliates *(check)* | check (commonly quoted ~10%) | easy | check | not applied |
@@ -631,8 +631,8 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Viator Partner Program | ~8% of booking value | easy | Website with travel content | not applied |
 | GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | not applied |
 | Ruffwear (dog gear) | ~8% | easy | check | not applied |
-| REI *(check)* | check (commonly quoted ~5%) | moderate | check | not applied |
-| Klook Affiliate *(check)* | check | easy | check | not applied |
+| REI | 5% per sale | moderate | Apply via AvantLink with site + audience details; $50 payout threshold | not applied |
+| Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | not applied |
 
 ### Anime: where to watch and watch order
 
@@ -673,14 +673,14 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 
 | Programme | Pays | Approval | To qualify | Status |
 |---|---|---|---|---|
-| Discover Cars / Rentalcars (car hire) | ~4–8% | easy | check | not applied |
+| Discover Cars / Rentalcars (car hire) | 70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire) | easy | Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire. | not applied |
 | Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
 | Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
 | Viator Partner Program | ~8% of booking value | easy | Website with travel content | not applied |
 | GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | not applied |
-| Klook Affiliate *(check)* | check | easy | check | not applied |
-| Commission Factory (Australian network) *(check)* | varies by brand | easy | Australian publishers welcome; join once, then apply to brands | not applied |
+| Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | not applied |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | not applied |
 
 ### Movie soundtracks and film music
 
@@ -705,14 +705,14 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 
 | Programme | Pays | Approval | To qualify | Status |
 |---|---|---|---|---|
-| Discover Cars / Rentalcars (car hire) | ~4–8% | easy | check | not applied |
+| Discover Cars / Rentalcars (car hire) | 70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire) | easy | Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire. | not applied |
 | Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
 | Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
 | Viator Partner Program | ~8% of booking value | easy | Website with travel content | not applied |
 | GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | not applied |
-| Klook Affiliate *(check)* | check | easy | check | not applied |
-| Commission Factory (Australian network) *(check)* | varies by brand | easy | Australian publishers welcome; join once, then apply to brands | not applied |
+| Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | not applied |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | not applied |
 
 ### Victoria: where to eat by town
 
@@ -723,8 +723,8 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
 | Viator Partner Program | ~8% of booking value | easy | Website with travel content | not applied |
 | GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | not applied |
-| Klook Affiliate *(check)* | check | easy | check | not applied |
-| Commission Factory (Australian network) *(check)* | varies by brand | easy | Australian publishers welcome; join once, then apply to brands | not applied |
+| Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | not applied |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | not applied |
 
 ## Ad networks (when traffic qualifies)
 
