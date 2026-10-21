@@ -15,9 +15,11 @@
   ],
   "vars": {
     // Every site allowed to post forms, mapped to its brand. Add preview hosts too.
-    "BRAND_ORIGINS": "{\"movietrailer.channel\":\"trailers\",\"site-factory.simonpatrickfarrugia.workers.dev\":\"trailers\"}",
+    "BRAND_ORIGINS": "{\"movietrailer.channel\":\"trailers\",\"site-factory.simonpatrickfarrugia.workers.dev\":\"trailers\",\"communityhelp.com.au\":\"community-help-co\",\"community-help-co.simonpatrickfarrugia.workers.dev\":\"community-help-co\"}",
     // Forms each brand accepts.
-    "BRAND_FORMS": "{\"trailers\":[\"contact\",\"submission\",\"notify\"]}",
+    "BRAND_FORMS": "{\"trailers\":[\"contact\",\"submission\",\"notify\"],\"community-help-co\":[\"enquiry\",\"referral\"]}",
+    // Per-brand notification inbox (falls back to NOTIFY_TO).
+    "BRAND_NOTIFY": "{\"community-help-co\":\"simon@communityhelp.com.au\"}",
     "NOTIFY_TO": "simonpatrickfarrugia@gmail.com",
     "NOTIFY_FROM": "Site Factory <forms@movietrailer.channel>"
   }

@@ -17,6 +17,8 @@ export interface Env {
   BRAND_FORMS: string;
   /** Where notification emails go. */
   NOTIFY_TO: string;
+  /** Optional per-brand recipient, as JSON. e.g. {"community-help-co":"simon@communityhelp.com.au"} */
+  BRAND_NOTIFY?: string;
   /** Sender address on the factory's verified Resend domain. */
   NOTIFY_FROM: string;
   /** Secrets (set in Cloudflare, never committed). Optional so the Worker runs before they exist. */
@@ -80,6 +82,14 @@ async function passesTurnstile(token: string | undefined, ip: string | null, env
   return result.success;
 }
 
+function brandRecipient(env: Env, brand: string): string {
+  try {
+    return (JSON.parse(env.BRAND_NOTIFY || '{}') as Record<string, string>)[brand] ?? env.NOTIFY_TO;
+  } catch {
+    return env.NOTIFY_TO;
+  }
+}
+
 async function notify(env: Env, brand: string, form: string, fields: Record<string, string>, page: string | null) {
   if (!env.RESEND_API_KEY) return;
   const lines = Object.entries(fields).map(([k, v]) => `${k}: ${v}`).join('\n');
@@ -89,7 +99,7 @@ async function notify(env: Env, brand: string, form: string, fields: Record<stri
     headers: { authorization: `Bearer ${env.RESEND_API_KEY}`, 'content-type': 'application/json' },
     body: JSON.stringify({
       from: env.NOTIFY_FROM,
-      to: env.NOTIFY_TO,
+      to: brandRecipient(env, brand),
       reply_to: replyTo,
       subject: `[${brand}] New ${form} submission`,
       text: `${lines}\n\nSent from: ${page ?? 'unknown page'}`,

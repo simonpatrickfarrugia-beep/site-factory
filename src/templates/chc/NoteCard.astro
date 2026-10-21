@@ -1,0 +1,18 @@
+---
+/** Example of the written notes clients get after each session: the product, shown honestly. */
+interface Props { note: { label: string; week: string; goals: { t: string; s: 'done' | 'next' }[]; nextStep: string } }
+const { note } = Astro.props;
+---
+<figure class="chc-note" aria-label={note.label}>
+  <figcaption class="chc-note__head"><span>{note.week} notes</span><small>{note.label}</small></figcaption>
+  <ul class="chc-note__goals">
+    {note.goals.map((g) => (
+      <li class={`chc-note__goal chc-note__goal--${g.s}`}>
+        <span class="chc-tick" aria-hidden="true">{g.s === 'done' ? '✓' : ''}</span>
+        <span>{g.t}</span>
+        <span class="visually-hidden">{g.s === 'done' ? '(done)' : '(next)'}</span>
+      </li>
+    ))}
+  </ul>
+  <p class="chc-note__next">{note.nextStep}</p>
+</figure>

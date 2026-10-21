@@ -15,6 +15,12 @@ import VicCollection from './vic/VicCollection.astro';
 import VicPage from './vic/VicPage.astro';
 import VicLoop from './vic/VicLoop.astro';
 import VicLoops from './vic/VicLoops.astro';
+import ChcHome from './chc/Home.astro';
+import ChcService from './chc/Service.astro';
+import ChcSteps from './chc/Steps.astro';
+import ChcPage from './chc/Page.astro';
+import ChcFaq from './chc/Faq.astro';
+import ChcContact from './chc/Contact.astro';
 
 export const templates = {
   home: Home,
@@ -33,4 +39,10 @@ export const templates = {
   vicPage: VicPage,
   vicLoop: VicLoop,
   vicLoops: VicLoops,
+  chcHome: ChcHome,
+  chcService: ChcService,
+  chcSteps: ChcSteps,
+  chcPage: ChcPage,
+  chcFaq: ChcFaq,
+  chcContact: ChcContact,
 };

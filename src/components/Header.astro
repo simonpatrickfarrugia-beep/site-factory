@@ -4,7 +4,14 @@ const current = Astro.url.pathname;
 ---
 <header class="site-header">
   <div class="wrap site-header__inner">
-    <a class="wordmark" href="/" aria-label={`${brand.name} home`}>{brand.domain.replace(/^www\./, "")}</a>
+    {brand.logo ? (
+      <a class="wordmark wordmark--logo" href="/" aria-label={`${brand.name} home`}>
+        <img src={brand.logo.src} alt="" width={brand.logo.width} height={brand.logo.height} />
+        <span>{brand.name.toLowerCase()}</span>
+      </a>
+    ) : (
+      <a class="wordmark" href="/" aria-label={`${brand.name} home`}>{brand.domain.replace(/^www\./, "")}</a>
+    )}
     {brand.nav.length > 0 && (
       <nav aria-label="Main">
         <ul class="site-nav">

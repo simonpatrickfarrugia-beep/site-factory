@@ -1,0 +1,17 @@
+---
+/** The one call to action, everywhere: book a free chat (Calendly), or send a message. */
+interface Props { calendly: string; heading?: string; text?: string }
+const { calendly, heading = 'Start with a free chat', text = 'A relaxed video call to talk about what you want to change. No cost, no commitment.' } = Astro.props;
+---
+<section class="chc-cta">
+  <div class="chc-wrap chc-cta__inner">
+    <div>
+      <h2>{heading}</h2>
+      <p>{text}</p>
+    </div>
+    <p class="chc-cta__actions">
+      <a class="chc-btn" href={calendly} target="_blank" rel="noopener" data-cta="book_chat">Book a free chat</a>
+      <a class="chc-link" href="/contact">Or send a message</a>
+    </p>
+  </div>
+</section>

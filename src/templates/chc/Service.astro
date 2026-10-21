@@ -1,0 +1,51 @@
+---
+import BookCta from './BookCta.astro';
+interface Props {
+  calendly: string;
+  service: { name: string; lede: string; whoFor: string[]; included: string[]; funding: string };
+  steps: { t: string; d: string }[];
+  others: { slug: string; name: string; short: string }[];
+}
+const { calendly, service: s, steps, others } = Astro.props;
+---
+<section class="chc-pagehead">
+  <div class="chc-wrap">
+    <h1>{s.name}</h1>
+    <p class="chc-lede">{s.lede}</p>
+    <p><a class="chc-btn" href={calendly} target="_blank" rel="noopener" data-cta="book_chat">Book a free chat</a></p>
+  </div>
+</section>
+
+<div class="chc-wrap chc-section chc-two">
+  <section>
+    <h2 class="chc-h2">Who it's for</h2>
+    <ul class="chc-list">{s.whoFor.map((w) => <li>{w}</li>)}</ul>
+  </section>
+  <section>
+    <h2 class="chc-h2">What's included</h2>
+    <ul class="chc-list chc-list--ticks">{s.included.map((w) => <li>{w}</li>)}</ul>
+  </section>
+</div>
+
+<section class="chc-wrap chc-section">
+  <div class="chc-funding">
+    <h2>Funding</h2>
+    <p>{s.funding}</p>
+  </div>
+</section>
+
+<section class="chc-section chc-band">
+  <div class="chc-wrap">
+    <h2 class="chc-h2">How it works</h2>
+    <ol class="chc-steps">{steps.map((st) => <li><h3>{st.t}</h3><p>{st.d}</p></li>)}</ol>
+  </div>
+</section>
+
+<section class="chc-section chc-wrap">
+  <h2 class="chc-h2">Other ways we help</h2>
+  <ul class="chc-services">
+    {others.map((o) => <li><a href={`/${o.slug}`}><h3>{o.name}</h3></a><p>{o.short}</p></li>)}
+  </ul>
+</section>
+
+<BookCta calendly={calendly} />

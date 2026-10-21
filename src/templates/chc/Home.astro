@@ -1,0 +1,79 @@
+---
+import NoteCard from './NoteCard.astro';
+import BookCta from './BookCta.astro';
+interface Props {
+  calendly: string;
+  hero: { title: string; lede: string; note: any };
+  audiences: { t: string; d: string; href?: string; link?: string }[];
+  services: { slug: string; name: string; short: string }[];
+  steps: { t: string; d: string }[];
+  testimonials: { quote: string; name: string; context: string }[];
+  faqs: { q: string; a: string }[];
+}
+const { calendly, hero, audiences, services, steps, testimonials, faqs } = Astro.props;
+---
+<section class="chc-hero">
+  <div class="chc-wrap chc-hero__grid">
+    <div class="chc-hero__text">
+      <h1>{hero.title}</h1>
+      <p class="chc-lede">{hero.lede}</p>
+      <p class="chc-hero__actions">
+        <a class="chc-btn" href={calendly} target="_blank" rel="noopener" data-cta="book_chat">Book a free chat</a>
+        <a class="chc-link" href="/how-it-works">How it works</a>
+      </p>
+      <p class="chc-small">Sessions are online on Microsoft Teams. For NDIS self-managed and plan-managed participants.</p>
+    </div>
+    <NoteCard note={hero.note} />
+  </div>
+</section>
+
+<section class="chc-section chc-wrap">
+  <h2 class="chc-h2">What we help with</h2>
+  <ul class="chc-services">
+    {services.map((s) => (
+      <li>
+        <a href={`/${s.slug}`}><h3>{s.name}</h3></a>
+        <p>{s.short}</p>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<section class="chc-section chc-band">
+  <div class="chc-wrap">
+    <h2 class="chc-h2">How it works</h2>
+    <ol class="chc-steps">
+      {steps.map((st) => <li><h3>{st.t}</h3><p>{st.d}</p></li>)}
+    </ol>
+  </div>
+</section>
+
+<section class="chc-section chc-wrap">
+  <h2 class="chc-h2">Who it's for</h2>
+  <div class="chc-audiences">
+    {audiences.map((a) => (
+      <div>
+        <h3>{a.t}</h3>
+        <p>{a.d}</p>
+        {a.href && <p><a class="chc-link" href={a.href}>{a.link}</a></p>}
+      </div>
+    ))}
+  </div>
+</section>
+
+{testimonials.length > 0 && (
+  <section class="chc-section chc-wrap">
+    <h2 class="chc-h2">In their words</h2>
+    {testimonials.map((t) => <blockquote class="chc-quote"><p>{t.quote}</p><footer>{t.name}, {t.context}</footer></blockquote>)}
+  </section>
+)}
+
+<section class="chc-section chc-wrap">
+  <h2 class="chc-h2">Common questions</h2>
+  <div class="chc-faq">
+    {faqs.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
+  </div>
+  <p><a class="chc-link" href="/faq">All questions</a></p>
+</section>
+
+<BookCta calendly={calendly} />

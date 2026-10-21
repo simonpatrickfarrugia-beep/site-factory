@@ -1,0 +1,16 @@
+---
+import BookCta from './BookCta.astro';
+interface Props { calendly: string; title: string; lede: string; steps: { t: string; d: string }[] }
+const { calendly, title, lede, steps } = Astro.props;
+---
+<section class="chc-pagehead">
+  <div class="chc-wrap">
+    <h1>{title}</h1>
+    <p class="chc-lede">{lede}</p>
+  </div>
+</section>
+<section class="chc-section chc-wrap">
+  <ol class="chc-steps chc-steps--big">{steps.map((st) => <li><h2>{st.t}</h2><p>{st.d}</p></li>)}</ol>
+  <p class="chc-small">Sessions are online on Microsoft Teams. Written notes come by email after each session.</p>
+</section>
+<BookCta calendly={calendly} />

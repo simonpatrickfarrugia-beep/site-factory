@@ -452,3 +452,146 @@ main { display: block; }
 /* Collection lists: watch links under each film */
 .lineup__watch { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; }
 .button--small { padding: 0.45rem 0.9rem; font-size: 0.9rem; }
+
+/* ===================== Theme: calm (Community Help Co) =====================
+ * Logo mint in big flat blocks, deep forest ink, white page. Sunny yellow only marks a goal done.
+ * Large, highly legible type (Atkinson Hyperlegible Next) for an NDIS audience; WCAG AA contrast throughout.
+ */
+[data-theme='calm'] {
+  color-scheme: light;
+  --mint: #9EF5CF;
+  --mint-soft: #E4FBF1;
+  --forest: #123B30;
+  --forest-2: #2C5A4D;
+  --sun: #FFD66B;
+  --ink: #FFFFFF;        /* page ground */
+  --paper: #123B30;      /* text */
+  --muted: #3F6157;      /* 7:1 on white */
+  --line: #CFE9DE;
+  --wrap: 68rem;
+  --radius: 18px;
+  --step-0: 1.125rem;
+  --step--1: 1rem;
+}
+[data-theme='calm'] body { line-height: 1.7; }
+[data-theme='calm'] a:hover { color: var(--forest-2); }
+[data-theme='calm'] :focus-visible { outline: 3px solid var(--forest); outline-offset: 3px; }
+[data-theme='calm'] h1, [data-theme='calm'] h2, [data-theme='calm'] h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
+[data-theme='calm'] .site-header { background: var(--mint); border-bottom: 0; }
+[data-theme='calm'] .site-header__inner { padding-block: 0.9rem; }
+[data-theme='calm'] .wordmark--logo { display: inline-flex; align-items: center; gap: 0.7rem; text-decoration: none; font-family: var(--font-display); font-weight: 800; font-size: 1.35rem; color: var(--forest); letter-spacing: -0.01em; }
+[data-theme='calm'] .site-nav a { color: var(--forest); font-weight: 600; text-decoration: none; }
+[data-theme='calm'] .site-nav a[aria-current='page'] { text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: var(--forest); }
+[data-theme='calm'] .site-footer { background: var(--forest); color: #DCEFE7; border-top: 0; margin-top: 0; }
+[data-theme='calm'] .site-footer a { color: #fff; }
+[data-theme='calm'] .site-footer__name { color: var(--mint); }
+
+.chc-wrap { width: min(100% - 2rem, var(--wrap)); margin-inline: auto; }
+.chc-section { padding-block: clamp(2.5rem, 7vw, 4.5rem); }
+.chc-h2 { font-size: clamp(1.6rem, 4vw, 2.1rem); margin-bottom: 1.25rem; }
+.chc-lede { font-size: clamp(1.2rem, 2.6vw, 1.4rem); max-width: 38ch; color: var(--paper); }
+.chc-small { font-size: var(--step--1); color: var(--muted); }
+.chc-btn {
+  display: inline-block; background: var(--forest); color: #fff; font-family: var(--font-display); font-weight: 700;
+  font-size: 1.1rem; padding: 0.85rem 1.5rem; border-radius: 999px; text-decoration: none; border: 0; cursor: pointer;
+}
+.chc-btn:hover { background: var(--forest-2); color: #fff; }
+.chc-btn:disabled { opacity: 0.6; cursor: wait; }
+.chc-link { font-weight: 700; text-decoration-thickness: 2px; text-decoration-color: var(--forest); }
+
+/* Hero: the mint block with the example notes card */
+.chc-hero { background: var(--mint); padding-block: clamp(2rem, 6vw, 4.5rem) clamp(3rem, 8vw, 5.5rem); }
+.chc-hero__grid { display: grid; gap: 2.5rem; align-items: center; }
+@media (min-width: 52rem) { .chc-hero__grid { grid-template-columns: 1.15fr 0.85fr; } }
+.chc-hero h1 { font-size: clamp(2.4rem, 7vw, 4.2rem); line-height: 1.02; letter-spacing: -0.025em; font-weight: 800; max-width: 14ch; margin-bottom: 1.25rem; }
+.chc-hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-block: 1.75rem 1rem; }
+.chc-hero .chc-small { color: var(--forest-2); }
+
+.chc-note { margin: 0; background: #fff; border-radius: var(--radius); padding: 1.5rem 1.5rem 1.25rem; box-shadow: 0 1px 0 var(--forest), 0 18px 40px -24px rgba(18, 59, 48, 0.45); transform: rotate(-1.2deg); max-width: 26rem; justify-self: center; }
+.chc-note__head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 2px solid var(--forest); padding-bottom: 0.6rem; margin-bottom: 0.9rem; }
+.chc-note__head span { font-family: var(--font-display); font-weight: 800; font-size: 1.35rem; }
+.chc-note__head small { color: var(--muted); font-size: 0.85rem; }
+.chc-note__goals { list-style: none; padding: 0; margin: 0 0 0.9rem; display: grid; gap: 0.65rem; }
+.chc-note__goal { display: grid; grid-template-columns: 1.6rem 1fr; gap: 0.7rem; align-items: start; }
+.chc-tick { width: 1.6rem; height: 1.6rem; border-radius: 50%; border: 2px solid var(--forest); display: grid; place-items: center; font-weight: 800; font-size: 0.95rem; line-height: 1; }
+.chc-note__goal--done .chc-tick { background: var(--sun); }
+.chc-note__goal--done > span:nth-child(2) { text-decoration: line-through; text-decoration-color: rgba(18, 59, 48, 0.45); }
+.chc-note__next { margin: 0; padding-top: 0.75rem; border-top: 1px dashed var(--line); font-size: 1rem; color: var(--forest-2); }
+@media (prefers-reduced-motion: reduce) { .chc-note { transform: none; } }
+
+/* Services as plain rows, not identical cards */
+.chc-services { list-style: none; padding: 0; margin: 0; border-top: 2px solid var(--forest); }
+.chc-services li { padding-block: 1.4rem; border-bottom: 1px solid var(--line); display: grid; gap: 0.4rem; }
+@media (min-width: 52rem) { .chc-services li { grid-template-columns: 22rem 1fr; gap: 2rem; align-items: baseline; } }
+.chc-services h3 { font-size: 1.5rem; }
+.chc-services a { text-decoration: none; }
+.chc-services a:hover h3 { text-decoration: underline; text-decoration-thickness: 2px; }
+.chc-services p { margin: 0; max-width: 52ch; }
+
+/* The real 3-step process: numbered on purpose */
+.chc-band { background: var(--mint-soft); }
+.chc-steps { list-style: none; padding: 0; margin: 0; counter-reset: step; display: grid; gap: 1.75rem; }
+@media (min-width: 52rem) { .chc-steps { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; } }
+.chc-steps li { counter-increment: step; position: relative; padding-top: 3.6rem; }
+.chc-steps li::before { content: counter(step); position: absolute; top: 0; left: 0; width: 2.8rem; height: 2.8rem; border-radius: 50%; background: var(--mint); color: var(--forest); font-family: var(--font-display); font-weight: 800; font-size: 1.4rem; display: grid; place-items: center; }
+.chc-steps h3, .chc-steps h2 { font-size: 1.35rem; margin-bottom: 0.4rem; }
+.chc-steps p { margin: 0; }
+.chc-steps--big { gap: 2.5rem; }
+@media (min-width: 52rem) { .chc-steps--big { grid-template-columns: 1fr; max-width: 44rem; } }
+
+.chc-audiences { display: grid; gap: 2rem; }
+@media (min-width: 52rem) { .chc-audiences { grid-template-columns: repeat(3, 1fr); } }
+.chc-audiences h3 { font-size: 1.25rem; margin-bottom: 0.4rem; }
+
+.chc-faq { display: grid; gap: 0.6rem; max-width: 46rem; margin-bottom: 1.25rem; }
+.chc-faq details { border: 2px solid var(--line); border-radius: 12px; padding: 0.9rem 1.1rem; background: #fff; }
+.chc-faq details[open] { border-color: var(--forest); }
+.chc-faq summary { cursor: pointer; font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; }
+.chc-faq details p { margin: 0.7rem 0 0.2rem; }
+
+.chc-quote { margin: 0 0 1.5rem; padding-left: 1.25rem; border-left: 4px solid var(--mint); font-size: 1.25rem; }
+.chc-quote footer { font-size: 1rem; color: var(--muted); margin-top: 0.4rem; }
+
+.chc-cta { background: var(--forest); color: #fff; padding-block: clamp(2.5rem, 6vw, 4rem); }
+.chc-cta__inner { display: grid; gap: 1.5rem; align-items: center; }
+@media (min-width: 52rem) { .chc-cta__inner { grid-template-columns: 1fr auto; } }
+.chc-cta h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); color: var(--mint); margin-bottom: 0.5rem; }
+.chc-cta p { margin: 0; max-width: 44ch; }
+.chc-cta__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
+.chc-cta .chc-btn { background: var(--mint); color: var(--forest); }
+.chc-cta .chc-btn:hover { background: #fff; color: var(--forest); }
+.chc-cta .chc-link { color: #fff; text-decoration-color: var(--mint); }
+
+.chc-pagehead { background: var(--mint); padding-block: clamp(2rem, 6vw, 3.5rem); }
+.chc-pagehead h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.05; letter-spacing: -0.02em; font-weight: 800; margin-bottom: 1rem; max-width: 18ch; }
+.chc-pagehead .chc-lede { margin-bottom: 1.5rem; }
+
+.chc-two { display: grid; gap: 2.5rem; }
+@media (min-width: 52rem) { .chc-two { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+.chc-list { padding-left: 1.2rem; margin: 0; display: grid; gap: 0.6rem; }
+.chc-list--ticks { list-style: none; padding: 0; }
+.chc-list--ticks li { position: relative; padding-left: 2.1rem; }
+.chc-list--ticks li::before { content: '✓'; position: absolute; left: 0; top: 0.15em; width: 1.4rem; height: 1.4rem; border-radius: 50%; background: var(--sun); border: 2px solid var(--forest); display: grid; place-items: center; font-size: 0.8rem; font-weight: 800; }
+.chc-funding { background: var(--mint-soft); border-left: 6px solid var(--forest); border-radius: 0 var(--radius) var(--radius) 0; padding: 1.5rem 1.75rem; max-width: 48rem; }
+.chc-funding h2 { font-size: 1.35rem; margin-bottom: 0.5rem; }
+.chc-funding p { margin: 0; }
+
+.chc-prose { max-width: 42rem; }
+.chc-prose p { margin-bottom: 1.2rem; }
+
+.chc-forms { display: grid; gap: 3.5rem; }
+@media (min-width: 60rem) { .chc-forms { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+.chc-form { display: grid; gap: 1.1rem; }
+.chc-form label { display: grid; gap: 0.35rem; font-weight: 700; }
+.chc-form input:not([type=radio]), .chc-form select, .chc-form textarea {
+  font: inherit; font-weight: 400; color: var(--forest); background: #fff; border: 2px solid #8FB5A7; border-radius: 10px; padding: 0.75rem 0.9rem; width: 100%;
+}
+.chc-form input:focus, .chc-form select:focus, .chc-form textarea:focus { border-color: var(--forest); outline: 3px solid var(--mint); outline-offset: 0; }
+.chc-form fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 0.5rem; }
+.chc-form legend { font-weight: 700; margin-bottom: 0.4rem; }
+.chc-form .chc-choice { display: flex; align-items: center; gap: 0.6rem; font-weight: 400; }
+.chc-form .chc-choice input { width: 1.25rem; height: 1.25rem; accent-color: var(--forest); }
+.chc-opt { font-weight: 400; color: var(--muted); }
+.chc-hint { background: var(--mint-soft); border-radius: 10px; padding: 0.75rem 1rem; margin: 0; font-size: 1rem; }
+.chc-hp { position: absolute; left: -9999px; width: 1px; height: 1px; }
+.chc-form__status { min-height: 1.5em; font-weight: 700; margin: 0; }
