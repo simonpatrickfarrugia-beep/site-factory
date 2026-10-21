@@ -37,6 +37,14 @@ if (existsSync(redirectsPath)) {
   notice(`Checked ${rules.length} redirect(s)`);
 }
 
+// Affiliate-ready: networks review these pages before approving a site, so every launched brand needs them.
+if (brandLaunched()) {
+  for (const need of ['/about', '/contact', '/privacy-policy']) if (!existsSync(fileFor(need))) problems.push(`Affiliate-ready: missing ${need} page`);
+  const cfg = readFileSync(join('brands', brand, 'brand.config.ts'), 'utf8');
+  if (!existsSync(fileFor('/affiliate-disclosure')) && !/footerNote:[\s\S]{0,40}(Amazon Associate|commission|affiliate)/i.test(cfg)) problems.push('Affiliate-ready: no affiliate disclosure (a /affiliate-disclosure page or a footer note)');
+  notice('Affiliate-ready pages checked');
+}
+
 const walk = (dir) => readdirSync(dir).flatMap((f) => {
   const p = join(dir, f);
   return statSync(p).isDirectory() ? walk(p) : p.endsWith('.html') ? [p] : [];

@@ -223,6 +223,42 @@
   "rye": {
    "intro": "Rye is a classic Mornington Peninsula beach town with calm bay beaches and a long pier on one side and the wild ocean back beach on the other. The Peninsula Hot Springs are a short drive away.",
    "region": "Mornington Peninsula"
+  },
+  "anglesea": {
+   "intro": "Anglesea is a relaxed surf town at the start of the Great Ocean Road, about 20 minutes past Torquay. Kangaroos graze on the local golf course, and the river mouth and main beach suit families.",
+   "region": "Great Ocean Road"
+  },
+  "kyneton": {
+   "intro": "Kyneton is a bluestone town in the Macedon Ranges, about an hour north-west of Melbourne, known for Piper Street's restaurants, cafés and antique shops. The Botanic Gardens and the Campaspe River walk are close to the centre.",
+   "region": "Macedon Ranges"
+  },
+  "mansfield": {
+   "intro": "Mansfield is the High Country town at the foot of Mount Buller: a base for skiing in winter and for Lake Eildon, horse riding and mountain biking the rest of the year. It has a lively main street of pubs and cafés for its size.",
+   "region": "High Country"
+  },
+  "warburton": {
+   "intro": "Warburton sits on the Upper Yarra River at the end of the Lilydale to Warburton Rail Trail, a popular, mostly flat bike ride. The Redwood Forest at East Warburton and the Mount Donna Buang lookout are nearby.",
+   "region": "Yarra Valley"
+  },
+  "barwon-heads": {
+   "intro": "Barwon Heads is a small seaside village at the mouth of the Barwon River on the Bellarine Peninsula, with a well-known river bridge, calm river beaches and the surf of Thirteenth Beach.",
+   "region": "Bellarine Peninsula"
+  },
+  "marysville": {
+   "intro": "Marysville is a mountain village about 90 minutes north-east of Melbourne, rebuilt after the 2009 Black Saturday bushfires. Steavenson Falls, one of Victoria's tallest waterfalls, is a short walk from town, and Lake Mountain has cross-country skiing in winter.",
+   "region": "Yarra Ranges"
+  },
+  "brighton": {
+   "intro": "Brighton is a bayside suburb about 11 km south-east of the CBD, known for the colourful bathing boxes on Dendy Street Beach and the shops and cafés of Church Street and Bay Street.",
+   "region": "Melbourne"
+  },
+  "rutherglen": {
+   "intro": "Rutherglen is a wine town near the Murray River in north-east Victoria, famous for fortified muscat and topaque from old family wineries. Its main street keeps many of its gold-era buildings.",
+   "region": "Murray"
+  },
+  "belgrave": {
+   "intro": "Belgrave is the gateway to the Dandenong Ranges and the home station of Puffing Billy, the century-old steam railway. Sherbrooke Forest and the Dandenong Ranges National Park walks are minutes away.",
+   "region": "Dandenong Ranges"
   }
  },
  "collections": [
@@ -240,7 +276,11 @@
     "bendigo",
     "healesville",
     "red-hill",
-    "sorrento"
+    "sorrento",
+    "belgrave",
+    "anglesea",
+    "warburton",
+    "kyneton"
    ]
   },
   {
@@ -277,7 +317,10 @@
     "warrnambool",
     "mornington",
     "geelong",
-    "st-kilda"
+    "st-kilda",
+    "anglesea",
+    "barwon-heads",
+    "brighton"
    ]
   },
   {
@@ -312,10 +355,12 @@
     "yarra-glen",
     "healesville",
     "red-hill",
+    "kyneton",
     "mornington",
     "bright",
     "beechworth",
-    "geelong"
+    "geelong",
+    "rutherglen"
    ],
    "body": [
     "Victoria's wine regions are close to the city. The Yarra Valley is about an hour east of Melbourne and the Mornington Peninsula about an hour south, so both work as a day trip or an easy overnight stay. Further out, the High Country around Bright and Beechworth pairs cellar doors with alpine produce.",
@@ -329,7 +374,9 @@
     "mornington": "Main Street cafés and restaurants, with the Peninsula's wineries a short drive inland.",
     "bright": "The gateway to the Alpine Valleys wineries and breweries, with bakeries and farm gates along the Great Alpine Road.",
     "beechworth": "A gold town with a strong food scene: a famous bakery, honey and wineries in the surrounding hills.",
-    "geelong": "Waterfront dining, with the Bellarine and Moorabool Valley wineries close by."
+    "geelong": "Waterfront dining, with the Bellarine and Moorabool Valley wineries close by.",
+    "rutherglen": "Fortified muscat and topaque from old family wineries near the Murray River.",
+    "kyneton": "Piper Street's restaurants and cafés, an hour from Melbourne in the Macedon Ranges."
    }
   },
   {
@@ -368,6 +415,39 @@
     "Places with more complete details (website, opening hours, address) are shown first, and chain restaurants are listed last. We don’t accept payment for placement.",
     "Distances are measured in a straight line from Melbourne’s CBD, so the drive is longer. Opening hours change, so check with the venue before you go.",
     "Some links may become booking links in future. If they do, we’ll say so clearly on the page."
+   ]
+  },
+  {
+   "slug": "contact",
+   "title": "Contact Vic Tours",
+   "description": "How to contact Vic Tours: corrections, local tips and partnership enquiries.",
+   "paragraphs": [
+    "We'd love to hear from you, whether it's a correction, a local tip for a town we cover, or a business enquiry.",
+    "Email: hello@victours.com.au. We read everything and usually reply within a few days.",
+    "Found a wrong or missing listing? Most places come from OpenStreetMap, so the quickest fix is to edit it there (openstreetmap.org), and the change flows into our guides. Or just email us and we'll sort it out.",
+    "Vic Tours is published by Independent Media Network Pty Ltd, Melbourne, Victoria."
+   ]
+  },
+  {
+   "slug": "privacy-policy",
+   "title": "Privacy policy",
+   "description": "What information Vic Tours collects, how it's used and your choices.",
+   "paragraphs": [
+    "Last updated: October 2026. This policy explains what information victours.com.au collects and how it's used. We collect as little as possible.",
+    "Analytics: we use Google Analytics to understand which pages are useful (pages viewed, approximate location, device and the links people click). It uses cookies. We don't use it to identify you, and we don't sell data. You can block analytics cookies in your browser or with Google's opt-out add-on.",
+    "Booking and affiliate links: some links take you to partners such as booking or tour websites. If you book, the partner may pay us a commission and will use its own cookies to record that the booking came from us. Their privacy policies apply on their sites.",
+    "Email: if you email us, we use your address only to reply.",
+    "We don't run accounts, take payments or collect personal details on this site. Questions or requests: hello@victours.com.au. Independent Media Network Pty Ltd, Melbourne, Victoria."
+   ]
+  },
+  {
+   "slug": "affiliate-disclosure",
+   "title": "Affiliate disclosure",
+   "description": "How Vic Tours earns money: booking links and what that means for you.",
+   "paragraphs": [
+    "Vic Tours is free to use. To keep it that way, some links on the site are affiliate links: if you click through to a partner (for example a hotel booking or tour site) and book, the partner may pay us a small commission. The price you pay is the same.",
+    "Affiliate links are labelled on the page. We never charge places to be listed and never rank a place higher because it pays us: listings are ordered by how complete their details are, as explained on our methods page.",
+    "Partners may include Booking.com, Viator, GetYourGuide, Klook and car hire comparison sites."
    ]
   }
  ],

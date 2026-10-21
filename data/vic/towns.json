@@ -454,7 +454,7 @@
   "counts": {
    "stay": 7,
    "eat": 39,
-   "do": 21
+   "do": 20
   }
  },
  {
@@ -1053,7 +1053,7 @@
   "counts": {
    "stay": 5,
    "eat": 20,
-   "do": 23
+   "do": 22
   }
  },
  {
@@ -1285,9 +1285,9 @@
   ],
   "kmFromMelbourne": 63,
   "counts": {
-   "stay": 7,
+   "stay": 5,
    "eat": 17,
-   "do": 15
+   "do": 11
   }
  },
  {
@@ -1317,7 +1317,8 @@
    "withHours": 17,
    "total": 83
   },
-  "published": false
+  "published": false,
+  "note": "Held back: covered by the Phillip Island page"
  },
  {
   "name": "Wangaratta",
@@ -1701,7 +1702,17 @@
    "withHours": 0,
    "total": 37
   },
-  "published": false
+  "published": true,
+  "centre": [
+   -38.4051948,
+   144.188958
+  ],
+  "kmFromMelbourne": 94,
+  "counts": {
+   "stay": 12,
+   "eat": 9,
+   "do": 14
+  }
  },
  {
   "name": "Kyneton",
@@ -1730,7 +1741,17 @@
    "withHours": 5,
    "total": 32
   },
-  "published": false
+  "published": true,
+  "centre": [
+   -37.247494,
+   144.4552171
+  ],
+  "kmFromMelbourne": 77,
+  "counts": {
+   "stay": 4,
+   "eat": 20,
+   "do": 8
+  }
  },
  {
   "name": "Port Campbell",
@@ -1798,7 +1819,17 @@
    "withHours": 6,
    "total": 45
   },
-  "published": false
+  "published": true,
+  "centre": [
+   -37.0521129,
+   146.0881495
+  ],
+  "kmFromMelbourne": 131,
+  "counts": {
+   "stay": 13,
+   "eat": 21,
+   "do": 11
+  }
  },
  {
   "name": "Warburton",
@@ -1827,7 +1858,17 @@
    "withHours": 7,
    "total": 35
   },
-  "published": false
+  "published": true,
+  "centre": [
+   -37.7536223,
+   145.6887265
+  ],
+  "kmFromMelbourne": 64,
+  "counts": {
+   "stay": 7,
+   "eat": 18,
+   "do": 8
+  }
  },
  {
   "name": "Dandenong Ranges",
@@ -1909,7 +1950,17 @@
    "withHours": 2,
    "total": 30
   },
-  "published": false
+  "published": true,
+  "centre": [
+   -38.2747705,
+   144.4881352
+  ],
+  "kmFromMelbourne": 66,
+  "counts": {
+   "stay": 5,
+   "eat": 6,
+   "do": 8
+  }
  },
  {
   "name": "Mount Hotham",
@@ -1991,7 +2042,17 @@
    "withHours": 2,
    "total": 26
   },
-  "published": false
+  "published": true,
+  "centre": [
+   -37.5097663,
+   145.7490382
+  ],
+  "kmFromMelbourne": 77,
+  "counts": {
+   "stay": 4,
+   "eat": 7,
+   "do": 15
+  }
  },
  {
   "name": "Brighton",
@@ -2020,7 +2081,17 @@
    "withHours": 7,
    "total": 69
   },
-  "published": false
+  "published": true,
+  "centre": [
+   -37.9081962,
+   144.9957991
+  ],
+  "kmFromMelbourne": 11,
+  "counts": {
+   "stay": 3,
+   "eat": 54,
+   "do": 12
+  }
  },
  {
   "name": "Metung",
@@ -2088,7 +2159,17 @@
    "withHours": 6,
    "total": 36
   },
-  "published": false
+  "published": true,
+  "centre": [
+   -36.0538594,
+   146.4601363
+  ],
+  "kmFromMelbourne": 237,
+  "counts": {
+   "stay": 6,
+   "eat": 7,
+   "do": 23
+  }
  },
  {
   "name": "Mallacoota",
@@ -2214,7 +2295,17 @@
    "withHours": 24,
    "total": 80
   },
-  "published": false
+  "published": true,
+  "centre": [
+   -37.912056,
+   145.3552263
+  ],
+  "kmFromMelbourne": 36,
+  "counts": {
+   "stay": 2,
+   "eat": 43,
+   "do": 35
+  }
  },
  {
   "name": "Olinda",

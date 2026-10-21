@@ -19,6 +19,9 @@ export default defineBrand({
   footer: [
     { label: 'About', href: '/about' },
     { label: 'How we build our guides', href: '/how-we-build-our-guides' },
+    { label: 'Contact', href: '/contact' },
+    { label: 'Privacy', href: '/privacy-policy' },
+    { label: 'Affiliate disclosure', href: '/affiliate-disclosure' },
   ],
   footerNote:
     'Place details come from OpenStreetMap (© OpenStreetMap contributors, ODbL) and can change. Check opening hours with the venue before you go.',
