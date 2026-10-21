@@ -35,6 +35,15 @@ export interface TownContent {
   sections?: Partial<Record<Group, string[]>>;
 }
 
+export interface VicRegion {
+  slug: string;
+  name: string;
+  /** Matches content.towns.<slug>.region for member towns. */
+  label: string;
+  intro: string;
+  body?: string[];
+}
+
 export interface VicCollection {
   slug: string;
   name: string;
@@ -75,6 +84,7 @@ export interface Photo {
 export interface Content {
   towns: Record<string, TownContent>;
   collections: VicCollection[];
+  regions?: VicRegion[];
   loops?: Loop[];
   affiliates?: Record<'stay' | 'tours', { enabled: boolean; label: string; partner: string; template: string; target?: string }>;
   pages: { slug: string; title: string; description: string; paragraphs: string[] }[];

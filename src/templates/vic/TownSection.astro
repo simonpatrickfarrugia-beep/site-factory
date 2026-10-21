@@ -11,8 +11,9 @@ interface Props {
   placePhotos?: Record<string, any>;
   total?: number;
   guide?: string[];
+  townNames?: Record<string, string>;
 }
-const { town, group, places, affiliates = null, placePhotos = {}, guide = [] } = Astro.props;
+const { town, group, places, affiliates = null, placePhotos = {}, guide = [], townNames = {} } = Astro.props;
 const total = Astro.props.total ?? places.length;
 const has = (k: string) => places.filter((p) => (k === 'dog' ? ['yes', 'leashed'].includes(p.tags.dog) : k === 'outdoor' ? p.tags.outdoor_seating === 'yes' : k === 'access' ? p.tags.wheelchair === 'yes' : !!p.tags.opening_hours)).length;
 const situations = [
@@ -43,7 +44,7 @@ const types = Object.entries(places.reduce<Record<string, number>>((a, p) => ((a
     </div>
   )}
   <p class="count" data-shown hidden></p>
-  <ul class="places" data-places>{places.map((p) => <PlaceRow place={p} photo={placePhotos[p.id]} />)}</ul>
+  <ul class="places" data-places>{places.map((p) => <PlaceRow place={p} photo={placePhotos[p.id]} townName={townNames[p.town]} townSlug={p.town} />)}</ul>
   <p class="more"><a href={`/${town.slug}`}>Back to {town.name}: stay, eat and do</a></p>
 </div>
 <script is:inline>

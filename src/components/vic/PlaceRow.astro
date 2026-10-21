@@ -1,8 +1,8 @@
 ---
 import { TYPE_LABEL, address, cuisine, mapUrl, phone, prettyHours, website, type Place } from '../../../brands/vic/model';
 import PhotoFig from './Photo.astro';
-interface Props { place: Place; photo?: any }
-const { place: p, photo = null } = Astro.props;
+interface Props { place: Place; photo?: any; townName?: string; townSlug?: string }
+const { place: p, photo = null, townName, townSlug } = Astro.props;
 const t = p.tags;
 const kind = [TYPE_LABEL[p.type] ?? p.type, cuisine(t.cuisine), t.stars ? `${t.stars}★` : null].filter(Boolean).join(', ');
 const addr = address(t);
@@ -22,7 +22,7 @@ const flags = [
 >
   {photo && <PhotoFig photo={photo} alt={p.name} size="thumb" />}
   <h3 class="place__name">{p.name}</h3>
-  <p class="place__kind">{kind}</p>
+  <p class="place__kind">{kind}{townName && <> · in <a href={`/${townSlug}`}>{townName}</a></>}</p>
   {addr && <p class="place__line">{addr}</p>}
   {hours && <p class="place__line place__hours">{hours}</p>}
   {flags.length > 0 && <p class="place__flags">{flags.join(', ')}</p>}

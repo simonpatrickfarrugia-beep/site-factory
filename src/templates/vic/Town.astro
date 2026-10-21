@@ -12,17 +12,30 @@ interface Props {
   affiliates?: Record<string, any> | null;
   photo?: any;
   placePhotos?: Record<string, any>;
+  /** Region hubs: extra guide paragraphs, member towns, town label on each place. */
+  body?: string[];
+  members?: { slug: string; name: string; km: number }[];
+  townNames?: Record<string, string>;
+  isRegion?: boolean;
 }
-const { town, sections, nearby, collections, affiliates = null, photo = null, placePhotos = {} } = Astro.props;
+const { town, sections, nearby, collections, affiliates = null, photo = null, placePhotos = {}, body = [], members = [], townNames = {}, isRegion = false } = Astro.props;
 ---
 <div class="wrap town">
   <p class="crumb"><a href="/towns">All towns</a></p>
-  <RoadSign name={town.name} km={town.km} size="hero" as="h1" sub={town.km < 3 ? `${town.region}, central Melbourne` : `${town.region}, ${town.km} km from Melbourne`} />
+  <RoadSign name={town.name} km={town.km} size="hero" as="h1" sub={isRegion ? `${members.length} towns · from ${town.km} km from Melbourne` : town.km < 3 ? `${town.region}, central Melbourne` : `${town.region}, ${town.km} km from Melbourne`} />
   {photo && <PhotoFig photo={photo} alt={`${town.name}, Victoria`} />}
   <div class="town__intro">
     <p class="town__lede">{town.intro}</p>
+    {body.map((para) => <p class="town__body">{para}</p>)}
     {town.tips.map((tip) => <p class="tip"><strong>Local tip:</strong> {tip}</p>)}
   </div>
+
+  {members.length > 0 && (
+    <section class="town__section">
+      <h2>Towns in the {town.name}</h2>
+      <ul class="signpost">{members.map((t) => <li><RoadSign name={t.name} km={t.km} href={`/${t.slug}`} /></li>)}</ul>
+    </section>
+  )}
 
   <nav class="jump" aria-label="On this page">
     {sections.map((s) => <a class={`jump__chip jump__chip--${s.group}`} href={`#${s.group}`}>{GROUP_LABEL[s.group].short} <span>{s.total}</span></a>)}
@@ -37,7 +50,7 @@ const { town, sections, nearby, collections, affiliates = null, photo = null, pl
         <p class="empty">No {GROUP_LABEL[s.group].noun} listed yet.</p>
       ) : (
         <>
-          <ul class="places">{s.places.map((p) => <PlaceRow place={p} photo={placePhotos[p.id]} />)}</ul>
+          <ul class="places">{s.places.map((p) => <PlaceRow place={p} photo={placePhotos[p.id]} townName={townNames[p.town]} townSlug={p.town} />)}</ul>
           {s.total > s.places.length && (
             <p class="more"><a href={`/${town.slug}/${s.group}`}>See all {s.total} {GROUP_LABEL[s.group].noun} in {town.name}</a></p>
           )}
@@ -55,7 +68,7 @@ const { town, sections, nearby, collections, affiliates = null, photo = null, pl
 
   {nearby.length > 0 && (
     <section class="town__section">
-      <h2>Nearby on the list</h2>
+      <h2>{isRegion ? 'Nearby regions and towns' : 'Nearby on the list'}</h2>
       <ul class="signpost">{nearby.map((t) => <li><RoadSign name={t.name} km={t.km} href={`/${t.slug}`} /></li>)}</ul>
     </section>
   )}

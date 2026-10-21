@@ -72,6 +72,16 @@ export function routes(): Route[] {
     },
   });
 
+  // Region hubs (content.regions): only regions with 2+ published member towns get a page.
+  const regionList = (content.regions ?? []).map((r) => ({ ...r, towns: byKm.filter((t) => content.towns[t.slug].region === r.label) })).filter((r) => r.towns.length >= 2);
+  const regionHref = (label: string) => { const r = regionList.find((x) => x.label === label); return r ? `/${r.slug}` : undefined; };
+  /** Best places across a region's towns, alternating towns so one big town doesn't fill the list. */
+  const mergeRegion = (slugs: string[], g: Group) => {
+    const lists = slugs.map((s) => inGroup(s, g));
+    const out: Place[] = [];
+    for (let i = 0; out.length < lists.reduce((a, l) => a + l.length, 0); i++) for (const l of lists) if (l[i]) out.push(l[i]);
+    return out;
+  };
   // All towns, grouped by region
   const regions = new Map<string, ReturnType<typeof info>[]>();
   for (const t of byKm) (regions.get(info(t).region) ?? regions.set(info(t).region, []).get(info(t).region)!).push(info(t));
@@ -80,7 +90,7 @@ export function routes(): Route[] {
     template: 'vicTowns',
     seo: { title: 'All towns and neighbourhoods' + SUFFIX, rawTitle: true, description: 'Every Victorian town and Melbourne neighbourhood in the Vic Tours guide, grouped by region.' },
     props: {
-      groups: [...regions].map(([region, list]) => ({ region, towns: list })),
+      groups: [...regions].map(([region, list]) => ({ region, href: regionHref(region), towns: list })),
       comingSoon: getCollection<Town>('towns').filter((t) => !t.published).length,
     },
   });
@@ -154,6 +164,59 @@ export function routes(): Route[] {
           crumbs([{ name: 'Home', path: '' }, { name: t.name, path: t.slug }, { name: GROUP_LABEL[g].short, path: `${t.slug}/${g}` }]),
         ],
         props: { town: { name: t.name, slug: t.slug, km }, guide: content.towns[t.slug].sections?.[g] ?? [], group: g, places: all.slice(0, MAX_LIST), total: all.length, affiliates: content.affiliates ?? null, placePhotos: Object.fromEntries(all.slice(0, MAX_LIST).filter((p) => photos.places[p.id]).map((p) => [p.id, photos.places[p.id]])) },
+      });
+    }
+  }
+
+  // Region hub pages: /<region> and /<region>/stay|eat|do
+  for (const r of regionList) {
+    const slugs = r.towns.map((t) => t.slug);
+    const townNames = Object.fromEntries(r.towns.map((t) => [t.slug, t.name]));
+    const km = Math.min(...r.towns.map((t) => t.kmFromMelbourne ?? 0));
+    const sections = GROUPS.map((g) => { const all = mergeRegion(slugs, g); return { group: g, total: all.length, places: all.slice(0, ON_HUB) }; });
+    const totals = Object.fromEntries(sections.map((s) => [s.group, s.total]));
+    out.push({
+      path: r.slug,
+      template: 'vicTown',
+      seo: {
+        title: `${r.name}: where to stay, eat and things to do` + SUFFIX,
+        rawTitle: true,
+        description: `The ${r.name}, town by town: ${r.towns.length} towns, ${totals.stay} places to stay, ${totals.eat} places to eat and drink and ${totals.do} things to do.`,
+      },
+      schema: [
+        { '@context': 'https://schema.org', '@type': 'TouristDestination', name: `${r.name}, Victoria`, description: r.intro, url: `${SITE}/${r.slug}`, includesAttraction: r.towns.map((t) => ({ '@type': 'TouristDestination', name: t.name, url: `${SITE}/${t.slug}` })) },
+        crumbs([{ name: 'Home', path: '' }, { name: 'Towns', path: 'towns' }, { name: r.name, path: r.slug }]),
+      ],
+      props: {
+        town: { name: r.name, slug: r.slug, km, region: 'Region', intro: r.intro, tips: [] },
+        body: r.body ?? [],
+        members: r.towns.map(info),
+        townNames,
+        isRegion: true,
+        affiliates: content.affiliates ?? null,
+        photo: photos.towns[r.towns[0].slug] ?? null,
+        placePhotos: Object.fromEntries(sections.flatMap((x) => x.places).filter((p) => photos.places[p.id]).map((p) => [p.id, photos.places[p.id]])),
+        sections,
+        nearby: [],
+        collections: [
+          ...(content.loops ?? []).filter((l) => !l.draft && l.days.some((d) => d.stops.some((s) => slugs.includes(s)))).map((l) => ({ href: `/road-trips/${l.slug}`, name: `Road trip: ${l.name}` })),
+          ...content.collections.filter((col) => col.towns.some((s) => slugs.includes(s))).map(({ slug, name }) => ({ href: `/collections/${slug}`, name })),
+        ],
+      },
+    });
+    for (const g of GROUPS) {
+      const all = mergeRegion(slugs, g);
+      if (all.length <= ON_HUB) continue;
+      out.push({
+        path: `${r.slug}/${g}`,
+        template: 'vicTownSection',
+        seo: {
+          title: `${GROUP_LABEL[g].title(r.name)}: ${all.length} ${GROUP_LABEL[g].noun}` + SUFFIX,
+          rawTitle: true,
+          description: `${all.length} ${GROUP_LABEL[g].noun} across the ${r.name} (${r.towns.map((t) => t.name).slice(0, 5).join(', ')}${r.towns.length > 5 ? ' and more' : ''}). Addresses, hours, websites and maps.`,
+        },
+        schema: [crumbs([{ name: 'Home', path: '' }, { name: r.name, path: r.slug }, { name: GROUP_LABEL[g].short, path: `${r.slug}/${g}` }])],
+        props: { town: { name: r.name, slug: r.slug, km }, group: g, places: all.slice(0, MAX_LIST), total: all.length, townNames, affiliates: content.affiliates ?? null, placePhotos: Object.fromEntries(all.slice(0, MAX_LIST).filter((p) => photos.places[p.id]).map((p) => [p.id, photos.places[p.id]])) },
       });
     }
   }
