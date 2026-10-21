@@ -1,6 +1,6 @@
 # Keyword research
 
-Updated 2026-10-20. Monthly Google searches (Google Ads data via DataForSEO).
+Updated 2026-10-21. Monthly Google searches (Google Ads data via DataForSEO).
 
 ## Victorian road trips and itineraries (Australia)
 
@@ -41,3 +41,68 @@ Updated 2026-10-20. Monthly Google searches (Google Ads data via DataForSEO).
 | gippsland road trip | 10 |
 | wilsons promontory itinerary | 10 |
 | goldfields road trip | — |
+
+## Dog breeds: money pages (USA)
+
+| Search | /mo |
+|---|---:|
+| hypoallergenic dog breeds | 90,500 |
+| german shepherd lifespan | 22,200 |
+| best pet insurance for dogs | 22,200 |
+| best family dogs | 18,100 |
+| golden retriever lifespan | 14,800 |
+| labrador lifespan | 14,800 |
+| golden retriever vs labrador | 14,800 |
+| french bulldog lifespan | 12,100 |
+| bernese mountain dog lifespan | 8,100 |
+| dachshund lifespan | 6,600 |
+| husky lifespan | 6,600 |
+| how much is a golden retriever | 5,400 |
+| how much is a cane corso | 5,400 |
+| cane corso lifespan | 5,400 |
+| corgi cost | 5,400 |
+| corgi lifespan | 5,400 |
+| dog breeds that live longest | 5,400 |
+| cheapest dog breeds | 4,400 |
+| how much is a german shepherd | 3,600 |
+| poodle lifespan | 3,600 |
+| how much is a french bulldog | 2,900 |
+| how much is a husky | 2,900 |
+| how much is a corgi | 2,900 |
+| french bulldog health problems | 2,400 |
+| cane corso cost | 2,400 |
+| low maintenance dog breeds | 2,400 |
+| golden retriever cost | 1,900 |
+| french bulldog cost | 1,900 |
+| german shepherd cost | 1,600 |
+| dachshund cost | 1,600 |
+| how much is a dachshund | 1,600 |
+| how much is a bernese mountain dog | 1,600 |
+| dachshund health problems | 1,300 |
+| how much is a poodle | 1,300 |
+| corgi health problems | 1,300 |
+| golden retriever health problems | 1,000 |
+| how much is a labrador | 1,000 |
+| bernese mountain dog cost | 1,000 |
+| french bulldog vs english bulldog | 1,000 |
+| labrador health problems | 880 |
+| german shepherd health problems | 880 |
+| husky cost | 880 |
+| husky vs german shepherd | 880 |
+| labrador cost | 720 |
+| dog breeds for apartments | 720 |
+| cane corso health problems | 590 |
+| poodle cost | 590 |
+| pet insurance for french bulldog | 480 |
+| husky health problems | 480 |
+| poodle health problems | 480 |
+| bernese mountain dog health problems | 480 |
+| pet insurance for dachshund | 210 |
+| pet insurance for corgi | 170 |
+| pet insurance for golden retriever | 110 |
+| pet insurance for german shepherd | 110 |
+| pet insurance for labrador | 70 |
+| pet insurance for cane corso | 50 |
+| pet insurance for husky | 20 |
+| pet insurance for poodle | — |
+| pet insurance for bernese mountain dog | — |
