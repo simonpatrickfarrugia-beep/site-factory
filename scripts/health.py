@@ -43,6 +43,22 @@ try:
 except Exception as e:
     problems.append(f'Pipeline status unreachable ({str(e)[:150]})')
 
+# 2b. Each site serves the latest deployable commit (a commit without [skip ci], pushed 30+ minutes ago)
+try:
+    out = subprocess.run(['gh', 'api', f"repos/{os.environ['GITHUB_REPOSITORY']}/commits?sha=main&per_page=40", '--jq', '.[] | [.sha, .commit.committer.date, (.commit.message | split("\\n")[0])] | @tsv'], capture_output=True, text=True, check=True).stdout
+    commits = [l.split('\t') for l in out.strip().splitlines()]
+    shas = [c[0] for c in commits]
+    expected = next((c for c in commits if '[skip ci]' not in c[2] and age_days(c[1]) * 24 * 60 >= 30), None)
+    for site in cfg.get('versionSites', []):
+        _, body = get(site + '/version.txt')
+        live = body.decode().split()[0]
+        if expected and live != expected[0] and (live not in shas or shas.index(live) > shas.index(expected[0])):
+            problems.append(f"{site} is serving an older build ({live[:7]}); expected {expected[0][:7]} \"{expected[2][:60]}\". Workers Builds may have skipped a deploy: push an empty commit.")
+        else:
+            ok.append(f"{site} serves {live[:7]}")
+except Exception as e:
+    ok.append(f'Version check skipped ({str(e)[:80]})')
+
 # 3. Data files fresh
 for f in cfg['freshFiles']:
     try:
