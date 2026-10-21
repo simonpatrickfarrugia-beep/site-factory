@@ -57,7 +57,7 @@ try:
         else:
             ok.append(f"{site} serves {live[:7]}")
 except Exception as e:
-    ok.append(f'Version check skipped ({str(e)[:80]})')
+    problems.append(f'Version check failed ({str(e)[:100]})')
 
 # 3. Data files fresh
 for f in cfg['freshFiles']:
