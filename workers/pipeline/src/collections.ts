@@ -207,6 +207,7 @@ export async function buildCollections(
     return {
       ...i,
       volume: old?.volume ?? null,
+      competition: old?.competition ?? null,
       volumeCheckedAt: old?.volumeCheckedAt ?? null,
       volumeLocation: old?.volumeLocation ?? null,
       status: old?.status === 'created' ? 'created' : existingSlug ? 'existing' : 'open',
