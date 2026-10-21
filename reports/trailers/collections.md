@@ -1,6 +1,6 @@
 # Trailer channel collection ideas
 
-Updated 2026-10-19. Searches/mo = Google searches in United States for "<theme>" + "best <theme>".
+Updated 2026-10-21. Searches/mo = Google searches in United States for "<theme>" + "best <theme>".
 
 New collections need at least 6 films and 100 searches/mo. Up to 3 are created each month, as smart collections that keep filling themselves.
 
@@ -13,7 +13,7 @@ New collections need at least 6 films and 100 searches/mo. Up to 3 are created e
 | Natalie Portman Movies | 6 | 110,320 |
 | Hayao Miyazaki Movies | 11 | 33,490 |
 | 90s Family Movies | 8 | 18,000 |
-| 90s Comedy Movies | 23 | 12,980 |
+| 90s Comedy Movies | 24 | 12,980 |
 | 2000s Comedy Movies | 15 | 11,000 |
 | 80s Comedy Movies | 11 | 7,300 |
 | 2000s Animated Movies | 9 | 6,740 |
