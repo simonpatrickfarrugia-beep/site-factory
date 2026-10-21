@@ -6,6 +6,9 @@ on:
       domain:
         description: Domain to snapshot
         required: true
+      server:
+        description: Optional nameserver to ask directly (e.g. garret.ns.cloudflare.com)
+        default: ''
 jobs:
   snapshot:
     runs-on: ubuntu-latest
@@ -14,9 +17,12 @@ jobs:
       - name: Look up records
         env:
           D: ${{ inputs.domain }}
+          S: ${{ inputs.server }}
         run: |
           sudo apt-get install -y -qq dnsutils whois >/dev/null 2>&1 || true
+          if [ -n "$S" ]; then dig() { command dig @"$S" "$@"; }; fi
           {
+          echo "## DNS snapshot (asking ${S:-public DNS})"; echo
           echo "## DNS snapshot for $D ($(date -u +%F))"
           echo; echo '```'
           echo "NAMESERVERS:"; dig +short NS $D
