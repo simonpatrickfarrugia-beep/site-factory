@@ -92,7 +92,8 @@
    "group": "business",
    "name": "Community Help Co",
    "status": "live",
-   "note": "Life goals and mentoring"
+   "note": "Website preview built 21 Oct (lead gen)",
+   "station": "Build"
   },
   {
    "id": "hub",
@@ -335,6 +336,26 @@
    "mins": 1,
    "what": "Dog breeds for November: go or no-go? Domain: breedpicker.com?",
    "why": "#1 idea on the priority model",
+   "done": false
+  },
+  {
+   "id": "chc-import",
+   "kind": "do",
+   "sprint": false,
+   "mins": 3,
+   "what": "Community Help Co: import the preview in Cloudflare (build: BRAND=community-help-co npm run build; deploy: npx wrangler deploy --config brands/community-help-co/wrangler.jsonc)",
+   "why": "Gives you a preview link to check on your phone",
+   "link": "https://dash.cloudflare.com",
+   "linkLabel": "Cloudflare",
+   "done": false
+  },
+  {
+   "id": "chc-about",
+   "kind": "decide",
+   "sprint": false,
+   "mins": 3,
+   "what": "Community Help Co: send 3–4 lines of real background for the About page, and confirm the Calendly link",
+   "why": "People book a mentor they trust; nothing gets invented",
    "done": false
   }
  ],
