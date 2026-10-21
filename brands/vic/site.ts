@@ -153,7 +153,7 @@ export function routes(): Route[] {
           },
           crumbs([{ name: 'Home', path: '' }, { name: t.name, path: t.slug }, { name: GROUP_LABEL[g].short, path: `${t.slug}/${g}` }]),
         ],
-        props: { town: { name: t.name, slug: t.slug, km }, group: g, places: all.slice(0, MAX_LIST), total: all.length, affiliates: content.affiliates ?? null, placePhotos: Object.fromEntries(all.slice(0, MAX_LIST).filter((p) => photos.places[p.id]).map((p) => [p.id, photos.places[p.id]])) },
+        props: { town: { name: t.name, slug: t.slug, km }, guide: content.towns[t.slug].sections?.[g] ?? [], group: g, places: all.slice(0, MAX_LIST), total: all.length, affiliates: content.affiliates ?? null, placePhotos: Object.fromEntries(all.slice(0, MAX_LIST).filter((p) => photos.places[p.id]).map((p) => [p.id, photos.places[p.id]])) },
       });
     }
   }
@@ -177,7 +177,8 @@ export function routes(): Route[] {
       props: {
         name: col.name,
         intro: col.intro,
-        towns: list.map((t) => ({ ...info(t), intro: content.towns[t.slug].intro, counts: Object.fromEntries(GROUPS.map((g) => [g, inGroup(t.slug, g).length])) })),
+        body: col.body ?? [],
+        towns: list.map((t) => ({ ...info(t), intro: col.notes?.[t.slug] ?? content.towns[t.slug].intro, counts: Object.fromEntries(GROUPS.map((g) => [g, inGroup(t.slug, g).length])) })),
       },
     });
   }

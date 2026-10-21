@@ -10,8 +10,9 @@ interface Props {
   affiliates?: Record<string, any> | null;
   placePhotos?: Record<string, any>;
   total?: number;
+  guide?: string[];
 }
-const { town, group, places, affiliates = null, placePhotos = {} } = Astro.props;
+const { town, group, places, affiliates = null, placePhotos = {}, guide = [] } = Astro.props;
 const total = Astro.props.total ?? places.length;
 const has = (k: string) => places.filter((p) => (k === 'dog' ? ['yes', 'leashed'].includes(p.tags.dog) : k === 'outdoor' ? p.tags.outdoor_seating === 'yes' : k === 'access' ? p.tags.wheelchair === 'yes' : !!p.tags.opening_hours)).length;
 const situations = [
@@ -26,6 +27,7 @@ const types = Object.entries(places.reduce<Record<string, number>>((a, p) => ((a
   <p class="crumb"><a href={`/${town.slug}`}>{town.name}</a></p>
   <RoadSign name={town.name} km={town.km} tone={group === 'do' ? 'brown' : 'green'} />
   <h1 class="page-title">{GROUP_LABEL[group].title(town.name)}</h1>
+  {guide.map((para) => <p class="town__body">{para}</p>)}
   <p class="count">{total > places.length ? `The ${places.length} best-documented of ${total.toLocaleString('en-AU')} ${GROUP_LABEL[group].noun}.` : `${places.length} ${GROUP_LABEL[group].noun}, best-documented first.`}</p>
   {group === 'stay' && <AffiliateLink aff={affiliates?.stay} place={town.name} kind="stay" />}
   {group === 'do' && <AffiliateLink aff={affiliates?.tours} place={town.name} kind="tours" />}

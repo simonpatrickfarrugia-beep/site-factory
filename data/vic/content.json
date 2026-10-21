@@ -74,7 +74,13 @@
   },
   "harrietville": {
    "intro": "Harrietville is a tiny old gold-mining village at the foot of Mount Hotham, the last stop before the Great Alpine Road climbs into the mountains. It’s the start of the Razorback and Mount Feathertop walks for keen hikers.",
-   "region": "High Country"
+   "region": "High Country",
+   "sections": {
+    "do": [
+     "Most visitors come for the walking. The Bungalow Spur and Razorback tracks to Mount Feathertop, Victoria's second-highest peak, start near the village; both are long, steep, full-day walks, best from late spring to autumn.",
+     "Harrietville is also the last stop before the Great Alpine Road climbs to Mount Hotham, so it's a base for the snowfields in winter and for cycling the climb in summer. Check road and track conditions with Parks Victoria before you set out."
+    ]
+   }
   },
   "mount-hotham": {
    "intro": "Mount Hotham is one of Victoria’s highest alpine resorts, right on the Great Alpine Road. In winter it’s a ski and snowboard village; in summer the high plains open up for walking, wildflowers and huge views across the Alps. Carry chains in winter, as alpine road rules apply.",
@@ -118,7 +124,13 @@
   },
   "yarra-glen": {
    "intro": "Yarra Glen sits in the middle of the Yarra Valley wine country, close to some of the region’s best-known cellar doors, with hot-air balloon flights over the vineyards at dawn.",
-   "region": "Yarra Valley"
+   "region": "Yarra Valley",
+   "sections": {
+    "do": [
+     "Yarra Glen is surrounded by Yarra Valley wineries, many with cellar doors and restaurants, and it's one of the main launch points for hot-air balloon flights over the valley. Flights leave around dawn and depend on the weather, so book ahead and keep a spare morning.",
+     "Healesville Sanctuary and the Yarra Valley's distilleries and dairies are a short drive away, which makes Yarra Glen an easy base for a day or two in the valley."
+    ]
+   }
   },
   "melbourne-cbd": {
    "intro": "Melbourne’s city centre is a grid of laneways, arcades and rooftop bars, built on gold-rush money and best explored on foot. Get lost in Degraves Street and Hosier Lane, see the State Library’s domed reading room, then cross Federation Square to the river. The free tram zone covers the whole grid.",
@@ -238,11 +250,21 @@
    "towns": [
     "daylesford",
     "bright",
+    "lorne",
+    "apollo-bay",
+    "port-fairy",
+    "halls-gap",
     "phillip-island",
+    "beechworth",
+    "echuca",
     "warrnambool",
     "ballarat",
     "bendigo",
     "torquay"
+   ],
+   "body": [
+    "Two nights is right for anywhere two to three hours from Melbourne: leave on Friday afternoon, have a full Saturday and drive home on Sunday.",
+    "School holidays and long weekends book out early in the coastal and alpine towns, so find a place to stay first. In winter, the Great Ocean Road and the High Country are quieter and cheaper; summer is peak season on the coast."
    ]
   },
   {
@@ -265,8 +287,21 @@
    "towns": [
     "ballarat",
     "bendigo",
+    "castlemaine",
+    "beechworth",
     "daylesford"
-   ]
+   ],
+   "body": [
+    "Gold was found near Ballarat and Bendigo in 1851, the same year Victoria became a separate colony. Within ten years the population had grown several times over, and the money built the stone banks, town halls, hotels and wide streetscapes these towns still have.",
+    "Ballarat, Castlemaine and Bendigo sit in a loose ring 100 to 130 km north-west of Melbourne and make an easy two- or three-day loop by car or V/Line train. Beechworth, in the north-east, is further but is one of the best-preserved gold towns in the state. Daylesford grew up on the diggings too, though most people now come for the mineral springs."
+   ],
+   "notes": {
+    "ballarat": "Sovereign Hill recreates an 1850s goldfields town, the Eureka Centre tells the story of the 1854 Eureka Stockade, and Lydiard Street keeps its boom-era banks and hotels.",
+    "bendigo": "Grand gold-boom buildings, underground tours at the Central Deborah Gold Mine, the Golden Dragon Museum on the town's Chinese heritage and the Bendigo Art Gallery.",
+    "castlemaine": "Heritage streets, the botanical gardens and a steam train on the Victorian Goldfields Railway to nearby Maldon.",
+    "beechworth": "Honey-coloured granite buildings, the courthouse where Ned Kelly appeared in 1880, and a famous bakery.",
+    "daylesford": "A goldfields town turned spa town: mineral springs, Lake Daylesford and galleries, with Hepburn Springs next door."
+   }
   },
   {
    "slug": "food-and-wine-weekends",
@@ -274,10 +309,28 @@
    "intro": "Long lunches, cellar doors and produce stores. Towns where eating well is the main event.",
    "towns": [
     "daylesford",
-    "bright",
+    "yarra-glen",
+    "healesville",
+    "red-hill",
     "mornington",
+    "bright",
+    "beechworth",
     "geelong"
-   ]
+   ],
+   "body": [
+    "Victoria's wine regions are close to the city. The Yarra Valley is about an hour east of Melbourne and the Mornington Peninsula about an hour south, so both work as a day trip or an easy overnight stay. Further out, the High Country around Bright and Beechworth pairs cellar doors with alpine produce.",
+    "Book long lunches ahead on weekends, and plan a designated driver or a winery tour: many cellar doors are on winding country roads."
+   ],
+   "notes": {
+    "daylesford": "Bakeries, produce stores and restaurants around Lake Daylesford and Hepburn Springs.",
+    "yarra-glen": "In the middle of the Yarra Valley, minutes from some of its best-known cellar doors, with balloon flights over the vineyards at dawn.",
+    "healesville": "Yarra Valley cellar doors, a gin distillery and local cheese, with Healesville Sanctuary for a break between tastings.",
+    "red-hill": "The heart of the Mornington Peninsula's cool-climate wine country: pinot noir, chardonnay and cellar-door restaurants.",
+    "mornington": "Main Street cafés and restaurants, with the Peninsula's wineries a short drive inland.",
+    "bright": "The gateway to the Alpine Valleys wineries and breweries, with bakeries and farm gates along the Great Alpine Road.",
+    "beechworth": "A gold town with a strong food scene: a famous bakery, honey and wineries in the surrounding hills.",
+    "geelong": "Waterfront dining, with the Bellarine and Moorabool Valley wineries close by."
+   }
   },
   {
    "slug": "romantic-getaways",
@@ -300,7 +353,9 @@
    "description": "Vic Tours is a town-by-town guide to Victoria, made in Melbourne.",
    "paragraphs": [
     "Vic Tours is a town-by-town guide to Victoria: where to stay, where to eat and what to do, in one place for each town and Melbourne neighbourhood.",
-    "It’s made in Melbourne by Independent Media Network Pty Ltd. We start with open data, so every listing is a real place, and add local knowledge on top.",
+    "It's made in Melbourne by Independent Media Network Pty Ltd, a small independent publisher. We start with open data, so every listing is a real place, and add local knowledge on top: which towns pair well, how long to stay and what to book ahead.",
+    "We don't charge places to be listed and we don't rank anyone for payment. Places with fuller details (website, hours, address) come first, so the most useful listings are easiest to find. How we build the guides is explained on our methods page.",
+    "Some links may later become booking links that pay us a small commission at no cost to you. When they do, they're labelled on the page.",
     "Spotted something wrong or missing? Most listings come from OpenStreetMap, which anyone can improve, and fixes there flow back into our guides."
    ]
   },

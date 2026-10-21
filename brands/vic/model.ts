@@ -31,12 +31,18 @@ export interface TownContent {
   region: string;
   highlights?: string[];
   tips?: string[]; // Simon's own local tips (shown as "Local tip")
+  /** Optional short guide shown above a full list page (e.g. sections.do). */
+  sections?: Partial<Record<Group, string[]>>;
 }
 
 export interface VicCollection {
   slug: string;
   name: string;
   intro: string;
+  /** Longer guide paragraphs under the intro. */
+  body?: string[];
+  /** Why each town is in this collection (falls back to the town's intro). */
+  notes?: Record<string, string>;
   towns: string[];
 }
 

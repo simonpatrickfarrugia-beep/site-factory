@@ -3,19 +3,21 @@ import RoadSign from '../../components/vic/RoadSign.astro';
 interface Props {
   name: string;
   intro: string;
+  body?: string[];
   towns: { slug: string; name: string; km: number; region: string; intro: string; counts: Record<string, number> }[];
 }
-const { name, intro, towns } = Astro.props;
+const { name, intro, body = [], towns } = Astro.props;
 ---
 <div class="wrap town">
   <p class="crumb"><a href="/towns">All towns</a></p>
   <h1 class="page-title page-title--big">{name}</h1>
   <p class="town__lede">{intro}</p>
+  {body.map((para) => <p class="town__body">{para}</p>)}
   <ul class="stops">
     {towns.map((t) => (
       <li class="stop">
         <RoadSign name={t.name} km={t.km} href={`/${t.slug}`} sub={t.region} />
-        <p class="stop__intro">{t.intro.split('. ')[0]}.</p>
+        <p class="stop__intro">{t.intro}</p>
         <p class="stop__counts">
           <a href={`/${t.slug}#stay`}>{t.counts.stay} to stay</a>
           <a href={`/${t.slug}#eat`}>{t.counts.eat} to eat</a>
