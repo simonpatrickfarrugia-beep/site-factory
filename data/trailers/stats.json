@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-20T21:00:10.695Z",
+ "generatedAt": "2026-10-21T21:00:10.808Z",
  "period": {
-  "start": "2026-09-22",
-  "end": "2026-10-19"
+  "start": "2026-09-23",
+  "end": "2026-10-20"
  },
  "gscPeriod": {
-  "start": "2026-09-20",
-  "end": "2026-10-17"
+  "start": "2026-09-21",
+  "end": "2026-10-18"
  },
  "sources": {
   "ga4": true,
@@ -14,19 +14,14 @@
   "notes": []
  },
  "totals": {
-  "views": 279,
-  "prevViews": 47,
-  "users": 184,
+  "views": 273,
+  "prevViews": 57,
+  "users": 185,
   "cta": {},
   "gscClicks": 7,
-  "gscImpressions": 647
+  "gscImpressions": 652
  },
  "daily": [
-  {
-   "date": "2026-09-22",
-   "views": 10,
-   "cta": 0
-  },
   {
    "date": "2026-09-23",
    "views": 10,
@@ -156,14 +151,19 @@
    "date": "2026-10-19",
    "views": 11,
    "cta": 0
+  },
+  {
+   "date": "2026-10-20",
+   "views": 4,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 119,
-   "prevViews": 34,
-   "users": 47,
+   "views": 115,
+   "prevViews": 42,
+   "users": 49,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 0,
@@ -248,25 +248,14 @@
    "topQuery": null
   },
   {
-   "path": "/movies/independence-day-1996",
-   "views": 4,
-   "prevViews": 0,
-   "users": 3,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null
-  },
-  {
    "path": "/movies/home-alone-1990",
    "views": 3,
    "prevViews": 0,
    "users": 1,
    "cta": {},
    "gscClicks": 2,
-   "gscImpressions": 29,
-   "gscPosition": 41.2,
+   "gscImpressions": 31,
+   "gscPosition": 41.4,
    "topQuery": "home alone trailer"
   },
   {
@@ -279,6 +268,17 @@
    "gscImpressions": 17,
    "gscPosition": 43.7,
    "topQuery": "jurassic park trailer"
+  },
+  {
+   "path": "/movies/independence-day-1996",
+   "views": 3,
+   "prevViews": 1,
+   "users": 3,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
   },
   {
    "path": "/movies/lethal-weapon-1987",
@@ -672,8 +672,8 @@
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 28,
-   "gscPosition": 24.9,
+   "gscImpressions": 29,
+   "gscPosition": 26.1,
    "topQuery": "the sixth sense trailer"
   },
   {
@@ -908,17 +908,6 @@
    "topQuery": null
   },
   {
-   "path": "/movies/robin-hood-prince-of-thieves-1991",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null
-  },
-  {
    "path": "/movies/the-imitation-game-2014",
    "views": 1,
    "prevViews": 0,
@@ -996,6 +985,17 @@
    "topQuery": "inception trailer"
   },
   {
+   "path": "/movies/the-silence-of-the-lambs-1991",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 19,
+   "gscPosition": 34.6,
+   "topQuery": "silence of the lambs trailer"
+  },
+  {
    "path": "/movies/ferris-buellers-day-off-1986",
    "views": 0,
    "prevViews": 0,
@@ -1005,17 +1005,6 @@
    "gscImpressions": 18,
    "gscPosition": 44.2,
    "topQuery": "ferris bueller trailer"
-  },
-  {
-   "path": "/movies/the-silence-of-the-lambs-1991",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 18,
-   "gscPosition": 33.4,
-   "topQuery": "silence of the lambs trailer"
   },
   {
    "path": "/movies/dunkirk-2017",
@@ -1249,6 +1238,17 @@
    "topQuery": "box office 1986"
   },
   {
+   "path": "/movies/aladdin-1992",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 41.3,
+   "topQuery": "aladdin 1992 trailer"
+  },
+  {
    "path": "/movies/jackie-brown-1997",
    "views": 0,
    "prevViews": 0,
@@ -1302,17 +1302,6 @@
    "gscImpressions": 2,
    "gscPosition": 38,
    "topQuery": "box office 1995"
-  },
-  {
-   "path": "/movies/aladdin-1992",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 37.5,
-   "topQuery": "aladdin 1992 trailer"
   },
   {
    "path": "/movies/captain-america-the-winter-soldier-2014",
@@ -1558,6 +1547,17 @@
   },
   {
    "path": "/movies/good-will-hunting-1998",
+   "views": 0,
+   "prevViews": 1,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
+   "path": "/movies/robin-hood-prince-of-thieves-1991",
    "views": 0,
    "prevViews": 1,
    "users": 0,

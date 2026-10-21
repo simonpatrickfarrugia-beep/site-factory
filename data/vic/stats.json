@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-20T21:00:10.695Z",
+ "generatedAt": "2026-10-21T21:00:10.808Z",
  "period": {
-  "start": "2026-09-22",
-  "end": "2026-10-19"
+  "start": "2026-09-23",
+  "end": "2026-10-20"
  },
  "gscPeriod": {
-  "start": "2026-09-20",
-  "end": "2026-10-17"
+  "start": "2026-09-21",
+  "end": "2026-10-18"
  },
  "sources": {
   "ga4": true,
@@ -14,13 +14,31 @@
   "notes": []
  },
  "totals": {
-  "views": 0,
+  "views": 2,
   "prevViews": 0,
-  "users": 0,
+  "users": 2,
   "cta": {},
   "gscClicks": 0,
   "gscImpressions": 0
  },
- "daily": [],
- "pages": []
+ "daily": [
+  {
+   "date": "2026-10-20",
+   "views": 2,
+   "cta": 0
+  }
+ ],
+ "pages": [
+  {
+   "path": "/",
+   "views": 2,
+   "prevViews": 0,
+   "users": 2,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  }
+ ]
 }
