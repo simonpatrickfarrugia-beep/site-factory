@@ -12,10 +12,7 @@ New collections need at least 6 films and 100 searches/mo. Up to 3 are created e
 | Robert Downey Jr. Movies | 8 | 110,320 |
 | Natalie Portman Movies | 6 | 110,320 |
 | Hayao Miyazaki Movies | 11 | 33,490 |
-| 90s Family Movies | 8 | 18,000 |
 | 90s Comedy Movies | 24 | 12,980 |
-| 2000s Comedy Movies | 15 | 11,000 |
-| 80s Comedy Movies | 11 | 7,300 |
 | 2000s Animated Movies | 9 | 6,740 |
 | 90s Animated Movies | 14 | 4,790 |
 | 90s Romance Movies | 11 | 3,920 |
@@ -28,6 +25,9 @@ New collections need at least 6 films and 100 searches/mo. Up to 3 are created e
 | 90s Adventure Movies | 26 | 460 |
 | 90s Crime Movies | 17 | 440 |
 | 2010s Action Movies | 27 | 420 |
+| 80s Adventure Movies | 12 | 370 |
+| 2000s Fantasy Movies | 6 | 270 |
+| 2000s Thrillers | 9 | 260 |
 
 ## Popular themes that need more films
 
@@ -63,6 +63,9 @@ Add catalogue candidates for these ("add candidates: 80s horror") and they becom
 | Tom Hanks Movies | 6 | 305,400 | /discover/tom-hanks-movies |
 | Christian Bale Movies | 6 | 166,600 | /discover/christian-bale-movies |
 | Scarlett Johansson Movies | 7 | 165,480 | /discover/scarlett-johansson-movies |
+| 90s Family Movies | 8 | 18,000 | /discover/90s-family-movies |
+| 2000s Comedy Movies | 15 | 11,000 | /discover/2000s-comedy-movies |
+| 80s Comedy Movies | 11 | 7,300 | /discover/80s-comedy-movies |
 | 90s Action Movies | 19 | — | /discover/90s-action-movies |
 | 80s Action Movies | 13 | — | /discover/1980s-action-classics |
 | Christopher Nolan Movies | 11 | — | /discover/christopher-nolan-feature-films |
