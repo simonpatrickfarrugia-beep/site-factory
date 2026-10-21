@@ -372,6 +372,39 @@
    "linkLabel": "Cloudflare",
    "done": true,
    "doneAt": "2026-10-22"
+  },
+  {
+   "id": "chc-gsc",
+   "kind": "do",
+   "sprint": false,
+   "mins": 5,
+   "what": "Community Help Co: Search Console → Add property → Domain → communityhelp.com.au (let Cloudflare add the record) → submit sitemap.xml; add the search-console-reader service account as a user",
+   "why": "So Google indexes the site and the daily report can track it",
+   "link": "https://search.google.com/search-console",
+   "linkLabel": "Search Console",
+   "done": false
+  },
+  {
+   "id": "chc-ga4",
+   "kind": "do",
+   "sprint": false,
+   "mins": 5,
+   "what": "Community Help Co: create a GA4 property and send Claude the G- ID",
+   "why": "Counts visits and journal downloads",
+   "link": "https://analytics.google.com",
+   "linkLabel": "GA4",
+   "done": false
+  },
+  {
+   "id": "chc-www",
+   "kind": "do",
+   "sprint": false,
+   "mins": 1,
+   "what": "Community Help Co: Cloudflare → Rules → Redirect Rules → 'Redirect from WWW to root'",
+   "why": "One address for Google; canonical tags already point there",
+   "link": "https://dash.cloudflare.com",
+   "linkLabel": "Cloudflare",
+   "done": false
   }
  ],
  "notes": [
