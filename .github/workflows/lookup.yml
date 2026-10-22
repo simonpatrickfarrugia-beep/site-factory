@@ -20,10 +20,15 @@ jobs:
           LOC: ${{ inputs.location }}
         run: |
           python3 - <<'PY'
-          import json, os, urllib.parse, urllib.request
+          import json, os, urllib.error, urllib.parse, urllib.request
           q = urllib.parse.urlencode({'key': os.environ['KEY'], 'kw': os.environ['KW'], 'loc': os.environ['LOC']})
-          d = json.load(urllib.request.urlopen(f'https://trailer-pipeline.simonpatrickfarrugia.workers.dev/lookup/volumes?{q}', timeout=120))
-          if 'error' in d: print('::error title=lookup::' + d['error']); raise SystemExit(1)
+          try:
+              d = json.load(urllib.request.urlopen(urllib.request.Request(f'https://trailer-pipeline.simonpatrickfarrugia.workers.dev/lookup/volumes?{q}', headers={'user-agent': 'site-factory-lookup/1'}), timeout=120))
+          except urllib.error.HTTPError as e:
+              d = {'error': f'HTTP {e.code}: ' + e.read().decode()[:300]}
+          except Exception as e:
+              d = {'error': repr(e)[:300]}
+          if 'error' in d: print('::error title=lookup::' + d['error'].replace('\n', ' ')); raise SystemExit(1)
           rows = sorted(d['volumes'].items(), key=lambda kv: -(kv[1] or -1))
           out = '\n'.join(f'{v if v is not None else "-"}\t{k}' for k, v in rows)
           open(os.environ['GITHUB_STEP_SUMMARY'], 'a').write('```\n' + out + '\n```\n')
