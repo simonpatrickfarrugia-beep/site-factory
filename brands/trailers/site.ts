@@ -1,6 +1,6 @@
 /**
- * Every page on movietrailer.channel. URLs and SEO titles match the Webflow
- * site exactly so the migration is invisible to Google.
+ * Every page on movietrailer.channel. URLs match the Webflow site exactly. Film and collection titles were
+ * reworded around "where to watch" on 22 Oct 2026 (see movieSeo).
  */
 import { getCollection, getSingleton } from '../../src/lib/data';
 import { hqProps } from '../../src/lib/hq';
@@ -12,6 +12,7 @@ const SUFFIX = ' | MovieTrailer.Channel';
 /** Amazon Associates tracking ID, carried over from the Webflow site's custom code. */
 const AMAZON_TAG = 'movietrailerc-20';
 
+const splitNames = (s: string | null | undefined) => (s ?? '').split(',').map((n) => n.trim()).filter((n) => n && n !== 'N/A');
 const byNewest = (a: { created: string }, b: { created: string }) => b.created.localeCompare(a.created);
 const people = (names: string | string[] | null) =>
   (Array.isArray(names) ? names : (names ?? '').split(','))
@@ -44,6 +45,28 @@ function movieSchema(m: Movie) {
   if (m.runtimeMinutes) movie.duration = `PT${m.runtimeMinutes}M`;
   if (m.rating && m.rating !== 'Not Rated') movie.contentRating = m.rating;
   return movie;
+}
+
+/** Google shows about 60 characters of a title and 155-160 of a description; longer gets cut mid-word. */
+const TITLE_MAX = 60;
+const DESC_MAX = 158;
+const fitTitle = (...options: string[]) => options.find((t) => t.length <= TITLE_MAX) ?? options[options.length - 1];
+const clip = (text: string, max = DESC_MAX) => {
+  const t = text.replace(/\s+/g, ' ').trim();
+  if (t.length <= max) return t;
+  const cut = t.slice(0, max - 1);
+  return cut.slice(0, cut.lastIndexOf(' ')).replace(/[,;:.\-–— ]+$/, '') + '…';
+};
+/**
+ * Film pages lead with "where to watch": in a 25-film US sample (22 Oct 2026) "where to watch X" had ~5x the
+ * searches of "X trailer" (102,770 vs 20,010 a month), and it's the search that ends in a rental.
+ */
+function movieSeo(m: Movie) {
+  const ny = `${m.name}${m.year ? ` (${m.year})` : ''}`;
+  const title = fitTitle(`Where to Watch ${ny}: Stream, Rent & Trailer`, `Where to Watch ${ny} + Trailer`, `Where to Watch ${ny}`, `${m.name}: Where to Watch`);
+  const lead = `Where to watch ${ny}: stream, rent or buy it in the US, plus the official trailer.`;
+  const description = m.synopsis ? clip(`${lead} ${m.synopsis}`) : clip(lead);
+  return { title, description };
 }
 
 function breadcrumbs(items: { name: string; path: string }[]) {
@@ -143,6 +166,10 @@ export function routes(): Route[] {
   for (const m of movies) {
     const inCollections = collections.filter((c) => moviesIn(c).includes(m)).map(collectionCard);
     const firstGenre = m.genres[0];
+    const directors = splitNames(m.director);
+    const byDirector = directors.length
+      ? movies.filter((o) => o.slug !== m.slug && splitNames(o.director).some((d) => directors.includes(d))).sort(byYear).slice(0, 6).map(card)
+      : [];
     const related = firstGenre
       ? movies.filter((o) => o.slug !== m.slug && o.genres.includes(firstGenre)).sort(byNewest).slice(0, 10).map(card)
       : [];
@@ -150,9 +177,8 @@ export function routes(): Route[] {
       path: `movies/${m.slug}`,
       template: 'movie',
       seo: {
-        title: `${m.name}${m.year ? ` (${m.year})` : ''} Official Trailer & Where to Watch`,
+        ...movieSeo(m),
         rawTitle: true,
-        description: m.synopsis ? `Watch the trailer for ${m.name}: ${m.synopsis}` : `Watch the official trailer for ${m.name}.`,
         image: thumb(m.youtubeId),
       },
       schema: [
@@ -164,7 +190,7 @@ export function routes(): Route[] {
         ]),
       ],
       lastmod: m.updated,
-      props: { movie: m, inCollections, related, genre: firstGenre ?? null, amazonTag: AMAZON_TAG },
+      props: { movie: m, inCollections, related, byDirector, genre: firstGenre ?? null, amazonTag: AMAZON_TAG },
     });
   }
 
@@ -177,11 +203,12 @@ export function routes(): Route[] {
       path: `discover/${c.slug}`,
       template: 'collection',
       seo: {
-        title: `${c.name}: Trailers & Where to Stream or Rent Each One` + SUFFIX,
+        title: fitTitle(`${c.name}: Where to Watch Each One` + SUFFIX, `${c.name}: Where to Watch Each One`, `${c.name}: Where to Watch`, c.name),
         rawTitle: true,
-        description:
+        description: clip(
           c.metaDescription ??
-          `${c.name}: watch the trailer for each of ${list.length} films, then see where to stream, rent or buy it in the US, with a direct Prime Video link.`,
+            `${c.name}: where to stream, rent or buy each of ${list.length} films in the US, with the trailer for every one and a direct Prime Video link.`,
+        ),
         image: list[0] ? thumb(list[0].youtubeId) : undefined,
       },
       schema: [

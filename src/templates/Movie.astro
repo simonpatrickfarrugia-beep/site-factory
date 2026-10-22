@@ -7,10 +7,11 @@ interface Props {
   movie: Movie;
   inCollections: { slug: string; name: string; count: number }[];
   related: { slug: string; name: string; year: string | null; youtubeId: string }[];
+  byDirector?: { slug: string; name: string; year: string | null; youtubeId: string }[];
   genre: string | null;
   amazonTag: string;
 }
-const { movie: m, inCollections, related, genre, amazonTag } = Astro.props;
+const { movie: m, inCollections, related, byDirector = [], genre, amazonTag } = Astro.props;
 
 const runtime = m.runtimeMinutes
   ? `${Math.floor(m.runtimeMinutes / 60)}h ${String(m.runtimeMinutes % 60).padStart(2, '0')}m`
@@ -41,6 +42,36 @@ const amazonSearch = (dept: 'instant-video' | 'movies-tv') =>
 const primeUrl = m.rentBuyUrl ? tagAmazon(m.rentBuyUrl) : amazonSearch('instant-video');
 const discUrl = amazonSearch('movies-tv');
 const justWatchUrl = `https://www.justwatch.com/us/search?q=${encodeURIComponent(m.name)}`;
+
+// "Is it worth watching?": plain answers built only from facts we hold (IMDb score, US rating, runtime,
+// box office). No invented opinions; streaming services aren't named as having it, because we don't track that.
+const r = typeof m.imdbRating === 'number' ? m.imdbRating : null;
+const g = (m.genres[0] ?? 'this kind of film').toLowerCase();
+const verdict =
+  r === null ? null
+  : r >= 8 ? `Yes. It's rated ${r}/10 on IMDb, which puts it among the best-reviewed films there. A safe pick if you haven't seen it.`
+  : r >= 7 ? `Most people think so. It holds ${r}/10 on IMDb, a strong score.`
+  : r >= 6 ? `It splits opinion: ${r}/10 on IMDb. Worth it if you enjoy ${g} films.`
+  : `Reviews are mixed (${r}/10 on IMDb), so watch the trailer above first and decide.`;
+const gross = Number((m.boxOffice ?? '').replace(/[^0-9]/g, '')) || 0;
+const hit = gross >= 100_000_000 ? ` It was a big hit too, taking ${m.boxOffice} at the US box office.` : '';
+const length = m.runtimeMinutes
+  ? `${runtime}${m.runtimeMinutes < 95 ? ': a short one, easy for a weeknight.' : m.runtimeMinutes <= 130 ? ': a standard movie-night length.' : m.runtimeMinutes <= 150 ? ': on the long side, so start early.' : ': a long one. Settle in for the evening.'}`
+  : null;
+const ratings: Record<string, string> = {
+  G: 'Rated G in the US: fine for all ages.',
+  PG: 'Rated PG in the US: fine for most kids, though some scenes may need a parent nearby.',
+  'PG-13': 'Rated PG-13 in the US: better for teens; some material may not suit under-13s.',
+  R: 'Rated R in the US: for adults, or under-17s with a parent.',
+  'NC-17': 'Rated NC-17 in the US: adults only.',
+};
+const kids = m.rating ? ratings[m.rating] ?? null : null;
+const faq = [
+  verdict && { q: `Is ${m.name} worth watching?`, a: verdict + hit },
+  length && { q: `How long is ${m.name}?`, a: length },
+  kids && { q: `Is ${m.name} OK for kids?`, a: kids },
+  { q: `Where can I stream ${m.name}?`, a: `You can rent or buy it on Prime Video in the US (button above). For subscription services, JustWatch shows where it's streaming today, since that changes month to month.` },
+].filter(Boolean) as { q: string; a: string }[];
 ---
 <article class="movie">
   <div class="movie__screen">
@@ -69,6 +100,18 @@ const justWatchUrl = `https://www.justwatch.com/us/search?q=${encodeURIComponent
             <a class="button button--quiet" href={justWatchUrl} rel="noopener" target="_blank" data-cta="justwatch">Where else to stream</a>
           </p>
         </section>
+
+        {faq.length > 1 && (
+          <section class="worth" aria-labelledby="worth-heading">
+            <h2 id="worth-heading">Is {m.name} worth watching?</h2>
+            {faq.map((f, i) => (
+              <div class="worth__item">
+                {i > 0 && <h3>{f.q}</h3>}
+                <p>{f.a}</p>
+              </div>
+            ))}
+          </section>
+        )}
       </div>
 
       {facts.length > 0 && (
@@ -89,6 +132,15 @@ const justWatchUrl = `https://www.justwatch.com/us/search?q=${encodeURIComponent
         <ul class="chip-list">
           {inCollections.map((c) => <li><a class="chip" href={c.href ?? `/discover/${c.slug}`}>{c.name}</a></li>)}
         </ul>
+      </section>
+    )}
+
+    {byDirector.length > 0 && (
+      <section class="band" aria-labelledby="by-director">
+        <h2 id="by-director">More from {m.director}</h2>
+        <div class="grid grid--cards">
+          {byDirector.map((r) => <MovieCard {...r} />)}
+        </div>
       </section>
     )}
 
