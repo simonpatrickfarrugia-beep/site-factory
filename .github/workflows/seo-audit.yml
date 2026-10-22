@@ -1,0 +1,16 @@
+# Live SEO audit of a site (Claude runs this from chat). Results in the run summary and the annotation titled "seo".
+name: seo-audit
+on:
+  workflow_dispatch:
+    inputs:
+      site:
+        description: Site root, e.g. https://communityhelp.com.au
+        required: true
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - run: python3 scripts/seo_audit.py "${{ inputs.site }}" && cat seo.md >> "$GITHUB_STEP_SUMMARY"
+      - run: echo "::notice title=seo::$(sed 's/%/%25/g' seo.md | sed ':a;N;$!ba;s/\n/%0A/g' | cut -c1-30000)"
