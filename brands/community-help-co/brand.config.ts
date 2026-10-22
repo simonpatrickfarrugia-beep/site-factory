@@ -13,6 +13,7 @@ export default defineBrand({
   fonts: { display: 'Outfit', body: 'Atkinson Hyperlegible Next' },
   logo: { src: '/logo-mark.png', alt: '', width: 61, height: 36 },
   favicon: '/favicon.png',
+  shareImage: '/share.png',
 
   nav: [
     { label: 'Life goals', href: '/life-goals-mentoring' },

@@ -52,8 +52,8 @@ const tokenCss = `:root{${Object.entries(tokens).map(([k, v]) => `${k}:${v}`).jo
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    {image && <meta property="og:image" content={image} />}
-    <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+    {(image || brand.shareImage) && <meta property="og:image" content={image ?? new URL(brand.shareImage!, Astro.site).toString()} />}
+    <meta name="twitter:card" content={image || brand.shareImage ? 'summary_large_image' : 'summary'} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

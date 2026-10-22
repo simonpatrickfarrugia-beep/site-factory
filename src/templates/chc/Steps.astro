@@ -1,7 +1,7 @@
 ---
 import BookCta from './BookCta.astro';
-interface Props { book: string; title: string; lede: string; steps: { t: string; d: string }[] }
-const { book, title, lede, steps } = Astro.props;
+interface Props { book: string; title: string; lede: string; steps: { t: string; d: string }[]; sections?: { h: string; p: string[] }[] }
+const { book, title, lede, steps, sections = [] } = Astro.props;
 ---
 <section class="chc-pagehead">
   <div class="chc-wrap">
@@ -11,6 +11,10 @@ const { book, title, lede, steps } = Astro.props;
 </section>
 <section class="chc-section chc-wrap">
   <ol class="chc-steps chc-steps--big">{steps.map((st) => <li><h2>{st.t}</h2><p>{st.d}</p></li>)}</ol>
-  <p class="chc-small">Sessions are online on Microsoft Teams. Written notes come by email after each session.</p>
 </section>
+{sections.length > 0 && (
+  <section class="chc-wrap chc-section chc-section--tight chc-prose">
+    {sections.map((sec) => <><h2 class="chc-h2">{sec.h}</h2>{sec.p.map((para) => <p>{para}</p>)}</>)}
+  </section>
+)}
 <BookCta book={book} />

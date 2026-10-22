@@ -17,6 +17,8 @@ export const brandSchema = z.object({
   theme: z.enum(['cinematic', 'editorial', 'coastal', 'roadtrip', 'calm']),
   /** Optional logo mark shown before the name in the header (file in brands/<slug>/public). */
   logo: z.object({ src: z.string(), alt: z.string().default(''), width: z.number(), height: z.number() }).optional(),
+  /** Default social share image (1200x630) in brands/<slug>/public, used when a page has none. */
+  shareImage: z.string().optional(),
   /** Optional favicon in brands/<slug>/public. */
   favicon: z.string().optional(),
   colors: z.object({ brand: hex, accent: hex }),
