@@ -37,6 +37,7 @@ ok((await pv.textContent()).includes('Night packer'), 'added job appears in prev
 await page.locator('[data-list="work"] .rb-item').last().getByRole('button', { name: 'Remove' }).click();
 ok((await page.locator('[data-list="work"] .rb-item').count()) === jobsBefore && !(await pv.textContent()).includes('Night packer'), 'removed job disappears');
 
+await page.locator('summary', { hasText: '8. Referees' }).click();
 await page.locator('input[name="refs"][value="list"]').check();
 await page.locator('[data-f="referees"]').fill('Alex Smith, Manager, 0400 111 222');
 ok((await pv.textContent()).includes('Alex Smith'), 'listed referees appear');
