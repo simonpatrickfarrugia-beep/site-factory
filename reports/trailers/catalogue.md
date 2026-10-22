@@ -1,8 +1,8 @@
 # Trailer channel catalogue candidates
 
-Updated 2026-10-19. Monthly Google searches in United States for "<film> movie" + "<film> trailer". Any year; films still in cinemas wait until they can be rented or streamed.
+Updated 2026-10-22. Monthly Google searches in United States for "<film> movie" + "<film> trailer". Any year; films still in cinemas wait until they can be rented or streamed.
 
-176 waiting · 50 sent to the pipeline · 1 already on the site · 0 skipped.
+146 waiting · 80 sent to the pipeline · 1 already on the site · 0 skipped.
 
 Add films by chat: "add candidates: <theme or list>". The weekly run queues the most-searched ones.
 
@@ -31,36 +31,6 @@ Add films by chat: "add candidates: <theme or list>". The weekly run queues the 
 
 | Film | Searches/mo | Theme |
 |---|---:|---|
-| Sleepless in Seattle (1993) | 135,590 | 90s favourites |
-| Shaun of the Dead (2004) | 135,590 | 2000s crowd-pleasers |
-| Citizen Kane (1941) | 135,480 | Classic Hollywood |
-| True Grit (2010) | 135,480 | Westerns |
-| Who Framed Roger Rabbit (1988) | 135,480 | Family classics |
-| Caddyshack (1980) | 135,390 | 80s comedy |
-| Gran Torino (2008) | 135,390 | 2000s crowd-pleasers |
-| The Sound of Music (1965) | 135,320 | Classic Hollywood |
-| Beverly Hills Cop (1984) | 135,260 | 80s action |
-| Coming to America (1988) | 135,260 | 80s comedy |
-| Singin' in the Rain (1952) | 135,210 | Classic Hollywood |
-| Airplane! (1980) | 112,900 | 80s comedy |
-| The Hills Have Eyes (1977) | 111,600 | 70s horror |
-| Misery (1990) | 111,300 | 90s thrillers |
-| Annie Hall (1977) | 110,590 | 70s New Hollywood |
-| Chitty Chitty Bang Bang (1968) | 110,590 | Family classics |
-| Trading Places (1983) | 110,480 | 80s comedy |
-| Sixteen Candles (1984) | 110,390 | 80s comedy |
-| The NeverEnding Story (1984) | 110,390 | 80s sci-fi & fantasy |
-| Casablanca (1942) | 110,390 | Classic Hollywood |
-| Clerks (1994) | 110,320 | Cult classics |
-| Eraserhead (1977) | 110,260 | Cult classics |
-| Saturday Night Fever (1977) | 110,210 | 70s New Hollywood |
-| Pirates of the Caribbean: The Curse of the Black Pearl (2003) | 99,000 | 2000s crowd-pleasers |
-| Labyrinth (1986) | 92,100 | 80s sci-fi & fantasy |
-| Zodiac (2007) | 91,500 | 2000s crowd-pleasers |
-| Grease (1978) | 91,380 | 70s New Hollywood |
-| Carrie (1976) | 91,380 | 70s horror |
-| Escape from New York (1981) | 91,220 | 80s action |
-| Weird Science (1985) | 91,220 | 80s comedy |
 | The Dark Crystal (1982) | 91,090 | 80s sci-fi & fantasy |
 | Galaxy Quest (1999) | 90,980 | 90s comedy |
 | The Great Escape (1963) | 90,980 | Classic Hollywood |
@@ -91,3 +61,33 @@ Add films by chat: "add candidates: <theme or list>". The weekly run queues the 
 | Matilda (1996) | 61,800 | Family classics |
 | Friday the 13th (1980) | 61,380 | 80s horror |
 | Akira (1988) | 61,220 | Cult classics |
+| Groundhog Day (1993) | 61,090 | 90s comedy |
+| Twins (1988) | 60,890 | 80s comedy |
+| Once Upon a Time in the West (1968) | 60,890 | Westerns |
+| The Rocky Horror Picture Show (1975) | 60,590 | Cult classics |
+| Evil Dead II (1987) | 60,510 | 80s horror |
+| The Shining (1980) | 53,100 | 80s horror |
+| Back to the Future (1985) | 51,400 | 80s comedy |
+| Dumb and Dumber (1994) | 50,800 | 90s comedy |
+| Ghostbusters (1984) | 50,380 | 80s comedy |
+| Willow (1988) | 50,090 | 80s sci-fi & fantasy |
+| Videodrome (1983) | 49,980 | 80s horror |
+| The Fog (1980) | 49,890 | 80s horror |
+| Three Amigos! (1986) | 49,820 | 80s comedy |
+| Phantasm (1979) | 49,760 | 70s horror |
+| Clear and Present Danger (1994) | 49,760 | 90s thrillers |
+| Chinatown (1974) | 49,710 | 70s New Hollywood |
+| The Terminator (1984) | 49,640 | 80s action |
+| The Searchers (1956) | 49,640 | Westerns |
+| Enter the Dragon (1973) | 49,610 | Hong Kong action |
+| The Hangover (2009) | 41,500 | 2000s crowd-pleasers |
+| Babe (1995) | 41,500 | Australian classics |
+| The Wicker Man (1973) | 40,890 | 70s horror |
+| Repo Man (1984) | 40,760 | Cult classics |
+| In the Line of Fire (1993) | 40,710 | 90s thrillers |
+| Rebel Without a Cause (1955) | 40,610 | Classic Hollywood |
+| The French Connection (1971) | 40,590 | 70s New Hollywood |
+| Big (1988) | 35,000 | 80s comedy |
+| Tremors (1990) | 33,980 | Cult classics |
+| The Thing (1982) | 33,820 | 80s horror |
+| First Blood (1982) | 33,310 | 80s action |
