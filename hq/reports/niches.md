@@ -1,6 +1,6 @@
 # Niche finder
 
-Updated 2026-10-21. Google searches in the United States unless an idea says otherwise (Market column). Score = 30% demand + 25% money (CPC) + 25% ease (SEO difficulty) + 20% fit (Claude: data source, automation, monetisation, risk).
+Updated 2026-10-22. Google searches in the United States unless an idea says otherwise (Market column). Score = 30% demand + 25% money (CPC) + 25% ease (SEO difficulty) + 20% fit (Claude: data source, automation, monetisation, risk).
 
 Add ideas by chat: "score these niches: …". Rules: launch at most one new site a month, only while the last one is on track.
 
@@ -19,6 +19,9 @@ Add ideas by chat: "score these niches: …". Rules: launch at most one new site
 | 9 | Book series in reading order | United States | **53** | 90 | 25 | 50 | 38 | 4,912,700 | $0.27 | — |
 | 10 | Movie soundtracks and film music | United States | **53** | 79 | 0 | 81 | 45 | 2,377,600 | $0.08 | 19 |
 | 11 | Victoria: where to eat by town | Australia | **51** | 40 | 41 | 96 | 22 | 155,710 | $0.50 | 4 |
+| 12 | Australian clothing brands directory (beason.com.au) | Australia | **50** | 43 | 61 | 60 | 34 | 189,760 | $1.09 | 40 |
+| 13 | Australian winter wear: beanies, jackets and knitwear | Australia | **50** | 13 | 57 | 96 | 38 | 24,330 | $0.92 | 4 |
+| 14 | Australian loungewear and comfortwear brands | Australia | **42** | 0 | 55 | 90 | 28 | 7,150 | $0.86 | 10 |
 
 ## Dog breeds: 75/100
 
@@ -586,25 +589,177 @@ _Seeds: movie soundtrack, film score, soundtrack vinyl, best movie soundtracks, 
 
 _Seeds: best restaurants daylesford, restaurants bright, restaurants lorne, best restaurants geelong, yarra valley restaurants, winery lunch yarra valley. Data cost: US$0.114._
 
+## Australian clothing brands directory (beason.com.au): 50/100
+
+**Verdict:** The head queries are large but cheap (CPC mostly $0.50 to $1.40), and the attributes you want per brand (made in AU, materials, sizes, ethics) aren't in any free structured source, so the database would need manual research that doesn't scale to hundreds of pages. Only a narrower, feed-driven angle is worth testing.
+
+**Site angle:** beason.com.au as a swimwear and dress directory: one page per Australian swimwear or dress brand, built from Commission Factory merchant and product feeds (price, sizes, stock, product lists), with a small hand-verified set of made-in and materials fields. Start with about 30 brands before generating anything at scale.
+
+**Data sources:** Commission Factory merchant list and product feeds, available to publishers under program terms (price, sizes, stock, product URLs); ABN Lookup bulk extract from the Australian Business Register (free, CC-BY licensed; confirms registered entity names and dates, not made-in or materials); Brand and retailer websites checked manually for made-in, materials and ethics claims, with source URL stored per field; Wikidata for a small seed set of Australian fashion brands (sparse, mainly a starting list)
+
+**Money:** Commission Factory affiliate links to Australian fashion merchants (confirm the swimwear and dress programs and their commission rates before building); Awin and Rakuten fashion programs as secondary networks; Display ads, weak for fashion RPM and only worth it at high traffic
+
+**Page types:** /brands/[brand-slug]: one page per brand with verified attributes, feed-sourced price range and sizes, and affiliate outbound links; /swimwear/australian-swimsuit-brands and /dresses/australian-dress-brands: category lists; /brands/[brand-slug]/sizes: only if the size data is real and verified per brand; Avoid city or state combinations; the data doesn't support them and they create thin pages
+
+**Risks:** Thin or templated pages: AI copy over a few fields will be read as mass-produced text; each page needs real, verified attributes or it should not be published; Ethics and sustainability claims are brand self-declarations; labelling a brand ethical without evidence risks misleading-conduct issues under the Australian Consumer Law and greenwashing scrutiny; Scraping brand sites for sizes or prices may breach terms of service; prefer feeds and manual checks; Keyword volume is misleading: the 8100/mo group is one cluster of near-identical variants, and the head term carries a low CPC, which signals weak commercial intent; Brand-name queries (for example ghanda aus, australian urban outfitters) target specific retailers, not a directory, and invite trademark or brand-owner disputes if used in page titles; Affiliate program terms may restrict feed use, caching or republishing of product data; check before building; Fashion affiliate payouts are often low, and brands may pull or change programs, so revenue per page is unstable; Ghanda aus, the Australian urban outfitters and the many brand-specific queries show most search demand is for named brands the site would only ever be a thin aggregator for
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| australian urban outfitters | 5,400 | 7 | $0.47 |
+| australian womens workwear | 1,600 | 1 | $1.10 |
+| australian sportswear brands | 1,300 | 12 | $1.73 |
+| clothing designers australia | 1,300 | 6 | $1.00 |
+| australian fashion designer dresses | 1,300 | 6 | $1.00 |
+| australian fashion houses | 1,300 | 6 | $1.00 |
+| australian made clothing | 1,000 | 18 | $1.32 |
+| australian streetwear brands | 1,000 | 24 | $1.09 |
+| mango clothing australia | 1,000 | 1 | $0.61 |
+| clothes manufacturing australia | 1,000 | 0 | $4.26 |
+| australia streetwear brands | 1,000 | 24 | $1.09 |
+| australian female fashion brands | 1,000 | 16 | $0.75 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| australian clothing brands | 8,100 | 43 | $0.69 |
+| australian fashion brands | 8,100 | 33 | $0.69 |
+| womens clothing australia | 8,100 | 55 | $1.09 |
+| womens fashion australia | 8,100 | 55 | $1.09 |
+| aus clothing brands | 8,100 | 84 | $0.69 |
+| clothing australia womens | 8,100 | 55 | $1.09 |
+| womens fashion aus | 8,100 | 55 | $1.09 |
+| australian apparel brands | 8,100 | 43 | $0.69 |
+| australia apparel brands | 8,100 | 43 | $0.69 |
+| australian garment brands | 8,100 | 43 | $0.69 |
+| australian womens wear | 8,100 | — | $1.09 |
+| australian urban outfitters | 5,400 | 7 | $0.47 |
+| australian designers dress | 2,900 | 39 | $0.64 |
+| ghanda aus | 2,900 | — | $0.09 |
+| australian swimsuit brands | 2,400 | 45 | $1.03 |
+
+_Seeds: australian clothing brands, australian made clothing, australian fashion brands, sustainable clothing brands australia, australian streetwear brands. Data cost: US$0.114._
+
+## Australian winter wear: beanies, jackets and knitwear: 50/100
+
+**Verdict:** Commercially weak and seasonal: the best terms (merino, beanies) are small, search volume is modest, and most product-listing pages would be thin unless weather data drives them. It only works as a weather-led guide site with a few hundred genuinely distinct pages, and it has to be built before March to catch the May-August window.
+
+**Site angle:** An Australian 'what to wear this week' site: city and suburb pages that turn BOM or Open-Meteo forecast and historical data (min temp, wind chill, rain, UV) into specific layering and jacket/beanie/merino recommendations, plus a small set of material guides (merino vs wool vs puffer) and beanie buying guides. Product picks come from affiliate feeds, not from generated listing pages.
+
+**Data sources:** Bureau of Meteorology open data (observations and forecasts by station/postcode); Open-Meteo API (free, historical and forecast, Australian coordinates); ABS postcode and locality data (page targets and population weighting); Commission Factory merchant product feeds (approval-gated, for real prices, stock and images where licence allows); Google Trends and the keyword export for prioritising material and city terms
+
+**Money:** Commission Factory affiliate links to AU outdoor and fashion retailers (check which brands are actually on the network, e.g. Kathmandu, Macpac, Icebreaker, Rip Curl); Amazon Associates AU for beanies and merino basics; Display ads on weather pages (low RPM, seasonal, so treat as a supplement)
+
+**Page types:** /weather/[city-or-suburb]/what-to-wear/ (forecast-driven, refreshed daily from BOM/Open-Meteo); /[city]/winter-jackets-for-[temp-band]/ (e.g. below-10C, wind-chill, rainy days); /merino/[use-case]/ (thermals, base layers, activity-specific); /beanies/[material-or-fit]/ (merino, personalised, kids, sizing); /womens-winter-coats/[style]/ and /mens-winter-jackets/[style]/ (only with real feed data and distinct buyer guidance)
+
+**Risks:** Seasonality: about four months of demand a year, so cash flow and Google ranking build-up are compressed; no meaningful traffic outside May-August; Thin-content penalty if city or temperature pages differ only by place name; each page needs data-driven, unique recommendations; Keyword volumes are small (most terms under 1,000/mo; the top clusters are mostly the same coat terms in different wording); a few hundred pages will not produce large traffic; Kd values of 0 on many terms look like tool artefacts and should be verified in a second source before committing; Affiliate feed approval and merchant terms may block image use or price display; some brands may not be on Commission Factory at all; Competition from large retailers and comparison sites (Kathmandu, Target, Myer, Amazon) with far larger domain authority on product terms; Weather-data licensing: BOM terms of use and attribution requirements must be checked before scaling; Google's helpful-content and spam policies apply to scaled AI copy; copy must be reviewed and grounded in the data, not generic
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| ladies winter coats australia sale | 1,300 | 0 | $0.59 |
+| women's winter jackets australia | 880 | 0 | $0.68 |
+| ladies winter coats australia | 880 | 0 | $0.68 |
+| womens winter coats australia | 880 | 0 | $0.68 |
+| ladies winter jackets australia | 880 | 0 | $0.68 |
+| woollen jumpers australia | 720 | 0 | $0.94 |
+| men's winter jackets australia | 720 | 0 | $0.44 |
+| beanies australia | 590 | 0 | $0.98 |
+| beanie au | 590 | 0 | $0.98 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| ladies winter coats australia sale | 1,300 | 0 | $0.59 |
+| icebreaker clothes australia | 1,300 | — | $0.63 |
+| women's winter jackets australia | 880 | 0 | $0.68 |
+| ladies winter coats australia | 880 | 0 | $0.68 |
+| womens winter coats australia | 880 | 0 | $0.68 |
+| ladies winter jackets australia | 880 | 0 | $0.68 |
+| woollen jumpers australia | 720 | 0 | $0.94 |
+| men's winter jackets australia | 720 | 0 | $0.44 |
+| beanies australia | 590 | 0 | $0.98 |
+| beanie au | 590 | 0 | $0.98 |
+| winter jackets australia | 480 | 5 | $0.92 |
+| merino wool clothing australia | 480 | 0 | $1.40 |
+| winter coats australia | 480 | 0 | $0.92 |
+| merino clothing australia | 480 | 34 | $1.40 |
+| winter coat au | 480 | 0 | $0.92 |
+
+_Seeds: beanies australia, winter jackets australia, merino wool clothing australia, australian knitwear brands, best winter jacket australia. Data cost: US$0.114._
+
+## Australian loungewear and comfortwear brands: 42/100
+
+**Verdict:** Keyword demand is thin: the whole list is roughly 4,000 searches a month across near-duplicate groups, and the largest clusters are generic retail queries that big retailers and Google Shopping already own. It only works if merchant feeds give each page live price, size and stock data that a human-written guide can't match, and that data needs formal affiliate-feed access.
+
+**Site angle:** A price-and-stock comparison directory for about 30-50 Australian comfortwear brands. Each brand gets a page, and each category (hoodies, track pants, lounge sets) gets a comparison page built from live feed data, with a 'price drops this week' page. Skip generic 'best X' guides as the core product.
+
+**Data sources:** Commission Factory merchant product feeds for approved Australian fashion/apparel merchants (price, stock, sizes, images, deep links), accessed under each merchant's programme terms; Awin and other AU affiliate-network product feeds where the merchant offers them; ABN Lookup bulk extract (free, government data) to verify brand legal entity names and ABNs for brand pages; Google Search Console and Keyword Planner exports to prioritise which brand and category pages to build
+
+**Money:** Commission Factory affiliate commissions on approved fashion merchants (commission rates vary widely, and fashion is often low single digits to low double digits; verify per merchant); Awin and other affiliate networks where the same merchants are listed; Display ads once traffic clears a meaningful threshold (unlikely at this search volume)
+
+**Page types:** /brand/[brand-slug]/ for each approved brand with live price range, stock status and category links; /brand/[brand-slug]/[category]/ e.g. /brand/example-brand/track-pants/ built from feed rows; /[category]/[state-or-city]/ only if you have real per-location stock or pickup data, otherwise skip; /price-drops/ and /new-arrivals/ generated from daily feed diffs; /compare/[brand-a]-vs-[brand-b]/ using only feed attributes (fabric, price, sizes), not invented reviews
+
+**Risks:** Total search demand is small: the largest group is about 720/mo, and many 'best' queries sit at 30-70/mo, so traffic ceiling is low; Affiliate feed access is not guaranteed; many brands restrict feed use or require approval, and feed terms may ban redistribution or caching of prices; Price and stock data goes stale fast; out-of-date prices on affiliate pages create trust and compliance problems (Australian Consumer Law misleading-pricing risk if prices are shown incorrectly); Google may treat feed-only pages as thin or duplicate content unless each brand page has real editorial context, which is the core helpful-content risk here; Competition from Google Shopping, Myer, Kmart, Big W and brand sites on the head terms; ranking for 'loungewear sets australia' is unlikely at KD 0-1 without authority; Commission rates and cookie windows change; don't model revenue on the feed alone without actual click and sales data; Copyright: do not copy brand product descriptions or photos beyond what feed terms allow; write your own attributes and use links to source images
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| loungewear sets australia | 720 | 1 | $0.85 |
+| lounge sets australia | 720 | 0 | $0.85 |
+| lounge wear sets australia | 720 | 0 | $0.85 |
+| loungewear australia | 590 | 6 | $1.12 |
+| lounge wear aus | 590 | 6 | $1.12 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| loungewear sets australia | 720 | 1 | $0.85 |
+| lounge sets australia | 720 | 0 | $0.85 |
+| lounge wear sets australia | 720 | 0 | $0.85 |
+| loungewear australia | 590 | 6 | $1.12 |
+| lounge wear aus | 590 | 6 | $1.12 |
+| loungewear underwear australia | 480 | 0 | $1.38 |
+| womens track pants australia | 260 | 0 | $0.92 |
+| ladies track pants australia | 260 | 0 | $0.92 |
+| best hoodies australia | 210 | 0 | $0.85 |
+| women's loungewear sets australia | 210 | 0 | $0.69 |
+| best hoodie brands australia | 170 | 1 | $0.65 |
+| good quality hoodies australia | 170 | 2 | $1.67 |
+| trackpants australia | 140 | — | $1.49 |
+| luxury loungewear australia | 140 | 0 | $1.15 |
+| mens track pants australia | 110 | 0 | $1.61 |
+
+_Seeds: loungewear australia, australian loungewear brands, best hoodies australia, trackpants australia, comfortable clothes australia. Data cost: US$0.114._
+
 ## Money map: estimated revenue at maturity
 
 Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits × affiliate clicks × conversion × payout (average of the top 3 matching programmes), plus display ads. These numbers rank ideas against each other; they are not forecasts. They get replaced by our own measured rates as our sites earn.
 
-**Model:** Calibrated from 279 page views, 0 affiliate clicks and 0 reported sales (trailers): click rate 4.4% (assumed 5.0%), conversion 5.0% (assumed 5.0%). The assumption weighs as much as 2,000 views / 200 clicks, so real data takes over as it grows.
+**Model:** Calibrated from 275 page views, 0 affiliate clicks and 0 reported sales (trailers, vic): click rate 4.4% (assumed 5.0%), conversion 5.0% (assumed 5.0%). The assumption weighs as much as 2,000 views / 200 clicks, so real data takes over as it grows.
 
 | Idea | Market | Visits/mo (mid) | Est. revenue/mo (low · mid · high) | Avg payout per sale | Score |
 |---|---|---:|---|---:|---:|
-| Dog breeds | United States | 274,520 | $1,501 · **$13,985** · $67,570 | $18.33 | 75 |
-| US national parks and hiking trails | United States | 89,156 | $311 · **$2,709** · $12,571 | $9 | 74 |
-| Anime: where to watch and watch order | United States | 102,419 | $198 · **$1,455** · $5,981 | $1.7 | 70 |
-| TV shows: where to watch | United States | 27,719 | $110 · **$769** · $3,024 | $1.7 | 73 |
-| Video games: release dates and trailers | United States | 70,520 | $60 · **$463** · $1,982 | $1.17 | 62 |
-| Book series in reading order | United States | 24,564 | $22 · **$176** · $764 | $1.43 | 53 |
-| Victoria: where to stay by town | Australia | 3,903 | $16 · **$144** · $674 | $11.33 | 66 |
+| Dog breeds | United States | 274,520 | $1,503 · **$14,004** · $67,669 | $18.33 | 75 |
+| US national parks and hiking trails | United States | 89,156 | $312 · **$2,712** · $12,587 | $9 | 74 |
+| Anime: where to watch and watch order | United States | 102,419 | $198 · **$1,456** · $5,984 | $1.7 | 70 |
+| TV shows: where to watch | United States | 27,719 | $110 · **$769** · $3,025 | $1.7 | 73 |
+| Video games: release dates and trailers | United States | 70,520 | $60 · **$463** · $1,984 | $1.17 | 62 |
+| Book series in reading order | United States | 24,564 | $22 · **$176** · $765 | $1.43 | 53 |
+| Victoria: where to stay by town | Australia | 3,903 | $16 · **$144** · $675 | $11.33 | 66 |
 | Movie soundtracks and film music | United States | 11,888 | $11 · **$85** · $370 | $1.43 | 53 |
 | Board games | United States | 11,226 | $10 · **$79** · $345 | $1.4 | 61 |
 | Victoria: things to do by town | Australia | 1,769 | $6 · **$53** · $259 | $11.33 | 60 |
-| Victoria: where to eat by town | Australia | 779 | $2 · **$18** · $90 | $9 | 51 |
+| Victoria: where to eat by town | Australia | 779 | $2 · **$19** · $91 | $9 | 51 |
+| Australian clothing brands directory (beason.com.au) | Australia | 949 | $2 · **$16** · $68 | $3.5 | 50 |
+| Australian winter wear: beanies, jackets and knitwear | Australia | 122 | $0 · **$3** · $16 | $9 | 50 |
+| Australian loungewear and comfortwear brands | Australia | 36 | $0 · **$1** · $5 | $9 | 42 |
 
 ## Programmes to consider, by idea
 
@@ -724,6 +879,35 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Viator Partner Program | ~8% of booking value | easy | Website with travel content | not applied |
 | GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | not applied |
 | Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | not applied |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | not applied |
+
+### Australian clothing brands directory (beason.com.au)
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Ruffwear (dog gear) | ~8% | easy | check | not applied |
+| Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | not applied |
+
+### Australian winter wear: beanies, jackets and knitwear
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
+| Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
+| Ruffwear (dog gear) | ~8% | easy | check | not applied |
+| Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | not applied |
+
+### Australian loungewear and comfortwear brands
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
+| Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
+| Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
 | Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | not applied |
 
 ## Ad networks (when traffic qualifies)
