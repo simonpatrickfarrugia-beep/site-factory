@@ -5,7 +5,7 @@ name: indexnow
 on:
   push:
     branches: [main]
-    paths: ['data/trailers/movies.json', 'data/trailers/collections.json', 'data/vic/places.json', 'data/vic/content.json']
+    paths: ['data/trailers/movies.json', 'data/trailers/collections.json', 'data/vic/places.json', 'data/vic/content.json', 'data/community-help-co/**']
   workflow_dispatch:
     inputs:
       mode:
@@ -13,9 +13,9 @@ on:
         options: [changed, all]
         default: all
       site:
-        description: Which site (vic submits every URL in its live sitemap)
+        description: Which site (vic and community-help-co submit every URL in their live sitemap)
         type: choice
-        options: [trailers, vic]
+        options: [trailers, vic, community-help-co]
         default: trailers
 jobs:
   ping:
@@ -27,30 +27,36 @@ jobs:
       - name: Wait for the site deploy
         if: github.event_name == 'push'
         run: sleep 200
-      - name: Vic Tours (sitemap-based)
-        if: inputs.site == 'vic' || (github.event_name == 'push' && contains(join(github.event.commits.*.modified, ' '), 'data/vic/'))
+      - name: Sitemap-based sites (Vic Tours, Community Help Co)
+        if: inputs.site == 'vic' || inputs.site == 'community-help-co' || (github.event_name == 'push' && (contains(join(github.event.commits.*.modified, ' '), 'data/vic/') || contains(join(github.event.commits.*.modified, ' '), 'data/community-help-co/')))
+        env:
+          SITE: ${{ inputs.site }}
+          CHANGED: ${{ join(github.event.commits.*.modified, ' ') }}
         run: |
           python3 - <<'PY'
-          import json, re, urllib.request
-          host, key = 'victours.com.au', '6c1f961ff6f1023985f899a7bbd06282'
-          xml = urllib.request.urlopen(urllib.request.Request(f'https://{host}/sitemap.xml', headers={'User-Agent': 'SiteFactory-IndexNow'}), timeout=30).read().decode()
-          urls = re.findall(r'<loc>([^<]+)</loc>', xml)
-          body = json.dumps({'host': host, 'key': key, 'keyLocation': f'https://{host}/{key}.txt', 'urlList': urls[:10000]}).encode()
-          for endpoint in ('https://api.indexnow.org/indexnow', 'https://www.bing.com/indexnow'):
-              try:
-                  code = urllib.request.urlopen(urllib.request.Request(endpoint, data=body, headers={'content-type': 'application/json; charset=utf-8'}), timeout=30).status
-              except urllib.error.HTTPError as e:
-                  code = e.code
-              print(f'::notice title=indexnow::vic {endpoint}: HTTP {code} for {len(urls)} URL(s)')
-              if code in (200, 202): break
+          import json, os, re, urllib.request
+          SITES = {'vic': ('victours.com.au', '6c1f961ff6f1023985f899a7bbd06282'), 'community-help-co': ('communityhelp.com.au', 'ca36fafa9a7318ff6c766b9e701ced31')}
+          wanted = [os.environ['SITE']] if os.environ.get('SITE') in SITES else [s for s in SITES if f'data/{s}/' in os.environ.get('CHANGED', '')]
+          for site in wanted:
+              host, key = SITES[site]
+              xml = urllib.request.urlopen(urllib.request.Request(f'https://{host}/sitemap.xml', headers={'User-Agent': 'SiteFactory-IndexNow'}), timeout=30).read().decode()
+              urls = re.findall(r'<loc>([^<]+)</loc>', xml)
+              body = json.dumps({'host': host, 'key': key, 'keyLocation': f'https://{host}/{key}.txt', 'urlList': urls[:10000]}).encode()
+              for endpoint in ('https://api.indexnow.org/indexnow', 'https://www.bing.com/indexnow'):
+                  try:
+                      code = urllib.request.urlopen(urllib.request.Request(endpoint, data=body, headers={'content-type': 'application/json; charset=utf-8'}), timeout=30).status
+                  except urllib.error.HTTPError as e:
+                      code = e.code
+                  print(f'::notice title=indexnow::{site} {endpoint}: HTTP {code} for {len(urls)} URL(s)')
+                  if code in (200, 202): break
           PY
       - name: Check the key file is live
-        if: inputs.site != 'vic'
+        if: inputs.site == 'trailers' || (github.event_name == 'push' && contains(join(github.event.commits.*.modified, ' '), 'data/trailers/'))
         run: |
           code=$(curl -sS -o key.txt -w '%{http_code}' "https://www.movietrailer.channel/d8f03bdd0f45a76ce44c030bea08ea85.txt")
           echo "::notice title=indexnow-key::HTTP $code, content: $(head -c 60 key.txt | tr -d '\n')"
       - name: Submit
-        if: inputs.site != 'vic'
+        if: inputs.site == 'trailers' || (github.event_name == 'push' && contains(join(github.event.commits.*.modified, ' '), 'data/trailers/'))
         env:
           MODE: ${{ inputs.mode || 'changed' }}
           HOST: www.movietrailer.channel
