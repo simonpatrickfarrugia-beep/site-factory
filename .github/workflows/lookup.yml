@@ -28,7 +28,7 @@ jobs:
               d = {'error': f'HTTP {e.code}: ' + e.read().decode()[:300]}
           except Exception as e:
               d = {'error': repr(e)[:300]}
-          if 'error' in d: print('::error title=lookup::' + d['error'].replace('\n', ' ')); raise SystemExit(1)
+          if 'error' in d: print('::notice title=lookup::ERROR ' + d['error'].replace('\n', ' ')); raise SystemExit(0)  # no failure email
           rows = sorted(d['volumes'].items(), key=lambda kv: -(kv[1] or -1))
           out = '\n'.join(f'{v if v is not None else "-"}\t{k}' for k, v in rows)
           open(os.environ['GITHUB_STEP_SUMMARY'], 'a').write('```\n' + out + '\n```\n')
