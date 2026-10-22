@@ -66,7 +66,7 @@ export interface Env {
   STATUS?: KVNamespace;
 }
 
-type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections' | 'stats' | 'niches' | 'towns' | 'keywords' | 'competition' | 'collcheck';
+type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections' | 'stats' | 'niches' | 'towns' | 'keywords' | 'competition' | 'collcheck' | 'ratings';
 
 /**
  * Workers Free allows 5 cron schedules per ACCOUNT, so the pipeline uses two (see wrangler.jsonc)
@@ -81,7 +81,7 @@ function jobFor(cron: string, at: Date): Job | null {
   if (cron !== DAILY_CRON) throw new Error(`Unknown cron "${cron}"`);
   const hour = at.getUTCHours();
   const day = at.getUTCDate();
-  if (hour === 18) return day === 1 ? 'recheck' : day === 2 ? 'demand' : day === 3 ? 'collections' : null; // 05:00 Melbourne on the 2nd / 3rd / 4th
+  if (hour === 18) return day === 1 ? 'recheck' : day === 2 ? 'demand' : day === 3 ? 'collections' : day === 4 ? 'ratings' : null; // 05:00 Melbourne on the 2nd / 3rd / 4th / 5th
   if (hour === 19) return 'enrich'; // daily, 06:00 Melbourne
   if (hour === 20) return CATALOGUE_DAYS.includes(day) ? 'catalogue' : day === 2 ? 'collcheck' : null; // 07:00 Melbourne (collcheck on the 3rd, before collections on the 4th)
   if (hour === 21) return 'stats'; // 08:00 Melbourne, every day (feeds the daily traffic report)
@@ -122,7 +122,7 @@ export default {
 
   async fetch(req: Request, env: Env): Promise<Response> {
     const url = new URL(req.url);
-    const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue|collections|stats|niches|competition|collcheck|towns|keywords)$/);
+    const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue|collections|stats|niches|competition|collcheck|towns|keywords|ratings)$/);
     if (url.pathname === '/status') {
       if (!env.RUN_KEY || url.searchParams.get('key') !== env.RUN_KEY) return new Response('Forbidden\n', { status: 403 });
       const status = (await env.STATUS?.get('runs', 'json')) ?? {};
@@ -177,6 +177,7 @@ async function tracked(job: Job, env: Env, dryRun: boolean, via: 'schedule' | 'm
 
 const NEEDS: Record<Job, (keyof Env)[]> = {
   intake: ['GITHUB_TOKEN'],
+  ratings: ['GITHUB_TOKEN', 'OMDB_API_KEY'],
   enrich: ['GITHUB_TOKEN', 'OMDB_API_KEY', 'ANTHROPIC_API_KEY'],
   recheck: ['GITHUB_TOKEN', 'OMDB_API_KEY', 'ANTHROPIC_API_KEY'],
   demand: ['GITHUB_TOKEN', 'GSC_SERVICE_ACCOUNT'],
@@ -219,6 +220,7 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
   const now = new Date();
   const minAgeYears = Number(env.MIN_AGE_YEARS ?? '10') || 0;
 
+  if (job === 'ratings') return ratingsJob(env, repo, snap, now, dryRun);
   if (job === 'demand') return demand(env, repo, snap, now, dryRun, maxYear({ now, minAgeYears }));
   if (job === 'catalogue') return catalogue(env, repo, snap, now, dryRun, maxYear({ now, minAgeYears }));
   if (job === 'stats') return statsJob(env, repo, snap, now, dryRun);
@@ -383,6 +385,41 @@ async function demand(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boole
     callsLeft: null,
     report: report.markdown,
   };
+}
+
+/**
+ * Refresh IMDb scores from OMDb. Films imported from Webflow carry rounded scores (8 instead of 8.2), and the film
+ * pages quote the score. Each film is checked once (ratingCheckedAt); after that the monthly run refreshes the oldest.
+ */
+async function ratingsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean) {
+  const movies = JSON.parse(snap.files[MOVIES]) as (Movie & { ratingCheckedAt?: string })[];
+  const due = [...movies].sort((a, b) => (a.ratingCheckedAt ?? '').localeCompare(b.ratingCheckedAt ?? '')).slice(0, 40);
+  let changed = 0, checked = 0;
+  const notes: string[] = [];
+  for (const m of due) {
+    let found;
+    try {
+      found = await omdbLookup(env.OMDB_API_KEY, m.name, Number(m.year) || null);
+    } catch (e) {
+      notes.push(`OMDb failed for "${m.name}": ${(e as Error).message}`);
+      if (/limit/i.test((e as Error).message)) break;
+      continue;
+    }
+    checked++;
+    m.ratingCheckedAt = now.toISOString();
+    const r = Number(found?.imdbRating);
+    if (found && String(found.Year).slice(0, 4) === String(m.year) && Number.isFinite(r) && r > 0 && r !== m.imdbRating) {
+      notes.push(`${m.name}: ${m.imdbRating ?? '-'} → ${r}`);
+      m.imdbRating = r;
+      changed++;
+    }
+  }
+  const left = movies.filter((m) => !m.ratingCheckedAt).length;
+  const log = [`Ratings: checked ${checked}, updated ${changed}; ${left} never checked.`, ...notes.slice(0, 12)];
+  const commit = checked
+    ? await save(repo, snap.sha, { [MOVIES]: JSON.stringify(movies, null, 1) + '\n' }, changed ? `Pipeline: IMDb scores refreshed (${changed} changed)` : 'Pipeline: IMDb scores checked [skip ci]', dryRun, log)
+    : null;
+  return { job: 'ratings' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: changed > 0, queueChanged: false, callsLeft: null };
 }
 
 /** Sites whose dashboards the daily `stats` job refreshes (STATS_SITES in wrangler.jsonc). */

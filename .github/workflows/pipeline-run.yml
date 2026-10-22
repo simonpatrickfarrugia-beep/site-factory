@@ -7,7 +7,7 @@ on:
       job:
         description: Job to run
         type: choice
-        options: [intake, enrich, recheck, demand, catalogue, collections, collcheck, stats, niches, competition, towns, keywords]
+        options: [intake, enrich, recheck, demand, catalogue, collections, collcheck, stats, niches, competition, towns, keywords, ratings]
         default: enrich
       dry:
         description: Dry run (nothing saved)
