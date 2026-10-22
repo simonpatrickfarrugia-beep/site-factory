@@ -1,0 +1,37 @@
+# Browser tests against the live site (Claude runs these from chat). Results in the "uitest" annotation;
+# screenshots are pushed to the branch uitest-shots (git fetch origin uitest-shots).
+name: uitest
+on:
+  workflow_dispatch:
+    inputs:
+      test:
+        description: Test script in scripts/ (e.g. test-resume.mjs)
+        default: test-resume.mjs
+      base:
+        description: Site root
+        default: https://communityhelp.com.au
+jobs:
+  test:
+    runs-on: ubuntu-24.04  # pinned: ubuntu-latest moved to 26.04 in Oct 2026 and broke the Playwright install
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: npm install --no-save --no-audit --no-fund playwright@1 && npx playwright install --with-deps chromium
+      - name: Run
+        id: run
+        continue-on-error: true
+        env:
+          TEST: ${{ inputs.test }}
+          BASE: ${{ inputs.base }}
+        run: node "scripts/$TEST" "$BASE" 2>&1 | tee out.txt; exit ${PIPESTATUS[0]}
+      - name: Report and push screenshots
+        run: |
+          echo "::notice title=uitest::$(sed 's/%/%25/g' out.txt | sed ':a;N;$!ba;s/\n/%0A/g' | cut -c1-20000)"
+          cd shots && git init -q -b shots && git config user.name ci && git config user.email ci@users.noreply.github.com
+          git add . && git commit -qm "UI test shots ${GITHUB_SHA}" && git push -qf "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" shots:refs/heads/uitest-shots
+          [ "${{ steps.run.outcome }}" = "success" ]
+permissions:
+  contents: write
