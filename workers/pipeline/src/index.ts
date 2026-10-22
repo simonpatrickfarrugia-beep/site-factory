@@ -408,6 +408,11 @@ async function ratingsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: b
     checked++;
     m.ratingCheckedAt = now.toISOString();
     const r = Number(found?.imdbRating);
+    // A jump of more than 1.5 points usually means OMDb matched a different film with the same title: flag, don't save.
+    if (found && Number.isFinite(r) && m.imdbRating !== null && Math.abs(r - m.imdbRating) > 1.5) {
+      notes.push(`CHECK ${m.name}: OMDb says ${r}, we have ${m.imdbRating}; not changed`);
+      continue;
+    }
     if (found && String(found.Year).slice(0, 4) === String(m.year) && Number.isFinite(r) && r > 0 && r !== m.imdbRating) {
       notes.push(`${m.name}: ${m.imdbRating ?? '-'} → ${r}`);
       m.imdbRating = r;
