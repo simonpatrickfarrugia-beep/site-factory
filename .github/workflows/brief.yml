@@ -1,0 +1,37 @@
+# Daily brief (08:35 Melbourne summer time, after the 21:00 UTC stats job): writes hq/brief.md, the one file
+# any new chat reads first. Also runs on demand (scripts/claude/brief.sh). Commits with [skip ci] so no site rebuilds.
+name: brief
+on:
+  schedule:
+    - cron: '35 21 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+  issues: read
+concurrency: brief
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - name: Health check (for the brief only; the health workflow owns issues)
+        continue-on-error: true
+        env:
+          RUN_KEY: ${{ secrets.PIPELINE_RUN_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/health.py > /dev/null
+      - name: Write brief
+        env:
+          RUN_KEY: ${{ secrets.PIPELINE_RUN_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/hq/brief.py > /dev/null && cat hq/brief.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Commit
+        run: |
+          git config user.name "Site Factory brief" && git config user.email "brief@movietrailer.channel"
+          git add hq/brief.md
+          git diff --cached --quiet && exit 0
+          git commit -m "HQ: daily brief [skip ci]"
+          for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
+      - run: echo "::notice title=brief::$(head -c 3000 hq/brief.md | sed 's/%/%25/g' | sed ':a;N;$!ba;s/\n/%0A/g')"

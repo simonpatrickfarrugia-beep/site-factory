@@ -1,0 +1,24 @@
+# Fetch live pages and report what's on them: status, redirects, live build, title, buttons, pattern matches.
+# Claude runs this from chat (scripts/claude/probe.sh), because chat sessions can't load the live sites directly.
+# Result: run summary and the annotation titled "probe".
+name: probe
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: One or more URLs, separated by spaces or commas
+        required: true
+      find:
+        description: Optional regex to look for on each page
+        default: ''
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - env:
+          URLS: ${{ inputs.urls }}
+          FIND: ${{ inputs.find }}
+        run: python3 scripts/probe.py "$URLS" "$FIND" && cat probe.md >> "$GITHUB_STEP_SUMMARY"
+      - run: echo "::notice title=probe::$(sed 's/%/%25/g' probe.md | sed ':a;N;$!ba;s/\n/%0A/g' | cut -c1-60000)"
