@@ -9,4 +9,5 @@ read **hq/brief.md** — the daily state of the whole factory.
 | `probe.sh "<urls>" ["regex"]` | What is live on a page right now: status, redirects, live build, title, description, buttons, pattern matches |
 | `seo-audit.sh <site>` | SEO + tracking audit of a whole site (samples 25 pages on big sites) |
 | `pipe-run.sh <job> [dry]` | Run a pipeline Worker job now (intake, enrich, stats, collections, …) |
+| `volumes.sh "a|b" [loc]` | Google monthly searches for keywords (US default; ~US$0.09) |
 | `brief.sh` | Rebuild hq/brief.md now and print it |

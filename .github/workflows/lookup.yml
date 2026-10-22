@@ -1,0 +1,31 @@
+# Read-only Google search volumes for chat sessions (scripts/claude/volumes.sh). ~US$0.09 per run from DataForSEO credit.
+name: lookup
+on:
+  workflow_dispatch:
+    inputs:
+      keywords:
+        description: Keywords separated by |
+        required: true
+      location:
+        description: Google Ads location code (2840 US, 2036 Australia)
+        default: '2840'
+jobs:
+  volumes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - env:
+          KEY: ${{ secrets.PIPELINE_RUN_KEY }}
+          KW: ${{ inputs.keywords }}
+          LOC: ${{ inputs.location }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.parse, urllib.request
+          q = urllib.parse.urlencode({'key': os.environ['KEY'], 'kw': os.environ['KW'], 'loc': os.environ['LOC']})
+          d = json.load(urllib.request.urlopen(f'https://trailer-pipeline.simonpatrickfarrugia.workers.dev/lookup/volumes?{q}', timeout=120))
+          if 'error' in d: print('::error title=lookup::' + d['error']); raise SystemExit(1)
+          rows = sorted(d['volumes'].items(), key=lambda kv: -(kv[1] or -1))
+          out = '\n'.join(f'{v if v is not None else "-"}\t{k}' for k, v in rows)
+          open(os.environ['GITHUB_STEP_SUMMARY'], 'a').write('```\n' + out + '\n```\n')
+          print('::notice title=lookup::' + out.replace('%', '%25').replace('\n', '%0A')[:60000])
+          PY

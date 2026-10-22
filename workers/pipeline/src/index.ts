@@ -128,6 +128,15 @@ export default {
       const status = (await env.STATUS?.get('runs', 'json')) ?? {};
       return Response.json(status, { headers: { 'cache-control': 'no-store' } });
     }
+    // Read-only keyword volume lookup for chat sessions: /lookup/volumes?key=…&kw=a|b|c&loc=2840 (US). ~US$0.09 per call.
+    if (url.pathname === '/lookup/volumes') {
+      if (!env.RUN_KEY || url.searchParams.get('key') !== env.RUN_KEY) return new Response('Forbidden\n', { status: 403 });
+      if (!env.DATAFORSEO_LOGIN || !env.DATAFORSEO_PASSWORD) return Response.json({ error: 'DataForSEO not configured' }, { status: 500 });
+      const kws = (url.searchParams.get('kw') ?? '').split('|').map((k) => k.trim()).filter(Boolean).slice(0, 1000);
+      if (!kws.length) return Response.json({ error: 'no keywords' }, { status: 400 });
+      const vols = await searchVolumes(env.DATAFORSEO_LOGIN, env.DATAFORSEO_PASSWORD, kws, Number(url.searchParams.get('loc') ?? 2840));
+      return Response.json({ volumes: Object.fromEntries(kws.map((k) => [k, vols.get(cleanKeyword(k)) ?? null])) }, { headers: { 'cache-control': 'no-store' } });
+    }
     if (!m) return new Response('Trailer pipeline. Runs on a schedule.\n', { status: url.pathname === '/' ? 200 : 404 });
     if (!env.RUN_KEY || url.searchParams.get('key') !== env.RUN_KEY) return new Response('Forbidden\n', { status: 403 });
     try {
