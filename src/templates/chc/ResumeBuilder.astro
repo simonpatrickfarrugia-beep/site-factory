@@ -1,0 +1,389 @@
+---
+/**
+ * Free resume builder. Runs entirely in the browser: nothing typed is sent anywhere or stored on a server.
+ * Saved only if the visitor ticks "Remember on this device" (localStorage), or downloads a backup file.
+ * Save as PDF = the browser's print dialog with print styles that show only the resume (A4).
+ */
+import BookCta from './BookCta.astro';
+interface Props {
+  book: string;
+  page: {
+    title: string; lede: string; privacy: string;
+    tips: Record<string, string>;
+    howTo: { t: string; d: string }[];
+    faq: { q: string; a: string }[];
+  };
+}
+const { book, page: p } = Astro.props;
+const t = p.tips;
+---
+<section class="chc-pagehead rb-noprint">
+  <div class="chc-wrap">
+    <h1>{p.title}</h1>
+    <p class="chc-lede">{p.lede}</p>
+    <ol class="rb-howto">{p.howTo.map((s) => <li><strong>{s.t}.</strong> {s.d}</li>)}</ol>
+  </div>
+</section>
+
+<div class="chc-wrap rb" data-rb>
+  <div class="rb-form rb-noprint">
+    <p class="chc-hint">🔒 {p.privacy}</p>
+    <div class="rb-tools">
+      <button type="button" class="rb-btn" data-act="example">Fill with an example</button>
+      <button type="button" class="rb-btn rb-btn--quiet" data-act="clear">Clear everything</button>
+      <label class="chc-choice rb-remember"><input type="checkbox" data-remember /> Remember on this device</label>
+    </div>
+
+    <form class="chc-form" data-fields onsubmit="return false">
+      <details open class="rb-sec">
+        <summary>1. About you</summary>
+        <p class="rb-tip">{t.about}</p>
+        <label>Full name<input data-f="name" autocomplete="name" /></label>
+        <label>Job title you're aiming for <span class="chc-opt">(e.g. Retail assistant)</span><input data-f="headline" /></label>
+        <div class="rb-row">
+          <label>Phone<input data-f="phone" type="tel" autocomplete="tel" /></label>
+          <label>Email<input data-f="email" type="email" autocomplete="email" /></label>
+        </div>
+        <div class="rb-row">
+          <label>Suburb and state <span class="chc-opt">(e.g. Footscray VIC)</span><input data-f="location" /></label>
+          <label>LinkedIn or website <span class="chc-opt">(optional)</span><input data-f="link" /></label>
+        </div>
+      </details>
+
+      <details open class="rb-sec">
+        <summary>2. Summary</summary>
+        <p class="rb-tip">{t.summary}</p>
+        <label>About me<textarea data-f="summary" rows="4"></textarea></label>
+      </details>
+
+      <details open class="rb-sec">
+        <summary>3. Skills</summary>
+        <p class="rb-tip">{t.skills}</p>
+        <label>One skill per line<textarea data-f="skills" rows="6"></textarea></label>
+      </details>
+
+      <details open class="rb-sec">
+        <summary>4. Work experience</summary>
+        <p class="rb-tip">{t.work}</p>
+        <p class="rb-tip rb-tip--soft">{t.gaps}</p>
+        <div data-list="work"></div>
+        <button type="button" class="rb-btn rb-btn--quiet" data-add="work">+ Add a job</button>
+      </details>
+
+      <details class="rb-sec">
+        <summary>5. Education and training</summary>
+        <p class="rb-tip">{t.education}</p>
+        <div data-list="education"></div>
+        <button type="button" class="rb-btn rb-btn--quiet" data-add="education">+ Add a course or school</button>
+      </details>
+
+      <details class="rb-sec">
+        <summary>6. Volunteering and other experience</summary>
+        <p class="rb-tip">{t.volunteering}</p>
+        <div data-list="volunteering"></div>
+        <button type="button" class="rb-btn rb-btn--quiet" data-add="volunteering">+ Add volunteering</button>
+      </details>
+
+      <details class="rb-sec">
+        <summary>7. Licences and checks</summary>
+        <p class="rb-tip">{t.licences}</p>
+        <label>One per line<textarea data-f="licences" rows="4"></textarea></label>
+      </details>
+
+      <details class="rb-sec">
+        <summary>8. Referees</summary>
+        <p class="rb-tip">{t.referees}</p>
+        <label class="chc-choice"><input type="radio" name="refs" value="request" data-f="refs" checked /> Available on request</label>
+        <label class="chc-choice"><input type="radio" name="refs" value="list" data-f="refs" /> List them</label>
+        <label data-refs-list hidden>Name, role, phone or email (one referee per line)<textarea data-f="referees" rows="3"></textarea></label>
+      </details>
+    </form>
+
+    <div class="rb-save">
+      <fieldset class="rb-look">
+        <legend>Look</legend>
+        <label class="chc-choice"><input type="radio" name="look" value="clean" data-look checked /> Clean</label>
+        <label class="chc-choice"><input type="radio" name="look" value="classic" data-look /> Classic</label>
+      </fieldset>
+      <button type="button" class="chc-btn" data-act="print">Save as PDF or print</button>
+      <p class="chc-small">Tip: in the print window, choose “Save as PDF” as the printer. To keep working later on another device, <button type="button" class="rb-linkbtn" data-act="backup">download a backup file</button> or <label class="rb-linkbtn">open one<input type="file" accept="application/json,.json" data-restore hidden /></label>.</p>
+    </div>
+  </div>
+
+  <div class="rb-previewwrap">
+    <p class="rb-previewlabel rb-noprint">Preview</p>
+    <article class="rb-paper rb-clean" data-preview aria-live="polite" aria-label="Resume preview"></article>
+  </div>
+</div>
+
+<section class="chc-wrap chc-section rb-noprint">
+  <h2 class="chc-h2">Resume questions</h2>
+  <div class="chc-faq">
+    {p.faq.map((f) => (
+      <details><summary>{f.q}</summary><p>{f.a}</p></details>
+    ))}
+  </div>
+</section>
+
+<div class="rb-noprint">
+  <BookCta book={book} heading="Want help landing the job?" text="Job Catalyst is 1:1 job coaching: resumes, applications, interview practice and staying on track. Start with a free chat." />
+</div>
+
+<template id="rb-item-job">
+  <fieldset class="rb-item">
+    <div class="rb-row">
+      <label>Role<input data-k="role" /></label>
+      <label>Organisation<input data-k="org" /></label>
+    </div>
+    <div class="rb-row rb-row--3">
+      <label>Location<input data-k="where" /></label>
+      <label>Start <span class="chc-opt">(e.g. Mar 2023)</span><input data-k="start" /></label>
+      <label>End <span class="chc-opt">(or “Present”)</span><input data-k="end" /></label>
+    </div>
+    <label>What you did, one per line<textarea data-k="points" rows="3"></textarea></label>
+    <p class="rb-itemtools"><button type="button" class="rb-linkbtn" data-up>Move up</button> · <button type="button" class="rb-linkbtn" data-remove>Remove</button></p>
+  </fieldset>
+</template>
+<template id="rb-item-edu">
+  <fieldset class="rb-item">
+    <div class="rb-row">
+      <label>Qualification or course<input data-k="role" /></label>
+      <label>School, TAFE or provider<input data-k="org" /></label>
+    </div>
+    <div class="rb-row">
+      <label>Year finished <span class="chc-opt">(or “Studying now”)</span><input data-k="end" /></label>
+      <label>Details <span class="chc-opt">(optional)</span><input data-k="points" /></label>
+    </div>
+    <p class="rb-itemtools"><button type="button" class="rb-linkbtn" data-up>Move up</button> · <button type="button" class="rb-linkbtn" data-remove>Remove</button></p>
+  </fieldset>
+</template>
+
+<script>
+  type Item = { role?: string; org?: string; where?: string; start?: string; end?: string; points?: string };
+  type Data = { f: Record<string, string>; lists: Record<string, Item[]>; look: string };
+  const KEY = 'chc-resume-v1';
+  const root = document.querySelector<HTMLElement>('[data-rb]')!;
+  const preview = root.querySelector<HTMLElement>('[data-preview]')!;
+  const remember = root.querySelector<HTMLInputElement>('[data-remember]')!;
+  const LISTS: Record<string, string> = { work: 'rb-item-job', education: 'rb-item-edu', volunteering: 'rb-item-job' };
+  const track = (name: string) => { try { (window as any).gtag?.('event', `cta_${name}`); } catch {} };
+
+  const empty = (): Data => ({ f: { refs: 'request' }, lists: { work: [{}], education: [{}], volunteering: [] }, look: 'clean' });
+
+  // ---------- read the form into data
+  function read(): Data {
+    const d: Data = { f: {}, lists: {}, look: 'clean' };
+    root.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[data-f]').forEach((el) => {
+      if (el instanceof HTMLInputElement && el.type === 'radio') { if (el.checked) d.f[el.dataset.f!] = el.value; }
+      else d.f[el.dataset.f!] = el.value;
+    });
+    for (const name of Object.keys(LISTS)) {
+      d.lists[name] = [...root.querySelectorAll<HTMLElement>(`[data-list="${name}"] .rb-item`)].map((item) => {
+        const o: Item = {};
+        item.querySelectorAll<HTMLInputElement>('[data-k]').forEach((el) => ((o as any)[el.dataset.k!] = el.value));
+        return o;
+      });
+    }
+    d.look = root.querySelector<HTMLInputElement>('[data-look]:checked')?.value ?? 'clean';
+    return d;
+  }
+
+  // ---------- write data into the form
+  function addItem(name: string, value: Item = {}) {
+    const tpl = document.getElementById(LISTS[name]) as HTMLTemplateElement;
+    const node = tpl.content.firstElementChild!.cloneNode(true) as HTMLElement;
+    node.querySelectorAll<HTMLInputElement>('[data-k]').forEach((el) => (el.value = (value as any)[el.dataset.k!] ?? ''));
+    root.querySelector(`[data-list="${name}"]`)!.appendChild(node);
+    return node;
+  }
+  function fill(d: Data) {
+    root.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[data-f]').forEach((el) => {
+      if (el instanceof HTMLInputElement && el.type === 'radio') el.checked = (d.f[el.dataset.f!] ?? 'request') === el.value;
+      else el.value = d.f[el.dataset.f!] ?? '';
+    });
+    for (const name of Object.keys(LISTS)) {
+      root.querySelector(`[data-list="${name}"]`)!.replaceChildren();
+      (d.lists[name] ?? []).forEach((v) => addItem(name, v));
+    }
+    root.querySelectorAll<HTMLInputElement>('[data-look]').forEach((el) => (el.checked = el.value === d.look));
+    update();
+  }
+
+  // ---------- render the resume (DOM only, never innerHTML, so typed text can't break the page)
+  const el = (tag: string, cls?: string, text?: string) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; };
+  const lines = (s?: string) => (s ?? '').split('\n').map((l) => l.replace(/^[-•*]\s*/, '').trim()).filter(Boolean);
+  const has = (i: Item) => Object.values(i).some((v) => (v ?? '').trim());
+  function section(title: string) { const s = el('section', 'rb-r-sec'); s.appendChild(el('h2', 'rb-r-h', title)); return s; }
+  function items(list: Item[], withPoints: boolean) {
+    const wrap = document.createDocumentFragment();
+    for (const i of list.filter(has)) {
+      const box = el('div', 'rb-r-item');
+      const head = el('div', 'rb-r-itemhead');
+      const left = el('div');
+      left.appendChild(el('strong', '', i.role || i.org || ''));
+      const sub = [i.role ? i.org : '', i.where].filter(Boolean).join(', ');
+      if (sub) left.appendChild(el('span', 'rb-r-sub', sub));
+      head.appendChild(left);
+      const when = [i.start, i.end].filter(Boolean).join(' – ');
+      if (when) head.appendChild(el('span', 'rb-r-when', when));
+      box.appendChild(head);
+      const pts = lines(i.points);
+      if (pts.length && withPoints) { const ul = el('ul'); pts.forEach((p) => ul.appendChild(el('li', '', p))); box.appendChild(ul); }
+      else if (pts.length) box.appendChild(el('p', 'rb-r-note', pts.join(' ')));
+      wrap.appendChild(box);
+    }
+    return wrap;
+  }
+  function render(d: Data) {
+    const f = d.f;
+    preview.className = `rb-paper rb-${d.look}`;
+    preview.replaceChildren();
+    const head = el('header', 'rb-r-head');
+    head.appendChild(el('h1', 'rb-r-name', f.name || 'Your name'));
+    if (f.headline) head.appendChild(el('p', 'rb-r-headline', f.headline));
+    const contact = [f.location, f.phone, f.email, f.link].filter(Boolean);
+    if (contact.length) head.appendChild(el('p', 'rb-r-contact', contact.join('  ·  ')));
+    preview.appendChild(head);
+    if (f.summary?.trim()) { const s = section('Summary'); s.appendChild(el('p', '', f.summary.trim())); preview.appendChild(s); }
+    const skills = lines(f.skills);
+    if (skills.length) { const s = section('Skills'); const ul = el('ul', 'rb-r-skills'); skills.forEach((k) => ul.appendChild(el('li', '', k))); s.appendChild(ul); preview.appendChild(s); }
+    const blocks: [string, string, boolean][] = [['work', 'Work experience', true], ['education', 'Education and training', false], ['volunteering', 'Volunteering and other experience', true]];
+    for (const [name, title, pts] of blocks) {
+      const list = (d.lists[name] ?? []).filter(has);
+      if (list.length) { const s = section(title); s.appendChild(items(list, pts)); preview.appendChild(s); }
+    }
+    const lic = lines(f.licences);
+    if (lic.length) { const s = section('Licences and checks'); const ul = el('ul', 'rb-r-skills'); lic.forEach((k) => ul.appendChild(el('li', '', k))); s.appendChild(ul); preview.appendChild(s); }
+    const s = section('Referees');
+    const refs = lines(f.referees);
+    if (f.refs === 'list' && refs.length) { const ul = el('ul'); refs.forEach((r) => ul.appendChild(el('li', '', r))); s.appendChild(ul); }
+    else s.appendChild(el('p', '', 'Available on request.'));
+    preview.appendChild(s);
+  }
+
+  // ---------- saving (only when the visitor asks)
+  function store(d: Data | null) {
+    try { d ? localStorage.setItem(KEY, JSON.stringify(d)) : localStorage.removeItem(KEY); } catch {}
+  }
+  function update() {
+    const d = read();
+    root.querySelector<HTMLElement>('[data-refs-list]')!.hidden = d.f.refs !== 'list';
+    render(d);
+    if (remember.checked) store(d);
+  }
+
+  const EXAMPLE: Data = {
+    look: 'clean',
+    f: {
+      name: 'Jordan Lee', headline: 'Retail and customer service', phone: '0400 000 000', email: 'jordan.lee@example.com', location: 'Sunshine VIC', link: '',
+      summary: 'Friendly, reliable team member with two years of casual hospitality work. Calm in busy periods, quick to learn new systems and happy to take on extra shifts. Looking for a retail role with weekend availability.',
+      skills: 'Customer service\nCash handling and EFTPOS\nStock replenishment\nWorking in a team\nPunctual and reliable\nBasic Microsoft Excel',
+      licences: 'Victorian driver licence (own car)\nWorking with Children Check\nFirst Aid certificate (HLTAID011)',
+      refs: 'request', referees: '',
+    },
+    lists: {
+      work: [
+        { role: 'Café all-rounder (casual)', org: 'Local Café', where: 'Footscray VIC', start: 'Feb 2024', end: 'Present', points: 'Served up to 150 customers on busy weekend shifts\nHandled cash, EFTPOS and end-of-day counts\nTrained two new staff on the coffee machine and till' },
+        { role: 'Kitchen hand', org: 'Family restaurant', where: 'Sunshine VIC', start: 'Jun 2022', end: 'Dec 2023', points: 'Kept the kitchen clean and stocked during service\nPrepared ingredients to food safety standards' },
+      ],
+      education: [{ role: 'Victorian Certificate of Education (VCE)', org: 'Sunshine College', end: '2022' }, { role: 'Certificate II in Retail Services', org: 'TAFE', end: 'Studying now' }],
+      volunteering: [{ role: 'Volunteer', org: 'Community food bank', where: 'Brimbank VIC', start: '2023', end: 'Present', points: 'Pack and hand out food hampers every second Saturday' }],
+    },
+  };
+
+  // ---------- events
+  root.addEventListener('input', update);
+  root.addEventListener('change', (e) => {
+    const t = e.target as HTMLInputElement;
+    if (t.matches('[data-remember]')) { if (t.checked) store(read()); else store(null); return; }
+    if (t.matches('[data-restore]') && t.files?.[0]) {
+      t.files[0].text().then((txt) => { try { fill(JSON.parse(txt)); } catch { alert('That file is not a resume backup from this page.'); } t.value = ''; });
+      return;
+    }
+    update();
+  });
+  root.addEventListener('click', (e) => {
+    const b = (e.target as HTMLElement).closest('button');
+    if (!b) return;
+    if (b.dataset.add) { addItem(b.dataset.add).querySelector('input')?.focus(); update(); }
+    else if (b.hasAttribute('data-remove')) { b.closest('.rb-item')!.remove(); update(); }
+    else if (b.hasAttribute('data-up')) { const it = b.closest('.rb-item')!; if (it.previousElementSibling) it.parentElement!.insertBefore(it, it.previousElementSibling); update(); }
+    else if (b.dataset.act === 'example') { fill(structuredClone(EXAMPLE)); track('resume_example'); }
+    else if (b.dataset.act === 'clear') { if (confirm('Clear everything you have typed?')) { fill(empty()); store(null); } }
+    else if (b.dataset.act === 'print') { update(); track('resume_pdf'); window.print(); }
+    else if (b.dataset.act === 'backup') {
+      const blob = new Blob([JSON.stringify(read(), null, 1)], { type: 'application/json' });
+      const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: 'my-resume-backup.json' });
+      a.click(); URL.revokeObjectURL(a.href); track('resume_backup');
+    }
+  });
+
+  // ---------- start: a saved copy if the visitor chose "remember", otherwise blank
+  let saved: Data | null = null;
+  try { const raw = localStorage.getItem(KEY); if (raw) saved = JSON.parse(raw); } catch {}
+  remember.checked = !!saved;
+  fill(saved ?? empty());
+</script>
+
+<style>
+  .rb-howto { margin: 0; padding-left: 1.3rem; max-width: 60ch; display: grid; gap: 0.35rem; }
+  .rb { display: grid; gap: 2rem; padding-block: 2rem 1rem; }
+  @media (min-width: 64rem) { .rb { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: start; } .rb-previewwrap { position: sticky; top: 1rem; } }
+  .rb-form { display: grid; gap: 1.25rem; min-width: 0; }
+  .rb-tools { display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; align-items: center; }
+  .rb-btn { font: inherit; font-weight: 700; background: var(--forest); color: #fff; border: 0; border-radius: 999px; padding: 0.55rem 1.1rem; cursor: pointer; }
+  .rb-btn--quiet { background: var(--mint-soft); color: var(--forest); border: 2px solid var(--line); }
+  .rb-linkbtn { font: inherit; background: none; border: 0; padding: 0; color: var(--forest); text-decoration: underline; cursor: pointer; }
+  .rb-remember { font-weight: 400; }
+  .rb-sec { border: 2px solid var(--line); border-radius: var(--radius); padding: 0.9rem 1.1rem; }
+  .rb-sec[open] { padding-bottom: 1.2rem; }
+  .rb-sec > summary { font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; cursor: pointer; }
+  .rb-sec > :not(summary) { margin-top: 0.9rem; }
+  .rb-tip { background: var(--mint-soft); border-radius: 10px; padding: 0.7rem 0.9rem; font-size: 1rem; margin: 0; }
+  .rb-tip--soft { background: #fff; border: 1px dashed var(--line); }
+  .rb-row { display: grid; gap: 0.9rem; }
+  @media (min-width: 40rem) { .rb-row { grid-template-columns: 1fr 1fr; } .rb-row--3 { grid-template-columns: 1fr 1fr 1fr; } }
+  .rb-item { border: 0; border-left: 4px solid var(--mint); padding: 0 0 0 0.9rem !important; display: grid; gap: 0.8rem; margin-bottom: 1rem !important; }
+  .rb-itemtools { margin: 0; font-size: 0.95rem; }
+  .rb-save { display: grid; gap: 0.8rem; background: var(--mint-soft); border-radius: var(--radius); padding: 1.1rem; }
+  .rb-look { display: flex !important; gap: 1.25rem; flex-wrap: wrap; border: 0; padding: 0; margin: 0; }
+  .rb-look legend { font-weight: 700; }
+  .rb-previewlabel { font-weight: 700; margin: 0 0 0.4rem; color: var(--muted); }
+
+  /* ---------- the resume itself (screen preview and print) */
+  .rb-paper { background: #fff; color: #1b1b1b; border: 1px solid #d8d8d8; border-radius: 6px; box-shadow: 0 6px 24px rgba(18, 59, 48, 0.08);
+    padding: clamp(1.2rem, 4vw, 2.4rem); font-size: 0.92rem; line-height: 1.45; min-height: 20rem; overflow-wrap: anywhere; }
+  .rb-paper :global(h1), .rb-paper :global(h2) { letter-spacing: 0; color: inherit; }
+  .rb-paper :global(.rb-r-name) { font-size: 1.9rem; line-height: 1.1; margin: 0; font-weight: 800; }
+  .rb-paper :global(.rb-r-headline) { margin: 0.2rem 0 0; font-size: 1.05rem; font-weight: 600; }
+  .rb-paper :global(.rb-r-contact) { margin: 0.4rem 0 0; color: #444; font-size: 0.88rem; }
+  .rb-paper :global(.rb-r-sec) { margin-top: 1.1rem; break-inside: avoid-page; }
+  .rb-paper :global(.rb-r-h) { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 0.45rem; padding-bottom: 0.25rem; }
+  .rb-paper :global(p) { margin: 0; }
+  .rb-paper :global(ul) { margin: 0.25rem 0 0; padding-left: 1.1rem; }
+  .rb-paper :global(.rb-r-skills) { columns: 2; column-gap: 1.5rem; }
+  .rb-paper :global(.rb-r-item) { margin-bottom: 0.7rem; break-inside: avoid; }
+  .rb-paper :global(.rb-r-itemhead) { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .rb-paper :global(.rb-r-sub) { display: block; color: #444; }
+  .rb-paper :global(.rb-r-when) { color: #444; white-space: nowrap; font-size: 0.88rem; }
+  .rb-paper :global(.rb-r-note) { color: #444; }
+  /* Clean: sans, forest accent rule */
+  .rb-clean { font-family: 'Atkinson Hyperlegible Next', Arial, sans-serif; }
+  .rb-clean :global(.rb-r-head) { border-bottom: 3px solid #123B30; padding-bottom: 0.7rem; }
+  .rb-clean :global(.rb-r-name) { font-family: 'Outfit', Arial, sans-serif; color: #123B30; }
+  .rb-clean :global(.rb-r-h) { color: #123B30; border-bottom: 1px solid #cfe9de; font-family: 'Outfit', Arial, sans-serif; }
+  /* Classic: serif, black and white, centred header */
+  .rb-classic { font-family: Georgia, 'Times New Roman', serif; }
+  .rb-classic :global(.rb-r-head) { text-align: center; border-bottom: 1px solid #222; padding-bottom: 0.7rem; }
+  .rb-classic :global(.rb-r-name) { font-weight: 700; letter-spacing: 0.02em; }
+  .rb-classic :global(.rb-r-h) { border-bottom: 1px solid #222; font-weight: 700; }
+
+  @media print {
+    @page { size: A4; margin: 14mm 15mm; }
+    :global(body) { background: #fff !important; }
+    :global(.site-header), :global(.site-footer), :global(.rb-noprint), :global(.skip-link) { display: none !important; }
+    .rb { display: block; padding: 0; width: auto; }
+    .rb-paper { border: 0; box-shadow: none; padding: 0; font-size: 10.5pt; border-radius: 0; }
+    .rb-previewwrap { position: static; }
+  }
+</style>

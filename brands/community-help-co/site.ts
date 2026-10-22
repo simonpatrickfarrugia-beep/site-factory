@@ -99,6 +99,21 @@ export function routes(): Route[] {
     });
   }
 
+  const rb = (pages as unknown as Record<string, any>)['resume-builder'];
+  if (rb) {
+    out.push({
+      path: 'resume-builder',
+      template: 'chcResumeBuilder',
+      seo: { title: rb.seoTitle, rawTitle: true, description: rb.description },
+      schema: [
+        { '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Free resume builder', url: `${SITE}/resume-builder`, applicationCategory: 'BusinessApplication', operatingSystem: 'Any (runs in your web browser)', isAccessibleForFree: true, offers: { '@type': 'Offer', price: '0', priceCurrency: 'AUD' }, description: rb.description, publisher: { '@id': `${SITE}/#org` } },
+        faqSchema(rb.faq.map((f: { q: string; a: string }) => ({ q: f.q, a: f.a, service: null }))),
+        crumbs([{ name: 'Home', path: '' }, { name: 'Free resume builder', path: 'resume-builder' }]),
+      ],
+      props: { ...common, page: rb },
+    });
+  }
+
   out.push({
     path: 'faq',
     template: 'chcFaq',
