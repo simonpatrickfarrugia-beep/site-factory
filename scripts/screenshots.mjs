@@ -20,7 +20,7 @@ await new Promise((r) => server.listen(4321, r));
 
 const paths = process.argv.slice(2);
 await mkdir('screenshots', { recursive: true });
-const browser = await chromium.launch();
+const browser = await chromium.launch({ channel: 'chrome' }).catch(() => chromium.launch()); // runner's Chrome first
 const sizes = { phone: { width: 390, height: 844 }, desktop: { width: 1440, height: 900 } };
 for (const [label, viewport] of Object.entries(sizes)) {
   const page = await browser.newPage({ viewport, deviceScaleFactor: 1 });

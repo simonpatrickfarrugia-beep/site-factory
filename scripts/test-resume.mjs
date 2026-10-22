@@ -10,7 +10,8 @@ await mkdir('shots', { recursive: true });
 const fails = [];
 const ok = (cond, msg) => { console.log(`${cond ? '✅' : '❌'} ${msg}`); if (!cond) fails.push(msg); };
 
-const browser = await chromium.launch();
+// GitHub's runners ship Google Chrome: use it (no slow, hang-prone browser download); fall back to Playwright's Chromium.
+const browser = await chromium.launch({ channel: 'chrome' }).catch(() => chromium.launch());
 const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
 const page = await ctx.newPage();
 const errors = [];
@@ -19,7 +20,8 @@ page.on('console', (m) => { if (m.type() === 'error') console.log('CONSOLE: ' + 
 page.on('requestfailed', (r) => console.log('REQUEST FAILED: ' + r.url() + ' ' + (r.failure()?.errorText ?? '')));
 page.on('dialog', (d) => d.accept());
 const posts = [];
-page.on('request', (r) => { if (r.method() !== 'GET' && !/google-analytics|googletagmanager|analytics/.test(r.url())) posts.push(r.url()); });
+page.on('request', (r) => { // Analytics beacons (Google Analytics, Cloudflare's /cdn-cgi/rum page-timing beacon) carry visits and timings, not form text.
+  if (r.method() !== 'GET' && !/google-analytics|googletagmanager|analytics|\/cdn-cgi\/rum/.test(r.url())) posts.push(r.url()); });
 
 await page.goto(URL_, { waitUntil: 'networkidle' });
 await page.waitForSelector('[data-preview] .rb-r-name', { timeout: 15000 }).catch(() => console.log('preview never rendered'));
