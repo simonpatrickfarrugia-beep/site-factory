@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-21T21:00:10.808Z",
+ "generatedAt": "2026-10-22T21:00:11.098Z",
  "period": {
-  "start": "2026-09-23",
-  "end": "2026-10-20"
+  "start": "2026-09-24",
+  "end": "2026-10-21"
  },
  "gscPeriod": {
-  "start": "2026-09-21",
-  "end": "2026-10-18"
+  "start": "2026-09-22",
+  "end": "2026-10-19"
  },
  "sources": {
   "ga4": true,
@@ -14,10 +14,12 @@
   "notes": []
  },
  "totals": {
-  "views": 2,
+  "views": 11,
   "prevViews": 0,
-  "users": 2,
-  "cta": {},
+  "users": 11,
+  "cta": {
+   "map": 1
+  },
   "gscClicks": 0,
   "gscImpressions": 0
  },
@@ -26,14 +28,76 @@
    "date": "2026-10-20",
    "views": 2,
    "cta": 0
+  },
+  {
+   "date": "2026-10-21",
+   "views": 9,
+   "cta": 1
   }
  ],
  "pages": [
   {
    "path": "/",
+   "views": 5,
+   "prevViews": 0,
+   "users": 5,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
+   "path": "/daylesford",
    "views": 2,
    "prevViews": 0,
    "users": 2,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
+   "path": "/richmond",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
+   "path": "/richmond/do",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {
+    "map": 1
+   },
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
+   "path": "/road-trips/yarra-valley-day-trip",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
+   "path": "/yarra-glen",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 0,
