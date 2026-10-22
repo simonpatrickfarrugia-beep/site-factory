@@ -419,7 +419,7 @@ async function ratingsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: b
   const commit = checked
     ? await save(repo, snap.sha, { [MOVIES]: JSON.stringify(movies, null, 1) + '\n' }, changed ? `Pipeline: IMDb scores refreshed (${changed} changed)` : 'Pipeline: IMDb scores checked [skip ci]', dryRun, log)
     : null;
-  return { job: 'ratings' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: changed > 0, queueChanged: false, callsLeft: null };
+  return { job: 'ratings' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: changed > 0, queueChanged: false, callsLeft: null, report: undefined as string | undefined };
 }
 
 /** Sites whose dashboards the daily `stats` job refreshes (STATS_SITES in wrangler.jsonc). */
