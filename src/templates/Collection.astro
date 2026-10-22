@@ -42,7 +42,7 @@ const primeUrl = (m: Movie) => {
           </p>
           {(m.tagline || m.synopsis) && <p class="lineup__blurb">{m.tagline ?? m.synopsis}</p>}
           <p class="lineup__watch">
-            {primeUrl(m) && <a class="button button--small" href={primeUrl(m)!} rel="sponsored noopener" target="_blank" data-cta="prime">Rent on Prime Video</a>}
+            {primeUrl(m) && <a class="button button--small" href={primeUrl(m)!} rel="sponsored noopener" target="_blank" data-cta="prime" aria-label={`Watch ${m.name} now on Prime Video`}>Watch now <span class="button__via">on Prime Video</span></a>}
             <a class="text-link" href={`/movies/${m.slug}`}>All ways to watch {m.name}</a>
           </p>
         </div>

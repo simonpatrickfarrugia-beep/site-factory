@@ -39,7 +39,7 @@ First one: `/discover/steven-spielberg-movies` (18 Oct, written by hand).
 
 - Tracking ID `movietrailerc-20` (Amazon.com US Associates) on every Amazon link; links are `rel="sponsored"`;
   the footer carries the Associates disclosure.
-- Movie pages: **Rent on Prime Video** first (Prime Video search; digital rentals/purchases pay 5%), then
+- Movie pages: **Watch now (on Prime Video)** first (Prime Video search; digital rentals/purchases pay 5%), then
   **Buy on DVD & Blu-ray** (2.5%), then JustWatch. A movie's `rentBuyUrl` (a direct Amazon link) overrides the Prime search.
 - CI fails the build if any Amazon link lacks the tag, uses a different tag, isn't marked sponsored, a page with Amazon
   links lacks the disclosure, or a movie page has no Prime Video link.

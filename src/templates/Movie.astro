@@ -64,7 +64,7 @@ const justWatchUrl = `https://www.justwatch.com/us/search?q=${encodeURIComponent
         <section class="watch" aria-labelledby="watch-heading">
           <h2 id="watch-heading">Where to watch {m.name}</h2>
           <p class="button-row">
-            <a class="button" href={primeUrl} rel="sponsored noopener" target="_blank" data-cta="prime">Rent on Prime Video</a>
+            <a class="button" href={primeUrl} rel="sponsored noopener" target="_blank" data-cta="prime" aria-label={`Watch ${m.name} now on Prime Video`}>Watch now <span class="button__via">on Prime Video</span></a>
             <a class="button button--quiet" href={discUrl} rel="sponsored noopener" target="_blank" data-cta="disc">Buy on DVD &amp; Blu-ray</a>
             <a class="button button--quiet" href={justWatchUrl} rel="noopener" target="_blank" data-cta="justwatch">Where else to stream</a>
           </p>
