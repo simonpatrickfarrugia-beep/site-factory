@@ -10,6 +10,7 @@ export default defineBrand({
   // Australian road signage: highway-sign green for places, tourist-sign brown for things to do.
   colors: { brand: '#00653B', accent: '#8A4B26' },
   fonts: { display: 'Overpass', body: 'Source Serif 4' },
+  shareImage: '/share.png', // default og:image; town, region, trip and collection pages use a town photo
 
   nav: [
     { label: 'Towns', href: '/towns' },

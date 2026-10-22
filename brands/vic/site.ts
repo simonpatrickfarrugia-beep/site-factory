@@ -46,6 +46,14 @@ export function routes(): Route[] {
   const towns = getCollection<Town>('towns').filter((t) => t.published && t.centre && content.towns[t.slug]);
   const places = getCollection<Place>('places');
   const photos = getSingleton<{ towns: Record<string, unknown>; places: Record<string, unknown> }>('photos');
+  /** Share image (og:image) for a page: the first of these towns that has a photo; pages without one use brand.shareImage. */
+  const photoUrl = (...slugs: string[]) => {
+    for (const slug of slugs) {
+      const p = photos.towns[slug] as { url?: string } | undefined;
+      if (p?.url) return p.url;
+    }
+    return undefined;
+  };
   const byTown = new Map<string, Place[]>();
   for (const p of places) (byTown.get(p.town) ?? byTown.set(p.town, []).get(p.town)!).push(p);
   const inGroup = (slug: string, g: Group) => (byTown.get(slug) ?? []).filter((p) => p.group === g); // already best-first
@@ -116,6 +124,7 @@ export function routes(): Route[] {
       seo: {
         title: `${t.name}: where to stay, eat and things to do` + SUFFIX,
         rawTitle: true,
+        image: photoUrl(t.slug),
         description: `${t.name}, ${km < 3 ? 'in central Melbourne' : `${km} km from Melbourne`}: ${totals.stay} places to stay, ${totals.eat} places to eat and drink and ${totals.do} things to do, with addresses, hours and maps.`,
       },
       schema: [
@@ -152,6 +161,7 @@ export function routes(): Route[] {
         seo: {
           title: `${GROUP_LABEL[g].title(t.name)}: ${all.length} ${GROUP_LABEL[g].noun}` + SUFFIX,
           rawTitle: true,
+          image: photoUrl(t.slug),
           description: `${all.length} ${GROUP_LABEL[g].noun} in ${t.name}, Victoria, including ${kinds}. Addresses, opening hours, websites and maps.`,
         },
         schema: [
@@ -181,6 +191,7 @@ export function routes(): Route[] {
       seo: {
         title: `${r.name}: where to stay, eat and things to do` + SUFFIX,
         rawTitle: true,
+        image: photoUrl(...r.towns.map((x) => x.slug)),
         description: `The ${r.name}, town by town: ${r.towns.length} towns, ${totals.stay} places to stay, ${totals.eat} places to eat and drink and ${totals.do} things to do.`,
       },
       schema: [
@@ -213,6 +224,7 @@ export function routes(): Route[] {
         seo: {
           title: `${GROUP_LABEL[g].title(r.name)}: ${all.length} ${GROUP_LABEL[g].noun}` + SUFFIX,
           rawTitle: true,
+          image: photoUrl(...r.towns.map((x) => x.slug)),
           description: `${all.length} ${GROUP_LABEL[g].noun} across the ${r.name} (${r.towns.map((t) => t.name).slice(0, 5).join(', ')}${r.towns.length > 5 ? ' and more' : ''}). Addresses, hours, websites and maps.`,
         },
         schema: [crumbs([{ name: 'Home', path: '' }, { name: r.name, path: r.slug }, { name: GROUP_LABEL[g].short, path: `${r.slug}/${g}` }])],
@@ -228,7 +240,7 @@ export function routes(): Route[] {
     out.push({
       path: `collections/${col.slug}`,
       template: 'vicCollection',
-      seo: { title: col.name + SUFFIX, rawTitle: true, description: `${col.name}: ${col.intro}`.slice(0, 165) },
+      seo: { title: col.name + SUFFIX, rawTitle: true, description: `${col.name}: ${col.intro}`.slice(0, 165), image: photoUrl(...col.towns) },
       schema: [
         {
           '@context': 'https://schema.org',
@@ -276,6 +288,7 @@ export function routes(): Route[] {
       seo: {
         title: `${l.name}: ${l.days.length}-day road trip from Melbourne` + SUFFIX,
         rawTitle: true,
+        image: photoUrl(...l.days.flatMap((d) => [...d.stops, ...(d.overnight ? [d.overnight] : [])])),
         description: `${l.summary} Day-by-day plan with where to stay, eat and what to do.`.slice(0, 165),
       },
       schema: [
