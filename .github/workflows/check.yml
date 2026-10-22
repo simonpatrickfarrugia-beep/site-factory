@@ -10,7 +10,7 @@ on:
   pull_request:
 jobs:
   pipeline:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # pinned: ubuntu-latest moved to 26.04 in Oct 2026 and broke the Playwright install
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v5
@@ -27,7 +27,7 @@ jobs:
             exit 1
           fi
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # pinned: ubuntu-latest moved to 26.04 in Oct 2026 and broke the Playwright install
     timeout-minutes: 10
     strategy:
       fail-fast: false
@@ -57,6 +57,7 @@ jobs:
           cat quality.md >> "$GITHUB_STEP_SUMMARY"
           exit $rc
       - name: Screenshots (main and preview/* branches)
+        timeout-minutes: 6
         if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/preview/')
         continue-on-error: true
         run: |

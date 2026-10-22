@@ -12,7 +12,7 @@ permissions:
 concurrency: brief
 jobs:
   brief:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # pinned: ubuntu-latest moved to 26.04 in Oct 2026 and broke the Playwright install
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v5
