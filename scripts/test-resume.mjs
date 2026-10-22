@@ -14,12 +14,15 @@ const browser = await chromium.launch();
 const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
 const page = await ctx.newPage();
 const errors = [];
-page.on('pageerror', (e) => errors.push(e.message));
+page.on('pageerror', (e) => { errors.push(e.message); console.log('PAGE ERROR: ' + e.message); });
+page.on('console', (m) => { if (m.type() === 'error') console.log('CONSOLE: ' + m.text()); });
+page.on('requestfailed', (r) => console.log('REQUEST FAILED: ' + r.url() + ' ' + (r.failure()?.errorText ?? '')));
 page.on('dialog', (d) => d.accept());
 const posts = [];
 page.on('request', (r) => { if (r.method() !== 'GET' && !/google-analytics|googletagmanager|analytics/.test(r.url())) posts.push(r.url()); });
 
 await page.goto(URL_, { waitUntil: 'networkidle' });
+await page.waitForSelector('[data-preview] .rb-r-name', { timeout: 15000 }).catch(() => console.log('preview never rendered'));
 const pv = page.locator('[data-preview]');
 ok((await pv.textContent()).includes('Your name'), 'blank preview shows placeholder name');
 
