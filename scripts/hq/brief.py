@@ -81,7 +81,8 @@ md += ['## Health', '']
 if os.path.exists('health.md'):
     h = open('health.md').read()
     if 'Problems' in h:
-        md += [l for l in h.splitlines() if l.startswith('- ') and '<' not in l][:10]
+        probs = h.split('## ❌ Problems', 1)[1].split('<details>', 1)[0]
+        md += [l for l in probs.splitlines() if l.startswith('- ')][:10]
     else:
         md.append('All checks passing ✅ (sites up, pipeline jobs fresh, live builds current, no failing workflows)')
 else:
