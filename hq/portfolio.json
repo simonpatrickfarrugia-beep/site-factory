@@ -155,6 +155,11 @@
    "who": "Claude",
    "what": "Template the content engine during the dog breeds build",
    "site": "factory"
+  },
+  {
+   "who": "Claude",
+   "what": "Cover letter builder for Community Help Co (after the resume builder, live 23 Oct)",
+   "site": "chc"
   }
  ],
  "_stations": [
@@ -415,6 +420,15 @@
    "why": "Biggest single lever for 'life coach melbourne' / 'career coach melbourne' searches and Google reviews",
    "link": "https://business.google.com",
    "linkLabel": "Google Business",
+   "done": false
+  },
+  {
+   "id": "chc-share-resume",
+   "kind": "do",
+   "sprint": false,
+   "mins": 10,
+   "what": "Share communityhelp.com.au/resume-builder with 3 job services, schools or community groups you know",
+   "why": "Links from real organisations are what will get it found on Google",
    "done": false
   }
  ],
