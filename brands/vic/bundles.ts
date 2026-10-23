@@ -55,6 +55,15 @@ function pools(places: Place[], extras: TownExtras | undefined): Record<string, 
   };
 }
 
+const CASUAL = /\b(pizza|burger|kebab|dumpling|noodle|hut|express|takeaway|take away|fried|chicken|sushi train|fish (and|&) chips|subway|domino|mcdonald|kfc|bakery)\b/i;
+const CASUAL_CUISINE = /\b(pizza|burger|kebab|chicken|fish_and_chips|sandwich|fast_food|donut|ice_cream)\b/i;
+const NICE_CUISINE = /\b(french|italian|modern|australian|regional|wine|fine_dining|mediterranean|steak|seafood|tapas|spanish|european)\b/i;
+/** Date-night fit for a restaurant, from what the data says (cuisine, name, details). */
+const dinnerFit = (i: Item) =>
+  (CASUAL.test(i.name) || CASUAL_CUISINE.test(i.tags.cuisine ?? '') ? -4 : 0) + (NICE_CUISINE.test(i.tags.cuisine ?? '') ? 2 : 0) +
+  (i.tags.outdoor_seating === 'yes' ? 0.5 : 0) + (i.tags.opening_hours ? 0.5 : 0);
+const NOT_A_STOP = /\b(railway station|station|car park|toilets?|visitor information)\b/i;
+
 // ---------------------------------------------------------------- recipes
 const atStation = (c: Ctx) => (c.station ? { lat: c.station.lat, lon: c.station.lon } : null);
 const atCentre = (c: Ctx) => c.centre;
@@ -66,10 +75,10 @@ const RECIPES: Record<Audience, Recipe<Ctx>> = {
     slots: [
       { key: 'stay', label: 'Stay', pool: 'stay', required: true, alternates: 3, filter: (i) => ['hotel', 'motel', 'guest_house', 'apartment', 'hostel'].includes(i.kind),
         near: { anchor: atStation, maxKm: 1.6, weight: 5 }, score: (i) => stars(i) / 2 + notable(i) },
-      { key: 'dinner', label: 'Dinner', pool: 'dinner', required: true, near: { slot: 'stay', maxKm: 1.2, weight: 3 }, score: (i) => (i.tags.cuisine ? 1 : 0) + notable(i) },
+      { key: 'dinner', label: 'Dinner', pool: 'dinner', required: true, near: { slot: 'stay', maxKm: 1.2, weight: 3 }, score: (i) => dinnerFit(i) / 2 + (i.tags.cuisine ? 1 : 0) + notable(i) },
       { key: 'breakfast', label: 'Breakfast', pool: 'cafe', required: true, near: { slot: 'stay', maxKm: 1.2, weight: 3 } },
       { key: 'see', label: 'See and do', pool: ['do', 'beach', 'wine'], count: 2, required: true, alternates: 3,
-        filter: (i) => SIGHTS.has(i.kind) || i.kind === 'beach' || i.kind === 'wine', near: { anchor: atStation, maxKm: 2.5, weight: 3 },
+        filter: (i) => (SIGHTS.has(i.kind) || i.kind === 'beach' || i.kind === 'wine') && !NOT_A_STOP.test(i.name), near: { anchor: atStation, maxKm: 2.5, weight: 3 },
         score: (i) => notable(i) + (['museum', 'gallery', 'attraction', 'viewpoint', 'beach'].includes(i.kind) ? 2 : 0) + (i.kind === 'park' ? -1 : 0) },
       { key: 'lunch', label: 'Lunch', pool: ['cafe', 'dinner'], near: { anchor: atStation, maxKm: 1, weight: 3 } },
     ],
@@ -93,10 +102,10 @@ const RECIPES: Record<Audience, Recipe<Ctx>> = {
       { key: 'stay', label: 'Stay', pool: 'stay', required: true, alternates: 3, filter: (i) => ['guest_house', 'chalet', 'apartment', 'hotel'].includes(i.kind),
         near: { anchor: atCentre, maxKm: 10, weight: 1 },
         score: (i) => ({ guest_house: 4, chalet: 3, hotel: 2, apartment: 1 } as Record<string, number>)[i.kind]! + (stars(i) >= 4 ? 2 : 0) + notable(i) },
-      { key: 'dinner', label: 'Dinner', pool: 'dinner', required: true, alternates: 3, filter: (i) => i.kind === 'restaurant',
-        near: { slot: 'stay', maxKm: 5, weight: 1 }, score: (i) => (i.tags.cuisine ? 1 : 0) + (has(i.tags, 'website') ? 1 : 0) + notable(i) },
+      { key: 'dinner', label: 'Dinner', pool: 'dinner', required: true, alternates: 3, filter: (i) => i.kind === 'restaurant' && !CASUAL.test(i.name),
+        near: { slot: 'stay', maxKm: 5, weight: 1 }, score: (i) => dinnerFit(i) + (has(i.tags, 'website') ? 1 : 0) + notable(i) },
       { key: 'unwind', label: 'Unwind', pool: ['spa', 'wine', 'do', 'beach'], count: 2, required: true, alternates: 3,
-        filter: (i) => ['spa', 'wine', 'winery', 'distillery', 'viewpoint', 'gallery', 'beach', 'nature_reserve', 'attraction'].includes(i.kind),
+        filter: (i) => ['spa', 'wine', 'winery', 'distillery', 'viewpoint', 'gallery', 'beach', 'nature_reserve', 'attraction'].includes(i.kind) && !NOT_A_STOP.test(i.name),
         near: { anchor: atCentre, maxKm: 12, weight: 1 },
         score: (i) => ({ spa: 5, wine: 4, winery: 4, distillery: 3, viewpoint: 3, beach: 3, gallery: 2, nature_reserve: 1, attraction: 1 } as Record<string, number>)[i.kind]! + notable(i) },
       { key: 'drinks', label: 'Drinks', pool: 'bar', near: { slot: 'stay', maxKm: 4, weight: 1 }, score: (i) => (i.kind === 'bar' ? 1 : 0) },
@@ -109,7 +118,7 @@ const RECIPES: Record<Audience, Recipe<Ctx>> = {
       { key: 'stay', label: 'Stay', pool: 'stay', required: true, alternates: 3, filter: (i) => ['caravan_site', 'apartment', 'chalet', 'motel', 'hotel'].includes(i.kind),
         near: { anchor: atCentre, maxKm: 8, weight: 1 }, score: (i) => ({ caravan_site: 4, apartment: 3, chalet: 3, motel: 1, hotel: 1 } as Record<string, number>)[i.kind]! },
       { key: 'big', label: 'Big day out', pool: ['do', 'beach', 'pool'], required: true, alternates: 3,
-        filter: (i) => ['zoo', 'aquarium', 'theme_park', 'water_park', 'beach', 'pool', 'museum'].includes(i.kind), near: { anchor: atCentre, maxKm: 12, weight: 1 },
+        filter: (i) => ['zoo', 'aquarium', 'theme_park', 'water_park', 'beach', 'pool', 'museum'].includes(i.kind) && !NOT_A_STOP.test(i.name), near: { anchor: atCentre, maxKm: 12, weight: 1 },
         score: (i) => ({ zoo: 6, aquarium: 6, theme_park: 6, water_park: 6, beach: 4, pool: 3, museum: 1 } as Record<string, number>)[i.kind]! + notable(i) },
       { key: 'play', label: 'Playground', pool: 'playground', required: true, near: { anchor: atCentre, maxKm: 4, weight: 2 } },
       { key: 'outdoors', label: 'Outdoors', pool: ['do', 'picnic', 'bike', 'beach'], alternates: 2,
@@ -228,7 +237,7 @@ export function vicBundles(towns: Town[], content: Content, byTown: Map<string, 
       const b: VicBundle = { slug: `${town.slug}-${AUDIENCE[aud].path}`, path: `weekends/${town.slug}-${AUDIENCE[aud].path}`, audience: aud, town, result, days: plan(aud, result, ctx),
         demand: demand.volume ? demand : null, station: ctx.station, rank: result.fit + Math.log10((town.volume ?? 10) + 10) * 3 + Math.log10(demand.volume + 1) * 4 };
       if (aud === 'train' || aud === 'budget') { if (demand.volume >= MIN_DEMAND) out.push(b); }
-      else if (town.kind !== 'suburb') statewide[aud].push(b);
+      else if (town.kind !== 'suburb' && (town.kmFromMelbourne ?? 0) <= 300) statewide[aud].push(b); // a weekend, not a road trip
     }
   }
   for (const aud of ['couples', 'family'] as const) out.push(...statewide[aud].sort((a, b) => b.rank - a.rank).slice(0, TOP_STATEWIDE));
