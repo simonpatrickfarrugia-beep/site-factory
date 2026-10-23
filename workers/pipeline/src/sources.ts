@@ -293,3 +293,41 @@ export async function pickCategories(apiKey: string, model: string, idea: string
   const j = JSON.parse(await claudeJson(res)) as { categories?: unknown };
   return (Array.isArray(j.categories) ? j.categories.map(String) : []).filter((c) => c in categories).slice(0, 3);
 }
+
+export interface NicheCandidate { idea: string; seeds: string[]; market: 'US' | 'AU'; why: string }
+
+/**
+ * Weekly niche discovery: Claude proposes new site ideas that fit the factory model
+ * (many useful pages generated from free structured data), avoiding everything already tried.
+ */
+export async function brainstormNiches(apiKey: string, model: string, n: number, avoid: string[], liked: string[]): Promise<NicheCandidate[]> {
+  const prompt = [
+    'You find website niches for a solo founder in Melbourne who runs many small sites from one codebase.',
+    'His model: hundreds of pages generated from a FREE structured data source (open data, free APIs, Wikidata, government data),',
+    'each page answering a real search with real numbers, monetised with affiliate links, display ads or leads.',
+    'He wins on long-tail, templated searches that big sites ignore: "[thing] in [place]", "[a] vs [b]", "[thing] [attribute]",',
+    '"how long/how much/when/where to [thing]". Thin AI text without data loses, and so do health, finance and legal advice (YMYL).',
+    '',
+    `Propose ${n} NEW, specific niche ideas. Mix them: about two thirds for the United States, one third for Australia.`,
+    'Each idea must name the repeating page pattern and have a plausible free data source. Avoid generic mega-topics.',
+    avoid.length ? `Already tried or rejected (do not repeat or rephrase): ${avoid.join('; ')}` : '',
+    liked.length ? `Ideas that scored well before (find different niches with the same shape): ${liked.join('; ')}` : '',
+    '',
+    'For each, give 3 short seed searches that real people type (the templated long-tail kind, not brand names).',
+    'Reply with JSON only: {"ideas": [{"idea": "short name", "seeds": ["...", "...", "..."], "market": "US" or "AU", "why": "the page pattern + data source in one sentence"}]}',
+  ].filter((l) => l !== '').join('\n');
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: claudeHeaders(apiKey),
+    body: JSON.stringify({ model, max_tokens: 6000, messages: [{ role: 'user', content: prompt }] }),
+  });
+  const j = JSON.parse(await claudeJson(res)) as { ideas?: unknown };
+  const out: NicheCandidate[] = [];
+  for (const raw of Array.isArray(j.ideas) ? j.ideas : []) {
+    const r = raw as Record<string, unknown>;
+    const seeds = Array.isArray(r.seeds) ? r.seeds.map(String).filter(Boolean).slice(0, 5) : [];
+    if (!r.idea || !seeds.length) continue;
+    out.push({ idea: String(r.idea).slice(0, 90), seeds, market: r.market === 'AU' ? 'AU' : 'US', why: String(r.why ?? '').slice(0, 300) });
+  }
+  return out.slice(0, n);
+}

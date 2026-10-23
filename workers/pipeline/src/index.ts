@@ -11,7 +11,7 @@
  */
 import { enrich, intake, maxYear, recheck, type QueueItem, type Movie, type Result, type State } from './jobs';
 import { commitFiles, readFiles, StaleError, type Repo } from './github';
-import { channelFeed, omdbLookup, omdbYearsForTitle, judgeNiche, pickCategories, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
+import { channelFeed, omdbLookup, omdbYearsForTitle, brainstormNiches, judgeNiche, pickCategories, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
 import { buildCollections, minFilmsFor, winnable, MIN_OPENNESS, PERSON_MIN_FILMS, type Idea, type MovieCollection } from './collections';
 import { ga4Report, googleAccessToken, searchAnalytics, youtubeSearch } from './google';
 import { buildStats } from './stats';
@@ -19,7 +19,8 @@ import { calibrate, estimateMoney, moneyReport, type Measured, nicheReport, scor
 import { buildDemandReport } from './demand';
 import { pickTrailer } from './titles';
 import { buildCatalogue, type Candidate } from './catalogue';
-import { cleanKeyword, domainTraffic, keywordDifficulty, keywordIdeas, searchVolumes, serpTop10, type SerpResult } from './dataforseo';
+import { cleanKeyword, domainTraffic, easyKeywords, keywordDifficulty, keywordIdeas, searchVolumes, serpTop10, type SerpResult } from './dataforseo';
+import { MARKETS, PROMOTE, discoverReport, measure, qualifies, type Discovered } from './discover';
 import { COMPETITION_VERSION, competitionReport, pickKeywords, rootDomain, scoreCompetition, type Competition } from './competition';
 
 export interface Env {
@@ -45,6 +46,7 @@ export interface Env {
   RECHECK_LIMIT: string;
   GSC_SITE: string; // Search Console property: sc-domain:movietrailer.channel (Domain property) or a URL-prefix property
   NICHES_PER_RUN?: string; // ideas scored per niche-finder run
+  DISCOVER_PER_RUN?: string; // ideas proposed and screened per weekly discovery run (default 15, max 25)
   COMPETITION_PER_RUN?: string;
   COLLCHECK_PER_RUN?: string; // collection ideas checked per collcheck run
   STATS_SITES?: string; // JSON list of { name, path, ga4, gsc } for the dashboards
@@ -66,7 +68,7 @@ export interface Env {
   STATUS?: KVNamespace;
 }
 
-type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections' | 'stats' | 'niches' | 'towns' | 'keywords' | 'competition' | 'collcheck' | 'ratings';
+type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections' | 'stats' | 'niches' | 'towns' | 'keywords' | 'competition' | 'collcheck' | 'ratings' | 'discover';
 
 /**
  * Workers Free allows 5 cron schedules per ACCOUNT, so the pipeline uses two (see wrangler.jsonc)
@@ -81,7 +83,13 @@ function jobFor(cron: string, at: Date): Job | null {
   if (cron !== DAILY_CRON) throw new Error(`Unknown cron "${cron}"`);
   const hour = at.getUTCHours();
   const day = at.getUTCDate();
-  if (hour === 18) return day === 1 ? 'recheck' : day === 2 ? 'demand' : day === 3 ? 'collections' : day === 4 ? 'ratings' : null; // 05:00 Melbourne on the 2nd / 3rd / 4th / 5th
+  if (hour === 18) {
+    if (day <= 4) return day === 1 ? 'recheck' : day === 2 ? 'demand' : day === 3 ? 'collections' : 'ratings'; // 05:00 Melbourne on the 2nd / 3rd / 4th / 5th
+    // Weekly niche cycle (05:00 Melbourne): Sunday discover → Monday score → Tuesday competition check.
+    // In the first days of a month the monthly jobs win and that step waits a week (each job works through its backlog).
+    const wd = at.getUTCDay(); // 6 = Saturday UTC = Sunday morning Melbourne
+    return wd === 6 ? 'discover' : wd === 0 ? 'niches' : wd === 1 ? 'competition' : null;
+  }
   if (hour === 19) return 'enrich'; // daily, 06:00 Melbourne
   if (hour === 20) return CATALOGUE_DAYS.includes(day) ? 'catalogue' : day === 2 ? 'collcheck' : null; // 07:00 Melbourne (collcheck on the 3rd, before collections on the 4th)
   if (hour === 21) return 'stats'; // 08:00 Melbourne, every day (feeds the daily traffic report)
@@ -103,6 +111,8 @@ const KEYWORDS = 'hq/keywords.json';
 const KEYWORDS_REPORT = 'hq/reports/keywords.md';
 const VIC_TOWNS_REPORT = 'reports/vic/towns.md';
 const NICHES_REPORT = 'hq/reports/niches.md';
+const DISCOVER = 'hq/discover.json';
+const DISCOVER_REPORT = 'hq/reports/discover.md';
 const COMPETITION_REPORT = 'hq/reports/competition.md';
 const FINANCE = 'hq/finance.json';
 /** Only affiliate-link clicks count toward the click rate (not website, map, call or JustWatch clicks). */
@@ -122,7 +132,7 @@ export default {
 
   async fetch(req: Request, env: Env): Promise<Response> {
     const url = new URL(req.url);
-    const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue|collections|stats|niches|competition|collcheck|towns|keywords|ratings)$/);
+    const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue|collections|stats|niches|competition|collcheck|towns|keywords|ratings|discover)$/);
     if (url.pathname === '/status') {
       if (!env.RUN_KEY || url.searchParams.get('key') !== env.RUN_KEY) return new Response('Forbidden\n', { status: 403 });
       const status = (await env.STATUS?.get('runs', 'json')) ?? {};
@@ -188,6 +198,7 @@ const NEEDS: Record<Job, (keyof Env)[]> = {
   towns: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD'],
   keywords: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD'],
   competition: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD'],
+  discover: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD', 'ANTHROPIC_API_KEY'],
   collcheck: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD'],
 };
 
@@ -206,6 +217,8 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
       ? [NICHES, AFFILIATES, FINANCE, ...statsPaths(env)]
       : job === 'competition'
       ? [NICHES, AFFILIATES]
+      : job === 'discover'
+      ? [NICHES, DISCOVER]
       : job === 'collcheck'
       ? [IDEAS]
       : job === 'stats'
@@ -226,6 +239,7 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
   if (job === 'stats') return statsJob(env, repo, snap, now, dryRun);
   if (job === 'niches') return nichesJob(env, repo, snap, now, dryRun);
   if (job === 'competition') return competitionJob(env, repo, snap, now, dryRun);
+  if (job === 'discover') return discoverJob(env, repo, snap, now, dryRun);
   if (job === 'collcheck') return collcheckJob(env, repo, snap, now, dryRun);
   if (job === 'towns') return townsJob(env, repo, snap, now, dryRun);
   if (job === 'keywords') return keywordsJob(env, repo, snap, now, dryRun);
@@ -499,6 +513,59 @@ async function statsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boo
   }
   const commit = await save(repo, snap.sha, changes, `Pipeline: refresh dashboard stats\n\n${log.join('\n')}`, dryRun, log);
   return { job: 'stats' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report: undefined as string | undefined };
+}
+
+/**
+ * Weekly niche discovery (Sundays 05:00 Melbourne, or on demand): Claude proposes ideas, one cheap
+ * DataForSEO Labs call per idea screens for searches with real volume and low SEO difficulty,
+ * and the best few go into hq/niches.json for full scoring. See discover.ts.
+ */
+async function discoverJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean) {
+  const niches = JSON.parse(snap.files[NICHES] || '[]') as Niche[];
+  const history = JSON.parse(snap.files[DISCOVER] || '[]') as Discovered[];
+  const week = now.toISOString().slice(0, 10);
+  const log: string[] = [];
+  const count = Math.min(25, Number(env.DISCOVER_PER_RUN) || 15);
+  const avoid = [...new Set([...niches.map((x) => x.idea), ...history.map((d) => d.idea)])].slice(-250);
+  const liked = niches.filter((x) => (x.score?.overall ?? 0) >= 65).map((x) => x.idea);
+  const ideas = await brainstormNiches(env.ANTHROPIC_API_KEY, env.ANTHROPIC_MODEL, count, avoid, liked);
+  const seen = new Set(avoid.map((a) => a.toLowerCase()));
+  let cost = 0;
+  const fresh: Discovered[] = [];
+  for (const c of ideas) {
+    if (seen.has(c.idea.toLowerCase())) continue;
+    seen.add(c.idea.toLowerCase());
+    const d: Discovered = { week, idea: c.idea, market: c.market, seeds: c.seeds, why: c.why, breadth: 0, easyVolume: 0, medianCpc: null, opportunity: 0, top: [], promoted: false };
+    try {
+      const e = await easyKeywords(env.DATAFORSEO_LOGIN!, env.DATAFORSEO_PASSWORD!, c.seeds, MARKETS[c.market].code);
+      cost += e.cost;
+      Object.assign(d, measure(e));
+    } catch (e) {
+      d.error = (e as Error).message.slice(0, 160);
+      log.push(`${c.idea}: screen failed: ${d.error}`);
+    }
+    fresh.push(d);
+  }
+  // Promote the best few that clear the bar into the full niche scoring.
+  const promote = fresh.filter(qualifies).sort((a, b) => b.opportunity - a.opportunity).slice(0, PROMOTE.perWeek);
+  for (const d of promote) {
+    d.promoted = true;
+    niches.push({
+      idea: d.idea,
+      seeds: d.seeds,
+      notes: `Found by weekly discovery (${week}): ${d.why} ${d.breadth} related searches with 100+/mo and SEO difficulty ≤ 25, ${d.easyVolume.toLocaleString('en-US')}/mo across the biggest 100.`,
+      market: MARKETS[d.market],
+      addedAt: now.toISOString(),
+      status: 'new',
+    } as Niche);
+  }
+  const all = [...history, ...fresh];
+  log.unshift(`Discover: screened ${fresh.length} new ideas for US$${cost.toFixed(2)}; ${promote.length} promoted to scoring${promote.length ? `: ${promote.map((d) => d.idea).join(', ')}` : ''}.`);
+  const report = discoverReport(all, week, cost);
+  const changes: Record<string, string> = { [DISCOVER]: JSON.stringify(all, null, 1) + '\n', [DISCOVER_REPORT]: report };
+  if (promote.length) changes[NICHES] = JSON.stringify(niches, null, 1) + '\n';
+  const commit = await save(repo, snap.sha, changes, `HQ: weekly niche discovery [skip ci]\n\n${log.join('\n')}`, dryRun, log);
+  return { job: 'discover' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report };
 }
 
 async function nichesJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean) {

@@ -147,3 +147,44 @@ export async function domainTraffic(login: string, password: string, domains: st
   for (const i of result?.[0]?.items ?? []) etv.set(i.target.replace(/^www\./, ''), Math.round(i.metrics?.organic?.etv ?? 0));
   return { etv, cost };
 }
+
+export interface EasyKeywords {
+  /** How many related searches pass the filter in total (the breadth of the opportunity). */
+  total: number;
+  /** The biggest of them (up to `limit`). */
+  items: { keyword: string; volume: number; kd: number; cpc: number | null }[];
+}
+
+/**
+ * Bulk screen for "lots of searches, little competition": related keywords (DataForSEO Labs keyword ideas)
+ * with at least `minVolume` searches a month and SEO difficulty at most `maxKd`, biggest first.
+ * About US$0.01 per call + US$0.0001 per keyword returned (~US$0.02 at limit 100).
+ */
+export async function easyKeywords(
+  login: string,
+  password: string,
+  seeds: string[],
+  locationCode: number,
+  opts: { minVolume?: number; maxKd?: number; limit?: number } = {},
+): Promise<EasyKeywords & { cost: number }> {
+  const keywords = [...new Set(seeds.map(cleanKeyword).filter(Boolean))].slice(0, 20);
+  const { result, cost } = await dfsTask<
+    { total_count?: number; items?: { keyword: string; keyword_info?: { search_volume?: number | null; cpc?: number | null }; keyword_properties?: { keyword_difficulty?: number | null } }[] }[]
+  >(login, password, 'dataforseo_labs/google/keyword_ideas/live', {
+    keywords,
+    location_code: locationCode,
+    language_code: 'en',
+    include_serp_info: false,
+    filters: [['keyword_info.search_volume', '>=', opts.minVolume ?? 100], 'and', ['keyword_properties.keyword_difficulty', '<=', opts.maxKd ?? 25]],
+    order_by: ['keyword_info.search_volume,desc'],
+    limit: opts.limit ?? 100,
+  });
+  const r = result?.[0];
+  return {
+    total: r?.total_count ?? 0,
+    items: (r?.items ?? [])
+      .filter((i) => i.keyword_properties?.keyword_difficulty != null)
+      .map((i) => ({ keyword: i.keyword, volume: i.keyword_info?.search_volume ?? 0, kd: i.keyword_properties!.keyword_difficulty!, cpc: i.keyword_info?.cpc ?? null })),
+    cost,
+  };
+}
