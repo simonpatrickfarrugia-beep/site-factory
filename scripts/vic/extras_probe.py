@@ -37,22 +37,27 @@ area["ISO3166-2"="AU-VIC"]["admin_level"="4"]->.vic;
   node["railway"="station"](area.vic);
   node["public_transport"="station"]["train"="yes"](area.vic);
 );
-out tags;'''
+out body;'''
     out, seen = [], set()
     for e in overpass(q).get('elements', []):
         t = e.get('tags', {})
         name = t.get('name')
+        if not (t.get('railway') == 'station' or (t.get('public_transport') == 'station' and t.get('train') == 'yes')):
+            continue
         if not name or t.get('railway') in ('disused', 'abandoned') or t.get('disused') == 'yes' or t.get('usage') == 'tourism':
             continue
         if t.get('station') in ('light_rail', 'subway') and 'tram' in (t.get('network') or '').lower():
             continue
-        key = (name, round(e['lat'], 3), round(e['lon'], 3))
+        p = pt(e)
+        if not p:
+            continue
+        key = (name, round(p[0], 3), round(p[1], 3))
         if key in seen:
             continue
         seen.add(key)
         net = t.get('network') or t.get('operator') or ''
         tourist = 'tourist' in (t.get('railway:preserved', '') + t.get('usage', '') + net).lower() or t.get('railway:preserved') == 'yes'
-        out.append({'name': name.replace(' Railway Station', '').replace(' Station', ''), 'lat': round(e['lat'], 6), 'lon': round(e['lon'], 6),
+        out.append({'name': name.replace(' Railway Station', '').replace(' Station', ''), 'lat': p[0], 'lon': p[1],
                     'network': net, 'tourist': tourist})
     out.sort(key=lambda s: s['name'])
     return out
