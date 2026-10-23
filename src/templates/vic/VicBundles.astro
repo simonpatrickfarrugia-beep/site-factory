@@ -1,7 +1,7 @@
 ---
 /** Hub of ready-made weekend plans: all audiences (/weekends) or one audience (/weekends/romantic, …). */
 import RoadSign from '../../components/vic/RoadSign.astro';
-interface Card { href: string; town: string; km: number; summary: string; highlights: string[] }
+interface Card { href: string; town: string; km: number; summary: string; highlights: string[]; photo?: { url: string; width?: number; height?: number; artist: string; license: string; page: string } | null }
 interface Group { title: string; href?: string; intro?: string; cards: Card[] }
 interface Props { title: string; intro: string[]; groups: Group[]; others: { href: string; label: string }[] }
 const { title, intro, groups, others } = Astro.props;
@@ -15,7 +15,8 @@ const { title, intro, groups, others } = Astro.props;
       {groups.length > 1 && <h2 class="bundle-group__title">{g.href ? <a href={g.href}>{g.title}</a> : g.title}</h2>}
       {g.intro && <p>{g.intro}</p>}
       {g.cards.map((c) => (
-        <article class="loop-card">
+        <article class="loop-card bcard">
+          {c.photo && <a class="bcard__img" href={c.href} tabindex="-1" aria-hidden="true"><img src={c.photo.url} alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" /></a>}
           <a class="loop-card__name" href={c.href}>{c.town}</a>
           <p class="loop-card__route">{c.km >= 3 ? `${c.km} km from Melbourne` : 'Central Melbourne'}</p>
           <p>{c.summary}</p>
@@ -30,6 +31,10 @@ const { title, intro, groups, others } = Astro.props;
 </div>
 <style>
   .bundle-group { margin-top: var(--space-5); }
+  .bcard::after { content: ''; display: block; clear: both; }
+  .bcard__img { float: right; width: 112px; margin: 0.2rem 0 0.4rem 0.9rem; }
+  .bcard__img img { width: 112px; height: 84px; object-fit: cover; border-radius: 8px; display: block; }
+  @media (min-width: 52rem) { .bcard__img, .bcard__img img { width: 168px; height: 126px; } }
   .bundle-group__title { font-size: 1.6rem; margin-bottom: var(--space-2); }
   .bundle-group__title a { color: var(--sign-green); }
   .bundle-others { margin-top: var(--space-5); font-family: var(--font-display); font-weight: 700; }

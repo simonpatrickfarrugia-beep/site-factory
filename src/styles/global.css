@@ -382,6 +382,7 @@ main { display: block; }
   [data-theme='roadtrip'] .site-nav { gap: var(--space-3); font-size: 0.95rem; }
 }
 [data-theme='roadtrip'] .wordmark { font-size: 1.3rem; }
+[data-theme='roadtrip'] .wordmark--logo { display: inline-flex; align-items: center; gap: 0.55rem; text-decoration: none; font-family: var(--font-display); font-weight: 800; letter-spacing: 0.01em; }
 [data-theme='roadtrip'] h2 { font-size: var(--step-2); font-weight: 800; letter-spacing: -0.005em; }
 
 [data-theme='roadtrip'] .town { padding-block: var(--space-4) var(--space-6); }

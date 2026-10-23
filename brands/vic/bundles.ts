@@ -9,19 +9,23 @@
 import { buildBundle, km, walkMins, type BundleResult, type Item, type Recipe } from '../../src/lib/bundles';
 import { TYPE_LABEL, type Content, type Place, type Town } from './model';
 
-export type Audience = 'train' | 'budget' | 'couples' | 'family';
+export type Audience = 'daytrip' | 'train' | 'budget' | 'couples' | 'family';
 export interface Station { name: string; lat: number; lon: number; network: string; tourist: boolean }
 export interface ExtraItem { id: string; name: string; named: boolean; lat: number; lon: number; tags: Record<string, string> }
 export type TownExtras = Record<string, ExtraItem[]>;
 interface Ctx { town: Town; centre: { lat: number; lon: number }; station: (Station & { km: number }) | null }
 
 export const AUDIENCE: Record<Audience, { label: string; short: string; path: string; hubPath: string; hubTitle: string; hubKeyword: string }> = {
+  daytrip: { label: 'day trip', short: 'Day trips', path: 'day-trip', hubPath: 'day-trips', hubTitle: 'Day trips from Melbourne', hubKeyword: 'day trips from melbourne' },
   train: { label: 'without a car', short: 'By train', path: 'by-train', hubPath: 'weekends/by-train', hubTitle: 'Weekends away from Melbourne by train', hubKeyword: 'weekend getaway from melbourne by train' },
   budget: { label: 'on a budget', short: 'Budget', path: 'on-a-budget', hubPath: 'weekends/budget', hubTitle: 'Cheap weekend getaways from Melbourne', hubKeyword: 'cheap weekend getaways from melbourne' },
   couples: { label: 'for couples', short: 'Couples', path: 'romantic-weekend', hubPath: 'weekends/romantic', hubTitle: 'Romantic weekend itineraries for couples', hubKeyword: 'romantic weekend getaways victoria' },
   family: { label: 'with kids', short: 'Families', path: 'family-weekend', hubPath: 'weekends/family', hubTitle: 'Family weekend itineraries from Melbourne', hubKeyword: 'family weekend getaways from melbourne' },
 };
 const MIN_DEMAND = 50; // monthly searches for a per-town train/budget page
+const MIN_DAYTRIP_DEMAND = 30; // "X day trip" searches (or the region's, for its best town)
+/** Region searches beat town searches for day trips ("great ocean road day trip" 880/mo): the best-fitting town in the region takes the region keyword. */
+const REGION_DAYTRIP: Record<string, string> = { 'Great Ocean Road': 'great ocean road day trip', 'Mornington Peninsula': 'mornington peninsula day trip', 'Yarra Valley': 'yarra valley day trip' };
 const TOP_STATEWIDE = 8; // couples / family pages
 
 // ---------------------------------------------------------------- items
@@ -70,6 +74,22 @@ const atCentre = (c: Ctx) => c.centre;
 const SIGHTS = new Set(['museum', 'gallery', 'attraction', 'viewpoint', 'zoo', 'aquarium', 'winery', 'brewery', 'distillery', 'nature_reserve', 'theme_park', 'water_park', 'park']);
 
 const RECIPES: Record<Audience, Recipe<Ctx>> = {
+  daytrip: {
+    id: 'vic-daytrip', audience: 'daytrip',
+    slots: [
+      { key: 'morning', label: 'Morning', pool: ['do', 'beach', 'wine'], required: true, alternates: 3,
+        filter: (i) => ['museum', 'gallery', 'attraction', 'viewpoint', 'zoo', 'aquarium', 'nature_reserve', 'beach', 'theme_park', 'park'].includes(i.kind) && !NOT_A_STOP.test(i.name),
+        near: { anchor: atCentre, maxKm: 15, weight: 1 },
+        score: (i) => notable(i) * 1.5 + (({ zoo: 3, aquarium: 3, attraction: 2, museum: 2, gallery: 2, viewpoint: 2, beach: 2, nature_reserve: 1 } as Record<string, number>)[i.kind] ?? 0) + (i.kind === 'park' ? -2 : 0) },
+      { key: 'lunch', label: 'Lunch', pool: ['dinner', 'cafe', 'wine'], required: true, alternates: 3, near: { slot: 'morning', maxKm: 8, weight: 2 },
+        filter: (i) => !CASUAL.test(i.name) && i.kind !== 'distillery', score: (i) => dinnerFit(i) / 2 + (['winery', 'wine'].includes(i.kind) ? 2 : 0) + (has(i.tags, 'website') ? 0.5 : 0) },
+      { key: 'afternoon', label: 'Afternoon', pool: ['do', 'beach', 'wine'], required: true, alternates: 3,
+        filter: (i) => ['museum', 'gallery', 'attraction', 'viewpoint', 'nature_reserve', 'beach', 'wine', 'winery', 'brewery', 'distillery', 'park'].includes(i.kind) && !NOT_A_STOP.test(i.name),
+        near: { anchor: atCentre, maxKm: 15, weight: 1 },
+        score: (i) => notable(i) + (({ viewpoint: 2, beach: 2, wine: 2, winery: 2, gallery: 1, nature_reserve: 1, brewery: 1 } as Record<string, number>)[i.kind] ?? 0) + (i.kind === 'park' ? -2 : 0) },
+      { key: 'treat', label: 'Treat', pool: ['icecream', 'cafe'], near: { slot: 'afternoon', maxKm: 4, weight: 2 }, score: (i) => (i.kind === 'icecream' ? 1 : 0) },
+    ],
+  },
   train: {
     id: 'vic-train', audience: 'train',
     slots: [
@@ -148,6 +168,19 @@ function plan(aud: Audience, b: BundleResult, ctx: Ctx): Day[] {
     return pk ? [{ when, slot, pick: pk, text: text(pk.item, pk.km) }] : [];
   };
   const t = ctx.town.name;
+  if (aud === 'daytrip') {
+    const km = ctx.town.kmFromMelbourne ?? 0;
+    const st = ctx.station;
+    return [
+      { title: 'The day', steps: [
+        { when: 'Getting there', text: `${t} is about ${km} km from Melbourne by road.` + (st ? ` No car? ${st.name} station is ${st.km < 0.3 ? 'right in town' : `${st.km.toFixed(1)} km from the centre`}; check the PTV journey planner for trains.` : '') },
+        ...step('Morning', 'morning', 0, (i, d) => `${i.name} (${kindLabel(i)})${near(d, `${t} centre`)}.`),
+        ...step('Lunch', 'lunch', 0, (i, d) => `${i.name}, ${['winery', 'wine'].includes(i.kind) ? 'a cellar door' : `a ${kindLabel(i)}`}${i.tags.cuisine ? ` (${i.tags.cuisine.split(/[;,]/)[0].replace(/_/g, ' ')})` : ''}${near(d, 'your morning stop')}.`),
+        ...step('Afternoon', 'afternoon', 0, (i, d) => `${i.name} (${kindLabel(i)})${near(d, `${t} centre`)}.`),
+        ...step('Before you head home', 'treat', 0, (i, d) => `${i.kind === 'icecream' ? 'Ice cream' : 'Coffee'} at ${i.name}${near(d, 'your afternoon stop')}.`),
+      ] },
+    ];
+  }
   if (aud === 'train') {
     const st = ctx.station!;
     const metro = /metro/i.test(st.network);
@@ -216,11 +249,14 @@ function plan(aud: Audience, b: BundleResult, ctx: Ctx): Day[] {
 export interface VicBundle {
   slug: string; path: string; audience: Audience; town: Town; result: BundleResult; days: Day[];
   demand: { keyword: string; volume: number } | null; station: (Station & { km: number }) | null; rank: number;
+  /** Day trips: the region name when this town takes the region's day-trip search. */
+  region?: string;
 }
 
 export function vicBundles(towns: Town[], content: Content, byTown: Map<string, Place[]>, stations: Station[], extras: Record<string, TownExtras>, volumes: Record<string, number>): VicBundle[] {
   const out: VicBundle[] = [];
   const statewide: Record<'couples' | 'family', VicBundle[]> = { couples: [], family: [] };
+  const daytrips: VicBundle[] = [];
   for (const town of towns) {
     if (!town.centre) continue;
     const centre = { lat: town.centre[0], lon: town.centre[1] };
@@ -231,15 +267,23 @@ export function vicBundles(towns: Town[], content: Content, byTown: Map<string, 
     const vol = (...k: string[]) => k.map((kw) => ({ keyword: kw, volume: volumes[kw] ?? 0 })).sort((a, b) => b.volume - a.volume)[0];
     for (const aud of Object.keys(RECIPES) as Audience[]) {
       if (aud === 'train' && (!ctx.station || town.kind === 'suburb' || (town.kmFromMelbourne ?? 0) < 15)) continue;
+      if (aud === 'daytrip' && (town.kind === 'suburb' || (town.kmFromMelbourne ?? 0) < 20 || (town.kmFromMelbourne ?? 0) > 160)) continue;
       const result = buildBundle(RECIPES[aud], pl, ctx);
       if (result.missing.length) continue;
-      const demand = aud === 'train' ? vol(`train to ${n}`, `${n} by train`) : aud === 'budget' ? vol(`cheap accommodation ${n}`) : aud === 'couples' ? vol(`romantic getaway ${n}`, `${n} romantic weekend`) : vol(`family holiday ${n}`, `${n} with kids`);
-      const b: VicBundle = { slug: `${town.slug}-${AUDIENCE[aud].path}`, path: `weekends/${town.slug}-${AUDIENCE[aud].path}`, audience: aud, town, result, days: plan(aud, result, ctx),
+      const demand = aud === 'daytrip' ? vol(`${n} day trip`, `day trip to ${n}`) : aud === 'train' ? vol(`train to ${n}`, `${n} by train`) : aud === 'budget' ? vol(`cheap accommodation ${n}`) : aud === 'couples' ? vol(`romantic getaway ${n}`, `${n} romantic weekend`) : vol(`family holiday ${n}`, `${n} with kids`);
+      const b: VicBundle = { slug: `${town.slug}-${AUDIENCE[aud].path}`, path: aud === 'daytrip' ? `day-trips/${town.slug}` : `weekends/${town.slug}-${AUDIENCE[aud].path}`, audience: aud, town, result, days: plan(aud, result, ctx),
         demand: demand.volume ? demand : null, station: ctx.station, rank: result.fit + Math.log10((town.volume ?? 10) + 10) * 3 + Math.log10(demand.volume + 1) * 4 };
-      if (aud === 'train' || aud === 'budget') { if (demand.volume >= MIN_DEMAND) out.push(b); }
+      if (aud === 'daytrip') daytrips.push(b);
+      else if (aud === 'train' || aud === 'budget') { if (demand.volume >= MIN_DEMAND) out.push(b); }
       else if (town.kind !== 'suburb' && (town.kmFromMelbourne ?? 0) <= 300) statewide[aud].push(b); // a weekend, not a road trip
     }
   }
   for (const aud of ['couples', 'family'] as const) out.push(...statewide[aud].sort((a, b) => b.rank - a.rank).slice(0, TOP_STATEWIDE));
+  // Day trips: the best-fitting town in a region takes the region's search; others need their own town search.
+  for (const [region, kw] of Object.entries(REGION_DAYTRIP)) {
+    const best = daytrips.filter((b) => content.towns[b.town.slug]?.region === region).sort((a, b) => b.result.fit - a.result.fit)[0];
+    if (best && (volumes[kw] ?? 0) > (best.demand?.volume ?? 0)) { best.demand = { keyword: kw, volume: volumes[kw] }; best.region = region; best.rank += Math.log10(volumes[kw] + 1) * 4; }
+  }
+  out.push(...daytrips.filter((b) => (b.demand?.volume ?? 0) >= MIN_DAYTRIP_DEMAND));
   return out.sort((a, b) => b.rank - a.rank);
 }

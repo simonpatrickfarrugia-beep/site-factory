@@ -67,7 +67,8 @@ export function routes(): Route[] {
   const demand = optional<{ volumes: Record<string, number> }>('bundle-demand', { volumes: {} }).volumes;
   const bundles: VicBundle[] = stations.length ? vicBundles(towns, content, byTown, stations, extras, demand) : [];
   const bundleLabel = (b: VicBundle) =>
-    ({ train: `${b.town.name} by train`, budget: `${b.town.name} on a budget`, couples: `Romantic weekend in ${b.town.name}`, family: `${b.town.name} with kids` } as Record<Audience, string>)[b.audience];
+    ({ daytrip: b.region ? `${b.region} day trip: ${b.town.name}` : `${b.town.name} day trip`, train: `${b.town.name} by train`, budget: `${b.town.name} on a budget`, couples: `Romantic weekend in ${b.town.name}`, family: `${b.town.name} with kids` } as Record<Audience, string>)[b.audience];
+  const hasDayTripsEarly = bundles.some((b) => b.audience === 'daytrip');
   const bundlesByTown = new Map<string, VicBundle[]>();
   for (const b of bundles) (bundlesByTown.get(b.town.slug) ?? bundlesByTown.set(b.town.slug, []).get(b.town.slug)!).push(b);
   const byKm = [...towns].sort((a, b) => (a.kmFromMelbourne ?? 0) - (b.kmFromMelbourne ?? 0));
@@ -87,7 +88,18 @@ export function routes(): Route[] {
     props: {
       towns: byKm.filter((t) => !isNeighbourhood(t)).map(info),
       neighbourhoods: byKm.filter(isNeighbourhood).map(info),
-      collections: content.collections,
+      collections: content.collections.filter((c) => !(hasDayTripsEarly && c.slug === 'day-trips-from-melbourne')),
+      dayTrips: bundles.filter((b) => b.audience === 'daytrip').sort((a, b) => (b.demand?.volume ?? 0) - (a.demand?.volume ?? 0)).slice(0, 6).map((b) => {
+        const m = b.result.picks.morning?.[0]?.item; const l = b.result.picks.lunch?.[0]?.item;
+        return { href: `/${b.path}`, title: b.region ?? b.town.name, town: b.region ? b.town.name : null, km: b.town.kmFromMelbourne ?? 0, photo: photos.towns[b.town.slug] ?? null,
+          line: [m && m.name, l && `lunch at ${l.name}`].filter(Boolean).join(', then ') };
+      }),
+      weekendTiles: (['train', 'couples', 'family', 'budget'] as Audience[]).map((a) => {
+        const list = bundles.filter((b) => b.audience === a).sort((x, y) => y.rank - x.rank);
+        const top = list.find((b) => photos.towns[b.town.slug]);
+        return { href: `/${AUDIENCE[a].hubPath}`, title: ({ train: 'By train', couples: 'Romantic weekends', family: 'With kids', budget: 'On a budget' } as Record<string, string>)[a], count: list.length,
+          photo: top ? photos.towns[top.town.slug] : null, example: top?.town.name ?? null };
+      }).filter((t) => t.count > 0),
       loops: (content.loops ?? []).filter((l) => !l.draft).map((l) => ({ slug: l.slug, name: l.name, summary: l.summary, days: l.days.length })),
     },
   });
@@ -160,7 +172,7 @@ export function routes(): Route[] {
         collections: [
           ...(bundlesByTown.get(t.slug) ?? []).map((b) => ({ href: `/${b.path}`, name: `Weekend plan: ${bundleLabel(b)}` })),
           ...(content.loops ?? []).filter((l) => !l.draft && l.days.some((d) => d.stops.includes(t.slug))).map((l) => ({ href: `/road-trips/${l.slug}`, name: `Road trip: ${l.name}` })),
-          ...content.collections.filter((col) => col.towns.includes(t.slug)).map(({ slug, name }) => ({ href: `/collections/${slug}`, name })),
+          ...content.collections.filter((col) => col.towns.includes(t.slug) && !(hasDayTripsEarly && col.slug === 'day-trips-from-melbourne')).map(({ slug, name }) => ({ href: `/collections/${slug}`, name })),
         ],
       },
     });
@@ -248,7 +260,11 @@ export function routes(): Route[] {
 
   // Trip ideas (collections)
   const townBySlug = new Map(towns.map((t) => [t.slug, t]));
+  // The day-trips collection is replaced by the /day-trips itineraries hub when day-trip plans exist (301 in public/_redirects).
+  const hasDayTrips = bundles.some((b) => b.audience === 'daytrip');
+  const MERGED_COLLECTIONS: Record<string, string> = hasDayTrips ? { 'day-trips-from-melbourne': '/day-trips' } : {};
   for (const col of content.collections) {
+    if (MERGED_COLLECTIONS[col.slug]) continue;
     const list = col.towns.map((s) => townBySlug.get(s)).filter((t): t is Town => !!t);
     out.push({
       path: `collections/${col.slug}`,
@@ -365,7 +381,7 @@ export function routes(): Route[] {
     const T_MAX = 60;
     const fit = (...o: string[]) => o.find((x) => x.length <= T_MAX) ?? o[o.length - 1];
     const ref = (b: VicBundle, slot: string) =>
-      b.audience === 'train' && ['stay', 'see', 'lunch'].includes(slot) ? 'the station' : ['dinner', 'breakfast', 'eat', 'drinks'].includes(slot) ? 'your stay' : `${b.town.name} centre`;
+      b.audience === 'train' && ['stay', 'see', 'lunch'].includes(slot) ? 'the station' : b.audience === 'daytrip' && slot === 'lunch' ? 'your morning stop' : ['dinner', 'breakfast', 'eat', 'drinks'].includes(slot) ? 'your stay' : `${b.town.name} centre`;
     const kindOf = (i: Item) =>
       ({ beach: 'beach', playground: 'playground', pool: 'swimming pool', spa: 'day spa', wine: 'cellar door', icecream: 'ice cream', picnic: 'picnic spot', bike: 'bike hire' } as Record<string, string>)[i.kind] ?? (TYPE_LABEL[i.kind] ?? i.kind);
     const dist = (d: number | null, from: string) => (d === null ? null : d <= 1.5 ? `${walkMins(d)} min walk from ${from}` : `${d.toFixed(1)} km from ${from}`);
@@ -375,7 +391,9 @@ export function routes(): Route[] {
     });
     const seoTitle = (b: VicBundle) => {
       const T = b.town.name;
+      const R = b.region ?? T;
       return {
+        daytrip: fit(`${R} Day Trip from Melbourne: ${b.region ? T + ' ' : ''}Itinerary` + SUFFIX, `${R} Day Trip from Melbourne: Itinerary` + SUFFIX, `${R} Day Trip from Melbourne: Itinerary`, `${R} Day Trip from Melbourne`),
         train: fit(`${T} by Train: a Weekend Without a Car` + SUFFIX, `${T} by Train: a Weekend Without a Car`, `${T} by Train: Weekend Plan`),
         budget: fit(`Cheap Weekend in ${T}: Budget Stays & Free Fun` + SUFFIX, `Cheap Weekend in ${T}: Budget Stays & Free Fun`, `Cheap Weekend in ${T}`),
         couples: fit(`Romantic Weekend in ${T}: Stay, Dine & Unwind` + SUFFIX, `Romantic Weekend in ${T}: Stay, Dine & Unwind`, `Romantic Weekend in ${T}`),
@@ -388,16 +406,17 @@ export function routes(): Route[] {
       const bits: string[] = [];
       if (b.audience === 'train' && b.station) bits.push(`Train to ${b.station.name}`);
       if (st) bits.push(`stay at ${st.name}`);
-      const main = first(b, { train: 'see', budget: 'free', couples: 'unwind', family: 'big' }[b.audience])?.item;
+      const main = first(b, ({ daytrip: 'morning', train: 'see', budget: 'free', couples: 'unwind', family: 'big' } as Record<string, string>)[b.audience])?.item;
       if (main) bits.push(`${b.audience === 'budget' ? 'free: ' : ''}${main.name}`);
-      const din = first(b, b.audience === 'budget' ? 'eat' : 'dinner')?.item;
-      if (din) bits.push(`dinner at ${din.name}`);
+      const din = first(b, b.audience === 'budget' ? 'eat' : b.audience === 'daytrip' ? 'lunch' : 'dinner')?.item;
+      if (din) bits.push(`${b.audience === 'daytrip' ? 'lunch' : 'dinner'} at ${din.name}`);
       const s0 = bits.join(', ');
       return s0.charAt(0).toUpperCase() + s0.slice(1) + '.';
     };
     const description = (b: VicBundle) => {
       const T = b.town.name;
       const lead = {
+        daytrip: `A day trip to ${b.region ? `the ${b.region} (${T})` : T} from Melbourne, planned hour by hour: what to see in the morning, where to have lunch, an afternoon stop, and a treat before you head home.`,
         train: `A weekend in ${T} without a car: train to ${b.station?.name} station, a stay within walking distance, and where to eat and what to see.`,
         budget: `A cheap weekend in ${T}: a budget place to stay, free things to do and cheap eats, planned day by day.`,
         couples: `A romantic weekend in ${T} for two: where to stay, dinner, and places to unwind, planned day by day.`,
@@ -411,6 +430,8 @@ export function routes(): Route[] {
       const lines = [content.towns[b.town.slug].intro];
       if (b.audience === 'train' && b.station && st)
         lines.push(`${T} has its own train station (${b.station.name}), so you can leave the car at home. This plan keeps everything close: your stay is about ${walkMins(st.km ?? 0)} minutes' walk from the platform, and dinner and breakfast are a short walk from your bed.`);
+      if (b.audience === 'daytrip')
+        lines.push(`A day out with everything close together: a morning stop, lunch nearby, an afternoon stop and a treat before the drive home. ${T} is about ${b.town.kmFromMelbourne ?? 0} km from Melbourne, so you can be back for dinner.`);
       if (b.audience === 'budget')
         lines.push(`This plan keeps costs down without skipping the good bits: a ${kindOf(st!.item).toLowerCase()} to sleep in, ${b.result.picks.free.length} things to do that cost nothing, and pubs and cafés for cheap meals.`);
       if (b.audience === 'couples')
@@ -436,6 +457,7 @@ export function routes(): Route[] {
       return out2;
     };
     const TIPS: Record<Audience, string[]> = {
+      daytrip: ['Leave early: you\'ll beat the traffic out of Melbourne and the lunch crowd.', 'Check opening hours for each stop before you go; some close early or on certain days.', 'Weekdays are quieter than weekends at most of these places.'],
       train: ['Check the timetable before you plan the day: some regional lines run fewer trains on weekends.', 'Travel light: a backpack beats a wheelie case on country footpaths.', 'Save the station on your phone map so the walk back on Sunday is easy.'],
       budget: ['Compare prices for the exact night you want: budget stays change price with demand, and midweek or off-season is usually cheaper.', 'Many caravan parks have cabins as well as sites, so you don’t need your own tent.', 'Free places are free to enter, but parking nearby may cost. Pack water and snacks.'],
       couples: ['Book Saturday dinner ahead: the best tables go first.', 'B&Bs and cottages often have a two-night minimum on weekends, so check when you book.', 'Ask for a late checkout on Sunday. It’s often free if you ask.'],
@@ -448,7 +470,7 @@ export function routes(): Route[] {
         steps: d.steps.map((s) => ({ when: s.when, text: s.text, place: s.pick ? view(s.pick.item, null, '') : null })),
       }));
       const swapSlots = Object.entries(b.result.alternates).filter(([, list]) => list.length > 0);
-      const LABEL: Record<string, string> = { stay: 'Other places to stay', dinner: 'Other dinner options', see: 'More to see', free: 'More free things to do', unwind: 'More ways to unwind', big: 'Other big days out', outdoors: 'More outdoors', eat: 'More cheap eats' };
+      const LABEL: Record<string, string> = { morning: 'More to see', afternoon: 'More afternoon ideas', lunch: 'Other lunch spots', stay: 'Other places to stay', dinner: 'Other dinner options', see: 'More to see', free: 'More free things to do', unwind: 'More ways to unwind', big: 'Other big days out', outdoors: 'More outdoors', eat: 'More cheap eats' };
       const swaps = swapSlots.filter(([k]) => LABEL[k]).map(([k, list]) => ({ label: LABEL[k], places: list.map((p) => view(p.item, p.km, ref(b, k))) }));
       const related = [
         ...(bundlesByTown.get(b.town.slug) ?? []).filter((o) => o !== b).map((o) => ({ href: `/${o.path}`, label: bundleLabel(o) })),
@@ -465,21 +487,23 @@ export function routes(): Route[] {
             '@type': 'TouristTrip',
             name: bundleLabel(b),
             description: description(b),
-            touristType: { train: 'Travellers without a car', budget: 'Budget travellers', couples: 'Couples', family: 'Families with children' }[b.audience],
+            touristType: { daytrip: 'Day trippers', train: 'Travellers without a car', budget: 'Budget travellers', couples: 'Couples', family: 'Families with children' }[b.audience],
             itinerary: { '@type': 'ItemList', itemListElement: places.map((p, i) => ({ '@type': 'ListItem', position: i + 1, item: { '@type': 'Place', name: p.item.name, geo: { '@type': 'GeoCoordinates', latitude: p.item.lat, longitude: p.item.lon } } })) },
           },
-          crumbs([{ name: 'Home', path: '' }, { name: 'Weekend plans', path: 'weekends' }, { name: AUDIENCE[b.audience].hubTitle, path: AUDIENCE[b.audience].hubPath }, { name: bundleLabel(b), path: b.path }]),
+          crumbs(b.audience === 'daytrip' ? [{ name: 'Home', path: '' }, { name: 'Day trips', path: 'day-trips' }, { name: bundleLabel(b), path: b.path }] : [{ name: 'Home', path: '' }, { name: 'Weekend plans', path: 'weekends' }, { name: AUDIENCE[b.audience].hubTitle, path: AUDIENCE[b.audience].hubPath }, { name: bundleLabel(b), path: b.path }]),
         ],
         props: {
           title: bundleLabel(b),
-          sub: `2 days, 1 night · ${b.audience === 'train' && b.station ? `${b.station.name} station` : b.town.kmFromMelbourne && b.town.kmFromMelbourne >= 3 ? `${b.town.kmFromMelbourne} km from Melbourne` : 'Melbourne'}`,
+          sub: b.audience === 'daytrip' ? `Day trip · about ${b.town.kmFromMelbourne ?? 0} km from Melbourne` : `2 days, 1 night · ${b.audience === 'train' && b.station ? `${b.station.name} station` : b.town.kmFromMelbourne && b.town.kmFromMelbourne >= 3 ? `${b.town.kmFromMelbourne} km from Melbourne` : 'Melbourne'}`,
           intro: intro(b),
           town: { name: T, slug: b.town.slug },
           days, swaps, gettingThere: gettingThere(b), tips: TIPS[b.audience],
           related: related.filter((r, i, a) => a.findIndex((x) => x.href === r.href) === i).slice(0, 6),
           hub: { href: `/${AUDIENCE[b.audience].hubPath}`, label: AUDIENCE[b.audience].hubTitle },
           affiliates: content.affiliates ?? null,
-          showTours: b.audience === 'couples' || b.audience === 'family',
+          showTours: b.audience === 'couples' || b.audience === 'family' || b.audience === 'daytrip',
+          showStay: b.audience !== 'daytrip',
+          root: b.audience === 'daytrip' ? { href: '/day-trips', label: 'Day trips' } : { href: '/weekends', label: 'Weekend plans' },
           bundle: { audience: b.audience, town: T, summary: summary(b), demand: b.demand },
         },
       });
@@ -487,9 +511,10 @@ export function routes(): Route[] {
     // Hubs: one per audience, plus /weekends with all of them.
     const card = (b: VicBundle) => ({
       href: `/${b.path}`, town: bundleLabel(b), km: b.town.kmFromMelbourne ?? 0, summary: summary(b),
-      highlights: [] as string[],
+      highlights: [] as string[], photo: photos.towns[b.town.slug] ?? null,
     });
     const HUB_INTRO: Record<Audience, string[]> = {
+      daytrip: ['Day trips from Melbourne, planned hour by hour: a morning stop, lunch close by, an afternoon stop and a treat before you drive home. Every plan uses real places near each other, with addresses, opening hours and maps.', 'Most are within two hours of the city. Leave early to beat the traffic and the lunch crowd.'],
       train: ['Leave the car at home. Each plan picks a Victorian town with its own train station, a place to stay within walking distance of the platform, and where to eat and what to see on foot.', 'Plans only include towns with a station close to the centre. Check the PTV journey planner for times before you book.'],
       budget: ['Weekends away that don’t cost a fortune: budget stays (hostels, caravan parks, motels), free things to do, and pubs and cafés for cheap meals.', 'We never list prices because they change daily. Compare for your dates before you book.'],
       couples: ['Weekend plans for two: a B&B, cottage or boutique stay, a proper dinner, and time to unwind with a spa, a cellar door or a view.', 'Towns are picked by how well they fit a romantic weekend, using what each one actually has nearby.'],
@@ -501,8 +526,8 @@ export function routes(): Route[] {
       out.push({
         path: AUDIENCE[a].hubPath,
         template: 'vicBundles',
-        seo: { title: AUDIENCE[a].hubTitle + SUFFIX, rawTitle: true, description: `${AUDIENCE[a].hubTitle}: ${list.length} ready-made weekend plans with where to stay, eat and what to do, day by day.`, image: photoUrl(...list.map((b) => b.town.slug)) },
-        schema: [crumbs([{ name: 'Home', path: '' }, { name: 'Weekend plans', path: 'weekends' }, { name: AUDIENCE[a].hubTitle, path: AUDIENCE[a].hubPath }])],
+        seo: { title: a === 'daytrip' ? 'Day Trips from Melbourne: Ready-Made Itineraries' + SUFFIX : AUDIENCE[a].hubTitle + SUFFIX, rawTitle: true, description: `${AUDIENCE[a].hubTitle}: ${list.length} ready-made weekend plans with where to stay, eat and what to do, day by day.`, image: photoUrl(...list.map((b) => b.town.slug)) },
+        schema: [crumbs(a === 'daytrip' ? [{ name: 'Home', path: '' }, { name: 'Day trips', path: 'day-trips' }] : [{ name: 'Home', path: '' }, { name: 'Weekend plans', path: 'weekends' }, { name: AUDIENCE[a].hubTitle, path: AUDIENCE[a].hubPath }])],
         props: {
           title: AUDIENCE[a].hubTitle, intro: HUB_INTRO[a], groups: [{ title: AUDIENCE[a].hubTitle, cards: list.map(card) }],
           others: auds.filter((o) => o !== a).map((o) => ({ href: `/${AUDIENCE[o].hubPath}`, label: AUDIENCE[o].hubTitle })),
@@ -512,12 +537,12 @@ export function routes(): Route[] {
     out.push({
       path: 'weekends',
       template: 'vicBundles',
-      seo: { title: 'Weekend Itineraries from Melbourne: Ready-Made Plans' + SUFFIX, rawTitle: true, description: `${bundles.length} ready-made weekend itineraries from Melbourne: by train, on a budget, for couples and for families, with where to stay, eat and what to do, day by day.`, image: photoUrl(...bundles.map((b) => b.town.slug)) },
+      seo: { title: 'Weekend Itineraries from Melbourne: Ready-Made Plans' + SUFFIX, rawTitle: true, description: `${bundles.filter((b) => b.audience !== 'daytrip').length} ready-made weekend itineraries from Melbourne: by train, on a budget, for couples and for families, with where to stay, eat and what to do, day by day.`, image: photoUrl(...bundles.map((b) => b.town.slug)) },
       schema: [crumbs([{ name: 'Home', path: '' }, { name: 'Weekend plans', path: 'weekends' }])],
       props: {
         title: 'Weekend itineraries from Melbourne',
         intro: ['Ready-made weekend plans: pick how you want to travel and who’s coming, and each plan gives you where to stay, where to eat and what to do, day by day, with real places and maps.', 'Every plan uses places from open data near each other, so the weekend works on the ground.'],
-        groups: auds.map((a) => ({ title: AUDIENCE[a].hubTitle, href: `/${AUDIENCE[a].hubPath}`, intro: HUB_INTRO[a][0], cards: bundles.filter((b) => b.audience === a).sort((x, y) => (y.demand?.volume ?? 0) - (x.demand?.volume ?? 0) || y.rank - x.rank).slice(0, 4).map(card) })),
+        groups: auds.filter((a) => a !== 'daytrip').map((a) => ({ title: AUDIENCE[a].hubTitle, href: `/${AUDIENCE[a].hubPath}`, intro: HUB_INTRO[a][0], cards: bundles.filter((b) => b.audience === a).sort((x, y) => (y.demand?.volume ?? 0) - (x.demand?.volume ?? 0) || y.rank - x.rank).slice(0, 4).map(card) })),
         others: [],
       },
     });

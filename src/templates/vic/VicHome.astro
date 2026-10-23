@@ -1,22 +1,68 @@
 ---
 import RoadSign from '../../components/vic/RoadSign.astro';
+import type { Photo } from '../../../brands/vic/model';
 interface SignTown { slug: string; name: string; km: number; region: string }
+interface DayTrip { href: string; title: string; town: string | null; km: number; photo: Photo | null; line: string }
+interface Tile { href: string; title: string; count: number; photo: Photo | null; example: string | null }
 interface Props {
   towns: SignTown[];
   neighbourhoods: SignTown[];
   collections: { slug: string; name: string; intro: string; towns: string[] }[];
   loops: { slug: string; name: string; summary: string; days: number }[];
+  dayTrips?: DayTrip[];
+  weekendTiles?: Tile[];
 }
-const { towns, neighbourhoods, collections, loops } = Astro.props;
+const { towns, neighbourhoods, collections, loops, dayTrips = [], weekendTiles = [] } = Astro.props;
+const credit = (p: Photo) => `Photo: ${p.artist}, ${p.license}, via Wikimedia Commons`;
 ---
 <div class="wrap home">
   <section class="home__hero">
     <h1 class="home__title">Victoria, town by town.</h1>
-    <p class="home__lede">Where to stay, where to eat and what to do, for every town on the list. Distances are from Melbourne’s CBD.</p>
-    <ul class="signpost" aria-label="Towns, nearest first">
-      {towns.map((t) => <li><RoadSign name={t.name} km={t.km} href={`/${t.slug}`} /></li>)}
-    </ul>
+    <p class="home__lede">Ready-made day trips and weekends from Melbourne, with where to stay, eat and what to do in every town.</p>
   </section>
+
+  {dayTrips.length > 0 && (
+    <section class="home__section home__section--first" aria-labelledby="daytrips">
+      <div class="home__head">
+        <h2 id="daytrips">Day trips from Melbourne</h2>
+        <a class="home__more" href="/day-trips">All day trips</a>
+      </div>
+      <ul class="cards">
+        {dayTrips.map((d, i) => (
+          <li class="card">
+            <a class="card__link" href={d.href}>
+              <span class="card__img">
+                {d.photo ? <img src={d.photo.url} alt={`${d.town ?? d.title}, Victoria`} width={d.photo.width} height={d.photo.height} loading={i < 2 ? 'eager' : 'lazy'} decoding="async" referrerpolicy="no-referrer" /> : <span class="card__noimg" />}
+                <span class="card__sign">{d.title}</span>
+              </span>
+              <span class="card__meta">{d.town ? `${d.town} · ` : ''}{d.km} km from Melbourne</span>
+              <span class="card__line">{d.line}</span>
+            </a>
+            {d.photo && <a class="card__credit" href={d.photo.page} rel="nofollow noopener" target="_blank">{credit(d.photo)}</a>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {weekendTiles.length > 0 && (
+    <section class="home__section" aria-labelledby="weekends">
+      <div class="home__head">
+        <h2 id="weekends">Weekends away</h2>
+        <a class="home__more" href="/weekends">All weekend plans</a>
+      </div>
+      <ul class="tiles">
+        {weekendTiles.map((t) => (
+          <li>
+            <a class="tile" href={t.href}>
+              {t.photo && <img src={t.photo.url} alt="" width={t.photo.width} height={t.photo.height} loading="lazy" decoding="async" referrerpolicy="no-referrer" />}
+              <span class="tile__text"><strong>{t.title}</strong><span>{t.count} plans{t.example ? `, like ${t.example}` : ''}</span></span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
 
   {loops.length > 0 && (
     <section class="home__section">
@@ -46,6 +92,13 @@ const { towns, neighbourhoods, collections, loops } = Astro.props;
     </ul>
   </section>
 
+  <section class="home__section">
+    <h2>Every town, nearest first</h2>
+    <ul class="signpost" aria-label="Towns, nearest first">
+      {towns.map((t) => <li><RoadSign name={t.name} km={t.km} href={`/${t.slug}`} /></li>)}
+    </ul>
+  </section>
+
   {neighbourhoods.length > 0 && (
     <section class="home__section">
       <h2>Melbourne neighbourhoods</h2>
@@ -62,6 +115,33 @@ const { towns, neighbourhoods, collections, loops } = Astro.props;
   .signpost { list-style: none; margin: var(--space-4) 0 0; padding: 0; display: grid; gap: 0.6rem; max-width: 34rem; }
   .signpost--tight { margin-top: var(--space-3); }
   .home__section { margin-top: var(--space-6); }
+  .home__section--first { margin-top: var(--space-4); }
+  .home__head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+  .home__more { font-family: var(--font-display); font-weight: 700; color: var(--sign-green); }
+  .cards { list-style: none; padding: 0; margin: var(--space-3) 0 0; display: grid; gap: var(--space-4) var(--space-3); grid-template-columns: 1fr; }
+  @media (min-width: 40rem) { .cards { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 64rem) { .cards { grid-template-columns: repeat(3, 1fr); } }
+  .card__link { display: grid; gap: 0.35rem; text-decoration: none; color: var(--paper); }
+  .card__img { position: relative; display: block; aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden; background: var(--line); }
+  .card__img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  .card__link:hover .card__img img { transform: scale(1.03); }
+  @media (prefers-reduced-motion: reduce) { .card__img img { transition: none; } }
+  .card__noimg { position: absolute; inset: 0; background: var(--sign-green); }
+  .card__sign { position: absolute; left: 0.7rem; bottom: 0.7rem; right: 0.7rem; width: fit-content; max-width: calc(100% - 1.4rem); background: var(--sign-green); color: #fff;
+    border: 3px solid #fff; outline: 3px solid var(--sign-green); border-radius: 8px; padding: 0.3rem 0.7rem 0.2rem; font: 800 1.25rem/1.15 var(--font-display); }
+  .card__meta { font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; color: var(--muted); }
+  .card__line { font-size: 0.98rem; }
+  .card__link:hover .card__line { text-decoration: underline; }
+  .card__credit { display: block; font-size: 0.68rem; color: var(--muted); margin-top: 0.25rem; text-decoration: none; }
+  .tiles { list-style: none; padding: 0; margin: var(--space-3) 0 0; display: grid; gap: var(--space-3); grid-template-columns: 1fr 1fr; }
+  @media (min-width: 64rem) { .tiles { grid-template-columns: repeat(4, 1fr); } }
+  .tile { position: relative; display: block; aspect-ratio: 1; border-radius: var(--radius); overflow: hidden; background: var(--sign-brown); text-decoration: none; color: #fff; }
+  .tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .tile::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0) 60%); }
+  .tile__text { position: absolute; left: 0.8rem; right: 0.8rem; bottom: 0.7rem; z-index: 1; display: grid; gap: 0.1rem; }
+  .tile__text strong { font: 800 1.2rem/1.1 var(--font-display); }
+  .tile__text span { font-size: 0.85rem; opacity: 0.92; }
+
   .home__section h2 { font-size: var(--step-2); }
   .trips { list-style: none; margin: var(--space-3) 0 0; padding: 0; display: grid; gap: 0; }
   @media (min-width: 52rem) { .trips { grid-template-columns: 1fr 1fr; column-gap: var(--space-5); } }

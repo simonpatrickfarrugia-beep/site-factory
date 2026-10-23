@@ -10,12 +10,12 @@ interface Props {
   swaps: { label: string; places: PlaceView[] }[];
   gettingThere: string[]; tips: string[];
   related: { href: string; label: string }[]; hub: { href: string; label: string };
-  affiliates?: Record<string, any> | null; showTours: boolean;
+  affiliates?: Record<string, any> | null; showTours: boolean; showStay?: boolean; root?: { href: string; label: string };
 }
-const { title, sub, intro, town, days, swaps, gettingThere, tips, related, hub, affiliates = null, showTours } = Astro.props;
+const { title, sub, intro, town, days, swaps, gettingThere, tips, related, hub, affiliates = null, showTours, showStay = true, root = { href: '/weekends', label: 'Weekend plans' } } = Astro.props;
 ---
 <div class="wrap town bundle">
-  <p class="crumb"><a href="/weekends">Weekend plans</a> · <a href={hub.href}>{hub.label}</a></p>
+  <p class="crumb"><a href={root.href}>{root.label}</a>{hub.href !== root.href && <> · <a href={hub.href}>{hub.label}</a></>}</p>
   <RoadSign name={title} size="hero" as="h1" sub={sub} />
   <div class="town__intro">
     {intro.map((p, i) => <p class={i === 0 ? 'town__lede' : ''}>{p}</p>)}
@@ -48,7 +48,7 @@ const { title, sub, intro, town, days, swaps, gettingThere, tips, related, hub, 
 
   <section class="picks bundle-book" aria-labelledby="book">
     <h2 id="book" class="bundle-h2">Book it</h2>
-    <AffiliateLink aff={affiliates?.stay} place={town.name} kind="stay" />
+    {showStay && <AffiliateLink aff={affiliates?.stay} place={town.name} kind="stay" />}
     {showTours && <AffiliateLink aff={affiliates?.tours} place={town.name} kind="tours" />}
     <p>Every place to stay in {town.name}, with addresses and maps: <a href={`/${town.slug}/stay`}>where to stay in {town.name}</a>. More food: <a href={`/${town.slug}/eat`}>where to eat</a>. More to see: <a href={`/${town.slug}/do`}>things to do</a>.</p>
   </section>

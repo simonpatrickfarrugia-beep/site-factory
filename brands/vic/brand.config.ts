@@ -10,13 +10,15 @@ export default defineBrand({
   // Australian road signage: highway-sign green for places, tourist-sign brown for things to do.
   colors: { brand: '#00653B', accent: '#8A4B26' },
   fonts: { display: 'Overpass', body: 'Source Serif 4' },
+  logo: { src: '/logo-mark.svg', alt: '', width: 34, height: 34 },
+  favicon: '/favicon.png',
   shareImage: '/share.png', // default og:image; town, region, trip and collection pages use a town photo
 
   nav: [
     { label: 'Towns', href: '/towns' },
     { label: 'Weekends', href: '/weekends' },
     { label: 'Road trips', href: '/road-trips' },
-    { label: 'Day trips', href: '/collections/day-trips-from-melbourne' },
+    { label: 'Day trips', href: '/day-trips' },
   ],
   footer: [
     { label: 'About', href: '/about' },
