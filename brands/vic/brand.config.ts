@@ -14,6 +14,7 @@ export default defineBrand({
 
   nav: [
     { label: 'Towns', href: '/towns' },
+    { label: 'Weekends', href: '/weekends' },
     { label: 'Road trips', href: '/road-trips' },
     { label: 'Day trips', href: '/collections/day-trips-from-melbourne' },
   ],

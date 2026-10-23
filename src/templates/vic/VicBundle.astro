@@ -1,0 +1,102 @@
+---
+/** One ready-made weekend plan (bundle): day-by-day steps with real places, swap options, booking links and tips. */
+import RoadSign from '../../components/vic/RoadSign.astro';
+import AffiliateLink from '../../components/vic/AffiliateLink.astro';
+interface PlaceView { name: string; kind: string; address: string | null; hours: string | null; website: string | null; map: string; dist: string | null }
+interface StepView { when: string; text: string; place: PlaceView | null }
+interface Props {
+  title: string; sub: string; intro: string[]; town: { name: string; slug: string };
+  days: { title: string; steps: StepView[] }[];
+  swaps: { label: string; places: PlaceView[] }[];
+  gettingThere: string[]; tips: string[];
+  related: { href: string; label: string }[]; hub: { href: string; label: string };
+  affiliates?: Record<string, any> | null; showTours: boolean;
+}
+const { title, sub, intro, town, days, swaps, gettingThere, tips, related, hub, affiliates = null, showTours } = Astro.props;
+---
+<div class="wrap town bundle">
+  <p class="crumb"><a href="/weekends">Weekend plans</a> · <a href={hub.href}>{hub.label}</a></p>
+  <RoadSign name={title} size="hero" as="h1" sub={sub} />
+  <div class="town__intro">
+    {intro.map((p, i) => <p class={i === 0 ? 'town__lede' : ''}>{p}</p>)}
+  </div>
+
+  <ol class="loop-days">
+    {days.map((d, i) => (
+      <li class="loop-day">
+        <span class="loop-day__num" aria-hidden="true">{i + 1}</span>
+        <h2 class="loop-day__title">{d.title}</h2>
+        <ul class="bundle-steps">
+          {d.steps.map((s) => (
+            <li class="bundle-step">
+              <span class="picks__label">{s.when}</span>
+              <span>{s.text}</span>
+              {s.place && (
+                <span class="bundle-step__links">
+                  {s.place.address && <span>{s.place.address}</span>}
+                  {s.place.hours && <span>{s.place.hours}</span>}
+                  {s.place.website && <a href={s.place.website} rel="nofollow noopener" target="_blank" data-cta="website">Website</a>}
+                  <a href={s.place.map} rel="nofollow noopener" target="_blank" data-cta="map">Map</a>
+                </span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </li>
+    ))}
+  </ol>
+
+  <section class="picks bundle-book" aria-labelledby="book">
+    <h2 id="book" class="bundle-h2">Book it</h2>
+    <AffiliateLink aff={affiliates?.stay} place={town.name} kind="stay" />
+    {showTours && <AffiliateLink aff={affiliates?.tours} place={town.name} kind="tours" />}
+    <p>Every place to stay in {town.name}, with addresses and maps: <a href={`/${town.slug}/stay`}>where to stay in {town.name}</a>. More food: <a href={`/${town.slug}/eat`}>where to eat</a>. More to see: <a href={`/${town.slug}/do`}>things to do</a>.</p>
+  </section>
+
+  {swaps.length > 0 && (
+    <section class="bundle-swaps" aria-labelledby="swaps">
+      <h2 id="swaps" class="bundle-h2">Swap it</h2>
+      <p class="count">Not your style? Other options that fit the same plan.</p>
+      {swaps.map((s) => (
+        <div class="picks">
+          <h3>{s.label}</h3>
+          {s.places.map((p) => (
+            <p><strong>{p.name}</strong>, {p.kind}{p.dist ? ` · ${p.dist}` : ''}{p.address ? ` · ${p.address}` : ''} · <a href={p.map} rel="nofollow noopener" target="_blank" data-cta="map">Map</a></p>
+          ))}
+        </div>
+      ))}
+    </section>
+  )}
+
+  {gettingThere.length > 0 && (
+    <section aria-labelledby="getting-there">
+      <h2 id="getting-there" class="bundle-h2">Getting there</h2>
+      {gettingThere.map((p) => <p>{p}</p>)}
+    </section>
+  )}
+
+  <section aria-labelledby="tips">
+    <h2 id="tips" class="bundle-h2">Before you go</h2>
+    <ul class="bundle-tips">{tips.map((t) => <li>{t}</li>)}</ul>
+  </section>
+
+  {related.length > 0 && (
+    <section aria-labelledby="more">
+      <h2 id="more" class="bundle-h2">More weekend plans</h2>
+      <ul class="bundle-related">{related.map((r) => <li><a href={r.href}>{r.label}</a></li>)}</ul>
+    </section>
+  )}
+  <p class="count">Places come from open data (OpenStreetMap) and are picked by how well they fit this plan and how complete their details are, never by payment. Opening hours and prices change: check before you go.</p>
+</div>
+<style>
+  .bundle-steps { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-3); }
+  .bundle-step { display: grid; gap: 0.15rem; }
+  .bundle-step__links { display: flex; flex-wrap: wrap; gap: 0.25rem 0.9rem; font-size: 0.9rem; color: var(--muted); }
+  .bundle-step__links a { color: var(--paper); }
+  .bundle-h2 { font-size: 1.45rem; margin: var(--space-5) 0 var(--space-2); }
+  .bundle-book .bundle-h2 { margin-top: 0; }
+  .bundle-book { margin-top: var(--space-4); }
+  .bundle-swaps .picks { margin-top: var(--space-2); }
+  .bundle-tips, .bundle-related { padding-left: 1.2rem; display: grid; gap: 0.4rem; }
+  .bundle-related a { font-family: var(--font-display); font-weight: 700; color: var(--sign-green); }
+</style>
