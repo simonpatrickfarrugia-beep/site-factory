@@ -55,7 +55,7 @@ function pools(places: Place[], extras: TownExtras | undefined): Record<string, 
   };
 }
 
-const CASUAL = /\b(pizza|burger|kebab|dumpling|noodle|hut|express|takeaway|take away|fried|chicken|sushi train|fish (and|&) chips|subway|domino|mcdonald|kfc|bakery)\b/i;
+const CASUAL = /\b(pizza|burger|kebab|souvlaki|sushi|dumpling|noodle|hut|express|takeaway|take away|fried|chicken|sushi train|fish (and|&) chips|subway|domino|mcdonald|kfc|bakery)\b/i;
 const CASUAL_CUISINE = /\b(pizza|burger|kebab|chicken|fish_and_chips|sandwich|fast_food|donut|ice_cream)\b/i;
 const NICE_CUISINE = /\b(french|italian|modern|australian|regional|wine|fine_dining|mediterranean|steak|seafood|tapas|spanish|european)\b/i;
 /** Date-night fit for a restaurant, from what the data says (cuisine, name, details). */
