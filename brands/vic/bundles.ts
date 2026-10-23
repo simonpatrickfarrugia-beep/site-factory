@@ -59,7 +59,7 @@ function pools(places: Place[], extras: TownExtras | undefined): Record<string, 
   };
 }
 
-const CASUAL = /\b(pizza|burger|kebab|souvlaki|sushi|dumpling|noodle|hut|express|takeaway|take away|fried|chicken|sushi train|fish (and|&) chips|subway|domino|mcdonald|kfc|bakery)\b/i;
+const CASUAL = /\b(la porchetta|grill'?d|nando'?s|hungry jack'?s|oporto|guzman|schnitz|crust|red rooster|zambrero|pizza|burger|kebab|souvlaki|sushi|dumpling|noodle|hut|express|takeaway|take away|fried|chicken|sushi train|fish (and|&) chips|subway|domino|mcdonald|kfc|bakery)\b/i;
 const CASUAL_CUISINE = /\b(pizza|burger|kebab|chicken|fish_and_chips|sandwich|fast_food|donut|ice_cream)\b/i;
 const NICE_CUISINE = /\b(french|italian|modern|australian|regional|wine|fine_dining|mediterranean|steak|seafood|tapas|spanish|european)\b/i;
 /** Date-night fit for a restaurant, from what the data says (cuisine, name, details). */
@@ -67,6 +67,22 @@ const dinnerFit = (i: Item) =>
   (CASUAL.test(i.name) || CASUAL_CUISINE.test(i.tags.cuisine ?? '') ? -4 : 0) + (NICE_CUISINE.test(i.tags.cuisine ?? '') ? 2 : 0) +
   (i.tags.outdoor_seating === 'yes' ? 0.5 : 0) + (i.tags.opening_hours ? 0.5 : 0);
 const NOT_A_STOP = /\b(railway station|station|car park|toilets?|visitor information)\b/i;
+
+/**
+ * Victoria's signature attractions. Open map data sometimes under-describes them (Healesville Sanctuary is tagged as a plain
+ * nature reserve), so plans give them priority and a proper description. Dusk-only ones become an evening step, never a morning stop.
+ */
+const SIGNATURE: Record<string, { label: string; dusk?: boolean }> = {
+  'Healesville Sanctuary': { label: 'wildlife sanctuary with koalas, platypus and birds of prey' },
+  'Sovereign Hill': { label: 'outdoor gold-rush museum' },
+  'Puffing Billy Railway': { label: 'heritage steam railway through the Dandenongs' },
+  'Golden Dragon Museum': { label: 'museum of Chinese-Australian history' },
+  'Churchill Island Heritage Farm': { label: 'heritage farm on its own island' },
+  'Arthurs Seat Lookout': { label: 'lookout over Port Phillip Bay' },
+  'Penguin Parade': { label: 'little penguins coming ashore at sunset', dusk: true },
+};
+const sigBoost = (i: Item) => (SIGNATURE[i.name] && !SIGNATURE[i.name].dusk ? 6 : 0);
+const notDusk = (i: Item) => !SIGNATURE[i.name]?.dusk;
 
 // ---------------------------------------------------------------- recipes
 const atStation = (c: Ctx) => (c.station ? { lat: c.station.lat, lon: c.station.lon } : null);
@@ -78,15 +94,15 @@ const RECIPES: Record<Audience, Recipe<Ctx>> = {
     id: 'vic-daytrip', audience: 'daytrip',
     slots: [
       { key: 'morning', label: 'Morning', pool: ['do', 'beach', 'wine'], required: true, alternates: 3,
-        filter: (i) => ['museum', 'gallery', 'attraction', 'viewpoint', 'zoo', 'aquarium', 'nature_reserve', 'beach', 'theme_park', 'park'].includes(i.kind) && !NOT_A_STOP.test(i.name),
+        filter: (i) => ['museum', 'gallery', 'attraction', 'viewpoint', 'zoo', 'aquarium', 'nature_reserve', 'beach', 'theme_park', 'park'].includes(i.kind) && !NOT_A_STOP.test(i.name) && notDusk(i),
         near: { anchor: atCentre, maxKm: 15, weight: 1 },
-        score: (i) => notable(i) * 1.5 + (({ zoo: 3, aquarium: 3, attraction: 2, museum: 2, gallery: 2, viewpoint: 2, beach: 2, nature_reserve: 1 } as Record<string, number>)[i.kind] ?? 0) + (i.kind === 'park' ? -2 : 0) },
+        score: (i) => sigBoost(i) + notable(i) * 1.5 + (({ zoo: 3, aquarium: 3, attraction: 2, museum: 2, gallery: 2, viewpoint: 2, beach: 2, nature_reserve: 1 } as Record<string, number>)[i.kind] ?? 0) + (i.kind === 'park' ? -2 : 0) },
       { key: 'lunch', label: 'Lunch', pool: ['dinner', 'cafe', 'wine'], required: true, alternates: 3, near: { slot: 'morning', maxKm: 8, weight: 2 },
         filter: (i) => !CASUAL.test(i.name) && i.kind !== 'distillery', score: (i) => dinnerFit(i) / 2 + (['winery', 'wine'].includes(i.kind) ? 2 : 0) + (has(i.tags, 'website') ? 0.5 : 0) },
       { key: 'afternoon', label: 'Afternoon', pool: ['do', 'beach', 'wine'], required: true, alternates: 3,
-        filter: (i) => ['museum', 'gallery', 'attraction', 'viewpoint', 'nature_reserve', 'beach', 'wine', 'winery', 'brewery', 'distillery', 'park'].includes(i.kind) && !NOT_A_STOP.test(i.name),
+        filter: (i) => ['museum', 'gallery', 'attraction', 'viewpoint', 'nature_reserve', 'beach', 'wine', 'winery', 'brewery', 'distillery', 'park'].includes(i.kind) && !NOT_A_STOP.test(i.name) && notDusk(i),
         near: { anchor: atCentre, maxKm: 15, weight: 1 },
-        score: (i) => notable(i) + (({ viewpoint: 2, beach: 2, wine: 2, winery: 2, gallery: 1, nature_reserve: 1, brewery: 1 } as Record<string, number>)[i.kind] ?? 0) + (i.kind === 'park' ? -2 : 0) },
+        score: (i) => sigBoost(i) / 2 + notable(i) + (({ viewpoint: 2, beach: 2, wine: 2, winery: 2, gallery: 1, nature_reserve: 1, brewery: 1 } as Record<string, number>)[i.kind] ?? 0) + (i.kind === 'park' ? -2 : 0) },
       { key: 'treat', label: 'Treat', pool: ['icecream', 'cafe'], near: { slot: 'afternoon', maxKm: 4, weight: 2 }, score: (i) => (i.kind === 'icecream' ? 1 : 0) },
     ],
   },
@@ -99,7 +115,7 @@ const RECIPES: Record<Audience, Recipe<Ctx>> = {
       { key: 'breakfast', label: 'Breakfast', pool: 'cafe', required: true, near: { slot: 'stay', maxKm: 1.2, weight: 3 } },
       { key: 'see', label: 'See and do', pool: ['do', 'beach', 'wine'], count: 2, required: true, alternates: 3,
         filter: (i) => (SIGHTS.has(i.kind) || i.kind === 'beach' || i.kind === 'wine') && !NOT_A_STOP.test(i.name), near: { anchor: atStation, maxKm: 2.5, weight: 3 },
-        score: (i) => notable(i) + (['museum', 'gallery', 'attraction', 'viewpoint', 'beach'].includes(i.kind) ? 2 : 0) + (i.kind === 'park' ? -1 : 0) },
+        score: (i) => sigBoost(i) + notable(i) + (['museum', 'gallery', 'attraction', 'viewpoint', 'beach'].includes(i.kind) ? 2 : 0) + (i.kind === 'park' ? -1 : 0) },
       { key: 'lunch', label: 'Lunch', pool: ['cafe', 'dinner'], near: { anchor: atStation, maxKm: 1, weight: 3 } },
     ],
   },
@@ -156,6 +172,7 @@ export interface Step { when: string; text: string; slot?: string; pick?: { item
 export interface Day { title: string; steps: Step[] }
 
 const kindLabel = (i: Item) =>
+  SIGNATURE[i.name]?.label ??
   ({ beach: 'beach', playground: 'playground', pool: 'swimming pool', spa: 'day spa', wine: 'cellar door', icecream: 'ice cream', picnic: 'picnic spot', bike: 'bike hire' } as Record<string, string>)[i.kind] ??
   (TYPE_LABEL[i.kind] ?? i.kind).toLowerCase();
 const walk = (d: number | null, from: string) => (d === null ? '' : d < 0.08 ? ` (right by ${from})` : ` (about ${walkMins(d)} min walk from ${from})`);
@@ -273,7 +290,17 @@ export function vicBundles(towns: Town[], content: Content, byTown: Map<string, 
       const demand = aud === 'daytrip' ? vol(`${n} day trip`, `day trip to ${n}`) : aud === 'train' ? vol(`train to ${n}`, `${n} by train`) : aud === 'budget' ? vol(`cheap accommodation ${n}`) : aud === 'couples' ? vol(`romantic getaway ${n}`, `${n} romantic weekend`) : vol(`family holiday ${n}`, `${n} with kids`);
       const b: VicBundle = { slug: `${town.slug}-${AUDIENCE[aud].path}`, path: aud === 'daytrip' ? `day-trips/${town.slug}` : `weekends/${town.slug}-${AUDIENCE[aud].path}`, audience: aud, town, result, days: plan(aud, result, ctx),
         demand: demand.volume ? demand : null, station: ctx.station, rank: result.fit + Math.log10((town.volume ?? 10) + 10) * 3 + Math.log10(demand.volume + 1) * 4 };
-      if (aud === 'daytrip') daytrips.push(b);
+      if (aud === 'daytrip') {
+        const dusk = (byTown.get(town.slug) ?? []).find((p) => SIGNATURE[p.name]?.dusk);
+        if (dusk) {
+          const item = fromPlace(dusk);
+          const steps = b.days[0].steps;
+          const at = steps.findIndex((x) => x.when === 'Before you head home');
+          const step: Step = { when: 'Stay for sunset', slot: 'dusk', pick: { item, km: null }, text: `${dusk.name}: ${SIGNATURE[dusk.name].label}. Book ahead, and you'll drive home after dark.` };
+          if (at >= 0) steps.splice(at + 1, 0, step); else steps.push(step);
+        }
+        daytrips.push(b);
+      }
       else if (aud === 'train' || aud === 'budget') { if (demand.volume >= MIN_DEMAND) out.push(b); }
       else if (town.kind !== 'suburb' && (town.kmFromMelbourne ?? 0) <= 300) statewide[aud].push(b); // a weekend, not a road trip
     }
