@@ -85,6 +85,12 @@ export function routes(): Route[] {
     if (local[0]) return placePhoto(local[0].id);
     // 3. Any stop on the plan, then the town's own photo (often just a main street), then anything in the region.
     if (picks[0]) return placePhoto(picks[0].id);
+    // 4. Region day trips (Mornington Peninsula, Yarra Valley): the region's own scenery beats one town's main street.
+    if (b.region) {
+      const slugs = towns.filter((t) => content.towns[t.slug]?.region === b.region).map((t) => t.slug);
+      const scenic = slugs.flatMap((sl) => byTown.get(sl) ?? []).find((p) => ['viewpoint', 'nature_reserve', 'beach'].includes(p.type) && placePhoto(p.id));
+      if (scenic) return placePhoto(scenic.id);
+    }
     if (photos.towns[b.town.slug]) return photos.towns[b.town.slug];
     if (b.region) {
       const slugs = towns.filter((t) => content.towns[t.slug]?.region === b.region).map((t) => t.slug);
