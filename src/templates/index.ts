@@ -23,6 +23,8 @@ import ChcFaq from './chc/Faq.astro';
 import ChcContact from './chc/Contact.astro';
 import ChcJournal from './chc/Journal.astro';
 import ChcResumeBuilder from './chc/ResumeBuilder.astro';
+import VicBundle from './vic/VicBundle.astro';
+import VicBundles from './vic/VicBundles.astro';
 
 export const templates = {
   home: Home,
@@ -49,4 +51,6 @@ export const templates = {
   chcContact: ChcContact,
   chcJournal: ChcJournal,
   chcResumeBuilder: ChcResumeBuilder,
+  vicBundle: VicBundle,
+  vicBundles: VicBundles,
 };
