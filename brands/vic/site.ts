@@ -431,7 +431,7 @@ export function routes(): Route[] {
       if (b.audience === 'train' && b.station && st)
         lines.push(`${T} has its own train station (${b.station.name}), so you can leave the car at home. This plan keeps everything close: your stay is about ${walkMins(st.km ?? 0)} minutes' walk from the platform, and dinner and breakfast are a short walk from your bed.`);
       if (b.audience === 'daytrip')
-        lines.push(`A day out with everything close together: a morning stop, lunch nearby, an afternoon stop and a treat before the drive home. ${T} is about ${b.town.kmFromMelbourne ?? 0} km from Melbourne, so you can be back for dinner.`);
+        lines.push(`A day out with everything close together: a morning stop, lunch nearby, an afternoon stop and a treat before the drive home. ${T} is about ${b.town.kmFromMelbourne ?? 0} km from Melbourne, an easy day out from the city.`);
       if (b.audience === 'budget')
         lines.push(`This plan keeps costs down without skipping the good bits: a ${kindOf(st!.item).toLowerCase()} to sleep in, ${b.result.picks.free.length} things to do that cost nothing, and pubs and cafés for cheap meals.`);
       if (b.audience === 'couples')
@@ -526,7 +526,7 @@ export function routes(): Route[] {
       out.push({
         path: AUDIENCE[a].hubPath,
         template: 'vicBundles',
-        seo: { title: a === 'daytrip' ? 'Day Trips from Melbourne: Ready-Made Itineraries' + SUFFIX : AUDIENCE[a].hubTitle + SUFFIX, rawTitle: true, description: `${AUDIENCE[a].hubTitle}: ${list.length} ready-made weekend plans with where to stay, eat and what to do, day by day.`, image: photoUrl(...list.map((b) => b.town.slug)) },
+        seo: { title: a === 'daytrip' ? 'Day Trips from Melbourne: Ready-Made Itineraries' + SUFFIX : AUDIENCE[a].hubTitle + SUFFIX, rawTitle: true, description: a === 'daytrip' ? `${list.length} ready-made day trips from Melbourne, planned hour by hour: a morning stop, lunch, an afternoon stop and a treat, with real places and maps.` : `${AUDIENCE[a].hubTitle}: ${list.length} ready-made weekend plans with where to stay, eat and what to do, day by day.`, image: photoUrl(...list.map((b) => b.town.slug)) },
         schema: [crumbs(a === 'daytrip' ? [{ name: 'Home', path: '' }, { name: 'Day trips', path: 'day-trips' }] : [{ name: 'Home', path: '' }, { name: 'Weekend plans', path: 'weekends' }, { name: AUDIENCE[a].hubTitle, path: AUDIENCE[a].hubPath }])],
         props: {
           title: AUDIENCE[a].hubTitle, intro: HUB_INTRO[a], groups: [{ title: AUDIENCE[a].hubTitle, cards: list.map(card) }],
