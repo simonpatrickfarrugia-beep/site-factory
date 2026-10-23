@@ -1,0 +1,10 @@
+---
+import SlCta from './SlCta.astro';
+interface Props { email: string; title: string; paragraphs: string[]; showCta?: boolean }
+const { title, paragraphs, showCta = true } = Astro.props;
+---
+<section class="sl-pagehead">
+  <div class="sl-wrap"><h1>{title}</h1></div>
+</section>
+<article class="sl-wrap sl-section sl-prose">{paragraphs.map((t) => <p>{t}</p>)}</article>
+{showCta && <SlCta />}

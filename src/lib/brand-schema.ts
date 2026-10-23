@@ -14,7 +14,7 @@ export const brandSchema = z.object({
   /** false = every page gets noindex, so previews never leak into Google. Flip at cutover. */
   launched: z.boolean().default(false),
 
-  theme: z.enum(['cinematic', 'editorial', 'coastal', 'roadtrip', 'calm']),
+  theme: z.enum(['cinematic', 'editorial', 'coastal', 'roadtrip', 'calm', 'shortlist']),
   /** Optional logo mark shown before the name in the header (file in brands/<slug>/public). */
   logo: z.object({ src: z.string(), alt: z.string().default(''), width: z.number(), height: z.number() }).optional(),
   /** Default social share image (1200x630) in brands/<slug>/public, used when a page has none. */
@@ -40,7 +40,7 @@ export const brandSchema = z.object({
     base: z.string().regex(/^app[A-Za-z0-9]{14}$/).optional(),
   }).refine((d) => d.source !== 'airtable' || !!d.base, 'Airtable source needs a base ID'),
 
-  forms: z.array(z.enum(['contact', 'quote', 'supplier-signup', 'enquiry', 'referral'])).default([]),
+  forms: z.array(z.enum(['contact', 'quote', 'supplier-signup', 'enquiry', 'referral', 'shortlist'])).default([]),
 
   analytics: z.object({
     /** Cloudflare Web Analytics site token (public, safe to commit). */

@@ -1,0 +1,27 @@
+---
+import SlCta from './SlCta.astro';
+import type { Section } from '../../../brands/shortlisted/model';
+interface Props { email: string; page: { title: string; lede: string; sections: Section[] } }
+const { page: p } = Astro.props;
+---
+<section class="sl-pagehead">
+  <div class="sl-wrap">
+    <p class="sl-crumb"><a href="/">Shortlisted</a></p>
+    <h1>{p.title}</h1>
+    <p class="sl-lede">{p.lede}</p>
+  </div>
+</section>
+<article class="sl-wrap sl-section sl-prose">
+  {p.sections.map((s) => (
+    <section>
+      <h2>{s.h}</h2>
+      {s.p?.map((t) => <p>{t}</p>)}
+      {s.list && <ul class="sl-ticks">{s.list.map((t) => <li>{t}</li>)}</ul>}
+    </section>
+  ))}
+  <aside class="sl-note">
+    <h2>Need a policy first?</h2>
+    <p>Our free <a href="/business-travel/travel-policy-template">travel policy template</a> makes a clear one-page policy in five minutes. Handy whether or not you use a travel manager.</p>
+  </aside>
+</article>
+<SlCta heading="Get a business travel shortlist" text="Tell us your team size, rough spend and what's not working. We'll come back with the options that fit and what to ask each one." />

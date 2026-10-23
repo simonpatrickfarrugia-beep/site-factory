@@ -1,0 +1,69 @@
+---
+import type { Category } from '../../../brands/shortlisted/model';
+interface Props { email: string; endpoint: string; page: { title: string; lede: string }; categories: Category[] }
+const { email, endpoint, page: p, categories } = Astro.props;
+---
+<section class="sl-pagehead">
+  <div class="sl-wrap">
+    <h1>{p.title}</h1>
+    <p class="sl-lede">{p.lede}</p>
+  </div>
+</section>
+<div class="sl-wrap sl-section">
+  <form class="sl-form" data-form action={`${endpoint}/submit/shortlist`} method="post">
+    <label>What do you need help with?
+      <select name="category" required>
+        {categories.map((c) => <option value={c.name}>{c.name}</option>)}
+        <option value="Something else">Something else</option>
+      </select>
+    </label>
+    <div class="sl-row">
+      <label>Your name<input name="name" autocomplete="name" required /></label>
+      <label>Work email<input name="email" type="email" autocomplete="email" required /></label>
+    </div>
+    <div class="sl-row">
+      <label>Company<input name="company" autocomplete="organization" required /></label>
+      <label>Phone <span class="sl-opt">(optional)</span><input name="phone" type="tel" autocomplete="tel" /></label>
+    </div>
+    <div class="sl-row">
+      <label>How many people travel for work?
+        <select name="travellers"><option>1–5</option><option>6–20</option><option>21–50</option><option>51–200</option><option>200+</option><option>Not sure</option></select>
+      </label>
+      <label>Rough yearly travel spend
+        <select name="spend"><option>Under $50k</option><option>$50k–$250k</option><option>$250k–$500k</option><option>$500k–$2m</option><option>Over $2m</option><option>Not sure</option></select>
+      </label>
+    </div>
+    <fieldset>
+      <legend>How do you book travel today?</legend>
+      <label class="sl-choice"><input type="radio" name="booking" value="Ourselves, online" required /> Ourselves, online</label>
+      <label class="sl-choice"><input type="radio" name="booking" value="Through an agency or travel manager" /> Through an agency or travel manager</label>
+      <label class="sl-choice"><input type="radio" name="booking" value="A mix" /> A mix</label>
+    </fieldset>
+    <label>What's not working, or what are you looking for?<textarea name="message" rows="4" required></textarea></label>
+    <label class="sl-choice"><input type="checkbox" name="consent" value="yes" required /> I'm happy for Shortlisted to contact me about this. We won't share your details with any provider until you say yes.</label>
+    <input class="sl-hp" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+    <button class="sl-btn" type="submit">Send my request</button>
+    <p class="sl-form__status" role="status" aria-live="polite"></p>
+  </form>
+  <p class="sl-small">Prefer email? <a href={`mailto:${email}?subject=Shortlist%20request`}>{email}</a></p>
+</div>
+<script is:inline define:vars={{ email }}>
+  document.querySelectorAll('form[data-form]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var status = form.querySelector('.sl-form__status');
+      var button = form.querySelector('button[type=submit]');
+      button.disabled = true;
+      status.textContent = 'Sending…';
+      fetch(form.action, { method: 'POST', body: new FormData(form) })
+        .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+        .then(function () {
+          form.reset();
+          status.textContent = 'Sent. We’ll reply within two business days.';
+          if (window.gtag) window.gtag('event', 'cta_shortlist_sent');
+        })
+        .catch(function () { status.textContent = "That didn't send. Please email " + email + ' instead.'; })
+        .finally(function () { button.disabled = false; });
+    });
+  });
+</script>

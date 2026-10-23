@@ -23,6 +23,11 @@ import ChcFaq from './chc/Faq.astro';
 import ChcContact from './chc/Contact.astro';
 import ChcJournal from './chc/Journal.astro';
 import ChcResumeBuilder from './chc/ResumeBuilder.astro';
+import SlHome from './sl/SlHome.astro';
+import SlGuide from './sl/SlGuide.astro';
+import SlPolicy from './sl/SlPolicy.astro';
+import SlEnquiry from './sl/SlEnquiry.astro';
+import SlPage from './sl/SlPage.astro';
 
 export const templates = {
   home: Home,
@@ -49,4 +54,9 @@ export const templates = {
   chcContact: ChcContact,
   chcJournal: ChcJournal,
   chcResumeBuilder: ChcResumeBuilder,
+  slHome: SlHome,
+  slGuide: SlGuide,
+  slPolicy: SlPolicy,
+  slEnquiry: SlEnquiry,
+  slPage: SlPage,
 };

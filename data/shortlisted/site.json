@@ -1,0 +1,50 @@
+{
+ "email": "hello@shortlisted.com.au",
+ "formsEndpoint": "https://forms.simonpatrickfarrugia.workers.dev",
+ "hero": {
+  "title": "The right provider for your business, shortlisted.",
+  "lede": "Tell us what your business needs. We come back with a short, honest shortlist and the questions to ask each one. Free for Australian small and mid-sized businesses.",
+  "card": {
+   "heading": "Business travel for a 40-person team",
+   "rows": [
+    {
+     "t": "Agency that wants a 12-month lock-in",
+     "s": "out",
+     "why": "Lock-in, no reporting"
+    },
+    {
+     "t": "Booking it all yourself",
+     "s": "out",
+     "why": "Hours a month, no duty of care"
+    },
+    {
+     "t": "Travel manager with 24/7 support",
+     "s": "pick",
+     "why": "Fees in writing, monthly spend report"
+    }
+   ]
+  }
+ },
+ "steps": [
+  {
+   "t": "Tell us what you need",
+   "d": "Two minutes: your team size, roughly what you spend, and what's not working today."
+  },
+  {
+   "t": "We shortlist",
+   "d": "We come back with the options that fit, why, and what to ask each one. Usually within two business days."
+  },
+  {
+   "t": "You decide",
+   "d": "Talk to who you like, when you like. No obligation, and we never pass on your details without your OK."
+  }
+ ],
+ "categories": [
+  {
+   "slug": "business-travel",
+   "name": "Business travel",
+   "live": true,
+   "d": "Travel management companies, booking tools and travel policies for teams that travel for work."
+  }
+ ]
+}

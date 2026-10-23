@@ -1,0 +1,167 @@
+---
+/**
+ * Free business travel policy generator. Runs in the browser: nothing chosen or typed is sent anywhere or stored.
+ * Pick rules on the left, the policy writes itself on the right; save as PDF (print) or copy into Word.
+ */
+import SlCta from './SlCta.astro';
+interface Props { email: string; page: { title: string; lede: string; faq: { q: string; a: string }[] } }
+const { page: p } = Astro.props;
+const opt = (name: string, options: [string, string][], first = 0) =>
+  options.map(([value, label], i) => ({ name, value, label, checked: i === first }));
+const groups = [
+  { legend: 'Who approves trips?', items: opt('approver', [['manager', 'Their manager'], ['owner', 'The owner or CEO'], ['finance', 'Finance']]) },
+  { legend: 'Which trips need approval?', items: opt('approvalScope', [['all', 'Every trip'], ['overnight', 'Overnight and interstate trips'], ['international', 'International trips only']]) },
+  { legend: 'How do people book?', items: opt('booking', [['tmc', 'Through our travel manager'], ['online', 'Online, by the traveller'], ['mix', 'Online for simple trips, travel manager for complex ones']], 2) },
+  { legend: 'Book domestic flights at least', items: opt('advanceDom', [['7', '7 days ahead'], ['14', '14 days ahead'], ['21', '21 days ahead']], 1) },
+  { legend: 'Book international flights at least', items: opt('advanceIntl', [['21', '21 days ahead'], ['28', '28 days ahead'], ['42', '6 weeks ahead']], 1) },
+  { legend: 'Which fares?', items: opt('fare', [['lowest', 'Lowest logical fare (sensible times, no long layovers)'], ['flex', 'Flexible fares, so plans can change']]) },
+  { legend: 'Premium economy on international flights', items: opt('premium', [['never', 'Not used'], ['6', 'Flights over 6 hours'], ['8', 'Flights over 8 hours']], 2) },
+  { legend: 'Business class', items: opt('business', [['never', 'Not used'], ['10', 'International flights over 10 hours'], ['exec', 'Executives only, with approval']]) },
+  { legend: 'Hotels', items: opt('hotel', [['ato', 'Standard room; use the ATO reasonable amounts as a guide'], ['approver', 'Standard room; approver agrees the budget']]) },
+  { legend: 'Meals and incidentals', items: opt('meals', [['actual', 'Reasonable actual costs, with receipts'], ['allowance', 'A daily allowance set by the company']]) },
+  { legend: 'Claim expenses within', items: opt('claimDays', [['14', '14 days of returning'], ['30', '30 days of returning']]) },
+  { legend: 'Frequent flyer points', items: opt('loyalty', [['keep', 'Travellers keep their points (as long as it doesn\'t change the fare chosen)'], ['no', 'Points must not influence bookings; personal use only']]) },
+  { legend: 'Adding personal days to a work trip', items: opt('bleisure', [['allowed', 'Allowed, at the traveller\'s own cost, with approval'], ['no', 'Not allowed']]) },
+];
+---
+<section class="sl-pagehead sl-noprint">
+  <div class="sl-wrap">
+    <p class="sl-crumb"><a href="/business-travel">Business travel</a></p>
+    <h1>{p.title}</h1>
+    <p class="sl-lede">{p.lede}</p>
+  </div>
+</section>
+
+<div class="sl-wrap tp" data-tp>
+  <form class="sl-form tp-form sl-noprint" onsubmit="return false">
+    <div class="sl-row">
+      <label>Company name<input data-f="company" placeholder="Your company" autocomplete="organization" /></label>
+      <label>Policy owner <span class="sl-opt">(a role)</span><input data-f="owner" placeholder="Operations Manager" /></label>
+    </div>
+    {groups.map((g) => (
+      <fieldset>
+        <legend>{g.legend}</legend>
+        {g.items.map((i) => <label class="sl-choice"><input type="radio" name={i.name} value={i.value} checked={i.checked} /> {i.label}</label>)}
+      </fieldset>
+    ))}
+    <div class="tp-save">
+      <button type="button" class="sl-btn" data-act="print">Save as PDF or print</button>
+      <button type="button" class="sl-btn sl-btn--quiet" data-act="copy">Copy text for Word</button>
+      <p class="sl-form__status" role="status" aria-live="polite"></p>
+      <p class="sl-small">Nothing you choose or type leaves this page. In the print window, choose “Save as PDF”.</p>
+    </div>
+  </form>
+  <div class="tp-previewwrap">
+    <article class="tp-paper" data-policy aria-live="polite" aria-label="Your travel policy"></article>
+  </div>
+</div>
+
+<section class="sl-wrap sl-section sl-noprint">
+  <h2 class="sl-h2">Travel policy questions</h2>
+  <div class="sl-faq">{p.faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}</div>
+</section>
+<div class="sl-noprint"><SlCta heading="Want someone to run travel for you?" text="A good travel manager can load this policy into their booking tool so it's followed automatically. Tell us about your team and we'll shortlist the options that fit." /></div>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-tp]')!;
+  const out = root.querySelector<HTMLElement>('[data-policy]')!;
+  const status = root.querySelector<HTMLElement>('.sl-form__status')!;
+  const val = (n: string) => root.querySelector<HTMLInputElement>(`input[name="${n}"]:checked`)?.value ?? '';
+  const txt = (f: string, d: string) => (root.querySelector<HTMLInputElement>(`[data-f="${f}"]`)?.value.trim() || d);
+  const track = (n: string) => { try { (window as any).gtag?.('event', `cta_${n}`); } catch {} };
+
+  function sections(): [string, string[]][] {
+    const co = txt('company', 'the company');
+    const owner = txt('owner', 'the policy owner');
+    const approver = { manager: 'their manager', owner: 'the owner or CEO', finance: 'Finance' }[val('approver')]!;
+    const scope = { all: 'Every work trip', overnight: 'Every trip that involves an overnight stay or interstate travel', international: 'Every international trip' }[val('approvalScope')]!;
+    const booking = {
+      tmc: [`All flights, hotels and car hire are booked through ${co}'s travel management company, so trips are tracked, policy is applied and travellers have 24/7 support.`],
+      online: ['Travellers book their own flights, hotels and car hire online, following this policy. Keep all booking confirmations.'],
+      mix: ['Simple domestic trips can be booked online by the traveller. Multi-city, international and group trips are booked through the travel management company.'],
+    }[val('booking')]!;
+    const fare = val('fare') === 'lowest'
+      ? 'Book the lowest logical fare: the cheapest fare at a reasonable time of day, without long layovers or extra connections to save small amounts.'
+      : 'Book flexible fares where the trip may change, so changes and cancellations don\'t waste the fare.';
+    const premium = val('premium') === 'never' ? null : `Premium economy may be booked for international flights over ${val('premium')} hours.`;
+    const business = { never: 'Business class is not used.', '10': 'Business class may be booked for international flights over 10 hours, with approval.', exec: 'Business class is limited to executives, with approval for each trip.' }[val('business')]!;
+    const hotel = val('hotel') === 'ato'
+      ? 'Book a standard room in a safe, convenient hotel close to where the work is. Use the ATO\'s reasonable travel allowance amounts for the destination as a guide to a sensible nightly rate; anything above that needs approval.'
+      : 'Book a standard room in a safe, convenient hotel close to where the work is. The approver agrees the nightly budget when approving the trip.';
+    const meals = val('meals') === 'actual'
+      ? ['Reasonable actual costs for meals and incidentals are reimbursed with receipts.', 'Alcohol is the traveller\'s own cost unless it is part of approved client entertainment.']
+      : [`${co} pays a daily allowance for meals and incidentals at rates set by ${owner}. The ATO publishes reasonable amounts each year that can guide those rates.`, 'Keep records of what you spend in case they\'re needed for tax purposes.'];
+    const loyalty = val('loyalty') === 'keep'
+      ? 'Travellers may keep frequent flyer points and hotel loyalty benefits earned on work trips, as long as loyalty never changes which fare or hotel is booked.'
+      : 'Frequent flyer and loyalty programmes must not influence which flight or hotel is booked. Any points earned are for personal use only.';
+    const bleisure = val('bleisure') === 'allowed'
+      ? 'Personal days may be added to a work trip with approval. Any extra flights, nights or costs caused by personal days are paid by the traveller, and the trip is only treated as work travel for the work days.'
+      : 'Personal days are not added to work trips.';
+    return [
+      ['Purpose and who this applies to', [`This policy explains how ${co} books, pays for and supports work travel. It applies to all employees and contractors travelling on ${co} business. The aim is simple: safe travellers, sensible costs, and no surprises.`, `${owner} owns this policy and reviews it every year.`]],
+      ['Approval', [`${scope} is approved by ${approver} before anything is booked.`, 'Approval covers the purpose of the trip, dates, estimated cost and any exceptions to this policy.']],
+      ['Booking', [...booking, `Book domestic flights at least ${val('advanceDom')} days ahead and international flights at least ${val('advanceIntl')} days ahead where possible. Late bookings cost more.`]],
+      ['Flights', [fare, 'Economy class for all domestic flights.', ...(premium ? [premium] : []), business]],
+      ['Accommodation', [hotel, 'Cancel unused bookings as soon as plans change.']],
+      ['Getting around', ['Use public transport, taxis or rideshare where practical.', 'Hire cars are small or mid-size unless the trip needs more space. Decline extra insurance offered at the counter if the company already covers it.', 'Using a personal car for work trips is reimbursed per kilometre, in line with the ATO\'s cents-per-kilometre rate.']],
+      ['Meals and incidentals', meals],
+      ['Expenses and receipts', [`Submit expense claims with receipts within ${val('claimDays')} days of returning.`, 'Costs that are outside this policy without approval may not be reimbursed.']],
+      ['Safety and duty of care', ['Every trip must be booked or registered so the company knows where travellers are.', 'For international travel, check the Smartraveller advice for the destination before booking and before leaving, and subscribe to updates.', 'Carry the company\'s emergency contact details. If something goes wrong, your safety comes first: make yourself safe, then contact the company.', 'Travellers must not be pressured into travel they believe is unsafe.']],
+      ['Loyalty programmes and personal travel', [loyalty, bleisure]],
+      ['Exceptions and questions', [`Any exception to this policy needs approval from ${approver} before booking. Questions go to ${owner}.`]],
+    ];
+  }
+
+  function render() {
+    const co = txt('company', 'Your company');
+    const el = (t: string, c?: string, s?: string) => { const e = document.createElement(t); if (c) e.className = c; if (s) e.textContent = s; return e; };
+    out.replaceChildren();
+    out.appendChild(el('h1', 'tp-title', `${co} travel policy`));
+    out.appendChild(el('p', 'tp-meta', `Effective ${new Date().toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}. Reviewed every year.`));
+    sections().forEach(([h, ps], i) => {
+      const s = el('section', 'tp-sec');
+      s.appendChild(el('h2', '', `${i + 1}. ${h}`));
+      ps.forEach((t) => s.appendChild(el('p', '', t)));
+      out.appendChild(s);
+    });
+  }
+
+  function plain() {
+    const co = txt('company', 'Your company');
+    return [`${co} travel policy`, '', ...sections().flatMap(([h, ps], i) => [`${i + 1}. ${h}`, ...ps, ''])].join('\n');
+  }
+
+  root.addEventListener('input', render);
+  root.addEventListener('change', render);
+  root.addEventListener('click', (e) => {
+    const b = (e.target as HTMLElement).closest('button');
+    if (!b) return;
+    if (b.dataset.act === 'print') { render(); track('policy_pdf'); window.print(); }
+    if (b.dataset.act === 'copy') {
+      navigator.clipboard?.writeText(plain()).then(
+        () => { status.textContent = 'Copied. Paste it into Word or Google Docs.'; track('policy_copy'); },
+        () => { status.textContent = 'Copy didn\'t work in this browser. Use “Save as PDF” instead.'; },
+      );
+    }
+  });
+  render();
+</script>
+
+<style>
+  .tp { display: grid; gap: 2rem; padding-block: 2rem 1rem; }
+  @media (min-width: 64rem) { .tp { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); align-items: start; } .tp-previewwrap { position: sticky; top: 1rem; } }
+  .tp-form fieldset { border-top: 1px solid var(--line); padding-top: 0.9rem; }
+  .tp-save { display: grid; gap: 0.6rem; justify-items: start; padding: 1.1rem; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+  .tp-paper { background: #fff; color: #1d2433; border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(1.2rem, 4vw, 2.4rem); font-size: 0.95rem; line-height: 1.55; }
+  .tp-paper :global(.tp-title) { font-family: var(--font-display); font-size: 1.7rem; line-height: 1.15; margin: 0; color: var(--paper); }
+  .tp-paper :global(.tp-meta) { color: #566176; margin: 0.3rem 0 1rem; font-size: 0.88rem; }
+  .tp-paper :global(.tp-sec) { margin-top: 1rem; break-inside: avoid; }
+  .tp-paper :global(h2) { font-family: var(--font-display); font-size: 1.05rem; margin: 0 0 0.3rem; color: var(--paper); }
+  .tp-paper :global(p) { margin: 0 0 0.4rem; }
+  @media print {
+    @page { size: A4; margin: 16mm; }
+    :global(.site-header), :global(.site-footer), :global(.sl-noprint), :global(.skip-link) { display: none !important; }
+    .tp { display: block; padding: 0; }
+    .tp-paper { border: 0; padding: 0; font-size: 10.5pt; }
+  }
+</style>
