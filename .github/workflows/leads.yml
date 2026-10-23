@@ -1,0 +1,34 @@
+# Daily outbound call list for business travel (07:20 Melbourne summer time, before the 08:41 report).
+# Writes leads/latest.md. Run on demand: scripts/claude/_dispatch.sh leads.yml leads
+name: leads
+on:
+  schedule:
+    - cron: '20 20 * * *'
+  workflow_dispatch:
+    inputs:
+      days:
+        description: Days of AusTender notices to scan
+        default: '7'
+permissions:
+  contents: write
+concurrency: leads
+jobs:
+  austender:
+    runs-on: ubuntu-24.04  # pinned: ubuntu-latest moved to 26.04 in Oct 2026 and broke the Playwright install
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - name: Score AusTender suppliers
+        run: |
+          set -o pipefail
+          python3 scripts/leads/austender.py "${{ inputs.days || '7' }}" 2>&1 | tee out.txt
+      - name: Commit
+        if: always()
+        run: |
+          f=leads/latest.md; [ -s "$f" ] && [ "${{ job.status }}" = "success" ] || f=out.txt
+          echo "::notice title=leads::$(tail -c 12000 $f 2>/dev/null | sed 's/%/%25/g' | sed ':a;N;$!ba;s/\n/%0A/g')"
+          git config user.name "Leads" && git config user.email "leads@users.noreply.github.com"
+          git add leads 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -qm "Leads: daily call list [skip ci]"
+          for i in 1 2 3; do git pull -q --rebase && git push -q && exit 0; sleep 5; done; exit 1

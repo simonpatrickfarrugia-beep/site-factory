@@ -1,0 +1,13 @@
+{
+  // Cloudflare Worker for Shortlisted (shortlisted.com.au). Preview on workers.dev until launch.
+  // Build:  BRAND=shortlisted npm run build
+  // Deploy: npx wrangler deploy --config brands/shortlisted/wrangler.jsonc
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "shortlisted",
+  "compatibility_date": "2026-06-01",
+  "assets": {
+    "directory": "../../dist",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

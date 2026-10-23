@@ -138,6 +138,15 @@
    "name": "Daily journal PDF",
    "status": "idea",
    "note": "Etsy / Gumroad"
+  },
+  {
+   "id": "shortlisted",
+   "group": "business",
+   "name": "Shortlisted",
+   "status": "building",
+   "note": "B2B lead gen (business travel first): preview built 23 Oct; daily AusTender call list live",
+   "station": "Build",
+   "url": null
   }
  ],
  "actions": [
@@ -430,6 +439,45 @@
    "mins": 10,
    "what": "Share communityhelp.com.au/resume-builder with 3 job services, schools or community groups you know",
    "why": "Links from real organisations are what will get it found on Google",
+   "done": false
+  },
+  {
+   "id": "sl-domain",
+   "kind": "do",
+   "sprint": false,
+   "mins": 5,
+   "what": "Buy shortlisted.com.au (about A$25/yr at an AU registrar, with IMN's ABN)",
+   "why": "Locks the name before someone else does; Cloudflare can't sell .com.au",
+   "done": false
+  },
+  {
+   "id": "sl-import",
+   "kind": "do",
+   "sprint": false,
+   "mins": 3,
+   "what": "Cloudflare → Workers & Pages → Create → Import repository → site-factory. Name: shortlisted. Build: BRAND=shortlisted npm run build. Deploy: npx wrangler deploy --config brands/shortlisted/wrangler.jsonc",
+   "why": "Gives Shortlisted its preview link",
+   "link": "https://dash.cloudflare.com",
+   "done": false
+  },
+  {
+   "id": "adzuna",
+   "kind": "do",
+   "sprint": false,
+   "mins": 3,
+   "what": "Get a free Adzuna API key (developer.adzuna.com) and add ADZUNA_APP_ID + ADZUNA_APP_KEY as GitHub secrets",
+   "why": "Adds 'companies hiring travelling sales staff' to your daily call list",
+   "link": "https://developer.adzuna.com",
+   "done": false
+  },
+  {
+   "id": "sl-disclose",
+   "kind": "decide",
+   "sprint": false,
+   "mins": 2,
+   "what": "Shortlisted: OK the 'How we make money' wording (says the founder works for a travel management company, without naming it)",
+   "why": "Being upfront protects you and the brand",
+   "link": "https://github.com/simonpatrickfarrugia-beep/site-factory/blob/main/data/shortlisted/pages.json",
    "done": false
   }
  ],

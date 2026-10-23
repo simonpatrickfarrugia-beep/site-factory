@@ -25,6 +25,11 @@ import ChcJournal from './chc/Journal.astro';
 import ChcResumeBuilder from './chc/ResumeBuilder.astro';
 import VicBundle from './vic/VicBundle.astro';
 import VicBundles from './vic/VicBundles.astro';
+import SlHome from './sl/SlHome.astro';
+import SlGuide from './sl/SlGuide.astro';
+import SlPolicy from './sl/SlPolicy.astro';
+import SlEnquiry from './sl/SlEnquiry.astro';
+import SlPage from './sl/SlPage.astro';
 
 export const templates = {
   home: Home,
@@ -53,4 +58,9 @@ export const templates = {
   chcResumeBuilder: ChcResumeBuilder,
   vicBundle: VicBundle,
   vicBundles: VicBundles,
+  slHome: SlHome,
+  slGuide: SlGuide,
+  slPolicy: SlPolicy,
+  slEnquiry: SlEnquiry,
+  slPage: SlPage,
 };

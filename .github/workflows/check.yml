@@ -32,7 +32,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        brand: [trailers, vic, community-help-co]
+        brand: [trailers, vic, community-help-co, shortlisted]
     env:
       BRAND: ${{ matrix.brand }}
     steps:

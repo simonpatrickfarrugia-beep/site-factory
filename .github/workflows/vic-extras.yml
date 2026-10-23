@@ -19,7 +19,7 @@ jobs:
       - name: Probe OpenStreetMap
         run: |
           set -o pipefail
-          python3 scripts/vic/extras_probe.py ${{ inputs.refresh && '--refresh' || '' }} 2>&1 | tee out.txt
+          python3 scripts/vic/extras_probe.py --extras-only 2>&1 | tee out.txt
         timeout-minutes: 80
       - name: Commit (also after a timeout, so finished towns are kept)
         if: always()

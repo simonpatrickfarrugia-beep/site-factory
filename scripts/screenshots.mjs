@@ -27,6 +27,7 @@ for (const [label, viewport] of Object.entries(sizes)) {
   for (const p of paths) {
     await page.goto(`http://localhost:4321${p}`, { waitUntil: 'networkidle' }).catch(() => {});
     await page.evaluate(() => document.fonts.ready);
+    await page.waitForTimeout(2000); // let one-off load animations finish so reviews show the settled page
     const name = (p === '/' ? 'home' : p.slice(1).replace(/\//g, '__')) + `.${label}.png`;
     await page.screenshot({ path: `screenshots/${name}`, fullPage: true, clip: undefined });
     console.log(`saved ${name}`);

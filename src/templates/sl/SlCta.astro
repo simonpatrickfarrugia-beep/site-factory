@@ -1,0 +1,14 @@
+---
+/** The one call to action: get a shortlist. */
+interface Props { heading?: string; text?: string }
+const { heading = 'Want a shortlist for your business?', text = 'Tell us what you need in two minutes. Free, no obligation, and we never pass your details on without your OK.' } = Astro.props;
+---
+<section class="sl-cta">
+  <div class="sl-wrap sl-cta__inner">
+    <div>
+      <h2>{heading}</h2>
+      <p>{text}</p>
+    </div>
+    <p><a class="sl-btn sl-btn--light" href="/get-a-shortlist" data-cta="shortlist_cta">Get a shortlist</a></p>
+  </div>
+</section>

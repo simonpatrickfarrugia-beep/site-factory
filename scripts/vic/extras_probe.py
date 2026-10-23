@@ -98,32 +98,49 @@ def match(key, t):
     }[key]
 
 
+def statewide(key):
+    """All of one feature in Victoria in a single request (much faster than one query per town)."""
+    filters, label = FEATURES[key]
+    q = '[out:json][timeout:180];area["ISO3166-2"="AU-VIC"]["admin_level"="4"]->.vic;(' + ''.join(f + '(area.vic);' for f in filters) + ');out center tags;'
+    items = []
+    for e in overpass(q).get('elements', []):
+        t = e.get('tags', {})
+        p = pt(e)
+        if p and match(key, t):
+            items.append({'id': f"{e['type'][0]}{e['id']}", 'name': t.get('name') or label, 'named': bool(t.get('name')), 'lat': p[0], 'lon': p[1],
+                          'tags': {k: t[k] for k in KEEP if k in t}})
+    return items
+
+
+def km(a, b):
+    import math
+    dlat = math.radians(b[0] - a[0]); dlon = math.radians(b[1] - a[1])
+    h = math.sin(dlat / 2) ** 2 + math.cos(math.radians(a[0])) * math.cos(math.radians(b[0])) * math.sin(dlon / 2) ** 2
+    return 2 * 6371 * math.asin(math.sqrt(h))
+
+
 def main():
-    st = stations()
-    json.dump({'_source': 'OpenStreetMap contributors (ODbL)', 'fetchedAt': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'stations': st},
-              open('data/vic/stations.json', 'w'), indent=1, ensure_ascii=False)
-    print(f'{len(st)} stations')
-    towns = json.load(open(TOWNS))
-    try:
-        doc = json.load(open('data/vic/extras.json'))
-    except Exception:
-        doc = {'_source': 'OpenStreetMap contributors (ODbL)', 'towns': {}}
-    for t in towns:
-        if not t.get('published') or not t.get('centre'):
-            continue
-        if t['slug'] in doc['towns'] and '--refresh' not in sys.argv:
-            continue
-        lat, lon = t['centre']
+    if '--extras-only' not in sys.argv:
+        st = stations()
+        json.dump({'_source': 'OpenStreetMap contributors (ODbL)', 'fetchedAt': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'stations': st},
+                  open('data/vic/stations.json', 'w'), indent=1, ensure_ascii=False)
+        print(f'{len(st)} stations')
+    towns = [t for t in json.load(open(TOWNS)) if t.get('published') and t.get('centre')]
+    doc = {'_source': 'OpenStreetMap contributors (ODbL)', 'towns': {t['slug']: {k: [] for k in FEATURES} for t in towns}}
+    for key in FEATURES:
         try:
-            doc['towns'][t['slug']] = extras(t, lat, lon)
+            items = statewide(key)
         except Exception as e:
-            print(f"  {t['slug']}: failed ({e})")
+            print(f'  {key}: failed ({e})')
             continue
-        print(f"  {t['slug']}: " + ', '.join(f'{k} {len(v)}' for k, v in doc['towns'][t['slug']].items() if v))
-        json.dump(doc, open('data/vic/extras.json', 'w'), indent=1, ensure_ascii=False)  # keep progress
-        time.sleep(2)
-    doc['fetchedAt'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
-    json.dump(doc, open('data/vic/extras.json', 'w'), indent=1, ensure_ascii=False)
+        for t in towns:
+            radius = (RADIUS['city'] if t['name'] in BIG else RADIUS.get(t['kind'], 3000)) / 1000
+            near = sorted((i for i in items if km(t['centre'], (i['lat'], i['lon'])) <= radius), key=lambda i: (not i['named'], km(t['centre'], (i['lat'], i['lon']))))
+            doc['towns'][t['slug']][key] = near[:40]
+        print(f'  {key}: {len(items)} in Victoria')
+        doc['fetchedAt'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+        json.dump(doc, open('data/vic/extras.json', 'w'), indent=1, ensure_ascii=False)  # keep progress after each feature
+        time.sleep(3)
 
 
 if __name__ == '__main__':
