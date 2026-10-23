@@ -218,6 +218,16 @@
  "_todo": "Simon's to-do list shown at the top of HQ. kind: do | decide. sprint: true = counts toward the current sprint. Claude (or the daily coach / weekly autopilot) sets done: true + doneAt when Simon says 'done' or an approval email arrives.",
  "todo": [
   {
+   "id": "vic-weekends-live",
+   "kind": "decide",
+   "sprint": true,
+   "mins": 2,
+   "what": "Vic Tours: put the 49 weekend plans live? (by train, budget, couples, families; screenshots in chat 23 Oct). Reply 'go' in the Site Factory chat",
+   "why": "New pages for searches like 'train to Geelong' (1,900/mo) and 'cheap accommodation Ballarat' (590/mo); each has booking buttons ready for affiliate approvals",
+   "link": "https://github.com/simonpatrickfarrugia-beep/site-factory/tree/preview/bundles",
+   "done": false
+  },
+  {
    "id": "share",
    "kind": "do",
    "sprint": true,
