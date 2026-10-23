@@ -1,5 +1,6 @@
 ---
 import RoadSign from '../../components/vic/RoadSign.astro';
+import Signup from '../../components/vic/Signup.astro';
 import type { Photo } from '../../../brands/vic/model';
 interface SignTown { slug: string; name: string; km: number; region: string }
 interface DayTrip { href: string; title: string; town: string | null; km: number; photo: Photo | null; line: string }
@@ -44,6 +45,8 @@ const credit = (p: Photo) => `Photo: ${p.artist}, ${p.license}, via Wikimedia Co
       </ul>
     </section>
   )}
+
+  <Signup />
 
   {weekendTiles.length > 0 && (
     <section class="home__section" aria-labelledby="weekends">

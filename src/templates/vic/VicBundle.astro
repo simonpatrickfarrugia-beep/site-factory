@@ -2,6 +2,7 @@
 /** One ready-made weekend plan (bundle): day-by-day steps with real places, swap options, booking links and tips. */
 import RoadSign from '../../components/vic/RoadSign.astro';
 import AffiliateLink from '../../components/vic/AffiliateLink.astro';
+import Signup from '../../components/vic/Signup.astro';
 interface PlaceView { name: string; kind: string; address: string | null; hours: string | null; website: string | null; map: string; dist: string | null }
 interface StepView { when: string; text: string; place: PlaceView | null }
 interface Props {
@@ -79,6 +80,8 @@ const { title, sub, intro, town, days, swaps, gettingThere, tips, related, hub, 
     <h2 id="tips" class="bundle-h2">Before you go</h2>
     <ul class="bundle-tips">{tips.map((t) => <li>{t}</li>)}</ul>
   </section>
+
+  <Signup heading="Want more plans like this?" />
 
   {related.length > 0 && (
     <section aria-labelledby="more">

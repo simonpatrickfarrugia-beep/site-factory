@@ -5,11 +5,19 @@
   "$schema": "../../node_modules/wrangler/config-schema.json",
   "name": "victours",
   "compatibility_date": "2026-06-01",
+  // Only /api/* runs Worker code (email signups); every other request is served straight from the built files.
+  "main": "../../src/worker/site.ts",
   "assets": {
     "directory": "../../dist",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"],
     "html_handling": "drop-trailing-slash",
     "not_found_handling": "404-page"
   },
+  "vars": { "BRAND": "vic" },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "site-factory-forms", "database_id": "5441b63f-1ab8-484f-a6c7-0a0af4302774" }
+  ],
   // Live domains. The bare domain is canonical; www is redirected to it by a Cloudflare Redirect Rule (dashboard).
   "routes": [
     { "pattern": "victours.com.au", "custom_domain": true },

@@ -1,6 +1,7 @@
 ---
 /** Hub of ready-made weekend plans: all audiences (/weekends) or one audience (/weekends/romantic, …). */
 import RoadSign from '../../components/vic/RoadSign.astro';
+import Signup from '../../components/vic/Signup.astro';
 interface Card { href: string; town: string; km: number; summary: string; highlights: string[]; photo?: { url: string; width?: number; height?: number; artist: string; license: string; page: string } | null }
 interface Group { title: string; href?: string; intro?: string; cards: Card[] }
 interface Props { title: string; intro: string[]; groups: Group[]; others: { href: string; label: string }[]; crumb?: { href: string; label: string } | null }
@@ -26,6 +27,7 @@ const { title, intro, groups, others, crumb = { href: '/weekends', label: 'Weeke
       ))}
     </section>
   ))}
+  <Signup />
   {others.length > 0 && (
     <p class="bundle-others">More plans: {others.map((o, i) => <>{i > 0 && ' · '}<a href={o.href}>{o.label}</a></>)}</p>
   )}
