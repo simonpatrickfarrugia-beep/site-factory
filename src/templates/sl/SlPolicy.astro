@@ -35,8 +35,8 @@ const groups = [
 <div class="sl-wrap tp" data-tp>
   <form class="sl-form tp-form sl-noprint" onsubmit="return false">
     <div class="sl-row">
-      <label>Company name<input data-f="company" placeholder="Your company" autocomplete="organization" /></label>
-      <label>Policy owner <span class="sl-opt">(a role)</span><input data-f="owner" placeholder="Operations Manager" /></label>
+      <label><span>Company name</span><input data-f="company" placeholder="Your company" autocomplete="organization" /></label>
+      <label><span>Policy owner <span class="sl-opt">(a role)</span></span><input data-f="owner" placeholder="Operations Manager" /></label>
     </div>
     {groups.map((g) => (
       <fieldset>
@@ -73,6 +73,7 @@ const groups = [
   function sections(): [string, string[]][] {
     const co = txt('company', 'the company');
     const owner = txt('owner', 'the policy owner');
+    const cap = (t: string) => t.charAt(0).toUpperCase() + t.slice(1);
     const approver = { manager: 'their manager', owner: 'the owner or CEO', finance: 'Finance' }[val('approver')]!;
     const scope = { all: 'Every work trip', overnight: 'Every trip that involves an overnight stay or interstate travel', international: 'Every international trip' }[val('approvalScope')]!;
     const booking = {
@@ -98,7 +99,7 @@ const groups = [
       ? 'Personal days may be added to a work trip with approval. Any extra flights, nights or costs caused by personal days are paid by the traveller, and the trip is only treated as work travel for the work days.'
       : 'Personal days are not added to work trips.';
     return [
-      ['Purpose and who this applies to', [`This policy explains how ${co} books, pays for and supports work travel. It applies to all employees and contractors travelling on ${co} business. The aim is simple: safe travellers, sensible costs, and no surprises.`, `${owner} owns this policy and reviews it every year.`]],
+      ['Purpose and who this applies to', [`This policy explains how ${co} books, pays for and supports work travel. It applies to all employees and contractors travelling on ${co} business. The aim is simple: safe travellers, sensible costs, and no surprises.`, `${cap(owner)} owns this policy and reviews it every year.`]],
       ['Approval', [`${scope} is approved by ${approver} before anything is booked.`, 'Approval covers the purpose of the trip, dates, estimated cost and any exceptions to this policy.']],
       ['Booking', [...booking, `Book domestic flights at least ${val('advanceDom')} days ahead and international flights at least ${val('advanceIntl')} days ahead where possible. Late bookings cost more.`]],
       ['Flights', [fare, 'Economy class for all domestic flights.', ...(premium ? [premium] : []), business]],
