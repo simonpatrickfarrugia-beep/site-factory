@@ -69,6 +69,21 @@ export function routes(): Route[] {
   const bundleLabel = (b: VicBundle) =>
     ({ daytrip: b.region ? `${b.region} day trip: ${b.town.name}` : `${b.town.name} day trip`, train: `${b.town.name} by train`, budget: `${b.town.name} on a budget`, couples: `Romantic weekend in ${b.town.name}`, family: `${b.town.name} with kids` } as Record<Audience, string>)[b.audience];
   const hasDayTripsEarly = bundles.some((b) => b.audience === 'daytrip');
+  /** Card photo for a plan: its own stops first (Sovereign Hill beats a street), then the region's (for region day trips), then the town's. */
+  const placePhoto = (id: string) => (photos.places[id] as { url?: string } | undefined)?.url ? photos.places[id] : null;
+  const DO_PHOTO = new Set(['museum', 'gallery', 'attraction', 'viewpoint', 'zoo', 'nature_reserve', 'park', 'beach_resort', 'theme_park', 'aquarium']);
+  const planPhoto = (b: VicBundle) => {
+    for (const k of ['morning', 'afternoon', 'see', 'big', 'unwind', 'free']) for (const p of b.result.picks[k] ?? []) { const ph = placePhoto(p.item.id); if (ph) return ph; }
+    if (b.region) {
+      const slugs = towns.filter((t) => content.towns[t.slug]?.region === b.region).map((t) => t.slug);
+      for (const sl of slugs) for (const p of byTown.get(sl) ?? []) if (DO_PHOTO.has(p.type) && placePhoto(p.id)) return placePhoto(p.id);
+    }
+    if (photos.towns[b.town.slug]) return photos.towns[b.town.slug];
+    for (const p of byTown.get(b.town.slug) ?? []) if (DO_PHOTO.has(p.type) && placePhoto(p.id)) return placePhoto(p.id);
+    return null;
+  };
+  const usedTile = new Set<string>();
+
   const bundlesByTown = new Map<string, VicBundle[]>();
   for (const b of bundles) (bundlesByTown.get(b.town.slug) ?? bundlesByTown.set(b.town.slug, []).get(b.town.slug)!).push(b);
   const byKm = [...towns].sort((a, b) => (a.kmFromMelbourne ?? 0) - (b.kmFromMelbourne ?? 0));
@@ -91,14 +106,16 @@ export function routes(): Route[] {
       collections: content.collections.filter((c) => !(hasDayTripsEarly && c.slug === 'day-trips-from-melbourne')),
       dayTrips: bundles.filter((b) => b.audience === 'daytrip').sort((a, b) => (b.demand?.volume ?? 0) - (a.demand?.volume ?? 0)).slice(0, 6).map((b) => {
         const m = b.result.picks.morning?.[0]?.item; const l = b.result.picks.lunch?.[0]?.item;
-        return { href: `/${b.path}`, title: b.region ?? b.town.name, town: b.region ? b.town.name : null, km: b.town.kmFromMelbourne ?? 0, photo: photos.towns[b.town.slug] ?? null,
+        return { href: `/${b.path}`, title: b.region ?? b.town.name, town: b.region ? b.town.name : null, km: b.town.kmFromMelbourne ?? 0, photo: planPhoto(b),
           line: [m && m.name, l && `lunch at ${l.name}`].filter(Boolean).join(', then ') };
       }),
       weekendTiles: (['train', 'couples', 'family', 'budget'] as Audience[]).map((a) => {
         const list = bundles.filter((b) => b.audience === a).sort((x, y) => y.rank - x.rank);
-        const top = list.find((b) => photos.towns[b.town.slug]);
+        const top = list.find((b) => { const ph = planPhoto(b) as { url?: string } | null; return ph?.url && !usedTile.has(ph.url); });
+        const ph = top ? (planPhoto(top) as { url: string }) : null;
+        if (ph) usedTile.add(ph.url);
         return { href: `/${AUDIENCE[a].hubPath}`, title: ({ train: 'By train', couples: 'Romantic weekends', family: 'With kids', budget: 'On a budget' } as Record<string, string>)[a], count: list.length,
-          photo: top ? photos.towns[top.town.slug] : null, example: top?.town.name ?? null };
+          photo: ph, example: top?.town.name ?? null };
       }).filter((t) => t.count > 0),
       loops: (content.loops ?? []).filter((l) => !l.draft).map((l) => ({ slug: l.slug, name: l.name, summary: l.summary, days: l.days.length })),
     },
@@ -511,7 +528,7 @@ export function routes(): Route[] {
     // Hubs: one per audience, plus /weekends with all of them.
     const card = (b: VicBundle) => ({
       href: `/${b.path}`, town: bundleLabel(b), km: b.town.kmFromMelbourne ?? 0, summary: summary(b),
-      highlights: [] as string[], photo: photos.towns[b.town.slug] ?? null,
+      highlights: [] as string[], photo: planPhoto(b),
     });
     const HUB_INTRO: Record<Audience, string[]> = {
       daytrip: ['Day trips from Melbourne, planned hour by hour: a morning stop, lunch close by, an afternoon stop and a treat before you drive home. Every plan uses real places near each other, with addresses, opening hours and maps.', 'Most are within two hours of the city. Leave early to beat the traffic and the lunch crowd.'],
