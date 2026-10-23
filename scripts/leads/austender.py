@@ -10,7 +10,7 @@ Usage:  python3 scripts/leads/austender.py [days=7]
 Data: AusTender contract notices (CC BY). Company details only; we don't harvest personal contact details. Find the
 right person (office manager, ops, finance, EA) yourself before calling.
 """
-import json, os, re, sys, time, urllib.parse, urllib.request
+import json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
 from datetime import datetime, timedelta, timezone
 
 API = 'https://api.tenders.gov.au/ocds/findByDates/contractPublished/{start}/{end}'
@@ -38,6 +38,11 @@ def get(url):
         try:
             with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': UA, 'Accept': 'application/json'}), timeout=60) as r:
                 return json.load(r)
+        except urllib.error.HTTPError as e:
+            if e.code in (400, 404):  # AusTender answers 400/404 for a window with no notices (e.g. weekends)
+                return {}
+            print(f'  retry {attempt + 1}: {str(e)[:100]}')
+            time.sleep(5 * (attempt + 1))
         except Exception as e:
             print(f'  retry {attempt + 1}: {str(e)[:100]}')
             time.sleep(5 * (attempt + 1))
@@ -45,7 +50,7 @@ def get(url):
 
 
 def releases(days):
-    end = datetime.now(timezone.utc).replace(microsecond=0)
+    end = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0) + timedelta(days=1)
     out = []
     for d in range(days):  # one request per day keeps responses small
         a, b = end - timedelta(days=d + 1), end - timedelta(days=d)
