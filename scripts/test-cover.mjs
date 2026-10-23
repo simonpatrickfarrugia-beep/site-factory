@@ -19,7 +19,7 @@ ok((await pv.textContent()).includes('Dear Hiring Manager'), 'no contact → "De
 await page.getByRole('button', { name: 'Fill with an example' }).click();
 const t = await pv.textContent();
 ok(t.includes('Dear Priya Shah') && t.includes('Retail Sales Assistant') && t.includes('Westside Outdoor Supplies'), 'example fills greeting, role and employer');
-ok(t.includes('advertised on SEEK') && t.includes('I can start in two weeks'), 'source and start date flow into sentences');
+ok(t.includes(', advertised on SEEK') && t.includes('I can start in two weeks'), 'source and start date flow into sentences');
 await page.locator('[data-f="name"]').fill('Sam <b>Test</b>');
 ok((await pv.locator('.cl-name').textContent()) === 'Sam <b>Test</b>', 'typed text shows as text (no HTML injection)');
 await page.getByRole('button', { name: 'Copy the text' }).click();
