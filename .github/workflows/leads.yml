@@ -22,6 +22,12 @@ jobs:
         run: |
           set -o pipefail
           python3 scripts/leads/austender.py "${{ inputs.days || '7' }}" 2>&1 | tee out.txt
+      - name: Add job-ad leads (Adzuna; skipped until the key is added)
+        continue-on-error: true
+        env:
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+        run: python3 scripts/leads/adzuna.py "${{ inputs.days || '7' }}" 2>&1 | tee -a out.txt
       - name: Commit
         if: always()
         run: |
