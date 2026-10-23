@@ -19,4 +19,4 @@ for n in names:
 out = ['## Domain check', '', f'**Not registered ({len(free)}):** ' + (', '.join(free) or 'none'), '', f'**Taken ({len(taken)}):**', *[f'- {t}' for t in taken], '', f'**Unknown ({len(unknown)}):** ' + (', '.join(unknown) or 'none')]
 print('\n'.join(out))
 open('domains.md', 'w').write('\n'.join(out) + '\n')
-print('::notice title=domains::Not registered: ' + (', '.join(free) or 'none'))
+print('::notice title=domains::Not registered: ' + (', '.join(free) or 'none') + ' || Taken: ' + '; '.join(taken) + ' || Unknown: ' + (', '.join(unknown) or 'none'))
