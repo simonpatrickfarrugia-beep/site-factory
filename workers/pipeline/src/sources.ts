@@ -317,21 +317,44 @@ export async function brainstormNiches(apiKey: string, model: string, n: number,
     'and 1 to 4 topic words that EVERY relevant search would contain (e.g. ["tornado", "hail"] or ["ski"]): single words, specific to the topic, never generic words like "best", "near", "county", "city", "price" or place names.',
     'Reply with JSON only: {"ideas": [{"idea": "short name", "seeds": ["...", "...", "..."], "terms": ["..."], "market": "US" or "AU", "why": "the page pattern + data source in one sentence"}]}',
   ].filter((l) => l !== '').join('\n');
-  // One retry: a long JSON list occasionally comes back malformed.
-  let j: { ideas?: unknown } = {};
-  for (let attempt = 0; attempt < 2; attempt++) {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: claudeHeaders(apiKey),
-      body: JSON.stringify({ model, max_tokens: 6000, messages: [{ role: 'user', content: prompt }] }),
-    });
-    try {
-      j = JSON.parse(await claudeJson(res)) as { ideas?: unknown };
-      break;
-    } catch (e) {
-      if (attempt === 1) throw e;
-    }
-  }
+  // Forced tool call: the API returns the list as structured input, so stray quotes can't break the JSON.
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: claudeHeaders(apiKey),
+    body: JSON.stringify({
+      model,
+      max_tokens: 6000,
+      tools: [{
+        name: 'save_ideas',
+        description: 'Save the proposed niche ideas.',
+        input_schema: {
+          type: 'object',
+          properties: {
+            ideas: {
+              type: 'array',
+              items: {
+                type: 'object',
+                properties: {
+                  idea: { type: 'string' },
+                  seeds: { type: 'array', items: { type: 'string' } },
+                  terms: { type: 'array', items: { type: 'string' } },
+                  market: { type: 'string', enum: ['US', 'AU'] },
+                  why: { type: 'string' },
+                },
+                required: ['idea', 'seeds', 'terms', 'market', 'why'],
+              },
+            },
+          },
+          required: ['ideas'],
+        },
+      }],
+      tool_choice: { type: 'tool', name: 'save_ideas' },
+      messages: [{ role: 'user', content: prompt.replace('Reply with JSON only: ', 'Call save_ideas with: ') }],
+    }),
+  });
+  if (!res.ok) throw new Error(`Claude: HTTP ${res.status} ${(await res.text()).slice(0, 200)}`);
+  const body = (await res.json()) as { content?: { type: string; input?: { ideas?: unknown } }[] };
+  const j = body.content?.find((c) => c.type === 'tool_use')?.input ?? {};
   const out: NicheCandidate[] = [];
   for (const raw of Array.isArray(j.ideas) ? j.ideas : []) {
     const r = raw as Record<string, unknown>;
