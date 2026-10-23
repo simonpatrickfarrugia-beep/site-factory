@@ -24,6 +24,7 @@ export default defineBrand({
   ],
   footer: [
     { label: 'How it works', href: '/how-it-works' },
+    { label: 'Cover letter builder', href: '/cover-letter-builder' },
     { label: 'Advocacy support', href: '/advocacy-support' },
     { label: 'About Simon', href: '/about' },
     { label: 'FAQ', href: '/faq' },

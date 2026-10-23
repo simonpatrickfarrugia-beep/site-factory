@@ -114,6 +114,21 @@ export function routes(): Route[] {
     });
   }
 
+  const cl = (pages as unknown as Record<string, any>)['cover-letter-builder'];
+  if (cl) {
+    out.push({
+      path: 'cover-letter-builder',
+      template: 'chcCoverLetter',
+      seo: { title: cl.seoTitle, rawTitle: true, description: cl.description },
+      schema: [
+        { '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Free cover letter builder', url: `${SITE}/cover-letter-builder`, applicationCategory: 'BusinessApplication', operatingSystem: 'Any (runs in your web browser)', isAccessibleForFree: true, offers: { '@type': 'Offer', price: '0', priceCurrency: 'AUD' }, description: cl.description, publisher: { '@id': `${SITE}/#org` } },
+        faqSchema(cl.faq.map((f: { q: string; a: string }) => ({ q: f.q, a: f.a, service: null }))),
+        crumbs([{ name: 'Home', path: '' }, { name: 'Free cover letter builder', path: 'cover-letter-builder' }]),
+      ],
+      props: { ...common, page: cl },
+    });
+  }
+
   out.push({
     path: 'faq',
     template: 'chcFaq',

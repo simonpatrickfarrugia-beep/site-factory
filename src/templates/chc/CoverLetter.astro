@@ -1,0 +1,197 @@
+---
+/**
+ * Free cover letter builder. Runs entirely in the browser: nothing typed is sent anywhere or stored.
+ * Guided prompts on the left, a formatted Australian business letter on the right; save as PDF or copy text.
+ */
+import BookCta from './BookCta.astro';
+interface Props {
+  book: string;
+  page: { title: string; lede: string; privacy: string; tips: Record<string, string>; faq: { q: string; a: string }[] };
+}
+const { book, page: p } = Astro.props;
+const t = p.tips;
+---
+<section class="chc-pagehead cl-noprint">
+  <div class="chc-wrap">
+    <h1>{p.title}</h1>
+    <p class="chc-lede">{p.lede}</p>
+    <p class="chc-small">Need a resume too? Try the <a href="/resume-builder">free resume builder</a>.</p>
+  </div>
+</section>
+
+<div class="chc-wrap cl" data-cl>
+  <form class="chc-form cl-form cl-noprint" onsubmit="return false">
+    <p class="chc-hint">🔒 {p.privacy}</p>
+    <p><button type="button" class="cl-btn" data-act="example">Fill with an example</button></p>
+
+    <fieldset class="cl-sec">
+      <legend>1. You</legend>
+      <p class="cl-tip">{t.you}</p>
+      <label>Full name<input data-f="name" autocomplete="name" /></label>
+      <div class="cl-row">
+        <label>Phone<input data-f="phone" type="tel" autocomplete="tel" /></label>
+        <label>Email<input data-f="email" type="email" autocomplete="email" /></label>
+      </div>
+      <label><span>Suburb and state <span class="chc-opt">(e.g. Footscray VIC)</span></span><input data-f="location" /></label>
+    </fieldset>
+
+    <fieldset class="cl-sec">
+      <legend>2. The job</legend>
+      <p class="cl-tip">{t.job}</p>
+      <div class="cl-row">
+        <label>Job title<input data-f="role" /></label>
+        <label>Employer<input data-f="employer" /></label>
+      </div>
+      <div class="cl-row">
+        <label><span>Contact person <span class="chc-opt">(if the ad names one)</span></span><input data-f="contact" /></label>
+        <label><span>Where you saw it <span class="chc-opt">(e.g. SEEK)</span></span><input data-f="source" /></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="cl-sec">
+      <legend>3. Why this job</legend>
+      <p class="cl-tip">{t.why}</p>
+      <label>Why you want it<textarea data-f="why" rows="3"></textarea></label>
+    </fieldset>
+
+    <fieldset class="cl-sec">
+      <legend>4. Why you</legend>
+      <p class="cl-tip">{t.strengths}</p>
+      <label>Strength 1, with an example<textarea data-f="s1" rows="2"></textarea></label>
+      <label>Strength 2, with an example<textarea data-f="s2" rows="2"></textarea></label>
+      <label><span>Strength 3 <span class="chc-opt">(optional)</span></span><textarea data-f="s3" rows="2"></textarea></label>
+    </fieldset>
+
+    <fieldset class="cl-sec">
+      <legend>5. Close</legend>
+      <p class="cl-tip">{t.close}</p>
+      <label><span>When you can start <span class="chc-opt">(e.g. immediately, or in two weeks)</span></span><input data-f="start" /></label>
+    </fieldset>
+
+    <div class="cl-save">
+      <button type="button" class="chc-btn" data-act="print">Save as PDF or print</button>
+      <button type="button" class="cl-btn cl-btn--quiet" data-act="copy">Copy the text</button>
+      <button type="button" class="cl-linkbtn" data-act="clear">Clear everything</button>
+      <p class="chc-form__status" role="status" aria-live="polite"></p>
+    </div>
+  </form>
+
+  <div class="cl-previewwrap" id="cl-preview">
+    <p class="cl-previewlabel cl-noprint">Preview</p>
+    <article class="cl-paper" data-preview aria-live="polite" aria-label="Cover letter preview"></article>
+  </div>
+</div>
+
+<section class="chc-wrap chc-section cl-noprint">
+  <h2 class="chc-h2">Cover letter questions</h2>
+  <div class="chc-faq">{p.faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}</div>
+</section>
+<div class="cl-noprint">
+  <BookCta book={book} heading="Want help with the whole job hunt?" text="Job Catalyst is 1:1 job coaching: applications, interview practice and staying on track until you land the role. Start with a free chat." />
+</div>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-cl]')!;
+  const out = root.querySelector<HTMLElement>('[data-preview]')!;
+  const status = root.querySelector<HTMLElement>('.chc-form__status')!;
+  const f = (k: string) => (root.querySelector<HTMLInputElement | HTMLTextAreaElement>(`[data-f="${k}"]`)?.value ?? '').trim();
+  const track = (n: string) => { try { (window as any).gtag?.('event', `cta_${n}`); } catch {} };
+  const sentence = (s: string) => (s && !/[.!?]$/.test(s) ? s + '.' : s);
+
+  function parts() {
+    const role = f('role') || 'the role';
+    const employer = f('employer') || 'your organisation';
+    const greet = f('contact') ? `Dear ${f('contact')},` : 'Dear Hiring Manager,';
+    const seen = f('source') ? ` advertised on ${f('source')}` : '';
+    const p1 = `I'm writing to apply for the ${role} position at ${employer}${seen}.` + (f('why') ? ' ' + sentence(f('why')) : '');
+    const strengths = [f('s1'), f('s2'), f('s3')].filter(Boolean).map(sentence);
+    const p2 = strengths.length ? `I'd bring the following to the role. ${strengths.join(' ')}` : '';
+    const start = f('start') ? ` I can start ${f('start').replace(/\.$/, '')}.` : '';
+    const p3 = `I'd welcome the chance to talk about how I can help ${employer}.${start} Thank you for considering my application.`;
+    return { greet, body: [p1, p2, p3].filter(Boolean), sign: f('name') || 'Your name' };
+  }
+
+  function render() {
+    const el = (tag: string, cls?: string, text?: string) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; };
+    const pr = parts();
+    out.replaceChildren();
+    const head = el('header', 'cl-head');
+    head.appendChild(el('p', 'cl-name', f('name') || 'Your name'));
+    const contact = [f('location'), f('phone'), f('email')].filter(Boolean).join('  ·  ');
+    if (contact) head.appendChild(el('p', 'cl-contact', contact));
+    out.appendChild(head);
+    out.appendChild(el('p', 'cl-date', new Date().toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })));
+    if (f('employer')) out.appendChild(el('p', 'cl-to', [f('contact'), f('employer')].filter(Boolean).join('\n')));
+    out.appendChild(el('p', 'cl-re', `Re: ${f('role') || 'Job title'}`));
+    out.appendChild(el('p', '', pr.greet));
+    pr.body.forEach((b) => out.appendChild(el('p', '', b)));
+    out.appendChild(el('p', 'cl-sign', 'Kind regards,'));
+    out.appendChild(el('p', 'cl-signname', pr.sign));
+  }
+
+  function plain() {
+    const pr = parts();
+    const contact = [f('location'), f('phone'), f('email')].filter(Boolean).join(' | ');
+    return [f('name') || 'Your name', contact, '', new Date().toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' }), '',
+      `Re: ${f('role') || 'Job title'}`, '', pr.greet, '', ...pr.body.flatMap((b) => [b, '']), 'Kind regards,', pr.sign].join('\n');
+  }
+
+  const EXAMPLE: Record<string, string> = {
+    name: 'Jordan Lee', phone: '0400 000 000', email: 'jordan.lee@example.com', location: 'Sunshine VIC',
+    role: 'Retail Sales Assistant', employer: 'Westside Outdoor Supplies', contact: 'Priya Shah', source: 'SEEK',
+    why: 'I love helping people find the right gear, and I shop at your Sunshine store myself, so I know how much your team cares about service',
+    s1: 'In two years of café work I served up to 150 customers on busy weekend shifts while keeping a friendly, calm manner',
+    s2: 'I handled cash, EFTPOS and end-of-day counts accurately, and trained two new staff on the till',
+    s3: 'I hold a current First Aid certificate and a Working with Children Check',
+    start: 'in two weeks',
+  };
+
+  root.addEventListener('input', render);
+  root.addEventListener('click', (e) => {
+    const b = (e.target as HTMLElement).closest('button');
+    if (!b) return;
+    if (b.dataset.act === 'example') { Object.entries(EXAMPLE).forEach(([k, v]) => { const i = root.querySelector<HTMLInputElement>(`[data-f="${k}"]`); if (i) i.value = v; }); render(); track('cover_example'); }
+    if (b.dataset.act === 'print') { render(); track('cover_pdf'); window.print(); }
+    if (b.dataset.act === 'copy') {
+      navigator.clipboard?.writeText(plain()).then(
+        () => { status.textContent = 'Copied. Paste it into an email or Word.'; track('cover_copy'); },
+        () => { status.textContent = 'Copy didn\'t work in this browser. Use "Save as PDF" instead.'; },
+      );
+    }
+    if (b.dataset.act === 'clear') { root.querySelectorAll<HTMLInputElement>('[data-f]').forEach((i) => (i.value = '')); render(); status.textContent = ''; }
+  });
+  render();
+</script>
+
+<style>
+  .cl { display: grid; gap: 2rem; padding-block: 2rem 1rem; }
+  @media (min-width: 64rem) { .cl { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: start; } .cl-previewwrap { position: sticky; top: 1rem; } }
+  .cl-form { display: grid; gap: 1.2rem; min-width: 0; }
+  .cl-sec { border: 2px solid var(--line) !important; border-radius: var(--radius); padding: 1rem 1.1rem 1.2rem !important; display: grid; gap: 0.9rem; }
+  .cl-sec legend { font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; padding: 0 0.3rem; }
+  .cl-tip { background: var(--mint-soft); border-radius: 10px; padding: 0.7rem 0.9rem; font-size: 1rem; margin: 0; }
+  .cl-row { display: grid; gap: 0.9rem; }
+  @media (min-width: 40rem) { .cl-row { grid-template-columns: 1fr 1fr; } }
+  .cl-form label > span { display: block; }
+  .cl-btn { font: inherit; font-weight: 700; background: var(--forest); color: #fff; border: 0; border-radius: 999px; padding: 0.55rem 1.1rem; cursor: pointer; }
+  .cl-btn--quiet { background: var(--mint-soft); color: var(--forest); border: 2px solid var(--line); }
+  .cl-linkbtn { font: inherit; background: none; border: 0; padding: 0; color: var(--forest); text-decoration: underline; cursor: pointer; }
+  .cl-save { display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; background: var(--mint-soft); border-radius: var(--radius); padding: 1.1rem; }
+  .cl-save .chc-form__status { flex-basis: 100%; }
+  .cl-previewlabel { font-weight: 700; margin: 0 0 0.4rem; color: var(--muted); }
+  .cl-paper { background: #fff; color: #1b1b1b; border: 1px solid #d8d8d8; border-radius: 6px; box-shadow: 0 6px 24px rgba(18, 59, 48, 0.08);
+    padding: clamp(1.2rem, 4vw, 2.4rem); font-family: 'Atkinson Hyperlegible Next', Arial, sans-serif; font-size: 0.95rem; line-height: 1.55; min-height: 20rem; overflow-wrap: anywhere; }
+  .cl-paper :global(p) { margin: 0 0 0.8rem; white-space: pre-line; }
+  .cl-paper :global(.cl-head) { border-bottom: 3px solid #123B30; padding-bottom: 0.6rem; margin-bottom: 1rem; }
+  .cl-paper :global(.cl-name) { font-family: 'Outfit', Arial, sans-serif; font-size: 1.6rem; font-weight: 800; color: #123B30; margin: 0; }
+  .cl-paper :global(.cl-contact) { color: #444; font-size: 0.88rem; margin: 0.2rem 0 0; }
+  .cl-paper :global(.cl-re) { font-weight: 700; }
+  .cl-paper :global(.cl-sign) { margin-top: 1.2rem; margin-bottom: 0.2rem; }
+  .cl-paper :global(.cl-signname) { font-weight: 700; }
+  @media print {
+    @page { size: A4; margin: 20mm; }
+    :global(.site-header), :global(.site-footer), :global(.cl-noprint), :global(.skip-link) { display: none !important; }
+    .cl { display: block; padding: 0; }
+    .cl-paper { border: 0; box-shadow: none; padding: 0; font-size: 11pt; }
+  }
+</style>
