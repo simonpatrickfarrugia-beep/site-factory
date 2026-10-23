@@ -1,94 +1,109 @@
-# Call list — Fri 23 Oct 2026
+# Call list — Sat 24 Oct 2026
 
-_SMEs that won Australian Government contracts in the last 7 days (AusTender). Interstate work = flights. Find the person who books travel (office manager, ops, finance, EA) before calling. Company details only; check the Do Not Call Register rules for any number you use._
+_SMEs that won Australian Government contracts in the last 7 days (AusTender). Interstate work = flights. Wash every lead first: check Salesforce for existing contact, and that CT and Corporate Traveller aren't already prospecting or trading with them. Then find the person who books travel (office manager, ops, finance, EA). Company details only; check the Do Not Call Register rules for any number you use. Bulk lookup file: leads/latest.csv._
 
-**1. ELEPHANT IN THE ROOM CONSULTING PTY** — Carina QLD · $89,980 · score 8.0
-- Why: based in Carina QLD, delivering for Austrade (Canberra); work runs 12 months
-- Work: First Nations Cultural Advisory Services
-- Opener: "Congrats on the Austrade contract. With the team in Carina and the work in Canberra, who's looking after flights and accommodation for it?"
-- Find: [Google](https://www.google.com/search?q=ELEPHANT+IN+THE+ROOM+CONSULTING+PTY) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=ELEPHANT+IN+THE+ROOM+CONSULTING+PTY)
+**1. TR PTY LTD** — Blackburn North VIC · $131,999 · score 9.0
+- Why: based in Blackburn North VIC, delivering for Department of Industry, Science and Resources (Canberra); work runs 12 months
+- Work: Procurement of a Fluke 792A AC/DC Standard for the Physical Metrology Branch of the National Measurement Institute.
+- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
+- Opener: "Congrats on the Department of Industry, Science and Resources contract. With the team in Blackburn North and the work in Canberra, who's looking after flights and accommodation for it?"
+- Find: [Google](https://www.google.com/search?q=TR+PTY+LTD) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=TR+PTY+LTD)
 
-**2. BMF ADVERTISING PTY LTD** — Sydney NSW · $1,320,000 · score 7.0
-- Why: based in Sydney NSW, delivering for Department of Home Affairs (Canberra); work runs 8 months
-- Work: Creative advertising services
-- Opener: "Congrats on the Department of Home Affairs contract. With the team in Sydney and the work in Canberra, who's looking after flights and accommodation for it?"
-- Find: [Google](https://www.google.com/search?q=BMF+ADVERTISING+PTY+LTD) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=BMF+ADVERTISING+PTY+LTD)
+**2. O'Connor Marsden & Associates Pty Ltd** — Canberra ACT · $490,000 · score 5.0
+- Why: work runs 24 months
+- Work: Audit Service Provider Procurement 2026
+- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
+- Opener: "Congrats on the Australian Competition and Consumer Commission contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=O%27Connor+Marsden+%26+Associates+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=O%27Connor+Marsden+%26+Associates+Pty+Ltd)
 
-**3. PM SOLUTIONS AUSTRALIA PTY LTD** — Brisbane QLD · $164,010 · score 7.0
-- Why: based in Brisbane QLD, delivering for Australian Securities and Investments Commission (NSW); work runs 12 months
-- Work: DTx - Independent Assurance Services
-- Opener: "Congrats on the Australian Securities and Investments Commission contract. With the team in Brisbane and the work in NSW, who's looking after flights and accommodation for it?"
-- Find: [Google](https://www.google.com/search?q=PM+SOLUTIONS+AUSTRALIA+PTY+LTD) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=PM+SOLUTIONS+AUSTRALIA+PTY+LTD)
-
-**4. Strategem Enterprises Pty Ltd** — Thirroul NSW · $148,435 · score 7.0
-- Why: based in Thirroul NSW, delivering for Royal Australian Mint (Canberra); work runs 12 months
-- Work: safety culture program
-- Opener: "Congrats on the Royal Australian Mint contract. With the team in Thirroul and the work in Canberra, who's looking after flights and accommodation for it?"
-- Find: [Google](https://www.google.com/search?q=Strategem+Enterprises+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Strategem+Enterprises+Pty+Ltd)
-
-**5. Nous Group Pty Ltd** — Sydney NSW · $756,329 · score 6.0
-- Why: 2 new government contracts in the last 7 days; work runs 28 months
-- Work: Contract with Nous Group Pty Ltd and partner Curijo to provide services to implement the Monitoring and Evaluation Framework for the Partnerships for culturally safe cancer care gr
-- Opener: "Congrats on the Cancer Australia contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=Nous+Group+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Nous+Group+Pty+Ltd)
-
-**6. Painted Dog Research Pty Ltd** — Leederville WA · $714,950 · score 6.0
-- Why: 2 new government contracts in the last 7 days; work runs 9 months
-- Work: Evaluation Research
-- Opener: "Congrats on the Department of Health, Disability and Ageing contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=Painted+Dog+Research+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Painted+Dog+Research+Pty+Ltd)
-
-**7. Planex Sales Pty Ltd** — Alexandria NSW · $316,580 · score 6.0
-- Why: based in Alexandria NSW, delivering for Attorney-General's Department (Canberra)
-- Work: Secure Containers
-- Opener: "Congrats on the Attorney-General's Department contract. With the team in Alexandria and the work in Canberra, who's looking after flights and accommodation for it?"
-- Find: [Google](https://www.google.com/search?q=Planex+Sales+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Planex+Sales+Pty+Ltd)
-
-**8. Callida Pty Ltd** — Forrest ACT · $153,340 · score 6.0
-- Why: 2 new government contracts in the last 7 days; work runs 7 months
-- Work: Management advisory services
-- Opener: "Congrats on the Department of the Treasury contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=Callida+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Callida+Pty+Ltd)
-
-**9. Akkodis Australia Consulting P L** — Brisbane (Efte) QLD · $83,545 · score 6.0
-- Why: based in Brisbane (Efte) QLD, delivering for Australian Taxation Office (NSW); work runs 12 months
-- Work: Provision of Leader Workflows with Gen AI Practical Application Masterclass
-- Opener: "Congrats on the Australian Taxation Office contract. With the team in Brisbane (Efte) and the work in NSW, who's looking after flights and accommodation for it?"
-- Find: [Google](https://www.google.com/search?q=Akkodis+Australia+Consulting+P+L) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Akkodis+Australia+Consulting+P+L)
-
-**10. Australian Sports Technologies Netw** — Cremorne VIC · $75,000 · score 6.0
-- Why: based in Cremorne VIC, delivering for Austrade (Canberra); work runs 8 months
-- Work: Delivery of sector capability report and partner to deliver business mission and summit.
-- Opener: "Congrats on the Austrade contract. With the team in Cremorne and the work in Canberra, who's looking after flights and accommodation for it?"
-- Find: [Google](https://www.google.com/search?q=Australian+Sports+Technologies+Netw) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Australian+Sports+Technologies+Netw)
-
-**11. Leeson & Co Pty Ltd ATF The Leeson Family Trust** — Annerley (Efte) QLD · $58,346 · score 6.0
-- Why: based in Annerley (Efte) QLD, delivering for Australian Taxation Office (NSW); work runs 7 months
-- Work: Provision of Valuation Services
-- Opener: "Congrats on the Australian Taxation Office contract. With the team in Annerley (Efte) and the work in NSW, who's looking after flights and accommodation for it?"
-- Find: [Google](https://www.google.com/search?q=Leeson+%26+Co+Pty+Ltd+ATF+The+Leeson+Family+Trust) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Leeson+%26+Co+Pty+Ltd+ATF+The+Leeson+Family+Trust)
-
-**12. JWS Research Pty Ltd in its personal capacity and as trustee for JWS Research Unit Trust** — Malvern VIC · $508,860 · score 5.0
-- Why: work runs 12 months
-- Work: Community Research Services
-- Opener: "Congrats on the Reserve Bank of Australia contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=JWS+Research+Pty+Ltd+in+its+personal+capacity+and+as+trustee+for+JWS+Research+Unit+Trust) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=JWS+Research+Pty+Ltd+in+its+personal+capacity+and+as+trustee+for+JWS+Research+Unit+Trust)
-
-**13. Axiom Associated Pty Ltd** — Barton ACT · $480,000 · score 5.0
-- Why: work runs 49 months
-- Work: Internal audit services
-- Opener: "Congrats on the National Museum of Australia contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=Axiom+Associated+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Axiom+Associated+Pty+Ltd)
-
-**14. Bluebird Advisory Pty Ltd** — Canberra City ACT · $380,739 · score 5.0
-- Why: 2 new government contracts in the last 7 days
-- Work: ERP Current State Assessment
-- Opener: "Congrats on the Australian Centre for International Agricultural Research contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=Bluebird+Advisory+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Bluebird+Advisory+Pty+Ltd)
-
-**15. Veritas Buildings & Infrastructure Pty Ltd** — Sydney NSW · $321,189 · score 5.0
-- Why: work runs 34 months
-- Work: Project Management
+**3. AURECON AUSTRALASIA PTY LTD** — Turner ACT · $272,582 · score 5.0
+- Why: work runs 9 months
+- Work: Project management
+- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
 - Opener: "Congrats on the Department of Defence contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=Veritas+Buildings+%26+Infrastructure+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Veritas+Buildings+%26+Infrastructure+Pty+Ltd)
+- Find: [Google](https://www.google.com/search?q=AURECON+AUSTRALASIA+PTY+LTD) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=AURECON+AUSTRALASIA+PTY+LTD)
+
+**4. MOTT MACDONALD AUSTRALIA PTY LIMITED** — Adelaide SA · $186,405 · score 5.0
+- Why: work runs 8 months
+- Work: Project Management
+- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
+- Opener: "Congrats on the Department of Defence contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=MOTT+MACDONALD+AUSTRALIA+PTY+LIMITED) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=MOTT+MACDONALD+AUSTRALIA+PTY+LIMITED)
+
+**5. THE MISSING LINK SECURITY PTY LTD** — Artarmon NSW · $115,539 · score 5.0
+- Why: work runs 12 months
+- Work: Maintenance and support
+- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
+- Opener: "Congrats on the Fair Work Commission contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=THE+MISSING+LINK+SECURITY+PTY+LTD) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=THE+MISSING+LINK+SECURITY+PTY+LTD)
+
+**6. Healthcare Management Advisors Pty** — Robinson VIC · $234,190 · score 4.0
+- Why: new government contract
+- Work: Evaluation of the Homelessness Access Program
+- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
+- Opener: "Congrats on the Department of Health, Disability and Ageing contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=Healthcare+Management+Advisors+Pty) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Healthcare+Management+Advisors+Pty)
+
+**7. ECONOMIC DEVELOPMENT SERVICES PTY LTD** — Unley SA · $165,000 · score 4.0
+- Why: new government contract
+- Work: Mid-Term Review of the Papua New Guinea - Australia Transport Sector Support Program Phase 3 (TSSP3) (Papua New Guinea)
+- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
+- Opener: "Congrats on the Department of Foreign Affairs and Trade - Australian Aid Program contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=ECONOMIC+DEVELOPMENT+SERVICES+PTY+LTD) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=ECONOMIC+DEVELOPMENT+SERVICES+PTY+LTD)
+
+**8. Strategic Development Group Pty Ltd** — Yass NSW · $152,132 · score 4.0
+- Why: new government contract
+- Work: Program Review
+- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
+- Opener: "Congrats on the Department of Foreign Affairs and Trade contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=Strategic+Development+Group+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Strategic+Development+Group+Pty+Ltd)
+
+**9. Mindly Pty Ltd** — Beaumaris VIC · $79,999 · score 4.0
+- Why: work runs 12 months
+- Work: Medical Assessment Services
+- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
+- Opener: "Congrats on the Services Australia contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=Mindly+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Mindly+Pty+Ltd)
+
+**10. EVERLLENCE AUSTRALIA PTY LTD** — Yennora NSW · $76,372 · score 4.0
+- Why: 2 new government contracts in the last 7 days
+- Work: Watercraft Maintenance
+- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
+- Opener: "Congrats on the Department of Defence contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=EVERLLENCE+AUSTRALIA+PTY+LTD) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=EVERLLENCE+AUSTRALIA+PTY+LTD)
+
+**11. IPAR Rehabilitation Pty Ltd** — Melbourne VIC · $60,667 · score 4.0
+- Why: work runs 24 months
+- Work: Ergonomic Workplace Assessment
+- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
+- Opener: "Congrats on the Parliamentary Workplace Support Service contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=IPAR+Rehabilitation+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=IPAR+Rehabilitation+Pty+Ltd)
+
+**12. BEAVER ENGINEERING PTY LTD** — Girraween NSW · $59,802 · score 4.0
+- Why: 2 new government contracts in the last 7 days
+- Work: Watercraft Maintenance
+- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
+- Opener: "Congrats on the Department of Defence contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=BEAVER+ENGINEERING+PTY+LTD) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=BEAVER+ENGINEERING+PTY+LTD)
+
+**13. BIRDON PTY LTD** — Port Macquarie NSW · $53,679 · score 4.0
+- Why: 2 new government contracts in the last 7 days
+- Work: Watercraft Maintenance
+- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
+- Opener: "Congrats on the Department of Defence contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=BIRDON+PTY+LTD) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=BIRDON+PTY+LTD)
+
+**14. YMCA Australia** — Essendon Fields VIC · $88,048 · score 3.0
+- Why: new government contract
+- Work: Supervisors for National Youth Parliament
+- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
+- Opener: "Congrats on the Department of the House of Representatives contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=YMCA+Australia) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=YMCA+Australia)
+
+**15. Portable Australia Pty Ltd** — Collingwood VIC · $77,000 · score 3.0
+- Why: new government contract
+- Work: NDRLD Replacement – Discovery. Review NDRLD portal and deliv
+- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
+- Opener: "Congrats on the Australian Radiation Protection and Nuclear Safety Agency contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=Portable+Australia+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Portable+Australia+Pty+Ltd)
 
