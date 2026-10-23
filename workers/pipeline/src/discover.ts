@@ -35,7 +35,31 @@ export interface Discovered {
   opportunity: number;
   top: { keyword: string; volume: number; kd: number }[];
   promoted: boolean;
+  /** Domain ideas from Claude; availability is checked for promoted ideas only. */
+  domains?: { name: string; free: boolean | null }[];
   error?: string;
+}
+
+/**
+ * Is a domain unregistered? .com/.net: Verisign RDAP (404 = not registered).
+ * Others (.com.au blocks RDAP from cloud servers): DNS via Cloudflare DoH, NXDOMAIN = almost certainly free.
+ * null = couldn't tell. Final availability and price are confirmed at purchase (Cloudflare Registrar / AU registrar).
+ */
+export async function domainFree(name: string): Promise<boolean | null> {
+  try {
+    if (/\.(com|net)$/.test(name)) {
+      const tld = name.split('.').pop();
+      const r = await fetch(`https://rdap.verisign.com/${tld}/v1/domain/${name}`, { headers: { accept: 'application/rdap+json' } });
+      if (r.status === 404) return true;
+      if (r.ok) return false;
+      return null;
+    }
+    const r = await fetch(`https://cloudflare-dns.com/dns-query?name=${name}&type=NS`, { headers: { accept: 'application/dns-json' } });
+    const st = ((await r.json()) as { Status?: number }).Status;
+    return st === 3 ? true : st === 0 ? false : null;
+  } catch {
+    return null;
+  }
 }
 
 const median = (xs: number[]) => {
@@ -78,6 +102,7 @@ export function discoverReport(all: Discovered[], week: string, costUsd: number)
     '',
     `- **Easy searches**: how many related searches pass that bar (a site needs many pages, so breadth matters).`,
     `- **Opportunity**: easy volume, weighted by money (CPC) and breadth. Use it to rank, not as a forecast.`,
+    `- **Domains**: names checked for promoted ideas (✅ not registered, ❌ taken). Re-checked before buying; buy only once an idea passes scoring and competition.`,
     `- ⭐ = cleared the bar (${PROMOTE.minBreadth}+ easy searches and ${n(PROMOTE.minEasyVolume.US)}+/mo in the US or ${n(PROMOTE.minEasyVolume.AU)}+/mo in Australia) and went into the full niche scoring (\`hq/reports/niches.md\`) and the competition check.`,
     '',
     '## This week',
@@ -85,6 +110,10 @@ export function discoverReport(all: Discovered[], week: string, costUsd: number)
     head,
     ...thisWeek.map(row),
     '',
+    ...(thisWeek.some((d) => d.domains?.some((x) => x.free !== null))
+      ? ['## Domains for this week\'s ⭐ ideas', '', ...thisWeek.filter((d) => d.promoted && d.domains?.length).map((d) =>
+          `- **${d.idea}**: ${d.domains!.map((x) => `${x.free === true ? '✅' : x.free === false ? '❌' : '❔'} ${x.name}`).join(' · ')}`), '']
+      : []),
     '## All-time leaderboard',
     '',
     head,

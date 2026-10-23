@@ -294,7 +294,7 @@ export async function pickCategories(apiKey: string, model: string, idea: string
   return (Array.isArray(j.categories) ? j.categories.map(String) : []).filter((c) => c in categories).slice(0, 3);
 }
 
-export interface NicheCandidate { idea: string; seeds: string[]; terms: string[]; market: 'US' | 'AU'; why: string }
+export interface NicheCandidate { idea: string; seeds: string[]; terms: string[]; market: 'US' | 'AU'; why: string; domains: string[] }
 
 /**
  * Weekly niche discovery: Claude proposes new site ideas that fit the factory model
@@ -315,7 +315,10 @@ export async function brainstormNiches(apiKey: string, model: string, n: number,
     '',
     'For each, give 3 short seed searches that real people type (the templated long-tail kind, not brand names),',
     'and 1 to 4 topic words that EVERY relevant search would contain (e.g. ["tornado", "hail"] or ["ski"]): single words, specific to the topic, never generic words like "best", "near", "county", "city", "price" or place names.',
-    'Reply with JSON only: {"ideas": [{"idea": "short name", "seeds": ["...", "...", "..."], "terms": ["..."], "market": "US" or "AU", "why": "the page pattern + data source in one sentence"}]}',
+    'Also suggest 6 domain names per idea: short (under 15 letters before the dot), easy to say and spell, no hyphens or numbers,',
+    'clearly about the topic but brandable (e.g. "fishfinderguide.com" is too generic, "lakeroster.com" is better). US ideas: .com only.',
+    'Australian ideas: 3 .com.au and 3 .com. Avoid obvious dictionary words that will already be taken.',
+    'Reply with JSON only: {"ideas": [{"idea": "short name", "seeds": ["...", "...", "..."], "terms": ["..."], "market": "US" or "AU", "why": "the page pattern + data source in one sentence", "domains": ["...", "..."]}]}',
   ].filter((l) => l !== '').join('\n');
   // Forced tool call: the API returns the list as structured input, so stray quotes can't break the JSON.
   const res = await fetch('https://api.anthropic.com/v1/messages', {
@@ -340,8 +343,9 @@ export async function brainstormNiches(apiKey: string, model: string, n: number,
                   terms: { type: 'array', items: { type: 'string' } },
                   market: { type: 'string', enum: ['US', 'AU'] },
                   why: { type: 'string' },
+                  domains: { type: 'array', items: { type: 'string' } },
                 },
-                required: ['idea', 'seeds', 'terms', 'market', 'why'],
+                required: ['idea', 'seeds', 'terms', 'market', 'why', 'domains'],
               },
             },
           },
@@ -361,7 +365,9 @@ export async function brainstormNiches(apiKey: string, model: string, n: number,
     const seeds = Array.isArray(r.seeds) ? r.seeds.map(String).filter(Boolean).slice(0, 5) : [];
     const terms = Array.isArray(r.terms) ? r.terms.map(String).filter((t) => t && !t.includes(' ')).slice(0, 4) : [];
     if (!r.idea || !seeds.length || !terms.length) continue;
-    out.push({ idea: String(r.idea).slice(0, 90), seeds, terms, market: r.market === 'AU' ? 'AU' : 'US', why: String(r.why ?? '').slice(0, 300) });
+    const domains = (Array.isArray(r.domains) ? r.domains.map((d) => String(d).toLowerCase().trim()) : [])
+      .filter((d) => /^[a-z0-9]{3,20}\.(com|com\.au)$/.test(d)).slice(0, 6);
+    out.push({ idea: String(r.idea).slice(0, 90), seeds, terms, domains, market: r.market === 'AU' ? 'AU' : 'US', why: String(r.why ?? '').slice(0, 300) });
   }
   return out.slice(0, n);
 }

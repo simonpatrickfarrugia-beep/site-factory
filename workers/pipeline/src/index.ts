@@ -20,7 +20,7 @@ import { buildDemandReport } from './demand';
 import { pickTrailer } from './titles';
 import { buildCatalogue, type Candidate } from './catalogue';
 import { cleanKeyword, domainTraffic, easyKeywords, keywordDifficulty, keywordIdeas, searchVolumes, serpTop10, type SerpResult } from './dataforseo';
-import { MARKETS, PROMOTE, discoverReport, measure, qualifies, type Discovered } from './discover';
+import { MARKETS, PROMOTE, discoverReport, domainFree, measure, qualifies, type Discovered } from './discover';
 import { COMPETITION_VERSION, competitionReport, pickKeywords, rootDomain, scoreCompetition, type Competition } from './competition';
 
 export interface Env {
@@ -525,7 +525,8 @@ async function discoverJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: 
   const history = JSON.parse(snap.files[DISCOVER] || '[]') as Discovered[];
   const week = now.toISOString().slice(0, 10);
   const log: string[] = [];
-  const count = Math.min(25, Number(env.DISCOVER_PER_RUN) || 15);
+  // Cloudflare Free allows 50 outgoing calls per run: 1 Claude + 1 per idea + up to 18 domain checks + ~8 GitHub.
+  const count = Math.min(20, Number(env.DISCOVER_PER_RUN) || 15);
   const avoid = [...new Set([...niches.map((x) => x.idea), ...history.map((d) => d.idea)])].slice(-250);
   const liked = niches.filter((x) => (x.score?.overall ?? 0) >= 65).map((x) => x.idea);
   const ideas = await brainstormNiches(env.ANTHROPIC_API_KEY, env.ANTHROPIC_MODEL, count, avoid, liked);
@@ -535,7 +536,7 @@ async function discoverJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: 
   for (const c of ideas) {
     if (seen.has(c.idea.toLowerCase())) continue;
     seen.add(c.idea.toLowerCase());
-    const d: Discovered = { week, idea: c.idea, market: c.market, seeds: c.seeds, terms: c.terms, why: c.why, breadth: 0, easyVolume: 0, medianCpc: null, opportunity: 0, top: [], promoted: false };
+    const d: Discovered = { week, idea: c.idea, market: c.market, seeds: c.seeds, terms: c.terms, why: c.why, domains: c.domains.map((name) => ({ name, free: null })), breadth: 0, easyVolume: 0, medianCpc: null, opportunity: 0, top: [], promoted: false };
     try {
       const e = await easyKeywords(env.DATAFORSEO_LOGIN!, env.DATAFORSEO_PASSWORD!, c.seeds, MARKETS[c.market].code, { mustMatch: c.terms });
       cost += e.cost;
@@ -550,17 +551,20 @@ async function discoverJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: 
   const promote = fresh.filter(qualifies).sort((a, b) => b.opportunity - a.opportunity).slice(0, PROMOTE.perWeek);
   for (const d of promote) {
     d.promoted = true;
+    // Check the domain ideas while we're here, so a good niche arrives with names you can actually buy.
+    for (const x of d.domains ?? []) x.free = await domainFree(x.name);
+    const free = (d.domains ?? []).filter((x) => x.free).map((x) => x.name);
     niches.push({
       idea: d.idea,
       seeds: d.seeds,
-      notes: `Found by weekly discovery (${week}): ${d.why} ${d.breadth} related searches with 100+/mo and SEO difficulty ≤ 25, ${d.easyVolume.toLocaleString('en-US')}/mo across the biggest 100.`,
+      notes: `Found by weekly discovery (${week}): ${d.why} ${d.breadth} related searches with 100+/mo and SEO difficulty ≤ 25, ${d.easyVolume.toLocaleString('en-US')}/mo across the biggest 100.${free.length ? ` Unregistered domains on ${week}: ${free.join(', ')}.` : ''}`,
       market: MARKETS[d.market],
       addedAt: now.toISOString(),
       status: 'new',
     } as Niche);
   }
   const all = [...history, ...fresh];
-  log.unshift(`Discover: screened ${fresh.length} new ideas for US$${cost.toFixed(2)}; ${promote.length} promoted to scoring${promote.length ? `: ${promote.map((d) => d.idea).join(', ')}` : ''}.`);
+  log.unshift(`Discover: screened ${fresh.length} new ideas for US$${cost.toFixed(2)}; ${promote.length} promoted to scoring${promote.length ? `: ${promote.map((d) => `${d.idea} (${(d.domains ?? []).filter((x) => x.free).length} free domains)`).join(', ')}` : ''}.`);
   const report = discoverReport(all, week, cost);
   const changes: Record<string, string> = { [DISCOVER]: JSON.stringify(all, null, 1) + '\n', [DISCOVER_REPORT]: report };
   if (promote.length) changes[NICHES] = JSON.stringify(niches, null, 1) + '\n';
