@@ -23,7 +23,7 @@ TOP = 15
 BIG = re.compile(r'\b(deloitte|kpmg|pwc|pricewaterhouse|ernst|\bey\b|accenture|ibm|microsoft|oracle|telstra|optus|vodafone|qantas|virgin|'
                  r'leidos|lockheed|bae systems|boeing|thales|raytheon|northrop|cisco|dell|hewlett|\bhp\b|fujitsu|unisys|datacom|nttdata|ntt data|'
                  r'downer|serco|sodexo|compass group|ventia|lendlease|cpb|john holland|kbr|jacobs|aecom|ghd|wsp|arup|mckinsey|boston consulting|bain|'
-                 r'gartner|amazon|google|salesforce|sap |servicenow|commonwealth bank|westpac|anz|nab|national australia bank|australia post|'
+                 r'gartner|micro focus|opentext|hays|sg fleet|amazon|google|salesforce|sap |servicenow|commonwealth bank|westpac|anz|nab|national australia bank|australia post|'
                  r'flight centre|corporate travel management|fcm|american express|amex|gbt|helloworld|travel)\b', re.I)
 GOV = re.compile(r'\b(university|department|council|commonwealth|government|agency|authority|commission|tafe|csiro|hospital|health service|'
                  r'police|defence|army|navy|air force|minister|court|tribunal|ombudsman|institute of technology)\b', re.I)
@@ -32,9 +32,14 @@ TRAVEL_WORDS = re.compile(r'\b(national|nationwide|regional|remote|on-?site|site
                           r'project management|implementation|roll-?out|engagement|research)\b', re.I)
 # Work that doesn't put a supplier's own team on planes: temps placed at the client, goods, licences, supplies.
 NO_TRAVEL_WORK = re.compile(r'\b(labou?r hire|temporary personnel|temporary staff|recruitment|contingent|contractors? services panel|software licen|'
-                            r'licen[cs]es|subscription|fuel|vehicles?|tankers?|furniture|stationery|office supplies|medical supplies|pharmaceutical|'
+                            r'licen[cs]es|subscription|maintenance renewal|software|equipment|hardware|supply of|purchase of|fuel|vehicles?|tankers?|furniture|stationery|office supplies|medical supplies|pharmaceutical|'
                             r'ammunition|uniforms|clothing|printing|postage|electricity|gas supply|telecommunications)\b', re.I)
 # A public company ("... Limited" without "Pty") is usually too big for an SME travel pitch.
+COMPANY = re.compile(r'\b(pty|ltd|limited|inc|group|consult\w*|services|solutions|partners|associates|advisory|australia|co\b|corporation|trust|& )', re.I)
+def person(name):
+    # A sole trader / barrister listed under their own name: 2-4 plain words, no company words.
+    return not COMPANY.search(name) and 2 <= len(name.split()) <= 4 and not re.search(r'\d', name)
+
 def public_co(name):
     n = name.lower()
     return bool(re.search(r'\b(limited|ltd)\.?$', n)) and 'pty' not in n
@@ -103,7 +108,7 @@ def main():
                     continue
                 name = (p.get('name') or '').strip()
                 abn = ((p.get('identifier') or {}).get('id') or '').replace(' ', '')
-                if not name or BIG.search(name) or GOV.search(name) or public_co(name):
+                if not name or BIG.search(name) or GOV.search(name) or public_co(name) or person(name):
                     continue
                 s = sup.setdefault(abn or name.lower(), {'name': name, 'abn': abn, 'locality': (p.get('address') or {}).get('locality', '').title(),
                                                          'state': state_of(p.get('address')), 'contracts': []})
@@ -129,6 +134,8 @@ def main():
         # don't travel, so an ACT supplier only counts when the agency is clearly not in Canberra AND the work says so.
         interstate = [c for c in s['contracts'] if c['buyerState'] and s['state'] and c['buyerState'] != s['state'] and s['state'] != 'ACT']
         text = ' '.join(c['desc'] + ' ' + c['category'] for c in s['contracts'])
+        if not interstate and not TRAVEL_WORDS.search(text):
+            continue  # no sign the team will travel
         months = 0
         for c in s['contracts']:
             try:
