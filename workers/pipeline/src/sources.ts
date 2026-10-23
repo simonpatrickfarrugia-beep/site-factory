@@ -317,12 +317,21 @@ export async function brainstormNiches(apiKey: string, model: string, n: number,
     'and 1 to 4 topic words that EVERY relevant search would contain (e.g. ["tornado", "hail"] or ["ski"]): single words, specific to the topic, never generic words like "best", "near", "county", "city", "price" or place names.',
     'Reply with JSON only: {"ideas": [{"idea": "short name", "seeds": ["...", "...", "..."], "terms": ["..."], "market": "US" or "AU", "why": "the page pattern + data source in one sentence"}]}',
   ].filter((l) => l !== '').join('\n');
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: claudeHeaders(apiKey),
-    body: JSON.stringify({ model, max_tokens: 6000, messages: [{ role: 'user', content: prompt }] }),
-  });
-  const j = JSON.parse(await claudeJson(res)) as { ideas?: unknown };
+  // One retry: a long JSON list occasionally comes back malformed.
+  let j: { ideas?: unknown } = {};
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: claudeHeaders(apiKey),
+      body: JSON.stringify({ model, max_tokens: 6000, messages: [{ role: 'user', content: prompt }] }),
+    });
+    try {
+      j = JSON.parse(await claudeJson(res)) as { ideas?: unknown };
+      break;
+    } catch (e) {
+      if (attempt === 1) throw e;
+    }
+  }
   const out: NicheCandidate[] = [];
   for (const raw of Array.isArray(j.ideas) ? j.ideas : []) {
     const r = raw as Record<string, unknown>;
