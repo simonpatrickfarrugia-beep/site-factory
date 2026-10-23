@@ -72,16 +72,28 @@ export function routes(): Route[] {
   /** Card photo for a plan: its own stops first (Sovereign Hill beats a street), then the region's (for region day trips), then the town's. */
   const placePhoto = (id: string) => (photos.places[id] as { url?: string } | undefined)?.url ? photos.places[id] : null;
   const DO_PHOTO = new Set(['museum', 'gallery', 'attraction', 'viewpoint', 'zoo', 'nature_reserve', 'park', 'beach_resort', 'theme_park', 'aquarium']);
+  const SCENIC = ['viewpoint', 'nature_reserve', 'beach', 'beach_resort', 'park', 'zoo'];
+  const SIGNATURE_PHOTO = /sovereign hill|golden dragon|puffing billy|arthurs seat|healesville sanctuary/i;
   const planPhoto = (b: VicBundle) => {
-    for (const k of ['morning', 'afternoon', 'see', 'big', 'unwind', 'free']) for (const p of b.result.picks[k] ?? []) { const ph = placePhoto(p.item.id); if (ph) return ph; }
+    const picks = ['morning', 'afternoon', 'see', 'big', 'unwind', 'free'].flatMap((k) => b.result.picks[k] ?? []).map((p) => p.item).filter((it) => placePhoto(it.id));
+    // 1. A scenic or signature stop on the plan itself (Arthurs Seat Lookout, Sovereign Hill).
+    const best = picks.find((it) => SCENIC.includes(it.kind) || SIGNATURE_PHOTO.test(it.name));
+    if (best) return placePhoto(best.id);
+    // 2. A lookout or nature park in the town (Red Bluff beats a museum car park).
+    const local = (byTown.get(b.town.slug) ?? []).filter((p) => ['viewpoint', 'nature_reserve'].includes(p.type) && placePhoto(p.id))
+      .sort((x, y) => (x.type === 'viewpoint' ? 0 : 1) - (y.type === 'viewpoint' ? 0 : 1));
+    if (local[0]) return placePhoto(local[0].id);
+    // 3. The town's own photo, then any stop on the plan, then anything in the region.
+    if (photos.towns[b.town.slug]) return photos.towns[b.town.slug];
+    if (picks[0]) return placePhoto(picks[0].id);
     if (b.region) {
       const slugs = towns.filter((t) => content.towns[t.slug]?.region === b.region).map((t) => t.slug);
       for (const sl of slugs) for (const p of byTown.get(sl) ?? []) if (DO_PHOTO.has(p.type) && placePhoto(p.id)) return placePhoto(p.id);
     }
-    if (photos.towns[b.town.slug]) return photos.towns[b.town.slug];
     for (const p of byTown.get(b.town.slug) ?? []) if (DO_PHOTO.has(p.type) && placePhoto(p.id)) return placePhoto(p.id);
     return null;
   };
+
   const usedTile = new Set<string>();
 
   const bundlesByTown = new Map<string, VicBundle[]>();
@@ -108,6 +120,7 @@ export function routes(): Route[] {
         const m = b.result.picks.morning?.[0]?.item; const l = b.result.picks.lunch?.[0]?.item;
         return { href: `/${b.path}`, title: b.region ?? b.town.name, town: b.region ? b.town.name : null, km: b.town.kmFromMelbourne ?? 0, photo: planPhoto(b),
           line: [m && m.name, l && `lunch at ${l.name}`].filter(Boolean).join(', then ') };
+      }).map((d) => { const u = (d.photo as { url?: string } | null)?.url; if (u) usedTile.add(u); return d;
       }),
       weekendTiles: (['train', 'couples', 'family', 'budget'] as Audience[]).map((a) => {
         const list = bundles.filter((b) => b.audience === a).sort((x, y) => y.rank - x.rank);

@@ -73,7 +73,7 @@ const credit = (p: Photo) => `Photo: ${p.artist}, ${p.license}, via Wikimedia Co
           <li class="trip">
             <a class="trip__name trip__name--loop" href={`/road-trips/${l.slug}`}>{l.name}</a>
             <p class="trip__intro">{l.summary}</p>
-            <p class="trip__towns">{l.days} days, planned day by day</p>
+            <p class="trip__towns">{l.days === 1 ? 'One day' : `${l.days} days`}, planned {l.days === 1 ? 'stop by stop' : 'day by day'}</p>
           </li>
         ))}
       </ul>
