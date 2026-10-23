@@ -25,7 +25,8 @@ jobs:
       - name: Commit
         if: always()
         run: |
-          echo "::notice title=leads::$(head -c 12000 leads/latest.md 2>/dev/null | sed 's/%/%25/g' | sed ':a;N;$!ba;s/\n/%0A/g')"
+          f=leads/latest.md; [ -s "$f" ] && [ "${{ job.status }}" = "success" ] || f=out.txt
+          echo "::notice title=leads::$(tail -c 12000 $f 2>/dev/null | sed 's/%/%25/g' | sed ':a;N;$!ba;s/\n/%0A/g')"
           git config user.name "Leads" && git config user.email "leads@users.noreply.github.com"
           git add leads 2>/dev/null || true
           git diff --cached --quiet && exit 0
