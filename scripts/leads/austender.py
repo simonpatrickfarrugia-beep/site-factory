@@ -163,7 +163,9 @@ def main():
     os.makedirs('leads', exist_ok=True)
     today = datetime.now(timezone(timedelta(hours=11))).strftime('%a %d %b %Y')
     md = [f'# Call list — {today}', '', f'_SMEs that won Australian Government contracts in the last {DAYS} days (AusTender). Interstate work = flights. '
-          'Find the person who books travel (office manager, ops, finance, EA) before calling. Company details only; check the Do Not Call Register rules for any number you use._', '']
+          'Wash every lead first: check Salesforce for existing contact, and that CT and Corporate Traveller aren\'t already prospecting or trading with them. '
+          'Then find the person who books travel (office manager, ops, finance, EA). Company details only; check the Do Not Call Register rules for any number you use. '
+          'Bulk lookup file: leads/latest.csv._', '']
     for i, s in enumerate([x for x in scored if not x['seenBefore']][:TOP], 1):
         inter = [c for c in s['contracts'] if c['buyerState'] and c['buyerState'] != s['state']] if s['interstate'] else []
         top = max(inter or s['contracts'], key=lambda c: c['value'])
@@ -175,12 +177,21 @@ def main():
         md += [f"**{i}. {s['name']}** — {where} · ${s['total']:,.0f} · score {s['score']}",
                f"- Why: {'; '.join(s['why']) or 'new government contract'}",
                f"- Work: {top['desc'] or top['category'] or 'see contract'}",
+               f"- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller",
                f"- Opener: \"{opener}\"",
                f"- Find: [Google](https://www.google.com/search?q={q}) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords={q})"
                + (f" · [ABN](https://abr.business.gov.au/ABN/View?abn={s['abn']})" if s['abn'] else ''), '']
     if not any(not x['seenBefore'] for x in scored):
         md.append('No new prospects this run.')
     open('leads/latest.md', 'w').write('\n'.join(md) + '\n')
+    # CSV for washing in Salesforce (bulk lookup by company name / ABN) before anyone calls.
+    import csv
+    with open('leads/latest.csv', 'w', newline='') as fh:
+        w = csv.writer(fh)
+        w.writerow(['Rank', 'Company', 'ABN', 'Suburb', 'State', 'Contract value (AUD)', 'Agency', 'Work', 'Why', 'Washed (Y/N)', 'Notes'])
+        for i, s2 in enumerate([x for x in scored if not x['seenBefore']][:TOP], 1):
+            top2 = max(s2['contracts'], key=lambda c: c['value'])
+            w.writerow([i, s2['name'], s2['abn'], s2['locality'], s2['state'] or '', s2['total'], top2['buyer'], top2['desc'][:120], '; '.join(s2['why']), '', ''])
     json.dump({'generatedAt': datetime.now(timezone.utc).isoformat(timespec='seconds'), 'days': DAYS, 'suppliers': scored[:300]}, open('leads/austender.json', 'w'), indent=1)
     for s in [x for x in scored if not x['seenBefore']][:TOP]:
         seen[s['abn'] or s['name'].lower()] = datetime.now(timezone.utc).strftime('%Y-%m-%d')
