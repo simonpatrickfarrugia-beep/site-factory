@@ -23,6 +23,8 @@ export interface Discovered {
   idea: string;
   market: 'US' | 'AU';
   seeds: string[];
+  /** topic words every counted search must contain */
+  terms?: string[];
   why: string;
   /** related searches with 100+/mo and difficulty ≤ 25 */
   breadth: number;
@@ -72,7 +74,7 @@ export function discoverReport(all: Discovered[], week: string, costUsd: number)
   return [
     '# Niche discovery (weekly)',
     '',
-    `Updated ${week}. Every Sunday Claude proposes new site ideas and each is screened for **lots of searches with little competition**: related Google searches with 100+ a month **and** SEO difficulty 25 or less. ${thisWeek.length} ideas screened this week for about US$${costUsd.toFixed(2)}.`,
+    `Updated ${week}. Every Sunday Claude proposes new site ideas and each is screened for **lots of searches with little competition**: related Google searches that contain the topic's own words, with 100+ a month **and** SEO difficulty 25 or less. ${thisWeek.length} ideas screened this week for about US$${costUsd.toFixed(2)}.`,
     '',
     `- **Easy searches**: how many related searches pass that bar (a site needs many pages, so breadth matters).`,
     `- **Opportunity**: easy volume, weighted by money (CPC) and breadth. Use it to rank, not as a forecast.`,

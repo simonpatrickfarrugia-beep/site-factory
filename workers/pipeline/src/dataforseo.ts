@@ -165,8 +165,13 @@ export async function easyKeywords(
   password: string,
   seeds: string[],
   locationCode: number,
-  opts: { minVolume?: number; maxKd?: number; limit?: number } = {},
+  opts: { minVolume?: number; maxKd?: number; limit?: number; mustMatch?: string[] } = {},
 ): Promise<EasyKeywords & { cost: number }> {
+  // Keyword ideas drift far from the topic ("tornado history" → "how many weeks in a year"), so only
+  // searches containing one of the topic's own words count. Server-side, so total_count stays honest.
+  const terms = (opts.mustMatch ?? []).map((t) => cleanKeyword(t).replace(/[^a-z0-9 ]/g, '')).filter((t) => t.length >= 3).slice(0, 6);
+  const filters: unknown[] = [['keyword_info.search_volume', '>=', opts.minVolume ?? 100], 'and', ['keyword_properties.keyword_difficulty', '<=', opts.maxKd ?? 25]];
+  if (terms.length) filters.push('and', ['keyword', 'regex', `(${terms.join('|')})`]);
   const keywords = [...new Set(seeds.map(cleanKeyword).filter(Boolean))].slice(0, 20);
   const { result, cost } = await dfsTask<
     { total_count?: number; items?: { keyword: string; keyword_info?: { search_volume?: number | null; cpc?: number | null }; keyword_properties?: { keyword_difficulty?: number | null } }[] }[]
@@ -175,7 +180,7 @@ export async function easyKeywords(
     location_code: locationCode,
     language_code: 'en',
     include_serp_info: false,
-    filters: [['keyword_info.search_volume', '>=', opts.minVolume ?? 100], 'and', ['keyword_properties.keyword_difficulty', '<=', opts.maxKd ?? 25]],
+    filters,
     order_by: ['keyword_info.search_volume,desc'],
     limit: opts.limit ?? 100,
   });
