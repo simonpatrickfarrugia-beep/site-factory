@@ -13,7 +13,18 @@ for n in names:
             ev = {e.get('eventAction'): e.get('eventDate', '')[:10] for e in d.get('events', [])}
             taken.append(f"{n} (registered {ev.get('registration', '?')}, expires {ev.get('expiration', '?')})")
     except urllib.error.HTTPError as e:
-        (free if e.code == 404 else unknown).append(n if e.code == 404 else f'{n} (HTTP {e.code})')
+        if e.code == 404:
+            free.append(n)
+            continue
+        # Some registries (e.g. .au) block RDAP from cloud runners: fall back to DNS. No name servers (NXDOMAIN) = almost certainly unregistered.
+        try:
+            req = urllib.request.Request(f'https://cloudflare-dns.com/dns-query?name={n}&type=NS', headers={'accept': 'application/dns-json'})
+            st = json.load(urllib.request.urlopen(req, timeout=15)).get('Status')
+            if st == 3: free.append(f'{n} (no DNS)')
+            elif st == 0: taken.append(f'{n} (has DNS)')
+            else: unknown.append(f'{n} (DNS status {st})')
+        except Exception as e2:
+            unknown.append(f'{n} (HTTP {e.code}; DNS {str(e2)[:40]})')
     except Exception as e:
         unknown.append(f'{n} ({str(e)[:60]})')
 out = ['## Domain check', '', f'**Not registered ({len(free)}):** ' + (', '.join(free) or 'none'), '', f'**Taken ({len(taken)}):**', *[f'- {t}' for t in taken], '', f'**Unknown ({len(unknown)}):** ' + (', '.join(unknown) or 'none')]
