@@ -71,6 +71,7 @@ const live = p.nodes.filter((x) => x.status === 'live').length;
 
   <section class="panel todo" id="todo">
     <h2>Simon: still to do <small>· {open.length} left · about {openMins} min</small></h2>
+    <p class="todo__note"><a href="/hq/signup">📋 Signup answers (tap to copy)</a> for affiliate and partner forms.</p>
     {open.length === 0 && <p>All clear. Nice work.</p>}
     {['decide', 'do'].map((kind) => {
       const items = open.filter((t) => t.kind === kind);

@@ -108,3 +108,18 @@ export function hqProps() {
     builtAt: new Date().toISOString(),
   };
 }
+
+/** Tap-to-copy signup answers (hq/affiliate-answers.json), with each site's latest 28-day visits filled in. */
+export function hqAnswersProps() {
+  const a = read<any>('hq/affiliate-answers.json', { common: {}, sites: [] });
+  const fields = (o: Record<string, string>) => Object.entries(o).map(([label, value]) => ({ label, value }));
+  return {
+    common: fields(a.common),
+    sites: a.sites.map((s: any) => {
+      const st = read<any>(s.stats, null);
+      const v = st?.totals?.views ?? 0;
+      const traffic = `New site, launched October 2026, growing organic traffic${v ? ` (${v.toLocaleString('en-AU')} page views in the last 28 days)` : ''}.`;
+      return { name: s.name, url: s.url, traffic, fields: fields(s.fields) };
+    }),
+  };
+}

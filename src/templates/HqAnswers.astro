@@ -1,0 +1,47 @@
+---
+/** Private: tap-to-copy answers for affiliate signups (data: hq/affiliate-answers.json). */
+interface Field { label: string; value: string }
+interface Props { sites: { name: string; url: string; traffic: string; fields: Field[] }[]; common: Field[] }
+const { sites, common } = Astro.props;
+---
+<div class="wrap answers">
+  <p class="answers__back"><a href="/hq">← HQ</a></p>
+  <h1>Signup answers</h1>
+  <p class="answers__lede">Tap a button to copy, then paste into the signup form. ABN, tax, bank and card details are never stored here: type those only into the vendor's own form.</p>
+  {sites.map((s) => (
+    <section class="answers__site">
+      <h2>{s.name}</h2>
+      <div class="answers__list">
+        {[...s.fields, { label: 'Monthly visitors', value: s.traffic }, ...common].map((f) => (
+          <div class="answers__row">
+            <div class="answers__label">{f.label}</div>
+            <p class="answers__value">{f.value}</p>
+            <button type="button" class="answers__copy" data-copy={f.value}>Copy</button>
+          </div>
+        ))}
+      </div>
+    </section>
+  ))}
+</div>
+<script is:inline>
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-copy]');
+    if (!b) return;
+    navigator.clipboard.writeText(b.getAttribute('data-copy')).then(function () {
+      var t = b.textContent; b.textContent = 'Copied ✓'; b.classList.add('is-done');
+      setTimeout(function () { b.textContent = t; b.classList.remove('is-done'); }, 1500);
+    });
+  });
+</script>
+<style>
+  .answers { padding-block: 1.5rem 3rem; max-width: 46rem; }
+  .answers h1 { font-size: 1.8rem; margin: 0.3rem 0 0.4rem; }
+  .answers__lede { color: var(--muted); }
+  .answers__site { margin-top: 2rem; }
+  .answers__site h2 { font-size: 1.3rem; }
+  .answers__row { display: grid; grid-template-columns: 1fr auto; gap: 0.25rem 0.8rem; padding: 0.8rem 0; border-top: 1px solid var(--line); align-items: start; }
+  .answers__label { grid-column: 1 / -1; font-size: 0.8rem; font-weight: 700; color: var(--muted); }
+  .answers__value { margin: 0; font-size: 0.95rem; }
+  .answers__copy { font: inherit; font-weight: 700; font-size: 0.85rem; padding: 0.5rem 0.9rem; border-radius: 999px; border: 0; background: var(--color-accent); color: var(--ink); cursor: pointer; min-width: 5.5rem; }
+  .answers__copy.is-done { background: #2e7d32; color: #fff; }
+</style>
