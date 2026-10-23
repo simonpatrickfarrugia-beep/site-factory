@@ -58,6 +58,7 @@ const credit = (p: Photo) => `Photo: ${p.artist}, ${p.license}, via Wikimedia Co
               {t.photo && <img src={t.photo.url} alt="" width={t.photo.width} height={t.photo.height} loading="lazy" decoding="async" referrerpolicy="no-referrer" />}
               <span class="tile__text"><strong>{t.title}</strong><span>{t.count} plans{t.example ? `, like ${t.example}` : ''}</span></span>
             </a>
+            {t.photo && <a class="card__credit" href={t.photo.page} rel="nofollow noopener" target="_blank">{credit(t.photo)}</a>}
           </li>
         ))}
       </ul>

@@ -531,6 +531,7 @@ export function routes(): Route[] {
         props: {
           title: AUDIENCE[a].hubTitle, intro: HUB_INTRO[a], groups: [{ title: AUDIENCE[a].hubTitle, cards: list.map(card) }],
           others: auds.filter((o) => o !== a).map((o) => ({ href: `/${AUDIENCE[o].hubPath}`, label: AUDIENCE[o].hubTitle })),
+          crumb: a === 'daytrip' ? null : { href: '/weekends', label: 'Weekend plans' },
         },
       });
     }
