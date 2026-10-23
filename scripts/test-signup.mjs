@@ -1,5 +1,7 @@
 // Browser test for the Vic Tours email signup against the live site (or BASE). Uses a test address; Claude deletes the row after.
 import { chromium } from 'playwright';
+import { mkdir } from 'node:fs/promises';
+await mkdir('shots', { recursive: true });
 const BASE = process.argv[2] || 'https://victours.com.au';
 const fails = [];
 const ok = (c, m) => { console.log(`${c ? '✅' : '❌'} ${m}`); if (!c) fails.push(m); };
@@ -17,6 +19,7 @@ await page.click('#signup button[type=submit]');
 await page.waitForFunction(() => /on the list|didn/.test(document.querySelector('.signup__msg')?.textContent ?? ''), null, { timeout: 15000 }).catch(() => {});
 const msg = await page.locator('.signup__msg').textContent();
 ok(/on the list/.test(msg ?? ''), `JS signup works ("${msg}")`);
+await page.locator('#signup').screenshot({ path: 'shots/vic-signup.png' }).catch(() => {});
 const get = await page.evaluate(async () => (await fetch('/api/subscribe')).status);
 ok(get === 405, `GET /api/subscribe is refused (${get})`);
 const home = await page.evaluate(async () => (await fetch('/day-trips')).status);
