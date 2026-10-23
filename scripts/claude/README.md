@@ -11,4 +11,5 @@ read **hq/brief.md** — the daily state of the whole factory.
 | `pipe-run.sh <job> [dry]` | Run a pipeline Worker job now (intake, enrich, stats, collections, …) |
 | `volumes.sh "a|b" [loc]` | Google monthly searches for keywords (US default; ~US$0.09) |
 | `_dispatch.sh uitest.yml uitest -f "inputs[test]=test-resume.mjs" -f "inputs[base]=https://communityhelp.com.au"` | Real-browser test against a live site (14 checks for the resume builder); screenshots on branch `uitest-shots` |
+| `inspect.sh <brand> <branch> "/a /b"` | Build a branch and print page text (read previews before launch) |
 | `brief.sh` | Rebuild hq/brief.md now and print it |
