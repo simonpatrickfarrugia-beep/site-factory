@@ -83,9 +83,9 @@ export function routes(): Route[] {
     const local = (byTown.get(b.town.slug) ?? []).filter((p) => ['viewpoint', 'nature_reserve'].includes(p.type) && placePhoto(p.id))
       .sort((x, y) => (x.type === 'viewpoint' ? 0 : 1) - (y.type === 'viewpoint' ? 0 : 1));
     if (local[0]) return placePhoto(local[0].id);
-    // 3. The town's own photo, then any stop on the plan, then anything in the region.
-    if (photos.towns[b.town.slug]) return photos.towns[b.town.slug];
+    // 3. Any stop on the plan, then the town's own photo (often just a main street), then anything in the region.
     if (picks[0]) return placePhoto(picks[0].id);
+    if (photos.towns[b.town.slug]) return photos.towns[b.town.slug];
     if (b.region) {
       const slugs = towns.filter((t) => content.towns[t.slug]?.region === b.region).map((t) => t.slug);
       for (const sl of slugs) for (const p of byTown.get(sl) ?? []) if (DO_PHOTO.has(p.type) && placePhoto(p.id)) return placePhoto(p.id);
