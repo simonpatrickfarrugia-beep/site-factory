@@ -18,8 +18,8 @@ interface Ctx { town: Town; centre: { lat: number; lon: number }; station: (Stat
 export const AUDIENCE: Record<Audience, { label: string; short: string; path: string; hubPath: string; hubTitle: string; hubKeyword: string }> = {
   train: { label: 'without a car', short: 'By train', path: 'by-train', hubPath: 'weekends/by-train', hubTitle: 'Weekends away from Melbourne by train', hubKeyword: 'weekend getaway from melbourne by train' },
   budget: { label: 'on a budget', short: 'Budget', path: 'on-a-budget', hubPath: 'weekends/budget', hubTitle: 'Cheap weekend getaways from Melbourne', hubKeyword: 'cheap weekend getaways from melbourne' },
-  couples: { label: 'for couples', short: 'Couples', path: 'romantic-weekend', hubPath: 'weekends/romantic', hubTitle: 'Romantic getaways in Victoria', hubKeyword: 'romantic getaways victoria' },
-  family: { label: 'with kids', short: 'Families', path: 'family-weekend', hubPath: 'weekends/family', hubTitle: 'Family weekend getaways from Melbourne', hubKeyword: 'family weekend getaways from melbourne' },
+  couples: { label: 'for couples', short: 'Couples', path: 'romantic-weekend', hubPath: 'weekends/romantic', hubTitle: 'Romantic weekend itineraries for couples', hubKeyword: 'romantic weekend getaways victoria' },
+  family: { label: 'with kids', short: 'Families', path: 'family-weekend', hubPath: 'weekends/family', hubTitle: 'Family weekend itineraries from Melbourne', hubKeyword: 'family weekend getaways from melbourne' },
 };
 const MIN_DEMAND = 50; // monthly searches for a per-town train/budget page
 const TOP_STATEWIDE = 8; // couples / family pages

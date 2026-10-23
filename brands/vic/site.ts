@@ -512,10 +512,10 @@ export function routes(): Route[] {
     out.push({
       path: 'weekends',
       template: 'vicBundles',
-      seo: { title: 'Weekend Getaways from Melbourne: Ready-Made Plans' + SUFFIX, rawTitle: true, description: `${bundles.length} ready-made weekend getaways from Melbourne: by train, on a budget, romantic and family weekends, with where to stay, eat and what to do.`, image: photoUrl(...bundles.map((b) => b.town.slug)) },
+      seo: { title: 'Weekend Itineraries from Melbourne: Ready-Made Plans' + SUFFIX, rawTitle: true, description: `${bundles.length} ready-made weekend itineraries from Melbourne: by train, on a budget, for couples and for families, with where to stay, eat and what to do, day by day.`, image: photoUrl(...bundles.map((b) => b.town.slug)) },
       schema: [crumbs([{ name: 'Home', path: '' }, { name: 'Weekend plans', path: 'weekends' }])],
       props: {
-        title: 'Weekend getaways from Melbourne',
+        title: 'Weekend itineraries from Melbourne',
         intro: ['Ready-made weekend plans: pick how you want to travel and who’s coming, and each plan gives you where to stay, where to eat and what to do, day by day, with real places and maps.', 'Every plan uses places from open data near each other, so the weekend works on the ground.'],
         groups: auds.map((a) => ({ title: AUDIENCE[a].hubTitle, href: `/${AUDIENCE[a].hubPath}`, intro: HUB_INTRO[a][0], cards: bundles.filter((b) => b.audience === a).sort((x, y) => (y.demand?.volume ?? 0) - (x.demand?.volume ?? 0) || y.rank - x.rank).slice(0, 4).map(card) })),
         others: [],
