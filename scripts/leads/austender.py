@@ -30,6 +30,15 @@ GOV = re.compile(r'\b(university|department|council|commonwealth|government|agen
 TRAVEL_WORDS = re.compile(r'\b(national|nationwide|regional|remote|on-?site|site visit|travel|field|inspection|audit|training delivery|'
                           r'deliver training|workshops?|facilitat|install|maintenance|survey|assessment|evaluation|review|consult|advisory|'
                           r'project management|implementation|roll-?out|engagement|research)\b', re.I)
+# Work that doesn't put a supplier's own team on planes: temps placed at the client, goods, licences, supplies.
+NO_TRAVEL_WORK = re.compile(r'\b(labou?r hire|temporary personnel|temporary staff|recruitment|contingent|contractors? services panel|software licen|'
+                            r'licen[cs]es|subscription|fuel|vehicles?|tankers?|furniture|stationery|office supplies|medical supplies|pharmaceutical|'
+                            r'ammunition|uniforms|clothing|printing|postage|electricity|gas supply|telecommunications)\b', re.I)
+# A public company ("... Limited" without "Pty") is usually too big for an SME travel pitch.
+def public_co(name):
+    n = name.lower()
+    return bool(re.search(r'\b(limited|ltd)\.?$', n)) and 'pty' not in n
+
 STATES = {'ACT': 'Canberra', 'NSW': 'NSW', 'VIC': 'Victoria', 'QLD': 'Queensland', 'SA': 'South Australia', 'WA': 'Western Australia', 'TAS': 'Tasmania', 'NT': 'Northern Territory'}
 
 
@@ -94,7 +103,7 @@ def main():
                     continue
                 name = (p.get('name') or '').strip()
                 abn = ((p.get('identifier') or {}).get('id') or '').replace(' ', '')
-                if not name or BIG.search(name) or GOV.search(name):
+                if not name or BIG.search(name) or GOV.search(name) or public_co(name):
                     continue
                 s = sup.setdefault(abn or name.lower(), {'name': name, 'abn': abn, 'locality': (p.get('address') or {}).get('locality', '').title(),
                                                          'state': state_of(p.get('address')), 'contracts': []})
@@ -110,7 +119,15 @@ def main():
         total = sum(c['value'] for c in s['contracts'])
         if total < MIN_VALUE or total > MAX_VALUE:
             continue
-        interstate = [c for c in s['contracts'] if c['buyerState'] and s['state'] and c['buyerState'] != s['state']]
+        s['contracts'] = [c for c in s['contracts'] if not NO_TRAVEL_WORK.search(c['desc'] + ' ' + c['category'])]
+        if not s['contracts']:
+            continue
+        total = sum(c['value'] for c in s['contracts'])
+        if total < MIN_VALUE:
+            continue
+        # Interstate = flights. Canberra firms working for agencies whose listed address is a head office elsewhere usually
+        # don't travel, so an ACT supplier only counts when the agency is clearly not in Canberra AND the work says so.
+        interstate = [c for c in s['contracts'] if c['buyerState'] and s['state'] and c['buyerState'] != s['state'] and s['state'] != 'ACT']
         text = ' '.join(c['desc'] + ' ' + c['category'] for c in s['contracts'])
         months = 0
         for c in s['contracts']:
@@ -130,7 +147,7 @@ def main():
             c = max(interstate, key=lambda x: x['value'])
             why.append(f"based in {s['locality'] or STATES[s['state']]} {s['state']}, delivering for {c['buyer']} ({STATES.get(c['buyerState'], c['buyerState'])})")
         if len(s['contracts']) > 1:
-            why.append(f"{len(s['contracts'])} new government contracts this week")
+            why.append(f"{len(s['contracts'])} new government contracts in the last {DAYS} days")
         if months >= 6:
             why.append(f'work runs {round(months)} months')
         scored.append({**s, 'total': round(total), 'score': round(score, 1), 'interstate': bool(interstate), 'why': why, 'seenBefore': key in seen})
@@ -141,7 +158,8 @@ def main():
     md = [f'# Call list — {today}', '', f'_SMEs that won Australian Government contracts in the last {DAYS} days (AusTender). Interstate work = flights. '
           'Find the person who books travel (office manager, ops, finance, EA) before calling. Company details only; check the Do Not Call Register rules for any number you use._', '']
     for i, s in enumerate([x for x in scored if not x['seenBefore']][:TOP], 1):
-        top = max(s['contracts'], key=lambda c: c['value'])
+        inter = [c for c in s['contracts'] if c['buyerState'] and c['buyerState'] != s['state']] if s['interstate'] else []
+        top = max(inter or s['contracts'], key=lambda c: c['value'])
         where = f"{s['locality'] or ''} {s['state'] or ''}".strip()
         opener = (f"Congrats on the {top['buyer']} contract. With the team in {s['locality'] or STATES.get(s['state'], 'your home state')} and the work in "
                   f"{STATES.get(top['buyerState'], 'another state')}, who's looking after flights and accommodation for it?") if s['interstate'] else (
