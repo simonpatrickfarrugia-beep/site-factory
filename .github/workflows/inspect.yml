@@ -1,0 +1,52 @@
+# Build a brand from any branch and print the text of chosen pages (Claude reads previews before they go live).
+# Result: annotation titled "inspect". Run: scripts/claude/inspect.sh <brand> <branch> "<path> <path>"
+name: inspect
+on:
+  workflow_dispatch:
+    inputs:
+      brand: { description: Brand slug, required: true }
+      ref: { description: Branch, default: main }
+      paths: { description: Page paths separated by spaces (e.g. /weekends /bundles.json), required: true }
+jobs:
+  inspect:
+    runs-on: ubuntu-24.04  # pinned: ubuntu-latest moved to 26.04 in Oct 2026 and broke the Playwright install
+    timeout-minutes: 10
+    env:
+      BRAND: ${{ inputs.brand }}
+    steps:
+      - uses: actions/checkout@v5
+        with: { ref: '${{ inputs.ref }}' }
+      - uses: actions/setup-node@v5
+        with: { node-version: 22 }
+      - run: npm install --no-audit --no-fund && npm run build > /dev/null
+      - env:
+          PATHS: ${{ inputs.paths }}
+        run: |
+          python3 - <<'PY'
+          import html, os, re
+          out = []
+          for p in os.environ['PATHS'].split():
+              p = p.strip('/')
+              cands = [f'dist/{p}.html', f'dist/{p}/index.html', f'dist/{p}', 'dist/index.html' if not p else '']
+              f = next((c for c in cands if c and os.path.isfile(c)), None)
+              if not f:
+                  out.append(f'## /{p}\nNOT FOUND'); continue
+              s = open(f, encoding='utf-8', errors='replace').read()
+              if f.endswith('.html'):
+                  title = re.search(r'<title>(.*?)</title>', s, re.S)
+                  desc = re.search(r'<meta name="description" content="([^"]*)"', s)
+                  body = re.search(r'<main[^>]*>(.*)</main>', s, re.S)
+                  t = re.sub(r'(?is)<(script|style)\b.*?</\1>', ' ', body.group(1) if body else s)
+                  t = re.sub(r'(?i)<(h[1-6]|li|p|section|article|div)\b', r'\n<\1', t)
+                  t = html.unescape(re.sub(r'<[^>]+>', ' ', t))
+                  t = '\n'.join(re.sub(r'[ \t]+', ' ', l).strip() for l in t.splitlines())
+                  t = re.sub(r'\n{2,}', '\n', t).strip()
+                  out.append(f"## /{p}\nTITLE: {html.unescape(title.group(1)) if title else ''}\nDESC: {html.unescape(desc.group(1)) if desc else ''}\n{t}")
+              else:
+                  out.append(f'## /{p}\n{s}')
+          text = '\n\n'.join(out)
+          open('inspect.md', 'w').write(text)
+          print(text[:3000])
+          PY
+          cat inspect.md >> "$GITHUB_STEP_SUMMARY"
+          echo "::notice title=inspect::$(head -c 60000 inspect.md | sed 's/%/%25/g' | sed ':a;N;$!ba;s/\n/%0A/g')"

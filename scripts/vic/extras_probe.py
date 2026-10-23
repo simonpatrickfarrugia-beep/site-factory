@@ -15,7 +15,8 @@ FEATURES = {
     'playground': (['nwr["leisure"="playground"]'], 'Playground'),
     'beach': (['nwr["natural"="beach"]["name"]'], 'Beach'),
     'pool': (['nwr["leisure"="swimming_pool"]["access"!="private"]["name"]', 'nwr["leisure"="sports_centre"]["sport"~"swimming"]', 'nwr["leisure"="water_park"]'], 'Swimming pool'),
-    'spa': (['nwr["leisure"="spa"]["name"]', 'nwr["amenity"="spa"]["name"]', 'nwr["shop"="beauty"]["beauty"~"spa"]["name"]', 'nwr["amenity"="public_bath"]["name"]'], 'Day spa'),
+    # (shop=beauty + beauty=spa is too heavy to query statewide; the public servers time out)
+    'spa': (['nwr["leisure"="spa"]["name"]', 'nwr["amenity"="spa"]["name"]', 'nwr["amenity"="public_bath"]["name"]', 'nwr["leisure"="sauna"]["name"]'], 'Day spa'),
     'wine': (['nwr["tourism"="wine_cellar"]["name"]', 'nwr["craft"="winery"]["name"]'], 'Cellar door'),
     'icecream': (['nwr["amenity"="ice_cream"]["name"]', 'nwr["shop"="ice_cream"]["name"]'], 'Ice cream'),
     'picnic': (['nwr["tourism"="picnic_site"]', 'nwr["leisure"="picnic_table"]["name"]'], 'Picnic spot'),
@@ -90,7 +91,7 @@ def match(key, t):
         'playground': g('leisure') == 'playground',
         'beach': g('natural') == 'beach',
         'pool': g('leisure') in ('swimming_pool', 'water_park') or (g('leisure') == 'sports_centre' and 'swimming' in (g('sport') or '')),
-        'spa': g('leisure') == 'spa' or g('amenity') in ('spa', 'public_bath') or (g('shop') == 'beauty' and 'spa' in (g('beauty') or '')),
+        'spa': g('leisure') in ('spa', 'sauna') or g('amenity') in ('spa', 'public_bath') or (g('shop') == 'beauty' and 'spa' in (g('beauty') or '')),
         'wine': g('tourism') == 'wine_cellar' or g('craft') == 'winery',
         'icecream': g('amenity') == 'ice_cream' or g('shop') == 'ice_cream',
         'picnic': g('tourism') == 'picnic_site' or g('leisure') == 'picnic_table',
@@ -126,8 +127,16 @@ def main():
                   open('data/vic/stations.json', 'w'), indent=1, ensure_ascii=False)
         print(f'{len(st)} stations')
     towns = [t for t in json.load(open(TOWNS)) if t.get('published') and t.get('centre')]
+    only = next((a.split('=', 1)[1].split(',') for a in sys.argv if a.startswith('--only=')), None)
     doc = {'_source': 'OpenStreetMap contributors (ODbL)', 'towns': {t['slug']: {k: [] for k in FEATURES} for t in towns}}
-    for key in FEATURES:
+    if only:  # update just these features, keep the rest
+        try:
+            old = json.load(open('data/vic/extras.json'))
+            for slug, d in old.get('towns', {}).items():
+                doc['towns'].setdefault(slug, {}).update(d)
+        except Exception:
+            pass
+    for key in (only or FEATURES):
         try:
             items = statewide(key)
         except Exception as e:
