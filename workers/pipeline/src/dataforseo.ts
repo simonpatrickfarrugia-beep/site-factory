@@ -171,7 +171,7 @@ export async function easyKeywords(
   // searches containing one of the topic's own words count. Server-side, so total_count stays honest.
   const terms = (opts.mustMatch ?? []).map((t) => cleanKeyword(t).replace(/[^a-z0-9 ]/g, '')).filter((t) => t.length >= 3).slice(0, 6);
   const filters: unknown[] = [['keyword_info.search_volume', '>=', opts.minVolume ?? 100], 'and', ['keyword_properties.keyword_difficulty', '<=', opts.maxKd ?? 25]];
-  if (terms.length) filters.push('and', ['keyword', 'regex', `(${terms.join('|')})`]);
+  if (terms.length) filters.push('and', ['keyword', 'regex', `\\b(${terms.join('|')})(s|es)?\\b`]);
   const keywords = [...new Set(seeds.map(cleanKeyword).filter(Boolean))].slice(0, 20);
   const { result, cost } = await dfsTask<
     { total_count?: number; items?: { keyword: string; keyword_info?: { search_volume?: number | null; cpc?: number | null }; keyword_properties?: { keyword_difficulty?: number | null } }[] }[]
