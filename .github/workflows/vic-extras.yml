@@ -1,0 +1,30 @@
+# Vic Tours bundle data: train stations + per-town extras (playgrounds, beaches, spas, cellar doors…) from OpenStreetMap.
+name: vic-extras
+on:
+  workflow_dispatch:
+    inputs:
+      refresh:
+        description: Re-fetch towns that already have extras
+        type: boolean
+        default: false
+permissions:
+  contents: write
+concurrency: vic-data
+jobs:
+  probe:
+    runs-on: ubuntu-24.04  # pinned: ubuntu-latest moved to 26.04 in Oct 2026 and broke the Playwright install
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v5
+      - name: Probe OpenStreetMap
+        run: python3 scripts/vic/extras_probe.py ${{ inputs.refresh && '--refresh' || '' }} | tee out.txt
+        timeout-minutes: 80
+      - name: Commit (also after a timeout, so finished towns are kept)
+        if: always()
+        run: |
+          echo "::notice title=vic-extras::$(tail -c 15000 out.txt | sed 's/%/%25/g' | sed ':a;N;$!ba;s/\n/%0A/g')"
+          git config user.name "Vic Tours probe" && git config user.email "pipeline@victours.com.au"
+          git add data/vic/stations.json data/vic/extras.json
+          git diff --cached --quiet && exit 0
+          git commit -qm "Vic Tours: stations + bundle extras from OpenStreetMap [skip ci]"
+          for i in 1 2 3; do git pull -q --rebase && git push -q && exit 0; sleep 5; done; exit 1
