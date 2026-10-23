@@ -1,0 +1,27 @@
+// Browser test for the Vic Tours email signup against the live site (or BASE). Uses a test address; Claude deletes the row after.
+import { chromium } from 'playwright';
+const BASE = process.argv[2] || 'https://victours.com.au';
+const fails = [];
+const ok = (c, m) => { console.log(`${c ? '✅' : '❌'} ${m}`); if (!c) fails.push(m); };
+const browser = await chromium.launch({ channel: 'chrome' }).catch(() => chromium.launch());
+const page = await (await browser.newContext({ viewport: { width: 390, height: 844 } })).newPage();
+const errors = [];
+page.on('pageerror', (e) => errors.push(e.message));
+await page.goto(`${BASE}/`, { waitUntil: 'domcontentloaded' });
+ok(await page.locator('#signup').isVisible(), 'signup box shows on the home page');
+await page.fill('#signup-email', 'not-an-email@x');
+const bad = await page.evaluate(async () => { const r = await fetch('/api/subscribe', { method: 'POST', headers: { 'content-type': 'application/json', accept: 'application/json' }, body: JSON.stringify({ email: 'nope' }) }); return [r.status, (await r.json()).ok]; });
+ok(bad[0] === 400 && bad[1] === false, `bad email rejected (${bad[0]})`);
+await page.fill('#signup-email', 'ci-signup-test@victours.com.au');
+await page.click('#signup button[type=submit]');
+await page.waitForFunction(() => /on the list|didn/.test(document.querySelector('.signup__msg')?.textContent ?? ''), null, { timeout: 15000 }).catch(() => {});
+const msg = await page.locator('.signup__msg').textContent();
+ok(/on the list/.test(msg ?? ''), `JS signup works ("${msg}")`);
+const get = await page.evaluate(async () => (await fetch('/api/subscribe')).status);
+ok(get === 405, `GET /api/subscribe is refused (${get})`);
+const home = await page.evaluate(async () => (await fetch('/day-trips')).status);
+ok(home === 200, `normal pages still served (${home})`);
+ok(errors.length === 0, `no page errors ${errors.join(' | ')}`);
+await browser.close();
+console.log(fails.length ? `FAILED: ${fails.length}` : 'ALL PASSED');
+process.exit(fails.length ? 1 : 0);
