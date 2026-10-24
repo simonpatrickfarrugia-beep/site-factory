@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-23T21:00:10.758Z",
+ "generatedAt": "2026-10-24T21:00:11.729Z",
  "period": {
-  "start": "2026-09-25",
-  "end": "2026-10-22"
+  "start": "2026-09-26",
+  "end": "2026-10-23"
  },
  "gscPeriod": {
-  "start": "2026-09-23",
-  "end": "2026-10-20"
+  "start": "2026-09-24",
+  "end": "2026-10-21"
  },
  "sources": {
   "ga4": true,
@@ -14,14 +14,14 @@
   "notes": []
  },
  "totals": {
-  "views": 11,
+  "views": 14,
   "prevViews": 0,
-  "users": 11,
+  "users": 14,
   "cta": {
    "map": 1
   },
   "gscClicks": 0,
-  "gscImpressions": 0
+  "gscImpressions": 31
  },
  "daily": [
   {
@@ -33,14 +33,19 @@
    "date": "2026-10-21",
    "views": 9,
    "cta": 1
+  },
+  {
+   "date": "2026-10-23",
+   "views": 3,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 5,
+   "views": 8,
    "prevViews": 0,
-   "users": 5,
+   "users": 8,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 0,
@@ -103,6 +108,193 @@
    "gscImpressions": 0,
    "gscPosition": null,
    "topQuery": null
+  },
+  {
+   "path": "/red-hill",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 22.3,
+   "topQuery": "1004 mornington-flinders road red hill vic 3937"
+  },
+  {
+   "path": "/apollo-bay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 4,
+   "gscPosition": 77.3,
+   "topQuery": "apollo bay"
+  },
+  {
+   "path": "/collections/day-trips-from-melbourne",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 67.7,
+   "topQuery": "day tours from melbourne"
+  },
+  {
+   "path": "/st-kilda",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 76.3,
+   "topQuery": "st kilda 3182"
+  },
+  {
+   "path": "/bairnsdale",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 47.5,
+   "topQuery": "bairnsdale beach"
+  },
+  {
+   "path": "/port-fairy",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 75,
+   "topQuery": "the crags port fairy"
+  },
+  {
+   "path": "/bright",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 50,
+   "topQuery": "bright"
+  },
+  {
+   "path": "/dunkeld",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 88,
+   "topQuery": "dunkeld camping"
+  },
+  {
+   "path": "/lakes-entrance",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 94,
+   "topQuery": "lakes entrance"
+  },
+  {
+   "path": "/lorne",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 72,
+   "topQuery": "lorne australia"
+  },
+  {
+   "path": "/metung",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 66,
+   "topQuery": "metung vic"
+  },
+  {
+   "path": "/mornington",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 65,
+   "topQuery": "mornington vic"
+  },
+  {
+   "path": "/omeo",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 43,
+   "topQuery": "omeo golf club"
+  },
+  {
+   "path": "/road-trips",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 80,
+   "topQuery": "road trips from melbourne"
+  },
+  {
+   "path": "/road-trips/phillip-island-day-trip",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 60,
+   "topQuery": "phillip island day trip"
+  },
+  {
+   "path": "/sorrento",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 49,
+   "topQuery": "sorrento"
+  },
+  {
+   "path": "/torquay/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 72,
+   "topQuery": "best lunch in torquay"
   }
  ]
 }

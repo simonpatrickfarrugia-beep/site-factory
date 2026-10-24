@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-23T21:00:10.758Z",
+ "generatedAt": "2026-10-24T21:00:11.729Z",
  "period": {
-  "start": "2026-09-25",
-  "end": "2026-10-22"
+  "start": "2026-09-26",
+  "end": "2026-10-23"
  },
  "gscPeriod": {
-  "start": "2026-09-23",
-  "end": "2026-10-20"
+  "start": "2026-09-24",
+  "end": "2026-10-21"
  },
  "sources": {
   "ga4": true,
@@ -14,19 +14,14 @@
   "notes": []
  },
  "totals": {
-  "views": 253,
-  "prevViews": 85,
-  "users": 177,
+  "views": 249,
+  "prevViews": 92,
+  "users": 176,
   "cta": {},
   "gscClicks": 7,
   "gscImpressions": 665
  },
  "daily": [
-  {
-   "date": "2026-09-25",
-   "views": 7,
-   "cta": 0
-  },
   {
    "date": "2026-09-26",
    "views": 1,
@@ -156,13 +151,18 @@
    "date": "2026-10-22",
    "views": 4,
    "cta": 0
+  },
+  {
+   "date": "2026-10-23",
+   "views": 3,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 104,
-   "prevViews": 61,
+   "views": 101,
+   "prevViews": 66,
    "users": 48,
    "cta": {},
    "gscClicks": 0,
@@ -215,17 +215,6 @@
    "topQuery": null
   },
   {
-   "path": "/movies/whalefall-2026",
-   "views": 4,
-   "prevViews": 0,
-   "users": 4,
-   "cta": {},
-   "gscClicks": 2,
-   "gscImpressions": 2,
-   "gscPosition": 35,
-   "topQuery": "whalefall 2026 full movie"
-  },
-  {
    "path": "/movies/batman-begins-2005",
    "views": 4,
    "prevViews": 0,
@@ -257,6 +246,17 @@
    "gscImpressions": 18,
    "gscPosition": 44.3,
    "topQuery": "jurassic park trailer"
+  },
+  {
+   "path": "/movies/whalefall-2026",
+   "views": 3,
+   "prevViews": 1,
+   "users": 3,
+   "cta": {},
+   "gscClicks": 2,
+   "gscImpressions": 2,
+   "gscPosition": 35,
+   "topQuery": "whalefall 2026 full movie"
   },
   {
    "path": "/movies/independence-day-1996",
@@ -831,7 +831,7 @@
    "topQuery": null
   },
   {
-   "path": "/movies/pocahontas-1995",
+   "path": "/movies/raiders-of-the-lost-ark-1981",
    "views": 1,
    "prevViews": 0,
    "users": 1,
@@ -1547,6 +1547,17 @@
   },
   {
    "path": "/movies/good-will-hunting-1998",
+   "views": 0,
+   "prevViews": 1,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
+   "path": "/movies/pocahontas-1995",
    "views": 0,
    "prevViews": 1,
    "users": 0,
