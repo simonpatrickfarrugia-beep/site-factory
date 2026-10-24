@@ -30,7 +30,7 @@ const flags = [
   {flags.length > 0 && <p class="place__flags">{flags.join(', ')}</p>}
   <p class="place__links">
     {site && <a href={site} rel="nofollow noopener" target="_blank" data-cta="website">Website</a>}
-    {tix && <a class="place__tix" href={tix.url} rel="sponsored noopener" target="_blank" data-cta="book_tour">Tickets on Viator{tix.from ? ` (from A$${tix.from})` : ''}</a>}
+    {tix && <a class="place__tix" href={tix.url} rel="sponsored noopener" target="_blank" data-cta="book_tour">Book on Viator{tix.from ? ` (from A$${tix.from})` : ''}</a>}
     <a href={mapUrl(p)} rel="nofollow noopener" target="_blank" data-cta="map">Map</a>
     {tel && <a href={`tel:${tel.replace(/[^+\d]/g, '')}`} data-cta="call">Call</a>}
   </p>

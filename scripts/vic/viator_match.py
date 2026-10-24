@@ -41,11 +41,15 @@ def tracked(url, campaign):
     return urllib.parse.urlunsplit((p.scheme, p.netloc, p.path, urllib.parse.urlencode(q), ''))
 
 
-def pick(results, must, n, campaign):
+def pick(results, must, n, campaign, from_melbourne=False):
     out = []
     for r in results:
         title = (r.get('title') or '').strip()
-        if not title or not any(m in title.lower() for m in must):
+        tl = title.lower()
+        if not title or not any(m in tl for m in must):
+            continue
+        # Day-trip boxes promise a tour from Melbourne: skip entry tickets, balloon flights and local-only tours.
+        if from_melbourne and ('melbourne' not in tl or any(w in tl for w in ('ticket', 'entry', 'admission', 'balloon'))):
             continue
         rev = r.get('reviews') or {}
         price = ((r.get('pricing') or {}).get('summary') or {}).get('fromPrice')
@@ -66,7 +70,7 @@ def main():
     qs = json.load(open('data/vic/viator-queries.json'))
     data = {'checkedAt': datetime.now(timezone.utc).strftime('%Y-%m-%d'), 'daytrips': {}, 'attractions': {}}
     for slug, q in qs['daytrips'].items():
-        hits = pick(search(q['q']), q['must'], 3, f'victours-daytrip-{slug}')
+        hits = pick(search(q['q']), q['must'], 3, f'victours-daytrip-{slug}', from_melbourne=True)
         if hits: data['daytrips'][slug] = hits
         print(f'day trip {slug}: {len(hits)} tours')
         time.sleep(1)

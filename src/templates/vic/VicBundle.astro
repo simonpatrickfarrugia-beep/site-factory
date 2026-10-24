@@ -44,7 +44,7 @@ const hrs = (m: number | null) => (m ? (m >= 90 ? `${Math.round(m / 30) / 2} hou
                   {s.place.hours && <span>{s.place.hours}</span>}
                   {s.place.website && <a href={s.place.website} rel="nofollow noopener" target="_blank" data-cta="website">Website</a>}
                   <a href={s.place.map} rel="nofollow noopener" target="_blank" data-cta="map">Map</a>
-                  {tix[s.place.name] && <a class="bundle-tix" href={tix[s.place.name].url} rel="sponsored noopener" target="_blank" data-cta="book_tour">Tickets on Viator{tix[s.place.name].from ? ` (from A$${tix[s.place.name].from})` : ''}</a>}
+                  {tix[s.place.name] && <a class="bundle-tix" href={tix[s.place.name].url} rel="sponsored noopener" target="_blank" data-cta="book_tour">Book on Viator{tix[s.place.name].from ? ` (from A$${tix[s.place.name].from})` : ''}</a>}
                 </span>
               )}
             </li>
@@ -57,7 +57,7 @@ const hrs = (m: number | null) => (m ? (m >= 90 ? `${Math.round(m / 30) / 2} hou
   {tours.length > 0 && (
     <section class="picks bundle-guided" aria-labelledby="guided">
       <h2 id="guided" class="bundle-h2">Rather not drive?</h2>
-      <p>Guided day tours from Melbourne that cover this trip, with transport included:</p>
+      <p>Guided tours from Melbourne that cover this trip, so someone else does the driving:</p>
       <ul class="bundle-tours">
         {tours.map((t) => (
           <li><a href={t.url} rel="sponsored noopener" target="_blank" data-cta="book_tour">{t.title}</a>{[hrs(t.mins), t.from ? `from A$${t.from}` : null].filter(Boolean).length > 0 && <span class="count"> · {[hrs(t.mins), t.from ? `from A$${t.from}` : null].filter(Boolean).join(' · ')}</span>}</li>
