@@ -1,0 +1,44 @@
+{
+ "checked": "2026-10-25",
+ "note": "Prices copied from each vendor's own Australian pricing page on the date above. Re-check before relying on them.",
+ "apps": {
+  "servicem8": {
+   "name": "ServiceM8",
+   "url": "https://www.servicem8.com/au/pricing",
+   "model": "Priced by how many new jobs you create each month. Every paid plan includes unlimited users.",
+   "gst": "inc",
+   "trial": "14-day free trial; a free plan for 1 user and 30 jobs a month.",
+   "plans": [
+    { "name": "Free", "price": 0, "per": "month", "jobs": 30, "users": 1 },
+    { "name": "Starter", "price": 29, "per": "month", "jobs": 50, "sms": 100 },
+    { "name": "Growing", "price": 79, "per": "month", "jobs": 150, "sms": 300 },
+    { "name": "Premium", "price": 149, "per": "month", "jobs": 500, "sms": 1000 },
+    { "name": "Premium Plus", "price": 349, "per": "month", "jobs": 1500, "sms": 3000 }
+   ]
+  },
+  "tradify": {
+   "name": "Tradify",
+   "url": "https://www.tradifyhq.com/au/pricing",
+   "model": "Priced per user, per month, with no cap on jobs.",
+   "gst": "ex",
+   "trial": "14-day free trial. Optional add-ons: an instant website ($19 a month) and SMS quotes and invoices (20c a message).",
+   "plans": [
+    { "name": "Lite", "price": 48, "per": "user" },
+    { "name": "Pro", "price": 52, "per": "user" },
+    { "name": "Plus", "price": 62, "per": "user" }
+   ]
+  },
+  "fergus": {
+   "name": "Fergus",
+   "url": "https://fergus.com/au/pricing/",
+   "model": "Priced per user, per month (\"from\" prices), with no lock-in contract. Timesheet-only staff cost less (from $26 a month).",
+   "gst": "unstated",
+   "trial": "Free trial and a free 1-hour onboarding session. The pricing page also shows a lower introductory price, so check the current offer.",
+   "plans": [
+    { "name": "Essentials", "price": 53, "per": "user" },
+    { "name": "Professional", "price": 77, "per": "user" }
+   ]
+  }
+ },
+ "bigger": "For larger businesses (roughly 10+ staff, service contracts, assets), AroFlo and simPRO are the usual names. They quote prices on request, so we don't list them here."
+}

@@ -1,0 +1,57 @@
+---
+interface Props {
+  page: { title: string; lede: string; tools: { href: string; t: string; d: string }[]; why: { t: string; d: string }[] };
+  compareLinks: { href: string; label: string }[];
+  checked: string;
+}
+const { page, compareLinks, checked } = Astro.props;
+---
+<section class="ta-hero">
+  <div class="ta-wrap ta-hero__grid">
+    <div>
+      <h1 class="ta-hero__title">{page.title}</h1>
+      <p class="ta-lede">{page.lede}</p>
+      <p class="ta-actions">
+        <a class="ta-btn" href="/quote-builder">Make a quote</a>
+        <a class="ta-btn ta-btn--quiet" href="/invoice-builder">Make an invoice</a>
+      </p>
+    </div>
+    <figure class="ta-docket" aria-label="Example quote made with the builder">
+      <div class="ta-docket__head"><span>QUOTE</span><span>Q-0142</span></div>
+      <p class="ta-docket__biz">Bayside Electrical<br /><span>ABN 12 345 678 901 · REC 12345</span></p>
+      <table class="ta-docket__items">
+        <tbody>
+          <tr><td>Install 6 LED downlights</td><td>$540.00</td></tr>
+          <tr><td>Supply &amp; fit 2 double GPOs</td><td>$310.00</td></tr>
+          <tr><td>Switchboard safety check</td><td>$150.00</td></tr>
+        </tbody>
+      </table>
+      <p class="ta-docket__total"><span>Total inc GST</span><strong>$1,100.00</strong></p>
+      <p class="ta-docket__note">Includes GST of $100.00 · Valid 30 days</p>
+      <span class="ta-docket__stamp" aria-hidden="true">Done in 2 min</span>
+    </figure>
+  </div>
+</section>
+
+<section class="ta-wrap ta-section">
+  <h2 class="ta-h2">Pick a tool</h2>
+  <ul class="ta-cards">
+    {page.tools.map((t) => (
+      <li><a class="ta-card" href={t.href}><strong>{t.t}</strong><span>{t.d}</span><em>Start →</em></a></li>
+    ))}
+  </ul>
+</section>
+
+<section class="ta-band">
+  <div class="ta-wrap ta-section">
+    <ul class="ta-why">
+      {page.why.map((w) => <li><h3>{w.t}</h3><p>{w.d}</p></li>)}
+    </ul>
+  </div>
+</section>
+
+<section class="ta-wrap ta-section">
+  <h2 class="ta-h2">Outgrowing templates?</h2>
+  <p class="ta-measure">Once you're chasing unpaid invoices, juggling a team's schedule or re-typing jobs into Xero, a job management app usually pays for itself. We compare the main ones on their own published prices (checked {new Date(checked).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}), with a calculator for your team.</p>
+  <ul class="ta-links">{compareLinks.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+</section>

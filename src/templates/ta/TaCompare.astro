@@ -1,0 +1,111 @@
+---
+/** Job app price comparison: one page per angle (all apps, A vs B, or one app's pricing), each with the same calculator. */
+import type { Apps, ComparePage } from '../../../brands/trade-admin/model';
+interface Props { page: ComparePage; apps: Apps; focus: readonly string[] | null; slug: string; others: { href: string; label: string }[] }
+const { page, apps, focus, slug, others } = Astro.props;
+const keys = (focus ?? Object.keys(apps.apps)) as (keyof Apps['apps'])[];
+const checked = new Date(apps.checked).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
+const gstLabel = { inc: 'Prices include GST', ex: 'Prices exclude GST (add 10%)', unstated: "The pricing page doesn't say whether prices include GST" } as const;
+const money = (n: number) => (n === 0 ? 'Free' : `$${n}`);
+---
+<div class="ta-wrap ta-section">
+  {slug !== 'job-management-software' && <p class="ta-crumb"><a href="/job-management-software">Job apps compared</a></p>}
+  <h1 class="ta-h1">{page.title}</h1>
+  <p class="ta-lede ta-measure">{page.lede}</p>
+  <p class="ta-small">Prices copied from each company's own Australian pricing page on {checked}. They change, so check before you sign up.</p>
+
+  <section class="ta-calc" data-calc data-apps={JSON.stringify(Object.fromEntries(keys.map((k) => [k, apps.apps[k]])))} aria-labelledby="calc-h">
+    <h2 id="calc-h" class="ta-h2">What would it cost you?</h2>
+    <div class="ta-calc__inputs">
+      <label>People who'd use the app <input type="number" min="1" max="50" value="2" inputmode="numeric" data-people /></label>
+      <label>New jobs per month <input type="number" min="1" max="3000" value="40" inputmode="numeric" data-jobs /></label>
+    </div>
+    <table class="ta-table">
+      <thead><tr><th scope="col">App and plan</th><th scope="col">Per month</th><th scope="col">Why</th></tr></thead>
+      <tbody data-out></tbody>
+    </table>
+    <p class="ta-small">Monthly cost on the cheapest plan that fits your numbers, including GST where we can work it out. Plans differ in features, so the cheapest isn't always the best fit: check what each plan includes.</p>
+  </section>
+
+  {keys.map((k) => {
+    const a = apps.apps[k];
+    return (
+      <section class="ta-app" aria-labelledby={`h-${k}`}>
+        <h2 id={`h-${k}`} class="ta-h2">{a.name}</h2>
+        <p>{a.model}</p>
+        <table class="ta-table">
+          <thead><tr><th scope="col">Plan</th><th scope="col">Price</th><th scope="col">Includes</th></tr></thead>
+          <tbody>
+            {a.plans.map((p) => (
+              <tr>
+                <td>{p.name}</td>
+                <td>{money(p.price)}{p.price > 0 ? (p.per === 'user' ? ' per user / month' : ' / month') : ''}</td>
+                <td>{[p.jobs ? `${p.jobs}${p.name === 'Premium Plus' ? '+' : ''} new jobs a month` : null, p.users ? `${p.users} user` : p.per === 'month' && p.price > 0 ? 'unlimited users' : null, p.sms ? `${p.sms} SMS` : null].filter(Boolean).join(' · ') || 'Unlimited jobs'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p class="ta-small">{gstLabel[a.gst]}. {a.trial}</p>
+        <p><a class="ta-btn ta-btn--quiet" href={a.url} rel="nofollow noopener" target="_blank" data-cta="app_site">See {a.name}'s pricing page</a></p>
+      </section>
+    );
+  })}
+
+  {!focus && <p class="ta-measure">{apps.bigger}</p>}
+
+  <section class="ta-band ta-band--inline">
+    <h2 class="ta-h2">Only a few jobs a month?</h2>
+    <p>A good template might be all you need. Our free builders do proper quotes and ATO-ready tax invoices on your phone.</p>
+    <p class="ta-actions"><a class="ta-btn" href="/quote-builder">Quote builder</a> <a class="ta-btn ta-btn--quiet" href="/invoice-builder">Invoice builder</a></p>
+  </section>
+
+  <p class="ta-more">More comparisons: {others.map((o, i) => <>{i > 0 && ' · '}<a href={o.href}>{o.label}</a></>)}</p>
+</div>
+
+<script>
+  type Plan = { name: string; price: number; per: 'month' | 'user'; jobs?: number; users?: number };
+  type App = { name: string; gst: 'inc' | 'ex' | 'unstated'; plans: Plan[] };
+  for (const box of document.querySelectorAll<HTMLElement>('[data-calc]')) {
+    const apps = JSON.parse(box.dataset.apps!) as Record<string, App>;
+    const peopleIn = box.querySelector<HTMLInputElement>('[data-people]')!;
+    const jobsIn = box.querySelector<HTMLInputElement>('[data-jobs]')!;
+    const out = box.querySelector<HTMLElement>('[data-out]')!;
+    const fmt = (n: number) => '$' + n.toLocaleString('en-AU', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    const render = () => {
+      const people = Math.max(1, Math.min(50, Math.round(Number(peopleIn.value) || 1)));
+      const jobs = Math.max(1, Math.round(Number(jobsIn.value) || 1));
+      const rows: { name: string; cost: number | null; text: string; why: string }[] = [];
+      for (const a of Object.values(apps)) {
+        if (a.plans[0]?.per === 'month') {
+          // Priced by job volume: cheapest plan with enough jobs (the free plan is 1 user only).
+          const fit = a.plans.find((p) => (p.jobs ?? Infinity) >= jobs && (p.users ?? Infinity) >= people);
+          const top = a.plans[a.plans.length - 1];
+          const p = fit ?? top;
+          const over = !fit;
+          rows.push({ name: `${a.name} ${p.name}`, cost: p.price, text: (over ? fmt(p.price) + '+' : fmt(p.price)), why: over ? `${p.jobs}+ jobs: very high volumes may cost more` : `up to ${p.jobs} new jobs, ${p.users ? '1 user' : 'unlimited users'}` });
+        } else {
+          for (const p of a.plans) {
+            const base = p.price * people;
+            const cost = a.gst === 'ex' ? base * 1.1 : base;
+            rows.push({ name: `${a.name} ${p.name}`, cost, text: fmt(cost) + (a.gst === 'unstated' ? '*' : ''), why: `${people} × $${p.price}${a.gst === 'ex' ? ' + GST' : ''}, unlimited jobs` });
+          }
+        }
+      }
+      rows.sort((x, y) => (x.cost ?? 0) - (y.cost ?? 0));
+      out.innerHTML = '';
+      rows.forEach((r, i) => {
+        const tr = document.createElement('tr');
+        if (i === 0) tr.className = 'ta-best';
+        for (const [txt, tag] of [[r.name, 'th'], [r.text, 'td'], [r.why, 'td']] as const) {
+          const c = document.createElement(tag); c.textContent = txt; if (tag === 'th') c.setAttribute('scope', 'row'); tr.appendChild(c);
+        }
+        out.appendChild(tr);
+      });
+      if (rows.some((r) => r.text.endsWith('*'))) {
+        const tr = document.createElement('tr'); const td = document.createElement('td'); td.colSpan = 3; td.className = 'ta-small';
+        td.textContent = '* As listed; the pricing page doesn’t say whether GST is included.'; tr.appendChild(td); out.appendChild(tr);
+      }
+    };
+    peopleIn.addEventListener('input', render); jobsIn.addEventListener('input', render); render();
+  }
+</script>

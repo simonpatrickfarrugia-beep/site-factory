@@ -1,0 +1,9 @@
+---
+interface Props { title: string; paragraphs: string[] }
+const { title, paragraphs } = Astro.props;
+---
+<div class="ta-wrap ta-section ta-measure">
+  <h1 class="ta-h1">{title}</h1>
+  {paragraphs.map((p) => <p>{p}</p>)}
+  <p class="ta-actions"><a class="ta-btn" href="/quote-builder">Make a quote</a> <a class="ta-btn ta-btn--quiet" href="/invoice-builder">Make an invoice</a></p>
+</div>

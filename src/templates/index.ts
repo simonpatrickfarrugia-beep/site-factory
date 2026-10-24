@@ -32,6 +32,10 @@ import SlGuide from './sl/SlGuide.astro';
 import SlPolicy from './sl/SlPolicy.astro';
 import SlEnquiry from './sl/SlEnquiry.astro';
 import SlPage from './sl/SlPage.astro';
+import TaHome from './ta/TaHome.astro';
+import TaBuilder from './ta/TaBuilder.astro';
+import TaCompare from './ta/TaCompare.astro';
+import TaPage from './ta/TaPage.astro';
 
 export const templates = {
   home: Home,
@@ -67,4 +71,8 @@ export const templates = {
   slPolicy: SlPolicy,
   slEnquiry: SlEnquiry,
   slPage: SlPage,
+  taHome: TaHome,
+  taBuilder: TaBuilder,
+  taCompare: TaCompare,
+  taPage: TaPage,
 };

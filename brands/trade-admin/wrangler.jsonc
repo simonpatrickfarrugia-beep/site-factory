@@ -1,0 +1,13 @@
+{
+  // Cloudflare Worker for Trade Admin (tradeadmin.com.au). Preview on workers.dev until launch.
+  // Build:  BRAND=trade-admin npm run build
+  // Deploy: npx wrangler deploy --config brands/trade-admin/wrangler.jsonc
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "trade-admin",
+  "compatibility_date": "2026-06-01",
+  "assets": {
+    "directory": "../../dist",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

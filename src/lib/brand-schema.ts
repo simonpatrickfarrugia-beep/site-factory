@@ -14,7 +14,7 @@ export const brandSchema = z.object({
   /** false = every page gets noindex, so previews never leak into Google. Flip at cutover. */
   launched: z.boolean().default(false),
 
-  theme: z.enum(['cinematic', 'editorial', 'coastal', 'roadtrip', 'calm', 'shortlist']),
+  theme: z.enum(['cinematic', 'editorial', 'coastal', 'roadtrip', 'calm', 'shortlist', 'workshop']),
   /** Optional logo mark shown before the name in the header (file in brands/<slug>/public). */
   logo: z.object({ src: z.string(), alt: z.string().default(''), width: z.number(), height: z.number() }).optional(),
   /** Default social share image (1200x630) in brands/<slug>/public, used when a page has none. */

@@ -1,0 +1,257 @@
+---
+/**
+ * Quote / invoice builder. Runs entirely in the browser: nothing is sent anywhere.
+ * GST and tax-invoice wording follow the ATO's tax invoice rules (checked October 2026).
+ * Quote → invoice hand-off goes through sessionStorage; "remember my details" uses localStorage (this device only).
+ */
+import type { ToolPage } from '../../../brands/trade-admin/model';
+interface Props { mode: 'quote' | 'invoice'; page: ToolPage }
+const { mode, page } = Astro.props;
+const isQuote = mode === 'quote';
+---
+<div class="ta-wrap ta-section ta-builder" data-builder data-mode={mode}>
+  <h1 class="ta-h1">{page.title}</h1>
+  <p class="ta-lede ta-measure">{page.lede}</p>
+
+  <div class="ta-builder__grid">
+    <form class="ta-form" data-form autocomplete="on" onsubmit="return false">
+      <fieldset>
+        <legend>Your business</legend>
+        <label>Business name <input name="bizName" autocomplete="organization" placeholder="e.g. Bayside Electrical" /></label>
+        <div class="ta-row">
+          <label>ABN <input name="abn" inputmode="numeric" placeholder="12 345 678 901" /></label>
+          <label>Licence no. <span class="ta-opt">(optional)</span> <input name="licence" placeholder="e.g. REC 12345" /></label>
+        </div>
+        <div class="ta-row">
+          <label>Phone <input name="phone" type="tel" autocomplete="tel" /></label>
+          <label>Email <input name="email" type="email" autocomplete="email" /></label>
+        </div>
+        <label>Address <span class="ta-opt">(optional)</span> <input name="bizAddress" autocomplete="street-address" /></label>
+        <label class="ta-check"><input type="checkbox" name="remember" /> Remember my business details on this device</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Customer</legend>
+        <label>Name <input name="custName" placeholder="e.g. Sam Nguyen" /></label>
+        <label>Job or site address <input name="custAddress" /></label>
+        <label>Customer ABN <span class="ta-opt">(businesses only)</span> <input name="custAbn" inputmode="numeric" /></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>{isQuote ? 'Quote' : 'Invoice'} details</legend>
+        <div class="ta-row">
+          <label>{isQuote ? 'Quote' : 'Invoice'} no. <input name="docNo" value={isQuote ? 'Q-0001' : 'INV-0001'} /></label>
+          <label>Date <input name="date" type="date" /></label>
+        </div>
+        {isQuote
+          ? <label>Valid for (days) <input name="validDays" type="number" min="1" value="30" inputmode="numeric" /></label>
+          : <label>Due in (days) <input name="dueDays" type="number" min="0" value="14" inputmode="numeric" /></label>}
+        <label>GST
+          <select name="gst">
+            <option value="ex">I'm registered for GST: add 10% to my prices</option>
+            <option value="inc">I'm registered for GST: my prices already include it</option>
+            <option value="none">I'm not registered for GST</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Work and materials</legend>
+        <div class="ta-items" data-items></div>
+        <button type="button" class="ta-btn ta-btn--quiet ta-btn--small" data-add>+ Add a line</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>{isQuote ? 'Terms and notes' : 'Payment'}</legend>
+        {!isQuote && (
+          <>
+            <div class="ta-row">
+              <label>Account name <input name="accName" /></label>
+              <label>BSB <input name="bsb" inputmode="numeric" placeholder="000-000" /></label>
+            </div>
+            <div class="ta-row">
+              <label>Account no. <input name="accNo" inputmode="numeric" /></label>
+              <label>PayID <span class="ta-opt">(optional)</span> <input name="payId" /></label>
+            </div>
+          </>
+        )}
+        <label>{isQuote ? 'Terms' : 'Notes'} <textarea name="notes" rows="3" placeholder={isQuote ? 'e.g. 30% deposit to book. Excludes patching and painting. Variations quoted in writing before work starts.' : 'e.g. Thanks for your business. Please use the invoice number as your payment reference.'}></textarea></label>
+      </fieldset>
+      <p class="ta-small">Your bank details and everything else stay on this device. Nothing is sent to us.</p>
+    </form>
+
+    <div class="ta-preview-col">
+      <article class="ta-doc" data-doc aria-live="polite">
+        <header class="ta-doc__head">
+          <div>
+            <p class="ta-doc__biz" data-o="bizName"></p>
+            <p class="ta-doc__meta" data-o="bizMeta"></p>
+          </div>
+          <div class="ta-doc__type">
+            <p class="ta-doc__title" data-o="title"></p>
+            <p class="ta-doc__meta" data-o="docMeta"></p>
+          </div>
+        </header>
+        <section class="ta-doc__to">
+          <p class="ta-doc__label">{isQuote ? 'Prepared for' : 'Bill to'}</p>
+          <p data-o="cust"></p>
+        </section>
+        <table class="ta-doc__items">
+          <thead><tr><th scope="col">Description</th><th scope="col">Qty</th><th scope="col">Price</th><th scope="col">Amount</th></tr></thead>
+          <tbody data-o="rows"></tbody>
+        </table>
+        <dl class="ta-doc__totals" data-o="totals"></dl>
+        <p class="ta-doc__gstnote" data-o="gstNote"></p>
+        <section class="ta-doc__foot" data-o="foot"></section>
+      </article>
+      <ul class="ta-warn" data-warn></ul>
+      <p class="ta-actions ta-noprint">
+        <button type="button" class="ta-btn" data-print>Save as PDF / print</button>
+        <button type="button" class="ta-btn ta-btn--quiet" data-copy>Copy as text</button>
+        {isQuote && <button type="button" class="ta-btn ta-btn--quiet" data-convert>Turn this quote into an invoice</button>}
+      </p>
+      <p class="ta-small ta-noprint" data-status role="status"></p>
+    </div>
+  </div>
+
+  <section class="ta-band ta-band--inline ta-noprint">
+    <h2 class="ta-h2">Doing this every week?</h2>
+    <p>Job management apps send quotes from your phone, turn them into invoices, chase late payers and sync with Xero or MYOB. See what ServiceM8, Tradify and Fergus would cost for your team.</p>
+    <p><a class="ta-btn ta-btn--quiet" href="/job-management-software">Compare job apps</a></p>
+  </section>
+
+  <section class="ta-faq ta-noprint ta-measure" aria-labelledby="faq">
+    <h2 id="faq" class="ta-h2">Common questions</h2>
+    {page.faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
+  </section>
+</div>
+
+<script>
+  type Item = { d: string; q: number; p: number };
+  const root = document.querySelector<HTMLElement>('[data-builder]')!;
+  const mode = root.dataset.mode as 'quote' | 'invoice';
+  const form = root.querySelector<HTMLFormElement>('[data-form]')!;
+  const itemsBox = root.querySelector<HTMLElement>('[data-items]')!;
+  const out = (k: string) => root.querySelector<HTMLElement>(`[data-o="${k}"]`)!;
+  const field = (n: string) => form.elements.namedItem(n) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | null;
+  const val = (n: string) => (field(n)?.value ?? '').trim();
+  const BIZ = ['bizName', 'abn', 'licence', 'phone', 'email', 'bizAddress', 'gst', 'accName', 'bsb', 'accNo', 'payId'];
+  const store = { get(k: string) { try { return localStorage.getItem(k); } catch { return null; } }, set(k: string, v: string | null) { try { v === null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch { /* storage blocked */ } } };
+  const money = (n: number) => '$' + n.toLocaleString('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const today = () => new Date().toISOString().slice(0, 10);
+  const addDays = (iso: string, d: number) => { const t = new Date(iso + 'T00:00:00'); t.setDate(t.getDate() + d); return t; };
+  const nice = (d: Date) => d.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
+
+  function addRow(it: Item = { d: '', q: 1, p: 0 }) {
+    const row = document.createElement('div');
+    row.className = 'ta-item';
+    row.innerHTML = '<input aria-label="Description" placeholder="e.g. Install 6 LED downlights" data-f="d" /><input aria-label="Quantity" type="number" min="0" step="any" inputmode="decimal" data-f="q" /><input aria-label="Unit price ($)" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Price" data-f="p" /><button type="button" aria-label="Remove this line" data-del>×</button>';
+    (row.querySelector('[data-f="d"]') as HTMLInputElement).value = it.d;
+    (row.querySelector('[data-f="q"]') as HTMLInputElement).value = String(it.q);
+    (row.querySelector('[data-f="p"]') as HTMLInputElement).value = it.p ? String(it.p) : '';
+    row.querySelector('[data-del]')!.addEventListener('click', () => { row.remove(); if (!itemsBox.children.length) addRow(); render(); });
+    row.addEventListener('input', render);
+    itemsBox.appendChild(row);
+  }
+  const items = (): Item[] => [...itemsBox.querySelectorAll('.ta-item')].map((r) => ({
+    d: (r.querySelector('[data-f="d"]') as HTMLInputElement).value.trim(),
+    q: Number((r.querySelector('[data-f="q"]') as HTMLInputElement).value) || 0,
+    p: Number((r.querySelector('[data-f="p"]') as HTMLInputElement).value) || 0,
+  }));
+  const cents = (n: number) => Math.round(n * 100) / 100;
+
+  function calc() {
+    const gst = val('gst');
+    const list = items().filter((i) => i.d || i.p);
+    const lines = list.map((i) => ({ ...i, amt: cents(i.q * i.p) }));
+    const sum = cents(lines.reduce((a, l) => a + l.amt, 0));
+    let sub = sum, tax = 0, total = sum;
+    if (gst === 'ex') { tax = cents(sum * 0.1); total = cents(sum + tax); }
+    if (gst === 'inc') { tax = cents(sum / 11); sub = cents(sum - tax); total = sum; }
+    return { gst, lines, sub, tax, total };
+  }
+
+  function text(el: HTMLElement, lines: (string | null | undefined)[]) {
+    el.textContent = '';
+    lines.filter(Boolean).forEach((l, i) => { if (i) el.appendChild(document.createElement('br')); el.appendChild(document.createTextNode(l!)); });
+  }
+
+  function render() {
+    const c = calc();
+    const isTax = mode === 'invoice' && c.gst !== 'none';
+    const date = val('date') || today();
+    out('bizName').textContent = val('bizName') || 'Your business name';
+    text(out('bizMeta'), [val('abn') ? `ABN ${val('abn')}` : 'ABN —', val('licence') && `Licence ${val('licence')}`, val('bizAddress'), [val('phone'), val('email')].filter(Boolean).join(' · ')]);
+    out('title').textContent = mode === 'quote' ? 'QUOTE' : isTax ? 'TAX INVOICE' : 'INVOICE';
+    const extra = mode === 'quote'
+      ? `Valid until ${nice(addDays(date, Number(val('validDays')) || 30))}`
+      : `Due ${nice(addDays(date, Number(val('dueDays')) || 0))}`;
+    text(out('docMeta'), [val('docNo'), nice(new Date(date + 'T00:00:00')), extra]);
+    text(out('cust'), [val('custName') || 'Customer name', val('custAddress'), val('custAbn') && `ABN ${val('custAbn')}`]);
+
+    const tbody = out('rows'); tbody.textContent = '';
+    (c.lines.length ? c.lines : [{ d: 'Add your work and materials', q: 0, p: 0, amt: 0 }]).forEach((l) => {
+      const tr = document.createElement('tr');
+      [l.d || '—', l.q ? String(l.q) : '', l.p ? money(l.p) : '', l.amt ? money(l.amt) : ''].forEach((v) => { const td = document.createElement('td'); td.textContent = v; tr.appendChild(td); });
+      tbody.appendChild(tr);
+    });
+
+    const dl = out('totals'); dl.textContent = '';
+    const pair = (k: string, v: string, strong = false) => { const dt = document.createElement('dt'); dt.textContent = k; const dd = document.createElement('dd'); dd.textContent = v; if (strong) { dt.className = dd.className = 'ta-doc__grand'; } dl.append(dt, dd); };
+    if (c.gst === 'none') pair('Total', money(c.total), true);
+    else { pair(c.gst === 'inc' ? 'Subtotal (ex GST)' : 'Subtotal', money(c.sub)); pair('GST (10%)', money(c.tax)); pair('Total inc GST', money(c.total), true); }
+    out('gstNote').textContent = c.gst === 'none' ? 'No GST has been charged.' : c.gst === 'inc' ? 'Total price includes GST.' : '';
+
+    const foot = out('foot');
+    if (mode === 'invoice') text(foot, [
+      (val('accName') || val('bsb') || val('accNo')) ? `Pay by bank transfer: ${[val('accName'), val('bsb') && `BSB ${val('bsb')}`, val('accNo') && `Account ${val('accNo')}`].filter(Boolean).join(' · ')}` : null,
+      val('payId') ? `PayID: ${val('payId')}` : null,
+      val('docNo') ? `Reference: ${val('docNo')}` : null,
+      val('notes'),
+    ]);
+    else text(foot, [val('notes') && `Terms: ${val('notes')}`, 'To accept this quote, reply in writing or sign and return it.']);
+
+    // ATO checks (tax invoices) and plain-sense checks.
+    const warn: string[] = [];
+    if (!val('bizName')) warn.push('Add your business name.');
+    if (!val('abn')) warn.push(c.gst === 'none' ? 'Add your ABN: without it, business customers may have to withhold tax from your payment.' : 'Add your ABN: a tax invoice must show it.');
+    if (isTax && c.total >= 1000 && !val('custName') && !val('custAbn')) warn.push('Sales of $1,000 or more need the customer’s name or ABN on the tax invoice.');
+    if (!c.lines.length) warn.push('Add at least one line of work or materials.');
+    const ul = root.querySelector<HTMLElement>('[data-warn]')!; ul.textContent = '';
+    warn.forEach((w) => { const li = document.createElement('li'); li.textContent = w; ul.appendChild(li); });
+
+    if (field('remember') && (field('remember') as HTMLInputElement).checked) store.set('ta-biz', JSON.stringify(Object.fromEntries(BIZ.map((k) => [k, val(k)]))));
+  }
+
+  // Start-up: remembered details, then any quote handed over for invoicing.
+  try {
+    const saved = JSON.parse(store.get('ta-biz') || 'null') as Record<string, string> | null;
+    if (saved) { for (const [k, v] of Object.entries(saved)) { const f = field(k); if (f && v) f.value = v; } (field('remember') as HTMLInputElement).checked = true; }
+  } catch { /* ignore */ }
+  let handed: { fields: Record<string, string>; items: Item[] } | null = null;
+  try { handed = JSON.parse(sessionStorage.getItem('ta-handoff') || 'null'); sessionStorage.removeItem('ta-handoff'); } catch { /* ignore */ }
+  if (handed && mode === 'invoice') {
+    for (const [k, v] of Object.entries(handed.fields)) { const f = field(k); if (f && v && k !== 'docNo' && k !== 'date' && k !== 'notes') f.value = v; }
+    handed.items.forEach((it) => addRow(it));
+  } else addRow();
+  const dateField = field('date') as HTMLInputElement; if (!dateField.value) dateField.value = today();
+
+  (field('remember') as HTMLInputElement).addEventListener('change', (e) => { if (!(e.target as HTMLInputElement).checked) store.set('ta-biz', null); render(); });
+  form.addEventListener('input', render);
+  form.addEventListener('change', render);
+  root.querySelector('[data-add]')!.addEventListener('click', () => { addRow(); render(); (itemsBox.lastElementChild?.querySelector('input') as HTMLInputElement)?.focus(); });
+  const status = root.querySelector<HTMLElement>('[data-status]')!;
+  root.querySelector('[data-print]')!.addEventListener('click', () => { (window as any).gtag?.('event', 'tool_print', { tool: mode }); window.print(); });
+  root.querySelector('[data-copy]')!.addEventListener('click', async () => {
+    const t = root.querySelector<HTMLElement>('[data-doc]')!.innerText;
+    try { await navigator.clipboard.writeText(t); status.textContent = 'Copied. Paste it into an email or text.'; } catch { status.textContent = 'Copy didn’t work on this device: use Save as PDF instead.'; }
+    (window as any).gtag?.('event', 'tool_copy', { tool: mode });
+  });
+  root.querySelector('[data-convert]')?.addEventListener('click', () => {
+    const fields = Object.fromEntries([...form.elements].filter((e) => (e as HTMLInputElement).name).map((e) => [(e as HTMLInputElement).name, (e as HTMLInputElement).value]));
+    try { sessionStorage.setItem('ta-handoff', JSON.stringify({ fields, items: items() })); } catch { /* ignore */ }
+    (window as any).gtag?.('event', 'tool_convert', { tool: 'quote' });
+    location.href = '/invoice-builder';
+  });
+  render();
+</script>
