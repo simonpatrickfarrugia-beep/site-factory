@@ -294,7 +294,7 @@ export async function pickCategories(apiKey: string, model: string, idea: string
   return (Array.isArray(j.categories) ? j.categories.map(String) : []).filter((c) => c in categories).slice(0, 3);
 }
 
-export interface NicheCandidate { idea: string; seeds: string[]; terms: string[]; market: 'US' | 'AU'; why: string; domains: string[] }
+export interface NicheCandidate { idea: string; seeds: string[]; terms: string[]; market: 'US' | 'AU'; why: string; domains: string[]; money: string }
 
 /**
  * Weekly niche discovery: Claude proposes new site ideas that fit the factory model
@@ -307,6 +307,11 @@ export async function brainstormNiches(apiKey: string, model: string, n: number,
     'each page answering a real search with real numbers, monetised with affiliate links, display ads or leads.',
     'He wins on long-tail, templated searches that big sites ignore: "[thing] in [place]", "[a] vs [b]", "[thing] [attribute]",',
     '"how long/how much/when/where to [thing]". Thin AI text without data loses, and so do health, finance and legal advice (YMYL).',
+    '',
+    'MONEY FIRST: every idea must have buyer intent. Visitors must be about to spend money on something a real affiliate',
+    'programme or lead buyer pays for per sale, booking or signup (e.g. tours, accommodation, car hire, insurance quotes,',
+    'software trials, courses, equipment, pet supplies, solar or finance quotes). Name the specific programme and its typical',
+    'payout. Ideas that could only earn from display ads (facts, statistics, history, public-service lookups) are NOT wanted.',
     '',
     `Propose ${n} NEW, specific niche ideas. Mix them: about two thirds for the United States, one third for Australia.`,
     'Each idea must name the repeating page pattern and have a plausible free data source. Avoid generic mega-topics.',
@@ -344,8 +349,10 @@ export async function brainstormNiches(apiKey: string, model: string, n: number,
                   market: { type: 'string', enum: ['US', 'AU'] },
                   why: { type: 'string' },
                   domains: { type: 'array', items: { type: 'string' } },
+                  money: { type: 'string', description: 'The affiliate programme(s) or lead buyer and typical payout per sale/signup, e.g. "Viator tours ~8% of A$150"' },
+                  adsOnly: { type: 'boolean', description: 'true if the only realistic income is display ads' },
                 },
-                required: ['idea', 'seeds', 'terms', 'market', 'why', 'domains'],
+                required: ['idea', 'seeds', 'terms', 'market', 'why', 'domains', 'money', 'adsOnly'],
               },
             },
           },
@@ -365,9 +372,11 @@ export async function brainstormNiches(apiKey: string, model: string, n: number,
     const seeds = Array.isArray(r.seeds) ? r.seeds.map(String).filter(Boolean).slice(0, 5) : [];
     const terms = Array.isArray(r.terms) ? r.terms.map(String).filter((t) => t && !t.includes(' ')).slice(0, 4) : [];
     if (!r.idea || !seeds.length || !terms.length) continue;
+    // Ads-only niches need ~50k visits a month before a decent ad network will even accept them: skip before paying to screen.
+    if (r.adsOnly === true || !String(r.money ?? '').trim() || /display ads|adsense|^ads$/i.test(String(r.money))) continue;
     const domains = (Array.isArray(r.domains) ? r.domains.map((d) => String(d).toLowerCase().trim()) : [])
       .filter((d) => /^[a-z0-9]{3,20}\.(com|com\.au)$/.test(d)).slice(0, 6);
-    out.push({ idea: String(r.idea).slice(0, 90), seeds, terms, domains, market: r.market === 'AU' ? 'AU' : 'US', why: String(r.why ?? '').slice(0, 300) });
+    out.push({ idea: String(r.idea).slice(0, 90), seeds, terms, domains, money: String(r.money).slice(0, 200), market: r.market === 'AU' ? 'AU' : 'US', why: String(r.why ?? '').slice(0, 300) });
   }
   return out.slice(0, n);
 }

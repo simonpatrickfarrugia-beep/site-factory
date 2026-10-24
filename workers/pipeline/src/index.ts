@@ -536,7 +536,7 @@ async function discoverJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: 
   for (const c of ideas) {
     if (seen.has(c.idea.toLowerCase())) continue;
     seen.add(c.idea.toLowerCase());
-    const d: Discovered = { week, idea: c.idea, market: c.market, seeds: c.seeds, terms: c.terms, why: c.why, domains: c.domains.map((name) => ({ name, free: null })), breadth: 0, easyVolume: 0, medianCpc: null, opportunity: 0, top: [], promoted: false };
+    const d: Discovered = { week, idea: c.idea, market: c.market, seeds: c.seeds, terms: c.terms, why: c.why, money: c.money, domains: c.domains.map((name) => ({ name, free: null })), breadth: 0, easyVolume: 0, medianCpc: null, opportunity: 0, top: [], promoted: false };
     try {
       const e = await easyKeywords(env.DATAFORSEO_LOGIN!, env.DATAFORSEO_PASSWORD!, c.seeds, MARKETS[c.market].code, { mustMatch: c.terms });
       cost += e.cost;
@@ -557,7 +557,7 @@ async function discoverJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: 
     niches.push({
       idea: d.idea,
       seeds: d.seeds,
-      notes: `Found by weekly discovery (${week}): ${d.why} ${d.breadth} related searches with 100+/mo and SEO difficulty ≤ 25, ${d.easyVolume.toLocaleString('en-US')}/mo across the biggest 100.${free.length ? ` Unregistered domains on ${week}: ${free.join(', ')}.` : ''}`,
+      notes: `Found by weekly discovery (${week}): ${d.why} Earns from: ${d.money ?? 'not stated'}. ${d.breadth} related searches with 100+/mo and SEO difficulty ≤ 25, ${d.easyVolume.toLocaleString('en-US')}/mo across the biggest 100.${free.length ? ` Unregistered domains on ${week}: ${free.join(', ')}.` : ''}`,
       market: MARKETS[d.market],
       addedAt: now.toISOString(),
       status: 'new',

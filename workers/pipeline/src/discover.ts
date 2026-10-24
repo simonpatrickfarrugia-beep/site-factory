@@ -26,6 +26,8 @@ export interface Discovered {
   /** topic words every counted search must contain */
   terms?: string[];
   why: string;
+  /** how it earns: affiliate programme or lead buyer and typical payout (from Claude) */
+  money?: string;
   /** related searches with 100+/mo and difficulty ≤ 25 */
   breadth: number;
   /** monthly searches across the biggest 100 of them */
@@ -93,12 +95,12 @@ export function discoverReport(all: Discovered[], week: string, costUsd: number)
   const thisWeek = all.filter((d) => d.week === week).sort((a, b) => b.opportunity - a.opportunity);
   const board = all.filter((d) => !d.error).sort((a, b) => b.opportunity - a.opportunity).slice(0, 15);
   const row = (d: Discovered, i: number) =>
-    `| ${i + 1} | ${d.promoted ? '⭐ ' : ''}${d.idea} | ${d.market} | **${n(d.opportunity)}** | ${n(d.breadth)} | ${n(d.easyVolume)} | ${d.medianCpc == null ? '—' : '$' + d.medianCpc.toFixed(2)} | ${d.error ? 'failed' : d.top.slice(0, 3).map((k) => `${k.keyword} (${n(k.volume)}, kd ${k.kd})`).join('; ')} |`;
-  const head = '| # | Idea | Market | Opportunity | Easy searches | Easy volume/mo | Median CPC | Biggest easy searches |\n|---:|---|---|---:|---:|---:|---:|---|';
+    `| ${i + 1} | ${d.promoted ? '⭐ ' : ''}${d.idea} | ${d.market} | **${n(d.opportunity)}** | ${n(d.breadth)} | ${n(d.easyVolume)} | ${d.medianCpc == null ? '—' : '$' + d.medianCpc.toFixed(2)} | ${(d.money ?? '—').replace(/\|/g, '/')} | ${d.error ? 'failed' : d.top.slice(0, 3).map((k) => `${k.keyword} (${n(k.volume)}, kd ${k.kd})`).join('; ')} |`;
+  const head = '| # | Idea | Market | Opportunity | Easy searches | Easy volume/mo | Median CPC | Earns from | Biggest easy searches |\n|---:|---|---|---:|---:|---:|---:|---|---|';
   return [
     '# Niche discovery (weekly)',
     '',
-    `Updated ${week}. Every Sunday Claude proposes new site ideas and each is screened for **lots of searches with little competition**: related Google searches that contain the topic's own words, with 100+ a month **and** SEO difficulty 25 or less. ${thisWeek.length} ideas screened this week for about US$${costUsd.toFixed(2)}.`,
+    `Updated ${week}. Every Sunday Claude proposes new site ideas that can earn per sale or signup (ads-only ideas are skipped), and each is screened for **lots of searches with little competition**: related Google searches that contain the topic's own words, with 100+ a month **and** SEO difficulty 25 or less. ${thisWeek.length} ideas screened this week for about US$${costUsd.toFixed(2)}.`,
     '',
     `- **Easy searches**: how many related searches pass that bar (a site needs many pages, so breadth matters).`,
     `- **Opportunity**: easy volume, weighted by money (CPC) and breadth. Use it to rank, not as a forecast.`,
