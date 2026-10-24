@@ -300,6 +300,7 @@ export interface NicheCandidate { idea: string; seeds: string[]; terms: string[]
  * Weekly niche discovery: Claude proposes new site ideas that fit the factory model
  * (many useful pages generated from free structured data), avoiding everything already tried.
  */
+export const brainstormStats = { proposed: 0, adsOnly: 0, invalid: 0, sample: '' };
 export async function brainstormNiches(apiKey: string, model: string, n: number, avoid: string[], liked: string[]): Promise<NicheCandidate[]> {
   const prompt = [
     'You find website niches for a solo founder in Melbourne who runs many small sites from one codebase.',
@@ -367,13 +368,14 @@ export async function brainstormNiches(apiKey: string, model: string, n: number,
   const body = (await res.json()) as { content?: { type: string; input?: { ideas?: unknown } }[] };
   const j = body.content?.find((c) => c.type === 'tool_use')?.input ?? {};
   const out: NicheCandidate[] = [];
+  Object.assign(brainstormStats, { proposed: Array.isArray(j.ideas) ? j.ideas.length : 0, adsOnly: 0, invalid: 0, sample: JSON.stringify(j).slice(0, 300) });
   for (const raw of Array.isArray(j.ideas) ? j.ideas : []) {
     const r = raw as Record<string, unknown>;
     const seeds = Array.isArray(r.seeds) ? r.seeds.map(String).filter(Boolean).slice(0, 5) : [];
     const terms = Array.isArray(r.terms) ? r.terms.map(String).filter((t) => t && !t.includes(' ')).slice(0, 4) : [];
-    if (!r.idea || !seeds.length || !terms.length) continue;
+    if (!r.idea || !seeds.length || !terms.length) { brainstormStats.invalid++; continue; }
     // Ads-only niches need ~50k visits a month before a decent ad network will even accept them: skip before paying to screen.
-    if (r.adsOnly === true || !String(r.money ?? '').trim() || /display ads|adsense|^ads$/i.test(String(r.money))) continue;
+    if (r.adsOnly === true || !String(r.money ?? '').trim() || /^(display )?ads$|adsense only/i.test(String(r.money).trim())) { brainstormStats.adsOnly++; continue; }
     const domains = (Array.isArray(r.domains) ? r.domains.map((d) => String(d).toLowerCase().trim()) : [])
       .filter((d) => /^[a-z0-9]{3,20}\.(com|com\.au)$/.test(d)).slice(0, 6);
     out.push({ idea: String(r.idea).slice(0, 90), seeds, terms, domains, money: String(r.money).slice(0, 200), market: r.market === 'AU' ? 'AU' : 'US', why: String(r.why ?? '').slice(0, 300) });

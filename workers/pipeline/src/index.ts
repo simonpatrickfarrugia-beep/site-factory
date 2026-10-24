@@ -11,7 +11,7 @@
  */
 import { enrich, intake, maxYear, recheck, type QueueItem, type Movie, type Result, type State } from './jobs';
 import { commitFiles, readFiles, StaleError, type Repo } from './github';
-import { channelFeed, omdbLookup, omdbYearsForTitle, brainstormNiches, judgeNiche, pickCategories, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
+import { channelFeed, omdbLookup, omdbYearsForTitle, brainstormNiches, brainstormStats, judgeNiche, pickCategories, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
 import { buildCollections, minFilmsFor, winnable, MIN_OPENNESS, PERSON_MIN_FILMS, type Idea, type MovieCollection } from './collections';
 import { ga4Report, googleAccessToken, searchAnalytics, youtubeSearch } from './google';
 import { buildStats } from './stats';
@@ -530,6 +530,7 @@ async function discoverJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: 
   const avoid = [...new Set([...niches.map((x) => x.idea), ...history.map((d) => d.idea)])].slice(-250);
   const liked = niches.filter((x) => (x.score?.overall ?? 0) >= 65).map((x) => x.idea);
   const ideas = await brainstormNiches(env.ANTHROPIC_API_KEY, env.ANTHROPIC_MODEL, count, avoid, liked);
+  log.push(`Claude proposed ${brainstormStats.proposed}; dropped ${brainstormStats.adsOnly} ads-only and ${brainstormStats.invalid} incomplete.${brainstormStats.proposed ? '' : ` Reply: ${brainstormStats.sample}`}`);
   const seen = new Set(avoid.map((a) => a.toLowerCase()));
   let cost = 0;
   const fresh: Discovered[] = [];
