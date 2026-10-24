@@ -3,25 +3,30 @@
  * Affiliate button (Booking.com, Viator, ...). Renders nothing until the programme is switched on
  * in data/vic/content.json -> affiliates.<kind> (enabled + template). Always rel="sponsored" with a disclosure.
  */
-interface Aff { enabled: boolean; label: string; partner: string; template: string; target?: string }
+interface Aff { enabled: boolean; label: string; partner: string; template: string; target?: string; alt?: { partner: string; label: string; template: string } }
 interface Props { aff?: Aff | null; place: string; kind: 'stay' | 'tours' }
 const { aff, place, kind } = Astro.props;
 let href: string | null = null;
+let altHref: string | null = null;
 if (aff?.enabled && aff.template) {
   const q = encodeURIComponent(`${place}, Victoria, Australia`);
   const target = aff.target ? aff.target.replace('{q}', q) : '';
   // {c} = campaign label per place (e.g. victours-ballarat), so partner reports show which page earned the booking.
   const c = 'victours-' + place.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   href = aff.template.replace('{q}', q).replace('{url}', encodeURIComponent(target)).replace('{c}', c);
+  // Optional second partner (e.g. GetYourGuide next to Viator): a small text link, not a second big button.
+  if (aff.alt?.template) altHref = aff.alt.template.replace('{q}', encodeURIComponent(`${place}, Victoria`)).replace('{c}', c);
 }
 ---
 {href && (
   <p class={`aff aff--${kind}`}>
     <a class="aff__button" href={href} rel="sponsored noopener" target="_blank" data-cta={kind === 'stay' ? 'book_stay' : 'book_tour'}>{aff!.label} in {place}</a>
-    <span class="aff__note">on {aff!.partner}. We may earn a commission if you book, at no extra cost to you.</span>
+    {altHref && <a class="aff__alt" href={altHref} rel="sponsored noopener" target="_blank" data-cta={kind === 'stay' ? 'book_stay' : 'book_tour'}>{aff!.alt!.label}</a>}
+    <span class="aff__note">on {aff!.partner}{altHref ? ` or ${aff!.alt!.partner}` : ''}. We may earn a commission if you book, at no extra cost to you.</span>
   </p>
 )}
 <style>
+  .aff__alt { font-weight: 700; color: var(--sign-green); }
   .aff { margin: var(--space-3) 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.8rem; }
   .aff__button { font: 800 1rem var(--font-display); color: #fff !important; background: var(--sign-green); border-radius: 8px; padding: 0.65rem 1rem; text-decoration: none; }
   .aff--tours .aff__button { background: var(--sign-brown); }

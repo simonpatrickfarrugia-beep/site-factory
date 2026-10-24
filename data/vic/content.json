@@ -791,7 +791,12 @@
    "enabled": true,
    "label": "Find tours and activities",
    "partner": "Viator",
-   "template": "https://www.viator.com/searchResults/all?text={q}&pid=P00327691&mcid=42383&medium=link&medium_version=selector&campaign={c}"
+   "template": "https://www.viator.com/searchResults/all?text={q}&pid=P00327691&mcid=42383&medium=link&medium_version=selector&campaign={c}",
+   "alt": {
+    "partner": "GetYourGuide",
+    "label": "Compare on GetYourGuide",
+    "template": "https://www.getyourguide.com/s/?q={q}&partner_id=CZLHXOV&cmp={c}"
+   }
   }
  },
  "regions": [
