@@ -12,6 +12,7 @@ export default defineBrand({
   fonts: { display: 'Overpass', body: 'Source Serif 4' },
   logo: { src: '/logo-mark.svg', alt: '', width: 34, height: 34 },
   favicon: '/favicon.png',
+  verify: { 'commission-factory-verification': '63364874a5f44ce9b5877f4ae51960a7' },
   shareImage: '/share.png', // default og:image; town, region, trip and collection pages use a town photo
 
   nav: [

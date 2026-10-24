@@ -19,6 +19,8 @@ export const brandSchema = z.object({
   logo: z.object({ src: z.string(), alt: z.string().default(''), width: z.number(), height: z.number() }).optional(),
   /** Default social share image (1200x630) in brands/<slug>/public, used when a page has none. */
   shareImage: z.string().optional(),
+  /** Site-ownership meta tags for affiliate networks etc., as { name: content }. */
+  verify: z.record(z.string(), z.string()).optional(),
   /** Optional favicon in brands/<slug>/public. */
   favicon: z.string().optional(),
   colors: z.object({ brand: hex, accent: hex }),
