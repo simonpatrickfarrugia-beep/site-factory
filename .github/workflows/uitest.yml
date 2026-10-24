@@ -8,8 +8,11 @@ on:
         description: Test script in scripts/ (e.g. test-resume.mjs)
         default: test-resume.mjs
       base:
-        description: Site root
+        description: Site root (ignored when brand is set)
         default: https://communityhelp.com.au
+      brand:
+        description: Optional. Build this brand from the dispatched branch and test it locally (for sites not deployed yet)
+        default: ''
 jobs:
   test:
     runs-on: ubuntu-24.04  # pinned: ubuntu-latest moved to 26.04 in Oct 2026 and broke the Playwright install
@@ -19,13 +22,22 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: 22
+      - name: Build and serve a brand locally (optional)
+        if: inputs.brand != ''
+        env:
+          BRAND: ${{ inputs.brand }}
+        run: |
+          npm install --no-audit --no-fund >/dev/null
+          npm run build >/dev/null
+          (npx --yes serve@14 dist -l 4321 >/dev/null 2>&1 &)   # serves /page from page.html (the site uses build.format 'file')
+          for i in $(seq 1 30); do curl -sf http://localhost:4321/ >/dev/null && break; sleep 1; done
       - run: npm install --no-save --no-audit --no-fund playwright@1  # uses the runner's preinstalled Chrome
       - name: Run
         id: run
         continue-on-error: true
         env:
           TEST: ${{ inputs.test }}
-          BASE: ${{ inputs.base }}
+          BASE: ${{ inputs.brand != '' && 'http://localhost:4321' || inputs.base }}
         run: node "scripts/$TEST" "$BASE" 2>&1 | tee out.txt; exit ${PIPESTATUS[0]}
       - name: Report and push screenshots
         run: |

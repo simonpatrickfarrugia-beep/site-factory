@@ -214,7 +214,7 @@ const isQuote = mode === 'quote';
     // ATO checks (tax invoices) and plain-sense checks.
     const warn: string[] = [];
     if (!val('bizName')) warn.push('Add your business name.');
-    if (!val('abn')) warn.push(c.gst === 'none' ? 'Add your ABN: without it, business customers may have to withhold tax from your payment.' : 'Add your ABN: a tax invoice must show it.');
+    if (!val('abn')) warn.push(mode === 'quote' ? 'Add your ABN so the customer can check who they\u2019re dealing with.' : c.gst === 'none' ? 'Add your ABN: without it, business customers may have to withhold tax from your payment.' : 'Add your ABN: a tax invoice must show it.');
     if (isTax && c.total >= 1000 && !val('custName') && !val('custAbn')) warn.push('Sales of $1,000 or more need the customer’s name or ABN on the tax invoice.');
     if (!c.lines.length) warn.push('Add at least one line of work or materials.');
     const ul = root.querySelector<HTMLElement>('[data-warn]')!; ul.textContent = '';
