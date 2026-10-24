@@ -19,6 +19,7 @@ const names = (ps: Place[]) => ps.map((p) => p.name).join(', ');
     <p class="town__lede">{intro}</p>
     <p class="count">{route}</p>
   </div>
+  <AffiliateLink aff={affiliates?.cars} place="Melbourne" kind="cars" />
   <ol class="loop-days">
     {days.map((d, i) => (
       <li class="loop-day">

@@ -116,7 +116,7 @@ const DISCOVER_REPORT = 'hq/reports/discover.md';
 const COMPETITION_REPORT = 'hq/reports/competition.md';
 const FINANCE = 'hq/finance.json';
 /** Only affiliate-link clicks count toward the click rate (not website, map, call or JustWatch clicks). */
-const AFFILIATE_CTA = new Set(['prime', 'disc', 'book_stay', 'book_tour']);
+const AFFILIATE_CTA = new Set(['prime', 'disc', 'book_stay', 'book_tour', 'book_car']);
 const statsPaths = (env: Env) => (JSON.parse(env.STATS_SITES || '[]') as { path: string }[]).map((s) => s.path);
 const AFFILIATES = 'hq/affiliate-programs.json';
 

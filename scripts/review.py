@@ -8,7 +8,7 @@ d = json.load(open('hq/portfolio.json'))
 gh = lambda *a: subprocess.run(['gh', *a], capture_output=True, text=True)
 existing = gh('api', f'repos/{R}/issues?labels=review&state=all&per_page=100', '--jq', '.[].title').stdout.splitlines()
 gh('label', 'create', 'review', '--color', '1D76DB', '--description', '90-day site review')
-MONEY = {'trailers': ['prime', 'disc'], 'vic': ['book_stay', 'book_tour']}
+MONEY = {'trailers': ['prime', 'disc'], 'vic': ['book_stay', 'book_tour', 'book_car']}
 for n in d['nodes']:
     if not n.get('launched') or not n.get('target90') or not n.get('stats'): continue
     day = (date.today() - date.fromisoformat(n['launched'])).days

@@ -71,6 +71,7 @@ const hrs = (m: number | null) => (m ? (m >= 90 ? `${Math.round(m / 30) / 2} hou
     <h2 id="book" class="bundle-h2">Book it</h2>
     {showStay && <AffiliateLink aff={affiliates?.stay} place={town.name} kind="stay" />}
     {showTours && <AffiliateLink aff={affiliates?.tours} place={town.name} kind="tours" />}
+    {isDayTrip && <AffiliateLink aff={affiliates?.cars} place="Melbourne" kind="cars" />}
     <p>Every place to stay in {town.name}, with addresses and maps: <a href={`/${town.slug}/stay`}>where to stay in {town.name}</a>. More food: <a href={`/${town.slug}/eat`}>where to eat</a>. More to see: <a href={`/${town.slug}/do`}>things to do</a>.</p>
   </section>
 

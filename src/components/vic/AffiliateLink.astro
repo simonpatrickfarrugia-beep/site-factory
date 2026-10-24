@@ -4,7 +4,7 @@
  * in data/vic/content.json -> affiliates.<kind> (enabled + template). Always rel="sponsored" with a disclosure.
  */
 interface Aff { enabled: boolean; label: string; partner: string; template: string; target?: string; alt?: { partner: string; label: string; template: string } }
-interface Props { aff?: Aff | null; place: string; kind: 'stay' | 'tours' }
+interface Props { aff?: Aff | null; place: string; kind: 'stay' | 'tours' | 'cars' }
 const { aff, place, kind } = Astro.props;
 let href: string | null = null;
 let altHref: string | null = null;
@@ -20,7 +20,7 @@ if (aff?.enabled && aff.template) {
 ---
 {href && (
   <p class={`aff aff--${kind}`}>
-    <a class="aff__button" href={href} rel="sponsored noopener" target="_blank" data-cta={kind === 'stay' ? 'book_stay' : 'book_tour'}>{aff!.label} in {place}</a>
+    <a class="aff__button" href={href} rel="sponsored noopener" target="_blank" data-cta={kind === 'stay' ? 'book_stay' : kind === 'cars' ? 'book_car' : 'book_tour'}>{aff!.label} in {place}</a>
     {altHref && <a class="aff__alt" href={altHref} rel="sponsored noopener" target="_blank" data-cta={kind === 'stay' ? 'book_stay' : 'book_tour'}>{aff!.alt!.label}</a>}
     <span class="aff__note">on {aff!.partner}{altHref ? ` or ${aff!.alt!.partner}` : ''}. We may earn a commission if you book, at no extra cost to you.</span>
   </p>
@@ -30,6 +30,7 @@ if (aff?.enabled && aff.template) {
   .aff { margin: var(--space-3) 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.8rem; }
   .aff__button { font: 800 1rem var(--font-display); color: #fff !important; background: var(--sign-green); border-radius: 8px; padding: 0.65rem 1rem; text-decoration: none; }
   .aff--tours .aff__button { background: var(--sign-brown); }
+  .aff--cars .aff__button { background: #1f4e79; }
   .aff__button:hover { color: #fff; filter: brightness(1.12); }
   .aff__note { font-size: 0.82rem; color: var(--muted); }
 </style>
