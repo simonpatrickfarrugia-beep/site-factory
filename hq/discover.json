@@ -837,5 +837,1000 @@
    }
   ],
   "promoted": false
+ },
+ {
+  "week": "2026-10-24",
+  "idea": "US school district enrollment by county",
+  "market": "US",
+  "seeds": [
+   "school enrollment in harris county",
+   "how many students in austin isd",
+   "largest school districts in ohio"
+  ],
+  "terms": [
+   "enrollment",
+   "school"
+  ],
+  "why": "Pattern: one page per district or county showing enrollment, graduation and per-pupil spend; data from NCES Common Core of Data (free federal CSV/API).",
+  "domains": [
+   {
+    "name": "enrollmentlist.com",
+    "free": true
+   },
+   {
+    "name": "schoolcounts.com",
+    "free": false
+   },
+   {
+    "name": "districtrank.com",
+    "free": false
+   },
+   {
+    "name": "pupilmap.com",
+    "free": true
+   },
+   {
+    "name": "campusledger.com",
+    "free": false
+   },
+   {
+    "name": "classcount.com",
+    "free": false
+   }
+  ],
+  "breadth": 16667,
+  "easyVolume": 2338700,
+  "medianCpc": 6.13,
+  "opportunity": 7016100,
+  "top": [
+   {
+    "keyword": "middle schools near me",
+    "volume": 165000,
+    "kd": 1
+   },
+   {
+    "keyword": "nyc schools calendar",
+    "volume": 90500,
+    "kd": 20
+   },
+   {
+    "keyword": "after school program",
+    "volume": 90500,
+    "kd": 7
+   },
+   {
+    "keyword": "massachusetts schools closing",
+    "volume": 60500,
+    "kd": 20
+   },
+   {
+    "keyword": "mass schools closing",
+    "volume": 60500,
+    "kd": 20
+   },
+   {
+    "keyword": "ma schools closed",
+    "volume": 60500,
+    "kd": 20
+   },
+   {
+    "keyword": "ct schools closing",
+    "volume": 40500,
+    "kd": 5
+   },
+   {
+    "keyword": "connecticut schools closed",
+    "volume": 40500,
+    "kd": 7
+   }
+  ],
+  "promoted": true
+ },
+ {
+  "week": "2026-10-24",
+  "idea": "US wildfire history by county",
+  "market": "US",
+  "seeds": [
+   "wildfires in shasta county",
+   "how many fires in colorado each year",
+   "largest wildfire in oregon history"
+  ],
+  "terms": [
+   "wildfire",
+   "burn"
+  ],
+  "why": "Pattern: county pages with annual fire counts, acres burned and largest fires; data from NIFC/USFS wildfire perimeter datasets (free downloads).",
+  "domains": [
+   {
+    "name": "burnrecord.com",
+    "free": null
+   },
+   {
+    "name": "wildfirecounts.com",
+    "free": null
+   },
+   {
+    "name": "firelogus.com",
+    "free": null
+   },
+   {
+    "name": "acreslog.com",
+    "free": null
+   },
+   {
+    "name": "burnmapper.com",
+    "free": null
+   },
+   {
+    "name": "firehistory.com",
+    "free": null
+   }
+  ],
+  "breadth": 413,
+  "easyVolume": 194530,
+  "medianCpc": 1.74,
+  "opportunity": 435747,
+  "top": [
+   {
+    "keyword": "utah wildfire today",
+    "volume": 14800,
+    "kd": 24
+   },
+   {
+    "keyword": "utah wildfires now",
+    "volume": 14800,
+    "kd": 9
+   },
+   {
+    "keyword": "utah wildfires today",
+    "volume": 14800,
+    "kd": 18
+   },
+   {
+    "keyword": "colorado wildfires today",
+    "volume": 6600,
+    "kd": 21
+   },
+   {
+    "keyword": "current wildfires in colorado",
+    "volume": 6600,
+    "kd": 21
+   },
+   {
+    "keyword": "colorado wildfire today",
+    "volume": 6600,
+    "kd": 22
+   },
+   {
+    "keyword": "co wildfires today",
+    "volume": 6600,
+    "kd": 22
+   },
+   {
+    "keyword": "georgia wildfire map",
+    "volume": 6600,
+    "kd": 12
+   }
+  ],
+  "promoted": false
+ },
+ {
+  "week": "2026-10-24",
+  "idea": "US Superfund sites by county",
+  "market": "US",
+  "seeds": [
+   "superfund sites in essex county",
+   "how many superfund sites in new jersey",
+   "closest superfund site to zip code"
+  ],
+  "terms": [
+   "superfund",
+   "contaminated"
+  ],
+  "why": "Pattern: county and state pages listing site count, status and NPL listing date; data from EPA Envirofacts and the National Priorities List (free).",
+  "domains": [
+   {
+    "name": "superfundlist.com",
+    "free": null
+   },
+   {
+    "name": "cleanupcounts.com",
+    "free": null
+   },
+   {
+    "name": "npllist.com",
+    "free": null
+   },
+   {
+    "name": "sitemapepa.com",
+    "free": null
+   },
+   {
+    "name": "brownfieldmap.com",
+    "free": null
+   },
+   {
+    "name": "siteroster.com",
+    "free": null
+   }
+  ],
+  "breadth": 16,
+  "easyVolume": 3070,
+  "medianCpc": 0.11,
+  "opportunity": 1086,
+  "top": [
+   {
+    "keyword": "define superfund sites",
+    "volume": 320,
+    "kd": 16
+   },
+   {
+    "keyword": "greenpoint superfund site",
+    "volume": 320,
+    "kd": 0
+   },
+   {
+    "keyword": "lcp chemicals superfund site",
+    "volume": 320,
+    "kd": 0
+   },
+   {
+    "keyword": "wr grace superfund site",
+    "volume": 260,
+    "kd": 0
+   },
+   {
+    "keyword": "nc superfund sites",
+    "volume": 210,
+    "kd": 2
+   },
+   {
+    "keyword": "ma superfund sites",
+    "volume": 210,
+    "kd": 0
+   },
+   {
+    "keyword": "wells g & h superfund site",
+    "volume": 170,
+    "kd": 0
+   },
+   {
+    "keyword": "avco superfund site",
+    "volume": 170,
+    "kd": 0
+   }
+  ],
+  "promoted": false
+ },
+ {
+  "week": "2026-10-24",
+  "idea": "US public library branches by city",
+  "market": "US",
+  "seeds": [
+   "libraries in tulsa oklahoma",
+   "how many library branches in phoenix",
+   "public library hours near denver"
+  ],
+  "terms": [
+   "library",
+   "libraries"
+  ],
+  "why": "Pattern: city pages with branch list, count per capita and service stats; data from IMLS Public Libraries Survey and OpenStreetMap (free).",
+  "domains": [
+   {
+    "name": "shelfcount.com",
+    "free": false
+   },
+   {
+    "name": "branchlist.com",
+    "free": false
+   },
+   {
+    "name": "libraryroster.com",
+    "free": false
+   },
+   {
+    "name": "stackmap.com",
+    "free": false
+   },
+   {
+    "name": "bookhall.com",
+    "free": false
+   }
+  ],
+  "breadth": 15173,
+  "easyVolume": 1098300,
+  "medianCpc": 0.74,
+  "opportunity": 1361892,
+  "top": [
+   {
+    "keyword": "harold washington library center chicago public library chicago il",
+    "volume": 40500,
+    "kd": 23
+   },
+   {
+    "keyword": "harold washington library center chicago public library",
+    "volume": 40500,
+    "kd": 21
+   },
+   {
+    "keyword": "suzzallo library uw",
+    "volume": 33100,
+    "kd": 25
+   },
+   {
+    "keyword": "uw library suzzallo",
+    "volume": 33100,
+    "kd": 23
+   },
+   {
+    "keyword": "saratoga library saratoga ca",
+    "volume": 22200,
+    "kd": 23
+   },
+   {
+    "keyword": "wichita public library wichita ks",
+    "volume": 18100,
+    "kd": 14
+   },
+   {
+    "keyword": "fremont main library fremont ca",
+    "volume": 18100,
+    "kd": 18
+   },
+   {
+    "keyword": "palm beach county library system",
+    "volume": 18100,
+    "kd": 25
+   }
+  ],
+  "promoted": true
+ },
+ {
+  "week": "2026-10-24",
+  "idea": "US craft brewery counts by state",
+  "market": "US",
+  "seeds": [
+   "breweries in asheville nc",
+   "how many breweries in vermont per capita",
+   "oldest brewery in wisconsin"
+  ],
+  "terms": [
+   "brewery",
+   "breweries"
+  ],
+  "why": "Pattern: city and state pages with brewery counts, openings by year and per-capita rate; data from TTB brewer notices and OpenStreetMap (free).",
+  "domains": [
+   {
+    "name": "hopcount.com",
+    "free": null
+   },
+   {
+    "name": "brewroster.com",
+    "free": null
+   },
+   {
+    "name": "malttrail.com",
+    "free": null
+   },
+   {
+    "name": "breweryledger.com",
+    "free": null
+   },
+   {
+    "name": "taphistory.com",
+    "free": null
+   },
+   {
+    "name": "kegmap.com",
+    "free": null
+   }
+  ],
+  "breadth": 12,
+  "easyVolume": 3590,
+  "medianCpc": 0.02,
+  "opportunity": 1045,
+  "top": [
+   {
+    "keyword": "what is the oldest brewery in america",
+    "volume": 880,
+    "kd": 12
+   },
+   {
+    "keyword": "what is the oldest brewery in the united states",
+    "volume": 880,
+    "kd": 17
+   },
+   {
+    "keyword": "what is the oldest brewery in the world",
+    "volume": 320,
+    "kd": 6
+   },
+   {
+    "keyword": "how many breweries in asheville",
+    "volume": 320,
+    "kd": 4
+   },
+   {
+    "keyword": "how many breweries are in the us",
+    "volume": 210,
+    "kd": 15
+   },
+   {
+    "keyword": "how many guinness breweries are there",
+    "volume": 170,
+    "kd": 14
+   },
+   {
+    "keyword": "is yuengling the oldest brewery in america",
+    "volume": 140,
+    "kd": 9
+   },
+   {
+    "keyword": "how many breweries in bend oregon",
+    "volume": 140,
+    "kd": 5
+   }
+  ],
+  "promoted": false
+ },
+ {
+  "week": "2026-10-24",
+  "idea": "US airport runway and elevation facts",
+  "market": "US",
+  "seeds": [
+   "longest runway at denver airport",
+   "elevation of albuquerque airport",
+   "how many runways does jfk have"
+  ],
+  "terms": [
+   "runway",
+   "airport"
+  ],
+  "why": "Pattern: one page per airport with runway length, elevation and aircraft fit; data from FAA NASR airport database (free public data).",
+  "domains": [
+   {
+    "name": "runwaydata.com",
+    "free": false
+   },
+   {
+    "name": "airportfacts.com",
+    "free": false
+   },
+   {
+    "name": "runwaylist.com",
+    "free": false
+   },
+   {
+    "name": "taxiway.com",
+    "free": false
+   },
+   {
+    "name": "airfieldlog.com",
+    "free": true
+   },
+   {
+    "name": "tarmacdata.com",
+    "free": false
+   }
+  ],
+  "breadth": 21226,
+  "easyVolume": 2480300,
+  "medianCpc": 2.02,
+  "opportunity": 6250356,
+  "top": [
+   {
+    "keyword": "orlando international airport location",
+    "volume": 90500,
+    "kd": 16
+   },
+   {
+    "keyword": "logan airport terminal b",
+    "volume": 90500,
+    "kd": 23
+   },
+   {
+    "keyword": "laguardia airport plane crashes",
+    "volume": 90500,
+    "kd": 11
+   },
+   {
+    "keyword": "chicago o'hare airport terminal 1",
+    "volume": 90500,
+    "kd": 24
+   },
+   {
+    "keyword": "seatac airport parking",
+    "volume": 74000,
+    "kd": 19
+   },
+   {
+    "keyword": "biggest airport in the us",
+    "volume": 74000,
+    "kd": 23
+   },
+   {
+    "keyword": "newark airport parking",
+    "volume": 60500,
+    "kd": 9
+   },
+   {
+    "keyword": "logan airport parking",
+    "volume": 49500,
+    "kd": 0
+   }
+  ],
+  "promoted": true
+ },
+ {
+  "week": "2026-10-24",
+  "idea": "US tornado paths by county",
+  "market": "US",
+  "seeds": [
+   "tornado history in johnson county kansas",
+   "how many tornadoes in mississippi each year",
+   "strongest tornado in missouri"
+  ],
+  "terms": [
+   "tornado",
+   "twister"
+  ],
+  "why": "Pattern: county pages with tornado count, strongest event and yearly chart; data from NOAA SPC storm reports and tornado tracks (free).",
+  "domains": [
+   {
+    "name": "tornadotally.com",
+    "free": null
+   },
+   {
+    "name": "twisterlog.com",
+    "free": null
+   },
+   {
+    "name": "stormcounts.com",
+    "free": null
+   },
+   {
+    "name": "tornadoroll.com",
+    "free": null
+   },
+   {
+    "name": "funnelrecord.com",
+    "free": null
+   },
+   {
+    "name": "twisterlist.com",
+    "free": null
+   }
+  ],
+  "breadth": 2337,
+  "easyVolume": 921800,
+  "medianCpc": 0.03,
+  "opportunity": 488554,
+  "top": [
+   {
+    "keyword": "biggest tornadoes in history",
+    "volume": 33100,
+    "kd": 16
+   },
+   {
+    "keyword": "largest tornado ever",
+    "volume": 33100,
+    "kd": 6
+   },
+   {
+    "keyword": "biggest tornado in history",
+    "volume": 33100,
+    "kd": 16
+   },
+   {
+    "keyword": "longest tornado ever",
+    "volume": 33100,
+    "kd": 13
+   },
+   {
+    "keyword": "strongest tornado ever",
+    "volume": 33100,
+    "kd": 9
+   },
+   {
+    "keyword": "widest tornado ever",
+    "volume": 33100,
+    "kd": 3
+   },
+   {
+    "keyword": "biggest tornadoes ever",
+    "volume": 27100,
+    "kd": 16
+   },
+   {
+    "keyword": "difference between tornado watch and warning",
+    "volume": 22200,
+    "kd": 0
+   }
+  ],
+  "promoted": false
+ },
+ {
+  "week": "2026-10-24",
+  "idea": "AU Melbourne tram route stops",
+  "market": "AU",
+  "seeds": [
+   "how many stops on tram route 96",
+   "where does tram 109 go",
+   "which trams stop at flinders street"
+  ],
+  "terms": [
+   "tram"
+  ],
+  "why": "Pattern: one page per route and stop with stop lists and frequency; data from Victorian Public Transport GTFS (free open data via Transport Victoria).",
+  "domains": [
+   {
+    "name": "tramroute.com.au",
+    "free": null
+   },
+   {
+    "name": "stopcount.com.au",
+    "free": null
+   },
+   {
+    "name": "tramstops.com",
+    "free": null
+   },
+   {
+    "name": "routelog.com",
+    "free": null
+   },
+   {
+    "name": "melbtrams.com",
+    "free": null
+   },
+   {
+    "name": "stoplist.com",
+    "free": null
+   }
+  ],
+  "breadth": 2,
+  "easyVolume": 310,
+  "medianCpc": null,
+  "opportunity": 79,
+  "top": [
+   {
+    "keyword": "are trams free in melbourne on weekends",
+    "volume": 170,
+    "kd": 6
+   },
+   {
+    "keyword": "are dogs allowed on trams in melbourne",
+    "volume": 140,
+    "kd": 0
+   }
+  ],
+  "promoted": false
+ },
+ {
+  "week": "2026-10-24",
+  "idea": "AU Melbourne bus route stops",
+  "market": "AU",
+  "seeds": [
+   "how many stops on bus route 401",
+   "where does route 220 bus go",
+   "bus timetable for sunshine station"
+  ],
+  "terms": [
+   "bus"
+  ],
+  "why": "Pattern: route pages listing stops, length and operating hours; data from Victorian GTFS static feeds (free open data).",
+  "domains": [
+   {
+    "name": "busroute.com.au",
+    "free": null
+   },
+   {
+    "name": "stopcount.com.au",
+    "free": null
+   },
+   {
+    "name": "busstops.com",
+    "free": null
+   },
+   {
+    "name": "melbbus.com",
+    "free": null
+   },
+   {
+    "name": "routelog.com.au",
+    "free": null
+   },
+   {
+    "name": "stopfinder.com",
+    "free": null
+   }
+  ],
+  "breadth": 1807,
+  "easyVolume": 123380,
+  "medianCpc": 1.39,
+  "opportunity": 233188,
+  "top": [
+   {
+    "keyword": "greyhound bus stop brisbane",
+    "volume": 4400,
+    "kd": 0
+   },
+   {
+    "keyword": "adelaide bus timetable",
+    "volume": 2900,
+    "kd": 18
+   },
+   {
+    "keyword": "greyhound bus stop noosa",
+    "volume": 2900,
+    "kd": 1
+   },
+   {
+    "keyword": "greyhound bus stop airlie beach",
+    "volume": 2900,
+    "kd": 0
+   },
+   {
+    "keyword": "airlie beach greyhound bus stop",
+    "volume": 2900,
+    "kd": 0
+   },
+   {
+    "keyword": "party bus hire",
+    "volume": 2400,
+    "kd": 23
+   },
+   {
+    "keyword": "333 bus route",
+    "volume": 1900,
+    "kd": 0
+   },
+   {
+    "keyword": "premier bus service",
+    "volume": 1900,
+    "kd": 2
+   }
+  ],
+  "promoted": false
+ },
+ {
+  "week": "2026-10-24",
+  "idea": "AU Victorian rainfall by town",
+  "market": "AU",
+  "seeds": [
+   "rainfall in ballarat in march",
+   "how wet is bendigo in winter",
+   "driest month in geelong"
+  ],
+  "terms": [
+   "rainfall",
+   "rain"
+  ],
+  "why": "Pattern: town pages with monthly rainfall and rain days; data from Bureau of Meteorology climate statistics (free).",
+  "domains": [
+   {
+    "name": "rainrecord.com.au",
+    "free": null
+   },
+   {
+    "name": "wetmonths.com.au",
+    "free": null
+   },
+   {
+    "name": "rainlog.com",
+    "free": null
+   },
+   {
+    "name": "raintown.com",
+    "free": null
+   },
+   {
+    "name": "monthlyrain.com",
+    "free": null
+   },
+   {
+    "name": "rainfallmap.com",
+    "free": null
+   }
+  ],
+  "breadth": 121,
+  "easyVolume": 39680,
+  "medianCpc": 0.95,
+  "opportunity": 57338,
+  "top": [
+   {
+    "keyword": "bom geelong rain radar",
+    "volume": 6600,
+    "kd": 14
+   },
+   {
+    "keyword": "bendigo rain radar",
+    "volume": 1600,
+    "kd": 1
+   },
+   {
+    "keyword": "bom rainfall data",
+    "volume": 1300,
+    "kd": 0
+   },
+   {
+    "keyword": "bureau of meteorology rainfall data",
+    "volume": 1300,
+    "kd": 0
+   },
+   {
+    "keyword": "bom rainfall map",
+    "volume": 880,
+    "kd": 1
+   },
+   {
+    "keyword": "perth rainfall today",
+    "volume": 880,
+    "kd": 0
+   },
+   {
+    "keyword": "melbourne rainfall today",
+    "volume": 880,
+    "kd": 5
+   },
+   {
+    "keyword": "bureau of meteorology rainfall map",
+    "volume": 880,
+    "kd": 9
+   }
+  ],
+  "promoted": false
+ },
+ {
+  "week": "2026-10-24",
+  "idea": "AU Queensland council waste collection days",
+  "market": "AU",
+  "seeds": [
+   "bin collection day in ipswich",
+   "when is green waste collected in logan",
+   "recycling bin schedule brisbane"
+  ],
+  "terms": [
+   "bin",
+   "waste"
+  ],
+  "why": "Pattern: suburb pages with bin days and fees; data from council open data portals (free, many publish CSV).",
+  "domains": [
+   {
+    "name": "binday.com.au",
+    "free": null
+   },
+   {
+    "name": "wastedays.com.au",
+    "free": null
+   },
+   {
+    "name": "bincalendar.com",
+    "free": null
+   },
+   {
+    "name": "collectionday.com",
+    "free": null
+   },
+   {
+    "name": "recyclingdays.com",
+    "free": null
+   },
+   {
+    "name": "binroute.com.au",
+    "free": null
+   }
+  ],
+  "breadth": 738,
+  "easyVolume": 159730,
+  "medianCpc": 4.2,
+  "opportunity": 479190,
+  "top": [
+   {
+    "keyword": "skip bin hire",
+    "volume": 27100,
+    "kd": 25
+   },
+   {
+    "keyword": "monash waste transfer station",
+    "volume": 6600,
+    "kd": 0
+   },
+   {
+    "keyword": "brisbane city council nudgee waste transfer station",
+    "volume": 6600,
+    "kd": 9
+   },
+   {
+    "keyword": "boroondara recycling and waste centre",
+    "volume": 5400,
+    "kd": 8
+   },
+   {
+    "keyword": "summerhill waste management centre",
+    "volume": 5400,
+    "kd": 0
+   },
+   {
+    "keyword": "adelaide waste and recycling centre",
+    "volume": 3600,
+    "kd": 6
+   },
+   {
+    "keyword": "hard waste collection",
+    "volume": 3600,
+    "kd": 6
+   },
+   {
+    "keyword": "stonnington waste transfer station",
+    "volume": 3600,
+    "kd": 0
+   }
+  ],
+  "promoted": false
+ },
+ {
+  "week": "2026-10-24",
+  "idea": "AU Australian pubs and clubs by suburb count",
+  "market": "AU",
+  "seeds": [
+   "how many pubs in fitzroy",
+   "hotels in footscray vic",
+   "oldest pub in ballarat"
+  ],
+  "terms": [
+   "pub",
+   "hotel"
+  ],
+  "why": "Pattern: suburb pages with venue counts, licence types and openings; data from Victorian Liquor Licence register and OpenStreetMap (free open data).",
+  "domains": [
+   {
+    "name": "pubcount.com.au",
+    "free": null
+   },
+   {
+    "name": "barlist.com.au",
+    "free": null
+   },
+   {
+    "name": "pubroster.com",
+    "free": null
+   },
+   {
+    "name": "hotelmap.com",
+    "free": null
+   },
+   {
+    "name": "taplist.com.au",
+    "free": null
+   },
+   {
+    "name": "licensed.com.au",
+    "free": null
+   }
+  ],
+  "breadth": 3,
+  "easyVolume": 420,
+  "medianCpc": null,
+  "opportunity": 108,
+  "top": [
+   {
+    "keyword": "oops i bought a pub how many episodes",
+    "volume": 170,
+    "kd": 0
+   },
+   {
+    "keyword": "what is the oldest pub in australia",
+    "volume": 140,
+    "kd": 1
+   },
+   {
+    "keyword": "where is the pub with no beer",
+    "volume": 110,
+    "kd": 0
+   }
+  ],
+  "promoted": false
  }
 ]
