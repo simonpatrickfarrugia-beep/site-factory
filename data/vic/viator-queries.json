@@ -1,0 +1,121 @@
+{
+ "_note": "What to look up on Viator. daytrips: keyed by the day trip's town slug; attractions: keyed by the exact place name on Vic Tours. 'must' = words a product title must contain (any one), so unrelated tours never show.",
+ "daytrips": {
+  "torquay": {
+   "q": "Great Ocean Road day tour from Melbourne",
+   "must": [
+    "great ocean road",
+    "twelve apostles",
+    "12 apostles"
+   ]
+  },
+  "phillip-island": {
+   "q": "Phillip Island penguin parade tour from Melbourne",
+   "must": [
+    "phillip island",
+    "penguin"
+   ]
+  },
+  "dromana": {
+   "q": "Mornington Peninsula day tour from Melbourne",
+   "must": [
+    "mornington peninsula",
+    "peninsula hot springs"
+   ]
+  },
+  "sorrento": {
+   "q": "Mornington Peninsula day tour from Melbourne",
+   "must": [
+    "mornington peninsula",
+    "sorrento"
+   ]
+  },
+  "mornington": {
+   "q": "Mornington Peninsula day tour from Melbourne",
+   "must": [
+    "mornington peninsula"
+   ]
+  },
+  "healesville": {
+   "q": "Yarra Valley tour from Melbourne",
+   "must": [
+    "yarra valley",
+    "healesville"
+   ]
+  },
+  "warburton": {
+   "q": "Yarra Valley Dandenong Ranges tour from Melbourne",
+   "must": [
+    "yarra valley",
+    "dandenong"
+   ]
+  },
+  "ballarat": {
+   "q": "Ballarat Sovereign Hill tour from Melbourne",
+   "must": [
+    "ballarat",
+    "sovereign hill"
+   ]
+  },
+  "daylesford": {
+   "q": "Daylesford Hepburn Springs tour from Melbourne",
+   "must": [
+    "daylesford",
+    "hepburn"
+   ]
+  },
+  "bendigo": {
+   "q": "Bendigo tour from Melbourne",
+   "must": [
+    "bendigo"
+   ]
+  },
+  "castlemaine": {
+   "q": "Goldfields tour from Melbourne",
+   "must": [
+    "castlemaine",
+    "goldfields"
+   ]
+  },
+  "geelong": {
+   "q": "Geelong Bellarine tour",
+   "must": [
+    "geelong",
+    "bellarine"
+   ]
+  }
+ },
+ "attractions": {
+  "Puffing Billy Railway": {
+   "q": "Puffing Billy Railway",
+   "must": [
+    "puffing billy"
+   ]
+  },
+  "Penguin Parade": {
+   "q": "Penguin Parade Phillip Island",
+   "must": [
+    "penguin parade",
+    "penguin"
+   ]
+  },
+  "Healesville Sanctuary": {
+   "q": "Healesville Sanctuary",
+   "must": [
+    "healesville sanctuary"
+   ]
+  },
+  "Sovereign Hill": {
+   "q": "Sovereign Hill Ballarat",
+   "must": [
+    "sovereign hill"
+   ]
+  },
+  "Arthurs Seat Lookout": {
+   "q": "Arthurs Seat Eagle gondola",
+   "must": [
+    "arthurs seat"
+   ]
+  }
+ }
+}

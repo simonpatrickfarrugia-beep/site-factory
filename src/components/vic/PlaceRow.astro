@@ -1,9 +1,11 @@
 ---
 import { TYPE_LABEL, address, cuisine, mapUrl, phone, prettyHours, website, type Place } from '../../../brands/vic/model';
 import PhotoFig from './Photo.astro';
+import viator from '../../../data/vic/viator.json';
 interface Props { place: Place; photo?: any; townName?: string; townSlug?: string }
 const { place: p, photo = null, townName, townSlug } = Astro.props;
 const t = p.tags;
+const tix = (viator.attractions as Record<string, { url: string; from: number | null }>)[p.name] ?? null;
 const kind = [TYPE_LABEL[p.type] ?? p.type, cuisine(t.cuisine), t.stars ? `${t.stars}★` : null].filter(Boolean).join(', ');
 const addr = address(t);
 const hours = prettyHours(t.opening_hours);
@@ -28,11 +30,13 @@ const flags = [
   {flags.length > 0 && <p class="place__flags">{flags.join(', ')}</p>}
   <p class="place__links">
     {site && <a href={site} rel="nofollow noopener" target="_blank" data-cta="website">Website</a>}
+    {tix && <a class="place__tix" href={tix.url} rel="sponsored noopener" target="_blank" data-cta="book_tour">Tickets on Viator{tix.from ? ` (from A$${tix.from})` : ''}</a>}
     <a href={mapUrl(p)} rel="nofollow noopener" target="_blank" data-cta="map">Map</a>
     {tel && <a href={`tel:${tel.replace(/[^+\d]/g, '')}`} data-cta="call">Call</a>}
   </p>
 </li>
 <style>
+  .place__tix { font-weight: 700; }
   .place { padding: 0.9rem 0; border-top: 1px solid var(--line); list-style: none; overflow: hidden; }
   .place__name { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; line-height: 1.2; }
   .place__kind { margin: 0.1rem 0 0.25rem; font-family: var(--font-display); font-size: 0.92rem; color: var(--muted); }

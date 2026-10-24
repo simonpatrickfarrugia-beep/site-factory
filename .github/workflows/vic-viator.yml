@@ -1,0 +1,27 @@
+# Vic Tours: match day trips and ticketed attractions to real Viator products (weekly, Mondays 06:10 Melbourne).
+# Skips quietly until the VIATOR_API_KEY secret exists. Run on demand: scripts/claude/_dispatch.sh vic-viator.yml viator
+name: vic-viator
+on:
+  schedule:
+    - cron: '10 19 * * 0'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: vic-viator
+jobs:
+  match:
+    runs-on: ubuntu-24.04  # pinned: ubuntu-latest moved to 26.04 in Oct 2026 and broke the Playwright install
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - name: Match Viator products
+        env:
+          VIATOR_API_KEY: ${{ secrets.VIATOR_API_KEY }}
+        run: python3 scripts/vic/viator_match.py
+      - name: Commit
+        run: |
+          git config user.name "Vic Tours Viator" && git config user.email "pipeline@victours.com.au"
+          git add data/vic/viator.json
+          git diff --cached --quiet && exit 0
+          git commit -qm "Vic Tours: Viator products refreshed"
+          for i in 1 2 3; do git pull -q --rebase && git push -q && exit 0; sleep 5; done; exit 1
