@@ -499,6 +499,26 @@
    "link": "https://github.com/simonpatrickfarrugia-beep/site-factory/blob/main/data/shortlisted/pages.json",
    "done": true,
    "doneAt": "2026-10-23"
+  },
+  {
+   "id": "ta-dns",
+   "kind": "do",
+   "sprint": false,
+   "mins": 5,
+   "what": "Trade Admin: point tradeadmin.com.au's nameservers (GoDaddy) to Cloudflare",
+   "why": "The site can't go live on its own domain until Cloudflare manages it",
+   "link": "https://dash.cloudflare.com",
+   "done": false
+  },
+  {
+   "id": "ta-import",
+   "kind": "do",
+   "sprint": false,
+   "mins": 5,
+   "what": "Cloudflare → Workers & Pages → Create → Import repository → site-factory. Name: trade-admin. Build command: BRAND=trade-admin npm run build. Deploy command: npx wrangler deploy --config brands/trade-admin/wrangler.jsonc",
+   "why": "Puts the Trade Admin preview online so Claude can attach the domain and launch it",
+   "link": "https://dash.cloudflare.com",
+   "done": false
   }
  ],
  "notes": [
