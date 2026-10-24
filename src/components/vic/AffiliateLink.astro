@@ -10,7 +10,9 @@ let href: string | null = null;
 if (aff?.enabled && aff.template) {
   const q = encodeURIComponent(`${place}, Victoria, Australia`);
   const target = aff.target ? aff.target.replace('{q}', q) : '';
-  href = aff.template.replace('{q}', q).replace('{url}', encodeURIComponent(target));
+  // {c} = campaign label per place (e.g. victours-ballarat), so partner reports show which page earned the booking.
+  const c = 'victours-' + place.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  href = aff.template.replace('{q}', q).replace('{url}', encodeURIComponent(target)).replace('{c}', c);
 }
 ---
 {href && (

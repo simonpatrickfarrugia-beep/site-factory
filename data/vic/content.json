@@ -788,10 +788,10 @@
    "target": "https://www.booking.com/searchresults.html?ss={q}"
   },
   "tours": {
-   "enabled": false,
+   "enabled": true,
    "label": "Find tours and activities",
    "partner": "Viator",
-   "template": ""
+   "template": "https://www.viator.com/searchResults/all?text={q}&pid=P00327691&mcid=42383&medium=link&medium_version=selector&campaign={c}"
   }
  },
  "regions": [
