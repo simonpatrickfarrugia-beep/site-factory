@@ -3,6 +3,7 @@
 import RoadSign from '../../components/vic/RoadSign.astro';
 import AffiliateLink from '../../components/vic/AffiliateLink.astro';
 import Signup from '../../components/vic/Signup.astro';
+import viator from '../../../data/vic/viator.json';
 interface PlaceView { name: string; kind: string; address: string | null; hours: string | null; website: string | null; map: string; dist: string | null }
 interface StepView { when: string; text: string; place: PlaceView | null }
 interface Props {
@@ -14,6 +15,11 @@ interface Props {
   affiliates?: Record<string, any> | null; showTours: boolean; showStay?: boolean; root?: { href: string; label: string };
 }
 const { title, sub, intro, town, days, swaps, gettingThere, tips, related, hub, affiliates = null, showTours, showStay = true, root = { href: '/weekends', label: 'Weekend plans' } } = Astro.props;
+type Tour = { title: string; url: string; from: number | null; mins: number | null };
+const tix = viator.attractions as Record<string, Tour>;
+const isDayTrip = root.href === '/day-trips';
+const tours = isDayTrip ? ((viator.daytrips as Record<string, Tour[]>)[town.slug] ?? []) : [];
+const hrs = (m: number | null) => (m ? (m >= 90 ? `${Math.round(m / 30) / 2} hours` : `${m} min`) : null);
 ---
 <div class="wrap town bundle">
   <p class="crumb"><a href={root.href}>{root.label}</a>{hub.href !== root.href && <> · <a href={hub.href}>{hub.label}</a></>}</p>
@@ -38,6 +44,7 @@ const { title, sub, intro, town, days, swaps, gettingThere, tips, related, hub, 
                   {s.place.hours && <span>{s.place.hours}</span>}
                   {s.place.website && <a href={s.place.website} rel="nofollow noopener" target="_blank" data-cta="website">Website</a>}
                   <a href={s.place.map} rel="nofollow noopener" target="_blank" data-cta="map">Map</a>
+                  {tix[s.place.name] && <a class="bundle-tix" href={tix[s.place.name].url} rel="sponsored noopener" target="_blank" data-cta="book_tour">Tickets on Viator{tix[s.place.name].from ? ` (from A$${tix[s.place.name].from})` : ''}</a>}
                 </span>
               )}
             </li>
@@ -46,6 +53,19 @@ const { title, sub, intro, town, days, swaps, gettingThere, tips, related, hub, 
       </li>
     ))}
   </ol>
+
+  {tours.length > 0 && (
+    <section class="picks bundle-guided" aria-labelledby="guided">
+      <h2 id="guided" class="bundle-h2">Rather not drive?</h2>
+      <p>Guided day tours from Melbourne that cover this trip, with transport included:</p>
+      <ul class="bundle-tours">
+        {tours.map((t) => (
+          <li><a href={t.url} rel="sponsored noopener" target="_blank" data-cta="book_tour">{t.title}</a>{[hrs(t.mins), t.from ? `from A$${t.from}` : null].filter(Boolean).length > 0 && <span class="count"> · {[hrs(t.mins), t.from ? `from A$${t.from}` : null].filter(Boolean).join(' · ')}</span>}</li>
+        ))}
+      </ul>
+      <p class="count">On Viator. We may earn a commission if you book, at no extra cost to you. Prices checked {viator.checkedAt}; check the latest on Viator.</p>
+    </section>
+  )}
 
   <section class="picks bundle-book" aria-labelledby="book">
     <h2 id="book" class="bundle-h2">Book it</h2>
@@ -96,6 +116,9 @@ const { title, sub, intro, town, days, swaps, gettingThere, tips, related, hub, 
   .bundle-step { display: grid; gap: 0.15rem; }
   .bundle-step__links { display: flex; flex-wrap: wrap; gap: 0.25rem 0.9rem; font-size: 0.9rem; color: var(--muted); }
   .bundle-step__links a { color: var(--paper); }
+  .bundle-tix { color: var(--sign-green) !important; font-weight: 700; }
+  .bundle-tours { padding-left: 1.2rem; display: grid; gap: 0.5rem; }
+  .bundle-tours a { font-weight: 700; color: var(--sign-green); }
   .bundle-h2 { font-size: 1.45rem; margin: var(--space-5) 0 var(--space-2); }
   .bundle-book .bundle-h2 { margin-top: 0; }
   .bundle-book { margin-top: var(--space-4); }
