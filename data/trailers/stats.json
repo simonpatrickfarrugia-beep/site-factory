@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-24T21:00:11.729Z",
+ "generatedAt": "2026-10-25T21:00:10.681Z",
  "period": {
-  "start": "2026-09-26",
-  "end": "2026-10-23"
+  "start": "2026-09-27",
+  "end": "2026-10-24"
  },
  "gscPeriod": {
-  "start": "2026-09-24",
-  "end": "2026-10-21"
+  "start": "2026-09-25",
+  "end": "2026-10-22"
  },
  "sources": {
   "ga4": true,
@@ -15,18 +15,13 @@
  },
  "totals": {
   "views": 249,
-  "prevViews": 92,
-  "users": 176,
+  "prevViews": 93,
+  "users": 177,
   "cta": {},
   "gscClicks": 7,
-  "gscImpressions": 665
+  "gscImpressions": 667
  },
  "daily": [
-  {
-   "date": "2026-09-26",
-   "views": 1,
-   "cta": 0
-  },
   {
    "date": "2026-09-27",
    "views": 10,
@@ -156,14 +151,19 @@
    "date": "2026-10-23",
    "views": 3,
    "cta": 0
+  },
+  {
+   "date": "2026-10-24",
+   "views": 1,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
    "views": 101,
-   "prevViews": 66,
-   "users": 48,
+   "prevViews": 67,
+   "users": 49,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 0,
@@ -380,6 +380,17 @@
    "topQuery": "true lies trailer"
   },
   {
+   "path": "/movies/men-in-black-1997",
+   "views": 2,
+   "prevViews": 0,
+   "users": 2,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 41.5,
+   "topQuery": "men in black trailer"
+  },
+  {
    "path": "/movies/saving-private-ryan-1998",
    "views": 2,
    "prevViews": 0,
@@ -400,17 +411,6 @@
    "gscImpressions": 6,
    "gscPosition": 33,
    "topQuery": "jurassic park ii trailer"
-  },
-  {
-   "path": "/movies/men-in-black-1997",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 38.6,
-   "topQuery": "men in black trailer"
   },
   {
    "path": "/movies/babel-2006",
@@ -639,8 +639,8 @@
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 31,
-   "gscPosition": 28,
+   "gscImpressions": 32,
+   "gscPosition": 29.2,
    "topQuery": "the sixth sense trailer"
   },
   {
