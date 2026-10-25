@@ -3,13 +3,30 @@
   "title": "Free admin tools for Australian tradies",
   "lede": "Make a proper quote or invoice in two minutes, on your phone, for free. No sign-up, nothing to install, and your details stay on your device.",
   "tools": [
-   { "href": "/quote-builder", "t": "Quote builder", "d": "Line items, GST done for you, a \"valid until\" date and your terms. Save it as a PDF and send it." },
-   { "href": "/invoice-builder", "t": "Invoice builder", "d": "A tax invoice the ATO will accept: ABN, GST shown properly, due date and how to pay you." }
+   {
+    "href": "/quote-builder",
+    "t": "Quote builder",
+    "d": "Line items, GST done for you, a \"valid until\" date and your terms. Save it as a PDF and send it."
+   },
+   {
+    "href": "/invoice-builder",
+    "t": "Invoice builder",
+    "d": "A tax invoice the ATO will accept: ABN, GST shown properly, due date and how to pay you."
+   }
   ],
   "why": [
-   { "t": "GST worked out for you", "d": "Tick whether you're registered for GST and whether your prices include it. The totals and wording follow ATO rules." },
-   { "t": "Quote to invoice in one tap", "d": "Job done? Turn the quote straight into an invoice without typing it all again." },
-   { "t": "Private by default", "d": "Everything runs in your browser. We never see your customers, prices or bank details." }
+   {
+    "t": "GST worked out for you",
+    "d": "Tick whether you're registered for GST and whether your prices include it. The totals and wording follow ATO rules."
+   },
+   {
+    "t": "Quote to invoice in one tap",
+    "d": "Job done? Turn the quote straight into an invoice without typing it all again."
+   },
+   {
+    "t": "Private by default",
+    "d": "Everything runs in your browser. We never see your customers, prices or bank details."
+   }
   ]
  },
  "quote-builder": {
@@ -18,11 +35,26 @@
   "description": "Make a professional quote in two minutes: line items, GST worked out, valid-until date and your terms. Free, no sign-up, save as PDF. Built for Australian tradies.",
   "lede": "Fill it in on the left, watch the quote build on the right, then save it as a PDF and send it. Free, no account, and nothing leaves your device.",
   "faq": [
-   { "q": "What should a tradie quote include?", "a": "Your business name, ABN and contact details; the customer's name and site address; a clear list of work and materials with prices; whether prices include GST; how long the quote is valid; and your key terms, such as deposits, payment timing and what isn't included. The builder has a field for each." },
-   { "q": "Is a quote legally binding?", "a": "A quote is usually treated as a fixed offer that becomes a contract once the customer accepts it, while an estimate is a rough guide. If the job might change, say so in your terms and put variations in writing. For domestic building work in Victoria there are extra contract rules above certain values, so check with the Victorian Building Authority." },
-   { "q": "Do I have to include GST in a quote?", "a": "If you're registered for GST, be clear whether your prices include it. Consumer law expects prices shown to consumers to include GST, so for home owners it's safest to quote GST-inclusive totals. If you're not registered, don't add GST." },
-   { "q": "Can I turn the quote into an invoice?", "a": "Yes. When the job's done, tap \"Turn this quote into an invoice\" and everything carries across to the invoice builder." },
-   { "q": "Do you keep my quotes?", "a": "No. The builder runs entirely in your browser. If you tick \"remember my business details\", they're saved on this device only, so you don't retype them next time." }
+   {
+    "q": "What should a tradie quote include?",
+    "a": "Your business name, ABN and contact details; the customer's name and site address; a clear list of work and materials with prices; whether prices include GST; how long the quote is valid; and your key terms, such as deposits, payment timing and what isn't included. The builder has a field for each."
+   },
+   {
+    "q": "Is a quote legally binding?",
+    "a": "A quote is usually treated as a fixed offer that becomes a contract once the customer accepts it, while an estimate is a rough guide. If the job might change, say so in your terms and put variations in writing. For domestic building work in Victoria there are extra contract rules above certain values, so check with the Victorian Building Authority."
+   },
+   {
+    "q": "Do I have to include GST in a quote?",
+    "a": "If you're registered for GST, be clear whether your prices include it. Consumer law expects prices shown to consumers to include GST, so for home owners it's safest to quote GST-inclusive totals. If you're not registered, don't add GST."
+   },
+   {
+    "q": "Can I turn the quote into an invoice?",
+    "a": "Yes. When the job's done, tap \"Turn this quote into an invoice\" and everything carries across to the invoice builder."
+   },
+   {
+    "q": "Do you keep my quotes?",
+    "a": "No. The builder runs entirely in your browser. If you tick \"remember my business details\", they're saved on this device only, so you don't retype them next time."
+   }
   ]
  },
  "invoice-builder": {
@@ -31,11 +63,26 @@
   "description": "Make an ATO-compliant tax invoice in two minutes: ABN, GST shown correctly, due date and payment details. Free, no sign-up, save as PDF. Built for Australian tradies.",
   "lede": "A proper invoice that gets you paid: your ABN, GST shown the way the ATO wants, a due date and how to pay you. Free, no account, and nothing leaves your device.",
   "faq": [
-   { "q": "What does a tax invoice need to show?", "a": "Under the ATO's rules: that it's a tax invoice, your identity and ABN, the date, a brief description of what you sold with quantity and price, the GST amount (or \"Total price includes GST\" when GST is exactly one-eleventh of the total), and how much of each sale is taxable. For sales of $1,000 or more it must also show the buyer's identity or ABN. The builder warns you if something's missing." },
-   { "q": "I'm not registered for GST. What do I send?", "a": "Send an invoice, not a tax invoice, and don't charge GST. Choose \"Not registered for GST\" in the builder and it titles the document \"Invoice\" with no GST lines. You still need to quote your ABN, or the customer may have to withhold tax from the payment." },
-   { "q": "When do I have to give a tax invoice?", "a": "If a GST-registered customer asks for one, you must give it within 28 days, unless the sale is $82.50 or less including GST." },
-   { "q": "Are my bank details safe?", "a": "They never leave your phone or computer. The builder runs in your browser and doesn't send anything to us." },
-   { "q": "Is this a replacement for job management software?", "a": "For a handful of jobs a month, a good template is plenty. Once you're chasing unpaid invoices, scheduling a team or re-typing everything into Xero, a job app usually pays for itself. See our price comparison of the main ones." }
+   {
+    "q": "What does a tax invoice need to show?",
+    "a": "Under the ATO's rules: that it's a tax invoice, your identity and ABN, the date, a brief description of what you sold with quantity and price, the GST amount (or \"Total price includes GST\" when GST is exactly one-eleventh of the total), and how much of each sale is taxable. For sales of $1,000 or more it must also show the buyer's identity or ABN. The builder warns you if something's missing."
+   },
+   {
+    "q": "I'm not registered for GST. What do I send?",
+    "a": "Send an invoice, not a tax invoice, and don't charge GST. Choose \"Not registered for GST\" in the builder and it titles the document \"Invoice\" with no GST lines. You still need to quote your ABN, or the customer may have to withhold tax from the payment."
+   },
+   {
+    "q": "When do I have to give a tax invoice?",
+    "a": "If a GST-registered customer asks for one, you must give it within 28 days, unless the sale is $82.50 or less including GST."
+   },
+   {
+    "q": "Are my bank details safe?",
+    "a": "They never leave your phone or computer. The builder runs in your browser and doesn't send anything to us."
+   },
+   {
+    "q": "Is this a replacement for job management software?",
+    "a": "For a handful of jobs a month, a good template is plenty. Once you're chasing unpaid invoices, scheduling a team or re-typing everything into Xero, a job app usually pays for itself. See our price comparison of the main ones."
+   }
   ]
  },
  "job-management-software": {
@@ -97,6 +144,15 @@
    "Analytics: we may use Google Analytics to see which pages are useful (pages viewed, approximate location, device and the links people click). It uses cookies and doesn't identify you. We don't sell data.",
    "Referral links: if you follow a link to a software company, its own privacy policy applies on its site, and it may use cookies to record that you came from us.",
    "Questions or requests: hello@tradeadmin.com.au. Independent Media Network Pty Ltd, Melbourne, Victoria."
+  ]
+ },
+ "contact": {
+  "title": "Contact",
+  "description": "How to reach Trade Admin.",
+  "paragraphs": [
+   "Questions, a mistake to fix, or a feature you'd like in the quote or invoice builder? Email hello@tradeadmin.com.au and we'll get back to you, usually within a couple of working days.",
+   "Software companies: if a price or plan on our comparison pages is out of date, email us a link to your current pricing page and we'll update it.",
+   "Trade Admin is run by Independent Media Network Pty Ltd, Melbourne, Victoria."
   ]
  }
 }

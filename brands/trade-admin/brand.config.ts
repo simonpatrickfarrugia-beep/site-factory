@@ -4,7 +4,7 @@ export default defineBrand({
   slug: 'trade-admin',
   name: 'Trade Admin',
   domain: 'tradeadmin.com.au',
-  launched: false, // preview only until the domain points at Cloudflare and Simon OKs it
+  launched: true, // live 25 Oct 2026
 
   theme: 'workshop',
   // Carpenter's-pencil graphite on docket-book paper; safety orange only for the one thing to do next.
@@ -22,6 +22,7 @@ export default defineBrand({
   ],
   footer: [
     { label: 'About', href: '/about' },
+    { label: 'Contact', href: '/contact' },
     { label: 'How we make money', href: '/how-we-make-money' },
     { label: 'Privacy', href: '/privacy-policy' },
   ],

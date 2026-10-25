@@ -16,6 +16,7 @@ export interface Pages {
   'tradify-pricing': ComparePage;
   'fergus-pricing': ComparePage;
   about: TextPage;
+  contact: TextPage;
   'how-we-make-money': TextPage;
   'privacy-policy': TextPage;
 }

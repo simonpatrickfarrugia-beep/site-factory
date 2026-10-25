@@ -74,7 +74,7 @@ export function routes(): Route[] {
     });
   }
 
-  for (const slug of ['about', 'how-we-make-money', 'privacy-policy'] as const) {
+  for (const slug of ['about', 'contact', 'how-we-make-money', 'privacy-policy'] as const) {
     const p = pages[slug];
     out.push({
       path: slug,
