@@ -243,7 +243,7 @@
    "revenueUsd": [
     110,
     769,
-    3025
+    3028
    ],
    "bestPerSaleUsd": 1.7,
    "programs": [
@@ -601,7 +601,7 @@
    "revenueUsd": [
     22,
     176,
-    765
+    767
    ],
    "bestPerSaleUsd": 1.43,
    "programs": [
@@ -1109,8 +1109,8 @@
    ],
    "revenueUsd": [
     10,
-    79,
-    345
+    80,
+    346
    ],
    "bestPerSaleUsd": 1.4,
    "programs": [
@@ -1650,8 +1650,8 @@
    ],
    "revenueUsd": [
     60,
-    463,
-    1984
+    464,
+    1989
    ],
    "bestPerSaleUsd": 1.17,
    "programs": [
@@ -2098,8 +2098,8 @@
    ],
    "revenueUsd": [
     198,
-    1456,
-    5984
+    1458,
+    5995
    ],
    "bestPerSaleUsd": 1.7,
    "programs": [
@@ -2569,8 +2569,8 @@
    ],
    "revenueUsd": [
     312,
-    2712,
-    12587
+    2721,
+    12634
    ],
    "bestPerSaleUsd": 9,
    "programs": [
@@ -2607,7 +2607,7 @@
      "commission": "~8% of booking value",
      "approval": "easy",
      "requirements": "Website with travel content",
-     "status": "not applied",
+     "status": "approved",
      "verified": true
     },
     {
@@ -2616,7 +2616,7 @@
      "commission": "~8% baseline, tiered up for volume",
      "approval": "easy",
      "requirements": "Website with travel content",
-     "status": "not applied",
+     "status": "approved",
      "verified": true
     },
     {
@@ -2643,7 +2643,7 @@
      "commission": "2–5% per booking",
      "approval": "easy",
      "requirements": "Application via CJ with site + audience details; $50 payout threshold",
-     "status": "not applied",
+     "status": "approved",
      "verified": true
     }
    ]
@@ -2955,9 +2955,9 @@
     549040
    ],
    "revenueUsd": [
-    1503,
-    14004,
-    67669
+    1509,
+    14063,
+    67970
    ],
    "bestPerSaleUsd": 18.33,
    "programs": [
@@ -3488,7 +3488,7 @@
    "revenueUsd": [
     11,
     85,
-    370
+    371
    ],
    "bestPerSaleUsd": 1.43,
    "programs": [
@@ -3967,7 +3967,7 @@
    "revenueUsd": [
     6,
     53,
-    259
+    260
    ],
    "bestPerSaleUsd": 11.33,
    "programs": [
@@ -4013,7 +4013,7 @@
      "commission": "~8% of booking value",
      "approval": "easy",
      "requirements": "Website with travel content",
-     "status": "not applied",
+     "status": "approved",
      "verified": true
     },
     {
@@ -4022,7 +4022,7 @@
      "commission": "~8% baseline, tiered up for volume",
      "approval": "easy",
      "requirements": "Website with travel content",
-     "status": "not applied",
+     "status": "approved",
      "verified": true
     },
     {
@@ -4031,7 +4031,7 @@
      "commission": "2–5% per booking",
      "approval": "easy",
      "requirements": "Application via CJ with site + audience details; $50 payout threshold",
-     "status": "not applied",
+     "status": "approved",
      "verified": true
     },
     {
@@ -4508,8 +4508,8 @@
    ],
    "revenueUsd": [
     16,
-    144,
-    675
+    145,
+    677
    ],
    "bestPerSaleUsd": 11.33,
    "programs": [
@@ -4555,7 +4555,7 @@
      "commission": "~8% of booking value",
      "approval": "easy",
      "requirements": "Website with travel content",
-     "status": "not applied",
+     "status": "approved",
      "verified": true
     },
     {
@@ -4564,7 +4564,7 @@
      "commission": "~8% baseline, tiered up for volume",
      "approval": "easy",
      "requirements": "Website with travel content",
-     "status": "not applied",
+     "status": "approved",
      "verified": true
     },
     {
@@ -4573,7 +4573,7 @@
      "commission": "2–5% per booking",
      "approval": "easy",
      "requirements": "Application via CJ with site + audience details; $50 payout threshold",
-     "status": "not applied",
+     "status": "approved",
      "verified": true
     },
     {
@@ -5110,7 +5110,7 @@
      "commission": "~8% of booking value",
      "approval": "easy",
      "requirements": "Website with travel content",
-     "status": "not applied",
+     "status": "approved",
      "verified": true
     },
     {
@@ -5119,7 +5119,7 @@
      "commission": "~8% baseline, tiered up for volume",
      "approval": "easy",
      "requirements": "Website with travel content",
-     "status": "not applied",
+     "status": "approved",
      "verified": true
     },
     {
@@ -5128,7 +5128,7 @@
      "commission": "2–5% per booking",
      "approval": "easy",
      "requirements": "Application via CJ with site + audience details; $50 payout threshold",
-     "status": "not applied",
+     "status": "approved",
      "verified": true
     },
     {
@@ -5670,7 +5670,7 @@
    "revenueUsd": [
     2,
     16,
-    68
+    69
    ],
    "bestPerSaleUsd": 3.5,
    "programs": [
@@ -6264,7 +6264,145 @@
    "name": "United States"
   },
   "addedAt": "2026-10-23T21:57:24.068Z",
-  "status": "new"
+  "status": "scored",
+  "score": {
+   "overall": 33,
+   "demand": 0,
+   "money": 0,
+   "ease": 97,
+   "fit": 42,
+   "totalVolume": 30,
+   "keywords": 0,
+   "medianCpc": null,
+   "avgDifficulty": 3,
+   "easyWins": [],
+   "topKeywords": [
+    {
+     "keyword": "hurricanes that hit florida by year",
+     "volume": 10,
+     "kd": null,
+     "cpc": null
+    },
+    {
+     "keyword": "how many hurricanes has louisiana had",
+     "volume": 10,
+     "kd": null,
+     "cpc": null
+    },
+    {
+     "keyword": "strongest hurricane to hit north carolina",
+     "volume": 10,
+     "kd": 3,
+     "cpc": null
+    }
+   ],
+   "judgement": {
+    "fit": 42,
+    "verdict": "The data is genuinely usable: NOAA IBTrACS is free, public-domain, and carries wind and pressure per storm, so hundreds of real state pages are feasible. But the monetisation is weak for history content, and the traffic numbers you have don't agree with each other (the three top queries show 10/mo, while the 4.08M/mo total implies much higher volumes), so verify demand before building.",
+    "angle": "stormyears.com as a state-by-state landfall archive: one page per coastal state listing every IBTrACS storm that made landfall there, with per-storm pages for wind, pressure and year, and a 'strongest storm' page per state. Keep it a data reference, not a blog, and leave insurance intent to a separate page or site.",
+    "dataSources": [
+     "NOAA IBTrACS (International Best Track Archive for Climate Stewardship), free and public domain, includes wind speed, central pressure and track points",
+     "US Census TIGER/Line state boundary shapefiles (public domain), used to assign landfall points to states",
+     "NOAA NHC annual season reports and tropical cyclone reports (free, public domain) for narrative fact-checking"
+    ],
+    "monetisation": [
+     "Display ads via Ezoic or AdSense (low RPM for history/weather content; Mediavine needs about 50k sessions/month)",
+     "Amazon Associates for hurricane prep products (generators, flood barriers, go-bags); low conversion but cheap to add",
+     "Lead-gen for homeowners insurance via EverQuote or MediaAlpha, only on separate intent pages (e.g. 'hurricane insurance by state'), since history queries rarely convert and insurance is near-YMYL",
+     "Impact-network prep brands as a secondary option"
+    ],
+    "pageTypes": [
+     "/[state]/hurricanes-that-hit/[year] (storms making landfall in that state that year)",
+     "/[state]/strongest-hurricane/ (top storms by wind or pressure for the state)",
+     "/[state]/hurricanes/[storm-name-year] (single-storm page with track map, wind, pressure, landfall date)",
+     "/storms/[name-year] (canonical storm page linking to every affected state)",
+     "/[state]/landfall-count-by-decade/ (count tables for queries like 'how many hurricanes has louisiana had')"
+    ],
+    "risks": [
+     "Search volume is inconsistent: listed queries show 10/mo while the aggregate claims 4M/mo across 8,453 queries, so the demand figure is likely overstated; check with Search Console or a keyword tool before committing",
+     "Thin-content risk: data-only pages with templated AI copy are exactly what Google's scaled-content policies target; each page needs unique analysis, such as comparisons, context or regional impact notes",
+     "Attribution errors: IBTrACS track points near state borders or with multiple landfalls are easy to mis-assign, which damages trust; document the methodology",
+     "Low monetisation ceiling: history and weather queries carry low CPCs, and display RPM will be small per page",
+     "Disaster-adjacent YMYL: pages that touch on storm safety or preparedness need accurate sourcing from NHC/NOAA and clear disclaimers",
+     "Competition from NOAA, NHC, Wikipedia season pages and weather.com archives, which already rank for many storm queries",
+     "Domain fit: landfallmap.com suggests a map product, which needs map tiles and licensing (Mapbox or OpenStreetMap, with attribution), a larger build than a table site"
+    ]
+   },
+   "costUsd": 0.102
+  },
+  "scoredAt": "2026-10-25T18:00:11.376Z",
+  "location": "United States",
+  "error": null,
+  "categories": [
+   "travel-insurance",
+   "books",
+   "movies-tv"
+  ],
+  "money": {
+   "categories": [
+    "travel-insurance",
+    "books",
+    "movies-tv"
+   ],
+   "visits": [
+    0,
+    0,
+    0
+   ],
+   "revenueUsd": [
+    0,
+    0,
+    0
+   ],
+   "bestPerSaleUsd": 3.83,
+   "programs": [
+    {
+     "id": "insurance",
+     "name": "Travel insurance (World Nomads, SafetyWing, Allianz)",
+     "commission": "~10–40%",
+     "approval": "moderate",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "bookshop",
+     "name": "Bookshop.org affiliates",
+     "commission": "check (commonly quoted ~10%)",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": false
+    },
+    {
+     "id": "amazon-us-video",
+     "name": "Amazon Associates US: digital video (Prime Video)",
+     "commission": "5% (digital video); bounties: $3 Prime trial, $5 first Prime Video stream",
+     "approval": "easy",
+     "requirements": "3 qualifying sales within 180 days of joining, or the account is closed",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "amazon-us-books",
+     "name": "Amazon Associates US: physical books",
+     "commission": "4.5%",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "amazon-us-dvd",
+     "name": "Amazon Associates US: DVD and Blu-ray",
+     "commission": "2.5%",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    }
+   ]
+  }
  },
  {
   "idea": "Freshwater fish species by state",
@@ -6279,7 +6417,216 @@
    "name": "United States"
   },
   "addedAt": "2026-10-23T21:57:24.068Z",
-  "status": "new"
+  "status": "scored",
+  "score": {
+   "overall": 28,
+   "demand": 0,
+   "money": 0,
+   "ease": 94,
+   "fit": 22,
+   "totalVolume": 650,
+   "keywords": 3,
+   "medianCpc": 0.03,
+   "avgDifficulty": 6,
+   "easyWins": [],
+   "topKeywords": [
+    {
+     "keyword": "snakehead fish in texas",
+     "volume": 260,
+     "kd": 0,
+     "cpc": null
+    },
+    {
+     "keyword": "freshwater fish in ohio",
+     "volume": 140,
+     "kd": 0,
+     "cpc": 0.03
+    },
+    {
+     "keyword": "what fish live in lake michigan",
+     "volume": 140,
+     "kd": 0,
+     "cpc": null
+    },
+    {
+     "keyword": "invasive fish species in texas",
+     "volume": 40,
+     "kd": 2,
+     "cpc": null
+    },
+    {
+     "keyword": "fresh water fish in ohio",
+     "volume": 20,
+     "kd": 0,
+     "cpc": null
+    },
+    {
+     "keyword": "australian redclaw crayfish in texas",
+     "volume": 10,
+     "kd": 0,
+     "cpc": null
+    },
+    {
+     "keyword": "fresh water fish ohio",
+     "volume": 10,
+     "kd": null,
+     "cpc": null
+    },
+    {
+     "keyword": "lionfish texas",
+     "volume": 10,
+     "kd": 42,
+     "cpc": null
+    },
+    {
+     "keyword": "ohio fresh water fish",
+     "volume": 10,
+     "kd": null,
+     "cpc": null
+    },
+    {
+     "keyword": "ohio freshwater fish species",
+     "volume": 10,
+     "kd": null,
+     "cpc": null
+    }
+   ],
+   "judgement": {
+    "fit": 22,
+    "verdict": "The headline 5.47M/mo figure cannot be reconciled with the listed terms: the largest listed search is 260/mo and most are 10-140/mo, so the real addressable volume looks like a few thousand searches a month at near-zero CPC. The data is public and the pattern is programmatic, but the monetisation ceiling is very low unless the site also captures adjacent fishing intent.",
+    "angle": "fishbystate.com as a state-by-state freshwater fish and invasive species reference: one page per state (/[state]/freshwater-fish/) plus one per species-state pair only where USGS NAS or state agency records exist, with an invasive-species hub (/invasive-fish/[state]/). Skip lakeroster and fishroster, which don't match the pattern. Build only the states and species with verified records and treat it as a 50-state reference, not a 5,000-page farm.",
+    "dataSources": [
+     "USGS Nonindigenous Aquatic Species (NAS) database: public domain US government data, state-level occurrence and status records",
+     "GBIF occurrence API: per-dataset licences, filter to CC0/CC-BY",
+     "State wildlife agency fish lists and regulations pages (check each agency's reuse terms)",
+     "iNaturalist API: observation photos under per-item CC licences, for images with attribution",
+     "Wikidata/Wikipedia: CC0 and CC-BY-SA for species names and descriptions"
+    ],
+    "monetisation": [
+     "Amazon Associates: tackle, aquarium and identification guides, contextual to species pages",
+     "Bass Pro Shops affiliate programme for fishing gear, contextual to state pages",
+     "Display ads only once traffic justifies a network; at this volume, expect them to be marginal",
+     "Do NOT monetise live sales of invasive species (snakehead, lionfish, etc.); many states prohibit possession or sale, so this is a legal and reputational risk"
+    ],
+    "pageTypes": [
+     "/[state]/freshwater-fish/ : hub listing species with verified records in that state, native/introduced status from USGS NAS",
+     "/[species]-in-[state]/ : only where a USGS NAS or GBIF record exists for that pair; otherwise no page",
+     "/invasive-fish/[state]/ : invasive and nonindigenous species with control and reporting info from the state agency",
+     "/species/[species]/ : single species page with range map data, habitat and native status, shared across states"
+    ],
+    "risks": [
+     "Headline volume figures are internally inconsistent; verify the 52858 and 5.47M numbers in a keyword tool before committing",
+     "Search volume is tiny and CPC near zero, so revenue per page is very low",
+     "NatureServe data is licence-restricted for commercial use; obtain permission or exclude it",
+     "FishBase terms are restrictive for commercial reuse; avoid bulk scraping",
+     "Thin-page risk: many state/species pairs will have no data; generating them anyway triggers Google's mass-produced content penalty",
+     "Invasive species content may be read as encouraging harmful releases or sales; include clear reporting and no-release guidance",
+     "Species-level habitat text and regulation details can go stale; they need refresh cycles and clear dating",
+     "Fish regulations and licensing sit near YMYL territory; avoid presenting regulations as authoritative without linking the state agency"
+    ]
+   },
+   "costUsd": 0.103
+  },
+  "scoredAt": "2026-10-25T18:00:11.376Z",
+  "location": "United States",
+  "error": null,
+  "categories": [
+   "outdoors",
+   "books",
+   "travel-tours"
+  ],
+  "money": {
+   "categories": [
+    "outdoors",
+    "books",
+    "travel-tours"
+   ],
+   "visits": [
+    1,
+    3,
+    7
+   ],
+   "revenueUsd": [
+    0,
+    0,
+    0
+   ],
+   "bestPerSaleUsd": 7,
+   "programs": [
+    {
+     "id": "viator",
+     "name": "Viator Partner Program",
+     "commission": "~8% of booking value",
+     "approval": "easy",
+     "requirements": "Website with travel content",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "getyourguide",
+     "name": "GetYourGuide Partner Program",
+     "commission": "~8% baseline, tiered up for volume",
+     "approval": "easy",
+     "requirements": "Website with travel content",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "ruffwear",
+     "name": "Ruffwear (dog gear)",
+     "commission": "~8%",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "rei",
+     "name": "REI",
+     "commission": "5% per sale",
+     "approval": "moderate",
+     "requirements": "Apply via AvantLink with site + audience details; $50 payout threshold",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "klook",
+     "name": "Klook Affiliate",
+     "commission": "2–5% per booking",
+     "approval": "easy",
+     "requirements": "Application via CJ with site + audience details; $50 payout threshold",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "bookshop",
+     "name": "Bookshop.org affiliates",
+     "commission": "check (commonly quoted ~10%)",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": false
+    },
+    {
+     "id": "amazon-us-outdoors",
+     "name": "Amazon Associates US: sports and outdoors",
+     "commission": "3%",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "amazon-us-books",
+     "name": "Amazon Associates US: physical books",
+     "commission": "4.5%",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    }
+   ]
+  }
  },
  {
   "idea": "Rail travel times between NSW stations",
@@ -6294,7 +6641,156 @@
    "name": "Australia"
   },
   "addedAt": "2026-10-23T21:57:24.068Z",
-  "status": "new"
+  "status": "scored",
+  "score": {
+   "overall": 21,
+   "demand": 0,
+   "money": 0,
+   "ease": 50,
+   "fit": 44,
+   "totalVolume": 0,
+   "keywords": 0,
+   "medianCpc": null,
+   "avgDifficulty": null,
+   "easyWins": [],
+   "topKeywords": [],
+   "judgement": {
+    "fit": 44,
+    "verdict": "The data is real and free, and the page pattern can scale, but Google already answers most of these queries with transit cards and Transport NSW's own planner, and rail queries have almost no direct affiliate income. It only works as a utility site monetised through adjacent travel offers, and the 1.37M/mo figure is probably inflated by grouped variants.",
+    "angle": "railhop.com.au as a station-and-route reference: one page per station with first and last services by day type, plus route pages only for station pairs with a direct or single-change service in the GTFS data, not every possible pair. Launch with about 1,000 to 2,000 pages and add travel-adjacent modules (accommodation near each station, tours, car hire) to earn.",
+    "dataSources": [
+     "Transport for NSW Open Data Hub GTFS Static timetable feed (free API key; check the current licence, which is expected to be CC BY 4.0 with attribution)",
+     "GTFS stops.txt and stop_times.txt for station coordinates, stop sequences and first/last departures",
+     "OpenStreetMap or the NSW Spatial Data portal for station and suburb geography, to add local context",
+     "Optional: GTFS-Realtime feed for a live disruption flag, only if the feed's terms allow it"
+    ],
+    "monetisation": [
+     "Travel insurance comparison affiliate links on station and route pages (Australian comparison sites often pay per acquisition; verify rates)",
+     "Booking.com Affiliate Partner Programme and Expedia Partner Solutions for stays near stations",
+     "Klook or GetYourGuide affiliate links for day trips from each station",
+     "Car hire affiliates (Discover Cars, or Rentalcars via Awin) on long-distance route pages",
+     "Display ads only after traffic is proven; travel RPM is modest",
+     "Do not expect Trainline or Opal-style rail booking commissions; I'm not aware of a usable AU rail-ticket affiliate, so verify before planning around one"
+    ],
+    "pageTypes": [
+     "/station/[station-slug]/ with first and last services by weekday, Saturday and Sunday, plus stop count on each line",
+     "/[origin]-to-[destination]-by-train/ only for pairs with a direct or single-change service, showing journey time range, stop count, first and last service, and change points",
+     "/line/[line-name]/ timetable hub pages linking to all stations on the line",
+     "/[station]-accommodation/ or /[station]-day-trips/ monetisation pages, only where there is real local content",
+     "Avoid bulk /[city]-to-[city]/ pages that repeat the same table with different names"
+    ],
+    "risks": [
+     "Google's transit cards and Transport NSW's planner dominate the query, so click-through may be low even with good data",
+     "Scheduled journey times are not actual journey times; disruptions, engineering works and weekend variations can make pages wrong, which damages trust",
+     "Thin-content risk: a page that is only a timetable table with templated text may be treated as low value, so each page needs station-specific context",
+     "Search volume figures from grouped Google Ads keyword data may overstate the real addressable traffic",
+     "Licence and attribution compliance for TfNSW data; do not imply endorsement or use the TfNSW or Opal branding in a misleading way",
+     "Affiliate income per visitor is likely low for transit queries, so the site needs substantial traffic to pay off",
+     "Feed format changes or API key policy changes could break the whole codebase at once"
+    ]
+   },
+   "costUsd": 0.09
+  },
+  "scoredAt": "2026-10-25T18:00:11.376Z",
+  "location": "Australia",
+  "error": null,
+  "categories": [
+   "travel-stays",
+   "travel-tours",
+   "travel-car"
+  ],
+  "money": {
+   "categories": [
+    "travel-stays",
+    "travel-tours",
+    "travel-car"
+   ],
+   "visits": [
+    0,
+    0,
+    0
+   ],
+   "revenueUsd": [
+    0,
+    0,
+    0
+   ],
+   "bestPerSaleUsd": 11.33,
+   "programs": [
+    {
+     "id": "discovercars",
+     "name": "Discover Cars / Rentalcars (car hire)",
+     "commission": "70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire)",
+     "approval": "easy",
+     "requirements": "Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire.",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "booking",
+     "name": "Booking.com Affiliate Partner",
+     "commission": "Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay)",
+     "approval": "moderate",
+     "requirements": "Content site about travel; tax form + payment details (W-8BEN-E for AU companies)",
+     "status": "applying",
+     "verified": true
+    },
+    {
+     "id": "hotelgroups",
+     "name": "Hotel groups (Marriott, Hilton, IHG)",
+     "commission": "~3–7%",
+     "approval": "moderate",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "expedia",
+     "name": "Expedia Group Affiliate",
+     "commission": "~2–6% by product",
+     "approval": "moderate",
+     "requirements": "Travel content site",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "viator",
+     "name": "Viator Partner Program",
+     "commission": "~8% of booking value",
+     "approval": "easy",
+     "requirements": "Website with travel content",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "getyourguide",
+     "name": "GetYourGuide Partner Program",
+     "commission": "~8% baseline, tiered up for volume",
+     "approval": "easy",
+     "requirements": "Website with travel content",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "klook",
+     "name": "Klook Affiliate",
+     "commission": "2–5% per booking",
+     "approval": "easy",
+     "requirements": "Application via CJ with site + audience details; $50 payout threshold",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "commissionfactory",
+     "name": "Commission Factory (Australian network)",
+     "commission": "varies by brand",
+     "approval": "easy",
+     "requirements": "Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network.",
+     "status": "not applied",
+     "verified": true
+    }
+   ]
+  }
  },
  {
   "idea": "US school district enrollment by county",
@@ -6309,7 +6805,133 @@
    "name": "United States"
   },
   "addedAt": "2026-10-24T18:00:11.213Z",
-  "status": "new"
+  "status": "scored",
+  "score": {
+   "overall": 31,
+   "demand": 0,
+   "money": 0,
+   "ease": 95,
+   "fit": 38,
+   "totalVolume": 20,
+   "keywords": 0,
+   "medianCpc": null,
+   "avgDifficulty": 5,
+   "easyWins": [],
+   "topKeywords": [
+    {
+     "keyword": "how many students in austin isd",
+     "volume": 20,
+     "kd": 5,
+     "cpc": null
+    }
+   ],
+   "judgement": {
+    "fit": 38,
+    "verdict": "The data is strong: NCES CCD is free, public domain, and covers about 13,000 districts with enrollment and finance fields, so unique per-district pages are feasible. But the sampled queries are tiny (20/mo for Austin ISD), the 2.3M/mo total does not square with that sample, and display-ad and affiliate value for enrollment numbers alone is weak; only homebuyer-adjacent lead generation makes this worth building.",
+    "angle": "A district and county comparison site for families and homebuyers ('which districts in this county are growing, how big are they, what do they spend per pupil'), with enrollment as the hook and mortgage, insurance and moving leads as the revenue. Start with one state (for example Texas or Florida) to test whether the pages earn anything before scaling nationally.",
+    "dataSources": [
+     "NCES Common Core of Data (CCD) directory and membership files (enrollment by district, grade and race/ethnicity), via nces.ed.gov and the Urban Institute Education Data Portal API",
+     "CCD School Finance (F-33) for per-pupil current spending",
+     "EDFacts adjusted cohort graduation rate files for graduation rates",
+     "Census county and place boundaries and ACS population data for county pages and context"
+    ],
+    "monetisation": [
+     "Lead generation for mortgage and refinance (e.g. via lead marketplaces) on district pages, since school quality drives relocation search",
+     "Home and auto insurance leads via networks such as EverQuote or MediaAlpha on county pages",
+     "Moving-company lead forms on compare pages",
+     "Amazon Associates for school supplies and tutoring-related items, low yield",
+     "Display ads (AdSense or Mediavine if traffic qualifies), low RPM, treat as a floor only"
+    ],
+    "pageTypes": [
+     "/district/[state]/[district-slug]/ (enrollment trend, grades, per-pupil spend, graduation rate)",
+     "/county/[state]/[county-slug]/ (all districts in county, totals, largest and fastest-changing)",
+     "/compare/[district-a]-vs-[district-b]/ for pairs within the same state or metro",
+     "/state/[state]/enrollment/ (state rollup and ranking)",
+     "/[state]/districts-by-enrollment/ (sortable list)"
+    ],
+    "risks": [
+     "Per-query volume is very low (about 20/mo in the sample); the 2.3M/mo aggregate needs checking because it implies ~23k per query on average, which contradicts the sample",
+     "Incumbents (GreatSchools, Niche, Public School Review, state DOE sites) already rank for these queries and have far more reviews and traffic",
+     "Thin-content risk: enrollment numbers alone are the same across dozens of pages; the copy and comparisons must add real analysis or the pages look mass-produced",
+     "CCD data lags 1-2 years and has suppressed or missing values for small districts and some states; pages will show stale or blank fields",
+     "Charter, multi-county and merged districts create identity and boundary mismatches that produce wrong or duplicated pages",
+     "Mortgage and insurance lead gen is regulated (TCPA, state licensing, advertising rules), and lead prices fall sharply for thin sites",
+     "Dependence on Google for a page set that is data-heavy but low-intent could mean a long wait before any revenue"
+    ]
+   },
+   "costUsd": 0.102
+  },
+  "scoredAt": "2026-10-25T18:00:11.376Z",
+  "location": "United States",
+  "error": null,
+  "categories": [
+   "books",
+   "travel-stays"
+  ],
+  "money": {
+   "categories": [
+    "books",
+    "travel-stays"
+   ],
+   "visits": [
+    0,
+    0,
+    0
+   ],
+   "revenueUsd": [
+    0,
+    0,
+    0
+   ],
+   "bestPerSaleUsd": 9,
+   "programs": [
+    {
+     "id": "booking",
+     "name": "Booking.com Affiliate Partner",
+     "commission": "Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay)",
+     "approval": "moderate",
+     "requirements": "Content site about travel; tax form + payment details (W-8BEN-E for AU companies)",
+     "status": "applying",
+     "verified": true
+    },
+    {
+     "id": "hotelgroups",
+     "name": "Hotel groups (Marriott, Hilton, IHG)",
+     "commission": "~3–7%",
+     "approval": "moderate",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "expedia",
+     "name": "Expedia Group Affiliate",
+     "commission": "~2–6% by product",
+     "approval": "moderate",
+     "requirements": "Travel content site",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "bookshop",
+     "name": "Bookshop.org affiliates",
+     "commission": "check (commonly quoted ~10%)",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": false
+    },
+    {
+     "id": "amazon-us-books",
+     "name": "Amazon Associates US: physical books",
+     "commission": "4.5%",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    }
+   ]
+  }
  },
  {
   "idea": "US airport runway and elevation facts",
@@ -6324,7 +6946,135 @@
    "name": "United States"
   },
   "addedAt": "2026-10-24T18:00:11.213Z",
-  "status": "new"
+  "status": "scored",
+  "score": {
+   "overall": 33,
+   "demand": 0,
+   "money": 0,
+   "ease": 100,
+   "fit": 42,
+   "totalVolume": 730,
+   "keywords": 1,
+   "medianCpc": null,
+   "avgDifficulty": 0,
+   "easyWins": [
+    {
+     "keyword": "how many runways does jfk have",
+     "volume": 720,
+     "kd": 0,
+     "cpc": null
+    }
+   ],
+   "topKeywords": [
+    {
+     "keyword": "how many runways does jfk have",
+     "volume": 720,
+     "kd": 0,
+     "cpc": null
+    },
+    {
+     "keyword": "elevation of albuquerque airport",
+     "volume": 10,
+     "kd": null,
+     "cpc": null
+    }
+   ],
+   "judgement": {
+    "fit": 42,
+    "verdict": "The data is free, public-domain and legally clean, but AirNav, SkyVector and FAA's own pages already cover airport runway and elevation facts with far more authority, and the traffic figures look inflated by keyword clustering. Viable only as a narrower, utility-driven tool with a real aviation lead-gen angle, not as a generic one-page-per-airport site.",
+    "angle": "airfieldlog.com as a runway and elevation lookup for pilots and aviation students: one page per public-use airport (ICAO/FAA ID) with a density-altitude calculator, runway table and a 'which aircraft types fit' summary, plus filtered list pages such as airports with runways over 6,000 ft by state. Skip generic 'how many runways' copy pages and build the calculator and comparison tools first.",
+    "dataSources": [
+     "FAA NASR (28-day subscription cycle, public domain): airport, runway, elevation, and frequency records",
+     "OurAirports open data (public domain CSV): global airport, runway and elevation cross-reference",
+     "FAA Type Certificate Data Sheets (public): aircraft type reference for the 'aircraft fit' section, used only for category-level, non-performance claims",
+     "NOAA/NWS station data (public domain): optional temperature inputs for density altitude"
+    ],
+    "monetisation": [
+     "Sporty's Pilot Shop and ASA (Aviation Supplies & Academics) affiliate programs, to be verified before launch",
+     "Flight school and CFI lead forms (per-lead sales to local schools)",
+     "Aircraft insurance and aircraft sales/broker leads (Trade-A-Plane, Controller listings where terms allow)",
+     "Display ads (AdSense or Mediavine once traffic qualifies); aviation CPMs are modest, so expect low revenue per page"
+    ],
+    "pageTypes": [
+     "/airport/[icao]/ (e.g. /airport/kjfk/): runway table, elevation, FAA ID, cross-reference to FAA NASR",
+     "/airport/[icao]/density-altitude/: calculator page per airport with pre-filled elevation",
+     "/airports/[state]/: state index with elevation and longest-runway filters",
+     "/airports/runway-over-[length]-ft/[state]/: filtered list pages, generated only where the list has 5+ airports",
+     "/aircraft/[type]/airports/: airports where a given type's runway needs are plausibly met (category-level, not performance guarantees)"
+    ],
+    "risks": [
+     "AirNav.com, SkyVector and FAA already rank for these queries with much stronger domain authority; the site needs a differentiating tool, not a copy",
+     "Search volume is unreliable: a 2.48M total across the top 100 with kd 0 on JFK suggests keyword-group inflation, so validate with Search Console or Ads planner before building",
+     "Most of the ~5,000 public-use airports have near-zero search demand, so the long tail is thin pages",
+     "Safety liability: any aircraft performance or go/no-go claim could lead to harm; use prominent 'not for flight planning' disclaimers and avoid performance numbers not from the POH",
+     "FAA NASR updates every 28 days, so pages go stale unless the pipeline re-ingests each cycle",
+     "Google may treat near-identical airport pages as thin content unless each page adds computed or sourced value (density altitude, nearby airports, approach notes)"
+    ]
+   },
+   "costUsd": 0.102
+  },
+  "scoredAt": "2026-10-25T18:00:11.376Z",
+  "location": "United States",
+  "error": null,
+  "categories": [
+   "travel-stays",
+   "travel-car"
+  ],
+  "money": {
+   "categories": [
+    "travel-stays",
+    "travel-car"
+   ],
+   "visits": [
+    1,
+    4,
+    7
+   ],
+   "revenueUsd": [
+    0,
+    0,
+    1
+   ],
+   "bestPerSaleUsd": 11.33,
+   "programs": [
+    {
+     "id": "discovercars",
+     "name": "Discover Cars / Rentalcars (car hire)",
+     "commission": "70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire)",
+     "approval": "easy",
+     "requirements": "Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire.",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "booking",
+     "name": "Booking.com Affiliate Partner",
+     "commission": "Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay)",
+     "approval": "moderate",
+     "requirements": "Content site about travel; tax form + payment details (W-8BEN-E for AU companies)",
+     "status": "applying",
+     "verified": true
+    },
+    {
+     "id": "hotelgroups",
+     "name": "Hotel groups (Marriott, Hilton, IHG)",
+     "commission": "~3–7%",
+     "approval": "moderate",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "expedia",
+     "name": "Expedia Group Affiliate",
+     "commission": "~2–6% by product",
+     "approval": "moderate",
+     "requirements": "Travel content site",
+     "status": "not applied",
+     "verified": true
+    }
+   ]
+  }
  },
  {
   "idea": "US public library branches by city",
@@ -6339,6 +7089,225 @@
    "name": "United States"
   },
   "addedAt": "2026-10-24T18:00:11.213Z",
-  "status": "new"
+  "status": "scored",
+  "score": {
+   "overall": 46,
+   "demand": 22,
+   "money": 54,
+   "ease": 77,
+   "fit": 34,
+   "totalVolume": 45100,
+   "keywords": 14,
+   "medianCpc": 0.84,
+   "avgDifficulty": 23,
+   "easyWins": [
+    {
+     "keyword": "libraries in tulsa oklahoma",
+     "volume": 9900,
+     "kd": 19,
+     "cpc": 0.56
+    },
+    {
+     "keyword": "tulsa city county library tulsa ok",
+     "volume": 8100,
+     "kd": 25,
+     "cpc": 0.62
+    },
+    {
+     "keyword": "downtown tulsa library",
+     "volume": 720,
+     "kd": 2,
+     "cpc": 3.25
+    }
+   ],
+   "topKeywords": [
+    {
+     "keyword": "libraries in tulsa oklahoma",
+     "volume": 9900,
+     "kd": 19,
+     "cpc": 0.56
+    },
+    {
+     "keyword": "city of tulsa library",
+     "volume": 9900,
+     "kd": null,
+     "cpc": 0.56
+    },
+    {
+     "keyword": "libraries in tulsa",
+     "volume": 9900,
+     "kd": 36,
+     "cpc": 0.56
+    },
+    {
+     "keyword": "tulsa city county library tulsa ok",
+     "volume": 8100,
+     "kd": 25,
+     "cpc": 0.62
+    },
+    {
+     "keyword": "tulsa public library",
+     "volume": 1900,
+     "kd": 39,
+     "cpc": 0.76
+    },
+    {
+     "keyword": "tulsa oklahoma public library",
+     "volume": 1900,
+     "kd": null,
+     "cpc": 0.76
+    },
+    {
+     "keyword": "downtown tulsa library",
+     "volume": 720,
+     "kd": 2,
+     "cpc": 3.25
+    },
+    {
+     "keyword": "tulsa library hours",
+     "volume": 480,
+     "kd": 28,
+     "cpc": 10.55
+    },
+    {
+     "keyword": "hardesty library tulsa",
+     "volume": 480,
+     "kd": 28,
+     "cpc": 9.94
+    },
+    {
+     "keyword": "hardesty library tulsa ok",
+     "volume": 480,
+     "kd": 28,
+     "cpc": 9.94
+    },
+    {
+     "keyword": "tulsa libraries near me",
+     "volume": 260,
+     "kd": 17,
+     "cpc": 0.03
+    },
+    {
+     "keyword": "university of tulsa library",
+     "volume": 140,
+     "kd": 23,
+     "cpc": null
+    },
+    {
+     "keyword": "rudisill regional library tulsa ok",
+     "volume": 110,
+     "kd": 6,
+     "cpc": 24.02
+    },
+    {
+     "keyword": "tulsa library events",
+     "volume": 110,
+     "kd": 37,
+     "cpc": 0.84
+    },
+    {
+     "keyword": "tulsa library printing",
+     "volume": 90,
+     "kd": 13,
+     "cpc": 4.84
+    }
+   ],
+   "judgement": {
+    "fit": 34,
+    "verdict": "The data is real and free: IMLS PLS outlet-level stats plus OSM branch geometry can support thousands of city and branch pages. But the search demand is mostly navigational (\"tulsa public library\", \"hardesty library hours\") and is already answered by the official library sites and Google Maps, and the commercial intent that pays is thin. The 1.1M/mo top-100 figure can't be checked against the list supplied, which shows roughly 40k/mo across about 33 queries.",
+    "angle": "A US-wide library statistics site, not a branch directory: /library/[city-state] pages comparing per-capita funding, visits, circulation and programmes against peer cities, with a branch list and map beneath. Lead with the comparison data, which is what makes each page useful, and treat hours and addresses as secondary, since Google Maps owns those queries.",
+    "dataSources": [
+     "IMLS Public Libraries Survey (annual outlet-level and systems-level CSV/Excel, free)",
+     "OpenStreetMap amenity=library nodes/ways via Overpass API (free, ODbL attribution required)",
+     "US Census population estimates by place (free) for per-capita denominators",
+     "Library system websites for hours (scraping is fragile; treat as optional)"
+    ],
+    "monetisation": [
+     "Display ads (Mediavine/Ezoic-style) on statistics pages; expect low RPM because intent is informational",
+     "Bookshop.org affiliate links on reading and library-program pages",
+     "Libro.fm affiliate links on audiobook content",
+     "Amazon Associates for library-science and reading-list books",
+     "No strong lead-gen category identified; relocation or moving-service leads are a weak possibility for city pages"
+    ],
+    "pageTypes": [
+     "/library/[city-state] for each place with a public library: branch list, per-capita stats, peer comparison",
+     "/library/[city-state]/[branch-slug] for each outlet: address, OSM map, PLS visits and circulation, service area",
+     "/library-systems/[state] index pages ranking systems by per-capita metrics",
+     "/compare/[city-a]-vs-[city-b] for high-population pairs where the data differs meaningfully"
+    ],
+    "risks": [
+     "Search volume is concentrated in a few Tulsa queries; the long tail of 100+/mo searches needs per-city validation before building thousands of pages",
+     "The official library sites and Google Maps dominate branch and hours queries, so clicks are limited",
+     "IMLS PLS data lags by one to two years and some branch records are incomplete or inconsistent across years",
+     "OSM hours and addresses go stale; wrong hours send people to closed branches, so show hours only with a source date or a link to the library",
+     "Attribution requirements for OSM (ODbL) and any scraped library-site content need handling",
+     "Per-capita pages built from the same template are at risk of being judged thin unless the comparisons and narrative are genuinely varied",
+     "Very low affiliate relevance means revenue per page will be small; the site needs display traffic at scale to pay"
+    ]
+   },
+   "costUsd": 0.107
+  },
+  "scoredAt": "2026-10-25T18:00:11.376Z",
+  "location": "United States",
+  "error": null,
+  "categories": [
+   "books",
+   "movies-tv"
+  ],
+  "money": {
+   "categories": [
+    "books",
+    "movies-tv"
+   ],
+   "visits": [
+    90,
+    226,
+    451
+   ],
+   "revenueUsd": [
+    0,
+    2,
+    9
+   ],
+   "bestPerSaleUsd": 1.43,
+   "programs": [
+    {
+     "id": "bookshop",
+     "name": "Bookshop.org affiliates",
+     "commission": "check (commonly quoted ~10%)",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": false
+    },
+    {
+     "id": "amazon-us-video",
+     "name": "Amazon Associates US: digital video (Prime Video)",
+     "commission": "5% (digital video); bounties: $3 Prime trial, $5 first Prime Video stream",
+     "approval": "easy",
+     "requirements": "3 qualifying sales within 180 days of joining, or the account is closed",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "amazon-us-books",
+     "name": "Amazon Associates US: physical books",
+     "commission": "4.5%",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "amazon-us-dvd",
+     "name": "Amazon Associates US: DVD and Blu-ray",
+     "commission": "2.5%",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    }
+   ]
+  }
  }
 ]

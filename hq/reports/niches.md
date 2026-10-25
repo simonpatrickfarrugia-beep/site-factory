@@ -1,6 +1,6 @@
 # Niche finder
 
-Updated 2026-10-22. Google searches in the United States unless an idea says otherwise (Market column). Score = 30% demand + 25% money (CPC) + 25% ease (SEO difficulty) + 20% fit (Claude: data source, automation, monetisation, risk).
+Updated 2026-10-25. Google searches in the United States unless an idea says otherwise (Market column). Score = 30% demand + 25% money (CPC) + 25% ease (SEO difficulty) + 20% fit (Claude: data source, automation, monetisation, risk).
 
 Add ideas by chat: "score these niches: …". Rules: launch at most one new site a month, only while the last one is on track.
 
@@ -21,7 +21,13 @@ Add ideas by chat: "score these niches: …". Rules: launch at most one new site
 | 11 | Victoria: where to eat by town | Australia | **51** | 40 | 41 | 96 | 22 | 155,710 | $0.50 | 4 |
 | 12 | Australian clothing brands directory (beason.com.au) | Australia | **50** | 43 | 61 | 60 | 34 | 189,760 | $1.09 | 40 |
 | 13 | Australian winter wear: beanies, jackets and knitwear | Australia | **50** | 13 | 57 | 96 | 38 | 24,330 | $0.92 | 4 |
-| 14 | Australian loungewear and comfortwear brands | Australia | **42** | 0 | 55 | 90 | 28 | 7,150 | $0.86 | 10 |
+| 14 | US public library branches by city | United States | **46** | 22 | 54 | 77 | 34 | 45,100 | $0.84 | 23 |
+| 15 | Australian loungewear and comfortwear brands | Australia | **42** | 0 | 55 | 90 | 28 | 7,150 | $0.86 | 10 |
+| 16 | Hurricane history by coastal state | United States | **33** | 0 | 0 | 97 | 42 | 30 | — | 3 |
+| 17 | US airport runway and elevation facts | United States | **33** | 0 | 0 | 100 | 42 | 730 | — | 0 |
+| 18 | US school district enrollment by county | United States | **31** | 0 | 0 | 95 | 38 | 20 | — | 5 |
+| 19 | Freshwater fish species by state | United States | **28** | 0 | 0 | 94 | 22 | 650 | $0.03 | 6 |
+| 20 | Rail travel times between NSW stations | Australia | **21** | 0 | 0 | 50 | 44 | 0 | — | — |
 
 ## Dog breeds: 75/100
 
@@ -692,6 +698,50 @@ _Seeds: australian clothing brands, australian made clothing, australian fashion
 
 _Seeds: beanies australia, winter jackets australia, merino wool clothing australia, australian knitwear brands, best winter jacket australia. Data cost: US$0.114._
 
+## US public library branches by city: 46/100
+
+**Verdict:** The data is real and free: IMLS PLS outlet-level stats plus OSM branch geometry can support thousands of city and branch pages. But the search demand is mostly navigational ("tulsa public library", "hardesty library hours") and is already answered by the official library sites and Google Maps, and the commercial intent that pays is thin. The 1.1M/mo top-100 figure can't be checked against the list supplied, which shows roughly 40k/mo across about 33 queries.
+
+**Site angle:** A US-wide library statistics site, not a branch directory: /library/[city-state] pages comparing per-capita funding, visits, circulation and programmes against peer cities, with a branch list and map beneath. Lead with the comparison data, which is what makes each page useful, and treat hours and addresses as secondary, since Google Maps owns those queries.
+
+**Data sources:** IMLS Public Libraries Survey (annual outlet-level and systems-level CSV/Excel, free); OpenStreetMap amenity=library nodes/ways via Overpass API (free, ODbL attribution required); US Census population estimates by place (free) for per-capita denominators; Library system websites for hours (scraping is fragile; treat as optional)
+
+**Money:** Display ads (Mediavine/Ezoic-style) on statistics pages; expect low RPM because intent is informational; Bookshop.org affiliate links on reading and library-program pages; Libro.fm affiliate links on audiobook content; Amazon Associates for library-science and reading-list books; No strong lead-gen category identified; relocation or moving-service leads are a weak possibility for city pages
+
+**Page types:** /library/[city-state] for each place with a public library: branch list, per-capita stats, peer comparison; /library/[city-state]/[branch-slug] for each outlet: address, OSM map, PLS visits and circulation, service area; /library-systems/[state] index pages ranking systems by per-capita metrics; /compare/[city-a]-vs-[city-b] for high-population pairs where the data differs meaningfully
+
+**Risks:** Search volume is concentrated in a few Tulsa queries; the long tail of 100+/mo searches needs per-city validation before building thousands of pages; The official library sites and Google Maps dominate branch and hours queries, so clicks are limited; IMLS PLS data lags by one to two years and some branch records are incomplete or inconsistent across years; OSM hours and addresses go stale; wrong hours send people to closed branches, so show hours only with a source date or a link to the library; Attribution requirements for OSM (ODbL) and any scraped library-site content need handling; Per-capita pages built from the same template are at risk of being judged thin unless the comparisons and narrative are genuinely varied; Very low affiliate relevance means revenue per page will be small; the site needs display traffic at scale to pay
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| libraries in tulsa oklahoma | 9,900 | 19 | $0.56 |
+| tulsa city county library tulsa ok | 8,100 | 25 | $0.62 |
+| downtown tulsa library | 720 | 2 | $3.25 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| libraries in tulsa oklahoma | 9,900 | 19 | $0.56 |
+| city of tulsa library | 9,900 | — | $0.56 |
+| libraries in tulsa | 9,900 | 36 | $0.56 |
+| tulsa city county library tulsa ok | 8,100 | 25 | $0.62 |
+| tulsa public library | 1,900 | 39 | $0.76 |
+| tulsa oklahoma public library | 1,900 | — | $0.76 |
+| downtown tulsa library | 720 | 2 | $3.25 |
+| tulsa library hours | 480 | 28 | $10.55 |
+| hardesty library tulsa | 480 | 28 | $9.94 |
+| hardesty library tulsa ok | 480 | 28 | $9.94 |
+| tulsa libraries near me | 260 | 17 | $0.03 |
+| university of tulsa library | 140 | 23 | — |
+| rudisill regional library tulsa ok | 110 | 6 | $24.02 |
+| tulsa library events | 110 | 37 | $0.84 |
+| tulsa library printing | 90 | 13 | $4.84 |
+
+_Seeds: libraries in tulsa oklahoma, how many library branches in phoenix, public library hours near denver. Data cost: US$0.107._
+
 ## Australian loungewear and comfortwear brands: 42/100
 
 **Verdict:** Keyword demand is thin: the whole list is roughly 4,000 searches a month across near-duplicate groups, and the largest clusters are generic retail queries that big retailers and Google Shopping already own. It only works if merchant feeds give each page live price, size and stock data that a human-written guide can't match, and that data needs formal affiliate-feed access.
@@ -738,28 +788,161 @@ _Seeds: beanies australia, winter jackets australia, merino wool clothing austra
 
 _Seeds: loungewear australia, australian loungewear brands, best hoodies australia, trackpants australia, comfortable clothes australia. Data cost: US$0.114._
 
+## Hurricane history by coastal state: 33/100
+
+**Verdict:** The data is genuinely usable: NOAA IBTrACS is free, public-domain, and carries wind and pressure per storm, so hundreds of real state pages are feasible. But the monetisation is weak for history content, and the traffic numbers you have don't agree with each other (the three top queries show 10/mo, while the 4.08M/mo total implies much higher volumes), so verify demand before building.
+
+**Site angle:** stormyears.com as a state-by-state landfall archive: one page per coastal state listing every IBTrACS storm that made landfall there, with per-storm pages for wind, pressure and year, and a 'strongest storm' page per state. Keep it a data reference, not a blog, and leave insurance intent to a separate page or site.
+
+**Data sources:** NOAA IBTrACS (International Best Track Archive for Climate Stewardship), free and public domain, includes wind speed, central pressure and track points; US Census TIGER/Line state boundary shapefiles (public domain), used to assign landfall points to states; NOAA NHC annual season reports and tropical cyclone reports (free, public domain) for narrative fact-checking
+
+**Money:** Display ads via Ezoic or AdSense (low RPM for history/weather content; Mediavine needs about 50k sessions/month); Amazon Associates for hurricane prep products (generators, flood barriers, go-bags); low conversion but cheap to add; Lead-gen for homeowners insurance via EverQuote or MediaAlpha, only on separate intent pages (e.g. 'hurricane insurance by state'), since history queries rarely convert and insurance is near-YMYL; Impact-network prep brands as a secondary option
+
+**Page types:** /[state]/hurricanes-that-hit/[year] (storms making landfall in that state that year); /[state]/strongest-hurricane/ (top storms by wind or pressure for the state); /[state]/hurricanes/[storm-name-year] (single-storm page with track map, wind, pressure, landfall date); /storms/[name-year] (canonical storm page linking to every affected state); /[state]/landfall-count-by-decade/ (count tables for queries like 'how many hurricanes has louisiana had')
+
+**Risks:** Search volume is inconsistent: listed queries show 10/mo while the aggregate claims 4M/mo across 8,453 queries, so the demand figure is likely overstated; check with Search Console or a keyword tool before committing; Thin-content risk: data-only pages with templated AI copy are exactly what Google's scaled-content policies target; each page needs unique analysis, such as comparisons, context or regional impact notes; Attribution errors: IBTrACS track points near state borders or with multiple landfalls are easy to mis-assign, which damages trust; document the methodology; Low monetisation ceiling: history and weather queries carry low CPCs, and display RPM will be small per page; Disaster-adjacent YMYL: pages that touch on storm safety or preparedness need accurate sourcing from NHC/NOAA and clear disclaimers; Competition from NOAA, NHC, Wikipedia season pages and weather.com archives, which already rank for many storm queries; Domain fit: landfallmap.com suggests a map product, which needs map tiles and licensing (Mapbox or OpenStreetMap, with attribution), a larger build than a table site
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| hurricanes that hit florida by year | 10 | — | — |
+| how many hurricanes has louisiana had | 10 | — | — |
+| strongest hurricane to hit north carolina | 10 | 3 | — |
+
+_Seeds: hurricanes that hit florida by year, how many hurricanes has louisiana had, strongest hurricane to hit north carolina. Data cost: US$0.102._
+
+## US airport runway and elevation facts: 33/100
+
+**Verdict:** The data is free, public-domain and legally clean, but AirNav, SkyVector and FAA's own pages already cover airport runway and elevation facts with far more authority, and the traffic figures look inflated by keyword clustering. Viable only as a narrower, utility-driven tool with a real aviation lead-gen angle, not as a generic one-page-per-airport site.
+
+**Site angle:** airfieldlog.com as a runway and elevation lookup for pilots and aviation students: one page per public-use airport (ICAO/FAA ID) with a density-altitude calculator, runway table and a 'which aircraft types fit' summary, plus filtered list pages such as airports with runways over 6,000 ft by state. Skip generic 'how many runways' copy pages and build the calculator and comparison tools first.
+
+**Data sources:** FAA NASR (28-day subscription cycle, public domain): airport, runway, elevation, and frequency records; OurAirports open data (public domain CSV): global airport, runway and elevation cross-reference; FAA Type Certificate Data Sheets (public): aircraft type reference for the 'aircraft fit' section, used only for category-level, non-performance claims; NOAA/NWS station data (public domain): optional temperature inputs for density altitude
+
+**Money:** Sporty's Pilot Shop and ASA (Aviation Supplies & Academics) affiliate programs, to be verified before launch; Flight school and CFI lead forms (per-lead sales to local schools); Aircraft insurance and aircraft sales/broker leads (Trade-A-Plane, Controller listings where terms allow); Display ads (AdSense or Mediavine once traffic qualifies); aviation CPMs are modest, so expect low revenue per page
+
+**Page types:** /airport/[icao]/ (e.g. /airport/kjfk/): runway table, elevation, FAA ID, cross-reference to FAA NASR; /airport/[icao]/density-altitude/: calculator page per airport with pre-filled elevation; /airports/[state]/: state index with elevation and longest-runway filters; /airports/runway-over-[length]-ft/[state]/: filtered list pages, generated only where the list has 5+ airports; /aircraft/[type]/airports/: airports where a given type's runway needs are plausibly met (category-level, not performance guarantees)
+
+**Risks:** AirNav.com, SkyVector and FAA already rank for these queries with much stronger domain authority; the site needs a differentiating tool, not a copy; Search volume is unreliable: a 2.48M total across the top 100 with kd 0 on JFK suggests keyword-group inflation, so validate with Search Console or Ads planner before building; Most of the ~5,000 public-use airports have near-zero search demand, so the long tail is thin pages; Safety liability: any aircraft performance or go/no-go claim could lead to harm; use prominent 'not for flight planning' disclaimers and avoid performance numbers not from the POH; FAA NASR updates every 28 days, so pages go stale unless the pipeline re-ingests each cycle; Google may treat near-identical airport pages as thin content unless each page adds computed or sourced value (density altitude, nearby airports, approach notes)
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| how many runways does jfk have | 720 | 0 | — |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| how many runways does jfk have | 720 | 0 | — |
+| elevation of albuquerque airport | 10 | — | — |
+
+_Seeds: longest runway at denver airport, elevation of albuquerque airport, how many runways does jfk have. Data cost: US$0.102._
+
+## US school district enrollment by county: 31/100
+
+**Verdict:** The data is strong: NCES CCD is free, public domain, and covers about 13,000 districts with enrollment and finance fields, so unique per-district pages are feasible. But the sampled queries are tiny (20/mo for Austin ISD), the 2.3M/mo total does not square with that sample, and display-ad and affiliate value for enrollment numbers alone is weak; only homebuyer-adjacent lead generation makes this worth building.
+
+**Site angle:** A district and county comparison site for families and homebuyers ('which districts in this county are growing, how big are they, what do they spend per pupil'), with enrollment as the hook and mortgage, insurance and moving leads as the revenue. Start with one state (for example Texas or Florida) to test whether the pages earn anything before scaling nationally.
+
+**Data sources:** NCES Common Core of Data (CCD) directory and membership files (enrollment by district, grade and race/ethnicity), via nces.ed.gov and the Urban Institute Education Data Portal API; CCD School Finance (F-33) for per-pupil current spending; EDFacts adjusted cohort graduation rate files for graduation rates; Census county and place boundaries and ACS population data for county pages and context
+
+**Money:** Lead generation for mortgage and refinance (e.g. via lead marketplaces) on district pages, since school quality drives relocation search; Home and auto insurance leads via networks such as EverQuote or MediaAlpha on county pages; Moving-company lead forms on compare pages; Amazon Associates for school supplies and tutoring-related items, low yield; Display ads (AdSense or Mediavine if traffic qualifies), low RPM, treat as a floor only
+
+**Page types:** /district/[state]/[district-slug]/ (enrollment trend, grades, per-pupil spend, graduation rate); /county/[state]/[county-slug]/ (all districts in county, totals, largest and fastest-changing); /compare/[district-a]-vs-[district-b]/ for pairs within the same state or metro; /state/[state]/enrollment/ (state rollup and ranking); /[state]/districts-by-enrollment/ (sortable list)
+
+**Risks:** Per-query volume is very low (about 20/mo in the sample); the 2.3M/mo aggregate needs checking because it implies ~23k per query on average, which contradicts the sample; Incumbents (GreatSchools, Niche, Public School Review, state DOE sites) already rank for these queries and have far more reviews and traffic; Thin-content risk: enrollment numbers alone are the same across dozens of pages; the copy and comparisons must add real analysis or the pages look mass-produced; CCD data lags 1-2 years and has suppressed or missing values for small districts and some states; pages will show stale or blank fields; Charter, multi-county and merged districts create identity and boundary mismatches that produce wrong or duplicated pages; Mortgage and insurance lead gen is regulated (TCPA, state licensing, advertising rules), and lead prices fall sharply for thin sites; Dependence on Google for a page set that is data-heavy but low-intent could mean a long wait before any revenue
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| how many students in austin isd | 20 | 5 | — |
+
+_Seeds: school enrollment in harris county, how many students in austin isd, largest school districts in ohio. Data cost: US$0.102._
+
+## Freshwater fish species by state: 28/100
+
+**Verdict:** The headline 5.47M/mo figure cannot be reconciled with the listed terms: the largest listed search is 260/mo and most are 10-140/mo, so the real addressable volume looks like a few thousand searches a month at near-zero CPC. The data is public and the pattern is programmatic, but the monetisation ceiling is very low unless the site also captures adjacent fishing intent.
+
+**Site angle:** fishbystate.com as a state-by-state freshwater fish and invasive species reference: one page per state (/[state]/freshwater-fish/) plus one per species-state pair only where USGS NAS or state agency records exist, with an invasive-species hub (/invasive-fish/[state]/). Skip lakeroster and fishroster, which don't match the pattern. Build only the states and species with verified records and treat it as a 50-state reference, not a 5,000-page farm.
+
+**Data sources:** USGS Nonindigenous Aquatic Species (NAS) database: public domain US government data, state-level occurrence and status records; GBIF occurrence API: per-dataset licences, filter to CC0/CC-BY; State wildlife agency fish lists and regulations pages (check each agency's reuse terms); iNaturalist API: observation photos under per-item CC licences, for images with attribution; Wikidata/Wikipedia: CC0 and CC-BY-SA for species names and descriptions
+
+**Money:** Amazon Associates: tackle, aquarium and identification guides, contextual to species pages; Bass Pro Shops affiliate programme for fishing gear, contextual to state pages; Display ads only once traffic justifies a network; at this volume, expect them to be marginal; Do NOT monetise live sales of invasive species (snakehead, lionfish, etc.); many states prohibit possession or sale, so this is a legal and reputational risk
+
+**Page types:** /[state]/freshwater-fish/ : hub listing species with verified records in that state, native/introduced status from USGS NAS; /[species]-in-[state]/ : only where a USGS NAS or GBIF record exists for that pair; otherwise no page; /invasive-fish/[state]/ : invasive and nonindigenous species with control and reporting info from the state agency; /species/[species]/ : single species page with range map data, habitat and native status, shared across states
+
+**Risks:** Headline volume figures are internally inconsistent; verify the 52858 and 5.47M numbers in a keyword tool before committing; Search volume is tiny and CPC near zero, so revenue per page is very low; NatureServe data is licence-restricted for commercial use; obtain permission or exclude it; FishBase terms are restrictive for commercial reuse; avoid bulk scraping; Thin-page risk: many state/species pairs will have no data; generating them anyway triggers Google's mass-produced content penalty; Invasive species content may be read as encouraging harmful releases or sales; include clear reporting and no-release guidance; Species-level habitat text and regulation details can go stale; they need refresh cycles and clear dating; Fish regulations and licensing sit near YMYL territory; avoid presenting regulations as authoritative without linking the state agency
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| snakehead fish in texas | 260 | 0 | — |
+| freshwater fish in ohio | 140 | 0 | $0.03 |
+| what fish live in lake michigan | 140 | 0 | — |
+| invasive fish species in texas | 40 | 2 | — |
+| fresh water fish in ohio | 20 | 0 | — |
+| australian redclaw crayfish in texas | 10 | 0 | — |
+| fresh water fish ohio | 10 | — | — |
+| lionfish texas | 10 | 42 | — |
+| ohio fresh water fish | 10 | — | — |
+| ohio freshwater fish species | 10 | — | — |
+
+_Seeds: freshwater fish in ohio, what fish live in lake michigan, invasive fish species in texas. Data cost: US$0.103._
+
+## Rail travel times between NSW stations: 21/100
+
+**Verdict:** The data is real and free, and the page pattern can scale, but Google already answers most of these queries with transit cards and Transport NSW's own planner, and rail queries have almost no direct affiliate income. It only works as a utility site monetised through adjacent travel offers, and the 1.37M/mo figure is probably inflated by grouped variants.
+
+**Site angle:** railhop.com.au as a station-and-route reference: one page per station with first and last services by day type, plus route pages only for station pairs with a direct or single-change service in the GTFS data, not every possible pair. Launch with about 1,000 to 2,000 pages and add travel-adjacent modules (accommodation near each station, tours, car hire) to earn.
+
+**Data sources:** Transport for NSW Open Data Hub GTFS Static timetable feed (free API key; check the current licence, which is expected to be CC BY 4.0 with attribution); GTFS stops.txt and stop_times.txt for station coordinates, stop sequences and first/last departures; OpenStreetMap or the NSW Spatial Data portal for station and suburb geography, to add local context; Optional: GTFS-Realtime feed for a live disruption flag, only if the feed's terms allow it
+
+**Money:** Travel insurance comparison affiliate links on station and route pages (Australian comparison sites often pay per acquisition; verify rates); Booking.com Affiliate Partner Programme and Expedia Partner Solutions for stays near stations; Klook or GetYourGuide affiliate links for day trips from each station; Car hire affiliates (Discover Cars, or Rentalcars via Awin) on long-distance route pages; Display ads only after traffic is proven; travel RPM is modest; Do not expect Trainline or Opal-style rail booking commissions; I'm not aware of a usable AU rail-ticket affiliate, so verify before planning around one
+
+**Page types:** /station/[station-slug]/ with first and last services by weekday, Saturday and Sunday, plus stop count on each line; /[origin]-to-[destination]-by-train/ only for pairs with a direct or single-change service, showing journey time range, stop count, first and last service, and change points; /line/[line-name]/ timetable hub pages linking to all stations on the line; /[station]-accommodation/ or /[station]-day-trips/ monetisation pages, only where there is real local content; Avoid bulk /[city]-to-[city]/ pages that repeat the same table with different names
+
+**Risks:** Google's transit cards and Transport NSW's planner dominate the query, so click-through may be low even with good data; Scheduled journey times are not actual journey times; disruptions, engineering works and weekend variations can make pages wrong, which damages trust; Thin-content risk: a page that is only a timetable table with templated text may be treated as low value, so each page needs station-specific context; Search volume figures from grouped Google Ads keyword data may overstate the real addressable traffic; Licence and attribution compliance for TfNSW data; do not imply endorsement or use the TfNSW or Opal branding in a misleading way; Affiliate income per visitor is likely low for transit queries, so the site needs substantial traffic to pay off; Feed format changes or API key policy changes could break the whole codebase at once
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+
+_Seeds: how long to get from parramatta to central by train, train from wollongong to sydney how long, how far is epping station from town hall. Data cost: US$0.09._
+
 ## Money map: estimated revenue at maturity
 
 Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits × affiliate clicks × conversion × payout (average of the top 3 matching programmes), plus display ads. These numbers rank ideas against each other; they are not forecasts. They get replaced by our own measured rates as our sites earn.
 
-**Model:** Calibrated from 275 page views, 0 affiliate clicks and 0 reported sales (trailers, vic): click rate 4.4% (assumed 5.0%), conversion 5.0% (assumed 5.0%). The assumption weighs as much as 2,000 views / 200 clicks, so real data takes over as it grows.
+**Model:** Calibrated from 263 page views, 0 affiliate clicks and 0 reported sales (trailers, vic): click rate 4.4% (assumed 5.0%), conversion 5.0% (assumed 5.0%). The assumption weighs as much as 2,000 views / 200 clicks, so real data takes over as it grows.
 
 | Idea | Market | Visits/mo (mid) | Est. revenue/mo (low · mid · high) | Avg payout per sale | Score |
 |---|---|---:|---|---:|---:|
-| Dog breeds | United States | 274,520 | $1,503 · **$14,004** · $67,669 | $18.33 | 75 |
-| US national parks and hiking trails | United States | 89,156 | $312 · **$2,712** · $12,587 | $9 | 74 |
-| Anime: where to watch and watch order | United States | 102,419 | $198 · **$1,456** · $5,984 | $1.7 | 70 |
-| TV shows: where to watch | United States | 27,719 | $110 · **$769** · $3,025 | $1.7 | 73 |
-| Video games: release dates and trailers | United States | 70,520 | $60 · **$463** · $1,984 | $1.17 | 62 |
-| Book series in reading order | United States | 24,564 | $22 · **$176** · $765 | $1.43 | 53 |
-| Victoria: where to stay by town | Australia | 3,903 | $16 · **$144** · $675 | $11.33 | 66 |
-| Movie soundtracks and film music | United States | 11,888 | $11 · **$85** · $370 | $1.43 | 53 |
-| Board games | United States | 11,226 | $10 · **$79** · $345 | $1.4 | 61 |
-| Victoria: things to do by town | Australia | 1,769 | $6 · **$53** · $259 | $11.33 | 60 |
+| Dog breeds | United States | 274,520 | $1,509 · **$14,063** · $67,970 | $18.33 | 75 |
+| US national parks and hiking trails | United States | 89,156 | $312 · **$2,721** · $12,634 | $9 | 74 |
+| Anime: where to watch and watch order | United States | 102,419 | $198 · **$1,458** · $5,995 | $1.7 | 70 |
+| TV shows: where to watch | United States | 27,719 | $110 · **$769** · $3,028 | $1.7 | 73 |
+| Video games: release dates and trailers | United States | 70,520 | $60 · **$464** · $1,989 | $1.17 | 62 |
+| Book series in reading order | United States | 24,564 | $22 · **$176** · $767 | $1.43 | 53 |
+| Victoria: where to stay by town | Australia | 3,903 | $16 · **$145** · $677 | $11.33 | 66 |
+| Movie soundtracks and film music | United States | 11,888 | $11 · **$85** · $371 | $1.43 | 53 |
+| Board games | United States | 11,226 | $10 · **$80** · $346 | $1.4 | 61 |
+| Victoria: things to do by town | Australia | 1,769 | $6 · **$53** · $260 | $11.33 | 60 |
 | Victoria: where to eat by town | Australia | 779 | $2 · **$19** · $91 | $9 | 51 |
-| Australian clothing brands directory (beason.com.au) | Australia | 949 | $2 · **$16** · $68 | $3.5 | 50 |
+| Australian clothing brands directory (beason.com.au) | Australia | 949 | $2 · **$16** · $69 | $3.5 | 50 |
 | Australian winter wear: beanies, jackets and knitwear | Australia | 122 | $0 · **$3** · $16 | $9 | 50 |
+| US public library branches by city | United States | 226 | $0 · **$2** · $9 | $1.43 | 46 |
 | Australian loungewear and comfortwear brands | Australia | 36 | $0 · **$1** · $5 | $9 | 42 |
+| Hurricane history by coastal state | United States | 0 | $0 · **$0** · $0 | $3.83 | 33 |
+| Freshwater fish species by state | United States | 3 | $0 · **$0** · $0 | $7 | 28 |
+| Rail travel times between NSW stations | Australia | 0 | $0 · **$0** · $0 | $11.33 | 21 |
+| US school district enrollment by county | United States | 0 | $0 · **$0** · $0 | $9 | 31 |
+| US airport runway and elevation facts | United States | 4 | $0 · **$0** · $1 | $11.33 | 33 |
 
 ## Programmes to consider, by idea
 
@@ -783,11 +966,11 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
 | Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
-| Viator Partner Program | ~8% of booking value | easy | Website with travel content | not applied |
-| GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | not applied |
+| Viator Partner Program | ~8% of booking value | easy | Website with travel content | approved |
+| GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | approved |
 | Ruffwear (dog gear) | ~8% | easy | check | not applied |
 | REI | 5% per sale | moderate | Apply via AvantLink with site + audience details; $50 payout threshold | not applied |
-| Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | not applied |
+| Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | approved |
 
 ### Anime: where to watch and watch order
 
@@ -832,9 +1015,9 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
 | Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
-| Viator Partner Program | ~8% of booking value | easy | Website with travel content | not applied |
-| GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | not applied |
-| Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | not applied |
+| Viator Partner Program | ~8% of booking value | easy | Website with travel content | approved |
+| GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | approved |
+| Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | approved |
 | Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | not applied |
 
 ### Movie soundtracks and film music
@@ -864,9 +1047,9 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
 | Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
-| Viator Partner Program | ~8% of booking value | easy | Website with travel content | not applied |
-| GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | not applied |
-| Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | not applied |
+| Viator Partner Program | ~8% of booking value | easy | Website with travel content | approved |
+| GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | approved |
+| Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | approved |
 | Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | not applied |
 
 ### Victoria: where to eat by town
@@ -876,9 +1059,9 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
 | Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
-| Viator Partner Program | ~8% of booking value | easy | Website with travel content | not applied |
-| GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | not applied |
-| Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | not applied |
+| Viator Partner Program | ~8% of booking value | easy | Website with travel content | approved |
+| GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | approved |
+| Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | approved |
 | Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | not applied |
 
 ### Australian clothing brands directory (beason.com.au)
@@ -900,6 +1083,15 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
 | Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | not applied |
 
+### US public library branches by city
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Bookshop.org affiliates *(check)* | check (commonly quoted ~10%) | easy | check | not applied |
+| Amazon Associates US: digital video (Prime Video) | 5% (digital video); bounties: $3 Prime trial, $5 first Prime Video stream | easy | 3 qualifying sales within 180 days of joining, or the account is closed | approved |
+| Amazon Associates US: physical books | 4.5% | easy | Same Associates account | approved |
+| Amazon Associates US: DVD and Blu-ray | 2.5% | easy | Same Associates account | approved |
+
 ### Australian loungewear and comfortwear brands
 
 | Programme | Pays | Approval | To qualify | Status |
@@ -909,6 +1101,61 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
 | Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
 | Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | not applied |
+
+### Hurricane history by coastal state
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Travel insurance (World Nomads, SafetyWing, Allianz) | ~10–40% | moderate | check | not applied |
+| Bookshop.org affiliates *(check)* | check (commonly quoted ~10%) | easy | check | not applied |
+| Amazon Associates US: digital video (Prime Video) | 5% (digital video); bounties: $3 Prime trial, $5 first Prime Video stream | easy | 3 qualifying sales within 180 days of joining, or the account is closed | approved |
+| Amazon Associates US: physical books | 4.5% | easy | Same Associates account | approved |
+| Amazon Associates US: DVD and Blu-ray | 2.5% | easy | Same Associates account | approved |
+
+### Freshwater fish species by state
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Viator Partner Program | ~8% of booking value | easy | Website with travel content | approved |
+| GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | approved |
+| Ruffwear (dog gear) | ~8% | easy | check | not applied |
+| REI | 5% per sale | moderate | Apply via AvantLink with site + audience details; $50 payout threshold | not applied |
+| Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | approved |
+| Bookshop.org affiliates *(check)* | check (commonly quoted ~10%) | easy | check | not applied |
+| Amazon Associates US: sports and outdoors | 3% | easy | Same Associates account | approved |
+| Amazon Associates US: physical books | 4.5% | easy | Same Associates account | approved |
+
+### Rail travel times between NSW stations
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Discover Cars / Rentalcars (car hire) | 70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire) | easy | Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire. | not applied |
+| Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
+| Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
+| Viator Partner Program | ~8% of booking value | easy | Website with travel content | approved |
+| GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | approved |
+| Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | approved |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | not applied |
+
+### US school district enrollment by county
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
+| Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
+| Bookshop.org affiliates *(check)* | check (commonly quoted ~10%) | easy | check | not applied |
+| Amazon Associates US: physical books | 4.5% | easy | Same Associates account | approved |
+
+### US airport runway and elevation facts
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Discover Cars / Rentalcars (car hire) | 70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire) | easy | Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire. | not applied |
+| Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
+| Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
 
 ## Ad networks (when traffic qualifies)
 
