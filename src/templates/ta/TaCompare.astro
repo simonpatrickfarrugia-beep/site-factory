@@ -27,6 +27,13 @@ const money = (n: number) => (n === 0 ? 'Free' : `$${n}`);
     <p class="ta-small">Monthly cost on the cheapest plan that fits your numbers, including GST where we can work it out. Plans differ in features, so the cheapest isn't always the best fit: check what each plan includes.</p>
   </section>
 
+  {page.body && (
+    <section class="ta-measure" aria-labelledby="body-h">
+      <h2 id="body-h" class="ta-h2">{page.body.h}</h2>
+      {page.body.p.map((t) => <p>{t}</p>)}
+    </section>
+  )}
+
   {keys.map((k) => {
     const a = apps.apps[k];
     return (
