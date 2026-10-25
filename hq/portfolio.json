@@ -508,7 +508,8 @@
    "what": "Trade Admin: point tradeadmin.com.au's nameservers (GoDaddy) to Cloudflare",
    "why": "The site can't go live on its own domain until Cloudflare manages it",
    "link": "https://dash.cloudflare.com",
-   "done": false
+   "done": true,
+   "doneAt": "2026-10-25"
   },
   {
    "id": "ta-import",
@@ -518,6 +519,37 @@
    "what": "Cloudflare → Workers & Pages → Create → Import repository → site-factory. Name: trade-admin. Build command: BRAND=trade-admin npm run build. Deploy command: npx wrangler deploy --config brands/trade-admin/wrangler.jsonc",
    "why": "Puts the Trade Admin preview online so Claude can attach the domain and launch it",
    "link": "https://dash.cloudflare.com",
+   "done": true,
+   "doneAt": "2026-10-25"
+  },
+  {
+   "id": "ta-www",
+   "kind": "do",
+   "sprint": false,
+   "mins": 3,
+   "what": "Trade Admin: www.tradeadmin.com.au shows an error. In Cloudflare → tradeadmin.com.au → DNS, delete any leftover 'www' record, then check trade-admin → Domains & Routes lists www.tradeadmin.com.au",
+   "why": "Some people type www",
+   "link": "https://dash.cloudflare.com",
+   "done": false
+  },
+  {
+   "id": "ta-gsc",
+   "kind": "do",
+   "sprint": false,
+   "mins": 5,
+   "what": "Trade Admin: Search Console → Add property → Domain → tradeadmin.com.au (let Cloudflare add the TXT record), then submit sitemap.xml",
+   "why": "Google finds and ranks the new site faster; Claude reads the numbers for the reports",
+   "link": "https://search.google.com/search-console",
+   "done": false
+  },
+  {
+   "id": "ta-partners",
+   "kind": "do",
+   "sprint": false,
+   "mins": 15,
+   "what": "Trade Admin: apply to the Fergus referral partner and Tradify partner programmes (answers drafted by Claude)",
+   "why": "Fergus pays A$250–500 per sign-up; comparison pages are ready for the links",
+   "link": "https://fergus.com/referral-partner/",
    "done": false
   }
  ],
