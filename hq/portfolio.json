@@ -34,7 +34,7 @@
     "views": 3000,
     "moneyClicks": 30
    },
-   "targetSet": "provisional"
+   "targetSet": "confirmed"
   },
   {
    "id": "vic",
@@ -43,14 +43,14 @@
    "status": "live",
    "url": "https://victours.com.au",
    "stats": "data/vic/stats.json",
-   "money": "Booking.com, Viator (applying)",
+   "money": "Viator, GetYourGuide, Discover Cars (live); Booking.com pending",
    "station": "Launch",
    "launched": "2026-10-20",
    "target90": {
     "views": 1000,
     "moneyClicks": 20
    },
-   "targetSet": "provisional"
+   "targetSet": "confirmed"
   },
   {
    "id": "factory",
@@ -86,6 +86,17 @@
    "name": "Dashboards",
    "status": "live",
    "note": "Daily GA4 + Search Console"
+  },
+  {
+   "id": "trade-admin",
+   "group": "sites",
+   "name": "tradeadmin.com.au",
+   "status": "live",
+   "url": "https://tradeadmin.com.au",
+   "money": "Fergus / Tradify referrals (applying)",
+   "station": "Launch",
+   "launched": "2026-10-25",
+   "note": "Free quote + invoice builders for tradies; job app price comparisons"
   },
   {
    "id": "chc",
@@ -537,8 +548,8 @@
    "kind": "do",
    "sprint": false,
    "mins": 5,
-   "what": "Trade Admin: Search Console → Add property → Domain → tradeadmin.com.au (let Cloudflare add the TXT record), then submit sitemap.xml",
-   "why": "Google finds and ranks the new site faster; Claude reads the numbers for the reports",
+   "what": "Trade Admin Search Console: remove the www sitemap, submit https://tradeadmin.com.au/sitemap.xml, then Settings → Users and permissions → add the …iam.gserviceaccount.com reader (copy it from Vic's users) as Restricted",
+   "why": "Google indexes the right host, and the daily report can include Trade Admin",
    "link": "https://search.google.com/search-console",
    "done": false
   },
