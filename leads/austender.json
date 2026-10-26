@@ -1,7 +1,70 @@
 {
- "generatedAt": "2026-10-25T22:39:25+00:00",
+ "generatedAt": "2026-10-26T23:57:01+00:00",
  "days": 7,
  "suppliers": [
+  {
+   "name": "Sirva Relocation Pty Ltd",
+   "abn": "",
+   "locality": "Dandenong",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 70000.0,
+     "buyer": "Australian Office of Financial Management",
+     "buyerState": "ACT",
+     "desc": "OECD relocations and storage services",
+     "category": "",
+     "start": "2025-03-31",
+     "end": "2026-09-29",
+     "id": "CN4284414"
+    },
+    {
+     "value": 72100.0,
+     "buyer": "Australian Office of Financial Management",
+     "buyerState": "ACT",
+     "desc": "OECD relocations and storage services",
+     "category": "",
+     "start": "2025-03-31",
+     "end": "2026-09-29",
+     "id": "CN4284414"
+    }
+   ],
+   "total": 142100,
+   "score": 8.0,
+   "interstate": true,
+   "why": [
+    "based in Dandenong VIC, delivering for Australian Office of Financial Management (Canberra)",
+    "2 new government contracts in the last 7 days",
+    "work runs 18 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "CLEMENGER BBDO PTY LTD",
+   "abn": "",
+   "locality": "Melbourne",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 168138.53,
+     "buyer": "Australian Securities and Investments Commission",
+     "buyerState": "NSW",
+     "desc": "Director ID Linking Campaign Creative Development",
+     "category": "",
+     "start": "2026-09-21",
+     "end": "2027-04-29",
+     "id": "CN4284543"
+    }
+   ],
+   "total": 168139,
+   "score": 7.0,
+   "interstate": true,
+   "why": [
+    "based in Melbourne VIC, delivering for Australian Securities and Investments Commission (NSW)",
+    "work runs 7 months"
+   ],
+   "seenBefore": false
+  },
   {
    "name": "TR PTY LTD",
    "abn": "",
@@ -27,6 +90,81 @@
     "work runs 12 months"
    ],
    "seenBefore": true
+  },
+  {
+   "name": "CRONDO PTY LTD",
+   "abn": "",
+   "locality": "Newcastle",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 866348.47,
+     "buyer": "Australian Submarine Agency",
+     "buyerState": null,
+     "desc": "Project Management Services",
+     "category": "",
+     "start": "2026-09-10",
+     "end": "2028-06-29",
+     "id": "CN4284563"
+    }
+   ],
+   "total": 866348,
+   "score": 5.0,
+   "interstate": false,
+   "why": [
+    "work runs 22 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "AERO PM PTY. LTD.",
+   "abn": "",
+   "locality": "Barton",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 601495.99,
+     "buyer": "Australian Submarine Agency",
+     "buyerState": null,
+     "desc": "Project Management Services",
+     "category": "",
+     "start": "2026-09-09",
+     "end": "2028-06-29",
+     "id": "CN4284564"
+    }
+   ],
+   "total": 601496,
+   "score": 5.0,
+   "interstate": false,
+   "why": [
+    "work runs 22 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "THE TRUSTEE FOR PROJECTS ASSURED TRUST",
+   "abn": "",
+   "locality": "Braddon",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 596146.65,
+     "buyer": "Australian Submarine Agency",
+     "buyerState": null,
+     "desc": "Project Management Services",
+     "category": "",
+     "start": "2026-09-13",
+     "end": "2028-06-29",
+     "id": "CN4284562"
+    }
+   ],
+   "total": 596147,
+   "score": 5.0,
+   "interstate": false,
+   "why": [
+    "work runs 22 months"
+   ],
+   "seenBefore": false
   },
   {
    "name": "ELEPHANT IN THE ROOM CONSULTING PTY",
@@ -79,6 +217,29 @@
     "work runs 8 months"
    ],
    "seenBefore": true
+  },
+  {
+   "name": "ALINEA INTERNATIONAL PTY LTD",
+   "abn": "",
+   "locality": "Melbourne",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 172157.7,
+     "buyer": "Department of Foreign Affairs and Trade - Australian Aid Program",
+     "buyerState": null,
+     "desc": "Australian Awards Solomon Islands Mid- Term Review  (Solomon Islands)",
+     "category": "",
+     "start": "2026-10-20",
+     "end": "2027-02-27",
+     "id": "CN4284575"
+    }
+   ],
+   "total": 172158,
+   "score": 4.0,
+   "interstate": false,
+   "why": [],
+   "seenBefore": false
   },
   {
    "name": "Strategem Enterprises Pty Ltd",
@@ -204,42 +365,6 @@
    "seenBefore": true
   },
   {
-   "name": "Callida Pty Ltd",
-   "abn": "",
-   "locality": "Forrest",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 66000.0,
-     "buyer": "Australian Centre for International Agricultural Research",
-     "buyerState": null,
-     "desc": "Finance Advsior",
-     "category": "",
-     "start": "2026-10-18",
-     "end": "2026-11-29",
-     "id": "CN4283357"
-    },
-    {
-     "value": 87339.56,
-     "buyer": "Department of the Treasury",
-     "buyerState": null,
-     "desc": "Management advisory services",
-     "category": "",
-     "start": "2026-10-05",
-     "end": "2027-04-29",
-     "id": "CN4283152"
-    }
-   ],
-   "total": 153340,
-   "score": 3.0,
-   "interstate": false,
-   "why": [
-    "2 new government contracts in the last 7 days",
-    "work runs 7 months"
-   ],
-   "seenBefore": true
-  },
-  {
    "name": "Akkodis Australia Consulting P L",
    "abn": "",
    "locality": "Brisbane (Efte)",
@@ -264,6 +389,29 @@
     "work runs 12 months"
    ],
    "seenBefore": true
+  },
+  {
+   "name": "MITHRIL SECURITY PTY LTD",
+   "abn": "",
+   "locality": "Googong",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 78999.99,
+     "buyer": "Australian Submarine Agency",
+     "buyerState": null,
+     "desc": "Risk Assessment",
+     "category": "",
+     "start": "2026-11-01",
+     "end": "2027-02-21",
+     "id": "CN4284566"
+    }
+   ],
+   "total": 79000,
+   "score": 3.0,
+   "interstate": false,
+   "why": [],
+   "seenBefore": false
   },
   {
    "name": "Australian Sports Technologies Netw",
@@ -292,6 +440,29 @@
    "seenBefore": true
   },
   {
+   "name": "Parbery Consulting Pty Ltd",
+   "abn": "",
+   "locality": "Fyshwick",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 71280.0,
+     "buyer": "Department of the Treasury",
+     "buyerState": null,
+     "desc": "Management advisory services",
+     "category": "",
+     "start": "2026-10-19",
+     "end": "2027-04-16",
+     "id": "CN4284581"
+    }
+   ],
+   "total": 71280,
+   "score": 3.0,
+   "interstate": false,
+   "why": [],
+   "seenBefore": false
+  },
+  {
    "name": "Leeson & Co Pty Ltd ATF The Leeson Family Trust",
    "abn": "",
    "locality": "Annerley (Efte)",
@@ -318,31 +489,6 @@
    "seenBefore": true
   },
   {
-   "name": "JWS Research Pty Ltd in its personal capacity and as trustee for JWS Research Unit Trust",
-   "abn": "",
-   "locality": "Malvern",
-   "state": "VIC",
-   "contracts": [
-    {
-     "value": 508860.0,
-     "buyer": "Reserve Bank of Australia",
-     "buyerState": null,
-     "desc": "Community Research Services",
-     "category": "",
-     "start": "2024-12-17",
-     "end": "2025-12-16",
-     "id": "CN4283311"
-    }
-   ],
-   "total": 508860,
-   "score": 2.0,
-   "interstate": false,
-   "why": [
-    "work runs 12 months"
-   ],
-   "seenBefore": true
-  },
-  {
    "name": "O'Connor Marsden & Associates Pty Ltd",
    "abn": "",
    "locality": "Canberra",
@@ -364,31 +510,6 @@
    "interstate": false,
    "why": [
     "work runs 24 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "Axiom Associated Pty Ltd",
-   "abn": "",
-   "locality": "Barton",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 480000.0,
-     "buyer": "National Museum of Australia",
-     "buyerState": null,
-     "desc": "Internal audit services",
-     "category": "",
-     "start": "2024-10-28",
-     "end": "2028-10-28",
-     "id": "CN4283332"
-    }
-   ],
-   "total": 480000,
-   "score": 2.0,
-   "interstate": false,
-   "why": [
-    "work runs 49 months"
    ],
    "seenBefore": true
   },
@@ -453,31 +574,6 @@
    "seenBefore": true
   },
   {
-   "name": "AURECON AUSTRALASIA PTY LTD",
-   "abn": "",
-   "locality": "Turner",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 272581.84,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Project management",
-     "category": "",
-     "start": "2026-10-14",
-     "end": "2027-06-29",
-     "id": "CN4283290"
-    }
-   ],
-   "total": 272582,
-   "score": 2.0,
-   "interstate": false,
-   "why": [
-    "work runs 9 months"
-   ],
-   "seenBefore": true
-  },
-  {
    "name": "MOTT MACDONALD AUSTRALIA PTY LIMITED",
    "abn": "",
    "locality": "Adelaide",
@@ -499,31 +595,6 @@
    "interstate": false,
    "why": [
     "work runs 8 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "THE MISSING LINK SECURITY PTY LTD",
-   "abn": "",
-   "locality": "Artarmon",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 115539.36,
-     "buyer": "Fair Work Commission",
-     "buyerState": null,
-     "desc": "Maintenance and support",
-     "category": "",
-     "start": "2026-10-21",
-     "end": "2027-10-20",
-     "id": "CN4283327"
-    }
-   ],
-   "total": 115539,
-   "score": 2.0,
-   "interstate": false,
-   "why": [
-    "work runs 12 months"
    ],
    "seenBefore": true
   },
@@ -622,41 +693,6 @@
    "seenBefore": true
   },
   {
-   "name": "EVERLLENCE AUSTRALIA PTY LTD",
-   "abn": "",
-   "locality": "Yennora",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 45288.51,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Watercraft Maintenance",
-     "category": "",
-     "start": "2026-10-14",
-     "end": "2027-01-19",
-     "id": "CN4283788"
-    },
-    {
-     "value": 31083.0,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Watercraft Spare Parts",
-     "category": "",
-     "start": "2026-10-08",
-     "end": "2026-11-19",
-     "id": "CN4283258"
-    }
-   ],
-   "total": 76372,
-   "score": 1.0,
-   "interstate": false,
-   "why": [
-    "2 new government contracts in the last 7 days"
-   ],
-   "seenBefore": true
-  },
-  {
    "name": "IPAR Rehabilitation Pty Ltd",
    "abn": "",
    "locality": "Melbourne",
@@ -749,29 +785,6 @@
    "why": [
     "2 new government contracts in the last 7 days"
    ],
-   "seenBefore": true
-  },
-  {
-   "name": "YMCA Australia",
-   "abn": "",
-   "locality": "Essendon Fields",
-   "state": "VIC",
-   "contracts": [
-    {
-     "value": 88048.09,
-     "buyer": "Department of the House of Representatives",
-     "buyerState": null,
-     "desc": "Supervisors for National Youth Parliament",
-     "category": "",
-     "start": "2026-09-29",
-     "end": "2026-11-29",
-     "id": "CN4283322"
-    }
-   ],
-   "total": 88048,
-   "score": 0.0,
-   "interstate": false,
-   "why": [],
    "seenBefore": true
   },
   {
