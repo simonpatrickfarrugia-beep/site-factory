@@ -1,13 +1,17 @@
 # Competition check
 
-Updated 2026-10-20. Google top 10 for each niche's best keywords. A slot is **beatable** when a forum (Reddit, Quora, Fandom...) or a small site (under 30k est. search visits/month) holds it. **Openness** 0-100 weights the top 3 positions most. Rough guide: 40+ open, 20-40 possible with a strong angle, under 20 owned by big brands.
+Updated 2026-10-26. Google top 10 for each niche's best keywords. A slot is **beatable** when a forum (Reddit, Quora, Fandom...) or a small site (under 30k est. search visits/month) holds it. **Openness** 0-100 weights the top 3 positions most. Rough guide: 40+ open, 20-40 possible with a strong angle, under 20 owned by big brands.
 
 | Idea | Openness | Keywords checked | Biggest players |
 |---|---:|---:|---|
+| Australian clothing brands directory (beason.com.au) | **59** | 6 | davidjones.com (1.2M), theurbanlist.com (903k), superprof.com.au (52k), glamcorner.com.au (39k) |
 | Victoria: where to eat by town | **54** | 6 | tripadvisor.com.au (19.3M), visitmelbourne.com (1.1M), instagram.com (61.7M), agfg.com.au (2.5M) |
 | Board games | **48** | 6 | youtube.com (625.8M), boardgamegeek.com (1.3M), google.com (551.5M), chess.com (1.2M) |
 | Victoria: where to stay by town | **47** | 6 | instagram.com (61.7M), tripadvisor.com.au (19.3M), tripadvisor.com (2.0M), visitvictoria.com (598k) |
+| Australian loungewear and comfortwear brands | **45** | 6 | amazon.com.au (7.6M), lululemon.com.au (306k), uniqlo.com (740k), brasnthings.com (164k) |
+| Hurricane history by coastal state | **40** | 3 | wikipedia.org (1937.8M), youtube.com (625.8M), weather.gov (54.0M), noaa.gov (11.7M) |
 | Book series in reading order | **37** | 6 | goodreads.com (10.5M), scholastic.com (657k), amazon.com (251.6M), nytimes.com (54.6M) |
+| Australian winter wear: beanies, jackets and knitwear | **36** | 6 | bestandless.com.au (274k), oxfordshop.com.au (58k), davidjones.com (1.2M), jgl.com.au (514k) |
 | Anime: where to watch and watch order | **33** | 6 | google.com (551.5M), hulu.com (8.8M), wikipedia.org (1937.8M), imdb.com (385.1M) |
 | Dog breeds | **31** | 6 | youtube.com (625.8M), akc.org (4.5M), wikipedia.org (1937.8M), petfinder.com (2.2M) |
 | Victoria: things to do by town | **28** | 6 | visitballarat.com.au (42k), tripadvisor.com.au (19.3M), visitmelbourne.com (1.1M), experienceoz.com.au (82k) |
@@ -15,6 +19,17 @@ Updated 2026-10-20. Google top 10 for each niche's best keywords. A slot is **be
 | TV shows: where to watch | **19** | 5 | youtube.com (625.8M), apple.com (162.5M), netflix.com (52.3M), hulu.com (8.8M) |
 | Video games: release dates and trailers | **18** | 6 | youtube.com (625.8M), bestbuy.com (19.6M), amazon.com (251.6M), yahoo.com (144.2M) |
 | US national parks and hiking trails | **11** | 1 | britannica.com (39.9M), hilton.com (16.4M), aaa.com (5.1M), maryland.gov (4.9M) |
+
+## Australian clothing brands directory (beason.com.au) (openness 59)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| australian urban outfitters | 5,400 | 63 | #1 urbanequipment.com.au, #4 urbanoutfitters.com, #5 facebook.com (forum), #6 everythingaustralian.com.au, #7 facebook.com (forum), #8 theoutfitter.au, #9 urbanculture.com | urbanequipment.com.au, m.yelp.com, en.wikipedia.org |
+| australian womens workwear | 1,600 | 47 | #3 hardyakka.com, #5 cue.com, #6 sukworkwear.com.au, #7 stellaclothing.com.au, #9 theark.com.au | saba.com.au, forcast.com.au, hardyakka.com |
+| australian sportswear brands | 1,300 | 68 | #1 dkactive.com, #3 muki.com.au, #4 mamamovement.com.au, #5 reddit.com (forum), #7 revenuebase.ai, #8 au.ryderwear.com, #9 koral.au | dkactive.com, theurbanlist.com, muki.com.au |
+| clothing designers australia | 1,300 | 79 | #1 marais.com.au, #3 aquel.com.au, #4 reddit.com (forum), #5 reluv.com.au, #6 augustethelabel.com, #7 frockaholics.com, #9 australianfashion.org, #10 whatson.melbourne.vic.gov.au | marais.com.au, elle.com.au, aquel.com.au |
+| australian fashion designer dresses | 1,300 | 42 | #2 girlswithgems.com, #5 lucylaurita.com.au, #7 antheacrawford.com.au, #8 pinterest.com (forum), #9 goldcouture.net.au | davidjones.com, girlswithgems.com, theurbanlist.com |
+| australian fashion houses | 1,300 | 42 | #1 libertylondon.com, #4 reddit.com (forum), #6 frockaholics.com, #7 australianfashion.org | libertylondon.com, superprof.com.au, whowhatwear.com |
 
 ## Victoria: where to eat by town (openness 54)
 
@@ -49,6 +64,25 @@ Updated 2026-10-20. Google top 10 for each niche's best keywords. A slot is **be
 | lake house daylesford accommodation | 9,900 | 26 | #1 lakehouse.com.au, #6 luxurylodgesofaustralia.com.au | lakehouse.com.au, tripadvisor.com.au, visitvictoria.com |
 | lake house daylesford hotel | 9,900 | 32 | #1 lakehouse.com.au, #6 lakehouse.com.au, #9 luxurytravelmag.com.au | lakehouse.com.au, gourmettraveller.com.au, instagram.com |
 
+## Australian loungewear and comfortwear brands (openness 45)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| loungewear sets australia | 720 | 58 | #2 papinelle.com, #3 aimn.com.au, #4 loungewearrepublic.com.au, #5 gingerlilly.com.au, #9 au.yoursclothing.com | lornajane.com.au, papinelle.com, aimn.com.au |
+| lounge sets australia | 720 | 37 | #2 papinelle.com, #4 ortc.com.au, #6 homebodii.com | brasnthings.com, papinelle.com, thatssofetch.com.au |
+| lounge wear aus | 590 | 58 | #1 matildalife.com.au, #2 paire.com.au, #3 magnolialounge.com.au, #6 aimn.com.au | matildalife.com.au, paire.com.au, magnolialounge.com.au |
+| loungewear underwear australia | 480 | 32 | #2 aus.loungeunderwear.com, #4 loungewearrepublic.com.au, #8 intimo.com.au | aus.lounge.com, aus.loungeunderwear.com, uniqlo.com |
+| womens track pants australia | 260 | 53 | #2 motionlifestyle.com.au, #3 echt.com.au, #6 russellathletic.com.au, #8 goondiwindicotton.com.au, #10 macronnsw.com.au | underarmour.com.au, motionlifestyle.com.au, echt.com.au |
+| ladies track pants australia | 260 | 21 | #1 russellathletic.com.au, #8 millers.com.au | russellathletic.com.au, lululemon.com.au, sussan.com.au |
+
+## Hurricane history by coastal state (openness 40)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| hurricanes that hit florida by year | 10 | 47 | #2 suncoastsearchlight.org, #4 boggslawgroup.com, #6 learn.weatherstem.com, #7 facebook.com (forum), #10 weathernationtv.com | aoml.noaa.gov, suncoastsearchlight.org, youtube.com |
+| how many hurricanes has louisiana had | 10 | 58 | #1 unitedwayswla.org, #2 thecajuns.com, #5 facebook.com (forum), #7 facebook.com (forum), #8 hurricanecity.com, #9 quora.com (forum) | unitedwayswla.org, thecajuns.com, houmatoday.com |
+| strongest hurricane to hit north carolina | 10 | 16 | #6 facebook.com (forum), #8 ctlowndes.com | abc11.com, en.wikipedia.org, weather.gov |
+
 ## Book series in reading order (openness 37)
 
 | Keyword | /mo | Openness | Beatable slots | Top 3 |
@@ -59,6 +93,17 @@ Updated 2026-10-20. Google top 10 for each niche's best keywords. A slot is **be
 | the new york times best seller | 110,000 | 11 | #5 reddit.com (forum) | nytimes.com, nytimes.com, en.wikipedia.org |
 | scholastic book club | 74,000 | 42 | #1 mybookclubs.scholastic.com.au, #2 reddit.com (forum), #5 reddit.com (forum) | mybookclubs.scholastic.com.au, reddit.com, teacher.scholastic.com |
 | harry potter books in order | 60,500 | 58 | #1 reddit.com (forum), #2 harrypotter.fandom.com (forum), #4 facebook.com (forum), #6 thehappybookstack.com, #7 harrypotter.fandom.com (forum) | reddit.com, harrypotter.fandom.com, ign.com |
+
+## Australian winter wear: beanies, jackets and knitwear (openness 36)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| ladies winter coats australia sale | 1,300 | 26 | #4 facebook.com (forum), #7 stellaclothing.com.au, #9 champion.com.au, #10 cablemelbourne.com | suzannegrae.com.au, portmans.jgl.com.au, macpac.com.au |
+| women's winter jackets australia | 880 | 58 | #1 paddingtoncoats.com.au, #2 cablemelbourne.com, #5 champion.com.au, #6 millers.com.au, #8 roxyaustralia.com.au | paddingtoncoats.com.au, cablemelbourne.com, suzannegrae.com.au |
+| womens winter coats australia | 880 | 21 | #3 fjallraven.com.au, #7 creswickwool.com | oxfordshop.com.au, trenery.com.au, fjallraven.com.au |
+| ladies winter jackets australia | 880 | 42 | #1 fjallraven.com.au, #3 enni.com.au, #7 roxyaustralia.com.au, #9 plusoutdoor.com.au | fjallraven.com.au, cos.com, enni.com.au |
+| woollen jumpers australia | 720 | 58 | #2 dannysknitwear.com, #4 wool.com, #5 fields.com.au, #6 swoolly.com.au, #8 sweatersaustralia.com.au, #9 sweatersaustralia.com.au | kookai.com.au, dannysknitwear.com, rmwilliams.com.au |
+| men's winter jackets australia | 720 | 16 | #1 everythingaustralian.com.au | everythingaustralian.com.au, adidas.com.au, quiksilver.com.au |
 
 ## Anime: where to watch and watch order (openness 33)
 
