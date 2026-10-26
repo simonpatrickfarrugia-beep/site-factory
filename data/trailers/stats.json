@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-25T21:00:10.681Z",
+ "generatedAt": "2026-10-26T21:00:11.111Z",
  "period": {
-  "start": "2026-09-27",
-  "end": "2026-10-24"
+  "start": "2026-09-28",
+  "end": "2026-10-25"
  },
  "gscPeriod": {
-  "start": "2026-09-25",
-  "end": "2026-10-22"
+  "start": "2026-09-26",
+  "end": "2026-10-23"
  },
  "sources": {
   "ga4": true,
@@ -14,19 +14,14 @@
   "notes": []
  },
  "totals": {
-  "views": 249,
-  "prevViews": 93,
-  "users": 177,
+  "views": 239,
+  "prevViews": 103,
+  "users": 171,
   "cta": {},
   "gscClicks": 7,
   "gscImpressions": 667
  },
  "daily": [
-  {
-   "date": "2026-09-27",
-   "views": 10,
-   "cta": 0
-  },
   {
    "date": "2026-09-28",
    "views": 1,
@@ -161,25 +156,14 @@
  "pages": [
   {
    "path": "/",
-   "views": 101,
-   "prevViews": 67,
-   "users": 49,
+   "views": 98,
+   "prevViews": 70,
+   "users": 48,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 0,
    "gscPosition": null,
    "topQuery": null
-  },
-  {
-   "path": "/movies/schindlers-list-1994",
-   "views": 11,
-   "prevViews": 0,
-   "users": 9,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 10,
-   "gscPosition": 31.6,
-   "topQuery": "schindler's list trailer"
   },
   {
    "path": "/browse",
@@ -191,6 +175,17 @@
    "gscImpressions": 0,
    "gscPosition": null,
    "topQuery": null
+  },
+  {
+   "path": "/movies/schindlers-list-1994",
+   "views": 9,
+   "prevViews": 2,
+   "users": 9,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 10,
+   "gscPosition": 31.6,
+   "topQuery": "schindler's list trailer"
   },
   {
    "path": "/movies/star-wars-episode-v---the-empire-strikes-back-1980",
@@ -235,17 +230,6 @@
    "gscImpressions": 33,
    "gscPosition": 41.8,
    "topQuery": "home alone trailer"
-  },
-  {
-   "path": "/movies/jurassic-park-1993",
-   "views": 3,
-   "prevViews": 0,
-   "users": 3,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 18,
-   "gscPosition": 44.3,
-   "topQuery": "jurassic park trailer"
   },
   {
    "path": "/movies/whalefall-2026",
@@ -309,7 +293,7 @@
    "users": 2,
    "cta": {},
    "gscClicks": 3,
-   "gscImpressions": 107,
+   "gscImpressions": 106,
    "gscPosition": 8.9,
    "topQuery": "ghost soldier movie 2006"
   },
@@ -323,6 +307,17 @@
    "gscImpressions": 36,
    "gscPosition": 35.2,
    "topQuery": "the prestige trailer"
+  },
+  {
+   "path": "/movies/jurassic-park-1993",
+   "views": 2,
+   "prevViews": 1,
+   "users": 2,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 18,
+   "gscPosition": 44.3,
+   "topQuery": "jurassic park trailer"
   },
   {
    "path": "/movies/the-departed-2006",
@@ -699,17 +694,6 @@
    "topQuery": "seabiscuit trailer"
   },
   {
-   "path": "/movies/the-dark-knight-2008",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 40,
-   "topQuery": "the dark night trailer"
-  },
-  {
    "path": "/movies/the-firm-1993",
    "views": 1,
    "prevViews": 0,
@@ -820,17 +804,6 @@
    "topQuery": null
   },
   {
-   "path": "/movies/oppenheimer-2023",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null
-  },
-  {
    "path": "/movies/raiders-of-the-lost-ark-1981",
    "views": 1,
    "prevViews": 0,
@@ -886,17 +859,6 @@
    "topQuery": null
   },
   {
-   "path": "/movies/the-making-of-kill-bill-volume-2-2004",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null
-  },
-  {
    "path": "/movies/the-sandlot-1993",
    "views": 1,
    "prevViews": 0,
@@ -911,17 +873,6 @@
    "path": "/movies/the-tale-of-the-princess-kaguya-2013",
    "views": 1,
    "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null
-  },
-  {
-   "path": "/movies/when-marnie-was-there-2014",
-   "views": 1,
-   "prevViews": 1,
    "users": 1,
    "cta": {},
    "gscClicks": 0,
@@ -1150,6 +1101,17 @@
    "topQuery": "aliens 1986 trailer"
   },
   {
+   "path": "/movies/air-force-one-1997",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 5,
+   "gscPosition": 51.4,
+   "topQuery": "air force one trailer"
+  },
+  {
    "path": "/movies/howls-moving-castle-2004",
    "views": 0,
    "prevViews": 0,
@@ -1192,17 +1154,6 @@
    "gscImpressions": 5,
    "gscPosition": 50,
    "topQuery": "up trailer"
-  },
-  {
-   "path": "/movies/air-force-one-1997",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 43.3,
-   "topQuery": "air force one trailer"
   },
   {
    "path": "/movies/following-1998",
@@ -1370,6 +1321,17 @@
    "topQuery": "клейфейс фильм"
   },
   {
+   "path": "/movies/the-dark-knight-2008",
+   "views": 0,
+   "prevViews": 1,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 40,
+   "topQuery": "the dark night trailer"
+  },
+  {
    "path": "/discover/1992-box-office-highlights",
    "views": 0,
    "prevViews": 0,
@@ -1524,6 +1486,17 @@
    "topQuery": null
   },
   {
+   "path": "/movies/when-marnie-was-there-2014",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
    "path": "/movies/animol",
    "views": 0,
    "prevViews": 1,
@@ -1557,6 +1530,17 @@
    "topQuery": null
   },
   {
+   "path": "/movies/oppenheimer-2023",
+   "views": 0,
+   "prevViews": 1,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
    "path": "/movies/pocahontas-1995",
    "views": 0,
    "prevViews": 1,
@@ -1569,6 +1553,17 @@
   },
   {
    "path": "/movies/robin-hood-prince-of-thieves-1991",
+   "views": 0,
+   "prevViews": 1,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
+   "path": "/movies/the-making-of-kill-bill-volume-2-2004",
    "views": 0,
    "prevViews": 1,
    "users": 0,
