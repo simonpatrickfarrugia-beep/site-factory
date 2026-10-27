@@ -1,23 +1,27 @@
-# Site Factory brief — Tue 27 Oct 2026 (generated 00:43 UTC)
+# Site Factory brief — Tue 27 Oct 2026 (generated 10:11 UTC)
 
 _Auto-written daily by scripts/hq/brief.py. Read this first in any new chat. Refresh: scripts/claude/brief.sh_
 
 ## Headline
 
-Revenue to date **A$0.00** · sprint "First $1" ends in 4 days · Simon has **16** open items (~99 min)
+Revenue to date **A$0.00** · sprint "First $1" ends in 4 days · Simon has **15** open items (~94 min)
 
 ## Traffic (last 28 days)
 
 | Site | Station | Views (prev) | Last 7 days | CTA clicks | Google clicks / impressions |
 |---|---|---|---|---|---|
-| movietrailer.channel | Measure | 239 (103) | 15 11 4 4 4 3 1 | 0 | 7 / 667 |
-| victours.com.au | Launch | 49 (0) | 2 9 3 28 7 | book_tour 2, website 1, map 1 | 2 / 635 |
-| Community Help Co | Launch | not tracked yet | | | |
+| movietrailer.channel | Measure | 245 (104) | 11 4 4 4 3 1 7 | 0 | 7 / 646 |
+| victours.com.au | Launch | 56 (0) | 2 9 3 28 7 7 | book_tour 2, website 1, map 1 | 2 / 1263 |
+| Community Help Co | Launch | 0 (0) |  | 0 | 0 / 30 |
+| tradeadmin.com.au | Launch | 0 (0) |  | 0 | 0 / 0 |
 
-- **movietrailer.channel** (stats 4h ago) — top pages: / 98, /browse 10, /movies/schindlers-list-1994 9, /movies/star-wars-episode-v---the-empire-strikes-back-1980 9, /movies/star-wars-episode-vii---the-force-awakens-2015 6
-  - Google: "ghost soldier movie 2006" 106 impr, pos 8.9; "the prestige trailer" 36 impr, pos 35.2; "home alone trailer" 33 impr, pos 41.8; "the sixth sense trailer" 32 impr, pos 29.2; "star wars episode 1 trailer" 23 impr, pos 41
-- **victours.com.au** (stats 4h ago) — top pages: / 20, /towns 6, /warburton 5, /daylesford 2, /road-trips/goldfields-road-trip 2
-  - Google: "sorrento restaurants" 66 impr, pos 90.6; "activities lorne victoria" 30 impr, pos 75.4; "best restaurants in mornington peninsula" 26 impr, pos 86.8; "1004 mornington-flinders road red hill vic 3937" 24 impr, pos 24.7; "bright things to do" 21 impr, pos 55.6
+- **movietrailer.channel** (stats 0h ago) — top pages: / 103, /browse 12, /movies/star-wars-episode-v---the-empire-strikes-back-1980 9, /movies/schindlers-list-1994 8, /movies/star-wars-episode-vii---the-force-awakens-2015 6
+  - Google: "ghost soldier movie 2006" 97 impr, pos 8.8; "the prestige trailer" 37 impr, pos 36; "the sixth sense trailer" 32 impr, pos 29.2; "home alone trailer" 30 impr, pos 42.3; "star wars episode 1 trailer" 23 impr, pos 41
+- **victours.com.au** (stats 0h ago) — top pages: / 26, /towns 6, /warburton 5, /daylesford 2, /road-trips/goldfields-road-trip 2
+  - Google: "accommodation melbourne southbank" 153 impr, pos 77.6; "sorrento restaurants" 66 impr, pos 90.6; "activities lorne victoria" 42 impr, pos 72.2; "1004 mornington-flinders road red hill vic 3937" 36 impr, pos 31.3; "best restaurants in mornington peninsula" 35 impr, pos 79.5
+- **Community Help Co** (stats 0h ago) — top pages: / 0
+  - Google: "community services placement" 30 impr, pos 15.9
+- **tradeadmin.com.au** (stats 0h ago) — top pages: 
 
 Latest milestones: 2026-10-15 trailers: Best day ever: 80 visits; 2026-10-15 trailers: Daily visits crossed 50; 2026-10-21 trailers: First Google clicks (7 in 28 days)
 
@@ -27,13 +31,13 @@ All checks passing ✅ (sites up, pipeline jobs fresh, live builds current, no f
 
 ## Pipeline jobs (last run)
 
-- ✅ `intake` 1h ago: Intake: 0 new trailer(s) queued. | Feed UCAP57cF-FSjJKzzXg7ntPlQ failed: YouTube feed UCAP57cF-FSjJKzzXg7ntPlQ: HTTP 404 | Feed UCtlPYzQ188v
-- ✅ `stats` 4h ago: vic: 49 views, 4 CTA clicks, 2 Google clicks. | trailers: 239 views, 0 CTA clicks, 7 Google clicks. | trailers GA4: 66 page(s), 0 CTA click(
-- ✅ `enrich` 6h ago: Enrich: looked at 0, published 0. Queue: 1 waiting for OMDb, 11 need review.
-- ✅ `competition` 7h ago: Competition: checked 4; 5 still to check (run again). | Australian clothing brands directory (beason.com.au): openness 59/100; big players d
-- ✅ `niches` 31h ago: Niches: scored 6 of 6. | Hurricane history by coastal state: 33/100 (demand 0, money 0, ease 97, fit 42). | Freshwater fish species by state
-- ✅ `discover` 2d ago: Discover: screened 12 new ideas for US$0.24; 3 promoted to scoring: US school district enrollment by county (2 free domains), US airport run
-- ✅ `catalogue` 4d ago: Catalogue: queued 30 film(s): Sleepless in Seattle (1993): 135590/mo, Shaun of the Dead (2004): 135590/mo, Citizen Kane (1941): 135480/mo, T
+- ✅ `stats` 0h ago: trade-admin: 0 views, 0 CTA clicks, 0 Google clicks. | community-help-co: 0 views, 0 CTA clicks, 0 Google clicks. | vic: 56 views, 4 CTA cli
+- ✅ `intake` 10h ago: Intake: 0 new trailer(s) queued. | Feed UCAP57cF-FSjJKzzXg7ntPlQ failed: YouTube feed UCAP57cF-FSjJKzzXg7ntPlQ: HTTP 404 | Feed UCtlPYzQ188v
+- ✅ `enrich` 15h ago: Enrich: looked at 0, published 0. Queue: 1 waiting for OMDb, 11 need review.
+- ✅ `competition` 16h ago: Competition: checked 4; 5 still to check (run again). | Australian clothing brands directory (beason.com.au): openness 59/100; big players d
+- ✅ `niches` 40h ago: Niches: scored 6 of 6. | Hurricane history by coastal state: 33/100 (demand 0, money 0, ease 97, fit 42). | Freshwater fish species by state
+- ✅ `discover` 3d ago: Discover: screened 12 new ideas for US$0.24; 3 promoted to scoring: US school district enrollment by county (2 free domains), US airport run
+- ✅ `catalogue` 5d ago: Catalogue: queued 30 film(s): Sleepless in Seattle (1993): 135590/mo, Shaun of the Dead (2004): 135590/mo, Citizen Kane (1941): 135480/mo, T
 - ✅ `ratings` 5d ago: Ratings: checked 40, updated 0; 0 never checked.
 - ✅ `keywords` 6d ago: Victorian road trips and itineraries: day trips from melbourne 2900, great alpine road 1900, weekend getaways from melbourne 1900, romantic 
 - ✅ `collections` 6d ago: Collections: created 3: 90s Family Movies (8 films, 18000/mo) → /discover/90s-family-movies; 2000s Comedy Movies (15 films, 11000/mo) → /dis
@@ -51,7 +55,6 @@ All checks passing ✅ (sites up, pipeline jobs fresh, live builds current, no f
 - · [do, 5 min] Community Help Co: Search Console → Add property → Domain → communityhelp.com.au (let Cloudflare add the record) → submit sitemap.xml; add the search-console-reader service account as a user (`chc-gsc`)
 - · [do, 5 min] Community Help Co: create a GA4 property and send Claude the G- ID (`chc-ga4`)
 - · [do, 5 min] Buy shortlisted.com.au (about A$25/yr at an AU registrar, with IMN's ABN) (`sl-domain`)
-- · [do, 5 min] Trade Admin Search Console: remove the www sitemap, submit https://tradeadmin.com.au/sitemap.xml, then Settings → Users and permissions → add the …iam.gserviceaccount.com reader (copy it from Vic's users) as Restricted (`ta-gsc`)
 - · [do, 10 min] Cloudflare Access: login on /hq pages (both domains) (`access`)
 - · [do, 10 min] Join Impact and Awin (`networks`)
 - · [do, 10 min] Share communityhelp.com.au/resume-builder with 3 job services, schools or community groups you know (`chc-share-resume`)
@@ -73,8 +76,14 @@ Done in the last 7 days: Vic Tours: put the 49 weekend plans live? (by train, bu
 
 ## Changes in the last 7 days
 
-100 commits (18 automated data updates). Hand-made changes:
+100 commits (19 automated data updates). Hand-made changes:
 
+- 2026-10-27 Daily brief: include Trade Admin traffic; mark ta-gsc done
+- 2026-10-27 Trade Admin: GA4 ID is G-MLFVHPE242 (replaces G-ZCRGB48394)
+- 2026-10-27 Fix trailers/HQ build: Trade Admin signup answers had no stats path (crashed /hq/signup); read() now tolerates
+- 2026-10-27 GA4 tags for Community Help Co (G-W507HD781R) and Trade Admin (G-ZCRGB48394); add both to daily stats (Search 
+- 2026-10-27 Community Help Co: hosted logo for Simon's email signature
+- 2026-10-27 HQ: Trade Admin answers for the Fergus and Tradify partner applications (tap-to-copy at /hq/signup)
 - 2026-10-26 Leads: daily call list [skip ci]
 - 2026-10-26 HQ: Trade Admin on the dashboard and health check; Vic affiliates live; targets confirmed; niche jobs monitore
 - 2026-10-25 Leads: daily call list [skip ci]
@@ -94,12 +103,6 @@ Done in the last 7 days: Vic Tours: put the 49 weekend plans live? (by train, bu
 - 2026-10-24 HQ: Commission Factory applied [skip ci]
 - 2026-10-24 Vic: Commission Factory site verification meta tag (brand config 'verify')
 - 2026-10-24 Vic Tours: Viator products refreshed
-- 2026-10-24 Viator: day-trip boxes only list tours from Melbourne (no entry tickets or balloon flights); 'Book on Viator' 
-- 2026-10-24 Vic Tours: Viator products refreshed
-- 2026-10-24 Affiliates: GetYourGuide as the second tours link on Vic Tours; Klook approved (IDs saved, not wired)
-- 2026-10-24 Vic: Viator tickets on matched attractions and 'Rather not drive?' guided tours on day trips (filled weekly fr
-- 2026-10-24 Affiliates: switch on Viator tours buttons on Vic Tours (campaign label per town); GetYourGuide approved
-- 2026-10-24 Affiliates: tick GetYourGuide signup (welcome email 24 Oct)
 
 ## Where things live
 
