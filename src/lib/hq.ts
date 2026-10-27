@@ -5,7 +5,8 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const read = <T>(path: string, fallback: T): T => {
+const read = <T>(path: string | undefined, fallback: T): T => {
+  if (!path) return fallback; // e.g. a site with no stats file yet
   const f = join(process.cwd(), path);
   if (!existsSync(f)) return fallback;
   try {
