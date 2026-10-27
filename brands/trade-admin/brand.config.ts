@@ -35,6 +35,6 @@ export default defineBrand({
 
   data: { source: 'snapshot' },
   forms: [],
-  analytics: { ga4Id: 'G-ZCRGB48394' }, // GA4 property "Trade Admin" (27 Oct 2026)
+  analytics: { ga4Id: 'G-MLFVHPE242' }, // GA4 property "Trade Admin" (27 Oct 2026)
   payments: { enabled: false },
 });
