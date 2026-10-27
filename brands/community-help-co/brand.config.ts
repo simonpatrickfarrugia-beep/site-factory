@@ -40,5 +40,6 @@ export default defineBrand({
 
   data: { source: 'snapshot' },
   forms: ['enquiry', 'referral'],
+  analytics: { ga4Id: 'G-W507HD781R' }, // GA4 property "Community Help Co" (27 Oct 2026)
   payments: { enabled: false },
 });
