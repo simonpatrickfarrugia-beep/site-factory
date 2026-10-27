@@ -137,7 +137,7 @@ export function routes(): Route[] {
       title: 'Movie Trailers & Where to Watch' + SUFFIX,
       rawTitle: true,
       description:
-        'Watch trailers for new releases, award winners, indie films, and hidden gems. Free 24/7 trailer stream, plus where to rent, buy, or stream each movie.',
+        'Classic movie trailers and where to watch each film tonight: rent, buy or stream. Browse by decade, genre and director, or play the free 24/7 trailer channel.',
       image: thumb(newest[0].youtubeId),
     },
     schema: [

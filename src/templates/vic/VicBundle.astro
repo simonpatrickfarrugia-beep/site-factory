@@ -16,7 +16,9 @@ interface Props {
 }
 const { title, sub, intro, town, days, swaps, gettingThere, tips, related, hub, affiliates = null, showTours, showStay = true, root = { href: '/weekends', label: 'Weekend plans' } } = Astro.props;
 type Tour = { title: string; url: string; from: number | null; mins: number | null };
-const tix = viator.attractions as Record<string, Tour>;
+// Inside a plan the reader is already going there, so only entry tickets sit on a step. Guided tours from Melbourne
+// would be a different trip; day trips list those in "Rather not drive?" instead.
+const tix = Object.fromEntries(Object.entries(viator.attractions as Record<string, Tour>).filter(([, t]) => !/from melbourne|\btour\b/i.test(t.title)));
 const isDayTrip = root.href === '/day-trips';
 const tours = isDayTrip ? ((viator.daytrips as Record<string, Tour[]>)[town.slug] ?? []) : [];
 const hrs = (m: number | null) => (m ? (m >= 90 ? `${Math.round(m / 30) / 2} hours` : `${m} min`) : null);
@@ -44,7 +46,7 @@ const hrs = (m: number | null) => (m ? (m >= 90 ? `${Math.round(m / 30) / 2} hou
                   {s.place.hours && <span>{s.place.hours}</span>}
                   {s.place.website && <a href={s.place.website} rel="nofollow noopener" target="_blank" data-cta="website">Website</a>}
                   <a href={s.place.map} rel="nofollow noopener" target="_blank" data-cta="map">Map</a>
-                  {tix[s.place.name] && <a class="bundle-tix" href={tix[s.place.name].url} rel="sponsored noopener" target="_blank" data-cta="book_tour">Book on Viator{tix[s.place.name].from ? ` (from A$${tix[s.place.name].from})` : ''}</a>}
+                  {tix[s.place.name] && <a class="bundle-tix" href={tix[s.place.name].url} rel="sponsored noopener" target="_blank" data-cta="book_tour">Tickets on Viator{tix[s.place.name].from ? ` (from A$${tix[s.place.name].from})` : ''}</a>}
                 </span>
               )}
             </li>

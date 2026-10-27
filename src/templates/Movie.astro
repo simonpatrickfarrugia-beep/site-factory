@@ -81,25 +81,27 @@ const faq = [
   <div class="wrap">
     <header class="movie__head">
       <h1 class="marquee">
+        <span class="marquee__kicker">Where to watch</span>
         <span class="marquee__title">{m.name}</span>
         {m.year && <span class="marquee__year">{m.year}</span>}
       </h1>
       {m.tagline && <p class="movie__tagline">{m.tagline}</p>}
     </header>
 
+    <section class="watch" aria-labelledby="watch-heading">
+      <h2 id="watch-heading">Rent, buy or stream it</h2>
+      <p class="button-row">
+        <a class="button" href={primeUrl} rel="sponsored noopener" target="_blank" data-cta="prime" aria-label={`Watch ${m.name} now on Prime Video`}>Watch now <span class="button__via">on Prime Video</span></a>
+        <a class="button button--quiet" href={discUrl} rel="sponsored noopener" target="_blank" data-cta="disc">Buy on DVD &amp; Blu-ray</a>
+        <a class="button button--quiet" href={justWatchUrl} rel="noopener" target="_blank" data-cta="justwatch">Where else to stream</a>
+      </p>
+    </section>
+
     <div class="movie__body">
       <div class="movie__story prose">
-        {m.synopsis && <p class="lede">{m.synopsis}</p>}
-        {m.summary && m.summary !== m.synopsis && <p>{m.summary}</p>}
+        {(m.summary || m.synopsis) && <p class="lede">{m.summary || m.synopsis}</p>}
 
-        <section class="watch" aria-labelledby="watch-heading">
-          <h2 id="watch-heading">Where to watch {m.name}</h2>
-          <p class="button-row">
-            <a class="button" href={primeUrl} rel="sponsored noopener" target="_blank" data-cta="prime" aria-label={`Watch ${m.name} now on Prime Video`}>Watch now <span class="button__via">on Prime Video</span></a>
-            <a class="button button--quiet" href={discUrl} rel="sponsored noopener" target="_blank" data-cta="disc">Buy on DVD &amp; Blu-ray</a>
-            <a class="button button--quiet" href={justWatchUrl} rel="noopener" target="_blank" data-cta="justwatch">Where else to stream</a>
-          </p>
-        </section>
+
 
         {faq.length > 1 && (
           <section class="worth" aria-labelledby="worth-heading">

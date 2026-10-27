@@ -206,7 +206,7 @@ export function routes(): Route[] {
         sections,
         nearby,
         collections: [
-          ...(bundlesByTown.get(t.slug) ?? []).map((b) => ({ href: `/${b.path}`, name: `Weekend plan: ${bundleLabel(b)}` })),
+          ...(bundlesByTown.get(t.slug) ?? []).map((b) => ({ href: `/${b.path}`, name: `${b.audience === 'daytrip' ? 'Day trip' : 'Weekend plan'}: ${bundleLabel(b)}` })),
           ...(content.loops ?? []).filter((l) => !l.draft && l.days.some((d) => d.stops.includes(t.slug))).map((l) => ({ href: `/road-trips/${l.slug}`, name: `Road trip: ${l.name}` })),
           ...content.collections.filter((col) => col.towns.includes(t.slug) && !(hasDayTripsEarly && col.slug === 'day-trips-from-melbourne')).map(({ slug, name }) => ({ href: `/collections/${slug}`, name })),
         ],
@@ -516,7 +516,7 @@ export function routes(): Route[] {
       out.push({
         path: b.path,
         template: 'vicBundle',
-        seo: { title: seoTitle(b), rawTitle: true, description: description(b), image: photoUrl(b.town.slug) },
+        seo: { title: seoTitle(b), rawTitle: true, description: description(b), image: (planPhoto(b) as { url?: string } | null)?.url ?? photoUrl(b.town.slug) },
         schema: [
           {
             '@context': 'https://schema.org',

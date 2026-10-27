@@ -81,7 +81,8 @@ export function routes(): Route[] {
       template: 'chcPage',
       seo: { title: p.title + SUFFIX, rawTitle: true, description: p.description },
       schema: [crumbs([{ name: 'Home', path: '' }, { name: p.title, path: slug }])],
-      props: { ...common, title: p.title, paragraphs: p.paragraphs, showCta: slug === 'about' },
+      // The About page is about a person: lead with him, not the company name (the SEO title keeps the company name).
+      props: { ...common, title: slug === 'about' ? 'Hi, I’m Simon' : p.title, paragraphs: p.paragraphs, showCta: slug === 'about' },
     });
   }
 

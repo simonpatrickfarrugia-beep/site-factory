@@ -27,7 +27,7 @@ export default defineBrand({
   seo: {
     titleSuffix: ' | MovieTrailer.Channel',
     defaultDescription:
-      'Watch trailers for new releases, award winners, indie films, and hidden gems. Free 24/7 trailer stream, plus where to rent, buy, or stream each movie.',
+      'Classic movie trailers and where to watch each film tonight: rent, buy or stream. Browse by decade, genre and director, or play the free 24/7 trailer channel.',
   },
 
   // Snapshot exported from Webflow on 2026-10-16. Switches to airtable once the

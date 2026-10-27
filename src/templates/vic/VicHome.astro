@@ -14,12 +14,20 @@ interface Props {
   weekendTiles?: Tile[];
 }
 const { towns, neighbourhoods, collections, loops, dayTrips = [], weekendTiles = [] } = Astro.props;
+/** Towns shown before the rest fold away (the full list stays in the page for search engines). */
+const SHOW = 10;
 const credit = (p: Photo) => `Photo: ${p.artist}, ${p.license}, via Wikimedia Commons`;
 ---
 <div class="wrap home">
   <section class="home__hero">
     <h1 class="home__title">Victoria, town by town.</h1>
     <p class="home__lede">Ready-made day trips and weekends from Melbourne, with where to stay, eat and what to do in every town.</p>
+    <nav class="home__chips" aria-label="Plan a trip">
+      <a class="home__chip" href="/day-trips">Day trips</a>
+      <a class="home__chip" href="/weekends">Weekends away</a>
+      <a class="home__chip" href="/road-trips">Road trips</a>
+      <a class="home__chip home__chip--quiet" href="/towns">Pick a town</a>
+    </nav>
   </section>
 
   {dayTrips.length > 0 && (
@@ -99,16 +107,32 @@ const credit = (p: Photo) => `Photo: ${p.artist}, ${p.license}, via Wikimedia Co
   <section class="home__section">
     <h2>Every town, nearest first</h2>
     <ul class="signpost" aria-label="Towns, nearest first">
-      {towns.map((t) => <li><RoadSign name={t.name} km={t.km} href={`/${t.slug}`} /></li>)}
+      {towns.slice(0, SHOW).map((t) => <li><RoadSign name={t.name} km={t.km} href={`/${t.slug}`} /></li>)}
     </ul>
+    {towns.length > SHOW && (
+      <details class="more">
+        <summary>Show all {towns.length} towns</summary>
+        <ul class="signpost signpost--tight">
+          {towns.slice(SHOW).map((t) => <li><RoadSign name={t.name} km={t.km} href={`/${t.slug}`} /></li>)}
+        </ul>
+      </details>
+    )}
   </section>
 
   {neighbourhoods.length > 0 && (
     <section class="home__section">
       <h2>Melbourne neighbourhoods</h2>
       <ul class="signpost signpost--tight">
-        {neighbourhoods.map((t) => <li><RoadSign name={t.name} km={t.km} href={`/${t.slug}`} /></li>)}
+        {neighbourhoods.slice(0, 6).map((t) => <li><RoadSign name={t.name} km={t.km} href={`/${t.slug}`} /></li>)}
       </ul>
+      {neighbourhoods.length > 6 && (
+        <details class="more">
+          <summary>Show all {neighbourhoods.length} neighbourhoods</summary>
+          <ul class="signpost signpost--tight">
+            {neighbourhoods.slice(6).map((t) => <li><RoadSign name={t.name} km={t.km} href={`/${t.slug}`} /></li>)}
+          </ul>
+        </details>
+      )}
     </section>
   )}
 </div>
@@ -118,6 +142,12 @@ const credit = (p: Photo) => `Photo: ${p.artist}, ${p.license}, via Wikimedia Co
   .home__lede { font-size: var(--step-1); max-width: 38ch; color: var(--muted); }
   .signpost { list-style: none; margin: var(--space-4) 0 0; padding: 0; display: grid; gap: 0.6rem; max-width: 34rem; }
   .signpost--tight { margin-top: var(--space-3); }
+  .home__chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: var(--space-4); }
+  .home__chip { font: 800 1rem/1 var(--font-display); text-decoration: none; color: #fff; background: var(--sign-green); border: 2px solid var(--sign-green); border-radius: 999px; padding: 0.65rem 1rem; }
+  .home__chip:hover { background: var(--sign-brown); border-color: var(--sign-brown); }
+  .home__chip--quiet { background: transparent; color: var(--sign-green); }
+  .more { margin-top: var(--space-3); max-width: 34rem; }
+  .more summary { cursor: pointer; font: 700 1rem/1.4 var(--font-display); color: var(--sign-green); padding: 0.5rem 0; }
   .home__section { margin-top: var(--space-6); }
   .home__section--first { margin-top: var(--space-4); }
   .home__head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }

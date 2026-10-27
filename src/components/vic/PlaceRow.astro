@@ -5,7 +5,10 @@ import viator from '../../../data/vic/viator.json';
 interface Props { place: Place; photo?: any; townName?: string; townSlug?: string }
 const { place: p, photo = null, townName, townSlug } = Astro.props;
 const t = p.tags;
-const tix = (viator.attractions as Record<string, { url: string; from: number | null }>)[p.name] ?? null;
+const tix = (viator.attractions as Record<string, { url: string; title: string; from: number | null }>)[p.name] ?? null;
+// A matched product is either an entry ticket or a guided tour from Melbourne that includes this place. Say which.
+const tixIsTour = !!tix && /from melbourne|\btour\b/i.test(tix.title);
+const tixLabel = tix ? `${tixIsTour ? 'Tour from Melbourne' : 'Tickets on Viator'}${tix.from ? ` (from A$${tix.from})` : ''}` : '';
 const kind = [TYPE_LABEL[p.type] ?? p.type, cuisine(t.cuisine), t.stars ? `${t.stars}★` : null].filter(Boolean).join(', ');
 const addr = address(t);
 const hours = prettyHours(t.opening_hours);
@@ -30,7 +33,7 @@ const flags = [
   {flags.length > 0 && <p class="place__flags">{flags.join(', ')}</p>}
   <p class="place__links">
     {site && <a href={site} rel="nofollow noopener" target="_blank" data-cta="website">Website</a>}
-    {tix && <a class="place__tix" href={tix.url} rel="sponsored noopener" target="_blank" data-cta="book_tour">Book on Viator{tix.from ? ` (from A$${tix.from})` : ''}</a>}
+    {tix && <a class="place__tix" href={tix.url} rel="sponsored noopener" target="_blank" data-cta="book_tour">{tixLabel}</a>}
     <a href={mapUrl(p)} rel="nofollow noopener" target="_blank" data-cta="map">Map</a>
     {tel && <a href={`tel:${tel.replace(/[^+\d]/g, '')}`} data-cta="call">Call</a>}
   </p>

@@ -6,7 +6,7 @@
  *   couples + family: searched state-wide ("romantic getaways victoria"), so the best-fitting towns get pages.
  * Nothing here invents facts: prices, travel times and ratings we don't have are never stated.
  */
-import { buildBundle, km, walkMins, type BundleResult, type Item, type Recipe } from '../../src/lib/bundles';
+import { buildBundle, dayList, km, openDays, walkMins, type BundleResult, type Item, type Recipe } from '../../src/lib/bundles';
 import { TYPE_LABEL, type Content, type Place, type Town } from './model';
 
 export type Audience = 'daytrip' | 'train' | 'budget' | 'couples' | 'family';
@@ -85,6 +85,8 @@ const sigBoost = (i: Item) => (SIGNATURE[i.name] && !SIGNATURE[i.name].dusk ? 6 
 const notDusk = (i: Item) => !SIGNATURE[i.name]?.dusk;
 
 // ---------------------------------------------------------------- recipes
+/** Clock time in minutes after midnight, for slot windows (when the plan visits a place). */
+const at = (h: number, m = 0) => h * 60 + m;
 const atStation = (c: Ctx) => (c.station ? { lat: c.station.lat, lon: c.station.lon } : null);
 const atCentre = (c: Ctx) => c.centre;
 const SIGHTS = new Set(['museum', 'gallery', 'attraction', 'viewpoint', 'zoo', 'aquarium', 'winery', 'brewery', 'distillery', 'nature_reserve', 'theme_park', 'water_park', 'park']);
@@ -93,17 +95,17 @@ const RECIPES: Record<Audience, Recipe<Ctx>> = {
   daytrip: {
     id: 'vic-daytrip', audience: 'daytrip',
     slots: [
-      { key: 'morning', label: 'Morning', pool: ['do', 'beach', 'wine'], required: true, alternates: 3,
+      { key: 'morning', label: 'Morning', pool: ['do', 'beach', 'wine'], required: true, alternates: 3, window: [at(10), at(11, 30)],
         filter: (i) => ['museum', 'gallery', 'attraction', 'viewpoint', 'zoo', 'aquarium', 'nature_reserve', 'beach', 'theme_park', 'park'].includes(i.kind) && !NOT_A_STOP.test(i.name) && notDusk(i),
         near: { anchor: atCentre, maxKm: 15, weight: 1 },
         score: (i) => sigBoost(i) + notable(i) * 1.5 + (({ zoo: 3, aquarium: 3, attraction: 2, museum: 2, gallery: 2, viewpoint: 2, beach: 2, nature_reserve: 1 } as Record<string, number>)[i.kind] ?? 0) + (i.kind === 'park' ? -2 : 0) },
-      { key: 'lunch', label: 'Lunch', pool: ['dinner', 'cafe', 'wine'], required: true, alternates: 3, near: { slot: 'morning', maxKm: 8, weight: 2 },
+      { key: 'lunch', label: 'Lunch', pool: ['dinner', 'cafe', 'wine'], required: true, alternates: 3, window: [at(12, 30), at(13, 30)], near: { slot: 'morning', maxKm: 8, weight: 2 },
         filter: (i) => !CASUAL.test(i.name) && i.kind !== 'distillery', score: (i) => dinnerFit(i) / 2 + (['winery', 'wine'].includes(i.kind) ? 2 : 0) + (has(i.tags, 'website') ? 0.5 : 0) },
-      { key: 'afternoon', label: 'Afternoon', pool: ['do', 'beach', 'wine'], required: true, alternates: 3,
+      { key: 'afternoon', label: 'Afternoon', pool: ['do', 'beach', 'wine'], required: true, alternates: 3, window: [at(14, 30), at(16)],
         filter: (i) => ['museum', 'gallery', 'attraction', 'viewpoint', 'zoo', 'aquarium', 'nature_reserve', 'beach', 'wine', 'winery', 'brewery', 'distillery', 'park'].includes(i.kind) && !NOT_A_STOP.test(i.name) && notDusk(i),
         near: { anchor: atCentre, maxKm: 15, weight: 1 },
         score: (i) => sigBoost(i) / 2 + notable(i) + (({ zoo: 2, aquarium: 2, viewpoint: 2, beach: 2, wine: 2, winery: 2, gallery: 1, nature_reserve: 1, brewery: 1 } as Record<string, number>)[i.kind] ?? 0) + (i.kind === 'park' ? -2 : 0) },
-      { key: 'treat', label: 'Treat', pool: ['icecream', 'cafe'], near: { slot: 'afternoon', maxKm: 4, weight: 2 }, score: (i) => (i.kind === 'icecream' ? 1 : 0) },
+      { key: 'treat', label: 'Treat', pool: ['icecream', 'cafe'], window: [at(16), at(16, 30)], near: { slot: 'afternoon', maxKm: 4, weight: 2 }, score: (i) => (i.kind === 'icecream' ? 1 : 0) },
     ],
   },
   train: {
@@ -111,12 +113,12 @@ const RECIPES: Record<Audience, Recipe<Ctx>> = {
     slots: [
       { key: 'stay', label: 'Stay', pool: 'stay', required: true, alternates: 3, filter: (i) => ['hotel', 'motel', 'guest_house', 'apartment', 'hostel'].includes(i.kind),
         near: { anchor: atStation, maxKm: 1.6, weight: 5 }, score: (i) => stars(i) / 2 + notable(i) },
-      { key: 'dinner', label: 'Dinner', pool: 'dinner', required: true, near: { slot: 'stay', maxKm: 1.2, weight: 3 }, score: (i) => dinnerFit(i) / 2 + (i.tags.cuisine ? 1 : 0) + notable(i) },
-      { key: 'breakfast', label: 'Breakfast', pool: 'cafe', required: true, near: { slot: 'stay', maxKm: 1.2, weight: 3 } },
+      { key: 'dinner', label: 'Dinner', pool: 'dinner', required: true, window: [at(18, 30), at(20)], near: { slot: 'stay', maxKm: 1.2, weight: 3 }, score: (i) => dinnerFit(i) / 2 + (i.tags.cuisine ? 1 : 0) + notable(i) },
+      { key: 'breakfast', label: 'Breakfast', pool: 'cafe', required: true, window: [at(8, 30), at(9, 30)], near: { slot: 'stay', maxKm: 1.2, weight: 3 } },
       { key: 'see', label: 'See and do', pool: ['do', 'beach', 'wine'], count: 2, required: true, alternates: 3,
         filter: (i) => (SIGHTS.has(i.kind) || i.kind === 'beach' || i.kind === 'wine') && !NOT_A_STOP.test(i.name), near: { anchor: atStation, maxKm: 2.5, weight: 3 },
         score: (i) => sigBoost(i) + notable(i) + (['museum', 'gallery', 'attraction', 'viewpoint', 'beach'].includes(i.kind) ? 2 : 0) + (i.kind === 'park' ? -1 : 0) },
-      { key: 'lunch', label: 'Lunch', pool: ['cafe', 'dinner'], near: { anchor: atStation, maxKm: 1, weight: 3 } },
+      { key: 'lunch', label: 'Lunch', pool: ['cafe', 'dinner'], window: [at(12, 30), at(13, 30)], near: { anchor: atStation, maxKm: 1, weight: 3 } },
     ],
   },
   budget: {
@@ -138,14 +140,14 @@ const RECIPES: Record<Audience, Recipe<Ctx>> = {
       { key: 'stay', label: 'Stay', pool: 'stay', required: true, alternates: 3, filter: (i) => ['guest_house', 'chalet', 'apartment', 'hotel'].includes(i.kind),
         near: { anchor: atCentre, maxKm: 10, weight: 1 },
         score: (i) => ({ guest_house: 4, chalet: 3, hotel: 2, apartment: 1 } as Record<string, number>)[i.kind]! + (stars(i) >= 4 ? 2 : 0) + notable(i) },
-      { key: 'dinner', label: 'Dinner', pool: 'dinner', required: true, alternates: 3, filter: (i) => i.kind === 'restaurant' && !CASUAL.test(i.name),
+      { key: 'dinner', label: 'Dinner', pool: 'dinner', required: true, alternates: 3, window: [at(19), at(20, 30)], filter: (i) => i.kind === 'restaurant' && !CASUAL.test(i.name),
         near: { slot: 'stay', maxKm: 5, weight: 1 }, score: (i) => dinnerFit(i) + (has(i.tags, 'website') ? 1 : 0) + notable(i) },
       { key: 'unwind', label: 'Unwind', pool: ['spa', 'wine', 'do', 'beach'], count: 2, required: true, alternates: 3,
         filter: (i) => ['spa', 'wine', 'winery', 'distillery', 'viewpoint', 'gallery', 'beach', 'nature_reserve', 'attraction'].includes(i.kind) && !NOT_A_STOP.test(i.name),
         near: { anchor: atCentre, maxKm: 12, weight: 1 },
         score: (i) => ({ spa: 5, wine: 4, winery: 4, distillery: 3, viewpoint: 3, beach: 3, gallery: 2, nature_reserve: 1, attraction: 1 } as Record<string, number>)[i.kind]! + notable(i) },
-      { key: 'drinks', label: 'Drinks', pool: 'bar', near: { slot: 'stay', maxKm: 4, weight: 1 }, score: (i) => (i.kind === 'bar' ? 1 : 0) },
-      { key: 'breakfast', label: 'Breakfast', pool: 'cafe', required: true, near: { slot: 'stay', maxKm: 4, weight: 2 } },
+      { key: 'drinks', label: 'Drinks', pool: 'bar', window: [at(17, 30), at(18, 30)], near: { slot: 'stay', maxKm: 4, weight: 1 }, score: (i) => (i.kind === 'bar' ? 1 : 0) },
+      { key: 'breakfast', label: 'Breakfast', pool: 'cafe', required: true, window: [at(9), at(10)], near: { slot: 'stay', maxKm: 4, weight: 2 } },
     ],
   },
   family: {
@@ -160,9 +162,9 @@ const RECIPES: Record<Audience, Recipe<Ctx>> = {
       { key: 'outdoors', label: 'Outdoors', pool: ['do', 'picnic', 'bike', 'beach'], alternates: 2,
         filter: (i) => ['park', 'nature_reserve', 'viewpoint', 'picnic', 'bike', 'beach'].includes(i.kind), near: { anchor: atCentre, maxKm: 10, weight: 1 },
         score: (i) => notable(i) + (i.kind === 'bike' ? 2 : 0) },
-      { key: 'dinner', label: 'Dinner', pool: 'dinner', required: true, near: { slot: 'stay', maxKm: 5, weight: 2 }, score: (i) => (i.kind === 'pub' ? 2 : 1) },
-      { key: 'treat', label: 'Treat', pool: 'icecream', near: { anchor: atCentre, maxKm: 4 } },
-      { key: 'breakfast', label: 'Breakfast', pool: 'cafe', near: { slot: 'stay', maxKm: 4, weight: 2 } },
+      { key: 'dinner', label: 'Dinner', pool: 'dinner', required: true, window: [at(17, 30), at(18, 30)], near: { slot: 'stay', maxKm: 5, weight: 2 }, score: (i) => (i.kind === 'pub' ? 2 : 1) },
+      { key: 'treat', label: 'Treat', pool: 'icecream', window: [at(15), at(16)], near: { anchor: atCentre, maxKm: 4 } },
+      { key: 'breakfast', label: 'Breakfast', pool: 'cafe', window: [at(8, 30), at(9, 30)], near: { slot: 'stay', maxKm: 4, weight: 2 } },
     ],
   },
 };
@@ -188,8 +190,20 @@ function plan(aud: Audience, b: BundleResult, ctx: Ctx): Day[] {
   if (aud === 'daytrip') {
     const km = ctx.town.kmFromMelbourne ?? 0;
     const st = ctx.station;
+    // Which days every stop is open at its time slot (stops with unknown hours don't count against a day).
+    let days = [0, 1, 2, 3, 4, 5, 6];
+    for (const slot of RECIPES.daytrip.slots) {
+      const pk = p(slot.key);
+      if (!pk || !slot.window) continue;
+      const od = openDays(pk.item, slot.window[0], slot.window[1]);
+      if (od) days = days.filter((d) => od.includes(d));
+    }
+    const bestDays: Step[] = days.length === 7 ? []
+      : days.length ? [{ when: 'Best days', text: `${dayList(days)}. Some stops below are closed on other days.` }]
+      : [{ when: 'Best days', text: 'These stops aren’t all open on the same day: check each one’s hours, or use the swaps below.' }];
     return [
       { title: 'The day', steps: [
+        ...bestDays,
         { when: 'Getting there', text: `${t} is about ${km} km from Melbourne by road.` + (st ? ` No car? ${st.name} station is ${st.km < 0.3 ? 'right in town' : `${st.km.toFixed(1)} km from the centre`}; check the PTV journey planner for trains.` : '') },
         ...step('Morning', 'morning', 0, (i, d) => `${i.name} (${kindLabel(i)})${near(d, `${t} centre`)}.`),
         ...step('Lunch', 'lunch', 0, (i, d) => `${i.name}, ${['winery', 'wine'].includes(i.kind) ? 'a cellar door' : `a ${kindLabel(i)}`}${i.tags.cuisine ? ` (${i.tags.cuisine.split(/[;,]/)[0].replace(/_/g, ' ')})` : ''}${near(d, 'your morning stop')}.`),
