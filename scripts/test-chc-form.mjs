@@ -1,0 +1,35 @@
+// Browser test for the Community Help Co enquiry form against the live site (or BASE).
+// Sends one clearly marked test enquiry (ci-form-test@communityhelp.com.au); Claude deletes the row after.
+import { chromium } from 'playwright';
+import { mkdir } from 'node:fs/promises';
+await mkdir('shots', { recursive: true });
+const BASE = process.argv[2] || 'https://communityhelp.com.au';
+const fails = [];
+const ok = (c, m) => { console.log(`${c ? '✅' : '❌'} ${m}`); if (!c) fails.push(m); };
+const browser = await chromium.launch({ channel: 'chrome' }).catch(() => chromium.launch());
+const page = await (await browser.newContext({ viewport: { width: 390, height: 844 } })).newPage();
+const errors = [];
+page.on('pageerror', (e) => errors.push(e.message));
+await page.goto(`${BASE}/contact`, { waitUntil: 'domcontentloaded' });
+const form = page.locator('#enquire form');
+ok(await form.isVisible(), 'enquiry form shows');
+ok((await form.getAttribute('action')) === '/api/submit/enquiry', 'form posts to this site (/api/submit/enquiry)');
+await form.locator('input[name=name]').fill('CI test (please ignore)');
+await form.locator('input[name=email]').fill('ci-form-test@communityhelp.com.au');
+await form.locator('input[name=for][value=me]').check();
+await form.locator('textarea[name=message]').fill('Automated test of the enquiry form. Safe to delete.');
+await form.locator('button[type=submit]').click();
+await page.waitForFunction(() => /Sent|didn/.test(document.querySelector('#enquire .chc-form__status')?.textContent ?? ''), null, { timeout: 15000 }).catch(() => {});
+const msg = await form.locator('.chc-form__status').textContent();
+ok(/^Sent/.test(msg ?? ''), `enquiry sends ("${msg}")`);
+await form.screenshot({ path: 'shots/chc-form.png' }).catch(() => {});
+const bad = await page.evaluate(async () => { const fd = new FormData(); fd.set('email', 'nope'); const r = await fetch('/api/submit/enquiry', { method: 'POST', body: fd, headers: { accept: 'application/json' } }); return r.status; });
+ok(bad === 400, `bad email rejected (${bad})`);
+const unknown = await page.evaluate(async () => (await fetch('/api/submit/anything', { method: 'POST', body: new FormData() })).status);
+ok(unknown === 404, `unknown forms refused (${unknown})`);
+const status = await page.evaluate(async () => (await fetch('/api/submit/status?since=2020-01-01T00:00:00Z')).json());
+ok(status.ok && status.count >= 1 && Object.keys(status).length === 2, `status shows a count only (${JSON.stringify(status)})`);
+ok(errors.length === 0, `no page errors ${errors.join(' | ')}`);
+await browser.close();
+console.log(fails.length ? `FAILED: ${fails.length}` : 'ALL PASSED');
+process.exit(fails.length ? 1 : 0);
