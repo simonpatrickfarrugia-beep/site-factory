@@ -21,7 +21,7 @@ jobs:
         run: |
           set -u
           # Look back a little over the gap between runs, so nothing falls between two checks.
-          since=$(date -u -d '-11 hours -10 minutes' +%Y-%m-%dT%H:%M:%SZ)
+          since=$(date -u -d '-14 hours -10 minutes' +%Y-%m-%dT%H:%M:%SZ)
           [ "$(date -u +%H)" = "21" ] || since=$(date -u -d '-5 hours -10 minutes' +%Y-%m-%dT%H:%M:%SZ)
           gh label create enquiry --color 0E8A16 --description "New website enquiry" 2>/dev/null || true
           for site in communityhelp.com.au; do
