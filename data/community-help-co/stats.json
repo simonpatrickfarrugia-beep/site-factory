@@ -1,16 +1,17 @@
 {
- "generatedAt": "2026-10-27T10:16:11.924Z",
- "period": null,
+ "generatedAt": "2026-10-27T10:30:33.012Z",
+ "period": {
+  "start": "2026-09-29",
+  "end": "2026-10-26"
+ },
  "gscPeriod": {
   "start": "2026-09-27",
   "end": "2026-10-24"
  },
  "sources": {
-  "ga4": false,
+  "ga4": true,
   "gsc": true,
-  "notes": [
-   "GA4 not connected yet: add search-console-reader@site-factory-512008.iam.gserviceaccount.com as a Viewer on the GA4 property, then set its ID in STATS_SITES."
-  ]
+  "notes": []
  },
  "totals": {
   "views": 0,
