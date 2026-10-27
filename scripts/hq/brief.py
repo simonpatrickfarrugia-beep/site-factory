@@ -55,7 +55,7 @@ md += ['## Headline', '', ' · '.join(head), '']
 names = {n['id']: (n.get('name'), n.get('url'), n.get('station')) for n in portfolio.get('nodes', [])}
 md += ['## Traffic (last 28 days)', '', '| Site | Station | Views (prev) | Last 7 days | CTA clicks | Google clicks / impressions |', '|---|---|---|---|---|---|']
 details = []
-for brand, node in [('trailers', 'trailers'), ('vic', 'vic'), ('community-help-co', 'chc')]:
+for brand, node in [('trailers', 'trailers'), ('vic', 'vic'), ('community-help-co', 'chc'), ('trade-admin', 'trade-admin')]:
     s = load(f'data/{brand}/stats.json')
     nm, url, station = names.get(node, (brand, '', ''))
     if not s:
