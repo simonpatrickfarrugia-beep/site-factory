@@ -4,7 +4,9 @@
  *
  *   POST /api/subscribe   email list signup: { email, source?, interests? } (JSON or a plain HTML form post)
  *   POST /api/submit/<form>  a form submission (enquiry, referral…), for forms listed in the brand's FORMS var.
- *                            Stored in table `submissions` (one row, fields as JSON); the daily report lists new ones.
+ *                            Stored in table `submissions` (one row, fields as JSON).
+ *   GET  /api/submit/status?since=<ISO time>  how many submissions arrived since then: a count only, never any details.
+ *                            The `enquiries` GitHub workflow polls it and opens an issue (emailed to Simon) when it's above 0.
  *
  * Same origin as the site, so no CORS. Signups go to the shared D1 database (site-factory-forms),
  * table `subscribers`, one row per brand + email. Spam: a hidden honeypot field.
@@ -90,6 +92,12 @@ export default {
         console.error('subscribe failed', e);
         return Response.json({ ok: false, message: 'Something went wrong. Please try again.' }, { status: 500 });
       }
+    }
+    if (pathname === '/api/submit/status' && (env.FORMS ?? '').trim()) {
+      const since = new URL(request.url).searchParams.get('since') ?? '';
+      if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?Z$/.test(since)) return Response.json({ ok: false, message: 'since must be an ISO UTC time' }, { status: 400 });
+      const row = await env.DB.prepare('SELECT COUNT(*) AS n FROM submissions WHERE brand = ? AND created_at > ?').bind(env.BRAND, since).first<{ n: number }>();
+      return Response.json({ ok: true, count: row?.n ?? 0 }, { headers: { 'cache-control': 'no-store' } });
     }
     const sub = pathname.match(/^\/api\/submit\/([a-z0-9-]{1,40})$/);
     const allowed = (env.FORMS ?? '').split(',').map((x) => x.trim()).filter(Boolean);
