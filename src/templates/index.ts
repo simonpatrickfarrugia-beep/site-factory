@@ -36,6 +36,7 @@ import TaHome from './ta/TaHome.astro';
 import TaBuilder from './ta/TaBuilder.astro';
 import TaCompare from './ta/TaCompare.astro';
 import TaPage from './ta/TaPage.astro';
+import TaQuiz from './ta/TaQuiz.astro';
 
 export const templates = {
   home: Home,
@@ -75,4 +76,5 @@ export const templates = {
   taBuilder: TaBuilder,
   taCompare: TaCompare,
   taPage: TaPage,
+  taQuiz: TaQuiz,
 };

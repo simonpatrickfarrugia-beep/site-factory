@@ -842,6 +842,30 @@ main { display: block; }
 .ta-best th::after { content: ' · cheapest'; color: var(--hi); font-weight: 700; }
 .ta-app { margin-top: 2.5rem; }
 
+/* Which-job-app quiz */
+.ta-quizlink { font-weight: 700; margin: -1.2rem 0 2rem; }
+.ta-quiz { background: var(--panel); border: 2px solid var(--paper); border-radius: var(--radius); padding: 1.3rem 1.3rem 0.6rem; margin-block: 1.8rem 2.5rem; max-width: 40rem; }
+.ta-quiz [hidden], .ta-result[hidden] { display: none !important; }
+.ta-quiz__progress { margin: 0 0 0.4rem; font: 700 0.95rem var(--font-display); text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+.ta-quiz__q { border: 0; padding: 0; margin: 0 0 1rem; }
+.ta-quiz__q legend { font: 800 clamp(1.35rem, 3.6vw, 1.7rem)/1.15 var(--font-display); margin-bottom: 0.4rem; padding: 0; }
+.ta-quiz__opts { display: grid; gap: 0.55rem; margin-top: 0.8rem; }
+@media (min-width: 34rem) { .ta-quiz__opts { grid-template-columns: 1fr 1fr; } }
+.ta-quiz__opt { display: flex; align-items: center; gap: 0.6rem; background: #fff; border: 2px solid #B9B2A4; border-radius: 6px; padding: 0.85rem 0.9rem; font-weight: 700; font-size: 1.08rem; cursor: pointer; min-height: 3.2rem; }
+.ta-quiz__opt:hover { border-color: var(--paper); }
+.ta-quiz__opt:has(input:checked) { border-color: var(--hi); box-shadow: 4px 4px 0 var(--hi); }
+.ta-quiz__opt input { width: 1.2rem; height: 1.2rem; accent-color: var(--hi); margin: 0; }
+.ta-quiz__nav { margin-top: 0.4rem; }
+.ta-result { margin-block: 1.8rem 2.5rem; outline: none; }
+.ta-result__kicker { margin: 0; font: 700 0.95rem var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; color: var(--hi); }
+.ta-result__head { font: 800 clamp(1.9rem, 5.5vw, 2.8rem)/1.05 var(--font-display); margin: 0.2rem 0 0.6rem; }
+.ta-h3 { font-size: 1.3rem; margin: 2rem 0 0.6rem; }
+.ta-ticks { padding-left: 1.2rem; display: grid; gap: 0.4rem; }
+.ta-trials { display: grid; gap: 1rem; margin-top: 1.5rem; }
+@media (min-width: 46rem) { .ta-trials { grid-template-columns: 1fr 1fr; } }
+.ta-trial { border: 2px solid var(--paper); border-radius: var(--radius); padding: 1rem 1.1rem; background: var(--panel); }
+.ta-trial h4 { margin: 0 0 0.3rem; font: 800 1.2rem var(--font-display); text-transform: uppercase; }
+
 /* Builder */
 .ta-builder__grid { display: grid; gap: 2rem; margin-top: 1.5rem; align-items: start; }
 @media (min-width: 64rem) { .ta-builder__grid { grid-template-columns: 1fr 1fr; } .ta-preview-col { position: sticky; top: 1rem; } }

@@ -26,6 +26,7 @@ const money = (n: number) => (n === 0 ? 'Free' : `$${n}`);
     </table>
     <p class="ta-small">Monthly cost on the cheapest plan that fits your numbers, including GST where we can work it out. Plans differ in features, so the cheapest isn't always the best fit: check what each plan includes.</p>
   </section>
+  <p class="ta-quizlink"><a href="/which-job-app" data-cta="quiz_start">Not sure which fits? Answer 3 quick questions →</a></p>
 
   {page.body && (
     <section class="ta-measure" aria-labelledby="body-h">
@@ -70,45 +71,29 @@ const money = (n: number) => (n === 0 ? 'Free' : `$${n}`);
 </div>
 
 <script>
-  type Plan = { name: string; price: number; per: 'month' | 'user'; jobs?: number; users?: number };
-  type App = { name: string; gst: 'inc' | 'ex' | 'unstated'; plans: Plan[] };
+  import { costRows, type CostApp } from '../../lib/ta-costs';
   for (const box of document.querySelectorAll<HTMLElement>('[data-calc]')) {
-    const apps = JSON.parse(box.dataset.apps!) as Record<string, App>;
+    const apps = JSON.parse(box.dataset.apps!) as Record<string, CostApp>;
     const peopleIn = box.querySelector<HTMLInputElement>('[data-people]')!;
     const jobsIn = box.querySelector<HTMLInputElement>('[data-jobs]')!;
     const out = box.querySelector<HTMLElement>('[data-out]')!;
-    const fmt = (n: number) => '$' + n.toLocaleString('en-AU', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    const qs = new URLSearchParams(location.search);
+    if (Number(qs.get('people')) > 0) peopleIn.value = String(Math.min(50, Math.round(Number(qs.get('people')))));
+    if (Number(qs.get('jobs')) > 0) jobsIn.value = String(Math.min(3000, Math.round(Number(qs.get('jobs')))));
     const render = () => {
       const people = Math.max(1, Math.min(50, Math.round(Number(peopleIn.value) || 1)));
       const jobs = Math.max(1, Math.round(Number(jobsIn.value) || 1));
-      const rows: { name: string; cost: number | null; text: string; why: string }[] = [];
-      for (const a of Object.values(apps)) {
-        if (a.plans[0]?.per === 'month') {
-          // Priced by job volume: cheapest plan with enough jobs (the free plan is 1 user only).
-          const fit = a.plans.find((p) => (p.jobs ?? Infinity) >= jobs && (p.users ?? Infinity) >= people);
-          const top = a.plans[a.plans.length - 1];
-          const p = fit ?? top;
-          const over = !fit;
-          rows.push({ name: `${a.name} ${p.name}`, cost: p.price, text: (over ? fmt(p.price) + '+' : fmt(p.price)), why: over ? `${p.jobs}+ jobs: very high volumes may cost more` : `up to ${p.jobs} new jobs, ${p.users ? '1 user' : 'unlimited users'}` });
-        } else {
-          for (const p of a.plans) {
-            const base = p.price * people;
-            const cost = a.gst === 'ex' ? base * 1.1 : base;
-            rows.push({ name: `${a.name} ${p.name}`, cost, text: fmt(cost) + (a.gst === 'unstated' ? '*' : ''), why: `${people} × $${p.price}${a.gst === 'ex' ? ' + GST' : ''}, unlimited jobs` });
-          }
-        }
-      }
-      rows.sort((x, y) => (x.cost ?? 0) - (y.cost ?? 0));
+      const rows = costRows(apps, people, jobs);
       out.innerHTML = '';
       rows.forEach((r, i) => {
         const tr = document.createElement('tr');
         if (i === 0) tr.className = 'ta-best';
-        for (const [txt, tag] of [[r.name, 'th'], [r.text, 'td'], [r.why, 'td']] as const) {
+        for (const [txt, tag] of [[`${r.app} ${r.plan}`, 'th'], [r.text, 'td'], [r.why, 'td']] as const) {
           const c = document.createElement(tag); c.textContent = txt; if (tag === 'th') c.setAttribute('scope', 'row'); tr.appendChild(c);
         }
         out.appendChild(tr);
       });
-      if (rows.some((r) => r.text.endsWith('*'))) {
+      if (rows.some((r) => r.unstatedGst)) {
         const tr = document.createElement('tr'); const td = document.createElement('td'); td.colSpan = 3; td.className = 'ta-small';
         td.textContent = '* As listed; the pricing page doesn’t say whether GST is included.'; tr.appendChild(td); out.appendChild(tr);
       }

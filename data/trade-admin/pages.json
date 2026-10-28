@@ -12,6 +12,11 @@
     "href": "/invoice-builder",
     "t": "Invoice builder",
     "d": "A tax invoice the ATO will accept: ABN, GST shown properly, due date and how to pay you."
+   },
+   {
+    "href": "/which-job-app",
+    "t": "Which job app?",
+    "d": "Three questions, then ServiceM8, Tradify and Fergus ranked by what they'd cost your business."
    }
   ],
   "why": [
@@ -199,5 +204,138 @@
    "Software companies: if a price or plan on our comparison pages is out of date, email us a link to your current pricing page and we'll update it.",
    "Trade Admin is run by Independent Media Network Pty Ltd, Melbourne, Victoria."
   ]
+ },
+ "which-job-app": {
+  "title": "Which job app fits your trade business?",
+  "seoTitle": "Which Job Management App Suits You? ServiceM8, Tradify or Fergus",
+  "description": "Three quick questions, then ServiceM8, Tradify and Fergus ranked by what they'd cost your business, from their own Australian prices. Free, no sign-up.",
+  "lede": "Three quick questions about your business, then ServiceM8, Tradify and Fergus ranked by what each would cost you, using their own published Australian prices. Nothing you pick is sent anywhere.",
+  "questions": [
+   {
+    "id": "people",
+    "q": "How many people would use the app?",
+    "help": "Count everyone who'd log in: you, your crew in the field, and anyone doing the office side.",
+    "options": [
+     {
+      "label": "Just me",
+      "value": "1"
+     },
+     {
+      "label": "2 people",
+      "value": "2"
+     },
+     {
+      "label": "3 to 4",
+      "value": "4"
+     },
+     {
+      "label": "5 to 6",
+      "value": "6"
+     },
+     {
+      "label": "7 to 10",
+      "value": "10"
+     },
+     {
+      "label": "More than 10",
+      "value": "15"
+     }
+    ]
+   },
+   {
+    "id": "jobs",
+    "q": "How many new jobs do you take on in a month?",
+    "help": "A rough guess is fine. A job is each new piece of work you'd quote or book in.",
+    "options": [
+     {
+      "label": "Up to 30",
+      "value": "30"
+     },
+     {
+      "label": "31 to 50",
+      "value": "50"
+     },
+     {
+      "label": "51 to 150",
+      "value": "150"
+     },
+     {
+      "label": "151 to 500",
+      "value": "500"
+     },
+     {
+      "label": "More than 500",
+      "value": "1000"
+     }
+    ]
+   },
+   {
+    "id": "need",
+    "q": "What's eating most of your admin time?",
+    "options": [
+     {
+      "label": "Writing quotes and invoices",
+      "value": "paperwork"
+     },
+     {
+      "label": "Scheduling who goes where",
+      "value": "team"
+     },
+     {
+      "label": "Chasing payments and doing the books",
+      "value": "payments"
+     },
+     {
+      "label": "All of the above",
+      "value": "all"
+     }
+    ]
+   }
+  ],
+  "tips": {
+   "paperwork": [
+    "Build one of your real quotes from scratch on your phone and time it.",
+    "Turn that quote into an invoice and check the GST wording is right for your business."
+   ],
+   "team": [
+    "Book three real jobs for two different people and check each person sees their own day on their phone.",
+    "Move a job to another day or person and see how many taps it takes."
+   ],
+   "payments": [
+    "Send yourself a test invoice and check how the customer pays (card, bank transfer) and what fees apply.",
+    "Connect your accounting software and check an invoice and payment arrive there correctly."
+   ],
+   "all": [
+    "Run one real job end to end: quote, booking, job notes or photos, invoice, payment.",
+    "Check the parts you'd use every day work well on your phone, not just on a computer."
+   ],
+   "always": [
+    "Ask what happens to your data if you leave: can you export your customers and jobs?",
+    "Check the price on the day you sign up; plans and introductory offers change."
+   ]
+  },
+  "faq": [
+   {
+    "q": "How does the quiz pick an app?",
+    "a": "On price. It works out what each app's cheapest suitable plan would cost for your team size and job numbers, using the prices on each company's own Australian pricing page, and ranks them. It doesn't score features, because the right features depend on your trade and how you work. That's what the free trials are for."
+   },
+   {
+    "q": "Why does team size matter so much?",
+    "a": "ServiceM8 charges by how many new jobs you create each month, with unlimited users on paid plans. Tradify and Fergus charge per person, with no cap on jobs. So bigger teams usually pay less with ServiceM8, and busy one- or two-person businesses often pay less with Tradify or Fergus."
+   },
+   {
+    "q": "Is GST included in the prices?",
+    "a": "ServiceM8's prices include GST. Tradify's exclude GST, so we add 10%. Fergus's pricing page doesn't say, so we show its price as listed with an asterisk."
+   },
+   {
+    "q": "Do you get paid if I sign up?",
+    "a": "We may earn a referral fee from some of these companies in future. It never changes the ranking: the order comes only from the published prices and your answers. See how we make money for details."
+   },
+   {
+    "q": "Do I need an app at all?",
+    "a": "Not always. If it's just you and a handful of jobs a month, our free quote and invoice builders may be all you need. Apps start paying for themselves when you're scheduling other people, chasing payments or re-typing jobs into your accounting software."
+   }
+  ],
+  "disclosure": "Trade Admin may earn a referral fee from some software companies. Rankings come only from published prices and your answers."
  }
 }

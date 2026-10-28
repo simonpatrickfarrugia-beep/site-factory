@@ -1,0 +1,174 @@
+---
+/**
+ * "Which job app fits you?" — 3 questions, then the apps ranked by what they'd cost this business
+ * (same maths as the comparison calculator, src/lib/ta-costs.ts), plus what to test in the free trial.
+ * Runs in the browser; answers are never sent anywhere.
+ */
+import type { Apps, QuizPage } from '../../../brands/trade-admin/model';
+interface Props { page: QuizPage; apps: Apps }
+const { page, apps } = Astro.props;
+const checked = new Date(apps.checked).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
+const trial = Object.fromEntries(Object.entries(apps.apps).map(([k, a]) => [k, { name: a.name, url: a.url, trial: a.trial }]));
+---
+<div class="ta-wrap ta-section">
+  <p class="ta-crumb"><a href="/job-management-software">Job apps compared</a></p>
+  <h1 class="ta-h1">{page.title}</h1>
+  <p class="ta-lede ta-measure">{page.lede}</p>
+
+  <form class="ta-quiz" data-quiz data-apps={JSON.stringify(apps.apps)} data-trial={JSON.stringify(trial)} data-tips={JSON.stringify(page.tips)}>
+    <p class="ta-quiz__progress" aria-live="polite" data-progress hidden>Question <span data-step>1</span> of {page.questions.length}</p>
+    {page.questions.map((q, i) => (
+      <fieldset class="ta-quiz__q" data-q={q.id} data-index={i}>
+        <legend>{q.q}</legend>
+        {q.help && <p class="ta-small">{q.help}</p>}
+        <div class="ta-quiz__opts">
+          {q.options.map((o) => (
+            <label class="ta-quiz__opt"><input type="radio" name={q.id} value={o.value} required /> <span>{o.label}</span></label>
+          ))}
+        </div>
+      </fieldset>
+    ))}
+    <p class="ta-actions ta-quiz__nav">
+      <button type="button" class="ta-btn ta-btn--quiet ta-btn--small" data-back hidden>Back</button>
+      <button type="submit" class="ta-btn" data-submit>Show my match</button>
+    </p>
+    <noscript><p class="ta-small">The quiz needs JavaScript. The <a href="/job-management-software">price calculator</a> shows the same numbers.</p></noscript>
+  </form>
+
+  <section class="ta-result" data-result hidden aria-live="polite" tabindex="-1">
+    <p class="ta-result__kicker">Your best fit on price</p>
+    <h2 class="ta-result__head" data-headline></h2>
+    <p class="ta-lede" data-reason></p>
+
+    <div data-free-path hidden class="ta-band ta-band--inline">
+      <h3 class="ta-h3">You might not need an app yet</h3>
+      <p>At your volume, a proper quote and invoice template does the job for free. ServiceM8 also has a free plan for one person and up to 30 new jobs a month, if you want a job list and a calendar.</p>
+      <p class="ta-actions"><a class="ta-btn" href="/quote-builder" data-cta="quiz_free_quote">Free quote builder</a> <a class="ta-btn ta-btn--quiet" href="/invoice-builder" data-cta="quiz_free_invoice">Free invoice builder</a></p>
+    </div>
+
+    <h3 class="ta-h3">What each would cost you a month</h3>
+    <table class="ta-table">
+      <thead><tr><th scope="col">App</th><th scope="col">Per month</th><th scope="col">Why</th></tr></thead>
+      <tbody data-out></tbody>
+    </table>
+    <p class="ta-small">Each app's cheapest plan that fits your answers, from its own Australian pricing page on {checked}. Higher plans add features; check what you'd need. <span data-gstnote hidden>* As listed; the pricing page doesn't say whether GST is included.</span></p>
+
+    <h3 class="ta-h3">Before you pay: test these in the free trial</h3>
+    <ul class="ta-ticks" data-tips-out></ul>
+
+    <div class="ta-trials" data-trials></div>
+
+    <p class="ta-actions">
+      <button type="button" class="ta-btn ta-btn--quiet ta-btn--small" data-restart>Start again</button>
+      <a href="/job-management-software" data-calc-link>Fine-tune the numbers in the calculator →</a>
+    </p>
+  </section>
+
+  <section class="ta-measure ta-faq" aria-labelledby="faq-h">
+    <h2 id="faq-h" class="ta-h2">Questions</h2>
+    {page.faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
+  </section>
+
+  <p class="ta-small ta-measure">{page.disclosure}</p>
+</div>
+
+<script>
+  import { costRows, cheapestPerApp, fmtMoney, type CostApp } from '../../lib/ta-costs';
+  type Trial = Record<string, { name: string; url: string; trial: string }>;
+  type Tips = Record<string, string[]>;
+  const ESC = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+  const gtag = (name: string, params: Record<string, string | number>) => { try { (window as any).gtag?.('event', name, params); } catch {} };
+
+  for (const form of document.querySelectorAll<HTMLFormElement>('[data-quiz]')) {
+    const apps = JSON.parse(form.dataset.apps!) as Record<string, CostApp>;
+    const trial = JSON.parse(form.dataset.trial!) as Trial;
+    const tips = JSON.parse(form.dataset.tips!) as Tips;
+    const qs = [...form.querySelectorAll<HTMLFieldSetElement>('[data-q]')];
+    const progress = form.querySelector<HTMLElement>('[data-progress]')!;
+    const stepOut = form.querySelector<HTMLElement>('[data-step]')!;
+    const back = form.querySelector<HTMLButtonElement>('[data-back]')!;
+    const submit = form.querySelector<HTMLButtonElement>('[data-submit]')!;
+    const result = document.querySelector<HTMLElement>('[data-result]')!;
+    let step = 0;
+
+    // One question at a time; picking an answer moves on.
+    const show = (i: number) => {
+      step = i;
+      qs.forEach((q, n) => (q.hidden = n !== i));
+      progress.hidden = false; stepOut.textContent = String(i + 1);
+      back.hidden = i === 0;
+      submit.hidden = i !== qs.length - 1 || !qs[i].querySelector('input:checked');
+    };
+    // 'click' (not 'change') so re-picking the same answer after "Back" still moves on.
+    form.addEventListener('click', (e) => {
+      const input = e.target as HTMLElement;
+      if (!(input instanceof HTMLInputElement) || input.type !== 'radio') return;
+      const fs = input.closest('[data-q]') as HTMLFieldSetElement | null;
+      if (!fs) return;
+      const i = Number(fs.dataset.index);
+      if (i === 0) gtag('quiz_start', { page: 'which-job-app' });
+      if (i < qs.length - 1) show(i + 1); else form.requestSubmit();
+    });
+    back.addEventListener('click', () => show(Math.max(0, step - 1)));
+    show(0);
+
+    const value = (id: string) => form.querySelector<HTMLInputElement>(`input[name="${id}"]:checked`)?.value ?? '';
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const people = Number(value('people')) || 1;
+      const jobs = Number(value('jobs')) || 30;
+      const need = value('need') || 'all';
+      const rows = cheapestPerApp(costRows(apps, people, jobs));
+      const best = rows[0];
+      const second = rows[1];
+
+      const head = result.querySelector<HTMLElement>('[data-headline]')!;
+      const reason = result.querySelector<HTMLElement>('[data-reason]')!;
+      head.textContent = best.cost === 0 ? `${best.app}'s free plan` : `${best.app}: about ${best.text.replace(/[*+]$/, '')} a month`;
+      const gap = second ? Math.round(second.cost - best.cost) : 0;
+      const close = second && gap <= 10;
+      let why = '';
+      if (best.key === 'servicem8') {
+        why = people > 1
+          ? `ServiceM8 charges by how many new jobs you create, not by how many people use it, so a team of ${people} pays the same as one person.`
+          : best.cost === 0
+            ? 'ServiceM8 has a free plan for one person and up to 30 new jobs a month, so at your size you can start without paying.'
+            : `At around ${jobs} new jobs a month, ServiceM8's job-based plans come in cheapest for a one-person business.`;
+      } else {
+        why = `${best.app} charges per person with no cap on jobs, so at ${jobs >= 500 ? '500+' : jobs} new jobs a month with ${people === 1 ? 'just you' : people + ' people'} it beats paying by job volume.`;
+      }
+      if (close) why += ` ${second.app} is only about ${fmtMoney(gap)} more, so try both and pick the one that feels easier.`;
+      else if (second) why += ` Next cheapest: ${second.app} at about ${second.text.replace(/[*+]$/, '')}.`;
+      reason.textContent = why;
+
+      const tiny = people === 1 && jobs <= 30 && need === 'paperwork';
+      result.querySelector<HTMLElement>('[data-free-path]')!.hidden = !tiny;
+
+      const out = result.querySelector<HTMLElement>('[data-out]')!;
+      out.innerHTML = rows.map((r, i) => `<tr${i === 0 ? ' class="ta-best"' : ''}><th scope="row">${ESC(r.app)} ${ESC(r.plan)}</th><td>${ESC(r.text)}</td><td>${ESC(r.why)}</td></tr>`).join('');
+      result.querySelector<HTMLElement>('[data-gstnote]')!.hidden = !rows.some((r) => r.unstatedGst);
+
+      result.querySelector<HTMLElement>('[data-tips-out]')!.innerHTML = [...(tips[need] ?? []), ...(tips.always ?? [])].map((t) => `<li>${ESC(t)}</li>`).join('');
+
+      // Free-trial links for the two cheapest, best first.
+      result.querySelector<HTMLElement>('[data-trials]')!.innerHTML = rows.slice(0, 2).map((r, i) => {
+        const t = trial[r.key];
+        return `<div class="ta-trial"><h4>${i === 0 ? 'Start here' : 'Compare with'}: ${ESC(t.name)}</h4><p class="ta-small">${ESC(t.trial)}</p>`
+          + `<p><a class="ta-btn${i === 0 ? '' : ' ta-btn--quiet'} ta-btn--small" href="${ESC(t.url)}" rel="nofollow noopener" target="_blank" data-cta="quiz_trial_${ESC(r.key)}">See ${ESC(t.name)} plans and free trial</a></p></div>`;
+      }).join('');
+
+      result.querySelector<HTMLAnchorElement>('[data-calc-link]')!.href = `/job-management-software?people=${people}&jobs=${jobs}`;
+      gtag('quiz_complete', { best: best.key, people, jobs, need });
+      form.hidden = true;
+      result.hidden = false;
+      result.focus();
+      result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    result.querySelector<HTMLButtonElement>('[data-restart]')!.addEventListener('click', () => {
+      form.reset(); result.hidden = true; form.hidden = false; show(0);
+      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+</script>

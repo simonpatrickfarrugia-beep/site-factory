@@ -74,6 +74,21 @@ export function routes(): Route[] {
     });
   }
 
+  {
+    const p = pages['which-job-app'];
+    out.push({
+      path: 'which-job-app',
+      template: 'taQuiz',
+      seo: { title: p.seoTitle + SUFFIX, rawTitle: true, description: p.description },
+      schema: [
+        { '@context': 'https://schema.org', '@type': 'WebApplication', name: p.title, url: `${SITE}/which-job-app`, applicationCategory: 'BusinessApplication', operatingSystem: 'Any (runs in your web browser)', isAccessibleForFree: true, offers: { '@type': 'Offer', price: '0', priceCurrency: 'AUD' }, publisher: { '@id': `${SITE}/#org` } },
+        faqSchema(p.faq),
+        crumbs([{ name: 'Home', path: '' }, { name: 'Job apps compared', path: 'job-management-software' }, { name: p.title, path: 'which-job-app' }]),
+      ],
+      props: { page: p, apps },
+    });
+  }
+
   for (const slug of ['about', 'contact', 'how-we-make-money', 'privacy-policy'] as const) {
     const p = pages[slug];
     out.push({

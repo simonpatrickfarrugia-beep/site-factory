@@ -5,6 +5,13 @@ export interface App { name: string; url: string; model: string; gst: 'inc' | 'e
 export interface Apps { checked: string; note: string; apps: Record<'servicem8' | 'tradify' | 'fergus', App>; bigger: string }
 export interface ToolPage { title: string; seoTitle: string; description: string; lede: string; faq: Faq[] }
 export interface ComparePage { title: string; seoTitle: string; description: string; lede: string; body?: { h: string; p: string[] } }
+export interface QuizOption { label: string; value: string }
+export interface QuizPage {
+  title: string; seoTitle: string; description: string; lede: string;
+  questions: { id: 'people' | 'jobs' | 'need'; q: string; help?: string; options: QuizOption[] }[];
+  tips: Record<'paperwork' | 'team' | 'payments' | 'all' | 'always', string[]>;
+  faq: Faq[]; disclosure: string;
+}
 export interface TextPage { title: string; description: string; paragraphs: string[] }
 export interface Pages {
   home: { title: string; lede: string; tools: { href: string; t: string; d: string }[]; why: { t: string; d: string }[] };
@@ -15,6 +22,7 @@ export interface Pages {
   'servicem8-pricing': ComparePage;
   'tradify-pricing': ComparePage;
   'fergus-pricing': ComparePage;
+  'which-job-app': QuizPage;
   about: TextPage;
   contact: TextPage;
   'how-we-make-money': TextPage;
