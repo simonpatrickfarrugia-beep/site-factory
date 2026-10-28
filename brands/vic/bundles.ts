@@ -204,7 +204,7 @@ function plan(aud: Audience, b: BundleResult, ctx: Ctx): Day[] {
     return [
       { title: 'The day', steps: [
         ...bestDays,
-        { when: 'Getting there', text: `${t} is about ${km} km from Melbourne by road.` + (st ? ` No car? ${st.name} station is ${st.km < 0.3 ? 'right in town' : `${st.km.toFixed(1)} km from the centre`}; check the PTV journey planner for trains.` : '') },
+        { when: 'Getting there', text: `${t} is about ${km} km from Melbourne in a straight line (further by road).` + (st ? ` No car? ${st.name} station is ${st.km < 0.3 ? 'right in town' : `${st.km.toFixed(1)} km from the centre`}; check the PTV journey planner for trains.` : '') },
         ...step('Morning', 'morning', 0, (i, d) => `${i.name} (${kindLabel(i)})${near(d, `${t} centre`)}.`),
         ...step('Lunch', 'lunch', 0, (i, d) => `${i.name}, ${['winery', 'wine'].includes(i.kind) ? 'a cellar door' : `a ${kindLabel(i)}`}${i.tags.cuisine ? ` (${i.tags.cuisine.split(/[;,]/)[0].replace(/_/g, ' ')})` : ''}${near(d, 'your morning stop')}.`),
         ...step('Afternoon', 'afternoon', 0, (i, d) => `${i.name} (${kindLabel(i)})${near(d, `${t} centre`)}.`),

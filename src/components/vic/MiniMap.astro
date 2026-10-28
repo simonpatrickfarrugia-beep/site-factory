@@ -1,0 +1,25 @@
+---
+/** At-a-glance map: where this town sits in Victoria relative to Melbourne and its two airports. Inline SVG, no requests. */
+import { vicMapSvg } from '../../lib/vic-map';
+interface Props { name: string; lat: number; lon: number; km?: number | null }
+const { name, lat, lon, km = null } = Astro.props;
+---
+<figure class="vicmap">
+  <Fragment set:html={vicMapSvg({ name, lat, lon }, { km })} />
+  <figcaption class="vicmap__key">
+    <span><i class="vicmap__dot vicmap__dot--town"></i>{name}</span>
+    <span><i class="vicmap__dot"></i>Melbourne CBD</span>
+    <span><i class="vicmap__plane">✈</i>Melbourne (Tullamarine) and Avalon airports</span>
+    {km ? <span class="vicmap__note">{km} km from Melbourne in a straight line</span> : null}
+  </figcaption>
+</figure>
+<style is:global>
+  .vicmap { margin: var(--space-3) 0; max-width: 30rem; }
+  .vicmap__svg { width: 100%; height: auto; display: block; }
+  .vicmap__key { display: flex; flex-wrap: wrap; gap: 0.2rem 0.9rem; font-size: 0.82rem; color: var(--muted); margin-top: 0.3rem; }
+  .vicmap__key span { display: inline-flex; align-items: center; gap: 0.3rem; }
+  .vicmap__dot { width: 10px; height: 10px; border-radius: 50%; background: #1f2a24; display: inline-block; }
+  .vicmap__dot--town { width: 12px; height: 12px; background: #8A4B26; }
+  .vicmap__plane { font-style: normal; color: #1f4e79; }
+  .vicmap__note { width: 100%; }
+</style>

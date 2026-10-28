@@ -201,7 +201,7 @@ export function routes(): Route[] {
         crumbs([{ name: 'Home', path: '' }, { name: 'Towns', path: 'towns' }, { name: t.name, path: t.slug }]),
       ],
       props: {
-        town: { name: t.name, slug: t.slug, km, region: c.region, intro: c.intro, tips: c.tips ?? [] },
+        town: { name: t.name, slug: t.slug, km, region: c.region, intro: c.intro, tips: c.tips ?? [], centre: t.centre ?? null },
         affiliates: content.affiliates ?? null,
         photo: photos.towns[t.slug] ?? null,
         placePhotos: Object.fromEntries(sections.flatMap((x) => x.places).filter((p) => photos.places[p.id]).map((p) => [p.id, photos.places[p.id]])),
@@ -488,7 +488,7 @@ export function routes(): Route[] {
           : `${b.station.name} is on the V/Line network. Shorter V/Line trips use myki; longer trips need a booked V/Line ticket. The PTV journey planner shows times and which ticket you need.`);
         out2.push(`Everything in this plan is chosen to be walkable from the station or a short taxi ride, so you won't need a car once you arrive.`);
       } else {
-        if (km >= 3) out2.push(`${b.town.name} is about ${km} km from Melbourne by road.`);
+        if (km >= 3) out2.push(`${b.town.name} is about ${km} km from Melbourne in a straight line (further by road).`);
         const st = stations.filter((x) => !x.tourist).map((x) => ({ x, d: Math.hypot((x.lat - b.town.centre![0]) * 111, (x.lon - b.town.centre![1]) * 88) })).sort((a2, c2) => a2.d - c2.d)[0];
         if (st && st.d <= 2.5) out2.push(`No car? ${b.town.name} has a train station (${st.x.name}), about ${st.d.toFixed(1)} km from the centre.`);
       }
@@ -534,7 +534,7 @@ export function routes(): Route[] {
           title: bundleLabel(b),
           sub: b.audience === 'daytrip' ? `Day trip · about ${b.town.kmFromMelbourne ?? 0} km from Melbourne` : `2 days, 1 night · ${b.audience === 'train' && b.station ? `${b.station.name} station` : b.town.kmFromMelbourne && b.town.kmFromMelbourne >= 3 ? `${b.town.kmFromMelbourne} km from Melbourne` : 'Melbourne'}`,
           intro: intro(b),
-          town: { name: T, slug: b.town.slug },
+          town: { name: T, slug: b.town.slug, centre: b.town.centre ?? null, km: b.town.kmFromMelbourne ?? 0 },
           days, swaps, gettingThere: gettingThere(b), tips: TIPS[b.audience],
           related: related.filter((r, i, a) => a.findIndex((x) => x.href === r.href) === i).slice(0, 6),
           hub: { href: `/${AUDIENCE[b.audience].hubPath}`, label: AUDIENCE[b.audience].hubTitle },
@@ -592,13 +592,13 @@ export function routes(): Route[] {
     const tbAll = bundleSets.all.filter((b) => b.town.kind !== 'suburb' && (b.town.kmFromMelbourne ?? 0) >= 20 && (b.town.kmFromMelbourne ?? 0) <= 300);
     const published = new Map(bundles.map((b) => [b.slug, b.path]));
     const r1 = (n: number) => Math.round(n * 10) / 10;
-    const tbTowns: Record<string, { n: string; km: number; r: string | null; st: boolean; ph: string | null; credit: string | null; pg: string | null }> = {};
+    const tbTowns: Record<string, { n: string; km: number; r: string | null; st: boolean; ph: string | null; credit: string | null; pg: string | null; lat: number; lon: number }> = {};
     for (const b of tbAll) {
       if (tbTowns[b.town.slug]) continue;
       const ph = (planPhoto(b) as { url?: string; artist?: string; license?: string; page?: string } | null);
       const centre = b.town.centre!;
       const st = stations.filter((x) => !x.tourist).some((x) => Math.hypot((x.lat - centre[0]) * 111, (x.lon - centre[1]) * 88) <= 2.5);
-      tbTowns[b.town.slug] = { n: b.town.name, km: b.town.kmFromMelbourne ?? 0, r: content.towns[b.town.slug]?.region ?? null, st, ph: ph?.url ?? null, credit: ph?.url ? `${ph.artist ?? 'Wikimedia Commons'}, ${ph.license ?? ''}`.replace(/, $/, '') : null, pg: ph?.url ? ph.page ?? null : null };
+      tbTowns[b.town.slug] = { n: b.town.name, km: b.town.kmFromMelbourne ?? 0, r: content.towns[b.town.slug]?.region ?? null, st, ph: ph?.url ?? null, credit: ph?.url ? `${ph.artist ?? 'Wikimedia Commons'}, ${ph.license ?? ''}`.replace(/, $/, '') : null, pg: ph?.url ? ph.page ?? null : null, lat: centre[0], lon: centre[1] };
     }
     const tbPlans = tbAll.map((b) => ({
       t: b.town.slug, a: b.audience, rank: r1(b.rank), href: published.has(b.slug) ? `/${published.get(b.slug)}` : null,

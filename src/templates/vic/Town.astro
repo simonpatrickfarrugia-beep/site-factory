@@ -3,9 +3,10 @@ import RoadSign from '../../components/vic/RoadSign.astro';
 import PlaceRow from '../../components/vic/PlaceRow.astro';
 import AffiliateLink from '../../components/vic/AffiliateLink.astro';
 import PhotoFig from '../../components/vic/Photo.astro';
+import MiniMap from '../../components/vic/MiniMap.astro';
 import { GROUP_LABEL, type Group, type Place } from '../../../brands/vic/model';
 interface Props {
-  town: { name: string; slug: string; km: number; region: string; intro: string; tips: string[] };
+  town: { name: string; slug: string; km: number; region: string; intro: string; tips: string[]; centre?: [number, number] | null };
   sections: { group: Group; total: number; places: Place[] }[];
   nearby: { slug: string; name: string; km: number }[];
   collections: { href: string; name: string }[];
@@ -29,6 +30,7 @@ const { town, sections, nearby, collections, affiliates = null, photo = null, pl
     {body.map((para) => <p class="town__body">{para}</p>)}
     {town.tips.map((tip) => <p class="tip"><strong>Local tip:</strong> {tip}</p>)}
   </div>
+  {town.centre && town.km >= 15 && <MiniMap name={town.name} lat={town.centre[0]} lon={town.centre[1]} km={isRegion ? null : town.km} />}
 
   {members.length > 0 && (
     <section class="town__section">

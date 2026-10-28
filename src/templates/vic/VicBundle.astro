@@ -4,11 +4,12 @@ import RoadSign from '../../components/vic/RoadSign.astro';
 import AffiliateLink from '../../components/vic/AffiliateLink.astro';
 import Signup from '../../components/vic/Signup.astro';
 import SavePlan from '../../components/vic/SavePlan.astro';
+import MiniMap from '../../components/vic/MiniMap.astro';
 import viator from '../../../data/vic/viator.json';
 interface PlaceView { name: string; kind: string; address: string | null; hours: string | null; website: string | null; map: string; dist: string | null }
 interface StepView { when: string; text: string; place: PlaceView | null }
 interface Props {
-  title: string; sub: string; intro: string[]; town: { name: string; slug: string };
+  title: string; sub: string; intro: string[]; town: { name: string; slug: string; centre?: [number, number] | null; km?: number };
   days: { title: string; steps: StepView[] }[];
   swaps: { label: string; places: PlaceView[] }[];
   gettingThere: string[]; tips: string[];
@@ -30,6 +31,7 @@ const hrs = (m: number | null) => (m ? (m >= 90 ? `${Math.round(m / 30) / 2} hou
   <div class="town__intro">
     {intro.map((p, i) => <p class={i === 0 ? 'town__lede' : ''}>{p}</p>)}
   </div>
+  {town.centre && (town.km ?? 0) >= 15 && <MiniMap name={town.name} lat={town.centre[0]} lon={town.centre[1]} km={town.km} />}
 
   <ol class="loop-days">
     {days.map((d, i) => (
