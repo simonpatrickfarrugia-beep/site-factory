@@ -781,11 +781,11 @@
  "affiliates": {
   "_note": "Fill in a link template and set enabled: true when a programme approves. {q} = search text (e.g. 'Ballarat, Victoria'), {url} = encoded destination URL (for networks like CJ that wrap a target URL).",
   "stay": {
-   "enabled": false,
-   "label": "Check accommodation prices",
-   "partner": "Booking.com",
-   "template": "",
-   "target": "https://www.booking.com/searchresults.html?ss={q}"
+   "enabled": true,
+   "label": "Check hotel prices",
+   "partner": "Wotif",
+   "template": "https://www.wotif.com/affiliate?landingPage={url}&camref=1011l6uMgR&creativeref=1100l86817&adref=PZpZVoSteG",
+   "target": "https://www.wotif.com/Hotel-Search?destination={q}"
   },
   "tours": {
    "enabled": true,
