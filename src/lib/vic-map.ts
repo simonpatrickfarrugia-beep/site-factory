@@ -63,7 +63,7 @@ export function vicMapSvg(town: { name: string; lat: number; lon: number }, opts
   if (ny > 0) { nx = -nx; ny = -ny; }
   const lx = (tx + cx) / 2 + nx * 12 * k, ly = (ty + cy) / 2 + ny * 12 * k + 4 * k;
   return `<svg viewBox="${f(x0)} ${f(y0)} ${f(w)} ${f(h)}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map showing ${esc(town.name)}, Melbourne and its airports" class="vicmap__svg">`
-    + `<rect x="${f(x0)}" y="${f(y0)}" width="${f(w)}" height="${f(h)}" fill="#CFE3EE"/>`
+    + `<rect x="${f(x0)}" y="${f(y0)}" width="${f(w)}" height="${f(h)}" fill="#E3E6E1"/>`
     + `<path d="${VIC_MAP.path}" fill="#EEF4E6" stroke="#7FA58E" stroke-width="${s2(1.4)}" stroke-linejoin="round"/>`
     + (far ? `<line x1="${f(cx)}" y1="${f(cy)}" x2="${f(tx)}" y2="${f(ty)}" stroke="#8A4B26" stroke-width="${s2(2.4)}" stroke-dasharray="${s2(7)} ${s2(5)}"/>` : '')
     + plane(refs[1]) + plane(refs[2])
