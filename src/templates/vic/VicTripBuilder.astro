@@ -7,6 +7,7 @@
  */
 import RoadSign from '../../components/vic/RoadSign.astro';
 import Signup from '../../components/vic/Signup.astro';
+import SavePlan from '../../components/vic/SavePlan.astro';
 interface Props {
   towns: Record<string, { n: string; km: number; r: string | null; st: boolean; ph: string | null; credit: string | null; pg: string | null }>;
   plans: unknown[]; regions: string[]; daytours: Record<string, { title: string; url: string; from: number | null }>;
@@ -68,6 +69,7 @@ const data = JSON.stringify({ towns, plans, daytours, affiliates });
     <p class="tb-note" data-tb-note hidden></p>
     <div data-tb-list></div>
     <p><button type="button" class="tb-more" data-tb-more hidden>Show 3 more towns</button></p>
+    <SavePlan heading="Keep these ideas" />
     <p class="tb-small">Towns are ranked by how well each one fits your choices, using open map data: what's close together, opening hours and how well places are documented. We don't use star ratings or invent prices. Check hours and prices before you go. Booking links may earn us a commission at no extra cost to you (<a href="/affiliate-disclosure">how that works</a>).</p>
   </section>
 

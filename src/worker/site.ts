@@ -7,6 +7,11 @@
  *                            Stored in table `submissions` (one row, fields as JSON).
  *   GET  /api/jobs?q=&where=&hours=part|any&type=casual|temp|perm|any&page=  live job ads from Careerjet (brands with JOBS="1"),
  *                            each tagged with what the ad itself says (work from home, no experience, flexible hours…).
+ *   GET  /api/plan-email     { enabled }: whether "Email me this plan" is switched on (PLAN_EMAIL="1" + RESEND_API_KEY secret).
+ *   POST /api/plan-email     { email, url }: emails the visitor a link to one of OUR plan pages (title + description read from
+ *                            the built page, never from the request, so it can't be used to send arbitrary text), and adds
+ *                            them to the list (interests "plans"). Max 3 sends per email per day.
+ *   GET  /api/unsubscribe?e=&t=  one-click unsubscribe (t = HMAC of the email), linked from every email.
  *   GET  /api/submit/status?since=<ISO time>  how many submissions arrived since then: a count only, never any details.
  *                            The `enquiries` GitHub workflow polls it and opens an issue (emailed to Simon) when it's above 0.
  *
@@ -24,6 +29,11 @@ export interface Env {
   JOBS?: string;
   /** Careerjet publisher affiliate ID (free account; Careerjet shares revenue on clicks). Until it's set, /api/jobs says so. */
   CAREERJET_AFFID?: string;
+  /** "1" offers "Email me this plan" (needs RESEND_API_KEY as a Worker secret and the domain verified in Resend). */
+  PLAN_EMAIL?: string;
+  RESEND_API_KEY?: string;
+  /** From address for plan emails, e.g. "Vic Tours <plans@victours.com.au>". */
+  MAIL_FROM?: string;
 }
 
 const EMAIL = /^[^@\s<>"']{1,64}@[^@\s<>"']{1,190}\.[a-z]{2,24}$/i;
@@ -145,6 +155,77 @@ async function jobs(request: Request, env: Env): Promise<Response> {
   });
 }
 
+// ---------------------------------------------------------------- "Email me this plan" (Resend)
+const planEmailOn = (env: Env) => env.PLAN_EMAIL === '1' && !!env.RESEND_API_KEY && !!env.MAIL_FROM;
+async function unsubToken(email: string, env: Env): Promise<string> {
+  const key = await crypto.subtle.importKey('raw', new TextEncoder().encode(`unsub:${env.RESEND_API_KEY ?? ''}`), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+  const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(`${env.BRAND}:${email}`));
+  return [...new Uint8Array(sig)].slice(0, 12).map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+const htmlEsc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+const decodeEntities = (s: string) => s.replace(/&amp;/g, '&').replace(/&#39;|&#x27;|&rsquo;/g, '’').replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+
+async function planEmail(request: Request, env: Env): Promise<Response> {
+  const json = (body: unknown, status = 200) => Response.json(body, { status, headers: { 'cache-control': 'no-store' } });
+  if (request.method === 'GET') return json({ enabled: planEmailOn(env) });
+  if (request.method !== 'POST') return new Response('Method not allowed', { status: 405 });
+  if (!planEmailOn(env)) return json({ ok: false, message: 'Plan emails aren’t switched on yet.' }, 503);
+  const f = await readBody(request);
+  if (f.company_website) return json({ ok: true, message: 'Sent! Check your inbox.' });
+  const email = (f.email ?? '').trim().toLowerCase();
+  if (!EMAIL.test(email)) return json({ ok: false, message: 'That email address doesn’t look right.' }, 400);
+  const origin = new URL(request.url).origin;
+  let target: URL;
+  try { target = new URL(f.url ?? '', origin); } catch { return json({ ok: false, message: 'Unknown plan.' }, 400); }
+  if (target.origin !== origin || !/^\/(day-trips|weekends|trip-builder|road-trips)(\/|$)/.test(target.pathname)) return json({ ok: false, message: 'Unknown plan.' }, 400);
+  // Read the plan's own title and description from the built page (nothing from the request goes into the email text).
+  const page = await env.ASSETS.fetch(new Request(new URL(target.pathname, origin).toString()));
+  if (!page.ok) return json({ ok: false, message: 'Unknown plan.' }, 400);
+  const html = await page.text();
+  const title = decodeEntities((html.match(/<title>([^<]{1,200})<\/title>/) ?? [])[1] ?? 'Your trip plan').replace(/\s*\|\s*[^|]+$/, '');
+  const desc = decodeEntities((html.match(/<meta name="description" content="([^"]{1,400})"/) ?? [])[1] ?? '');
+  // Rate limit: 3 plan emails per address per day.
+  const sent = await env.DB.prepare(`SELECT COUNT(*) AS n FROM submissions WHERE brand = ? AND form = 'plan-email' AND page = ? AND created_at > strftime('%Y-%m-%dT%H:%M:%fZ', 'now', '-1 day')`)
+    .bind(env.BRAND, email).first<{ n: number }>();
+  if ((sent?.n ?? 0) >= 3) return json({ ok: false, message: 'We’ve already sent a few plans to that address today. Check your inbox (and spam folder).' }, 429);
+  await env.DB.prepare(
+    `INSERT INTO subscribers (brand, email, source, interests) VALUES (?, ?, ?, 'plans')
+     ON CONFLICT (brand, email) DO UPDATE SET unsubscribed_at = NULL`,
+  ).bind(env.BRAND, email, target.pathname.slice(0, 300)).run();
+  const link = `${target.origin}${target.pathname}${target.pathname === '/trip-builder' ? target.search : ''}`;
+  const unsub = `${origin}/api/unsubscribe?e=${encodeURIComponent(email)}&t=${await unsubToken(email, env)}`;
+  const site = new URL(origin).host;
+  const r = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: { authorization: `Bearer ${env.RESEND_API_KEY}`, 'content-type': 'application/json' },
+    body: JSON.stringify({
+      from: env.MAIL_FROM, to: [email], subject: `Your plan: ${title}`,
+      headers: { 'List-Unsubscribe': `<${unsub}>`, 'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click' },
+      text: `${title}\n\n${desc}\n\nOpen your plan: ${link}\n\nCheck opening hours and prices before you go.\n\nYou'll also get new day trips and weekend ideas from ${site} about once a month. Unsubscribe any time: ${unsub}`,
+      html: `<div style="font-family:Arial,sans-serif;font-size:16px;line-height:1.5;color:#1f2a24;max-width:560px">
+        <h1 style="font-size:22px;color:#00653B;margin:0 0 8px">${htmlEsc(title)}</h1>
+        <p style="margin:0 0 16px">${htmlEsc(desc)}</p>
+        <p style="margin:0 0 20px"><a href="${htmlEsc(link)}" style="background:#00653B;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:bold;display:inline-block">Open your plan</a></p>
+        <p style="margin:0 0 16px;color:#555">Check opening hours and prices before you go. Have a great trip!</p>
+        <p style="font-size:13px;color:#777;margin:24px 0 0">You'll also get new day trips and weekend ideas from ${htmlEsc(site)} about once a month. <a href="${htmlEsc(unsub)}" style="color:#777">Unsubscribe</a>.</p>
+      </div>`,
+    }),
+  });
+  await env.DB.prepare('INSERT INTO submissions (id, brand, form, data, page) VALUES (?, ?, ?, ?, ?)')
+    .bind(crypto.randomUUID(), env.BRAND, 'plan-email', JSON.stringify({ url: link, status: r.status }), email).run();
+  if (!r.ok) { console.error('resend failed', r.status, await r.text()); return json({ ok: false, message: 'That didn’t send. Please try again in a minute.' }, 502); }
+  return json({ ok: true, message: 'Sent! Check your inbox (and your spam folder, just in case).' });
+}
+
+async function unsubscribe(request: Request, env: Env): Promise<Response> {
+  const u = new URL(request.url);
+  const email = (u.searchParams.get('e') ?? '').trim().toLowerCase();
+  const page = (msg: string, status = 200) => new Response(`<!doctype html><meta name="viewport" content="width=device-width"><title>Unsubscribe</title><body style="font-family:Arial,sans-serif;max-width:32rem;margin:3rem auto;padding:0 1rem"><h1 style="font-size:1.4rem">${htmlEsc(msg)}</h1><p><a href="/">Back to the site</a></p></body>`, { status, headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' } });
+  if (!EMAIL.test(email) || u.searchParams.get('t') !== (await unsubToken(email, env))) return page('That unsubscribe link isn’t valid. Reply to any email and we’ll remove you.', 400);
+  await env.DB.prepare(`UPDATE subscribers SET unsubscribed_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now') WHERE brand = ? AND email = ?`).bind(env.BRAND, email).run();
+  return page('You’re unsubscribed. You won’t get any more emails from us.');
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const { pathname } = new URL(request.url);
@@ -174,6 +255,10 @@ export default {
         return Response.json({ ok: false, message: 'Something went wrong. Please try again.' }, { status: 500 });
       }
     }
+    if (pathname === '/api/plan-email') {
+      try { return await planEmail(request, env); } catch (e) { console.error('plan-email failed', e); return Response.json({ ok: false, message: 'Something went wrong. Please try again.' }, { status: 500 }); }
+    }
+    if (pathname === '/api/unsubscribe') return unsubscribe(request, env);
     if (pathname === '/api/jobs' && env.JOBS === '1') {
       if (request.method !== 'GET') return new Response('Method not allowed', { status: 405, headers: { allow: 'GET' } });
       return jobs(request, env);

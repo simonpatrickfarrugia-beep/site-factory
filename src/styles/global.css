@@ -866,6 +866,19 @@ main { display: block; }
 .ta-trial { border: 2px solid var(--paper); border-radius: var(--radius); padding: 1rem 1.1rem; background: var(--panel); }
 .ta-trial h4 { margin: 0 0 0.3rem; font: 800 1.2rem var(--font-display); text-transform: uppercase; }
 
+/* Admin help (interest form + band) */
+.ta-steps { list-style: none; counter-reset: st; padding: 0; margin: 1.5rem 0 2rem; display: grid; gap: 0.9rem; max-width: 46rem; }
+@media (min-width: 52rem) { .ta-steps { grid-template-columns: repeat(3, 1fr); } }
+.ta-steps li { counter-increment: st; border-top: 4px solid var(--hi); padding-top: 0.6rem; display: grid; gap: 0.2rem; }
+.ta-steps li::before { content: counter(st); font: 800 1.6rem var(--font-display); color: var(--hi); }
+.ta-helpform { max-width: 40rem; background: var(--panel); border: 2px solid var(--paper); border-radius: var(--radius); padding: 1.2rem 1.3rem; }
+.ta-helpform__checks { display: grid; gap: 0.4rem; }
+@media (min-width: 34rem) { .ta-helpform__checks { grid-template-columns: 1fr 1fr; } }
+.ta-helpform__status { font-weight: 700; }
+.ta-hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.ta-helpband { border: 2px solid var(--paper); border-left: 8px solid var(--hi); border-radius: var(--radius); background: var(--panel); padding: 1.2rem 1.4rem; margin-block: 2.5rem; }
+.ta-result__help { margin-top: 1.5rem; padding: 0.8rem 1rem; background: var(--panel); border-left: 5px solid var(--hi); }
+
 /* Builder */
 .ta-builder__grid { display: grid; gap: 2rem; margin-top: 1.5rem; align-items: start; }
 @media (min-width: 64rem) { .ta-builder__grid { grid-template-columns: 1fr 1fr; } .ta-preview-col { position: sticky; top: 1rem; } }

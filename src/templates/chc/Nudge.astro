@@ -1,0 +1,25 @@
+---
+/**
+ * A small, in-context "talk to Simon" prompt, shown at the moment someone feels the need (after saving a resume,
+ * after a job search). Mailto with a subject line so Simon knows where it came from. Tracked as cta_<cta>.
+ */
+interface Props { heading: string; text: string; subject: string; cta: string; button?: string; cls?: string }
+const { heading, text, subject, cta, button = 'Email Simon for a free chat', cls = '' } = Astro.props;
+const href = `mailto:simon@communityhelp.com.au?subject=${encodeURIComponent(subject)}`;
+---
+<aside class={`chc-nudge ${cls}`} data-nudge>
+  <p class="chc-nudge__h">{heading}</p>
+  <p>{text}</p>
+  <p><a class="chc-btn chc-btn--small" href={href} data-cta={cta}>{button}</a> <a class="chc-link" href="/contact">or use the contact form</a></p>
+</aside>
+<style is:global>
+  .chc-nudge { background: #fff; border: 2px solid var(--forest); border-left: 8px solid var(--mint); border-radius: 14px; padding: 1rem 1.2rem; margin: 1.5rem 0; max-width: 46rem; }
+  .chc-nudge__h { font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; margin: 0 0 0.3rem; }
+  .chc-nudge p { margin: 0 0 0.6rem; }
+  .chc-nudge p:last-child { margin: 0; }
+  .chc-btn--small { font-size: 1rem; padding: 0.65rem 1.1rem; }
+  .chc-nudge--flash { animation: chc-flash 1.2s ease 2; }
+  @keyframes chc-flash { 50% { box-shadow: 0 0 0 6px var(--mint); } }
+  @media (prefers-reduced-motion: reduce) { .chc-nudge--flash { animation: none; } }
+  @media print { .chc-nudge { display: none !important; } }
+</style>

@@ -14,7 +14,8 @@
     "html_handling": "drop-trailing-slash",
     "not_found_handling": "404-page"
   },
-  "vars": { "BRAND": "vic" },
+  // PLAN_EMAIL: "Email me this plan" (switches itself on once the RESEND_API_KEY secret is added and victours.com.au is verified in Resend).
+  "vars": { "BRAND": "vic", "PLAN_EMAIL": "1", "MAIL_FROM": "Vic Tours <plans@victours.com.au>" },
   "d1_databases": [
     { "binding": "DB", "database_name": "site-factory-forms", "database_id": "5441b63f-1ab8-484f-a6c7-0a0af4302774" }
   ],

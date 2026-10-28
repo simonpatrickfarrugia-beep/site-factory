@@ -5,6 +5,7 @@
  * Save as PDF = the browser's print dialog with print styles that show only the resume (A4).
  */
 import BookCta from './BookCta.astro';
+import Nudge from './Nudge.astro';
 interface Props {
   book: string;
   page: {
@@ -109,6 +110,7 @@ const t = p.tips;
       </fieldset>
       <button type="button" class="chc-btn" data-act="print">Save as PDF or print</button>
       <p class="chc-small">Tip: in the print window, choose “Save as PDF” as the printer. To keep working later on another device, <button type="button" class="rb-linkbtn" data-act="backup">download a backup file</button> or <label class="rb-linkbtn">open one<input type="file" accept="application/json,.json" data-restore hidden /></label>.</p>
+      <Nudge cls="rb-noprint" heading="Before you send it" text="A second pair of eyes helps. Book a free chat and Simon will go through your resume with you and suggest how to make it stronger for the jobs you want." subject="Resume help (free chat)" cta="nudge_resume" />
     </div>
   </div>
 
@@ -312,7 +314,7 @@ const t = p.tips;
     else if (b.hasAttribute('data-up')) { const it = b.closest('.rb-item')!; if (it.previousElementSibling) it.parentElement!.insertBefore(it, it.previousElementSibling); update(); }
     else if (b.dataset.act === 'example') { fill(structuredClone(EXAMPLE)); track('resume_example'); }
     else if (b.dataset.act === 'clear') { if (confirm('Clear everything you have typed?')) { fill(empty()); store(null); } }
-    else if (b.dataset.act === 'print') { update(); track('resume_pdf'); window.print(); }
+    else if (b.dataset.act === 'print') { update(); track('resume_pdf'); window.print(); const n = document.querySelector('[data-nudge]'); if (n) { n.scrollIntoView({ block: 'center' }); n.classList.add('chc-nudge--flash'); } }
     else if (b.dataset.act === 'backup') {
       const blob = new Blob([JSON.stringify(read(), null, 1)], { type: 'application/json' });
       const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: 'my-resume-backup.json' });

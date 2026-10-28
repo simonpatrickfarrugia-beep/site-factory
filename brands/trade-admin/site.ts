@@ -89,6 +89,17 @@ export function routes(): Route[] {
     });
   }
 
+  {
+    const p = pages['admin-help'];
+    out.push({
+      path: 'admin-help',
+      template: 'taHelp',
+      seo: { title: p.seoTitle + SUFFIX, rawTitle: true, description: p.description },
+      schema: [faqSchema(p.faq), crumbs([{ name: 'Home', path: '' }, { name: 'Admin help', path: 'admin-help' }])],
+      props: { page: p },
+    });
+  }
+
   for (const slug of ['about', 'contact', 'how-we-make-money', 'privacy-policy'] as const) {
     const p = pages[slug];
     out.push({

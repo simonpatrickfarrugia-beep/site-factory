@@ -1,4 +1,4 @@
-# New form enquiries on Simon's sites (Community Help Co enquiry + referral forms).
+# New form enquiries on Simon's sites (Community Help Co enquiry + referral forms; Trade Admin admin-help form).
 # The site Worker only reveals a count, never details. When it's above 0 this opens an issue labelled "enquiry",
 # which GitHub emails to Simon. He reads the enquiry itself by asking Claude ("show my CHC enquiries"; D1 table submissions).
 # Runs about 8am, 1pm and 6pm Melbourne (summer time) and costs ~3 Actions minutes a day.
@@ -24,11 +24,11 @@ jobs:
           since=$(date -u -d '-14 hours -10 minutes' +%Y-%m-%dT%H:%M:%SZ)
           [ "$(date -u +%H)" = "21" ] || since=$(date -u -d '-5 hours -10 minutes' +%Y-%m-%dT%H:%M:%SZ)
           gh label create enquiry --color 0E8A16 --description "New website enquiry" 2>/dev/null || true
-          for site in communityhelp.com.au; do
+          for site in communityhelp.com.au tradeadmin.com.au; do
             n=$(curl -fsS "https://$site/api/submit/status?since=$since" | python3 -c 'import sys,json; print(json.load(sys.stdin)["count"])') || { echo "::warning title=enquiries::Couldn't check $site"; continue; }
             echo "$site: $n new since $since"
             if [ "$n" -gt 0 ]; then
               gh issue create --label enquiry --title "📬 $n new enquiry on $site" \
-                --body "$n new form submission(s) on https://$site since $since (UTC). Reply within a working day: in a Site Factory chat, ask Claude to \"show my CHC enquiries\". Details stay in the database (D1 table submissions), not here. Close this issue once you've replied."
+                --body "$n new form submission(s) on https://$site since $since (UTC). Reply within a working day: in a Site Factory chat, ask Claude to \"show my enquiries for $site\". Details stay in the database (D1 table submissions), not here. Close this issue once you've replied."
             fi
           done

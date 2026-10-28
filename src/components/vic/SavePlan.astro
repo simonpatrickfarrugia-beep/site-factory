@@ -1,0 +1,67 @@
+---
+/**
+ * "Keep this plan": share or copy the link (always), and "Email me this plan" (only once the site Worker says plan
+ * emails are switched on: GET /api/plan-email → { enabled }). The email holds a link to this plan; the visitor joins
+ * the list (interests "plans") with a one-click unsubscribe in every email.
+ */
+interface Props { heading?: string }
+const { heading = 'Keep this plan' } = Astro.props;
+---
+<section class="saveplan" data-saveplan>
+  <h2 class="saveplan__h">{heading}</h2>
+  <form class="saveplan__form" data-saveplan-form hidden>
+    <label class="saveplan__label">Email it to yourself (and get new day trips about once a month)
+      <span class="saveplan__row">
+        <input type="email" name="email" required maxlength="160" autocomplete="email" placeholder="you@example.com" />
+        <button type="submit">Email me this plan</button>
+      </span>
+    </label>
+    <input class="saveplan__hp" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+    <p class="saveplan__status" role="status" aria-live="polite" data-saveplan-status></p>
+  </form>
+  <p class="saveplan__share"><button type="button" data-saveplan-share>Share or copy the link</button> <span data-saveplan-copied></span></p>
+</section>
+
+<script>
+  const gtag = (name: string, p: Record<string, string> = {}) => { try { (window as any).gtag?.('event', name, p); } catch {} };
+  for (const box of document.querySelectorAll<HTMLElement>('[data-saveplan]')) {
+    const form = box.querySelector<HTMLFormElement>('[data-saveplan-form]')!;
+    const status = box.querySelector<HTMLElement>('[data-saveplan-status]')!;
+    const copied = box.querySelector<HTMLElement>('[data-saveplan-copied]')!;
+    fetch('/api/plan-email', { headers: { accept: 'application/json' } }).then((r) => (r.ok ? r.json() : null)).then((j) => { if (j?.enabled) form.hidden = false; }).catch(() => {});
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button')!; btn.disabled = true; status.textContent = 'Sending…';
+      const fd = new FormData(form); fd.set('url', location.pathname + location.search);
+      try {
+        const r = await fetch('/api/plan-email', { method: 'POST', body: fd, headers: { accept: 'application/json' } });
+        const j = await r.json();
+        status.textContent = j.message ?? (r.ok ? 'Sent!' : 'That didn’t send. Please try again.');
+        if (r.ok && j.ok) { form.reset(); gtag('sign_up', { method: 'plan_email' }); }
+      } catch { status.textContent = 'That didn’t send. Please try again.'; }
+      btn.disabled = false;
+    });
+    box.querySelector<HTMLButtonElement>('[data-saveplan-share]')!.addEventListener('click', async () => {
+      const url = location.href; const title = document.title;
+      try {
+        if (navigator.share) { await navigator.share({ title, url }); gtag('share', { method: 'native' }); return; }
+        await navigator.clipboard.writeText(url); copied.textContent = 'Link copied.'; gtag('share', { method: 'copy' });
+      } catch { /* share sheet closed */ }
+    });
+  }
+</script>
+
+<style>
+  .saveplan { background: #fff; border: 2px solid var(--sign-green); border-radius: 12px; padding: var(--space-3); margin: var(--space-4) 0; }
+  .saveplan__h { font-size: 1.3rem; margin: 0 0 var(--space-2); color: var(--sign-green); }
+  .saveplan__form[hidden] { display: none; }
+  .saveplan__label { display: grid; gap: 0.4rem; font-weight: 700; }
+  .saveplan__row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .saveplan__row input { flex: 1 1 14rem; font: inherit; padding: 0.65rem; border: 2px solid var(--sign-green); border-radius: 8px; }
+  .saveplan__row button, .saveplan__share button { font: 800 1rem var(--font-display); border-radius: 8px; padding: 0.65rem 1rem; cursor: pointer; }
+  .saveplan__row button { color: #fff; background: var(--sign-green); border: 0; }
+  .saveplan__share button { background: #fff; color: var(--sign-green); border: 2px solid var(--sign-green); }
+  .saveplan__share { margin: var(--space-2) 0 0; }
+  .saveplan__hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .saveplan__status { margin: 0.4rem 0 0; font-weight: 700; }
+</style>

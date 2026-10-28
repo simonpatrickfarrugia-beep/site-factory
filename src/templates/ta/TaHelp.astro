@@ -1,0 +1,102 @@
+---
+/**
+ * "Want someone to handle your admin?" — an interest form that matches tradies with bookkeepers / admin assistants.
+ * We don't do the admin (no client services; BAS work needs a registered agent). Submissions go to the site Worker
+ * (/api/submit/admin-help → D1 table submissions); the enquiries workflow emails Simon a count.
+ */
+import type { HelpPage } from '../../../brands/trade-admin/model';
+interface Props { page: HelpPage }
+const { page } = Astro.props;
+const HELP = [
+  ['help_quotes', 'Quotes and invoices'],
+  ['help_chasing', 'Chasing unpaid invoices'],
+  ['help_books', 'Bookkeeping, BAS and GST'],
+  ['help_bookings', 'Booking jobs and scheduling'],
+  ['help_calls', 'Answering calls and emails'],
+  ['help_supplier', 'Ordering and supplier accounts'],
+];
+---
+<div class="ta-wrap ta-section">
+  <h1 class="ta-h1">{page.title}</h1>
+  <p class="ta-lede ta-measure">{page.lede}</p>
+
+  <ol class="ta-steps">
+    {page.how.map((h) => <li><strong>{h.t}</strong><span>{h.d}</span></li>)}
+  </ol>
+
+  <form class="ta-form ta-helpform" data-help action="/api/submit/admin-help" method="post">
+    <fieldset>
+      <legend>What would you hand over?</legend>
+      <div class="ta-helpform__checks">
+        {HELP.map(([n, l]) => <label class="ta-check"><input type="checkbox" name={n} value="yes" /> {l}</label>)}
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Your business</legend>
+      <div class="ta-row">
+        <label>Your trade<input name="trade" required maxlength="60" placeholder="e.g. electrician" /></label>
+        <label>People in the business
+          <select name="team" required>
+            <option value="">Choose…</option><option>Just me</option><option>2 to 5</option><option>6 to 10</option><option>More than 10</option>
+          </select>
+        </label>
+      </div>
+      <div class="ta-row">
+        <label>Admin hours a week now
+          <select name="hours">
+            <option value="">Choose…</option><option>Under 3</option><option>3 to 6</option><option>7 to 12</option><option>More than 12</option>
+          </select>
+        </label>
+        <label>Rough budget a week
+          <select name="budget">
+            <option value="">Not sure yet</option><option>Under $100</option><option>$100 to $250</option><option>$250 to $500</option><option>Over $500</option>
+          </select>
+        </label>
+      </div>
+      <label>Where you're based <span class="ta-opt">(suburb and state)</span><input name="where" maxlength="60" placeholder="e.g. Frankston VIC" /></label>
+    </fieldset>
+    <fieldset>
+      <legend>How we reach you</legend>
+      <div class="ta-row">
+        <label>Name<input name="name" required maxlength="80" autocomplete="name" /></label>
+        <label>Email<input name="email" type="email" required maxlength="160" autocomplete="email" /></label>
+      </div>
+      <label>Phone <span class="ta-opt">(optional)</span><input name="phone" type="tel" maxlength="30" autocomplete="tel" /></label>
+      <label>Anything else? <span class="ta-opt">(optional)</span><textarea name="message" rows="3" maxlength="1000"></textarea></label>
+      <input class="ta-hp" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+    </fieldset>
+    <p class="ta-small">{page.privacy}</p>
+    <p><button class="ta-btn" type="submit">Find me some help</button></p>
+    <p class="ta-helpform__status" role="status" aria-live="polite" data-status></p>
+  </form>
+
+  <p class="ta-small ta-measure">{page.note}</p>
+
+  <section class="ta-measure ta-faq" aria-labelledby="faq-h">
+    <h2 id="faq-h" class="ta-h2">Questions</h2>
+    {page.faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
+  </section>
+</div>
+
+<script is:inline define:vars={{ thanks: page.thanks }}>
+  (function () {
+    var form = document.querySelector('form[data-help]');
+    if (!form) return;
+    var status = form.querySelector('[data-status]');
+    if (/[?&]sent=1/.test(location.search)) status.textContent = thanks;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.querySelector('input[type=checkbox]:checked')) { status.textContent = 'Tick at least one thing you’d hand over.'; return; }
+      var button = form.querySelector('button[type=submit]');
+      button.disabled = true; status.textContent = 'Sending…';
+      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { accept: 'application/json' } })
+        .then(function (r) { return r.json().then(function (j) { if (!r.ok || !j.ok) throw new Error(j.message || 'failed'); return j; }); })
+        .then(function () {
+          form.reset(); status.textContent = thanks;
+          if (window.gtag) window.gtag('event', 'cta_admin_help_sent');
+        })
+        .catch(function (err) { status.textContent = (err && err.message && err.message !== 'failed' ? err.message + ' ' : '') + 'If it keeps failing, email hello@tradeadmin.com.au.'; })
+        .finally(function () { button.disabled = false; });
+    });
+  })();
+</script>

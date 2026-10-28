@@ -55,3 +55,11 @@ const { page, compareLinks, checked } = Astro.props;
   <p class="ta-measure">Once you're chasing unpaid invoices, juggling a team's schedule or re-typing jobs into Xero, a job management app usually pays for itself. We compare the main ones on their own published prices (checked {new Date(checked).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}), with a calculator for your team.</p>
   <ul class="ta-links">{compareLinks.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
 </section>
+
+<div class="ta-wrap">
+  <section class="ta-helpband">
+    <h2 class="ta-h2">Rather hand the admin to someone?</h2>
+    <p>Tell us what's eating your evenings (quotes, invoices, chasing payments, the BAS) and we'll match you with a bookkeeper or admin assistant who works with trades. Free to ask, no obligation.</p>
+    <p><a class="ta-btn" href="/admin-help" data-cta="admin_help">Get matched with admin help</a></p>
+  </section>
+</div>

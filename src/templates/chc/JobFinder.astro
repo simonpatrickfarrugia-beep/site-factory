@@ -6,6 +6,7 @@
  * Search words go to our Worker and on to the job search engine; nothing is stored.
  */
 import BookCta from './BookCta.astro';
+import Nudge from './Nudge.astro';
 interface Props {
   book: string;
   page: { title: string; lede: string; privacy: string; tips: string[]; help: { t: string; d: string; href: string; link: string }[]; faq: { q: string; a: string }[] };
@@ -53,6 +54,7 @@ const { book, page: p } = Astro.props;
     <p class="jf-note" data-jf-note hidden></p>
     <ol class="jf-list" data-jf-list></ol>
     <p><button type="button" class="chc-btn jf-more" data-jf-more hidden>Load more jobs</button></p>
+    <Nudge heading="Applying but not hearing back?" text="That's common, and usually fixable. Simon works one-on-one with people to find roles that fit, sharpen applications and prepare for interviews. Start with a free chat." subject="Job search help (free chat)" cta="nudge_jobs" />
     <div class="jf-boards">
       <p><strong>Search the big job boards with the same words:</strong></p>
       <p class="jf-boards__links" data-jf-boards></p>

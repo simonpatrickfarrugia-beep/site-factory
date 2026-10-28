@@ -5,11 +5,19 @@
   "$schema": "../../node_modules/wrangler/config-schema.json",
   "name": "trade-admin",
   "compatibility_date": "2026-06-01",
+  // Only /api/* runs Worker code (the admin-help form → D1 table submissions); everything else is the built files.
+  "main": "../../src/worker/site.ts",
   "assets": {
     "directory": "../../dist",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"],
     "html_handling": "drop-trailing-slash",
     "not_found_handling": "404-page"
   },
+  "vars": { "BRAND": "trade-admin", "FORMS": "admin-help" },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "site-factory-forms", "database_id": "5441b63f-1ab8-484f-a6c7-0a0af4302774" }
+  ],
   // Live domains (zone active in Cloudflare 25 Oct 2026). The bare domain is canonical; www should redirect to it
   // (Cloudflare Rules → Redirect Rules → "Redirect from WWW to root").
   "routes": [
