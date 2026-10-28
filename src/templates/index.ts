@@ -27,6 +27,7 @@ import ChcResumeBuilder from './chc/ResumeBuilder.astro';
 import ChcCoverLetter from './chc/CoverLetter.astro';
 import VicBundle from './vic/VicBundle.astro';
 import VicBundles from './vic/VicBundles.astro';
+import VicTripBuilder from './vic/VicTripBuilder.astro';
 import SlHome from './sl/SlHome.astro';
 import SlGuide from './sl/SlGuide.astro';
 import SlPolicy from './sl/SlPolicy.astro';
@@ -67,6 +68,7 @@ export const templates = {
   chcCoverLetter: ChcCoverLetter,
   vicBundle: VicBundle,
   vicBundles: VicBundles,
+  vicTripBuilder: VicTripBuilder,
   slHome: SlHome,
   slGuide: SlGuide,
   slPolicy: SlPolicy,

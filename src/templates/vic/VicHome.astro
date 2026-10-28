@@ -23,6 +23,7 @@ const credit = (p: Photo) => `Photo: ${p.artist}, ${p.license}, via Wikimedia Co
     <h1 class="home__title">Victoria, town by town.</h1>
     <p class="home__lede">Ready-made day trips and weekends from Melbourne, with where to stay, eat and what to do in every town.</p>
     <nav class="home__chips" aria-label="Plan a trip">
+      <a class="home__chip home__chip--go" href="/trip-builder">Plan my trip</a>
       <a class="home__chip" href="/day-trips">Day trips</a>
       <a class="home__chip" href="/weekends">Weekends away</a>
       <a class="home__chip" href="/road-trips">Road trips</a>
@@ -145,6 +146,7 @@ const credit = (p: Photo) => `Photo: ${p.artist}, ${p.license}, via Wikimedia Co
   .home__chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: var(--space-4); }
   .home__chip { font: 800 1rem/1 var(--font-display); text-decoration: none; color: #fff; background: var(--sign-green); border: 2px solid var(--sign-green); border-radius: 999px; padding: 0.65rem 1rem; }
   .home__chip:hover { background: var(--sign-brown); border-color: var(--sign-brown); }
+  .home__chip--go { background: var(--sign-brown); border-color: var(--sign-brown); }
   .home__chip--quiet { background: transparent; color: var(--sign-green); }
   .more { margin-top: var(--space-3); max-width: 34rem; }
   .more summary { cursor: pointer; font: 700 1rem/1.4 var(--font-display); color: var(--sign-green); padding: 0.5rem 0; }

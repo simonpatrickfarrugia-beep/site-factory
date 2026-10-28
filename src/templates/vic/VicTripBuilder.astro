@@ -1,0 +1,232 @@
+---
+/**
+ * Trip Builder: the visitor says how long, who's coming, car or train, how far and where; the page ranks every plan the
+ * bundle engine can build (brands/vic/bundles.ts → vicBundleSets().all) and shows the best three, each with its day-by-day
+ * plan and booking links. Runs in the browser; choices only go into the page address (so a result can be shared).
+ * Ranked by fit from open data (what's near what, opening hours, how complete a listing is), never by ratings we don't have.
+ */
+import RoadSign from '../../components/vic/RoadSign.astro';
+import Signup from '../../components/vic/Signup.astro';
+interface Props {
+  towns: Record<string, { n: string; km: number; r: string | null; st: boolean; ph: string | null; credit: string | null; pg: string | null }>;
+  plans: unknown[]; regions: string[]; daytours: Record<string, { title: string; url: string; from: number | null }>;
+  affiliates: Record<string, any> | null; counts: { towns: number; plans: number };
+}
+const { towns, plans, regions, daytours, affiliates, counts } = Astro.props;
+const data = JSON.stringify({ towns, plans, daytours, affiliates });
+---
+<div class="wrap town tb">
+  <RoadSign name="Trip Builder" size="hero" as="h1" sub="Day trips and weekends away from Melbourne" />
+  <div class="town__intro">
+    <p class="town__lede">Tell us who's coming, how long and how far, and we'll pick the towns that fit and plan the trip: where to stay, where to eat and what to do, with maps and booking links.</p>
+    <p>{counts.plans} ready-made plans across {counts.towns} Victorian towns, built from real places near each other.</p>
+  </div>
+
+  <form class="tb-form" data-tb-form>
+    <fieldset>
+      <legend>How long?</legend>
+      <div class="tb-chips">
+        <label><input type="radio" name="len" value="day" checked /> <span>Day trip</span></label>
+        <label><input type="radio" name="len" value="weekend" /> <span>Weekend away</span></label>
+      </div>
+    </fieldset>
+    <fieldset data-who>
+      <legend>Who's coming?</legend>
+      <div class="tb-chips">
+        <label><input type="radio" name="who" value="couples" checked /> <span>A couple</span></label>
+        <label><input type="radio" name="who" value="family" /> <span>Family with kids</span></label>
+        <label><input type="radio" name="who" value="budget" /> <span>Mates or solo, on a budget</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Getting there</legend>
+      <div class="tb-chips">
+        <label><input type="radio" name="car" value="car" checked /> <span>Driving</span></label>
+        <label><input type="radio" name="car" value="train" /> <span>No car (train)</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>How far from Melbourne?</legend>
+      <div class="tb-chips">
+        <label><input type="radio" name="far" value="100" checked /> <span>Up to 100 km</span></label>
+        <label><input type="radio" name="far" value="200" /> <span>Up to 200 km</span></label>
+        <label><input type="radio" name="far" value="300" /> <span>Up to 300 km</span></label>
+      </div>
+    </fieldset>
+    <label class="tb-region">Where in Victoria?
+      <select name="region">
+        <option value="">Anywhere</option>
+        {regions.map((r) => <option value={r}>{r}</option>)}
+      </select>
+    </label>
+    <p><button type="submit" class="tb-go">Build my trip</button></p>
+  </form>
+  <noscript><p>The Trip Builder needs JavaScript. Browse the <a href="/day-trips">day trips</a> and <a href="/weekends">weekend plans</a> instead.</p></noscript>
+
+  <section class="tb-results" data-tb-results hidden aria-live="polite" tabindex="-1">
+    <h2 class="tb-results__head" data-tb-head></h2>
+    <p class="tb-note" data-tb-note hidden></p>
+    <div data-tb-list></div>
+    <p><button type="button" class="tb-more" data-tb-more hidden>Show 3 more towns</button></p>
+    <p class="tb-small">Towns are ranked by how well each one fits your choices, using open map data: what's close together, opening hours and how well places are documented. We don't use star ratings or invent prices. Check hours and prices before you go. Booking links may earn us a commission at no extra cost to you (<a href="/affiliate-disclosure">how that works</a>).</p>
+  </section>
+
+  <Signup />
+  <p class="bundle-others">Or browse: <a href="/day-trips">Day trips</a> · <a href="/weekends">Weekend plans</a> · <a href="/road-trips">Road trips</a> · <a href="/towns">All towns</a></p>
+</div>
+<script type="application/json" id="tb-data" set:html={data.replace(/</g, '\\u003c')}></script>
+
+<script>
+  type Step = [string, string] | [string, string, string, number, number];
+  type Plan = { t: string; a: string; rank: number; href: string | null; sum: string; days: { h: string; s: Step[] }[] };
+  type TownInfo = { n: string; km: number; r: string | null; st: boolean; ph: string | null; credit: string | null; pg: string | null };
+  type Aff = { enabled?: boolean; label: string; partner: string; template: string; target?: string };
+  const D = JSON.parse(document.getElementById('tb-data')!.textContent!) as {
+    towns: Record<string, TownInfo>; plans: Plan[]; daytours: Record<string, { title: string; url: string; from: number | null }>; affiliates: Record<string, Aff> | null;
+  };
+  const ESC = (s: string) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+  const gtag = (name: string, p: Record<string, string | number>) => { try { (window as any).gtag?.('event', name, p); } catch {} };
+  const slugify = (s: string) => s.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const affLink = (kind: 'stay' | 'tours' | 'cars', place: string) => {
+    const a = D.affiliates?.[kind];
+    if (!a?.enabled || !a.template) return null;
+    const q = encodeURIComponent(`${place}, Victoria, Australia`);
+    const target = a.target ? a.target.replace('{q}', q) : '';
+    return { href: a.template.replace('{q}', q).replace('{url}', encodeURIComponent(target)).replace('{c}', `victours-tb-${slugify(place)}`), label: a.label, partner: a.partner };
+  };
+
+  const form = document.querySelector<HTMLFormElement>('[data-tb-form]')!;
+  const results = document.querySelector<HTMLElement>('[data-tb-results]')!;
+  const list = results.querySelector<HTMLElement>('[data-tb-list]')!;
+  const more = results.querySelector<HTMLButtonElement>('[data-tb-more]')!;
+  const head = results.querySelector<HTMLElement>('[data-tb-head]')!;
+  const note = results.querySelector<HTMLElement>('[data-tb-note]')!;
+  const val = (n: string) => (form.elements.namedItem(n) as RadioNodeList | HTMLSelectElement).value;
+  const AUD_LABEL: Record<string, string> = { daytrip: 'Day trip', train: 'Weekend by train', couples: 'Romantic weekend', family: 'Family weekend', budget: 'Budget weekend' };
+  let shown = 3;
+
+  const choose = () => {
+    const len = val('len'), who = val('who'), car = val('car'), far = Number(val('far')), region = val('region');
+    const aud = len === 'day' ? 'daytrip' : car === 'train' ? 'train' : who;
+    const base = D.plans.filter((p) => p.a === aud && (car !== 'train' || D.towns[p.t].st));
+    const within = (km: number, r: string) => base.filter((p) => D.towns[p.t].km <= km && (!r || D.towns[p.t].r === r));
+    let pool = within(far, region);
+    let relaxed = '';
+    if (!pool.length && region) { pool = within(300, region); if (pool.length) relaxed = `Nothing in the ${region} within ${far} km, so we've gone a bit further.`; }
+    if (!pool.length) { pool = within(far, ''); if (pool.length) relaxed = region ? `No ${AUD_LABEL[aud].toLowerCase()} plans in the ${region} yet, so here are the best fits elsewhere.` : ''; }
+    if (!pool.length) { pool = within(300, ''); relaxed = 'Nothing fits that distance yet, so here are the closest good fits.'; }
+    pool.sort((a, b) => b.rank - a.rank);
+    // Spread the top picks across regions when "Anywhere" is chosen, so three plans aren't three towns side by side.
+    if (!region) {
+      const seen = new Set<string>(); const first: Plan[] = []; const rest: Plan[] = [];
+      for (const p of pool) { const r = D.towns[p.t].r ?? p.t; (seen.has(r) || first.length >= 3 ? rest : first).push(p); seen.add(r); }
+      pool = [...first, ...rest];
+    }
+    return { pool, aud, len, who, car, far, region, relaxed };
+  };
+
+  const card = (p: Plan, i: number, ctx: ReturnType<typeof choose>) => {
+    const t = D.towns[p.t];
+    const steps = p.days.map((d) => `<h4>${ESC(d.h)}</h4><ul class="tb-steps">${d.s.map((s) => {
+      const links = s.length > 2 ? `<span class="tb-links">${s[2] ? `<a href="${ESC(s[2])}" rel="nofollow noopener" target="_blank" data-cta="website">Website</a>` : ''}<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${s[3]},${s[4]}`)}" rel="nofollow noopener" target="_blank" data-cta="map">Map</a></span>` : '';
+      return `<li><span class="picks__label">${ESC(s[0])}</span> <span>${ESC(s[1])}</span>${links}</li>`;
+    }).join('')}</ul>`).join('');
+    const buttons: string[] = [];
+    if (ctx.len === 'weekend') { const st = affLink('stay', t.n); if (st) buttons.push(`<a class="tb-btn tb-btn--stay" href="${ESC(st.href)}" rel="sponsored noopener" target="_blank" data-cta="book_stay">${ESC(st.label)} in ${ESC(t.n)}</a>`); }
+    const tours = affLink('tours', t.n);
+    if (tours) buttons.push(`<a class="tb-btn tb-btn--tours" href="${ESC(tours.href)}" rel="sponsored noopener" target="_blank" data-cta="book_tour">Tours and tickets in ${ESC(t.n)}</a>`);
+    if (ctx.car === 'car') { const c = affLink('cars', t.n); if (c) buttons.push(`<a class="tb-btn tb-btn--cars" href="${ESC(c.href)}" rel="sponsored noopener" target="_blank" data-cta="book_car">${ESC(c.label)}</a>`); }
+    const dt = ctx.len === 'day' ? D.daytours[p.t] : null;
+    const guided = dt ? `<p class="tb-guided"><strong>Rather not drive?</strong> <a href="${ESC(dt.url)}" rel="sponsored noopener" target="_blank" data-cta="book_tour">${ESC(dt.title)}</a>${dt.from ? ` (from A$${dt.from} on Viator)` : ' (Viator)'}</p>` : '';
+    return `<article class="tb-card">
+      ${t.ph ? `<img class="tb-card__img" src="${ESC(t.ph)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />` : ''}
+      <p class="tb-card__rank">${i === 0 ? 'Best fit' : `Option ${i + 1}`} · ${ESC(AUD_LABEL[p.a])}</p>
+      <h3 class="tb-card__name">${ESC(t.n)}</h3>
+      <p class="tb-card__meta">${t.km} km from Melbourne${t.r ? ` · ${ESC(t.r)}` : ''}${ctx.car === 'train' ? ' · has a train station' : ''}</p>
+      <p>${ESC(p.sum)}</p>
+      <details${i === 0 ? ' open' : ''}><summary>See the ${p.a === 'daytrip' ? 'day' : 'weekend'}, step by step</summary>${steps}</details>
+      ${buttons.length ? `<div class="tb-buttons">${buttons.join('')}</div><p class="tb-small">Booking partners may pay us a commission, at no extra cost to you.</p>` : ''}
+      ${guided}
+      ${p.href ? `<p><a class="tb-full" href="${ESC(p.href)}">Full plan with swaps and tips →</a></p>` : ''}
+      ${t.credit ? `<p class="tb-credit">Photo: ${t.pg ? `<a href="${ESC(t.pg)}" rel="nofollow noopener" target="_blank">${ESC(t.credit)}</a>` : ESC(t.credit)}</p>` : ''}
+    </article>`;
+  };
+
+  const render = (track = false) => {
+    const ctx = choose();
+    const pick = ctx.pool.slice(0, shown);
+    head.textContent = pick.length ? `${pick.length === 1 ? 'Your best fit' : `Your top ${pick.length}`}: ${AUD_LABEL[ctx.aud].toLowerCase()}${ctx.region ? ` in the ${ctx.region}` : ''}` : 'No plans fit yet';
+    note.hidden = !ctx.relaxed; note.textContent = ctx.relaxed;
+    list.innerHTML = pick.map((p, i) => card(p, i, ctx)).join('');
+    more.hidden = ctx.pool.length <= shown;
+    results.hidden = false;
+    // Keep the choices in the address so the result can be shared or bookmarked.
+    const q = new URLSearchParams({ len: ctx.len, who: ctx.who, car: ctx.car, far: String(ctx.far) });
+    if (ctx.region) q.set('region', ctx.region);
+    history.replaceState(null, '', `${location.pathname}?${q}`);
+    if (track) gtag('trip_build', { audience: ctx.aud, far: ctx.far, region: ctx.region || 'any', top: pick[0]?.t ?? 'none' });
+  };
+
+  const syncWho = () => { (form.querySelector('[data-who]') as HTMLElement).hidden = val('len') === 'day' || val('car') === 'train'; };
+  form.addEventListener('change', () => { syncWho(); if (!results.hidden) { shown = 3; render(); } });
+  form.addEventListener('submit', (e) => { e.preventDefault(); shown = 3; render(true); results.focus(); results.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+  more.addEventListener('click', () => { shown += 3; render(); });
+
+  // Prefill from a shared link (?len=weekend&who=family&car=car&far=200&region=…) and show the result straight away.
+  const qp = new URLSearchParams(location.search);
+  if (qp.has('len')) {
+    for (const n of ['len', 'who', 'car', 'far']) {
+      const v = qp.get(n); const el = v && form.querySelector<HTMLInputElement>(`input[name="${n}"][value="${CSS.escape(v)}"]`);
+      if (el) el.checked = true;
+    }
+    const r = qp.get('region'); const sel = form.elements.namedItem('region') as HTMLSelectElement;
+    if (r && [...sel.options].some((o) => o.value === r)) sel.value = r;
+    syncWho(); render();
+  } else syncWho();
+</script>
+
+<style>
+  .tb-form { background: #fff; border: 3px solid var(--sign-green); border-radius: 12px; padding: var(--space-3); margin-top: var(--space-4); max-width: 44rem; }
+  .tb-form fieldset { border: 0; padding: 0; margin: 0 0 var(--space-3); }
+  .tb-form fieldset[hidden] { display: none; }
+  .tb-form legend { font: 800 1.1rem var(--font-display); color: var(--sign-green); margin-bottom: var(--space-2); }
+  .tb-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tb-chips label { position: relative; }
+  .tb-chips input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+  .tb-chips span { display: inline-block; font: 800 1rem/1 var(--font-display); border: 2px solid var(--sign-green); color: var(--sign-green); border-radius: 999px; padding: 0.7rem 1rem; cursor: pointer; background: #fff; }
+  .tb-chips input:checked + span { background: var(--sign-green); color: #fff; }
+  .tb-chips input:focus-visible + span { outline: 3px solid var(--sign-brown); outline-offset: 2px; }
+  .tb-region { display: grid; gap: 0.3rem; font: 800 1.1rem var(--font-display); color: var(--sign-green); max-width: 22rem; }
+  .tb-region select { font: 1rem var(--font-body, inherit); padding: 0.6rem; border: 2px solid var(--sign-green); border-radius: 8px; background: #fff; color: inherit; }
+  .tb-go { font: 800 1.15rem var(--font-display); color: #fff; background: var(--sign-brown); border: 0; border-radius: 10px; padding: 0.85rem 1.4rem; cursor: pointer; margin-top: var(--space-2); }
+  .tb-go:hover { filter: brightness(1.1); }
+  .tb-results { margin-top: var(--space-5); outline: none; }
+  .tb-results[hidden] { display: none; }
+  .tb-results__head { font-size: 1.6rem; }
+  .tb-note { background: #fff6e5; border-left: 4px solid var(--sign-brown); padding: 0.5rem 0.8rem; }
+  .tb-card { background: #fff; border: 2px solid var(--sign-green); border-radius: 12px; padding: var(--space-3); margin-bottom: var(--space-4); }
+  .tb-card__img { width: 100%; height: 190px; object-fit: cover; border-radius: 8px; display: block; margin-bottom: var(--space-2); }
+  @media (min-width: 52rem) { .tb-card__img { height: 260px; } }
+  .tb-card__rank { margin: 0; font: 800 0.85rem var(--font-display); text-transform: uppercase; letter-spacing: 0.05em; color: var(--sign-brown); }
+  .tb-card__name { font-size: 1.7rem; margin: 0.1rem 0; color: var(--sign-green); }
+  .tb-card__meta { margin: 0 0 var(--space-2); color: var(--muted); font-size: 0.95rem; }
+  .tb-card details { margin: var(--space-2) 0; }
+  .tb-card summary { font: 800 1rem var(--font-display); color: var(--sign-green); cursor: pointer; }
+  .tb-card h4 { margin: var(--space-3) 0 var(--space-1); font-size: 1.05rem; }
+  .tb-steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.55rem; }
+  .tb-steps li { display: grid; gap: 0.1rem; }
+  .tb-links { display: flex; gap: 0.8rem; font-size: 0.88rem; }
+  .tb-buttons { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: var(--space-3); }
+  .tb-btn { font: 800 0.98rem var(--font-display); color: #fff !important; background: var(--sign-green); border-radius: 8px; padding: 0.65rem 1rem; text-decoration: none; }
+  .tb-btn--tours { background: var(--sign-brown); }
+  .tb-btn--cars { background: #1f4e79; }
+  .tb-btn:hover { filter: brightness(1.12); }
+  .tb-guided { margin: var(--space-2) 0 0; }
+  .tb-full { font: 800 1rem var(--font-display); }
+  .tb-more { font: 800 1rem var(--font-display); background: #fff; color: var(--sign-green); border: 2px solid var(--sign-green); border-radius: 999px; padding: 0.6rem 1.1rem; cursor: pointer; }
+  .tb-more[hidden] { display: none; }
+  .tb-small, .tb-credit { font-size: 0.82rem; color: var(--muted); }
+  .tb-credit { margin: 0; font-size: 0.7rem; }
+  .tb-credit a { color: inherit; }
+  .bundle-others { margin-top: var(--space-5); font-family: var(--font-display); font-weight: 700; }
+</style>

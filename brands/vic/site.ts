@@ -6,8 +6,9 @@
 import { getCollection, getSingleton } from '../../src/lib/data';
 import type { Route } from '../../src/lib/routes';
 import { GROUP_LABEL, TYPE_LABEL, address, prettyHours, website, type Content, type Group, type Place, type Town } from './model';
-import { AUDIENCE, vicBundles, type Audience, type Station, type TownExtras, type VicBundle } from './bundles';
+import { AUDIENCE, vicBundleSets, type Audience, type Station, type TownExtras, type VicBundle } from './bundles';
 import { walkMins, type Item } from '../../src/lib/bundles';
+import viatorData from '../../data/vic/viator.json';
 
 const SITE = 'https://victours.com.au';
 const SUFFIX = ' | Vic Tours';
@@ -65,7 +66,8 @@ export function routes(): Route[] {
   const stations = optional<{ stations: Station[] }>('stations', { stations: [] }).stations;
   const extras = optional<{ towns: Record<string, TownExtras> }>('extras', { towns: {} }).towns;
   const demand = optional<{ volumes: Record<string, number> }>('bundle-demand', { volumes: {} }).volumes;
-  const bundles: VicBundle[] = stations.length ? vicBundles(towns, content, byTown, stations, extras, demand) : [];
+  const bundleSets = stations.length ? vicBundleSets(towns, content, byTown, stations, extras, demand) : { published: [] as VicBundle[], all: [] as VicBundle[] };
+  const bundles: VicBundle[] = bundleSets.published;
   const bundleLabel = (b: VicBundle) =>
     ({ daytrip: b.region ? `${b.region} day trip: ${b.town.name}` : `${b.town.name} day trip`, train: `${b.town.name} by train`, budget: `${b.town.name} on a budget`, couples: `Romantic weekend in ${b.town.name}`, family: `${b.town.name} with kids` } as Record<Audience, string>)[b.audience];
   const hasDayTripsEarly = bundles.some((b) => b.audience === 'daytrip');
@@ -583,6 +585,47 @@ export function routes(): Route[] {
         others: [],
       },
     });
+  // ---------------------------------------------------------------- Trip Builder (/trip-builder)
+  // Every plan the engine can build (not just the searched-for ones that get pages), so a visitor's own
+  // choices (who, how long, how far, where) pick the town. Ranked by fit from open data: never by ratings we don't have.
+  if (bundleSets.all.length) {
+    const tbAll = bundleSets.all.filter((b) => b.town.kind !== 'suburb' && (b.town.kmFromMelbourne ?? 0) >= 20 && (b.town.kmFromMelbourne ?? 0) <= 300);
+    const published = new Map(bundles.map((b) => [b.slug, b.path]));
+    const r1 = (n: number) => Math.round(n * 10) / 10;
+    const tbTowns: Record<string, { n: string; km: number; r: string | null; st: boolean; ph: string | null; credit: string | null; pg: string | null }> = {};
+    for (const b of tbAll) {
+      if (tbTowns[b.town.slug]) continue;
+      const ph = (planPhoto(b) as { url?: string; artist?: string; license?: string; page?: string } | null);
+      const centre = b.town.centre!;
+      const st = stations.filter((x) => !x.tourist).some((x) => Math.hypot((x.lat - centre[0]) * 111, (x.lon - centre[1]) * 88) <= 2.5);
+      tbTowns[b.town.slug] = { n: b.town.name, km: b.town.kmFromMelbourne ?? 0, r: content.towns[b.town.slug]?.region ?? null, st, ph: ph?.url ?? null, credit: ph?.url ? `${ph.artist ?? 'Wikimedia Commons'}, ${ph.license ?? ''}`.replace(/, $/, '') : null, pg: ph?.url ? ph.page ?? null : null };
+    }
+    const tbPlans = tbAll.map((b) => ({
+      t: b.town.slug, a: b.audience, rank: r1(b.rank), href: published.has(b.slug) ? `/${published.get(b.slug)}` : null,
+      sum: summary(b),
+      days: b.days.map((d) => ({ h: d.title, s: d.steps.map((x) => {
+        const it = x.pick?.item;
+        return it ? [x.when, x.text, website(it.tags) ?? '', r1(it.lat * 1000) / 1000, r1(it.lon * 1000) / 1000] : [x.when, x.text];
+      }) })),
+    }));
+    const tbRegions = [...new Set(Object.values(tbTowns).map((t) => t.r).filter((r): r is string => !!r))].sort();
+    const daytours = Object.fromEntries(Object.entries((viatorData.daytrips ?? {}) as Record<string, { title: string; url: string; from: number | null; mins: number | null }[]>)
+      .filter(([slug, list]) => tbTowns[slug] && list.length).map(([slug, list]) => [slug, { title: list[0].title, url: list[0].url, from: list[0].from }]));
+    out.push({
+      path: 'trip-builder',
+      template: 'vicTripBuilder',
+      seo: { title: 'Trip Builder: Plan a Day Trip or Weekend Away in Victoria' + SUFFIX, rawTitle: true, description: `Tell us who's coming, how long and how far, and get a ready-made day trip or weekend in Victoria: where to stay, eat and what to do, picked from ${Object.keys(tbTowns).length} towns.` },
+      schema: [
+        { '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Vic Tours Trip Builder', url: `${SITE}/trip-builder`, applicationCategory: 'TravelApplication', operatingSystem: 'Any (runs in your web browser)', isAccessibleForFree: true, offers: { '@type': 'Offer', price: '0', priceCurrency: 'AUD' } },
+        crumbs([{ name: 'Home', path: '' }, { name: 'Trip Builder', path: 'trip-builder' }]),
+      ],
+      props: {
+        towns: tbTowns, plans: tbPlans, regions: tbRegions, daytours, affiliates: content.affiliates ?? null,
+        counts: { towns: Object.keys(tbTowns).length, plans: tbPlans.length },
+      },
+    });
+  }
+
   }
   for (const p of content.pages) {
     out.push({ path: p.slug, template: 'vicPage', seo: { title: p.title + SUFFIX, rawTitle: true, description: p.description }, props: { title: p.title, paragraphs: p.paragraphs } });

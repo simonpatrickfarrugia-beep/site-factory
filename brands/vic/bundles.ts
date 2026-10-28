@@ -285,6 +285,15 @@ export interface VicBundle {
 }
 
 export function vicBundles(towns: Town[], content: Content, byTown: Map<string, Place[]>, stations: Station[], extras: Record<string, TownExtras>, volumes: Record<string, number>): VicBundle[] {
+  return vicBundleSets(towns, content, byTown, stations, extras, volumes).published;
+}
+
+/**
+ * Every plan the engine can build (all towns × audiences), plus the ones that get their own page (searched for).
+ * The Trip Builder uses `all`: a visitor's own choices stand in for search demand.
+ */
+export function vicBundleSets(towns: Town[], content: Content, byTown: Map<string, Place[]>, stations: Station[], extras: Record<string, TownExtras>, volumes: Record<string, number>): { published: VicBundle[]; all: VicBundle[] } {
+  const all: VicBundle[] = [];
   const out: VicBundle[] = [];
   const statewide: Record<'couples' | 'family', VicBundle[]> = { couples: [], family: [] };
   const daytrips: VicBundle[] = [];
@@ -304,6 +313,7 @@ export function vicBundles(towns: Town[], content: Content, byTown: Map<string, 
       const demand = aud === 'daytrip' ? vol(`${n} day trip`, `day trip to ${n}`) : aud === 'train' ? vol(`train to ${n}`, `${n} by train`) : aud === 'budget' ? vol(`cheap accommodation ${n}`) : aud === 'couples' ? vol(`romantic getaway ${n}`, `${n} romantic weekend`) : vol(`family holiday ${n}`, `${n} with kids`);
       const b: VicBundle = { slug: `${town.slug}-${AUDIENCE[aud].path}`, path: aud === 'daytrip' ? `day-trips/${town.slug}` : `weekends/${town.slug}-${AUDIENCE[aud].path}`, audience: aud, town, result, days: plan(aud, result, ctx),
         demand: demand.volume ? demand : null, station: ctx.station, rank: result.fit + Math.log10((town.volume ?? 10) + 10) * 3 + Math.log10(demand.volume + 1) * 4 };
+      all.push(b);
       if (aud === 'daytrip') {
         const dusk = (byTown.get(town.slug) ?? []).find((p) => SIGNATURE[p.name]?.dusk);
         if (dusk) {
@@ -326,5 +336,5 @@ export function vicBundles(towns: Town[], content: Content, byTown: Map<string, 
     if (best && (volumes[kw] ?? 0) > (best.demand?.volume ?? 0)) { best.demand = { keyword: kw, volume: volumes[kw] }; best.region = region; best.rank += Math.log10(volumes[kw] + 1) * 4; }
   }
   out.push(...daytrips.filter((b) => (b.demand?.volume ?? 0) >= MIN_DAYTRIP_DEMAND));
-  return out.sort((a, b) => b.rank - a.rank);
+  return { published: out.sort((a, b) => b.rank - a.rank), all };
 }

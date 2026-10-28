@@ -11,6 +11,7 @@ const { title, intro, groups, others, crumb = { href: '/weekends', label: 'Weeke
   {others.length > 0 && crumb && <p class="crumb"><a href={crumb.href}>{crumb.label}</a></p>}
   <RoadSign name={title} size="hero" as="h1" />
   <div class="town__intro">{intro.map((p, i) => <p class={i === 0 ? 'town__lede' : ''}>{p}</p>)}</div>
+  <p class="bundle-tb">Not sure where to go? <a href="/trip-builder">Let the Trip Builder pick a town for you →</a></p>
   {groups.map((g) => (
     <section class="bundle-group">
       {groups.length > 1 && <h2 class="bundle-group__title">{g.href ? <a href={g.href}>{g.title}</a> : g.title}</h2>}
@@ -33,6 +34,7 @@ const { title, intro, groups, others, crumb = { href: '/weekends', label: 'Weeke
   )}
 </div>
 <style>
+  .bundle-tb { font-family: var(--font-display); font-weight: 700; }
   .bundle-group { margin-top: var(--space-5); }
   .bcard::after { content: ''; display: block; clear: both; }
   .bcard__img { float: right; width: 112px; margin: 0.2rem 0 0.4rem 0.9rem; }
