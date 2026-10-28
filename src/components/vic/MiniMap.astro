@@ -1,12 +1,13 @@
 ---
 /** At-a-glance map: where this town sits in Victoria relative to Melbourne and its two airports. Inline SVG, no requests. */
-import { vicMapSvg } from '../../lib/vic-map';
+import { vicLocatorSvg, vicMapSvg } from '../../lib/vic-map';
 interface Props { name: string; lat: number; lon: number; km?: number | null }
 const { name, lat, lon, km = null } = Astro.props;
 ---
 <figure class="vicmap">
   <Fragment set:html={vicMapSvg({ name, lat, lon }, { km })} />
   <figcaption class="vicmap__key">
+    <Fragment set:html={vicLocatorSvg({ lat, lon })} />
     <span><i class="vicmap__dot vicmap__dot--town"></i>{name}</span>
     <span><i class="vicmap__dot"></i>Melbourne CBD</span>
     <span><i class="vicmap__plane">✈</i>Melbourne (Tullamarine) and Avalon airports</span>
@@ -22,4 +23,6 @@ const { name, lat, lon, km = null } = Astro.props;
   .vicmap__dot--town { width: 12px; height: 12px; background: #8A4B26; }
   .vicmap__plane { font-style: normal; color: #1f4e79; }
   .vicmap__note { width: 100%; }
+  .vicmap__loc { width: 64px; height: auto; flex: none; margin-right: 0.3rem; }
+  .vicmap { position: relative; }
 </style>

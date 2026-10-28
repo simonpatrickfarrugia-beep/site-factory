@@ -81,7 +81,7 @@ const data = JSON.stringify({ towns, plans, daytours, affiliates });
 <script>
   type Step = [string, string] | [string, string, string, number, number];
   type Plan = { t: string; a: string; rank: number; href: string | null; sum: string; days: { h: string; s: Step[] }[] };
-  import { vicMapSvg } from '../../lib/vic-map';
+  import { vicLocatorSvg, vicMapSvg } from '../../lib/vic-map';
   type TownInfo = { n: string; km: number; r: string | null; st: boolean; ph: string | null; credit: string | null; pg: string | null; lat: number; lon: number };
   type Aff = { enabled?: boolean; label: string; partner: string; template: string; target?: string };
   const D = JSON.parse(document.getElementById('tb-data')!.textContent!) as {
@@ -146,7 +146,7 @@ const data = JSON.stringify({ towns, plans, daytours, affiliates });
       <p class="tb-card__rank">${i === 0 ? 'Best fit' : `Option ${i + 1}`} · ${ESC(AUD_LABEL[p.a])}</p>
       <h3 class="tb-card__name">${ESC(t.n)}</h3>
       <p class="tb-card__meta">${t.km} km from Melbourne${t.r ? ` · ${ESC(t.r)}` : ''}${ctx.car === 'train' ? ' · has a train station' : ''}</p>
-      <div class="tb-card__map">${vicMapSvg({ name: t.n, lat: t.lat, lon: t.lon }, { km: t.km })}<p class="tb-small">● Melbourne CBD · ✈ Melbourne and Avalon airports · straight-line distance</p></div>
+      <div class="tb-card__map">${vicMapSvg({ name: t.n, lat: t.lat, lon: t.lon }, { km: t.km })}<p class="tb-small tb-mapkey">${vicLocatorSvg({ lat: t.lat, lon: t.lon })}<span>● Melbourne CBD · ✈ Melbourne and Avalon airports · straight-line distance</span></p></div>
       <p>${ESC(p.sum)}</p>
       <details${i === 0 ? ' open' : ''}><summary>See the ${p.a === 'daytrip' ? 'day' : 'weekend'}, step by step</summary>${steps}</details>
       ${buttons.length ? `<div class="tb-buttons">${buttons.join('')}</div><p class="tb-small">Booking partners may pay us a commission, at no extra cost to you.</p>` : ''}
@@ -218,6 +218,8 @@ const data = JSON.stringify({ towns, plans, daytours, affiliates });
   .tb-card__map { max-width: 22rem; margin: var(--space-2) 0; }
   .tb-card__map svg { width: 100%; height: auto; display: block; }
   .tb-card__map p { margin: 0.2rem 0 0; }
+  .tb-mapkey { display: flex; align-items: center; gap: 0.4rem; }
+  .tb-mapkey svg { width: 56px; height: auto; flex: none; }
   .tb-card summary { font: 800 1rem var(--font-display); color: var(--sign-green); cursor: pointer; }
   .tb-card h4 { margin: var(--space-3) 0 var(--space-1); font-size: 1.05rem; }
   .tb-steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.55rem; }
