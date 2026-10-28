@@ -12,7 +12,7 @@ export default defineBrand({
   fonts: { display: 'Overpass', body: 'Source Serif 4' },
   logo: { src: '/logo-mark.svg', alt: '', width: 34, height: 34 },
   favicon: '/favicon.png',
-  verify: { 'commission-factory-verification': '63364874a5f44ce9b5877f4ae51960a7', 'impact-site-verification': 'f595053e-61c2-4426-be31-c614960af250' },
+  verify: { 'commission-factory-verification': '63364874a5f44ce9b5877f4ae51960a7', 'impact-site-verification': '93038550-a229-43bb-a100-676b897e1414' },
   shareImage: '/share.png', // default og:image; town, region, trip and collection pages use a town photo
 
   nav: [
