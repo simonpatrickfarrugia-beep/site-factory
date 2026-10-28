@@ -5,6 +5,7 @@ Writes data/vic/stations.json and data/vic/extras.json. Data © OpenStreetMap co
 
 Usage: python3 scripts/vic/extras_probe.py   (run by .github/workflows/vic-extras.yml)
 """
+import re
 import json, sys, time
 sys.path.insert(0, 'scripts/vic')
 from osm_probe import overpass, RADIUS, BIG  # same servers, retries and radii as the place probe
@@ -23,6 +24,12 @@ FEATURES = {
     'bike': (['nwr["amenity"="bicycle_rental"]'], 'Bike hire'),
 }
 KEEP = ['website', 'contact:website', 'opening_hours', 'fee', 'access', 'description', 'addr:street', 'addr:housenumber', 'operator']
+
+
+# Stations with no regular passenger service (heritage lines, closed lines, freight-only). Kept as tourist so plans
+# never send people to them by train.
+NO_PASSENGER = {'Mornington', 'Moorooduc', 'Maldon', 'Muckleford', 'Karadoc', 'Thurla', 'Walhalla', 'Tarrawarra',
+                'Site of Marshall Halt', 'Dookie', 'Rushworth', 'Talbot', 'Glenthompson', 'Inverleigh'}
 
 
 def pt(e):
@@ -58,6 +65,9 @@ out body;'''
         seen.add(key)
         net = t.get('network') or t.get('operator') or ''
         tourist = 'tourist' in (t.get('railway:preserved', '') + t.get('usage', '') + net).lower() or t.get('railway:preserved') == 'yes'
+        # Heritage railways and closed lines OSM doesn't flag (checked 29 Oct 2026): no regular passenger trains stop here.
+        if re.search(r'preservation|historical|steam|heritage|journey beyond|^mornington$', net.lower()) or name.replace(' Railway Station', '').replace(' Station', '') in NO_PASSENGER:
+            tourist = True
         out.append({'name': name.replace(' Railway Station', '').replace(' Station', ''), 'lat': p[0], 'lon': p[1],
                     'network': net, 'tourist': tourist})
     out.sort(key=lambda s: s['name'])
