@@ -505,10 +505,12 @@
    "kind": "decide",
    "sprint": false,
    "mins": 2,
-   "what": "Adzuna API: now £8/month for real access (free tier is only 25 test calls). Account created 28 Oct, no card added. Decide later if the call list needs it",
+   "what": "Adzuna API: not paying £8/month (Simon's call, 28 Oct)",
    "why": "Would add 'companies hiring travelling sales staff' to the daily call list; AusTender leads work without it",
    "link": "https://developer.adzuna.com",
-   "done": false
+   "done": true,
+   "doneAt": "2026-10-28",
+   "skipped": true
   },
   {
    "id": "sl-disclose",
