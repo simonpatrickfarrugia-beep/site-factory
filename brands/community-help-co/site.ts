@@ -46,7 +46,7 @@ export function routes(): Route[] {
   out.push({
     path: '',
     template: 'chcHome',
-    seo: { title: 'Life Mentoring & Job Coaching, Melbourne & Online | Community Help Co', rawTitle: true, description: 'Practical 1:1 life goals mentoring and job coaching from Melbourne, online across Australia. NDIS or private. Weekly sessions with written notes.' },
+    seo: { title: 'Career Coaching & Job Support, Melbourne | Community Help Co', rawTitle: true, description: 'Practical 1:1 career coaching and job support from Melbourne, online across Australia, plus life goals mentoring. NDIS or private. Weekly written notes.' },
     schema: [org, { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Community Help Co', url: SITE }],
     props: { ...common, hero: site.hero, audiences: site.audiences, services: services.map(({ slug, name, short }) => ({ slug, name, short })), steps: pages['how-it-works'].steps, testimonials, faqs: faqs.slice(0, 4) },
   });
