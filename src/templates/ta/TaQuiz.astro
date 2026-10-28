@@ -138,7 +138,7 @@ const trial = Object.fromEntries(Object.entries(apps.apps).map(([k, a]) => [k, {
       } else {
         why = `${best.app} charges per person with no cap on jobs, so at ${jobs >= 500 ? '500+' : jobs} new jobs a month with ${people === 1 ? 'just you' : people + ' people'} it beats paying by job volume.`;
       }
-      if (close) why += ` ${second.app} is only about ${fmtMoney(gap)} more, so try both and pick the one that feels easier.`;
+      if (close) why += gap < 1 ? ` ${second.app} costs about the same, so try both and pick the one that feels easier.` : ` ${second.app} is only about ${fmtMoney(gap)} more, so try both and pick the one that feels easier.`;
       else if (second) why += ` Next cheapest: ${second.app} at about ${second.text.replace(/[*+]$/, '')}.`;
       reason.textContent = why;
 
