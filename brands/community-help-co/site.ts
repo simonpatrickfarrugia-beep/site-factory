@@ -74,7 +74,7 @@ export function routes(): Route[] {
     props: { ...common, title: how.title, lede: how.lede, steps: how.steps, sections: (how as any).sections ?? [] },
   });
 
-  for (const slug of ['about', 'privacy-policy'] as const) {
+  for (const slug of ['about', 'privacy-policy', 'affiliate-disclosure'] as const) {
     const p = pages[slug];
     out.push({
       path: slug,

@@ -29,4 +29,5 @@ export interface Pages {
   'how-it-works': { title: string; description: string; lede: string; steps: { t: string; d: string }[] };
   about: { title: string; description: string; paragraphs: string[] };
   'privacy-policy': { title: string; description: string; paragraphs: string[] };
+  'affiliate-disclosure': { title: string; description: string; paragraphs: string[] };
 }
