@@ -1,10 +1,10 @@
-# Site Factory brief — Tue 27 Oct 2026 (generated 10:11 UTC)
+# Site Factory brief — Wed 28 Oct 2026 (generated 00:41 UTC)
 
 _Auto-written daily by scripts/hq/brief.py. Read this first in any new chat. Refresh: scripts/claude/brief.sh_
 
 ## Headline
 
-Revenue to date **A$0.00** · sprint "First $1" ends in 4 days · Simon has **15** open items (~94 min)
+Revenue to date **A$0.00** · sprint "First $1" ends in 3 days · Simon has **15** open items (~94 min)
 
 ## Traffic (last 28 days)
 
@@ -15,15 +15,15 @@ Revenue to date **A$0.00** · sprint "First $1" ends in 4 days · Simon has **15
 | Community Help Co | Launch | 0 (0) |  | 0 | 0 / 30 |
 | tradeadmin.com.au | Launch | 0 (0) |  | 0 | 0 / 0 |
 
-- **movietrailer.channel** (stats 0h ago) — top pages: / 103, /browse 12, /movies/star-wars-episode-v---the-empire-strikes-back-1980 9, /movies/schindlers-list-1994 8, /movies/star-wars-episode-vii---the-force-awakens-2015 6
+- **movietrailer.channel** (stats 4h ago) — top pages: / 103, /browse 12, /movies/star-wars-episode-v---the-empire-strikes-back-1980 9, /movies/schindlers-list-1994 8, /movies/star-wars-episode-vii---the-force-awakens-2015 6
   - Google: "ghost soldier movie 2006" 97 impr, pos 8.8; "the prestige trailer" 37 impr, pos 36; "the sixth sense trailer" 32 impr, pos 29.2; "home alone trailer" 30 impr, pos 42.3; "star wars episode 1 trailer" 23 impr, pos 41
-- **victours.com.au** (stats 0h ago) — top pages: / 26, /towns 6, /warburton 5, /daylesford 2, /road-trips/goldfields-road-trip 2
+- **victours.com.au** (stats 4h ago) — top pages: / 26, /towns 6, /warburton 5, /daylesford 2, /road-trips/goldfields-road-trip 2
   - Google: "accommodation melbourne southbank" 153 impr, pos 77.6; "sorrento restaurants" 66 impr, pos 90.6; "activities lorne victoria" 42 impr, pos 72.2; "1004 mornington-flinders road red hill vic 3937" 36 impr, pos 31.3; "best restaurants in mornington peninsula" 35 impr, pos 79.5
-- **Community Help Co** (stats 0h ago) — top pages: / 0
+- **Community Help Co** (stats 4h ago) — top pages: / 0
   - Google: "community services placement" 30 impr, pos 15.9
-- **tradeadmin.com.au** (stats 0h ago) — top pages: 
+- **tradeadmin.com.au** (stats 4h ago) — top pages: 
 
-Latest milestones: 2026-10-15 trailers: Best day ever: 80 visits; 2026-10-15 trailers: Daily visits crossed 50; 2026-10-21 trailers: First Google clicks (7 in 28 days)
+Latest milestones: 2026-10-24 vic: Daily visits crossed 10 (28 visits); 2026-10-28 vic: First affiliate clicks (2 tour clicks); 2026-10-28 vic: First Google clicks (2 in 28 days)
 
 ## Health
 
@@ -31,17 +31,17 @@ All checks passing ✅ (sites up, pipeline jobs fresh, live builds current, no f
 
 ## Pipeline jobs (last run)
 
-- ✅ `stats` 0h ago: trade-admin: 0 views, 0 CTA clicks, 0 Google clicks. | community-help-co: 0 views, 0 CTA clicks, 0 Google clicks. | vic: 56 views, 4 CTA cli
-- ✅ `intake` 10h ago: Intake: 0 new trailer(s) queued. | Feed UCAP57cF-FSjJKzzXg7ntPlQ failed: YouTube feed UCAP57cF-FSjJKzzXg7ntPlQ: HTTP 404 | Feed UCtlPYzQ188v
-- ✅ `enrich` 15h ago: Enrich: looked at 0, published 0. Queue: 1 waiting for OMDb, 11 need review.
-- ✅ `competition` 16h ago: Competition: checked 4; 5 still to check (run again). | Australian clothing brands directory (beason.com.au): openness 59/100; big players d
-- ✅ `niches` 40h ago: Niches: scored 6 of 6. | Hurricane history by coastal state: 33/100 (demand 0, money 0, ease 97, fit 42). | Freshwater fish species by state
+- ✅ `intake` 1h ago: Intake: 0 new trailer(s) queued. | Feed UCAP57cF-FSjJKzzXg7ntPlQ failed: YouTube feed UCAP57cF-FSjJKzzXg7ntPlQ: HTTP 404 | Feed UCtlPYzQ188v
+- ✅ `stats` 4h ago: trade-admin: 0 views, 0 CTA clicks, 0 Google clicks. | community-help-co: 0 views, 0 CTA clicks, 0 Google clicks. | vic: 56 views, 4 CTA cli
+- ✅ `enrich` 6h ago: Enrich: looked at 0, published 0. Queue: 1 waiting for OMDb, 11 need review.
+- ✅ `competition` 31h ago: Competition: checked 4; 5 still to check (run again). | Australian clothing brands directory (beason.com.au): openness 59/100; big players d
+- ✅ `niches` 2d ago: Niches: scored 6 of 6. | Hurricane history by coastal state: 33/100 (demand 0, money 0, ease 97, fit 42). | Freshwater fish species by state
 - ✅ `discover` 3d ago: Discover: screened 12 new ideas for US$0.24; 3 promoted to scoring: US school district enrollment by county (2 free domains), US airport run
 - ✅ `catalogue` 5d ago: Catalogue: queued 30 film(s): Sleepless in Seattle (1993): 135590/mo, Shaun of the Dead (2004): 135590/mo, Citizen Kane (1941): 135480/mo, T
-- ✅ `ratings` 5d ago: Ratings: checked 40, updated 0; 0 never checked.
-- ✅ `keywords` 6d ago: Victorian road trips and itineraries: day trips from melbourne 2900, great alpine road 1900, weekend getaways from melbourne 1900, romantic 
-- ✅ `collections` 6d ago: Collections: created 3: 90s Family Movies (8 films, 18000/mo) → /discover/90s-family-movies; 2000s Comedy Movies (15 films, 11000/mo) → /dis
-- ✅ `collcheck` 6d ago: Collection check: 29 idea(s) checked (US$0.077). Most winnable: Tom Hanks Movies 305400/mo × 21%; Christian Bale Movies 166600/mo × 16%; 90s
+- ✅ `ratings` 6d ago: Ratings: checked 40, updated 0; 0 never checked.
+- ✅ `keywords` 7d ago: Victorian road trips and itineraries: day trips from melbourne 2900, great alpine road 1900, weekend getaways from melbourne 1900, romantic 
+- ✅ `collections` 7d ago: Collections: created 3: 90s Family Movies (8 films, 18000/mo) → /discover/90s-family-movies; 2000s Comedy Movies (15 films, 11000/mo) → /dis
+- ✅ `collcheck` 7d ago: Collection check: 29 idea(s) checked (US$0.077). Most winnable: Tom Hanks Movies 305400/mo × 21%; Christian Bale Movies 166600/mo × 16%; 90s
 
 ## Simon's list (open)
 
@@ -76,8 +76,16 @@ Done in the last 7 days: Vic Tours: put the 49 weekend plans live? (by train, bu
 
 ## Changes in the last 7 days
 
-100 commits (19 automated data updates). Hand-made changes:
+100 commits (23 automated data updates). Hand-made changes:
 
+- 2026-10-27 Leads: daily call list [skip ci]
+- 2026-10-27 HQ: milestone Vic first affiliate clicks, first Google clicks, daily visits crossed 10 [skip ci]
+- 2026-10-27 Docs: UX audit 27 Oct [skip ci]
+- 2026-10-27 Test: CHC enquiry form [skip ci]
+- 2026-10-27 enquiries: overnight look-back covers the 14h gap
+- 2026-10-27 CHC enquiries: count-only status endpoint + enquiries workflow that opens an emailed issue
+- 2026-10-27 UX quick wins: trailers where-to-watch first, Vic opening-hours check + honest Viator labels + home chips, CHC
+- 2026-10-27 Stats: GA4 property IDs for Community Help Co (560907474) and Trade Admin (560897472)
 - 2026-10-27 Daily brief: include Trade Admin traffic; mark ta-gsc done
 - 2026-10-27 Trade Admin: GA4 ID is G-MLFVHPE242 (replaces G-ZCRGB48394)
 - 2026-10-27 Fix trailers/HQ build: Trade Admin signup answers had no stats path (crashed /hq/signup); read() now tolerates
@@ -95,14 +103,6 @@ Done in the last 7 days: Vic Tours: put the 49 weekend plans live? (by train, bu
 - 2026-10-24 Leads: daily call list [skip ci]
 - 2026-10-24 HQ: Trade Admin launch steps on Simon's list [skip ci]
 - 2026-10-24 Trade Admin: quote ABN wording; uitest can build and serve an undeployed brand; builder + calculator browser t
-- 2026-10-24 Trade Admin: register brand and site module
-- 2026-10-24 Trade Admin (preview): free quote and invoice builders for tradies, job app price comparisons with a cost calc
-- 2026-10-24 Discover: log how many ideas Claude proposed and why any were dropped
-- 2026-10-24 Discover: money first. Ideas must name a real affiliate programme or lead buyer with a per-sale/signup payout;
-- 2026-10-24 Affiliates: Discover Cars car hire on Vic road trips and day trips (book_car counts as an affiliate click)
-- 2026-10-24 HQ: Commission Factory applied [skip ci]
-- 2026-10-24 Vic: Commission Factory site verification meta tag (brand config 'verify')
-- 2026-10-24 Vic Tours: Viator products refreshed
 
 ## Where things live
 
