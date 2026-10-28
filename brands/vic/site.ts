@@ -85,6 +85,7 @@ export function routes(): Route[] {
     const s0 = bits.join(', ');
     return s0 ? s0.charAt(0).toUpperCase() + s0.slice(1) + '.' : '';
   };
+  const PLAN_ORDER: Audience[] = ['daytrip', 'train', 'budget', 'couples', 'family']; // day trips are the most searched
   const PLAN_KIND: Record<Audience, string> = { daytrip: 'Day trip', train: 'Weekend by train', budget: 'Budget weekend', couples: 'Weekend for couples', family: 'Weekend with kids' };
   /** Card photo for a plan: its own stops first (Sovereign Hill beats a street), then the region's (for region day trips), then the town's. */
   const placePhoto = (id: string) => (photos.places[id] as { url?: string } | undefined)?.url ? photos.places[id] : null;
@@ -224,7 +225,7 @@ export function routes(): Route[] {
         nearby,
         // Ready-made plans lead the page: they're what the competitors' listicles don't have (growth audit, 29 Oct 2026).
         plans: [
-          ...(bundlesByTown.get(t.slug) ?? []).map((b) => ({ href: `/${b.path}`, kind: PLAN_KIND[b.audience], title: bundleLabel(b), line: planSummary(b), photo: planPhoto(b) })),
+          ...[...(bundlesByTown.get(t.slug) ?? [])].sort((a, b) => PLAN_ORDER.indexOf(a.audience) - PLAN_ORDER.indexOf(b.audience)).map((b) => ({ href: `/${b.path}`, kind: PLAN_KIND[b.audience], title: bundleLabel(b), line: planSummary(b), photo: planPhoto(b) })),
           ...(content.loops ?? []).filter((l) => !l.draft && l.days.some((d) => d.stops.includes(t.slug))).map((l) => ({ href: `/road-trips/${l.slug}`, kind: `Road trip · ${l.days.length} ${l.days.length === 1 ? 'day' : 'days'}`, title: l.name, line: '', photo: null })),
         ],
         tripBuilder: !isNeighbourhood(t) && km >= 20 && km <= 300 ? `/trip-builder${c.region ? `?region=${encodeURIComponent(c.region)}` : ''}` : null,
