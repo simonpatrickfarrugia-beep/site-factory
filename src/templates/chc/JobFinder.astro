@@ -160,15 +160,14 @@ const { book, page: p } = Astro.props;
   .jf-form input[type='text'], .jf-form input:not([type]) { font: inherit; padding: 0.7rem; border: 2px solid #B8CFC6; border-radius: 10px; }
   .jf-form fieldset { border: 0; padding: 0; margin: 0; }
   .jf-form legend { font-family: var(--font-display); font-weight: 700; margin-bottom: 0.4rem; }
-  .jf-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-  .jf-chips legend { width: 100%; }
-  .jf-chips label { position: relative; display: inline-block; }
-  .jf-chips input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+  .jf-form fieldset { min-width: 0; }
+  .jf-chips label { position: relative; display: inline-block !important; margin: 0 0.4rem 0.5rem 0; }
+  .jf-chips input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; width: 100% !important; padding: 0 !important; }
   .jf-chips span { display: inline-block; border: 2px solid var(--forest); border-radius: 999px; padding: 0.55rem 1rem; font-weight: 700; background: #fff; }
   .jf-chips input:checked + span { background: var(--forest); color: #fff; }
   .jf-chips input:focus-visible + span { outline: 3px solid var(--sun); outline-offset: 2px; }
   .jf-checks label { display: flex !important; gap: 0.6rem; align-items: flex-start; font-weight: 400 !important; padding: 0.3rem 0; }
-  .jf-checks input { width: 1.25rem; height: 1.25rem; margin-top: 0.15rem; accent-color: var(--forest); flex: none; }
+  .jf-checks input { width: 1.25rem !important; min-width: 1.25rem; padding: 0 !important; height: 1.25rem; margin-top: 0.15rem; accent-color: var(--forest); flex: none; }
   .jf-results { margin-top: 2.5rem; outline: none; }
   .jf-results[hidden] { display: none; }
   .jf-note { background: #FFF6DA; border-left: 4px solid var(--sun); padding: 0.6rem 0.9rem; border-radius: 4px; }
