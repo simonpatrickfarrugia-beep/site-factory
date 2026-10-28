@@ -5,7 +5,7 @@
  */
 import { getSingleton } from '../../src/lib/data';
 import type { Route } from '../../src/lib/routes';
-import type { Apps, Pages } from './model';
+import type { Apps, Pages, Trades } from './model';
 
 const SITE = 'https://tradeadmin.com.au';
 const SUFFIX = ' | Trade Admin';
@@ -13,6 +13,8 @@ const SUFFIX = ' | Trade Admin';
 export function routes(): Route[] {
   const pages = getSingleton<Pages>('pages');
   const apps = getSingleton<Apps>('apps');
+  const trades = getSingleton<Trades>('trades').trades;
+  const tradeLinks = (mode: 'quote' | 'invoice') => trades.filter((t) => t.mode === mode).map((t) => ({ href: `/${t.slug}`, label: t.trade }));
   const org = {
     '@context': 'https://schema.org', '@type': 'Organization', '@id': `${SITE}/#org`, name: 'Trade Admin', url: SITE,
     email: 'hello@tradeadmin.com.au', parentOrganization: { '@type': 'Organization', name: 'Independent Media Network Pty Ltd' },
@@ -41,7 +43,7 @@ export function routes(): Route[] {
     template: 'taHome',
     seo: { title: 'Trade Admin: Free Quote & Invoice Builders for Tradies', rawTitle: true, description: 'Free quote and invoice builders for Australian tradies: GST done for you, works on your phone, save as PDF. Plus job management apps compared on real prices.' },
     schema: [org, { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Trade Admin', url: SITE }],
-    props: { page: pages.home, compareLinks, checked: apps.checked },
+    props: { page: pages.home, compareLinks, checked: apps.checked, tradeLinks: trades.map((t) => ({ href: `/${t.slug}`, label: `${t.trade} ${t.mode}` })) },
   });
 
   for (const mode of ['quote', 'invoice'] as const) {
@@ -56,7 +58,30 @@ export function routes(): Route[] {
         faqSchema(p.faq),
         crumbs([{ name: 'Home', path: '' }, { name: p.title, path: slug }]),
       ],
-      props: { mode, page: p },
+      props: { mode, page: p, tradeLinks: tradeLinks(mode) },
+    });
+  }
+
+  // Trade-specific templates (growth audit, 29 Oct 2026): "electrician invoice template", "builder quote template"…
+  // Same builder, started with the trade's usual lines and its own guidance. Prices are left for the tradie.
+  for (const t of trades) {
+    const base = `${t.mode}-builder`;
+    out.push({
+      path: t.slug,
+      template: 'taBuilder',
+      seo: { title: t.seoTitle + SUFFIX, rawTitle: true, description: t.description },
+      schema: [
+        { '@context': 'https://schema.org', '@type': 'WebApplication', name: t.title, url: `${SITE}/${t.slug}`, applicationCategory: 'BusinessApplication', operatingSystem: 'Any (runs in your web browser)', isAccessibleForFree: true, offers: { '@type': 'Offer', price: '0', priceCurrency: 'AUD' }, publisher: { '@id': `${SITE}/#org` } },
+        faqSchema(t.faq),
+        crumbs([{ name: 'Home', path: '' }, { name: pages[base].title, path: base }, { name: t.title, path: t.slug }]),
+      ],
+      props: {
+        mode: t.mode,
+        page: { title: t.title, seoTitle: t.seoTitle, description: t.description, lede: t.lede, faq: t.faq },
+        trade: { name: t.trade, licence: t.licence, items: t.items, notes: t.notes, tips: t.tips, base: `/${base}` },
+        tradeLinks: tradeLinks(t.mode).filter((l) => l.href !== `/${t.slug}`),
+        otherMode: trades.filter((o) => o.trade === t.trade && o.mode !== t.mode).map((o) => ({ href: `/${o.slug}`, label: o.title.replace(/^Free /, '') }))[0] ?? null,
+      },
     });
   }
 

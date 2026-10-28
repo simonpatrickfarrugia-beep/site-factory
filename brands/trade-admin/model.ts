@@ -3,6 +3,12 @@ export interface Faq { q: string; a: string }
 export interface Plan { name: string; price: number; per: 'month' | 'user'; jobs?: number; users?: number; sms?: number }
 export interface App { name: string; url: string; model: string; gst: 'inc' | 'ex' | 'unstated'; trial: string; plans: Plan[] }
 export interface Apps { checked: string; note: string; apps: Record<'servicem8' | 'tradify' | 'fergus', App>; bigger: string }
+/** A trade-specific template: the builder pre-filled with that trade's usual lines (no prices: we never invent them). */
+export interface Trade {
+  slug: string; mode: 'quote' | 'invoice'; trade: string; title: string; seoTitle: string; description: string; lede: string;
+  licence: string; items: { d: string; q: number }[]; notes: string; tips: { h: string; p: string }[]; faq: Faq[];
+}
+export interface Trades { checked: string; trades: Trade[] }
 export interface ToolPage { title: string; seoTitle: string; description: string; lede: string; faq: Faq[] }
 export interface ComparePage { title: string; seoTitle: string; description: string; lede: string; body?: { h: string; p: string[] } }
 export interface QuizOption { label: string; value: string }

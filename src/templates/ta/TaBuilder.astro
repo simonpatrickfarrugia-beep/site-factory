@@ -5,13 +5,23 @@
  * Quote → invoice hand-off goes through sessionStorage; "remember my details" uses localStorage (this device only).
  */
 import type { ToolPage } from '../../../brands/trade-admin/model';
-interface Props { mode: 'quote' | 'invoice'; page: ToolPage }
-const { mode, page } = Astro.props;
+interface Props {
+  mode: 'quote' | 'invoice'; page: ToolPage;
+  /** Trade-specific template: starting lines (no prices), placeholders and its own guidance. */
+  trade?: { name: string; licence: string; items: { d: string; q: number }[]; notes: string; tips: { h: string; p: string }[]; base: string } | null;
+  tradeLinks?: { href: string; label: string }[];
+  otherMode?: { href: string; label: string } | null;
+}
+const { mode, page, trade = null, tradeLinks = [], otherMode = null } = Astro.props;
 const isQuote = mode === 'quote';
+const docWord = isQuote ? 'quote' : 'invoice';
 ---
-<div class="ta-wrap ta-section ta-builder" data-builder data-mode={mode}>
+<div class="ta-wrap ta-section ta-builder" data-builder data-mode={mode} data-start={trade ? JSON.stringify(trade.items) : undefined}>
   <h1 class="ta-h1">{page.title}</h1>
   <p class="ta-lede ta-measure">{page.lede}</p>
+  {!trade && tradeLinks.length > 0 && (
+    <p class="ta-trades ta-noprint"><span>Start from your trade:</span> {tradeLinks.map((l) => <a href={l.href}>{l.label}</a>)}</p>
+  )}
 
   <div class="ta-builder__grid">
     <form class="ta-form" data-form autocomplete="on" onsubmit="return false">
@@ -20,7 +30,7 @@ const isQuote = mode === 'quote';
         <label>Business name <input name="bizName" autocomplete="organization" placeholder="e.g. Bayside Electrical" /></label>
         <div class="ta-row">
           <label>ABN <input name="abn" inputmode="numeric" placeholder="12 345 678 901" /></label>
-          <label>Licence no. <span class="ta-opt">(optional)</span> <input name="licence" placeholder="e.g. REC 12345" /></label>
+          <label>Licence no. <span class="ta-opt">(optional)</span> <input name="licence" placeholder={trade?.licence || 'e.g. REC 12345'} /></label>
         </div>
         <div class="ta-row">
           <label>Phone <input name="phone" type="tel" autocomplete="tel" /></label>
@@ -75,7 +85,7 @@ const isQuote = mode === 'quote';
             </div>
           </>
         )}
-        <label>{isQuote ? 'Terms' : 'Notes'} <textarea name="notes" rows="3" placeholder={isQuote ? 'e.g. 30% deposit to book. Excludes patching and painting. Variations quoted in writing before work starts.' : 'e.g. Thanks for your business. Please use the invoice number as your payment reference.'}></textarea></label>
+        <label>{isQuote ? 'Terms' : 'Notes'} <textarea name="notes" rows="3" placeholder={trade?.notes ? trade.notes : isQuote ? 'e.g. 30% deposit to book. Excludes patching and painting. Variations quoted in writing before work starts.' : 'e.g. Thanks for your business. Please use the invoice number as your payment reference.'}></textarea></label>
       </fieldset>
       <p class="ta-small">Your bank details and everything else stay on this device. Nothing is sent to us.</p>
     </form>
@@ -114,6 +124,14 @@ const isQuote = mode === 'quote';
     </div>
   </div>
 
+  {trade && (
+    <section class="ta-tradetips ta-noprint ta-measure" aria-labelledby="tips">
+      <h2 id="tips" class="ta-h2">What to put on {/^[aeiou]/i.test(trade.name) ? 'an' : 'a'} {trade.name.toLowerCase()} {docWord}</h2>
+      {trade.tips.map((t) => <><h3 class="ta-h3">{t.h}</h3><p>{t.p}</p></>)}
+      <p class="ta-small">The starting lines are examples with no prices: add your own rates. Rules checked October 2026; they can change, so check your state's regulator for anything that matters.</p>
+    </section>
+  )}
+
   <section class="ta-band ta-band--inline ta-noprint">
     <h2 class="ta-h2">Doing this every week?</h2>
     <p>Job management apps send quotes from your phone, turn them into invoices, chase late payers and sync with Xero or MYOB. See what ServiceM8, Tradify and Fergus would cost for your team.</p>
@@ -130,6 +148,17 @@ const isQuote = mode === 'quote';
     <h2 id="faq" class="ta-h2">Common questions</h2>
     {page.faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
   </section>
+
+  {trade && (
+    <nav class="ta-more ta-noprint ta-measure" aria-label="More templates">
+      <h2 class="ta-h2">More templates</h2>
+      <ul class="ta-links">
+        {otherMode && <li><a href={otherMode.href}>{otherMode.label}</a></li>}
+        <li><a href={trade.base}>Blank {docWord} (any trade)</a></li>
+        {tradeLinks.map((l) => <li><a href={l.href}>{l.label} {docWord} template</a></li>)}
+      </ul>
+    </nav>
+  )}
 </div>
 
 <script>
@@ -239,6 +268,9 @@ const isQuote = mode === 'quote';
   if (handed && mode === 'invoice') {
     for (const [k, v] of Object.entries(handed.fields)) { const f = field(k); if (f && v && k !== 'docNo' && k !== 'date' && k !== 'notes') f.value = v; }
     handed.items.forEach((it) => addRow(it));
+  } else if (root.dataset.start) {
+    // Trade template: the trade's usual lines, quantities only. Prices are the tradie's to add.
+    try { (JSON.parse(root.dataset.start) as { d: string; q: number }[]).forEach((it) => addRow({ d: it.d, q: it.q, p: 0 })); } catch { addRow(); }
   } else addRow();
   const dateField = field('date') as HTMLInputElement; if (!dateField.value) dateField.value = today();
 
@@ -261,3 +293,11 @@ const isQuote = mode === 'quote';
   });
   render();
 </script>
+
+<style>
+  .ta-trades { display: flex; flex-wrap: wrap; gap: 0.4rem 0.6rem; align-items: baseline; margin-top: 0.6rem; font-size: 0.95rem; }
+  .ta-trades span { opacity: 0.8; }
+  .ta-trades a { font-weight: 600; }
+  .ta-tradetips { margin-top: 2rem; }
+  .ta-more { margin-top: 2rem; }
+</style>

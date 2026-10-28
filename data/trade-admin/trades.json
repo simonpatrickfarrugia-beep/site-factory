@@ -1,0 +1,281 @@
+{
+ "checked": "2026-10-29",
+ "trades": [
+  {
+   "slug": "electrician-invoice-template",
+   "mode": "invoice",
+   "trade": "Electrician",
+   "title": "Free electrician invoice template",
+   "seoTitle": "Electrician Invoice Template (Free, Australia)",
+   "description": "Free electrician invoice template for Australian sparkies: labour, fittings and call-out lines ready to price, licence number, GST done for you. Save as PDF.",
+   "lede": "Starts with the lines most electrical jobs need. Change the wording, add your prices, and save it as a PDF. Free, no account, and nothing leaves your phone.",
+   "licence": "e.g. REC 12345",
+   "items": [
+    { "d": "Call-out / service fee", "q": 1 },
+    { "d": "Labour (hours)", "q": 2 },
+    { "d": "Supply and install LED downlights", "q": 6 },
+    { "d": "Supply and install double power point", "q": 2 },
+    { "d": "Test and tag / safety check", "q": 1 }
+   ],
+   "notes": "e.g. Certificate of Electrical Safety no. 1234567 issued. Please use the invoice number as your payment reference.",
+   "tips": [
+    { "h": "Show your licence and the certificate", "p": "Put your electrical contractor licence number on every invoice; customers and builders look for it. If the job needed a compliance certificate (a Certificate of Electrical Safety in Victoria, a CCEW in New South Wales), add its number in the notes so the customer can match the paperwork to the bill." },
+    { "h": "Split labour from fittings", "p": "List labour, the call-out fee and each fitting on its own line rather than one lump sum. Customers query fewer bills when they can see what the downlights cost against the time to fit them, and it makes the next quote for the same customer quicker." },
+    { "h": "Working for a builder?", "p": "Builders report what they pay contractors to the ATO each year, so they need your ABN and business name exactly as registered. Without an ABN on your invoice, the builder usually has to withhold 47% of your payment." }
+   ],
+   "faq": [
+    { "q": "What licence number goes on an electrician's invoice?", "a": "Your electrical contractor licence or registration number from your state's regulator. The builder has a licence field, and it prints under your ABN." },
+    { "q": "Should I charge GST on a call-out fee?", "a": "If you're registered for GST, yes: the call-out fee is part of your taxable supply like the rest of the job. If you're not registered, don't add GST to anything." },
+    { "q": "Can I send it from my phone on site?", "a": "Yes. Fill it in, tap Save as PDF, then share the PDF by email or text. Tick \"remember my details\" and your business details are there next time." }
+   ]
+  },
+  {
+   "slug": "electrician-quote-template",
+   "mode": "quote",
+   "trade": "Electrician",
+   "title": "Free electrician quote template",
+   "seoTitle": "Electrician Quote Template (Free, Australia)",
+   "description": "Free electrician quote template: fittings, labour and allowances itemised, valid-until date, GST and your terms. Built for Australian electricians. Save as PDF.",
+   "lede": "Starts with typical electrical lines so you only add prices and adjust the wording. Turn it into an invoice in one tap when the job's done.",
+   "licence": "e.g. REC 12345",
+   "items": [
+    { "d": "Supply and install LED downlights", "q": 8 },
+    { "d": "Supply and install double power points", "q": 3 },
+    { "d": "Supply and install smoke alarm (240V, interconnected)", "q": 2 },
+    { "d": "Labour (hours)", "q": 4 },
+    { "d": "Allowance: switchboard work if required (estimate)", "q": 1 }
+   ],
+   "notes": "e.g. 30% deposit to book. Price assumes clear access to the ceiling space. Any extra work quoted in writing before it starts.",
+   "tips": [
+    { "h": "Mark allowances as estimates", "p": "If you can't price something until you open the wall or the switchboard, put it on its own line marked as an allowance or estimate. It keeps the rest of the quote firm and stops arguments when the final number moves." },
+    { "h": "Say what the price assumes", "p": "Access to the roof space, an existing circuit with capacity, the customer supplying fittings: whatever the price depends on, write it in the terms. It's the cheapest protection you have." },
+    { "h": "Quote GST-inclusive for home owners", "p": "Home owners compare totals, and consumer law expects prices to them to include GST. The builder works it out either way; choose \"my prices already include it\" if you price that way." }
+   ],
+   "faq": [
+    { "q": "How long should an electrician's quote be valid?", "a": "Thirty days is common, and shorter when copper or fitting prices are moving. Set it in the \"Valid for\" box and the date prints on the quote." },
+    { "q": "Do I need to itemise every fitting?", "a": "You don't have to, but itemising the main fittings and labour makes your quote easier to compare and harder to undercut on one line." },
+    { "q": "What happens when the customer accepts?", "a": "Do the job, then tap \"Turn this quote into an invoice\". The lines and customer details carry across." }
+   ]
+  },
+  {
+   "slug": "plumber-invoice-template",
+   "mode": "invoice",
+   "trade": "Plumber",
+   "title": "Free plumber invoice template",
+   "seoTitle": "Plumber Invoice Template (Free, Australia)",
+   "description": "Free plumbing invoice template for Australian plumbers: call-out, labour, parts and compliance certificate lines, licence number and GST done for you. PDF.",
+   "lede": "Starts with the usual plumbing lines. Add your prices, your licence number and the compliance certificate if there is one, then save it as a PDF.",
+   "licence": "e.g. Plumbing licence 12345",
+   "items": [
+    { "d": "Call-out fee", "q": 1 },
+    { "d": "Labour (hours)", "q": 2 },
+    { "d": "Replace mixer tap (supply and install)", "q": 1 },
+    { "d": "Parts and fittings", "q": 1 },
+    { "d": "Drain clear (electric eel)", "q": 1 }
+   ],
+   "notes": "e.g. Compliance certificate no. 12345 issued and lodged. Please use the invoice number as your payment reference.",
+   "tips": [
+    { "h": "The compliance certificate (Victoria)", "p": "In Victoria a licensed plumber must issue a compliance certificate when the total value of the work is over $750, counting materials, appliances, labour and GST, even if someone else supplied the materials. Some work needs one at any price, such as installing or replacing a Type A gas appliance or altering a below-ground sanitary drain. Give it to the customer within five days. Putting the certificate number on the invoice ties the two together." },
+    { "h": "Parts on their own line", "p": "Customers accept a bill more easily when the tap, the fittings and the time are separate. It also shows the value of the job clearly, which matters for that $750 certificate threshold." },
+    { "h": "Other states", "p": "Every state has its own plumbing certificate rules. Check your regulator's page; the notes box is the place for whatever number it gives you." }
+   ],
+   "faq": [
+    { "q": "Does the $750 include GST?", "a": "Yes. In Victoria the value counts materials, appliances, labour and GST, including materials the customer supplied." },
+    { "q": "Do I charge GST on parts?", "a": "If you're registered for GST, yes: parts you supply are part of your taxable sale. The builder adds or includes it for the whole invoice." },
+    { "q": "Is it a tax invoice?", "a": "It's titled TAX INVOICE automatically when you choose a GST-registered option, and plain INVOICE when you're not registered, which is what the ATO expects." }
+   ]
+  },
+  {
+   "slug": "plumbing-quote-template",
+   "mode": "quote",
+   "trade": "Plumber",
+   "title": "Free plumbing quote template",
+   "seoTitle": "Plumbing Quote Template (Free, Australia)",
+   "description": "Free plumbing quote template: fixtures, labour and allowances itemised, GST, valid-until date and terms. For Australian plumbers. Save as PDF or copy as text.",
+   "lede": "Starts with typical plumbing lines for a bathroom or hot water job. Price them, adjust the wording, and send it as a PDF.",
+   "licence": "e.g. Plumbing licence 12345",
+   "items": [
+    { "d": "Remove and dispose of existing hot water unit", "q": 1 },
+    { "d": "Supply and install hot water unit", "q": 1 },
+    { "d": "Fittings, valves and sundries", "q": 1 },
+    { "d": "Labour (hours)", "q": 4 },
+    { "d": "Compliance certificate", "q": 1 }
+   ],
+   "notes": "e.g. 30% deposit to order the unit. Excludes electrical work and any tiling. Variations quoted in writing before work starts.",
+   "tips": [
+    { "h": "Quote the certificate, not just the job", "p": "In Victoria, work over $750 (materials, labour and GST included) needs a compliance certificate, and so does gas appliance work at any value. Listing it on the quote shows the customer it's included and why it's there." },
+    { "h": "Spell out the exclusions", "p": "Electrical connection, tiling, making good: say what isn't in the price. It's the usual reason a plumbing quote turns into a dispute." },
+    { "h": "Deposits for ordered units", "p": "If you're ordering a hot water unit or fixtures, a deposit that covers them is normal. Put the amount in the terms so it's agreed before you order." }
+   ],
+   "faq": [
+    { "q": "Should I quote the unit and the labour separately?", "a": "Yes. Customers often shop the unit price, and separating it shows what your labour and fittings actually cost." },
+    { "q": "How long should a plumbing quote be valid?", "a": "Thirty days is typical. Make it shorter if supplier prices are moving." },
+    { "q": "Can I turn it into an invoice later?", "a": "Yes, one tap: everything carries across to the invoice builder." }
+   ]
+  },
+  {
+   "slug": "builder-invoice-template",
+   "mode": "invoice",
+   "trade": "Builder",
+   "title": "Free builder invoice template (progress claims)",
+   "seoTitle": "Builder Invoice Template: Progress Claims (Free)",
+   "description": "Free builder invoice template for progress claims: deposit, base, frame, lock-up and fixing stages, registration number and GST. For Australian builders.",
+   "lede": "Set up for a progress claim. Keep the stage you're claiming, enter the amount, and save it as a PDF. Free, and nothing leaves your device.",
+   "licence": "e.g. Registered building practitioner no. DB-U 12345",
+   "items": [
+    { "d": "Progress claim: frame stage", "q": 1 },
+    { "d": "Approved variation no. 1", "q": 1 }
+   ],
+   "notes": "e.g. Contract no. 123, 12 Example St. Frame stage complete on 1 Nov. Payment due within the period set in the contract.",
+   "tips": [
+    { "h": "Stage percentages (Victoria)", "p": "For domestic building contracts in Victoria, Consumer Affairs Victoria sets the most you can claim at each stage. For a contract covering all stages: base 10%, frame 15%, lock-up 35% and fixing 25% of the contract price. For a contract to lock-up only: base 20% and frame 25%. For a contract to fixing: base 12%, frame 18% and lock-up 40%. Claim a stage only once it's complete." },
+    { "h": "Deposits", "p": "The deposit is capped too: 10% if the contract price is under $20,000, and 5% if it's $20,000 or more." },
+    { "h": "Name the contract and the stage", "p": "Each claim should say which contract it's under, which stage it's for, and that the stage is complete. Approved variations go on their own lines so the customer can match them to the signed variation." },
+    { "h": "Other states", "p": "Other states set their own progress payment rules. Check your state's consumer affairs or building regulator before you rely on these numbers." }
+   ],
+   "faq": [
+    { "q": "Can I claim a stage before it's finished?", "a": "Not under a Victorian domestic building contract: a stage payment is due only once that stage is complete." },
+    { "q": "Do variations go on the progress claim?", "a": "Approved variations can be claimed with the stage, each on its own line with its variation number, so the customer can see what they're paying for." },
+    { "q": "Is a progress claim a tax invoice?", "a": "If you're registered for GST, choose a GST option and the builder titles it TAX INVOICE with GST shown, which is what your customer needs." }
+   ]
+  },
+  {
+   "slug": "builder-quote-template",
+   "mode": "quote",
+   "trade": "Builder",
+   "title": "Free builder quote template",
+   "seoTitle": "Builder Quote Template (Free, Australia)",
+   "description": "Free builder quote template for small building jobs: demolition, framing, materials, labour, allowances and GST, with terms and a valid-until date. Save as PDF.",
+   "lede": "For small jobs and renovations. Starts with typical building lines; add your prices and terms, and send it as a PDF.",
+   "licence": "e.g. Registered building practitioner no. DB-U 12345",
+   "items": [
+    { "d": "Demolition and rubbish removal", "q": 1 },
+    { "d": "Framing timber and fixings", "q": 1 },
+    { "d": "Plasterboard supply, hang and set (m²)", "q": 30 },
+    { "d": "Labour (days)", "q": 3 },
+    { "d": "Allowance: rot repairs if found (estimate)", "q": 1 }
+   ],
+   "notes": "e.g. Deposit and payments as set out in the building contract. Excludes painting and electrical. Variations agreed in writing before work starts.",
+   "tips": [
+    { "h": "A quote isn't always enough", "p": "In Victoria, larger domestic building jobs need a proper written building contract and a registered builder, not just an accepted quote. Use the quote to agree the scope and price, then put it into the right contract. Consumer Affairs Victoria explains the thresholds." },
+    { "h": "Deposit limits", "p": "Under a Victorian domestic building contract the deposit can be at most 10% of the price if it's under $20,000, and 5% if it's $20,000 or more. Don't quote a bigger deposit than the law allows." },
+    { "h": "Allowances, priced honestly", "p": "Rot, hidden services, unknown ground: put an allowance on its own line marked as an estimate. Too low and you'll eat the difference or argue about it; realistic and the customer trusts the rest of the price." }
+   ],
+   "faq": [
+    { "q": "What's the difference between a quote and a contract?", "a": "A quote is your offer. For bigger domestic jobs the law expects a written building contract with set terms, which the quote feeds into." },
+    { "q": "Should I show prices per square metre?", "a": "For linings, flooring and paint it helps: the customer can see how the total was built, and it makes variations easier to price." },
+    { "q": "Can I convert it to an invoice?", "a": "Yes, one tap. For staged jobs, use the builder invoice template to make each progress claim." }
+   ]
+  },
+  {
+   "slug": "carpenter-invoice-template",
+   "mode": "invoice",
+   "trade": "Carpenter",
+   "title": "Free carpenter invoice template",
+   "seoTitle": "Carpenter Invoice Template (Free, Australia)",
+   "description": "Free carpenter invoice template: labour by the hour or day, timber and hardware lines, ABN and GST done for you. For Australian chippies. Save as PDF.",
+   "lede": "Starts with typical carpentry lines. Change the wording, add your rates, and save it as a PDF to send from site.",
+   "licence": "",
+   "items": [
+    { "d": "Labour (hours)", "q": 8 },
+    { "d": "Timber (pine framing, treated decking)", "q": 1 },
+    { "d": "Hardware and fixings", "q": 1 },
+    { "d": "Hang internal doors", "q": 3 }
+   ],
+   "notes": "e.g. Job: 12 Example St, week ending 1 Nov. Please use the invoice number as your payment reference.",
+   "tips": [
+    { "h": "Subbing to a builder", "p": "Builders report what they pay contractors to the ATO each year, so your invoice needs your ABN and the business name it's registered to. Without an ABN on the invoice, the builder usually has to withhold 47% of the payment." },
+    { "h": "Hours or a fixed price", "p": "For day labour, show the hours and your rate, and the dates or week the hours cover. For a fixed-price job, one line per item (doors hung, deck built) is clearer than one lump sum." },
+    { "h": "Materials you bought", "p": "List timber and hardware you supplied on their own lines. If you add a margin to materials, include it in the line price, not as a separate \"markup\" line." }
+   ],
+   "faq": [
+    { "q": "Do I need a licence number on a carpentry invoice?", "a": "Not always. Some carpentry work needs registration depending on your state and the job's value; if you hold one, add it. The field is optional." },
+    { "q": "I'm not registered for GST. What do I put?", "a": "Choose \"I'm not registered for GST\". The builder titles it INVOICE (not tax invoice) and adds no GST. Registration is required once your turnover reaches $75,000 a year." },
+    { "q": "Can I bill a week of hours on one invoice?", "a": "Yes. Put the total hours on one line, and the dates in the notes, or one line per day if the builder asks for it." }
+   ]
+  },
+  {
+   "slug": "painter-invoice-template",
+   "mode": "invoice",
+   "trade": "Painter",
+   "title": "Free painter invoice template",
+   "seoTitle": "Painter Invoice Template (Free, Australia)",
+   "description": "Free painting invoice template for Australian painters: prep, coats, paint and labour on separate lines, ABN and GST done for you. Save as PDF or copy as text.",
+   "lede": "Starts with typical painting lines. Add your prices, adjust the rooms or square metres, and save it as a PDF.",
+   "licence": "",
+   "items": [
+    { "d": "Prep: patch, sand and fill", "q": 1 },
+    { "d": "Walls: 2 coats (m²)", "q": 60 },
+    { "d": "Ceilings: 2 coats (m²)", "q": 25 },
+    { "d": "Trims and doors", "q": 1 },
+    { "d": "Paint and materials", "q": 1 }
+   ],
+   "notes": "e.g. Colours as agreed: walls Natural White, trims gloss. Please use the invoice number as your payment reference.",
+   "tips": [
+    { "h": "Show prep and coats", "p": "Prep is where painting time goes, and it's the line customers don't see. Listing it, and the number of coats, explains the price and heads off \"it only took two days\"." },
+    { "h": "Paint and materials", "p": "If you supplied the paint, list it on its own line; if the customer did, say so in the notes. Record the colours used: it saves a call when they want a touch-up next year." },
+    { "h": "Square metres or rooms", "p": "Either works. Square metres make variations easy to price; rooms are simpler for home owners. Keep it the same as your quote." }
+   ],
+   "faq": [
+    { "q": "Do painters need a licence number on invoices?", "a": "It depends on your state and the job's value; some states license painting work. If you hold a licence, add it in the optional field." },
+    { "q": "Should GST be on the paint as well as the labour?", "a": "If you're registered for GST, yes: it applies to the whole sale, paint included." },
+    { "q": "Can I copy the invoice into a text message?", "a": "Yes: \"Copy as text\" gives a plain version you can paste anywhere. The PDF looks better for email." }
+   ]
+  },
+  {
+   "slug": "painting-quote-template",
+   "mode": "quote",
+   "trade": "Painter",
+   "title": "Free painting quote template",
+   "seoTitle": "Painting Quote Template (Free, Australia)",
+   "description": "Free painting quote template: prep, coats, square metres, paint and exclusions itemised, with GST and a valid-until date. For Australian painters. Save as PDF.",
+   "lede": "Starts with typical interior painting lines. Price them, add the colours and exclusions, and send it as a PDF.",
+   "licence": "",
+   "items": [
+    { "d": "Prep: patch, sand and fill", "q": 1 },
+    { "d": "Walls: 2 coats (m²)", "q": 60 },
+    { "d": "Ceilings: 2 coats (m²)", "q": 25 },
+    { "d": "Doors and frames (each)", "q": 6 },
+    { "d": "Paint and materials", "q": 1 }
+   ],
+   "notes": "e.g. Price includes premium low-sheen acrylic. Excludes moving furniture and repairing cracked render. Colours to be confirmed before starting.",
+   "tips": [
+    { "h": "Quote coats and paint grade", "p": "Two coats of a premium paint and one coat of a budget one are different jobs. Writing both on the quote is the easiest way to explain why yours isn't the cheapest." },
+    { "h": "Exclusions save arguments", "p": "Moving furniture, crack repairs, high ceilings, lead paint: say what isn't included. Customers remember the total, not the conversation." },
+    { "h": "Confirm colours in writing", "p": "Note that colours are confirmed before you start. A repaint because of a colour mix-up comes out of your pocket." }
+   ],
+   "faq": [
+    { "q": "Should I quote per room or per square metre?", "a": "Square metres are fairer and make changes easy to price; rooms are easier for home owners to read. Pick one and use it on the invoice too." },
+    { "q": "How long should a painting quote be valid?", "a": "Thirty days is common. Shorten it before price rises or in your busy season." },
+    { "q": "Can I turn it into an invoice?", "a": "Yes: one tap when the job's done, and the lines carry across." }
+   ]
+  },
+  {
+   "slug": "cleaning-invoice-template",
+   "mode": "invoice",
+   "trade": "Cleaner",
+   "title": "Free cleaning invoice template",
+   "seoTitle": "Cleaning Invoice Template (Free, Australia)",
+   "description": "Free cleaning invoice template for Australian cleaners: regular cleans, end-of-lease and extras on separate lines, ABN, GST or no GST. Save as PDF.",
+   "lede": "Starts with typical cleaning lines. Set the visits and rates, and save it as a PDF. Works whether or not you're registered for GST.",
+   "licence": "",
+   "items": [
+    { "d": "Regular clean (visits)", "q": 4 },
+    { "d": "Oven clean", "q": 1 },
+    { "d": "Window cleaning (internal)", "q": 1 },
+    { "d": "Cleaning products supplied", "q": 1 }
+   ],
+   "notes": "e.g. Cleans on 4, 11, 18 and 25 Oct. Please use the invoice number as your payment reference.",
+   "tips": [
+    { "h": "One invoice for regular cleans", "p": "For weekly or fortnightly clients, one invoice a month with the number of visits on one line, and the dates in the notes, is easier for both of you than an invoice per visit." },
+    { "h": "Not registered for GST?", "p": "Many cleaners aren't, until turnover reaches $75,000 a year. Choose \"I'm not registered for GST\": the builder titles it INVOICE, adds no GST, and still shows your ABN." },
+    { "h": "End-of-lease cleans", "p": "Tenants often need the invoice for the bond. Itemise the rooms and extras (oven, carpet, windows) and include the property address so the agent can match it." }
+   ],
+   "faq": [
+    { "q": "Do I need an ABN to invoice cleaning work?", "a": "Business customers need it: without an ABN on your invoice, they usually have to withhold 47% of the payment. Households don't withhold, but an ABN still looks professional." },
+    { "q": "Can I invoice monthly for weekly cleans?", "a": "Yes. Put the number of visits as the quantity and your rate per visit as the price; list the dates in the notes." },
+    { "q": "Is my information stored?", "a": "No. It runs in your browser. \"Remember my details\" saves your business details on this device only." }
+   ]
+  }
+ ]
+}

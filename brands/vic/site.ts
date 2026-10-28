@@ -241,6 +241,9 @@ export function routes(): Route[] {
       out.push({
         path: `${t.slug}/${g}`,
         template: 'vicTownSection',
+        // Melbourne neighbourhood lists (1,050 CBD cafés…) are what Google Maps, Time Out and Broadsheet do better: live for
+        // visitors, kept out of Google so it judges the site on the plans and country towns (growth audit, 29 Oct 2026).
+        noindex: isNeighbourhood(t),
         seo: {
           title: (GROUP_LABEL[g].seoTitle?.(t.name) ?? `${GROUP_LABEL[g].title(t.name)}: ${all.length} ${GROUP_LABEL[g].noun}`) + SUFFIX,
           rawTitle: true,
@@ -568,6 +571,58 @@ export function routes(): Route[] {
       family: ['Weekend plans built for kids: holiday-park cabins and apartments, a big day out (beaches, pools, wildlife parks), playgrounds and easy dinners.', 'Towns are picked by what each one actually has for families nearby.'],
     };
     const auds = (Object.keys(AUDIENCE) as Audience[]).filter((a) => bundles.some((b) => b.audience === a));
+    // Day trips by train (growth audit, 29 Oct 2026): "day trips from melbourne by train" 260/mo, "v/line day trips" 70/mo,
+    // and nobody plans them properly. A day-trip plan qualifies only when the town has a regular (not tourist) station within
+    // 1.5 km of its centre and EVERY stop is within 2.5 km of that station, so the whole day works on foot.
+    // No train times or fares: we don't have timetables, so the page sends people to the journey planner.
+    const dayPath = new Map(bundles.map((b) => [b.slug, b.path]));
+    const flat = (a: { lat: number; lon: number }, lat: number, lon: number) => Math.hypot((a.lat - lat) * 111, (a.lon - lon) * 88);
+    const trainDays = bundleSets.all
+      .filter((b) => b.audience === 'daytrip' && b.town.kind !== 'suburb' && (b.town.kmFromMelbourne ?? 0) >= 40 && (b.town.kmFromMelbourne ?? 0) <= 250)
+      .flatMap((b) => {
+        const c = b.town.centre!;
+        const st = stations.filter((x) => !x.tourist).map((x) => ({ x, d: flat(x, c[0], c[1]) })).sort((p, q) => p.d - q.d)[0];
+        if (!st || st.d > 1.5) return [];
+        const stops = b.days.flatMap((d) => d.steps).filter((x) => x.pick?.item);
+        if (stops.length < 2) return [];
+        const far = Math.max(...stops.map((x) => flat(st.x, x.pick!.item.lat, x.pick!.item.lon)));
+        return far <= 2.5 ? [{ b, station: st.x.name, far, stops }] : [];
+      })
+      .sort((p, q) => (p.b.town.kmFromMelbourne ?? 0) - (q.b.town.kmFromMelbourne ?? 0));
+    const trainHub = trainDays.length >= 4 ? { href: '/day-trips/by-train', label: 'Day trips by train' } : null;
+    if (trainHub) {
+      const dist = (km: number) => (km < 1 ? `${Math.max(100, Math.round((km * 1000) / 50) * 50)} m` : `${km.toFixed(1)} km`);
+      out.push({
+        path: 'day-trips/by-train',
+        template: 'vicBundles',
+        seo: {
+          title: 'Day Trips from Melbourne by Train: No Car Needed' + SUFFIX, rawTitle: true,
+          description: `${trainDays.length} day trips from Melbourne you can do by train: every stop within walking distance of the station, planned morning to afternoon with real places and maps.`,
+          image: photoUrl(...trainDays.map((t) => t.b.town.slug)),
+        },
+        schema: [crumbs([{ name: 'Home', path: '' }, { name: 'Day trips', path: 'day-trips' }, { name: 'Day trips by train', path: 'day-trips/by-train' }])],
+        props: {
+          title: 'Day trips from Melbourne by train',
+          intro: [
+            `No car? These ${trainDays.length} towns have a station near the centre, and every stop on the plan is within walking distance of the platform, so the whole day works on foot.`,
+            'We don’t list train times or fares because timetables change: check the PTV journey planner (V/Line for regional trains) for your day, and aim for a morning train so you have the full day.',
+          ],
+          groups: [{
+            title: 'Day trips by train',
+            cards: trainDays.map(({ b, station, far, stops }) => ({
+              href: dayPath.has(b.slug) ? `/${dayPath.get(b.slug)}` : `/${b.town.slug}`,
+              town: b.town.name,
+              km: b.town.kmFromMelbourne ?? 0,
+              summary: `Train to ${station} station. ${stops.map((x) => `${x.when}: ${x.pick!.item.name}`).join('. ')}.`,
+              highlights: [`Every stop within ${dist(far)} of the station`, dayPath.has(b.slug) ? 'Full plan with map' : `${b.town.name} town guide`],
+              photo: planPhoto(b),
+            })),
+          }],
+          others: [{ href: '/day-trips', label: 'All day trips' }, { href: `/${AUDIENCE.train.hubPath}`, label: AUDIENCE.train.hubTitle }, { href: '/trip-builder', label: 'Trip Builder' }],
+          crumb: { href: '/day-trips', label: 'Day trips' },
+        },
+      });
+    }
     for (const a of auds) {
       const list = bundles.filter((b) => b.audience === a).sort((x, y) => (y.demand?.volume ?? 0) - (x.demand?.volume ?? 0) || y.rank - x.rank);
       out.push({
@@ -577,7 +632,7 @@ export function routes(): Route[] {
         schema: [crumbs(a === 'daytrip' ? [{ name: 'Home', path: '' }, { name: 'Day trips', path: 'day-trips' }] : [{ name: 'Home', path: '' }, { name: 'Weekend plans', path: 'weekends' }, { name: AUDIENCE[a].hubTitle, path: AUDIENCE[a].hubPath }])],
         props: {
           title: AUDIENCE[a].hubTitle, intro: HUB_INTRO[a], groups: [{ title: AUDIENCE[a].hubTitle, cards: list.map(card) }],
-          others: auds.filter((o) => o !== a).map((o) => ({ href: `/${AUDIENCE[o].hubPath}`, label: AUDIENCE[o].hubTitle })),
+          others: [...(trainHub && (a === 'daytrip' || a === 'train') ? [trainHub] : []), ...auds.filter((o) => o !== a).map((o) => ({ href: `/${AUDIENCE[o].hubPath}`, label: AUDIENCE[o].hubTitle }))],
           crumb: a === 'daytrip' ? null : { href: '/weekends', label: 'Weekend plans' },
         },
       });

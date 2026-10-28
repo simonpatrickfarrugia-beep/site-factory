@@ -3,8 +3,9 @@ interface Props {
   page: { title: string; lede: string; tools: { href: string; t: string; d: string }[]; why: { t: string; d: string }[] };
   compareLinks: { href: string; label: string }[];
   checked: string;
+  tradeLinks?: { href: string; label: string }[];
 }
-const { page, compareLinks, checked } = Astro.props;
+const { page, compareLinks, checked, tradeLinks = [] } = Astro.props;
 ---
 <section class="ta-hero">
   <div class="ta-wrap ta-hero__grid">
@@ -40,6 +41,12 @@ const { page, compareLinks, checked } = Astro.props;
       <li><a class="ta-card" href={t.href}><strong>{t.t}</strong><span>{t.d}</span><em>Start →</em></a></li>
     ))}
   </ul>
+  {tradeLinks.length > 0 && (
+    <>
+      <h3 class="ta-h3">Templates for your trade</h3>
+      <ul class="ta-links">{tradeLinks.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+    </>
+  )}
 </section>
 
 <section class="ta-band">
