@@ -115,6 +115,21 @@ export function routes(): Route[] {
     });
   }
 
+  const jf = (pages as unknown as Record<string, any>)['job-finder'];
+  if (jf) {
+    out.push({
+      path: 'job-finder',
+      template: 'chcJobFinder',
+      seo: { title: jf.seoTitle, rawTitle: true, description: jf.description },
+      schema: [
+        { '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Flexible job finder', url: `${SITE}/job-finder`, applicationCategory: 'BusinessApplication', operatingSystem: 'Any (runs in your web browser)', isAccessibleForFree: true, offers: { '@type': 'Offer', price: '0', priceCurrency: 'AUD' }, description: jf.description, publisher: { '@id': `${SITE}/#org` } },
+        faqSchema(jf.faq.map((f: { q: string; a: string }) => ({ q: f.q, a: f.a, service: null }))),
+        crumbs([{ name: 'Home', path: '' }, { name: 'Job finder', path: 'job-finder' }]),
+      ],
+      props: { ...common, page: jf },
+    });
+  }
+
   const cl = (pages as unknown as Record<string, any>)['cover-letter-builder'];
   if (cl) {
     out.push({

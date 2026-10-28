@@ -18,6 +18,7 @@ export default defineBrand({
   nav: [
     { label: 'Life goals', href: '/life-goals-mentoring' },
     { label: 'Job Catalyst', href: '/job-catalyst' },
+    { label: 'Job finder', href: '/job-finder' },
     { label: 'Resume builder', href: '/resume-builder' },
     { label: 'Free journal', href: '/free-daily-journal' },
     { label: 'Contact', href: '/contact' },

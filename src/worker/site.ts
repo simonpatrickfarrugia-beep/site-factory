@@ -5,6 +5,8 @@
  *   POST /api/subscribe   email list signup: { email, source?, interests? } (JSON or a plain HTML form post)
  *   POST /api/submit/<form>  a form submission (enquiry, referral…), for forms listed in the brand's FORMS var.
  *                            Stored in table `submissions` (one row, fields as JSON).
+ *   GET  /api/jobs?q=&where=&hours=part|any&type=casual|temp|perm|any&page=  live job ads from Careerjet (brands with JOBS="1"),
+ *                            each tagged with what the ad itself says (work from home, no experience, flexible hours…).
  *   GET  /api/submit/status?since=<ISO time>  how many submissions arrived since then: a count only, never any details.
  *                            The `enquiries` GitHub workflow polls it and opens an issue (emailed to Simon) when it's above 0.
  *
@@ -18,6 +20,10 @@ export interface Env {
   BRAND: string;
   /** Comma-separated form names this brand accepts at /api/submit/<form> (e.g. "enquiry,referral"). */
   FORMS?: string;
+  /** "1" turns on /api/jobs for this brand. */
+  JOBS?: string;
+  /** Careerjet publisher affiliate ID (free account; Careerjet shares revenue on clicks). Until it's set, /api/jobs says so. */
+  CAREERJET_AFFID?: string;
 }
 
 const EMAIL = /^[^@\s<>"']{1,64}@[^@\s<>"']{1,190}\.[a-z]{2,24}$/i;
@@ -81,6 +87,64 @@ async function submit(request: Request, env: Env, form: string): Promise<Respons
   return back(true, 'Sent.');
 }
 
+// ---------------------------------------------------------------- job ads (Careerjet)
+const FLAGS: { key: string; re: RegExp }[] = [
+  { key: 'remote', re: /\b(work(ing)? from home|wfh|remote|hybrid)\b/i },
+  { key: 'noexp', re: /\b(no (prior )?experience (needed|required|necessary)|entry[- ]level|trainee(ship)?|apprentice(ship)?|will train|training provided|graduate)\b/i },
+  { key: 'flexible', re: /\b(flexible (hours|hrs|roster|working|shifts)|school hours|choose your (own )?hours|days? to suit)\b/i },
+  { key: 'casual', re: /\bcasual\b/i },
+  { key: 'parttime', re: /\bpart[- ]time\b/i },
+  { key: 'licence', re: /\b(driver'?s? licen[cs]e|own (car|vehicle)|reliable (car|vehicle|transport))\b/i },
+];
+const strip = (s: unknown) => String(s ?? '').replace(/<[^>]*>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&#39;|&rsquo;/g, "'").replace(/&quot;/g, '"').replace(/\s+/g, ' ').trim();
+
+async function jobs(request: Request, env: Env): Promise<Response> {
+  const json = (body: unknown, status = 200) => Response.json(body, { status, headers: { 'cache-control': 'no-store' } });
+  if (!env.CAREERJET_AFFID) return json({ ok: false, reason: 'setup', message: 'Live job search is being set up.' }, 503);
+  const u = new URL(request.url);
+  const clean = (k: string, n: number) => (u.searchParams.get(k) ?? '').replace(/[^\p{L}\p{N} ,'&/+.-]/gu, ' ').trim().slice(0, n);
+  const q = clean('q', 80);
+  const where = clean('where', 60) || 'Australia';
+  const hours = u.searchParams.get('hours') === 'part' ? 'part' : 'any';
+  const type = (['casual', 'temp', 'perm'] as const).find((t) => t === u.searchParams.get('type')) ?? 'any';
+  const page = Math.max(1, Math.min(10, Number(u.searchParams.get('page')) || 1));
+  // Careerjet has no "casual" contract type, so casual work is a keyword; temporary and permanent are real filters.
+  const keywords = [q, type === 'casual' ? 'casual' : ''].filter(Boolean).join(' ');
+  const api = new URL('https://public.api.careerjet.net/search');
+  const params: Record<string, string> = {
+    locale_code: 'en_AU', affid: env.CAREERJET_AFFID, keywords, location: where, sort: 'date', pagesize: '20', page: String(page),
+    user_ip: request.headers.get('cf-connecting-ip') ?? '0.0.0.0', user_agent: (request.headers.get('user-agent') ?? 'Mozilla/5.0').slice(0, 300),
+    url: `${u.origin}/job-finder`,
+  };
+  if (hours === 'part') params.contractperiod = 'p';
+  if (type === 'temp') params.contracttype = 't';
+  if (type === 'perm') params.contracttype = 'p';
+  for (const [k, v] of Object.entries(params)) api.searchParams.set(k, v);
+  let data: Record<string, any>;
+  try {
+    const r = await fetch(api.toString(), { headers: { accept: 'application/json', 'user-agent': params.user_agent, referer: params.url } });
+    if (!r.ok) throw new Error(`careerjet ${r.status}`);
+    data = (await r.json()) as Record<string, any>;
+  } catch (e) {
+    console.error('jobs failed', e);
+    return json({ ok: false, reason: 'down', message: 'Live job search is not responding right now.' }, 502);
+  }
+  if (data.type === 'LOCATIONS') return json({ ok: true, hits: 0, pages: 0, jobs: [], places: (data.solveLocations ?? []).map((l: any) => strip(l.name)).slice(0, 8) });
+  const list = Array.isArray(data.jobs) ? data.jobs : [];
+  return json({
+    ok: true, hits: Number(data.hits) || 0, pages: Number(data.pages) || 0,
+    jobs: list.map((j: Record<string, unknown>) => {
+      const title = strip(j.title).slice(0, 160);
+      const text = `${title} ${strip(j.description)}`;
+      return {
+        title, company: strip(j.company).slice(0, 100), where: strip(j.locations).slice(0, 100), date: strip(j.date).slice(0, 40),
+        salary: strip(j.salary).slice(0, 80), snippet: strip(j.description).slice(0, 320), url: String(j.url ?? ''),
+        flags: FLAGS.filter((f) => f.re.test(text)).map((f) => f.key),
+      };
+    }).filter((j: { url: string }) => /^https:\/\//.test(j.url)),
+  });
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const { pathname } = new URL(request.url);
@@ -109,6 +173,10 @@ export default {
         console.error('submit failed', e);
         return Response.json({ ok: false, message: 'Something went wrong. Please try again.' }, { status: 500 });
       }
+    }
+    if (pathname === '/api/jobs' && env.JOBS === '1') {
+      if (request.method !== 'GET') return new Response('Method not allowed', { status: 405, headers: { allow: 'GET' } });
+      return jobs(request, env);
     }
     if (pathname.startsWith('/api/')) return new Response('Not found', { status: 404 });
     return env.ASSETS.fetch(request);

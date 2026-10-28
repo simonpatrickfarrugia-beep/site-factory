@@ -1,0 +1,195 @@
+---
+/**
+ * Flexible job finder: live Australian job ads (via the site Worker, /api/jobs → Careerjet), filtered on what each ad
+ * actually says: part-time, casual, work from home, no experience needed, flexible or school hours, no car needed.
+ * We never label a job "suitable for disability" or similar: only facts stated in the ad.
+ * Search words go to our Worker and on to the job search engine; nothing is stored.
+ */
+import BookCta from './BookCta.astro';
+interface Props {
+  book: string;
+  page: { title: string; lede: string; privacy: string; tips: string[]; help: { t: string; d: string; href: string; link: string }[]; faq: { q: string; a: string }[] };
+}
+const { book, page: p } = Astro.props;
+---
+<section class="chc-pagehead">
+  <div class="chc-wrap">
+    <h1>{p.title}</h1>
+    <p class="chc-lede">{p.lede}</p>
+  </div>
+</section>
+
+<div class="chc-wrap jf" data-jf>
+  <form class="chc-form jf-form" data-jf-form>
+    <div class="jf-row">
+      <label>What kind of work? <span class="chc-opt">(optional)</span><input name="q" placeholder="e.g. retail, admin, warehouse" maxlength="80" /></label>
+      <label>Where?<input name="where" placeholder="e.g. Footscray VIC or Geelong" maxlength="60" /></label>
+    </div>
+    <fieldset class="jf-chips">
+      <legend>Hours</legend>
+      <label><input type="radio" name="hours" value="part" checked /> <span>Part-time</span></label>
+      <label><input type="radio" name="hours" value="any" /> <span>Any hours</span></label>
+    </fieldset>
+    <fieldset class="jf-chips">
+      <legend>Type of job</legend>
+      <label><input type="radio" name="type" value="any" checked /> <span>Any</span></label>
+      <label><input type="radio" name="type" value="casual" /> <span>Casual</span></label>
+      <label><input type="radio" name="type" value="temp" /> <span>Temporary</span></label>
+      <label><input type="radio" name="type" value="perm" /> <span>Permanent</span></label>
+    </fieldset>
+    <fieldset class="jf-checks">
+      <legend>Only show ads that…</legend>
+      <label><input type="checkbox" name="f" value="remote" /> mention working from home or hybrid</label>
+      <label><input type="checkbox" name="f" value="noexp" /> say no experience is needed, or training is provided</label>
+      <label><input type="checkbox" name="f" value="flexible" /> mention flexible or school hours</label>
+      <label><input type="checkbox" name="f" value="nolicence" /> don't ask for a driver's licence or a car</label>
+    </fieldset>
+    <p><button class="chc-btn" type="submit">Find jobs</button></p>
+    <p class="chc-small">🔒 {p.privacy}</p>
+  </form>
+
+  <section class="jf-results" data-jf-results hidden aria-live="polite" tabindex="-1">
+    <h2 class="chc-h2" data-jf-head></h2>
+    <p class="jf-note" data-jf-note hidden></p>
+    <ol class="jf-list" data-jf-list></ol>
+    <p><button type="button" class="chc-btn jf-more" data-jf-more hidden>Load more jobs</button></p>
+    <div class="jf-boards">
+      <p><strong>Search the big job boards with the same words:</strong></p>
+      <p class="jf-boards__links" data-jf-boards></p>
+    </div>
+    <p class="chc-small">Ads come from employers and job boards via Careerjet, a job search engine; we don't check them. The filters only look at what each ad says, so read the full ad before you apply. Job links may earn Community Help Co a small fee from Careerjet, at no cost to you.</p>
+  </section>
+
+  <section class="jf-help" aria-labelledby="help-h">
+    <h2 id="help-h" class="chc-h2">Before you apply</h2>
+    <ul class="jf-tips">{p.tips.map((t) => <li>{t}</li>)}</ul>
+    <ul class="jf-cards">
+      {p.help.map((h) => <li><h3>{h.t}</h3><p>{h.d}</p><a class="chc-link" href={h.href} {...(/^https?:/.test(h.href) ? { rel: 'noopener', target: '_blank' } : {})}>{h.link}</a></li>)}
+    </ul>
+  </section>
+
+  <section class="jf-faq" aria-labelledby="faq-h">
+    <h2 id="faq-h" class="chc-h2">Questions</h2>
+    {p.faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
+  </section>
+</div>
+
+<BookCta book={book} heading="Want a hand with the applications?" text="Job Catalyst is one-on-one help to find the right roles, tailor your resume and prepare for interviews, online over Teams. Email Simon to talk it through." />
+
+<script>
+  type Job = { title: string; company: string; where: string; date: string; salary: string; snippet: string; url: string; flags: string[] };
+  const ESC = (s: string) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+  const gtag = (name: string, p: Record<string, string | number>) => { try { (window as any).gtag?.('event', name, p); } catch {} };
+  const LABEL: Record<string, string> = { remote: 'Work from home / hybrid', noexp: 'No experience needed', flexible: 'Flexible hours', casual: 'Casual', parttime: 'Part-time', licence: 'Asks for a licence or car' };
+
+  const root = document.querySelector<HTMLElement>('[data-jf]')!;
+  const form = root.querySelector<HTMLFormElement>('[data-jf-form]')!;
+  const results = root.querySelector<HTMLElement>('[data-jf-results]')!;
+  const list = root.querySelector<HTMLElement>('[data-jf-list]')!;
+  const head = root.querySelector<HTMLElement>('[data-jf-head]')!;
+  const note = root.querySelector<HTMLElement>('[data-jf-note]')!;
+  const more = root.querySelector<HTMLButtonElement>('[data-jf-more]')!;
+  const boards = root.querySelector<HTMLElement>('[data-jf-boards]')!;
+  let all: Job[] = []; let page = 1; let pages = 0; let hits = 0;
+
+  const opts = () => {
+    const fd = new FormData(form);
+    return { q: String(fd.get('q') ?? '').trim(), where: String(fd.get('where') ?? '').trim(), hours: String(fd.get('hours')), type: String(fd.get('type')), f: fd.getAll('f').map(String) };
+  };
+  const keep = (j: Job, f: string[]) => f.every((x) => (x === 'nolicence' ? !j.flags.includes('licence') : j.flags.includes(x)));
+
+  const setBoards = () => {
+    const o = opts();
+    const words = [o.hours === 'part' ? 'part time' : '', o.type === 'casual' ? 'casual' : o.type === 'temp' ? 'temporary' : '', o.f.includes('remote') ? 'work from home' : '', o.q].filter(Boolean).join(' ');
+    const where = o.where || 'Australia';
+    boards.innerHTML = [
+      ['Seek', `https://www.seek.com.au/jobs?keywords=${encodeURIComponent(words)}&where=${encodeURIComponent(where)}`],
+      ['Indeed', `https://au.indeed.com/jobs?q=${encodeURIComponent(words)}&l=${encodeURIComponent(where)}`],
+      ['Workforce Australia', 'https://www.workforceaustralia.gov.au/individuals/jobs/search'],
+    ].map(([n, h]) => `<a class="chc-link" href="${ESC(h)}" rel="nofollow noopener" target="_blank" data-cta="board_${n.toLowerCase().replace(/\s+/g, '_')}">${ESC(n)}</a>`).join(' · ');
+  };
+
+  const render = () => {
+    const o = opts();
+    const shown = all.filter((j) => keep(j, o.f));
+    head.textContent = all.length ? `${shown.length} of ${all.length} jobs loaded match${hits > all.length ? ` (about ${hits.toLocaleString('en-AU')} found in total)` : ''}` : 'No jobs found';
+    list.innerHTML = shown.map((j) => `<li class="jf-job">
+      <h3><a href="${ESC(j.url)}" rel="sponsored nofollow noopener" target="_blank" data-cta="job_click">${ESC(j.title)}</a></h3>
+      <p class="jf-job__meta">${[j.company, j.where, j.date].filter(Boolean).map(ESC).join(' · ')}</p>
+      ${j.salary ? `<p class="jf-job__pay">${ESC(j.salary)}</p>` : ''}
+      <p>${ESC(j.snippet)}${j.snippet.length >= 300 ? '…' : ''}</p>
+      ${j.flags.length ? `<p class="jf-tags">${j.flags.map((f) => `<span class="jf-tag${f === 'licence' ? ' jf-tag--warn' : ''}">${ESC(LABEL[f] ?? f)}</span>`).join('')}</p>` : ''}
+    </li>`).join('');
+    if (all.length && !shown.length) list.innerHTML = '<li class="jf-empty">None of the jobs loaded so far match every filter. Untick a filter, or load more jobs.</li>';
+    more.hidden = page >= pages || page >= 10;
+  };
+
+  const load = async (next: boolean) => {
+    const o = opts();
+    page = next ? page + 1 : 1;
+    if (!next) { all = []; note.hidden = true; }
+    const q = new URLSearchParams({ q: o.q, where: o.where, hours: o.hours, type: o.type, page: String(page) });
+    setBoards();
+    results.hidden = false;
+    head.textContent = 'Searching…';
+    let d: { ok: boolean; reason?: string; message?: string; hits?: number; pages?: number; jobs?: Job[]; places?: string[] };
+    try { d = await (await fetch(`/api/jobs?${q}`, { headers: { accept: 'application/json' } })).json(); }
+    catch { d = { ok: false, reason: 'down', message: 'Live job search is not responding right now.' }; }
+    if (!d.ok) {
+      head.textContent = d.reason === 'setup' ? 'Live job ads are coming soon' : 'Live search is down for a moment';
+      note.hidden = false; note.textContent = `${d.message ?? ''} In the meantime, these links run the same search on the big job boards.`;
+      list.innerHTML = ''; more.hidden = true; return;
+    }
+    if (d.places?.length) { note.hidden = false; note.textContent = `Which place did you mean? Try one of: ${d.places.join(', ')}.`; }
+    all = all.concat(d.jobs ?? []); pages = d.pages ?? 0; hits = d.hits ?? 0;
+    render();
+    gtag('job_search', { hours: o.hours, type: o.type, filters: o.f.join(',') || 'none', results: all.length });
+  };
+
+  form.addEventListener('submit', (e) => { e.preventDefault(); load(false).then(() => { results.focus(); results.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); });
+  form.addEventListener('change', (e) => { if ((e.target as HTMLInputElement).name === 'f' && all.length) { render(); setBoards(); } });
+  more.addEventListener('click', () => load(true));
+</script>
+
+<style is:global>
+  .jf { padding-block: 2rem 3rem; }
+  .jf-form { background: #fff; border: 2px solid var(--forest); border-radius: 16px; padding: 1.3rem; max-width: 46rem; display: grid; gap: 1rem; }
+  .jf-row { display: grid; gap: 0.8rem; }
+  @media (min-width: 40rem) { .jf-row { grid-template-columns: 1fr 1fr; } }
+  .jf-form label { display: grid; gap: 0.3rem; font-weight: 700; }
+  .jf-form input[type='text'], .jf-form input:not([type]) { font: inherit; padding: 0.7rem; border: 2px solid #B8CFC6; border-radius: 10px; }
+  .jf-form fieldset { border: 0; padding: 0; margin: 0; }
+  .jf-form legend { font-family: var(--font-display); font-weight: 700; margin-bottom: 0.4rem; }
+  .jf-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .jf-chips legend { width: 100%; }
+  .jf-chips label { position: relative; display: inline-block; }
+  .jf-chips input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+  .jf-chips span { display: inline-block; border: 2px solid var(--forest); border-radius: 999px; padding: 0.55rem 1rem; font-weight: 700; background: #fff; }
+  .jf-chips input:checked + span { background: var(--forest); color: #fff; }
+  .jf-chips input:focus-visible + span { outline: 3px solid var(--sun); outline-offset: 2px; }
+  .jf-checks label { display: flex !important; gap: 0.6rem; align-items: flex-start; font-weight: 400 !important; padding: 0.3rem 0; }
+  .jf-checks input { width: 1.25rem; height: 1.25rem; margin-top: 0.15rem; accent-color: var(--forest); flex: none; }
+  .jf-results { margin-top: 2.5rem; outline: none; }
+  .jf-results[hidden] { display: none; }
+  .jf-note { background: #FFF6DA; border-left: 4px solid var(--sun); padding: 0.6rem 0.9rem; border-radius: 4px; }
+  .jf-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
+  .jf-job { background: #fff; border: 1px solid #CFE3DA; border-radius: 14px; padding: 1rem 1.1rem; }
+  .jf-job h3 { margin: 0 0 0.2rem; font-size: 1.2rem; }
+  .jf-job__meta { margin: 0; color: var(--muted); font-size: 0.95rem; }
+  .jf-job__pay { margin: 0.3rem 0 0; font-weight: 700; }
+  .jf-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.5rem 0 0; }
+  .jf-tag { background: var(--mint); color: var(--forest); border-radius: 999px; padding: 0.2rem 0.65rem; font-size: 0.85rem; font-weight: 700; }
+  .jf-tag--warn { background: #F1ECE0; color: #5B5240; }
+  .jf-empty { padding: 1rem; background: #fff; border-radius: 12px; }
+  .jf-more[hidden] { display: none; }
+  .jf-boards { margin-top: 1.5rem; }
+  .jf-help { margin-top: 3rem; }
+  .jf-tips { display: grid; gap: 0.5rem; padding-left: 1.2rem; max-width: 60ch; }
+  .jf-cards { list-style: none; padding: 0; display: grid; gap: 1rem; margin-top: 1.5rem; }
+  @media (min-width: 52rem) { .jf-cards { grid-template-columns: repeat(3, 1fr); } }
+  .jf-cards li { background: #fff; border-radius: 14px; padding: 1.1rem; border-top: 5px solid var(--mint); }
+  .jf-cards h3 { margin: 0 0 0.3rem; font-size: 1.15rem; }
+  .jf-faq { margin-top: 3rem; max-width: 60ch; }
+  .jf-faq details { border-top: 1px solid #CFE3DA; padding: 0.7rem 0; }
+  .jf-faq summary { font-weight: 700; cursor: pointer; }
+</style>

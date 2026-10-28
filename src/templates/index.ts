@@ -22,6 +22,7 @@ import ChcSteps from './chc/Steps.astro';
 import ChcPage from './chc/Page.astro';
 import ChcFaq from './chc/Faq.astro';
 import ChcContact from './chc/Contact.astro';
+import ChcJobFinder from './chc/JobFinder.astro';
 import ChcJournal from './chc/Journal.astro';
 import ChcResumeBuilder from './chc/ResumeBuilder.astro';
 import ChcCoverLetter from './chc/CoverLetter.astro';
@@ -63,6 +64,7 @@ export const templates = {
   chcPage: ChcPage,
   chcFaq: ChcFaq,
   chcContact: ChcContact,
+  chcJobFinder: ChcJobFinder,
   chcJournal: ChcJournal,
   chcResumeBuilder: ChcResumeBuilder,
   chcCoverLetter: ChcCoverLetter,
