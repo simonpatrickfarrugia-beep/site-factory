@@ -222,10 +222,10 @@ export function routes(): Route[] {
         path: `${t.slug}/${g}`,
         template: 'vicTownSection',
         seo: {
-          title: `${GROUP_LABEL[g].title(t.name)}: ${all.length} ${GROUP_LABEL[g].noun}` + SUFFIX,
+          title: (GROUP_LABEL[g].seoTitle?.(t.name) ?? `${GROUP_LABEL[g].title(t.name)}: ${all.length} ${GROUP_LABEL[g].noun}`) + SUFFIX,
           rawTitle: true,
           image: photoUrl(t.slug),
-          description: `${all.length} ${GROUP_LABEL[g].noun} in ${t.name}, Victoria, including ${kinds}. Addresses, opening hours, websites and maps.`,
+          description: g === 'stay' ? `Accommodation in ${t.name}, Victoria: ${all.length} places to stay, including ${kinds}. Addresses, websites and maps, plus hotel prices.` : `${all.length} ${GROUP_LABEL[g].noun} in ${t.name}, Victoria, including ${kinds}. Addresses, opening hours, websites and maps.`,
         },
         schema: [
           {
@@ -285,7 +285,7 @@ export function routes(): Route[] {
         path: `${r.slug}/${g}`,
         template: 'vicTownSection',
         seo: {
-          title: `${GROUP_LABEL[g].title(r.name)}: ${all.length} ${GROUP_LABEL[g].noun}` + SUFFIX,
+          title: (GROUP_LABEL[g].seoTitle?.(r.name) ?? `${GROUP_LABEL[g].title(r.name)}: ${all.length} ${GROUP_LABEL[g].noun}`) + SUFFIX,
           rawTitle: true,
           image: photoUrl(...r.towns.map((x) => x.slug)),
           description: `${all.length} ${GROUP_LABEL[g].noun} across the ${r.name} (${r.towns.map((t) => t.name).slice(0, 5).join(', ')}${r.towns.length > 5 ? ' and more' : ''}). Addresses, hours, websites and maps.`,

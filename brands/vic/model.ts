@@ -90,8 +90,10 @@ export interface Content {
   pages: { slug: string; title: string; description: string; paragraphs: string[] }[];
 }
 
-export const GROUP_LABEL: Record<Group, { title: (town: string) => string; short: string; noun: string }> = {
-  stay: { title: (t) => `Where to stay in ${t}`, short: 'Stay', noun: 'places to stay' },
+// title = on-page heading. seoTitle (optional) = the <title>, led by the words people search.
+// Stay: "accommodation <town>" and "hotels <town>" are the big AU searches (DataForSEO, 29 Oct 2026); "best"/"top rated" are tiny and we have no ratings.
+export const GROUP_LABEL: Record<Group, { title: (town: string) => string; seoTitle?: (town: string) => string; short: string; noun: string }> = {
+  stay: { title: (t) => `Accommodation in ${t}`, seoTitle: (t) => `${t} Accommodation & Hotels: Where to Stay`, short: 'Stay', noun: 'places to stay' },
   eat: { title: (t) => `Where to eat in ${t}`, short: 'Eat', noun: 'places to eat and drink' },
   do: { title: (t) => `Things to do in ${t}`, short: 'Do', noun: 'things to do' },
 };
