@@ -229,6 +229,39 @@
  "_todo": "Simon's to-do list shown at the top of HQ. kind: do | decide. sprint: true = counts toward the current sprint. Claude (or the daily coach / weekly autopilot) sets done: true + doneAt when Simon says 'done' or an approval email arrives.",
  "todo": [
   {
+   "id": "hotel-expedia",
+   "kind": "do",
+   "sprint": false,
+   "mins": 5,
+   "what": "Apply to the Expedia Group affiliate programme (covers Wotif, Expedia, Hotels.com). Use the Vic standard answers in AFFILIATE-SIGNUP-KIT.md",
+   "why": "Backup for Booking.com: Vic Stay buttons and the Trip Builder earn nothing on hotels until a programme approves",
+   "link": "https://innovation.expediagroup.com/en-au/solutions/explore-our-affiliate-program",
+   "linkLabel": "Expedia Group",
+   "done": false
+  },
+  {
+   "id": "hotel-agoda",
+   "kind": "do",
+   "sprint": false,
+   "mins": 5,
+   "what": "Apply to Agoda Partners (direct). Same Vic standard answers",
+   "why": "Second hotel backup (~4–7% on completed stays)",
+   "link": "https://partners.agoda.com",
+   "linkLabel": "Agoda Partners",
+   "done": false
+  },
+  {
+   "id": "careerjet",
+   "kind": "do",
+   "sprint": false,
+   "mins": 5,
+   "what": "Sign up as a Careerjet publisher (free) with communityhelp.com.au and send Claude the affiliate ID",
+   "why": "Switches on live job ads in the CHC job finder; Careerjet shares revenue on job clicks",
+   "link": "https://www.careerjet.com.au/partners/",
+   "linkLabel": "Careerjet partners",
+   "done": false
+  },
+  {
    "id": "vic-weekends-live",
    "kind": "decide",
    "sprint": true,
