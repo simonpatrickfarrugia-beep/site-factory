@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-27T21:00:10.250Z",
+ "generatedAt": "2026-10-28T21:00:10.810Z",
  "period": {
-  "start": "2026-09-29",
-  "end": "2026-10-26"
+  "start": "2026-09-30",
+  "end": "2026-10-27"
  },
  "gscPeriod": {
-  "start": "2026-09-27",
-  "end": "2026-10-24"
+  "start": "2026-09-28",
+  "end": "2026-10-25"
  },
  "sources": {
   "ga4": true,
@@ -14,25 +14,42 @@
   "notes": []
  },
  "totals": {
-  "views": 0,
+  "views": 1,
   "prevViews": 0,
-  "users": 0,
+  "users": 1,
   "cta": {},
   "gscClicks": 0,
-  "gscImpressions": 30
+  "gscImpressions": 36
  },
- "daily": [],
+ "daily": [
+  {
+   "date": "2026-10-27",
+   "views": 1,
+   "cta": 0
+  }
+ ],
  "pages": [
   {
    "path": "/",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 35,
+   "gscPosition": 15.7,
+   "topQuery": "community services placement"
+  },
+  {
+   "path": "/resume-builder",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 30,
-   "gscPosition": 15.9,
-   "topQuery": "community services placement"
+   "gscImpressions": 1,
+   "gscPosition": 81,
+   "topQuery": "help making a resume for free"
   }
  ]
 }
