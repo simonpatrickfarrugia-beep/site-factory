@@ -71,6 +71,21 @@ export function routes(): Route[] {
   const bundleLabel = (b: VicBundle) =>
     ({ daytrip: b.region ? `${b.region} day trip: ${b.town.name}` : `${b.town.name} day trip`, train: `${b.town.name} by train`, budget: `${b.town.name} on a budget`, couples: `Romantic weekend in ${b.town.name}`, family: `${b.town.name} with kids` } as Record<Audience, string>)[b.audience];
   const hasDayTripsEarly = bundles.some((b) => b.audience === 'daytrip');
+  /** One line on what a plan contains (Trip Builder results and the "Plan your trip" cards on town pages). */
+  const planSummary = (b: VicBundle) => {
+    const first = (slot: string) => b.result.picks[slot]?.[0];
+    const st = first('stay')?.item;
+    const bits: string[] = [];
+    if (b.audience === 'train' && b.station) bits.push(`Train to ${b.station.name}`);
+    if (st) bits.push(`stay at ${st.name}`);
+    const main = first(({ daytrip: 'morning', train: 'see', budget: 'free', couples: 'unwind', family: 'big' } as Record<string, string>)[b.audience])?.item;
+    if (main) bits.push(`${b.audience === 'budget' ? 'free: ' : ''}${main.name}`);
+    const din = first(b.audience === 'budget' ? 'eat' : b.audience === 'daytrip' ? 'lunch' : 'dinner')?.item;
+    if (din) bits.push(`${b.audience === 'daytrip' ? 'lunch' : 'dinner'} at ${din.name}`);
+    const s0 = bits.join(', ');
+    return s0 ? s0.charAt(0).toUpperCase() + s0.slice(1) + '.' : '';
+  };
+  const PLAN_KIND: Record<Audience, string> = { daytrip: 'Day trip', train: 'Weekend by train', budget: 'Budget weekend', couples: 'Weekend for couples', family: 'Weekend with kids' };
   /** Card photo for a plan: its own stops first (Sovereign Hill beats a street), then the region's (for region day trips), then the town's. */
   const placePhoto = (id: string) => (photos.places[id] as { url?: string } | undefined)?.url ? photos.places[id] : null;
   const DO_PHOTO = new Set(['museum', 'gallery', 'attraction', 'viewpoint', 'zoo', 'nature_reserve', 'park', 'beach_resort', 'theme_park', 'aquarium']);
@@ -207,9 +222,13 @@ export function routes(): Route[] {
         placePhotos: Object.fromEntries(sections.flatMap((x) => x.places).filter((p) => photos.places[p.id]).map((p) => [p.id, photos.places[p.id]])),
         sections,
         nearby,
+        // Ready-made plans lead the page: they're what the competitors' listicles don't have (growth audit, 29 Oct 2026).
+        plans: [
+          ...(bundlesByTown.get(t.slug) ?? []).map((b) => ({ href: `/${b.path}`, kind: PLAN_KIND[b.audience], title: bundleLabel(b), line: planSummary(b), photo: planPhoto(b) })),
+          ...(content.loops ?? []).filter((l) => !l.draft && l.days.some((d) => d.stops.includes(t.slug))).map((l) => ({ href: `/road-trips/${l.slug}`, kind: `Road trip · ${l.days.length} ${l.days.length === 1 ? 'day' : 'days'}`, title: l.name, line: '', photo: null })),
+        ],
+        tripBuilder: !isNeighbourhood(t) && km >= 20 && km <= 300 ? `/trip-builder${c.region ? `?region=${encodeURIComponent(c.region)}` : ''}` : null,
         collections: [
-          ...(bundlesByTown.get(t.slug) ?? []).map((b) => ({ href: `/${b.path}`, name: `${b.audience === 'daytrip' ? 'Day trip' : 'Weekend plan'}: ${bundleLabel(b)}` })),
-          ...(content.loops ?? []).filter((l) => !l.draft && l.days.some((d) => d.stops.includes(t.slug))).map((l) => ({ href: `/road-trips/${l.slug}`, name: `Road trip: ${l.name}` })),
           ...content.collections.filter((col) => col.towns.includes(t.slug) && !(hasDayTripsEarly && col.slug === 'day-trips-from-melbourne')).map(({ slug, name }) => ({ href: `/collections/${slug}`, name })),
         ],
       },
@@ -439,18 +458,7 @@ export function routes(): Route[] {
       }[b.audience];
     };
     const first = (b: VicBundle, slot: string) => b.result.picks[slot]?.[0];
-    const summary = (b: VicBundle) => {
-      const st = first(b, 'stay')?.item;
-      const bits: string[] = [];
-      if (b.audience === 'train' && b.station) bits.push(`Train to ${b.station.name}`);
-      if (st) bits.push(`stay at ${st.name}`);
-      const main = first(b, ({ daytrip: 'morning', train: 'see', budget: 'free', couples: 'unwind', family: 'big' } as Record<string, string>)[b.audience])?.item;
-      if (main) bits.push(`${b.audience === 'budget' ? 'free: ' : ''}${main.name}`);
-      const din = first(b, b.audience === 'budget' ? 'eat' : b.audience === 'daytrip' ? 'lunch' : 'dinner')?.item;
-      if (din) bits.push(`${b.audience === 'daytrip' ? 'lunch' : 'dinner'} at ${din.name}`);
-      const s0 = bits.join(', ');
-      return s0.charAt(0).toUpperCase() + s0.slice(1) + '.';
-    };
+    const summary = planSummary;
     const description = (b: VicBundle) => {
       const T = b.town.name;
       const lead = {

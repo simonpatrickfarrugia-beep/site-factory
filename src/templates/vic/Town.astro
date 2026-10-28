@@ -18,8 +18,11 @@ interface Props {
   members?: { slug: string; name: string; km: number }[];
   townNames?: Record<string, string>;
   isRegion?: boolean;
+  /** Ready-made plans for this town (day trip, weekends, road trips): shown first. */
+  plans?: { href: string; kind: string; title: string; line: string; photo?: { url?: string; width?: number; height?: number } | null }[];
+  tripBuilder?: string | null;
 }
-const { town, sections, nearby, collections, affiliates = null, photo = null, placePhotos = {}, body = [], members = [], townNames = {}, isRegion = false } = Astro.props;
+const { town, sections, nearby, collections, affiliates = null, photo = null, placePhotos = {}, body = [], members = [], townNames = {}, isRegion = false, plans = [], tripBuilder = null } = Astro.props;
 ---
 <div class="wrap town">
   <p class="crumb"><a href="/towns">All towns</a></p>
@@ -30,6 +33,29 @@ const { town, sections, nearby, collections, affiliates = null, photo = null, pl
     {body.map((para) => <p class="town__body">{para}</p>)}
     {town.tips.map((tip) => <p class="tip"><strong>Local tip:</strong> {tip}</p>)}
   </div>
+  {(plans.length > 0 || tripBuilder) && (
+    <section class="plans" aria-labelledby="plans-h">
+      <h2 id="plans-h">{plans.length ? `Ready-made plans for ${town.name}` : `Plan a trip to ${town.name}`}</h2>
+      {plans.length > 0 && (
+        <ul class="plans__list">
+          {plans.map((p) => (
+            <li>
+              <a class="plan" href={p.href} data-cta="town_plan">
+                {p.photo?.url ? <img class="plan__img" src={p.photo.url} alt="" width="96" height="96" loading="lazy" decoding="async" referrerpolicy="no-referrer" /> : <span class="plan__img plan__img--none" aria-hidden="true" />}
+                <span class="plan__text">
+                  <span class="plan__kind">{p.kind}</span>
+                  <strong class="plan__title">{p.title}</strong>
+                  {p.line && <span class="plan__line">{p.line}</span>}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+      {tripBuilder && <p class="plans__tb"><a href={tripBuilder} data-cta="town_tripbuilder">{plans.length ? 'Or build your own trip: who, how long, car or train →' : 'Build a day trip or weekend: tell us who, how long, car or train →'}</a></p>}
+    </section>
+  )}
+
   {town.centre && town.km >= 15 && <MiniMap name={town.name} lat={town.centre[0]} lon={town.centre[1]} km={isRegion ? null : town.km} />}
 
   {members.length > 0 && (
@@ -63,7 +89,7 @@ const { town, sections, nearby, collections, affiliates = null, photo = null, pl
 
   {collections.length > 0 && (
     <section class="town__section">
-      <h2>Part of these trips</h2>
+      <h2>Trip ideas</h2>
       <ul class="inline-list">{collections.map((c) => <li><a href={c.href}>{c.name}</a></li>)}</ul>
     </section>
   )}
@@ -75,3 +101,19 @@ const { town, sections, nearby, collections, affiliates = null, photo = null, pl
     </section>
   )}
 </div>
+
+<style>
+  .plans { margin-top: var(--space-5); }
+  .plans h2 { margin-bottom: var(--space-3); }
+  .plans__list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; max-width: 40rem; }
+  .plan { display: grid; grid-template-columns: 4.5rem 1fr; gap: 0.8rem; align-items: center; padding: 0.55rem; border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; color: inherit; }
+  .plan:hover { border-color: var(--sign-green); }
+  .plan__img { width: 4.5rem; height: 4.5rem; border-radius: calc(var(--radius) * 0.7); object-fit: cover; display: block; }
+  .plan__img--none { background: var(--sign-green); }
+  .plan__text { display: grid; gap: 0.15rem; min-width: 0; }
+  .plan__kind { font: 700 0.78rem/1.2 var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; color: var(--sign-green); }
+  .plan__title { font: 800 1.08rem/1.2 var(--font-display); }
+  .plan__line { font-size: 0.9rem; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .plans__tb { margin-top: var(--space-3); font-family: var(--font-display); font-weight: 700; }
+  .plans__tb a { color: var(--sign-green); }
+</style>
