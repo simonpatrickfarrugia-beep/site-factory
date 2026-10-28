@@ -1,9 +1,14 @@
 ---
 interface Props { title: string; paragraphs: string[] }
 const { title, paragraphs } = Astro.props;
+/** Paragraphs may hold simple links: [text](https://… or /path). Anything else stays plain text. */
+const parts = (p: string) => p.split(/(\[[^\]]+\]\((?:https:\/\/|\/)[^)\s]*\))/).map((s) => {
+  const m = s.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+  return m ? { text: m[1], href: m[2], ext: m[2].startsWith('https://') } : { text: s, href: null, ext: false };
+});
 ---
 <div class="ta-wrap ta-section ta-measure">
   <h1 class="ta-h1">{title}</h1>
-  {paragraphs.map((p) => <p>{p}</p>)}
+  {paragraphs.map((p) => <p>{parts(p).map((x) => (x.href ? <a href={x.href} rel={x.ext ? 'noopener' : undefined}>{x.text}</a> : x.text))}</p>)}
   <p class="ta-actions"><a class="ta-btn" href="/quote-builder">Make a quote</a> <a class="ta-btn ta-btn--quiet" href="/invoice-builder">Make an invoice</a></p>
 </div>
