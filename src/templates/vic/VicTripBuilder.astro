@@ -185,7 +185,7 @@ const data = JSON.stringify({ towns, plans, daytours, affiliates });
   } else syncWho();
 </script>
 
-<style>
+<style is:global>
   .tb-form { background: #fff; border: 3px solid var(--sign-green); border-radius: 12px; padding: var(--space-3); margin-top: var(--space-4); max-width: 44rem; }
   .tb-form fieldset { border: 0; padding: 0; margin: 0 0 var(--space-3); }
   .tb-form fieldset[hidden] { display: none; }
@@ -215,6 +215,7 @@ const data = JSON.stringify({ towns, plans, daytours, affiliates });
   .tb-card h4 { margin: var(--space-3) 0 var(--space-1); font-size: 1.05rem; }
   .tb-steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.55rem; }
   .tb-steps li { display: grid; gap: 0.1rem; }
+  .tb-steps .picks__label { font: 800 0.8rem var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; color: var(--sign-brown); }
   .tb-links { display: flex; gap: 0.8rem; font-size: 0.88rem; }
   .tb-buttons { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: var(--space-3); }
   .tb-btn { font: 800 0.98rem var(--font-display); color: #fff !important; background: var(--sign-green); border-radius: 8px; padding: 0.65rem 1rem; text-decoration: none; }
