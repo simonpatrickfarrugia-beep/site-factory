@@ -545,7 +545,8 @@
    "what": "Trade Admin: www.tradeadmin.com.au shows an error. In Cloudflare → tradeadmin.com.au → DNS, delete any leftover 'www' record, then check trade-admin → Domains & Routes lists www.tradeadmin.com.au",
    "why": "Some people type www",
    "link": "https://dash.cloudflare.com",
-   "done": false
+   "done": true,
+   "doneAt": "2026-10-28"
   },
   {
    "id": "ta-gsc",
