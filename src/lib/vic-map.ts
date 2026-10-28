@@ -30,27 +30,47 @@ export function kmBetween(a: { lat: number; lon: number }, b: { lat: number; lon
   return 2 * R * Math.asin(Math.sqrt(s));
 }
 
-/** The whole mini map as an SVG string (shared by the Astro component and the Trip Builder's browser code). */
-export function vicMapSvg(town: { name: string; lat: number; lon: number }, opts: { km?: number | null; idSuffix?: string } = {}): string {
-  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+/**
+ * The mini map as an SVG string (shared by the Astro component and the Trip Builder's browser code).
+ * Zooms to fit the town, Melbourne CBD and both airports (so towns near Melbourne aren't a dot), with a small
+ * whole-of-Victoria inset in the corner for bearings.
+ */
+export function vicMapSvg(town: { name: string; lat: number; lon: number }, opts: { km?: number | null } = {}): string {
+  const esc = (t: string) => t.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+  const f = (n: number) => n.toFixed(1);
   const [tx, ty] = vicXY(town.lat, town.lon);
-  const [cx, cy] = vicXY(VIC_REFS[0].lat, VIC_REFS[0].lon);
-  const plane = (lat: number, lon: number) => {
-    const [x, y] = vicXY(lat, lon);
-    return `<g transform="translate(${x.toFixed(1)},${y.toFixed(1)})"><circle r="6" fill="#fff" stroke="#1f4e79" stroke-width="1.5"/><path d="M-3.6,0.6 L3.6,0.6 M0,-3.4 L0,3.4 M-1.8,3 L1.8,3" stroke="#1f4e79" stroke-width="1.4" stroke-linecap="round"/></g>`;
-  };
-  const right = tx < VIC_MAP.width - 110;
-  const label = esc(town.name);
-  const kmText = opts.km ? `${opts.km} km` : '';
-  const midX = (tx + cx) / 2, midY = (ty + cy) / 2;
-  const far = Math.hypot(tx - cx, ty - cy) > 28;
-  return `<svg viewBox="0 0 ${VIC_MAP.width} ${VIC_MAP.height}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of Victoria showing ${label}, Melbourne and its airports" class="vicmap__svg">`
-    + `<path d="${VIC_MAP.path}" fill="#DCEFE3" stroke="#00653B" stroke-width="1.2" stroke-linejoin="round"/>`
-    + (far ? `<line x1="${cx.toFixed(1)}" y1="${cy.toFixed(1)}" x2="${tx.toFixed(1)}" y2="${ty.toFixed(1)}" stroke="#8A4B26" stroke-width="2" stroke-dasharray="5 4"/>` : '')
-    + plane(VIC_REFS[1].lat, VIC_REFS[1].lon) + plane(VIC_REFS[2].lat, VIC_REFS[2].lon)
-    + `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="5" fill="#1f2a24" stroke="#fff" stroke-width="1.5"/>`
-    + `<g transform="translate(${tx.toFixed(1)},${ty.toFixed(1)})"><circle r="9" fill="#8A4B26" stroke="#fff" stroke-width="2.5"/><circle r="3" fill="#fff"/></g>`
-    + `<text x="${(right ? tx + 13 : tx - 13).toFixed(1)}" y="${(ty + 5).toFixed(1)}" text-anchor="${right ? 'start' : 'end'}" font-family="system-ui,sans-serif" font-size="15" font-weight="800" fill="#1f2a24" stroke="#fff" stroke-width="4" paint-order="stroke">${label}</text>`
-    + (kmText && far ? `<text x="${midX.toFixed(1)}" y="${(midY - 7).toFixed(1)}" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#8A4B26" stroke="#fff" stroke-width="3.5" paint-order="stroke">${kmText}</text>` : '')
+  const refs = VIC_REFS.map((r) => vicXY(r.lat, r.lon));
+  const [cx, cy] = refs[0];
+  // View box: everything that matters, padded, at least ~1.5° wide, 4:3, clamped to the state.
+  const xs = [tx, ...refs.map((r) => r[0])], ys = [ty, ...refs.map((r) => r[1])];
+  let x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+  const pad = Math.max(x1 - x0, y1 - y0) * 0.22 + 14;
+  x0 -= pad; x1 += pad * 1.6; y0 -= pad; y1 += pad;  // extra room on the right for the label
+  let w = Math.max(x1 - x0, 66), h = Math.max(y1 - y0, 66 * 0.75);
+  if (w / h > 4 / 3) h = w * 0.75; else w = h * (4 / 3);
+  const mx = (Math.min(...xs) + Math.max(...xs)) / 2 + pad * 0.3, my = (Math.min(...ys) + Math.max(...ys)) / 2;
+  x0 = mx - w / 2; y0 = my - h / 2;
+  const k = w / 400; // scale for text and symbols, so they look the same size at any zoom
+  const plane = ([x, y]: [number, number]) =>
+    `<g transform="translate(${f(x)},${f(y)}) scale(${k.toFixed(3)})"><circle r="7" fill="#fff" stroke="#1f4e79" stroke-width="1.6"/><path d="M-4,0.6 L4,0.6 M0,-4 L0,4 M-2,3.4 L2,3.4" stroke="#1f4e79" stroke-width="1.6" stroke-linecap="round"/></g>`;
+  const text = (x: number, y: number, t: string, size: number, color: string, anchor: string, weight = 800) =>
+    `<text x="${f(x)}" y="${f(y)}" text-anchor="${anchor}" font-family="system-ui,sans-serif" font-size="${(size * k).toFixed(2)}" font-weight="${weight}" fill="${color}" stroke="#fff" stroke-width="${(4 * k).toFixed(2)}" paint-order="stroke">${t}</text>`;
+  const right = tx < x0 + w * 0.62;
+  const far = Math.hypot(tx - cx, ty - cy) > 40 * k;
+  const iw = w * 0.3, ih = iw * (VIC_MAP.height / VIC_MAP.width), ix = x0 + w - iw - 6 * k, iy = y0 + 6 * k;
+  const inset = `<g><rect x="${f(ix)}" y="${f(iy)}" width="${f(iw)}" height="${f(ih)}" fill="#fff" stroke="#9bb5a6" stroke-width="${(1 * k).toFixed(2)}"/>`
+    + `<svg x="${f(ix)}" y="${f(iy)}" width="${f(iw)}" height="${f(ih)}" viewBox="0 0 ${VIC_MAP.width} ${VIC_MAP.height}"><path d="${VIC_MAP.path}" fill="#DCEFE3" stroke="#00653B" stroke-width="3"/>`
+    + `<rect x="${f(x0)}" y="${f(y0)}" width="${f(w)}" height="${f(h)}" fill="none" stroke="#8A4B26" stroke-width="6"/><circle cx="${f(tx)}" cy="${f(ty)}" r="9" fill="#8A4B26"/></svg></g>`;
+  return `<svg viewBox="${f(x0)} ${f(y0)} ${f(w)} ${f(h)}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map showing ${esc(town.name)}, Melbourne and its airports" class="vicmap__svg">`
+    + `<rect x="${f(x0)}" y="${f(y0)}" width="${f(w)}" height="${f(h)}" fill="#EAF3F8"/>`
+    + `<path d="${VIC_MAP.path}" fill="#F3F7F1" stroke="#7FA58E" stroke-width="${(1.4 * k).toFixed(2)}" stroke-linejoin="round"/>`
+    + (far ? `<line x1="${f(cx)}" y1="${f(cy)}" x2="${f(tx)}" y2="${f(ty)}" stroke="#8A4B26" stroke-width="${(2.4 * k).toFixed(2)}" stroke-dasharray="${(7 * k).toFixed(2)} ${(5 * k).toFixed(2)}"/>` : '')
+    + plane(refs[1]) + plane(refs[2])
+    + `<circle cx="${f(cx)}" cy="${f(cy)}" r="${(6 * k).toFixed(2)}" fill="#1f2a24" stroke="#fff" stroke-width="${(2 * k).toFixed(2)}"/>`
+    + text(cx + 10 * k, cy - 9 * k, 'Melbourne', 13, '#1f2a24', 'start', 700)
+    + `<g transform="translate(${f(tx)},${f(ty)}) scale(${k.toFixed(3)})"><circle r="10" fill="#8A4B26" stroke="#fff" stroke-width="3"/><circle r="3.5" fill="#fff"/></g>`
+    + text(right ? tx + 15 * k : tx - 15 * k, ty + 6 * k, esc(town.name), 17, '#1f2a24', right ? 'start' : 'end')
+    + (opts.km && far ? text((tx + cx) / 2, (ty + cy) / 2 - 8 * k, `${opts.km} km`, 14, '#8A4B26', 'middle') : '')
+    + inset
     + `</svg>`;
 }
