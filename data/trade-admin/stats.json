@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-28T21:00:10.810Z",
+ "generatedAt": "2026-10-29T07:26:18.785Z",
  "period": {
-  "start": "2026-09-30",
-  "end": "2026-10-27"
+  "start": "2026-10-01",
+  "end": "2026-10-28"
  },
  "gscPeriod": {
-  "start": "2026-09-28",
-  "end": "2026-10-25"
+  "start": "2026-09-29",
+  "end": "2026-10-26"
  },
  "sources": {
   "ga4": true,
@@ -14,13 +14,93 @@
   "notes": []
  },
  "totals": {
-  "views": 0,
+  "views": 11,
   "prevViews": 0,
-  "users": 0,
+  "users": 10,
   "cta": {},
   "gscClicks": 0,
   "gscImpressions": 0
  },
- "daily": [],
- "pages": []
+ "daily": [
+  {
+   "date": "2026-10-28",
+   "views": 11,
+   "cta": 0
+  }
+ ],
+ "pages": [
+  {
+   "path": "/",
+   "views": 7,
+   "prevViews": 0,
+   "users": 6,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
+   "path": "/how-we-make-money",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
+   "path": "/job-management-software",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
+   "path": "/quote-builder",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
+   "path": "/tradify-pricing",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  }
+ ],
+ "queries": [],
+ "gscDaily": [
+  {
+   "date": "2026-10-24",
+   "clicks": 0,
+   "impressions": 0
+  },
+  {
+   "date": "2026-10-25",
+   "clicks": 0,
+   "impressions": 0
+  },
+  {
+   "date": "2026-10-26",
+   "clicks": 0,
+   "impressions": 0
+  }
+ ]
 }

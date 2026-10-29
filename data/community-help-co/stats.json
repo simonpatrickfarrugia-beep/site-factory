@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-28T21:00:10.810Z",
+ "generatedAt": "2026-10-29T07:26:18.785Z",
  "period": {
-  "start": "2026-09-30",
-  "end": "2026-10-27"
+  "start": "2026-10-01",
+  "end": "2026-10-28"
  },
  "gscPeriod": {
-  "start": "2026-09-28",
-  "end": "2026-10-25"
+  "start": "2026-09-29",
+  "end": "2026-10-26"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,21 @@
   "notes": []
  },
  "totals": {
-  "views": 1,
+  "views": 2,
   "prevViews": 0,
-  "users": 1,
+  "users": 2,
   "cta": {},
   "gscClicks": 0,
-  "gscImpressions": 36
+  "gscImpressions": 49
  },
  "daily": [
   {
    "date": "2026-10-27",
+   "views": 1,
+   "cta": 0
+  },
+  {
+   "date": "2026-10-28",
    "views": 1,
    "cta": 0
   }
@@ -36,9 +41,31 @@
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 35,
-   "gscPosition": 15.7,
+   "gscImpressions": 42,
+   "gscPosition": 17.4,
    "topQuery": "community services placement"
+  },
+  {
+   "path": "/contact",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 41.3,
+   "topQuery": "community help"
+  },
+  {
+   "path": "/cover-letter-builder",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 63.5,
+   "topQuery": "free cover letter"
   },
   {
    "path": "/resume-builder",
@@ -47,9 +74,155 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 81,
+   "gscImpressions": 2,
+   "gscPosition": 41,
    "topQuery": "help making a resume for free"
+  }
+ ],
+ "queries": [
+  {
+   "query": "community help",
+   "clicks": 0,
+   "impressions": 14,
+   "position": 35.4,
+   "page": "/"
+  },
+  {
+   "query": "community services placement",
+   "clicks": 0,
+   "impressions": 10,
+   "position": 5.9,
+   "page": "/"
+  },
+  {
+   "query": "community service placement",
+   "clicks": 0,
+   "impressions": 5,
+   "position": 12.2,
+   "page": "/"
+  },
+  {
+   "query": "job community services",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 6.7,
+   "page": "/"
+  },
+  {
+   "query": "local community support",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 5,
+   "page": "/"
+  },
+  {
+   "query": "community services recruitment agencies",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 3,
+   "page": "/"
+  },
+  {
+   "query": "free cover letter",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 63.5,
+   "page": "/cover-letter-builder"
+  },
+  {
+   "query": "help community",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 62.5,
+   "page": "/"
+  },
+  {
+   "query": "assistance with social economic and community participation",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 1,
+   "page": "/"
+  },
+  {
+   "query": "community job",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 11,
+   "page": "/"
+  },
+  {
+   "query": "community services recruitment agencies melbourne",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 2,
+   "page": "/"
+  },
+  {
+   "query": "work in community services",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 10,
+   "page": "/"
+  },
+  {
+   "query": "community number",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 43,
+   "page": "/contact"
+  },
+  {
+   "query": "simon support",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 6,
+   "page": "/contact"
+  },
+  {
+   "query": "help making a resume for free",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 81,
+   "page": "/resume-builder"
+  },
+  {
+   "query": "resume builder help",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 1,
+   "page": "/resume-builder"
+  }
+ ],
+ "gscDaily": [
+  {
+   "date": "2026-10-21",
+   "clicks": 0,
+   "impressions": 13
+  },
+  {
+   "date": "2026-10-22",
+   "clicks": 1,
+   "impressions": 11
+  },
+  {
+   "date": "2026-10-23",
+   "clicks": 1,
+   "impressions": 14
+  },
+  {
+   "date": "2026-10-24",
+   "clicks": 0,
+   "impressions": 11
+  },
+  {
+   "date": "2026-10-25",
+   "clicks": 1,
+   "impressions": 14
+  },
+  {
+   "date": "2026-10-26",
+   "clicks": 3,
+   "impressions": 26
   }
  ]
 }
