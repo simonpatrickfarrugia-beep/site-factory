@@ -1,10 +1,11 @@
 # Competition check
 
-Updated 2026-10-26. Google top 10 for each niche's best keywords. A slot is **beatable** when a forum (Reddit, Quora, Fandom...) or a small site (under 30k est. search visits/month) holds it. **Openness** 0-100 weights the top 3 positions most. Rough guide: 40+ open, 20-40 possible with a strong angle, under 20 owned by big brands.
+Updated 2026-10-29. Google top 10 for each niche's best keywords. A slot is **beatable** when a forum (Reddit, Quora, Fandom...) or a small site (under 30k est. search visits/month) holds it. **Openness** 0-100 weights the top 3 positions most. Rough guide: 40+ open, 20-40 possible with a strong angle, under 20 owned by big brands.
 
 | Idea | Openness | Keywords checked | Biggest players |
 |---|---:|---:|---|
 | Australian clothing brands directory (beason.com.au) | **59** | 6 | davidjones.com (1.2M), theurbanlist.com (903k), superprof.com.au (52k), glamcorner.com.au (39k) |
+| Freshwater fish species by state | **58** | 6 | ohiodnr.gov (835k), texas.gov (11.5M), utoledo.edu (170k), youtube.com (625.8M) |
 | Victoria: where to eat by town | **54** | 6 | tripadvisor.com.au (19.3M), visitmelbourne.com (1.1M), instagram.com (61.7M), agfg.com.au (2.5M) |
 | Board games | **48** | 6 | youtube.com (625.8M), boardgamegeek.com (1.3M), google.com (551.5M), chess.com (1.2M) |
 | Victoria: where to stay by town | **47** | 6 | instagram.com (61.7M), tripadvisor.com.au (19.3M), tripadvisor.com (2.0M), visitvictoria.com (598k) |
@@ -12,13 +13,16 @@ Updated 2026-10-26. Google top 10 for each niche's best keywords. A slot is **be
 | Hurricane history by coastal state | **40** | 3 | wikipedia.org (1937.8M), youtube.com (625.8M), weather.gov (54.0M), noaa.gov (11.7M) |
 | Book series in reading order | **37** | 6 | goodreads.com (10.5M), scholastic.com (657k), amazon.com (251.6M), nytimes.com (54.6M) |
 | Australian winter wear: beanies, jackets and knitwear | **36** | 6 | bestandless.com.au (274k), oxfordshop.com.au (58k), davidjones.com (1.2M), jgl.com.au (514k) |
+| Retro game finder: where to play classic games today (AU) | **33** | 6 | google.com (33.2M), nintendo.com (295k), youtube.com (38.0M), wikipedia.org (140.6M) |
 | Anime: where to watch and watch order | **33** | 6 | google.com (551.5M), hulu.com (8.8M), wikipedia.org (1937.8M), imdb.com (385.1M) |
 | Dog breeds | **31** | 6 | youtube.com (625.8M), akc.org (4.5M), wikipedia.org (1937.8M), petfinder.com (2.2M) |
 | Victoria: things to do by town | **28** | 6 | visitballarat.com.au (42k), tripadvisor.com.au (19.3M), visitmelbourne.com (1.1M), experienceoz.com.au (82k) |
+| Retro game finder: where to play classic games today (US) | **25** | 6 | youtube.com (625.8M), google.com (551.5M), nintendolife.com (369k), imdb.com (385.1M) |
 | Movie soundtracks and film music | **20** | 6 | apple.com (162.5M), youtube.com (625.8M), wikipedia.org (1937.8M), imdb.com (385.1M) |
 | TV shows: where to watch | **19** | 5 | youtube.com (625.8M), apple.com (162.5M), netflix.com (52.3M), hulu.com (8.8M) |
 | Video games: release dates and trailers | **18** | 6 | youtube.com (625.8M), bestbuy.com (19.6M), amazon.com (251.6M), yahoo.com (144.2M) |
 | US national parks and hiking trails | **11** | 1 | britannica.com (39.9M), hilton.com (16.4M), aaa.com (5.1M), maryland.gov (4.9M) |
+| Rail travel times between NSW stations | **0** | 0 | — |
 
 ## Australian clothing brands directory (beason.com.au) (openness 59)
 
@@ -30,6 +34,17 @@ Updated 2026-10-26. Google top 10 for each niche's best keywords. A slot is **be
 | clothing designers australia | 1,300 | 79 | #1 marais.com.au, #3 aquel.com.au, #4 reddit.com (forum), #5 reluv.com.au, #6 augustethelabel.com, #7 frockaholics.com, #9 australianfashion.org, #10 whatson.melbourne.vic.gov.au | marais.com.au, elle.com.au, aquel.com.au |
 | australian fashion designer dresses | 1,300 | 42 | #2 girlswithgems.com, #5 lucylaurita.com.au, #7 antheacrawford.com.au, #8 pinterest.com (forum), #9 goldcouture.net.au | davidjones.com, girlswithgems.com, theurbanlist.com |
 | australian fashion houses | 1,300 | 42 | #1 libertylondon.com, #4 reddit.com (forum), #6 frockaholics.com, #7 australianfashion.org | libertylondon.com, superprof.com.au, whowhatwear.com |
+
+## Freshwater fish species by state (openness 58)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| snakehead fish in texas | 260 | 47 | #3 facebook.com (forum), #4 tsusinvasives.org, #5 reddit.com (forum), #7 myparistexas.com, #8 usa.fishermap.org | tpwd.texas.gov, tpwd.texas.gov, facebook.com |
+| freshwater fish in ohio | 140 | 63 | #2 facebook.com (forum), #3 freshfishfinder.org, #4 facebook.com (forum), #6 facebook.com (forum), #7 flyfishfinder.com, #8 facebook.com (forum) | utoledo.edu, facebook.com, freshfishfinder.org |
+| what fish live in lake michigan | 140 | 68 | #1 facebook.com (forum), #3 facebook.com (forum), #4 michiganwhitetailproperties.com, #5 facebook.com (forum), #6 facebook.com (forum), #8 facebook.com (forum) | facebook.com, nwf.org, facebook.com |
+| invasive fish species in texas | 40 | 79 | #1 texasinvasives.org, #2 texasinvasives.org, #3 reportingtexas.com, #4 texasinvasives.org, #6 texasinvasives.org, #7 brazos.org, #8 facebook.com (forum) | texasinvasives.org, texasinvasives.org, reportingtexas.com |
+| fresh water fish in ohio | 20 | 47 | #3 freshfishfinder.org, #4 facebook.com (forum), #5 facebook.com (forum), #7 facebook.com (forum), #8 facebook.com (forum) | ohiodnr.gov, utoledo.edu, freshfishfinder.org |
+| australian redclaw crayfish in texas | 10 | 42 | #2 texasinvasives.org, #3 facebook.com (forum), #5 facebook.com (forum) | star-telegram.com, texasinvasives.org, facebook.com |
 
 ## Victoria: where to eat by town (openness 54)
 
@@ -105,6 +120,17 @@ Updated 2026-10-26. Google top 10 for each niche's best keywords. A slot is **be
 | woollen jumpers australia | 720 | 58 | #2 dannysknitwear.com, #4 wool.com, #5 fields.com.au, #6 swoolly.com.au, #8 sweatersaustralia.com.au, #9 sweatersaustralia.com.au | kookai.com.au, dannysknitwear.com, rmwilliams.com.au |
 | men's winter jackets australia | 720 | 16 | #1 everythingaustralian.com.au | everythingaustralian.com.au, adidas.com.au, quiksilver.com.au |
 
+## Retro game finder: where to play classic games today (AU) (openness 33)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| nintendo switch online | 3,600 | 37 | #1 reddit.com (forum), #4 gg.deals, #5 gameshub.com | reddit.com, gamespot.com, youtube.com |
+| goldeneye 007 nintendo | 1,900 | 0 | — | google.com, google.com, google.com |
+| game cube games | 1,300 | 47 | #1 superretro.com.au, #2 retrosales.com.au, #5 retroachievements.org, #8 cavegamers.com | superretro.com.au, retrosales.com.au, en.wikipedia.org |
+| price nintendo switch | 1,300 | 16 | #6 ntdeals.net, #7 facebook.com (forum) | jbhifi.com.au, store.nintendo.com.au, nintendo.com |
+| nintendo switch rpg games | 1,000 | 58 | #2 reddit.com (forum), #3 nintendolife.com, #4 gamerbymistake.com, #5 switchscores.com, #8 gamestop.com | nintendo.com, reddit.com, nintendolife.com |
+| nintendo cube games | 1,000 | 58 | #1 superretro.com.au, #2 retrosales.com.au, #5 retroachievements.org, #6 infinityretro.com, #8 reddit.com (forum) | superretro.com.au, retrosales.com.au, en.wikipedia.org |
+
 ## Anime: where to watch and watch order (openness 33)
 
 | Keyword | /mo | Openness | Beatable slots | Top 3 |
@@ -137,6 +163,17 @@ Updated 2026-10-26. Google top 10 for each niche's best keywords. A slot is **be
 | ballarat sightseeing | 8,100 | 16 | #4 vetlifeinballarat.com.au, #8 culturalattractionsofaustralia.com | visitballarat.com.au, visitmelbourne.com, tripadvisor.com.au |
 | ballarat things to see | 8,100 | 16 | #5 vetlifeinballarat.com.au, #9 culturalattractionsofaustralia.com | visitballarat.com.au, tripadvisor.com.au, visitmelbourne.com |
 | things to do in phillip island | 5,400 | 26 | #4 facebook.com (forum), #6 melbournecitytour.com.au, #7 wildlifetours.com.au | visitphillipisland.com.au, tripadvisor.com.au, klook.com |
+
+## Retro game finder: where to play classic games today (US) (openness 25)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| retro handheld game system | 49,500 | 47 | #1 retrocatalog.com, #4 keepretro.com, #5 reddit.com (forum), #6 retroresolve.com | retrocatalog.com, gamesradar.com, youtube.com |
+| game cube games | 40,500 | 26 | #2 reddit.com (forum), #6 fairgameretro.com | retrododo.com, reddit.com, en.wikipedia.org |
+| nintendo switch rpg games | 27,100 | 16 | #6 reddit.com (forum), #10 whatoplay.com | youtube.com, youtube.com, gamefaqs.gamespot.com |
+| mariokart double dash | 27,100 | 16 | #2 reddit.com (forum) | lukiegames.com, reddit.com, ign.com |
+| goldeneye 007 nintendo | 27,100 | 0 | — | ebay.com, google.com, google.com |
+| nintendo cube games | 22,200 | 26 | #2 vgcollect.com, #4 nintendo.fandom.com (forum) | youtube.com, vgcollect.com, walmart.com |
 
 ## Movie soundtracks and film music (openness 20)
 
@@ -175,3 +212,8 @@ Updated 2026-10-26. Google top 10 for each niche's best keywords. A slot is **be
 | Keyword | /mo | Openness | Beatable slots | Top 3 |
 |---|---:|---:|---|---|
 | national parks | 550,000 | 11 | #6 explore.usparkpass.com | nationalparks.org, americasnationalparks.org, nationalgeographic.com |
+
+## Rail travel times between NSW stations (openness 0)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
