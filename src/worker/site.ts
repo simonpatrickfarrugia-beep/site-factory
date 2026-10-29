@@ -132,15 +132,18 @@ async function jobs(request: Request, env: Env): Promise<Response> {
   if (type === 'perm') params.contract_type = 'p';
   for (const [k, v] of Object.entries(params)) api.searchParams.set(k, v);
   let data: Record<string, any>;
+  let upstream = 0;
   try {
     const r = await fetch(api.toString(), {
       headers: { accept: 'application/json', authorization: `Basic ${btoa(`${env.CAREERJET_KEY}:`)}`, referer: `${u.origin}/job-finder` },
     });
-    if (!r.ok) throw new Error(`careerjet ${r.status}`);
+    upstream = r.status;
+    if (!r.ok) throw new Error(`careerjet ${r.status}: ${(await r.text()).slice(0, 200)}`);
     data = (await r.json()) as Record<string, any>;
   } catch (e) {
     console.error('jobs failed', e);
-    return json({ ok: false, reason: 'down', message: 'Live job search is not responding right now.' }, 502);
+    // upstream = Careerjet's HTTP status (403 usually means the server IP isn't declared in the Careerjet partner account).
+    return json({ ok: false, reason: 'down', upstream, message: 'Live job search is not responding right now.' }, 502);
   }
   if (data.type === 'LOCATIONS') return json({ ok: true, hits: 0, pages: 0, jobs: [], places: (data.locations ?? data.solveLocations ?? []).map((l: any) => strip(typeof l === 'string' ? l : l.name)).slice(0, 8) });
   const list = Array.isArray(data.jobs) ? data.jobs : [];
