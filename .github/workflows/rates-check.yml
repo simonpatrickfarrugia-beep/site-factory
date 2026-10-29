@@ -1,0 +1,43 @@
+# Monthly accuracy check for the pay calculator: every figure in data/paycalc/rates.json is compared with its ATO
+# source page, and it watches for new-year figures (Budget in May, new income year 1 July). Anything off opens or
+# updates an issue labelled "accuracy" (GitHub emails the repo owner); the issue closes itself once all is confirmed.
+# Runs 09:17 Melbourne on the 2nd of each month. Run by hand: Actions → rates-check → Run workflow.
+name: rates-check
+on:
+  schedule:
+    - cron: '17 22 1 * *'
+  workflow_dispatch:
+    inputs:
+      dry: { description: 'true = report only, no issue', default: 'false' }
+permissions:
+  contents: read
+  issues: write
+jobs:
+  check:
+    runs-on: ubuntu-24.04  # pinned: ubuntu-latest moved to 26.04 in Oct 2026 and broke the Playwright install
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - name: Compare our figures with the ATO
+        id: check
+        continue-on-error: true
+        run: python3 scripts/paycalc/rates_check.py
+      - name: Report
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FAILED: ${{ steps.check.outcome == 'failure' }}
+          DRY: ${{ inputs.dry || 'false' }}
+        run: |
+          cat rates-check.md >> "$GITHUB_STEP_SUMMARY"
+          echo "::notice title=rates-report::$(sed 's/%/%25/g' rates-check.md | sed ':a;N;$!ba;s/\n/%0A/g' | cut -c1-6000)"
+          if [ "$DRY" = "true" ]; then exit 0; fi
+          gh label create accuracy --color FBCA04 --description "Monthly accuracy check (pay calculator rates)" 2>/dev/null || true
+          open=$(gh issue list --label accuracy --state open --json number --jq '.[0].number // empty')
+          if [ "$FAILED" = "true" ]; then
+            if [ -n "$open" ]; then gh issue comment "$open" --body-file rates-check.md
+            else gh issue create --title "Pay calculator: check the rates" --label accuracy --body-file rates-check.md; fi
+            echo "::warning title=rates-check::$(grep '^- \*\*' rates-check.md | head -6 | tr '\n' ' ' | cut -c1-900)"
+          else
+            [ -n "$open" ] && gh issue close "$open" --comment "All figures confirmed against the ATO ✅"
+            echo "::notice title=rates-check::All figures confirmed against the ATO"
+          fi
