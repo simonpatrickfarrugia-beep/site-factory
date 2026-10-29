@@ -1,0 +1,59 @@
+{
+  "_about": "Every figure here is copied from an official source (listed in sources), with the date it was checked. Change a figure only with a new source. Used by src/lib/pay-tax.ts (calculator, salary pages) and the guides.",
+  "year": "2026-27",
+  "yearLabel": "2026–27",
+  "checked": "2026-10-29",
+  "brackets": [
+    { "from": 0, "rate": 0 },
+    { "from": 18200, "rate": 0.15 },
+    { "from": 45000, "rate": 0.3 },
+    { "from": 135000, "rate": 0.37 },
+    { "from": 190000, "rate": 0.45 }
+  ],
+  "lito": { "max": 700, "full": 37500, "r1": 0.05, "mid": 45000, "midAmount": 325, "r2": 0.015 },
+  "medicare": {
+    "rate": 0.02,
+    "shadeIn": 0.1,
+    "singleLower": 28011,
+    "singleUpper": 35013,
+    "thresholdYear": "2025–26",
+    "note": "The 2026–27 low-income thresholds are usually set in the May Budget, after the year starts, so we use the latest published (2025–26) thresholds."
+  },
+  "help": {
+    "nilTo": 69528,
+    "bands": [
+      { "from": 69528, "upTo": 129717, "base": 0, "rate": 0.15 },
+      { "from": 129717, "upTo": 186050, "base": 9028, "rate": 0.17 }
+    ],
+    "flatFrom": 186050,
+    "flatRate": 0.1
+  },
+  "super": { "rate": 0.12, "maxBase": 270830 },
+  "previous": {
+    "yearLabel": "2025–26",
+    "brackets": [
+      { "from": 0, "rate": 0 },
+      { "from": 18200, "rate": 0.16 },
+      { "from": 45000, "rate": 0.3 },
+      { "from": 135000, "rate": 0.37 },
+      { "from": 190000, "rate": 0.45 }
+    ],
+    "help": {
+      "nilTo": 67000,
+      "bands": [
+        { "from": 67000, "upTo": 125000, "base": 0, "rate": 0.15 },
+        { "from": 125000, "upTo": 179285, "base": 8700, "rate": 0.17 }
+      ],
+      "flatFrom": 179285,
+      "flatRate": 0.1
+    }
+  },
+  "next": { "yearLabel": "2027–28", "change": "The 15% rate falls to 14% from 1 July 2027. The other rates and thresholds stay the same." },
+  "sources": [
+    { "what": "Income tax rates 2026–27 (15% second rate) and the 14% rate from 1 July 2027", "name": "Treasury Laws Amendment (More Cost of Living Relief) Act 2025", "url": "https://www.legislation.gov.au/C2025A00028/asmade" },
+    { "what": "Low income tax offset", "name": "ATO: Low income tax offset", "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/tax-offsets/low-income-tax-offset" },
+    { "what": "Medicare levy low-income thresholds (2025–26)", "name": "ATO: M1 Medicare levy reduction or exemption 2026", "url": "https://www.ato.gov.au/forms-and-instructions/individual-tax-return-2026-instructions/medicare-levy-questions-m1-m2-individual-tax-return-2026/m1-medicare-levy-reduction-or-exemption-2026" },
+    { "what": "HELP and other study loan repayment thresholds, 2025–26 and 2026–27", "name": "ATO: Study and training support loans rates and repayment thresholds", "url": "https://www.ato.gov.au/tax-rates-and-codes/study-and-training-support-loans-rates-and-repayment-thresholds" },
+    { "what": "Super guarantee 12% and the 2026–27 maximum contribution base", "name": "ATO: Super guarantee percentage", "url": "https://www.ato.gov.au/SuperRate" }
+  ]
+}

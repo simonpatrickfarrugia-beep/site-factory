@@ -1,0 +1,102 @@
+---
+/**
+ * One salary, worked out ("$85,000 after tax"). Everything on the page is computed from the rates, so the words
+ * change with the numbers: which brackets it reaches, whether the offset or Medicare reduction applies, what the
+ * next $5,000 is worth, what HECS-HELP would take.
+ */
+import Payslip from './Payslip.astro';
+import { calculate, perPeriod, bracketSteps, litoFor, aud, pct } from '../../lib/pay-tax';
+import type { RateFile } from '../../../brands/paycalc/model';
+interface Link { n: number; href: string }
+interface Props { salary: number; rates: RateFile; prev: Link | null; next: Link | null; nearby: Link[] }
+const { salary, rates, prev, next, nearby } = Astro.props;
+const r = calculate({ amount: salary, period: 'year' }, rates);
+const withHelp = calculate({ amount: salary, period: 'year', help: true }, rates);
+const plus5 = calculate({ amount: salary + 5000, period: 'year' }, rates);
+const lastYear = calculate({ amount: salary, period: 'year' }, { ...rates, brackets: rates.previous.brackets });
+const steps = bracketSteps(salary, rates.brackets);
+const pp = perPeriod(r.net);
+const hourly = r.gross / 52 / 38;
+const keep5 = plus5.net - r.net;
+const saving = r.net - lastYear.net;
+const m = rates.medicare;
+const medicareNote =
+  salary <= m.singleLower ? `At ${aud(salary)} you’re under the low-income threshold (${aud(m.singleLower)}), so there’s no Medicare levy to pay.`
+  : salary <= m.singleUpper ? `At ${aud(salary)} you get the low-income Medicare reduction: the levy is 10% of what you earn over ${aud(m.singleLower)}, which is ${aud(r.medicare)} instead of the full ${aud(salary * m.rate)}.`
+  : `The Medicare levy is 2% of your taxable income: ${aud(r.medicare)}.`;
+const litoNote =
+  r.lito <= 0 ? `The low income tax offset stops at about $66,667, so it doesn’t apply at ${aud(salary)}.`
+  : r.incomeTax === 0 ? `The low income tax offset (${aud(litoFor(salary, rates.lito))}) is more than the tax, so you pay no income tax at all.`
+  : `The low income tax offset takes ${aud(r.lito)} off, leaving ${aud(r.incomeTax)} of income tax.`;
+const top = steps[steps.length - 1];
+---
+<section class="pc-wrap pc-section pc-salary">
+  <p class="pc-crumb"><a href="/salary">Salaries</a></p>
+  <div class="pc-salary__grid">
+    <div>
+      <h1 class="pc-h1">{aud(salary)} after tax in Australia</h1>
+      <p class="pc-lede">On a salary of {aud(salary)} you take home <strong>{aud(r.net)}</strong> a year in {rates.yearLabel}. That’s {aud(pp.month)} a month, {aud(pp.fortnight)} a fortnight or {aud(pp.week)} a week.</p>
+      <p>Tax and Medicare take {aud(r.incomeTax + r.medicare)}, an average of {pct(r.effectiveRate)} of your pay. Your employer pays another {aud(r.superAmount)} into your super on top.</p>
+      <p class="pc-actions"><a class="pc-btn" href={`/?pay=${salary}&per=year`} data-cta="salary_to_calc">Change the details</a></p>
+    </div>
+    <Payslip r={r} yearLabel={rates.yearLabel} period="fortnight" heading={`${aud(salary)} salary`} />
+  </div>
+</section>
+
+<section class="pc-wrap pc-section">
+  <h2 class="pc-h2">{aud(salary)} a year, every pay period</h2>
+  <div class="pc-scroll">
+    <table class="pc-table">
+      <thead><tr><th scope="col">Per</th><th scope="col">Gross</th><th scope="col">Tax</th><th scope="col">Medicare</th><th scope="col">Take-home</th></tr></thead>
+      <tbody>
+        {([['Year', 'year'], ['Month', 'month'], ['Fortnight', 'fortnight'], ['Week', 'week']] as const).map(([label, k]) => (
+          <tr><th scope="row">{label}</th><td>{aud(perPeriod(r.gross)[k])}</td><td>{aud(perPeriod(r.incomeTax)[k])}</td><td>{aud(perPeriod(r.medicare)[k])}</td><td><strong>{aud(perPeriod(r.net)[k])}</strong></td></tr>
+        ))}
+        <tr><th scope="row">Hour (38-hour week)</th><td>{aud(hourly, true)}</td><td>{aud(r.incomeTax / 52 / 38, true)}</td><td>{aud(r.medicare / 52 / 38, true)}</td><td><strong>{aud(r.net / 52 / 38, true)}</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="pc-wrap pc-section pc-measure">
+  <h2 class="pc-h2">How the tax on {aud(salary)} is worked out</h2>
+  <ol class="pc-steps">
+    {steps.map((s) => (
+      <li>
+        {s.rate === 0
+          ? <>The first {aud(Math.min(salary, s.to ?? salary))} is tax-free.</>
+          : <>{aud(s.amount)} between {aud(s.from)} and {aud(s.to !== null && salary > s.to ? s.to : salary)} is taxed at {pct(s.rate, 0)}: {aud(s.tax)}.</>}
+      </li>
+    ))}
+    <li>That’s {aud(r.taxBeforeOffset)} of tax before offsets. {litoNote}</li>
+    <li>{medicareNote}</li>
+    <li>{aud(salary)} − {aud(r.incomeTax)} − {aud(r.medicare)} = <strong>{aud(r.net)}</strong> take-home pay.</li>
+  </ol>
+  <p>Your top tax bracket is {pct(top.rate, 0)}. On your next dollar of pay you’d keep about {Math.round((1 - r.marginalRate) * 100)} cents after tax and Medicare.</p>
+
+  <h2 class="pc-h2">What a {aud(5000)} pay rise is worth</h2>
+  <p>Going from {aud(salary)} to {aud(salary + 5000)} adds {aud(keep5)} a year to your take-home pay, or {aud(keep5 / 26)} a fortnight. The other {aud(5000 - keep5)} goes in tax and Medicare.</p>
+
+  <h2 class="pc-h2">With a HECS-HELP debt</h2>
+  {withHelp.help > 0
+    ? <p>If you have a study loan, {aud(withHelp.help)} a year ({aud(withHelp.help / 26)} a fortnight) goes to your repayments, so you’d take home {aud(withHelp.net)}. Repayments are 15 cents for each dollar over {aud(rates.help.nilTo)}{salary > rates.help.bands[1].from ? ', and 17 cents above $129,717' : ''}{salary > rates.help.flatFrom ? ', but from $186,051 it’s 10% of your whole income' : ''}. <a href="/hecs-help-repayments">How HECS-HELP repayments work</a>.</p>
+    : <p>No study loan repayments come out at {aud(salary)}: compulsory repayments start once your income passes {aud(rates.help.nilTo)} in {rates.yearLabel}. <a href="/hecs-help-repayments">HECS-HELP thresholds</a>.</p>}
+
+  <h2 class="pc-h2">Compared with last year</h2>
+  {saving > 0.5
+    ? <p>In {rates.previous.yearLabel} the same salary took home {aud(lastYear.net)}. The new 15% tax rate (down from 16%) leaves you {aud(saving)} a year better off.</p>
+    : <p>At {aud(salary)} the change from 16% to 15% makes no difference: you didn’t pay income tax in that bracket after the low income tax offset.</p>}
+  <p class="pc-small">Assumes an Australian resident for tax, claiming the tax-free threshold, super paid on top, no other income or deductions. <a href="/how-we-calculate">How we calculate</a>.</p>
+
+  <nav class="pc-pager" aria-label="Other salaries">
+    {prev ? <a href={prev.href}>{aud(prev.n)} after tax</a> : <span></span>}
+    {next ? <a href={next.href}>{aud(next.n)} after tax</a> : <span></span>}
+  </nav>
+  <h2 class="pc-h2">Nearby salaries</h2>
+  <ul class="pc-chips">{nearby.map((s) => <li><a href={s.href}>{aud(s.n)}</a></li>)}</ul>
+</section>
+
+<script>
+  import { bindSlips } from '../../lib/pc-slip';
+  bindSlips();
+</script>

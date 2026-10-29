@@ -39,7 +39,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        brand: [trailers, vic, community-help-co, shortlisted, trade-admin]
+        brand: [trailers, vic, community-help-co, shortlisted, trade-admin, paycalc]
     env:
       BRAND: ${{ matrix.brand }}
     steps:
@@ -48,6 +48,14 @@ jobs:
         with:
           node-version: 22
       - run: npm install --no-audit --no-fund
+      - name: Pay calculator maths (paycalc only)
+        if: matrix.brand == 'paycalc'
+        run: |
+          if ! node --experimental-strip-types --no-warnings scripts/test-pay-tax.ts > paytax.log 2>&1; then
+            node -e "const l=require('fs').readFileSync('paytax.log','utf8').trim().split('\\n').slice(0,30).join('\\n');console.log('::error title=Pay calculator maths::'+l.replace(/%/g,'%25').replace(/\\r?\\n/g,'%0A'))"
+            exit 1
+          fi
+          tail -1 paytax.log | sed 's/^/::notice title=Pay calculator maths::/'
       - name: Build
         run: |
           set -o pipefail

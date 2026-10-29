@@ -1,0 +1,22 @@
+---
+import type { Source } from '../../../brands/paycalc/model';
+interface Props { title: string; paragraphs: string[]; sources: Source[] | null; checked: string }
+const { title, paragraphs, sources, checked } = Astro.props;
+/** Paragraphs may hold simple links: [text](https://… or /path). */
+const parts = (p: string) => p.split(/(\[[^\]]+\]\((?:https:\/\/|\/)[^)\s]*\))/).map((s) => {
+  const m = s.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+  return m ? { text: m[1], href: m[2], ext: m[2].startsWith('https://') } : { text: s, href: null, ext: false };
+});
+const when = new Date(checked).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<div class="pc-wrap pc-section pc-measure">
+  <h1 class="pc-h1">{title}</h1>
+  {paragraphs.map((p) => <p>{parts(p).map((x) => (x.href ? <a href={x.href} rel={x.ext ? 'noopener' : undefined}>{x.text}</a> : x.text))}</p>)}
+  {sources && (
+    <>
+      <h2 class="pc-h2">Sources (checked {when})</h2>
+      <ul class="pc-sources">{sources.map((s) => <li>{s.what}: <a href={s.url} rel="noopener">{s.name}</a></li>)}</ul>
+    </>
+  )}
+  <p class="pc-actions"><a class="pc-btn" href="/">Open the pay calculator</a></p>
+</div>

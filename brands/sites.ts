@@ -8,6 +8,7 @@ import { routes as vic } from './vic/site';
 import { routes as communityHelpCo } from './community-help-co/site';
 import { routes as shortlisted } from './shortlisted/site';
 import { routes as tradeAdmin } from './trade-admin/site';
+import { routes as paycalc } from './paycalc/site';
 
 export const sites: Record<string, () => Route[]> = {
   trailers,
@@ -15,4 +16,5 @@ export const sites: Record<string, () => Route[]> = {
   'community-help-co': communityHelpCo,
   shortlisted,
   'trade-admin': tradeAdmin,
+  paycalc,
 };

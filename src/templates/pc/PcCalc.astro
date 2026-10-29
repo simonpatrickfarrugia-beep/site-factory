@@ -1,0 +1,155 @@
+---
+/** Home: the pay calculator. Works without JavaScript (shows $85,000 worked out); with it, updates as you type. */
+import Payslip from './Payslip.astro';
+import Faq from './PcFaq.astro';
+import { calculate, perPeriod, aud, pct } from '../../lib/pay-tax';
+import type { RateFile, ToolPage } from '../../../brands/paycalc/model';
+interface Props { page: ToolPage; rates: RateFile; popular: { href: string; label: string }[] }
+const { page, rates, popular } = Astro.props;
+const start = calculate({ amount: 85000, period: 'year' }, rates);
+const rows = [['Week', 'week'], ['Fortnight', 'fortnight'], ['Month', 'month'], ['Year', 'year']] as const;
+const engineRates = { brackets: rates.brackets, lito: rates.lito, medicare: rates.medicare, help: rates.help, super: rates.super };
+---
+<section class="pc-hero">
+  <div class="pc-wrap pc-hero__grid">
+    <div class="pc-hero__intro">
+      <h1 class="pc-h1">{page.title}</h1>
+      <p class="pc-lede">{page.lede}</p>
+
+      <form class="pc-form" data-calc data-rates={JSON.stringify(engineRates)} onsubmit="return false" aria-label="Pay calculator">
+        <div class="pc-field pc-field--pay">
+          <label for="pay">Your pay before tax</label>
+          <div class="pc-pay">
+            <span class="pc-pay__dollar" aria-hidden="true">$</span>
+            <input id="pay" name="pay" type="text" inputmode="decimal" autocomplete="off" value="85,000" data-in="amount" />
+            <select name="per" aria-label="Paid per" data-in="period">
+              <option value="year" selected>a year</option>
+              <option value="month">a month</option>
+              <option value="fortnight">a fortnight</option>
+              <option value="week">a week</option>
+              <option value="hour">an hour</option>
+            </select>
+          </div>
+        </div>
+        <div class="pc-field" data-hours hidden>
+          <label for="hours">Hours a week</label>
+          <input id="hours" name="hours" type="number" min="1" max="80" step="0.5" value="38" inputmode="decimal" data-in="hours" />
+        </div>
+        <fieldset class="pc-field pc-choice">
+          <legend>Super</legend>
+          <label><input type="radio" name="super" value="on-top" checked data-in="super" /> Paid on top of this</label>
+          <label><input type="radio" name="super" value="included" data-in="super" /> Included in this</label>
+        </fieldset>
+        <label class="pc-check"><input type="checkbox" name="help" data-in="help" /> I have a HECS-HELP or other study loan</label>
+      </form>
+    </div>
+
+    <div class="pc-hero__slip">
+      <Payslip r={start} yearLabel={rates.yearLabel} live />
+      <dl class="pc-rates">
+        <div><dt>Average tax rate</dt><dd data-rate="effective">{pct(start.effectiveRate)}</dd></div>
+        <div><dt>Tax on your next dollar</dt><dd data-rate="marginal">{pct(start.marginalRate, 1)}</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="pc-wrap pc-section">
+  <h2 class="pc-h2">Every pay period</h2>
+  <div class="pc-scroll">
+    <table class="pc-table" data-table>
+      <thead><tr><th scope="col">Per</th><th scope="col">Gross</th><th scope="col">Tax</th><th scope="col">Medicare</th><th scope="col" data-col="help" hidden>HECS-HELP</th><th scope="col">Take-home</th><th scope="col">Super</th></tr></thead>
+      <tbody>
+        {rows.map(([label, k]) => (
+          <tr data-per-row={k}>
+            <th scope="row">{label}</th>
+            <td data-t="gross">{aud(perPeriod(start.gross)[k])}</td>
+            <td data-t="incomeTax">{aud(perPeriod(start.incomeTax)[k])}</td>
+            <td data-t="medicare">{aud(perPeriod(start.medicare)[k])}</td>
+            <td data-t="help" hidden>{aud(0)}</td>
+            <td data-t="net"><strong>{aud(perPeriod(start.net)[k])}</strong></td>
+            <td data-t="superAmount">{aud(perPeriod(start.superAmount)[k])}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="pc-small">Weekly, fortnightly and monthly figures are the year divided evenly. Your payslip uses the ATO’s withholding tables, so it can differ by a few dollars. <a href="/how-we-calculate">How we calculate</a>.</p>
+</section>
+
+<section class="pc-band">
+  <div class="pc-wrap pc-section">
+    <h2 class="pc-h2">Popular salaries, worked out</h2>
+    <ul class="pc-chips">{popular.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+    <p><a href="/salary">Every salary from $20,000 to $300,000</a></p>
+  </div>
+</section>
+
+<section class="pc-wrap pc-section pc-measure">
+  <h2 class="pc-h2">The {rates.yearLabel} rates we use</h2>
+  <p>Income tax: nothing on the first $18,200, then 15% to $45,000, 30% to $135,000, 37% to $190,000 and 45% above that. The 15% rate is new this year (it was 16%). <a href="/tax-brackets">Tax brackets explained</a>.</p>
+  <p>Plus the Medicare levy (2%, less on low incomes), the low income tax offset (up to $700 off your tax) and, if you have one, study loan repayments from $69,528. <a href="/hecs-help-repayments">HECS-HELP repayments</a>.</p>
+  <Faq items={page.faq} />
+</section>
+
+<script>
+  import { calculate, aud, pct, type Rates, type Period } from '../../lib/pay-tax';
+  import { drawSlip, bindSlips } from '../../lib/pc-slip';
+  const form = document.querySelector<HTMLFormElement>('[data-calc]');
+  if (form) {
+    const rates = JSON.parse(form.dataset.rates!) as Rates;
+    const slip = document.querySelector<HTMLElement>('[data-slip]')!;
+    const live = document.querySelector<HTMLElement>('[data-live]');
+    const table = document.querySelector<HTMLElement>('[data-table]')!;
+    const hoursBox = form.querySelector<HTMLElement>('[data-hours]')!;
+    const payIn = form.querySelector<HTMLInputElement>('[data-in="amount"]')!;
+    const perIn = form.querySelector<HTMLSelectElement>('[data-in="period"]')!;
+    const hoursIn = form.querySelector<HTMLInputElement>('[data-in="hours"]')!;
+    const helpIn = form.querySelector<HTMLInputElement>('[data-in="help"]')!;
+    const DIV = { week: 52, fortnight: 26, month: 12, year: 1 } as const;
+    const num = (s: string) => Number(s.replace(/[^0-9.]/g, '')) || 0;
+    let tracked = false;
+
+    // Start from the address (?pay=72000&per=year&help=1&super=included) so results can be shared.
+    const q = new URLSearchParams(location.search);
+    if (q.get('pay')) payIn.value = Number(num(q.get('pay')!)).toLocaleString('en-AU');
+    if (q.get('per') && [...perIn.options].some((o) => o.value === q.get('per'))) perIn.value = q.get('per')!;
+    if (q.get('hours')) hoursIn.value = String(num(q.get('hours')!));
+    if (q.get('help') === '1') helpIn.checked = true;
+    if (q.get('super') === 'included') form.querySelector<HTMLInputElement>('input[name="super"][value="included"]')!.checked = true;
+
+    const run = () => {
+      const period = perIn.value as Period;
+      hoursBox.hidden = period !== 'hour';
+      const superMode = form.querySelector<HTMLInputElement>('input[name="super"]:checked')!.value as 'on-top' | 'included';
+      const r = calculate({ amount: num(payIn.value), period, hours: num(hoursIn.value) || 38, superMode, help: helpIn.checked }, rates);
+      drawSlip(slip, r, helpIn.checked);
+      document.querySelector('[data-rate="effective"]')!.textContent = pct(r.effectiveRate);
+      document.querySelector('[data-rate="marginal"]')!.textContent = pct(r.marginalRate);
+      for (const row of table.querySelectorAll<HTMLElement>('[data-per-row]')) {
+        const d = DIV[row.dataset.perRow as keyof typeof DIV];
+        for (const td of row.querySelectorAll<HTMLElement>('[data-t]')) {
+          const v = aud((r as unknown as Record<string, number>)[td.dataset.t!] / d);
+          td.innerHTML = td.dataset.t === 'net' ? `<strong>${v}</strong>` : v;
+          if (td.dataset.t === 'help') td.hidden = !helpIn.checked;
+        }
+      }
+      table.querySelector<HTMLElement>('[data-col="help"]')!.hidden = !helpIn.checked;
+      if (live) live.textContent = `Take-home pay ${aud(r.net)} a year.`;
+      const qs = new URLSearchParams({ pay: String(num(payIn.value)), per: period });
+      if (period === 'hour') qs.set('hours', String(num(hoursIn.value) || 38));
+      if (helpIn.checked) qs.set('help', '1');
+      if (superMode === 'included') qs.set('super', 'included');
+      history.replaceState(null, '', `?${qs}`);
+      if (!tracked && num(payIn.value) > 0) {
+        tracked = true;
+        (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.('event', 'calc_use');
+      }
+    };
+    payIn.addEventListener('blur', () => { if (num(payIn.value)) payIn.value = num(payIn.value).toLocaleString('en-AU', { maximumFractionDigits: 2 }); });
+    form.addEventListener('input', run);
+    form.addEventListener('change', run);
+    bindSlips();
+    if (location.search) run();
+  }
+</script>

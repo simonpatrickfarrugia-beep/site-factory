@@ -1,0 +1,89 @@
+---
+/** Rate guides: the tax brackets and HECS-HELP repayments, each with its own table from the sourced rates. */
+import Faq from './PcFaq.astro';
+import { aud, pct, helpFor, taxOnIncome } from '../../lib/pay-tax';
+import type { GuidePage, RateFile } from '../../../brands/paycalc/model';
+interface Props { kind: 'brackets' | 'help'; page: GuidePage; rates: RateFile; popular: { href: string; label: string }[] }
+const { kind, page, rates, popular } = Astro.props;
+const checked = new Date(rates.checked).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
+const bracketRows = (b: RateFile['brackets']) => b.map((x, i) => {
+  const to = i + 1 < b.length ? b[i + 1].from : null;
+  const base = taxOnIncome(x.from, b);
+  return {
+    range: to === null ? `${aud(x.from + 1)} and over` : `${aud(i === 0 ? 0 : x.from + 1)} – ${aud(to)}`,
+    tax: x.rate === 0 ? 'Nil' : `${base > 0 ? `${aud(base)} plus ` : ''}${Math.round(x.rate * 100)}c for each $1 over ${aud(x.from)}`,
+  };
+});
+const helpRows = (h: RateFile['help']) => [
+  { range: `${aud(0)} – ${aud(h.nilTo)}`, rep: 'Nil' },
+  ...h.bands.map((b) => ({ range: `${aud(b.from + 1)} – ${aud(b.upTo)}`, rep: `${b.base ? `${aud(b.base)} plus ` : ''}${Math.round(b.rate * 100)}c for each $1 over ${aud(b.from)}` })),
+  { range: `${aud(h.flatFrom + 1)} and over`, rep: `${pct(h.flatRate, 0)} of your total repayment income` },
+];
+const helpExamples = [60000, 75000, 90000, 110000, 140000, 200000];
+const ato = kind === 'brackets' ? rates.sources.find((s) => /Treasury Laws/.test(s.name)) : rates.sources.find((s) => /Study and training/.test(s.name));
+---
+<section class="pc-wrap pc-section pc-measure">
+  <h1 class="pc-h1">{page.title}</h1>
+  <p class="pc-lede">{page.lede}</p>
+
+  {kind === 'brackets' ? (
+    <>
+      <h2 class="pc-h2">Resident tax rates {rates.yearLabel}</h2>
+      <div class="pc-scroll">
+        <table class="pc-table">
+          <thead><tr><th scope="col">Taxable income</th><th scope="col">Tax on this income</th></tr></thead>
+          <tbody>{bracketRows(rates.brackets).map((r) => <tr><th scope="row">{r.range}</th><td>{r.tax}</td></tr>)}</tbody>
+        </table>
+      </div>
+      <p class="pc-small">Not including the 2% Medicare levy. Checked {checked}.</p>
+
+      <h2 class="pc-h2">How brackets work</h2>
+      {page.how.map((t) => <p>{t}</p>)}
+
+      <h2 class="pc-h2">What changed from {rates.previous.yearLabel}</h2>
+      <div class="pc-scroll">
+        <table class="pc-table">
+          <thead><tr><th scope="col">Taxable income</th><th scope="col">{rates.previous.yearLabel}</th><th scope="col">{rates.yearLabel}</th></tr></thead>
+          <tbody>{rates.brackets.map((b, i) => <tr><th scope="row">{bracketRows(rates.brackets)[i].range}</th><td>{pct(rates.previous.brackets[i].rate, 0)}</td><td>{pct(b.rate, 0)}</td></tr>)}</tbody>
+        </table>
+      </div>
+      <p><strong>{rates.next.yearLabel}:</strong> {rates.next.change}</p>
+    </>
+  ) : (
+    <>
+      <h2 class="pc-h2">Compulsory repayment thresholds {rates.yearLabel}</h2>
+      <div class="pc-scroll">
+        <table class="pc-table">
+          <thead><tr><th scope="col">Repayment income</th><th scope="col">Repayment</th></tr></thead>
+          <tbody>{helpRows(rates.help).map((r) => <tr><th scope="row">{r.range}</th><td>{r.rep}</td></tr>)}</tbody>
+        </table>
+      </div>
+      <p class="pc-small">Checked {checked}.</p>
+
+      <h2 class="pc-h2">How much comes out at your income</h2>
+      <div class="pc-scroll">
+        <table class="pc-table">
+          <thead><tr><th scope="col">Repayment income</th><th scope="col">A year</th><th scope="col">A fortnight</th><th scope="col">{rates.previous.yearLabel} rules</th></tr></thead>
+          <tbody>{helpExamples.map((n) => <tr><th scope="row">{aud(n)}</th><td>{aud(helpFor(n, rates.help))}</td><td>{aud(helpFor(n, rates.help) / 26)}</td><td>{aud(helpFor(n, rates.previous.help))}</td></tr>)}</tbody>
+        </table>
+      </div>
+
+      <h2 class="pc-h2">How repayments work</h2>
+      {page.how.map((t) => <p>{t}</p>)}
+
+      <h2 class="pc-h2">The {rates.previous.yearLabel} thresholds</h2>
+      <div class="pc-scroll">
+        <table class="pc-table">
+          <thead><tr><th scope="col">Repayment income</th><th scope="col">Repayment</th></tr></thead>
+          <tbody>{helpRows(rates.previous.help).map((r) => <tr><th scope="row">{r.range}</th><td>{r.rep}</td></tr>)}</tbody>
+        </table>
+      </div>
+    </>
+  )}
+
+  <p class="pc-actions"><a class="pc-btn" href={kind === 'help' ? '/?help=1' : '/'} data-cta={`guide_${kind}_calc`}>Work out your take-home pay</a></p>
+  <Faq items={page.faq} />
+  {ato && <p class="pc-small">Source: <a href={ato.url} rel="noopener">{ato.name}</a>.</p>}
+  <h2 class="pc-h2">Popular salaries</h2>
+  <ul class="pc-chips">{popular.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+</section>

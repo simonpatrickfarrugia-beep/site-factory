@@ -1,0 +1,22 @@
+---
+import { aud, type PayResult } from '../../lib/pay-tax';
+import type { RateFile } from '../../../brands/paycalc/model';
+interface Props { page: { title: string; lede: string }; rates: RateFile; salaries: { n: number; href: string; r: PayResult }[] }
+const { page, rates, salaries } = Astro.props;
+---
+<section class="pc-wrap pc-section">
+  <h1 class="pc-h1">{page.title}</h1>
+  <p class="pc-lede pc-measure">{page.lede}</p>
+  <div class="pc-scroll">
+    <table class="pc-table pc-table--list">
+      <caption class="pc-small">Take-home pay for {rates.yearLabel}, after income tax and the Medicare levy.</caption>
+      <thead><tr><th scope="col">Salary</th><th scope="col">A year</th><th scope="col">A month</th><th scope="col">A fortnight</th><th scope="col">A week</th></tr></thead>
+      <tbody>
+        {salaries.map((s) => (
+          <tr><th scope="row"><a href={s.href}>{aud(s.n)}</a></th><td><strong>{aud(s.r.net)}</strong></td><td>{aud(s.r.net / 12)}</td><td>{aud(s.r.net / 26)}</td><td>{aud(s.r.net / 52)}</td></tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p>Your salary isn’t listed, or you’re paid hourly? <a href="/">Use the calculator</a>.</p>
+</section>

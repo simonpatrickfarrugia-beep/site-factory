@@ -46,7 +46,7 @@ const tokenCss = `:root{${Object.entries(tokens).map(([k, v]) => `${k}:${v}`).jo
     {brand.launched && !isPrivate && noindex && <meta name="robots" content="noindex, follow" />}
     <meta name="theme-color" content={brand.colors.brand} />
     {Object.entries(brand.verify ?? {}).map(([name, content]) => <meta name={name} content={content} value={content} />)}
-    {brand.favicon && <link rel="icon" type="image/png" href={brand.favicon} />}
+    {brand.favicon && <link rel="icon" type={brand.favicon.endsWith('.svg') ? 'image/svg+xml' : 'image/png'} href={brand.favicon} />}
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={brand.name} />

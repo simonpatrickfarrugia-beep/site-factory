@@ -40,6 +40,11 @@ import TaCompare from './ta/TaCompare.astro';
 import TaPage from './ta/TaPage.astro';
 import TaQuiz from './ta/TaQuiz.astro';
 import TaHelp from './ta/TaHelp.astro';
+import PcCalc from './pc/PcCalc.astro';
+import PcSalary from './pc/PcSalary.astro';
+import PcSalaries from './pc/PcSalaries.astro';
+import PcGuide from './pc/PcGuide.astro';
+import PcPage from './pc/PcPage.astro';
 
 export const templates = {
   home: Home,
@@ -83,4 +88,9 @@ export const templates = {
   taPage: TaPage,
   taQuiz: TaQuiz,
   taHelp: TaHelp,
+  pcCalc: PcCalc,
+  pcSalary: PcSalary,
+  pcSalaries: PcSalaries,
+  pcGuide: PcGuide,
+  pcPage: PcPage,
 };

@@ -1,0 +1,13 @@
+{
+  // Cloudflare Worker for the Australian pay calculator (working name MyPayCalc). Preview on workers.dev until launch.
+  // Build:  BRAND=paycalc npm run build
+  // Deploy: npx wrangler deploy --config brands/paycalc/wrangler.jsonc
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "paycalc",
+  "compatibility_date": "2026-06-01",
+  "assets": {
+    "directory": "../../dist",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

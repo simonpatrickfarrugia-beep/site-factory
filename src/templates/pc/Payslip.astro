@@ -1,0 +1,35 @@
+---
+/**
+ * The payslip card: the site's signature. Rendered with real figures at build time (so it works without JavaScript
+ * and Google sees the numbers); the calculator updates the [data-f] fields live. Period buttons switch every line.
+ */
+import { perPeriod, aud, type PayResult } from '../../lib/pay-tax';
+interface Props { r: PayResult; yearLabel: string; period?: 'week' | 'fortnight' | 'month' | 'year'; showHelp?: boolean; live?: boolean; heading?: string }
+const { r, yearLabel, period = 'year', showHelp = r.help > 0, live = false, heading } = Astro.props;
+const p = (n: number) => aud(perPeriod(n)[period]);
+const periods = [['week', 'Week'], ['fortnight', 'Fortnight'], ['month', 'Month'], ['year', 'Year']] as const;
+const perLabel = { week: 'a week', fortnight: 'a fortnight', month: 'a month', year: 'a year' }[period];
+---
+<figure class="pc-slip" data-slip data-period={period} data-annual={JSON.stringify({ gross: r.gross, incomeTax: r.incomeTax, medicare: r.medicare, help: r.help, net: r.net, superAmount: r.superAmount })} aria-label={heading ?? `Take-home pay estimate for ${yearLabel}`}>
+  <div class="pc-slip__top">
+    <span class="pc-slip__name">{heading ?? 'Your pay, estimated'}</span>
+    <span class="pc-slip__year">{yearLabel} rates</span>
+  </div>
+  <div class="pc-slip__tabs" role="group" aria-label="Show amounts per">
+    {periods.map(([k, label]) => <button type="button" data-per={k} aria-pressed={k === period ? 'true' : 'false'}>{label}</button>)}
+  </div>
+  <table class="pc-slip__rows">
+    <tbody>
+      <tr><th scope="row">Gross pay</th><td data-f="gross">{p(r.gross)}</td></tr>
+      <tr class="pc-slip__minus"><th scope="row">Income tax</th><td data-f="incomeTax">−{p(r.incomeTax)}</td></tr>
+      <tr class="pc-slip__minus"><th scope="row">Medicare levy</th><td data-f="medicare">−{p(r.medicare)}</td></tr>
+      <tr class="pc-slip__minus" data-row="help" hidden={!showHelp}><th scope="row">HECS-HELP</th><td data-f="help">−{p(r.help)}</td></tr>
+    </tbody>
+  </table>
+  <p class="pc-slip__net">
+    <span>Take-home pay <span class="pc-slip__per" data-perlabel>{perLabel}</span></span>
+    <strong><mark data-f="net">{p(r.net)}</mark></strong>
+  </p>
+  <p class="pc-slip__super">Your employer also pays <span data-f="superAmount">{p(r.superAmount)}</span> into your super.</p>
+  {live && <p class="pc-slip__live" aria-live="polite" data-live></p>}
+</figure>
