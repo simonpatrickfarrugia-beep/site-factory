@@ -1,30 +1,56 @@
 {
- "generatedAt": "2026-10-27T23:51:07+00:00",
+ "generatedAt": "2026-10-29T00:04:17+00:00",
  "days": 7,
  "suppliers": [
   {
-   "name": "CHUBB FIRE & SECURITY PTY LTD",
+   "name": "Hyperion 3 Pty Ltd",
+   "abn": "",
+   "locality": "Royalla",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 364995.62,
+     "buyer": "Department of Home Affairs",
+     "buyerState": "ACT",
+     "desc": "ICT Contractor Services",
+     "category": "",
+     "start": "2026-11-08",
+     "end": "2027-06-29",
+     "id": "CN4284799"
+    }
+   ],
+   "total": 364996,
+   "score": 7.0,
+   "interstate": true,
+   "why": [
+    "based in Royalla NSW, delivering for Department of Home Affairs (Canberra)",
+    "work runs 8 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "FlowBuilders Pty Limited",
    "abn": "",
    "locality": "Sydney",
    "state": "NSW",
    "contracts": [
     {
-     "value": 102848.9,
-     "buyer": "Department of Home Affairs",
+     "value": 201000.0,
+     "buyer": "Aged Care Quality and Safety Commission",
      "buyerState": "ACT",
-     "desc": "Licensing for CCTV systems",
+     "desc": "Professional Services on Integrations Architecture",
      "category": "",
-     "start": "2026-10-19",
+     "start": "2026-10-13",
      "end": "2027-06-29",
-     "id": "CN4284798"
+     "id": "CN4285303"
     }
    ],
-   "total": 102849,
+   "total": 201000,
    "score": 7.0,
    "interstate": true,
    "why": [
-    "based in Sydney NSW, delivering for Department of Home Affairs (Canberra)",
-    "work runs 8 months"
+    "based in Sydney NSW, delivering for Aged Care Quality and Safety Commission (Canberra)",
+    "work runs 9 months"
    ],
    "seenBefore": false
   },
@@ -55,88 +81,27 @@
    "seenBefore": true
   },
   {
-   "name": "EVOLVE FM PTY LTD",
+   "name": "Benjamin David Gray trading as Botanical Places",
    "abn": "",
-   "locality": "Canberra",
+   "locality": "Kambah",
    "state": "ACT",
    "contracts": [
     {
-     "value": 150272.62,
-     "buyer": "Department of Infrastructure, Transport, Regional Development, Communications, Sport and the Arts",
+     "value": 524886.43,
+     "buyer": "Australian War Memorial",
      "buyerState": null,
-     "desc": "Territories Emission Baselining Phase 2",
+     "desc": "For the provision of horticultural maintenance services",
      "category": "",
-     "start": "2026-10-12",
-     "end": "2027-06-29",
-     "id": "CN4284813"
-    },
-    {
-     "value": 3575550.0,
-     "buyer": "Department of Home Affairs",
-     "buyerState": "ACT",
-     "desc": "Project Management Services",
-     "category": "",
-     "start": "2026-10-21",
-     "end": "2027-06-29",
-     "id": "CN4284796"
+     "start": "2022-10-31",
+     "end": "2025-10-30",
+     "id": "CN4285254"
     }
    ],
-   "total": 3725823,
+   "total": 524886,
    "score": 5.0,
    "interstate": false,
    "why": [
-    "2 new government contracts in the last 7 days",
-    "work runs 9 months"
-   ],
-   "seenBefore": false
-  },
-  {
-   "name": "GREEN BY NATURE LANDSCAPE SERVICES PTY LTD",
-   "abn": "",
-   "locality": "Terrey Hills",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 1041517.0,
-     "buyer": "Sydney Harbour Federation Trust",
-     "buyerState": null,
-     "desc": "Landscaping Maintenance Services",
-     "category": "",
-     "start": "2026-09-30",
-     "end": "2028-09-29",
-     "id": "CN4284783"
-    }
-   ],
-   "total": 1041517,
-   "score": 5.0,
-   "interstate": false,
-   "why": [
-    "work runs 24 months"
-   ],
-   "seenBefore": false
-  },
-  {
-   "name": "EQUITY PARTNERS & DC PTY LTD ATF DC FAMILY TRUST",
-   "abn": "",
-   "locality": "Braddon",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 434712.5,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Financial Advisory Services",
-     "category": "",
-     "start": "2026-09-29",
-     "end": "2027-06-29",
-     "id": "CN4284666"
-    }
-   ],
-   "total": 434712,
-   "score": 5.0,
-   "interstate": false,
-   "why": [
-    "work runs 9 months"
+    "work runs 36 months"
    ],
    "seenBefore": false
   },
@@ -178,31 +143,6 @@
    "seenBefore": true
   },
   {
-   "name": "The Trustee for Hill & Olson Family Trust",
-   "abn": "",
-   "locality": "Nelly Bay",
-   "state": "QLD",
-   "contracts": [
-    {
-     "value": 129250.0,
-     "buyer": "Department of Health, Disability and Ageing",
-     "buyerState": null,
-     "desc": "Health Technology Assessment",
-     "category": "",
-     "start": "2026-10-25",
-     "end": "2027-04-29",
-     "id": "CN4284762"
-    }
-   ],
-   "total": 129250,
-   "score": 5.0,
-   "interstate": false,
-   "why": [
-    "work runs 6 months"
-   ],
-   "seenBefore": false
-  },
-  {
    "name": "ELEPHANT IN THE ROOM CONSULTING PTY",
    "abn": "",
    "locality": "Carina",
@@ -229,49 +169,39 @@
    "seenBefore": true
   },
   {
-   "name": "DEWC SERVICES PTY LTD",
+   "name": "WorkFocus Australia Pty Ltd",
    "abn": "",
-   "locality": "Mawson Lakes",
-   "state": "SA",
+   "locality": "Melbourne",
+   "state": "VIC",
    "contracts": [
     {
-     "value": 220000.0,
-     "buyer": "Department of Defence",
+     "value": 53333.0,
+     "buyer": "Parliamentary Workplace Support Service",
      "buyerState": null,
-     "desc": "Research and Development",
+     "desc": "Ergonomic Workplace Assessments",
      "category": "",
-     "start": "2026-10-05",
-     "end": "2027-03-30",
-     "id": "CN4284693"
-    }
-   ],
-   "total": 220000,
-   "score": 4.0,
-   "interstate": false,
-   "why": [],
-   "seenBefore": false
-  },
-  {
-   "name": "INDIANIC GROUP PTY LTD",
-   "abn": "",
-   "locality": "Henderson",
-   "state": "WA",
-   "contracts": [
+     "start": "2026-10-25",
+     "end": "2028-10-24",
+     "id": "CN4284568"
+    },
     {
-     "value": 172878.9,
-     "buyer": "Department of Defence",
+     "value": 20000.0,
+     "buyer": "Department of Agriculture, Fisheries and Forestry",
      "buyerState": null,
-     "desc": "Inspection Services",
+     "desc": "Occupational Rehabilitation and Assessment Services",
      "category": "",
-     "start": "2026-09-28",
-     "end": "2027-02-27",
-     "id": "CN4284732"
+     "start": "2026-10-31",
+     "end": "2028-10-30",
+     "id": "CN4284506"
     }
    ],
-   "total": 172879,
-   "score": 4.0,
+   "total": 73333,
+   "score": 5.0,
    "interstate": false,
-   "why": [],
+   "why": [
+    "2 new government contracts in the last 7 days",
+    "work runs 24 months"
+   ],
    "seenBefore": false
   },
   {
@@ -301,53 +231,30 @@
    "seenBefore": true
   },
   {
-   "name": "Strategem Enterprises Pty Ltd",
+   "name": "CHUBB FIRE & SECURITY PTY LTD",
    "abn": "",
-   "locality": "Thirroul",
+   "locality": "Sydney",
    "state": "NSW",
    "contracts": [
     {
-     "value": 148434.65,
-     "buyer": "Royal Australian Mint",
+     "value": 102848.9,
+     "buyer": "Department of Home Affairs",
      "buyerState": "ACT",
-     "desc": "safety culture program",
+     "desc": "Licensing for CCTV systems",
      "category": "",
-     "start": "2026-09-08",
-     "end": "2027-08-23",
-     "id": "CN4284216"
+     "start": "2026-10-19",
+     "end": "2027-06-29",
+     "id": "CN4284798"
     }
    ],
-   "total": 148435,
+   "total": 102849,
    "score": 4.0,
    "interstate": true,
    "why": [
-    "based in Thirroul NSW, delivering for Royal Australian Mint (Canberra)",
-    "work runs 12 months"
+    "based in Sydney NSW, delivering for Department of Home Affairs (Canberra)",
+    "work runs 8 months"
    ],
    "seenBefore": true
-  },
-  {
-   "name": "GENERAL DYNAMICS LAND SYSTEMS AUSTRALIA PTY LTD",
-   "abn": "",
-   "locality": "Mawson Lakes",
-   "state": "SA",
-   "contracts": [
-    {
-     "value": 119710.99,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Travel Services",
-     "category": "",
-     "start": "2026-09-30",
-     "end": "2027-01-30",
-     "id": "CN4284730"
-    }
-   ],
-   "total": 119711,
-   "score": 4.0,
-   "interstate": false,
-   "why": [],
-   "seenBefore": false
   },
   {
    "name": "AERO PM PTY. LTD.",
@@ -386,164 +293,183 @@
    "seenBefore": true
   },
   {
-   "name": "Nous Group Pty Ltd",
+   "name": "MOTT MACDONALD AUSTRALIA PTY LIMITED",
    "abn": "",
-   "locality": "Sydney",
-   "state": "NSW",
+   "locality": "Adelaide",
+   "state": "SA",
    "contracts": [
     {
-     "value": 693629.2,
-     "buyer": "Cancer Australia",
+     "value": 304229.28,
+     "buyer": "Department of Defence",
      "buyerState": null,
-     "desc": "Contract with Nous Group Pty Ltd and partner Curijo to provide services to implement the Monitoring and Evaluation Framework for the Partnerships for culturally safe cancer care gr",
+     "desc": "Project Management",
      "category": "",
-     "start": "2026-03-18",
-     "end": "2028-06-29",
-     "id": "CN4234914"
+     "start": "2026-10-27",
+     "end": "2027-06-29",
+     "id": "CN4285192"
     },
     {
-     "value": 62700.0,
-     "buyer": "Cancer Australia",
+     "value": 186404.62,
+     "buyer": "Department of Defence",
      "buyerState": null,
-     "desc": "Development of guidance on research priorities for the Low Survival Cancers Mission",
+     "desc": "Project Management",
      "category": "",
-     "start": "2026-10-21",
-     "end": "2027-03-30",
-     "id": "CN4284215"
+     "start": "2026-10-19",
+     "end": "2027-06-29",
+     "id": "CN4284330"
     }
    ],
-   "total": 756329,
+   "total": 490634,
    "score": 3.0,
    "interstate": false,
    "why": [
     "2 new government contracts in the last 7 days",
-    "work runs 28 months"
+    "work runs 8 months"
    ],
    "seenBefore": true
   },
   {
-   "name": "Planex Sales Pty Ltd",
+   "name": "Anchoram Consulting",
    "abn": "",
-   "locality": "Alexandria",
-   "state": "NSW",
+   "locality": "Deakin",
+   "state": "ACT",
    "contracts": [
     {
-     "value": 316580.0,
-     "buyer": "Attorney-General's Department",
-     "buyerState": "ACT",
-     "desc": "Secure Containers",
-     "category": "",
-     "start": "2026-10-15",
-     "end": "2026-12-13",
-     "id": "CN4284283"
-    }
-   ],
-   "total": 316580,
-   "score": 3.0,
-   "interstate": true,
-   "why": [
-    "based in Alexandria NSW, delivering for Attorney-General's Department (Canberra)"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "Akkodis Australia Consulting P L",
-   "abn": "",
-   "locality": "Brisbane (Efte)",
-   "state": "QLD",
-   "contracts": [
-    {
-     "value": 83545.0,
-     "buyer": "Australian Taxation Office",
-     "buyerState": "NSW",
-     "desc": "Provision of Leader Workflows with Gen AI Practical Application Masterclass",
-     "category": "",
-     "start": "2026-09-27",
-     "end": "2027-09-26",
-     "id": "CN4284041"
-    }
-   ],
-   "total": 83545,
-   "score": 3.0,
-   "interstate": true,
-   "why": [
-    "based in Brisbane (Efte) QLD, delivering for Australian Taxation Office (NSW)",
-    "work runs 12 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "PERCEPTIVE AUSTRALIA PTY LTD",
-   "abn": "",
-   "locality": "Melbourne",
-   "state": "VIC",
-   "contracts": [
-    {
-     "value": 77727.93,
-     "buyer": "Department of Education",
+     "value": 85228.0,
+     "buyer": "Australian Financial Security Authority",
      "buyerState": null,
-     "desc": "Provision of Evaluation Research Services.",
+     "desc": "Independent Review",
      "category": "",
-     "start": "2026-09-30",
-     "end": "2026-12-30",
-     "id": "CN4284607"
+     "start": "2026-10-08",
+     "end": "2027-01-28",
+     "id": "CN4284947"
     }
    ],
-   "total": 77728,
+   "total": 85228,
    "score": 3.0,
    "interstate": false,
    "why": [],
    "seenBefore": false
   },
   {
-   "name": "Australian Sports Technologies Netw",
+   "name": "Veritas Buildings & Infrastructure Pty Ltd",
    "abn": "",
-   "locality": "Cremorne",
-   "state": "VIC",
+   "locality": "Sydney",
+   "state": "NSW",
    "contracts": [
     {
-     "value": 75000.2,
-     "buyer": "Austrade",
-     "buyerState": "ACT",
-     "desc": "Delivery of sector capability report and partner to deliver business mission and summit.",
+     "value": 4400000.0,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Project Management",
      "category": "",
-     "start": "2026-10-18",
+     "start": "2026-10-26",
      "end": "2027-06-29",
-     "id": "CN4284238"
+     "id": "CN4285194"
+    },
+    {
+     "value": 321189.0,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Project Management",
+     "category": "",
+     "start": "2026-10-21",
+     "end": "2029-07-23",
+     "id": "CN4284334"
     }
    ],
-   "total": 75000,
-   "score": 3.0,
-   "interstate": true,
+   "total": 4721189,
+   "score": 2.0,
+   "interstate": false,
    "why": [
-    "based in Cremorne VIC, delivering for Austrade (Canberra)",
-    "work runs 8 months"
+    "2 new government contracts in the last 7 days",
+    "work runs 34 months"
    ],
    "seenBefore": true
   },
   {
-   "name": "Leeson & Co Pty Ltd ATF The Leeson Family Trust",
+   "name": "EVOLVE FM PTY LTD",
    "abn": "",
-   "locality": "Annerley (Efte)",
+   "locality": "Canberra",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 150272.62,
+     "buyer": "Department of Infrastructure, Transport, Regional Development, Communications, Sport and the Arts",
+     "buyerState": null,
+     "desc": "Territories Emission Baselining Phase 2",
+     "category": "",
+     "start": "2026-10-12",
+     "end": "2027-06-29",
+     "id": "CN4284813"
+    },
+    {
+     "value": 3575550.0,
+     "buyer": "Department of Home Affairs",
+     "buyerState": "ACT",
+     "desc": "Project Management Services",
+     "category": "",
+     "start": "2026-10-21",
+     "end": "2027-06-29",
+     "id": "CN4284796"
+    }
+   ],
+   "total": 3725823,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "2 new government contracts in the last 7 days",
+    "work runs 9 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "AURECON AUSTRALASIA PTY LTD",
+   "abn": "",
+   "locality": "Brisbane",
    "state": "QLD",
    "contracts": [
     {
-     "value": 58346.45,
-     "buyer": "Australian Taxation Office",
-     "buyerState": "NSW",
-     "desc": "Provision of Valuation Services",
+     "value": 2831496.8,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Project Management and Contract Administration Services",
      "category": "",
-     "start": "2026-09-23",
-     "end": "2027-04-29",
-     "id": "CN4284034"
+     "start": "2026-10-21",
+     "end": "2031-01-29",
+     "id": "CN4285196"
     }
    ],
-   "total": 58346,
-   "score": 3.0,
-   "interstate": true,
+   "total": 2831497,
+   "score": 2.0,
+   "interstate": false,
    "why": [
-    "based in Annerley (Efte) QLD, delivering for Australian Taxation Office (NSW)",
-    "work runs 7 months"
+    "work runs 52 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "GREEN BY NATURE LANDSCAPE SERVICES PTY LTD",
+   "abn": "",
+   "locality": "Terrey Hills",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 1041517.0,
+     "buyer": "Sydney Harbour Federation Trust",
+     "buyerState": null,
+     "desc": "Landscaping Maintenance Services",
+     "category": "",
+     "start": "2026-09-30",
+     "end": "2028-09-29",
+     "id": "CN4284783"
+    }
+   ],
+   "total": 1041517,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 24 months"
    ],
    "seenBefore": true
   },
@@ -569,6 +495,31 @@
    "interstate": false,
    "why": [
     "work runs 22 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "Nous Group Pty Ltd",
+   "abn": "",
+   "locality": "Sydney",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 693629.2,
+     "buyer": "Cancer Australia",
+     "buyerState": null,
+     "desc": "Contract with Nous Group Pty Ltd and partner Curijo to provide services to implement the Monitoring and Evaluation Framework for the Partnerships for culturally safe cancer care gr",
+     "category": "",
+     "start": "2026-03-18",
+     "end": "2028-06-29",
+     "id": "CN4234914"
+    }
+   ],
+   "total": 693629,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 28 months"
    ],
    "seenBefore": true
   },
@@ -623,112 +574,52 @@
    "seenBefore": true
   },
   {
-   "name": "Bluebird Advisory Pty Ltd",
+   "name": "EQUITY PARTNERS & DC PTY LTD ATF DC FAMILY TRUST",
    "abn": "",
-   "locality": "Canberra City",
+   "locality": "Braddon",
    "state": "ACT",
    "contracts": [
     {
-     "value": 220000.0,
-     "buyer": "Australian Centre for International Agricultural Research",
-     "buyerState": null,
-     "desc": "ERP Current State Assessment",
-     "category": "",
-     "start": "2026-09-30",
-     "end": "2026-11-29",
-     "id": "CN4284146"
-    },
-    {
-     "value": 160738.66,
-     "buyer": "Australian Centre for International Agricultural Research",
-     "buyerState": null,
-     "desc": "Enterprise Resource Planning (ERP) Professional Services",
-     "category": "",
-     "start": "2026-10-13",
-     "end": "2027-01-13",
-     "id": "CN4284142"
-    }
-   ],
-   "total": 380739,
-   "score": 2.0,
-   "interstate": false,
-   "why": [
-    "2 new government contracts in the last 7 days"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "Veritas Buildings & Infrastructure Pty Ltd",
-   "abn": "",
-   "locality": "Sydney",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 321189.0,
+     "value": 434712.5,
      "buyer": "Department of Defence",
      "buyerState": null,
-     "desc": "Project Management",
+     "desc": "Financial Advisory Services",
      "category": "",
-     "start": "2026-10-21",
-     "end": "2029-07-23",
-     "id": "CN4284334"
-    }
-   ],
-   "total": 321189,
-   "score": 2.0,
-   "interstate": false,
-   "why": [
-    "work runs 34 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "MOTT MACDONALD AUSTRALIA PTY LIMITED",
-   "abn": "",
-   "locality": "Adelaide",
-   "state": "SA",
-   "contracts": [
-    {
-     "value": 186404.62,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Project Management",
-     "category": "",
-     "start": "2026-10-19",
+     "start": "2026-09-29",
      "end": "2027-06-29",
-     "id": "CN4284330"
+     "id": "CN4284666"
     }
    ],
-   "total": 186405,
+   "total": 434712,
    "score": 2.0,
    "interstate": false,
    "why": [
-    "work runs 8 months"
+    "work runs 9 months"
    ],
    "seenBefore": true
   },
   {
-   "name": "Painted Dog Research Pty Ltd",
+   "name": "The Trustee for Hill & Olson Family Trust",
    "abn": "",
-   "locality": "Leederville",
-   "state": "WA",
+   "locality": "Nelly Bay",
+   "state": "QLD",
    "contracts": [
     {
-     "value": 165000.0,
+     "value": 129250.0,
      "buyer": "Department of Health, Disability and Ageing",
      "buyerState": null,
-     "desc": "Campaign Evaluation",
+     "desc": "Health Technology Assessment",
      "category": "",
-     "start": "2026-10-14",
+     "start": "2026-10-25",
      "end": "2027-04-29",
-     "id": "CN4284262"
+     "id": "CN4284762"
     }
    ],
-   "total": 165000,
+   "total": 129250,
    "score": 2.0,
    "interstate": false,
    "why": [
-    "work runs 7 months"
+    "work runs 6 months"
    ],
    "seenBefore": true
   },
@@ -758,6 +649,52 @@
    "seenBefore": true
   },
   {
+   "name": "DEWC SERVICES PTY LTD",
+   "abn": "",
+   "locality": "Mawson Lakes",
+   "state": "SA",
+   "contracts": [
+    {
+     "value": 220000.0,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Research and Development",
+     "category": "",
+     "start": "2026-10-05",
+     "end": "2027-03-30",
+     "id": "CN4284693"
+    }
+   ],
+   "total": 220000,
+   "score": 1.0,
+   "interstate": false,
+   "why": [],
+   "seenBefore": true
+  },
+  {
+   "name": "INDIANIC GROUP PTY LTD",
+   "abn": "",
+   "locality": "Henderson",
+   "state": "WA",
+   "contracts": [
+    {
+     "value": 172878.9,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Inspection Services",
+     "category": "",
+     "start": "2026-09-28",
+     "end": "2027-02-27",
+     "id": "CN4284732"
+    }
+   ],
+   "total": 172879,
+   "score": 1.0,
+   "interstate": false,
+   "why": [],
+   "seenBefore": true
+  },
+  {
    "name": "ALINEA INTERNATIONAL PTY LTD",
    "abn": "",
    "locality": "Melbourne",
@@ -781,69 +718,46 @@
    "seenBefore": true
   },
   {
-   "name": "ECONOMIC DEVELOPMENT SERVICES PTY LTD",
+   "name": "GENERAL DYNAMICS LAND SYSTEMS AUSTRALIA PTY LTD",
    "abn": "",
-   "locality": "Unley",
+   "locality": "Mawson Lakes",
    "state": "SA",
    "contracts": [
     {
-     "value": 165000.0,
-     "buyer": "Department of Foreign Affairs and Trade - Australian Aid Program",
+     "value": 119710.99,
+     "buyer": "Department of Defence",
      "buyerState": null,
-     "desc": "Mid-Term Review of the Papua New Guinea - Australia Transport Sector Support Program Phase 3 (TSSP3) (Papua New Guinea)",
+     "desc": "Travel Services",
      "category": "",
-     "start": "2026-10-05",
-     "end": "2027-02-27",
-     "id": "CN4284197"
+     "start": "2026-09-30",
+     "end": "2027-01-30",
+     "id": "CN4284730"
     }
    ],
-   "total": 165000,
+   "total": 119711,
    "score": 1.0,
    "interstate": false,
    "why": [],
    "seenBefore": true
   },
   {
-   "name": "Strategic Development Group Pty Ltd",
+   "name": "The Missing Link Security Pty Ltd",
    "abn": "",
-   "locality": "Yass",
+   "locality": "Artarmon",
    "state": "NSW",
    "contracts": [
     {
-     "value": 152131.52,
-     "buyer": "Department of Foreign Affairs and Trade",
+     "value": 55660.0,
+     "buyer": "Australian Prudential Regulation Authority",
      "buyerState": null,
-     "desc": "Program Review",
+     "desc": "IT Maintenance",
      "category": "",
-     "start": "2026-10-13",
-     "end": "2026-11-26",
-     "id": "CN4284071"
+     "start": "2026-09-30",
+     "end": "2027-09-29",
+     "id": "CN4284988"
     }
    ],
-   "total": 152132,
-   "score": 1.0,
-   "interstate": false,
-   "why": [],
-   "seenBefore": true
-  },
-  {
-   "name": "Mindly Pty Ltd",
-   "abn": "",
-   "locality": "Beaumaris",
-   "state": "VIC",
-   "contracts": [
-    {
-     "value": 79999.0,
-     "buyer": "Services Australia",
-     "buyerState": null,
-     "desc": "Medical Assessment Services",
-     "category": "",
-     "start": "2026-06-30",
-     "end": "2027-06-29",
-     "id": "CN4283936"
-    }
-   ],
-   "total": 79999,
+   "total": 55660,
    "score": 1.0,
    "interstate": false,
    "why": [
@@ -875,23 +789,23 @@
    "seenBefore": true
   },
   {
-   "name": "Portable Australia Pty Ltd",
+   "name": "PERCEPTIVE AUSTRALIA PTY LTD",
    "abn": "",
-   "locality": "Collingwood",
+   "locality": "Melbourne",
    "state": "VIC",
    "contracts": [
     {
-     "value": 77000.0,
-     "buyer": "Australian Radiation Protection and Nuclear Safety Agency",
+     "value": 77727.93,
+     "buyer": "Department of Education",
      "buyerState": null,
-     "desc": "NDRLD Replacement \u2013 Discovery. Review NDRLD portal and deliv",
+     "desc": "Provision of Evaluation Research Services.",
      "category": "",
-     "start": "2026-09-20",
-     "end": "2026-12-22",
-     "id": "CN4283872"
+     "start": "2026-09-30",
+     "end": "2026-12-30",
+     "id": "CN4284607"
     }
    ],
-   "total": 77000,
+   "total": 77728,
    "score": 0.0,
    "interstate": false,
    "why": [],
