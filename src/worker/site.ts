@@ -133,17 +133,18 @@ async function jobs(request: Request, env: Env): Promise<Response> {
   for (const [k, v] of Object.entries(params)) api.searchParams.set(k, v);
   let data: Record<string, any>;
   let upstream = 0;
+  let detail = '';
   try {
     const r = await fetch(api.toString(), {
       headers: { accept: 'application/json', authorization: `Basic ${btoa(`${env.CAREERJET_KEY}:`)}`, referer: `${u.origin}/job-finder` },
     });
     upstream = r.status;
-    if (!r.ok) throw new Error(`careerjet ${r.status}: ${(await r.text()).slice(0, 200)}`);
+    if (!r.ok) { detail = strip(await r.text()).slice(0, 160); throw new Error(`careerjet ${r.status}: ${detail}`); }
     data = (await r.json()) as Record<string, any>;
   } catch (e) {
     console.error('jobs failed', e);
     // upstream = Careerjet's HTTP status (403 usually means the server IP isn't declared in the Careerjet partner account).
-    return json({ ok: false, reason: 'down', upstream, message: 'Live job search is not responding right now.' }, 502);
+    return json({ ok: false, reason: 'down', upstream, detail, message: 'Live job search is not responding right now.' }, 502);
   }
   if (data.type === 'LOCATIONS') return json({ ok: true, hits: 0, pages: 0, jobs: [], places: (data.locations ?? data.solveLocations ?? []).map((l: any) => strip(typeof l === 'string' ? l : l.name)).slice(0, 8) });
   const list = Array.isArray(data.jobs) ? data.jobs : [];
