@@ -129,11 +129,11 @@ export function hqAnswersProps() {
  * Morning traffic dashboard (/hq/traffic on the trailer site): every site's visits and Google searches on one page.
  * Built from each site's data/<brand>/stats.json, which the pipeline's stats job refreshes at 06:00 Melbourne.
  */
-const TRAFFIC_SITES = [
-  { id: 'paycalc', name: 'MyPayCalc', url: 'https://mypaycalc.com.au', stats: 'data/paycalc/stats.json', money: [] as string[] },
+const TRAFFIC_SITES: { id: string; name: string; url: string; stats: string; money: string[]; moneyNote?: string }[] = [
+  { id: 'paycalc', name: 'MyPayCalc', url: 'https://mypaycalc.com.au', stats: 'data/paycalc/stats.json', money: [] as string[], moneyNote: 'ads later' },
   { id: 'vic', name: 'Vic Tours', url: 'https://victours.com.au', stats: 'data/vic/stats.json', money: ['book_stay', 'book_tour', 'book_car'] },
   { id: 'trade-admin', name: 'Trade Admin', url: 'https://tradeadmin.com.au', stats: 'data/trade-admin/stats.json', money: ['quiz_trial_servicem8', 'quiz_trial_tradify', 'quiz_trial_fergus', 'app_site'] },
-  { id: 'chc', name: 'Community Help Co', url: 'https://communityhelp.com.au', stats: 'data/community-help-co/stats.json', money: [] as string[] },
+  { id: 'chc', name: 'Community Help Co', url: 'https://communityhelp.com.au', stats: 'data/community-help-co/stats.json', money: [] as string[], moneyNote: 'enquiries by email' },
   { id: 'trailers', name: 'Movie Trailer Channel', url: 'https://www.movietrailer.channel', stats: 'data/trailers/stats.json', money: ['prime', 'disc'] },
 ];
 

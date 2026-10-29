@@ -6,7 +6,7 @@
 interface Site {
   id: string; name: string; url: string; connected: boolean; generatedAt: string | null; lastDay: string | null; gscLastDay: string | null;
   series: number[]; days: string[]; yesterday: number; weekAgo: number | null; d7: number; prev7: number | null; d28: number; prev28: number;
-  clicks: number; impressions: number; imprSeries: number[]; position: number | null; actions: number; money: number; moneyKeys: string[];
+  clicks: number; impressions: number; imprSeries: number[]; position: number | null; actions: number; money: number; moneyKeys: string[]; moneyNote?: string;
   queries: { query: string; clicks: number; impressions: number; position: number | null; page: string }[];
   topPages: { path: string; views: number }[]; notes: string[];
 }
@@ -113,7 +113,7 @@ const spark = (xs: number[], w = 120, h = 28) => {
                   <div><span>7 days</span><strong>{n(s.d7)}</strong>{c7.text && <em class={c7.cls}>{c7.text}</em>}</div>
                   <div><span>28 days</span><strong>{n(s.d28)}</strong></div>
                   <div><span>In Google</span><strong>{n(s.impressions)}</strong><em>{n(s.clicks)} clicks{s.position ? `, avg #${s.position}` : ''}</em></div>
-                  <div><span>Money clicks</span><strong>{s.moneyKeys.length ? n(s.money) : '—'}</strong>{!s.moneyKeys.length && <em>ads later</em>}</div>
+                  <div><span>Money clicks</span><strong>{s.moneyKeys.length ? n(s.money) : '—'}</strong>{!s.moneyKeys.length && <em>{s.moneyNote ?? 'not tracked'}</em>}</div>
                 </div>
                 <svg class="spark" viewBox="0 0 120 28" preserveAspectRatio="none" aria-label={`Visits per day, last ${s.series.length} days`}>
                   {spark(s.series).map((b) => <rect x={b.x} y={b.y} width={b.w} height={b.h} />)}
@@ -140,12 +140,12 @@ const spark = (xs: number[], w = 120, h = 28) => {
     {p.allQueries.length === 0 ? <p>No searches yet.</p> : (
       <div class="scroll">
         <table>
-          <thead><tr><th scope="col">Search</th><th scope="col">Site</th><th scope="col">Shown</th><th scope="col">Clicks</th><th scope="col">#</th></tr></thead>
+          <thead><tr><th scope="col">Search</th><th scope="col" class="col-site">Site</th><th scope="col">Shown</th><th scope="col">Clicks</th><th scope="col">#</th></tr></thead>
           <tbody>
             {p.allQueries.map((q) => (
               <tr>
-                <th scope="row"><a href={`${q.url}${q.page === '/' ? '' : q.page}`}>{q.query}</a></th>
-                <td><i class="dot" style={`background:${COLORS[sites.find((s) => s.name === q.site)?.id ?? '']}`}></i>{q.site}</td>
+                <th scope="row"><i class="dot dot--m" style={`background:${COLORS[sites.find((s) => s.name === q.site)?.id ?? '']}`}></i><a href={`${q.url}${q.page === '/' ? '' : q.page}`}>{q.query}</a></th>
+                <td class="col-site"><i class="dot" style={`background:${COLORS[sites.find((s) => s.name === q.site)?.id ?? '']}`}></i>{q.site}</td>
                 <td>{n(q.impressions)}</td><td>{n(q.clicks)}</td><td>{q.position ?? '—'}</td>
               </tr>
             ))}
@@ -219,4 +219,6 @@ const spark = (xs: number[], w = 120, h = 28) => {
   tbody th { font-weight: 600; white-space: normal; min-width: 12rem; }
   tbody th a { color: var(--paper); }
   tbody tr:last-child > * { border-bottom: 0; }
+  .dot--m { display: none; }
+  @media (max-width: 40rem) { .col-site { display: none; } .dot--m { display: inline-block; } tbody th { min-width: 0; } th, td { padding: 0.45rem 0.5rem; } }
 </style>
