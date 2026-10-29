@@ -229,6 +229,17 @@
  "_todo": "Simon's to-do list shown at the top of HQ. kind: do | decide. sprint: true = counts toward the current sprint. Claude (or the daily coach / weekly autopilot) sets done: true + doneAt when Simon says 'done' or an approval email arrives.",
  "todo": [
   {
+   "id": "careerjet-ip",
+   "kind": "do",
+   "sprint": true,
+   "mins": 3,
+   "what": "Email Careerjet (reply to the welcome email or use their contact page) asking them to remove the IP restriction on the communityhelp.com.au API key: the site runs on Cloudflare Workers with no fixed IP (text in the Site Factory chat, 29 Oct)",
+   "why": "Careerjet currently refuses the job finder's searches (403: server IP not declared)",
+   "link": "https://www.careerjet.com.au/partners/",
+   "linkLabel": "Careerjet",
+   "done": false
+  },
+  {
    "id": "careerjet-key",
    "kind": "do",
    "sprint": true,
@@ -237,7 +248,8 @@
    "why": "Switches on live job ads on the CHC job finder; Careerjet pays on job clicks",
    "link": "https://dash.cloudflare.com",
    "linkLabel": "Cloudflare",
-   "done": false
+   "done": true,
+   "doneAt": "2026-10-29"
   },
   {
    "id": "hotel-expedia",
