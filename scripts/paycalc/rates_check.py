@@ -54,7 +54,8 @@ for name, url, want in checks:
     # "a|b" = either form counts (e.g. 12% or 12.00%).
     missing = [w.split('|')[0] for w in want if not any(alt in text for alt in w.split('|'))]
     if missing:
-        problems.append(f"**{name}**: the source no longer shows {', '.join(missing)}. A figure may have changed: {url}")
+        seen = sorted(set(re.findall(r'\$\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?\s?(?:%|per cent)', text)))[:25]
+        problems.append(f"**{name}**: the source no longer shows {', '.join(missing)}. A figure may have changed: {url} (figures on the page now: {', '.join(seen) or 'none found'})")
     else:
         ok.append(f"{name}: all {len(want)} figures found")
     # A table for the next income year appearing on a page we watch = new figures to load.
