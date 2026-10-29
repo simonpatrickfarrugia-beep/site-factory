@@ -655,9 +655,10 @@
    "mins": 5,
    "what": "MyPayCalc: Search Console → Add property → Domain → mypaycalc.com.au (let Cloudflare add the record), then Sitemaps → submit sitemap.xml. Then Settings → Users and permissions → add the …iam.gserviceaccount.com reader (copy it from Vic's users) as Restricted",
    "why": "Google finds all 51 pages and the daily report can track the site",
-   "done": false,
+   "done": true,
    "link": "https://search.google.com/search-console",
-   "linkLabel": "Search Console"
+   "linkLabel": "Search Console",
+   "doneAt": "2026-10-29"
   },
   {
    "id": "pc-ga4",
@@ -666,20 +667,10 @@
    "mins": 3,
    "what": "MyPayCalc: GA4 → Admin → Create property 'MyPayCalc' → Web stream https://mypaycalc.com.au → send Claude the G- ID",
    "why": "Counts visits and calculator use (calc_use); AdSense and Raptive want to see traffic",
-   "done": false,
+   "done": true,
    "link": "https://analytics.google.com",
-   "linkLabel": "GA4"
-  },
-  {
-   "id": "cf-branches",
-   "kind": "do",
-   "sprint": false,
-   "mins": 5,
-   "what": "Cloudflare → Workers & Pages → each project (paycalc, trade-admin, victours, community-help-co, site-factory) → Settings → Build → Branch control → untick builds for non-production branches",
-   "why": "Stops false 'build failed' emails from the screenshot branches",
-   "done": false,
-   "link": "https://dash.cloudflare.com",
-   "linkLabel": "Cloudflare"
+   "linkLabel": "GA4",
+   "doneAt": "2026-10-29"
   },
   {
    "id": "pc-www",
@@ -688,9 +679,10 @@
    "mins": 1,
    "what": "MyPayCalc: Cloudflare → mypaycalc.com.au → Rules → Redirect Rules → template 'Redirect from WWW to root' → Deploy",
    "why": "One address for Google (canonical is the bare domain)",
-   "done": false,
+   "done": true,
    "link": "https://dash.cloudflare.com",
-   "linkLabel": "Cloudflare"
+   "linkLabel": "Cloudflare",
+   "doneAt": "2026-10-29"
   }
  ],
  "notes": [
