@@ -41,7 +41,7 @@ checks = [
     ('Medicare low-income thresholds', R['sources'][2]['url'], [money(m['singleLower']), money(m['singleUpper'])]),
     ('HECS-HELP repayment thresholds', R['sources'][3]['url'],
      [money(h['nilTo']), money(h['bands'][1]['from']), money(h['flatFrom']), money(h['bands'][1]['base'])]),
-    ('Super guarantee and maximum contribution base', R['sources'][4]['url'], [f"{s['rate'] * 100:.2f}%", money(s['maxBase'])]),
+    ('Super guarantee and maximum contribution base', R['sources'][4]['url'], [f"{s['rate'] * 100:.2f}%|{s['rate'] * 100:g}%|{s['rate'] * 100:g} %", money(s['maxBase'])]),
 ]
 
 problems, news, ok = [], [], []
@@ -51,7 +51,8 @@ for name, url, want in checks:
     except Exception as e:
         problems.append(f"**{name}**: couldn't load the source ({str(e)[:80]}). Check it by hand: {url}")
         continue
-    missing = [w for w in want if w not in text]
+    # "a|b" = either form counts (e.g. 12% or 12.00%).
+    missing = [w.split('|')[0] for w in want if not any(alt in text for alt in w.split('|'))]
     if missing:
         problems.append(f"**{name}**: the source no longer shows {', '.join(missing)}. A figure may have changed: {url}")
     else:
