@@ -27,8 +27,9 @@ export interface Env {
   FORMS?: string;
   /** "1" turns on /api/jobs for this brand. */
   JOBS?: string;
-  /** Careerjet publisher affiliate ID (free account; Careerjet shares revenue on clicks). Until it's set, /api/jobs says so. */
-  CAREERJET_AFFID?: string;
+  /** Careerjet publisher API key (v4 API, basic auth; free account, Careerjet shares revenue on clicks).
+   *  A Worker SECRET set in the Cloudflare dashboard, never in the repo. Until it's set, /api/jobs says so. */
+  CAREERJET_KEY?: string;
   /** "1" offers "Email me this plan" (needs RESEND_API_KEY as a Worker secret and the domain verified in Resend). */
   PLAN_EMAIL?: string;
   RESEND_API_KEY?: string;
@@ -110,7 +111,7 @@ const strip = (s: unknown) => String(s ?? '').replace(/<[^>]*>/g, ' ').replace(/
 
 async function jobs(request: Request, env: Env): Promise<Response> {
   const json = (body: unknown, status = 200) => Response.json(body, { status, headers: { 'cache-control': 'no-store' } });
-  if (!env.CAREERJET_AFFID) return json({ ok: false, reason: 'setup', message: 'Live job search is being set up.' }, 503);
+  if (!env.CAREERJET_KEY) return json({ ok: false, reason: 'setup', message: 'Live job search is being set up.' }, 503);
   const u = new URL(request.url);
   const clean = (k: string, n: number) => (u.searchParams.get(k) ?? '').replace(/[^\p{L}\p{N} ,'&/+.-]/gu, ' ').trim().slice(0, n);
   const q = clean('q', 80);
@@ -120,26 +121,28 @@ async function jobs(request: Request, env: Env): Promise<Response> {
   const page = Math.max(1, Math.min(10, Number(u.searchParams.get('page')) || 1));
   // Careerjet has no "casual" contract type, so casual work is a keyword; temporary and permanent are real filters.
   const keywords = [q, type === 'casual' ? 'casual' : ''].filter(Boolean).join(' ');
-  const api = new URL('https://public.api.careerjet.net/search');
+  // Careerjet v4 API: https://www.careerjet.com/partners/api (basic auth: key as username, empty password).
+  const api = new URL('https://search.api.careerjet.net/v4/query');
   const params: Record<string, string> = {
-    locale_code: 'en_AU', affid: env.CAREERJET_AFFID, keywords, location: where, sort: 'date', pagesize: '20', page: String(page),
+    locale_code: 'en_AU', keywords, location: where, sort: 'date', page_size: '20', page: String(page), fragment_size: '320',
     user_ip: request.headers.get('cf-connecting-ip') ?? '0.0.0.0', user_agent: (request.headers.get('user-agent') ?? 'Mozilla/5.0').slice(0, 300),
-    url: `${u.origin}/job-finder`,
   };
-  if (hours === 'part') params.contractperiod = 'p';
-  if (type === 'temp') params.contracttype = 't';
-  if (type === 'perm') params.contracttype = 'p';
+  if (hours === 'part') params.work_hours = 'p';
+  if (type === 'temp') params.contract_type = 't';
+  if (type === 'perm') params.contract_type = 'p';
   for (const [k, v] of Object.entries(params)) api.searchParams.set(k, v);
   let data: Record<string, any>;
   try {
-    const r = await fetch(api.toString(), { headers: { accept: 'application/json', 'user-agent': params.user_agent, referer: params.url } });
+    const r = await fetch(api.toString(), {
+      headers: { accept: 'application/json', authorization: `Basic ${btoa(`${env.CAREERJET_KEY}:`)}`, referer: `${u.origin}/job-finder` },
+    });
     if (!r.ok) throw new Error(`careerjet ${r.status}`);
     data = (await r.json()) as Record<string, any>;
   } catch (e) {
     console.error('jobs failed', e);
     return json({ ok: false, reason: 'down', message: 'Live job search is not responding right now.' }, 502);
   }
-  if (data.type === 'LOCATIONS') return json({ ok: true, hits: 0, pages: 0, jobs: [], places: (data.solveLocations ?? []).map((l: any) => strip(l.name)).slice(0, 8) });
+  if (data.type === 'LOCATIONS') return json({ ok: true, hits: 0, pages: 0, jobs: [], places: (data.locations ?? data.solveLocations ?? []).map((l: any) => strip(typeof l === 'string' ? l : l.name)).slice(0, 8) });
   const list = Array.isArray(data.jobs) ? data.jobs : [];
   return json({
     ok: true, hits: Number(data.hits) || 0, pages: Number(data.pages) || 0,

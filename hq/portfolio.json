@@ -229,6 +229,17 @@
  "_todo": "Simon's to-do list shown at the top of HQ. kind: do | decide. sprint: true = counts toward the current sprint. Claude (or the daily coach / weekly autopilot) sets done: true + doneAt when Simon says 'done' or an approval email arrives.",
  "todo": [
   {
+   "id": "careerjet-key",
+   "kind": "do",
+   "sprint": true,
+   "mins": 2,
+   "what": "Cloudflare → Workers & Pages → community-help-co → Settings → Variables and Secrets → Add → type Secret, name CAREERJET_KEY, value = your Careerjet API key → Deploy",
+   "why": "Switches on live job ads on the CHC job finder; Careerjet pays on job clicks",
+   "link": "https://dash.cloudflare.com",
+   "linkLabel": "Cloudflare",
+   "done": false
+  },
+  {
    "id": "hotel-expedia",
    "kind": "do",
    "sprint": false,
@@ -260,7 +271,8 @@
    "why": "Switches on live job ads in the CHC job finder; Careerjet shares revenue on job clicks",
    "link": "https://www.careerjet.com.au/partners/",
    "linkLabel": "Careerjet partners",
-   "done": false
+   "done": true,
+   "doneAt": "2026-10-29"
   },
   {
    "id": "vic-weekends-live",
