@@ -41,7 +41,9 @@ checks = [
     ('Medicare low-income thresholds', R['sources'][2]['url'], [money(m['singleLower']), money(m['singleUpper'])]),
     ('HECS-HELP repayment thresholds', R['sources'][3]['url'],
      [money(h['nilTo']), money(h['bands'][1]['from']), money(h['flatFrom']), money(h['bands'][1]['base'])]),
-    ('Super guarantee rate', R['sources'][5]['url'], [f"{s['rate'] * 100:.2f}%|{s['rate'] * 100:g}%|{s['rate'] * 100:g} %"]),
+    # The 12% super guarantee rate isn't checked here: the ATO loads that table with JavaScript, so it never appears
+    # in the page we fetch. It's fixed in law at 12% from 1 July 2025 with no further rises scheduled; the July
+    # new-year flag below is the prompt to re-check it by hand.
     ('Maximum super contribution base', R['sources'][4]['url'], [money(s['maxBase'])]),
 ]
 
@@ -70,7 +72,7 @@ if m.get('thresholdYear', '').replace('–', '-') != R['year'] and exists(nxt):
 
 # The financial year moved on and the rates file is still last year's.
 if today >= dt.date(y1, 7, 1):
-    problems.append(f"**New financial year**: it's past 1 July {y1} and the calculator still uses {R['yearLabel']} rates. Load the {next_year} figures.")
+    problems.append(f"**New financial year**: it's past 1 July {y1} and the calculator still uses {R['yearLabel']} rates. Load the {next_year} figures (and re-check the 12% super guarantee by hand).")
 if today.month in (5, 6):
     news.append("**Budget season**: the federal Budget usually sets the Medicare low-income thresholds and can change tax settings. Worth a look this month.")
 
