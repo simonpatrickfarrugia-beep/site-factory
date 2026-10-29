@@ -4,10 +4,13 @@ Updated 2026-10-29. Google top 10 for each niche's best keywords. A slot is **be
 
 | Idea | Openness | Keywords checked | Biggest players |
 |---|---:|---:|---|
+| AU suburb profiles: prices, rent and demographics | **64** | 6 | google.com (33.2M), domain.com.au (1.8M), realestate.com.au (8.6M), cotality.com (50k) |
 | Australian clothing brands directory (beason.com.au) | **59** | 6 | davidjones.com (1.2M), theurbanlist.com (903k), superprof.com.au (52k), glamcorner.com.au (39k) |
 | Freshwater fish species by state | **58** | 6 | ohiodnr.gov (835k), texas.gov (11.5M), utoledo.edu (170k), youtube.com (625.8M) |
 | Victoria: where to eat by town | **54** | 6 | tripadvisor.com.au (19.3M), visitmelbourne.com (1.1M), instagram.com (61.7M), agfg.com.au (2.5M) |
 | AU solar and home battery payback by postcode | **51** | 6 | google.com (33.2M), canstar.com.au (453k), energy.gov.au (50k), hipages.com.au (118k) |
+| AU electric car running costs vs petrol by model | **49** | 6 | drive.com.au (352k), bydautomotive.com.au (144k), energy.gov.au (50k), mynrma.com.au (215k) |
+| US cost of living by city | **48** | 6 | youtube.com (625.8M), usnews.com (21.5M), niche.com (6.4M), yahoo.com (144.2M) |
 | Board games | **48** | 6 | youtube.com (625.8M), boardgamegeek.com (1.3M), google.com (551.5M), chess.com (1.2M) |
 | AU electricity prices by postcode and retailer | **47** | 6 | google.com (33.2M), agl.com.au (252k), canstar.com.au (453k), aer.gov.au (37k) |
 | Victoria: where to stay by town | **47** | 6 | instagram.com (61.7M), tripadvisor.com.au (19.3M), tripadvisor.com (2.0M), visitvictoria.com (598k) |
@@ -26,7 +29,19 @@ Updated 2026-10-29. Google top 10 for each niche's best keywords. A slot is **be
 | TV shows: where to watch | **19** | 5 | youtube.com (625.8M), apple.com (162.5M), netflix.com (52.3M), hulu.com (8.8M) |
 | Video games: release dates and trailers | **18** | 6 | youtube.com (625.8M), bestbuy.com (19.6M), amazon.com (251.6M), yahoo.com (144.2M) |
 | US national parks and hiking trails | **11** | 1 | britannica.com (39.9M), hilton.com (16.4M), aaa.com (5.1M), maryland.gov (4.9M) |
+| US take-home pay by salary and state | **6** | 6 | adp.com (6.5M), paycheckcity.com (269k), indeed.com (40.8M), glassdoor.com (6.0M) |
 | Rail travel times between NSW stations | **0** | 0 | — |
+
+## AU suburb profiles: prices, rent and demographics (openness 64)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| rental yield calculator | 3,600 | 58 | #2 calculatestuff.com, #3 ianritchie.com.au, #4 propertyinvestmentprofessionals.com.au, #7 rentalyieldcalculator.com.au, #8 crewcommercial.com.au, #9 hudsonproperty.com.au | ing.com.au, calculatestuff.com, ianritchie.com.au |
+| yield rent calculator | 3,600 | 95 | #1 rethinkinvesting.com.au, #2 propertygo.com.au, #3 realestatecoastal.com.au, #4 ras360.com.au, #5 investorjoint.com.au, #6 propertygain.com.au, #7 est.com.au, #8 condieco.com.au, #9 getleasedandsold.com.au | rethinkinvesting.com.au, propertygo.com.au, realestatecoastal.com.au |
+| suburb profile | 1,900 | 42 | #3 smartpropertyinvestment.com.au, #4 picki.com.au, #6 hqproperty.com.au, #8 theinformedbuyer.com.au | cotality.com, realestate.com.au, smartpropertyinvestment.com.au |
+| median house price | 1,000 | 58 | #1 openagent.com.au, #3 discover.data.vic.gov.au, #4 globalpropertyguide.com, #5 reddit.com (forum), #8 calibrerealestate.com.au | openagent.com.au, cotality.com, discover.data.vic.gov.au |
+| home median price | 1,000 | 21 | #4 mortgagebox.com.au, #5 discover.data.vic.gov.au | google.com, google.com, google.com |
+| median household price | 1,000 | 63 | #1 property.carto.au, #2 discover.data.vic.gov.au, #3 loans.com.au, #6 proptrack.com.au, #8 australianpropertyupdate.com.au | property.carto.au, discover.data.vic.gov.au, loans.com.au |
 
 ## Australian clothing brands directory (beason.com.au) (openness 59)
 
@@ -71,6 +86,28 @@ Updated 2026-10-29. Google top 10 for each niche's best keywords. A slot is **be
 | solar energy installation cost | 5,400 | 32 | #2 engie.com.au, #4 solarcalculator.com.au, #7 solarnerds.com.au | energy.gov.au, engie.com.au, canstar.com.au |
 | solar power installation price | 5,400 | 58 | #1 solarcalculator.com.au, #4 rksolar.com.au, #5 solarcitizens.org.au, #6 thinkrenewable.com.au, #7 1komma5.com, #8 ballaratsolarcompany.com.au | solarcalculator.com.au, canstar.com.au, hipages.com.au |
 | solar hot water system price | 1,900 | 79 | #1 sahotwater.com.au, #3 solahart.com, #4 amw.org.au, #5 rheem.com.au, #6 cdlplumbdraingas.com.au, #7 samedayhotwaterservice.com.au, #8 baywoodplumbingandgas.com.au, #10 solarhotwatercanberra.com.au | sahotwater.com.au, energy.gov.au, solahart.com |
+
+## AU electric car running costs vs petrol by model (openness 49)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| byd atto 3 price | 4,400 | 68 | #1 byd.com, #3 zecar.com, #4 reddit.com (forum), #5 bydautoindia.com, #6 cardekho.com, #10 facebook.com (forum) | byd.com, thebeep.com.au, zecar.com |
+| cheapest electric car australia | 4,400 | 42 | #2 reddit.com (forum), #3 zecar.com, #7 drive-electric.com.au, #8 onlineauto.com.au | chasingcars.com.au, reddit.com, zecar.com |
+| byd atto3 price | 4,400 | 32 | #4 reddit.com (forum), #6 bydmelbourne.com.au, #8 zecar.com, #10 facebook.com (forum) | thebeep.com.au, bydautomotive.com.au, carexpert.com.au |
+| ev charging at home | 3,600 | 68 | #1 reddit.com (forum), #2 energy.vic.gov.au, #4 facebook.com (forum), #5 evse.com.au, #6 ev-nrg.com, #8 evse.com.au | reddit.com, energy.vic.gov.au, ampcharge.ampol.com.au |
+| ev charging installation | 2,900 | 47 | #1 powershop.com.au, #5 dawsonelectric.com.au, #6 regenevcharginginstall.com.au, #7 nrgsolar.com.au, #8 endeavourenergy.com.au | powershop.com.au, energy.gov.au, solarchoice.net.au |
+| electric car charging installation | 2,900 | 32 | #1 evci.com.au, #5 regenevcharginginstall.com.au, #8 evse.com.au | evci.com.au, racv.com.au, energy.nsw.gov.au |
+
+## US cost of living by city (openness 48)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| cheapest american cities to live | 27,100 | 58 | #1 reddit.com (forum), #2 amazingcolumbusga.com, #3 facebook.com (forum), #5 makemymove.com | reddit.com, amazingcolumbusga.com, facebook.com |
+| cheapest states to live in | 22,200 | 37 | #2 northamerican.com, #4 reddit.com (forum), #8 facebook.com (forum), #9 annuity.com | usnews.com, northamerican.com, youtube.com |
+| most cheapest state to live in | 22,200 | 47 | #1 centex.com, #2 reddit.com (forum), #3 homebuyer.com | centex.com, reddit.com, homebuyer.com |
+| lowest cost of living states | 9,900 | 37 | #3 facebook.com (forum), #4 reddit.com (forum), #5 mygoodmovers.com | visualcapitalist.com, move.org, facebook.com |
+| cheapest cost of living states | 9,900 | 68 | #1 westwoodinsurance.com, #3 reddit.com (forum), #4 costoflivingusa.com, #5 facebook.com (forum), #6 fortunebuilders.com, #9 mygoodmovers.com | westwoodinsurance.com, visualcapitalist.com, reddit.com |
+| cheapest places to live | 8,100 | 42 | #3 cityventures.com, #5 fastexpert.com, #6 northamerican.com, #9 meatheadmovers.com | realestate.usnews.com, zillow.com, cityventures.com |
 
 ## Board games (openness 48)
 
@@ -260,6 +297,17 @@ Updated 2026-10-29. Google top 10 for each niche's best keywords. A slot is **be
 | Keyword | /mo | Openness | Beatable slots | Top 3 |
 |---|---:|---:|---|---|
 | national parks | 550,000 | 11 | #6 explore.usparkpass.com | nationalparks.org, americasnationalparks.org, nationalgeographic.com |
+
+## US take-home pay by salary and state (openness 6)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| calculate my paycheck | 550,000 | 11 | #5 craneesfresh.us | adp.com, interactive2.marylandtaxes.gov, paycheckcity.com |
+| adp paycheck calculator | 201,000 | 0 | — | adp.com, adp.com, adp.com |
+| adp estimate paycheck | 201,000 | 0 | — | adp.com, adp.com, adp.com |
+| adp pay check calculator | 201,000 | 0 | — | adp.com, adp.com, adp.com |
+| adp wage calculator | 201,000 | 11 | #6 rollbyadp.com | adp.com, adp.com, adp.com |
+| salary of a dental hygienist | 90,500 | 11 | #7 facebook.com (forum), #8 gotu.com | princessdentalstaffing.com, careerexplorer.com, indeed.com |
 
 ## Rail travel times between NSW stations (openness 0)
 
