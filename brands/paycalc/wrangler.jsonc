@@ -9,5 +9,11 @@
     "directory": "../../dist",
     "html_handling": "drop-trailing-slash",
     "not_found_handling": "404-page"
-  }
+  },
+  // Domain bought 29 Oct 2026 (GoDaddy registrar, DNS on Cloudflare). The bare domain is canonical; www should redirect
+  // to it (Cloudflare Rules → Redirect Rules → "Redirect from WWW to root"). Needs the zone active in Cloudflare first.
+  "routes": [
+    { "pattern": "mypaycalc.com.au", "custom_domain": true },
+    { "pattern": "www.mypaycalc.com.au", "custom_domain": true }
+  ]
 }

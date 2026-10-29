@@ -2,10 +2,10 @@ import { defineBrand } from '../../src/lib/brand-schema';
 
 export default defineBrand({
   slug: 'paycalc',
-  // Working name and domain until Simon picks one (unregistered on 29 Oct 2026: mypaycalc.com.au, takehomecalc.com.au, aftertaxpay.com.au).
+  // Domain bought by Simon 29 Oct 2026 (GoDaddy).
   name: 'MyPayCalc',
   domain: 'mypaycalc.com.au',
-  launched: false,
+  launched: true, // indexable from the first deploy on mypaycalc.com.au (29 Oct 2026)
 
   theme: 'payslip',
   // Payslip navy on cool office-paper white; highlighter yellow marks the one number people came for (take-home pay).

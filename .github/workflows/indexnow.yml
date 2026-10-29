@@ -15,7 +15,7 @@ on:
       site:
         description: Which site (vic and community-help-co submit every URL in their live sitemap)
         type: choice
-        options: [trailers, vic, community-help-co, trade-admin]
+        options: [trailers, vic, community-help-co, trade-admin, paycalc]
         default: trailers
 jobs:
   ping:
@@ -28,14 +28,14 @@ jobs:
         if: github.event_name == 'push'
         run: sleep 200
       - name: Sitemap-based sites (Vic Tours, Community Help Co)
-        if: inputs.site == 'vic' || inputs.site == 'community-help-co' || inputs.site == 'trade-admin' || (github.event_name == 'push' && (contains(join(github.event.commits.*.modified, ' '), 'data/vic/') || contains(join(github.event.commits.*.modified, ' '), 'data/community-help-co/') || contains(join(github.event.commits.*.modified, ' '), 'data/trade-admin/')))
+        if: inputs.site == 'vic' || inputs.site == 'community-help-co' || inputs.site == 'trade-admin' || inputs.site == 'paycalc' || (github.event_name == 'push' && (contains(join(github.event.commits.*.modified, ' '), 'data/vic/') || contains(join(github.event.commits.*.modified, ' '), 'data/community-help-co/') || contains(join(github.event.commits.*.modified, ' '), 'data/trade-admin/')))
         env:
           SITE: ${{ inputs.site }}
           CHANGED: ${{ join(github.event.commits.*.modified, ' ') }}
         run: |
           python3 - <<'PY'
           import json, os, re, urllib.request
-          SITES = {'vic': ('victours.com.au', '6c1f961ff6f1023985f899a7bbd06282'), 'community-help-co': ('communityhelp.com.au', 'ca36fafa9a7318ff6c766b9e701ced31'), 'trade-admin': ('tradeadmin.com.au', '0ee5a61a8874ff2e59f192587b3fc6e2')}
+          SITES = {'vic': ('victours.com.au', '6c1f961ff6f1023985f899a7bbd06282'), 'community-help-co': ('communityhelp.com.au', 'ca36fafa9a7318ff6c766b9e701ced31'), 'trade-admin': ('tradeadmin.com.au', '0ee5a61a8874ff2e59f192587b3fc6e2'), 'paycalc': ('mypaycalc.com.au', 'a17af0fbaf8c355ac0a7c156a3c3a960')}
           wanted = [os.environ['SITE']] if os.environ.get('SITE') in SITES else [s for s in SITES if f'data/{s}/' in os.environ.get('CHANGED', '')]
           for site in wanted:
               host, key = SITES[site]
