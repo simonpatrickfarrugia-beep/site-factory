@@ -8,7 +8,7 @@ One Cloudflare Worker, `trailer-pipeline`, in `workers/pipeline/`. Replaces the 
 |---|---|---|
 | catalogue | ~weekly (1st, 8th, 15th, 22nd, 29th UTC; 07:00 Melbourne next day) | **Main growth engine.** Looks up Google search volumes (DataForSEO) for films in `data/trailers/candidates.json`, queues the 10 most-searched, and writes `reports/trailers/catalogue.md` (ranked list + demand by theme). |
 | intake | every 12 hours | Newest 5 videos from classic and re-release label channels (Criterion, Kino Lorber, Vinegar Syndrome, Severin, Umbrella). Trailers go into the queue. |
-| enrich | daily 06:00 | Up to 15 queued films: OMDb lookup → trailer found on YouTube if needed → Claude Haiku writes tagline + summary → added to `data/trailers/movies.json` → site rebuilds and the page goes live. |
+| enrich | daily 08:00 | Up to 15 queued films: OMDb lookup → trailer found on YouTube if needed → Claude Haiku writes tagline + summary → added to `data/trailers/movies.json` → site rebuilds and the page goes live. |
 | collections | monthly (4th, 08:00) | **SEO collection pages.** Finds every theme the catalogue can fill (decade + genre, director, lead actor), looks up searches for "<theme>" + "best <theme>", and creates the 3 most-searched as **smart collections** (rule-based; new movies join automatically at each build). Claude writes tagline, intro and meta description. Report: `reports/trailers/collections.md`, incl. popular themes that need more films. Needs ≥ 6 films and ≥ 100 searches/mo. |
 | demand | monthly (3rd, 08:00) | Last 28 days from Search Console → `reports/trailers/demand-YYYY-MM.md`: top searches, quick-win pages (ranking 4–20), low click-through titles, missing films, collection ideas. |
 | recheck | monthly (2nd, 05:00) | Only matters if the age cutoff is turned off: upcoming films not yet in OMDb get looked up again. |
@@ -114,7 +114,7 @@ and reports the result as an annotation. Nobody needs to open `/run/...` links b
 ## Dashboard (/hq/stats)
 
 Private page at `https://www.movietrailer.channel/hq/stats` (noindex, no analytics, not in the sitemap, `Disallow: /hq/`).
-The `stats` job (daily 08:00 Melbourne slot, except the 3rd/4th) writes `data/trailers/stats.json` from:
+The `stats` job (daily 06:00 Melbourne, moved from 08:00 on 29 Oct 2026) writes each site's `data/<brand>/stats.json` (incl. top Google searches and daily Google totals for `/hq/traffic`) from:
 - **GA4 Data API**: visits per page (28 days vs the 28 before), daily trend, and CTA click events. The site sends
   `cta_prime`, `cta_disc`, `cta_justwatch` for every `a[data-cta]` click (Base.astro). Needs `GA4_PROPERTY` (wrangler var),
   the Analytics Data API enabled in the Google Cloud project, and the service account as Viewer on the GA4 property.

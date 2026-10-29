@@ -60,6 +60,7 @@ const live = p.nodes.filter((x) => x.status === 'live').length;
     <p class="hq__owner">{p.owner}</p>
     <h1 class="display hq__title">HQ</h1>
     <p class="hq__meta">Built {new Date(p.builtAt).toLocaleString('en-AU', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Australia/Melbourne' })}. Site numbers are the last 28 days and refresh every morning.</p>
+    <p class="hq__meta"><a href="/hq/traffic">Morning traffic: every site's visits and Google searches on one page</a></p>
   </header>
 
   <section class="kpis" aria-label="Portfolio totals">

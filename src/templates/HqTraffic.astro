@@ -1,0 +1,222 @@
+---
+/**
+ * Morning traffic: every site's visits and Google searches on one private page (/hq/traffic on the trailer site).
+ * Data: each site's stats.json, refreshed by the pipeline at 06:00 Melbourne; the commit rebuilds this page.
+ */
+interface Site {
+  id: string; name: string; url: string; connected: boolean; generatedAt: string | null; lastDay: string | null; gscLastDay: string | null;
+  series: number[]; days: string[]; yesterday: number; weekAgo: number | null; d7: number; prev7: number | null; d28: number; prev28: number;
+  clicks: number; impressions: number; imprSeries: number[]; position: number | null; actions: number; money: number; moneyKeys: string[];
+  queries: { query: string; clicks: number; impressions: number; position: number | null; page: string }[];
+  topPages: { path: string; views: number }[]; notes: string[];
+}
+interface Props {
+  sites: Site[];
+  allQueries: { query: string; clicks: number; impressions: number; position: number | null; page: string; site: string; url: string }[];
+  topPages: { path: string; views: number; site: string; url: string }[];
+  total: number[]; totalDays: string[]; updated: string | null; builtAt: string;
+}
+const p = Astro.props;
+const COLORS: Record<string, string> = { paycalc: '#FFE14D', vic: '#7FD49B', 'trade-admin': '#F0955A', chc: '#7FB2F0', trailers: '#C9A6F2' };
+const n = (v: number) => v.toLocaleString('en-AU');
+const mel = (iso: string | null, opts: Intl.DateTimeFormatOptions) => (iso ? new Date(iso).toLocaleString('en-AU', { timeZone: 'Australia/Melbourne', ...opts }) : '—');
+const dayName = (d: string | null) => (d ? new Date(d + 'T12:00:00Z').toLocaleDateString('en-AU', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' }) : '—');
+const change = (now: number, before: number | null) => {
+  if (before === null) return { text: '', cls: '' };
+  if (before === 0) return now > 0 ? { text: 'new', cls: 'up' } : { text: '', cls: '' };
+  const pct = Math.round(((now - before) / before) * 100);
+  return { text: `${pct > 0 ? '+' : ''}${pct}%`, cls: pct > 0 ? 'up' : pct < 0 ? 'down' : '' };
+};
+const sites = [...p.sites].sort((a, b) => b.d7 - a.d7 || b.d28 - a.d28 || b.impressions - a.impressions);
+const sum = (xs: number[]) => xs.reduce((a, b) => a + b, 0);
+const yesterday = sum(sites.map((s) => s.yesterday));
+const weekAgo = sum(sites.map((s) => s.weekAgo ?? 0));
+const d7 = sum(sites.map((s) => s.d7));
+const prev7 = sum(sites.map((s) => s.prev7 ?? 0));
+const impressions = sum(sites.map((s) => s.impressions));
+const clicks = sum(sites.map((s) => s.clicks));
+const money = sum(sites.map((s) => s.money));
+const actions = sum(sites.map((s) => s.actions));
+const lastDay = p.totalDays[p.totalDays.length - 1] ?? null;
+const gscDay = sites.map((s) => s.gscLastDay).filter(Boolean).sort().pop() ?? null;
+
+// Stacked bars: visits per day for the last 28 days, one colour per site.
+const W = 720, H = 170, padB = 18, bw = W / Math.max(1, p.totalDays.length);
+const max = Math.max(1, ...p.totalDays.map((d) => sum(sites.map((s) => { const i = s.days.indexOf(d); return i >= 0 ? s.series[i] : 0; }))));
+const stacks = p.totalDays.map((d, i) => {
+  let y = H - padB;
+  const parts = sites.map((s) => {
+    const k = s.days.indexOf(d);
+    const v = k >= 0 ? s.series[k] : 0;
+    const h = (v / max) * (H - padB - 8);
+    y -= h;
+    return { id: s.id, v, y, h };
+  }).filter((x) => x.v > 0);
+  return { d, x: i * bw, parts, total: sum(parts.map((x) => x.v)) };
+});
+const spark = (xs: number[], w = 120, h = 28) => {
+  const m = Math.max(1, ...xs);
+  const b = w / Math.max(1, xs.length);
+  return xs.map((v, i) => ({ x: i * b + 0.5, w: Math.max(1, b - 1), h: Math.max(v > 0 ? 2 : 0.6, (v / m) * h), y: h - Math.max(v > 0 ? 2 : 0.6, (v / m) * h) }));
+};
+---
+<div class="wrap tr">
+  <header>
+    <p class="tr__crumb"><a href="/hq">IMN HQ</a></p>
+    <h1 class="tr__title">Morning traffic</h1>
+    <p class="tr__meta">Updated {mel(p.updated, { weekday: 'short', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' })}. Visits up to {dayName(lastDay)}. Google searches up to {dayName(gscDay)} (Google reports 2–3 days late).</p>
+  </header>
+
+  <section class="kpis" aria-label="All sites">
+    <div class="kpi"><span class="kpi__label">Visits yesterday</span><span class="kpi__value">{n(yesterday)}</span><span class={`kpi__sub ${change(yesterday, weekAgo).cls}`}>{change(yesterday, weekAgo).text ? `${change(yesterday, weekAgo).text} vs same day last week` : 'same day last week: ' + n(weekAgo)}</span></div>
+    <div class="kpi"><span class="kpi__label">Visits, last 7 days</span><span class="kpi__value">{n(d7)}</span><span class={`kpi__sub ${change(d7, prev7).cls}`}>{change(d7, prev7).text || '—'} vs the 7 days before</span></div>
+    <div class="kpi"><span class="kpi__label">Shown in Google, 28 days</span><span class="kpi__value">{n(impressions)}</span><span class="kpi__sub">{n(clicks)} clicks from Google</span></div>
+    <div class="kpi kpi--money"><span class="kpi__label">Money clicks, 28 days</span><span class="kpi__value">{n(money)}</span><span class="kpi__sub">{n(actions)} button clicks in total</span></div>
+  </section>
+
+  <section class="panel" aria-labelledby="chart-h">
+    <h2 id="chart-h">Visits per day, all sites</h2>
+    <div class="chart">
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Visits per day for the last ${p.totalDays.length} days, all sites stacked`}>
+        {stacks.map((s) => (
+          <g>
+            <title>{`${dayName(s.d)}: ${n(s.total)} visits`}</title>
+            {s.parts.map((x) => <rect x={s.x + 1} y={x.y} width={Math.max(1, bw - 2)} height={x.h} fill={COLORS[x.id]} rx="1.5" />)}
+            {s.parts.length === 0 && <rect x={s.x + 1} y={H - padB - 1} width={Math.max(1, bw - 2)} height="1" class="zero" />}
+          </g>
+        ))}
+        <text x="0" y={H - 4} class="axis">{dayName(p.totalDays[0] ?? null)}</text>
+        <text x={W} y={H - 4} class="axis" text-anchor="end">{dayName(lastDay)}</text>
+        <text x="0" y="10" class="axis">peak {n(max)}</text>
+      </svg>
+    </div>
+    <ul class="legend">{sites.map((s) => <li><i style={`background:${COLORS[s.id]}`}></i>{s.name}</li>)}</ul>
+  </section>
+
+  <section class="panel" aria-labelledby="sites-h">
+    <h2 id="sites-h">Each site</h2>
+    <div class="sites">
+      {sites.map((s) => {
+        const c7 = change(s.d7, s.prev7);
+        return (
+          <article class="site" style={`--c:${COLORS[s.id]}`}>
+            <div class="site__head">
+              <h3><a href={s.url}>{s.name}</a></h3>
+              <a class="site__more" href={`${s.url}/hq/stats`}>Page by page</a>
+            </div>
+            {!s.connected ? (
+              <p class="site__note">No data yet. The first numbers arrive with the next 6am update.</p>
+            ) : (
+              <>
+                <div class="site__nums">
+                  <div><span>Yesterday</span><strong>{n(s.yesterday)}</strong></div>
+                  <div><span>7 days</span><strong>{n(s.d7)}</strong>{c7.text && <em class={c7.cls}>{c7.text}</em>}</div>
+                  <div><span>28 days</span><strong>{n(s.d28)}</strong></div>
+                  <div><span>In Google</span><strong>{n(s.impressions)}</strong><em>{n(s.clicks)} clicks{s.position ? `, avg #${s.position}` : ''}</em></div>
+                  <div><span>Money clicks</span><strong>{s.moneyKeys.length ? n(s.money) : '—'}</strong>{!s.moneyKeys.length && <em>ads later</em>}</div>
+                </div>
+                <svg class="spark" viewBox="0 0 120 28" preserveAspectRatio="none" aria-label={`Visits per day, last ${s.series.length} days`}>
+                  {spark(s.series).map((b) => <rect x={b.x} y={b.y} width={b.w} height={b.h} />)}
+                </svg>
+                {s.queries.length > 0 ? (
+                  <ol class="site__q">
+                    {s.queries.slice(0, 3).map((q) => <li><span>{q.query}</span><em>{n(q.impressions)} shown{q.clicks ? `, ${n(q.clicks)} clicks` : ''}{q.position ? `, #${q.position}` : ''}</em></li>)}
+                  </ol>
+                ) : (
+                  <p class="site__note">No Google searches yet.</p>
+                )}
+              </>
+            )}
+            {s.notes.map((x) => <p class="site__note">{x}</p>)}
+          </article>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="q-h">
+    <h2 id="q-h">What people searched on Google</h2>
+    <p class="tr__meta">Last 28 days of Search Console, every site. "Shown" means your page appeared in their results; "#" is the average position.</p>
+    {p.allQueries.length === 0 ? <p>No searches yet.</p> : (
+      <div class="scroll">
+        <table>
+          <thead><tr><th scope="col">Search</th><th scope="col">Site</th><th scope="col">Shown</th><th scope="col">Clicks</th><th scope="col">#</th></tr></thead>
+          <tbody>
+            {p.allQueries.map((q) => (
+              <tr>
+                <th scope="row"><a href={`${q.url}${q.page === '/' ? '' : q.page}`}>{q.query}</a></th>
+                <td><i class="dot" style={`background:${COLORS[sites.find((s) => s.name === q.site)?.id ?? '']}`}></i>{q.site}</td>
+                <td>{n(q.impressions)}</td><td>{n(q.clicks)}</td><td>{q.position ?? '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )}
+  </section>
+
+  <section class="panel" aria-labelledby="pages-h">
+    <h2 id="pages-h">Most visited pages, 28 days</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th scope="col">Page</th><th scope="col">Site</th><th scope="col">Visits</th></tr></thead>
+        <tbody>{p.topPages.map((x) => <tr><th scope="row"><a href={`${x.url}${x.path === '/' ? '' : x.path}`}>{x.path}</a></th><td>{x.site}</td><td>{n(x.views)}</td></tr>)}</tbody>
+      </table>
+    </div>
+  </section>
+
+  <p class="tr__meta tr__foot">Visits come from Google Analytics (includes your own visits). Google searches come from Search Console. Refreshed every day at 6am Melbourne; this page rebuilds a few minutes later. Page built {mel(p.builtAt, { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' })}.</p>
+</div>
+
+<style>
+  .tr { padding-block: var(--space-5) var(--space-6); }
+  .tr__crumb { margin: 0; font-size: var(--step--1); }
+  .tr__crumb a { color: var(--muted); }
+  .tr__title { margin: 0.2rem 0 0.4rem; }
+  .tr__meta { color: var(--muted); font-size: var(--step--1); max-width: 70ch; }
+  .tr__foot { margin-top: var(--space-5); }
+  .kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); margin: var(--space-4) 0; }
+  @media (min-width: 52rem) { .kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  .kpi { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--space-3); display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .kpi--money { box-shadow: inset 0 3px 0 var(--color-accent); }
+  .kpi__label { color: var(--muted); font-size: var(--step--1); }
+  .kpi__value { font-family: var(--font-display); font-size: var(--step-3); font-weight: 800; line-height: 1.1; }
+  .kpi__sub { color: var(--muted); font-size: 0.8rem; }
+  .up { color: #7fd49b !important; }
+  .down { color: #f08a7e !important; }
+  .panel { margin-top: var(--space-5); }
+  .panel h2 { margin-bottom: var(--space-3); }
+  .chart { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--space-3); }
+  .chart svg { display: block; width: 100%; height: auto; }
+  .chart .zero { fill: var(--line); }
+  .axis { fill: var(--muted); font: 11px var(--font-body); }
+  .legend { list-style: none; padding: 0; margin: var(--space-2) 0 0; display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; color: var(--muted); font-size: var(--step--1); }
+  .legend i, .dot { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+  .sites { display: grid; gap: var(--space-3); }
+  @media (min-width: 60rem) { .sites { grid-template-columns: 1fr 1fr; } }
+  .site { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--c); border-radius: var(--radius); padding: var(--space-3); min-width: 0; }
+  .site__head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+  .site__head h3 { margin: 0; font-size: 1.15rem; }
+  .site__head h3 a { color: var(--paper); text-decoration: none; }
+  .site__more { font-size: var(--step--1); color: var(--muted); }
+  .site__nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.6rem 0.8rem; margin: 0.8rem 0 0.6rem; }
+  @media (min-width: 30rem) { .site__nums { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+  .site__nums div { display: flex; flex-direction: column; min-width: 0; }
+  .site__nums span { color: var(--muted); font-size: 0.75rem; }
+  .site__nums strong { font-family: var(--font-display); font-size: 1.45rem; font-weight: 800; line-height: 1.1; }
+  .site__nums em { font-style: normal; font-size: 0.75rem; color: var(--muted); }
+  .spark { display: block; width: 100%; height: 34px; }
+  .spark rect { fill: var(--c); opacity: 0.85; }
+  .site__q { margin: 0.6rem 0 0; padding-left: 1.2rem; font-size: 0.92rem; }
+  .site__q li { margin-bottom: 0.2rem; }
+  .site__q em { font-style: normal; color: var(--muted); font-size: 0.8rem; margin-left: 0.4rem; }
+  .site__note { color: var(--muted); font-size: var(--step--1); margin: 0.6rem 0 0; }
+  .scroll { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  th, td { padding: 0.5rem 0.7rem; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+  thead th { color: var(--muted); font-weight: 600; font-size: 0.8rem; }
+  th:first-child, td:first-child, thead th:first-child, tbody td:nth-child(2) { text-align: left; }
+  tbody th { font-weight: 600; white-space: normal; min-width: 12rem; }
+  tbody th a { color: var(--paper); }
+  tbody tr:last-child > * { border-bottom: 0; }
+</style>

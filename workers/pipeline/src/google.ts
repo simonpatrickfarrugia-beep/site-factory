@@ -54,7 +54,7 @@ export async function searchAnalytics(
   site: string,
   startDate: string,
   endDate: string,
-  dimensions: ('query' | 'page')[],
+  dimensions: ('query' | 'page' | 'date')[],
   rowLimit = 5000,
 ): Promise<GscRow[]> {
   const res = await fetch(

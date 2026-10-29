@@ -90,9 +90,9 @@ function jobFor(cron: string, at: Date): Job | null {
     const wd = at.getUTCDay(); // 6 = Saturday UTC = Sunday morning Melbourne
     return wd === 6 ? 'discover' : wd === 0 ? 'niches' : wd === 1 ? 'competition' : null;
   }
-  if (hour === 19) return 'enrich'; // daily, 06:00 Melbourne
+  if (hour === 19) return 'stats'; // 06:00 Melbourne, every day: fresh numbers for the morning dashboard (/hq/traffic) and the 08:41 report
   if (hour === 20) return CATALOGUE_DAYS.includes(day) ? 'catalogue' : day === 2 ? 'collcheck' : null; // 07:00 Melbourne (collcheck on the 3rd, before collections on the 4th)
-  if (hour === 21) return 'stats'; // 08:00 Melbourne, every day (feeds the daily traffic report)
+  if (hour === 21) return 'enrich'; // daily, 08:00 Melbourne (moved from 06:00 on 29 Oct 2026 so stats run first)
   return null;
 }
 
@@ -501,6 +501,8 @@ async function statsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boo
     if (site.gsc && gscToken) {
       try {
         gsc = { pageQueries: await searchAnalytics(gscToken, site.gsc, gscPeriod.start, gscPeriod.end, ['page', 'query'], 25000) };
+        // Daily totals for the morning dashboard's trend line (one extra call per site; Search Console is free).
+        gsc.daily = await searchAnalytics(gscToken, site.gsc, gscPeriod.start, gscPeriod.end, ['date'], 100).catch(() => []);
         log.push(`${site.name} Search Console: ${gsc.pageQueries.length} row(s).`);
       } catch (e) {
         notes.push(`Search Console not read: ${(e as Error).message}. Is ${email} a user on ${site.gsc}?`);

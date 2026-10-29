@@ -8,6 +8,7 @@ import Page from './Page.astro';
 import Dashboard from './Dashboard.astro';
 import Hq from './Hq.astro';
 import HqAnswers from './HqAnswers.astro';
+import HqTraffic from './HqTraffic.astro';
 import VicHome from './vic/VicHome.astro';
 import VicTowns from './vic/Towns.astro';
 import VicTown from './vic/Town.astro';
@@ -56,6 +57,7 @@ export const templates = {
   dashboard: Dashboard,
   hq: Hq,
   hqAnswers: HqAnswers,
+  hqTraffic: HqTraffic,
   vicHome: VicHome,
   vicTowns: VicTowns,
   vicTown: VicTown,

@@ -3,7 +3,7 @@
  * reworded around "where to watch" on 22 Oct 2026 (see movieSeo).
  */
 import { getCollection, getSingleton } from '../../src/lib/data';
-import { hqAnswersProps, hqProps } from '../../src/lib/hq';
+import { hqAnswersProps, hqProps, trafficProps } from '../../src/lib/hq';
 import type { Route } from '../../src/lib/routes';
 import { matchesRule, thumb, type Movie, type MovieCollection, type StaticPage } from './model';
 
@@ -312,6 +312,8 @@ export function routes(): Route[] {
     seo: { title: 'IMN HQ', rawTitle: true, description: 'Independent Media Network portfolio: sites, engines, money and next actions.' },
     props: hqProps(),
   });
+  // Morning traffic: every site's visits and Google searches on one page (private).
+  out.push({ path: 'hq/traffic', template: 'hqTraffic', private: true, seo: { title: 'Morning traffic', rawTitle: true, description: 'Visits and Google searches across every IMN site.' }, props: trafficProps() });
   // Tap-to-copy affiliate signup answers (private).
   out.push({ path: 'hq/signup', template: 'hqAnswers', private: true, seo: { title: 'Signup answers', rawTitle: true, description: 'Copy-paste answers for affiliate signups.' }, props: hqAnswersProps() });
 

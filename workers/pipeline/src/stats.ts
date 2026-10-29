@@ -28,6 +28,10 @@ export interface SiteStats {
   totals: { views: number; prevViews: number; users: number; cta: Record<string, number>; gscClicks: number; gscImpressions: number };
   daily: { date: string; views: number; cta: number }[];
   pages: PageStats[];
+  /** Top Google searches across the whole site (by impressions), for the morning dashboard. */
+  queries?: { query: string; clicks: number; impressions: number; position: number; page: string }[];
+  /** Google clicks and impressions per day (Search Console reports with a 2–3 day delay). */
+  gscDaily?: { date: string; clicks: number; impressions: number }[];
   /** Last IndexNow submission (new pages since then are submitted on the next run). */
   indexNowAt?: string | null;
 }
@@ -49,7 +53,7 @@ export function buildStats(input: {
   gscPeriod: { start: string; end: string } | null;
   notes: string[];
   ga4: null | { pages: Ga4Row[]; prevPages: Ga4Row[]; events: Ga4Row[]; daily: Ga4Row[]; dailyEvents: Ga4Row[] };
-  gsc: null | { pageQueries: GscRow[] };
+  gsc: null | { pageQueries: GscRow[]; daily?: GscRow[] };
 }): SiteStats {
   const pages = new Map<string, PageStats>();
   const page = (path: string) => {
@@ -120,6 +124,24 @@ export function buildStats(input: {
       if (p.gscImpressions) p.gscPosition = Math.round(((weighted.get(p.path) ?? 0) / p.gscImpressions) * 10) / 10;
   }
 
+  // Searches across the whole site: one row per query, its best page, impression-weighted position.
+  const byQuery = new Map<string, { query: string; clicks: number; impressions: number; pos: number; page: string; pageImpr: number }>();
+  for (const r of input.gsc?.pageQueries ?? []) {
+    const path = pathOf(r.keys[0]);
+    if (skip(path)) continue;
+    const q = byQuery.get(r.keys[1]) ?? { query: r.keys[1], clicks: 0, impressions: 0, pos: 0, page: path, pageImpr: -1 };
+    q.clicks += r.clicks;
+    q.impressions += r.impressions;
+    q.pos += r.position * r.impressions;
+    if (r.impressions > q.pageImpr) { q.page = path; q.pageImpr = r.impressions; }
+    byQuery.set(r.keys[1], q);
+  }
+  const queries = [...byQuery.values()]
+    .sort((a, b) => b.impressions - a.impressions || b.clicks - a.clicks)
+    .slice(0, 100)
+    .map((q) => ({ query: q.query, clicks: q.clicks, impressions: q.impressions, position: q.impressions ? Math.round((q.pos / q.impressions) * 10) / 10 : 0, page: normPath(q.page) }));
+  const gscDaily = (input.gsc?.daily ?? []).map((r) => ({ date: r.keys[0], clicks: r.clicks, impressions: r.impressions })).sort((a, b) => a.date.localeCompare(b.date));
+
   return {
     generatedAt: input.now.toISOString(),
     period: input.period,
@@ -128,5 +150,7 @@ export function buildStats(input: {
     totals,
     daily: [...daily.values()].sort((a, b) => a.date.localeCompare(b.date)),
     pages: [...pages.values()].sort((a, b) => b.views - a.views || b.gscImpressions - a.gscImpressions),
+    queries,
+    gscDaily,
   };
 }
