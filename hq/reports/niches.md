@@ -16,28 +16,28 @@ Add ideas by chat: "score these niches: …". Rules: launch at most one new site
 | 6 | Anime: where to watch and watch order | United States | **70** | 100 | 66 | 60 | 42 | 20,483,800 | $1.31 | 40 |
 | 7 | AU electric car running costs vs petrol by model | Australia | **69** | 56 | 80 | 92 | 48 | 462,460 | $2.29 | 8 |
 | 8 | AU solar and home battery payback by postcode | Australia | **66** | 37 | 100 | 89 | 38 | 124,800 | $8.88 | 11 |
-| 9 | Victoria: where to stay by town | Australia | **66** | 63 | 69 | 90 | 38 | 780,660 | $1.51 | 10 |
-| 10 | AU stamp duty and home buying costs by state | Australia | **64** | 59 | 89 | 66 | 38 | 597,090 | $3.19 | 34 |
-| 11 | Video games: release dates and trailers | United States | **62** | 100 | 32 | 62 | 40 | 14,104,000 | $0.35 | 38 |
-| 12 | AU electricity prices by postcode and retailer | Australia | **61** | 36 | 100 | 71 | 38 | 120,850 | $10.97 | 29 |
-| 13 | Board games | United States | **61** | 78 | 32 | 84 | 42 | 2,245,200 | $0.35 | 16 |
-| 14 | Victoria: things to do by town | Australia | **60** | 52 | 47 | 95 | 42 | 353,780 | $0.63 | 5 |
-| 15 | Retro game finder: where to play classic games today (US) | United States | **58** | 71 | 31 | 81 | 42 | 1,393,340 | $0.34 | 19 |
-| 16 | Book series in reading order | United States | **53** | 90 | 25 | 50 | 38 | 4,912,700 | $0.27 | — |
-| 17 | Movie soundtracks and film music | United States | **53** | 79 | 0 | 81 | 45 | 2,377,600 | $0.08 | 19 |
-| 18 | Victoria: where to eat by town | Australia | **51** | 40 | 41 | 96 | 22 | 155,710 | $0.50 | 4 |
-| 19 | Australian clothing brands directory (beason.com.au) | Australia | **50** | 43 | 61 | 60 | 34 | 189,760 | $1.09 | 40 |
-| 20 | Australian winter wear: beanies, jackets and knitwear | Australia | **50** | 13 | 57 | 96 | 38 | 24,330 | $0.92 | 4 |
-| 21 | US public library branches by city | United States | **46** | 22 | 54 | 77 | 34 | 45,100 | $0.84 | 23 |
-| 22 | Retro game finder: where to play classic games today (AU) | Australia | **42** | 31 | 19 | 82 | 38 | 84,660 | $0.21 | 18 |
-| 23 | Australian loungewear and comfortwear brands | Australia | **42** | 0 | 55 | 90 | 28 | 7,150 | $0.86 | 10 |
-| 24 | Hurricane history by coastal state | United States | **33** | 0 | 0 | 97 | 42 | 30 | — | 3 |
-| 25 | US airport runway and elevation facts | United States | **33** | 0 | 0 | 100 | 42 | 730 | — | 0 |
-| 26 | US school district enrollment by county | United States | **31** | 0 | 0 | 95 | 38 | 20 | — | 5 |
-| 27 | Freshwater fish species by state | United States | **28** | 0 | 0 | 94 | 22 | 650 | $0.03 | 6 |
-| 28 | Rail travel times between NSW stations | Australia | **21** | 0 | 0 | 50 | 44 | 0 | — | — |
-
-Not scored yet: US cost of living by city; AU suburb profiles: prices, rent and demographics.
+| 9 | US cost of living by city | United States | **66** | 70 | 71 | 63 | 56 | 1,271,660 | $1.62 | 37 |
+| 10 | Victoria: where to stay by town | Australia | **66** | 63 | 69 | 90 | 38 | 780,660 | $1.51 | 10 |
+| 11 | AU stamp duty and home buying costs by state | Australia | **64** | 59 | 89 | 66 | 38 | 597,090 | $3.19 | 34 |
+| 12 | Video games: release dates and trailers | United States | **62** | 100 | 32 | 62 | 40 | 14,104,000 | $0.35 | 38 |
+| 13 | AU electricity prices by postcode and retailer | Australia | **61** | 36 | 100 | 71 | 38 | 120,850 | $10.97 | 29 |
+| 14 | Board games | United States | **61** | 78 | 32 | 84 | 42 | 2,245,200 | $0.35 | 16 |
+| 15 | Victoria: things to do by town | Australia | **60** | 52 | 47 | 95 | 42 | 353,780 | $0.63 | 5 |
+| 16 | Retro game finder: where to play classic games today (US) | United States | **58** | 71 | 31 | 81 | 42 | 1,393,340 | $0.34 | 19 |
+| 17 | AU suburb profiles: prices, rent and demographics | Australia | **55** | 14 | 82 | 89 | 38 | 26,730 | $2.48 | 11 |
+| 18 | Book series in reading order | United States | **53** | 90 | 25 | 50 | 38 | 4,912,700 | $0.27 | — |
+| 19 | Movie soundtracks and film music | United States | **53** | 79 | 0 | 81 | 45 | 2,377,600 | $0.08 | 19 |
+| 20 | Victoria: where to eat by town | Australia | **51** | 40 | 41 | 96 | 22 | 155,710 | $0.50 | 4 |
+| 21 | Australian clothing brands directory (beason.com.au) | Australia | **50** | 43 | 61 | 60 | 34 | 189,760 | $1.09 | 40 |
+| 22 | Australian winter wear: beanies, jackets and knitwear | Australia | **50** | 13 | 57 | 96 | 38 | 24,330 | $0.92 | 4 |
+| 23 | US public library branches by city | United States | **46** | 22 | 54 | 77 | 34 | 45,100 | $0.84 | 23 |
+| 24 | Retro game finder: where to play classic games today (AU) | Australia | **42** | 31 | 19 | 82 | 38 | 84,660 | $0.21 | 18 |
+| 25 | Australian loungewear and comfortwear brands | Australia | **42** | 0 | 55 | 90 | 28 | 7,150 | $0.86 | 10 |
+| 26 | Hurricane history by coastal state | United States | **33** | 0 | 0 | 97 | 42 | 30 | — | 3 |
+| 27 | US airport runway and elevation facts | United States | **33** | 0 | 0 | 100 | 42 | 730 | — | 0 |
+| 28 | US school district enrollment by county | United States | **31** | 0 | 0 | 95 | 38 | 20 | — | 5 |
+| 29 | Freshwater fish species by state | United States | **28** | 0 | 0 | 94 | 22 | 650 | $0.03 | 6 |
+| 30 | Rail travel times between NSW stations | Australia | **21** | 0 | 0 | 50 | 44 | 0 | — | — |
 
 ## US take-home pay by salary and state: 77/100
 
@@ -463,6 +463,59 @@ _Seeds: ev charging cost, electric car running costs, byd atto 3 price, ev vs pe
 
 _Seeds: solar battery rebate, home battery rebate, solar panels cost, solar payback calculator, tesla powerwall price australia, solar feed in tariff vic. Data cost: US$0.114._
 
+## US cost of living by city: 66/100
+
+**Verdict:** The data is strong and public, and BEA metro price parities give each city page real differentiation, but the head terms are dominated by NerdWallet, Numbeo and similar sites, and the calculator-intent keywords need a working tool, not templated copy. Monetisation depends on traffic you have not yet earned, and the moving-lead angle carries consent and margin risk.
+
+**Site angle:** A data-led US metro cost-of-living site with two page families: /cost-of-living/[metro] profiles (BEA RPP index, HUD fair market rents by bedroom count, BLS wages and the Census income figures) and /compare/[metro-a]-vs-[metro-b] pages with a deterministic 'salary needed to match' calculator. Lead with the 'cheapest states' and 'city vs city' queries, which have lower difficulty, and treat 'cost of living calculator' as a tool-page target, not a copy target.
+
+**Data sources:** BEA Regional Price Parities (state and MSA, free API key); HUD Fair Market Rents API (free token, metro and county level); BLS OEWS occupational wages by metro (public domain); BLS regional CPI where published (limited metro coverage, so do not promise it for every page); Census ACS median rent, income and housing cost (free API)
+
+**Money:** Display ads via AdSense or Ezoic at launch; Mediavine or Raptive only once traffic thresholds are met; Moving quote lead buyers such as Moving.com or MovingWaldo (verify current payouts and whether they pay per lead or per booked move); Renter and apartment lead or affiliate programs such as Zumper or Apartment List (verify terms); Home and renters insurance quote affiliates such as Policygenius or The Zebra (verify terms)
+
+**Page types:** /cost-of-living/[metro]: one page per MSA with RPP index, HUD FMR by bedroom count, median wage by occupation and a salary-equivalent table; /compare/[metro-a]-vs-[metro-b]: templated side-by-side comparisons for top-volume pairs first, not all combinations; /cheapest-states and /cheapest-cities: ranked index pages built from the same data; /state/[state]: rollups linking to metro pages; /moving/[origin]-to-[destination]: only if moving-quote lead terms are validated before build
+
+**Risks:** NerdWallet, Numbeo, Payscale and Bankrate already own the head terms; the site may never rank for 'cost of living calculator' at KD 58 with a thin tool; Pages that only swap city names into a template risk the thin-content penalty; each page needs a unique data view and a genuinely useful calculation; Numbeo's terms prohibit scraping, so do not use it as a source; BEA and HUD data are annual and lag by a year or more; state this on pages to avoid stale-data complaints; Moving leads: TCPA and state consent rules apply to phone and SMS leads; check consent flows before selling or buying; Moving lead margins are thin and buyers often cap volume or reject traffic; validate with a small test before building the funnel; Display RPM for this topic depends on traffic quality; the ads-first case is unproven until the site has real sessions; Cheapest-states terms show KD 0 and low CPC, which may signal weak commercial intent for ads
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| cheapest american cities to live | 27,100 | 19 | $1.43 |
+| cheapest states to live in | 22,200 | 0 | $0.83 |
+| most cheapest state to live in | 22,200 | 0 | $0.83 |
+| lowest cost of living states | 9,900 | 11 | $0.79 |
+| cheapest cost of living states | 9,900 | 11 | $0.79 |
+| cheapest places to live | 8,100 | 6 | $2.63 |
+| affordable places to live | 8,100 | 16 | $2.63 |
+| inexpensive places to live | 8,100 | 6 | $2.63 |
+| most inexpensive places to live | 8,100 | 6 | $2.63 |
+| cheapest country to live in | 8,100 | 11 | $0.74 |
+| least expensive places to live | 8,100 | 6 | $2.63 |
+| cheapest cities to live | 8,100 | 6 | $2.63 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| cost of living calculator | 49,500 | 58 | $1.62 |
+| living expenses calculator | 49,500 | 68 | $1.62 |
+| cost of living converter | 49,500 | 58 | $1.62 |
+| cost of living cost of living calculator | 49,500 | 58 | $1.62 |
+| cost ofliving calculator | 49,500 | — | $1.62 |
+| costof living calculator | 49,500 | — | $1.62 |
+| price of living calculator | 49,500 | 58 | $1.62 |
+| cost of living comparison | 40,500 | 69 | $0.88 |
+| living expenses comparison | 40,500 | 69 | $0.88 |
+| cost of life comparison | 40,500 | 69 | $0.88 |
+| price of living comparison | 40,500 | 69 | $0.88 |
+| compare life expenses | 40,500 | — | $0.88 |
+| cost of living comp | 40,500 | — | $0.88 |
+| cost to live comparison | 40,500 | 69 | $0.88 |
+| life expense comparison | 40,500 | — | $0.88 |
+
+_Seeds: cost of living calculator, cost of living in austin, cheapest places to live, salary needed to live in denver, most affordable cities, cost of living comparison. Data cost: US$0.114._
+
 ## Victoria: where to stay by town: 66/100
 
 **Verdict:** Most of the volume is branded hotel names (Yarra Valley Lodge, Mantra Lorne, Lake House, Balgownie), which a generic town site can't win, and the same figures repeat across close variants, so real unique demand is lower than it looks. The only workable opportunity is generic 'accommodation in [town]' queries in smaller towns, where you'd compete with Booking.com, Expedia and TripAdvisor on thin affiliate margins.
@@ -833,6 +886,52 @@ _Seeds: things to do in daylesford, things to do in bright, things to do in phil
 | nintendo cube games | 22,200 | 27 | $0.35 |
 
 _Seeds: chrono trigger steam, chrono trigger switch, super mario 64 switch, gamecube games on switch, sega mega drive classics, nintendo switch online games, best retro handheld, best retro console, castlevania anniversary collection, dos games. Data cost: US$0.114._
+
+## AU suburb profiles: prices, rent and demographics: 55/100
+
+**Verdict:** The free data is real and the calculator and list keywords are genuinely useful, but total volume is small (roughly 20k/mo across the whole list) and the high-CPC money depends on mortgage broker lead buyers that are unverified and credit-regulated in Australia. Templated suburb profiles on display ads alone will earn little, and the incumbents own the price data.
+
+**Site angle:** A rental yield calculator plus NSW and VIC-only suburb pages (/suburb/[state]/[suburb]), each showing ABS Census demographics, state rent medians and an auto-computed gross yield with a plain-English explanation. Build the calculator first, since it targets the best-paying terms, and only add pages once the calculator earns organic traffic.
+
+**Data sources:** ABS Census 2021 (DataPacks / TableBuilder, CC BY 4.0), suburb-level SA2 and SAL geography; NSW Fair Trading Rent and Sales Report (open data; verify licence terms); Victorian Department of Families, Fairness and Housing rental report (verify licence); Queensland RTA/Residential Tenancies Authority bond lodgement data (verify licence); ABS Consumer Price Index and Australian Financial Review-free interest rate series (RBA statistical tables, CC BY 4.0) for yield and repayment inputs
+
+**Money:** Display ads (Google AdSense or Ezoic) on calculator and suburb pages; expect low RPM outside the calculator, so treat ads as secondary; Mortgage broker lead buyers: only after confirming an Australian Credit Licence or credit representative arrangement, and checking ASIC rules on referral and comparison; do not assume this income; Property investment newsletter or PDF email sign-up as a first-party lead, if you can offer something worth paying for; Property data affiliates (e.g. buyer's agent or conveyancing referral): none verified; check current programs before relying on them
+
+**Page types:** /rental-yield-calculator (single tool page, highest priority); /suburb/[state]/[suburb] (NSW and VIC only at launch, roughly 300 to 600 suburbs with real data); /cheapest-suburbs/[city] (list pages ranked from the same data, for the low-competition 'cheapest suburbs in Sydney' type queries); /best-suburbs-to-invest/[city] (only if you can show a transparent, data-backed scoring method)
+
+**Risks:** Median sales prices: NSW and VIC sales data is licensed or paid, and Domain and realestate.com.au data is off-limits; using it without a licence risks copyright and ToS breach; Volume ceiling: most terms sit at 100 to 1,000/mo, so suburb pages will likely earn little traffic per page; Credit and financial advice rules: any broker lead flow or yield advice can trigger ASIC licensing requirements, and yield-based investment content can drift toward financial product advice; Thin-content penalty: 500 templated suburb pages with the same paragraphs and only a number swapped in will be treated as doorway pages; each needs unique local analysis; Competition for the lead terms from Domain, realestate.com.au and aggregators with much higher domain authority; Data freshness: census data is five-yearly (next 2026 release), and state rent reports lag by a quarter or more
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| rental yield calculator | 3,600 | 17 | $3.02 |
+| suburb profile | 1,900 | 14 | $2.03 |
+| rental yield | 1,000 | 10 | $3.48 |
+| real estate suburb profile | 720 | 18 | $5.14 |
+| cheapest suburbs in sydney | 590 | 0 | $1.69 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| rental yield calculator | 3,600 | 17 | $3.02 |
+| yield rent calculator | 3,600 | — | $3.02 |
+| suburb profile | 1,900 | 14 | $2.03 |
+| median house price | 1,000 | 35 | $1.06 |
+| rental yield | 1,000 | 10 | $3.48 |
+| home median price | 1,000 | — | $1.06 |
+| median household price | 1,000 | — | $1.06 |
+| median price house | 1,000 | 35 | $1.06 |
+| real estate suburb profile | 720 | 18 | $5.14 |
+| cheapest suburbs in sydney | 590 | 0 | $1.69 |
+| best investment suburbs melbourne | 480 | 0 | $4.57 |
+| top suburbs to invest in melbourne | 480 | 0 | $4.57 |
+| domain suburb profile | 480 | 28 | $1.99 |
+| average house price | 390 | 26 | — |
+| suburb research | 390 | 13 | $2.06 |
+
+_Seeds: best suburbs to buy in melbourne, suburb profile, median house price, cheapest suburbs in sydney, rental yield calculator, suburb demographics. Data cost: US$0.114._
 
 ## Book series in reading order: 53/100
 
@@ -1364,6 +1463,7 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | TV shows: where to watch | United States | 27,719 | $110 · **$769** · $3,024 | $1.7 | 73 |
 | Video games: release dates and trailers | United States | 70,520 | $60 · **$463** · $1,982 | $1.17 | 62 |
 | AU pay and tax calculators (take-home pay by salary) | Australia | 8,647 | $48 · **$378** · $1,652 | $9 | 76 |
+| US cost of living by city | United States | 6,358 | $37 · **$338** · $1,618 | $18.33 | 66 |
 | Book series in reading order | United States | 24,564 | $22 · **$175** · $764 | $1.43 | 53 |
 | Victoria: where to stay by town | Australia | 3,903 | $16 · **$144** · $674 | $11.33 | 66 |
 | AU electric car running costs vs petrol by model | Australia | 2,312 | $12 · **$101** · $458 | $11.5 | 69 |
@@ -1372,10 +1472,11 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | AU stamp duty and home buying costs by state | Australia | 2,985 | $11 · **$78** · $302 | $1 | 64 |
 | Victoria: things to do by town | Australia | 1,769 | $6 · **$53** · $259 | $11.33 | 60 |
 | Retro game finder: where to play classic games today (US) | United States | 6,967 | $5 · **$41** · $172 | $0.87 | 58 |
+| AU electricity prices by postcode and retailer | Australia | 604 | $3 · **$21** · $88 | $5 | 61 |
 | Victoria: where to eat by town | Australia | 779 | $2 · **$18** · $90 | $9 | 51 |
 | Australian clothing brands directory (beason.com.au) | Australia | 949 | $2 · **$16** · $68 | $3.5 | 50 |
 | AU solar and home battery payback by postcode | Australia | 624 | $2 · **$15** · $56 | $0 | 66 |
-| AU electricity prices by postcode and retailer | Australia | 604 | $2 · **$14** · $54 | $0 | 61 |
+| AU suburb profiles: prices, rent and demographics | Australia | 134 | $1 · **$5** · $23 | $9 | 55 |
 | Retro game finder: where to play classic games today (AU) | Australia | 423 | $0 · **$3** · $11 | $1 | 42 |
 | Australian winter wear: beanies, jackets and knitwear | Australia | 122 | $0 · **$3** · $16 | $9 | 50 |
 | US public library branches by city | United States | 226 | $0 · **$2** · $9 | $1.43 | 46 |
@@ -1460,6 +1561,19 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | rejected |
 | Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
 
+### US cost of living by city
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| BarkBox | $20.80 per sale | moderate | Application (likely via FlexOffers) with site + audience details; a website expected | not applied |
+| Embrace Pet Insurance | Listed as $36 per lead; one listing says ~$5 per lead / $36 per policy sale (confirm in Impact) | moderate | Join via Impact; traffic must be US-based (US pets only); no adult, religious or political content | not applied |
+| Chewy | $15 per new-customer order (Chewy says ~8% equivalent) | moderate | Join via Partnerize; no coupon/deal sites; required disclosure line; no "Chewy" in domain | not applied |
+| Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
+| Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
+| Rover (pet sitting) | ~15% per referral | moderate | check | not applied |
+| Ruffwear (dog gear) | ~8% | easy | check | not applied |
+
 ### Book series in reading order
 
 | Programme | Pays | Approval | To qualify | Status |
@@ -1535,6 +1649,16 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Humble Bundle partner *(check)* | check | easy | check | not applied |
 | Amazon Associates US: video games | 1% physical / 2% digital | easy | Same Associates account | approved |
 
+### AU electricity prices by postcode and retailer
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Travel insurance (World Nomads, SafetyWing, Allianz) | ~10–40% | moderate | check | not applied |
+| Ruffwear (dog gear) | ~8% | easy | check | not applied |
+| Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | rejected |
+| Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
+
 ### Victoria: where to eat by town
 
 | Programme | Pays | Approval | To qualify | Status |
@@ -1562,11 +1686,17 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 |---|---|---|---|---|
 | _No programme in the catalogue yet: research needed_ | | | | |
 
-### AU electricity prices by postcode and retailer
+### AU suburb profiles: prices, rent and demographics
 
 | Programme | Pays | Approval | To qualify | Status |
 |---|---|---|---|---|
-| _No programme in the catalogue yet: research needed_ | | | | |
+| Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
+| Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
+| Ruffwear (dog gear) | ~8% | easy | check | not applied |
+| Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | rejected |
+| Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
 
 ### Retro game finder: where to play classic games today (AU)
 

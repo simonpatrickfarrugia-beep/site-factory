@@ -1051,21 +1051,73 @@
   "scoredAt": "2026-10-29T05:15:56.891Z",
   "location": "Australia",
   "error": null,
-  "categories": [],
+  "categories": [
+   "travel-insurance",
+   "pets"
+  ],
   "money": {
-   "categories": [],
+   "categories": [
+    "travel-insurance",
+    "pets"
+   ],
    "visits": [
     242,
     604,
     1209
    ],
    "revenueUsd": [
-    2,
-    14,
-    54
+    3,
+    21,
+    88
    ],
-   "bestPerSaleUsd": 0,
-   "programs": []
+   "bestPerSaleUsd": 5,
+   "programs": [
+    {
+     "id": "insurance",
+     "name": "Travel insurance (World Nomads, SafetyWing, Allianz)",
+     "commission": "~10–40%",
+     "approval": "moderate",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "ruffwear",
+     "name": "Ruffwear (dog gear)",
+     "commission": "~8%",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "amazon-au",
+     "name": "Amazon Associates Australia",
+     "commission": "By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other",
+     "approval": "easy",
+     "requirements": "Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "commissionfactory",
+     "name": "Commission Factory (Australian network)",
+     "commission": "varies by brand",
+     "approval": "easy",
+     "requirements": "Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network.",
+     "status": "rejected",
+     "verified": true
+    },
+    {
+     "id": "impact",
+     "name": "Impact (affiliate network)",
+     "commission": "varies by brand",
+     "approval": "moderate",
+     "requirements": "Publisher account; verify site by meta tag; then apply to each brand",
+     "status": "applying",
+     "verified": true
+    }
+   ]
   }
  },
  {
@@ -1647,7 +1699,318 @@
    "name": "United States"
   },
   "addedAt": "2026-10-29T05:20:00.000Z",
-  "status": "new"
+  "status": "scored",
+  "score": {
+   "overall": 66,
+   "demand": 70,
+   "money": 71,
+   "ease": 63,
+   "fit": 56,
+   "totalVolume": 1271660,
+   "keywords": 393,
+   "medianCpc": 1.62,
+   "avgDifficulty": 37,
+   "easyWins": [
+    {
+     "keyword": "cheapest american cities to live",
+     "volume": 27100,
+     "kd": 19,
+     "cpc": 1.43
+    },
+    {
+     "keyword": "cheapest states to live in",
+     "volume": 22200,
+     "kd": 0,
+     "cpc": 0.83
+    },
+    {
+     "keyword": "most cheapest state to live in",
+     "volume": 22200,
+     "kd": 0,
+     "cpc": 0.83
+    },
+    {
+     "keyword": "lowest cost of living states",
+     "volume": 9900,
+     "kd": 11,
+     "cpc": 0.79
+    },
+    {
+     "keyword": "cheapest cost of living states",
+     "volume": 9900,
+     "kd": 11,
+     "cpc": 0.79
+    },
+    {
+     "keyword": "cheapest places to live",
+     "volume": 8100,
+     "kd": 6,
+     "cpc": 2.63
+    },
+    {
+     "keyword": "affordable places to live",
+     "volume": 8100,
+     "kd": 16,
+     "cpc": 2.63
+    },
+    {
+     "keyword": "inexpensive places to live",
+     "volume": 8100,
+     "kd": 6,
+     "cpc": 2.63
+    },
+    {
+     "keyword": "most inexpensive places to live",
+     "volume": 8100,
+     "kd": 6,
+     "cpc": 2.63
+    },
+    {
+     "keyword": "cheapest country to live in",
+     "volume": 8100,
+     "kd": 11,
+     "cpc": 0.74
+    },
+    {
+     "keyword": "least expensive places to live",
+     "volume": 8100,
+     "kd": 6,
+     "cpc": 2.63
+    },
+    {
+     "keyword": "cheapest cities to live",
+     "volume": 8100,
+     "kd": 6,
+     "cpc": 2.63
+    }
+   ],
+   "topKeywords": [
+    {
+     "keyword": "cost of living calculator",
+     "volume": 49500,
+     "kd": 58,
+     "cpc": 1.62
+    },
+    {
+     "keyword": "living expenses calculator",
+     "volume": 49500,
+     "kd": 68,
+     "cpc": 1.62
+    },
+    {
+     "keyword": "cost of living converter",
+     "volume": 49500,
+     "kd": 58,
+     "cpc": 1.62
+    },
+    {
+     "keyword": "cost of living cost of living calculator",
+     "volume": 49500,
+     "kd": 58,
+     "cpc": 1.62
+    },
+    {
+     "keyword": "cost ofliving calculator",
+     "volume": 49500,
+     "kd": null,
+     "cpc": 1.62
+    },
+    {
+     "keyword": "costof living calculator",
+     "volume": 49500,
+     "kd": null,
+     "cpc": 1.62
+    },
+    {
+     "keyword": "price of living calculator",
+     "volume": 49500,
+     "kd": 58,
+     "cpc": 1.62
+    },
+    {
+     "keyword": "cost of living comparison",
+     "volume": 40500,
+     "kd": 69,
+     "cpc": 0.88
+    },
+    {
+     "keyword": "living expenses comparison",
+     "volume": 40500,
+     "kd": 69,
+     "cpc": 0.88
+    },
+    {
+     "keyword": "cost of life comparison",
+     "volume": 40500,
+     "kd": 69,
+     "cpc": 0.88
+    },
+    {
+     "keyword": "price of living comparison",
+     "volume": 40500,
+     "kd": 69,
+     "cpc": 0.88
+    },
+    {
+     "keyword": "compare life expenses",
+     "volume": 40500,
+     "kd": null,
+     "cpc": 0.88
+    },
+    {
+     "keyword": "cost of living comp",
+     "volume": 40500,
+     "kd": null,
+     "cpc": 0.88
+    },
+    {
+     "keyword": "cost to live comparison",
+     "volume": 40500,
+     "kd": 69,
+     "cpc": 0.88
+    },
+    {
+     "keyword": "life expense comparison",
+     "volume": 40500,
+     "kd": null,
+     "cpc": 0.88
+    }
+   ],
+   "judgement": {
+    "fit": 56,
+    "verdict": "The data is strong and public, and BEA metro price parities give each city page real differentiation, but the head terms are dominated by NerdWallet, Numbeo and similar sites, and the calculator-intent keywords need a working tool, not templated copy. Monetisation depends on traffic you have not yet earned, and the moving-lead angle carries consent and margin risk.",
+    "angle": "A data-led US metro cost-of-living site with two page families: /cost-of-living/[metro] profiles (BEA RPP index, HUD fair market rents by bedroom count, BLS wages and the Census income figures) and /compare/[metro-a]-vs-[metro-b] pages with a deterministic 'salary needed to match' calculator. Lead with the 'cheapest states' and 'city vs city' queries, which have lower difficulty, and treat 'cost of living calculator' as a tool-page target, not a copy target.",
+    "dataSources": [
+     "BEA Regional Price Parities (state and MSA, free API key)",
+     "HUD Fair Market Rents API (free token, metro and county level)",
+     "BLS OEWS occupational wages by metro (public domain)",
+     "BLS regional CPI where published (limited metro coverage, so do not promise it for every page)",
+     "Census ACS median rent, income and housing cost (free API)"
+    ],
+    "monetisation": [
+     "Display ads via AdSense or Ezoic at launch; Mediavine or Raptive only once traffic thresholds are met",
+     "Moving quote lead buyers such as Moving.com or MovingWaldo (verify current payouts and whether they pay per lead or per booked move)",
+     "Renter and apartment lead or affiliate programs such as Zumper or Apartment List (verify terms)",
+     "Home and renters insurance quote affiliates such as Policygenius or The Zebra (verify terms)"
+    ],
+    "pageTypes": [
+     "/cost-of-living/[metro]: one page per MSA with RPP index, HUD FMR by bedroom count, median wage by occupation and a salary-equivalent table",
+     "/compare/[metro-a]-vs-[metro-b]: templated side-by-side comparisons for top-volume pairs first, not all combinations",
+     "/cheapest-states and /cheapest-cities: ranked index pages built from the same data",
+     "/state/[state]: rollups linking to metro pages",
+     "/moving/[origin]-to-[destination]: only if moving-quote lead terms are validated before build"
+    ],
+    "risks": [
+     "NerdWallet, Numbeo, Payscale and Bankrate already own the head terms; the site may never rank for 'cost of living calculator' at KD 58 with a thin tool",
+     "Pages that only swap city names into a template risk the thin-content penalty; each page needs a unique data view and a genuinely useful calculation",
+     "Numbeo's terms prohibit scraping, so do not use it as a source",
+     "BEA and HUD data are annual and lag by a year or more; state this on pages to avoid stale-data complaints",
+     "Moving leads: TCPA and state consent rules apply to phone and SMS leads; check consent flows before selling or buying",
+     "Moving lead margins are thin and buyers often cap volume or reject traffic; validate with a small test before building the funnel",
+     "Display RPM for this topic depends on traffic quality; the ads-first case is unproven until the site has real sessions",
+     "Cheapest-states terms show KD 0 and low CPC, which may signal weak commercial intent for ads"
+    ]
+   },
+   "costUsd": 0.114
+  },
+  "scoredAt": "2026-10-29T05:18:49.528Z",
+  "location": "United States",
+  "error": null,
+  "categories": [
+   "travel-stays",
+   "pets"
+  ],
+  "money": {
+   "categories": [
+    "travel-stays",
+    "pets"
+   ],
+   "visits": [
+    2543,
+    6358,
+    12717
+   ],
+   "revenueUsd": [
+    37,
+    338,
+    1618
+   ],
+   "bestPerSaleUsd": 18.33,
+   "programs": [
+    {
+     "id": "barkbox",
+     "name": "BarkBox",
+     "commission": "$20.80 per sale",
+     "approval": "moderate",
+     "requirements": "Application (likely via FlexOffers) with site + audience details; a website expected",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "embrace",
+     "name": "Embrace Pet Insurance",
+     "commission": "Listed as $36 per lead; one listing says ~$5 per lead / $36 per policy sale (confirm in Impact)",
+     "approval": "moderate",
+     "requirements": "Join via Impact; traffic must be US-based (US pets only); no adult, religious or political content",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "chewy",
+     "name": "Chewy",
+     "commission": "$15 per new-customer order (Chewy says ~8% equivalent)",
+     "approval": "moderate",
+     "requirements": "Join via Partnerize; no coupon/deal sites; required disclosure line; no \"Chewy\" in domain",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "booking",
+     "name": "Booking.com Affiliate Partner",
+     "commission": "Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay)",
+     "approval": "moderate",
+     "requirements": "Content site about travel; tax form + payment details (W-8BEN-E for AU companies)",
+     "status": "applying",
+     "verified": true
+    },
+    {
+     "id": "hotelgroups",
+     "name": "Hotel groups (Marriott, Hilton, IHG)",
+     "commission": "~3–7%",
+     "approval": "moderate",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "expedia",
+     "name": "Expedia Group Affiliate",
+     "commission": "~2–6% by product",
+     "approval": "moderate",
+     "requirements": "Travel content site",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "rover",
+     "name": "Rover (pet sitting)",
+     "commission": "~15% per referral",
+     "approval": "moderate",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "ruffwear",
+     "name": "Ruffwear (dog gear)",
+     "commission": "~8%",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    }
+   ]
+  }
  },
  {
   "idea": "AU suburb profiles: prices, rent and demographics",
@@ -1665,7 +2028,264 @@
    "name": "Australia"
   },
   "addedAt": "2026-10-29T05:20:00.000Z",
-  "status": "new"
+  "status": "scored",
+  "score": {
+   "overall": 55,
+   "demand": 14,
+   "money": 82,
+   "ease": 89,
+   "fit": 38,
+   "totalVolume": 26730,
+   "keywords": 34,
+   "medianCpc": 2.48,
+   "avgDifficulty": 11,
+   "easyWins": [
+    {
+     "keyword": "rental yield calculator",
+     "volume": 3600,
+     "kd": 17,
+     "cpc": 3.02
+    },
+    {
+     "keyword": "suburb profile",
+     "volume": 1900,
+     "kd": 14,
+     "cpc": 2.03
+    },
+    {
+     "keyword": "rental yield",
+     "volume": 1000,
+     "kd": 10,
+     "cpc": 3.48
+    },
+    {
+     "keyword": "real estate suburb profile",
+     "volume": 720,
+     "kd": 18,
+     "cpc": 5.14
+    },
+    {
+     "keyword": "cheapest suburbs in sydney",
+     "volume": 590,
+     "kd": 0,
+     "cpc": 1.69
+    }
+   ],
+   "topKeywords": [
+    {
+     "keyword": "rental yield calculator",
+     "volume": 3600,
+     "kd": 17,
+     "cpc": 3.02
+    },
+    {
+     "keyword": "yield rent calculator",
+     "volume": 3600,
+     "kd": null,
+     "cpc": 3.02
+    },
+    {
+     "keyword": "suburb profile",
+     "volume": 1900,
+     "kd": 14,
+     "cpc": 2.03
+    },
+    {
+     "keyword": "median house price",
+     "volume": 1000,
+     "kd": 35,
+     "cpc": 1.06
+    },
+    {
+     "keyword": "rental yield",
+     "volume": 1000,
+     "kd": 10,
+     "cpc": 3.48
+    },
+    {
+     "keyword": "home median price",
+     "volume": 1000,
+     "kd": null,
+     "cpc": 1.06
+    },
+    {
+     "keyword": "median household price",
+     "volume": 1000,
+     "kd": null,
+     "cpc": 1.06
+    },
+    {
+     "keyword": "median price house",
+     "volume": 1000,
+     "kd": 35,
+     "cpc": 1.06
+    },
+    {
+     "keyword": "real estate suburb profile",
+     "volume": 720,
+     "kd": 18,
+     "cpc": 5.14
+    },
+    {
+     "keyword": "cheapest suburbs in sydney",
+     "volume": 590,
+     "kd": 0,
+     "cpc": 1.69
+    },
+    {
+     "keyword": "best investment suburbs melbourne",
+     "volume": 480,
+     "kd": 0,
+     "cpc": 4.57
+    },
+    {
+     "keyword": "top suburbs to invest in melbourne",
+     "volume": 480,
+     "kd": 0,
+     "cpc": 4.57
+    },
+    {
+     "keyword": "domain suburb profile",
+     "volume": 480,
+     "kd": 28,
+     "cpc": 1.99
+    },
+    {
+     "keyword": "average house price",
+     "volume": 390,
+     "kd": 26,
+     "cpc": null
+    },
+    {
+     "keyword": "suburb research",
+     "volume": 390,
+     "kd": 13,
+     "cpc": 2.06
+    }
+   ],
+   "judgement": {
+    "fit": 38,
+    "verdict": "The free data is real and the calculator and list keywords are genuinely useful, but total volume is small (roughly 20k/mo across the whole list) and the high-CPC money depends on mortgage broker lead buyers that are unverified and credit-regulated in Australia. Templated suburb profiles on display ads alone will earn little, and the incumbents own the price data.",
+    "angle": "A rental yield calculator plus NSW and VIC-only suburb pages (/suburb/[state]/[suburb]), each showing ABS Census demographics, state rent medians and an auto-computed gross yield with a plain-English explanation. Build the calculator first, since it targets the best-paying terms, and only add pages once the calculator earns organic traffic.",
+    "dataSources": [
+     "ABS Census 2021 (DataPacks / TableBuilder, CC BY 4.0), suburb-level SA2 and SAL geography",
+     "NSW Fair Trading Rent and Sales Report (open data; verify licence terms)",
+     "Victorian Department of Families, Fairness and Housing rental report (verify licence)",
+     "Queensland RTA/Residential Tenancies Authority bond lodgement data (verify licence)",
+     "ABS Consumer Price Index and Australian Financial Review-free interest rate series (RBA statistical tables, CC BY 4.0) for yield and repayment inputs"
+    ],
+    "monetisation": [
+     "Display ads (Google AdSense or Ezoic) on calculator and suburb pages; expect low RPM outside the calculator, so treat ads as secondary",
+     "Mortgage broker lead buyers: only after confirming an Australian Credit Licence or credit representative arrangement, and checking ASIC rules on referral and comparison; do not assume this income",
+     "Property investment newsletter or PDF email sign-up as a first-party lead, if you can offer something worth paying for",
+     "Property data affiliates (e.g. buyer's agent or conveyancing referral): none verified; check current programs before relying on them"
+    ],
+    "pageTypes": [
+     "/rental-yield-calculator (single tool page, highest priority)",
+     "/suburb/[state]/[suburb] (NSW and VIC only at launch, roughly 300 to 600 suburbs with real data)",
+     "/cheapest-suburbs/[city] (list pages ranked from the same data, for the low-competition 'cheapest suburbs in Sydney' type queries)",
+     "/best-suburbs-to-invest/[city] (only if you can show a transparent, data-backed scoring method)"
+    ],
+    "risks": [
+     "Median sales prices: NSW and VIC sales data is licensed or paid, and Domain and realestate.com.au data is off-limits; using it without a licence risks copyright and ToS breach",
+     "Volume ceiling: most terms sit at 100 to 1,000/mo, so suburb pages will likely earn little traffic per page",
+     "Credit and financial advice rules: any broker lead flow or yield advice can trigger ASIC licensing requirements, and yield-based investment content can drift toward financial product advice",
+     "Thin-content penalty: 500 templated suburb pages with the same paragraphs and only a number swapped in will be treated as doorway pages; each needs unique local analysis",
+     "Competition for the lead terms from Domain, realestate.com.au and aggregators with much higher domain authority",
+     "Data freshness: census data is five-yearly (next 2026 release), and state rent reports lag by a quarter or more"
+    ]
+   },
+   "costUsd": 0.114
+  },
+  "scoredAt": "2026-10-29T05:18:49.528Z",
+  "location": "Australia",
+  "error": null,
+  "categories": [
+   "travel-stays",
+   "pets"
+  ],
+  "money": {
+   "categories": [
+    "travel-stays",
+    "pets"
+   ],
+   "visits": [
+    53,
+    134,
+    267
+   ],
+   "revenueUsd": [
+    1,
+    5,
+    23
+   ],
+   "bestPerSaleUsd": 9,
+   "programs": [
+    {
+     "id": "booking",
+     "name": "Booking.com Affiliate Partner",
+     "commission": "Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay)",
+     "approval": "moderate",
+     "requirements": "Content site about travel; tax form + payment details (W-8BEN-E for AU companies)",
+     "status": "applying",
+     "verified": true
+    },
+    {
+     "id": "hotelgroups",
+     "name": "Hotel groups (Marriott, Hilton, IHG)",
+     "commission": "~3–7%",
+     "approval": "moderate",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "expedia",
+     "name": "Expedia Group Affiliate",
+     "commission": "~2–6% by product",
+     "approval": "moderate",
+     "requirements": "Travel content site",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "ruffwear",
+     "name": "Ruffwear (dog gear)",
+     "commission": "~8%",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "amazon-au",
+     "name": "Amazon Associates Australia",
+     "commission": "By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other",
+     "approval": "easy",
+     "requirements": "Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "commissionfactory",
+     "name": "Commission Factory (Australian network)",
+     "commission": "varies by brand",
+     "approval": "easy",
+     "requirements": "Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network.",
+     "status": "rejected",
+     "verified": true
+    },
+    {
+     "id": "impact",
+     "name": "Impact (affiliate network)",
+     "commission": "varies by brand",
+     "approval": "moderate",
+     "requirements": "Publisher account; verify site by meta tag; then apply to each brand",
+     "status": "applying",
+     "verified": true
+    }
+   ]
+  }
  },
  {
   "idea": "Retro game finder: where to play classic games today (US)",
