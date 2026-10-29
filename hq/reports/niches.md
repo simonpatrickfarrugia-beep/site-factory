@@ -8,28 +8,142 @@ Add ideas by chat: "score these niches: …". Rules: launch at most one new site
 
 | # | Idea | Market | Score | Demand | Money | Ease | Fit | Searches/mo | Median CPC | Avg difficulty |
 |---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| 1 | Dog breeds | United States | **75** | 100 | 66 | 78 | 46 | 54,904,000 | $1.34 | 22 |
-| 2 | US national parks and hiking trails | United States | **74** | 100 | 66 | 78 | 42 | 17,831,200 | $1.33 | 22 |
-| 3 | TV shows: where to watch | United States | **73** | 91 | 91 | 68 | 30 | 5,543,800 | $3.55 | 32 |
-| 4 | Anime: where to watch and watch order | United States | **70** | 100 | 66 | 60 | 42 | 20,483,800 | $1.31 | 40 |
-| 5 | Victoria: where to stay by town | Australia | **66** | 63 | 69 | 90 | 38 | 780,660 | $1.51 | 10 |
-| 6 | Video games: release dates and trailers | United States | **62** | 100 | 32 | 62 | 40 | 14,104,000 | $0.35 | 38 |
-| 7 | Board games | United States | **61** | 78 | 32 | 84 | 42 | 2,245,200 | $0.35 | 16 |
-| 8 | Victoria: things to do by town | Australia | **60** | 52 | 47 | 95 | 42 | 353,780 | $0.63 | 5 |
-| 9 | Retro game finder: where to play classic games today (US) | United States | **58** | 71 | 31 | 81 | 42 | 1,393,340 | $0.34 | 19 |
-| 10 | Book series in reading order | United States | **53** | 90 | 25 | 50 | 38 | 4,912,700 | $0.27 | — |
-| 11 | Movie soundtracks and film music | United States | **53** | 79 | 0 | 81 | 45 | 2,377,600 | $0.08 | 19 |
-| 12 | Victoria: where to eat by town | Australia | **51** | 40 | 41 | 96 | 22 | 155,710 | $0.50 | 4 |
-| 13 | Australian clothing brands directory (beason.com.au) | Australia | **50** | 43 | 61 | 60 | 34 | 189,760 | $1.09 | 40 |
-| 14 | Australian winter wear: beanies, jackets and knitwear | Australia | **50** | 13 | 57 | 96 | 38 | 24,330 | $0.92 | 4 |
-| 15 | US public library branches by city | United States | **46** | 22 | 54 | 77 | 34 | 45,100 | $0.84 | 23 |
-| 16 | Retro game finder: where to play classic games today (AU) | Australia | **42** | 31 | 19 | 82 | 38 | 84,660 | $0.21 | 18 |
-| 17 | Australian loungewear and comfortwear brands | Australia | **42** | 0 | 55 | 90 | 28 | 7,150 | $0.86 | 10 |
-| 18 | Hurricane history by coastal state | United States | **33** | 0 | 0 | 97 | 42 | 30 | — | 3 |
-| 19 | US airport runway and elevation facts | United States | **33** | 0 | 0 | 100 | 42 | 730 | — | 0 |
-| 20 | US school district enrollment by county | United States | **31** | 0 | 0 | 95 | 38 | 20 | — | 5 |
-| 21 | Freshwater fish species by state | United States | **28** | 0 | 0 | 94 | 22 | 650 | $0.03 | 6 |
-| 22 | Rail travel times between NSW stations | Australia | **21** | 0 | 0 | 50 | 44 | 0 | — | — |
+| 1 | US take-home pay by salary and state | United States | **77** | 100 | 87 | 67 | 44 | 11,789,600 | $3.03 | 33 |
+| 2 | AU pay and tax calculators (take-home pay by salary) | Australia | **76** | 75 | 90 | 79 | 55 | 1,729,410 | $3.44 | 21 |
+| 3 | Dog breeds | United States | **75** | 100 | 66 | 78 | 46 | 54,904,000 | $1.34 | 22 |
+| 4 | US national parks and hiking trails | United States | **74** | 100 | 66 | 78 | 42 | 17,831,200 | $1.33 | 22 |
+| 5 | TV shows: where to watch | United States | **73** | 91 | 91 | 68 | 30 | 5,543,800 | $3.55 | 32 |
+| 6 | Anime: where to watch and watch order | United States | **70** | 100 | 66 | 60 | 42 | 20,483,800 | $1.31 | 40 |
+| 7 | AU electric car running costs vs petrol by model | Australia | **69** | 56 | 80 | 92 | 48 | 462,460 | $2.29 | 8 |
+| 8 | AU solar and home battery payback by postcode | Australia | **66** | 37 | 100 | 89 | 38 | 124,800 | $8.88 | 11 |
+| 9 | Victoria: where to stay by town | Australia | **66** | 63 | 69 | 90 | 38 | 780,660 | $1.51 | 10 |
+| 10 | AU stamp duty and home buying costs by state | Australia | **64** | 59 | 89 | 66 | 38 | 597,090 | $3.19 | 34 |
+| 11 | Video games: release dates and trailers | United States | **62** | 100 | 32 | 62 | 40 | 14,104,000 | $0.35 | 38 |
+| 12 | AU electricity prices by postcode and retailer | Australia | **61** | 36 | 100 | 71 | 38 | 120,850 | $10.97 | 29 |
+| 13 | Board games | United States | **61** | 78 | 32 | 84 | 42 | 2,245,200 | $0.35 | 16 |
+| 14 | Victoria: things to do by town | Australia | **60** | 52 | 47 | 95 | 42 | 353,780 | $0.63 | 5 |
+| 15 | Retro game finder: where to play classic games today (US) | United States | **58** | 71 | 31 | 81 | 42 | 1,393,340 | $0.34 | 19 |
+| 16 | Book series in reading order | United States | **53** | 90 | 25 | 50 | 38 | 4,912,700 | $0.27 | — |
+| 17 | Movie soundtracks and film music | United States | **53** | 79 | 0 | 81 | 45 | 2,377,600 | $0.08 | 19 |
+| 18 | Victoria: where to eat by town | Australia | **51** | 40 | 41 | 96 | 22 | 155,710 | $0.50 | 4 |
+| 19 | Australian clothing brands directory (beason.com.au) | Australia | **50** | 43 | 61 | 60 | 34 | 189,760 | $1.09 | 40 |
+| 20 | Australian winter wear: beanies, jackets and knitwear | Australia | **50** | 13 | 57 | 96 | 38 | 24,330 | $0.92 | 4 |
+| 21 | US public library branches by city | United States | **46** | 22 | 54 | 77 | 34 | 45,100 | $0.84 | 23 |
+| 22 | Retro game finder: where to play classic games today (AU) | Australia | **42** | 31 | 19 | 82 | 38 | 84,660 | $0.21 | 18 |
+| 23 | Australian loungewear and comfortwear brands | Australia | **42** | 0 | 55 | 90 | 28 | 7,150 | $0.86 | 10 |
+| 24 | Hurricane history by coastal state | United States | **33** | 0 | 0 | 97 | 42 | 30 | — | 3 |
+| 25 | US airport runway and elevation facts | United States | **33** | 0 | 0 | 100 | 42 | 730 | — | 0 |
+| 26 | US school district enrollment by county | United States | **31** | 0 | 0 | 95 | 38 | 20 | — | 5 |
+| 27 | Freshwater fish species by state | United States | **28** | 0 | 0 | 94 | 22 | 650 | $0.03 | 6 |
+| 28 | Rail travel times between NSW stations | Australia | **21** | 0 | 0 | 50 | 44 | 0 | — | — |
+
+Not scored yet: US cost of living by city; AU suburb profiles: prices, rent and demographics.
+
+## US take-home pay by salary and state: 77/100
+
+**Verdict:** The data is public and clean, and the paycheck CPCs are real, but the head terms belong to SmartAsset, ADP and established calculators, and a salary-by-state grid is the exact mass-produced pattern Google devalues unless each page computes a real, checked net-pay figure. Viable only as a tightly built calculator with a narrow long-tail wedge, not as a 50-state template farm.
+
+**Site angle:** Build a single net-pay calculator engine with two page families: /salary/[amount]-after-tax-[state]/ for a fixed salary grid (e.g. $30k to $150k in $5k steps, only states where the engine is verified) and /[occupation]/[state]/take-home-pay/ that pre-fills BLS median wages. Lead with the occupation pages, since 'salary of a dental hygienist' carries $24.41 CPC at KD 6, and treat generic 'paycheck calculator' as a tool-quality contest you enter only after the engine is proven.
+
+**Data sources:** IRS federal income tax brackets and standard deduction (Rev. Proc. annual release, irs.gov); IRS Publication 15-T withholding tables; SSA FICA rates and wage bases; State revenue department income tax tables (e.g. CA FTB, NY DTF, PA DOR); verify each annually; BLS Occupational Employment and Wage Statistics (OEWS) state-level median wages (public domain); Census ACS state data for cost-of-living context only, if needed
+
+**Money:** Display ads: AdSense first; Mediavine or Raptive only after traffic thresholds (finance RPM is high, but expect volatility); TurboTax and H&R Block affiliate programmes (tax-season intent, via Impact or direct); Gusto or Rippling referral for employers and small businesses, tied to payroll-calculator pages; Consented leads for financial-planning or CPA services where state rules allow; no payday or high-cost credit
+
+**Page types:** /salary/[amount]-after-tax-[state]/ for verified states only; /[occupation]/[state]/take-home-pay/ using BLS median wage as default input, with occupation-specific context; /state/[state]-income-tax/ explaining the state's rules, with the calculator embedded; /methodology/ and /tax-year/[year]/ as trust hubs, linked from every calculator page
+
+**Risks:** YMYL exposure: wrong tax figures cause real financial harm; needs a named reviewer, a methodology page and visible tax-year stamps; Annual law changes (federal rule changes, state rate changes, local taxes) require a maintenance cycle; stale pages will lose rankings and trust; Thin or doorway-like pages if the only difference between URLs is a number; each page needs state-specific rules and occupation context; Head-term competition from SmartAsset, ADP, Paycheck City, Calculator.net and Dinkytown, with stronger brands and link profiles; Local tax complexity (city and county taxes, reciprocity, no-tax states, SDI/FLI) makes accuracy hard to get across all states; Google site-reputation and helpful-content risk if the calculator is weak; the tool has to beat existing free options; FTC affiliate disclosure and state rules on financial lead generation; consent and TCPA exposure for any lead form; Display-ads-first economics depend on high-CPC traffic that may be top-of-funnel and low-intent for purchase offers
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| calculate my paycheck | 550,000 | 27 | $11.93 |
+| adp paycheck calculator | 201,000 | 29 | $12.90 |
+| adp estimate paycheck | 201,000 | 29 | $12.90 |
+| adp pay check calculator | 201,000 | 29 | $12.90 |
+| adp wage calculator | 201,000 | 29 | $12.90 |
+| salary of a dental hygienist | 90,500 | 6 | $24.41 |
+| take home pay calculator | 60,500 | 20 | $3.03 |
+| pharmacy tech pay | 60,500 | 0 | $23.98 |
+| army salary calculator | 60,500 | 4 | $3.27 |
+| estimate take home pay | 60,500 | 20 | $3.03 |
+| figure out take home pay | 60,500 | 27 | $3.03 |
+| army paycheck calculator | 60,500 | 4 | $3.27 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| paycheck calculator | 550,000 | 52 | $11.93 |
+| payroll calculator | 550,000 | 52 | $11.93 |
+| calculate my paycheck | 550,000 | 27 | $11.93 |
+| pay stub calculator | 550,000 | 52 | $11.93 |
+| paycheck estimator | 550,000 | 39 | $11.93 |
+| payroll check calculator | 550,000 | 52 | $11.93 |
+| paycheck stub calculator | 550,000 | 52 | $11.93 |
+| my paycheck | 550,000 | 35 | $5.13 |
+| pay check calc | 550,000 | — | $11.93 |
+| adp paycheck calculator | 201,000 | 29 | $12.90 |
+| adp estimate paycheck | 201,000 | 29 | $12.90 |
+| adp paycheck calc | 201,000 | — | $12.90 |
+| adp pay check calculator | 201,000 | 29 | $12.90 |
+| adp wage calculator | 201,000 | 29 | $12.90 |
+| smartasset paycheck calculator | 90,500 | 65 | $4.34 |
+
+_Seeds: paycheck calculator, take home pay calculator, salary after tax, 100k after tax california, hourly to salary, 70k a year is how much an hour. Data cost: US$0.114._
+
+## AU pay and tax calculators (take-home pay by salary): 76/100
+
+**Verdict:** Strong search demand and a genuinely useful calculator job, with public ATO data that fits the model. But the head terms are dominated by ATO and established finance sites, the topic is YMYL, and per-salary-band pages are the exact thin, templated pattern Google penalises unless each page carries real computed output and a named reviewer.
+
+**Site angle:** A single take-home pay calculator at /pay/ with state-free, year-specific computed tables for each salary and pay frequency (annual, monthly, fortnightly, weekly, hourly). Each page shows the full tax, Medicare, HELP and super breakdown for that tax year, plus an 'after 1 July' comparison when rates change. Only cover salary bands that the calculator genuinely computes. Do not build a page for every $1 increment.
+
+**Data sources:** ATO individual resident income tax rates (current and prior years); ATO Medicare levy rates and thresholds; ATO HELP/HECS repayment thresholds and rates; ATO super guarantee rate schedule; Fair Work Ombudsman / Fair Work Commission national minimum wage and award pay guides; ABS average weekly earnings (CC BY 4.0)
+
+**Money:** Display ads (AdSense or an ad manager with AU finance demand), the primary revenue; Comparison affiliate programs such as Finder, Mozo or Canstar, subject to current terms and licensing; Accounting and payroll software partner programs (Xero, MYOB, Reckon), if they are offered in your region; Lead sales to mortgage brokers (borrowing power) or super consolidation, only as general information with no personal advice; Salary packaging provider referrals, if any are legally and commercially viable
+
+**Page types:** /pay/[annual-salary]-after-tax (computed annually, with monthly, fortnightly and weekly breakdowns for each salary); /hourly/[rate]-after-tax (computed from hourly rate and hours per week); /super/[salary] (12% SG calculation with projected contribution in the current tax year); /tax-year/[year]/rates (rate tables, changes and worked examples); /method/[topic] (how the calculation works, such as Medicare levy or HELP)
+
+**Risks:** YMYL: needs a named reviewer (ideally a registered tax agent) and visible sourcing, or it risks suppression on finance queries; Annual rate changes (1 July, Stage 3 cuts, super rate rises) mean every page must be recomputed and dated or it goes stale quickly; Calculator error liability: wrong output can cause real harm, so add clear disclaimers and test against ATO examples; Competition from the ATO's own calculator and large incumbents such as Canstar, Finder, Hostplus and smartsalary-style tools; Head-term volume figures are shared Google Ads cluster numbers and must not be summed. Stamp duty is off-niche and should be excluded; Display RPM for AU finance tools is uncertain. The high CPC reflects advertiser bids, not your publisher revenue; Copyright and licence terms for ATO material must be checked before reuse; attribute and reuse only what the licence allows; Lead buyers may require compliance with ASIC general-advice rules, which limits what the pages can recommend
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| tax calculator australia | 40,500 | 15 | $2.93 |
+| aus tax calculator | 40,500 | 15 | $2.93 |
+| payment calculator australia | 40,500 | 28 | $6.58 |
+| aus pay calculator | 40,500 | 11 | $6.58 |
+| aus wage calculator | 40,500 | 6 | $6.58 |
+| australia taxation calculator | 40,500 | 15 | $2.93 |
+| australian taxation calculator | 40,500 | 15 | $2.93 |
+| tax payment calculator australia | 40,500 | 15 | $2.93 |
+| super calculator | 33,100 | 8 | $0.96 |
+| superannuation calculator | 33,100 | 11 | $0.96 |
+| superannuation australia calculator | 33,100 | 10 | $0.96 |
+| superannuation estimator | 33,100 | 8 | $0.96 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| pay calculator australia | 40,500 | 34 | $6.58 |
+| tax calculator australia | 40,500 | 15 | $2.93 |
+| salary calculator australia | 40,500 | 39 | $6.58 |
+| aus tax calculator | 40,500 | 15 | $2.93 |
+| wage calculator australia | 40,500 | 38 | $6.58 |
+| tax computation in australia | 40,500 | — | $2.93 |
+| payment calculator australia | 40,500 | 28 | $6.58 |
+| aus salary calculator | 40,500 | 33 | $6.58 |
+| aus pay calculator | 40,500 | 11 | $6.58 |
+| aus tax estimate | 40,500 | — | $2.93 |
+| aus wage calculator | 40,500 | 6 | $6.58 |
+| australia paycheck calculator | 40,500 | — | $6.58 |
+| australia taxation calculator | 40,500 | 15 | $2.93 |
+| australian tax converter | 40,500 | — | $2.93 |
+| australian taxation calculator | 40,500 | 15 | $2.93 |
+
+_Seeds: salary after tax calculator, pay calculator australia, tax calculator australia, super calculator, leave loading calculator, 100k after tax australia. Data cost: US$0.114._
 
 ## Dog breeds: 75/100
 
@@ -243,6 +357,112 @@ _Seeds: where to watch, what streaming service has, is it on netflix, tv show st
 
 _Seeds: anime watch order, where to watch anime, best anime, anime streaming, anime series. Data cost: US$0.114._
 
+## AU electric car running costs vs petrol by model: 69/100
+
+**Verdict:** The data is real and public, and each model page can carry genuine per-model numbers, so it clears the thin-content bar better than most. But the keyword list doesn't show running-cost intent: the high-CPC terms are charger installation (lead-gen) and map-style 'near me' queries, while the display-ad volume is small (about 4,400/mo for the best model-price terms), and incumbents like Carsguide, Drive and CarExpert already publish running-cost content.
+
+**Site angle:** A calculator-led site, /ev-running-costs, with one page per model per state or electricity tariff (e.g. /byd-atto-3/nsw) showing real $/km and annual cost against the closest petrol equivalent, using the state's current fuel price and the regulated home tariff. Add model-vs-model comparison pages for the same segment. Validate the 'cheapest electric car australia' and 'byd atto 3 price' clusters first, since they are the only ones on the list with near-zero difficulty.
+
+**Data sources:** Green Vehicle Guide (data.gov.au / GVG, verify whether EV energy consumption in kWh/100km is exposed; if not, supplement with cited manufacturer figures); AER Default Market Offer and Victorian Default Offer tariff schedules (public, by distributor/region); NSW FuelCheck API (free registration); QLD Fuel Price Reporting API (free); WA FuelWatch RSS (free); State rego and stamp duty rates for an optional on-road cost layer
+
+**Money:** Display ads on calculator pages (verify AU RPM before relying on it; the high-CPC claim is mostly from charger installation terms, not running costs); Lead sales to home charger installers via marketplaces such as hipages or Oneflare (installation terms show CPC around USD 15, so this is the strongest earner on the list); Car finance referrals via Finder or similar comparison affiliate programs (verify terms and credit-advertising disclosure); Car insurance referrals via iSelect or Finder affiliate programs (verify commission and licensing requirements)
+
+**Page types:** /ev-running-costs/[model]/[state] (one per model per state, from GVG plus fuel and tariff data); /ev-vs-petrol/[ev-model]-vs-[petrol-model] (same-segment comparisons); /charging-cost/[distributor-region] (home charging cost by tariff, feeding the installation lead CTA); /cheapest-ev/[state] (ranked lists, with a sorted-by-cost view)
+
+**Risks:** Google helpful-content risk if pages differ only in the numbers; each page needs model-specific notes such as real-world vs claimed consumption, battery size and warranty; Keyword mismatch: the list has no running-cost cluster, so organic demand is unproven and must be tested; Finance and insurance referrals are YMYL-adjacent and regulated (credit and general-advice warnings, referral disclosure); the lead-gen and display plan is safer than the finance plan; Stale data: EV model pricing and fuel and tariff rates change often, so pages need automated refresh and dated stamps; Copyright and ToS risk if car price data is scraped from Redbook, Carsales or manufacturer sites; Strong incumbents with domain authority and editorial teams already cover EV running costs; Model churn: EV line-ups and discontinuations will leave dead pages unless they are retired automatically
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| ev charging near me | 110,000 | 30 | $0.50 |
+| byd atto 3 price | 4,400 | 4 | $1.55 |
+| cheapest electric car australia | 4,400 | 0 | $2.11 |
+| byd atto3 price | 4,400 | 4 | $1.55 |
+| ev charging at home | 3,600 | 10 | $4.97 |
+| ev charging installation | 2,900 | 7 | $15.38 |
+| electric car charging installation | 2,900 | 4 | $15.38 |
+| ev charge installation | 2,900 | 4 | $15.38 |
+| cheapest ev australia | 2,900 | 0 | $2.21 |
+| electric vehicle charging installation | 2,900 | 4 | $15.38 |
+| electric car charging stations installation | 2,900 | 3 | $15.38 |
+| cheapest electric vehicles australia | 2,900 | 0 | $2.21 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| ev charging near me | 110,000 | 30 | $0.50 |
+| charging station for electric car near me | 110,000 | — | $0.50 |
+| evcharge | 90,500 | — | $0.78 |
+| byd atto 3 price | 4,400 | 4 | $1.55 |
+| cheapest electric car australia | 4,400 | 0 | $2.11 |
+| byd atto3 price | 4,400 | 4 | $1.55 |
+| byd atto 3 pricing | 4,400 | — | $1.55 |
+| byd atto 3 proce | 4,400 | — | $1.55 |
+| byd atto 3price | 4,400 | — | $1.55 |
+| charging charge | 4,400 | — | $1.58 |
+| cheapest electric car au | 4,400 | — | $2.11 |
+| ev charging at home | 3,600 | 10 | $4.97 |
+| ev charging installation | 2,900 | 7 | $15.38 |
+| charging electric cars | 2,900 | 44 | $2.41 |
+| electric car charging installation | 2,900 | 4 | $15.38 |
+
+_Seeds: ev charging cost, electric car running costs, byd atto 3 price, ev vs petrol cost, tesla model y range, cheapest electric car australia. Data cost: US$0.114._
+
+## AU solar and home battery payback by postcode: 66/100
+
+**Verdict:** The data is free and real, but the ads-first thesis is weak: the high CPCs are advertiser bids for installer leads, not what a small site's display inventory earns, and the lead-buyer route is crowded and compliance-heavy. It works only as a genuine payback calculator with postcode-specific outputs, not as templated price pages, which Google will read as doorway pages.
+
+**Site angle:** A solar and home-battery payback calculator at /payback/[postcode]. Each page pre-fills the postcode's STC zone, local sun-hours and typical tariffs, then lets the user adjust usage, system size, battery size and tariff. Show payback as a range with assumptions stated, and add a small set of state-level tariff and rebate explainers. Build only for postcodes where the inputs genuinely differ, and treat the calculator, not the copy, as the page's value.
+
+**Data sources:** Clean Energy Regulator small-scale installation data by postcode (open data, CC BY; check the current licence); CER STC solar zone rating by postcode (public mapping); Energy Made Easy / AER published retailer offers, including feed-in tariffs by state and retailer (verify current access method and terms); Global Solar Atlas (World Bank) PVOUT and GHI by coordinates (check licence and rate limits); Official Cheaper Home Batteries Program rules and rebate tiers from the government site (rules have changed; re-verify on each build)
+
+**Money:** Lead sales to installers via pre-qualified, consented enquiries (per-lead pricing unverified; get written AUD rates and exclusivity terms before building); Energy retail comparison affiliate programs such as Finder or Canstar, if their AU energy programs accept your traffic (verify availability); Display ads, realistically modest RPM for a small site; do not plan around search CPCs; Referral or affiliate deals with battery or inverter brands, usually small or unavailable in AU
+
+**Page types:** /payback/[postcode] interactive calculator, only for postcodes with distinct zone or tariff data; /solar-zone/[zone-number] explainers with postcode lists and worked examples; /battery-rebate/[state] pages covering eligibility, tier thresholds and current status; /feed-in-tariff/[state] tables built from published offers, with the update date shown
+
+**Risks:** Doorway-page penalty: thousands of near-identical postcode pages with swapped numbers will be treated as spam unless each page's calculation and inputs differ meaningfully; ACL and ACCC exposure for payback or savings claims: outputs must show assumptions, ranges and disclaimers, and must not imply guaranteed savings; Privacy Act, Spam Act and Do Not Call Register obligations for lead forms; lead buyers may demand consent evidence you must be able to produce; Reputational risk from the AU solar sales-scam history, since installers' lead buyers may be linked to high-pressure sales; Rebate rules change frequently; stale battery rebate figures will harm trust and rankings; Crowded SERPs from established comparison sites (Solar Choice, Solar Quotes, Energy Matters), so a small site will struggle with the commercial terms; Search CPC is not site revenue: a realistic display RPM may be a small fraction of the listed CPCs, so the model needs leads to work; Keyword difficulty is low for some terms, but the intent is commercial and heavily contested by installers bidding on ads
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| cost of solar battery | 9,900 | 4 | $8.91 |
+| solar power battery price | 9,900 | 13 | $8.91 |
+| solar panel installation cost | 5,400 | 11 | $10.84 |
+| solar energy installation cost | 5,400 | 9 | $10.84 |
+| solar power installation price | 5,400 | 11 | $10.84 |
+| solar hot water system price | 1,900 | 0 | $6.18 |
+| solar hot water system cost | 1,900 | 3 | $6.18 |
+| solar panels cost | 1,600 | 9 | $8.88 |
+| solar power cost | 1,600 | 10 | $8.88 |
+| solar energy cost | 1,600 | 4 | $8.88 |
+| solar power panels cost | 1,600 | 9 | $8.88 |
+| pv panels cost | 1,600 | 9 | $8.88 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| cost of solar battery | 9,900 | 4 | $8.91 |
+| solar power battery price | 9,900 | 13 | $8.91 |
+| solar battery rebate | 8,100 | 49 | $11.50 |
+| solar panel installation cost | 5,400 | 11 | $10.84 |
+| solar energy installation cost | 5,400 | 9 | $10.84 |
+| cost of fitting solar panels | 5,400 | — | $10.84 |
+| solar power installation price | 5,400 | 11 | $10.84 |
+| solar hot water system price | 1,900 | 0 | $6.18 |
+| solar hot water system cost | 1,900 | 3 | $6.18 |
+| solar panels cost | 1,600 | 9 | $8.88 |
+| solar power cost | 1,600 | 10 | $8.88 |
+| solar energy cost | 1,600 | 4 | $8.88 |
+| solar power panels cost | 1,600 | 9 | $8.88 |
+| pv panels cost | 1,600 | 9 | $8.88 |
+| sun panels cost | 1,600 | — | $8.88 |
+
+_Seeds: solar battery rebate, home battery rebate, solar panels cost, solar payback calculator, tesla powerwall price australia, solar feed in tariff vic. Data cost: US$0.114._
+
 ## Victoria: where to stay by town: 66/100
 
 **Verdict:** Most of the volume is branded hotel names (Yarra Valley Lodge, Mantra Lorne, Lake House, Balgownie), which a generic town site can't win, and the same figures repeat across close variants, so real unique demand is lower than it looks. The only workable opportunity is generic 'accommodation in [town]' queries in smaller towns, where you'd compete with Booking.com, Expedia and TripAdvisor on thin affiliate margins.
@@ -296,6 +516,59 @@ _Seeds: anime watch order, where to watch anime, best anime, anime streaming, an
 
 _Seeds: accommodation daylesford, where to stay in bright, phillip island accommodation, lorne accommodation, yarra valley accommodation, weekend getaways victoria, romantic getaways victoria. Data cost: US$0.114._
 
+## AU stamp duty and home buying costs by state: 64/100
+
+**Verdict:** The data is public and structured, but the rules change every year and each state has its own concessions, so pages only stay useful if someone maintains the rule tables. Display RPM on stamp duty terms is modest, and the high-CPC money sits in grant and borrowing-power terms that are either dominated by government and big comparison sites or depend on unverified broker lead buyers.
+
+**Site angle:** A stamp duty and upfront-costs calculator for all eight states and territories, with one page per state and purchase-price band (e.g. /stamp-duty/nsw/800000). Each page shows the duty calculation, the state's first home buyer concession logic, and a total-upfront-costs breakdown (duty, transfer/registration fees, LMI if applicable), with the rule set and effective date shown on-page. Copy is generated from the rule tables, not free-floating AI prose.
+
+**Data sources:** State revenue office duty rate schedules and concession rules: Revenue NSW, State Revenue Office Victoria, Queensland Revenue Office, RevenueSA, Western Australia Department of Finance (RevenueWA), State Revenue Office Tasmania, ACT Revenue Office, NT Revenue (manual extraction into versioned YAML/JSON, not a live API); Federal First Home Guarantee and First Home Owner Grant amounts from the relevant government pages (manual check each July); ABS or state property price data for sample price bands (optional, for context only)
+
+**Money:** Display ads via Google AdSense or an ad manager (Ezoic/Mediavine are worth applying to, but expect low RPM for AU traffic on these terms); Mortgage broker lead buyers (unverified: confirm a buyer who accepts calculator-sourced leads and will pay per lead before building lead forms); Conveyancing or moving-service affiliate links only if a program is confirmed; do not assume one exists
+
+**Page types:** /stamp-duty/[state]/[price-band] (8 states x about 20-30 price bands, only where the rule set has a distinct result); /first-home-buyer-concessions/[state] (one unique, rule-driven page per jurisdiction); /upfront-costs/[state]/[price-band] (duty plus fees, linked to the calculator); /grants/[scheme] (only for schemes with official criteria; avoid generic grant pages)
+
+**Risks:** Rates and thresholds change, often on 1 July; stale pages create wrong-number liability and quickly drop trust signals; YMYL financial content: Google will scrutinise accuracy, sourcing and authorship; show the source and last-verified date on every page; Mass-generated pages with near-identical copy risk the scaled-content policy; each state needs unique rules, not just swapped variables; Keyword volumes in the list appear grouped by Google Ads (identical 27100 figures for NSW, VIC and QLD), so do not add them up as separate demand; Google SERPs for stamp duty are dominated by Finder, Canstar, Domain, realestate.com.au and government sites; ranking on low-KD terms like the QLD ones is plausible, but the NSW/VIC terms at KD 35-44 are harder; Borrowing-power and grant terms carry high CPC but are the most regulated: lead-gen to brokers involves Privacy Act and ACL issues, and anything resembling personal credit advice needs care; avoid building around them without legal review; Display RPM on finance-adjacent AU traffic is uncertain; validate with a 60-day test before scaling beyond a few states
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| borrowing power calculator | 33,100 | 15 | $3.34 |
+| stamp duty calculator qld | 27,100 | 11 | $1.09 |
+| queensland stamp duty calculator | 27,100 | 9 | $1.09 |
+| borrowing capacity calculator | 12,100 | 17 | $3.69 |
+| calculate my borrowing capacity | 12,100 | 17 | $3.69 |
+| estimate borrowing capacity | 12,100 | 17 | $3.69 |
+| mortgage loan borrowing calculator | 8,100 | 16 | $4.51 |
+| borrowing power | 4,400 | 3 | $3.83 |
+| lmi calculator | 3,600 | 11 | $1.21 |
+| lmi estimator | 3,600 | 11 | $1.21 |
+| borrowing capacity | 2,900 | 3 | $3.19 |
+| sa first home owners grant | 2,900 | 5 | $5.31 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| borrowing power calculator | 33,100 | 15 | $3.34 |
+| stamp duty calculator nsw | 27,100 | 44 | $0.85 |
+| stamp duty calculator vic | 27,100 | 37 | $1.07 |
+| stamp duty calculator qld | 27,100 | 11 | $1.09 |
+| queensland stamp duty calculator | 27,100 | 9 | $1.09 |
+| new south wales stamp duty calculator | 27,100 | 44 | $0.85 |
+| calculator nsw stamp duty | 27,100 | 44 | $0.85 |
+| stamp duty calculator australia nsw | 27,100 | 35 | $0.85 |
+| first home buyer grant | 14,800 | 55 | $5.65 |
+| first time home buyer grants | 14,800 | 55 | $5.65 |
+| first time homebuyer grants | 14,800 | 55 | $5.65 |
+| 1st home buyer grant | 14,800 | — | $5.65 |
+| first home loan grant | 14,800 | 61 | $5.65 |
+| first buyers grant | 14,800 | 55 | $5.65 |
+| 1st home loan grant | 14,800 | 55 | $5.65 |
+
+_Seeds: stamp duty calculator nsw, stamp duty calculator vic, first home buyer grant, lmi calculator, borrowing power calculator, stamp duty qld. Data cost: US$0.114._
+
 ## Video games: release dates and trailers: 62/100
 
 **Verdict:** The data is free, large and genuinely refreshes, so per-game pages can be useful. But the high-volume terms are brand or navigational queries owned by Nintendo, publishers and fast news sites, the CPCs are low (about $0.30 typical), and display ads will take a long time to reach.
@@ -348,6 +621,59 @@ _Seeds: accommodation daylesford, where to stay in bright, phillip island accomm
 | animal crossing new horizons | 90,500 | 51 | $0.29 |
 
 _Seeds: game release date, upcoming games, video game trailer, best ps5 games, switch games. Data cost: US$0.114._
+
+## AU electricity prices by postcode and retailer: 61/100
+
+**Verdict:** The data is genuinely usable: AER and Victorian default offers, plus the CDR energy product data, can drive real per-area pages. But the search volume is thin and fragmented, the most valuable queries are brand or high-intent comparison terms that Finder, Canstar and Energy Made Easy already own, and display ads on pricing pages earn far less than the CPCs suggest. This is a lead-led site at best.
+
+**Site angle:** A postcode-to-network 'what should I pay?' tool: enter a postcode, get the applicable default offer for your distribution zone, the cheapest matching plans from the CDR product data, and a switch estimate. Keep retailer brand pages out of it.
+
+**Data sources:** AER Default Market Offer (published annually, per distribution zone); Victorian Default Offer (per distributor, published annually); Energy Made Easy public plan data; CDR energy product reference data (public, no-auth APIs from retailers); Postcode-to-distribution-zone mapping (verify against AER/DNSP coverage files)
+
+**Money:** Energy comparison affiliate or referral programmes (verify current terms for Finder, Canstar and similar; none confirmed here); Switching lead sales to energy retailers or brokers, paid per qualified lead; Display ads as a secondary layer, not the core model
+
+**Page types:** /electricity-prices/[state]/[postcode] mapped to the distribution zone and default offer; /default-offer/[network] with year-on-year change and plan comparison; /cheapest-plans/[state]/[network] built from CDR product data; /switch-estimate/[state]/[household-usage-band] calculator pages
+
+**Risks:** Postcode-to-network mapping is messy: many postcodes span several zones, so errors would be visible and damaging; Default offer figures change every 1 July, so pages go stale without an automated refresh; Brand-term bidding and trademark exposure on retailer names (AGL, Origin, Red Energy, Energy Australia); Strong incumbents (Finder, Canstar, Choice, Energy Made Easy) on most head terms, so ranking is hard; YMYL-adjacent financial decision content: Google's quality bar is high and thin AI copy will be penalised; Australian Consumer Law: undisclosed commissions and misleading savings claims draw ACCC attention; CDR and open data licence terms must be checked before commercial reuse; Display RPM on pricing pages is likely far below the CPC figures quoted
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| agl electricity rates | 8,100 | 0 | $4.28 |
+| solar panel installation cost | 5,400 | 11 | $10.84 |
+| cost of electricity per kwh | 3,600 | 25 | $3.30 |
+| energy cost per kwh | 3,600 | 15 | $3.30 |
+| price electric | 3,600 | 15 | $8.62 |
+| kwh electricity cost | 3,600 | 25 | $3.30 |
+| electricity tariffs per kwh | 3,600 | 13 | $3.30 |
+| origin energy electricity rates | 2,900 | 0 | $2.78 |
+| origin energy prices | 2,900 | 0 | $2.78 |
+| energy comparisons | 2,400 | 28 | $12.79 |
+| cheapest electricity provider | 1,900 | 27 | $16.19 |
+| lowest energy provider | 1,900 | 27 | $16.19 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| agl electricity rates | 8,100 | 0 | $4.28 |
+| solar panel installation cost | 5,400 | 11 | $10.84 |
+| electricity prices | 3,600 | 43 | $8.62 |
+| cost of electricity per kwh | 3,600 | 25 | $3.30 |
+| electric price per kwh | 3,600 | — | $3.30 |
+| energy cost per kwh | 3,600 | 15 | $3.30 |
+| price electric | 3,600 | 15 | $8.62 |
+| electric kwh price | 3,600 | — | $3.30 |
+| kwh electricity cost | 3,600 | 25 | $3.30 |
+| electricity tariffs per kwh | 3,600 | 13 | $3.30 |
+| origin energy electricity rates | 2,900 | 0 | $2.78 |
+| origin energy prices | 2,900 | 0 | $2.78 |
+| energy comparisons | 2,400 | 28 | $12.79 |
+| cheapest electricity provider | 1,900 | 27 | $16.19 |
+| lowest energy provider | 1,900 | 27 | $16.19 |
+
+_Seeds: electricity prices, cheapest electricity provider, average electricity bill australia, default market offer, victorian default offer, electricity price increase. Data cost: US$0.114._
 
 ## Board games: 61/100
 
@@ -1033,17 +1359,23 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 |---|---|---:|---|---:|---:|
 | Dog breeds | United States | 274,520 | $1,501 · **$13,983** · $67,559 | $18.33 | 75 |
 | US national parks and hiking trails | United States | 89,156 | $311 · **$2,709** · $12,569 | $9 | 74 |
+| US take-home pay by salary and state | United States | 58,948 | $324 · **$2,578** · $11,264 | $9 | 77 |
 | Anime: where to watch and watch order | United States | 102,419 | $198 · **$1,455** · $5,980 | $1.7 | 70 |
 | TV shows: where to watch | United States | 27,719 | $110 · **$769** · $3,024 | $1.7 | 73 |
 | Video games: release dates and trailers | United States | 70,520 | $60 · **$463** · $1,982 | $1.17 | 62 |
+| AU pay and tax calculators (take-home pay by salary) | Australia | 8,647 | $48 · **$378** · $1,652 | $9 | 76 |
 | Book series in reading order | United States | 24,564 | $22 · **$175** · $764 | $1.43 | 53 |
 | Victoria: where to stay by town | Australia | 3,903 | $16 · **$144** · $674 | $11.33 | 66 |
+| AU electric car running costs vs petrol by model | Australia | 2,312 | $12 · **$101** · $458 | $11.5 | 69 |
 | Movie soundtracks and film music | United States | 11,888 | $11 · **$85** · $370 | $1.43 | 53 |
 | Board games | United States | 11,226 | $10 · **$79** · $345 | $1.4 | 61 |
+| AU stamp duty and home buying costs by state | Australia | 2,985 | $11 · **$78** · $302 | $1 | 64 |
 | Victoria: things to do by town | Australia | 1,769 | $6 · **$53** · $259 | $11.33 | 60 |
 | Retro game finder: where to play classic games today (US) | United States | 6,967 | $5 · **$41** · $172 | $0.87 | 58 |
 | Victoria: where to eat by town | Australia | 779 | $2 · **$18** · $90 | $9 | 51 |
 | Australian clothing brands directory (beason.com.au) | Australia | 949 | $2 · **$16** · $68 | $3.5 | 50 |
+| AU solar and home battery payback by postcode | Australia | 624 | $2 · **$15** · $56 | $0 | 66 |
+| AU electricity prices by postcode and retailer | Australia | 604 | $2 · **$14** · $54 | $0 | 61 |
 | Retro game finder: where to play classic games today (AU) | Australia | 423 | $0 · **$3** · $11 | $1 | 42 |
 | Australian winter wear: beanies, jackets and knitwear | Australia | 122 | $0 · **$3** · $16 | $9 | 50 |
 | US public library branches by city | United States | 226 | $0 · **$2** · $9 | $1.43 | 46 |
@@ -1082,6 +1414,15 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | REI | 5% per sale | moderate | Apply via AvantLink with site + audience details; $50 payout threshold | not applied |
 | Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | approved |
 
+### US take-home pay by salary and state
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
+| Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
+| Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
+
 ### Anime: where to watch and watch order
 
 | Programme | Pays | Approval | To qualify | Status |
@@ -1108,6 +1449,17 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Amazon Associates US: DVD and Blu-ray | 2.5% | easy | Same Associates account | approved |
 | Amazon Associates US: video games | 1% physical / 2% digital | easy | Same Associates account | approved |
 
+### AU pay and tax calculators (take-home pay by salary)
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
+| Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
+| Travel insurance (World Nomads, SafetyWing, Allianz) | ~10–40% | moderate | check | not applied |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | rejected |
+| Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
+
 ### Book series in reading order
 
 | Programme | Pays | Approval | To qualify | Status |
@@ -1130,6 +1482,13 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | approved |
 | Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | rejected |
 
+### AU electric car running costs vs petrol by model
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Discover Cars / Rentalcars (car hire) | 70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire) | easy | Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire. | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
+
 ### Movie soundtracks and film music
 
 | Programme | Pays | Approval | To qualify | Status |
@@ -1148,6 +1507,12 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Green Man Gaming *(check)* | check | easy | check | not applied |
 | Humble Bundle partner *(check)* | check | easy | check | not applied |
 | Amazon Associates US: video games | 1% physical / 2% digital | easy | Same Associates account | approved |
+
+### AU stamp duty and home buying costs by state
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
 
 ### Victoria: things to do by town
 
@@ -1190,6 +1555,18 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Ruffwear (dog gear) | ~8% | easy | check | not applied |
 | Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
 | Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | rejected |
+
+### AU solar and home battery payback by postcode
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| _No programme in the catalogue yet: research needed_ | | | | |
+
+### AU electricity prices by postcode and retailer
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| _No programme in the catalogue yet: research needed_ | | | | |
 
 ### Retro game finder: where to play classic games today (AU)
 
