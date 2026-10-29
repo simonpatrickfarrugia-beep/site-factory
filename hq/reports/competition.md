@@ -7,12 +7,16 @@ Updated 2026-10-29. Google top 10 for each niche's best keywords. A slot is **be
 | Australian clothing brands directory (beason.com.au) | **59** | 6 | davidjones.com (1.2M), theurbanlist.com (903k), superprof.com.au (52k), glamcorner.com.au (39k) |
 | Freshwater fish species by state | **58** | 6 | ohiodnr.gov (835k), texas.gov (11.5M), utoledo.edu (170k), youtube.com (625.8M) |
 | Victoria: where to eat by town | **54** | 6 | tripadvisor.com.au (19.3M), visitmelbourne.com (1.1M), instagram.com (61.7M), agfg.com.au (2.5M) |
+| AU solar and home battery payback by postcode | **51** | 6 | google.com (33.2M), canstar.com.au (453k), energy.gov.au (50k), hipages.com.au (118k) |
 | Board games | **48** | 6 | youtube.com (625.8M), boardgamegeek.com (1.3M), google.com (551.5M), chess.com (1.2M) |
+| AU electricity prices by postcode and retailer | **47** | 6 | google.com (33.2M), agl.com.au (252k), canstar.com.au (453k), aer.gov.au (37k) |
 | Victoria: where to stay by town | **47** | 6 | instagram.com (61.7M), tripadvisor.com.au (19.3M), tripadvisor.com (2.0M), visitvictoria.com (598k) |
 | Australian loungewear and comfortwear brands | **45** | 6 | amazon.com.au (7.6M), lululemon.com.au (306k), uniqlo.com (740k), brasnthings.com (164k) |
+| AU pay and tax calculators (take-home pay by salary) | **43** | 6 | ato.gov.au (2.3M), moneysmart.gov.au (688k), paycalculator.com.au (358k), infochoice.com.au (73k) |
 | Hurricane history by coastal state | **40** | 3 | wikipedia.org (1937.8M), youtube.com (625.8M), weather.gov (54.0M), noaa.gov (11.7M) |
 | Book series in reading order | **37** | 6 | goodreads.com (10.5M), scholastic.com (657k), amazon.com (251.6M), nytimes.com (54.6M) |
 | Australian winter wear: beanies, jackets and knitwear | **36** | 6 | bestandless.com.au (274k), oxfordshop.com.au (58k), davidjones.com (1.2M), jgl.com.au (514k) |
+| AU stamp duty and home buying costs by state | **33** | 6 | bankofmelbourne.com.au (175k), commbank.com.au (4.3M), macquarie.com.au (378k), nab.com.au (1.4M) |
 | Retro game finder: where to play classic games today (AU) | **33** | 6 | google.com (33.2M), nintendo.com (295k), youtube.com (38.0M), wikipedia.org (140.6M) |
 | Anime: where to watch and watch order | **33** | 6 | google.com (551.5M), hulu.com (8.8M), wikipedia.org (1937.8M), imdb.com (385.1M) |
 | Dog breeds | **31** | 6 | youtube.com (625.8M), akc.org (4.5M), wikipedia.org (1937.8M), petfinder.com (2.2M) |
@@ -57,6 +61,17 @@ Updated 2026-10-29. Google top 10 for each niche's best keywords. A slot is **be
 | restaurants bright | 5,400 | 79 | #1 starhotelbright.com.au, #2 tomahawksbright.com.au, #3 visitbright.com.au, #5 alpinevalleygetaways.com.au, #6 theriverdeck.com.au, #8 visitbright.com.au, #9 facebook.com (forum) | starhotelbright.com.au, tomahawksbright.com.au, visitbright.com.au |
 | ezard at levantine hill | 5,400 | 68 | #2 doorexplorer.com, #3 facebook.com (forum), #4 taufulou.com, #5 restaurantsyarravalley.com.au, #7 yarravalleylodge.com, #8 facebook.com (forum), #10 halal-navi.com | tripadvisor.in, doorexplorer.com, facebook.com |
 
+## AU solar and home battery payback by postcode (openness 51)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| cost of solar battery | 9,900 | 5 | #8 solarcalculator.com.au | google.com, google.com, google.com |
+| solar power battery price | 9,900 | 84 | #1 solarbatterywarehouse.com.au, #2 growenergy.com.au, #3 solarbright.com.au, #4 solarcalculator.com.au, #5 solarbatterygroup.com.au, #6 solarmasters.com.au, #8 1komma5.com | solarbatterywarehouse.com.au, growenergy.com.au, solarbright.com.au |
+| solar panel installation cost | 5,400 | 79 | #1 solarcalculator.com.au, #2 engie.com.au, #3 solarcalculator.com.au, #4 solarcalculator.com.au, #5 gienergy.com.au, #6 efficientenergygroup.com.au | solarcalculator.com.au, engie.com.au, solarcalculator.com.au |
+| solar energy installation cost | 5,400 | 32 | #2 engie.com.au, #4 solarcalculator.com.au, #7 solarnerds.com.au | energy.gov.au, engie.com.au, canstar.com.au |
+| solar power installation price | 5,400 | 58 | #1 solarcalculator.com.au, #4 rksolar.com.au, #5 solarcitizens.org.au, #6 thinkrenewable.com.au, #7 1komma5.com, #8 ballaratsolarcompany.com.au | solarcalculator.com.au, canstar.com.au, hipages.com.au |
+| solar hot water system price | 1,900 | 79 | #1 sahotwater.com.au, #3 solahart.com, #4 amw.org.au, #5 rheem.com.au, #6 cdlplumbdraingas.com.au, #7 samedayhotwaterservice.com.au, #8 baywoodplumbingandgas.com.au, #10 solarhotwatercanberra.com.au | sahotwater.com.au, energy.gov.au, solahart.com |
+
 ## Board games (openness 48)
 
 | Keyword | /mo | Openness | Beatable slots | Top 3 |
@@ -67,6 +82,17 @@ Updated 2026-10-29. Google top 10 for each niche's best keywords. A slot is **be
 | chess game 2 player | 33,100 | 26 | #2 plainchess.timwoelfle.de, #5 foony.com | mathsisfun.com, plainchess.timwoelfle.de, chess.com |
 | two player chess game | 33,100 | 11 | #6 reddit.com (forum) | play.google.com, buddyboardgames.com, chess.com |
 | best codenames game | 33,100 | 68 | #2 facebook.com (forum), #3 facebook.com (forum), #4 reddit.com (forum), #5 thetabletopfamily.com, #6 facebook.com (forum), #7 facebook.com (forum) | youtube.com, facebook.com, facebook.com |
+
+## AU electricity prices by postcode and retailer (openness 47)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| agl electricity rates | 8,100 | 42 | #1 energyplans.com.au, #3 reddit.com (forum), #5 energyplans.com.au | energyplans.com.au, agl.com.au, reddit.com |
+| solar panel installation cost | 5,400 | 63 | #1 engie.com.au, #2 solarcalculator.com.au, #4 solarcalculator.com.au, #6 househonest.com.au, #7 rksolar.com.au, #8 solarcitizens.org.au | engie.com.au, solarcalculator.com.au, canstar.com.au |
+| cost of electricity per kwh | 3,600 | 47 | #3 esteemenergy.com.au, #5 goswitch.com.au, #6 perthsolarwarehouse.com.au, #7 cheapbills.com.au, #8 au.jackery.com | ecoflow.com, aer.gov.au, esteemenergy.com.au |
+| energy cost per kwh | 3,600 | 58 | #3 bluettipower.com.au, #4 perthenergy.com.au, #5 reddit.com (forum), #6 electricitywizard.com.au, #7 goswitch.com.au, #8 au.jackery.com | accc.gov.au, aer.gov.au, bluettipower.com.au |
+| price electric | 3,600 | 74 | #1 electricvehiclecouncil.com.au, #2 powershop.com.au, #3 aemo.com.au, #4 metroford.com.au, #6 business.qld.gov.au, #8 wa.gov.au | electricvehiclecouncil.com.au, powershop.com.au, aemo.com.au |
+| electricity tariffs per kwh | 3,600 | 0 | — | google.com, google.com, energyaustralia.com.au |
 
 ## Victoria: where to stay by town (openness 47)
 
@@ -89,6 +115,17 @@ Updated 2026-10-29. Google top 10 for each niche's best keywords. A slot is **be
 | loungewear underwear australia | 480 | 32 | #2 aus.loungeunderwear.com, #4 loungewearrepublic.com.au, #8 intimo.com.au | aus.lounge.com, aus.loungeunderwear.com, uniqlo.com |
 | womens track pants australia | 260 | 53 | #2 motionlifestyle.com.au, #3 echt.com.au, #6 russellathletic.com.au, #8 goondiwindicotton.com.au, #10 macronnsw.com.au | underarmour.com.au, motionlifestyle.com.au, echt.com.au |
 | ladies track pants australia | 260 | 21 | #1 russellathletic.com.au, #8 millers.com.au | russellathletic.com.au, lululemon.com.au, sussan.com.au |
+
+## AU pay and tax calculators (take-home pay by salary) (openness 43)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| tax calculator australia | 40,500 | 53 | #1 industrysuper.com, #3 wagecalculator.com.au, #4 etax.com.au, #5 simpletaxcalculators.com.au | industrysuper.com, service.nsw.gov.au, wagecalculator.com.au |
+| aus tax calculator | 40,500 | 53 | #1 industrysuper.com, #3 wagecalculator.com.au, #4 etax.com.au, #8 taxcalc.com.au, #9 oneclicklife.com.au | industrysuper.com, budget.gov.au, wagecalculator.com.au |
+| payment calculator australia | 40,500 | 16 | #3 wagecalculator.com.au | paycalculator.com.au, moneysmart.gov.au, wagecalculator.com.au |
+| aus pay calculator | 40,500 | 79 | #1 paycal.com.au, #3 amibetteroff.au, #4 paycal.com.au, #5 paycalc.com.au, #6 risehigh.com.au, #7 saas.epayroll.com.au, #8 auscalculators.com.au, #9 paycalculators.com.au | paycal.com.au, bankaust.com.au, amibetteroff.au |
+| aus wage calculator | 40,500 | 47 | #2 wagecalculator.com.au, #5 aussalarycalculator.com.au, #7 industrysuper.com, #8 salary.calculatorsaustralia.com.au, #9 risehigh.com.au, #10 paycal.com.au | paycalculator.com.au, wagecalculator.com.au, moneysmart.gov.au |
+| australia taxation calculator | 40,500 | 11 | #7 taxstore.com.au, #9 simpletaxcalculators.com.au | ato.gov.au, moneysmart.gov.au, paycalculator.com.au |
 
 ## Hurricane history by coastal state (openness 40)
 
@@ -119,6 +156,17 @@ Updated 2026-10-29. Google top 10 for each niche's best keywords. A slot is **be
 | ladies winter jackets australia | 880 | 42 | #1 fjallraven.com.au, #3 enni.com.au, #7 roxyaustralia.com.au, #9 plusoutdoor.com.au | fjallraven.com.au, cos.com, enni.com.au |
 | woollen jumpers australia | 720 | 58 | #2 dannysknitwear.com, #4 wool.com, #5 fields.com.au, #6 swoolly.com.au, #8 sweatersaustralia.com.au, #9 sweatersaustralia.com.au | kookai.com.au, dannysknitwear.com, rmwilliams.com.au |
 | men's winter jackets australia | 720 | 16 | #1 everythingaustralian.com.au | everythingaustralian.com.au, adidas.com.au, quiksilver.com.au |
+
+## AU stamp duty and home buying costs by state (openness 33)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| borrowing power calculator | 33,100 | 26 | #6 unloan.com.au, #7 broker.com.au, #8 athena.com.au, #9 buickfinancialsolutions.smartonline.com.au | macquarie.com.au, bankofmelbourne.com.au, comparethemarket.com.au |
+| stamp duty calculator qld | 27,100 | 37 | #3 qld.gov.au, #4 krg.com.au, #7 blacpg.com.au, #8 homeloanexperts.com.au | macquarie.com.au, reckon.com, qld.gov.au |
+| queensland stamp duty calculator | 27,100 | 63 | #1 ownhome.com, #2 qld.gov.au, #3 krg.com.au, #7 blacpg.com.au, #8 conveyancing.com.au, #9 support.smokeball.com | ownhome.com, qld.gov.au, krg.com.au |
+| borrowing capacity calculator | 12,100 | 0 | — | commbank.com.au, nab.com.au, moneysmart.gov.au |
+| calculate my borrowing capacity | 12,100 | 5 | #9 unitybank.com.au | qantasmoney.com, tmbank.com.au, bankofmelbourne.com.au |
+| estimate borrowing capacity | 12,100 | 32 | #1 defencebank.com.au, #4 banksyd.com.au, #8 skiploans.com.au | defencebank.com.au, pnbank.com.au, bankofmelbourne.com.au |
 
 ## Retro game finder: where to play classic games today (AU) (openness 33)
 
