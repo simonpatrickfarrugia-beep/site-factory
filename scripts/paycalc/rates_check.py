@@ -41,7 +41,8 @@ checks = [
     ('Medicare low-income thresholds', R['sources'][2]['url'], [money(m['singleLower']), money(m['singleUpper'])]),
     ('HECS-HELP repayment thresholds', R['sources'][3]['url'],
      [money(h['nilTo']), money(h['bands'][1]['from']), money(h['flatFrom']), money(h['bands'][1]['base'])]),
-    ('Super guarantee and maximum contribution base', R['sources'][4]['url'], [f"{s['rate'] * 100:.2f}%|{s['rate'] * 100:g}%|{s['rate'] * 100:g} %", money(s['maxBase'])]),
+    ('Super guarantee rate', R['sources'][5]['url'], [f"{s['rate'] * 100:.2f}%|{s['rate'] * 100:g}%|{s['rate'] * 100:g} %"]),
+    ('Maximum super contribution base', R['sources'][4]['url'], [money(s['maxBase'])]),
 ]
 
 problems, news, ok = [], [], []
