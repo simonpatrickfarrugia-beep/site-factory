@@ -958,6 +958,8 @@ main { display: block; }
 .pc-wrap { width: min(100% - 2rem, var(--wrap)); margin-inline: auto; }
 .pc-section { padding-block: clamp(2rem, 6vw, 3.5rem); }
 .pc-measure { max-width: 68ch; }
+.pc-wrap.pc-measure { max-width: none; }
+.pc-wrap.pc-measure > * { max-width: 68ch; }
 .pc-h1 { font-size: clamp(2.1rem, 6vw, 3.4rem); line-height: 1.02; font-weight: 800; margin: 0 0 0.8rem; }
 .pc-h2 { font-size: clamp(1.35rem, 3.2vw, 1.75rem); line-height: 1.15; margin: 2.2rem 0 0.8rem; }
 .pc-section > .pc-h2:first-child, .pc-measure > .pc-h2:first-child { margin-top: 0; }

@@ -58,16 +58,16 @@ const engineRates = { brackets: rates.brackets, lito: rates.lito, medicare: rate
   <h2 class="pc-h2">Every pay period</h2>
   <div class="pc-scroll">
     <table class="pc-table" data-table>
-      <thead><tr><th scope="col">Per</th><th scope="col">Gross</th><th scope="col">Tax</th><th scope="col">Medicare</th><th scope="col" data-col="help" hidden>HECS-HELP</th><th scope="col">Take-home</th><th scope="col">Super</th></tr></thead>
+      <thead><tr><th scope="col">Per</th><th scope="col">Take-home</th><th scope="col">Gross</th><th scope="col">Tax</th><th scope="col">Medicare</th><th scope="col" data-col="help" hidden>HECS-HELP</th><th scope="col">Super</th></tr></thead>
       <tbody>
         {rows.map(([label, k]) => (
           <tr data-per-row={k}>
             <th scope="row">{label}</th>
+            <td data-t="net"><strong>{aud(perPeriod(start.net)[k])}</strong></td>
             <td data-t="gross">{aud(perPeriod(start.gross)[k])}</td>
             <td data-t="incomeTax">{aud(perPeriod(start.incomeTax)[k])}</td>
             <td data-t="medicare">{aud(perPeriod(start.medicare)[k])}</td>
             <td data-t="help" hidden>{aud(0)}</td>
-            <td data-t="net"><strong>{aud(perPeriod(start.net)[k])}</strong></td>
             <td data-t="superAmount">{aud(perPeriod(start.superAmount)[k])}</td>
           </tr>
         ))}

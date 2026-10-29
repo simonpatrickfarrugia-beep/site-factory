@@ -16,10 +16,10 @@ export default defineBrand({
   favicon: '/favicon.svg',
 
   nav: [
-    { label: 'Pay calculator', href: '/' },
+    { label: 'Calculator', href: '/' },
     { label: 'Salaries', href: '/salary' },
     { label: 'Tax brackets', href: '/tax-brackets' },
-    { label: 'HECS-HELP', href: '/hecs-help-repayments' },
+    { label: 'HECS', href: '/hecs-help-repayments' },
   ],
   footer: [
     { label: 'How we calculate', href: '/how-we-calculate' },

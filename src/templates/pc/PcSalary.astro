@@ -47,12 +47,12 @@ const top = steps[steps.length - 1];
   <h2 class="pc-h2">{aud(salary)} a year, every pay period</h2>
   <div class="pc-scroll">
     <table class="pc-table">
-      <thead><tr><th scope="col">Per</th><th scope="col">Gross</th><th scope="col">Tax</th><th scope="col">Medicare</th><th scope="col">Take-home</th></tr></thead>
+      <thead><tr><th scope="col">Per</th><th scope="col">Take-home</th><th scope="col">Gross</th><th scope="col">Tax</th><th scope="col">Medicare</th></tr></thead>
       <tbody>
         {([['Year', 'year'], ['Month', 'month'], ['Fortnight', 'fortnight'], ['Week', 'week']] as const).map(([label, k]) => (
-          <tr><th scope="row">{label}</th><td>{aud(perPeriod(r.gross)[k])}</td><td>{aud(perPeriod(r.incomeTax)[k])}</td><td>{aud(perPeriod(r.medicare)[k])}</td><td><strong>{aud(perPeriod(r.net)[k])}</strong></td></tr>
+          <tr><th scope="row">{label}</th><td><strong>{aud(perPeriod(r.net)[k])}</strong></td><td>{aud(perPeriod(r.gross)[k])}</td><td>{aud(perPeriod(r.incomeTax)[k])}</td><td>{aud(perPeriod(r.medicare)[k])}</td></tr>
         ))}
-        <tr><th scope="row">Hour (38-hour week)</th><td>{aud(hourly, true)}</td><td>{aud(r.incomeTax / 52 / 38, true)}</td><td>{aud(r.medicare / 52 / 38, true)}</td><td><strong>{aud(r.net / 52 / 38, true)}</strong></td></tr>
+        <tr><th scope="row">Hour (38-hour week)</th><td><strong>{aud(r.net / 52 / 38, true)}</strong></td><td>{aud(hourly, true)}</td><td>{aud(r.incomeTax / 52 / 38, true)}</td><td>{aud(r.medicare / 52 / 38, true)}</td></tr>
       </tbody>
     </table>
   </div>
