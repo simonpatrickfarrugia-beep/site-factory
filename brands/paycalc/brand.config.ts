@@ -5,7 +5,7 @@ export default defineBrand({
   // Working name and domain until Simon picks one (unregistered on 29 Oct 2026: mypaycalc.com.au, takehomecalc.com.au, aftertaxpay.com.au).
   name: 'MyPayCalc',
   domain: 'mypaycalc.com.au',
-  launched: true, // TEMP: quality-gate check on preview branch only
+  launched: false,
 
   theme: 'payslip',
   // Payslip navy on cool office-paper white; highlighter yellow marks the one number people came for (take-home pay).

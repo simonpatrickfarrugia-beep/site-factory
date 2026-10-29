@@ -5,13 +5,34 @@
     "description": "Free Australian pay calculator for 2026–27. Your take-home pay after tax, Medicare and HECS-HELP, plus super, per week, fortnight, month and year.",
     "lede": "Type your pay the way it’s written in your contract or job ad. You’ll see what lands in your account after tax, Medicare and any HECS-HELP, using the ATO’s 2026–27 rates.",
     "faq": [
-      { "q": "Is this the same as what’s on my payslip?", "a": "Close, but not to the dollar. Your employer withholds tax each pay using the ATO’s withholding tables, which round each pay period. This calculator works out the tax for the whole year and divides it by 52, 26 or 12. Any difference usually comes back (or is owed) when you lodge your tax return." },
-      { "q": "Which tax rates does it use?", "a": "The 2026–27 rates for Australian residents: nothing on the first $18,200, then 15%, 30%, 37% and 45%. The 15% rate is new from 1 July 2026 (it was 16%), and it falls to 14% from 1 July 2027." },
-      { "q": "Does it include the low income tax offset?", "a": "Yes. If you earn under about $66,667 the offset (up to $700) comes off your tax automatically. It can bring your tax to nil, but it can’t be paid out as a refund on its own." },
-      { "q": "What does “super included” mean?", "a": "Some job ads quote a package that already includes your employer’s 12% super. Pick “Includes super” and the calculator works out the salary part first. If your contract says your salary is “plus super”, leave it on “Super on top”." },
-      { "q": "Should I tick HECS-HELP?", "a": "Tick it if you still owe a study loan (HECS-HELP, VET Student Loan, Australian Apprenticeship Support Loan or similar). From 2025–26 repayments are only on the part of your income above the threshold, which is $69,528 for 2026–27." },
-      { "q": "What isn’t included?", "a": "The Medicare levy surcharge (if you earn over the threshold without private hospital cover), salary sacrifice, deductions, other tax offsets, and family Medicare thresholds. It also assumes you’re an Australian resident for tax who claims the tax-free threshold from one job." },
-      { "q": "Is anything I type sent anywhere?", "a": "No. The sums run in your browser. We don’t store or see what you type." }
+      {
+        "q": "Is this the same as what’s on my payslip?",
+        "a": "Close, but not to the dollar. Your employer withholds tax each pay using the ATO’s withholding tables, which round each pay period. This calculator works out the tax for the whole year and divides it by 52, 26 or 12. Any difference usually comes back (or is owed) when you lodge your tax return."
+      },
+      {
+        "q": "Which tax rates does it use?",
+        "a": "The 2026–27 rates for Australian residents: nothing on the first $18,200, then 15%, 30%, 37% and 45%. The 15% rate is new from 1 July 2026 (it was 16%), and it falls to 14% from 1 July 2027."
+      },
+      {
+        "q": "Does it include the low income tax offset?",
+        "a": "Yes. If you earn under about $66,667 the offset (up to $700) comes off your tax automatically. It can bring your tax to nil, but it can’t be paid out as a refund on its own."
+      },
+      {
+        "q": "What does “super included” mean?",
+        "a": "Some job ads quote a package that already includes your employer’s 12% super. Pick “Includes super” and the calculator works out the salary part first. If your contract says your salary is “plus super”, leave it on “Super on top”."
+      },
+      {
+        "q": "Should I tick HECS-HELP?",
+        "a": "Tick it if you still owe a study loan (HECS-HELP, VET Student Loan, Australian Apprenticeship Support Loan or similar). From 2025–26 repayments are only on the part of your income above the threshold, which is $69,528 for 2026–27."
+      },
+      {
+        "q": "What isn’t included?",
+        "a": "The Medicare levy surcharge (if you earn over the threshold without private hospital cover), salary sacrifice, deductions, other tax offsets, and family Medicare thresholds. It also assumes you’re an Australian resident for tax who claims the tax-free threshold from one job."
+      },
+      {
+        "q": "Is anything I type sent anywhere?",
+        "a": "No. The sums run in your browser. We don’t store or see what you type."
+      }
     ]
   },
   "salary": {
@@ -31,10 +52,22 @@
       "The Medicare levy (2% for most people) is on top of these rates, and so are HECS-HELP repayments if you have a study loan."
     ],
     "faq": [
-      { "q": "Did the tax-free threshold change?", "a": "No. It’s still $18,200 for 2026–27." },
-      { "q": "How much do I save from the 15% rate?", "a": "If you earn $45,000 or more, the cut from 16% to 15% saves you $268 a year (1% of the $26,800 between $18,200 and $45,000). Below $45,000 you save 1% of whatever you earn over $18,200." },
-      { "q": "What happens in 2027–28?", "a": "The same rate falls again, from 15% to 14%, from 1 July 2027. That’s another saving of up to $268 a year." },
-      { "q": "Do these rates apply to working holiday makers or non-residents?", "a": "No. Non-residents and working holiday makers have their own rates, with no tax-free threshold. This page and our calculator cover Australian residents for tax only." }
+      {
+        "q": "Did the tax-free threshold change?",
+        "a": "No. It’s still $18,200 for 2026–27."
+      },
+      {
+        "q": "How much do I save from the 15% rate?",
+        "a": "If you earn $45,000 or more, the cut from 16% to 15% saves you $268 a year (1% of the $26,800 between $18,200 and $45,000). Below $45,000 you save 1% of whatever you earn over $18,200."
+      },
+      {
+        "q": "What happens in 2027–28?",
+        "a": "The same rate falls again, from 15% to 14%, from 1 July 2027. That’s another saving of up to $268 a year."
+      },
+      {
+        "q": "Do these rates apply to working holiday makers or non-residents?",
+        "a": "No. Non-residents and working holiday makers have their own rates, with no tax-free threshold. This page and our calculator cover Australian residents for tax only."
+      }
     ]
   },
   "hecs-help-repayments": {
@@ -49,9 +82,18 @@
       "Your employer takes repayments out of each pay once you tick the study loan box on your tax file number declaration. The final amount is settled when you lodge your tax return."
     ],
     "faq": [
-      { "q": "Which loans does this cover?", "a": "HELP (including HECS-HELP and FEE-HELP), VET Student Loans, Australian Apprenticeship Support Loans and the other study and training support loans the ATO collects. They all use the same thresholds." },
-      { "q": "Does paying it back early help?", "a": "Voluntary repayments reduce the debt straight away. The debt is indexed each 1 June, so paying before then means less indexation. Whether it’s worth it depends on your other debts and savings goals." },
-      { "q": "Why did my repayments drop in 2025–26?", "a": "The system changed from a percentage of your whole income to a percentage of the part above the threshold, and the threshold rose to $67,000. Most people repay less each year under the new rules." }
+      {
+        "q": "Which loans does this cover?",
+        "a": "HELP (including HECS-HELP and FEE-HELP), VET Student Loans, Australian Apprenticeship Support Loans and the other study and training support loans the ATO collects. They all use the same thresholds."
+      },
+      {
+        "q": "Does paying it back early help?",
+        "a": "Voluntary repayments reduce the debt straight away. The debt is indexed each 1 June, so paying before then means less indexation. Whether it’s worth it depends on your other debts and savings goals."
+      },
+      {
+        "q": "Why did my repayments drop in 2025–26?",
+        "a": "The system changed from a percentage of your whole income to a percentage of the part above the threshold, and the threshold rose to $67,000. Most people repay less each year under the new rules."
+      }
     ]
   },
   "how-we-calculate": {
@@ -84,6 +126,7 @@
     "paragraphs": [
       "Email hello@mypaycalc.com.au. We read every message and usually reply within two working days.",
       "Spotted a figure that looks wrong? Tell us the salary and options you used, and what you expected. We check every report against the ATO’s tables.",
+      "Feature ideas are welcome too. The calculator started with the questions people ask most (take-home pay, HECS-HELP and super), and we add what readers ask for next, such as part-time hours, a second job or salary sacrifice.",
       "We can’t give personal tax advice. For that, contact the ATO or a registered tax agent."
     ]
   },
@@ -93,6 +136,7 @@
     "paragraphs": [
       "MyPayCalc is free. We plan to show clearly marked ads on some pages to pay for running it.",
       "Ads never change the figures. The maths comes only from the ATO’s published rates, and we test it every time the site is built.",
+      "We don’t sell your data, and there’s nothing to sell: the calculator runs in your browser and we never see the pay you type. We also don’t take payment to change a result, rank a product higher or write about a company.",
       "If we ever link to a product that pays us when you sign up, we’ll say so next to the link."
     ]
   },
