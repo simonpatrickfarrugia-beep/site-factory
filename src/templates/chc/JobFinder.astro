@@ -62,6 +62,27 @@ const { book, page: p } = Astro.props;
     <p class="chc-small">Ads come from employers and job boards via Careerjet, a job search engine; we don't check them. The filters only look at what each ad says, so read the full ad before you apply. Job links may earn Community Help Co a small fee from Careerjet, at no cost to you.</p>
   </section>
 
+  <section class="jf-any" aria-labelledby="any-h">
+    <h2 id="any-h" class="chc-h2">Found a job somewhere else?</h2>
+    <p>Seek, Indeed, LinkedIn, Workforce Australia, a sign in a shop window: pop in the job and we'll set up a cover letter for it, using the resume saved on this device if you have one.</p>
+    <form class="chc-form jf-anyform" action="/cover-letter-builder" method="get" data-jf-any>
+      <div class="jf-row">
+        <label>Job title<input name="role" required maxlength="120" placeholder="e.g. Receptionist" /></label>
+        <label>Employer<input name="employer" maxlength="100" placeholder="e.g. Westside Medical" /></label>
+      </div>
+      <div class="jf-row">
+        <label>Where you saw it
+          <select name="source">
+            <option value="SEEK">SEEK</option><option value="Indeed">Indeed</option><option value="LinkedIn">LinkedIn</option>
+            <option value="Workforce Australia">Workforce Australia</option><option value="Jora">Jora</option><option value="">Somewhere else</option>
+          </select>
+        </label>
+        <label>Link to the ad <span class="chc-opt">(optional)</span><input name="job" type="url" maxlength="500" placeholder="https://…" /></label>
+      </div>
+      <p><button class="chc-btn" type="submit" data-cta="job_tailor_any">Tailor my application</button></p>
+    </form>
+  </section>
+
   <section class="jf-help" aria-labelledby="help-h">
     <h2 id="help-h" class="chc-h2">Before you apply</h2>
     <ul class="jf-tips">{p.tips.map((t) => <li>{t}</li>)}</ul>
@@ -98,6 +119,8 @@ const { book, page: p } = Astro.props;
     const fd = new FormData(form);
     return { q: String(fd.get('q') ?? '').trim(), where: String(fd.get('where') ?? '').trim(), hours: String(fd.get('hours')), type: String(fd.get('type')), f: fd.getAll('f').map(String) };
   };
+  // "Tailor my application": opens the cover letter builder with this job filled in (works for any job board).
+  const tailor = (j: Job) => `/cover-letter-builder?${new URLSearchParams({ role: j.title, employer: j.company, job: j.url })}`;
   const keep = (j: Job, f: string[]) => f.every((x) => (x === 'nolicence' ? !j.flags.includes('licence') : j.flags.includes(x)));
 
   const setBoards = () => {
@@ -121,6 +144,7 @@ const { book, page: p } = Astro.props;
       ${j.salary ? `<p class="jf-job__pay">${ESC(j.salary)}</p>` : ''}
       <p>${ESC(j.snippet)}${j.snippet.length >= 300 ? '…' : ''}</p>
       ${j.flags.length ? `<p class="jf-tags">${j.flags.map((f) => `<span class="jf-tag${f === 'licence' ? ' jf-tag--warn' : ''}">${ESC(LABEL[f] ?? f)}</span>`).join('')}</p>` : ''}
+      <p class="jf-job__act"><a class="jf-tailor" href="${ESC(tailor(j))}" data-cta="job_tailor">Tailor my application ✍️</a><span class="chc-small"> cover letter + your saved resume, ready in minutes</span></p>
     </li>`).join('');
     if (all.length && !shown.length) list.innerHTML = '<li class="jf-empty">None of the jobs loaded so far match every filter. Untick a filter, or load more jobs.</li>';
     more.hidden = page >= pages || page >= 10;
@@ -185,6 +209,13 @@ const { book, page: p } = Astro.props;
   .jf-empty { padding: 1rem; background: #fff; border-radius: 12px; }
   .jf-more[hidden] { display: none; }
   .jf-boards { margin-top: 1.5rem; }
+  .jf-job__act { margin: 0.7rem 0 0; }
+  .jf-tailor { display: inline-block; font-weight: 700; color: var(--forest); background: var(--mint); border-radius: 999px; padding: 0.4rem 0.9rem; text-decoration: none; margin-right: 0.4rem; }
+  .jf-tailor:hover { background: var(--forest); color: #fff; }
+  .jf-any { margin-top: 3rem; }
+  .jf-anyform { background: #fff; border: 2px solid var(--line, #CFE3DA); border-radius: 16px; padding: 1.3rem; max-width: 46rem; display: grid; gap: 1rem; }
+  .jf-anyform label { display: grid; gap: 0.3rem; font-weight: 700; }
+  .jf-anyform input, .jf-anyform select { font: inherit; padding: 0.7rem; border: 2px solid #B8CFC6; border-radius: 10px; background: #fff; }
   .jf-help { margin-top: 3rem; }
   .jf-tips { display: grid; gap: 0.5rem; padding-left: 1.2rem; max-width: 60ch; }
   .jf-cards { list-style: none; padding: 0; display: grid; gap: 1rem; margin-top: 1.5rem; }

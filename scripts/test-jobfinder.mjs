@@ -53,7 +53,15 @@ ok(await page.locator('.jf-job a[rel*="sponsored"]').count() > 0, 'job links are
 ok(await page.locator('[data-jf-more]').isVisible(), 'load more shown when more pages exist');
 await page.locator('[data-jf-more]').click(); await page.waitForTimeout(400);
 ok(/page=2/.test(lastQuery), 'load more asks for page 2');
+const tl = await page.locator('.jf-job .jf-tailor').first().getAttribute('href');
+ok(tl.startsWith('/cover-letter-builder?') && tl.includes('employer=Acme') && tl.includes('job=https'), `each job has a "Tailor my application" link (${tl})`);
+ok(await page.locator('[data-jf-any] [name=role]').isVisible(), '"Found a job somewhere else?" form is shown');
 await page.screenshot({ path: 'shots/jobfinder.png', fullPage: true });
+await page.goto(`${BASE}/job-finder`, { waitUntil: 'networkidle' });
+await page.fill('[data-jf-any] [name=role]', 'Receptionist'); await page.fill('[data-jf-any] [name=employer]', 'Westside Medical');
+await page.selectOption('[data-jf-any] [name=source]', 'Indeed');
+await Promise.all([page.waitForURL(/cover-letter-builder/), page.click('[data-jf-any] button[type=submit]')]);
+ok((await page.locator('[data-f="role"]').inputValue()) === 'Receptionist' && (await page.locator('[data-f="source"]').inputValue()) === 'Indeed', 'any-board form opens the cover letter with the job filled in');
 const home = await page.goto(`${BASE}/`, { waitUntil: 'domcontentloaded' });
 ok((await page.locator('a[href="/job-finder"]').count()) > 0, 'home links to the job finder');
 ok(errors.length === 0, `no page errors ${errors.join(' | ')}`);

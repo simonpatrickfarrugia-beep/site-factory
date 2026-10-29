@@ -35,6 +35,23 @@ await page.reload({ waitUntil: 'networkidle' });
 ok((await pv.textContent()).includes('Your name'), 'nothing stored after reload');
 ok(posts.length === 0, `nothing typed is sent anywhere (${posts.length ? posts.join(', ') : 'none'})`);
 ok(errors.length === 0, `no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
+// "Tailor my application": job in the link + a resume saved on this device
+const tctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+await tctx.addInitScript(() => localStorage.setItem('chc-resume-v1', JSON.stringify({ look: 'clean', f: { name: 'Alex Kim', phone: '0411 111 111', email: 'alex@example.com', location: 'Geelong VIC', skills: 'Customer service\nTeamwork' },
+  lists: { work: [{ role: 'Retail assistant', org: 'Big W', points: 'Served 100 customers a day\nTrained new staff' }], education: [], volunteering: [] } })));
+const tp = await tctx.newPage();
+const tposts = []; tp.on('request', (r) => { if (r.method() !== 'GET' && !/google-analytics|googletagmanager|analytics|\/cdn-cgi\/rum/.test(r.url())) tposts.push(r.url()); });
+tp.on('pageerror', (e) => errors.push(e.message));
+await tp.goto(`${BASE}/cover-letter-builder?role=Receptionist&employer=Westside%20Medical&source=SEEK&job=${encodeURIComponent('https://www.seek.com.au/job/1')}`, { waitUntil: 'networkidle' });
+const tt = await tp.locator('[data-preview]').textContent();
+ok(tt.includes('Re: Receptionist') && tt.includes('Westside Medical') && tt.includes('advertised on SEEK'), 'job from the link fills role, employer and source');
+ok(tt.includes('Alex Kim') && tt.includes('0411 111 111'), 'saved resume fills name and contact');
+ok(tt.includes('As a Retail assistant at Big W, I served 100 customers a day'), 'saved resume fills strengths from work points');
+ok(await tp.locator('[data-kit]').isVisible() && (await tp.locator('[data-kit-ad]').getAttribute('href')) === 'https://www.seek.com.au/job/1', 'apply kit shows with the job ad link');
+await tp.goto(`${BASE}/cover-letter-builder?role=X&job=${encodeURIComponent('javascript:alert(1)')}`, { waitUntil: 'networkidle' });
+ok((await tp.locator('[data-kit-ad]').count()) === 0, 'non-https job links are dropped');
+ok(tposts.length === 0, 'tailoring sends nothing anywhere');
+await tctx.close();
 const d = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 await d.goto(`${BASE}/cover-letter-builder`, { waitUntil: 'networkidle' });
 await d.getByRole('button', { name: 'Fill with an example' }).click();

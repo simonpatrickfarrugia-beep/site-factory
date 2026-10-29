@@ -2,6 +2,9 @@
 /**
  * Free cover letter builder. Runs entirely in the browser: nothing typed is sent anywhere or stored.
  * Guided prompts on the left, a formatted Australian business letter on the right; save as PDF or copy text.
+ * "Tailor my application" (job finder, any job board): ?role=&employer=&source=&job=<https ad link> pre-fills the job,
+ * and if the visitor saved a resume on this device (resume builder, localStorage 'chc-resume-v1') we offer to pull in
+ * their contact details and strengths. Still nothing is sent anywhere.
  */
 import BookCta from './BookCta.astro';
 import Nudge from './Nudge.astro';
@@ -23,7 +26,18 @@ const t = p.tips;
 <div class="chc-wrap cl" data-cl>
   <form class="chc-form cl-form cl-noprint" onsubmit="return false">
     <p class="chc-hint">🔒 {p.privacy}</p>
-    <p><button type="button" class="cl-btn" data-act="example">Fill with an example</button></p>
+    <div class="cl-kit" data-kit hidden>
+      <p class="cl-kit__head">✍️ Applying for <strong data-kit-role></strong><span data-kit-employer></span></p>
+      <ol class="cl-kit__steps">
+        <li data-kit-resume-step>Your resume: <span data-kit-resume></span></li>
+        <li>Your cover letter: check each section below, then <strong>Save as PDF</strong>.</li>
+        <li data-kit-ad-step>Apply on the ad: <a data-kit-ad rel="nofollow noopener" target="_blank" data-cta="tailor_ad">open the job ad ↗</a> and attach both PDFs.</li>
+      </ol>
+    </div>
+    <p class="cl-tools">
+      <button type="button" class="cl-btn" data-act="resume" hidden>Use my saved resume</button>
+      <button type="button" class="cl-btn cl-btn--quiet" data-act="example">Fill with an example</button>
+    </p>
 
     <fieldset class="cl-sec">
       <legend>1. You</legend>
@@ -148,10 +162,64 @@ const t = p.tips;
     start: 'in two weeks',
   };
 
+  // ---------- saved resume (only what the visitor chose to keep on this device)
+  type Resume = { f?: Record<string, string>; lists?: Record<string, { role?: string; org?: string; points?: string }[]> };
+  let resume: Resume | null = null;
+  try { const raw = localStorage.getItem('chc-resume-v1'); if (raw) resume = JSON.parse(raw); } catch {}
+  const set = (k: string, v: string, onlyEmpty = true) => {
+    const i = root.querySelector<HTMLInputElement | HTMLTextAreaElement>(`[data-f="${k}"]`);
+    if (i && v && (!onlyEmpty || !i.value.trim())) i.value = v;
+  };
+  const clip = (s: string) => s.replace(/^[-•*]\s*/, '').trim().replace(/\.$/, '');
+  function useResume() {
+    const r = resume?.f ?? {};
+    set('name', r.name ?? ''); set('phone', r.phone ?? ''); set('email', r.email ?? ''); set('location', r.location ?? '');
+    // Strengths: the visitor's own achievement lines from their work and volunteering, then skills.
+    const pts: string[] = [];
+    for (const it of [...(resume?.lists?.work ?? []), ...(resume?.lists?.volunteering ?? [])]) {
+      for (const line of (it.points ?? '').split('\n').map(clip).filter(Boolean)) {
+        const where = [it.role, it.org].filter(Boolean).join(' at ');
+        pts.push(where ? `As ${/^[aeiou]/i.test(where) ? 'an' : 'a'} ${where}, I ${line.charAt(0).toLowerCase()}${line.slice(1)}` : line);
+      }
+    }
+    const skills = (r.skills ?? '').split('\n').map(clip).filter(Boolean);
+    if (pts.length < 3 && skills.length) pts.push(`My strengths include ${skills.slice(0, 4).join(', ').toLowerCase()}`);
+    ['s1', 's2', 's3'].forEach((k, n) => set(k, pts[n] ?? ''));
+    render();
+    status.textContent = 'Filled from the resume saved on this device. Edit anything that doesn\'t fit this job.';
+    track('cover_from_resume');
+  }
+
+  // ---------- "Tailor my application": the job comes in the link
+  const qs = new URLSearchParams(location.search);
+  const qp = (k: string, n: number) => (qs.get(k) ?? '').replace(/[\u0000-\u001f<>]/g, ' ').trim().slice(0, n);
+  const job = { role: qp('role', 120), employer: qp('employer', 100), source: qp('source', 40), ad: qp('job', 500) };
+  const hasResume = !!(resume?.f && (resume.f.name || resume.f.summary || resume.f.skills));
+  root.querySelector<HTMLElement>('[data-act="resume"]')!.hidden = !hasResume;
+  if (job.role || job.employer) {
+    set('role', job.role, false); set('employer', job.employer, false); set('source', job.source, false);
+    const kit = root.querySelector<HTMLElement>('[data-kit]')!;
+    kit.hidden = false;
+    kit.querySelector('[data-kit-role]')!.textContent = job.role || 'this job';
+    kit.querySelector('[data-kit-employer]')!.textContent = job.employer ? ` at ${job.employer}` : '';
+    const rs = kit.querySelector<HTMLElement>('[data-kit-resume]')!;
+    const a = document.createElement('a'); a.href = '/resume-builder'; a.target = '_blank'; a.dataset.cta = 'tailor_resume';
+    if (hasResume) { a.textContent = 'open your saved resume'; rs.append(a, ', check it suits this job, then Save as PDF.'); }
+    else { a.textContent = 'make one with the free resume builder'; rs.append(a, ' (tick "Remember on this device" and come back here to reuse it).'); }
+    const adLink = kit.querySelector<HTMLAnchorElement>('[data-kit-ad]')!;
+    let ok = false;
+    try { const u = new URL(job.ad); ok = u.protocol === 'https:'; if (ok) adLink.href = u.toString(); } catch {}
+    kit.querySelector<HTMLElement>('[data-kit-ad-step]')!.hidden = !ok;
+    if (!ok) kit.querySelector<HTMLElement>('[data-kit-ad-step]')!.remove();
+    if (hasResume) useResume();
+    track('cover_tailor');
+  }
+
   root.addEventListener('input', render);
   root.addEventListener('click', (e) => {
     const b = (e.target as HTMLElement).closest('button');
     if (!b) return;
+    if (b.dataset.act === 'resume') useResume();
     if (b.dataset.act === 'example') { Object.entries(EXAMPLE).forEach(([k, v]) => { const i = root.querySelector<HTMLInputElement>(`[data-f="${k}"]`); if (i) i.value = v; }); render(); track('cover_example'); }
     if (b.dataset.act === 'print') { render(); track('cover_pdf'); window.print(); const n = document.querySelector('[data-nudge]'); if (n) { n.scrollIntoView({ block: 'center' }); n.classList.add('chc-nudge--flash'); } }
     if (b.dataset.act === 'copy') {
@@ -180,6 +248,13 @@ const t = p.tips;
   .cl-linkbtn { font: inherit; background: none; border: 0; padding: 0; color: var(--forest); text-decoration: underline; cursor: pointer; }
   .cl-save { display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; background: var(--mint-soft); border-radius: var(--radius); padding: 1.1rem; }
   .cl-save .chc-form__status { flex-basis: 100%; }
+  .cl-tools { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0; }
+  .cl-tools [hidden] { display: none; }
+  .cl-kit { background: #FFF6DA; border-left: 5px solid var(--sun); border-radius: 10px; padding: 0.9rem 1.1rem; }
+  .cl-kit[hidden] { display: none; }
+  .cl-kit__head { margin: 0 0 0.4rem; font-size: 1.1rem; }
+  .cl-kit__steps { margin: 0; padding-left: 1.3rem; display: grid; gap: 0.35rem; }
+  .cl-kit a { color: var(--forest); font-weight: 700; }
   .cl-previewlabel { font-weight: 700; margin: 0 0 0.4rem; color: var(--muted); }
   .cl-paper { background: #fff; color: #1b1b1b; border: 1px solid #d8d8d8; border-radius: 6px; box-shadow: 0 6px 24px rgba(18, 59, 48, 0.08);
     padding: clamp(1.2rem, 4vw, 2.4rem); font-family: 'Atkinson Hyperlegible Next', Arial, sans-serif; font-size: 0.95rem; line-height: 1.55; min-height: 20rem; overflow-wrap: anywhere; }
