@@ -1,6 +1,6 @@
 # Niche finder
 
-Updated 2026-10-25. Google searches in the United States unless an idea says otherwise (Market column). Score = 30% demand + 25% money (CPC) + 25% ease (SEO difficulty) + 20% fit (Claude: data source, automation, monetisation, risk).
+Updated 2026-10-29. Google searches in the United States unless an idea says otherwise (Market column). Score = 30% demand + 25% money (CPC) + 25% ease (SEO difficulty) + 20% fit (Claude: data source, automation, monetisation, risk).
 
 Add ideas by chat: "score these niches: …". Rules: launch at most one new site a month, only while the last one is on track.
 
@@ -16,18 +16,20 @@ Add ideas by chat: "score these niches: …". Rules: launch at most one new site
 | 6 | Video games: release dates and trailers | United States | **62** | 100 | 32 | 62 | 40 | 14,104,000 | $0.35 | 38 |
 | 7 | Board games | United States | **61** | 78 | 32 | 84 | 42 | 2,245,200 | $0.35 | 16 |
 | 8 | Victoria: things to do by town | Australia | **60** | 52 | 47 | 95 | 42 | 353,780 | $0.63 | 5 |
-| 9 | Book series in reading order | United States | **53** | 90 | 25 | 50 | 38 | 4,912,700 | $0.27 | — |
-| 10 | Movie soundtracks and film music | United States | **53** | 79 | 0 | 81 | 45 | 2,377,600 | $0.08 | 19 |
-| 11 | Victoria: where to eat by town | Australia | **51** | 40 | 41 | 96 | 22 | 155,710 | $0.50 | 4 |
-| 12 | Australian clothing brands directory (beason.com.au) | Australia | **50** | 43 | 61 | 60 | 34 | 189,760 | $1.09 | 40 |
-| 13 | Australian winter wear: beanies, jackets and knitwear | Australia | **50** | 13 | 57 | 96 | 38 | 24,330 | $0.92 | 4 |
-| 14 | US public library branches by city | United States | **46** | 22 | 54 | 77 | 34 | 45,100 | $0.84 | 23 |
-| 15 | Australian loungewear and comfortwear brands | Australia | **42** | 0 | 55 | 90 | 28 | 7,150 | $0.86 | 10 |
-| 16 | Hurricane history by coastal state | United States | **33** | 0 | 0 | 97 | 42 | 30 | — | 3 |
-| 17 | US airport runway and elevation facts | United States | **33** | 0 | 0 | 100 | 42 | 730 | — | 0 |
-| 18 | US school district enrollment by county | United States | **31** | 0 | 0 | 95 | 38 | 20 | — | 5 |
-| 19 | Freshwater fish species by state | United States | **28** | 0 | 0 | 94 | 22 | 650 | $0.03 | 6 |
-| 20 | Rail travel times between NSW stations | Australia | **21** | 0 | 0 | 50 | 44 | 0 | — | — |
+| 9 | Retro game finder: where to play classic games today (US) | United States | **58** | 71 | 31 | 81 | 42 | 1,393,340 | $0.34 | 19 |
+| 10 | Book series in reading order | United States | **53** | 90 | 25 | 50 | 38 | 4,912,700 | $0.27 | — |
+| 11 | Movie soundtracks and film music | United States | **53** | 79 | 0 | 81 | 45 | 2,377,600 | $0.08 | 19 |
+| 12 | Victoria: where to eat by town | Australia | **51** | 40 | 41 | 96 | 22 | 155,710 | $0.50 | 4 |
+| 13 | Australian clothing brands directory (beason.com.au) | Australia | **50** | 43 | 61 | 60 | 34 | 189,760 | $1.09 | 40 |
+| 14 | Australian winter wear: beanies, jackets and knitwear | Australia | **50** | 13 | 57 | 96 | 38 | 24,330 | $0.92 | 4 |
+| 15 | US public library branches by city | United States | **46** | 22 | 54 | 77 | 34 | 45,100 | $0.84 | 23 |
+| 16 | Retro game finder: where to play classic games today (AU) | Australia | **42** | 31 | 19 | 82 | 38 | 84,660 | $0.21 | 18 |
+| 17 | Australian loungewear and comfortwear brands | Australia | **42** | 0 | 55 | 90 | 28 | 7,150 | $0.86 | 10 |
+| 18 | Hurricane history by coastal state | United States | **33** | 0 | 0 | 97 | 42 | 30 | — | 3 |
+| 19 | US airport runway and elevation facts | United States | **33** | 0 | 0 | 100 | 42 | 730 | — | 0 |
+| 20 | US school district enrollment by county | United States | **31** | 0 | 0 | 95 | 38 | 20 | — | 5 |
+| 21 | Freshwater fish species by state | United States | **28** | 0 | 0 | 94 | 22 | 650 | $0.03 | 6 |
+| 22 | Rail travel times between NSW stations | Australia | **21** | 0 | 0 | 50 | 44 | 0 | — | — |
 
 ## Dog breeds: 75/100
 
@@ -453,6 +455,59 @@ _Seeds: best board games, board games for adults, board game rules, 2 player boa
 
 _Seeds: things to do in daylesford, things to do in bright, things to do in phillip island, things to do in ballarat, things to do in the yarra valley, day trips from melbourne, things to do in victoria. Data cost: US$0.114._
 
+## Retro game finder: where to play classic games today (US): 58/100
+
+**Verdict:** The high-volume head terms are Nintendo's own brand queries (Switch Online, eShop) with KD in the 30s, so you won't win them. The workable part is long-tail per-game pages, but the core promise, whether a game is playable on Switch Online today, has no free structured source, so you would need manual curation or accept stale data.
+
+**Site angle:** A 'where to play [game] today' database covering roughly 1,000 classic titles from the six platforms. Each game page lists current legal options (Steam, GOG, Fanatical/GMG, a named official collection such as NSO, PS Plus Classics or Sega Genesis Mini, and eBay original-cart listings where they exist), and only the official collections and cart pages get manual checks. Start with Mega Drive and GameCube, where the long-tail queries show volume and low KD. Hub pages cover each platform and each collection. Do not build any ROM, emulator or abandonware angle, and do not publish 'DOS games' pages until you can prove a legal source for each title.
+
+**Data sources:** Wikidata SPARQL (CC0): game, platform, release year, developer, publisher, series, franchise links; Steam Storefront API (appdetails): price, platforms, release, Steam Deck status; GOG catalogue data (check current terms before scraping; prefer any official feed or partner data); Fanatical and Green Man Gaming catalogue/price feeds where they offer them; Wikipedia platform and list pages for cross-checking releases and collection contents; Manually maintained official collection lists (Nintendo Switch Online, PS Plus Classics, Sega Genesis Mini, etc.), reviewed monthly; eBay Browse API for current cart listings (no sold data, so present prices as asking prices); Amazon Product Advertising API, only once the Associates account qualifies, for collections and consoles
+
+**Money:** GOG via Adtraction (about 6% of net, but a $5–10 game earns only around $0.30–0.60 per sale); Fanatical and Green Man Gaming affiliate programmes (about 5%); Amazon Associates for consoles, mini consoles and handhelds (video game commissions are low, historically around 1%, so treat it as secondary); eBay Partner Network for original carts; Display ads once traffic is established (retro handheld queries at $1.86 CPC are the main ad-value prize); Steam has no real affiliate programme, so Steam links earn nothing; use it for data, not monetisation
+
+**Page types:** /game/[slug]: one page per classic game, with a platform-by-platform 'where to play today' table and a price history if you store prices; /platform/[console]: hub for Mega Drive, SNES, N64, GameCube, PS1 and DOS, listing the best legal route for each platform; /collection/[service]: NSO, PS Plus Classics, Sega Genesis Mini and similar, with included-game lists and cost per game; /cart/[game]: original cartridge pages, only where eBay listings exist and carrying a condition/price-range note; /handhelds/[model]: retro handheld comparison pages, kept to official hardware and clearly labelled as not preloaded with ROMs
+
+**Risks:** Thin or mass-generated pages: 1,000 near-identical 'where to play' pages with AI filler will be classed as scaled content unless each has real, verified availability data; Stale availability: Nintendo and Sony rotate catalogues monthly, so pages can be wrong quickly and need a refresh pipeline; Head terms belong to Nintendo, with NSO queries at KD 36 and a strong brand SERP; Search intent may leak towards piracy ('dos games', 'nintendo online games'); keep the site visibly legal and avoid ranking for ROM-adjacent queries; Legal framing: 'playable legally' depends on region, service and storefront terms, so add a disclaimer and sourced claims rather than absolutes; Copyright and trademark: box art and screenshots need licensing or should be avoided; Wikidata images vary by Commons licence; Affiliate economics are thin per sale, and Amazon and eBay rates are low, so revenue depends on volume and ads; Affiliate and API terms: Amazon PA-API and eBay requirements (price display, freshness, disclosure) and FTC disclosure must be built into the template
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| retro handheld game system | 49,500 | 12 | $1.86 |
+| game cube games | 40,500 | 2 | $0.41 |
+| nintendo switch rpg games | 27,100 | 0 | $0.25 |
+| mariokart double dash | 27,100 | 6 | $0.30 |
+| goldeneye 007 nintendo | 27,100 | 23 | $0.37 |
+| nintendo cube games | 22,200 | 27 | $0.35 |
+| nintendo switch online family membership | 14,800 | 11 | $0.54 |
+| nintendo switch online individual membership | 14,800 | 28 | $0.58 |
+| mario baseball superstars | 12,100 | 6 | $0.30 |
+| mario superstar baseball superstars | 12,100 | 6 | $0.30 |
+| altered beast mega drive | 9,900 | 7 | $0.16 |
+| sega genesis altered beast | 9,900 | 1 | $0.16 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| nintendo switch online membership | 74,000 | 36 | $0.23 |
+| nintendo switch online | 60,500 | 36 | $0.27 |
+| nintendo online switch | 60,500 | — | $0.27 |
+| 64 nintendo games | 49,500 | — | $0.34 |
+| retro handheld game system | 49,500 | 12 | $1.86 |
+| game cube games | 40,500 | 2 | $0.41 |
+| nintendo switch online subscription | 40,500 | 39 | $0.41 |
+| nintendo online | 33,100 | 33 | $0.12 |
+| sonic and mario olympic | 33,100 | — | $0.15 |
+| nintendo switch rpg games | 27,100 | 0 | $0.25 |
+| nintendo e shop gift card | 27,100 | — | $1.22 |
+| mariokart double dash | 27,100 | 6 | $0.30 |
+| goldeneye 007 nintendo | 27,100 | 23 | $0.37 |
+| nintendo e shop games | 27,100 | — | $0.58 |
+| nintendo cube games | 22,200 | 27 | $0.35 |
+
+_Seeds: chrono trigger steam, chrono trigger switch, super mario 64 switch, gamecube games on switch, sega mega drive classics, nintendo switch online games, best retro handheld, best retro console, castlevania anniversary collection, dos games. Data cost: US$0.114._
+
 ## Book series in reading order: 53/100
 
 **Verdict:** The data is free and workable, since Wikidata has series membership and ordinals for thousands of series, but these are mostly franchise-level queries with weak monetisation (CPCs around $0.20-0.45, and books pay low affiliate commissions) and strong incumbents such as Wikipedia, Fandom wikis, publisher sites and Reddit. It only makes sense as a long-tail utility site, not a head-term play.
@@ -742,6 +797,59 @@ _Seeds: beanies australia, winter jackets australia, merino wool clothing austra
 
 _Seeds: libraries in tulsa oklahoma, how many library branches in phoenix, public library hours near denver. Data cost: US$0.107._
 
+## Retro game finder: where to play classic games today (AU): 42/100
+
+**Verdict:** Only a narrow version works: a PC-first classic game price and availability finder built on Steam and GOG APIs, plus Wikidata for metadata. The console side (Switch Online, PS Plus Classics) has no public catalogue API and needs manual curation, and the biggest keywords are Nintendo brand queries with low CPC, so the money sits in long-tail game pages.
+
+**Site angle:** auplay.example/classic/[game]: one page per classic PC/DOS/Windows game that is currently legally buyable or playable in Australia. Each page shows live AU prices from GOG and Steam, the cheapest verified option, and a short note on compatibility. Keep console availability as a small, manually reviewed list, not an auto-generated claim. Do not build the full six-platform 'where to play everything' site as the first launch.
+
+**Data sources:** Wikidata SPARQL (CC0): titles, release years, developers, platforms, and Steam/GOG ID properties to link entities; Steam Store API appdetails with cc=au for AU pricing, availability and age ratings; GOG catalogue endpoints (undocumented, verify terms and stability before relying on them); Wikipedia platform and release lists for the game universe and seeding; Manually verified Nintendo Switch Online and PS Plus Classics catalogue snapshots, reviewed monthly, never auto-scraped
+
+**Money:** GOG affiliate via Adtraction (confirm AU availability and current commission; the 6% figure is the founder's estimate); Fanatical and Green Man Gaming affiliate (confirm rate; ~5% is unverified); Amazon Associates AU for collections, mini consoles and retro handhelds (requires qualifying sales to stay active); eBay Partner Network for original cartridges, with a caveat that used-price volatility makes price claims risky; Display ads only once traffic justifies it; retro-gaming RPM is modest
+
+**Page types:** /classic/[game]: one page per game, live AU storefront prices and verified availability; /platform/[platform]: e.g. /platform/dos, /platform/gamecube, listing games with a current legal option; /platform/[platform]/[genre]: only where at least 10 games have verified availability; /buy/[game]-cartridge: original cartridge price pages, only for high-volume titles with real eBay listing data; /subscriptions/[service]: manually maintained catalogue pages, not templated per game
+
+**Risks:** No public API for Nintendo Switch Online or PS Plus Classics catalogues; auto-generated 'available on NSO' claims would be wrong and scraping breaks ToS; Availability and price data goes stale quickly; wrong 'where to play today' answers are a trust and YMYL-adjacent-consumer risk; Google may treat per-game templated pages with little unique content as thin; each page needs real price history or compatibility data to justify it; Top keywords are brand queries (nintendo switch online, eshop gift card) that Nintendo's own properties dominate, with CPC around $0.07 to $0.60; Per-game volumes are small: most DOS and GameCube game queries are in the tens to low hundreds per month, so traffic depends on breadth; Affiliate programme availability, rates and cookie terms for GOG, Fanatical and GMG in AU are unverified and could change; Amazon Associates and eBay PN both have terms on price display and sales thresholds that affect whether the site can monetise at all; Trademark and nominative use of Nintendo, Sony and Sega names needs careful disclaimers; avoid implying endorsement and never link to ROM or abandonware sources
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| nintendo switch online | 3,600 | 29 | $0.16 |
+| nintendo online | 2,900 | 29 | $0.64 |
+| nintendo switch online subscription | 1,900 | 30 | $0.07 |
+| goldeneye 007 nintendo | 1,900 | 24 | $0.60 |
+| game cube games | 1,300 | 3 | $0.28 |
+| price nintendo switch | 1,300 | 9 | $0.25 |
+| nintendo switch rpg games | 1,000 | 0 | $0.12 |
+| nintendo cube games | 1,000 | 14 | $0.31 |
+| nintendo switch sonic games | 720 | 0 | $0.14 |
+| nintendo switch online individual membership | 720 | 19 | $0.07 |
+| switch online | 590 | 27 | $0.29 |
+| nintendo switch online family membership | 590 | 16 | $0.24 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| nintendo switch online | 3,600 | 29 | $0.16 |
+| nintendo online switch | 3,600 | — | $0.16 |
+| nintendo online | 2,900 | 29 | $0.64 |
+| nintendo switch online membership | 2,900 | 34 | $0.09 |
+| retro handheld game system | 2,900 | — | $1.26 |
+| 64 nintendo games | 2,400 | — | $0.35 |
+| nintendo e shop gift card | 1,900 | — | $0.53 |
+| nintendo switch online subscription | 1,900 | 30 | $0.07 |
+| goldeneye 007 nintendo | 1,900 | 24 | $0.60 |
+| nintendoswitch eshop | 1,600 | — | $0.29 |
+| sonic and mario olympic | 1,600 | — | $0.21 |
+| game cube games | 1,300 | 3 | $0.28 |
+| nintendo e shop cards | 1,300 | — | $1.35 |
+| price nintendo switch | 1,300 | 9 | $0.25 |
+| nintendo switch rpg games | 1,000 | 0 | $0.12 |
+
+_Seeds: chrono trigger steam, chrono trigger switch, super mario 64 switch, gamecube games on switch, sega mega drive classics, nintendo switch online games, best retro handheld, best retro console, castlevania anniversary collection, dos games. Data cost: US$0.114._
+
 ## Australian loungewear and comfortwear brands: 42/100
 
 **Verdict:** Keyword demand is thin: the whole list is roughly 4,000 searches a month across near-duplicate groups, and the largest clusters are generic retail queries that big retailers and Google Shopping already own. It only works if merchant feeds give each page live price, size and stock data that a human-written guide can't match, and that data needs formal affiliate-feed access.
@@ -919,22 +1027,24 @@ _Seeds: how long to get from parramatta to central by train, train from wollongo
 
 Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits × affiliate clicks × conversion × payout (average of the top 3 matching programmes), plus display ads. These numbers rank ideas against each other; they are not forecasts. They get replaced by our own measured rates as our sites earn.
 
-**Model:** Calibrated from 263 page views, 0 affiliate clicks and 0 reported sales (trailers, vic): click rate 4.4% (assumed 5.0%), conversion 5.0% (assumed 5.0%). The assumption weighs as much as 2,000 views / 200 clicks, so real data takes over as it grows.
+**Model:** Calibrated from 302 page views, 2 affiliate clicks and 0 reported sales (trailers, vic, community-help-co): click rate 4.4% (assumed 5.0%), conversion 5.0% (assumed 5.0%). The assumption weighs as much as 2,000 views / 200 clicks, so real data takes over as it grows.
 
 | Idea | Market | Visits/mo (mid) | Est. revenue/mo (low · mid · high) | Avg payout per sale | Score |
 |---|---|---:|---|---:|---:|
-| Dog breeds | United States | 274,520 | $1,509 · **$14,063** · $67,970 | $18.33 | 75 |
-| US national parks and hiking trails | United States | 89,156 | $312 · **$2,721** · $12,634 | $9 | 74 |
-| Anime: where to watch and watch order | United States | 102,419 | $198 · **$1,458** · $5,995 | $1.7 | 70 |
-| TV shows: where to watch | United States | 27,719 | $110 · **$769** · $3,028 | $1.7 | 73 |
-| Video games: release dates and trailers | United States | 70,520 | $60 · **$464** · $1,989 | $1.17 | 62 |
-| Book series in reading order | United States | 24,564 | $22 · **$176** · $767 | $1.43 | 53 |
-| Victoria: where to stay by town | Australia | 3,903 | $16 · **$145** · $677 | $11.33 | 66 |
-| Movie soundtracks and film music | United States | 11,888 | $11 · **$85** · $371 | $1.43 | 53 |
-| Board games | United States | 11,226 | $10 · **$80** · $346 | $1.4 | 61 |
-| Victoria: things to do by town | Australia | 1,769 | $6 · **$53** · $260 | $11.33 | 60 |
-| Victoria: where to eat by town | Australia | 779 | $2 · **$19** · $91 | $9 | 51 |
-| Australian clothing brands directory (beason.com.au) | Australia | 949 | $2 · **$16** · $69 | $3.5 | 50 |
+| Dog breeds | United States | 274,520 | $1,501 · **$13,983** · $67,559 | $18.33 | 75 |
+| US national parks and hiking trails | United States | 89,156 | $311 · **$2,709** · $12,569 | $9 | 74 |
+| Anime: where to watch and watch order | United States | 102,419 | $198 · **$1,455** · $5,980 | $1.7 | 70 |
+| TV shows: where to watch | United States | 27,719 | $110 · **$769** · $3,024 | $1.7 | 73 |
+| Video games: release dates and trailers | United States | 70,520 | $60 · **$463** · $1,982 | $1.17 | 62 |
+| Book series in reading order | United States | 24,564 | $22 · **$175** · $764 | $1.43 | 53 |
+| Victoria: where to stay by town | Australia | 3,903 | $16 · **$144** · $674 | $11.33 | 66 |
+| Movie soundtracks and film music | United States | 11,888 | $11 · **$85** · $370 | $1.43 | 53 |
+| Board games | United States | 11,226 | $10 · **$79** · $345 | $1.4 | 61 |
+| Victoria: things to do by town | Australia | 1,769 | $6 · **$53** · $259 | $11.33 | 60 |
+| Retro game finder: where to play classic games today (US) | United States | 6,967 | $5 · **$41** · $172 | $0.87 | 58 |
+| Victoria: where to eat by town | Australia | 779 | $2 · **$18** · $90 | $9 | 51 |
+| Australian clothing brands directory (beason.com.au) | Australia | 949 | $2 · **$16** · $68 | $3.5 | 50 |
+| Retro game finder: where to play classic games today (AU) | Australia | 423 | $0 · **$3** · $11 | $1 | 42 |
 | Australian winter wear: beanies, jackets and knitwear | Australia | 122 | $0 · **$3** · $16 | $9 | 50 |
 | US public library branches by city | United States | 226 | $0 · **$2** · $9 | $1.43 | 46 |
 | Australian loungewear and comfortwear brands | Australia | 36 | $0 · **$1** · $5 | $9 | 42 |
@@ -965,7 +1075,7 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 |---|---|---|---|---|
 | Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
-| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
 | Viator Partner Program | ~8% of booking value | easy | Website with travel content | approved |
 | GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | approved |
 | Ruffwear (dog gear) | ~8% | easy | check | not applied |
@@ -1014,11 +1124,11 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Discover Cars / Rentalcars (car hire) | 70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire) | easy | Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire. | not applied |
 | Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
-| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
 | Viator Partner Program | ~8% of booking value | easy | Website with travel content | approved |
 | GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | approved |
 | Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | approved |
-| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | not applied |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | rejected |
 
 ### Movie soundtracks and film music
 
@@ -1046,11 +1156,19 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Discover Cars / Rentalcars (car hire) | 70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire) | easy | Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire. | not applied |
 | Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
-| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
 | Viator Partner Program | ~8% of booking value | easy | Website with travel content | approved |
 | GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | approved |
 | Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | approved |
-| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | not applied |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | rejected |
+
+### Retro game finder: where to play classic games today (US)
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Green Man Gaming *(check)* | check | easy | check | not applied |
+| Humble Bundle partner *(check)* | check | easy | check | not applied |
+| Amazon Associates US: video games | 1% physical / 2% digital | easy | Same Associates account | approved |
 
 ### Victoria: where to eat by town
 
@@ -1058,11 +1176,12 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 |---|---|---|---|---|
 | Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
-| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
 | Viator Partner Program | ~8% of booking value | easy | Website with travel content | approved |
 | GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | approved |
 | Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | approved |
-| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | not applied |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | rejected |
+| Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
 
 ### Australian clothing brands directory (beason.com.au)
 
@@ -1070,7 +1189,15 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 |---|---|---|---|---|
 | Ruffwear (dog gear) | ~8% | easy | check | not applied |
 | Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
-| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | not applied |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | rejected |
+
+### Retro game finder: where to play classic games today (AU)
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
+| Green Man Gaming *(check)* | check | easy | check | not applied |
+| Humble Bundle partner *(check)* | check | easy | check | not applied |
 
 ### Australian winter wear: beanies, jackets and knitwear
 
@@ -1078,10 +1205,11 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 |---|---|---|---|---|
 | Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
-| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
 | Ruffwear (dog gear) | ~8% | easy | check | not applied |
 | Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
-| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | not applied |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | rejected |
+| Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
 
 ### US public library branches by city
 
@@ -1098,9 +1226,10 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 |---|---|---|---|---|
 | Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
-| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
 | Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
-| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | not applied |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | rejected |
+| Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
 
 ### Hurricane history by coastal state
 
@@ -1132,11 +1261,11 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Discover Cars / Rentalcars (car hire) | 70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire) | easy | Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire. | not applied |
 | Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
-| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
 | Viator Partner Program | ~8% of booking value | easy | Website with travel content | approved |
 | GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | approved |
 | Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | approved |
-| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | not applied |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | rejected |
 
 ### US school district enrollment by county
 
@@ -1144,9 +1273,10 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 |---|---|---|---|---|
 | Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
-| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
 | Bookshop.org affiliates *(check)* | check (commonly quoted ~10%) | easy | check | not applied |
 | Amazon Associates US: physical books | 4.5% | easy | Same Associates account | approved |
+| Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
 
 ### US airport runway and elevation facts
 
@@ -1155,7 +1285,8 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Discover Cars / Rentalcars (car hire) | 70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire) | easy | Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire. | not applied |
 | Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
-| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
+| Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
 
 ## Ad networks (when traffic qualifies)
 
@@ -1167,4 +1298,4 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Mediavine | 50,000 sessions | Strong in lifestyle; check Journey (smaller-site tier) terms |
 | Ezoic | 250,000 users (raised Feb 2026) |  |
 
-_Catalogue: hq/affiliate-programs.json (28 programmes, updated 2026-10-21). "(check)" = terms not yet verified from a current source._
+_Catalogue: hq/affiliate-programs.json (31 programmes, updated 2026-10-21). "(check)" = terms not yet verified from a current source._
