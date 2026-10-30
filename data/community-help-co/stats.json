@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-29T19:00:10.795Z",
+ "generatedAt": "2026-10-30T19:00:10.976Z",
  "period": {
-  "start": "2026-10-01",
-  "end": "2026-10-28"
+  "start": "2026-10-02",
+  "end": "2026-10-29"
  },
  "gscPeriod": {
-  "start": "2026-09-29",
-  "end": "2026-10-26"
+  "start": "2026-09-30",
+  "end": "2026-10-27"
  },
  "sources": {
   "ga4": true,
@@ -14,12 +14,12 @@
   "notes": []
  },
  "totals": {
-  "views": 2,
+  "views": 9,
   "prevViews": 0,
-  "users": 2,
+  "users": 9,
   "cta": {},
   "gscClicks": 0,
-  "gscImpressions": 49
+  "gscImpressions": 58
  },
  "daily": [
   {
@@ -31,30 +31,57 @@
    "date": "2026-10-28",
    "views": 1,
    "cta": 0
+  },
+  {
+   "date": "2026-10-29",
+   "views": 7,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 1,
+   "views": 4,
    "prevViews": 0,
-   "users": 1,
+   "users": 4,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 42,
-   "gscPosition": 17.4,
+   "gscImpressions": 49,
+   "gscPosition": 16,
    "topQuery": "community services placement"
   },
   {
    "path": "/contact",
+   "views": 2,
+   "prevViews": 0,
+   "users": 2,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 4,
+   "gscPosition": 35,
+   "topQuery": "community help"
+  },
+  {
+   "path": "/job-finder",
+   "views": 2,
+   "prevViews": 0,
+   "users": 2,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
+   "path": "/about",
    "views": 1,
    "prevViews": 0,
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 41.3,
-   "topQuery": "community help"
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
   },
   {
    "path": "/cover-letter-builder",
@@ -77,28 +104,53 @@
    "gscImpressions": 2,
    "gscPosition": 41,
    "topQuery": "help making a resume for free"
+  },
+  {
+   "path": "/privacy-policy",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 31,
+   "topQuery": "product information support"
   }
  ],
  "queries": [
   {
    "query": "community help",
    "clicks": 0,
-   "impressions": 14,
-   "position": 35.4,
+   "impressions": 15,
+   "position": 33.1,
    "page": "/"
   },
   {
    "query": "community services placement",
    "clicks": 0,
-   "impressions": 10,
-   "position": 5.9,
+   "impressions": 11,
+   "position": 6.5,
    "page": "/"
   },
   {
    "query": "community service placement",
    "clicks": 0,
+   "impressions": 6,
+   "position": 12.3,
+   "page": "/"
+  },
+  {
+   "query": "local community support",
+   "clicks": 0,
    "impressions": 5,
-   "position": 12.2,
+   "position": 4.8,
+   "page": "/"
+  },
+  {
+   "query": "community services recruitment agencies",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 2.7,
    "page": "/"
   },
   {
@@ -106,20 +158,6 @@
    "clicks": 0,
    "impressions": 3,
    "position": 6.7,
-   "page": "/"
-  },
-  {
-   "query": "local community support",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 5,
-   "page": "/"
-  },
-  {
-   "query": "community services recruitment agencies",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 3,
    "page": "/"
   },
   {
@@ -165,10 +203,24 @@
    "page": "/"
   },
   {
+   "query": "community helping",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 14,
+   "page": "/"
+  },
+  {
    "query": "community number",
    "clicks": 0,
    "impressions": 1,
    "position": 43,
+   "page": "/contact"
+  },
+  {
+   "query": "help support",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 16,
    "page": "/contact"
   },
   {
@@ -177,6 +229,13 @@
    "impressions": 1,
    "position": 6,
    "page": "/contact"
+  },
+  {
+   "query": "product information support",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 31,
+   "page": "/privacy-policy"
   },
   {
    "query": "help making a resume for free",
@@ -223,6 +282,11 @@
    "date": "2026-10-26",
    "clicks": 3,
    "impressions": 26
+  },
+  {
+   "date": "2026-10-27",
+   "clicks": 0,
+   "impressions": 33
   }
  ]
 }

@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-29T19:00:10.795Z",
+ "generatedAt": "2026-10-30T19:00:10.976Z",
  "period": {
-  "start": "2026-10-01",
-  "end": "2026-10-28"
+  "start": "2026-10-02",
+  "end": "2026-10-29"
  },
  "gscPeriod": {
-  "start": "2026-09-29",
-  "end": "2026-10-26"
+  "start": "2026-09-30",
+  "end": "2026-10-27"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 61,
+  "views": 66,
   "prevViews": 0,
-  "users": 43,
+  "users": 46,
   "cta": {
    "book_tour": 2,
    "website": 1,
    "map": 1
   },
   "gscClicks": 4,
-  "gscImpressions": 1875
+  "gscImpressions": 1885
  },
  "daily": [
   {
@@ -65,14 +65,19 @@
    "date": "2026-10-28",
    "views": 4,
    "cta": 0
+  },
+  {
+   "date": "2026-10-29",
+   "views": 5,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 28,
+   "views": 30,
    "prevViews": 0,
-   "users": 16,
+   "users": 17,
    "cta": {},
    "gscClicks": 2,
    "gscImpressions": 5,
@@ -113,6 +118,17 @@
    "topQuery": null
   },
   {
+   "path": "/road-trips/yarra-valley-day-trip",
+   "views": 2,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 26,
+   "gscPosition": 68,
+   "topQuery": "yarra valley day trip"
+  },
+  {
    "path": "/daylesford",
    "views": 2,
    "prevViews": 0,
@@ -144,17 +160,6 @@
    "gscImpressions": 0,
    "gscPosition": null,
    "topQuery": null
-  },
-  {
-   "path": "/road-trips/yarra-valley-day-trip",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 26,
-   "gscPosition": 68,
-   "topQuery": "yarra valley day trip"
   },
   {
    "path": "/collections/day-trips-from-melbourne",
@@ -217,6 +222,17 @@
    "topQuery": "the ballarat"
   },
   {
+   "path": "/weekends/romantic",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 4,
+   "gscPosition": 88.8,
+   "topQuery": "couples getaway packages"
+  },
+  {
    "path": "/yarra-glen",
    "views": 1,
    "prevViews": 0,
@@ -272,6 +288,17 @@
    "gscImpressions": 1,
    "gscPosition": 80,
    "topQuery": "road trips from melbourne"
+  },
+  {
+   "path": "/weekends/daylesford-romantic-weekend",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 50,
+   "topQuery": "daylesford accommodation for couples"
   },
   {
    "path": "/weekends/by-train",
@@ -335,8 +362,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 51,
-   "gscPosition": 37.5,
+   "gscImpressions": 52,
+   "gscPosition": 38.1,
    "topQuery": "1004 mornington-flinders road red hill vic 3937"
   },
   {
@@ -406,6 +433,17 @@
    "topQuery": "great ocean road"
   },
   {
+   "path": "/omeo",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 30,
+   "gscPosition": 58.3,
+   "topQuery": "614 tongio gap road omeo"
+  },
+  {
    "path": "/south-yarra/eat",
    "views": 0,
    "prevViews": 0,
@@ -426,17 +464,6 @@
    "gscImpressions": 29,
    "gscPosition": 55.9,
    "topQuery": "bright things to do"
-  },
-  {
-   "path": "/omeo",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 27,
-   "gscPosition": 55.3,
-   "topQuery": "614 tongio gap road omeo"
   },
   {
    "path": "/carlton/eat",
@@ -467,8 +494,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 24,
-   "gscPosition": 61,
+   "gscImpressions": 25,
+   "gscPosition": 62.5,
    "topQuery": "sorrento"
   },
   {
@@ -637,6 +664,17 @@
    "topQuery": "romantic getaways victoria for couples"
   },
   {
+   "path": "/metung",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 15,
+   "gscPosition": 52.8,
+   "topQuery": "110 metung road metung vic 3904"
+  },
+  {
    "path": "/wangaratta",
    "views": 0,
    "prevViews": 0,
@@ -659,17 +697,6 @@
    "topQuery": "echuca moama attractions"
   },
   {
-   "path": "/metung",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 13,
-   "gscPosition": 47.6,
-   "topQuery": "110 metung road metung vic 3904"
-  },
-  {
    "path": "/south-yarra",
    "views": 0,
    "prevViews": 0,
@@ -690,6 +717,17 @@
    "gscImpressions": 12,
    "gscPosition": 59.5,
    "topQuery": "things to do bellarine peninsula"
+  },
+  {
+   "path": "/echuca/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 12,
+   "gscPosition": 62.6,
+   "topQuery": "accom in echuca"
   },
   {
    "path": "/lorne/stay",
@@ -745,17 +783,6 @@
    "gscImpressions": 11,
    "gscPosition": 42.8,
    "topQuery": "mornington"
-  },
-  {
-   "path": "/echuca/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 11,
-   "gscPosition": 63,
-   "topQuery": "accom in echuca"
   },
   {
    "path": "/phillip-island/do",
@@ -1066,6 +1093,17 @@
    "topQuery": "things to do in st kilda"
   },
   {
+   "path": "/apollo-bay/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 68.5,
+   "topQuery": "apollo bay dining"
+  },
+  {
    "path": "/castlemaine/do",
    "views": 0,
    "prevViews": 0,
@@ -1132,6 +1170,17 @@
    "topQuery": "warrnambool accommodation near city centre"
   },
   {
+   "path": "/weekends/budget",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 49.2,
+   "topQuery": "cheap getaways victoria"
+  },
+  {
    "path": "/anglesea",
    "views": 0,
    "prevViews": 0,
@@ -1141,17 +1190,6 @@
    "gscImpressions": 5,
    "gscPosition": 73.8,
    "topQuery": "anglesea 3230"
-  },
-  {
-   "path": "/apollo-bay/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 70.8,
-   "topQuery": "apollo bay dining"
   },
   {
    "path": "/castlemaine",
@@ -1295,17 +1333,6 @@
    "gscImpressions": 5,
    "gscPosition": 53.8,
    "topQuery": "best lunch in torquay"
-  },
-  {
-   "path": "/weekends/budget",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 48.6,
-   "topQuery": "cheap short getaways victoria"
   },
   {
    "path": "/barwon-heads",
@@ -1482,17 +1509,6 @@
    "gscImpressions": 4,
    "gscPosition": 57.5,
    "topQuery": "swan hill attractions"
-  },
-  {
-   "path": "/weekends/romantic",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 88.8,
-   "topQuery": "couples getaway packages"
   },
   {
    "path": "/yarra-glen/do",
@@ -2540,17 +2556,6 @@
    "topQuery": "trains to castlemaine"
   },
   {
-   "path": "/weekends/daylesford-romantic-weekend",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 50,
-   "topQuery": "daylesford accommodation for couples"
-  },
-  {
    "path": "/weekends/echuca-family-weekend",
    "views": 0,
    "prevViews": 0,
@@ -2759,6 +2764,13 @@
    "page": "/marysville/do"
   },
   {
+   "query": "614 tongio gap road omeo",
+   "clicks": 0,
+   "impressions": 11,
+   "position": 60.7,
+   "page": "/omeo"
+  },
+  {
    "query": "things to do in queenscliff",
    "clicks": 0,
    "impressions": 10,
@@ -2780,11 +2792,11 @@
    "page": "/lakes-entrance/do"
   },
   {
-   "query": "614 tongio gap road omeo",
+   "query": "1004 mornington-flinders road red hill",
    "clicks": 0,
    "impressions": 10,
-   "position": 58.7,
-   "page": "/omeo"
+   "position": 24.3,
+   "page": "/red-hill"
   },
   {
    "query": "accommodation in melbourne southbank",
@@ -2822,11 +2834,11 @@
    "page": "/mornington/eat"
   },
   {
-   "query": "1004 mornington-flinders road red hill",
+   "query": "614 tongio gap road omeo vic 3898",
    "clicks": 0,
    "impressions": 9,
-   "position": 19.6,
-   "page": "/red-hill"
+   "position": 66.9,
+   "page": "/omeo"
   },
   {
    "query": "things to do in st kilda",
@@ -2848,13 +2860,6 @@
    "impressions": 8,
    "position": 99,
    "page": "/mornington-peninsula/eat"
-  },
-  {
-   "query": "614 tongio gap road omeo vic 3898",
-   "clicks": 0,
-   "impressions": 8,
-   "position": 64.9,
-   "page": "/omeo"
   },
   {
    "query": "brunch in richmond",
@@ -2990,6 +2995,13 @@
    "page": "/kyneton/do"
   },
   {
+   "query": "110 metung road metung vic 3904",
+   "clicks": 0,
+   "impressions": 6,
+   "position": 54,
+   "page": "/metung"
+  },
+  {
    "query": "best restaurants in mornington peninsula",
    "clicks": 0,
    "impressions": 6,
@@ -3074,10 +3086,10 @@
    "page": "/melbourne-cbd/stay"
   },
   {
-   "query": "110 metung road metung vic 3904",
+   "query": "110 metung road metung",
    "clicks": 0,
    "impressions": 5,
-   "position": 48.4,
+   "position": 58.2,
    "page": "/metung"
   },
   {
@@ -3277,13 +3289,6 @@
    "page": "/melbourne-cbd/stay"
   },
   {
-   "query": "110 metung road metung",
-   "clicks": 0,
-   "impressions": 4,
-   "position": 50,
-   "page": "/metung"
-  },
-  {
    "query": "accommodation mildura",
    "clicks": 0,
    "impressions": 4,
@@ -3359,6 +3364,11 @@
    "date": "2026-10-26",
    "clicks": 1,
    "impressions": 52
+  },
+  {
+   "date": "2026-10-27",
+   "clicks": 0,
+   "impressions": 11
   }
  ]
 }
