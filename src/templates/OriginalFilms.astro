@@ -1,6 +1,6 @@
 ---
 /**
- * /original-films: a share of what the site earns goes into producing original short films (31 Oct 2026).
+ * /original-films: a share of what the site earns goes into producing original films (31 Oct 2026).
  * Writers and directors keep creative control. Filmmaker pitch form + optional updates signup.
  * RULES: no affiliate links on this page, and never tie the film fund to clicking or buying through affiliate
  * links (Amazon Associates §6(g) bans incentives, including donations to a cause, for using its links).
@@ -13,7 +13,7 @@ const { faqs } = Astro.props;
   <div class="wrap">
     <p class="fund-kicker">Original films</p>
     <h1 class="display">What this site earns helps make new films.</h1>
-    <p class="lede fund-hero__lede">We put a share of what movietrailer.channel earns into producing original short films. The more people use the site, the more films we can help get made.</p>
+    <p class="lede fund-hero__lede">We put a share of what movietrailer.channel earns into producing original films. The more people use the site, the more films we can help get made.</p>
   </div>
 </section>
 
@@ -24,8 +24,8 @@ const { faqs } = Astro.props;
       <p>We back writers and directors and their vision. We don’t make films by committee or tell anyone what to shoot.</p>
     </div>
     <div class="fund-point">
-      <h2>Short films first</h2>
-      <p>We’re starting small: original shorts from independent filmmakers, shown here when they’re finished.</p>
+      <h2>Starting small</h2>
+      <p>We’ll back projects the fund can properly pay for, most likely short films from independent filmmakers to begin with.</p>
     </div>
     <div class="fund-point">
       <h2>Where we’re at</h2>
@@ -54,7 +54,7 @@ const { faqs } = Astro.props;
     <div class="fund-pitch">
       <div>
         <h2 id="pitch-title">Filmmakers: pitch us</h2>
-        <p>Making a short film? Tell us about it. We read every pitch, but can’t reply to them all.</p>
+        <p>Making a film? Tell us about it. We read every pitch, but can’t reply to them all.</p>
         <p class="fund-fine">Send only what you’re happy to share: a logline and a link, not a script. We may already be developing similar ideas, and sending a pitch doesn’t create any agreement or obligation on either side.</p>
       </div>
       <form class="fund-form fund-form--pitch" data-films-pitch action="/api/submit/pitch" method="post">

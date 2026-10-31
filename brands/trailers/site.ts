@@ -285,7 +285,7 @@ export function routes(): Route[] {
     });
   }
 
-  // Original films: a share of what the site earns goes into producing original shorts (31 Oct 2026).
+  // Original films: a share of what the site earns goes into producing original films (31 Oct 2026).
   // No affiliate links on this page (CI-checked), and never tie the fund to affiliate clicks or purchases.
   out.push({
     path: 'original-films',
@@ -293,7 +293,7 @@ export function routes(): Route[] {
     seo: {
       title: 'Original Films: What This Site Earns Helps Make New Films' + SUFFIX,
       rawTitle: true,
-      description: 'MovieTrailer.Channel puts a share of what it earns into producing original short films, with writers and directors in creative control. Filmmakers can pitch us.',
+      description: 'MovieTrailer.Channel puts a share of what it earns into producing original films, with writers and directors in creative control. Filmmakers can pitch us.',
     },
     props: {
       faqs: [
