@@ -1053,41 +1053,30 @@ main { display: block; }
   .pc-slip__net mark { transition: background-size 0.25s ease; }
 }
 
-/* ---------- Fund the Next Film (trailers, 31 Oct 2026) ---------- */
+/* ---------- Original films (trailers, 31 Oct 2026) ---------- */
 .fund-banner { display: block; background: var(--color-accent); color: var(--ink); text-decoration: none; font-size: var(--step--1); }
 .fund-banner:hover { color: var(--ink); filter: brightness(1.05); }
 .fund-banner__inner { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 0.75rem; padding-block: 0.6rem; }
 .fund-banner__badge { background: var(--ink); color: var(--color-accent); font-weight: 700; font-size: 0.75em; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.15em 0.6em; border-radius: 999px; }
-.fund-banner__live { opacity: 0.8; }
 
 .fund-hero { padding-block: var(--space-5) var(--space-4); border-bottom: 1px solid var(--line); background: radial-gradient(120% 90% at 85% 0%, color-mix(in srgb, var(--color-accent) 16%, transparent), transparent 60%); }
 .fund-kicker { color: var(--color-accent); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: var(--space-2); }
-.fund-hero__lede { max-width: 46ch; }
-.fund-status { max-width: 52ch; color: var(--muted); margin: 0; }
-.fund-status strong { color: var(--paper); }
-.fund-total { color: var(--muted); margin: 0; }
-.fund-confirmed { background: color-mix(in srgb, var(--color-accent) 18%, transparent); border: 1px solid var(--color-accent); border-radius: var(--radius); padding: var(--space-3); font-weight: 600; }
+.fund-hero .display { max-width: 18ch; text-wrap: balance; }
+.fund-hero__lede { max-width: 48ch; margin: 0; }
 
-.fund-cards { border: 0; margin: 0; padding: 0; display: grid; gap: var(--space-3); grid-template-columns: 1fr; }
-@media (min-width: 40rem) { .fund-cards { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 64rem) { .fund-cards { grid-template-columns: repeat(4, 1fr); } }
-.fund-card { position: relative; display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-4); border-radius: var(--radius); background: var(--panel); box-shadow: inset 0 0 0 1.5px var(--line); cursor: pointer; transition: box-shadow 0.15s; }
-.fund-card:hover { box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--color-accent) 60%, transparent); }
-.fund-card:has(input:checked) { box-shadow: inset 0 0 0 3px var(--color-accent); }
-.fund-card input { position: absolute; top: var(--space-3); right: var(--space-3); width: 1.25rem; height: 1.25rem; accent-color: var(--color-accent); }
-.fund-card__tag { color: var(--color-accent); font-weight: 700; font-size: var(--step--1); letter-spacing: 0.1em; text-transform: uppercase; }
-.fund-card__name { font-family: var(--font-display); font-weight: 800; font-size: var(--step-2); line-height: 1; padding-right: 1.5rem; }
-.fund-card__blurb { color: var(--muted); }
-.fund-bar { position: relative; display: block; height: 1.6rem; margin-top: auto; border-radius: 999px; background: color-mix(in srgb, var(--paper) 10%, transparent); overflow: hidden; }
-.fund-bar__fill { position: absolute; inset: 0 auto 0 0; background: var(--color-accent); border-radius: 999px; transition: width 0.6s ease; }
-.fund-bar__pct { position: relative; display: block; padding-inline: 0.7rem; line-height: 1.6rem; font-weight: 700; font-size: var(--step--1); mix-blend-mode: difference; color: #fff; }
+.fund-points { display: grid; gap: var(--space-4); grid-template-columns: 1fr; }
+@media (min-width: 52rem) { .fund-points { grid-template-columns: repeat(3, 1fr); } }
+.fund-point { border-top: 3px solid var(--color-accent); padding-top: var(--space-3); }
+.fund-point h2 { font-size: var(--step-2); margin-bottom: var(--space-2); }
+.fund-point p { color: var(--muted); margin: 0; }
 
-.fund-form__fields { display: grid; gap: var(--space-3); max-width: 32rem; margin-top: var(--space-4); }
+.fund-updates, .fund-pitch { display: grid; gap: var(--space-4); padding: var(--space-5) var(--space-4); border-radius: var(--radius); background: var(--panel); }
+@media (min-width: 52rem) { .fund-updates, .fund-pitch { grid-template-columns: 1fr 1.2fr; align-items: start; } }
+.fund-updates h2, .fund-pitch h2 { margin-bottom: var(--space-3); }
+.fund-form { display: grid; gap: var(--space-3); }
 .fund-field { display: grid; gap: 0.35rem; font-weight: 600; }
-.fund-field input, .fund-field textarea { font: inherit; font-weight: 400; color: var(--paper); background: var(--panel); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 0.7rem 0.8rem; min-height: 2.75rem; }
+.fund-field input, .fund-field textarea { font: inherit; font-weight: 400; color: var(--paper); background: var(--ink); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 0.7rem 0.8rem; min-height: 2.75rem; }
 .fund-field input:focus, .fund-field textarea:focus { border-color: var(--color-accent); outline: none; }
-.fund-check { display: flex; gap: 0.6rem; align-items: center; }
-.fund-check input { width: 1.2rem; height: 1.2rem; accent-color: var(--color-accent); }
 .fund-opt { color: var(--muted); font-weight: 400; }
 .fund-form .button { justify-self: start; border: 0; font: inherit; font-weight: 700; cursor: pointer; }
 .fund-form .button:disabled { opacity: 0.6; cursor: wait; }
@@ -1095,10 +1084,4 @@ main { display: block; }
 .fund-fine { color: var(--muted); font-size: var(--step--1); margin: 0; }
 .fund-fine a { color: var(--color-accent); }
 .fund-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
-
-.fund-pitch { display: grid; gap: var(--space-4); padding: var(--space-5) var(--space-4); border-radius: var(--radius); background: var(--panel); }
-@media (min-width: 52rem) { .fund-pitch { grid-template-columns: 1fr 1.2fr; align-items: start; } }
-.fund-pitch h2 { margin-bottom: var(--space-3); }
-.fund-form--pitch { display: grid; gap: var(--space-3); }
-.fund-form--pitch .fund-field input, .fund-form--pitch .fund-field textarea { background: var(--ink); }
 .fund-q { font-size: var(--step-0); margin: var(--space-4) 0 var(--space-1); }

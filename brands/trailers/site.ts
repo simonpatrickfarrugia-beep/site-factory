@@ -285,29 +285,21 @@ export function routes(): Route[] {
     });
   }
 
-  // Fund the Next Film: vote on the first film we help fund (31 Oct 2026). No affiliate links on this page.
-  // Concept ids must match FUND_CONCEPTS in src/worker/site.ts (checked by scripts/check-fund.mjs in CI).
+  // Original films: a share of what the site earns goes into producing original shorts (31 Oct 2026).
+  // No affiliate links on this page (CI-checked), and never tie the fund to affiliate clicks or purchases.
   out.push({
-    path: 'fund-the-next-film',
-    template: 'fundFilm',
+    path: 'original-films',
+    template: 'originalFilms',
     seo: {
-      title: 'Fund the Next Film: Vote on What Gets Made' + SUFFIX,
+      title: 'Original Films: What This Site Earns Helps Make New Films' + SUFFIX,
       rawTitle: true,
-      description: 'Help MovieTrailer.Channel choose the first short film it helps fund. Vote free on four ideas, or pitch us your own short film.',
+      description: 'MovieTrailer.Channel puts a share of what it earns into producing original short films, with writers and directors in creative control. Filmmakers can pitch us.',
     },
     props: {
-      concepts: [
-        { id: 'practical-horror', tag: 'Horror', name: '80s-style practical-effects horror short', blurb: 'Latex, rubber and fake blood: a short shot the way 80s creature features were, with every effect made on set, not in a computer.' },
-        { id: 'melbourne-noir', tag: 'Neo-noir', name: 'Melbourne neo-noir short', blurb: 'Laneways, trams and rain on the streets: a modern crime story set after dark in Melbourne.' },
-        { id: 'animated-fable', tag: 'Animation', name: 'Hand-drawn animated fable', blurb: 'A short fable drawn by hand, frame by frame, with a story for all ages.' },
-        { id: 'shoestring-scifi', tag: 'Sci-fi', name: 'Shoestring sci-fi short', blurb: 'Big idea, small budget: science fiction that leans on the story rather than the spectacle.' },
-      ],
       faqs: [
-        { q: 'Does it cost anything?', a: 'No. Voting is free, and we will never ask voters for money.' },
-        { q: 'Where would the money come from?', a: 'From what this site earns: affiliate commissions now, and ads later. We are not raising money from the public, and a vote is not an investment or a donation.' },
-        { q: 'When will a film be made?', a: 'When the fund can pay for it. We will share how it is going with supporters who asked for updates.' },
-        { q: 'What are credits?', a: 'Every confirmed Founding Supporter gets 10 credits. Credits have no cash value, can’t be exchanged for money and can’t be transferred. We will explain what they are for before they can be used for anything.' },
-        { q: 'Can I change my vote?', a: 'One vote per email. Until you confirm, voting again with the same email replaces your earlier pick.' },
+        { q: 'Does it cost me anything?', a: 'No. Using the site is free, and we will never ask you for money for the films.' },
+        { q: 'Where does the money come from?', a: 'From what the site earns as a business, such as ads. It is not a donation or a crowdfunding campaign, and we are not raising money from the public.' },
+        { q: 'Who decides what gets made?', a: 'The filmmakers. We choose which projects to back; the writer and director keep creative control of the film.' },
         { q: 'Who runs this?', a: 'MovieTrailer.Channel is published by Independent Media Network Pty Ltd in Melbourne, Australia. Questions: hello@movietrailer.channel.' },
       ],
     },

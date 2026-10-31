@@ -4,7 +4,7 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 await mkdir('shots', { recursive: true });
 const BASE = process.argv[2] || 'http://localhost:4321';
-const paths = (process.env.SNAP_PATHS || '/fund-the-next-film /').split(/\s+/).filter(Boolean);
+const paths = (process.env.SNAP_PATHS || '/original-films /').split(/\s+/).filter(Boolean);
 for (const p of paths) {
   let html = await (await fetch(BASE + p)).text();
   for (const m of [...html.matchAll(/<link[^>]+rel="stylesheet"[^>]*href="(\/[^"]+)"[^>]*>/g)]) {

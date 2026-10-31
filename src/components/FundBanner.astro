@@ -1,22 +1,9 @@
 ---
-/** Home page strip above the fold: "We're funding our first film. Vote on what gets made →".
- *  The leading film and the vote total appear only once 25+ votes are confirmed (/api/fund/counts). */
+/** Home page strip above the fold (31 Oct 2026). Never tie the film fund to affiliate clicks or purchases (Amazon rules). */
 ---
-<a class="fund-banner" href="/fund-the-next-film" data-cta="fund_banner">
+<a class="fund-banner" href="/original-films" data-cta="films_banner">
   <span class="wrap fund-banner__inner">
     <span class="fund-banner__badge">New</span>
-    <span class="fund-banner__text">We’re funding our first film. <strong>Vote on what gets made →</strong></span>
-    <span class="fund-banner__live" data-fund-live hidden></span>
+    <span class="fund-banner__text">We put a share of what this site earns into new original films. <strong>Learn more →</strong></span>
   </span>
 </a>
-<script is:inline>
-  fetch('/api/fund/counts', { headers: { accept: 'application/json' } })
-    .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (d) {
-      if (!d || !d.ok || !d.show || !d.leader) return;
-      var el = document.querySelector('[data-fund-live]');
-      el.textContent = 'Leading: ' + d.leader.name + ' · ' + d.total.toLocaleString() + ' votes';
-      el.hidden = false;
-    })
-    .catch(function () {});
-</script>

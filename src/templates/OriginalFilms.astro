@@ -1,0 +1,104 @@
+---
+/**
+ * /original-films: a share of what the site earns goes into producing original short films (31 Oct 2026).
+ * Writers and directors keep creative control. Filmmaker pitch form + optional updates signup.
+ * RULES: no affiliate links on this page, and never tie the film fund to clicking or buying through affiliate
+ * links (Amazon Associates §6(g) bans incentives, including donations to a cause, for using its links).
+ * No percentage is published (Simon's choice); the allocation itself is real (see DECISIONS.md, 31 Oct 2026).
+ */
+interface Props { faqs: { q: string; a: string }[] }
+const { faqs } = Astro.props;
+---
+<section class="fund-hero">
+  <div class="wrap">
+    <p class="fund-kicker">Original films</p>
+    <h1 class="display">What this site earns helps make new films.</h1>
+    <p class="lede fund-hero__lede">We put a share of what movietrailer.channel earns into producing original short films. The more people use the site, the more films we can help get made.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="band fund-points" aria-label="How it works">
+    <div class="fund-point">
+      <h2>Filmmakers keep control</h2>
+      <p>We back writers and directors and their vision. We don’t make films by committee or tell anyone what to shoot.</p>
+    </div>
+    <div class="fund-point">
+      <h2>Short films first</h2>
+      <p>We’re starting small: original shorts from independent filmmakers, shown here when they’re finished.</p>
+    </div>
+    <div class="fund-point">
+      <h2>Where we’re at</h2>
+      <p>We’ve just started. No film has been funded yet. When the first one is, you’ll see it here first.</p>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="updates-title" id="updates">
+    <div class="fund-updates">
+      <div>
+        <h2 id="updates-title">Hear about our first film</h2>
+        <p class="fund-fine">Only news about the films we fund. Unsubscribe any time. See our <a href="/privacy-policy">privacy policy</a>.</p>
+      </div>
+      <form class="fund-form fund-form--inline" data-films-updates action="/api/subscribe" method="post">
+        <label class="fund-field">Your email<input name="email" type="email" autocomplete="email" required /></label>
+        <input type="hidden" name="interests" value="films" />
+        <input type="hidden" name="source" value="/original-films" />
+        <input class="fund-hp" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <button class="button" type="submit">Keep me posted</button>
+        <p class="fund-form__status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="pitch-title" id="pitch">
+    <div class="fund-pitch">
+      <div>
+        <h2 id="pitch-title">Filmmakers: pitch us</h2>
+        <p>Making a short film? Tell us about it. We read every pitch, but can’t reply to them all.</p>
+        <p class="fund-fine">Send only what you’re happy to share: a logline and a link, not a script. We may already be developing similar ideas, and sending a pitch doesn’t create any agreement or obligation on either side.</p>
+      </div>
+      <form class="fund-form fund-form--pitch" data-films-pitch action="/api/submit/pitch" method="post">
+        <label class="fund-field">Your name<input name="name" autocomplete="name" required maxlength="120" /></label>
+        <label class="fund-field">Email<input name="email" type="email" autocomplete="email" required /></label>
+        <label class="fund-field">Project title<input name="project_title" required maxlength="160" /></label>
+        <label class="fund-field">Logline <span class="fund-opt">(one or two sentences)</span><textarea name="logline" rows="3" required maxlength="400"></textarea></label>
+        <label class="fund-field">Link to your reel or past work<input name="reel_link" type="url" placeholder="https://" required maxlength="500" /></label>
+        <input class="fund-hp" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <button class="button" type="submit">Send pitch</button>
+        <p class="fund-form__status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="band prose" aria-labelledby="faq-title">
+    <h2 id="faq-title">Questions</h2>
+    {faqs.map((f) => (<><h3 class="fund-q">{f.q}</h3><p>{f.a}</p></>))}
+  </section>
+</div>
+
+<script is:inline>
+  (function () {
+    var track = function (name) { if (window.gtag) window.gtag('event', name); };
+    function wire(form, event, okText) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var status = form.querySelector('.fund-form__status');
+        var button = form.querySelector('button[type=submit]');
+        button.disabled = true;
+        status.textContent = 'Sending…';
+        fetch(form.action, { method: 'POST', body: new FormData(form), headers: { accept: 'application/json' } })
+          .then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
+          .then(function (d) {
+            if (!d.ok) { status.textContent = d.message || "That didn't send. Please try again."; return; }
+            status.textContent = okText;
+            form.reset();
+            track(event);
+          })
+          .catch(function () { status.textContent = "That didn't send. Please try again."; })
+          .finally(function () { button.disabled = false; });
+      });
+    }
+    wire(document.querySelector('[data-films-updates]'), 'films_signup', "You're on the list. We'll email you when our first film is funded.");
+    wire(document.querySelector('[data-films-pitch]'), 'pitch_submitted', 'Pitch sent. Thanks! We’ll be in touch if it’s a fit.');
+  })();
+</script>

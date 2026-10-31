@@ -12,10 +12,6 @@
  *                            the built page, never from the request, so it can't be used to send arbitrary text), and adds
  *                            them to the list (interests "plans"). Max 3 sends per email per day.
  *   GET  /api/unsubscribe?e=&t=  one-click unsubscribe (t = HMAC of the email), linked from every email.
- *   GET  /api/fund/counts    "Fund the Next Film" confirmed vote totals (per-concept numbers only once 25+ have confirmed).
- *   POST /api/fund/vote      { email, concept, consent? }: records a pending vote and emails a confirmation link (double opt-in).
- *   GET  /api/fund/confirm?e=&t=  shows a "Confirm my vote" button (a POST, so email link scanners can't confirm for people);
- *   POST /api/fund/confirm?e=&t=  confirms: the vote counts, 10 credits + Founding Supporter (logged in credit_ledger).
  *   GET  /api/submit/status?since=<ISO time>  how many submissions arrived since then: a count only, never any details.
  *                            The `enquiries` GitHub workflow polls it and opens an issue (emailed to Simon) when it's above 0.
  *
@@ -39,10 +35,6 @@ export interface Env {
   RESEND_API_KEY?: string;
   /** From address for plan emails, e.g. "Vic Tours <plans@victours.com.au>". */
   MAIL_FROM?: string;
-  /** "1" turns on "Fund the Next Film" (/api/fund/*). Votes open once FUND_MAIL_FROM and RESEND_API_KEY are set. */
-  FUND?: string;
-  /** From address for vote confirmations, e.g. "MovieTrailer.Channel <films@send.example.com>". */
-  FUND_MAIL_FROM?: string;
 }
 
 const EMAIL = /^[^@\s<>"']{1,64}@[^@\s<>"']{1,190}\.[a-z]{2,24}$/i;
@@ -232,161 +224,12 @@ async function planEmail(request: Request, env: Env): Promise<Response> {
   return json({ ok: true, message: 'Sent! Check your inbox (and your spam folder, just in case).' });
 }
 
-// ---------------------------------------------------------------- "Fund the Next Film" (votes, double opt-in, credits)
-/** Keep in step with the concept cards in brands/trailers/site.ts (CI checks the ids match). */
-export const FUND_CONCEPTS = [
-  { id: 'practical-horror', name: '80s-style practical-effects horror short' },
-  { id: 'melbourne-noir', name: 'Melbourne neo-noir short' },
-  { id: 'animated-fable', name: 'Hand-drawn animated fable' },
-  { id: 'shoestring-scifi', name: 'Shoestring sci-fi short' },
-] as const;
-/** Per-concept numbers stay hidden until this many confirmed votes (a "0 votes" bar makes the page look dead). */
-const FUND_SHOW_AT = 25;
-/** The only reasons credits can ever be given. Never for Amazon or affiliate clicks or purchases. */
-const CREDIT_REASONS = { founding_supporter: 10 } as const;
-/** Resend free plan: 3,000 emails a month. Cap confirmations well under that. */
-const FUND_DAILY_CAP = 90;
-const FUND_TOKEN_DAYS = 14;
-const FUND_PAGE = '/fund-the-next-film';
-const fundMailOn = (env: Env) => !!env.RESEND_API_KEY && !!env.FUND_MAIL_FROM;
-const nowIso = () => new Date().toISOString();
-const randomHex = (bytes: number) => [...crypto.getRandomValues(new Uint8Array(bytes))].map((b) => b.toString(16).padStart(2, '0')).join('');
-
-async function fundCounts(env: Env): Promise<Response> {
-  const { results } = await env.DB.prepare(
-    `SELECT v.concept AS concept, COUNT(*) AS n FROM fund_votes v
-     JOIN supporters s ON s.brand = v.brand AND s.email = v.email
-     WHERE v.brand = ? AND s.confirmed_at IS NOT NULL GROUP BY v.concept`,
-  ).bind(env.BRAND).all<{ concept: string; n: number }>();
-  const counts: Record<string, number> = Object.fromEntries(FUND_CONCEPTS.map((c) => [c.id, 0]));
-  for (const r of results ?? []) if (r.concept in counts) counts[r.concept] = Number(r.n) || 0;
-  const total = Object.values(counts).reduce((a, b) => a + b, 0);
-  const show = total >= FUND_SHOW_AT;
-  const leader = show ? FUND_CONCEPTS.reduce((best, c) => (counts[c.id] > counts[best.id] ? c : best), FUND_CONCEPTS[0]) : null;
-  return Response.json(
-    { ok: true, total, show, counts: show ? counts : null, leader: leader ? { id: leader.id, name: leader.name } : null },
-    { headers: { 'cache-control': 'public, max-age=60' } },
-  );
-}
-
-async function fundVote(request: Request, env: Env): Promise<Response> {
-  const json = (body: unknown, status = 200) => Response.json(body, { status, headers: { 'cache-control': 'no-store' } });
-  const done = json({ ok: true, message: 'Nearly there! Check your inbox for a link to confirm your vote. It can take a minute, so check spam too.' });
-  const f = await readBody(request);
-  if (f.company_website) return done; // honeypot
-  const email = (f.email ?? '').trim().toLowerCase();
-  if (!EMAIL.test(email)) return json({ ok: false, message: 'That email address doesn’t look right.' }, 400);
-  const concept = FUND_CONCEPTS.find((c) => c.id === f.concept);
-  if (!concept) return json({ ok: false, message: 'Pick one of the four films first.' }, 400);
-  if (!fundMailOn(env)) return json({ ok: false, message: 'Voting opens in a few days. Please check back soon.' }, 503);
-  const consent = f.consent === 'yes' || f.consent === 'on';
-
-  const existing = await env.DB.prepare('SELECT confirmed_at FROM supporters WHERE brand = ? AND email = ?').bind(env.BRAND, email).first<{ confirmed_at: string | null }>();
-  // Already confirmed: one vote per email. Same reply as a new vote, so nobody can test which emails have voted.
-  if (existing?.confirmed_at) return done;
-
-  const sends = await env.DB.prepare(
-    `SELECT SUM(CASE WHEN page = ? THEN 1 ELSE 0 END) AS mine, COUNT(*) AS all_sends FROM submissions
-     WHERE brand = ? AND form = 'fund-confirm' AND created_at > strftime('%Y-%m-%dT%H:%M:%fZ', 'now', '-1 day')`,
-  ).bind(email, env.BRAND).first<{ mine: number | null; all_sends: number }>();
-  if ((sends?.mine ?? 0) >= 3) return json({ ok: false, message: 'We’ve already sent a few confirmation emails to that address today. Check your inbox and spam folder.' }, 429);
-  if ((sends?.all_sends ?? 0) >= FUND_DAILY_CAP) return json({ ok: false, message: 'Lots of votes today! Please try again tomorrow.' }, 429);
-
-  const token = randomHex(16);
-  const now = nowIso();
-  const source = (() => { try { return new URL(request.headers.get('referer') ?? '', request.url).pathname.slice(0, 300); } catch { return FUND_PAGE; } })();
-  await env.DB.batch([
-    env.DB.prepare(
-      `INSERT INTO supporters (brand, email, consented_at, source, confirm_token, token_sent_at) VALUES (?, ?, ?, ?, ?, ?)
-       ON CONFLICT (brand, email) DO UPDATE SET confirm_token = excluded.confirm_token, token_sent_at = excluded.token_sent_at,
-         consented_at = CASE WHEN excluded.consented_at IS NOT NULL THEN excluded.consented_at ELSE supporters.consented_at END,
-         unsubscribed_at = CASE WHEN excluded.consented_at IS NOT NULL THEN NULL ELSE supporters.unsubscribed_at END`,
-    ).bind(env.BRAND, email, consent ? now : null, source, token, now),
-    env.DB.prepare(
-      `INSERT INTO fund_votes (brand, email, concept, voted_at) VALUES (?, ?, ?, ?)
-       ON CONFLICT (brand, email) DO UPDATE SET concept = excluded.concept, voted_at = excluded.voted_at`,
-    ).bind(env.BRAND, email, concept.id, now),
-  ]);
-
-  const origin = new URL(request.url).origin;
-  const site = new URL(origin).host.replace(/^www\./, '');
-  const confirm = `${origin}/api/fund/confirm?e=${encodeURIComponent(email)}&t=${token}`;
-  const unsub = `${origin}/api/unsubscribe?e=${encodeURIComponent(email)}&t=${await unsubToken(email, env)}`;
-  const updatesLine = consent
-    ? 'You also asked for funding updates. We’ll send them now and then, and you can unsubscribe any time.'
-    : 'You didn’t ask for updates, so this is the only email we’ll send unless you ask for more.';
-  const sender = `Sent by Independent Media Network Pty Ltd, publisher of ${site}, Melbourne, Australia. Contact: hello@movietrailer.channel`;
-  const r = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: { authorization: `Bearer ${env.RESEND_API_KEY}`, 'content-type': 'application/json' },
-    body: JSON.stringify({
-      from: env.FUND_MAIL_FROM, to: [email], subject: 'Confirm your vote',
-      headers: { 'List-Unsubscribe': `<${unsub}>`, 'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click' },
-      text: `Thanks for voting on the first film ${site} helps fund.\n\nYour vote: ${concept.name}\n\nConfirm it here (it only counts once you do): ${confirm}\n\nDidn't vote? Ignore this email and nothing happens.\n\n${updatesLine}\n\nUnsubscribe: ${unsub}\n\n${sender}`,
-      html: `<div style="font-family:Arial,sans-serif;font-size:16px;line-height:1.5;color:#12162B;max-width:560px">
-        <h1 style="font-size:22px;margin:0 0 8px">Confirm your vote</h1>
-        <p style="margin:0 0 8px">Thanks for voting on the first film ${htmlEsc(site)} helps fund.</p>
-        <p style="margin:0 0 16px">Your vote: <strong>${htmlEsc(concept.name)}</strong></p>
-        <p style="margin:0 0 20px"><a href="${htmlEsc(confirm)}" style="background:#F2B53A;color:#12162B;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:bold;display:inline-block">Confirm my vote</a></p>
-        <p style="margin:0 0 16px;color:#555">It only counts once you confirm. Didn’t vote? Ignore this email and nothing happens.</p>
-        <p style="margin:0 0 16px;color:#555">${htmlEsc(updatesLine)}</p>
-        <p style="font-size:13px;color:#777;margin:24px 0 0">${htmlEsc(sender)}. <a href="${htmlEsc(unsub)}" style="color:#777">Unsubscribe</a>.</p>
-      </div>`,
-    }),
-  });
-  await env.DB.prepare('INSERT INTO submissions (id, brand, form, data, page) VALUES (?, ?, ?, ?, ?)')
-    .bind(crypto.randomUUID(), env.BRAND, 'fund-confirm', JSON.stringify({ concept: concept.id, status: r.status }), email).run();
-  if (!r.ok) { console.error('resend failed', r.status, await r.text()); return json({ ok: false, message: 'That didn’t send. Please try again in a minute.' }, 502); }
-  return done;
-}
-
-async function fundConfirm(request: Request, env: Env): Promise<Response> {
-  const u = new URL(request.url);
-  const email = (u.searchParams.get('e') ?? '').trim().toLowerCase();
-  const token = u.searchParams.get('t') ?? '';
-  const page = (title: string, body: string, status = 200) => new Response(
-    `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta name="robots" content="noindex"><title>${htmlEsc(title)}</title>
-     <body style="font-family:Arial,sans-serif;max-width:32rem;margin:3rem auto;padding:0 1rem;background:#12162B;color:#F4EFE6"><h1 style="font-size:1.5rem">${htmlEsc(title)}</h1>${body}</body>`,
-    { status, headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' } },
-  );
-  const back = `<p><a href="${FUND_PAGE}" style="color:#F2B53A">Back to Fund the Next Film</a></p>`;
-  const row = EMAIL.test(email) && /^[0-9a-f]{32}$/.test(token)
-    ? await env.DB.prepare('SELECT confirm_token, token_sent_at, confirmed_at FROM supporters WHERE brand = ? AND email = ?').bind(env.BRAND, email).first<{ confirm_token: string | null; token_sent_at: string | null; confirmed_at: string | null }>()
-    : null;
-  if (row?.confirmed_at) return Response.redirect(new URL(`${FUND_PAGE}?confirmed=already#vote`, request.url).toString(), 303);
-  const fresh = row?.token_sent_at && Date.now() - Date.parse(row.token_sent_at) < FUND_TOKEN_DAYS * 864e5;
-  if (!row || row.confirm_token !== token || !fresh) return page('That link has expired', `<p>Confirmation links last ${FUND_TOKEN_DAYS} days and only the newest one works. Vote again and we’ll send a fresh link.</p>${back}`, 400);
-
-  // GET only shows a button: email security scanners open links, and a vote must be confirmed by a person.
-  if (request.method === 'GET') {
-    const v = await env.DB.prepare('SELECT concept FROM fund_votes WHERE brand = ? AND email = ?').bind(env.BRAND, email).first<{ concept: string }>();
-    const name = FUND_CONCEPTS.find((c) => c.id === v?.concept)?.name ?? 'your film';
-    return page('Confirm your vote', `<p>Your vote: <strong>${htmlEsc(name)}</strong></p>
-      <form method="post"><button style="font:inherit;font-weight:bold;background:#F2B53A;color:#12162B;border:0;border-radius:999px;padding:.8rem 1.4rem;cursor:pointer">Confirm my vote</button></form>${back}`);
-  }
-
-  const credits = CREDIT_REASONS.founding_supporter;
-  const res = await env.DB.prepare(
-    `UPDATE supporters SET confirmed_at = ?, confirm_token = NULL, founding = 1, credits = credits + ?
-     WHERE brand = ? AND email = ? AND confirmed_at IS NULL AND confirm_token = ?`,
-  ).bind(nowIso(), credits, env.BRAND, email, token).run();
-  if (res.meta.changes === 1) {
-    await env.DB.prepare('INSERT INTO credit_ledger (id, brand, email, amount, reason) VALUES (?, ?, ?, ?, ?)')
-      .bind(crypto.randomUUID(), env.BRAND, email, credits, 'founding_supporter').run();
-  }
-  return Response.redirect(new URL(`${FUND_PAGE}?confirmed=1#vote`, request.url).toString(), 303);
-}
-
 async function unsubscribe(request: Request, env: Env): Promise<Response> {
   const u = new URL(request.url);
   const email = (u.searchParams.get('e') ?? '').trim().toLowerCase();
   const page = (msg: string, status = 200) => new Response(`<!doctype html><meta name="viewport" content="width=device-width"><title>Unsubscribe</title><body style="font-family:Arial,sans-serif;max-width:32rem;margin:3rem auto;padding:0 1rem"><h1 style="font-size:1.4rem">${htmlEsc(msg)}</h1><p><a href="/">Back to the site</a></p></body>`, { status, headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' } });
   if (!EMAIL.test(email) || u.searchParams.get('t') !== (await unsubToken(email, env))) return page('That unsubscribe link isn’t valid. Reply to any email and we’ll remove you.', 400);
-  await env.DB.batch([
-    env.DB.prepare(`UPDATE subscribers SET unsubscribed_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now') WHERE brand = ? AND email = ?`).bind(env.BRAND, email),
-    // Film supporters too (the table only exists once migration 0003 is applied; it is, before FUND goes on).
-    ...(env.FUND === '1' ? [env.DB.prepare(`UPDATE supporters SET unsubscribed_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now'), consented_at = NULL WHERE brand = ? AND email = ?`).bind(env.BRAND, email)] : []),
-  ]);
+  await env.DB.prepare(`UPDATE subscribers SET unsubscribed_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now') WHERE brand = ? AND email = ?`).bind(env.BRAND, email).run();
   return page('You’re unsubscribed. You won’t get any more emails from us.');
 }
 
@@ -405,7 +248,7 @@ export default {
     if (pathname === '/api/submit/status' && (env.FORMS ?? '').trim()) {
       const since = new URL(request.url).searchParams.get('since') ?? '';
       if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?Z$/.test(since)) return Response.json({ ok: false, message: 'since must be an ISO UTC time' }, { status: 400 });
-      // Only the brand's own forms count (not internal rows such as plan-email or fund-confirm send logs).
+      // Only the brand's own forms count (not internal rows such as plan-email send logs).
       const forms = (env.FORMS ?? '').split(',').map((x) => x.trim()).filter(Boolean);
       const row = await env.DB.prepare(`SELECT COUNT(*) AS n FROM submissions WHERE brand = ? AND created_at > ? AND form IN (${forms.map(() => '?').join(',')})`).bind(env.BRAND, since, ...forms).first<{ n: number }>();
       return Response.json({ ok: true, count: row?.n ?? 0 }, { headers: { 'cache-control': 'no-store' } });
@@ -425,17 +268,6 @@ export default {
       try { return await planEmail(request, env); } catch (e) { console.error('plan-email failed', e); return Response.json({ ok: false, message: 'Something went wrong. Please try again.' }, { status: 500 }); }
     }
     if (pathname === '/api/unsubscribe') return unsubscribe(request, env);
-    if (env.FUND === '1' && pathname.startsWith('/api/fund/')) {
-      try {
-        if (pathname === '/api/fund/counts' && request.method === 'GET') return await fundCounts(env);
-        if (pathname === '/api/fund/vote' && request.method === 'POST') return await fundVote(request, env);
-        if (pathname === '/api/fund/confirm' && (request.method === 'GET' || request.method === 'POST')) return await fundConfirm(request, env);
-      } catch (e) {
-        console.error('fund failed', e);
-        return Response.json({ ok: false, message: 'Something went wrong. Please try again.' }, { status: 500 });
-      }
-      return new Response('Not found', { status: 404 });
-    }
     if (pathname === '/api/jobs' && env.JOBS === '1') {
       if (request.method !== 'GET') return new Response('Method not allowed', { status: 405, headers: { allow: 'GET' } });
       return jobs(request, env);
