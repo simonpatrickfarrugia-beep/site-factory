@@ -1,5 +1,6 @@
 /** Template registry. A route names its template; the catch-all page renders it. */
 import Home from './Home.astro';
+import FundFilm from './FundFilm.astro';
 import Movie from './Movie.astro';
 import Collection from './Collection.astro';
 import Discover from './Discover.astro';
@@ -49,6 +50,7 @@ import PcPage from './pc/PcPage.astro';
 
 export const templates = {
   home: Home,
+  fundFilm: FundFilm,
   movie: Movie,
   collection: Collection,
   discover: Discover,

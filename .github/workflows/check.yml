@@ -64,6 +64,16 @@ jobs:
             exit 1
           fi
           grep -E "page\(s\) built" build.log | sed "s/^/::notice title=Build ($BRAND)::/" || true
+      - name: Fund the Next Film concept ids match (trailers only)
+        if: matrix.brand == 'trailers'
+        run: |
+          node -e "
+            const fs=require('fs'); const ids=(f,re)=>[...fs.readFileSync(f,'utf8').matchAll(re)].map(m=>m[1]).sort().join(',');
+            const w=ids('src/worker/site.ts',/\{ id: '([a-z-]+)', name:/g), p=ids('brands/trailers/site.ts',/\{ id: '([a-z-]+)', tag:/g);
+            if(!w||w!==p){console.log('::error title=Fund concepts::Worker ['+w+'] vs page ['+p+'] must match');process.exit(1)}
+            console.log('::notice title=Fund concepts::'+w);
+            if(/amazon\.|tag=movietrailerc/i.test(fs.readFileSync('dist/fund-the-next-film.html','utf8').replace(/<footer[\s\S]*<\/footer>/,''))){console.log('::error title=Fund page::Affiliate link found on /fund-the-next-film');process.exit(1)}
+          " || exit 1
       - name: Verify
         run: node scripts/verify-build.mjs
       - name: Check the Cloudflare config bundles (dry run, nothing is deployed)

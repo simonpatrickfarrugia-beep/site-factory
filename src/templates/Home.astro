@@ -2,6 +2,7 @@
 import ChannelStream from '../components/ChannelStream.astro';
 import MovieCard from '../components/MovieCard.astro';
 import CollectionCard from '../components/CollectionCard.astro';
+import FundBanner from '../components/FundBanner.astro';
 
 type Card = { slug: string; name: string; year: string | null; youtubeId: string };
 interface Props {
@@ -13,6 +14,7 @@ interface Props {
 }
 const { stream, latest, featured, totals, allSlugs } = Astro.props;
 ---
+<FundBanner />
 <section class="spotlight" aria-labelledby="home-title">
   <div class="wrap spotlight__inner">
     <div class="spotlight__text">

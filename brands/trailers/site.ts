@@ -285,6 +285,34 @@ export function routes(): Route[] {
     });
   }
 
+  // Fund the Next Film: vote on the first film we help fund (31 Oct 2026). No affiliate links on this page.
+  // Concept ids must match FUND_CONCEPTS in src/worker/site.ts (checked by scripts/check-fund.mjs in CI).
+  out.push({
+    path: 'fund-the-next-film',
+    template: 'fundFilm',
+    seo: {
+      title: 'Fund the Next Film: Vote on What Gets Made' + SUFFIX,
+      rawTitle: true,
+      description: 'Help MovieTrailer.Channel choose the first short film it helps fund. Vote free on four ideas, or pitch us your own short film.',
+    },
+    props: {
+      concepts: [
+        { id: 'practical-horror', tag: 'Horror', name: '80s-style practical-effects horror short', blurb: 'Latex, rubber and fake blood: a short shot the way 80s creature features were, with every effect made on set, not in a computer.' },
+        { id: 'melbourne-noir', tag: 'Neo-noir', name: 'Melbourne neo-noir short', blurb: 'Laneways, trams and rain on the streets: a modern crime story set after dark in Melbourne.' },
+        { id: 'animated-fable', tag: 'Animation', name: 'Hand-drawn animated fable', blurb: 'A short fable drawn by hand, frame by frame, with a story for all ages.' },
+        { id: 'shoestring-scifi', tag: 'Sci-fi', name: 'Shoestring sci-fi short', blurb: 'Big idea, small budget: science fiction that leans on the story rather than the spectacle.' },
+      ],
+      faqs: [
+        { q: 'Does it cost anything?', a: 'No. Voting is free, and we will never ask voters for money.' },
+        { q: 'Where would the money come from?', a: 'From what this site earns: affiliate commissions now, and ads later. We are not raising money from the public, and a vote is not an investment or a donation.' },
+        { q: 'When will a film be made?', a: 'When the fund can pay for it. We will share how it is going with supporters who asked for updates.' },
+        { q: 'What are credits?', a: 'Every confirmed Founding Supporter gets 10 credits. Credits have no cash value, can’t be exchanged for money and can’t be transferred. We will explain what they are for before they can be used for anything.' },
+        { q: 'Can I change my vote?', a: 'One vote per email. Until you confirm, voting again with the same email replaces your earlier pick.' },
+        { q: 'Who runs this?', a: 'MovieTrailer.Channel is published by Independent Media Network Pty Ltd in Melbourne, Australia. Questions: hello@movietrailer.channel.' },
+      ],
+    },
+  });
+
   // Private dashboard (noindex, no analytics, not in the sitemap). Data: data/trailers/stats.json, refreshed daily.
   const titles: Record<string, string> = { '/': 'Home page', '/browse': 'Browse all', '/discover': 'Discover (collections)' };
   for (const m of movies) titles[`/movies/${m.slug}`] = `${m.name}${m.year ? ` (${m.year})` : ''}`;
