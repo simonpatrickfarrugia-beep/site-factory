@@ -51,6 +51,15 @@ export const brandSchema = z.object({
     ga4Id: z.string().regex(/^G-[A-Z0-9]+$/, 'GA4 IDs look like G-XXXXXXXXXX').optional(),
   }).default({}),
 
+  /** Display ads. One Google AdSense account serves every brand; each site is added to it in AdSense → Sites. */
+  ads: z.object({
+    /** AdSense publisher ID (public, safe to commit). Setting it adds the AdSense script, the site-verification
+     *  meta tag and an ads.txt line. Unset = no ads and an ads.txt that authorises nobody. */
+    adsenseClient: z.string().regex(/^ca-pub-\d{16}$/, 'AdSense publisher IDs look like ca-pub- followed by 16 digits').optional(),
+    /** Paths that never load ads (prefix match), e.g. ['/original-films']. Private /hq pages never do. */
+    exclude: z.array(z.string().startsWith('/')).default([]),
+  }).default({}),
+
   payments: z.object({ enabled: z.literal(false) }).default({ enabled: false }),
 });
 

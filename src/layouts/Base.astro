@@ -19,6 +19,10 @@ interface Props {
 
 const { title, rawTitle = false, description = brand.seo.defaultDescription, image, schema = [], private: isPrivate = false, noindex = false } = Astro.props;
 const fullTitle = !title ? brand.name : rawTitle ? title : `${title}${brand.seo.titleSuffix}`;
+// AdSense loads only on launched, public pages that aren't excluded (brand.ads.exclude).
+const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/') || '/';
+const adsClient = brand.launched && !isPrivate && brand.ads.adsenseClient && !brand.ads.exclude.some((p) => path === p || path.startsWith(p + '/'))
+  ? brand.ads.adsenseClient : null;
 const canonical = new URL(Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/'), Astro.site).toString();
 // Google Fonts rejects the whole request if a family lacks a requested weight,
 // so ask only for weights every family on the list is likely to have.
@@ -87,6 +91,10 @@ const tokenCss = `:root{${Object.entries(tokens).map(([k, v]) => `${k}:${v}`).jo
           });
         </script>
       </>
+    )}
+    {brand.ads.adsenseClient && <meta name="google-adsense-account" content={brand.ads.adsenseClient} />}
+    {adsClient && (
+      <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsClient}`} crossorigin="anonymous"></script>
     )}
     {brand.analytics.cloudflareToken && !isPrivate && (
       <script
