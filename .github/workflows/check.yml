@@ -33,6 +33,13 @@ jobs:
             node -e "const l=require('fs').readFileSync('tsc2.log','utf8').trim().split('\n').slice(0,30).join('\n');console.log('::error title=Site Worker typecheck::'+l.replace(/%/g,'%25').replace(/\r?\n/g,'%0A'))"
             exit 1
           fi
+      - name: Typecheck the mail Worker (IMN mail hub)
+        run: |
+          cp -r workers/pipeline/node_modules workers/mail/node_modules
+          if ! (cd workers/mail && npx tsc -p .) > tsc3.log 2>&1; then
+            node -e "const l=require('fs').readFileSync('tsc3.log','utf8').trim().split('\n').slice(0,30).join('\n');console.log('::error title=Mail Worker typecheck::'+l.replace(/%/g,'%25').replace(/\r?\n/g,'%0A'))"
+            exit 1
+          fi
   build:
     runs-on: ubuntu-24.04  # pinned: ubuntu-latest moved to 26.04 in Oct 2026 and broke the Playwright install
     timeout-minutes: 10
