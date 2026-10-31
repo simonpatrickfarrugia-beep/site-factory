@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-30T19:00:10.976Z",
+ "generatedAt": "2026-10-31T19:00:10.231Z",
  "period": {
-  "start": "2026-10-02",
-  "end": "2026-10-29"
+  "start": "2026-10-03",
+  "end": "2026-10-30"
  },
  "gscPeriod": {
-  "start": "2026-09-30",
-  "end": "2026-10-27"
+  "start": "2026-10-01",
+  "end": "2026-10-28"
  },
  "sources": {
   "ga4": true,
@@ -19,7 +19,7 @@
   "users": 9,
   "cta": {},
   "gscClicks": 0,
-  "gscImpressions": 58
+  "gscImpressions": 71
  },
  "daily": [
   {
@@ -46,8 +46,8 @@
    "users": 4,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 49,
-   "gscPosition": 16,
+   "gscImpressions": 56,
+   "gscPosition": 15,
    "topQuery": "community services placement"
   },
   {
@@ -90,8 +90,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 63.5,
+   "gscImpressions": 5,
+   "gscPosition": 41.2,
    "topQuery": "free cover letter"
   },
   {
@@ -101,9 +101,20 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 41,
-   "topQuery": "help making a resume for free"
+   "gscImpressions": 3,
+   "gscPosition": 30.7,
+   "topQuery": "resume builder help"
+  },
+  {
+   "path": "/free-daily-journal",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 1,
+   "topQuery": "back to you journal pdf free download"
   },
   {
    "path": "/privacy-policy",
@@ -115,28 +126,39 @@
    "gscImpressions": 1,
    "gscPosition": 31,
    "topQuery": "product information support"
+  },
+  {
+   "path": "/find-staff",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 45,
+   "topQuery": "hr support ringwood"
   }
  ],
  "queries": [
   {
    "query": "community help",
    "clicks": 0,
-   "impressions": 15,
-   "position": 33.1,
+   "impressions": 16,
+   "position": 31.3,
    "page": "/"
   },
   {
    "query": "community services placement",
    "clicks": 0,
-   "impressions": 11,
-   "position": 6.5,
+   "impressions": 12,
+   "position": 6.9,
    "page": "/"
   },
   {
    "query": "community service placement",
    "clicks": 0,
-   "impressions": 6,
-   "position": 12.3,
+   "impressions": 8,
+   "position": 12.6,
    "page": "/"
   },
   {
@@ -168,6 +190,20 @@
    "page": "/cover-letter-builder"
   },
   {
+   "query": "free cover letter builder",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 29,
+   "page": "/cover-letter-builder"
+  },
+  {
+   "query": "resume builder help",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 5.5,
+   "page": "/resume-builder"
+  },
+  {
    "query": "help community",
    "clicks": 0,
    "impressions": 2,
@@ -179,6 +215,13 @@
    "clicks": 0,
    "impressions": 1,
    "position": 1,
+   "page": "/"
+  },
+  {
+   "query": "community consultants",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 5,
    "page": "/"
   },
   {
@@ -196,6 +239,13 @@
    "page": "/"
   },
   {
+   "query": "i need help with work",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 6,
+   "page": "/"
+  },
+  {
    "query": "work in community services",
    "clicks": 0,
    "impressions": 1,
@@ -207,6 +257,13 @@
    "clicks": 0,
    "impressions": 1,
    "position": 14,
+   "page": "/"
+  },
+  {
+   "query": "help co",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 2,
    "page": "/"
   },
   {
@@ -231,6 +288,20 @@
    "page": "/contact"
   },
   {
+   "query": "cover letter builder",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 21,
+   "page": "/cover-letter-builder"
+  },
+  {
+   "query": "back to you journal pdf free download",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 1,
+   "page": "/free-daily-journal"
+  },
+  {
    "query": "product information support",
    "clicks": 0,
    "impressions": 1,
@@ -245,11 +316,11 @@
    "page": "/resume-builder"
   },
   {
-   "query": "resume builder help",
+   "query": "hr support ringwood",
    "clicks": 0,
    "impressions": 1,
-   "position": 1,
-   "page": "/resume-builder"
+   "position": 45,
+   "page": "/find-staff"
   }
  ],
  "gscDaily": [
@@ -287,6 +358,11 @@
    "date": "2026-10-27",
    "clicks": 0,
    "impressions": 33
+  },
+  {
+   "date": "2026-10-28",
+   "clicks": 0,
+   "impressions": 35
   }
  ]
 }

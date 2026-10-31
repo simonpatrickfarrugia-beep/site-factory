@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-30T19:00:10.976Z",
+ "generatedAt": "2026-10-31T19:00:10.231Z",
  "period": {
-  "start": "2026-10-02",
-  "end": "2026-10-29"
+  "start": "2026-10-03",
+  "end": "2026-10-30"
  },
  "gscPeriod": {
-  "start": "2026-09-30",
-  "end": "2026-10-27"
+  "start": "2026-10-01",
+  "end": "2026-10-28"
  },
  "sources": {
   "ga4": true,
@@ -14,9 +14,9 @@
   "notes": []
  },
  "totals": {
-  "views": 29,
+  "views": 37,
   "prevViews": 0,
-  "users": 29,
+  "users": 37,
   "cta": {},
   "gscClicks": 0,
   "gscImpressions": 0
@@ -26,14 +26,52 @@
    "date": "2026-10-29",
    "views": 29,
    "cta": 0
+  },
+  {
+   "date": "2026-10-30",
+   "views": 8,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 29,
+   "views": 34,
    "prevViews": 0,
-   "users": 29,
+   "users": 34,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
+   "path": "/contact",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
+   "path": "/salary/150000-after-tax",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
+   "path": "/salary/50000-after-tax",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 0,
@@ -42,5 +80,11 @@
   }
  ],
  "queries": [],
- "gscDaily": []
+ "gscDaily": [
+  {
+   "date": "2026-10-28",
+   "clicks": 0,
+   "impressions": 0
+  }
+ ]
 }
