@@ -683,6 +683,17 @@
    "link": "https://dash.cloudflare.com",
    "linkLabel": "Cloudflare",
    "doneAt": "2026-10-29"
+  },
+  {
+   "id": "bing-paycalc",
+   "kind": "do",
+   "sprint": false,
+   "mins": 2,
+   "what": "Bing Webmaster Tools → Add site → Import from Google Search Console → tick mypaycalc.com.au → Import (the other sites are already in Bing)",
+   "why": "Puts MyPayCalc in Bing, DuckDuckGo and ChatGPT search; free extra traffic for an ads site",
+   "link": "https://www.bing.com/webmasters",
+   "linkLabel": "Bing Webmaster Tools",
+   "done": false
   }
  ],
  "notes": [
