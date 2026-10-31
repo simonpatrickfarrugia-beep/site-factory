@@ -84,7 +84,7 @@ p { margin: 0 0 var(--space-3); }
 .site-header { border-bottom: 1px solid var(--line); }
 .site-header__inner {
   display: flex; align-items: center; justify-content: space-between;
-  gap: var(--space-3); min-height: 4rem;
+  gap: 0 var(--space-3); min-height: 4rem; flex-wrap: wrap; /* nav drops under the name on narrow phones instead of overflowing */
 }
 .wordmark {
   font-family: var(--font-display); font-weight: 800; font-size: 1.5rem;
@@ -92,7 +92,7 @@ p { margin: 0 0 var(--space-3); }
 }
 .wordmark:hover { color: var(--color-accent); }
 .site-nav { display: flex; gap: var(--space-4); list-style: none; margin: 0; padding: 0; }
-.site-nav a { text-decoration: none; font-weight: 600; padding-block: var(--space-2); }
+.site-nav a { text-decoration: none; font-weight: 600; padding-block: var(--space-2); white-space: nowrap; }
 .site-nav a[aria-current='page'] { color: var(--color-accent); }
 
 .site-footer { border-top: 1px solid var(--line); margin-top: var(--space-6); padding-block: var(--space-5); color: var(--muted); }
