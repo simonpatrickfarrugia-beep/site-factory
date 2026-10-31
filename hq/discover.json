@@ -1832,5 +1832,1316 @@
    }
   ],
   "promoted": false
+ },
+ {
+  "week": "2026-10-31",
+  "idea": "Boat ramp and marina slip rates by lake",
+  "market": "US",
+  "seeds": [
+   "how much does a boat slip cost on lake",
+   "boat ramp fees by lake",
+   "marina slip rental rates near lake"
+  ],
+  "terms": [
+   "marina",
+   "slip",
+   "boat"
+  ],
+  "why": "Pattern: one page per lake or reservoir listing marinas with slip, storage and launch fees, from USACE and state parks fee schedules plus OpenStreetMap marina data; buyers are about to rent slips, sign up for boat insurance quotes, or buy boat storage.",
+  "money": "Boat insurance lead buyers (e.g. Progressive/Boatus-style quote leads ~$15-40 per lead); Boatsetter or Captain-rental affiliates ~10%; marina booking platforms",
+  "domains": [
+   {
+    "name": "lakeslipguide.com",
+    "free": null
+   },
+   {
+    "name": "slipfinder.com",
+    "free": null
+   },
+   {
+    "name": "marinaroster.com",
+    "free": null
+   },
+   {
+    "name": "rampledger.com",
+    "free": null
+   },
+   {
+    "name": "berthmap.com",
+    "free": null
+   },
+   {
+    "name": "dockfare.com",
+    "free": null
+   }
+  ],
+  "breadth": 10714,
+  "easyVolume": 823500,
+  "medianCpc": 1.38,
+  "opportunity": 1548180,
+  "top": [
+   {
+    "keyword": "freedom boat club",
+    "volume": 60500,
+    "kd": 18
+   },
+   {
+    "keyword": "maid of mist boat tour",
+    "volume": 60500,
+    "kd": 16
+   },
+   {
+    "keyword": "ll bean boat and tote",
+    "volume": 60500,
+    "kd": 3
+   },
+   {
+    "keyword": "pontoon boat rental",
+    "volume": 22200,
+    "kd": 0
+   },
+   {
+    "keyword": "winter park scenic boat tour",
+    "volume": 22200,
+    "kd": 0
+   },
+   {
+    "keyword": "lake geneva boat accident",
+    "volume": 18100,
+    "kd": 0
+   },
+   {
+    "keyword": "crash boat beach",
+    "volume": 18100,
+    "kd": 0
+   },
+   {
+    "keyword": "fort lauderdale boat show",
+    "volume": 14800,
+    "kd": 17
+   }
+  ],
+  "promoted": false
+ },
+ {
+  "week": "2026-10-31",
+  "idea": "Campground booking by state park",
+  "market": "US",
+  "seeds": [
+   "how much is a campsite at state park",
+   "state park campsites with hookups",
+   "cheapest campground near lake"
+  ],
+  "terms": [
+   "campsite",
+   "campground",
+   "hookup"
+  ],
+  "why": "Pattern: one page per state park showing site types, hookup availability and nightly fees, using free state park open data and Recreation.gov/ReserveCalifornia feeds; visitors are about to book a site.",
+  "money": "Campground booking commissions (Hipcamp ~ affiliate/partner, KOA Campgrounds affiliate ~ small %); camping gear affiliates (Amazon ~3-4%, REI ~5%)",
+  "domains": [
+   {
+    "name": "campsitelist.com",
+    "free": null
+   },
+   {
+    "name": "sitesroster.com",
+    "free": null
+   },
+   {
+    "name": "hookupmap.com",
+    "free": null
+   },
+   {
+    "name": "campfeeguide.com",
+    "free": null
+   },
+   {
+    "name": "campsiteledger.com",
+    "free": null
+   },
+   {
+    "name": "parkcampfinder.com",
+    "free": null
+   }
+  ],
+  "breadth": 3326,
+  "easyVolume": 238700,
+  "medianCpc": 0.69,
+  "opportunity": 282860,
+  "top": [
+   {
+    "keyword": "big sur campground and cabins",
+    "volume": 14800,
+    "kd": 16
+   },
+   {
+    "keyword": "reserve california campground reservations",
+    "volume": 12100,
+    "kd": 23
+   },
+   {
+    "keyword": "sawmill campground florida",
+    "volume": 9900,
+    "kd": 0
+   },
+   {
+    "keyword": "lodgepole campground sequoia",
+    "volume": 5400,
+    "kd": 5
+   },
+   {
+    "keyword": "fort wilderness campground map",
+    "volume": 4400,
+    "kd": 0
+   },
+   {
+    "keyword": "zion canyon campground and rv resort",
+    "volume": 4400,
+    "kd": 0
+   },
+   {
+    "keyword": "ocean lakes family campground in myrtle beach",
+    "volume": 4400,
+    "kd": 10
+   },
+   {
+    "keyword": "madison campground yellowstone",
+    "volume": 4400,
+    "kd": 2
+   }
+  ],
+  "promoted": false
+ },
+ {
+  "week": "2026-10-31",
+  "idea": "Dog-friendly hotels by city",
+  "market": "US",
+  "seeds": [
+   "pet friendly hotels in austin",
+   "dog friendly hotels with no weight limit",
+   "hotels that allow two dogs in denver"
+  ],
+  "terms": [
+   "pet",
+   "dog",
+   "hotel"
+  ],
+  "why": "Pattern: one page per city listing pet policies (fees, weight limits, breed rules) parsed from free hotel OpenStreetMap tags and municipal lodging tax data; buyers are about to book a stay.",
+  "money": "Booking.com affiliate ~25-40% of commission; Expedia Affiliate ~2-6% of booking; pet travel insurance leads (Trupanion/Petplan ~$20-50 per signup)",
+  "domains": [
+   {
+    "name": "pawstay.com",
+    "free": false
+   },
+   {
+    "name": "leashroster.com",
+    "free": true
+   },
+   {
+    "name": "hotelwithdog.com",
+    "free": true
+   },
+   {
+    "name": "petstayguide.com",
+    "free": true
+   },
+   {
+    "name": "woofhotel.com",
+    "free": false
+   },
+   {
+    "name": "dogbedmap.com",
+    "free": true
+   }
+  ],
+  "breadth": 67000,
+  "easyVolume": 4629600,
+  "medianCpc": 2.66,
+  "opportunity": 13888800,
+  "top": [
+   {
+    "keyword": "small dog breeds",
+    "volume": 165000,
+    "kd": 7
+   },
+   {
+    "keyword": "purina pro plan dog food",
+    "volume": 135000,
+    "kd": 14
+   },
+   {
+    "keyword": "bluepearl pet hospital",
+    "volume": 135000,
+    "kd": 22
+   },
+   {
+    "keyword": "nationwide pet insurance",
+    "volume": 110000,
+    "kd": 24
+   },
+   {
+    "keyword": "massive dog breeds",
+    "volume": 90500,
+    "kd": 8
+   },
+   {
+    "keyword": "aggressive dog training",
+    "volume": 90500,
+    "kd": 5
+   },
+   {
+    "keyword": "hypoallergenic dog breeds",
+    "volume": 90500,
+    "kd": 0
+   },
+   {
+    "keyword": "girl dog names",
+    "volume": 90500,
+    "kd": 11
+   }
+  ],
+  "promoted": true
+ },
+ {
+  "week": "2026-10-31",
+  "idea": "Car seat compatibility by vehicle",
+  "market": "US",
+  "seeds": [
+   "will a graco car seat fit in a honda civic",
+   "car seats that fit 2015 toyota camry",
+   "best rear facing seat for small car"
+  ],
+  "terms": [
+   "fit",
+   "seat"
+  ],
+  "why": "Pattern: one page per make-model-year-car-seat combination with fit rating; NHTSA vehicle and LATCH data is free; parents are about to buy a car seat.",
+  "money": "Amazon Associates car seat sales ~3-4%; Chicco/Graco retailer affiliates; car seat trade-in and Carseat recycle partners; car insurance quote leads",
+  "domains": [
+   {
+    "name": "seatfitguide.com",
+    "free": null
+   },
+   {
+    "name": "carseatfit.com",
+    "free": null
+   },
+   {
+    "name": "latchroster.com",
+    "free": null
+   },
+   {
+    "name": "seatmatchbook.com",
+    "free": null
+   },
+   {
+    "name": "carseatmap.com",
+    "free": null
+   },
+   {
+    "name": "fitseatguide.com",
+    "free": null
+   }
+  ],
+  "breadth": 1230,
+  "easyVolume": 154140,
+  "medianCpc": 0.95,
+  "opportunity": 223503,
+  "top": [
+   {
+    "keyword": "is vivid seats legit",
+    "volume": 22200,
+    "kd": 0
+   },
+   {
+    "keyword": "booster seat requirements california",
+    "volume": 12100,
+    "kd": 1
+   },
+   {
+    "keyword": "when can infant car seat face forward",
+    "volume": 6600,
+    "kd": 2
+   },
+   {
+    "keyword": "when can an infant car seat face forward",
+    "volume": 6600,
+    "kd": 2
+   },
+   {
+    "keyword": "why do car seats expire",
+    "volume": 5400,
+    "kd": 2
+   },
+   {
+    "keyword": "suv with captain seats and third row",
+    "volume": 2900,
+    "kd": 0
+   },
+   {
+    "keyword": "3rd row seat suv",
+    "volume": 2400,
+    "kd": 0
+   },
+   {
+    "keyword": "will full sheets fit a queen bed",
+    "volume": 2400,
+    "kd": 0
+   }
+  ],
+  "promoted": false
+ },
+ {
+  "week": "2026-10-31",
+  "idea": "Solar installer quotes by US county",
+  "market": "US",
+  "seeds": [
+   "how much do solar panels cost in travis county",
+   "solar payback period by zip code",
+   "solar incentives in ohio county"
+  ],
+  "terms": [
+   "solar",
+   "panel"
+  ],
+  "why": "Pattern: one page per county showing installed cost per watt, state incentives and payback using NREL and EIA free data; visitors are about to request installer quotes.",
+  "money": "EnergySage / SolarReviews lead referral ~$30-100 per qualified solar lead; home battery installer leads",
+  "domains": [
+   {
+    "name": "solarcountyguide.com",
+    "free": null
+   },
+   {
+    "name": "sunroster.com",
+    "free": null
+   },
+   {
+    "name": "panelpayback.com",
+    "free": null
+   },
+   {
+    "name": "solarmapus.com",
+    "free": null
+   },
+   {
+    "name": "rooftopledger.com",
+    "free": null
+   },
+   {
+    "name": "sunquote.com",
+    "free": null
+   }
+  ],
+  "breadth": 788,
+  "easyVolume": 320900,
+  "medianCpc": 10.97,
+  "opportunity": 962700,
+  "top": [
+   {
+    "keyword": "white house solar panels passage",
+    "volume": 165000,
+    "kd": 14
+   },
+   {
+    "keyword": "solar panel installers",
+    "volume": 22200,
+    "kd": 23
+   },
+   {
+    "keyword": "white house solar panels teas test",
+    "volume": 9900,
+    "kd": 0
+   },
+   {
+    "keyword": "ivanpah solar power facility",
+    "volume": 8100,
+    "kd": 19
+   },
+   {
+    "keyword": "san jose solar companies",
+    "volume": 4400,
+    "kd": 9
+   },
+   {
+    "keyword": "ecoflow solar panels",
+    "volume": 4400,
+    "kd": 13
+   },
+   {
+    "keyword": "san jose solar company",
+    "volume": 4400,
+    "kd": 9
+   },
+   {
+    "keyword": "cnd solar oil",
+    "volume": 3600,
+    "kd": 0
+   }
+  ],
+  "promoted": false
+ },
+ {
+  "week": "2026-10-31",
+  "idea": "Pool service and installer cost by city",
+  "market": "US",
+  "seeds": [
+   "how much does a pool cleaning cost in phoenix",
+   "pool installation cost in tampa",
+   "inground pool cost per square foot"
+  ],
+  "terms": [
+   "pool",
+   "pool"
+  ],
+  "why": "Pattern: one page per metro with pool service and build cost ranges from Census housing data and local permit fee schedules; homeowners are about to request contractor quotes.",
+  "money": "Angi/HomeAdvisor-style contractor lead buyers ~$15-60 per lead; Leslie's pool supply affiliate; pool equipment Amazon affiliates",
+  "domains": [
+   {
+    "name": "poolquotemap.com",
+    "free": null
+   },
+   {
+    "name": "poolcostguide.com",
+    "free": null
+   },
+   {
+    "name": "swimfees.com",
+    "free": null
+   },
+   {
+    "name": "poolroster.com",
+    "free": null
+   },
+   {
+    "name": "deckandpool.com",
+    "free": null
+   },
+   {
+    "name": "poolpriceguide.com",
+    "free": null
+   }
+  ],
+  "breadth": 661,
+  "easyVolume": 147530,
+  "medianCpc": 2.83,
+  "opportunity": 442590,
+  "top": [
+   {
+    "keyword": "inground pool cost",
+    "volume": 12100,
+    "kd": 4
+   },
+   {
+    "keyword": "fiberglass pool cost",
+    "volume": 6600,
+    "kd": 0
+   },
+   {
+    "keyword": "above ground pool installation cost",
+    "volume": 6600,
+    "kd": 0
+   },
+   {
+    "keyword": "fiberglass pool installation cost",
+    "volume": 5400,
+    "kd": 0
+   },
+   {
+    "keyword": "above ground pool cost",
+    "volume": 4400,
+    "kd": 8
+   },
+   {
+    "keyword": "above ground swimming pool liner replacement cost",
+    "volume": 4400,
+    "kd": 0
+   },
+   {
+    "keyword": "how much does an inground pool cost",
+    "volume": 4400,
+    "kd": 0
+   },
+   {
+    "keyword": "plunge pool cost",
+    "volume": 3600,
+    "kd": 0
+   }
+  ],
+  "promoted": false
+ },
+ {
+  "week": "2026-10-31",
+  "idea": "Ferry and island day tour by port",
+  "market": "US",
+  "seeds": [
+   "ferry to catalina island from long beach",
+   "how to get to santa cruz island from ventura",
+   "island tour boats from port"
+  ],
+  "terms": [
+   "ferry",
+   "island"
+  ],
+  "why": "Pattern: one page per port or island pair listing ferry operators, sailing times and fares from published timetables and OSM ferry routes; travellers are about to buy tickets and tours.",
+  "money": "Viator tours ~8% commission; GetYourGuide ~8%; Booking.com hotel commissions for island stays",
+  "domains": [
+   {
+    "name": "ferryroster.com",
+    "free": null
+   },
+   {
+    "name": "islandferryguide.com",
+    "free": null
+   },
+   {
+    "name": "portferry.com",
+    "free": null
+   },
+   {
+    "name": "islandtickets.com",
+    "free": null
+   },
+   {
+    "name": "sailfare.com",
+    "free": null
+   },
+   {
+    "name": "ferrymap.com",
+    "free": null
+   }
+  ],
+  "breadth": 1526,
+  "easyVolume": 410900,
+  "medianCpc": 0.81,
+  "opportunity": 538279,
+  "top": [
+   {
+    "keyword": "catalina island ferry",
+    "volume": 60500,
+    "kd": 8
+   },
+   {
+    "keyword": "kingston to edmonds ferry times",
+    "volume": 27100,
+    "kd": 9
+   },
+   {
+    "keyword": "cape may lewes ferry schedule",
+    "volume": 18100,
+    "kd": 4
+   },
+   {
+    "keyword": "apostle island cruises",
+    "volume": 9900,
+    "kd": 10
+   },
+   {
+    "keyword": "cape may--lewes ferry tickets",
+    "volume": 9900,
+    "kd": 6
+   },
+   {
+    "keyword": "block island ferry schedule",
+    "volume": 9900,
+    "kd": 10
+   },
+   {
+    "keyword": "cape may lewes ferry tickets",
+    "volume": 9900,
+    "kd": 5
+   },
+   {
+    "keyword": "cape may-lewes ferry tickets",
+    "volume": 9900,
+    "kd": 6
+   }
+  ],
+  "promoted": false
+ },
+ {
+  "week": "2026-10-31",
+  "idea": "Melbourne tour and attraction tickets by suburb",
+  "market": "AU",
+  "seeds": [
+   "things to do in brighton melbourne with kids",
+   "tours from melbourne to great ocean road cost",
+   "day trips from melbourne by train"
+  ],
+  "terms": [
+   "tour"
+  ],
+  "why": "Pattern: one page per Melbourne day-trip destination with train times, tour prices and entry fees from Metro Trains timetable open data and attraction sites; visitors are about to book tours.",
+  "money": "Viator ~8% of A$150 tour; GetYourGuide ~8%; Klook affiliate ~3-5%",
+  "domains": [
+   {
+    "name": "daytripmelb.com.au",
+    "free": null
+   },
+   {
+    "name": "melbtours.com.au",
+    "free": null
+   },
+   {
+    "name": "tripfare.com.au",
+    "free": null
+   },
+   {
+    "name": "dayoutmelb.com.au",
+    "free": null
+   },
+   {
+    "name": "daytrippers.com",
+    "free": null
+   },
+   {
+    "name": "melbdaytrip.com",
+    "free": null
+   }
+  ],
+  "breadth": 43,
+  "easyVolume": 8600,
+  "medianCpc": 2.55,
+  "opportunity": 18447,
+  "top": [
+   {
+    "keyword": "free walking tour melbourne",
+    "volume": 1000,
+    "kd": 0
+   },
+   {
+    "keyword": "day tours from edinburgh",
+    "volume": 390,
+    "kd": 0
+   },
+   {
+    "keyword": "fraser island day tours from hervey bay",
+    "volume": 390,
+    "kd": 0
+   },
+   {
+    "keyword": "free tours melbourne",
+    "volume": 320,
+    "kd": 0
+   },
+   {
+    "keyword": "day tours darwin",
+    "volume": 320,
+    "kd": 1
+   },
+   {
+    "keyword": "day tours from port douglas",
+    "volume": 260,
+    "kd": 2
+   },
+   {
+    "keyword": "day tours from zurich",
+    "volume": 260,
+    "kd": 0
+   },
+   {
+    "keyword": "day tours rome",
+    "volume": 260,
+    "kd": 0
+   }
+  ],
+  "promoted": false
+ },
+ {
+  "week": "2026-10-31",
+  "idea": "Australian campsite and caravan park booking by park",
+  "market": "AU",
+  "seeds": [
+   "powered sites near melbourne with kids",
+   "dog friendly caravan parks in victoria",
+   "cheapest camping near phillip island"
+  ],
+  "terms": [
+   "caravan",
+   "campsite",
+   "powered"
+  ],
+  "why": "Pattern: one page per park listing site types, pet policies and nightly rates from state park open data and NPWS/Parks Victoria listings; visitors are about to book a site.",
+  "money": "Hipcamp / Discover Parks affiliates; camping gear affiliates (Anaconda ~5%, Amazon AU ~3%); caravan insurance leads (~$20-40 per quote)",
+  "domains": [
+   {
+    "name": "campsiteaus.com.au",
+    "free": null
+   },
+   {
+    "name": "caravanroster.com.au",
+    "free": null
+   },
+   {
+    "name": "sitefinder.com.au",
+    "free": null
+   },
+   {
+    "name": "powersite.com.au",
+    "free": null
+   },
+   {
+    "name": "campfeeguide.com",
+    "free": null
+   },
+   {
+    "name": "parkcampmap.com",
+    "free": null
+   }
+  ],
+  "breadth": 2431,
+  "easyVolume": 530900,
+  "medianCpc": 0.93,
+  "opportunity": 756533,
+  "top": [
+   {
+    "keyword": "west beach caravan park",
+    "volume": 14800,
+    "kd": 0
+   },
+   {
+    "keyword": "yamba caravan park",
+    "volume": 12100,
+    "kd": 9
+   },
+   {
+    "keyword": "cotton tree caravan park",
+    "volume": 9900,
+    "kd": 0
+   },
+   {
+    "keyword": "echuca caravan park",
+    "volume": 8100,
+    "kd": 20
+   },
+   {
+    "keyword": "port macquarie caravan park",
+    "volume": 8100,
+    "kd": 2
+   },
+   {
+    "keyword": "esperance caravan park",
+    "volume": 8100,
+    "kd": 9
+   },
+   {
+    "keyword": "albany caravan parks",
+    "volume": 8100,
+    "kd": 14
+   },
+   {
+    "keyword": "canberra caravan parks",
+    "volume": 8100,
+    "kd": 0
+   }
+  ],
+  "promoted": false
+ },
+ {
+  "week": "2026-10-31",
+  "idea": "Pet insurance quotes by breed and state",
+  "market": "US",
+  "seeds": [
+   "how much is pet insurance for a labrador",
+   "cheapest dog insurance for senior dog",
+   "cat insurance cost by breed"
+  ],
+  "terms": [
+   "insurance"
+  ],
+  "why": "Pattern: one page per breed-age-state pairing with typical premium bands from public breed claims data and state insurance filings; visitors are about to request a pet insurance quote.",
+  "money": "Pet insurance affiliates (Lemonade, Healthy Paws, Trupanion) ~$20-60 per signup, some CPA up to $50+",
+  "domains": [
+   {
+    "name": "petquoteguide.com",
+    "free": true
+   },
+   {
+    "name": "insurepaw.com",
+    "free": false
+   },
+   {
+    "name": "breedpremium.com",
+    "free": true
+   },
+   {
+    "name": "pawpremium.com",
+    "free": false
+   },
+   {
+    "name": "petrate.com",
+    "free": false
+   },
+   {
+    "name": "vetquote.com",
+    "free": false
+   }
+  ],
+  "breadth": 18688,
+  "easyVolume": 1507700,
+  "medianCpc": 17.8,
+  "opportunity": 4523100,
+  "top": [
+   {
+    "keyword": "fred loya insurance company",
+    "volume": 90500,
+    "kd": 8
+   },
+   {
+    "keyword": "erie insurance login",
+    "volume": 74000,
+    "kd": 13
+   },
+   {
+    "keyword": "geico insurance quote",
+    "volume": 60500,
+    "kd": 6
+   },
+   {
+    "keyword": "progressive insurance claims office",
+    "volume": 49500,
+    "kd": 12
+   },
+   {
+    "keyword": "the zebra car insurance quotes",
+    "volume": 49500,
+    "kd": 21
+   },
+   {
+    "keyword": "health insurance for individuals",
+    "volume": 40500,
+    "kd": 24
+   },
+   {
+    "keyword": "farmers insurance open",
+    "volume": 40500,
+    "kd": 2
+   },
+   {
+    "keyword": "fiesta auto insurance & tax service",
+    "volume": 27100,
+    "kd": 6
+   }
+  ],
+  "promoted": true
+ },
+ {
+  "week": "2026-10-31",
+  "idea": "Dog walking and boarding rates by city",
+  "market": "US",
+  "seeds": [
+   "dog boarding cost in portland oregon",
+   "dog daycare prices near seattle",
+   "how much to hire dog walker in chicago"
+  ],
+  "terms": [
+   "boarding",
+   "daycare",
+   "walker"
+  ],
+  "why": "Pattern: one page per city with boarding and daycare price bands scraped from public business listings and census income data; owners are about to book care.",
+  "money": "Rover/Wag affiliate sign-up commissions ~$10-25; pet insurance leads ~$20-50; pet supply Chewy affiliate ~3%",
+  "domains": [
+   {
+    "name": "boardroster.com",
+    "free": false
+   },
+   {
+    "name": "daycarerate.com",
+    "free": true
+   },
+   {
+    "name": "walkrate.com",
+    "free": false
+   },
+   {
+    "name": "kennelcost.com",
+    "free": true
+   },
+   {
+    "name": "pawboard.com",
+    "free": false
+   },
+   {
+    "name": "petcareprice.com",
+    "free": false
+   }
+  ],
+  "breadth": 1895,
+  "easyVolume": 666000,
+  "medianCpc": 4.96,
+  "opportunity": 1998000,
+  "top": [
+   {
+    "keyword": "dog boarding near me",
+    "volume": 201000,
+    "kd": 14
+   },
+   {
+    "keyword": "doggy daycare near me",
+    "volume": 74000,
+    "kd": 16
+   },
+   {
+    "keyword": "dog daycare near me",
+    "volume": 74000,
+    "kd": 12
+   },
+   {
+    "keyword": "treeing walker coonhound",
+    "volume": 49500,
+    "kd": 13
+   },
+   {
+    "keyword": "pet boarding near me",
+    "volume": 33100,
+    "kd": 21
+   },
+   {
+    "keyword": "cat boarding near me",
+    "volume": 27100,
+    "kd": 5
+   },
+   {
+    "keyword": "horse boarding near me",
+    "volume": 22200,
+    "kd": 3
+   },
+   {
+    "keyword": "dog boarding facility",
+    "volume": 12100,
+    "kd": 21
+   }
+  ],
+  "promoted": true
+ },
+ {
+  "week": "2026-10-31",
+  "idea": "Driving school and test prices by state",
+  "market": "US",
+  "seeds": [
+   "how much does driving lessons cost in ohio",
+   "driving test booking cost by state",
+   "cheapest driving school near columbus"
+  ],
+  "terms": [
+   "driving",
+   "lesson"
+  ],
+  "why": "Pattern: one page per state and metro with lesson and test fees from DMV open fee schedules and business listings; new drivers are about to book lessons or buy a teen insurance quote.",
+  "money": "Insurance quote leads for teen drivers ~$20-40; Drivers Ed online course affiliates ~$25-50 per signup",
+  "domains": [
+   {
+    "name": "drivelesson.com",
+    "free": null
+   },
+   {
+    "name": "lessonrate.com",
+    "free": null
+   },
+   {
+    "name": "learnerroster.com",
+    "free": null
+   },
+   {
+    "name": "drivefees.com",
+    "free": null
+   },
+   {
+    "name": "teendriver.com",
+    "free": null
+   },
+   {
+    "name": "lessonmap.com",
+    "free": null
+   }
+  ],
+  "breadth": 2284,
+  "easyVolume": 341100,
+  "medianCpc": 1.88,
+  "opportunity": 811818,
+  "top": [
+   {
+    "keyword": "american driving academy",
+    "volume": 18100,
+    "kd": 0
+   },
+   {
+    "keyword": "defensive driving course texas",
+    "volume": 18100,
+    "kd": 24
+   },
+   {
+    "keyword": "check for driving licence status",
+    "volume": 14800,
+    "kd": 19
+   },
+   {
+    "keyword": "texas driving school",
+    "volume": 8100,
+    "kd": 24
+   },
+   {
+    "keyword": "us driving license rules seniors",
+    "volume": 8100,
+    "kd": 15
+   },
+   {
+    "keyword": "ohio driving test",
+    "volume": 8100,
+    "kd": 6
+   },
+   {
+    "keyword": "texas driving record",
+    "volume": 8100,
+    "kd": 10
+   },
+   {
+    "keyword": "alabama driving license renewal online",
+    "volume": 8100,
+    "kd": 18
+   }
+  ],
+  "promoted": false
+ },
+ {
+  "week": "2026-10-31",
+  "idea": "Brisbane-style school-fee comparisons: Australian private schools by suburb",
+  "market": "AU",
+  "seeds": [
+   "private school fees in melbourne east",
+   "catholic school fees per year victoria",
+   "cheapest independent school near camberwell"
+  ],
+  "terms": [
+   "tuition"
+  ],
+  "why": "Pattern: one page per suburb comparing school fees parsed from published school fee schedules and ACARA My School open data; parents are about to enrol and buy tutoring or uniforms.",
+  "money": "Tutoring lead buyers (Ignite, Mathletics affiliates ~$20-50 per signup); school uniform retailers ~5-8%",
+  "domains": [
+   {
+    "name": "schoolfeesau.com.au",
+    "free": null
+   },
+   {
+    "name": "tuitionroster.com.au",
+    "free": null
+   },
+   {
+    "name": "feeroster.com.au",
+    "free": null
+   },
+   {
+    "name": "schoolcostmap.com.au",
+    "free": null
+   },
+   {
+    "name": "enrolguide.com",
+    "free": null
+   },
+   {
+    "name": "tuitionmap.com",
+    "free": null
+   }
+  ],
+  "breadth": 3,
+  "easyVolume": 420,
+  "medianCpc": 6.59,
+  "opportunity": 649,
+  "top": [
+   {
+    "keyword": "curtin tuition fees",
+    "volume": 170,
+    "kd": 0
+   },
+   {
+    "keyword": "unsw tuition fees",
+    "volume": 140,
+    "kd": 9
+   },
+   {
+    "keyword": "rmit tuition fees",
+    "volume": 110,
+    "kd": 1
+   }
+  ],
+  "promoted": false
+ },
+ {
+  "week": "2026-10-31",
+  "idea": "Melbourne car wash, detailing and mechanic price by suburb",
+  "market": "AU",
+  "seeds": [
+   "how much is a logbook service in carlton",
+   "cheap mechanic near footscray",
+   "tyre fitting price in thornbury"
+  ],
+  "terms": [
+   "mechanic",
+   "tyre"
+  ],
+  "why": "Pattern: one page per suburb with service prices from business listings and Victorian Consumer Affairs guides; drivers are about to book a workshop or buy tyres and car insurance quotes.",
+  "money": "Tyre retailer affiliates (Tyrepower, Bob Jane leads ~$5-20); car insurance comparison leads ~$15-40; RACV/NRMA referrals",
+  "domains": [
+   {
+    "name": "servicerate.com.au",
+    "free": null
+   },
+   {
+    "name": "mechanicmap.com.au",
+    "free": null
+   },
+   {
+    "name": "tyrerate.com.au",
+    "free": null
+   },
+   {
+    "name": "workshopfinder.com.au",
+    "free": null
+   },
+   {
+    "name": "carservicefee.com",
+    "free": null
+   },
+   {
+    "name": "logbookroster.com",
+    "free": null
+   }
+  ],
+  "breadth": 311,
+  "easyVolume": 98180,
+  "medianCpc": 2.62,
+  "opportunity": 294540,
+  "top": [
+   {
+    "keyword": "car mechanic near me",
+    "volume": 18100,
+    "kd": 11
+   },
+   {
+    "keyword": "mobile mechanic near me",
+    "volume": 14800,
+    "kd": 12
+   },
+   {
+    "keyword": "motorcycle mechanic near me",
+    "volume": 4400,
+    "kd": 0
+   },
+   {
+    "keyword": "diesel mechanic near me",
+    "volume": 4400,
+    "kd": 0
+   },
+   {
+    "keyword": "cheap tyres near me",
+    "volume": 4400,
+    "kd": 6
+   },
+   {
+    "keyword": "auto mechanic near me",
+    "volume": 2900,
+    "kd": 0
+   },
+   {
+    "keyword": "truck mechanic near me",
+    "volume": 1900,
+    "kd": 0
+   },
+   {
+    "keyword": "bike mechanic near me",
+    "volume": 1300,
+    "kd": 0
+   }
+  ],
+  "promoted": false
+ },
+ {
+  "week": "2026-10-31",
+  "idea": "Melbourne ski and snow resort lift pass by season",
+  "market": "AU",
+  "seeds": [
+   "how much is a lift pass at falls creek",
+   "ski hire cost at mount buller",
+   "snow season passes victoria"
+  ],
+  "terms": [
+   "ski"
+  ],
+  "why": "Pattern: one page per Victorian snow resort comparing lift pass, lesson and hire prices from resort published pricing and Bureau of Meteorology snow data; visitors are about to buy passes, lessons or accommodation.",
+  "money": "Ski holiday and accommodation affiliates (Booking.com ~25-40% of commission, Viator ~8%); Ski equipment retailers ~5%",
+  "domains": [
+   {
+    "name": "snowrateau.com.au",
+    "free": null
+   },
+   {
+    "name": "liftpassguide.com.au",
+    "free": null
+   },
+   {
+    "name": "skiprice.com.au",
+    "free": null
+   },
+   {
+    "name": "snowroster.com",
+    "free": null
+   },
+   {
+    "name": "skifares.com",
+    "free": null
+   },
+   {
+    "name": "snowfeemap.com",
+    "free": null
+   }
+  ],
+  "breadth": 145,
+  "easyVolume": 39860,
+  "medianCpc": 1.5,
+  "opportunity": 79521,
+  "top": [
+   {
+    "keyword": "perisher ski pass",
+    "volume": 3600,
+    "kd": 25
+   },
+   {
+    "keyword": "thredbo ski pass",
+    "volume": 2900,
+    "kd": 21
+   },
+   {
+    "keyword": "big white ski resort",
+    "volume": 2400,
+    "kd": 11
+   },
+   {
+    "keyword": "new zealand ski season",
+    "volume": 2400,
+    "kd": 12
+   },
+   {
+    "keyword": "jet ski price",
+    "volume": 1300,
+    "kd": 0
+   },
+   {
+    "keyword": "the shed ski hire",
+    "volume": 1300,
+    "kd": 0
+   },
+   {
+    "keyword": "queenstown ski season",
+    "volume": 880,
+    "kd": 10
+   },
+   {
+    "keyword": "queenstown ski packages",
+    "volume": 880,
+    "kd": 0
+   }
+  ],
+  "promoted": false
  }
 ]
