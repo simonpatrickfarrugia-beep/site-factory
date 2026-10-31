@@ -37,5 +37,6 @@ export default defineBrand({
 
   forms: ['contact'],
   analytics: { ga4Id: 'G-RXGCJ51YWJ' }, // same property Webflow used, so traffic history continues
+  ads: { adsenseClient: 'ca-pub-7620412596305362' }, // Google AdSense, one IMN account for every site (31 Oct 2026)
   payments: { enabled: false },
 });

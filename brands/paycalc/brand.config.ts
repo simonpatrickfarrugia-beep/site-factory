@@ -38,5 +38,6 @@ export default defineBrand({
   data: { source: 'snapshot' },
   forms: [],
   analytics: { ga4Id: 'G-YGBQKFNMWN' }, // GA4 property "MyPayCalc" 561397887, web stream 16226681952 (29 Oct 2026)
+  ads: { adsenseClient: 'ca-pub-7620412596305362' }, // Google AdSense, one IMN account for every site (31 Oct 2026)
   payments: { enabled: false },
 });
