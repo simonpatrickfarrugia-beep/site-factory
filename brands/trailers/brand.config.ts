@@ -14,6 +14,7 @@ export default defineBrand({
   nav: [
     { label: 'Browse', href: '/browse' },
     { label: 'Discover', href: '/discover' },
+    { label: 'Original films', href: '/original-films' },
   ],
   footer: [
     { label: 'About', href: '/about' },

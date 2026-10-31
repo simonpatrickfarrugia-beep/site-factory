@@ -64,6 +64,14 @@ jobs:
             exit 1
           fi
           grep -E "page\(s\) built" build.log | sed "s/^/::notice title=Build ($BRAND)::/" || true
+      - name: No affiliate links on /original-films (trailers only)
+        if: matrix.brand == 'trailers'
+        run: |
+          node -e "
+            const s=require('fs').readFileSync('dist/original-films.html','utf8').replace(/<footer[\s\S]*<\/footer>/,'');
+            if(/amazon\.|tag=movietrailerc|justwatch/i.test(s)){console.log('::error title=Original films::Affiliate link found on /original-films');process.exit(1)}
+            console.log('::notice title=Original films::no affiliate links');
+          " || exit 1
       - name: Verify
         run: node scripts/verify-build.mjs
       - name: Check the Cloudflare config bundles (dry run, nothing is deployed)

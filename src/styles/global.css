@@ -84,7 +84,7 @@ p { margin: 0 0 var(--space-3); }
 .site-header { border-bottom: 1px solid var(--line); }
 .site-header__inner {
   display: flex; align-items: center; justify-content: space-between;
-  gap: var(--space-3); min-height: 4rem;
+  gap: 0 var(--space-3); min-height: 4rem; flex-wrap: wrap; /* nav drops under the name on narrow phones instead of overflowing */
 }
 .wordmark {
   font-family: var(--font-display); font-weight: 800; font-size: 1.5rem;
@@ -92,7 +92,7 @@ p { margin: 0 0 var(--space-3); }
 }
 .wordmark:hover { color: var(--color-accent); }
 .site-nav { display: flex; gap: var(--space-4); list-style: none; margin: 0; padding: 0; }
-.site-nav a { text-decoration: none; font-weight: 600; padding-block: var(--space-2); }
+.site-nav a { text-decoration: none; font-weight: 600; padding-block: var(--space-2); white-space: nowrap; }
 .site-nav a[aria-current='page'] { color: var(--color-accent); }
 
 .site-footer { border-top: 1px solid var(--line); margin-top: var(--space-6); padding-block: var(--space-5); color: var(--muted); }
@@ -1052,3 +1052,36 @@ main { display: block; }
 @media (prefers-reduced-motion: no-preference) {
   .pc-slip__net mark { transition: background-size 0.25s ease; }
 }
+
+/* ---------- Original films (trailers, 31 Oct 2026) ---------- */
+.fund-banner { display: block; background: var(--color-accent); color: var(--ink); text-decoration: none; font-size: var(--step--1); }
+.fund-banner:hover { color: var(--ink); filter: brightness(1.05); }
+.fund-banner__inner { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 0.75rem; padding-block: 0.6rem; }
+.fund-banner__badge { background: var(--ink); color: var(--color-accent); font-weight: 700; font-size: 0.75em; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.15em 0.6em; border-radius: 999px; }
+
+.fund-hero { padding-block: var(--space-5) var(--space-4); border-bottom: 1px solid var(--line); background: radial-gradient(120% 90% at 85% 0%, color-mix(in srgb, var(--color-accent) 16%, transparent), transparent 60%); }
+.fund-kicker { color: var(--color-accent); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: var(--space-2); }
+.fund-hero .display { max-width: 18ch; text-wrap: balance; }
+.fund-hero__lede { max-width: 48ch; margin: 0; }
+
+.fund-points { display: grid; gap: var(--space-4); grid-template-columns: 1fr; }
+@media (min-width: 52rem) { .fund-points { grid-template-columns: repeat(3, 1fr); } }
+.fund-point { border-top: 3px solid var(--color-accent); padding-top: var(--space-3); }
+.fund-point h2 { font-size: var(--step-2); margin-bottom: var(--space-2); }
+.fund-point p { color: var(--muted); margin: 0; }
+
+.fund-updates, .fund-pitch { display: grid; gap: var(--space-4); padding: var(--space-5) var(--space-4); border-radius: var(--radius); background: var(--panel); }
+@media (min-width: 52rem) { .fund-updates, .fund-pitch { grid-template-columns: 1fr 1.2fr; align-items: start; } }
+.fund-updates h2, .fund-pitch h2 { margin-bottom: var(--space-3); }
+.fund-form { display: grid; gap: var(--space-3); }
+.fund-field { display: grid; gap: 0.35rem; font-weight: 600; }
+.fund-field input, .fund-field textarea { font: inherit; font-weight: 400; color: var(--paper); background: var(--ink); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 0.7rem 0.8rem; min-height: 2.75rem; }
+.fund-field input:focus, .fund-field textarea:focus { border-color: var(--color-accent); outline: none; }
+.fund-opt { color: var(--muted); font-weight: 400; }
+.fund-form .button { justify-self: start; border: 0; font: inherit; font-weight: 700; cursor: pointer; }
+.fund-form .button:disabled { opacity: 0.6; cursor: wait; }
+.fund-form__status { margin: 0; font-weight: 600; min-height: 1.6em; }
+.fund-fine { color: var(--muted); font-size: var(--step--1); margin: 0; }
+.fund-fine a { color: var(--color-accent); }
+.fund-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.fund-q { font-size: var(--step-0); margin: var(--space-4) 0 var(--space-1); }

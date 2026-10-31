@@ -248,7 +248,9 @@ export default {
     if (pathname === '/api/submit/status' && (env.FORMS ?? '').trim()) {
       const since = new URL(request.url).searchParams.get('since') ?? '';
       if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?Z$/.test(since)) return Response.json({ ok: false, message: 'since must be an ISO UTC time' }, { status: 400 });
-      const row = await env.DB.prepare('SELECT COUNT(*) AS n FROM submissions WHERE brand = ? AND created_at > ?').bind(env.BRAND, since).first<{ n: number }>();
+      // Only the brand's own forms count (not internal rows such as plan-email send logs).
+      const forms = (env.FORMS ?? '').split(',').map((x) => x.trim()).filter(Boolean);
+      const row = await env.DB.prepare(`SELECT COUNT(*) AS n FROM submissions WHERE brand = ? AND created_at > ? AND form IN (${forms.map(() => '?').join(',')})`).bind(env.BRAND, since, ...forms).first<{ n: number }>();
       return Response.json({ ok: true, count: row?.n ?? 0 }, { headers: { 'cache-control': 'no-store' } });
     }
     const sub = pathname.match(/^\/api\/submit\/([a-z0-9-]{1,40})$/);

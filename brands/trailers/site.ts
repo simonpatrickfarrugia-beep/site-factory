@@ -285,6 +285,26 @@ export function routes(): Route[] {
     });
   }
 
+  // Original films: a share of what the site earns goes into producing original films (31 Oct 2026).
+  // No affiliate links on this page (CI-checked), and never tie the fund to affiliate clicks or purchases.
+  out.push({
+    path: 'original-films',
+    template: 'originalFilms',
+    seo: {
+      title: 'Original Films: What This Site Earns Helps Make New Films' + SUFFIX,
+      rawTitle: true,
+      description: 'MovieTrailer.Channel puts a share of what it earns into producing original films, with writers and directors in creative control. Filmmakers can pitch us.',
+    },
+    props: {
+      faqs: [
+        { q: 'Does it cost me anything?', a: 'No. Using the site is free, and we will never ask you for money for the films.' },
+        { q: 'Where does the money come from?', a: 'From what the site earns as a business, such as ads. It is not a donation or a crowdfunding campaign, and we are not raising money from the public.' },
+        { q: 'Who decides what gets made?', a: 'The filmmakers. We choose which projects to back; the writer and director keep creative control of the film.' },
+        { q: 'Who runs this?', a: 'MovieTrailer.Channel is published by Independent Media Network Pty Ltd in Melbourne, Australia. Questions: hello@movietrailer.channel.' },
+      ],
+    },
+  });
+
   // Private dashboard (noindex, no analytics, not in the sitemap). Data: data/trailers/stats.json, refreshed daily.
   const titles: Record<string, string> = { '/': 'Home page', '/browse': 'Browse all', '/discover': 'Discover (collections)' };
   for (const m of movies) titles[`/movies/${m.slug}`] = `${m.name}${m.year ? ` (${m.year})` : ''}`;
