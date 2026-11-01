@@ -1,6 +1,6 @@
 # Niche finder
 
-Updated 2026-10-29. Google searches in the United States unless an idea says otherwise (Market column). Score = 30% demand + 25% money (CPC) + 25% ease (SEO difficulty) + 20% fit (Claude: data source, automation, monetisation, risk).
+Updated 2026-11-01. Google searches in the United States unless an idea says otherwise (Market column). Score = 30% demand + 25% money (CPC) + 25% ease (SEO difficulty) + 20% fit (Claude: data source, automation, monetisation, risk).
 
 Add ideas by chat: "score these niches: …". Rules: launch at most one new site a month, only while the last one is on track.
 
@@ -25,19 +25,22 @@ Add ideas by chat: "score these niches: …". Rules: launch at most one new site
 | 15 | Victoria: things to do by town | Australia | **60** | 52 | 47 | 95 | 42 | 353,780 | $0.63 | 5 |
 | 16 | Retro game finder: where to play classic games today (US) | United States | **58** | 71 | 31 | 81 | 42 | 1,393,340 | $0.34 | 19 |
 | 17 | AU suburb profiles: prices, rent and demographics | Australia | **55** | 14 | 82 | 89 | 38 | 26,730 | $2.48 | 11 |
-| 18 | Book series in reading order | United States | **53** | 90 | 25 | 50 | 38 | 4,912,700 | $0.27 | — |
-| 19 | Movie soundtracks and film music | United States | **53** | 79 | 0 | 81 | 45 | 2,377,600 | $0.08 | 19 |
-| 20 | Victoria: where to eat by town | Australia | **51** | 40 | 41 | 96 | 22 | 155,710 | $0.50 | 4 |
-| 21 | Australian clothing brands directory (beason.com.au) | Australia | **50** | 43 | 61 | 60 | 34 | 189,760 | $1.09 | 40 |
-| 22 | Australian winter wear: beanies, jackets and knitwear | Australia | **50** | 13 | 57 | 96 | 38 | 24,330 | $0.92 | 4 |
-| 23 | US public library branches by city | United States | **46** | 22 | 54 | 77 | 34 | 45,100 | $0.84 | 23 |
-| 24 | Retro game finder: where to play classic games today (AU) | Australia | **42** | 31 | 19 | 82 | 38 | 84,660 | $0.21 | 18 |
-| 25 | Australian loungewear and comfortwear brands | Australia | **42** | 0 | 55 | 90 | 28 | 7,150 | $0.86 | 10 |
-| 26 | Hurricane history by coastal state | United States | **33** | 0 | 0 | 97 | 42 | 30 | — | 3 |
-| 27 | US airport runway and elevation facts | United States | **33** | 0 | 0 | 100 | 42 | 730 | — | 0 |
-| 28 | US school district enrollment by county | United States | **31** | 0 | 0 | 95 | 38 | 20 | — | 5 |
-| 29 | Freshwater fish species by state | United States | **28** | 0 | 0 | 94 | 22 | 650 | $0.03 | 6 |
-| 30 | Rail travel times between NSW stations | Australia | **21** | 0 | 0 | 50 | 44 | 0 | — | — |
+| 18 | Dog-friendly hotels by city | United States | **54** | 1 | 96 | 98 | 28 | 10,970 | $4.21 | 2 |
+| 19 | Book series in reading order | United States | **53** | 90 | 25 | 50 | 38 | 4,912,700 | $0.27 | — |
+| 20 | Movie soundtracks and film music | United States | **53** | 79 | 0 | 81 | 45 | 2,377,600 | $0.08 | 19 |
+| 21 | Pet insurance quotes by breed and state | United States | **52** | 0 | 100 | 89 | 22 | 310 | $18.53 | 11 |
+| 22 | Victoria: where to eat by town | Australia | **51** | 40 | 41 | 96 | 22 | 155,710 | $0.50 | 4 |
+| 23 | Australian clothing brands directory (beason.com.au) | Australia | **50** | 43 | 61 | 60 | 34 | 189,760 | $1.09 | 40 |
+| 24 | Australian winter wear: beanies, jackets and knitwear | Australia | **50** | 13 | 57 | 96 | 38 | 24,330 | $0.92 | 4 |
+| 25 | US public library branches by city | United States | **46** | 22 | 54 | 77 | 34 | 45,100 | $0.84 | 23 |
+| 26 | Retro game finder: where to play classic games today (AU) | Australia | **42** | 31 | 19 | 82 | 38 | 84,660 | $0.21 | 18 |
+| 27 | Australian loungewear and comfortwear brands | Australia | **42** | 0 | 55 | 90 | 28 | 7,150 | $0.86 | 10 |
+| 28 | Hurricane history by coastal state | United States | **33** | 0 | 0 | 97 | 42 | 30 | — | 3 |
+| 29 | US airport runway and elevation facts | United States | **33** | 0 | 0 | 100 | 42 | 730 | — | 0 |
+| 30 | US school district enrollment by county | United States | **31** | 0 | 0 | 95 | 38 | 20 | — | 5 |
+| 31 | Freshwater fish species by state | United States | **28** | 0 | 0 | 94 | 22 | 650 | $0.03 | 6 |
+| 32 | Rail travel times between NSW stations | Australia | **21** | 0 | 0 | 50 | 44 | 0 | — | — |
+| 33 | Dog walking and boarding rates by city | United States | **21** | 0 | 0 | 50 | 42 | 0 | — | — |
 
 ## US take-home pay by salary and state: 77/100
 
@@ -933,6 +936,55 @@ _Seeds: chrono trigger steam, chrono trigger switch, super mario 64 switch, game
 
 _Seeds: best suburbs to buy in melbourne, suburb profile, median house price, cheapest suburbs in sydney, rental yield calculator, suburb demographics. Data cost: US$0.114._
 
+## Dog-friendly hotels by city: 54/100
+
+**Verdict:** The demand is real but small per city, and the claimed data source doesn't contain what the pages need. OSM and lodging-tax data won't reliably give fees, weight limits or breed rules, so the 'genuinely useful' test fails unless you add a verified policy source. Head terms are also dominated by Booking, Expedia, Tripadvisor and BringFido, and the 4.6M/month figure isn't supported by the Austin list (about 2,800-3,300/month after deduplication).
+
+**Site angle:** Austin-first, verified-policy guide: one hub page plus neighbourhood and hotel-level pages for about 40-80 Austin hotels whose pet policies you verify by hand or from the hotel's own pages, with a 'last checked' date. Only expand to other cities if Austin shows clicks and conversions within 3-4 months. Do not build hundreds of city pages on OSM tags alone.
+
+**Data sources:** OpenStreetMap via Overpass API (tourism=hotel/motel/guest_house locations, names, addresses; ODbL attribution and share-alike apply); Municipal hotel occupancy/lodging tax open data (hotel counts and names only, not pet policies); Hotel and property websites and pet-policy pages (manual verification, not bulk scraping); Booking.com Demand API or Expedia Rapid API via affiliate approval (property IDs, ratings, pet-filter flags where available)
+
+**Money:** Booking.com Affiliate Partner Programme (commission on bookings made through links); Expedia Group Affiliate Program (commission on bookings); Trupanion and Petplan pet insurance affiliate/lead programmes (per-signup payouts, check current terms); Display ads only after sustained traffic; not worth it at Austin scale
+
+**Page types:** /dog-friendly-hotels/austin-tx/ (city hub with policy summary and filters); /dog-friendly-hotels/austin-tx/[neighbourhood]/ (downtown, south, airport areas, only where verified hotels exist); /hotels/[hotel-slug]-austin/ (per-hotel policy: fee, weight and breed limits, number of pets, last verified date); /guides/bringing-a-dog-to-austin/ (editorial guide, human-written)
+
+**Risks:** Data gap: OSM and lodging-tax sources lack pet fee, weight and breed rules, so pages would be thin or wrong unless policies are verified manually; Stale or inaccurate pet-policy information could cost travellers money or leave them stranded, creating consumer-protection and trust exposure; Strong incumbents: Booking, Expedia, Tripadvisor, BringFido and DogFriendly.com already hold the SERPs for these queries despite low listed KD; Demand sizing: the 4,629,600/mo figure does not reconcile with the Austin variants (about 2,800-3,300/mo), so do not plan on it; Licence and terms: OSM ODbL share-alike obligations, plus Booking/Expedia affiliate terms that restrict content reuse and scraping, and Google Places caching limits; Thin-content penalty: templated pages across many cities with near-identical copy are exactly the pattern the founder wants to avoid; Affiliate economics are thin at low volume; commission on a single hotel booking may not cover the time to verify policies; Seasonality and small absolute volume make the niche sensitive to a few ranking changes
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| pet friendly hotels in austin | 1,600 | 0 | $3.77 |
+| pet friendly hotels austin tx | 1,600 | 0 | $3.77 |
+| dog friendly hotels austin | 880 | 0 | $4.57 |
+| hotels in austin that allow dogs | 880 | 0 | $4.57 |
+| dog friendly hotels austin tx | 880 | 0 | $4.57 |
+| hotels that allow dogs austin | 880 | 0 | $4.57 |
+| hotels in austin tx that allow dogs | 880 | 0 | $4.57 |
+| hotels that allow dogs in austin | 880 | 0 | $4.57 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| pet friendly hotels in austin | 1,600 | 0 | $3.77 |
+| pet friendly hotels austin tx | 1,600 | 0 | $3.77 |
+| hotels in austin that allow pets | 1,600 | — | $3.77 |
+| dog friendly hotels austin | 880 | 0 | $4.57 |
+| hotels in austin that allow dogs | 880 | 0 | $4.57 |
+| dog friendly hotels austin tx | 880 | 0 | $4.57 |
+| hotels that allow dogs austin | 880 | 0 | $4.57 |
+| hotels in austin tx that allow dogs | 880 | 0 | $4.57 |
+| hotels that allow dogs in austin | 880 | 0 | $4.57 |
+| hotel for dogs austin | 140 | — | $10.86 |
+| pet hotels in austin | 110 | 22 | $10.26 |
+| pet friendly hotels austin downtown | 70 | 0 | $4.40 |
+| pet friendly hotels downtown austin tx | 70 | 2 | $4.40 |
+| pet friendly hotels in downtown austin texas | 70 | 0 | $4.40 |
+| bring fido austin | 40 | 3 | $2.92 |
+
+_Seeds: pet friendly hotels in austin, dog friendly hotels with no weight limit, hotels that allow two dogs in denver. Data cost: US$0.107._
+
 ## Book series in reading order: 53/100
 
 **Verdict:** The data is free and workable, since Wikidata has series membership and ordinals for thousands of series, but these are mostly franchise-level queries with weak monetisation (CPCs around $0.20-0.45, and books pay low affiliate commissions) and strong incumbents such as Wikipedia, Fandom wikis, publisher sites and Reddit. It only makes sense as a long-tail utility site, not a head-term play.
@@ -1021,6 +1073,42 @@ _Seeds: books in order, book series in order, reading order, kindle series, best
 | songs from the movie frozen | 27,100 | 15 | $0.14 |
 
 _Seeds: movie soundtrack, film score, soundtrack vinyl, best movie soundtracks, song from movie. Data cost: US$0.114._
+
+## Pet insurance quotes by breed and state: 52/100
+
+**Verdict:** Weak fit. Individual search volumes are 10-50/mo, so the 1.5M/mo headline doesn't match the list and probably reflects broad or aggregated terms. The real problem is data: no public source gives per-breed, per-age, per-state premium bands, and generating those pages would mean presenting invented or thin numbers on a YMYL insurance topic.
+
+**Site angle:** Skip the breed×age×state grid. Build one small, human-verified editorial guide, something like /pet-insurance-by-breed/, with about 30-50 breed pages that are hand-checked and cite real claims and cost data. Add a single state-regulation explainer. Earn from comparison and lead-gen modules, not from generated premium tables.
+
+**Data sources:** Published pet insurer breed or claims reports (Trupanion, Embrace, Healthy Paws, Lemonade), only where they are publicly released and their terms allow reuse; Banfield or other vet-chain 'State of Pet Health' reports for breed condition prevalence; AKC breed statistics and breed health data; State insurance department consumer guides and any published rate filings (SERFF), verified manually because format and coverage vary a lot; BLS CPI series for veterinary and pet services (check whether a pet-insurance component exists before relying on it)
+
+**Money:** Pet insurance affiliate programmes: check current terms and networks for Lemonade, Healthy Paws and Trupanion, since signup rates and CPA values are unverified; Display ads (low RPM for this vertical unless traffic is strong); Lead-gen forms, only with compliant disclosures and licensed partners where state rules require it
+
+**Page types:** /pet-insurance/[breed]/ for roughly 30-50 hand-verified breed pages with cost and condition context, not auto-generated price bands; /pet-insurance/[breed]/[age-band]/ only where the source data supports the split; /pet-insurance/state/[state]/ for regulatory explainers that are genuinely different by state, with no filler copy; /compare/[insurer-a]-vs-[insurer-b]/ for a handful of editorial comparisons
+
+**Risks:** YMYL and Google's scaled-content and helpful-content policies: thin AI copy over templated numbers is high risk for a site this size; Presenting premium bands without a real source could be misleading and may breach insurance advertising and consumer-protection rules (FTC, state insurance departments); Pricing data is not public, so pages would have to be built on estimates or invented numbers; Affiliate and lead rules: disclosures, licensing for quote presentation, and whether insurers allow affiliate links in some states; Thin demand: most visible terms are 10-50 searches a month, so per-page revenue is tiny unless traffic is aggregated across a large keyword set; Domains petquoteguide.com and breedpremium.com are unregistered, but the brand would need to avoid implying an insurer quote tool it does not provide
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| cheap dog insurance for older dogs | 50 | 0 | $23.39 |
+| cheap older dog insurance | 50 | — | $23.39 |
+| maine coon cat insurance | 20 | 2 | $14.65 |
+| how much is pet insurance for a labrador | 10 | — | $5.13 |
+| cheapest senior dog insurance | 10 | — | $25.43 |
+| cheap pet insurance for senior dogs | 10 | — | $18.53 |
+| sphynx cat insurance | 10 | — | — |
+| pet insurance for ragdoll cats | 10 | — | $7.69 |
+| ragdoll cat insurance | 10 | — | — |
+| bengal cat insurance | 10 | 0 | $12.30 |
+| savannah cat insurance | 10 | — | $86.52 |
+| persian cat insurance | 10 | — | — |
+| pedigree cat insurance | 10 | — | — |
+| siamese cat insurance | 10 | — | — |
+| british shorthair cat insurance | 10 | 43 | — |
+
+_Seeds: how much is pet insurance for a labrador, cheapest dog insurance for senior dog, cat insurance cost by breed. Data cost: US$0.105._
 
 ## Victoria: where to eat by town: 51/100
 
@@ -1448,37 +1536,59 @@ _Seeds: freshwater fish in ohio, what fish live in lake michigan, invasive fish 
 
 _Seeds: how long to get from parramatta to central by train, train from wollongong to sydney how long, how far is epping station from town hall. Data cost: US$0.09._
 
+## Dog walking and boarding rates by city: 21/100
+
+**Verdict:** Search demand is real, but the core data is weak: public per-city price bands are hard to source legally and at scale, and the top intent is covered by Rover, Wag and Yelp. It only works if you build a narrow, data-backed set of city pages rather than the full mass-generated grid.
+
+**Site angle:** A city-level dog boarding and daycare price guide (e.g. /dog-boarding-prices/[city]) that only publishes pages where you have at least 15-20 verified local listings, showing the price range, median, and typical daycare vs boarding split, with census income as context and Rover/Wag as the 'book now' option.
+
+**Data sources:** US Census ACS API (median household income, pet ownership proxies, population by place) - free; Yelp Fusion API (business listings, categories and ratings for pet boarding and dog walking) - free tier, but check caching and display terms; Google Places API (business listings and price level where available) - paid, usage-based, with storage restrictions; Self-collected quotes from published rate pages of local kennels and walkers (manual or consented, not bulk scraping)
+
+**Money:** Rover affiliate or referral program (verify current terms and commission before building around it); Wag referral program (verify availability); Pet insurance leads via Trupanion, Lemonade or Healthy Paws affiliate or lead programs (higher-value per click than booking referrals); Chewy affiliate (around 3% commission) for boarding-related supplies; Display ads (pet category RPM is moderate; ad density must stay low for the thin pages)
+
+**Page types:** /dog-boarding-prices/[city]: price bands and median for boarding per night, only where listing sample size meets a threshold; /dog-daycare-prices/[city]: daycare per-day bands, with the same sample-size gate; /dog-walking-rates/[city]: per-walk and per-hour rates by walk length; /dog-boarding-prices/[city]/[neighbourhood or zip]: only for the largest metros with enough listings; /compare/[city-a]-vs-[city-b]: comparison pages built from the same dataset, where it adds genuine value
+
+**Risks:** Scraping listing sites breaches terms of service and can get API keys revoked; Yelp and Google restrict caching and redistribution of their data; Price bands from a handful of listings are unrepresentative and will be seen as thin content; an enforced minimum sample per page is essential; Rover and Wag dominate the head terms and can outrank you on booking intent, so organic CTR may be low; Rover and Wag affiliate commissions are small (about $10-25 per sign-up) and often cookie-limited; revenue per city page will be low; Pet insurance affiliate programs have strict compliance rules and can ban thin or misleading comparison content; Pricing data goes stale quickly and users may act on it when booking, so wrong or outdated prices create reputational and possible consumer-complaint risk; Google's scaled-content and helpful-content policies apply: 600 near-identical pages with templated AI copy is exactly the pattern that gets deindexed; Search volume is concentrated in a few head terms; the 1,895 KD≤25 searches are largely close variants sharing one volume figure, so true addressable demand is much smaller than the headline count
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+
+_Seeds: dog boarding cost in portland oregon, dog daycare prices near seattle, how much to hire dog walker in chicago. Data cost: US$0.09._
+
 ## Money map: estimated revenue at maturity
 
 Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits × affiliate clicks × conversion × payout (average of the top 3 matching programmes), plus display ads. These numbers rank ideas against each other; they are not forecasts. They get replaced by our own measured rates as our sites earn.
 
-**Model:** Calibrated from 302 page views, 2 affiliate clicks and 0 reported sales (trailers, vic, community-help-co): click rate 4.4% (assumed 5.0%), conversion 5.0% (assumed 5.0%). The assumption weighs as much as 2,000 views / 200 clicks, so real data takes over as it grows.
+**Model:** Calibrated from 339 page views, 2 affiliate clicks and 0 reported sales (trailers, vic, community-help-co, trade-admin, paycalc): click rate 4.4% (assumed 5.0%), conversion 5.0% (assumed 5.0%). The assumption weighs as much as 2,000 views / 200 clicks, so real data takes over as it grows.
 
 | Idea | Market | Visits/mo (mid) | Est. revenue/mo (low · mid · high) | Avg payout per sale | Score |
 |---|---|---:|---|---:|---:|
-| Dog breeds | United States | 274,520 | $1,501 · **$13,983** · $67,559 | $18.33 | 75 |
-| US national parks and hiking trails | United States | 89,156 | $311 · **$2,709** · $12,569 | $9 | 74 |
-| US take-home pay by salary and state | United States | 58,948 | $324 · **$2,578** · $11,264 | $9 | 77 |
-| Anime: where to watch and watch order | United States | 102,419 | $198 · **$1,455** · $5,980 | $1.7 | 70 |
-| TV shows: where to watch | United States | 27,719 | $110 · **$769** · $3,024 | $1.7 | 73 |
-| Video games: release dates and trailers | United States | 70,520 | $60 · **$463** · $1,982 | $1.17 | 62 |
-| AU pay and tax calculators (take-home pay by salary) | Australia | 8,647 | $48 · **$378** · $1,652 | $9 | 76 |
-| US cost of living by city | United States | 6,358 | $37 · **$338** · $1,618 | $18.33 | 66 |
-| Book series in reading order | United States | 24,564 | $22 · **$175** · $764 | $1.43 | 53 |
-| Victoria: where to stay by town | Australia | 3,903 | $16 · **$144** · $674 | $11.33 | 66 |
-| AU electric car running costs vs petrol by model | Australia | 2,312 | $12 · **$101** · $458 | $11.5 | 69 |
-| Movie soundtracks and film music | United States | 11,888 | $11 · **$85** · $370 | $1.43 | 53 |
-| Board games | United States | 11,226 | $10 · **$79** · $345 | $1.4 | 61 |
+| Dog breeds | United States | 274,520 | $1,484 · **$13,808** · $66,665 | $18.33 | 75 |
+| US national parks and hiking trails | United States | 89,156 | $309 · **$2,681** · $12,426 | $9 | 74 |
+| US take-home pay by salary and state | United States | 58,948 | $322 · **$2,560** · $11,169 | $9 | 77 |
+| Anime: where to watch and watch order | United States | 102,419 | $197 · **$1,449** · $5,950 | $1.7 | 70 |
+| TV shows: where to watch | United States | 27,719 | $110 · **$767** · $3,016 | $1.7 | 73 |
+| Video games: release dates and trailers | United States | 70,520 | $59 · **$460** · $1,967 | $1.17 | 62 |
+| AU pay and tax calculators (take-home pay by salary) | Australia | 8,647 | $47 · **$376** · $1,638 | $9 | 76 |
+| US cost of living by city | United States | 6,358 | $37 · **$334** · $1,598 | $18.33 | 66 |
+| Book series in reading order | United States | 24,564 | $22 · **$174** · $758 | $1.43 | 53 |
+| Victoria: where to stay by town | Australia | 3,903 | $16 · **$143** · $666 | $11.33 | 66 |
+| AU electric car running costs vs petrol by model | Australia | 2,312 | $12 · **$100** · $453 | $11.5 | 69 |
+| Movie soundtracks and film music | United States | 11,888 | $11 · **$84** · $367 | $1.43 | 53 |
+| Board games | United States | 11,226 | $10 · **$79** · $342 | $1.4 | 61 |
 | AU stamp duty and home buying costs by state | Australia | 2,985 | $11 · **$78** · $302 | $1 | 64 |
-| Victoria: things to do by town | Australia | 1,769 | $6 · **$53** · $259 | $11.33 | 60 |
-| Retro game finder: where to play classic games today (US) | United States | 6,967 | $5 · **$41** · $172 | $0.87 | 58 |
+| Victoria: things to do by town | Australia | 1,769 | $5 · **$52** · $255 | $11.33 | 60 |
+| Retro game finder: where to play classic games today (US) | United States | 6,967 | $5 · **$41** · $171 | $0.87 | 58 |
 | AU electricity prices by postcode and retailer | Australia | 604 | $3 · **$21** · $88 | $5 | 61 |
-| Victoria: where to eat by town | Australia | 779 | $2 · **$18** · $90 | $9 | 51 |
-| Australian clothing brands directory (beason.com.au) | Australia | 949 | $2 · **$16** · $68 | $3.5 | 50 |
+| Victoria: where to eat by town | Australia | 779 | $2 · **$18** · $89 | $9 | 51 |
 | AU solar and home battery payback by postcode | Australia | 624 | $2 · **$15** · $56 | $0 | 66 |
+| Australian clothing brands directory (beason.com.au) | Australia | 949 | $2 · **$15** · $68 | $3.5 | 50 |
 | AU suburb profiles: prices, rent and demographics | Australia | 134 | $1 · **$5** · $23 | $9 | 55 |
 | Retro game finder: where to play classic games today (AU) | Australia | 423 | $0 · **$3** · $11 | $1 | 42 |
-| Australian winter wear: beanies, jackets and knitwear | Australia | 122 | $0 · **$3** · $16 | $9 | 50 |
+| Australian winter wear: beanies, jackets and knitwear | Australia | 122 | $0 · **$3** · $15 | $9 | 50 |
+| Dog-friendly hotels by city | United States | 55 | $0 · **$3** · $16 | $18.33 | 54 |
 | US public library branches by city | United States | 226 | $0 · **$2** · $9 | $1.43 | 46 |
 | Australian loungewear and comfortwear brands | Australia | 36 | $0 · **$1** · $5 | $9 | 42 |
 | Hurricane history by coastal state | United States | 0 | $0 · **$0** · $0 | $3.83 | 33 |
@@ -1486,6 +1596,8 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Rail travel times between NSW stations | Australia | 0 | $0 · **$0** · $0 | $11.33 | 21 |
 | US school district enrollment by county | United States | 0 | $0 · **$0** · $0 | $9 | 31 |
 | US airport runway and elevation facts | United States | 4 | $0 · **$0** · $1 | $11.33 | 33 |
+| Pet insurance quotes by breed and state | United States | 2 | $0 · **$0** · $0 | $18.33 | 52 |
+| Dog walking and boarding rates by city | United States | 0 | $0 · **$0** · $0 | $18.33 | 21 |
 
 ## Programmes to consider, by idea
 
@@ -1672,6 +1784,12 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | rejected |
 | Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
 
+### AU solar and home battery payback by postcode
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| _No programme in the catalogue yet: research needed_ | | | | |
+
 ### Australian clothing brands directory (beason.com.au)
 
 | Programme | Pays | Approval | To qualify | Status |
@@ -1679,12 +1797,6 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Ruffwear (dog gear) | ~8% | easy | check | not applied |
 | Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
 | Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | rejected |
-
-### AU solar and home battery payback by postcode
-
-| Programme | Pays | Approval | To qualify | Status |
-|---|---|---|---|---|
-| _No programme in the catalogue yet: research needed_ | | | | |
 
 ### AU suburb profiles: prices, rent and demographics
 
@@ -1717,6 +1829,19 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
 | Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | rejected |
 | Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
+
+### Dog-friendly hotels by city
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| BarkBox | $20.80 per sale | moderate | Application (likely via FlexOffers) with site + audience details; a website expected | not applied |
+| Embrace Pet Insurance | Listed as $36 per lead; one listing says ~$5 per lead / $36 per policy sale (confirm in Impact) | moderate | Join via Impact; traffic must be US-based (US pets only); no adult, religious or political content | not applied |
+| Chewy | $15 per new-customer order (Chewy says ~8% equivalent) | moderate | Join via Partnerize; no coupon/deal sites; required disclosure line; no "Chewy" in domain | not applied |
+| Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
+| Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
+| Travel insurance (World Nomads, SafetyWing, Allianz) | ~10–40% | moderate | check | not applied |
+| Rover (pet sitting) | ~15% per referral | moderate | check | not applied |
 
 ### US public library branches by city
 
@@ -1793,6 +1918,30 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
 | Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
+| Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
+
+### Pet insurance quotes by breed and state
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| BarkBox | $20.80 per sale | moderate | Application (likely via FlexOffers) with site + audience details; a website expected | not applied |
+| Embrace Pet Insurance | Listed as $36 per lead; one listing says ~$5 per lead / $36 per policy sale (confirm in Impact) | moderate | Join via Impact; traffic must be US-based (US pets only); no adult, religious or political content | not applied |
+| Chewy | $15 per new-customer order (Chewy says ~8% equivalent) | moderate | Join via Partnerize; no coupon/deal sites; required disclosure line; no "Chewy" in domain | not applied |
+| Rover (pet sitting) | ~15% per referral | moderate | check | not applied |
+| Ruffwear (dog gear) | ~8% | easy | check | not applied |
+| Amazon Associates US: pet supplies | 3% | easy | Same Associates account | approved |
+| Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
+
+### Dog walking and boarding rates by city
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| BarkBox | $20.80 per sale | moderate | Application (likely via FlexOffers) with site + audience details; a website expected | not applied |
+| Embrace Pet Insurance | Listed as $36 per lead; one listing says ~$5 per lead / $36 per policy sale (confirm in Impact) | moderate | Join via Impact; traffic must be US-based (US pets only); no adult, religious or political content | not applied |
+| Chewy | $15 per new-customer order (Chewy says ~8% equivalent) | moderate | Join via Partnerize; no coupon/deal sites; required disclosure line; no "Chewy" in domain | not applied |
+| Rover (pet sitting) | ~15% per referral | moderate | check | not applied |
+| Ruffwear (dog gear) | ~8% | easy | check | not applied |
+| Amazon Associates US: pet supplies | 3% | easy | Same Associates account | approved |
 | Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
 
 ## Ad networks (when traffic qualifies)
