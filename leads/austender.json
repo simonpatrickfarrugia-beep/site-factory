@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-31T23:28:29+00:00",
+ "generatedAt": "2026-11-01T23:41:20+00:00",
  "days": 7,
  "suppliers": [
   {
@@ -88,6 +88,81 @@
     "work runs 12 months"
    ],
    "seenBefore": true
+  },
+  {
+   "name": "McGrathNicol Advisory Partnership",
+   "abn": "",
+   "locality": "Sydney",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 585609.75,
+     "buyer": "Reserve Bank of Australia",
+     "buyerState": null,
+     "desc": "Crisis management planning advisory services",
+     "category": "",
+     "start": "2026-08-03",
+     "end": "2027-03-30",
+     "id": "CN4284279"
+    }
+   ],
+   "total": 585610,
+   "score": 5.0,
+   "interstate": false,
+   "why": [
+    "work runs 8 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "MEDHEALTH PTY LIMITED",
+   "abn": "",
+   "locality": "Carlton South",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 150000.0,
+     "buyer": "Department of Agriculture, Fisheries and Forestry",
+     "buyerState": null,
+     "desc": "Occupational Rehabilitation and Assessment Services",
+     "category": "",
+     "start": "2026-10-31",
+     "end": "2028-10-30",
+     "id": "CN4285906"
+    }
+   ],
+   "total": 150000,
+   "score": 5.0,
+   "interstate": false,
+   "why": [
+    "work runs 24 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "MEDIRECT PTY LTD",
+   "abn": "",
+   "locality": "Warriewood",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 150000.0,
+     "buyer": "Department of Agriculture, Fisheries and Forestry",
+     "buyerState": null,
+     "desc": "Occupational Rehabilitation and Assessment Services",
+     "category": "",
+     "start": "2026-10-31",
+     "end": "2028-10-30",
+     "id": "CN4285907"
+    }
+   ],
+   "total": 150000,
+   "score": 5.0,
+   "interstate": false,
+   "why": [
+    "work runs 24 months"
+   ],
+   "seenBefore": false
   },
   {
    "name": "Sirva Relocation Pty Ltd",
@@ -257,32 +332,6 @@
    "seenBefore": true
   },
   {
-   "name": "CLEMENGER BBDO PTY LTD",
-   "abn": "",
-   "locality": "Melbourne",
-   "state": "VIC",
-   "contracts": [
-    {
-     "value": 168138.53,
-     "buyer": "Australian Securities and Investments Commission",
-     "buyerState": "NSW",
-     "desc": "Director ID Linking Campaign Creative Development",
-     "category": "",
-     "start": "2026-09-21",
-     "end": "2027-04-29",
-     "id": "CN4284543"
-    }
-   ],
-   "total": 168139,
-   "score": 4.0,
-   "interstate": true,
-   "why": [
-    "based in Melbourne VIC, delivering for Australian Securities and Investments Commission (NSW)",
-    "work runs 7 months"
-   ],
-   "seenBefore": true
-  },
-  {
    "name": "CHUBB FIRE & SECURITY PTY LTD",
    "abn": "",
    "locality": "Dingley",
@@ -307,31 +356,6 @@
     "work runs 8 months"
    ],
    "seenBefore": true
-  },
-  {
-   "name": "DARREN BOX PTY LTD [621]",
-   "abn": "",
-   "locality": "Duffy",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 67760.0,
-     "buyer": "Department of Climate Change, Energy, the Environment and Water",
-     "buyerState": null,
-     "desc": "Audit and Risk Committee Membership",
-     "category": "",
-     "start": "2026-11-30",
-     "end": "2028-05-30",
-     "id": "CN4285603"
-    }
-   ],
-   "total": 67760,
-   "score": 4.0,
-   "interstate": false,
-   "why": [
-    "work runs 18 months"
-   ],
-   "seenBefore": false
   },
   {
    "name": "Mossop Group Pty Ltd",
@@ -940,42 +964,6 @@
    "seenBefore": true
   },
   {
-   "name": "WorkFocus Australia Pty Ltd",
-   "abn": "",
-   "locality": "Melbourne",
-   "state": "VIC",
-   "contracts": [
-    {
-     "value": 53333.0,
-     "buyer": "Parliamentary Workplace Support Service",
-     "buyerState": null,
-     "desc": "Ergonomic Workplace Assessments",
-     "category": "",
-     "start": "2026-10-25",
-     "end": "2028-10-24",
-     "id": "CN4284568"
-    },
-    {
-     "value": 20000.0,
-     "buyer": "Department of Agriculture, Fisheries and Forestry",
-     "buyerState": null,
-     "desc": "Occupational Rehabilitation and Assessment Services",
-     "category": "",
-     "start": "2026-10-31",
-     "end": "2028-10-30",
-     "id": "CN4284506"
-    }
-   ],
-   "total": 73333,
-   "score": 2.0,
-   "interstate": false,
-   "why": [
-    "2 new government contracts in the last 7 days",
-    "work runs 24 months"
-   ],
-   "seenBefore": true
-  },
-  {
    "name": "Veritas Buildings & Infrastructure Pty Ltd",
    "abn": "",
    "locality": "Sydney",
@@ -1237,6 +1225,31 @@
    "interstate": false,
    "why": [
     "work runs 17 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "DARREN BOX PTY LTD [621]",
+   "abn": "",
+   "locality": "Duffy",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 67760.0,
+     "buyer": "Department of Climate Change, Energy, the Environment and Water",
+     "buyerState": null,
+     "desc": "Audit and Risk Committee Membership",
+     "category": "",
+     "start": "2026-11-30",
+     "end": "2028-05-30",
+     "id": "CN4285603"
+    }
+   ],
+   "total": 67760,
+   "score": 1.0,
+   "interstate": false,
+   "why": [
+    "work runs 18 months"
    ],
    "seenBefore": true
   },
