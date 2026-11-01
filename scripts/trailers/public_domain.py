@@ -297,6 +297,66 @@ def check():
     sys.exit(1 if problems else 0)
 
 
+# ---------- audio (silent films) ----------
+def _video_file(identifier):
+    meta = archive_meta(identifier)
+    vids = [f for f in meta.get('files', []) if f.get('format') in VIDEO_FORMATS]
+    order = {'h.264': 0, 'h.264 IA': 1, 'MPEG4': 2, '512Kb MPEG4': 3}
+    vids.sort(key=lambda f: order.get(f.get('format'), 9))
+    return meta, (vids[0]['name'] if vids else None)
+
+
+def _probe(url, start, secs=40):
+    import subprocess
+    cmd = ['ffmpeg', '-hide_banner', '-nostats', '-ss', str(start), '-t', str(secs), '-i', url,
+           '-vn', '-af', 'volumedetect', '-f', 'null', '-']
+    try:
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=180)
+    except Exception as e:  # noqa: BLE001
+        return {'error': repr(e)[:120]}
+    err = r.stderr
+    if 'does not contain any stream' in err or 'Output file #0 does not contain' in err or 'matches no streams' in err:
+        return {'audio': False}
+    m = re.search(r'mean_volume: (-?[\d.]+) dB', err)
+    x = re.search(r'max_volume: (-?[\d.]+) dB', err)
+    if not m:
+        return {'audio': False, 'note': err.strip().splitlines()[-1][:120] if err.strip() else ''}
+    return {'audio': True, 'mean': float(m.group(1)), 'max': float(x.group(1)) if x else None}
+
+
+def audio(ids):
+    """For each Archive copy: is there a soundtrack at all, how loud, and what the uploader says about it."""
+    lines = ['# Silent film audio check', '']
+    for identifier in ids:
+        try:
+            meta, name = _video_file(identifier)
+            md = meta.get('metadata', {})
+            desc = re.sub(r'<[^>]+>', ' ', ' '.join(str(md.get(k, '')) for k in ('description', 'notes', 'source')))
+            desc = re.sub(r'\s+', ' ', desc).strip()
+            rt = runtime_minutes(meta) or 60
+            url = f'https://archive.org/download/{urllib.parse.quote(identifier)}/{urllib.parse.quote(name)}' if name else None
+            probes = [(_probe(url, int(t)) if url else {'error': 'no video file'}) for t in (90, rt * 60 * 0.5, max(rt * 60 - 200, 120))]
+            heard = [p for p in probes if p.get('audio') and p.get('max') is not None and p['max'] > -45]
+            verdict = ('NO SOUND (silent: clean)' if not any(p.get('audio') for p in probes)
+                       else 'SOUND PRESENT: music/narration in the file' if heard
+                       else 'near-silent track (clean)')
+            music = re.findall(r'[^.]*\b(?:music|score|scored|soundtrack|composed|organ|piano|orchestra|accompan)\w*[^.]*\.', desc, flags=re.I)
+            lines += [f'## {identifier}', f'- title: {md.get("title")} · {rt} min · file: {name}', f'- verdict: **{verdict}**',
+                      f'- levels: ' + ' | '.join(f"mean {p.get('mean')} max {p.get('max')}" if p.get('audio') else (p.get('error') or 'no audio') for p in probes),
+                      f'- uploader says about music: ' + (' '.join(m.strip() for m in music)[:600] or '(nothing)'),
+                      f'- description: {desc[:500]}', '']
+        except Exception as e:  # noqa: BLE001
+            lines += [f'## {identifier}', f'- error: {repr(e)[:200]}', '']
+        print(f'audio {identifier} done', flush=True)
+    open('public-domain-find.md', 'w').write('\n'.join(lines))
+    print('\n'.join(lines))
+
+
 if __name__ == '__main__':
     mode = sys.argv[1] if len(sys.argv) > 1 else 'check'
-    find(sys.argv[2]) if mode == 'find' else check()
+    if mode == 'find':
+        find(sys.argv[2])
+    elif mode == 'audio':
+        audio([i for i in re.split(r'[;,\s]+', sys.argv[2]) if i])
+    else:
+        check()

@@ -8,8 +8,8 @@ on:
     - cron: '41 20 * * 0'
   workflow_dispatch:
     inputs:
-      mode: { description: 'check or find', default: 'check' }
-      titles: { description: 'find only: Title|Year;Title|Year', default: '' }
+      mode: { description: 'check, find or audio', default: 'check' }
+      titles: { description: 'find: Title|Year;Title|Year · audio: Archive ids separated by ;', default: '' }
       dry: { description: 'true = report only, no issue', default: 'false' }
 permissions:
   contents: read
@@ -20,20 +20,21 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
-      - name: Find candidates
-        if: inputs.mode == 'find'
-        env: { TITLES: '${{ inputs.titles }}' }
+      - name: Find candidates / check audio
+        if: inputs.mode == 'find' || inputs.mode == 'audio'
+        env: { TITLES: '${{ inputs.titles }}', MODE: '${{ inputs.mode }}' }
         run: |
-          python3 scripts/trailers/public_domain.py find "$TITLES"
+          which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+          python3 scripts/trailers/public_domain.py "$MODE" "$TITLES"
           cat public-domain-find.md >> "$GITHUB_STEP_SUMMARY"
           echo "::notice title=pd-find::$(sed 's/%/%25/g' public-domain-find.md | sed ':a;N;$!ba;s/\n/%0A/g' | cut -c1-60000)"
       - name: Check published films
-        if: inputs.mode != 'find'
+        if: inputs.mode != 'find' && inputs.mode != 'audio'
         id: check
         continue-on-error: true
         run: python3 scripts/trailers/public_domain.py check
       - name: Report
-        if: inputs.mode != 'find'
+        if: inputs.mode != 'find' && inputs.mode != 'audio'
         env:
           GH_TOKEN: ${{ github.token }}
           FAILED: ${{ steps.check.outcome == 'failure' }}
