@@ -242,22 +242,29 @@ def check():
     for f in films:
         if f.get('status') == 'removed':
             continue
-        name = f"{f['name']} ({f['year']})"
+        name = f"{f['name']} ({f['year']}) [{f.get('status')}]"
         bad = []
         try:
             wd = wikidata_film(f['name'], int(f['year']), f.get('wikidata'))
             if not wd:
                 bad.append(f"Wikidata item {f.get('wikidata')} not found or not a film")
             else:
-                if wd['year'] != int(f['year']):
+                tol = 0 if f['basis'] == 'term-expired' else 1  # lapsed films: release dates vary by a year between sources
+                if wd['year'] is None or abs(wd['year'] - int(f['year'])) > tol:
                     bad.append(f"Wikidata says first published {wd['year']}, we say {f['year']}")
                 if f['basis'] != 'term-expired' and 'Q30' not in (wd.get('countries') or []):
                     bad.append('lapsed-copyright film is not marked as made in the US on Wikidata (foreign films were restored in 1996)')
             if f['basis'] == 'term-expired' and int(f['year']) > cutoff:
-                if f.get('status') != 'held':
+                if f.get('status') not in ('held', 'pending'):
                     bad.append(f'published {f["year"]}, still in copyright in the US (cutoff {cutoff})')
             if f['basis'] != 'term-expired' and not on_wikipedia_list(f['name'], int(f['year'])):
                 bad.append("not on Wikipedia's US public domain films list (check the cited evidence by hand)")
+            for e in f.get('evidence', []):
+                try:
+                    get(e['url'], tries=2)
+                except Exception as ex:  # noqa: BLE001
+                    bad_link = f"evidence link broken: {e['url']} ({repr(ex)[:80]})"
+                    bad.append(bad_link)
             it = describe_item(f['archiveId'])
             accepted = set((f.get('audit') or {}).get('acceptedFlags') or [])
             if not it.get('exists') or it.get('dark'):

@@ -1,0 +1,144 @@
+---
+/**
+ * /watch/<film>: a public domain film, free. The player only loads for US visitors (the film is public domain in the
+ * US; rules differ elsewhere), checked through /api/geo. Rules and checks: brands/trailers/public-domain.ts.
+ */
+import type { FreeFilm } from '../../brands/trailers/public-domain';
+import { archiveEmbed, archivePage, archiveThumb, basisLine } from '../../brands/trailers/public-domain';
+
+interface Props {
+  film: FreeFilm;
+  more: { slug: string; name: string; year: string; archiveId: string }[];
+  trailerSlug: string | null;
+}
+const { film: f, more, trailerSlug } = Astro.props;
+const runtime = `${Math.floor(f.runtimeMinutes / 60)}h ${String(f.runtimeMinutes % 60).padStart(2, '0')}m`;
+const facts = [
+  { label: 'Released', value: f.year },
+  { label: 'Runtime', value: runtime },
+  { label: 'Directed by', value: f.director },
+  { label: 'Starring', value: f.cast.join(', ') },
+  { label: 'Genre', value: f.genres.join(', ') },
+  { label: 'Sound', value: f.audio === 'silent' ? 'Silent film (with English intertitles)' : 'Original soundtrack' },
+].filter((x) => x.value);
+const faq = [
+  { q: `Is it legal to watch ${f.name} for free?`, a: `Yes, in the United States. ${basisLine(f)} We only play it to visitors in the US because copyright rules differ from country to country.` },
+  { q: `Where does this copy come from?`, a: `It plays from the Internet Archive, a non-profit library that hosts public domain films. We embed the plain original, never a restored, colourised or re-scored version, because those can carry new copyright.` },
+  { q: `How long is ${f.name}?`, a: `${runtime}.${f.runtimeMinutes < 80 ? ' Short enough for a weeknight.' : ''}` },
+];
+---
+<article class="watch-page">
+  <div class="watch-player" data-embed={archiveEmbed(f.archiveId)} data-name={f.name}>
+    <div class="watch-player__frame">
+      <img src={archiveThumb(f.archiveId)} alt="" width="640" height="360" fetchpriority="high" />
+      <button type="button" class="watch-player__play" hidden>
+        <span class="watch-player__icon" aria-hidden="true"></span>
+        <span>Play the full film</span>
+      </button>
+      <p class="watch-player__note" data-state="checking">Checking where you're watching from…</p>
+    </div>
+    <noscript><p class="watch-player__fallback">The player needs JavaScript. You can also find this film on the <a href={archivePage(f.archiveId)} rel="noopener">Internet Archive</a>.</p></noscript>
+  </div>
+
+  <div class="wrap">
+    <header class="movie__head">
+      <h1 class="marquee">
+        <span class="marquee__kicker">Watch free</span>
+        <span class="marquee__title">{f.name}</span>
+        <span class="marquee__year">{f.year}</span>
+      </h1>
+      <p class="movie__tagline">The full film, free and legal: public domain in the United States.</p>
+    </header>
+
+    <div class="movie__body">
+      <div class="movie__story prose">
+        <p class="lede">{f.about}</p>
+        {f.watchIf && <p><strong>Watch it if</strong> {f.watchIf}</p>}
+
+        <section class="rights" aria-labelledby="rights-heading">
+          <h2 id="rights-heading">Why is it free?</h2>
+          <p>{basisLine(f)}</p>
+          <ul>
+            {f.evidence.map((e) => <li><a href={e.url} rel="noopener" target="_blank">{e.label}</a></li>)}
+          </ul>
+          <p class="rights__small">Last checked {f.audit.checkedOn}; re-checked every week. Own rights in this film or this copy? Email <a href="mailto:hello@movietrailer.channel?subject=Rights%20question%3A%20{encodeURIComponent(f.name)}">hello@movietrailer.channel</a> and we'll take it down while we look into it.</p>
+        </section>
+
+        <section class="worth" aria-labelledby="faq-heading">
+          <h2 id="faq-heading">Questions</h2>
+          {faq.map((x) => (<div class="worth__item"><h3>{x.q}</h3><p>{x.a}</p></div>))}
+        </section>
+
+        {trailerSlug && <p><a href={`/movies/${trailerSlug}`}>Trailer and where to rent {f.name} in HD →</a></p>}
+      </div>
+
+      <dl class="facts">
+        {facts.map((x) => (<div class="facts__row"><dt>{x.label}</dt><dd>{x.value}</dd></div>))}
+      </dl>
+    </div>
+
+    {more.length > 0 && (
+      <section class="band" aria-labelledby="more-free">
+        <h2 id="more-free">More free classic movies</h2>
+        <div class="grid grid--cards">
+          {more.map((m) => (
+            <a class="movie-card" href={`/watch/${m.slug}`}>
+              <span class="frame"><img src={archiveThumb(m.archiveId)} alt="" width="480" height="270" loading="lazy" decoding="async" /></span>
+              <h3 class="movie-card__title">{m.name}</h3>
+              <span class="movie-card__year">{m.year}</span>
+            </a>
+          ))}
+        </div>
+        <p><a href="/free-classic-movies">All free classic movies →</a></p>
+      </section>
+    )}
+  </div>
+</article>
+
+<style>
+  .watch-player { background: #000; }
+  .watch-player__frame { position: relative; width: min(100%, 68rem); margin-inline: auto; aspect-ratio: 4 / 3; max-height: 78vh; background: #000; }
+  .watch-player__frame img { width: 100%; height: 100%; object-fit: contain; opacity: 0.55; }
+  .watch-player__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .watch-player__play { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; width: 100%; border: 0; background: transparent; color: var(--paper, #fff); font: inherit; font-weight: 700; cursor: pointer; }
+  .watch-player__icon { width: 4.5rem; height: 4.5rem; border-radius: 50%; background: var(--accent, #F2B53A); position: relative; }
+  .watch-player__icon::after { content: ''; position: absolute; left: 1.75rem; top: 1.3rem; border-style: solid; border-width: 0.95rem 0 0.95rem 1.5rem; border-color: transparent transparent transparent #12162B; }
+  .watch-player__note { position: absolute; left: 1rem; right: 1rem; bottom: 1rem; margin: 0; padding: 0.75rem 1rem; border-radius: 0.5rem; background: rgba(0, 0, 0, 0.75); color: #fff; font-size: 0.95rem; }
+  .watch-player__note a { color: var(--accent, #F2B53A); }
+  .watch-player__fallback { color: #fff; text-align: center; padding: 1rem; margin: 0; }
+  .watch-player__fallback a { color: var(--accent, #F2B53A); }
+  .rights ul { padding-left: 1.2rem; }
+  .rights__small { font-size: 0.9rem; opacity: 0.85; }
+</style>
+
+<script>
+  // Only play where the film is known to be public domain: the US. Anything else (or an error) shows a note instead.
+  const box = document.querySelector<HTMLElement>('.watch-player');
+  const frame = box?.querySelector<HTMLElement>('.watch-player__frame');
+  const play = box?.querySelector<HTMLButtonElement>('.watch-player__play');
+  const note = box?.querySelector<HTMLElement>('.watch-player__note');
+  const archivePage = (box?.dataset.embed ?? '').replace('/embed/', '/details/');
+  const blocked = () => {
+    if (!note) return;
+    note.dataset.state = 'blocked';
+    note.innerHTML = `This film is public domain in the United States. Copyright rules are different in other countries, so we only play it for US visitors. <a href="${archivePage}" rel="noopener">See it on the Internet Archive</a>.`;
+  };
+  fetch('/api/geo', { headers: { accept: 'application/json' } })
+    .then((r) => (r.ok ? r.json() : null))
+    .then((d: { country?: string } | null) => {
+      if (d?.country !== 'US' || !play || !note) return blocked();
+      note.remove();
+      play.hidden = false;
+      play.setAttribute('aria-label', `Play ${box?.dataset.name ?? 'the film'}`);
+      play.addEventListener('click', () => {
+        const iframe = document.createElement('iframe');
+        iframe.src = box?.dataset.embed ?? '';
+        iframe.title = box?.dataset.name ?? 'Film';
+        iframe.allow = 'fullscreen; picture-in-picture';
+        iframe.allowFullscreen = true;
+        frame?.replaceChildren(iframe);
+        (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.('event', 'watch_free', { film: box?.dataset.name });
+      });
+    })
+    .catch(blocked);
+</script>

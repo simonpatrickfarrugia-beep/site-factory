@@ -63,6 +63,14 @@ jobs:
             exit 1
           fi
           tail -1 paytax.log | sed 's/^/::notice title=Pay calculator maths::/'
+      - name: Free films rules (trailers only)
+        if: matrix.brand == 'trailers'
+        run: |
+          if ! node --experimental-strip-types --no-warnings scripts/test-public-domain.ts > pd.log 2>&1; then
+            node -e "const l=require('fs').readFileSync('pd.log','utf8').trim().split('\\n').slice(0,30).join('\\n');console.log('::error title=Free films rules::'+l.replace(/%/g,'%25').replace(/\\r?\\n/g,'%0A'))"
+            exit 1
+          fi
+          tail -1 pd.log | sed 's/^/::notice title=Free films rules::/'
       - name: Build
         run: |
           set -o pipefail

@@ -1,0 +1,45 @@
+---
+/** /free-classic-movies: every public domain film we play, plus how we check them. */
+import { archiveThumb } from '../../brands/trailers/public-domain';
+
+interface Card { slug: string; name: string; year: string; archiveId: string; genres: string[]; runtimeMinutes: number }
+interface Props { films: Card[]; coming: { name: string; year: string; freeOn: string }[] }
+const { films, coming } = Astro.props;
+const year = new Date().getUTCFullYear();
+---
+<div class="wrap">
+  <header class="page-head">
+    <h1>Free Classic Movies</h1>
+    <p class="lede">Full-length classic films you can watch free and legally, because they're in the public domain in the United States. Every one is checked before it goes up, and re-checked every week.</p>
+  </header>
+
+  <div class="grid grid--cards">
+    {films.map((m) => (
+      <a class="movie-card" href={`/watch/${m.slug}`}>
+        <span class="frame"><img src={archiveThumb(m.archiveId)} alt="" width="480" height="270" loading="lazy" decoding="async" /></span>
+        <h2 class="movie-card__title">{m.name}</h2>
+        <span class="movie-card__year">{m.year} · {m.genres[0]} · {m.runtimeMinutes} min</span>
+      </a>
+    ))}
+  </div>
+
+  {coming.length > 0 && (
+    <section class="band" aria-labelledby="coming">
+      <h2 id="coming">Coming soon</h2>
+      <p>Every 1 January, another year of films enters the US public domain. These go up the day they're free:</p>
+      <ul>{coming.map((c) => <li><strong>{c.name}</strong> ({c.year}): free in the US from {c.freeOn}</li>)}</ul>
+    </section>
+  )}
+
+  <section class="band prose" aria-labelledby="how">
+    <h2 id="how">How we make sure every film is free to show</h2>
+    <ul>
+      <li><strong>Old enough, or properly lapsed.</strong> Films first published in the US {year - 96} or earlier are out of copyright by age (95-year term). Newer films only qualify if they are American and their copyright lapsed for a missing notice or renewal, and we cite where that's recorded.</li>
+      <li><strong>The story has to be free too.</strong> If a film is based on a book, play or song that someone still owns, we don't show it, even if the film itself lapsed.</li>
+      <li><strong>The plain original only.</strong> No restored, colourised, re-scored or narrated versions: those can carry new copyright of their own.</li>
+      <li><strong>US visitors only.</strong> Public domain rules differ by country, so the player only starts in the United States.</li>
+      <li><strong>Checked every week</strong> against Wikidata, Wikipedia's list of US public domain films and the Internet Archive copy we play.</li>
+    </ul>
+    <p>Think we've got one wrong, or own rights in a film here? Email <a href="mailto:hello@movietrailer.channel?subject=Rights%20question">hello@movietrailer.channel</a>. We take the film down while we look into it.</p>
+  </section>
+</div>

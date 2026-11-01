@@ -12,6 +12,8 @@
  *                            the built page, never from the request, so it can't be used to send arbitrary text), and adds
  *                            them to the list (interests "plans"). Max 3 sends per email per day.
  *   GET  /api/unsubscribe?e=&t=  one-click unsubscribe (t = HMAC of the email), linked from every email.
+ *   GET  /api/geo            { country }: the visitor's country (Cloudflare's guess), so /watch pages only play a public
+ *                            domain film where we know it's out of copyright (the US). Never stored.
  *   GET  /api/submit/status?since=<ISO time>  how many submissions arrived since then: a count only, never any details.
  *                            The `enquiries` GitHub workflow polls it and opens an issue (emailed to Simon) when it's above 0.
  *
@@ -268,6 +270,10 @@ export default {
       try { return await planEmail(request, env); } catch (e) { console.error('plan-email failed', e); return Response.json({ ok: false, message: 'Something went wrong. Please try again.' }, { status: 500 }); }
     }
     if (pathname === '/api/unsubscribe') return unsubscribe(request, env);
+    if (pathname === '/api/geo') {
+      const country = ((request as Request & { cf?: { country?: string } }).cf?.country ?? 'XX').toUpperCase();
+      return Response.json({ country }, { headers: { 'cache-control': 'private, no-store' } });
+    }
     if (pathname === '/api/jobs' && env.JOBS === '1') {
       if (request.method !== 'GET') return new Response('Method not allowed', { status: 405, headers: { allow: 'GET' } });
       return jobs(request, env);
