@@ -1,9 +1,8 @@
 ---
 /** /free-classic-movies: every public domain film we play, plus how we check them. */
-import { archiveThumb } from '../../brands/trailers/public-domain';
 
-interface Card { slug: string; name: string; year: string; archiveId: string; genres: string[]; runtimeMinutes: number }
-interface Props { films: Card[]; coming: { name: string; year: string; freeOn: string }[] }
+interface Card { slug: string; name: string; year: string; image: string; genres: string[]; runtimeMinutes: number }
+interface Props { films: Card[]; coming: { slug: string; name: string; year: string; freeOn: string }[] }
 const { films, coming } = Astro.props;
 const year = new Date().getUTCFullYear();
 ---
@@ -15,8 +14,8 @@ const year = new Date().getUTCFullYear();
 
   <div class="grid grid--cards">
     {films.map((m) => (
-      <a class="movie-card" href={`/watch/${m.slug}`}>
-        <span class="frame"><img src={archiveThumb(m.archiveId)} alt="" width="480" height="270" loading="lazy" decoding="async" /></span>
+      <a class="movie-card" href={`/movies/${m.slug}`}>
+        <span class="frame"><img src={m.image} alt="" width="480" height="270" loading="lazy" decoding="async" /></span>
         <h2 class="movie-card__title">{m.name}</h2>
         <span class="movie-card__year">{m.year} · {m.genres[0]} · {m.runtimeMinutes} min</span>
       </a>
@@ -26,8 +25,8 @@ const year = new Date().getUTCFullYear();
   {coming.length > 0 && (
     <section class="band" aria-labelledby="coming">
       <h2 id="coming">Coming soon</h2>
-      <p>Every 1 January, another year of films enters the US public domain. These go up the day they're free:</p>
-      <ul>{coming.map((c) => <li><strong>{c.name}</strong> ({c.year}): free in the US from {c.freeOn}</li>)}</ul>
+      <p>Every 1 January, another year of films enters the US public domain. These play here in full from the day they're free:</p>
+      <ul>{coming.map((c) => <li><a href={`/movies/${c.slug}`}><strong>{c.name}</strong> ({c.year})</a>: free in the US from {c.freeOn}</li>)}</ul>
     </section>
   )}
 

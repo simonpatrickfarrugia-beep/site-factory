@@ -6,7 +6,7 @@ import { getCollection, getSingleton } from '../../src/lib/data';
 import { hqAnswersProps, hqProps, trafficProps } from '../../src/lib/hq';
 import type { Route } from '../../src/lib/routes';
 import { matchesRule, thumb, type Movie, type MovieCollection, type StaticPage } from './model';
-import { archiveEmbed, archiveThumb, freeFilmsToPublish, usCutoffYear, type FreeFilm } from './public-domain';
+import { archiveEmbed, archiveThumb, freeFilmsToPublish, sameTitle, upcomingFreeFilms, type FreeFilm } from './public-domain';
 
 const SITE = 'https://www.movietrailer.channel'; // www is canonical (matches Webflow + Search Console)
 const SUFFIX = ' | MovieTrailer.Channel';
@@ -101,6 +101,62 @@ export function routes(): Route[] {
   const collections = getCollection<MovieCollection>('collections');
   const pages = getCollection<StaticPage>('pages');
 
+  // Free classic movies (public domain in the US). The film plays on its normal /movies page; films we have no
+  // trailer page for get one. Rules: ./public-domain.ts (a broken rule fails the build). Weekly outside checks:
+  // .github/workflows/public-domain.yml. "Held" films show as "free from 1 January" and switch on by themselves.
+  const allFree = getCollection<FreeFilm>('public-domain');
+  const free = freeFilmsToPublish(allFree);
+  const upcoming = upcomingFreeFilms(allFree);
+  const trailerFor = (f: FreeFilm) => movies.find((m) => m.slug === f.moviesSlug || (sameTitle(m.name, f.name) && m.year === f.year));
+  const asMovie = (f: FreeFilm): Movie => ({
+    id: f.slug, slug: f.slug, name: f.name, year: f.year, genres: f.genres, director: f.director, cast: f.cast,
+    runtimeMinutes: f.runtimeMinutes, rating: null, imdbRating: null, boxOffice: null, synopsis: null, tagline: null,
+    summary: f.about, youtubeId: '', trailerTitle: null, rentBuyUrl: null, airtableId: null,
+    created: f.audit.checkedOn, updated: f.audit.checkedOn,
+  });
+  const freeByMovie = new Map<string, FreeFilm>();
+  const upcomingByMovie = new Map<string, (typeof upcoming)[number]>();
+  const freeOnly: FreeFilm[] = []; // free films with no trailer page yet
+  const upcomingOnly: (typeof upcoming)[number][] = [];
+  for (const f of free) { const t = trailerFor(f); if (t) freeByMovie.set(t.slug, f); else freeOnly.push(f); }
+  for (const f of upcoming) { const t = trailerFor(f); if (t) upcomingByMovie.set(t.slug, f); else upcomingOnly.push(f); }
+  const freeSlug = (f: FreeFilm) => trailerFor(f)?.slug ?? f.slug;
+  const freeCard = (f: FreeFilm) => ({ slug: freeSlug(f), name: f.name, year: f.year, image: archiveThumb(f.archiveId) });
+  const moreFreeFor = (f: FreeFilm) => {
+    const others = free.filter((o) => o !== f);
+    const same = others.filter((o) => o.genres[0] === f.genres[0]);
+    return [...same, ...others.filter((o) => !same.includes(o))].slice(0, 6).map(freeCard);
+  };
+  /** The free version of this film in another year (remake → original). */
+  const originalFor = (m: Movie) => {
+    const f = free.find((x) => sameTitle(x.name, m.name) && x.year !== m.year);
+    if (f) return { slug: freeSlug(f), name: f.name, year: f.year, freeOn: null };
+    const u = upcoming.find((x) => sameTitle(x.name, m.name) && x.year !== m.year);
+    return u ? { slug: freeSlug(u), name: u.name, year: u.year, freeOn: u.freeOn } : null;
+  };
+  const fullFilmVideo = (f: FreeFilm, url: string) => ({
+    '@type': 'VideoObject',
+    name: `${f.name} (${f.year}): full movie`,
+    description: f.about,
+    thumbnailUrl: [archiveThumb(f.archiveId)],
+    uploadDate: f.audit.checkedOn,
+    duration: `PT${f.runtimeMinutes}M`,
+    embedUrl: archiveEmbed(f.archiveId),
+    regionsAllowed: 'US',
+    isAccessibleForFree: true,
+    url,
+  });
+  function freeSeo(m: Movie, f: FreeFilm) {
+    const ny = `${m.name}${m.year ? ` (${m.year})` : ''}`;
+    const title = fitTitle(`Watch ${ny} Free: Full Movie & Trailer`, `Watch ${ny} Free: Full Movie`, `${ny}: Watch Free`, `Watch ${m.name} Free`);
+    return { title, description: clip(`Watch ${ny} free: the full film, public domain in the US and legal to stream. ${f.about}`) };
+  }
+  function upcomingSeo(m: Movie, u: { freeOn: string }) {
+    const ny = `${m.name}${m.year ? ` (${m.year})` : ''}`;
+    const title = fitTitle(`${ny}: Where to Watch & Free from ${u.freeOn.replace('1 January ', 'Jan ')}`, `${ny}: Where to Watch`, ny);
+    return { title, description: clip(`${ny} enters the US public domain on ${u.freeOn}: watch the full film free here from that day. Until then: where to rent, buy or stream it.`) };
+  }
+
   const movieBySlug = new Map(movies.map((m) => [m.slug, m]));
   const byYear = (a: Movie, b: Movie) => (a.year ?? '9999').localeCompare(b.year ?? '9999') || a.name.localeCompare(b.name);
   // Hand-picked movies first, then (for smart collections) every other movie matching the rule, oldest first.
@@ -163,9 +219,17 @@ export function routes(): Route[] {
     },
   });
 
-  // Movie pages: /movies/{slug}
-  for (const m of movies) {
-    const inCollections = collections.filter((c) => moviesIn(c).includes(m)).map(collectionCard);
+  // Movie pages: /movies/{slug}. Trailer pages, plus pages for free films we have no trailer for. A free film plays
+  // in full on its page; an upcoming one says when it will.
+  type MoviePage = { m: Movie; free: FreeFilm | null; upcoming: (typeof upcoming)[number] | null; synthetic: boolean };
+  const moviePages: MoviePage[] = [
+    ...movies.map((m) => ({ m, free: freeByMovie.get(m.slug) ?? null, upcoming: upcomingByMovie.get(m.slug) ?? null, synthetic: false })),
+    ...freeOnly.map((f) => ({ m: asMovie(f), free: f, upcoming: null, synthetic: true })),
+    ...upcomingOnly.map((u) => ({ m: asMovie(u), free: null, upcoming: u, synthetic: true })),
+  ];
+  for (const { m, free: f, upcoming: u, synthetic } of moviePages) {
+    const url = `${SITE}/movies/${m.slug}`;
+    const inCollections = synthetic ? [] : collections.filter((c) => moviesIn(c).includes(m)).map(collectionCard);
     const firstGenre = m.genres[0];
     const directors = splitNames(m.director);
     const byDirector = directors.length
@@ -174,24 +238,52 @@ export function routes(): Route[] {
     const related = firstGenre
       ? movies.filter((o) => o.slug !== m.slug && o.genres.includes(firstGenre)).sort(byNewest).slice(0, 10).map(card)
       : [];
+    // Images: the trailer thumbnail, or a still from a free film. Never a still from a film that isn't free yet.
+    const image = m.youtubeId ? thumb(m.youtubeId) : f ? archiveThumb(f.archiveId) : undefined;
+    const schema: Record<string, unknown> = m.youtubeId
+      ? movieSchema(m)
+      : { '@context': 'https://schema.org', '@type': 'Movie', name: m.name, url, dateCreated: m.year, genre: m.genres, director: people(m.director), actor: people(m.cast), duration: `PT${m.runtimeMinutes}M`, description: m.summary };
+    if (f) { schema.video = fullFilmVideo(f, url); schema.image = image; }
     out.push({
       path: `movies/${m.slug}`,
       template: 'movie',
-      seo: {
-        ...movieSeo(m),
-        rawTitle: true,
-        image: thumb(m.youtubeId),
-      },
+      seo: { ...(f ? freeSeo(m, f) : u ? upcomingSeo(m, u) : movieSeo(m)), rawTitle: true, image },
       schema: [
-        movieSchema(m),
+        schema,
         breadcrumbs([
           { name: 'Home', path: '' },
-          { name: 'Browse', path: 'browse' },
+          f || u ? { name: 'Free classic movies', path: 'free-classic-movies' } : { name: 'Browse', path: 'browse' },
           { name: m.name, path: `movies/${m.slug}` },
         ]),
       ],
-      lastmod: m.updated,
-      props: { movie: m, inCollections, related, byDirector, genre: firstGenre ?? null, amazonTag: AMAZON_TAG },
+      lastmod: f ? [m.updated, f.audit.checkedOn].sort().pop() : m.updated,
+      props: {
+        movie: m, inCollections, related, byDirector, genre: firstGenre ?? null, amazonTag: AMAZON_TAG,
+        free: f, upcoming: u ? { freeOn: u.freeOn } : null, original: f || u ? null : originalFor(m),
+        moreFree: f ? moreFreeFor(f) : u ? free.slice(0, 6).map(freeCard) : [],
+      },
+    });
+  }
+
+  // Free classic movies hub (targets "public domain films", "free classic movies").
+  if (free.length) {
+    out.push({
+      path: 'free-classic-movies',
+      template: 'freeFilms',
+      seo: {
+        title: fitTitle('Free Classic Movies: Public Domain Films to Watch' + SUFFIX, 'Free Classic Movies: Public Domain Films to Watch'),
+        rawTitle: true,
+        description: clip(`Watch ${free.length} classic films free and legally: public domain movies like ${free.slice(0, 3).map((f) => f.name).join(', ')}. Every film checked, every week.`),
+        image: archiveThumb(free[0].archiveId),
+      },
+      schema: [
+        { '@context': 'https://schema.org', '@type': 'ItemList', itemListElement: free.map((f, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/movies/${freeSlug(f)}`, name: f.name })) },
+        breadcrumbs([{ name: 'Home', path: '' }, { name: 'Free classic movies', path: 'free-classic-movies' }]),
+      ],
+      props: {
+        films: free.map((f) => ({ ...freeCard(f), genres: f.genres, runtimeMinutes: f.runtimeMinutes })),
+        coming: upcoming.map((u) => ({ slug: freeSlug(u), name: u.name, year: u.year, freeOn: u.freeOn })),
+      },
     });
   }
 
@@ -241,8 +333,8 @@ export function routes(): Route[] {
   });
 
   // Browse all
-  const decades = [...new Set(movies.map((m) => (m.year ? `${m.year.slice(0, 3)}0s` : null)).filter(Boolean))].sort() as string[];
-  const genres = [...new Set(movies.flatMap((m) => m.genres))].sort();
+  const decades = [...new Set([...movies, ...freeOnly].map((m) => (m.year ? `${m.year.slice(0, 3)}0s` : null)).filter(Boolean))].sort() as string[];
+  const genres = [...new Set([...movies, ...freeOnly].flatMap((m) => m.genres))].sort();
   out.push({
     path: 'browse',
     template: 'browse',
@@ -252,7 +344,7 @@ export function routes(): Route[] {
       description: 'Browse every movie trailer in our catalog — search by title, filter by genre and year, or jump to a letter.',
     },
     props: {
-      movies: movies.map((m) => ({ ...card(m), genres: m.genres })),
+      movies: [...movies.map((m) => ({ ...card(m), image: null as string | null, badge: freeByMovie.has(m.slug) ? 'Watch free' : null, genres: m.genres })), ...freeOnly.map((f) => ({ ...freeCard(f), youtubeId: '', badge: 'Watch free', genres: f.genres }))],
       genres,
       decades,
     },
@@ -286,86 +378,6 @@ export function routes(): Route[] {
     });
   }
 
-  // Free classic movies: public domain in the US only. Rules enforced in ./public-domain.ts (a broken rule fails the
-  // build); weekly outside checks in .github/workflows/public-domain.yml. Held films go live when their year is free.
-  const allFree = getCollection<FreeFilm>('public-domain');
-  const free = freeFilmsToPublish(allFree);
-  const freeCard = (f: FreeFilm) => ({ slug: f.slug, name: f.name, year: f.year, archiveId: f.archiveId, genres: f.genres, runtimeMinutes: f.runtimeMinutes });
-  for (const f of free) {
-    const url = `${SITE}/watch/${f.slug}`;
-    const others = free.filter((o) => o.slug !== f.slug);
-    const sameGenre = others.filter((o) => o.genres[0] === f.genres[0]);
-    const more = [...sameGenre, ...others.filter((o) => !sameGenre.includes(o))].slice(0, 6).map(freeCard);
-    const trailer = movies.find((m) => m.slug === f.moviesSlug || (m.name.toLowerCase() === f.name.toLowerCase() && m.year === f.year));
-    out.push({
-      path: `watch/${f.slug}`,
-      template: 'watch',
-      seo: {
-        title: fitTitle(`Watch ${f.name} (${f.year}) Free: Full Movie`, `Watch ${f.name} (${f.year}) Free`, `${f.name} (${f.year}) Full Movie`),
-        rawTitle: true,
-        description: clip(`Watch ${f.name} (${f.year}) free: the full film, public domain in the US and legal to stream. ${f.about}`),
-        image: archiveThumb(f.archiveId),
-      },
-      schema: [
-        {
-          '@context': 'https://schema.org',
-          '@type': 'Movie',
-          name: f.name,
-          url,
-          dateCreated: f.year,
-          director: people(f.director),
-          actor: people(f.cast),
-          genre: f.genres,
-          duration: `PT${f.runtimeMinutes}M`,
-          description: f.about,
-          image: archiveThumb(f.archiveId),
-          video: {
-            '@type': 'VideoObject',
-            name: `${f.name} (${f.year}): full movie`,
-            description: f.about,
-            thumbnailUrl: [archiveThumb(f.archiveId)],
-            uploadDate: f.audit.checkedOn,
-            duration: `PT${f.runtimeMinutes}M`,
-            embedUrl: archiveEmbed(f.archiveId),
-            regionsAllowed: 'US',
-            isAccessibleForFree: true,
-          },
-        },
-        breadcrumbs([
-          { name: 'Home', path: '' },
-          { name: 'Free classic movies', path: 'free-classic-movies' },
-          { name: f.name, path: `watch/${f.slug}` },
-        ]),
-      ],
-      lastmod: f.audit.checkedOn,
-      props: { film: f, more, trailerSlug: trailer?.slug ?? null },
-    });
-  }
-  const cutoff = usCutoffYear();
-  const coming = allFree
-    .filter((f) => f.status === 'held' && Number(f.year) > cutoff)
-    .map((f) => ({ name: f.name, year: f.year, freeOn: `1 January ${Number(f.year) + 96}` }));
-  if (free.length) {
-    out.push({
-      path: 'free-classic-movies',
-      template: 'freeFilms',
-      seo: {
-        title: fitTitle('Free Classic Movies: Public Domain Films to Watch' + SUFFIX, 'Free Classic Movies: Public Domain Films to Watch'),
-        rawTitle: true,
-        description: clip(`Watch ${free.length} classic films free and legally: public domain movies like ${free.slice(0, 3).map((f) => f.name).join(', ')}. Every film checked, every week.`),
-        image: archiveThumb(free[0].archiveId),
-      },
-      schema: [
-        {
-          '@context': 'https://schema.org',
-          '@type': 'ItemList',
-          itemListElement: free.map((f, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/watch/${f.slug}`, name: f.name })),
-        },
-      ],
-      props: { films: free.map(freeCard), coming },
-    });
-  }
-
   // Original films: a share of what the site earns goes into producing original films (31 Oct 2026).
   // No affiliate links on this page (CI-checked), and never tie the fund to affiliate clicks or purchases.
   out.push({
@@ -390,7 +402,7 @@ export function routes(): Route[] {
   const titles: Record<string, string> = { '/': 'Home page', '/browse': 'Browse all', '/discover': 'Discover (collections)' };
   for (const m of movies) titles[`/movies/${m.slug}`] = `${m.name}${m.year ? ` (${m.year})` : ''}`;
   for (const c of collections) titles[`/discover/${c.slug}`] = `Collection: ${c.name}`;
-  for (const f of free) titles[`/watch/${f.slug}`] = `Free film: ${f.name} (${f.year})`;
+  for (const f of [...freeOnly, ...upcomingOnly]) titles[`/movies/${f.slug}`] = `${f.name} (${f.year}) (free film)`;
   titles['/free-classic-movies'] = 'Free classic movies';
   for (const p of pages) titles[`/${p.slug}`] = p.title;
   if (ghibli) titles['/studio-ghibli-where-to-watch'] = 'Studio Ghibli: where to watch';

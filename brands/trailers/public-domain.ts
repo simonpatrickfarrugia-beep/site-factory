@@ -25,7 +25,7 @@
 export type FreeBasis = 'term-expired' | 'no-notice' | 'not-renewed' | 'lapsed';
 
 export interface FreeFilm {
-  slug: string; // "<name>-<year>", used at /watch/<slug>
+  slug: string; // "<name>-<year>". Plays on /movies/<slug>, or on the trailer page for the same film and year
   name: string;
   year: string; // first publication (release) year in the US for lapsed films; first publication anywhere for term-expired
   country: string; // ISO code of the country of origin ("US", "DE", "FR"…)
@@ -146,3 +146,17 @@ export function basisLine(f: FreeFilm): string {
   if (f.basis === 'not-renewed') return `Its US copyright was never renewed, which US law required at the time, so it entered the public domain.`;
   return `Its US copyright lapsed: US law at the time required a copyright notice on release and a renewal after 28 years, and the owners didn't keep it up, so it entered the public domain.`;
 }
+
+/** Films waiting for their year to be free (status "held", year after the cutoff): shown as "free from 1 January". */
+export function upcomingFreeFilms(films: FreeFilm[], now = new Date()): (FreeFilm & { freeOn: string })[] {
+  const cutoff = usCutoffYear(now);
+  return films
+    .filter((f) => f.status === 'held' && f.basis === 'term-expired' && Number(f.year) > cutoff)
+    .map((f) => ({ ...f, freeOn: `1 January ${Number(f.year) + 96}` }));
+}
+
+/** Same film, any year: "Nosferatu" (2024) ↔ "Nosferatu" (1922). */
+export const sameTitle = (a: string, b: string) => {
+  const n = (s: string) => s.toLowerCase().replace(/^(the|a|an)\s+/, '').replace(/[^a-z0-9]/g, '');
+  return n(a) === n(b);
+};

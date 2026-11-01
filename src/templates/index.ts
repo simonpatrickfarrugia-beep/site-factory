@@ -2,7 +2,6 @@
 import Home from './Home.astro';
 import OriginalFilms from './OriginalFilms.astro';
 import Movie from './Movie.astro';
-import Watch from './Watch.astro';
 import FreeFilms from './FreeFilms.astro';
 import Collection from './Collection.astro';
 import Discover from './Discover.astro';
@@ -54,7 +53,6 @@ export const templates = {
   home: Home,
   originalFilms: OriginalFilms,
   movie: Movie,
-  watch: Watch,
   freeFilms: FreeFilms,
   collection: Collection,
   discover: Discover,

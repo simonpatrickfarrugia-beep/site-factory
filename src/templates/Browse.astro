@@ -2,7 +2,7 @@
 import MovieCard from '../components/MovieCard.astro';
 
 interface Props {
-  movies: { slug: string; name: string; year: string | null; youtubeId: string; genres: string[] }[];
+  movies: { slug: string; name: string; year: string | null; youtubeId: string; image?: string | null; badge?: string | null; genres: string[] }[];
   genres: string[];
   decades: string[];
 }
@@ -62,7 +62,7 @@ const letters = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ', '#'];
         data-decade={m.year ? `${m.year.slice(0, 3)}0s` : ''}
         data-letter={letterOf(m.name)}
       >
-        <MovieCard slug={m.slug} name={m.name} year={m.year} youtubeId={m.youtubeId} as="h2" />
+        <MovieCard slug={m.slug} name={m.name} year={m.year} youtubeId={m.youtubeId} image={m.image} badge={m.badge} as="h2" />
       </div>
     ))}
   </div>

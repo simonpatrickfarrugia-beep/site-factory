@@ -4,14 +4,20 @@ interface Props {
   name: string;
   year: string | null;
   youtubeId: string;
+  /** Picture to use when there's no trailer (public domain films: a still from the film itself). */
+  image?: string | null;
+  /** Small label over the picture, e.g. "Watch free". */
+  badge?: string | null;
   /** Heading level for the title inside the card. */
   as?: 'h2' | 'h3';
 }
-const { slug, name, year, youtubeId, as: Tag = 'h3' } = Astro.props;
+const { slug, name, year, youtubeId, image = null, badge = null, as: Tag = 'h3' } = Astro.props;
+const src = youtubeId ? `https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg` : image;
 ---
 <a class="movie-card" href={`/movies/${slug}`}>
   <span class="frame">
-    <img src={`https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg`} alt="" width="480" height="360" loading="lazy" decoding="async" />
+    {src && <img src={src} alt="" width="480" height="360" loading="lazy" decoding="async" />}
+    {badge && <span class="movie-card__badge">{badge}</span>}
   </span>
   <Tag class="movie-card__title">{name}</Tag>
   {year && <span class="movie-card__year">{year}</span>}

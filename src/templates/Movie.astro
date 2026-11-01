@@ -1,6 +1,8 @@
 ---
 import TrailerScreen from '../components/TrailerScreen.astro';
 import MovieCard from '../components/MovieCard.astro';
+import FreeFilmPlayer from '../components/FreeFilmPlayer.astro';
+import { basisLine, type FreeFilm } from '../../brands/trailers/public-domain';
 import type { Movie } from '../../brands/trailers/model';
 
 interface Props {
@@ -10,8 +12,16 @@ interface Props {
   byDirector?: { slug: string; name: string; year: string | null; youtubeId: string }[];
   genre: string | null;
   amazonTag: string;
+  /** Public domain in the US: the full film plays on this page (brands/trailers/public-domain.ts). */
+  free?: FreeFilm | null;
+  /** Public domain from a future 1 January: shown as "free here from …", no film and no stills until then. */
+  upcoming?: { freeOn: string } | null;
+  /** Another version of this film that is free here (e.g. the 1922 original on the 2024 remake's page). */
+  original?: { slug: string; name: string; year: string; freeOn?: string | null } | null;
+  /** Other free films, shown on free films' pages. */
+  moreFree?: { slug: string; name: string; year: string; image: string }[];
 }
-const { movie: m, inCollections, related, byDirector = [], genre, amazonTag } = Astro.props;
+const { movie: m, inCollections, related, byDirector = [], genre, amazonTag, free = null, upcoming = null, original = null, moreFree = [] } = Astro.props;
 
 const runtime = m.runtimeMinutes
   ? `${Math.floor(m.runtimeMinutes / 60)}h ${String(m.runtimeMinutes % 60).padStart(2, '0')}m`
@@ -24,6 +34,7 @@ const facts = [
   { label: 'Starring', value: m.cast.join(', ') || null },
   { label: 'Genre', value: m.genres.join(', ') || null },
   { label: 'Box office', value: m.boxOffice },
+  { label: 'Sound', value: free ? (free.audio === 'silent' ? 'Silent film' : 'Original soundtrack') : null },
 ].filter((f) => f.value);
 const withYear = `${m.name} ${m.year ?? ''}`.trim();
 const tagAmazon = (url: string) => {
@@ -70,18 +81,24 @@ const faq = [
   verdict && { q: `Is ${m.name} worth watching?`, a: verdict + hit },
   length && { q: `How long is ${m.name}?`, a: length },
   kids && { q: `Is ${m.name} OK for kids?`, a: kids },
-  { q: `Where can I stream ${m.name}?`, a: `You can rent or buy it on Prime Video in the US (button above). For subscription services, JustWatch shows where it's streaming today, since that changes month to month.` },
+  free && { q: `Is it legal to watch ${m.name} free?`, a: `Yes, in the United States. ${basisLine(free)} We only play it to US visitors because copyright rules differ between countries, and we show the plain original, never a restored or re-scored version.` },
+  upcoming && { q: `When can I watch ${m.name} free?`, a: `From ${upcoming.freeOn}, when it enters the public domain in the United States. It will play in full on this page from that day.` },
+  free
+    ? { q: `Where can I stream ${m.name}?`, a: `Right here, free, if you're in the US (player above). For a sharper restored copy, rent or buy it on Prime Video or Blu-ray.` }
+    : { q: `Where can I stream ${m.name}?`, a: `You can rent or buy it on Prime Video in the US (button above). For subscription services, JustWatch shows where it's streaming today, since that changes month to month.` },
 ].filter(Boolean) as { q: string; a: string }[];
 ---
 <article class="movie">
-  <div class="movie__screen">
-    <TrailerScreen youtubeId={m.youtubeId} title={m.name} priority />
-  </div>
+  {free ? (
+    <div class="movie__screen"><FreeFilmPlayer archiveId={free.archiveId} name={m.name} /></div>
+  ) : m.youtubeId ? (
+    <div class="movie__screen"><TrailerScreen youtubeId={m.youtubeId} title={m.name} priority /></div>
+  ) : null}
 
   <div class="wrap">
     <header class="movie__head">
       <h1 class="marquee">
-        <span class="marquee__kicker">Where to watch</span>
+        <span class="marquee__kicker">{free ? 'Watch free: full movie' : 'Where to watch'}</span>
         <span class="marquee__title">{m.name}</span>
         {m.year && <span class="marquee__year">{m.year}</span>}
       </h1>
@@ -89,7 +106,7 @@ const faq = [
     </header>
 
     <section class="watch" aria-labelledby="watch-heading">
-      <h2 id="watch-heading">Rent, buy or stream it</h2>
+      <h2 id="watch-heading">{free ? 'Prefer it restored and in HD? Rent or buy it' : 'Rent, buy or stream it'}</h2>
       <p class="button-row">
         <a class="button" href={primeUrl} rel="sponsored noopener" target="_blank" data-cta="prime" aria-label={`Watch ${m.name} now on Prime Video`}>Watch now <span class="button__via">on Prime Video</span></a>
         <a class="button button--quiet" href={discUrl} rel="sponsored noopener" target="_blank" data-cta="disc">Buy on DVD &amp; Blu-ray</a>
@@ -100,15 +117,46 @@ const faq = [
     <div class="movie__body">
       <div class="movie__story prose">
         {(m.summary || m.synopsis) && <p class="lede">{m.summary || m.synopsis}</p>}
+        {free?.watchIf && <p><strong>Watch it if</strong> {free.watchIf}</p>}
+
+        {upcoming && (
+          <section class="free-film" aria-labelledby="free-heading">
+            <h2 id="free-heading">Free to watch here from {upcoming.freeOn}</h2>
+            <p>{m.name} ({m.year}) enters the public domain in the United States on {upcoming.freeOn}. From that day the full film plays free on this page for US visitors. Bookmark it, or browse the <a href="/free-classic-movies">free classic movies</a> you can watch today.</p>
+          </section>
+        )}
+
+        {original && (
+          <section class="free-film" aria-labelledby="original-heading">
+            <h2 id="original-heading">{original.freeOn ? `The ${original.year} original: free here from ${original.freeOn}` : `Watch the ${original.year} original free`}</h2>
+            <p><a href={`/movies/${original.slug}`}>{original.name} ({original.year})</a> {original.freeOn ? 'enters the US public domain soon, and will play in full on its page.' : 'is in the public domain in the US: the full film plays free on its page.'}</p>
+          </section>
+        )}
+
+        {free && m.youtubeId && (
+          <section aria-labelledby="trailer-heading">
+            <h2 id="trailer-heading">Trailer</h2>
+            <TrailerScreen youtubeId={m.youtubeId} title={m.name} />
+          </section>
+        )}
+
+        {free && (
+          <section class="free-film" aria-labelledby="rights-heading">
+            <h2 id="rights-heading">Why is it free?</h2>
+            <p>{basisLine(free)}</p>
+            <ul>{free.evidence.map((e) => <li><a href={e.url} rel="noopener" target="_blank">{e.label}</a></li>)}</ul>
+            <p class="free-film__small">Plays from the Internet Archive, a non-profit library. Last checked {free.audit.checkedOn}, re-checked every week. Own rights in this film or this copy? Email <a href={`mailto:hello@movietrailer.channel?subject=${encodeURIComponent(`Rights question: ${m.name}`)}`}>hello@movietrailer.channel</a> and we'll take it down while we look into it.</p>
+          </section>
+        )}
 
 
 
         {faq.length > 1 && (
           <section class="worth" aria-labelledby="worth-heading">
-            <h2 id="worth-heading">Is {m.name} worth watching?</h2>
+            <h2 id="worth-heading">{verdict ? `Is ${m.name} worth watching?` : `${m.name}: your questions`}</h2>
             {faq.map((f, i) => (
               <div class="worth__item">
-                {i > 0 && <h3>{f.q}</h3>}
+                {(i > 0 || !verdict) && <h3>{f.q}</h3>}
                 <p>{f.a}</p>
               </div>
             ))}
@@ -143,6 +191,16 @@ const faq = [
         <div class="grid grid--cards">
           {byDirector.map((r) => <MovieCard {...r} />)}
         </div>
+      </section>
+    )}
+
+    {moreFree.length > 0 && (
+      <section class="band" aria-labelledby="more-free">
+        <h2 id="more-free">More free classic movies</h2>
+        <div class="grid grid--cards">
+          {moreFree.map((r) => <MovieCard slug={r.slug} name={r.name} year={r.year} youtubeId="" image={r.image} badge="Watch free" />)}
+        </div>
+        <p><a href="/free-classic-movies">All free classic movies →</a></p>
       </section>
     )}
 
