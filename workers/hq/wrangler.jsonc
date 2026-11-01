@@ -14,8 +14,8 @@
   "vars": {
     // Filled in after the Cloudflare Access application exists (Zero Trust → Access → Applications).
     // Until all three are set, every request gets "locked".
-    "ACCESS_TEAM": "",
-    "ACCESS_AUD": "",
+    "ACCESS_TEAM": "gentle-limit-20bf.cloudflareaccess.com",
+    "ACCESS_AUD": "bfee2721a6e2c56b4bb2e6269a86677fc0d1d3fd7eac08c17bddd5a6a00a4b2e",
     "ALLOWED_EMAILS": "simon@communityhelp.com.au,simonpatrickfarrugia@gmail.com"
   },
   // page.html is bundled as text.
