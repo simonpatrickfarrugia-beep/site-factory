@@ -8,6 +8,9 @@ on:
     inputs:
       slugs: { description: 'Film slugs separated by spaces (sound films with a hosted copy)', required: true }
       model: { description: 'Whisper model: small.en (default) or base.en (faster, rougher)', default: 'small.en' }
+      beam: { description: 'Beam size (5 = more thorough, 1 = faster)', default: '5' }
+      vad: { description: 'Speech detection threshold (lower catches more speech)', default: '0.35' }
+      upload: { description: 'false = test only, keep the current subtitles', default: 'true' }
 permissions:
   contents: read
 jobs:
@@ -42,10 +45,11 @@ jobs:
           curl -sSL --fail --retry 3 -o film.mp4 "https://www.movietrailer.channel/media/$SLUG.mp4"
           ffmpeg -hide_banner -loglevel error -y -i film.mp4 -vn -ac 1 -ar 16000 -c:a pcm_s16le audio.wav && rm film.mp4
       - name: Transcribe
+        env: { BEAM: '${{ inputs.beam }}', VAD_THRESHOLD: '${{ inputs.vad }}' }
         run: python3 scripts/trailers/subtitles.py "$SLUG" audio.wav "${{ inputs.model }}"
       - name: Upload to R2
         run: |
-          r=$(curl -sS -X PUT --data-binary @"$SLUG.en.vtt" -H 'content-type: text/vtt' "https://trailer-pipeline.simonpatrickfarrugia.workers.dev/media/put?key=$KEY&name=$SLUG.en.vtt")
+          r=skipped; [ "${{ inputs.upload }}" = "false" ] || r=$(curl -sS -X PUT --data-binary @"$SLUG.en.vtt" -H 'content-type: text/vtt' "https://trailer-pipeline.simonpatrickfarrugia.workers.dev/media/put?key=$KEY&name=$SLUG.en.vtt")
           stats=$(cat "$SLUG.subs.json")
           echo "::notice title=subs-$SLUG::$stats · upload $r · first lines: $(sed -n '5,14p' "$SLUG.en.vtt" | tr '\n' ' ' | cut -c1-400)"
       - uses: actions/upload-artifact@v4

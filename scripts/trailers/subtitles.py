@@ -7,7 +7,7 @@ Cleans up Whisper's known failure modes on old films: lines it invents over musi
 probability, very low confidence), the same line repeated many times in a row, and credit-style hallucinations
 ("Subtitles by…", "Thanks for watching"). Long lines are wrapped at 42 characters, two lines per cue at most.
 """
-import json, re, sys, textwrap, wave
+import json, os, re, sys, textwrap, wave
 
 import numpy as np
 
@@ -21,8 +21,10 @@ model = WhisperModel(model_name, device='cpu', compute_type='int8')
 # Decode the 16 kHz mono WAV ourselves (faster-whisper's own decoder breaks with newer PyAV releases).
 with wave.open(wav) as w:
     audio = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768.0
-segments, info = model.transcribe(audio, language='en', beam_size=1, vad_filter=True,
-                                  vad_parameters={'min_silence_duration_ms': 500}, condition_on_previous_text=False)
+BEAM = int(os.environ.get('BEAM', '5'))
+VAD = float(os.environ.get('VAD_THRESHOLD', '0.35'))
+segments, info = model.transcribe(audio, language='en', beam_size=BEAM, vad_filter=True,
+                                  vad_parameters={'min_silence_duration_ms': 500, 'threshold': VAD}, condition_on_previous_text=False)
 
 def ts(t):
     h, rem = divmod(t, 3600); m, s = divmod(rem, 60)
@@ -53,7 +55,10 @@ with open(f'{slug}.en.vtt', 'w') as f:
     for i, (a, b, t) in enumerate(cues, 1):
         f.write(f'{i}\n{ts(a)} --> {ts(b)}\n{t}\n\n')
 words = sum(len(t.split()) for _, _, t in cues)
-stats = {'slug': slug, 'model': model_name, 'cues': len(cues), 'dropped': dropped, 'words': words,
+covered = len({int(m) for a_, b_, _ in cues for m in range(int(a_ // 60), int(b_ // 60) + 1)})
+gaps = sorted(((round(b2 - a1), ts(a1)) for (_, a1, _), (b2, _, _) in zip(cues, cues[1:]) if b2 - a1 > 90), reverse=True)[:6]
+sample = {f'{p}%': cues[int(len(cues) * p / 100)][2].replace('\n', ' ') for p in (25, 50, 75)} if cues else {}
+stats = {'beam': BEAM, 'vad': VAD, 'minutesWithSpeech': covered, 'gapsOver90s': gaps, 'sample': sample, 'slug': slug, 'model': model_name, 'cues': len(cues), 'dropped': dropped, 'words': words,
          'duration': round(info.duration), 'last': ts(cues[-1][1]) if cues else None}
 json.dump(stats, open(f'{slug}.subs.json', 'w'))
 print(json.dumps(stats))
