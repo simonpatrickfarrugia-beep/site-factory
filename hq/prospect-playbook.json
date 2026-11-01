@@ -107,7 +107,7 @@
     },
     "trade-admin": {
       "name": "Trade Admin",
-      "active": false,
+      "active": true,
       "weeklyCap": 10,
       "perTargetCap": 3,
       "regionSource": "trades",
@@ -140,7 +140,7 @@
     },
     "trailers": {
       "name": "MovieTrailer.Channel",
-      "active": false,
+      "active": true,
       "weeklyCap": 10,
       "perTargetCap": 4,
       "regions": [
@@ -187,7 +187,7 @@
     },
     "paycalc": {
       "name": "MyPayCalc",
-      "active": false,
+      "active": true,
       "weeklyCap": 10,
       "perTargetCap": 4,
       "regions": [
