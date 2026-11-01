@@ -1,0 +1,251 @@
+{
+ "town": "Trentham",
+ "slug": "trentham",
+ "centre": [
+  -37.3900875,
+  144.3263388
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-11-01T21:30:18+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n1001983739",
+   "name": "The Plough @ Trentham",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.3889598,
+   "lon": 144.3220892,
+   "tags": {
+    "website": "https://theplough.com.au/",
+    "phone": "+61 3 5424 1144",
+    "addr:housenumber": "31",
+    "addr:street": "High Street",
+    "addr:suburb": "Trentham",
+    "addr:postcode": "3458",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n1001983743",
+   "name": "Cosmopolitan Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.3887323,
+   "lon": 144.3211653,
+   "tags": {
+    "website": "https://www.thecosmopolitanhotel.com.au/",
+    "outdoor_seating": "yes",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n1013064837",
+   "name": "Trentham Falls",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.370175,
+   "lon": 144.3245974,
+   "tags": {
+    "description": "Tallest single drop water fall in Victoria, 32m, cutting through scenic columnar basalt.",
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n1999720317",
+   "name": "Trentham General",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.3889639,
+   "lon": 144.3223209,
+   "tags": {
+    "phone": "+61 3 5424 1538",
+    "cuisine": "coffee_shop;breakfast",
+    "outdoor_seating": "yes",
+    "internet_access": "wlan",
+    "addr:housenumber": "37A",
+    "addr:street": "High Street",
+    "addr:suburb": "Trentham",
+    "addr:postcode": "3458",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2738348654",
+   "name": "RedBeard Historic Bakery Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.3882253,
+   "lon": 144.3219567,
+   "tags": {
+    "website": "http://redbeard.com.au/",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n6720337585",
+   "name": "du Fermier",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.3886637,
+   "lon": 144.3221642,
+   "tags": {
+    "website": "https://anniesmithers.com.au/du-fermier",
+    "cuisine": "regional;french;italian",
+    "addr:housenumber": "42",
+    "addr:street": "High Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n10288822213",
+   "name": "Market Street Trentham",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.3885351,
+   "lon": 144.3230097,
+   "tags": {
+    "phone": "+61 460 410 090",
+    "cuisine": "coffee_shop;ice_cream",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11448312932",
+   "name": "Mr. Peacock Wine Bar",
+   "group": "eat",
+   "type": "bar",
+   "lat": -37.3886768,
+   "lon": 144.3222373,
+   "tags": {
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n11448312940",
+   "name": "Arteics Cafe Bar",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.3886341,
+   "lon": 144.323321,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11448315344",
+   "name": "Little Gallery",
+   "group": "do",
+   "type": "gallery",
+   "lat": -37.3885567,
+   "lon": 144.3216222,
+   "tags": {
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "w60263396",
+   "name": "Trentham Town Square",
+   "group": "do",
+   "type": "park",
+   "lat": -37.3889485,
+   "lon": 144.3216465,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w176746914",
+   "name": "Quarry Street Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.3872786,
+   "lon": 144.3201688,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w176747498",
+   "name": "Trentham Public Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.390167,
+   "lon": 144.3186159,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w176750756",
+   "name": "Trent Creek Public Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.3880575,
+   "lon": 144.3261709,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w176751361",
+   "name": "Trentham Golf Club",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -37.3781477,
+   "lon": 144.3203852,
+   "tags": {
+    "website": "https://www.trenthamgolf.com.au/",
+    "phone": "+61 3 5424 1240",
+    "description": "18 hole Par 70",
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w486556271",
+   "name": "Coliban River Scenic Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.370613,
+   "lon": 144.3251611,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w666559764",
+   "name": "Coliban River Streamside Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.3712256,
+   "lon": 144.3157446,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r21814105",
+   "name": "Wombat - Lerderderg National Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.4490467,
+   "lon": 144.3462527,
+   "tags": {
+    "website": "https://www.parks.vic.gov.au/places-to-see/parks/wombat-lerderderg-national-park",
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r21814462",
+   "name": "Blackwood Regional Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.4285254,
+   "lon": 144.3099419,
+   "tags": {
+    "website": "https://www.parks.vic.gov.au/places-to-see/parks/blackwood-regional-park",
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+{
+ "town": "Mount Buller",
+ "slug": "mount-buller",
+ "centre": [
+  -37.269437,
+  146.4338655
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-11-01T21:18:02+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n1886268390",
+   "name": "Upper Jamieson Hut Campsite",
+   "group": "stay",
+   "type": "camp_site",
+   "lat": -37.2573264,
+   "lon": 146.44825,
+   "tags": {
+    "tourism": "camp_site"
+   }
+  },
+  {
+   "id": "r2248617",
+   "name": "Alpine National Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.0298081,
+   "lon": 147.5268894,
+   "tags": {
+    "website": "https://www.parks.vic.gov.au/places-to-see/parks/alpine-national-park",
+    "wikidata": "Q1291186",
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r16351708",
+   "name": "The Governors Remote and Natural Area",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.2659137,
+   "lon": 146.3871409,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r20306077",
+   "name": "Upper Goulburn State Forest",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.4146947,
+   "lon": 146.34586,
+   "tags": {
+    "wikidata": "Q115804184",
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}

@@ -1,0 +1,111 @@
+{
+ "town": "Woodend",
+ "slug": "woodend",
+ "centre": [
+  -37.3536857,
+  144.5341381
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-11-01T21:27:33+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n700793138",
+   "name": "Holgate Brewhouse",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.357018,
+   "lon": 144.5268984,
+   "tags": {
+    "website": "https://holgatebrewhouse.com/",
+    "wikidata": "Q5880182",
+    "addr:housenumber": "79",
+    "addr:street": "High Street",
+    "amenity": "pub",
+    "craft": "brewery"
+   }
+  },
+  {
+   "id": "n700796923",
+   "name": "Keatings Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.3569228,
+   "lon": 144.5269224,
+   "tags": {
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n1553422920",
+   "name": "Victoria Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.357701,
+   "lon": 144.5267346,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n1808392213",
+   "name": "Woodend Town Park",
+   "group": "stay",
+   "type": "camp_site",
+   "lat": -37.35389,
+   "lon": 144.52944,
+   "tags": {
+    "tourism": "camp_site"
+   }
+  },
+  {
+   "id": "n6429553111",
+   "name": "Andrews Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.3571677,
+   "lon": 144.5268857,
+   "tags": {
+    "addr:housenumber": "77",
+    "addr:street": "High Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n14332458001",
+   "name": "Woodend Railway Station, 1861",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -37.3590613,
+   "lon": 144.5263021,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "w230777061",
+   "name": "Woodend Golf Club",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -37.347966,
+   "lon": 144.5269904,
+   "tags": {
+    "website": "http://www.woodendgolfclub.com/",
+    "phone": "+61 3 5427 2261",
+    "description": "18 hole Par 66",
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w281232815",
+   "name": "Quahlee Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.3391428,
+   "lon": 144.5339205,
+   "tags": {
+    "leisure": "park"
+   }
+  }
+ ]
+}
