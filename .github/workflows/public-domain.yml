@@ -11,6 +11,7 @@ on:
       mode: { description: 'check, find or audio', default: 'check' }
       titles: { description: 'find: Title|Year;Title|Year · audio: Archive ids separated by ;', default: '' }
       dry: { description: 'true = report only, no issue', default: 'false' }
+      res_only: { description: 'audio mode: only report resolution', default: '' }
 permissions:
   contents: read
   issues: write
@@ -22,7 +23,7 @@ jobs:
       - uses: actions/checkout@v5
       - name: Find candidates / check audio
         if: inputs.mode == 'find' || inputs.mode == 'audio'
-        env: { TITLES: '${{ inputs.titles }}', MODE: '${{ inputs.mode }}' }
+        env: { TITLES: '${{ inputs.titles }}', MODE: '${{ inputs.mode }}', RES_ONLY: '${{ inputs.res_only }}' }
         run: |
           which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
           python3 scripts/trailers/public_domain.py "$MODE" "$TITLES"

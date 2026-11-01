@@ -15,7 +15,7 @@ Every film on /watch must be in the public domain in the United States. The buil
 
 Standard library only. Runs in GitHub Actions (chat sessions can't reach these sites).
 """
-import json, re, sys, time, urllib.parse, urllib.request
+import json, os, re, sys, time, urllib.parse, urllib.request
 from datetime import datetime, timezone
 
 UA = {'user-agent': 'site-factory-public-domain/1 (movietrailer.channel; hello@movietrailer.channel)'}
@@ -300,9 +300,9 @@ def check():
 # ---------- audio (silent films) ----------
 def _video_file(identifier):
     meta = archive_meta(identifier)
-    vids = [f for f in meta.get('files', []) if f.get('format') in VIDEO_FORMATS]
+    vids = [f for f in meta.get('files', []) if f.get('name', '').lower().endswith('.mp4') and int(f.get('size') or 0) < 2_500_000_000]
     order = {'h.264': 0, 'h.264 IA': 1, 'MPEG4': 2, '512Kb MPEG4': 3}
-    vids.sort(key=lambda f: order.get(f.get('format'), 9))
+    vids.sort(key=lambda f: (order.get(f.get('format'), 9), -int(f.get('size') or 0)))  # same pick as film-ingest.yml
     return meta, (vids[0]['name'] if vids else None)
 
 
@@ -335,6 +335,19 @@ def audio(ids):
             desc = re.sub(r'\s+', ' ', desc).strip()
             rt = runtime_minutes(meta) or 60
             url = f'https://archive.org/download/{urllib.parse.quote(identifier)}/{urllib.parse.quote(name)}' if name else None
+            import subprocess
+            res = ''
+            if url:
+                try:
+                    res = subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height,codec_name',
+                                          '-of', 'csv=p=0', url], capture_output=True, text=True, timeout=60).stdout.strip()
+                except Exception as e:  # noqa: BLE001
+                    res = repr(e)[:60]
+            size = next((int(f.get('size') or 0) for f in meta.get('files', []) if f.get('name') == name), 0)
+            if os.environ.get('RES_ONLY'):
+                lines += [f'- {identifier} | {md.get("title")} | {rt} min | {name} | {res} | {size // 1_000_000} MB']
+                print(f'res {identifier} {res}', flush=True)
+                continue
             probes = [(_probe(url, int(t)) if url else {'error': 'no video file'}) for t in (90, rt * 60 * 0.5, max(rt * 60 - 200, 120))]
             heard = [p for p in probes if p.get('audio') and p.get('max') is not None and p['max'] > -45]
             verdict = ('NO SOUND (silent: clean)' if not any(p.get('audio') for p in probes)
