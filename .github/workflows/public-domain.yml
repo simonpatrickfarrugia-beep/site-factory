@@ -8,7 +8,7 @@ on:
     - cron: '41 20 * * 0'
   workflow_dispatch:
     inputs:
-      mode: { description: 'check, find or audio', default: 'check' }
+      mode: { description: 'check, find, audio or serve', default: 'check' }
       titles: { description: 'find: Title|Year;Title|Year · audio: Archive ids separated by ;', default: '' }
       dry: { description: 'true = report only, no issue', default: 'false' }
       res_only: { description: 'audio mode: only report resolution', default: '' }
@@ -29,14 +29,24 @@ jobs:
           python3 scripts/trailers/public_domain.py "$MODE" "$TITLES"
           cat public-domain-find.md >> "$GITHUB_STEP_SUMMARY"
           echo "::notice title=pd-find::$(sed 's/%/%25/g' public-domain-find.md | sed ':a;N;$!ba;s/\n/%0A/g' | cut -c1-60000)"
+      - name: Serve test (our hosted copies, from a US runner)
+        if: inputs.mode == 'serve'
+        run: |
+          out=serve.md; echo "# Serve test" > $out
+          for f in $(python3 -c "import json;print(' '.join(x['media']['file'] for x in json.load(open('data/trailers/public-domain.json')) if x.get('media') and x['status']=='live'))"); do
+            r=$(curl -sS -o /dev/null -r 0-1023 -w '%{http_code} %{size_download}B %{content_type}' "https://www.movietrailer.channel/media/$f")
+            cr=$(curl -sSI -r 1000000-1001023 "https://www.movietrailer.channel/media/$f" | grep -i '^content-range' | tr -d '\r')
+            echo "- $f: $r · $cr" >> $out
+          done
+          cat $out >> "$GITHUB_STEP_SUMMARY"; echo "::notice title=pd-find::$(sed ':a;N;$!ba;s/\n/%0A/g' $out)"
       - name: Check published films
-        if: inputs.mode != 'find' && inputs.mode != 'audio'
+        if: inputs.mode != 'find' && inputs.mode != 'audio' && inputs.mode != 'serve'
         id: check
         continue-on-error: true
         env: { PIPELINE_RUN_KEY: '${{ secrets.PIPELINE_RUN_KEY }}' }
         run: python3 scripts/trailers/public_domain.py check
       - name: Report
-        if: inputs.mode != 'find' && inputs.mode != 'audio'
+        if: inputs.mode != 'find' && inputs.mode != 'audio' && inputs.mode != 'serve'
         env:
           GH_TOKEN: ${{ github.token }}
           FAILED: ${{ steps.check.outcome == 'failure' }}
