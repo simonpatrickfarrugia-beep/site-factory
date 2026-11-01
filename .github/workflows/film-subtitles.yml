@@ -40,7 +40,7 @@ jobs:
       - name: Audio
         run: |
           curl -sSL --fail --retry 3 -o film.mp4 "https://www.movietrailer.channel/media/$SLUG.mp4"
-          ffmpeg -hide_banner -loglevel error -y -i film.mp4 -vn -ac 1 -ar 16000 audio.wav && rm film.mp4
+          ffmpeg -hide_banner -loglevel error -y -i film.mp4 -vn -ac 1 -ar 16000 -c:a pcm_s16le audio.wav && rm film.mp4
       - name: Transcribe
         run: python3 scripts/trailers/subtitles.py "$SLUG" audio.wav "${{ inputs.model }}"
       - name: Upload to R2

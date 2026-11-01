@@ -7,7 +7,9 @@ Cleans up Whisper's known failure modes on old films: lines it invents over musi
 probability, very low confidence), the same line repeated many times in a row, and credit-style hallucinations
 ("Subtitles by…", "Thanks for watching"). Long lines are wrapped at 42 characters, two lines per cue at most.
 """
-import json, re, sys, textwrap
+import json, re, sys, textwrap, wave
+
+import numpy as np
 
 from faster_whisper import WhisperModel
 
@@ -16,7 +18,10 @@ model_name = sys.argv[3] if len(sys.argv) > 3 else 'small.en'
 JUNK = re.compile(r'(subtitles? (by|provided)|thanks? for watching|transcri(bed|ption) by|amara\.org|www\.|\.com\b|please subscribe)', re.I)
 
 model = WhisperModel(model_name, device='cpu', compute_type='int8')
-segments, info = model.transcribe(wav, language='en', beam_size=1, vad_filter=True,
+# Decode the 16 kHz mono WAV ourselves (faster-whisper's own decoder breaks with newer PyAV releases).
+with wave.open(wav) as w:
+    audio = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768.0
+segments, info = model.transcribe(audio, language='en', beam_size=1, vad_filter=True,
                                   vad_parameters={'min_silence_duration_ms': 500}, condition_on_previous_text=False)
 
 def ts(t):
