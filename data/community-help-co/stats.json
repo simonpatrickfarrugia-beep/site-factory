@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-31T19:00:10.231Z",
+ "generatedAt": "2026-11-01T19:00:10.720Z",
  "period": {
-  "start": "2026-10-03",
-  "end": "2026-10-30"
+  "start": "2026-10-04",
+  "end": "2026-10-31"
  },
  "gscPeriod": {
-  "start": "2026-10-01",
-  "end": "2026-10-28"
+  "start": "2026-10-02",
+  "end": "2026-10-29"
  },
  "sources": {
   "ga4": true,
@@ -19,7 +19,7 @@
   "users": 9,
   "cta": {},
   "gscClicks": 0,
-  "gscImpressions": 71
+  "gscImpressions": 82
  },
  "daily": [
   {
@@ -46,8 +46,8 @@
    "users": 4,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 56,
-   "gscPosition": 15,
+   "gscImpressions": 60,
+   "gscPosition": 14.6,
    "topQuery": "community services placement"
   },
   {
@@ -57,9 +57,9 @@
    "users": 2,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 35,
-   "topQuery": "community help"
+   "gscImpressions": 8,
+   "gscPosition": 23.8,
+   "topQuery": "help support"
   },
   {
    "path": "/job-finder",
@@ -90,8 +90,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 41.2,
+   "gscImpressions": 7,
+   "gscPosition": 39.9,
    "topQuery": "free cover letter"
   },
   {
@@ -101,8 +101,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 30.7,
+   "gscImpressions": 4,
+   "gscPosition": 30.5,
    "topQuery": "resume builder help"
   },
   {
@@ -150,15 +150,15 @@
   {
    "query": "community services placement",
    "clicks": 0,
-   "impressions": 12,
-   "position": 6.9,
+   "impressions": 13,
+   "position": 7.2,
    "page": "/"
   },
   {
    "query": "community service placement",
    "clicks": 0,
-   "impressions": 8,
-   "position": 12.6,
+   "impressions": 9,
+   "position": 12.8,
    "page": "/"
   },
   {
@@ -167,6 +167,13 @@
    "impressions": 5,
    "position": 4.8,
    "page": "/"
+  },
+  {
+   "query": "help support",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 14.5,
+   "page": "/contact"
   },
   {
    "query": "community services recruitment agencies",
@@ -185,9 +192,16 @@
   {
    "query": "free cover letter",
    "clicks": 0,
-   "impressions": 2,
-   "position": 63.5,
+   "impressions": 3,
+   "position": 56.7,
    "page": "/cover-letter-builder"
+  },
+  {
+   "query": "simon support",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 7,
+   "page": "/contact"
   },
   {
    "query": "free cover letter builder",
@@ -232,6 +246,13 @@
    "page": "/"
   },
   {
+   "query": "community service job",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7,
+   "page": "/"
+  },
+  {
    "query": "community services recruitment agencies melbourne",
    "clicks": 0,
    "impressions": 1,
@@ -267,6 +288,13 @@
    "page": "/"
   },
   {
+   "query": "online community support",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7,
+   "page": "/"
+  },
+  {
    "query": "community number",
    "clicks": 0,
    "impressions": 1,
@@ -274,24 +302,17 @@
    "page": "/contact"
   },
   {
-   "query": "help support",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 16,
-   "page": "/contact"
-  },
-  {
-   "query": "simon support",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 6,
-   "page": "/contact"
-  },
-  {
    "query": "cover letter builder",
    "clicks": 0,
    "impressions": 1,
    "position": 21,
+   "page": "/cover-letter-builder"
+  },
+  {
+   "query": "cover letter builder free",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 30,
    "page": "/cover-letter-builder"
   },
   {
@@ -307,6 +328,13 @@
    "impressions": 1,
    "position": 31,
    "page": "/privacy-policy"
+  },
+  {
+   "query": "create a resume for free",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 30,
+   "page": "/resume-builder"
   },
   {
    "query": "help making a resume for free",
@@ -363,6 +391,11 @@
    "date": "2026-10-28",
    "clicks": 0,
    "impressions": 35
+  },
+  {
+   "date": "2026-10-29",
+   "clicks": 0,
+   "impressions": 23
   }
  ]
 }

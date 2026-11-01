@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-31T19:00:10.231Z",
+ "generatedAt": "2026-11-01T19:00:10.720Z",
  "period": {
-  "start": "2026-10-03",
-  "end": "2026-10-30"
+  "start": "2026-10-04",
+  "end": "2026-10-31"
  },
  "gscPeriod": {
-  "start": "2026-10-01",
-  "end": "2026-10-28"
+  "start": "2026-10-02",
+  "end": "2026-10-29"
  },
  "sources": {
   "ga4": true,
@@ -14,12 +14,12 @@
   "notes": []
  },
  "totals": {
-  "views": 37,
+  "views": 38,
   "prevViews": 0,
-  "users": 37,
+  "users": 38,
   "cta": {},
   "gscClicks": 0,
-  "gscImpressions": 0
+  "gscImpressions": 14
  },
  "daily": [
   {
@@ -31,19 +31,24 @@
    "date": "2026-10-30",
    "views": 8,
    "cta": 0
+  },
+  {
+   "date": "2026-10-31",
+   "views": 1,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 34,
+   "views": 35,
    "prevViews": 0,
-   "users": 34,
+   "users": 35,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null
+   "gscImpressions": 4,
+   "gscPosition": 39.8,
+   "topQuery": "mypaycalc"
   },
   {
    "path": "/contact",
@@ -52,9 +57,9 @@
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null
+   "gscImpressions": 2,
+   "gscPosition": 9.5,
+   "topQuery": "mypaycalc"
   },
   {
    "path": "/salary/150000-after-tax",
@@ -77,14 +82,81 @@
    "gscImpressions": 0,
    "gscPosition": null,
    "topQuery": null
+  },
+  {
+   "path": "/tax-brackets",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 5,
+   "gscPosition": 53,
+   "topQuery": "mypaycalc"
+  },
+  {
+   "path": "/salary",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 3.5,
+   "topQuery": "mypaycalc"
+  },
+  {
+   "path": "/how-we-make-money",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 7,
+   "topQuery": "mypaycalc"
   }
  ],
- "queries": [],
+ "queries": [
+  {
+   "query": "mypaycalc",
+   "clicks": 0,
+   "impressions": 9,
+   "position": 5.7,
+   "page": "/"
+  },
+  {
+   "query": "paycalculator",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 78.5,
+   "page": "/"
+  },
+  {
+   "query": "tax brackets qld",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 76.5,
+   "page": "/tax-brackets"
+  },
+  {
+   "query": "income tax scales australia",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 96,
+   "page": "/tax-brackets"
+  }
+ ],
  "gscDaily": [
   {
    "date": "2026-10-28",
    "clicks": 0,
    "impressions": 0
+  },
+  {
+   "date": "2026-10-29",
+   "clicks": 0,
+   "impressions": 10
   }
  ]
 }

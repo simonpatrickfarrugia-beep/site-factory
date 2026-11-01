@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-31T19:00:10.231Z",
+ "generatedAt": "2026-11-01T19:00:10.720Z",
  "period": {
-  "start": "2026-10-03",
-  "end": "2026-10-30"
+  "start": "2026-10-04",
+  "end": "2026-10-31"
  },
  "gscPeriod": {
-  "start": "2026-10-01",
-  "end": "2026-10-28"
+  "start": "2026-10-02",
+  "end": "2026-10-29"
  },
  "sources": {
   "ga4": true,
@@ -19,7 +19,7 @@
   "users": 10,
   "cta": {},
   "gscClicks": 0,
-  "gscImpressions": 0
+  "gscImpressions": 1
  },
  "daily": [
   {
@@ -88,9 +88,28 @@
    "gscImpressions": 0,
    "gscPosition": null,
    "topQuery": null
+  },
+  {
+   "path": "/tradify-vs-servicem8",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 61,
+   "topQuery": "service mate vs tradify"
   }
  ],
- "queries": [],
+ "queries": [
+  {
+   "query": "service mate vs tradify",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 61,
+   "page": "/tradify-vs-servicem8"
+  }
+ ],
  "gscDaily": [
   {
    "date": "2026-10-24",
@@ -116,6 +135,11 @@
    "date": "2026-10-28",
    "clicks": 0,
    "impressions": 0
+  },
+  {
+   "date": "2026-10-29",
+   "clicks": 0,
+   "impressions": 1
   }
  ]
 }
