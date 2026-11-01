@@ -265,6 +265,12 @@ def check():
                 except Exception as ex:  # noqa: BLE001
                     bad_link = f"evidence link broken: {e['url']} ({repr(ex)[:80]})"
                     bad.append(bad_link)
+            if f.get('media') and os.environ.get('PIPELINE_RUN_KEY'):
+                h = jget(f"https://trailer-pipeline.simonpatrickfarrugia.workers.dev/media/head?key={os.environ['PIPELINE_RUN_KEY']}&name={f['media']['file']}")
+                if not h.get('exists'):
+                    bad.append(f"our hosted copy {f['media']['file']} is missing from R2 (run film-ingest again)")
+                elif h.get('size') != f['media']['bytes']:
+                    bad.append(f"our hosted copy is {h.get('size')} bytes, the data says {f['media']['bytes']}")
             it = describe_item(f['archiveId'])
             accepted = set((f.get('audit') or {}).get('acceptedFlags') or [])
             if not it.get('exists') or it.get('dark'):

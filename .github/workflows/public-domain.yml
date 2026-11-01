@@ -33,6 +33,7 @@ jobs:
         if: inputs.mode != 'find' && inputs.mode != 'audio'
         id: check
         continue-on-error: true
+        env: { PIPELINE_RUN_KEY: '${{ secrets.PIPELINE_RUN_KEY }}' }
         run: python3 scripts/trailers/public_domain.py check
       - name: Report
         if: inputs.mode != 'find' && inputs.mode != 'audio'

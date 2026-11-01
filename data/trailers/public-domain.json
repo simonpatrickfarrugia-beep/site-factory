@@ -41,7 +41,15 @@
     "audit": {
       "checkedOn": "2026-11-01"
     },
-    "status": "live"
+    "status": "live",
+    "media": {
+      "file": "night-of-the-living-dead-1968.mp4",
+      "bytes": 596400620,
+      "seconds": 5731,
+      "audio": "original",
+      "from": "night_of_the_living_dead_dvd",
+      "addedOn": "2026-11-01"
+    }
   },
   {
     "slug": "carnival-of-souls-1962",
@@ -85,7 +93,15 @@
     "audit": {
       "checkedOn": "2026-11-01"
     },
-    "status": "live"
+    "status": "live",
+    "media": {
+      "file": "carnival-of-souls-1962.mp4",
+      "bytes": 518509871,
+      "seconds": 4979,
+      "audio": "original",
+      "from": "CarnivalofSouls",
+      "addedOn": "2026-11-01"
+    }
   },
   {
     "slug": "the-little-shop-of-horrors-1960",
@@ -130,7 +146,15 @@
     "audit": {
       "checkedOn": "2026-11-01"
     },
-    "status": "live"
+    "status": "live",
+    "media": {
+      "file": "the-little-shop-of-horrors-1960.mp4",
+      "bytes": 452745825,
+      "seconds": 4350,
+      "audio": "original",
+      "from": "The_Little_Shop_of_Horrors.mpeg",
+      "addedOn": "2026-11-01"
+    }
   },
   {
     "slug": "reefer-madness-1936",
@@ -156,7 +180,7 @@
       }
     ],
     "audio": "original",
-    "archiveId": "reefer_madness_ipod",
+    "archiveId": "reefer_madness1938_201508",
     "wikidata": "Q1547202",
     "runtimeMinutes": 68,
     "director": "Louis J. Gasnier",
@@ -174,7 +198,15 @@
     "audit": {
       "checkedOn": "2026-11-01"
     },
-    "status": "live"
+    "status": "live",
+    "media": {
+      "file": "reefer-madness-1936.mp4",
+      "bytes": 426752144,
+      "seconds": 4097,
+      "audio": "original",
+      "from": "reefer_madness1938_201508",
+      "addedOn": "2026-11-01"
+    }
   },
   {
     "slug": "white-zombie-1932",
@@ -223,7 +255,15 @@
     "audit": {
       "checkedOn": "2026-11-01"
     },
-    "status": "live"
+    "status": "live",
+    "media": {
+      "file": "white-zombie-1932.mp4",
+      "bytes": 416920164,
+      "seconds": 4006,
+      "audio": "original",
+      "from": "WhiteZombie",
+      "addedOn": "2026-11-01"
+    }
   },
   {
     "slug": "doa-1949",
@@ -268,7 +308,15 @@
     "audit": {
       "checkedOn": "2026-11-01"
     },
-    "status": "live"
+    "status": "live",
+    "media": {
+      "file": "doa-1949.mp4",
+      "bytes": 519471768,
+      "seconds": 4989,
+      "audio": "original",
+      "from": "thoseguysontheradio_gmail_Doa",
+      "addedOn": "2026-11-01"
+    }
   },
   {
     "slug": "his-girl-friday-1940",
@@ -295,7 +343,7 @@
       }
     ],
     "audio": "original",
-    "archiveId": "his_girl_friday",
+    "archiveId": "HisGirlFriday1940_201505",
     "wikidata": "Q1066714",
     "runtimeMinutes": 92,
     "director": "Howard Hawks",
@@ -314,7 +362,15 @@
     "audit": {
       "checkedOn": "2026-11-01"
     },
-    "status": "live"
+    "status": "live",
+    "media": {
+      "file": "his-girl-friday-1940.mp4",
+      "bytes": 1774575128,
+      "seconds": 5517,
+      "audio": "original",
+      "from": "HisGirlFriday1940_201505",
+      "addedOn": "2026-11-01"
+    }
   },
   {
     "slug": "the-stranger-1946",
@@ -358,7 +414,15 @@
     "audit": {
       "checkedOn": "2026-11-01"
     },
-    "status": "live"
+    "status": "live",
+    "media": {
+      "file": "the-stranger-1946.mp4",
+      "bytes": 570457216,
+      "seconds": 5472,
+      "audio": "original",
+      "from": "TheStranger_0",
+      "addedOn": "2026-11-01"
+    }
   },
   {
     "slug": "nosferatu-1922",
@@ -402,7 +466,7 @@
       "checkedOn": "2026-11-01"
     },
     "status": "pending",
-    "pendingReason": "Audio check 1 Nov 2026: every Archive copy tested has an added music track with no credit. A modern recording can be copyrighted even when the film is not. Needs a copy with the sound removed (self-hosted) before it goes live."
+    "pendingReason": "German film. Every Archive copy has an added music track (we can strip it), but the English title cards may be a later translation with its own copyright. Next: find a copy with the original German title cards and add our own English subtitles."
   },
   {
     "slug": "the-phantom-of-the-opera-1925",
@@ -443,10 +507,18 @@
     "about": "A masked figure haunts the cellars beneath the Paris Opera House, coaching a young singer from the shadows and terrorising anyone who stands between her and the lead role. Lon Chaney, the 'man of a thousand faces', designed his own make-up, and the moment the singer pulls off his mask was so shocking in 1925 that cinemas reportedly kept smelling salts on hand. The film is built on Gaston Leroux's 1910 novel, the same story Andrew Lloyd Webber later turned into his musical. The opera house sets, the underground lake and the masked ball sequence are still spectacular a century on.",
     "watchIf": "you know the musical, like gothic horror, or want to see Lon Chaney's most famous role.",
     "audit": {
-      "checkedOn": "2026-11-01"
+      "checkedOn": "2026-11-01",
+      "note": "Uploader-added soundtrack removed in our copy (film-ingest, 1 Nov 2026). US film with its original English title cards."
     },
-    "status": "pending",
-    "pendingReason": "Audio check 1 Nov 2026: every Archive copy tested has an added music track with no credit. A modern recording can be copyrighted even when the film is not. Needs a copy with the sound removed (self-hosted) before it goes live."
+    "status": "live",
+    "media": {
+      "file": "the-phantom-of-the-opera-1925.mp4",
+      "bytes": 409613227,
+      "seconds": 6388,
+      "audio": "removed",
+      "from": "ThePhantomoftheOpera",
+      "addedOn": "2026-11-01"
+    }
   },
   {
     "slug": "dr-jekyll-and-mr-hyde-1920",
@@ -472,7 +544,7 @@
       }
     ],
     "audio": "silent",
-    "archiveId": "DrJekyllandMrHyde",
+    "archiveId": "Dr.JekyllAndMr.Hyde1920DirectorJohnS.Robertson",
     "wikidata": "Q1253932",
     "runtimeMinutes": 82,
     "director": "John S. Robertson",
@@ -487,10 +559,18 @@
     "about": "A saintly London doctor, goaded by a cynical friend into wondering about his darker side, invents a potion that splits him in two: the respectable Jekyll and the leering, spider-fingered Hyde. John Barrymore, then America's most celebrated stage actor, performs the first transformation almost entirely with his face and body before the make-up takes over, and it's still startling to watch. The story comes from Robert Louis Stevenson's 1886 novella, with a romance added for the screen. It's an early example of a horror film that is really about temptation, and Barrymore's Hyde set the template for every version since.",
     "watchIf": "you like classic monster stories, great physical acting, or Victorian gothic tales.",
     "audit": {
-      "checkedOn": "2026-11-01"
+      "checkedOn": "2026-11-01",
+      "note": "Uploader-added soundtrack removed in our copy (film-ingest, 1 Nov 2026). US film with its original English title cards."
     },
-    "status": "pending",
-    "pendingReason": "Audio check 1 Nov 2026: every Archive copy tested has an added music track with no credit. A modern recording can be copyrighted even when the film is not. Needs a copy with the sound removed (self-hosted) before it goes live."
+    "status": "live",
+    "media": {
+      "file": "dr-jekyll-and-mr-hyde-1920.mp4",
+      "bytes": 738757906,
+      "seconds": 4956,
+      "audio": "removed",
+      "from": "Dr.JekyllAndMr.Hyde1920DirectorJohnS.Robertson",
+      "addedOn": "2026-11-01"
+    }
   },
   {
     "slug": "the-hunchback-of-notre-dame-1923",
@@ -516,7 +596,7 @@
       }
     ],
     "audio": "silent",
-    "archiveId": "The_Hunchback_of_Notre_Dame",
+    "archiveId": "THEHUNCHBACKOFNOTREDAME1923LonChaneyPatsyRuthMiller",
     "wikidata": "Q288425",
     "runtimeMinutes": 101,
     "director": "Wallace Worsley",
@@ -531,10 +611,18 @@
     "about": "In medieval Paris, the deformed bell-ringer Quasimodo is used by a scheming nobleman to kidnap the street dancer Esmeralda, then humiliated in the square, until she is the only one who shows him kindness. Universal built a full-scale copy of Notre Dame's front for this film, and Lon Chaney put himself through painful make-up and a heavy hump harness to play Quasimodo. It was one of the biggest hits of the silent era and made Chaney a star. The story follows Victor Hugo's 1831 novel, the same one behind the later animated musical, but this version is far darker.",
     "watchIf": "you know the animated version and want the original screen one, or you like big historical epics.",
     "audit": {
-      "checkedOn": "2026-11-01"
+      "checkedOn": "2026-11-01",
+      "note": "Uploader-added soundtrack removed in our copy (film-ingest, 1 Nov 2026). US film with its original English title cards."
     },
-    "status": "pending",
-    "pendingReason": "Audio check 1 Nov 2026: every Archive copy tested has an added music track with no credit. A modern recording can be copyrighted even when the film is not. Needs a copy with the sound removed (self-hosted) before it goes live."
+    "status": "live",
+    "media": {
+      "file": "the-hunchback-of-notre-dame-1923.mp4",
+      "bytes": 368560659,
+      "seconds": 6042,
+      "audio": "removed",
+      "from": "THEHUNCHBACKOFNOTREDAME1923LonChaneyPatsyRuthMiller",
+      "addedOn": "2026-11-01"
+    }
   },
   {
     "slug": "the-cabinet-of-dr-caligari-1920",
@@ -578,7 +666,7 @@
       "checkedOn": "2026-11-01"
     },
     "status": "pending",
-    "pendingReason": "Audio check 1 Nov 2026: every Archive copy tested has an added music track with no credit. A modern recording can be copyrighted even when the film is not. Needs a copy with the sound removed (self-hosted) before it goes live."
+    "pendingReason": "German film. Every Archive copy has an added music track (we can strip it), but the English title cards may be a later translation with its own copyright. Next: find a copy with the original German title cards and add our own English subtitles."
   },
   {
     "slug": "the-general-1926",
@@ -619,10 +707,19 @@
     "about": "During the American Civil War, a Southern train driver is turned down by the army and dumped by his girlfriend, until Union spies steal his beloved locomotive, with her on board. What follows is one long chase by rail, there and back, with Buster Keaton performing stunts on moving trains that would never be allowed today. He never smiles, and he never needs to. The comedy comes from perfect timing and enormous physical risk, and the bridge collapse near the end used a real train. Critics now rank it among the greatest comedies ever made, though it flopped in 1926.",
     "watchIf": "you like action comedy, daring stunts, or want a silent film that's genuinely fun.",
     "audit": {
-      "checkedOn": "2026-11-01"
+      "checkedOn": "2026-11-01",
+      "note": "Uploader-added soundtrack removed in our copy (film-ingest, 1 Nov 2026). US film with its original English title cards. Simon confirmed the Archive copy plays silent.",
+      "audioCheckedOn": "2026-11-01"
     },
-    "status": "pending",
-    "pendingReason": "Audio check 1 Nov 2026: this copy has no soundtrack (automatic check). Waiting for a person to confirm it plays silent."
+    "status": "live",
+    "media": {
+      "file": "the-general-1926.mp4",
+      "bytes": 412400414,
+      "seconds": 4723,
+      "audio": "removed",
+      "from": "The_General_Buster_Keaton",
+      "addedOn": "2026-11-01"
+    }
   },
   {
     "slug": "dracula-1931",
