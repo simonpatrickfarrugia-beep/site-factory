@@ -1,50 +1,47 @@
-# Site Factory brief — Sat 31 Oct 2026 (generated 00:59 UTC)
+# Site Factory brief — Sun 01 Nov 2026 (generated 00:23 UTC)
 
 _Auto-written daily by scripts/hq/brief.py. Read this first in any new chat. Refresh: scripts/claude/brief.sh_
 
 ## Headline
 
-Revenue to date **A$0.00** · sprint "First $1" ends in 0 days · Simon has **5** open items (~33 min)
+Revenue to date **A$0.00** · sprint "First $1" ended 1 days ago · Simon has **5** open items (~33 min)
 
 ## Traffic (last 28 days)
 
 | Site | Station | Views (prev) | Last 7 days | CTA clicks | Google clicks / impressions |
 |---|---|---|---|---|---|
-| movietrailer.channel | Measure | 221 (131) | 4 4 4 3 1 7 3 | 0 | 6 / 541 |
-| victours.com.au | Launch | 66 (0) | 3 28 7 7 1 4 5 | book_tour 2, website 1, map 1 | 4 / 1885 |
-| Community Help Co | Launch | 9 (0) | 1 1 7 | 0 | 0 / 58 |
+| movietrailer.channel | Measure | 215 (141) | 4 4 3 1 7 3 4 | 0 | 6 / 511 |
+| victours.com.au | Launch | 69 (0) | 28 7 7 1 4 5 3 | book_tour 2, website 1, map 1 | 4 / 1892 |
+| Community Help Co | Launch | 9 (0) | 1 1 7 | 0 | 0 / 71 |
 | tradeadmin.com.au | Launch | 11 (0) | 11 1 | 0 | 0 / 0 |
 
-- **movietrailer.channel** (stats 6h ago) — top pages: / 83, /browse 12, /movies/star-wars-episode-v---the-empire-strikes-back-1980 9, /movies/schindlers-list-1994 6, /movies/star-wars-episode-vii---the-force-awakens-2015 6
-  - Google: "ghost soldier movie 2006" 71 impr, pos 8.6; "the prestige trailer" 36 impr, pos 36.1; "the sixth sense trailer" 30 impr, pos 29.4; "home alone trailer" 27 impr, pos 45.3; "silence of the lambs trailer" 19 impr, pos 34.6
-- **victours.com.au** (stats 6h ago) — top pages: / 30, /towns 6, /warburton 5, /day-trips/torquay 3, /road-trips/yarra-valley-day-trip 2
-  - Google: "melbourne accomodation southbank" 192 impr, pos 77.5; "sorrento restaurants" 72 impr, pos 87.5; "activities lorne victoria" 56 impr, pos 70.6; "1004 mornington-flinders road red hill vic 3937" 52 impr, pos 38.1; "best restaurants in mornington peninsula" 44 impr, pos 74.9
-- **Community Help Co** (stats 6h ago) — top pages: / 4, /contact 2, /job-finder 2, /about 1, /cover-letter-builder 0
-  - Google: "community services placement" 49 impr, pos 16; "community help" 4 impr, pos 35; "free cover letter" 2 impr, pos 63.5; "help making a resume for free" 2 impr, pos 41; "product information support" 1 impr, pos 31
-- **tradeadmin.com.au** (stats 6h ago) — top pages: / 7, /how-we-make-money 1, /job-management-software 1, /quote-builder 1, /tradify-pricing 1
+- **movietrailer.channel** (stats 5h ago) — top pages: / 80, /browse 12, /movies/star-wars-episode-v---the-empire-strikes-back-1980 9, /movies/schindlers-list-1994 6, /movies/star-wars-episode-vii---the-force-awakens-2015 6
+  - Google: "ghost soldier movie 2006" 69 impr, pos 8.6; "the prestige trailer" 35 impr, pos 35.8; "the sixth sense trailer" 30 impr, pos 29.4; "home alone trailer" 27 impr, pos 46.3; "star wars episode 1 trailer" 18 impr, pos 41.3
+- **victours.com.au** (stats 5h ago) — top pages: / 31, /towns 6, /warburton 5, /day-trips/torquay 3, /road-trips/yarra-valley-day-trip 2
+  - Google: "melbourne accomodation southbank" 192 impr, pos 77.5; "sorrento restaurants" 72 impr, pos 87.5; "activities lorne victoria" 56 impr, pos 70.6; "1004 mornington-flinders road red hill vic 3937" 53 impr, pos 38.8; "best restaurants in mornington peninsula" 44 impr, pos 74.9
+- **Community Help Co** (stats 5h ago) — top pages: / 4, /contact 2, /job-finder 2, /about 1, /cover-letter-builder 0
+  - Google: "community services placement" 56 impr, pos 15; "free cover letter" 5 impr, pos 41.2; "community help" 4 impr, pos 35; "resume builder help" 3 impr, pos 30.7; "back to you journal pdf free download" 1 impr, pos 1
+- **tradeadmin.com.au** (stats 5h ago) — top pages: / 7, /how-we-make-money 1, /job-management-software 1, /quote-builder 1, /tradify-pricing 1
 
 Latest milestones: 2026-10-28 vic: First affiliate clicks (2 tour clicks); 2026-10-28 vic: First Google clicks (2 in 28 days); 2026-10-29 vic: Best day ever: 28 visits (24 Oct)
 
 ## Health
 
-- https://www.movietrailer.channel is serving an older build (1546b48); expected 4a733b2 "Pipeline: add 13 movies". Workers Builds may have skipped a deploy: push an empty commit.
-- https://victours.com.au is serving an older build (1546b48); expected 4a733b2 "Pipeline: add 13 movies". Workers Builds may have skipped a deploy: push an empty commit.
-- https://communityhelp.com.au is serving an older build (1546b48); expected 4a733b2 "Pipeline: add 13 movies". Workers Builds may have skipped a deploy: push an empty commit.
-- https://tradeadmin.com.au is serving an older build (1546b48); expected 4a733b2 "Pipeline: add 13 movies". Workers Builds may have skipped a deploy: push an empty commit.
+All checks passing ✅ (sites up, pipeline jobs fresh, live builds current, no failing workflows)
 
 ## Pipeline jobs (last run)
 
-- ✅ `intake` 1h ago: Intake: 0 new trailer(s) queued. | Feed UCAP57cF-FSjJKzzXg7ntPlQ failed: YouTube feed UCAP57cF-FSjJKzzXg7ntPlQ: HTTP 404 | Feed UCtlPYzQ188v
-- ✅ `enrich` 4h ago: Enrich: looked at 15, published 13 (Tombstone (1993) → /movies/tombstone-1993; The Game (1997) → /movies/the-game-1997; Gladiator (2000) → /
-- ✅ `stats` 6h ago: paycalc: 29 views, 0 CTA clicks, 0 Google clicks. | trade-admin: 11 views, 0 CTA clicks, 0 Google clicks. | community-help-co: 9 views, 0 CT
-- ✅ `catalogue` 29h ago: Catalogue: queued 30 film(s): The Dark Crystal (1982): 91090/mo, Galaxy Quest (1999): 90980/mo, The Great Escape (1963): 90980/mo, Crouching
-- ✅ `competition` 44h ago: Competition: checked 4; 4 still to check (run again). | AU electric car running costs vs petrol by model: openness 49/100; big players drive
-- ✅ `niches` 44h ago: Niches: scored 2 of 2. | US cost of living by city: 66/100 (demand 70, money 71, ease 63, fit 56). | AU suburb profiles: prices, rent and de
-- ✅ `discover` 6d ago: Discover: screened 12 new ideas for US$0.24; 3 promoted to scoring: US school district enrollment by county (2 free domains), US airport run
-- ✅ `ratings` 9d ago: Ratings: checked 40, updated 0; 0 never checked.
-- ✅ `keywords` 10d ago: Victorian road trips and itineraries: day trips from melbourne 2900, great alpine road 1900, weekend getaways from melbourne 1900, romantic 
-- ✅ `collections` 10d ago: Collections: created 3: 90s Family Movies (8 films, 18000/mo) → /discover/90s-family-movies; 2000s Comedy Movies (15 films, 11000/mo) → /dis
-- ✅ `collcheck` 10d ago: Collection check: 29 idea(s) checked (US$0.077). Most winnable: Tom Hanks Movies 305400/mo × 21%; Christian Bale Movies 166600/mo × 16%; 90s
+- ✅ `intake` 0h ago: Intake: 0 new trailer(s) queued. | Feed UCAP57cF-FSjJKzzXg7ntPlQ failed: YouTube feed UCAP57cF-FSjJKzzXg7ntPlQ: HTTP 404 | Feed UCtlPYzQ188v
+- ✅ `enrich` 3h ago: Enrich: looked at 1, published 1 (Akira (1988) → /movies/akira-1988). Queue: 1 waiting for OMDb, 15 need review.
+- ✅ `stats` 5h ago: paycalc: 37 views, 0 CTA clicks, 0 Google clicks. | trade-admin: 11 views, 0 CTA clicks, 0 Google clicks. | community-help-co: 9 views, 0 CT
+- ✅ `discover` 6h ago: Discover: screened 15 new ideas for US$0.34; 3 promoted to scoring: Dog-friendly hotels by city (4 free domains), Pet insurance quotes by br
+- ✅ `catalogue` 2d ago: Catalogue: queued 30 film(s): The Dark Crystal (1982): 91090/mo, Galaxy Quest (1999): 90980/mo, The Great Escape (1963): 90980/mo, Crouching
+- ✅ `competition` 3d ago: Competition: checked 4; 4 still to check (run again). | AU electric car running costs vs petrol by model: openness 49/100; big players drive
+- ✅ `niches` 3d ago: Niches: scored 2 of 2. | US cost of living by city: 66/100 (demand 70, money 71, ease 63, fit 56). | AU suburb profiles: prices, rent and de
+- ✅ `ratings` 10d ago: Ratings: checked 40, updated 0; 0 never checked.
+- ✅ `keywords` 11d ago: Victorian road trips and itineraries: day trips from melbourne 2900, great alpine road 1900, weekend getaways from melbourne 1900, romantic 
+- ✅ `collections` 11d ago: Collections: created 3: 90s Family Movies (8 films, 18000/mo) → /discover/90s-family-movies; 2000s Comedy Movies (15 films, 11000/mo) → /dis
+- ✅ `collcheck` 11d ago: Collection check: 29 idea(s) checked (US$0.077). Most winnable: Tom Hanks Movies 305400/mo × 21%; Christian Bale Movies 166600/mo × 16%; 90s
 
 ## Simon's list (open)
 
@@ -54,7 +51,7 @@ Latest milestones: 2026-10-28 vic: First affiliate clicks (2 tour clicks); 2026-
 - · [do, 10 min] Join Awin (Impact applied 28 Oct, in review) (`networks`)
 - · [do, 10 min] Share communityhelp.com.au/resume-builder with 3 job services, schools or community groups you know (`chc-share-resume`)
 
-Done in the last 7 days: Email Careerjet (reply to the welcome email or use their con; Cloudflare → Workers & Pages → community-help-co → Settings ; Apply to the Expedia Group affiliate programme (covers Wotif; Sign up as a Careerjet publisher (free) with communityhelp.c; Send the Halloween movie-night page and a Vic Tours road tri; Cloudflare Email Routing: hello@victours.com.au → your Gmail; In CJ, apply to Klook (Booking.com applied 23 Oct); Sign up to Discover Cars; Viator: account created 23 Oct. Finish "Get verified" on the; Apply to GetYourGuide; Join Commission Factory (ABN + AU$5 refundable pre-auth); Bing Webmaster Tools: import both sites from Search Console; Cloudflare Access: login on /hq pages (both domains); Community Help Co: Search Console → Add property → Domain → ; Community Help Co: create a GA4 property and send Claude the; Community Help Co: Cloudflare → Rules → Redirect Rules → 'Re; Community Help Co: create a Google Business Profile as a ser; Adzuna API: not paying £8/month (Simon's call, 28 Oct); Trade Admin: point tradeadmin.com.au's nameservers (GoDaddy); Cloudflare → Workers & Pages → Create → Import repository → ; Trade Admin: www.tradeadmin.com.au shows an error. In Cloudf; Trade Admin: apply to the Tradify partner programme (Fergus ; MyPayCalc: Search Console → Add property → Domain → mypaycal; MyPayCalc: GA4 → Admin → Create property 'MyPayCalc' → Web s; MyPayCalc: Cloudflare → mypaycalc.com.au → Rules → Redirect 
+Done in the last 7 days: Email Careerjet (reply to the welcome email or use their con; Cloudflare → Workers & Pages → community-help-co → Settings ; Apply to the Expedia Group affiliate programme (covers Wotif; Sign up as a Careerjet publisher (free) with communityhelp.c; Send the Halloween movie-night page and a Vic Tours road tri; Cloudflare Email Routing: hello@victours.com.au → your Gmail; Bing Webmaster Tools: import both sites from Search Console; Cloudflare Access: login on /hq pages (both domains); Community Help Co: Search Console → Add property → Domain → ; Community Help Co: create a GA4 property and send Claude the; Community Help Co: Cloudflare → Rules → Redirect Rules → 'Re; Community Help Co: create a Google Business Profile as a ser; Adzuna API: not paying £8/month (Simon's call, 28 Oct); Trade Admin: point tradeadmin.com.au's nameservers (GoDaddy); Cloudflare → Workers & Pages → Create → Import repository → ; Trade Admin: www.tradeadmin.com.au shows an error. In Cloudf; Trade Admin: apply to the Tradify partner programme (Fergus ; MyPayCalc: Search Console → Add property → Domain → mypaycal; MyPayCalc: GA4 → Admin → Create property 'MyPayCalc' → Web s; MyPayCalc: Cloudflare → mypaycalc.com.au → Rules → Redirect ; Bing Webmaster Tools → Add site → Import from Google Search 
 
 ## Claude is on
 
@@ -65,12 +62,19 @@ Done in the last 7 days: Email Careerjet (reply to the welcome email or use thei
 
 ## Open GitHub issues
 
-- none
+- #3 Site Factory health check: something needs attention [health]
 
 ## Changes in the last 7 days
 
-100 commits (19 automated data updates). Hand-made changes:
+100 commits (21 automated data updates). Hand-made changes:
 
+- 2026-10-31 Leads: daily call list [skip ci]
+- 2026-10-31 Mail hub: imn-mail Email Worker, outreach CRM tables (0003), brand signature marks + signatures doc, CI typech
+- 2026-10-31 HQ to-do: MyPayCalc imported into Bing (done)
+- 2026-10-31 HQ to-do: add MyPayCalc to Bing Webmaster Tools
+- 2026-10-31 AdSense on movietrailer.channel and mypaycalc.com.au (ca-pub-7620412596305362); privacy and money pages update
+- 2026-10-31 AdSense support (off until a publisher ID is set): brand.ads.adsenseClient, layout script + verification meta,
+- 2026-10-31 Original films page + home banner on movietrailer.channel
 - 2026-10-30 Leads: daily call list [skip ci]
 - 2026-10-29 Leads: daily call list [skip ci]
 - 2026-10-29 Morning traffic: phone-friendly search table, right money label per site
@@ -89,13 +93,6 @@ Done in the last 7 days: Email Careerjet (reply to the welcome email or use thei
 - 2026-10-29 Pay calculator: monthly accuracy check against the ATO (rates-check workflow) [skip ci]
 - 2026-10-29 Pay calculator: back to preview (noindex); fuller contact and money pages
 - 2026-10-29 TEMP: run the quality gate on paycalc (reverted next commit) [preview only]
-- 2026-10-29 Pay calculator: take-home first in tables, nav highlight fix, left-aligned prose, browser test
-- 2026-10-29 Pay calculator (paycalc): new brand, preview only
-- 2026-10-29 Priority: re-rank with ads-first ideas [skip ci]
-- 2026-10-29 Niches: 8 ads-first ideas (AU finance, energy, EV, suburbs; US pay, cost of living) [skip ci]
-- 2026-10-29 Priority: add retro game finder (US + AU) [skip ci]
-- 2026-10-29 Niches: add retro game finder (US + AU) for scoring and competition [skip ci]
-- 2026-10-29 CHC: 'Tailor my application' from the job finder (Careerjet jobs or any job board) into the cover letter build
 
 ## Where things live
 
