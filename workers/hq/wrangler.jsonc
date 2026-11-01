@@ -18,6 +18,8 @@
     "ACCESS_AUD": "bfee2721a6e2c56b4bb2e6269a86677fc0d1d3fd7eac08c17bddd5a6a00a4b2e",
     "ALLOWED_EMAILS": "simon@communityhelp.com.au,simonpatrickfarrugia@gmail.com"
   },
+  // Daily at 06:40 Melbourne (19:40 UTC, AEDT): link check of contacted orgs + page performance snapshot.
+  "triggers": { "crons": ["40 19 * * *"] },
   // page.html is bundled as text.
   "rules": [{ "type": "Text", "globs": ["**/*.html"], "fallthrough": true }]
 }

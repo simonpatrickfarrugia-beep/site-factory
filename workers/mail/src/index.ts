@@ -4,7 +4,10 @@
 //  - hello@ / simon@  → log to D1 (direction "in"), then forward to Simon's Outlook.
 //  - crm@             → BCC copies of emails Simon sent (direction "out") or Outlook-rule copies of
 //                       CHC outreach replies. Logged only, never forwarded.
-// Forwarding always happens first, so a database problem can never lose an email.
+// The raw email is read once (for the text shown in IMN HQ), then forwarded. If reading fails the
+// email is still forwarded, and a database problem can never lose an email.
+
+import { emailText } from './mime';
 
 interface Env {
   DB: D1Database;
@@ -49,9 +52,16 @@ export default {
       return;
     }
 
+    let body = '';
+    try {
+      if (message.rawSize < 5_000_000) body = emailText(new Uint8Array(await new Response(message.raw).arrayBuffer()));
+    } catch (e) {
+      console.error('read failed', e);
+    }
+
     if (!isCrm) await message.forward(env.FORWARD_TO);
 
-    ctx.waitUntil(log(message, env, brand, isCrm, domains).catch((e) => console.error('log failed', e)));
+    ctx.waitUntil(log(message, env, brand, isCrm, domains, body).catch((e) => console.error('log failed', e)));
   },
 };
 
@@ -61,6 +71,7 @@ async function log(
   brand: string,
   isCrm: boolean,
   domains: Record<string, string>,
+  body: string,
 ): Promise<void> {
   const h = message.headers;
   const headerFrom = addr(h.get('from')) || message.from.toLowerCase();
@@ -87,9 +98,9 @@ async function log(
   }
 
   await env.DB.prepare(
-    `INSERT OR IGNORE INTO messages (brand, direction, mail_from, mail_to, subject, message_id, thread, contact_id, org_id)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-  ).bind(brand, direction, headerFrom, (direction === 'out' ? others.join(',') : message.to.toLowerCase()), subject, messageId || null, thread || null, contactId, orgId).run();
+    `INSERT OR IGNORE INTO messages (brand, direction, mail_from, mail_to, subject, message_id, thread, contact_id, org_id, body)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+  ).bind(brand, direction, headerFrom, (direction === 'out' ? others.join(',') : message.to.toLowerCase()), subject, messageId || null, thread || null, contactId, orgId, body || null).run();
 
   if (!orgId) return;
 

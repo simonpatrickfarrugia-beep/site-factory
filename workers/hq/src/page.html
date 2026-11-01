@@ -115,6 +115,47 @@ textarea{min-height:70px;resize:vertical}
 .timeline .t-body{min-width:0;overflow-wrap:anywhere}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:8px 16px;border-radius:999px;font-weight:600;font-size:.9rem;z-index:20}
 .error{color:var(--bad)}
+/* Draft sheet */
+.why{background:var(--sunk);border-radius:10px;padding:12px 14px;display:grid;gap:4px;font-size:.88rem}
+.why b{font-weight:600}
+.why .pq{grid-column:auto}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.field{display:grid;gap:4px;min-width:0}
+.field input,.field select{width:100%;font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.mail{display:grid;gap:8px}
+.mail textarea{min-height:300px;font:14px/1.5 var(--body)}
+.preview{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:.9rem;max-height:340px;overflow:auto;overflow-wrap:anywhere}
+.from{display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:var(--due-bg);color:var(--due);border-radius:8px;padding:8px 12px;font-size:.88rem;font-weight:600}
+.btn.ghost{background:var(--bg);color:var(--fg);border:1px solid var(--line)}
+.vers{display:flex;flex-wrap:wrap;gap:6px}
+.vers button{border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:4px 10px;font-size:.82rem}
+.vers button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);font-weight:600}
+.draft-btn{grid-column:2/4;justify-self:start;border:0;background:var(--accent);color:var(--accent-ink);border-radius:8px;padding:6px 12px;font-weight:600;font-size:.86rem}
+/* Replies body */
+.rbody{grid-column:2/4;white-space:pre-wrap;font-size:.9rem;overflow-wrap:anywhere;border-left:3px solid var(--line);padding-left:10px;margin-top:4px}
+.rbody.clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.rmore{grid-column:2/4;justify-self:start;border:0;background:none;color:var(--accent);padding:0;font-weight:600;font-size:.84rem}
+/* Pipeline */
+.fun{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:10px;border-top:4px solid var(--c)}
+.fun h2{font:700 1.1rem var(--display);margin:0;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.fun h2 span{font:400 .84rem var(--body);color:var(--muted)}
+.steps{display:grid;gap:6px}
+.step{display:grid;grid-template-columns:78px 1fr 92px;gap:10px;align-items:center;font-size:.86rem}
+.step .fbar{height:22px;background:var(--sunk);border-radius:5px;overflow:hidden;display:block}
+.step .fbar i{display:block;height:100%;background:var(--c);opacity:.85;min-width:2px}
+.step .n{font:500 .86rem var(--mono);font-variant-numeric:tabular-nums;text-align:right}
+.step .n small{color:var(--muted)}
+.cards2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+.tbl{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:.86rem}
+th,td{padding:9px 12px;text-align:left;border-top:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:.76rem;text-transform:uppercase;letter-spacing:.05em;border-top:0;white-space:nowrap}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.sec h2{font:700 1.15rem var(--display);margin:6px 0 10px}
+.spark{display:block;width:120px;height:28px}
+.delta{font-family:var(--mono);font-size:.8rem}
+.delta.up{color:var(--good)}
+.delta.down{color:var(--bad)}
 @media (max-width:640px){
   .tabs{margin-left:0;width:100%}
   .tabs button{flex:1}
@@ -124,6 +165,9 @@ textarea{min-height:70px;resize:vertical}
   .pwhy,.poffer,.pq{grid-column:2}
   .kv{grid-template-columns:1fr}
   .kv dt{margin-top:4px}
+  .grid2{grid-template-columns:1fr}
+  .draft-btn,.rbody,.rmore{grid-column:2}
+  .step{grid-template-columns:64px 1fr 76px}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
@@ -135,6 +179,7 @@ textarea{min-height:70px;resize:vertical}
     <div class="tabs" role="tablist">
       <button role="tab" id="tab-board" aria-selected="true" data-view="board">Board</button>
       <button role="tab" id="tab-prospect" aria-selected="false" data-view="prospect">Prospect</button>
+      <button role="tab" id="tab-pipeline" aria-selected="false" data-view="pipeline">Pipeline</button>
       <button role="tab" id="tab-replies" aria-selected="false" data-view="replies">Replies</button>
     </div>
   </div>
@@ -150,7 +195,7 @@ textarea{min-height:70px;resize:vertical}
 
 <script>
 const STAGE_LABEL = { found: 'Found', drafted: 'Drafted', sent: 'Sent', replied: 'Replied', linked: 'Linked', won: 'Won', no: 'No' };
-const state = { view: 'board', brand: 'all', board: null, summary: null, prospects: null, replies: null, showAll: {} };
+const state = { view: 'board', brand: 'all', board: null, summary: null, prospects: null, replies: null, pipeline: null, showAll: {}, open: {} };
 try { const s = JSON.parse(localStorage.getItem('imn-hq') || '{}'); if (s.view) state.view = s.view; if (s.brand) state.brand = s.brand; } catch (e) {}
 const save = () => { try { localStorage.setItem('imn-hq', JSON.stringify({ view: state.view, brand: state.brand })); } catch (e) {} };
 
@@ -181,8 +226,8 @@ function toast(msg) {
 
 async function load() {
   try {
-    const [board, summary, prospects, replies] = await Promise.all([api('/api/board'), api('/api/summary'), api('/api/prospects'), api('/api/replies')]);
-    Object.assign(state, { board, summary, prospects, replies });
+    const [board, summary, prospects, replies, pipeline] = await Promise.all([api('/api/board'), api('/api/summary'), api('/api/prospects'), api('/api/replies'), api('/api/pipeline')]);
+    Object.assign(state, { board, summary, prospects, replies, pipeline });
     $('#updated').textContent = 'Targets scored ' + new Date(prospects.generated).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
     render();
   } catch (e) {
@@ -195,6 +240,7 @@ function render() {
   renderChips(); renderStrip();
   if (state.view === 'board') renderBoard();
   else if (state.view === 'prospect') renderProspect();
+  else if (state.view === 'pipeline') renderPipeline();
   else renderReplies();
 }
 
@@ -265,6 +311,7 @@ function renderProspect() {
           <div class="pwhy">${esc(t.why)}${t.learn !== 1 ? ' · segment ' + (t.learn > 1 ? 'converting' : 'not converting') + ' (×' + t.learn + ')' : ''}</div>
           <div class="poffer"><strong>Offer:</strong> ${esc(t.offer)}</div>
           <div class="pq">${t.search.map((q) => `<a href="https://www.google.com/search?q=${encodeURIComponent(q)}" target="_blank" rel="noopener">${esc(q)}</a>`).join('')}${t.page ? `<a href="${esc(t.page)}" target="_blank" rel="noopener">Our page ↗</a>` : ''}</div>
+          ${t.status === 'covered' ? '' : `<button class="draft-btn" data-draft="${esc(t.brand)}|${esc(t.key)}">Draft email</button>`}
         </li>`).join('')}</ol>
       <button class="more" data-more="${b.key}">${all ? 'Show next up only' : 'Show top 40 targets'}</button>
     </article>`;
@@ -278,7 +325,8 @@ function renderReplies() {
     <li><i class="dot" style="--c:${color(m.brand)}"></i>
       <span class="who">${m.org_name ? `<button class="linkish" data-org="${m.org_id}" style="border:0;background:none;padding:0;font-weight:600;color:var(--accent)">${esc(m.org_name)}</button>` : esc(m.mail_from)}</span>
       <time datetime="${esc(m.at)}">${esc(short(m.at))}</time>
-      <span class="subj">${esc(m.subject || '(no subject)')} · to ${esc(m.mail_to)}</span>
+      <span class="subj">${esc(m.subject || '(no subject)')} · ${m.org_name ? esc(m.mail_from) + ' → ' : 'to '}${esc(m.mail_to)}</span>
+      ${m.body ? `<div class="rbody${state.open[m.id] ? '' : ' clamp'}">${esc(m.body)}</div>${m.body.length > 180 ? `<button class="rmore" data-expand="${m.id}">${state.open[m.id] ? 'Show less' : 'Show full email'}</button>` : ''}` : ''}
     </li>`).join('')}</ul>`;
 }
 
@@ -289,7 +337,7 @@ async function openOrg(id) {
     const d = await api('/api/orgs/' + id);
     const o = d.org; const c = d.contacts[0];
     const items = d.touches.map((t) => ({ at: t.at, text: `<strong>${esc(STAGE_LABEL[t.stage] || t.stage)}</strong>${t.subject ? ' · ' + esc(t.subject) : ''}${t.note ? ' · ' + esc(t.note) : ''}` }))
-      .concat(d.messages.map((m) => ({ at: m.at, text: (m.direction === 'in' ? 'Email in from ' + esc(m.mail_from) : 'Email out to ' + esc(m.mail_to)) + ' · ' + esc(m.subject || '') })))
+      .concat(d.messages.map((m) => ({ at: m.at, text: (m.direction === 'in' ? 'Email in from ' + esc(m.mail_from) : 'Email out to ' + esc(m.mail_to)) + ' · ' + esc(m.subject || '') + (m.body ? `<div class="rbody" style="margin-top:6px">${esc(m.body)}</div>` : '') })))
       .sort((a, z) => z.at.localeCompare(a.at));
     body.innerHTML = `
       <header><div><h2 id="sheet-title">${esc(o.name)}</h2><span class="pill" style="margin-top:6px">${esc(brandName(o.brand))}</span></div><button class="close" id="close">Close</button></header>
@@ -317,12 +365,140 @@ async function openOrg(id) {
   }
 }
 
+// ---------- Draft email from a prospect target ----------
+const fill = (text, v) => text
+  .replaceAll('{first_name}', v.first || 'there')
+  .replaceAll('{organisation}', v.org || 'your organisation')
+  .replaceAll('{region}', v.region || '')
+  .replaceAll('{page}', v.page || v.site || '')
+  .replaceAll('{site}', (v.site || '').replace(/^https?:\/\//, ''));
+
+async function openDraft(brand, key) {
+  const t = state.prospects.brands.find((b) => b.key === brand)?.top.concat(state.prospects.brands.find((b) => b.key === brand).next).find((x) => x.key === key);
+  if (!t) return;
+  const dlg = $('#sheet'); const body = $('#sheet-body');
+  body.innerHTML = '<p>Loading…</p>'; if (!dlg.open) dlg.showModal();
+  let tpl;
+  try { tpl = await api('/api/templates?brand=' + encodeURIComponent(brand) + '&segment=' + encodeURIComponent(t.segment)); } catch (e) { body.innerHTML = '<p class="error">' + esc(e.message) + '</p>'; return; }
+  const d = { ver: 0, subject: tpl.versions[0].subject, body: tpl.versions[0].body, id: tpl.versions[0].id, edited: false };
+  const from = tpl.brand.from || '';
+  const vals = () => ({ first: ($('#d-contact').value.trim().split(/\s+/)[0] || ''), org: $('#d-org').value.trim(), region: t.regionLabel, page: t.page, site: tpl.brand.site });
+  body.innerHTML = `
+    <header><div><h2 id="sheet-title">Draft email</h2><span class="pill" style="margin-top:6px">${esc(tpl.brand.name)} · ${esc(t.segmentLabel)} · ${esc(t.regionLabel)}</span></div><button class="close" id="close">Close</button></header>
+    <div class="why">
+      <span><b>Why this target (score ${t.score.toFixed(0)}):</b> ${esc(t.why)}</span>
+      <span><b>Offer:</b> ${esc(t.offer)}</span>
+      <span><b>Look for:</b> ${esc(t.evidence)} Use an address they publish themselves.</span>
+      <span class="pq" style="margin-top:4px">${t.search.map((q) => `<a href="https://www.google.com/search?q=${encodeURIComponent(q)}" target="_blank" rel="noopener">${esc(q)}</a>`).join('')}</span>
+    </div>
+    <div class="grid2">
+      <div class="field"><label for="d-org">Organisation</label><input id="d-org" type="text" placeholder="e.g. Daylesford Visitor Centre"></div>
+      <div class="field"><label for="d-email">Email they publish</label><input id="d-email" type="text" inputmode="email" placeholder="info@…"></div>
+      <div class="field"><label for="d-contact">Contact name (optional)</label><input id="d-contact" type="text" placeholder="First name used in the greeting"></div>
+      <div class="field"><label for="d-role">Their role (optional)</label><input id="d-role" type="text"></div>
+      <div class="field"><label for="d-web">Website</label><input id="d-web" type="text" placeholder="https://…"></div>
+      <div class="field"><label for="d-evidence">Page where they link to guides</label><input id="d-evidence" type="text" placeholder="https://… (checked daily for your link)"></div>
+    </div>
+    <div class="mail">
+      <label>Template</label>
+      <div class="vers" id="d-vers">${tpl.versions.map((v, i) => `<button data-ver="${i}" aria-pressed="${i === 0}">v${v.version}${v.perf.sent ? ` · ${v.perf.replied}/${v.perf.sent} replied` : ''}</button>`).join('')}</div>
+      <div class="field"><label for="d-subject">Subject</label><input id="d-subject" type="text"></div>
+      <div class="field"><label for="d-body">Email (placeholders: {first_name} {organisation} {region} {page} {site})</label><textarea id="d-body"></textarea></div>
+      <div class="row"><input id="d-note" type="text" placeholder="What did you change? (for the saved version)" style="flex:1;min-width:180px"><button class="btn ghost" id="d-save">Save as new version</button></div>
+      <label>Preview</label>
+      <div class="preview" id="d-preview"></div>
+    </div>
+    ${from ? `<div class="from">In Outlook, set From to <span id="d-from">${esc(from)}</span><button class="btn ghost" id="d-copyfrom" style="padding:3px 10px">Copy</button></div>` : ''}
+    <div class="row">
+      <button class="btn" id="d-go">Add to board &amp; open in Outlook</button>
+      <button class="btn ghost" id="d-copy">Copy email</button>
+    </div>
+    <p class="empty" style="padding:0">The brand signature is added automatically when you send. The card moves to Sent by itself once it's gone.</p>`;
+  const setVer = (i) => { const v = tpl.versions[i]; Object.assign(d, { ver: i, subject: v.subject, body: v.body, id: v.id }); $('#d-subject').value = v.subject; $('#d-body').value = v.body; body.querySelectorAll('[data-ver]').forEach((b) => b.setAttribute('aria-pressed', String(Number(b.dataset.ver) === i))); preview(); };
+  const preview = () => { $('#d-preview').textContent = 'Subject: ' + fill($('#d-subject').value, vals()) + '\n\n' + fill($('#d-body').value, vals()); };
+  setVer(0);
+  ['#d-org', '#d-contact', '#d-subject', '#d-body'].forEach((s) => $(s).addEventListener('input', () => { if (s === '#d-subject' || s === '#d-body') d.edited = true; preview(); }));
+  body.querySelectorAll('[data-ver]').forEach((b) => b.onclick = () => setVer(Number(b.dataset.ver)));
+  $('#close').onclick = () => dlg.close();
+  const copy = async (text, ok) => { try { await navigator.clipboard.writeText(text); toast(ok); } catch (e) { toast('Copy failed: select the text and copy it'); } };
+  if (from) $('#d-copyfrom').onclick = () => copy(from, 'From address copied');
+  $('#d-copy').onclick = () => copy(fill($('#d-body').value, vals()), 'Email copied');
+  $('#d-save').onclick = async () => {
+    try {
+      const r = await api('/api/templates', { brand, segment: t.segment, subject: $('#d-subject').value, body: $('#d-body').value, note: $('#d-note').value });
+      toast('Saved as v' + r.version);
+      const fresh = await api('/api/templates?brand=' + encodeURIComponent(brand) + '&segment=' + encodeURIComponent(t.segment));
+      tpl.versions = fresh.versions;
+      $('#d-vers').innerHTML = tpl.versions.map((v, i) => `<button data-ver="${i}" aria-pressed="${i === 0}">v${v.version}${v.perf.sent ? ` · ${v.perf.replied}/${v.perf.sent} replied` : ''}</button>`).join('');
+      body.querySelectorAll('[data-ver]').forEach((b) => b.onclick = () => setVer(Number(b.dataset.ver)));
+      Object.assign(d, { ver: 0, id: tpl.versions[0].id, edited: false });
+    } catch (e) { toast(e.message); }
+  };
+  $('#d-go').onclick = async () => {
+    const v = vals();
+    // Open the tab inside the click (pop-up blockers allow that), then point it at Outlook once the board is updated.
+    const w = window.open('about:blank', '_blank');
+    try {
+      await api('/api/prospects/start', { brand, target: t.key, organisation: v.org, email: $('#d-email').value, contact_name: $('#d-contact').value, contact_role: $('#d-role').value, website: $('#d-web').value, evidence_url: $('#d-evidence').value, template_id: d.id, subject: fill($('#d-subject').value, v) });
+      const url = 'https://outlook.office.com/mail/deeplink/compose?to=' + encodeURIComponent($('#d-email').value.trim()) + '&subject=' + encodeURIComponent(fill($('#d-subject').value, v)) + '&body=' + encodeURIComponent(fill($('#d-body').value, v));
+      if (w) { w.opener = null; w.location.href = url; } else { location.href = url; }
+      toast(d.edited ? 'Added as Drafted. Your unsaved edits count under the version you started from.' : 'Added to the board as Drafted');
+      dlg.close(); load();
+    } catch (e) { if (w) w.close(); toast(e.message); }
+  };
+}
+
+// ---------- Pipeline ----------
+function spark(series) {
+  if (!series || series.length < 2) return '';
+  const max = Math.max(1, ...series.map((p) => p.impressions));
+  const pts = series.map((p, i) => `${(i / (series.length - 1)) * 116 + 2},${26 - (p.impressions / max) * 22}`).join(' ');
+  return `<svg class="spark" viewBox="0 0 120 28" aria-hidden="true"><polyline points="${pts}" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>`;
+}
+function delta(now, then) {
+  if (then === null || then === undefined) return '';
+  const d = now - then;
+  return `<span class="delta ${d > 0 ? 'up' : d < 0 ? 'down' : ''}">${d > 0 ? '+' : ''}${d}</span>`;
+}
+function renderPipeline() {
+  const p = state.pipeline;
+  const fun = p.funnel.filter((f) => inBrand(f.key));
+  const funHtml = fun.map((f) => {
+    const top = Math.max(1, f.steps[0].count);
+    return `<article class="fun" style="--c:${color(f.key)}"><h2>${esc(f.name)} <span>${f.total} organisations · ${f.won} won · ${f.no} said no</span></h2>
+      <div class="steps">${f.steps.map((s, i) => {
+        const prev = i ? f.steps[i - 1].count : null;
+        const conv = prev ? Math.round((100 * s.count) / prev) + '%' : '';
+        return `<div class="step"><span>${STAGE_LABEL[s.stage]}</span><span class="fbar"><i style="width:${(100 * s.count) / top}%"></i></span><span class="n">${s.count}${conv ? ` <small>${conv}</small>` : ''}</span></div>`;
+      }).join('')}</div></article>`;
+  }).join('');
+  const tpls = p.templates.filter((t) => inBrand(t.brand));
+  const tplHtml = tpls.length ? `<div class="tbl"><table><thead><tr><th>Brand · segment</th><th>Version</th><th class="num">Orgs</th><th class="num">Sent</th><th class="num">Replied</th><th class="num">Linked</th></tr></thead><tbody>${tpls.map((t) => `
+    <tr><td>${esc(brandName(t.brand))} · ${esc(t.segmentLabel)}</td><td>v${t.version}${t.note ? ` <span class="meta">${esc(t.note)}</span>` : ''}</td><td class="num">${t.orgs}</td><td class="num">${t.sent}</td><td class="num">${t.replied}${t.replyRate !== null ? ` (${t.replyRate}%)` : ''}</td><td class="num">${t.linked}${t.linkRate !== null ? ` (${t.linkRate}%)` : ''}</td></tr>`).join('')}</tbody></table></div>`
+    : '<div class="hint">Template results show here once emails go out. Each version is tracked separately, so you can see which wording gets replies.</div>';
+  const links = p.links.filter((l) => inBrand(l.brand));
+  const linkHtml = links.length ? `<div class="tbl"><table><thead><tr><th>Organisation</th><th>Links to</th><th>Since</th><th class="num">Views 28d</th><th class="num">Impr. 28d</th><th class="num">Clicks 28d</th><th>Trend</th></tr></thead><tbody>${links.map((l) => `
+    <tr><td><button data-org="${l.org_id}" style="border:0;background:none;padding:0;color:var(--accent);font-weight:600;text-align:left">${esc(l.org_name)}</button><div class="meta"><a href="${esc(l.page_url)}" target="_blank" rel="noopener">their page ↗</a></div></td>
+    <td><a href="${esc(l.our_url)}" target="_blank" rel="noopener">${esc(l.our_url.replace(/^https?:\/\/(www\.)?/, ''))}</a></td>
+    <td>${esc(ago(l.first_seen))}</td>
+    <td class="num">${l.now.views} ${delta(l.now.views, l.atLink?.views)}</td>
+    <td class="num">${l.now.impressions} ${delta(l.now.impressions, l.atLink?.impressions)}</td>
+    <td class="num">${l.now.clicks} ${delta(l.now.clicks, l.atLink?.clicks)}</td>
+    <td>${spark(l.series)}</td></tr>`).join('')}</tbody></table></div>`
+    : '<div class="hint"><strong>No links won yet.</strong> Every morning IMN HQ visits the page you noted for each contacted organisation. When your link appears, the card moves to Linked and the page you were linked from shows here with its views, Google impressions and clicks, and the change since the link went up.</div>';
+  $('#view').innerHTML = `<div class="cards2">${funHtml}</div>
+    <section class="sec"><h2>Links won and page performance</h2>${linkHtml}</section>
+    <section class="sec"><h2>Template performance</h2>${tplHtml}</section>`;
+}
+
 document.addEventListener('click', (e) => {
   const t = e.target.closest('button'); if (!t) return;
   if (t.dataset.view) { state.view = t.dataset.view; save(); render(); }
   else if (t.dataset.brand) { state.brand = t.dataset.brand; save(); render(); }
   else if (t.dataset.org) openOrg(Number(t.dataset.org));
   else if (t.dataset.more) { state.showAll[t.dataset.more] = !state.showAll[t.dataset.more]; renderProspect(); }
+  else if (t.dataset.draft) { const [b, k] = t.dataset.draft.split('|'); openDraft(b, k); }
+  else if (t.dataset.expand) { state.open[t.dataset.expand] = !state.open[t.dataset.expand]; renderReplies(); }
 });
 $('#sheet').addEventListener('click', (e) => { if (e.target.id === 'sheet') e.target.close(); });
 load();

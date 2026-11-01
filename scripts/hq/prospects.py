@@ -116,7 +116,7 @@ def main():
                     "regionLabel": r["label"],
                     "base": round(base, 1),
                     "why": r.get("why", ""),
-                    "page": r.get("page"),
+                    "page": r.get("page") or seg.get("page") or cfg.get("site"),
                     "offer": fill(seg["offer"]),
                     "evidence": fill(seg["evidence"]),
                     "search": [fill(q) for q in seg.get("search", [])],
@@ -127,6 +127,9 @@ def main():
             "active": c.get("active", False),
             "weeklyCap": c.get("weeklyCap", 10),
             "perTargetCap": c.get("perTargetCap", 3),
+            "site": c.get("site"),
+            "from": c.get("from"),
+            "segments": {s["key"]: s["label"] for s in c["segments"]},
         }
         for b, c in playbook["brands"].items()
     }
