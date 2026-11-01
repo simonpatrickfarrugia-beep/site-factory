@@ -1,8 +1,8 @@
 # Trailer channel catalogue candidates
 
-Updated 2026-10-29. Monthly Google searches in United States for "<film> movie" + "<film> trailer". Any year; films still in cinemas wait until they can be rented or streamed.
+Updated 2026-11-01. Monthly Google searches in United States for "<film> movie" + "<film> trailer". Any year; films still in cinemas wait until they can be rented or streamed.
 
-116 waiting · 110 sent to the pipeline · 1 already on the site · 0 skipped.
+86 waiting · 140 sent to the pipeline · 1 already on the site · 0 skipped.
 
 Add films by chat: "add candidates: <theme or list>". The weekly run queues the most-searched ones.
 
@@ -31,36 +31,6 @@ Add films by chat: "add candidates: <theme or list>". The weekly run queues the 
 
 | Film | Searches/mo | Theme |
 |---|---:|---|
-| Groundhog Day (1993) | 61,090 | 90s comedy |
-| Twins (1988) | 60,890 | 80s comedy |
-| Once Upon a Time in the West (1968) | 60,890 | Westerns |
-| The Rocky Horror Picture Show (1975) | 60,590 | Cult classics |
-| Evil Dead II (1987) | 60,510 | 80s horror |
-| The Shining (1980) | 53,100 | 80s horror |
-| Back to the Future (1985) | 51,400 | 80s comedy |
-| Dumb and Dumber (1994) | 50,800 | 90s comedy |
-| Ghostbusters (1984) | 50,380 | 80s comedy |
-| Willow (1988) | 50,090 | 80s sci-fi & fantasy |
-| Videodrome (1983) | 49,980 | 80s horror |
-| The Fog (1980) | 49,890 | 80s horror |
-| Three Amigos! (1986) | 49,820 | 80s comedy |
-| Phantasm (1979) | 49,760 | 70s horror |
-| Clear and Present Danger (1994) | 49,760 | 90s thrillers |
-| Chinatown (1974) | 49,710 | 70s New Hollywood |
-| The Terminator (1984) | 49,640 | 80s action |
-| The Searchers (1956) | 49,640 | Westerns |
-| Enter the Dragon (1973) | 49,610 | Hong Kong action |
-| The Hangover (2009) | 41,500 | 2000s crowd-pleasers |
-| Babe (1995) | 41,500 | Australian classics |
-| The Wicker Man (1973) | 40,890 | 70s horror |
-| Repo Man (1984) | 40,760 | Cult classics |
-| In the Line of Fire (1993) | 40,710 | 90s thrillers |
-| Rebel Without a Cause (1955) | 40,610 | Classic Hollywood |
-| The French Connection (1971) | 40,590 | 70s New Hollywood |
-| Big (1988) | 35,000 | 80s comedy |
-| Tremors (1990) | 33,980 | Cult classics |
-| The Thing (1982) | 33,820 | 80s horror |
-| First Blood (1982) | 33,310 | 80s action |
 | The Evil Dead (1981) | 33,240 | 80s horror |
 | Tron (1982) | 32,500 | 80s sci-fi & fantasy |
 | Highlander (1986) | 28,100 | 80s sci-fi & fantasy |
@@ -91,3 +61,33 @@ Add films by chat: "add candidates: <theme or list>". The weekly run queues the 
 | The Godfather Part II (1974) | 18,110 | 70s New Hollywood |
 | The Warriors (1979) | 16,700 | Cult classics |
 | Animal Kingdom (2010) | 16,400 | Australian classics |
+| Hero (2002) | 15,520 | Hong Kong action |
+| WarGames (1983) | 15,390 | 80s sci-fi & fantasy |
+| Hellraiser (1987) | 15,190 | 80s horror |
+| The Little Mermaid (1989) | 15,060 | Family classics |
+| Short Circuit (1986) | 13,400 | 80s sci-fi & fantasy |
+| Explorers (1985) | 12,580 | 80s sci-fi & fantasy |
+| Chopper (2000) | 12,420 | Australian classics |
+| Lawrence of Arabia (1962) | 12,360 | Classic Hollywood |
+| Red Heat (1988) | 12,170 | 80s action |
+| Poltergeist (1982) | 11,200 | 80s horror |
+| Unforgiven (1992) | 10,290 | Westerns |
+| Flash Gordon (1980) | 10,160 | 80s sci-fi & fantasy |
+| Gallipoli (1981) | 10,040 | Australian classics |
+| Wolf Creek (2005) | 8,420 | Australian classics |
+| Commando (1985) | 8,270 | 80s action |
+| Police Story (1985) | 8,170 | Hong Kong action |
+| Drunken Master II (1994) | 8,110 | Hong Kong action |
+| The Truman Show (1998) | 7,900 | 90s favourites |
+| Kung Fu Hustle (2004) | 7,480 | Hong Kong action |
+| Rabbit-Proof Fence (2002) | 6,710 | Australian classics |
+| A Clockwork Orange (1971) | 6,120 | 70s New Hollywood |
+| Liar Liar (1997) | 5,880 | 90s comedy |
+| Breakfast at Tiffany's (1961) | 5,720 | Classic Hollywood |
+| The Omen (1976) | 5,610 | 70s horror |
+| Muriel's Wedding (1994) | 5,610 | Australian classics |
+| North by Northwest (1959) | 5,570 | Classic Hollywood |
+| Shine (1996) | 5,430 | Australian classics |
+| All the President's Men (1976) | 4,610 | 70s New Hollywood |
+| The Adventures of Priscilla, Queen of the Desert (1994) | 4,600 | Australian classics |
+| Dawn of the Dead (1978) | 4,080 | 70s horror |
