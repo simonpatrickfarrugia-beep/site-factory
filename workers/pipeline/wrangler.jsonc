@@ -7,6 +7,8 @@
   "main": "src/index.ts",
   "compatibility_date": "2026-06-01",
   "kv_namespaces": [{ "binding": "STATUS", "id": "55838af4d43d4ea8957763e45d68e78e" }],
+  // Free classic movies: film files, uploaded by .github/workflows/film-ingest.yml through /media/* (src/media.ts).
+  "r2_buckets": [{ "binding": "FILMS", "bucket_name": "trailer-films" }],
   "triggers": {
     // Times are UTC. Keep in sync with INTAKE_CRON / DAILY_CRON in src/index.ts.
     "crons": [

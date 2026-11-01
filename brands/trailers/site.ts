@@ -141,7 +141,7 @@ export function routes(): Route[] {
     thumbnailUrl: [archiveThumb(f.archiveId)],
     uploadDate: f.audit.checkedOn,
     duration: `PT${f.runtimeMinutes}M`,
-    embedUrl: archiveEmbed(f.archiveId),
+    ...(f.media ? { contentUrl: `${SITE}/media/${f.media.file}` } : { embedUrl: archiveEmbed(f.archiveId) }),
     regionsAllowed: 'US',
     isAccessibleForFree: true,
     url,

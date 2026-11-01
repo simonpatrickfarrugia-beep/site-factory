@@ -38,7 +38,11 @@ export interface FreeFilm {
   underlying: { work: string; year?: number; status: 'original' | 'public-domain'; note?: string }[];
   /** "silent" (no soundtrack or period accompaniment) or "original" (the film's own release soundtrack). */
   audio: 'silent' | 'original';
-  archiveId: string; // Internet Archive identifier of the copy we embed
+  archiveId: string; // Internet Archive identifier of the source copy
+  /** Our own copy in R2 (bucket trailer-films), made by .github/workflows/film-ingest.yml and served at /media/<file>
+   *  to US visitors only. audio "removed" = the soundtrack was stripped (silent films). Without it the page embeds
+   *  the Archive player instead. */
+  media?: { file: string; bytes: number; seconds: number; audio: 'removed' | 'original'; from: string; addedOn: string };
   wikidata: string; // Q-number of the film
   runtimeMinutes: number;
   director: string;
@@ -107,7 +111,15 @@ export function freeFilmsToPublish(films: FreeFilm[], now = new Date()): FreeFil
     if (!(f.runtimeMinutes > 0)) bad('runtimeMinutes missing');
     if (f.audio !== 'silent' && f.audio !== 'original') bad('audio must be "silent" or "original" (no added scores or narration)');
     if (!f.audit || !DATE.test(f.audit.checkedOn ?? '')) bad('audit.checkedOn (YYYY-MM-DD) missing: a person must have checked this film');
-    if (publishing && f.audio === 'silent' && !DATE.test(f.audit?.audioCheckedOn ?? '')) bad('silent film: play the Archive copy and confirm no modern score or narration, then set audit.audioCheckedOn (or status "pending")');
+    const soundRemoved = f.media?.audio === 'removed';
+    if (publishing && f.audio === 'silent' && !soundRemoved && !DATE.test(f.audit?.audioCheckedOn ?? '')) bad('silent film: host our own copy with the sound removed (film-ingest), or confirm the copy has no modern score or narration and set audit.audioCheckedOn');
+    if (f.media) {
+      if (!/^[a-z0-9-]{3,100}\.mp4$/.test(f.media.file) || f.media.file !== `${f.slug}.mp4`) bad('media.file must be "<slug>.mp4"');
+      if (!(f.media.bytes > 10_000_000)) bad('media.bytes looks wrong');
+      if (Math.abs(f.media.seconds / 60 - f.runtimeMinutes) > Math.max(8, f.runtimeMinutes * 0.15)) bad(`our copy runs ${Math.round(f.media.seconds / 60)} min, the film ~${f.runtimeMinutes} min`);
+      if (f.audio === 'silent' && f.media.audio !== 'removed' && !DATE.test(f.audit?.audioCheckedOn ?? '')) bad('silent film copy keeps its soundtrack without an audio check');
+      if (f.media.from !== f.archiveId) bad('media.from must be the archiveId it was copied from');
+    }
     if (f.status === 'pending' && !f.pendingReason) bad('pending needs a pendingReason');
     if (words(f.about ?? '') < 80) bad(`about is ${words(f.about ?? '')} words; write 80+ of our own`);
     const text = `${f.name} ${f.about} ${f.watchIf ?? ''} ${f.basisNote}`.toLowerCase();
@@ -138,6 +150,7 @@ export function freeFilmsToPublish(films: FreeFilm[], now = new Date()): FreeFil
 export const archiveThumb = (id: string) => `https://archive.org/services/img/${id}`;
 export const archiveEmbed = (id: string) => `https://archive.org/embed/${id}`;
 export const archivePage = (id: string) => `https://archive.org/details/${id}`;
+export const mediaUrl = (f: FreeFilm) => (f.media ? `/media/${f.media.file}` : null);
 
 /** Plain-English "why is this free?" line for the page. */
 export function basisLine(f: FreeFilm): string {

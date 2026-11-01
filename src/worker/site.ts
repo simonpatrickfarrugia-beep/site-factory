@@ -12,6 +12,8 @@
  *                            the built page, never from the request, so it can't be used to send arbitrary text), and adds
  *                            them to the list (interests "plans"). Max 3 sends per email per day.
  *   GET  /api/unsubscribe?e=&t=  one-click unsubscribe (t = HMAC of the email), linked from every email.
+ *   GET  /media/<film>.mp4   a free classic movie from R2 (trailers only), US visitors only (public domain in the US;
+ *                            rules differ elsewhere). Supports Range requests so the player can seek.
  *   GET  /api/geo            { country }: the visitor's country (Cloudflare's guess), so /watch pages only play a public
  *                            domain film where we know it's out of copyright (the US). Never stored.
  *   GET  /api/submit/status?since=<ISO time>  how many submissions arrived since then: a count only, never any details.
@@ -37,6 +39,8 @@ export interface Env {
   RESEND_API_KEY?: string;
   /** From address for plan emails, e.g. "Vic Tours <plans@victours.com.au>". */
   MAIL_FROM?: string;
+  /** R2 bucket with the free classic movies (trailers brand only). */
+  FILMS?: R2Bucket;
 }
 
 const EMAIL = /^[^@\s<>"']{1,64}@[^@\s<>"']{1,190}\.[a-z]{2,24}$/i;
@@ -235,9 +239,45 @@ async function unsubscribe(request: Request, env: Env): Promise<Response> {
   return page('You’re unsubscribed. You won’t get any more emails from us.');
 }
 
+/** Serves a film from R2 to US visitors, with Range support (seeking) and long browser caching. */
+async function film(request: Request, env: Env, name: string): Promise<Response> {
+  if (!env.FILMS) return new Response('Not found', { status: 404 });
+  if (request.method !== 'GET' && request.method !== 'HEAD') return new Response('Method not allowed', { status: 405, headers: { allow: 'GET, HEAD' } });
+  const country = ((request as Request & { cf?: { country?: string } }).cf?.country ?? 'XX').toUpperCase();
+  if (country !== 'US')
+    return new Response('This film is public domain in the United States and only plays there. Copyright rules differ in other countries.\n', {
+      status: 451, headers: { 'content-type': 'text/plain; charset=utf-8', 'cache-control': 'private, no-store', vary: 'cf-ipcountry' },
+    });
+  const head = await env.FILMS.head(name);
+  if (!head) return new Response('Not found', { status: 404 });
+  const size = head.size;
+  const base: Record<string, string> = {
+    'content-type': 'video/mp4', 'accept-ranges': 'bytes', etag: head.httpEtag,
+    'cache-control': 'private, max-age=86400', // private: shared caches must not serve it to visitors in other countries
+  };
+  const m = (request.headers.get('range') ?? '').match(/^bytes=(\d*)-(\d*)$/);
+  if (!m || (m[1] === '' && m[2] === '')) {
+    if (request.method === 'HEAD') return new Response(null, { headers: { ...base, 'content-length': String(size) } });
+    const obj = await env.FILMS.get(name);
+    return new Response(obj?.body ?? null, { headers: { ...base, 'content-length': String(size) } });
+  }
+  let start: number, end: number;
+  if (m[1] === '') { start = Math.max(0, size - Number(m[2])); end = size - 1; }
+  else { start = Number(m[1]); end = m[2] === '' ? size - 1 : Math.min(Number(m[2]), size - 1); }
+  if (start >= size || start > end) return new Response(null, { status: 416, headers: { ...base, 'content-range': `bytes */${size}` } });
+  // Cap open-ended ranges so one request doesn't stream the whole film (players ask again as they go).
+  if (m[2] === '' && end - start > 32 * 1024 * 1024) end = start + 32 * 1024 * 1024 - 1;
+  const headers = { ...base, 'content-range': `bytes ${start}-${end}/${size}`, 'content-length': String(end - start + 1) };
+  if (request.method === 'HEAD') return new Response(null, { status: 206, headers });
+  const obj = await env.FILMS.get(name, { range: { offset: start, length: end - start + 1 } });
+  return new Response(obj?.body ?? null, { status: 206, headers });
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const { pathname } = new URL(request.url);
+    const media = pathname.match(/^\/media\/([a-z0-9-]{3,100}\.mp4)$/);
+    if (media) return film(request, env, media[1]);
     if (pathname === '/api/subscribe') {
       if (request.method !== 'POST') return new Response('Method not allowed', { status: 405, headers: { allow: 'POST' } });
       try {

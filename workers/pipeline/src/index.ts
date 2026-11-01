@@ -9,6 +9,7 @@
  *   https://trailer-pipeline.<account>.workers.dev/run/intake?key=RUN_KEY&dry=1
  *   jobs: intake | enrich | recheck | demand | catalogue | collections ;  dry=1 shows what would change without committing.
  */
+import { media } from './media';
 import { enrich, intake, maxYear, recheck, type QueueItem, type Movie, type Result, type State } from './jobs';
 import { commitFiles, readFiles, StaleError, type Repo } from './github';
 import { channelFeed, omdbLookup, omdbYearsForTitle, brainstormNiches, brainstormStats, judgeNiche, pickCategories, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
@@ -37,6 +38,8 @@ export interface Env {
   DATAFORSEO_PASSWORD?: string;
   /** Any long random string; needed for the manual /run URL. */
   RUN_KEY?: string;
+  /** R2 bucket trailer-films: free classic movies (uploads only; the site Worker serves them). */
+  FILMS?: R2Bucket;
   REPO: string; // "owner/name"
   BRANCH: string;
   CHANNELS: string; // JSON array of YouTube channel IDs
@@ -146,6 +149,11 @@ export default {
       if (!kws.length) return Response.json({ error: 'no keywords' }, { status: 400 });
       const vols = await searchVolumes(env.DATAFORSEO_LOGIN, env.DATAFORSEO_PASSWORD, kws, Number(url.searchParams.get('loc') ?? 2840));
       return Response.json({ volumes: Object.fromEntries(kws.map((k) => [k, vols.get(cleanKeyword(k)) ?? null])) }, { headers: { 'cache-control': 'no-store' } });
+    }
+    // Film uploads for the free classic movies (see ./media.ts).
+    if (url.pathname.startsWith('/media/')) {
+      if (!env.RUN_KEY || url.searchParams.get('key') !== env.RUN_KEY) return new Response('Forbidden\n', { status: 403 });
+      return media(req, url, env.FILMS);
     }
     if (!m) return new Response('Trailer pipeline. Runs on a schedule.\n', { status: url.pathname === '/' ? 200 : 404 });
     if (!env.RUN_KEY || url.searchParams.get('key') !== env.RUN_KEY) return new Response('Forbidden\n', { status: 403 });

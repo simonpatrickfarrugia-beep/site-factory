@@ -1,0 +1,72 @@
+# Copies free classic movies (public domain in the US) from the Internet Archive into R2 (bucket trailer-films),
+# served by the site Worker at www.movietrailer.channel/media/<slug>.mp4 to US visitors only.
+# No re-encoding: the video is copied as is ("fast start" for streaming). Silent films have their soundtrack
+# REMOVED, because a soundtrack added to a silent film by an uploader can be a copyrighted modern recording.
+# Input: one or more "slug|archiveId|silent|sound" lines separated by ";". Uploads go through the pipeline Worker
+# (/media/*, workers/pipeline/src/media.ts) in 90 MB parts. Report only: the data file is updated by chat.
+name: film-ingest
+on:
+  workflow_dispatch:
+    inputs:
+      films: { description: 'slug|archiveId|silent-or-sound;… e.g. the-general-1926|The_General_Buster_Keaton|silent', required: true }
+      replace: { description: 'true = upload again even if the file is already there', default: 'false' }
+permissions:
+  contents: read
+jobs:
+  ingest:
+    runs-on: ubuntu-24.04  # pinned: ubuntu-latest moved to 26.04 in Oct 2026 and broke the Playwright install
+    timeout-minutes: 90
+    env:
+      KEY: ${{ secrets.PIPELINE_RUN_KEY }}
+      API: https://trailer-pipeline.simonpatrickfarrugia.workers.dev/media
+      FILMS: ${{ inputs.films }}
+      REPLACE: ${{ inputs.replace }}
+    steps:
+      - name: Tools
+        run: which ffmpeg ffprobe || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+      - name: Copy films into R2
+        run: |
+          set -u
+          report=film-ingest.md; echo "# Film ingest" > $report
+          IFS=';' read -ra items <<< "$FILMS"
+          for item in "${items[@]}"; do
+            item=$(echo "$item" | xargs); [ -z "$item" ] && continue
+            IFS='|' read -r slug id kind <<< "$item"
+            name="$slug.mp4"; echo "::group::$slug"
+            have=$(curl -sS "$API/head?key=$KEY&name=$name")
+            if echo "$have" | grep -q '"exists":true' && [ "$REPLACE" != "true" ]; then echo "- $slug: already there ($have)" >> $report; echo "::endgroup::"; continue; fi
+            # Pick the Archive's MP4: prefer the h.264 derivative, then the original MPEG4, under 2.5 GB.
+            file=$(curl -sSL "https://archive.org/metadata/$id" | python3 -c '
+          import json,sys
+          d=json.load(sys.stdin); fs=[f for f in d.get("files",[]) if f.get("name","").lower().endswith(".mp4") and int(f.get("size") or 0) < 2_500_000_000]
+          rank={"h.264":0,"h.264 IA":1,"MPEG4":2,"512Kb MPEG4":3}
+          fs.sort(key=lambda f:(rank.get(f.get("format"),9), -int(f.get("size") or 0)))
+          print(fs[0]["name"] if fs else "")')
+            if [ -z "$file" ]; then echo "- **$slug: no MP4 on the Archive item $id**" >> $report; echo "::endgroup::"; continue; fi
+            enc=$(python3 -c 'import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1]))' "$file")
+            curl -sSL --retry 3 -o src.mp4 "https://archive.org/download/$id/$enc" || { echo "- **$slug: download failed**" >> $report; echo "::endgroup::"; continue; }
+            if [ "$kind" = "silent" ]; then audio="-an"; else audio="-c:a copy"; fi
+            ffmpeg -hide_banner -loglevel error -y -i src.mp4 -map 0:v:0 $( [ "$kind" = "silent" ] || echo "-map 0:a:0?" ) -c:v copy $audio -movflags +faststart -f mp4 out.mp4 || { echo "- **$slug: ffmpeg failed**" >> $report; echo "::endgroup::"; continue; }
+            streams=$(ffprobe -v error -show_entries stream=codec_type,codec_name,width,height -of csv=p=0 out.mp4 | tr '\n' ' ')
+            dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 out.mp4 | cut -d. -f1)
+            if [ "$kind" = "silent" ] && echo "$streams" | grep -q audio; then echo "- **$slug: audio still present, not uploaded**" >> $report; echo "::endgroup::"; continue; fi
+            bytes=$(stat -c %s out.mp4)
+            up=$(curl -sS -X POST "$API/create?key=$KEY&name=$name" | python3 -c 'import json,sys;print(json.load(sys.stdin)["uploadId"])')
+            enc_up=$(python3 -c 'import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1],safe=""))' "$up")
+            rm -f part_*; split -b 90000000 -d -a 3 out.mp4 part_
+            parts="["; n=0; ok=1
+            for p in part_*; do
+              n=$((n+1))
+              r=$(curl -sS --retry 3 -X PUT --data-binary @"$p" -H 'content-type: application/octet-stream' "$API/part?key=$KEY&name=$name&uploadId=$enc_up&part=$n")
+              etag=$(echo "$r" | python3 -c 'import json,sys;print(json.load(sys.stdin).get("etag",""))' 2>/dev/null)
+              [ -z "$etag" ] && { ok=0; echo "part $n failed: $r"; break; }
+              parts="$parts{\"part\":$n,\"etag\":\"$etag\"},"
+            done
+            if [ $ok = 0 ]; then curl -sS -X POST "$API/abort?key=$KEY&name=$name&uploadId=$enc_up" >/dev/null; echo "- **$slug: upload failed**" >> $report; echo "::endgroup::"; continue; fi
+            parts="${parts%,}]"
+            done=$(curl -sS -X POST -H 'content-type: application/json' --data "$parts" "$API/complete?key=$KEY&name=$name&uploadId=$enc_up")
+            echo "- $slug: OK · $bytes bytes · ${dur}s · $streams· from $id/$file · $kind · $done" >> $report
+            rm -f src.mp4 out.mp4 part_*; echo "::endgroup::"
+          done
+          cat $report >> "$GITHUB_STEP_SUMMARY"
+          echo "::notice title=film-ingest::$(sed 's/%/%25/g' $report | sed ':a;N;$!ba;s/\n/%0A/g' | cut -c1-20000)"

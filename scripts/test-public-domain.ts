@@ -37,6 +37,12 @@ throws('underlying work still owned refused', t({ underlying: [{ work: 'A 1950 n
 throws('blocked title refused', t({ slug: 'its-a-wonderful-life-1946', name: "It's a Wonderful Life", year: '1946' }), /blocked/);
 throws('too-new film refused unless held', t({ basis: 'term-expired', year: '1935', slug: 'his-girl-friday-1935' }), /still in US copyright/);
 throws('silent film needs an audio check', t({ audio: 'silent' }), /audioCheckedOn/);
+const media = { file: 'his-girl-friday-1940.mp4', bytes: 500_000_000, seconds: 92 * 60, audio: 'removed' as const, from: base.archiveId, addedOn: '2026-11-01' };
+ok('silent film with sound removed passes', freeFilmsToPublish([{ ...base, audio: 'silent', media }]).length === 1);
+throws('silent film keeping its soundtrack refused', t({ audio: 'silent', media: { ...media, audio: 'original' } }), /audio/);
+throws('wrong-length copy refused', t({ media: { ...media, seconds: 30 * 60 } }), /runs 30 min/);
+throws('copy from another source refused', t({ media: { ...media, from: 'SomethingElse' } }), /media.from/);
+throws('media file must match slug', t({ media: { ...media, file: 'other-film-1940.mp4' } }), /media.file/);
 throws('added score refused', t({ audio: 'rescored' as FreeFilm['audio'] }), /audio must be/);
 throws('trademark words refused', t({ about: base.about + ' A Universal Monsters classic.' }), /trademark/);
 throws('thin copy refused', t({ about: 'Too short.' }), /80\+/);
