@@ -91,7 +91,7 @@ p { margin: 0 0 var(--space-3); }
   letter-spacing: 0.01em; text-decoration: none; color: var(--paper);
 }
 .wordmark:hover { color: var(--color-accent); }
-.site-nav { display: flex; gap: var(--space-4); list-style: none; margin: 0; padding: 0; }
+.site-nav { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-4); list-style: none; margin: 0; padding: 0; }
 .site-nav a { text-decoration: none; font-weight: 600; padding-block: var(--space-2); white-space: nowrap; }
 .site-nav a[aria-current='page'] { color: var(--color-accent); }
 
