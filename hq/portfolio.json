@@ -174,12 +174,12 @@
  "actions": [
   {
    "who": "Claude",
-   "what": "Switch on affiliate buttons as each programme approves",
+   "what": "Publish the next Vic towns weekly (12 probed 1 Nov)",
    "site": "vic"
   },
   {
    "who": "Claude",
-   "what": "Fix thin Vic collections and town pages flagged by the quality gate",
+   "what": "Switch on affiliate buttons as each programme approves",
    "site": "vic"
   },
   {
@@ -191,6 +191,11 @@
    "who": "Claude",
    "what": "Cover letter builder for Community Help Co (after the resume builder, live 23 Oct)",
    "site": "chc"
+  },
+  {
+   "who": "Claude",
+   "what": "Fix trailer queue items stuck on 'no OMDb match' (13 well-known films like Casablanca)",
+   "site": "trailers"
   }
  ],
  "_stations": [
@@ -239,6 +244,18 @@
  },
  "_todo": "Simon's to-do list shown at the top of HQ. kind: do | decide. sprint: true = counts toward the current sprint. Claude (or the daily coach / weekly autopilot) sets done: true + doneAt when Simon says 'done' or an approval email arrives.",
  "todo": [
+  {
+   "id": "sprint-first-dollar-reset",
+   "kind": "decide",
+   "sprint": true,
+   "mins": 1,
+   "what": "The 'First $1' sprint ended 31 Oct with no sale yet. Set a new deadline: 30 Nov? Reply 'yes' or a date in the Site Factory chat",
+   "why": "Keeps the HQ countdown honest; affiliate buttons are live on Vic and Amazon on trailers, so it's now traffic, not setup",
+   "link": "https://www.movietrailer.channel/hq",
+   "linkLabel": "HQ",
+   "done": false,
+   "addedAt": "2026-11-01"
+  },
   {
    "id": "careerjet-ip",
    "kind": "do",
