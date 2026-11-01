@@ -148,7 +148,10 @@ export function routes(): Route[] {
   });
   function freeSeo(m: Movie, f: FreeFilm) {
     const ny = `${m.name}${m.year ? ` (${m.year})` : ''}`;
-    const title = fitTitle(`Watch ${ny} Free: Full Movie & Trailer`, `Watch ${ny} Free: Full Movie`, `${ny}: Watch Free`, `Watch ${m.name} Free`);
+    // "& Trailer" only when the page really has one.
+    const title = m.youtubeId
+      ? fitTitle(`Watch ${ny} Free: Full Movie & Trailer`, `Watch ${ny} Free: Full Movie`, `${ny}: Watch Free`, `Watch ${m.name} Free`)
+      : fitTitle(`Watch ${ny} Free: Full Movie`, `${ny}: Watch Free`, `Watch ${m.name} Free`);
     return { title, description: clip(`Watch ${ny} free: the full film, public domain in the US and legal to stream. ${f.about}`) };
   }
   function upcomingSeo(m: Movie, u: { freeOn: string }) {

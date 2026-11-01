@@ -5,7 +5,7 @@ name: indexnow
 on:
   push:
     branches: [main]
-    paths: ['data/trailers/movies.json', 'data/trailers/collections.json', 'data/vic/places.json', 'data/vic/content.json', 'data/community-help-co/**', 'data/trade-admin/**']
+    paths: ['data/trailers/movies.json', 'data/trailers/collections.json', 'data/trailers/public-domain.json', 'data/vic/places.json', 'data/vic/content.json', 'data/community-help-co/**', 'data/trade-admin/**']
   workflow_dispatch:
     inputs:
       mode:
@@ -75,6 +75,11 @@ jobs:
           for path, prefix in (('data/trailers/movies.json', 'movies'), ('data/trailers/collections.json', 'discover')):
               now, before = load(path), ({} if mode == 'all' else load(path, 'HEAD~1'))
               urls += [f'https://{host}/{prefix}/{s}' for s, x in now.items() if before.get(s) != x]
+          # Free classic movies: their /movies page (by slug, or the trailer page for the same film) and the hub.
+          free_now, free_before = load('data/trailers/public-domain.json'), ({} if mode == 'all' else load('data/trailers/public-domain.json', 'HEAD~1'))
+          changed_free = [s for s, x in free_now.items() if free_before.get(s) != x and x.get('status') in ('live', 'held')]
+          urls += [f'https://{host}/movies/{s}' for s in changed_free if f'https://{host}/movies/{s}' not in urls]
+          if changed_free: urls.append(f'https://{host}/free-classic-movies')
           if mode == 'all':
               urls = [f'https://{host}', f'https://{host}/browse', f'https://{host}/discover'] + urls
           if not urls:
