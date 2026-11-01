@@ -229,6 +229,15 @@ async function process(state: State, svc: Services, limit: number, which: QueueI
         continue;
       }
     }
+    // Every film needs at least one genre (genre channels and collections are built from them).
+    if (found && !why && !na(found.Genre)) {
+      item.status = 'review';
+      item.note = 'NEEDS REVIEW: OMDb has no genre for this film (add genres by hand)';
+      item.lastChecked = nowIso;
+      r.queued.push(`${item.title}: ${item.note}`);
+      r.queueChanged = true;
+      continue;
+    }
     if (found && !why) {
       const slug = slugify(found.Title, yearOf(found));
       if (slugs.has(slug)) {

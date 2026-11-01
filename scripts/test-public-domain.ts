@@ -50,5 +50,12 @@ throws('no human check refused', t({ audit: { checkedOn: '' } }), /checkedOn/);
 throws('bad Archive id refused', t({ archiveId: 'x' }), /archiveId/);
 ok('removed film is skipped', freeFilmsToPublish([{ ...base, status: 'removed', country: 'GB' }]).length === 0);
 
+throws('film without genres refused', t({ genres: [] }), /genres missing/);
+
+// 4. Every movie on the site has at least one genre (genre channels and collections depend on it).
+const movies = JSON.parse(readFileSync('data/trailers/movies.json', 'utf8')) as { slug: string; genres: string[] }[];
+const noGenre = movies.filter((m) => !m.genres?.length).map((m) => m.slug);
+ok(`every movie has a genre${noGenre.length ? ` (missing: ${noGenre.join(', ')})` : ''}`, noGenre.length === 0);
+
 if (fails.length) { console.error(`FAIL ${fails.length}:\n- ${fails.join('\n- ')}`); process.exit(1); }
 console.log(`${pass}/${pass} free films rules passed`);

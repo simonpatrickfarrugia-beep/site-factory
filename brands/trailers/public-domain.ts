@@ -109,6 +109,7 @@ export function freeFilmsToPublish(films: FreeFilm[], now = new Date()): FreeFil
     if (!ARCHIVE_ID.test(f.archiveId ?? '')) bad('archiveId missing or malformed');
     if (!QID.test(f.wikidata ?? '')) bad('wikidata Q-number missing');
     if (!(f.runtimeMinutes > 0)) bad('runtimeMinutes missing');
+    if (!f.genres?.length) bad('genres missing (every film needs at least one: channels and collections are built from them)');
     if (f.audio !== 'silent' && f.audio !== 'original') bad('audio must be "silent" or "original" (no added scores or narration)');
     if (!f.audit || !DATE.test(f.audit.checkedOn ?? '')) bad('audit.checkedOn (YYYY-MM-DD) missing: a person must have checked this film');
     const soundRemoved = f.media?.audio === 'removed';

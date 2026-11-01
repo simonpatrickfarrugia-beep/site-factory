@@ -145,7 +145,7 @@ const faq = [
             <h2 id="rights-heading">Why is it free?</h2>
             <p>{basisLine(free)}</p>
             <ul>{free.evidence.map((e) => <li><a href={e.url} rel="noopener" target="_blank">{e.label}</a></li>)}</ul>
-            <p class="free-film__small">{free.media ? `Copied from the Internet Archive, a non-profit library${free.media.audio === 'removed' ? ', with the soundtrack an uploader added removed, so you see the film as it was released' : ''}.` : 'Plays from the Internet Archive, a non-profit library.'} Last checked {free.audit.checkedOn}, re-checked every week. Own rights in this film or this copy? Email <a href={`mailto:hello@movietrailer.channel?subject=${encodeURIComponent(`Rights question: ${m.name}`)}`}>hello@movietrailer.channel</a> and we'll take it down while we look into it.</p>
+            <p class="free-film__small">{free.media ? `Copied from the Internet Archive, a non-profit library${free.media.audio === 'removed' ? ', with the soundtrack an uploader added removed, so you see the film as it was released' : ''}.` : 'Plays from the Internet Archive, a non-profit library.'} Verified {free.audit.checkedOn} and re-verified every week. Rights enquiries: <a href={`mailto:hello@movietrailer.channel?subject=${encodeURIComponent(`Rights enquiry: ${m.name}`)}`}>hello@movietrailer.channel</a>.</p>
           </section>
         )}
 

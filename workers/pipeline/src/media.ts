@@ -9,10 +9,12 @@
  *   POST /media/abort?key=&name=&uploadId=
  *   GET  /media/head?key=&name=            → { exists, size, uploaded }
  *   POST /media/delete?key=&name=
+ *   PUT  /media/put?key=&name=             (body = a small file, ≤ 5 MB: subtitles) → { size }
  *
- * Names: lowercase "<slug>.mp4" only.
+ * Names: lowercase "<slug>.mp4" (films) or "<slug>.<lang>.vtt" (subtitles).
  */
-const NAME = /^[a-z0-9-]{3,100}\.mp4$/;
+const NAME = /^[a-z0-9-]{3,100}(\.mp4|\.[a-z]{2}\.vtt)$/;
+const typeOf = (name: string) => (name.endsWith('.vtt') ? 'text/vtt; charset=utf-8' : 'video/mp4');
 
 export async function media(req: Request, url: URL, bucket: R2Bucket | undefined): Promise<Response> {
   if (!bucket) return Response.json({ error: 'FILMS bucket not bound' }, { status: 500 });
@@ -26,7 +28,7 @@ export async function media(req: Request, url: URL, bucket: R2Bucket | undefined
       return Response.json(o ? { exists: true, size: o.size, uploaded: o.uploaded } : { exists: false });
     }
     if (op === 'create' && req.method === 'POST') {
-      const up = await bucket.createMultipartUpload(name, { httpMetadata: { contentType: 'video/mp4', cacheControl: 'public, max-age=604800' } });
+      const up = await bucket.createMultipartUpload(name, { httpMetadata: { contentType: typeOf(name), cacheControl: 'public, max-age=604800' } });
       return Response.json({ uploadId: up.uploadId });
     }
     if (op === 'part' && req.method === 'PUT' && req.body) {
@@ -43,6 +45,12 @@ export async function media(req: Request, url: URL, bucket: R2Bucket | undefined
     if (op === 'abort' && req.method === 'POST') {
       await bucket.resumeMultipartUpload(name, uploadId).abort();
       return Response.json({ ok: true });
+    }
+    if (op === 'put' && req.method === 'PUT' && req.body) {
+      const body = await req.arrayBuffer();
+      if (body.byteLength > 5_000_000) return Response.json({ error: 'too big for put (use create/part/complete)' }, { status: 413 });
+      const o = await bucket.put(name, body, { httpMetadata: { contentType: typeOf(name), cacheControl: 'public, max-age=86400' } });
+      return Response.json({ size: o?.size ?? body.byteLength });
     }
     if (op === 'delete' && req.method === 'POST') {
       await bucket.delete(name);

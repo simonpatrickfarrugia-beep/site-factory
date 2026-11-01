@@ -14,6 +14,7 @@
  *   GET  /api/unsubscribe?e=&t=  one-click unsubscribe (t = HMAC of the email), linked from every email.
  *   GET  /media/<film>.mp4   a free classic movie from R2 (trailers only), US visitors only (public domain in the US;
  *                            rules differ elsewhere). Supports Range requests so the player can seek.
+ *   GET  /media/<film>.<lang>.vtt  subtitles for a free film (any country).
  *   GET  /api/geo            { country }: the visitor's country (Cloudflare's guess), so /watch pages only play a public
  *                            domain film where we know it's out of copyright (the US). Never stored.
  *   GET  /api/submit/status?since=<ISO time>  how many submissions arrived since then: a count only, never any details.
@@ -278,6 +279,13 @@ export default {
     const { pathname } = new URL(request.url);
     const media = pathname.match(/^\/media\/([a-z0-9-]{3,100}\.mp4)$/);
     if (media) return film(request, env, media[1]);
+    const subs = pathname.match(/^\/media\/([a-z0-9-]{3,100}\.[a-z]{2}\.vtt)$/);
+    if (subs && env.FILMS) {
+      // Subtitles for the free films: plain text, same origin as the player, any country.
+      const obj = await env.FILMS.get(subs[1]);
+      if (!obj) return new Response('Not found', { status: 404 });
+      return new Response(obj.body, { headers: { 'content-type': 'text/vtt; charset=utf-8', 'cache-control': 'public, max-age=86400' } });
+    }
     if (pathname === '/api/subscribe') {
       if (request.method !== 'POST') return new Response('Method not allowed', { status: 405, headers: { allow: 'POST' } });
       try {

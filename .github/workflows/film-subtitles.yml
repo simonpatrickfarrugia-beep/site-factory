@@ -1,0 +1,54 @@
+# Auto-generated English subtitles for the free films with sound (scripts/trailers/subtitles.py, open-source Whisper on
+# the runner's CPU: free, roughly 0.5–1x the film's length per film). One job per film, in parallel.
+# Reads our hosted copy (www.movietrailer.channel/media/<slug>.mp4; runners are in the US), writes <slug>.en.vtt
+# to R2 through the pipeline Worker. The subtitle files are also kept as a run artifact. The data file is updated by chat.
+name: film-subtitles
+on:
+  workflow_dispatch:
+    inputs:
+      slugs: { description: 'Film slugs separated by spaces (sound films with a hosted copy)', required: true }
+      model: { description: 'Whisper model: small.en (default) or base.en (faster, rougher)', default: 'small.en' }
+permissions:
+  contents: read
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    outputs:
+      slugs: ${{ steps.s.outputs.slugs }}
+    steps:
+      - id: s
+        env: { SLUGS: '${{ inputs.slugs }}' }
+        run: echo "slugs=$(python3 -c 'import json,os,re;print(json.dumps([s for s in os.environ["SLUGS"].split() if re.fullmatch(r"[a-z0-9-]{3,100}",s)]))')" >> "$GITHUB_OUTPUT"
+  subs:
+    needs: plan
+    runs-on: ubuntu-24.04  # pinned: ubuntu-latest moved to 26.04 in Oct 2026 and broke the Playwright install
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        slug: ${{ fromJson(needs.plan.outputs.slugs) }}
+    env:
+      KEY: ${{ secrets.PIPELINE_RUN_KEY }}
+      SLUG: ${{ matrix.slug }}
+    steps:
+      - uses: actions/checkout@v5
+      - name: Tools
+        run: |
+          which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+          pip install -q faster-whisper==1.1.1
+      - name: Audio
+        run: |
+          curl -sSL --fail --retry 3 -o film.mp4 "https://www.movietrailer.channel/media/$SLUG.mp4"
+          ffmpeg -hide_banner -loglevel error -y -i film.mp4 -vn -ac 1 -ar 16000 audio.wav && rm film.mp4
+      - name: Transcribe
+        run: python3 scripts/trailers/subtitles.py "$SLUG" audio.wav "${{ inputs.model }}"
+      - name: Upload to R2
+        run: |
+          r=$(curl -sS -X PUT --data-binary @"$SLUG.en.vtt" -H 'content-type: text/vtt' "https://trailer-pipeline.simonpatrickfarrugia.workers.dev/media/put?key=$KEY&name=$SLUG.en.vtt")
+          stats=$(cat "$SLUG.subs.json")
+          echo "::notice title=subs-$SLUG::$stats · upload $r · first lines: $(sed -n '5,14p' "$SLUG.en.vtt" | tr '\n' ' ' | cut -c1-400)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: subs-${{ matrix.slug }}
+          path: ${{ matrix.slug }}.*
