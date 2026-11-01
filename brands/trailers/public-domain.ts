@@ -42,7 +42,11 @@ export interface FreeFilm {
   /** Our own copy in R2 (bucket trailer-films), made by .github/workflows/film-ingest.yml and served at /media/<file>
    *  to US visitors only. audio "removed" = the soundtrack was stripped (silent films). Without it the page embeds
    *  the Archive player instead. */
-  media?: { file: string; bytes: number; seconds: number; audio: 'removed' | 'original'; from: string; addedOn: string };
+  media?: {
+    file: string; bytes: number; seconds: number; audio: 'removed' | 'original'; from: string; addedOn: string;
+    /** Subtitles at /media/<file> (film-subtitles workflow). auto = speech recognition, labelled as such. */
+    subtitles?: { file: string; lang: string; label: string; auto: boolean; cues: number; addedOn: string }[];
+  };
   wikidata: string; // Q-number of the film
   runtimeMinutes: number;
   director: string;
@@ -120,6 +124,10 @@ export function freeFilmsToPublish(films: FreeFilm[], now = new Date()): FreeFil
       if (Math.abs(f.media.seconds / 60 - f.runtimeMinutes) > Math.max(8, f.runtimeMinutes * 0.15)) bad(`our copy runs ${Math.round(f.media.seconds / 60)} min, the film ~${f.runtimeMinutes} min`);
       if (f.audio === 'silent' && f.media.audio !== 'removed' && !DATE.test(f.audit?.audioCheckedOn ?? '')) bad('silent film copy keeps its soundtrack without an audio check');
       if (f.media.from !== f.archiveId) bad('media.from must be the archiveId it was copied from');
+      for (const t of f.media.subtitles ?? []) {
+        if (t.file !== `${f.slug}.${t.lang}.vtt` || !/^[a-z]{2}$/.test(t.lang)) bad('subtitles file must be "<slug>.<lang>.vtt"');
+        if (!(t.cues > 20)) bad(`subtitles ${t.file} look empty (${t.cues} cues)`);
+      }
     }
     if (f.status === 'pending' && !f.pendingReason) bad('pending needs a pendingReason');
     if (words(f.about ?? '') < 80) bad(`about is ${words(f.about ?? '')} words; write 80+ of our own`);

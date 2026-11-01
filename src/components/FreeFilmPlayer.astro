@@ -7,10 +7,10 @@
  */
 import { archiveEmbed, archivePage, archiveThumb } from '../../brands/trailers/public-domain';
 
-interface Props { archiveId: string; name: string; src?: string | null; silent?: boolean }
-const { archiveId, name, src = null, silent = false } = Astro.props;
+interface Props { archiveId: string; name: string; src?: string | null; silent?: boolean; tracks?: { src: string; lang: string; label: string }[] }
+const { archiveId, name, src = null, silent = false, tracks = [] } = Astro.props;
 ---
-<div class="film-player" data-embed={archiveEmbed(archiveId)} data-src={src ?? ''} data-poster={archiveThumb(archiveId)} data-page={archivePage(archiveId)} data-name={name} data-silent={silent ? '1' : ''}>
+<div class="film-player" data-embed={archiveEmbed(archiveId)} data-src={src ?? ''} data-poster={archiveThumb(archiveId)} data-page={archivePage(archiveId)} data-name={name} data-silent={silent ? '1' : ''} data-tracks={JSON.stringify(tracks)}>
   <div class="film-player__frame">
     <img src={archiveThumb(archiveId)} alt="" width="640" height="480" fetchpriority="high" />
     <button type="button" class="film-player__play" hidden>
@@ -65,6 +65,12 @@ const { archiveId, name, src = null, silent = false } = Astro.props;
             v.playsInline = true;
             v.preload = 'metadata';
             v.setAttribute('aria-label', `${box.dataset.name ?? 'Film'}, full movie`);
+            v.crossOrigin = 'anonymous';
+            for (const t of JSON.parse(box.dataset.tracks || '[]') as { src: string; lang: string; label: string }[]) {
+              const tr = document.createElement('track');
+              tr.kind = 'subtitles'; tr.src = t.src; tr.srclang = t.lang; tr.label = t.label;
+              v.appendChild(tr);
+            }
             el = v;
           } else {
             const iframe = document.createElement('iframe');

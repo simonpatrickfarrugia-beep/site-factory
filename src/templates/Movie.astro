@@ -35,6 +35,7 @@ const facts = [
   { label: 'Genre', value: m.genres.join(', ') || null },
   { label: 'Box office', value: m.boxOffice },
   { label: 'Sound', value: free ? (free.audio === 'silent' ? 'Silent film' : 'Original soundtrack') : null },
+  { label: 'Subtitles', value: free?.media?.subtitles?.length ? free.media.subtitles.map((t) => t.label).join(', ') : null },
 ].filter((f) => f.value);
 const withYear = `${m.name} ${m.year ?? ''}`.trim();
 const tagAmazon = (url: string) => {
@@ -90,7 +91,7 @@ const faq = [
 ---
 <article class="movie">
   {free ? (
-    <div class="movie__screen"><FreeFilmPlayer archiveId={free.archiveId} name={m.name} src={free.media ? `/media/${free.media.file}` : null} silent={free.audio === 'silent'} /></div>
+    <div class="movie__screen"><FreeFilmPlayer archiveId={free.archiveId} name={m.name} src={free.media ? `/media/${free.media.file}` : null} silent={free.audio === 'silent'} tracks={(free.media?.subtitles ?? []).map((t) => ({ src: `/media/${t.file}`, lang: t.lang, label: t.label }))} /></div>
   ) : m.youtubeId ? (
     <div class="movie__screen"><TrailerScreen youtubeId={m.youtubeId} title={m.name} priority /></div>
   ) : null}
