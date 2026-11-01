@@ -1,0 +1,53 @@
+# Rights check for the free films on movietrailer.channel/watch (scripts/trailers/public_domain.py).
+# Weekly (Mondays 07:41 Melbourne): every published film is re-checked against Wikidata, Wikipedia's US public domain
+# films list and its Internet Archive copy. Anything off opens or updates an issue labelled "rights" (emailed).
+# By hand: mode "find" + titles "Title|Year;Title|Year" looks up candidates (report only, nothing changes).
+name: public-domain
+on:
+  schedule:
+    - cron: '41 20 * * 0'
+  workflow_dispatch:
+    inputs:
+      mode: { description: 'check or find', default: 'check' }
+      titles: { description: 'find only: Title|Year;Title|Year', default: '' }
+      dry: { description: 'true = report only, no issue', default: 'false' }
+permissions:
+  contents: read
+  issues: write
+jobs:
+  run:
+    runs-on: ubuntu-24.04  # pinned: ubuntu-latest moved to 26.04 in Oct 2026 and broke the Playwright install
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - name: Find candidates
+        if: inputs.mode == 'find'
+        env: { TITLES: '${{ inputs.titles }}' }
+        run: |
+          python3 scripts/trailers/public_domain.py find "$TITLES"
+          cat public-domain-find.md >> "$GITHUB_STEP_SUMMARY"
+          echo "::notice title=pd-find::$(sed 's/%/%25/g' public-domain-find.md | sed ':a;N;$!ba;s/\n/%0A/g' | cut -c1-60000)"
+      - name: Check published films
+        if: inputs.mode != 'find'
+        id: check
+        continue-on-error: true
+        run: python3 scripts/trailers/public_domain.py check
+      - name: Report
+        if: inputs.mode != 'find'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FAILED: ${{ steps.check.outcome == 'failure' }}
+          DRY: ${{ inputs.dry || 'false' }}
+        run: |
+          cat public-domain-check.md >> "$GITHUB_STEP_SUMMARY"
+          echo "::notice title=pd-check::$(sed 's/%/%25/g' public-domain-check.md | sed ':a;N;$!ba;s/\n/%0A/g' | cut -c1-20000)"
+          if [ "$DRY" = "true" ]; then exit 0; fi
+          gh label create rights --color D93F0B --description "Public domain films: rights check" 2>/dev/null || true
+          open=$(gh issue list --label rights --state open --json number --jq '.[0].number // empty')
+          if [ "$FAILED" = "true" ]; then
+            if [ -n "$open" ]; then gh issue comment "$open" --body-file public-domain-check.md
+            else gh issue create --title "Free films: rights check needs a look" --label rights --body-file public-domain-check.md; fi
+          else
+            [ -n "$open" ] && gh issue close "$open" --comment "All free films confirmed ✅"
+            true
+          fi
