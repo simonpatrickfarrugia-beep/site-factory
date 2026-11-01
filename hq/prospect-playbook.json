@@ -1,0 +1,235 @@
+{
+  "_about": "Hand-set playbook for the prospecting engine (scripts/hq/prospects.py → hq/prospect-targets.json → IMN HQ 'Where to prospect'). One entry per brand: who to approach (segments), what we offer them, where (regions), and how much each segment is worth (weight 0-1). Organisations only, published addresses only, ≤10 emails a week per brand (claude/OUTREACH.md). Edit weights or set active:false to steer the engine.",
+  "brands": {
+    "vic": {
+      "name": "Vic Tours",
+      "active": true,
+      "weeklyCap": 10,
+      "regionSource": "vic-towns",
+      "perTargetCap": 2,
+      "segments": [
+        {
+          "key": "visitor-centre",
+          "label": "Visitor information centre / tourism association",
+          "weight": 1.0,
+          "offer": "The free {region} day trip plan and town guide for their visitors' page.",
+          "evidence": "A 'plan your visit' or 'useful links' page that already links to outside guides.",
+          "search": ["{region} visitor information centre", "{region} tourism association", "visit {region} victoria"]
+        },
+        {
+          "key": "traders",
+          "label": "Traders' group / chamber of commerce",
+          "weight": 0.8,
+          "offer": "A free guide that sends day-trippers to {region}'s main street, to share with members or link from their site.",
+          "evidence": "A members or 'visit our town' page with outside links.",
+          "search": ["{region} traders association", "{region} chamber of commerce", "{region} business association"]
+        },
+        {
+          "key": "council",
+          "label": "Council tourism / events page",
+          "weight": 0.6,
+          "offer": "The {region} guide as a free resource on their visitor or events page.",
+          "evidence": "A council 'visiting {region}' page listing resources.",
+          "search": ["{region} council visiting", "{region} shire tourism"]
+        },
+        {
+          "key": "history",
+          "label": "Historical society / museum",
+          "weight": 0.4,
+          "offer": "Their museum featured in the {region} guide; a link back from their 'getting here' page.",
+          "evidence": "A 'getting here' or 'local attractions' page.",
+          "search": ["{region} historical society", "{region} museum"]
+        }
+      ]
+    },
+    "community-help-co": {
+      "name": "Community Help Co",
+      "active": true,
+      "weeklyCap": 10,
+      "perTargetCap": 6,
+      "regions": [
+        { "key": "melbourne-north", "label": "Melbourne north", "weight": 1.0 },
+        { "key": "melbourne-west", "label": "Melbourne west", "weight": 1.0 },
+        { "key": "melbourne-east", "label": "Melbourne east", "weight": 0.9 },
+        { "key": "melbourne-south-east", "label": "Melbourne south-east", "weight": 0.9 },
+        { "key": "regional-vic", "label": "Regional Victoria", "weight": 0.7 }
+      ],
+      "segments": [
+        {
+          "key": "workforce-australia",
+          "label": "Workforce Australia provider",
+          "weight": 1.0,
+          "offer": "Free resume builder, cover letter builder and job finder their participants can use today.",
+          "evidence": "A 'job seeker resources' page with outside tools.",
+          "search": ["Workforce Australia provider {region}", "employment services provider {region} job seeker resources"]
+        },
+        {
+          "key": "disability-employment",
+          "label": "Disability employment / Inclusive Employment Australia provider",
+          "weight": 1.0,
+          "offer": "Free, plain-language resume and job tools, plus 1:1 mentoring for participants who want weekly support.",
+          "evidence": "A participant resources page.",
+          "search": ["disability employment service {region}", "inclusive employment australia provider {region}"]
+        },
+        {
+          "key": "neighbourhood-house",
+          "label": "Neighbourhood house / community centre",
+          "weight": 0.9,
+          "offer": "Free job tools for their computer and job-help sessions.",
+          "evidence": "A 'useful links' or job-help program page.",
+          "search": ["neighbourhood house {region} job help", "community centre {region} employment support"]
+        },
+        {
+          "key": "library",
+          "label": "Public library (job help / digital literacy)",
+          "weight": 0.7,
+          "offer": "Free resume and cover letter builders for their job-seeker resources list.",
+          "evidence": "A library 'job seekers' or 'careers' resources page.",
+          "search": ["{region} library job seekers resources", "{region} library careers resources"]
+        },
+        {
+          "key": "skills-jobs-centre",
+          "label": "TAFE Skills and Jobs Centre",
+          "weight": 0.8,
+          "offer": "Free job tools to list alongside their career advice.",
+          "evidence": "A careers or job-ready resources page.",
+          "search": ["Skills and Jobs Centre {region}", "TAFE {region} careers resources"]
+        },
+        {
+          "key": "support-coordination",
+          "label": "NDIS support coordinator / plan manager",
+          "weight": 0.9,
+          "offer": "1:1 goal mentoring with weekly written notes, for participants with capacity-building funding.",
+          "evidence": "A provider directory or 'our partners' page.",
+          "search": ["NDIS support coordination {region}", "NDIS plan manager {region}"]
+        }
+      ]
+    },
+    "trade-admin": {
+      "name": "Trade Admin",
+      "active": false,
+      "weeklyCap": 10,
+      "perTargetCap": 3,
+      "regionSource": "trades",
+      "segments": [
+        {
+          "key": "association",
+          "label": "Trade association member resources",
+          "weight": 1.0,
+          "offer": "A free {region} invoice and quote template (GST done, saves as PDF) for their members' resources page.",
+          "evidence": "A member resources or business tools page.",
+          "search": ["{region} association australia member resources", "master {region}s association business resources"]
+        },
+        {
+          "key": "tafe",
+          "label": "TAFE apprentice / trade course page",
+          "weight": 0.8,
+          "offer": "A free invoice template for apprentices starting out on their own.",
+          "evidence": "An apprentice resources or 'starting your business' page.",
+          "search": ["TAFE {region} apprentice resources", "{region} apprenticeship starting your own business"]
+        },
+        {
+          "key": "apprenticeship-network",
+          "label": "Apprenticeship Network provider",
+          "weight": 0.6,
+          "offer": "Free trade paperwork templates for their apprentices.",
+          "evidence": "An apprentice resources page.",
+          "search": ["Australian Apprenticeship Support Network {region} resources"]
+        }
+      ]
+    },
+    "trailers": {
+      "name": "MovieTrailer.Channel",
+      "active": false,
+      "weeklyCap": 10,
+      "perTargetCap": 4,
+      "regions": [
+        { "key": "vic", "label": "Victoria", "weight": 1.0 },
+        { "key": "nsw", "label": "New South Wales", "weight": 1.0 },
+        { "key": "qld", "label": "Queensland", "weight": 0.8 },
+        { "key": "wa-sa", "label": "WA and SA", "weight": 0.7 },
+        { "key": "online", "label": "Online / national", "weight": 0.9 }
+      ],
+      "segments": [
+        {
+          "key": "film-society",
+          "label": "Film society / classic film club",
+          "weight": 1.0,
+          "offer": "Free trailers and where-to-watch for every classic film on their screening list.",
+          "evidence": "A links or 'resources' page.",
+          "search": ["film society {region}", "classic film club {region}"]
+        },
+        {
+          "key": "film-school",
+          "label": "Film school / university film club",
+          "weight": 0.8,
+          "offer": "The Original films pitch page for students' short films.",
+          "evidence": "A student resources page.",
+          "search": ["film school {region} student resources", "university film society {region}"]
+        },
+        {
+          "key": "independent-cinema",
+          "label": "Independent / repertory cinema",
+          "weight": 0.6,
+          "offer": "Trailer pages for their classic screenings.",
+          "evidence": "A 'classics' or repertory program page.",
+          "search": ["repertory cinema {region} classic films", "independent cinema {region} classics"]
+        },
+        {
+          "key": "library-film",
+          "label": "Library film program",
+          "weight": 0.5,
+          "offer": "Trailers and where-to-watch for their film-club titles.",
+          "evidence": "A film club or movie night page.",
+          "search": ["library film club {region}", "library movie night {region}"]
+        }
+      ]
+    },
+    "paycalc": {
+      "name": "MyPayCalc",
+      "active": false,
+      "weeklyCap": 10,
+      "perTargetCap": 4,
+      "regions": [
+        { "key": "vic", "label": "Victoria", "weight": 1.0 },
+        { "key": "nsw", "label": "New South Wales", "weight": 1.0 },
+        { "key": "qld", "label": "Queensland", "weight": 0.9 },
+        { "key": "national", "label": "National", "weight": 1.0 }
+      ],
+      "segments": [
+        {
+          "key": "uni-careers",
+          "label": "University / TAFE careers service",
+          "weight": 1.0,
+          "offer": "A free take-home pay calculator for students comparing job offers.",
+          "evidence": "A careers resources page with outside tools.",
+          "search": ["university careers service {region} resources", "student money tools {region}"]
+        },
+        {
+          "key": "migrant-centre",
+          "label": "Migrant / multicultural resource centre",
+          "weight": 0.9,
+          "offer": "A plain-language pay calculator showing tax and super for new workers.",
+          "evidence": "An employment resources page.",
+          "search": ["migrant resource centre {region} employment", "multicultural employment support {region}"]
+        },
+        {
+          "key": "youth-employment",
+          "label": "Youth employment service",
+          "weight": 0.8,
+          "offer": "A free pay calculator for young people's first job.",
+          "evidence": "A youth job resources page.",
+          "search": ["youth employment service {region} resources"]
+        },
+        {
+          "key": "financial-counselling",
+          "label": "Financial counselling / money support service",
+          "weight": 0.7,
+          "offer": "A free pay and tax calculator for budgeting sessions.",
+          "evidence": "A useful tools page.",
+          "search": ["financial counselling {region} useful tools", "money support {region} budgeting tools"]
+        }
+      ]
+    }
+  }
+}

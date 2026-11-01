@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>IMN HQ Outreach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: sticky top bar (brand chips + tabs), summary strip, then one working view: board columns, prospect list or replies. */
+:root{
+  --bg:#F3F1EC; --surface:#FFFFFF; --sunk:#E9E6DF; --fg:#1D1F22; --muted:#666A70; --line:#DAD6CD;
+  --accent:#2F4AD0; --accent-ink:#FFFFFF; --due:#B5530F; --due-bg:#FCEBDD; --good:#1E7A4C; --good-bg:#E1F2E8; --bad:#9A2F2F;
+  --display:"Bricolage Grotesque",Georgia,serif; --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --vic:#00653B; --community-help-co:#1F6F5B; --trade-admin:#E8641B; --trailers:#C68A12; --paycalc:#152B4D;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#15171A; --surface:#1E2125; --sunk:#26292E; --fg:#ECEDEF; --muted:#A1A6AD; --line:#33373D;
+  --accent:#8EA2FF; --accent-ink:#0E1330; --due:#F4A261; --due-bg:#3A2716; --good:#7FD8A6; --good-bg:#16301F; --bad:#F08A8A;
+  --vic:#4FBF86; --community-help-co:#5FC7A8; --trade-admin:#F2924F; --trailers:#F2B53A; --paycalc:#8FB0E8; color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 var(--body);-webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom,0px)}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible,textarea:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.wrap{max-width:1320px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding-block:12px 10px}
+h1{font:700 1.35rem/1 var(--display);margin:0;letter-spacing:-.01em}
+h1 small{font:500 .78rem var(--mono);color:var(--muted);margin-left:8px;letter-spacing:0}
+.tabs{display:flex;gap:4px;background:var(--sunk);padding:3px;border-radius:9px;margin-left:auto}
+.tabs button{border:0;background:none;padding:6px 12px;border-radius:7px;font-weight:600;color:var(--muted)}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--fg);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 12px;font-size:.88rem;display:flex;align-items:center;gap:7px;white-space:nowrap}
+.chip[aria-pressed="true"]{border-color:var(--fg);background:var(--fg);color:var(--bg)}
+.dot{width:9px;height:9px;border-radius:50%;flex:none;background:var(--c,var(--muted))}
+.chip .paused{font-size:.72rem;color:var(--muted)}
+.chip[aria-pressed="true"] .paused{color:inherit;opacity:.7}
+main{padding-block:16px 48px;display:grid;gap:18px}
+main>*{min-width:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;min-width:0}
+.stat b{display:block;font:500 1.6rem/1.1 var(--mono);font-variant-numeric:tabular-nums}
+.stat span{font-size:.8rem;color:var(--muted);letter-spacing:.02em}
+.stat.due b{color:var(--due)}
+.board{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,1fr);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+.col{scroll-snap-align:start;background:var(--sunk);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:8px;min-height:160px;min-width:0}
+.col h2{font:600 .78rem var(--body);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:2px 4px 2px;display:flex;justify-content:space-between}
+.col h2 em{font:500 .78rem var(--mono);font-style:normal}
+.card{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--c,var(--line));border-radius:9px;padding:10px 12px;text-align:left;width:100%;display:grid;gap:3px;min-width:0}
+.card:hover{border-color:var(--muted);border-left-color:var(--c)}
+.card .name{font-weight:600;line-height:1.3;overflow-wrap:anywhere}
+.card .meta{font-size:.82rem;color:var(--muted);overflow-wrap:anywhere}
+.card .last{font-size:.82rem;overflow-wrap:anywhere}
+.pill{display:inline-block;font:600 .72rem var(--body);padding:2px 8px;border-radius:999px;background:var(--sunk);color:var(--muted);justify-self:start}
+.pill.due{background:var(--due-bg);color:var(--due)}
+.pill.good{background:var(--good-bg);color:var(--good)}
+.empty{color:var(--muted);font-size:.85rem;padding:8px 6px}
+.hint{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:16px 18px;color:var(--muted);max-width:70ch}
+.hint strong{color:var(--fg)}
+/* Prospect view */
+.pgrid{display:grid;gap:16px}
+.pbrand{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.phead{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;padding:14px 16px;border-bottom:1px solid var(--line);border-top:4px solid var(--c)}
+.phead h2{font:700 1.15rem var(--display);margin:0}
+.phead .sub{color:var(--muted);font-size:.86rem}
+.phead .cap{margin-left:auto;font:500 .85rem var(--mono);font-variant-numeric:tabular-nums}
+.meter{height:6px;background:var(--sunk);border-radius:3px;overflow:hidden;width:120px;display:inline-block;vertical-align:middle;margin-left:8px}
+.meter i{display:block;height:100%;background:var(--c)}
+.plist{list-style:none;margin:0;padding:0}
+.prow{display:grid;grid-template-columns:52px 1fr auto;gap:4px 12px;padding:12px 16px;border-top:1px solid var(--line);align-items:start}
+.prow:first-child{border-top:0}
+.score{font:500 1.05rem var(--mono);font-variant-numeric:tabular-nums;text-align:right;padding-top:1px}
+.score small{display:block;font-size:.68rem;color:var(--muted)}
+.ptitle{font-weight:600;min-width:0;overflow-wrap:anywhere}
+.ptitle span{color:var(--muted);font-weight:400}
+.pwhy{font-size:.82rem;color:var(--muted);grid-column:2/4;overflow-wrap:anywhere}
+.poffer{font-size:.86rem;grid-column:2/4;overflow-wrap:anywhere}
+.pq{grid-column:2/4;display:flex;flex-wrap:wrap;gap:6px}
+.pq a{font-size:.8rem;border:1px solid var(--line);border-radius:6px;padding:2px 8px;color:var(--fg);text-decoration:none;background:var(--bg)}
+.pq a:hover{border-color:var(--muted)}
+.more{width:100%;border:0;border-top:1px solid var(--line);background:none;padding:10px;color:var(--accent);font-weight:600}
+/* Replies */
+.rlist{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.rlist li{display:grid;grid-template-columns:auto 1fr auto;gap:2px 12px;padding:12px 16px;border-top:1px solid var(--line);align-items:baseline}
+.rlist li:first-child{border-top:0}
+.rlist .who{font-weight:600;overflow-wrap:anywhere;min-width:0}
+.rlist .subj{grid-column:2/4;font-size:.88rem;color:var(--muted);overflow-wrap:anywhere}
+.rlist time{font:500 .78rem var(--mono);color:var(--muted)}
+/* Detail sheet */
+dialog{border:0;padding:0;background:var(--surface);color:var(--fg);width:min(560px,100%);max-height:100dvh;margin:0 0 0 auto;height:100dvh;box-shadow:-8px 0 30px rgba(0,0,0,.18)}
+dialog::backdrop{background:rgba(10,12,16,.4)}
+.sheet{display:grid;gap:16px;padding:18px max(18px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) 18px;padding-top:calc(18px + env(safe-area-inset-top,0px))}
+.sheet header{display:flex;gap:12px;align-items:start}
+.sheet h2{font:700 1.3rem/1.2 var(--display);margin:0;overflow-wrap:anywhere}
+.sheet .close{margin-left:auto;border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:4px 10px}
+.kv{display:grid;grid-template-columns:110px 1fr;gap:6px 12px;font-size:.9rem}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0;overflow-wrap:anywhere;min-width:0}
+.kv a{color:var(--accent)}
+.stages{display:flex;flex-wrap:wrap;gap:6px}
+.stages button{border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:6px 11px;font-weight:600;font-size:.88rem}
+.stages button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+label{font-size:.8rem;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;font-weight:600}
+textarea,input[type=text]{width:100%;font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+textarea{min-height:70px;resize:vertical}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn{border:0;background:var(--accent);color:var(--accent-ink);border-radius:8px;padding:8px 14px;font-weight:600}
+.timeline{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.timeline li{display:grid;grid-template-columns:86px 1fr;gap:10px;font-size:.88rem}
+.timeline time{font:500 .76rem var(--mono);color:var(--muted);padding-top:2px}
+.timeline .t-body{min-width:0;overflow-wrap:anywhere}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:8px 16px;border-radius:999px;font-weight:600;font-size:.9rem;z-index:20}
+.error{color:var(--bad)}
+@media (max-width:640px){
+  .tabs{margin-left:0;width:100%}
+  .tabs button{flex:1}
+  .board{grid-auto-columns:86%}
+  .prow{grid-template-columns:44px 1fr}
+  .prow .pill{grid-column:2}
+  .pwhy,.poffer,.pq{grid-column:2}
+  .kv{grid-template-columns:1fr}
+  .kv dt{margin-top:4px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <div class="bar">
+    <h1>IMN HQ <small id="updated">Outreach</small></h1>
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tab-board" aria-selected="true" data-view="board">Board</button>
+      <button role="tab" id="tab-prospect" aria-selected="false" data-view="prospect">Prospect</button>
+      <button role="tab" id="tab-replies" aria-selected="false" data-view="replies">Replies</button>
+    </div>
+  </div>
+  <div class="chips" id="chips" aria-label="Filter by brand"></div>
+</div></div>
+
+<main class="wrap">
+  <section class="strip" id="strip" aria-label="This week"></section>
+  <section id="view"></section>
+</main>
+
+<dialog id="sheet" aria-labelledby="sheet-title"><div class="sheet" id="sheet-body"></div></dialog>
+
+<script>
+const STAGE_LABEL = { found: 'Found', drafted: 'Drafted', sent: 'Sent', replied: 'Replied', linked: 'Linked', won: 'Won', no: 'No' };
+const state = { view: 'board', brand: 'all', board: null, summary: null, prospects: null, replies: null, showAll: {} };
+try { const s = JSON.parse(localStorage.getItem('imn-hq') || '{}'); if (s.view) state.view = s.view; if (s.brand) state.brand = s.brand; } catch (e) {}
+const save = () => { try { localStorage.setItem('imn-hq', JSON.stringify({ view: state.view, brand: state.brand })); } catch (e) {} };
+
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const color = (b) => `var(--${b})`;
+const brandName = (b) => (state.board?.brands.find((x) => x.key === b)?.name) || b;
+const ago = (iso) => {
+  if (!iso) return '';
+  const d = Math.floor((Date.now() - Date.parse(iso)) / 86400000);
+  if (d <= 0) return 'today';
+  if (d === 1) return 'yesterday';
+  if (d < 14) return d + ' days ago';
+  return new Date(iso).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
+};
+const short = (iso) => new Date(iso).toLocaleString('en-AU', { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' });
+
+async function api(path, body) {
+  const res = await fetch(path, body ? { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) } : {});
+  const data = await res.json().catch(() => ({ error: 'The server sent something unexpected. Refresh and try again.' }));
+  if (!res.ok || data.error) throw new Error(data.error || 'Request failed (' + res.status + ')');
+  return data;
+}
+function toast(msg) {
+  const t = document.createElement('div'); t.className = 'toast'; t.setAttribute('role', 'status'); t.textContent = msg;
+  document.body.appendChild(t); setTimeout(() => t.remove(), 2200);
+}
+
+async function load() {
+  try {
+    const [board, summary, prospects, replies] = await Promise.all([api('/api/board'), api('/api/summary'), api('/api/prospects'), api('/api/replies')]);
+    Object.assign(state, { board, summary, prospects, replies });
+    $('#updated').textContent = 'Targets scored ' + new Date(prospects.generated).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
+    render();
+  } catch (e) {
+    $('#view').innerHTML = '<p class="error">' + esc(e.message) + '</p>';
+  }
+}
+
+function render() {
+  document.querySelectorAll('.tabs button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.view === state.view)));
+  renderChips(); renderStrip();
+  if (state.view === 'board') renderBoard();
+  else if (state.view === 'prospect') renderProspect();
+  else renderReplies();
+}
+
+function renderChips() {
+  const brands = state.board.brands;
+  const counts = {};
+  state.board.orgs.forEach((o) => { counts[o.brand] = (counts[o.brand] || 0) + 1; });
+  $('#chips').innerHTML = [`<button class="chip" aria-pressed="${state.brand === 'all'}" data-brand="all">All brands</button>`]
+    .concat(brands.map((b) => `<button class="chip" style="--c:${color(b.key)}" aria-pressed="${state.brand === b.key}" data-brand="${b.key}"><i class="dot"></i>${esc(b.name)}${b.active ? '' : ' <span class="paused">paused</span>'}</button>`)).join('');
+}
+
+function inBrand(b) { return state.brand === 'all' || state.brand === b; }
+
+function renderStrip() {
+  const s = state.summary; const keys = Object.keys(s).filter(inBrand);
+  const sum = (f) => keys.reduce((a, k) => a + (s[k][f] || 0), 0);
+  const contacted = sum('contacted'); const answered = keys.reduce((a, k) => a + (s[k].byStage.replied || 0) + (s[k].byStage.linked || 0) + (s[k].byStage.won || 0) + (s[k].byStage.no || 0), 0);
+  const rate = contacted ? Math.round((100 * answered) / contacted) + '%' : '–';
+  const due = sum('followUps');
+  $('#strip').innerHTML = `
+    <div class="stat"><b>${sum('sentWeek')}</b><span>Sent this week</span></div>
+    <div class="stat"><b>${rate}</b><span>Reply rate (${contacted} contacted)</span></div>
+    <div class="stat"><b>${sum('links')}</b><span>Links won</span></div>
+    <div class="stat${due ? ' due' : ''}"><b>${due}</b><span>Follow-ups due (7+ days)</span></div>`;
+}
+
+function renderBoard() {
+  const orgs = state.board.orgs.filter((o) => inBrand(o.brand));
+  if (!orgs.length) {
+    $('#view').innerHTML = `<div class="hint"><strong>No organisations on the board yet.</strong> Ask Claude to "find 10 for Vic Tours" (or another brand). It picks them from <em>Where to prospect</em>, adds each one here as Found, and drafts the emails in Outlook. Cards then move to Sent and Replied on their own as the emails go out and come back.</div>`;
+    return;
+  }
+  const cols = state.board.stages.map((st) => {
+    const list = orgs.filter((o) => o.stage === st);
+    const cards = list.map((o) => {
+      const flag = o.followUpDue ? '<span class="pill due">Follow up</span>' : (o.stage === 'replied' ? '<span class="pill good">Replied ' + esc(ago(o.last_in || o.stage_at)) + '</span>' : '');
+      return `<button class="card" style="--c:${color(o.brand)}" data-org="${o.id}">
+        <span class="name">${esc(o.name)}</span>
+        <span class="meta">${esc(brandName(o.brand))}${o.region ? ' · ' + esc(o.region) : ''}${o.contact_name ? ' · ' + esc(o.contact_name) : ''}</span>
+        ${o.last_note ? `<span class="last">${esc(o.last_note)}</span>` : ''}
+        ${o.next_step ? `<span class="meta">Next: ${esc(o.next_step)}</span>` : ''}
+        <span class="meta">${esc(STAGE_LABEL[o.stage])} ${esc(ago(o.stage_at))}</span>
+        ${flag}
+      </button>`;
+    }).join('') || '<p class="empty">Nothing here</p>';
+    return `<div class="col"><h2>${STAGE_LABEL[st]} <em>${list.length}</em></h2>${cards}</div>`;
+  });
+  $('#view').innerHTML = `<div class="board" role="list">${cols.join('')}</div>`;
+}
+
+function renderProspect() {
+  const brands = state.prospects.brands.filter((b) => inBrand(b.key)).sort((a, z) => (z.active - a.active));
+  $('#view').innerHTML = `<div class="pgrid">${brands.map((b) => {
+    const all = !!state.showAll[b.key];
+    const rows = all ? b.top : b.next.slice(0, b.active ? Math.max(b.leftThisWeek, 5) : 5);
+    const pct = Math.round((100 * b.foundThisWeek) / b.weeklyCap);
+    return `<article class="pbrand" style="--c:${color(b.key)}">
+      <div class="phead">
+        <h2>${esc(b.name)}</h2>
+        <span class="sub">${b.active ? 'Active' : 'Paused (pilot is Vic Tours and Community Help Co)'} · ${b.covered} of ${b.targets} targets covered, ${b.started} started</span>
+        <span class="cap">${b.foundThisWeek}/${b.weeklyCap} found this week<span class="meter"><i style="width:${Math.min(100, pct)}%"></i></span></span>
+      </div>
+      <ol class="plist">${rows.map((t) => `
+        <li class="prow">
+          <div class="score">${t.score.toFixed(0)}<small>score</small></div>
+          <div class="ptitle">${esc(t.regionLabel)} <span>· ${esc(t.segmentLabel)}</span></div>
+          <span class="pill${t.status === 'covered' ? ' good' : ''}">${t.status === 'open' ? 'Open' : t.status === 'started' ? t.found + ' found' : 'Covered'}</span>
+          <div class="pwhy">${esc(t.why)}${t.learn !== 1 ? ' · segment ' + (t.learn > 1 ? 'converting' : 'not converting') + ' (×' + t.learn + ')' : ''}</div>
+          <div class="poffer"><strong>Offer:</strong> ${esc(t.offer)}</div>
+          <div class="pq">${t.search.map((q) => `<a href="https://www.google.com/search?q=${encodeURIComponent(q)}" target="_blank" rel="noopener">${esc(q)}</a>`).join('')}${t.page ? `<a href="${esc(t.page)}" target="_blank" rel="noopener">Our page ↗</a>` : ''}</div>
+        </li>`).join('')}</ol>
+      <button class="more" data-more="${b.key}">${all ? 'Show next up only' : 'Show top 40 targets'}</button>
+    </article>`;
+  }).join('')}</div>`;
+}
+
+function renderReplies() {
+  const list = state.replies.messages.filter((m) => inBrand(m.brand));
+  if (!list.length) { $('#view').innerHTML = '<div class="hint">No replies yet. Every email that reaches a brand address (hello@, simon@, partners@) shows up here, with the organisation it matched.</div>'; return; }
+  $('#view').innerHTML = `<ul class="rlist">${list.map((m) => `
+    <li><i class="dot" style="--c:${color(m.brand)}"></i>
+      <span class="who">${m.org_name ? `<button class="linkish" data-org="${m.org_id}" style="border:0;background:none;padding:0;font-weight:600;color:var(--accent)">${esc(m.org_name)}</button>` : esc(m.mail_from)}</span>
+      <time datetime="${esc(m.at)}">${esc(short(m.at))}</time>
+      <span class="subj">${esc(m.subject || '(no subject)')} · to ${esc(m.mail_to)}</span>
+    </li>`).join('')}</ul>`;
+}
+
+async function openOrg(id) {
+  const dlg = $('#sheet'); const body = $('#sheet-body');
+  body.innerHTML = '<p>Loading…</p>'; if (!dlg.open) dlg.showModal();
+  try {
+    const d = await api('/api/orgs/' + id);
+    const o = d.org; const c = d.contacts[0];
+    const items = d.touches.map((t) => ({ at: t.at, text: `<strong>${esc(STAGE_LABEL[t.stage] || t.stage)}</strong>${t.subject ? ' · ' + esc(t.subject) : ''}${t.note ? ' · ' + esc(t.note) : ''}` }))
+      .concat(d.messages.map((m) => ({ at: m.at, text: (m.direction === 'in' ? 'Email in from ' + esc(m.mail_from) : 'Email out to ' + esc(m.mail_to)) + ' · ' + esc(m.subject || '') })))
+      .sort((a, z) => z.at.localeCompare(a.at));
+    body.innerHTML = `
+      <header><div><h2 id="sheet-title">${esc(o.name)}</h2><span class="pill" style="margin-top:6px">${esc(brandName(o.brand))}</span></div><button class="close" id="close">Close</button></header>
+      <dl class="kv">
+        ${c ? `<dt>Contact</dt><dd>${esc(c.name || '')}${c.role ? ', ' + esc(c.role) : ''} <span>${esc(c.email)}</span>${c.opted_out_at ? ' <span class="pill due">Opted out</span>' : ''}</dd>` : ''}
+        ${o.website ? `<dt>Website</dt><dd><a href="${esc(o.website)}" target="_blank" rel="noopener">${esc(o.website)}</a></dd>` : ''}
+        ${o.evidence_url ? `<dt>Links page</dt><dd><a href="${esc(o.evidence_url)}" target="_blank" rel="noopener">${esc(o.evidence_url)}</a></dd>` : ''}
+        ${d.target ? `<dt>Target</dt><dd>${esc(d.target.segmentLabel)} · ${esc(d.target.regionLabel)}</dd>` : ''}
+        ${o.notes ? `<dt>Notes</dt><dd>${esc(o.notes)}</dd>` : ''}
+        ${d.links.length ? `<dt>Links won</dt><dd>${d.links.map((l) => `<a href="${esc(l.page_url)}" target="_blank" rel="noopener">${esc(l.page_url)}</a>`).join('<br>')}</dd>` : ''}
+      </dl>
+      <div><label>Stage</label><div class="stages" style="margin-top:6px">${state.board.stages.map((s) => `<button data-stage="${s}" aria-pressed="${o.stage === s}">${STAGE_LABEL[s]}</button>`).join('')}</div></div>
+      <div><label for="next">Next step</label><div class="row" style="margin-top:6px"><input type="text" id="next" value="${esc(o.next_step || '')}" placeholder="e.g. Follow up on 12 Nov"><button class="btn" id="save-next">Save</button></div></div>
+      <div><label for="note">Add a note</label><textarea id="note" placeholder="What happened?"></textarea><div class="row" style="margin-top:6px"><button class="btn" id="save-note">Add note</button></div></div>
+      <div><label>History</label><ul class="timeline" style="margin-top:8px">${items.map((i) => `<li><time>${esc(short(i.at))}</time><span class="t-body">${i.text}</span></li>`).join('') || '<li><span></span><span class="t-body">No history yet</span></li>'}</ul></div>`;
+    $('#close').onclick = () => dlg.close();
+    body.querySelectorAll('[data-stage]').forEach((b) => b.onclick = async () => {
+      const note = b.dataset.stage === 'no' ? ($('#note').value.trim() || 'No') : $('#note').value.trim() || null;
+      try { await api('/api/orgs/' + id + '/stage', { stage: b.dataset.stage, note }); toast('Moved to ' + STAGE_LABEL[b.dataset.stage]); await load(); openOrg(id); } catch (e) { toast(e.message); }
+    });
+    $('#save-next').onclick = async () => { try { await api('/api/orgs/' + id + '/next', { next_step: $('#next').value }); toast('Next step saved'); load(); } catch (e) { toast(e.message); } };
+    $('#save-note').onclick = async () => { try { await api('/api/orgs/' + id + '/note', { note: $('#note').value }); toast('Note added'); await load(); openOrg(id); } catch (e) { toast(e.message); } };
+  } catch (e) {
+    body.innerHTML = '<p class="error">' + esc(e.message) + '</p><button class="close" onclick="this.closest(\'dialog\').close()">Close</button>';
+  }
+}
+
+document.addEventListener('click', (e) => {
+  const t = e.target.closest('button'); if (!t) return;
+  if (t.dataset.view) { state.view = t.dataset.view; save(); render(); }
+  else if (t.dataset.brand) { state.brand = t.dataset.brand; save(); render(); }
+  else if (t.dataset.org) openOrg(Number(t.dataset.org));
+  else if (t.dataset.more) { state.showAll[t.dataset.more] = !state.showAll[t.dataset.more]; renderProspect(); }
+});
+$('#sheet').addEventListener('click', (e) => { if (e.target.id === 'sheet') e.target.close(); });
+load();
+setInterval(() => { if (!$('#sheet').open && document.visibilityState === 'visible') load(); }, 60000);
+</script>
+</body>
+</html>

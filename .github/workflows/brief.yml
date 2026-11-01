@@ -27,10 +27,13 @@ jobs:
           RUN_KEY: ${{ secrets.PIPELINE_RUN_KEY }}
           GH_TOKEN: ${{ github.token }}
         run: python3 scripts/hq/brief.py > /dev/null && cat hq/brief.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Score prospect targets (IMN HQ "Where to prospect")
+        continue-on-error: true
+        run: python3 scripts/hq/prospects.py
       - name: Commit
         run: |
           git config user.name "Site Factory brief" && git config user.email "brief@movietrailer.channel"
-          git add hq/brief.md
+          git add hq/brief.md hq/prospect-targets.json
           git diff --cached --quiet && exit 0
           git commit -m "HQ: daily brief [skip ci]"
           for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
