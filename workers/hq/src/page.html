@@ -156,6 +156,23 @@ td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabu
 .delta{font-family:var(--mono);font-size:.8rem}
 .delta.up{color:var(--good)}
 .delta.down{color:var(--bad)}
+/* Affiliates */
+.agroup{display:grid;gap:8px}
+.agroup h2{font:700 1.05rem var(--display);margin:4px 0 0;display:flex;gap:8px;align-items:baseline}
+.agroup h2 em{font:500 .8rem var(--mono);font-style:normal;color:var(--muted)}
+.alist{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.arow{display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:11px 16px;border-top:1px solid var(--line);width:100%;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0}
+.alist li:first-child .arow{border-top:0}
+.arow:hover{background:var(--bg)}
+.arow .an{font-weight:600;overflow-wrap:anywhere;min-width:0}
+.arow .am{font-size:.82rem;color:var(--muted);overflow-wrap:anywhere;min-width:0}
+.arow .ar{text-align:right;display:grid;gap:4px;justify-items:end;align-content:start}
+.dots{display:inline-flex;gap:4px;margin-right:6px;vertical-align:middle}
+.st-approved{background:var(--good-bg);color:var(--good)}
+.st-applied{background:var(--sunk);color:var(--fg)}
+.st-rejected,.st-paused{background:var(--sunk);color:var(--muted)}
+.topbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px 0}
 @media (max-width:640px){
   .tabs{margin-left:0;width:100%}
   .tabs button{flex:1}
@@ -181,6 +198,7 @@ td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabu
       <button role="tab" id="tab-prospect" aria-selected="false" data-view="prospect">Prospect</button>
       <button role="tab" id="tab-pipeline" aria-selected="false" data-view="pipeline">Pipeline</button>
       <button role="tab" id="tab-replies" aria-selected="false" data-view="replies">Replies</button>
+      <button role="tab" id="tab-affiliates" aria-selected="false" data-view="affiliates">Affiliates</button>
     </div>
   </div>
   <div class="chips" id="chips" aria-label="Filter by brand"></div>
@@ -195,7 +213,7 @@ td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabu
 
 <script>
 const STAGE_LABEL = { found: 'Found', drafted: 'Drafted', sent: 'Sent', replied: 'Replied', linked: 'Linked', won: 'Won', no: 'No' };
-const state = { view: 'board', brand: 'all', board: null, summary: null, prospects: null, replies: null, pipeline: null, showAll: {}, open: {} };
+const state = { view: 'board', brand: 'all', board: null, summary: null, prospects: null, replies: null, pipeline: null, affiliates: null, showAll: {}, open: {} };
 try { const s = JSON.parse(localStorage.getItem('imn-hq') || '{}'); if (s.view) state.view = s.view; if (s.brand) state.brand = s.brand; } catch (e) {}
 const save = () => { try { localStorage.setItem('imn-hq', JSON.stringify({ view: state.view, brand: state.brand })); } catch (e) {} };
 
@@ -226,8 +244,8 @@ function toast(msg) {
 
 async function load() {
   try {
-    const [board, summary, prospects, replies, pipeline] = await Promise.all([api('/api/board'), api('/api/summary'), api('/api/prospects'), api('/api/replies'), api('/api/pipeline')]);
-    Object.assign(state, { board, summary, prospects, replies, pipeline });
+    const [board, summary, prospects, replies, pipeline, affiliates] = await Promise.all([api('/api/board'), api('/api/summary'), api('/api/prospects'), api('/api/replies'), api('/api/pipeline'), api('/api/affiliates')]);
+    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates });
     $('#updated').textContent = 'Targets scored ' + new Date(prospects.generated).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
     render();
   } catch (e) {
@@ -241,6 +259,7 @@ function render() {
   if (state.view === 'board') renderBoard();
   else if (state.view === 'prospect') renderProspect();
   else if (state.view === 'pipeline') renderPipeline();
+  else if (state.view === 'affiliates') renderAffiliates();
   else renderReplies();
 }
 
@@ -255,6 +274,16 @@ function renderChips() {
 function inBrand(b) { return state.brand === 'all' || state.brand === b; }
 
 function renderStrip() {
+  if (state.view === 'affiliates') {
+    const items = affItems();
+    const c = (f) => items.filter(f).length;
+    $('#strip').innerHTML = `
+      <div class="stat"><b>${c((i) => i.status === 'approved')}</b><span>Approved${c((i) => i.notWired) ? ' (' + c((i) => i.notWired) + ' not live yet)' : ''}</span></div>
+      <div class="stat"><b>${c((i) => i.status === 'applied')}</b><span>Applied, waiting</span></div>
+      <div class="stat${c((i) => i.chase) ? ' due' : ''}"><b>${c((i) => i.chase)}</b><span>To chase (14+ days or follow-up due)</span></div>
+      <div class="stat"><b>${c((i) => i.status === 'not-applied' && !i.brandList.includes('ideas'))}</b><span>Not applied yet</span></div>`;
+    return;
+  }
   const s = state.summary; const keys = Object.keys(s).filter(inBrand);
   const sum = (f) => keys.reduce((a, k) => a + (s[k][f] || 0), 0);
   const contacted = sum('contacted'); const answered = keys.reduce((a, k) => a + (s[k].byStage.replied || 0) + (s[k].byStage.linked || 0) + (s[k].byStage.won || 0) + (s[k].byStage.no || 0), 0);
@@ -448,6 +477,92 @@ async function openDraft(brand, key) {
   };
 }
 
+// ---------- Affiliates ----------
+const AFF_LABEL = { 'not-applied': 'Not applied', applied: 'Applied', approved: 'Approved', rejected: 'Rejected', paused: 'Paused' };
+function affItems() {
+  return (state.affiliates?.items || []).filter((i) => state.brand === 'all' || i.brandList.includes(state.brand));
+}
+function affRow(i) {
+  const brands = i.brandList.filter((b) => b !== 'ideas').map((b) => `<i class="dot" style="--c:${color(b)}" title="${esc(brandName(b))}"></i>`).join('');
+  const right = i.status === 'applied'
+    ? `${i.chase ? '<span class="pill due">Chase</span>' : ''}<span class="meta">${i.waiting !== null ? i.waiting + ' days waiting' : 'date not recorded'}</span>`
+    : i.status === 'approved'
+      ? (i.notWired ? '<span class="pill due">Not live yet</span>' : '<span class="pill good">Live</span>')
+      : `<span class="pill st-${i.status}">${AFF_LABEL[i.status]}</span>`;
+  const sub = [i.network, i.brandList.filter((b) => b !== 'ideas').map(brandName).join(', ')].filter(Boolean).join(' · ');
+  const line = i.status === 'approved' ? (i.live || i.next_step || '') : (i.next_step || i.note || '');
+  return `<li><button class="arow" data-aff="${esc(i.id)}">
+    <span class="an"><span class="dots">${brands}</span>${esc(i.name)}</span>
+    <span class="ar">${right}</span>
+    <span class="am">${esc(sub)}</span><span></span>
+    ${line ? `<span class="am" style="grid-column:1/3">${esc(line)}</span>` : ''}
+  </button></li>`;
+}
+function renderAffiliates() {
+  const items = affItems();
+  const real = items.filter((i) => !i.brandList.includes('ideas') || i.status !== 'not-applied');
+  const ideas = items.filter((i) => i.brandList.includes('ideas') && i.status === 'not-applied');
+  const group = (title, list, hint) => list.length ? `<section class="agroup"><h2>${title} <em>${list.length}</em></h2>${hint ? `<p class="empty" style="padding:0">${hint}</p>` : ''}<ul class="alist">${list.map(affRow).join('')}</ul></section>` : '';
+  const byWait = (a, z) => (z.waiting ?? -1) - (a.waiting ?? -1);
+  $('#view').innerHTML = `<div class="pgrid">
+    <div class="topbar"><span class="empty" style="padding:0">Tap a programme to update it. Only public IDs here: logins, tax and bank details stay in each programme's own site.</span><button class="btn" id="aff-add">Add programme</button></div>
+    ${group('To chase', real.filter((i) => i.chase).sort(byWait), 'Applied 14+ days ago with no answer, or a follow-up date has passed.')}
+    ${group('Applied, waiting', real.filter((i) => i.status === 'applied' && !i.chase).sort(byWait))}
+    ${group('Approved', real.filter((i) => i.status === 'approved').sort((a, z) => Number(z.notWired) - Number(a.notWired)))}
+    ${group('Not applied yet', real.filter((i) => i.status === 'not-applied'))}
+    ${group('Rejected or paused', real.filter((i) => i.status === 'rejected' || i.status === 'paused'))}
+    ${ideas.length ? `<details class="ideas"><summary>For future sites (${ideas.length})</summary><ul class="alist" style="margin-top:8px">${ideas.map(affRow).join('')}</ul></details>` : ''}
+  </div>`;
+  $('#aff-add').onclick = () => openAffiliate(null);
+}
+async function openAffiliate(id) {
+  const dlg = $('#sheet'); const body = $('#sheet-body');
+  body.innerHTML = '<p>Loading…</p>'; if (!dlg.open) dlg.showModal();
+  let a = { status: 'not-applied' }, events = [];
+  if (id) { try { const d = await api('/api/affiliates/' + encodeURIComponent(id)); a = d.item; events = d.events; } catch (e) { body.innerHTML = '<p class="error">' + esc(e.message) + '</p>'; return; } }
+  const brandOpts = state.board.brands.map((b) => b.key).concat(['ideas']);
+  const sel = (a.brands || '').split(',').map((s) => s.trim());
+  const f = (key, label, ph, type) => `<div class="field"><label for="a-${key}">${label}</label><input id="a-${key}" type="${type || 'text'}" value="${esc(type === 'date' ? (a[key] || '').slice(0, 10) : a[key] || '')}" placeholder="${esc(ph || '')}"></div>`;
+  body.innerHTML = `
+    <header><div><h2 id="sheet-title">${id ? esc(a.name) : 'Add programme'}</h2>${id ? `<span class="pill st-${a.status}" style="margin-top:6px">${AFF_LABEL[a.status]}</span>` : ''}</div><button class="close" id="close">Close</button></header>
+    ${id ? '' : f('name', 'Programme name', 'e.g. Agoda Partners')}
+    <div><label>Status</label><div class="stages" style="margin-top:6px">${state.affiliates.statuses.map((st) => `<button data-ast="${st}" aria-pressed="${a.status === st}">${AFF_LABEL[st]}</button>`).join('')}</div></div>
+    <div><label>For</label><div class="stages" style="margin-top:6px">${brandOpts.map((b) => `<button data-abr="${b}" aria-pressed="${sel.includes(b)}">${b === 'ideas' ? 'Future sites' : esc(brandName(b))}</button>`).join('')}</div></div>
+    <div class="grid2">
+      ${f('network', 'Network', 'e.g. CJ, Impact, direct')}
+      ${f('commission', 'Commission', 'e.g. ~8% per booking')}
+      ${f('applied_at', 'Applied on', '', 'date')}
+      ${f('decided_at', 'Approved / rejected on', '', 'date')}
+      ${f('ids', 'Public IDs', 'Partner ID, tag (no passwords)')}
+      ${f('signup_url', 'Programme link', 'https://…')}
+      ${f('live', 'Live where', 'e.g. Vic Tours stay buttons')}
+      ${f('follow_up_at', 'Follow up on', '', 'date')}
+    </div>
+    ${f('next_step', 'Next step', 'e.g. Chase by email if no reply by Friday')}
+    <div class="field"><label for="a-note">Notes</label><textarea id="a-note">${esc(a.note || '')}</textarea></div>
+    ${id ? `<div class="field"><label for="a-event">Add to history (optional)</label><input id="a-event" type="text" placeholder="e.g. Emailed support to chase"></div>` : ''}
+    <div class="row"><button class="btn" id="a-save">${id ? 'Save' : 'Add programme'}</button>${a.signup_url ? `<a class="btn ghost" style="text-decoration:none" href="${esc(a.signup_url)}" target="_blank" rel="noopener">Open programme ↗</a>` : ''}</div>
+    ${id ? `<div><label>History</label><ul class="timeline" style="margin-top:8px">${events.map((e) => `<li><time>${esc(short(e.at))}</time><span class="t-body"><strong>${esc(AFF_LABEL[e.status] || e.status || '')}</strong>${e.note ? ' · ' + esc(e.note) : ''}</span></li>`).join('')}</ul></div>` : ''}`;
+  let status = a.status;
+  const brands = new Set(sel.filter(Boolean));
+  $('#close').onclick = () => dlg.close();
+  body.querySelectorAll('[data-ast]').forEach((b) => b.onclick = () => { status = b.dataset.ast; body.querySelectorAll('[data-ast]').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.ast === status))); });
+  body.querySelectorAll('[data-abr]').forEach((b) => b.onclick = () => { const k = b.dataset.abr; brands.has(k) ? brands.delete(k) : brands.add(k); b.setAttribute('aria-pressed', String(brands.has(k))); });
+  $('#a-save').onclick = async () => {
+    const v = (k) => $('#a-' + k) ? $('#a-' + k).value : undefined;
+    const payload = { status, brands: [...brands].join(','), network: v('network'), commission: v('commission'), ids: v('ids'), signup_url: v('signup_url'), live: v('live'), follow_up_at: v('follow_up_at'), next_step: v('next_step'), note: v('note') };
+    if (v('applied_at') !== (a.applied_at || '').slice(0, 10)) payload.applied_at = v('applied_at');
+    if (v('decided_at') !== (a.decided_at || '').slice(0, 10)) payload.decided_at = v('decided_at');
+    if (!id) payload.name = v('name');
+    if (id && v('event')) payload.event_note = v('event');
+    try {
+      const r = await api('/api/affiliates' + (id ? '/' + encodeURIComponent(id) : ''), payload);
+      toast(id ? 'Saved' : 'Added');
+      state.affiliates = await api('/api/affiliates'); render(); openAffiliate(r.id);
+    } catch (e) { toast(e.message); }
+  };
+}
+
 // ---------- Pipeline ----------
 function spark(series) {
   if (!series || series.length < 2) return '';
@@ -498,6 +613,7 @@ document.addEventListener('click', (e) => {
   else if (t.dataset.org) openOrg(Number(t.dataset.org));
   else if (t.dataset.more) { state.showAll[t.dataset.more] = !state.showAll[t.dataset.more]; renderProspect(); }
   else if (t.dataset.draft) { const [b, k] = t.dataset.draft.split('|'); openDraft(b, k); }
+  else if (t.dataset.aff) openAffiliate(t.dataset.aff);
   else if (t.dataset.expand) { state.open[t.dataset.expand] = !state.open[t.dataset.expand]; renderReplies(); }
 });
 $('#sheet').addEventListener('click', (e) => { if (e.target.id === 'sheet') e.target.close(); });

@@ -6,6 +6,7 @@ import PAGE from './page.html';
 import TARGETS from '../../../hq/prospect-targets.json';
 import { defaultTemplate } from './templates';
 import { pipeline, daily } from './pipeline';
+import { listAffiliates, affiliateDetail, saveAffiliate } from './affiliates';
 
 interface Env {
   DB: D1Database;
@@ -45,6 +46,11 @@ export default {
       if (url.pathname === '/api/pipeline' && req.method === 'GET') return json(await pipeline(env.DB, T.brands));
       if (url.pathname === '/api/templates' && req.method === 'GET') return json(await templates(env, url.searchParams.get('brand') ?? '', url.searchParams.get('segment') ?? ''));
       if (url.pathname === '/api/templates' && req.method === 'POST') return json(await saveTemplate(env, (await req.json().catch(() => ({}))) as Record<string, unknown>));
+      if (url.pathname === '/api/affiliates' && req.method === 'GET') return json(await listAffiliates(env.DB));
+      if (url.pathname === '/api/affiliates' && req.method === 'POST') return json(await saveAffiliate(env.DB, null, (await req.json().catch(() => ({}))) as Record<string, unknown>));
+      const af = url.pathname.match(/^\/api\/affiliates\/([a-z0-9-]{1,60})$/);
+      if (af && req.method === 'GET') return json(await affiliateDetail(env.DB, af[1]));
+      if (af && req.method === 'POST') return json(await saveAffiliate(env.DB, af[1], (await req.json().catch(() => ({}))) as Record<string, unknown>));
       if (url.pathname === '/api/prospects/start' && req.method === 'POST') return json(await startOrg(env, (await req.json().catch(() => ({}))) as Record<string, unknown>));
       const m = url.pathname.match(/^\/api\/orgs\/(\d+)(?:\/(stage|note|next))?$/);
       if (m) {
