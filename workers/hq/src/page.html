@@ -173,9 +173,39 @@ td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabu
 .st-rejected,.st-paused{background:var(--sunk);color:var(--muted)}
 .topbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
 details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px 0}
+/* Today (Radar) */
+.today-head{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;justify-content:space-between}
+.today-head h2{font:700 1.25rem var(--display);margin:0}
+.today-head .meta{font-size:.86rem;color:var(--muted)}
+.rlist2{display:grid;gap:14px}
+.pgrid>*,.rlist2>*,.rtop>*{min-width:0}
+.drop{min-width:0;max-width:100%}
+.rcard{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--c);border-radius:12px;padding:16px;display:grid;gap:10px;min-width:0}
+.rtop{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+.rscore{font:500 1.25rem var(--mono);width:54px;height:54px;border-radius:10px;display:grid;place-items:center;background:var(--sunk);line-height:1;text-align:center}
+.rscore small{display:block;font:600 .58rem var(--body);letter-spacing:.1em;color:var(--muted);margin-top:3px}
+.rtop h3{font:700 1.2rem/1.2 var(--display);margin:0;overflow-wrap:anywhere}
+.rtop .meta{font-size:.84rem;color:var(--muted);overflow-wrap:anywhere}
+.rwhy{border-left:3px solid var(--c);padding-left:10px;margin:0;font-size:.92rem}
+.rwhy b{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.rkv{display:grid;grid-template-columns:96px 1fr;gap:4px 12px;font-size:.88rem;margin:0}
+.rkv dt{color:var(--muted)}
+.rkv dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.ractions{display:flex;flex-wrap:wrap;gap:6px;border-top:1px dashed var(--line);padding-top:10px}
+.ractions .btn{padding:7px 12px;font-size:.88rem}
+.drop{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.drop select,.drop input{font:inherit;font-size:.86rem;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 8px}
+.learn{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:10px}
+.learn h3{font:700 1.05rem var(--display);margin:0}
+.learn ul{margin:0;padding-left:18px;display:grid;gap:4px;font-size:.9rem}
+.learn .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.learn h4{margin:0 0 4px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.rule{display:flex;justify-content:space-between;gap:10px;align-items:center}
 @media (max-width:640px){
-  .tabs{margin-left:0;width:100%}
-  .tabs button{flex:1}
+  .tabs{margin-left:0;width:100%;flex:1 1 100%;min-width:0;overflow-x:auto;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs button{flex:1 0 auto;padding:6px 10px}
+  .drop input{min-width:0!important}
   .board{grid-auto-columns:86%}
   .prow{grid-template-columns:44px 1fr}
   .prow .pill{grid-column:2}
@@ -183,6 +213,8 @@ details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px
   .kv{grid-template-columns:1fr}
   .kv dt{margin-top:4px}
   .grid2{grid-template-columns:1fr}
+  .learn .two{grid-template-columns:1fr}
+  .rkv{grid-template-columns:1fr}
   .draft-btn,.rbody,.rmore{grid-column:2}
   .step{grid-template-columns:64px 1fr 76px}
 }
@@ -194,7 +226,8 @@ details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px
   <div class="bar">
     <h1>IMN HQ <small id="updated">Outreach</small></h1>
     <div class="tabs" role="tablist">
-      <button role="tab" id="tab-board" aria-selected="true" data-view="board">Board</button>
+      <button role="tab" id="tab-today" aria-selected="true" data-view="today">Today</button>
+      <button role="tab" id="tab-board" aria-selected="false" data-view="board">Board</button>
       <button role="tab" id="tab-prospect" aria-selected="false" data-view="prospect">Prospect</button>
       <button role="tab" id="tab-pipeline" aria-selected="false" data-view="pipeline">Pipeline</button>
       <button role="tab" id="tab-replies" aria-selected="false" data-view="replies">Replies</button>
@@ -213,7 +246,7 @@ details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px
 
 <script>
 const STAGE_LABEL = { found: 'Found', drafted: 'Drafted', sent: 'Sent', replied: 'Replied', linked: 'Linked', won: 'Won', no: 'No' };
-const state = { view: 'board', brand: 'all', board: null, summary: null, prospects: null, replies: null, pipeline: null, affiliates: null, showAll: {}, open: {} };
+const state = { view: 'today', radar: null, brand: 'all', board: null, summary: null, prospects: null, replies: null, pipeline: null, affiliates: null, showAll: {}, open: {} };
 try { const s = JSON.parse(localStorage.getItem('imn-hq') || '{}'); if (s.view) state.view = s.view; if (s.brand) state.brand = s.brand; } catch (e) {}
 const save = () => { try { localStorage.setItem('imn-hq', JSON.stringify({ view: state.view, brand: state.brand })); } catch (e) {} };
 
@@ -244,8 +277,8 @@ function toast(msg) {
 
 async function load() {
   try {
-    const [board, summary, prospects, replies, pipeline, affiliates] = await Promise.all([api('/api/board'), api('/api/summary'), api('/api/prospects'), api('/api/replies'), api('/api/pipeline'), api('/api/affiliates')]);
-    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates });
+    const [board, summary, prospects, replies, pipeline, affiliates, radar] = await Promise.all([api('/api/board'), api('/api/summary'), api('/api/prospects'), api('/api/replies'), api('/api/pipeline'), api('/api/affiliates'), api('/api/radar')]);
+    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar });
     $('#updated').textContent = 'Targets scored ' + new Date(prospects.generated).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
     render();
   } catch (e) {
@@ -256,7 +289,8 @@ async function load() {
 function render() {
   document.querySelectorAll('.tabs button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.view === state.view)));
   renderChips(); renderStrip();
-  if (state.view === 'board') renderBoard();
+  if (state.view === 'today') renderToday();
+  else if (state.view === 'board') renderBoard();
   else if (state.view === 'prospect') renderProspect();
   else if (state.view === 'pipeline') renderPipeline();
   else if (state.view === 'affiliates') renderAffiliates();
@@ -402,8 +436,13 @@ const fill = (text, v) => text
   .replaceAll('{page}', v.page || v.site || '')
   .replaceAll('{site}', (v.site || '').replace(/^https?:\/\//, ''));
 
-async function openDraft(brand, key) {
-  const t = state.prospects.brands.find((b) => b.key === brand)?.top.concat(state.prospects.brands.find((b) => b.key === brand).next).find((x) => x.key === key);
+async function openDraft(brand, key, org) {
+  const pb = state.prospects.brands.find((b) => b.key === brand);
+  let t = pb ? pb.top.concat(pb.next).find((x) => x.key === key) : null;
+  if (!t && org) {
+    const [seg, region] = String(key || '').split(':');
+    t = { key, segment: seg, segmentLabel: org.type || seg, regionLabel: org.region || region || '', page: null, why: '', offer: '', evidence: '', search: [], score: org.score || 0 };
+  }
   if (!t) return;
   const dlg = $('#sheet'); const body = $('#sheet-body');
   body.innerHTML = '<p>Loading…</p>'; if (!dlg.open) dlg.showModal();
@@ -411,11 +450,13 @@ async function openDraft(brand, key) {
   try { tpl = await api('/api/templates?brand=' + encodeURIComponent(brand) + '&segment=' + encodeURIComponent(t.segment)); } catch (e) { body.innerHTML = '<p class="error">' + esc(e.message) + '</p>'; return; }
   const d = { ver: 0, subject: tpl.versions[0].subject, body: tpl.versions[0].body, id: tpl.versions[0].id, edited: false };
   const from = tpl.brand.from || '';
-  const vals = () => ({ first: ($('#d-contact').value.trim().split(/\s+/)[0] || ''), org: $('#d-org').value.trim(), region: t.regionLabel, page: t.page, site: tpl.brand.site });
+  const vals = () => ({ first: ($('#d-contact').value.trim().split(/\s+/)[0] || ''), org: $('#d-org').value.trim(), region: t.regionLabel, page: t.page || tpl.brand.site, site: tpl.brand.site });
   body.innerHTML = `
     <header><div><h2 id="sheet-title">Draft email</h2><span class="pill" style="margin-top:6px">${esc(tpl.brand.name)} · ${esc(t.segmentLabel)} · ${esc(t.regionLabel)}</span></div><button class="close" id="close">Close</button></header>
     <div class="why">
-      <span><b>Why this target (score ${t.score.toFixed(0)}):</b> ${esc(t.why)}</span>
+      ${org && org.why ? `<span><b>Why ${esc(org.name)} (Radar ${esc(org.score ?? '')}):</b> ${esc(org.why)}</span>` : ''}
+      ${org && org.opener ? `<span><b>Suggested first line:</b> ${esc(org.opener)} <button class="btn ghost" id="d-opener" style="padding:2px 8px;margin-left:4px">Use it</button></span>` : ''}
+      <span><b>Why this target (score ${Number(t.score || 0).toFixed(0)}):</b> ${esc(t.why)}</span>
       <span><b>Offer:</b> ${esc(t.offer)}</span>
       <span><b>Look for:</b> ${esc(t.evidence)} Use an address they publish themselves.</span>
       <span class="pq" style="margin-top:4px">${t.search.map((q) => `<a href="https://www.google.com/search?q=${encodeURIComponent(q)}" target="_blank" rel="noopener">${esc(q)}</a>`).join('')}</span>
@@ -443,9 +484,19 @@ async function openDraft(brand, key) {
       <button class="btn ghost" id="d-copy">Copy email</button>
     </div>
     <p class="empty" style="padding:0">The brand signature is added automatically when you send. The card moves to Sent by itself once it's gone.</p>`;
+  if (org) {
+    $('#d-org').value = org.name || ''; $('#d-email').value = org.contact_email || ''; $('#d-contact').value = org.contact_name || '';
+    $('#d-role').value = org.contact_role || ''; $('#d-web').value = org.website || ''; $('#d-evidence').value = org.evidence_url || '';
+    $('#d-go').textContent = 'Open in Outlook';
+  }
   const setVer = (i) => { const v = tpl.versions[i]; Object.assign(d, { ver: i, subject: v.subject, body: v.body, id: v.id }); $('#d-subject').value = v.subject; $('#d-body').value = v.body; body.querySelectorAll('[data-ver]').forEach((b) => b.setAttribute('aria-pressed', String(Number(b.dataset.ver) === i))); preview(); };
   const preview = () => { $('#d-preview').textContent = 'Subject: ' + fill($('#d-subject').value, vals()) + '\n\n' + fill($('#d-body').value, vals()); };
   setVer(0);
+  if (org && org.opener && $('#d-opener')) $('#d-opener').onclick = () => {
+    const b = $('#d-body').value; const i = b.indexOf('\n\n');
+    $('#d-body').value = i > -1 ? b.slice(0, i + 2) + org.opener + '\n\n' + b.slice(i + 2) : org.opener + '\n\n' + b;
+    d.edited = true; preview();
+  };
   ['#d-org', '#d-contact', '#d-subject', '#d-body'].forEach((s) => $(s).addEventListener('input', () => { if (s === '#d-subject' || s === '#d-body') d.edited = true; preview(); }));
   body.querySelectorAll('[data-ver]').forEach((b) => b.onclick = () => setVer(Number(b.dataset.ver)));
   $('#close').onclick = () => dlg.close();
@@ -468,13 +519,67 @@ async function openDraft(brand, key) {
     // Open the tab inside the click (pop-up blockers allow that), then point it at Outlook once the board is updated.
     const w = window.open('about:blank', '_blank');
     try {
-      await api('/api/prospects/start', { brand, target: t.key, organisation: v.org, email: $('#d-email').value, contact_name: $('#d-contact').value, contact_role: $('#d-role').value, website: $('#d-web').value, evidence_url: $('#d-evidence').value, template_id: d.id, subject: fill($('#d-subject').value, v) });
+      if (org) await api('/api/orgs/' + org.id + '/drafted', { template_id: d.id, subject: fill($('#d-subject').value, v), email: $('#d-email').value, contact_name: $('#d-contact').value });
+      else await api('/api/prospects/start', { brand, target: t.key, organisation: v.org, email: $('#d-email').value, contact_name: $('#d-contact').value, contact_role: $('#d-role').value, website: $('#d-web').value, evidence_url: $('#d-evidence').value, template_id: d.id, subject: fill($('#d-subject').value, v) });
       const url = 'https://outlook.office.com/mail/deeplink/compose?to=' + encodeURIComponent($('#d-email').value.trim()) + '&subject=' + encodeURIComponent(fill($('#d-subject').value, v)) + '&body=' + encodeURIComponent(fill($('#d-body').value, v));
       if (w) { w.opener = null; w.location.href = url; } else { location.href = url; }
       toast(d.edited ? 'Added as Drafted. Your unsaved edits count under the version you started from.' : 'Added to the board as Drafted');
       dlg.close(); load();
     } catch (e) { if (w) w.close(); toast(e.message); }
   };
+}
+
+// ---------- Today (Radar) ----------
+const DROP = [['not_fit', 'Not a fit'], ['no_email', 'No public email'], ['already', 'Already links to us']];
+function renderToday() {
+  const r = state.radar;
+  const q = r.queue.filter((o) => inBrand(o.brand));
+  const last = r.lastRun;
+  const cards = q.map((o) => `
+    <article class="rcard" style="--c:${color(o.brand)}" data-rid="${o.id}">
+      <div class="rtop">
+        <div class="rscore">${esc(o.score ?? '–')}<small>FIT</small></div>
+        <div><h3>${esc(o.name)}</h3><div class="meta">${esc(brandName(o.brand))} · ${esc(o.targetLabel || o.type || '')}</div></div>
+      </div>
+      ${o.why ? `<p class="rwhy"><b>Why them</b>${esc(o.why)}</p>` : ''}
+      <dl class="rkv">
+        ${o.contact_email ? `<dt>Email</dt><dd>${esc(o.contact_email)}${o.contact_name ? ' · ' + esc(o.contact_name) : ''}${o.contact_role ? ', ' + esc(o.contact_role) : ''}${o.source_url ? ` · <a href="${esc(o.source_url)}" target="_blank" rel="noopener">where it's published ↗</a>` : ''}</dd>` : '<dt>Email</dt><dd>None found yet</dd>'}
+        ${o.evidence_url ? `<dt>Links page</dt><dd><a href="${esc(o.evidence_url)}" target="_blank" rel="noopener">${esc(o.evidence_url.replace(/^https?:\/\//, ''))}</a></dd>` : ''}
+        ${o.website ? `<dt>Website</dt><dd><a href="${esc(o.website)}" target="_blank" rel="noopener">${esc(o.website.replace(/^https?:\/\//, ''))}</a></dd>` : ''}
+        ${o.opener ? `<dt>Opener</dt><dd>${esc(o.opener)}</dd>` : ''}
+      </dl>
+      <div class="ractions">
+        <button class="btn" data-rdraft="${o.id}">Draft email</button>
+        <span class="drop"><select id="rdrop-${o.id}" aria-label="Reason">${DROP.map(([k, l]) => `<option value="${k}">${l}</option>`).join('')}</select>
+        <input id="rwhy-${o.id}" type="text" placeholder="Why? (teaches Radar)" style="min-width:150px;flex:1"><button class="btn ghost" data-rdrop="${o.id}">Drop</button></span>
+        <button class="btn ghost" data-rlater="${o.id}">Later</button>
+      </div>
+    </article>`).join('');
+  const empty = `<div class="hint"><strong>${r.queue.length ? 'Nothing for this brand today.' : 'All caught up.'}</strong> Radar researches ${r.size} new organisations each weekday morning, topped up only by what you've actioned. ${last && last.at ? 'Last run ' + esc(ago(last.at)) + (last.added !== undefined ? ', ' + esc(last.added) + ' added' : '') + (last.note ? ': ' + esc(last.note) : '') + '.' : 'The first run is tomorrow morning.'}</div>`;
+  const p = r.playbook;
+  const list = (a) => (a && a.length) ? `<ul>${a.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : '<p class="empty" style="padding:0">Nothing yet.</p>';
+  const learned = `<section class="learn"><div class="today-head"><h3>What Radar has learned</h3><span class="meta">${p && p.updatedAt ? 'Updated ' + esc(ago(p.updatedAt)) : ''}</span></div>
+    ${p ? `<p style="margin:0">${esc(p.summary || '')}</p><div class="two"><div><h4>Looking for more of</h4>${list(p.favour)}</div><div><h4>Steering away from</h4>${list(p.avoid)}</div></div>`
+      : '<p class="empty" style="padding:0">Radar rewrites this after each run from what you draft, drop and why, and from replies and links won.</p>'}
+  </section>`;
+  const coach = `<section class="learn"><h3>Coach Radar</h3><p class="empty" style="padding:0">Standing rules it follows on every run, e.g. "councils rarely link, skip them" or "more neighbourhood houses in the west".</p>
+    <div class="row"><input id="coach-in" type="text" placeholder="Add a rule…" style="flex:1;min-width:180px"><button class="btn" id="coach-add">Add rule</button></div>
+    ${r.coaching.length ? `<ul>${r.coaching.map((c, i) => `<li class="rule"><span>${esc(c.text)}</span><button class="btn ghost" data-uncoach="${i}" style="padding:3px 10px">Remove</button></li>`).join('')}</ul>` : ''}
+  </section>`;
+  const seg = r.bySegment.filter((x) => inBrand(x.brand));
+  const segHtml = seg.length ? `<div class="tbl"><table><thead><tr><th>Brand · type</th><th class="num">Found</th><th class="num">Drafted</th><th class="num">Dropped</th><th class="num">Replied</th><th class="num">Linked</th></tr></thead><tbody>${seg.map((x) => `<tr><td>${esc(brandName(x.brand))} · ${esc((state.prospects.brands.find((b) => b.key === x.brand)?.top.find((t) => t.segment === x.segment) || {}).segmentLabel || x.segment)}</td><td class="num">${x.found}</td><td class="num">${x.drafted}</td><td class="num">${x.dropped}</td><td class="num">${x.replied}</td><td class="num">${x.linked}</td></tr>`).join('')}</tbody></table></div>` : '';
+  $('#view').innerHTML = `<div class="pgrid">
+    <div class="today-head"><h2>Today's prospects</h2><span class="meta">${q.length} to review${r.later ? ' · ' + r.later + ' saved for later' : ''}</span></div>
+    ${q.length ? `<div class="rlist2">${cards}</div>` : empty}
+    ${learned}${coach}
+    ${segHtml ? `<section class="sec"><h2>How Radar's finds are doing</h2>${segHtml}</section>` : ''}
+  </div>`;
+  const addRule = async () => { const t = $('#coach-in').value.trim(); if (!t) return; try { const res = await api('/api/radar/coaching', { rules: r.coaching.concat([{ text: t }]) }); r.coaching = res.rules; toast('Rule added. Radar uses it from the next run'); renderToday(); } catch (e) { toast(e.message); } };
+  $('#coach-add').onclick = addRule;
+  $('#coach-in').onkeydown = (e) => { if (e.key === 'Enter') { e.preventDefault(); addRule(); } };
+}
+async function radarReview(id, review, reason) {
+  try { await api('/api/radar/' + id + '/review', { review, reason }); toast(review === 'later' ? 'Saved for next week' : 'Dropped. Radar will learn from it'); await load(); } catch (e) { toast(e.message); }
 }
 
 // ---------- Affiliates ----------
@@ -614,6 +719,10 @@ document.addEventListener('click', (e) => {
   else if (t.dataset.more) { state.showAll[t.dataset.more] = !state.showAll[t.dataset.more]; renderProspect(); }
   else if (t.dataset.draft) { const [b, k] = t.dataset.draft.split('|'); openDraft(b, k); }
   else if (t.dataset.aff) openAffiliate(t.dataset.aff);
+  else if (t.dataset.rdraft) { const o = state.radar.queue.find((x) => String(x.id) === t.dataset.rdraft); if (o) openDraft(o.brand, o.target, o); }
+  else if (t.dataset.rdrop) radarReview(t.dataset.rdrop, $('#rdrop-' + t.dataset.rdrop).value, $('#rwhy-' + t.dataset.rdrop).value);
+  else if (t.dataset.rlater) radarReview(t.dataset.rlater, 'later');
+  else if (t.dataset.uncoach !== undefined) { const i = Number(t.dataset.uncoach); api('/api/radar/coaching', { rules: state.radar.coaching.filter((_, j) => j !== i) }).then((res) => { state.radar.coaching = res.rules; toast('Rule removed'); renderToday(); }).catch((e) => toast(e.message)); }
   else if (t.dataset.expand) { state.open[t.dataset.expand] = !state.open[t.dataset.expand]; renderReplies(); }
 });
 $('#sheet').addEventListener('click', (e) => { if (e.target.id === 'sheet') e.target.close(); });

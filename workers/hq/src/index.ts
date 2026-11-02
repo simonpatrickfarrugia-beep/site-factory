@@ -7,6 +7,7 @@ import TARGETS from '../../../hq/prospect-targets.json';
 import { defaultTemplate } from './templates';
 import { pipeline, daily } from './pipeline';
 import { listAffiliates, affiliateDetail, saveAffiliate } from './affiliates';
+import { radar, review, markDrafted, saveCoaching, kvSet } from './radar';
 
 interface Env {
   DB: D1Database;
@@ -19,7 +20,7 @@ type Target = {
   brand: string; key: string; segment: string; segmentLabel: string; region: string; regionLabel: string;
   base: number; why: string; page?: string | null; offer: string; evidence: string; search: string[];
 };
-type BrandCfg = { name: string; active: boolean; weeklyCap: number; perTargetCap: number; site?: string; from?: string; segments?: Record<string, string> };
+type BrandCfg = { name: string; active: boolean; weeklyCap: number; perTargetCap: number; site?: string; from?: string; mailReady?: boolean; segments?: Record<string, string> };
 const T = TARGETS as unknown as { generated: string; brands: Record<string, BrandCfg>; targets: Target[] };
 
 export const STAGES = ['found', 'drafted', 'sent', 'replied', 'linked', 'won', 'no'] as const;
@@ -28,6 +29,7 @@ const FOLLOW_UP_DAYS = 7;
 export default {
   async scheduled(_event: ScheduledController, env: Env, ctx: ExecutionContext): Promise<void> {
     ctx.waitUntil(daily(env.DB, T.brands));
+    ctx.waitUntil(radarTargets(env));
   },
 
   async fetch(req: Request, env: Env): Promise<Response> {
@@ -44,6 +46,12 @@ export default {
       if (url.pathname === '/api/prospects' && req.method === 'GET') return json(await prospects(env));
       if (url.pathname === '/api/replies' && req.method === 'GET') return json(await replies(env));
       if (url.pathname === '/api/pipeline' && req.method === 'GET') return json(await pipeline(env.DB, T.brands));
+      if (url.pathname === '/api/radar' && req.method === 'GET') return json(await radar(env.DB, targetLabel));
+      if (url.pathname === '/api/radar/coaching' && req.method === 'POST') return json(await saveCoaching(env.DB, (await req.json().catch(() => ({}))) as Record<string, unknown>));
+      const rv = url.pathname.match(/^\/api\/radar\/(\d+)\/review$/);
+      if (rv && req.method === 'POST') return json(await review(env.DB, Number(rv[1]), (await req.json().catch(() => ({}))) as Record<string, unknown>));
+      const dr = url.pathname.match(/^\/api\/orgs\/(\d+)\/drafted$/);
+      if (dr && req.method === 'POST') return json(await markDrafted(env.DB, Number(dr[1]), (await req.json().catch(() => ({}))) as Record<string, unknown>));
       if (url.pathname === '/api/templates' && req.method === 'GET') return json(await templates(env, url.searchParams.get('brand') ?? '', url.searchParams.get('segment') ?? ''));
       if (url.pathname === '/api/templates' && req.method === 'POST') return json(await saveTemplate(env, (await req.json().catch(() => ({}))) as Record<string, unknown>));
       if (url.pathname === '/api/affiliates' && req.method === 'GET') return json(await listAffiliates(env.DB));
@@ -171,6 +179,7 @@ async function board(env: Env) {
       (SELECT MAX(at) FROM messages m WHERE m.org_id = o.id AND m.direction = 'in') AS last_in
     FROM orgs o
     LEFT JOIN contacts c ON c.id = (SELECT id FROM contacts WHERE org_id = o.id ORDER BY id LIMIT 1)
+    WHERE o.stage != 'dropped' AND NOT (o.found_by = 'radar' AND o.reviewed_at IS NULL)
     ORDER BY o.stage_at DESC
   `).all<OrgRow>();
   const now = Date.now();
@@ -272,6 +281,7 @@ async function prospects(env: Env) {
   const segTried = new Map<string, number>();
   const foundWeek: Record<string, number> = {};
   for (const r of rows) {
+    if (r.stage === 'dropped') continue; // dropped in Today: doesn't use up the target
     const k = `${r.brand}|${r.target}`;
     const c = cover.get(k) ?? { found: 0, contacted: 0, linked: 0 };
     c.found++;
@@ -404,4 +414,22 @@ async function startOrg(env: Env, b: Record<string, unknown>) {
       .bind(org.id, brand, subject, templateId ? 'Draft from a saved template' : 'Draft from the built-in template'),
   ]);
   return { ok: true, orgId: org.id };
+}
+
+// Daily: hand the research task its shortlist (top open targets per brand whose mail is ready).
+async function radarTargets(env: Env) {
+  const p = await prospects(env);
+  const out = p.brands
+    .filter((b) => b.active && T.brands[b.key]?.mailReady)
+    .map((b) => ({
+      brand: b.key,
+      name: b.name,
+      site: T.brands[b.key]?.site ?? null,
+      from: T.brands[b.key]?.from ?? null,
+      leftThisWeek: b.leftThisWeek,
+      targets: b.top.filter((t) => t.score > 0).slice(0, 12).map((t) => ({
+        key: t.key, segment: t.segmentLabel, region: t.regionLabel, score: t.score, why: t.why, offer: t.offer, evidence: t.evidence, search: t.search, page: t.page,
+      })),
+    }));
+  await kvSet(env.DB, 'radar_targets', { generated: new Date().toISOString(), brands: out });
 }

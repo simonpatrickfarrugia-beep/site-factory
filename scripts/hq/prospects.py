@@ -128,6 +128,7 @@ def main():
             "weeklyCap": c.get("weeklyCap", 10),
             "perTargetCap": c.get("perTargetCap", 3),
             "site": c.get("site"),
+            "mailReady": c.get("mailReady", False),
             "from": c.get("from"),
             "segments": {s["key"]: s["label"] for s in c["segments"]},
         }

@@ -1,5 +1,5 @@
 {
-  "_about": "Hand-set playbook for the prospecting engine (scripts/hq/prospects.py → hq/prospect-targets.json → IMN HQ 'Where to prospect'). One entry per brand: who to approach (segments), what we offer them, where (regions), and how much each segment is worth (weight 0-1). Organisations only, published addresses only, ≤10 emails a week per brand (claude/OUTREACH.md). Edit weights or set active:false to steer the engine. Each brand has its site and outreach From address; a segment's 'page' is the page we point that kind of organisation to (Vic towns and Trade Admin trades use their own page).",
+  "_about": "Hand-set playbook for the prospecting engine (scripts/hq/prospects.py → hq/prospect-targets.json → IMN HQ 'Where to prospect'). One entry per brand: who to approach (segments), what we offer them, where (regions), and how much each segment is worth (weight 0-1). Organisations only, published addresses only, ≤10 emails a week per brand (claude/OUTREACH.md). Edit weights or set active:false to steer the engine. Each brand has its site and outreach From address; a segment's 'page' is the page we point that kind of organisation to (Vic towns and Trade Admin trades use their own page). mailReady = the brand's domain is on the mail hub, so Radar researches prospects for it (set true when its mail setup is done).",
   "brands": {
     "vic": {
       "name": "Vic Tours",
@@ -56,7 +56,8 @@
         }
       ],
       "site": "https://victours.com.au",
-      "from": "simon@victours.com.au"
+      "from": "simon@victours.com.au",
+      "mailReady": true
     },
     "community-help-co": {
       "name": "Community Help Co",
@@ -165,7 +166,8 @@
         }
       ],
       "site": "https://communityhelp.com.au",
-      "from": "simon@communityhelp.com.au"
+      "from": "simon@communityhelp.com.au",
+      "mailReady": true
     },
     "trade-admin": {
       "name": "Trade Admin",
@@ -208,7 +210,8 @@
         }
       ],
       "site": "https://tradeadmin.com.au",
-      "from": "simon@tradeadmin.com.au"
+      "from": "simon@tradeadmin.com.au",
+      "mailReady": false
     },
     "trailers": {
       "name": "MovieTrailer.Channel",
@@ -293,7 +296,8 @@
         }
       ],
       "site": "https://www.movietrailer.channel",
-      "from": "simon@movietrailer.channel"
+      "from": "simon@movietrailer.channel",
+      "mailReady": true
     },
     "paycalc": {
       "name": "MyPayCalc",
@@ -372,7 +376,8 @@
         }
       ],
       "site": "https://mypaycalc.com.au",
-      "from": "simon@mypaycalc.com.au"
+      "from": "simon@mypaycalc.com.au",
+      "mailReady": false
     }
   }
 }
