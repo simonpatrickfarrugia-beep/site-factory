@@ -8,6 +8,7 @@ import { defaultTemplate } from './templates';
 import { pipeline, daily } from './pipeline';
 import { listAffiliates, affiliateDetail, saveAffiliate } from './affiliates';
 import { radar, review, markDrafted, saveCoaching, kvSet } from './radar';
+import { ICON_SVG, ICON_180, ICON_512, MANIFEST } from './app-assets';
 
 interface Env {
   DB: D1Database;
@@ -38,6 +39,14 @@ export default {
     if (!who) return deny(env);
 
     try {
+      if (url.pathname === '/manifest.webmanifest') return new Response(MANIFEST, { headers: { 'content-type': 'application/manifest+json', ...SECURITY } });
+      if (url.pathname === '/icon.svg') return new Response(ICON_SVG, { headers: { 'content-type': 'image/svg+xml', 'cache-control': 'max-age=86400', ...SECURITY } });
+      if (url.pathname === '/icon.png' || url.pathname === '/icon-512.png') {
+        const bin = atob(url.pathname === '/icon.png' ? ICON_180 : ICON_512);
+        const bytes = new Uint8Array(bin.length);
+        for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+        return new Response(bytes, { headers: { 'content-type': 'image/png', 'cache-control': 'max-age=86400', ...SECURITY } });
+      }
       if (url.pathname === '/' || url.pathname === '/index.html') {
         return new Response(PAGE, { headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', ...SECURITY } });
       }

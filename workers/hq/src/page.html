@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F3F1EC">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="IMN HQ">
+<link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon.png">
 <title>IMN HQ Outreach</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
@@ -219,6 +226,41 @@ details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px
   .step{grid-template-columns:64px 1fr 76px}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+/* ---------- Phone layout ---------- */
+.more-menu{display:none}
+.needs h2{font:700 1.05rem var(--display);margin:6px 0 8px;display:flex;gap:8px;align-items:baseline}
+.needs h2 em{font:500 .8rem var(--mono);font-style:normal;color:var(--muted)}
+.needs .card{margin-bottom:8px}
+@media (max-width:640px){
+  body{padding-bottom:calc(74px + env(safe-area-inset-bottom,0px))}
+  .top{position:static}
+  .bar{padding-block:10px 6px}
+  .tabs{position:fixed;left:0;right:0;bottom:0;z-index:15;margin:0;width:auto;border-radius:0;background:var(--surface);border-top:1px solid var(--line);padding:6px max(8px,env(safe-area-inset-left,0px)) calc(6px + env(safe-area-inset-bottom,0px));display:grid;grid-template-columns:repeat(4,1fr);gap:4px;overflow:visible}
+  .tabs button{padding:10px 4px;font-size:.9rem;border-radius:10px}
+  .tabs button[data-desk]{display:none}
+  .tabs button[aria-selected="true"]{background:var(--sunk);box-shadow:none}
+  .more-menu{position:fixed;right:max(8px,env(safe-area-inset-right,0px));bottom:calc(70px + env(safe-area-inset-bottom,0px));z-index:16;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.18);padding:6px;display:grid;gap:2px;min-width:180px}
+  .more-menu[hidden]{display:none}
+  .more-menu button{border:0;background:none;text-align:left;padding:12px 14px;border-radius:8px;font-weight:600}
+  .more-menu button:hover{background:var(--sunk)}
+  .strip{grid-template-columns:repeat(4,1fr);gap:6px}
+  .stat{padding:8px 8px}
+  .stat b{font-size:1.15rem}
+  .stat span{font-size:.68rem;line-height:1.2;display:block}
+  main{padding-block:10px 24px;gap:12px}
+  .ractions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .ractions .btn{padding:13px 12px;font-size:1rem}
+  .ractions [data-rdraft]{grid-column:1/-1}
+  .ractions .drop{grid-column:1/-1;display:grid;grid-template-columns:1fr auto;gap:8px}
+  .ractions .drop select{grid-column:1/-1;padding:10px}
+  .ractions .drop input{padding:10px}
+  .ractions [data-rlater]{grid-column:1/-1}
+  .desk-only{display:none!important}
+  .go-bar{position:sticky;bottom:0;background:var(--surface);padding:10px 0 calc(10px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line)}
+  .go-bar .btn{flex:1;padding:14px;font-size:1rem}
+  details.fold summary{cursor:pointer;font-weight:600;padding:6px 0}
+}
+@media (min-width:641px){ .mob-only{display:none!important} }
 </style>
 </head>
 <body>
@@ -228,15 +270,17 @@ details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px
     <div class="tabs" role="tablist">
       <button role="tab" id="tab-today" aria-selected="true" data-view="today">Today</button>
       <button role="tab" id="tab-board" aria-selected="false" data-view="board">Board</button>
-      <button role="tab" id="tab-prospect" aria-selected="false" data-view="prospect">Prospect</button>
-      <button role="tab" id="tab-pipeline" aria-selected="false" data-view="pipeline">Pipeline</button>
+      <button role="tab" id="tab-prospect" aria-selected="false" data-desk data-view="prospect">Prospect</button>
+      <button role="tab" id="tab-pipeline" aria-selected="false" data-desk data-view="pipeline">Pipeline</button>
       <button role="tab" id="tab-replies" aria-selected="false" data-view="replies">Replies</button>
-      <button role="tab" id="tab-affiliates" aria-selected="false" data-view="affiliates">Affiliates</button>
+      <button class="mob-only" id="more-btn" aria-haspopup="true" aria-expanded="false">More</button>
+      <button role="tab" id="tab-affiliates" aria-selected="false" data-desk data-view="affiliates">Affiliates</button>
     </div>
   </div>
   <div class="chips" id="chips" aria-label="Filter by brand"></div>
 </div></div>
 
+<div class="more-menu" id="more-menu" hidden><button data-view="prospect">Prospect</button><button data-view="pipeline">Pipeline</button><button data-view="affiliates">Affiliates</button></div>
 <main class="wrap">
   <section class="strip" id="strip" aria-label="This week"></section>
   <section id="view"></section>
@@ -287,7 +331,7 @@ async function load() {
 }
 
 function render() {
-  document.querySelectorAll('.tabs button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.view === state.view)));
+  document.querySelectorAll('.tabs button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.view === state.view || (b.id === 'more-btn' && ['prospect', 'pipeline', 'affiliates'].includes(state.view)))));
   renderChips(); renderStrip();
   if (state.view === 'today') renderToday();
   else if (state.view === 'board') renderBoard();
@@ -330,7 +374,9 @@ function renderStrip() {
     <div class="stat${due ? ' due' : ''}"><b>${due}</b><span>Follow-ups due (7+ days)</span></div>`;
 }
 
+const isPhone = () => matchMedia('(max-width:640px)').matches;
 function renderBoard() {
+  if (isPhone() && !state.fullBoard) { renderNeeds(); return; }
   const orgs = state.board.orgs.filter((o) => inBrand(o.brand));
   if (!orgs.length) {
     $('#view').innerHTML = `<div class="hint"><strong>No organisations on the board yet.</strong> Ask Claude to "find 10 for Vic Tours" (or another brand). It picks them from <em>Where to prospect</em>, adds each one here as Found, and drafts the emails in Outlook. Cards then move to Sent and Replied on their own as the emails go out and come back.</div>`;
@@ -351,7 +397,8 @@ function renderBoard() {
     }).join('') || '<p class="empty">Nothing here</p>';
     return `<div class="col"><h2>${STAGE_LABEL[st]} <em>${list.length}</em></h2>${cards}</div>`;
   });
-  $('#view').innerHTML = `<div class="board" role="list">${cols.join('')}</div>`;
+  $('#view').innerHTML = (isPhone() ? '<button class="btn ghost" id="needs-back" style="margin-bottom:10px">Back to what needs you</button>' : '') + `<div class="board" role="list">${cols.join('')}</div>`;
+  if ($('#needs-back')) $('#needs-back').onclick = () => { state.fullBoard = false; renderBoard(); };
 }
 
 function renderProspect() {
@@ -471,15 +518,15 @@ async function openDraft(brand, key, org) {
     </div>
     <div class="mail">
       <label>Template</label>
-      <div class="vers" id="d-vers">${tpl.versions.map((v, i) => `<button data-ver="${i}" aria-pressed="${i === 0}">v${v.version}${v.perf.sent ? ` · ${v.perf.replied}/${v.perf.sent} replied` : ''}</button>`).join('')}</div>
+      <div class="vers desk-only" id="d-vers">${tpl.versions.map((v, i) => `<button data-ver="${i}" aria-pressed="${i === 0}">v${v.version}${v.perf.sent ? ` · ${v.perf.replied}/${v.perf.sent} replied` : ''}</button>`).join('')}</div>
       <div class="field"><label for="d-subject">Subject</label><input id="d-subject" type="text"></div>
       <div class="field"><label for="d-body">Email (placeholders: {first_name} {organisation} {region} {page} {site})</label><textarea id="d-body"></textarea></div>
-      <div class="row"><input id="d-note" type="text" placeholder="What did you change? (for the saved version)" style="flex:1;min-width:180px"><button class="btn ghost" id="d-save">Save as new version</button></div>
+      <div class="row desk-only"><input id="d-note" type="text" placeholder="What did you change? (for the saved version)" style="flex:1;min-width:180px"><button class="btn ghost" id="d-save">Save as new version</button></div>
       <label>Preview</label>
       <div class="preview" id="d-preview"></div>
     </div>
     ${from ? `<div class="from">In Outlook, set From to <span id="d-from">${esc(from)}</span><button class="btn ghost" id="d-copyfrom" style="padding:3px 10px">Copy</button></div>` : ''}
-    <div class="row">
+    <div class="row go-bar">
       <button class="btn" id="d-go">Add to board &amp; open in Outlook</button>
       <button class="btn ghost" id="d-copy">Copy email</button>
     </div>
@@ -517,16 +564,40 @@ async function openDraft(brand, key, org) {
   $('#d-go').onclick = async () => {
     const v = vals();
     // Open the tab inside the click (pop-up blockers allow that), then point it at Outlook once the board is updated.
-    const w = window.open('about:blank', '_blank');
+    const w = isPhone() ? null : window.open('about:blank', '_blank');
     try {
       if (org) await api('/api/orgs/' + org.id + '/drafted', { template_id: d.id, subject: fill($('#d-subject').value, v), email: $('#d-email').value, contact_name: $('#d-contact').value });
       else await api('/api/prospects/start', { brand, target: t.key, organisation: v.org, email: $('#d-email').value, contact_name: $('#d-contact').value, contact_role: $('#d-role').value, website: $('#d-web').value, evidence_url: $('#d-evidence').value, template_id: d.id, subject: fill($('#d-subject').value, v) });
-      const url = 'https://outlook.office.com/mail/deeplink/compose?to=' + encodeURIComponent($('#d-email').value.trim()) + '&subject=' + encodeURIComponent(fill($('#d-subject').value, v)) + '&body=' + encodeURIComponent(fill($('#d-body').value, v));
-      if (w) { w.opener = null; w.location.href = url; } else { location.href = url; }
+      const to = $('#d-email').value.trim(), subj = fill($('#d-subject').value, v), bod = fill($('#d-body').value, v);
+      if (isPhone()) {
+        // Phones: open the mail app (Outlook, if it's the default) with the email filled in.
+        if (w) w.close();
+        location.href = 'mailto:' + encodeURIComponent(to) + '?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(bod);
+      } else {
+        const url = 'https://outlook.office.com/mail/deeplink/compose?to=' + encodeURIComponent(to) + '&subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(bod);
+        if (w) { w.opener = null; w.location.href = url; } else { location.href = url; }
+      }
       toast(d.edited ? 'Added as Drafted. Your unsaved edits count under the version you started from.' : 'Added to the board as Drafted');
       dlg.close(); load();
     } catch (e) { if (w) w.close(); toast(e.message); }
   };
+}
+
+function renderNeeds() {
+  const orgs = state.board.orgs.filter((o) => inBrand(o.brand));
+  const card = (o, flag) => `<button class="card" style="--c:${color(o.brand)}" data-org="${o.id}"><span class="name">${esc(o.name)}</span><span class="meta">${esc(brandName(o.brand))}${o.contact_email ? ' · ' + esc(o.contact_email) : ''}</span>${o.last_note ? `<span class="last">${esc(o.last_note)}</span>` : ''}${flag}</button>`;
+  const sec = (title, list, flag, hint) => `<section class="needs"><h2>${title} <em>${list.length}</em></h2>${list.length ? list.map((o) => card(o, flag(o))).join('') : `<p class="empty" style="padding:0 0 6px">${hint}</p>`}</section>`;
+  const replied = orgs.filter((o) => o.stage === 'replied');
+  const due = orgs.filter((o) => o.followUpDue);
+  const drafted = orgs.filter((o) => o.stage === 'drafted');
+  const sent = orgs.filter((o) => o.stage === 'sent' && !o.followUpDue);
+  $('#view').innerHTML = `
+    ${sec('Replied: answer them', replied, (o) => `<span class="pill good">Replied ${esc(ago(o.last_in || o.stage_at))}</span>`, 'No replies waiting.')}
+    ${sec('Follow up (7+ days)', due, () => '<span class="pill due">Follow up</span>', 'Nothing to chase.')}
+    ${sec('Drafted: send them', drafted, (o) => `<span class="meta">Drafted ${esc(ago(o.stage_at))}</span>`, 'No drafts waiting.')}
+    ${sec('Waiting for a reply', sent, (o) => `<span class="meta">Sent ${esc(ago(o.stage_at))}</span>`, 'Nothing out yet.')}
+    <button class="btn ghost" id="full-board" style="width:100%;padding:12px">Show the full board (${orgs.length})</button>`;
+  $('#full-board').onclick = () => { state.fullBoard = true; renderBoard(); };
 }
 
 // ---------- Today (Radar) ----------
@@ -713,11 +784,12 @@ function renderPipeline() {
 
 document.addEventListener('click', (e) => {
   const t = e.target.closest('button'); if (!t) return;
-  if (t.dataset.view) { state.view = t.dataset.view; save(); render(); }
+  if (t.dataset.view) { state.view = t.dataset.view; $('#more-menu').hidden = true; save(); render(); window.scrollTo(0, 0); }
   else if (t.dataset.brand) { state.brand = t.dataset.brand; save(); render(); }
   else if (t.dataset.org) openOrg(Number(t.dataset.org));
   else if (t.dataset.more) { state.showAll[t.dataset.more] = !state.showAll[t.dataset.more]; renderProspect(); }
   else if (t.dataset.draft) { const [b, k] = t.dataset.draft.split('|'); openDraft(b, k); }
+  else if (t.id === 'more-btn') { const m = $('#more-menu'); m.hidden = !m.hidden; t.setAttribute('aria-expanded', String(!m.hidden)); }
   else if (t.dataset.aff) openAffiliate(t.dataset.aff);
   else if (t.dataset.rdraft) { const o = state.radar.queue.find((x) => String(x.id) === t.dataset.rdraft); if (o) openDraft(o.brand, o.target, o); }
   else if (t.dataset.rdrop) radarReview(t.dataset.rdrop, $('#rdrop-' + t.dataset.rdrop).value, $('#rwhy-' + t.dataset.rdrop).value);
