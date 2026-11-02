@@ -1,15 +1,15 @@
 # Collection ideas: can we win them?
 
-Updated 2026-10-21. Google top 10 for each idea's main keyword (US). **Openness** = share of the top 10 a new site could take (forums or small sites), top spots weighted most. **Winnable** = searches × openness. The monthly collections job only builds ideas with openness ≥ 25, and actor/director lists only with 12+ of their films in our catalogue.
+Updated 2026-11-02. Google top 10 for each idea's main keyword (US). **Openness** = share of the top 10 a new site could take (forums or small sites), top spots weighted most. **Winnable** = searches × openness. The monthly collections job only builds ideas with openness ≥ 25, and actor/director lists only with 12+ of their films in our catalogue.
 
 | Idea | Status | Films | Searches/mo | Openness | Winnable | Big players |
 |---|---|---:|---:|---:|---:|---|
 | Tom Hanks Movies | created | 6 | 305,400 | 21 | 64,134 | imdb.com, apple.com, netflix.com |
 | Christian Bale Movies | created | 6 | 166,600 | 16 | 26,656 | apple.com, letterboxd.com, collider.com |
-| 90s Family Movies | open | 8 | 18,000 | 32 | 5,760 | youtube.com, imdb.com, letterboxd.com |
-| 2000s Comedy Movies | open | 15 | 11,000 | 47 | 5,170 | imdb.com, youtube.com, tubitv.com |
-| 90s Comedy Movies | open | 23 | 12,980 | 16 | 2,077 | youtube.com, wikipedia.org, imdb.com |
-| 80s Comedy Movies | open | 11 | 7,300 | 26 | 1,898 | youtube.com, imdb.com, amazon.com |
+| 90s Family Movies | created | 8 | 18,000 | 32 | 5,760 | youtube.com, imdb.com, letterboxd.com |
+| 2000s Comedy Movies | created | 15 | 11,000 | 47 | 5,170 | imdb.com, youtube.com, tubitv.com |
+| 90s Comedy Movies | open | 24 | 12,980 | 16 | 2,077 | youtube.com, wikipedia.org, imdb.com |
+| 80s Comedy Movies | created | 11 | 7,300 | 26 | 1,898 | youtube.com, imdb.com, amazon.com |
 | 2000s Animated Movies | open | 9 | 6,740 | 21 | 1,415 | wikipedia.org, youtube.com, imdb.com |
 | 90s Romance Movies | open | 11 | 3,920 | 32 | 1,254 | imdb.com, youtube.com, ew.com |
 | 2000s Action Movies | open | 14 | 3,900 | 32 | 1,248 | youtube.com, wikipedia.org, movieweb.com |
