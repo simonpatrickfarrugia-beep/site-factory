@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-01T19:00:10.720Z",
+ "generatedAt": "2026-11-02T19:00:10.883Z",
  "period": {
-  "start": "2026-10-04",
-  "end": "2026-10-31"
+  "start": "2026-10-05",
+  "end": "2026-11-01"
  },
  "gscPeriod": {
-  "start": "2026-10-02",
-  "end": "2026-10-29"
+  "start": "2026-10-03",
+  "end": "2026-10-30"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 70,
+  "views": 75,
   "prevViews": 0,
-  "users": 50,
+  "users": 55,
   "cta": {
    "book_tour": 2,
    "website": 1,
    "map": 1
   },
   "gscClicks": 4,
-  "gscImpressions": 1905
+  "gscImpressions": 1916
  },
  "daily": [
   {
@@ -80,17 +80,22 @@
    "date": "2026-10-31",
    "views": 1,
    "cta": 0
+  },
+  {
+   "date": "2026-11-01",
+   "views": 5,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 32,
+   "views": 33,
    "prevViews": 0,
-   "users": 19,
+   "users": 20,
    "cta": {},
    "gscClicks": 2,
-   "gscImpressions": 5,
+   "gscImpressions": 6,
    "gscPosition": 3,
    "topQuery": "victours"
   },
@@ -117,6 +122,17 @@
    "topQuery": "waburton"
   },
   {
+   "path": "/daylesford",
+   "views": 3,
+   "prevViews": 0,
+   "users": 3,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 9,
+   "gscPosition": 66.6,
+   "topQuery": "daylesford"
+  },
+  {
    "path": "/day-trips/torquay",
    "views": 3,
    "prevViews": 0,
@@ -139,15 +155,15 @@
    "topQuery": "yarra valley day trip"
   },
   {
-   "path": "/daylesford",
+   "path": "/richmond",
    "views": 2,
    "prevViews": 0,
    "users": 2,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 9,
-   "gscPosition": 66.6,
-   "topQuery": "daylesford"
+   "gscImpressions": 14,
+   "gscPosition": 85.4,
+   "topQuery": "brunch in richmond"
   },
   {
    "path": "/weekends",
@@ -172,6 +188,28 @@
    "topQuery": null
   },
   {
+   "path": "/lorne",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 56,
+   "gscPosition": 70.6,
+   "topQuery": "activities lorne victoria"
+  },
+  {
+   "path": "/port-campbell",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 21,
+   "gscPosition": 57.7,
+   "topQuery": "hotel port campbell"
+  },
+  {
    "path": "/collections/day-trips-from-melbourne",
    "views": 1,
    "prevViews": 0,
@@ -181,17 +219,6 @@
    "gscImpressions": 20,
    "gscPosition": 63.4,
    "topQuery": "melbourne day trips"
-  },
-  {
-   "path": "/richmond",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 14,
-   "gscPosition": 85.4,
-   "topQuery": "brunch in richmond"
   },
   {
    "path": "/rutherglen",
@@ -377,25 +404,14 @@
    "topQuery": "sorrento restaurants"
   },
   {
-   "path": "/lorne",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 56,
-   "gscPosition": 70.6,
-   "topQuery": "activities lorne victoria"
-  },
-  {
    "path": "/red-hill",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 54,
-   "gscPosition": 39.4,
+   "gscImpressions": 55,
+   "gscPosition": 39.7,
    "topQuery": "1004 mornington-flinders road red hill vic 3937"
   },
   {
@@ -575,15 +591,15 @@
    "topQuery": "lakes entrance"
   },
   {
-   "path": "/port-campbell",
+   "path": "/metung",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 21,
-   "gscPosition": 57.7,
-   "topQuery": "hotel port campbell"
+   "gscPosition": 62.7,
+   "topQuery": "110 metung road metung vic 3904"
   },
   {
    "path": "/southbank/eat",
@@ -617,17 +633,6 @@
    "gscImpressions": 20,
    "gscPosition": 73.1,
    "topQuery": "mount hotham"
-  },
-  {
-   "path": "/metung",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 19,
-   "gscPosition": 60,
-   "topQuery": "110 metung road metung vic 3904"
   },
   {
    "path": "/collections/weekend-getaways",
@@ -784,6 +789,17 @@
    "topQuery": "things to do in queenscliff"
   },
   {
+   "path": "/williamstown",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 12,
+   "gscPosition": 68.9,
+   "topQuery": "williamstown"
+  },
+  {
    "path": "/ballarat/do",
    "views": 0,
    "prevViews": 0,
@@ -916,6 +932,17 @@
    "topQuery": "great ocean road accommodation"
   },
   {
+   "path": "/port-fairy",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 9,
+   "gscPosition": 65.4,
+   "topQuery": "bottega toscana port fairy"
+  },
+  {
    "path": "/road-trips/mornington-peninsula-day-trip",
    "views": 0,
    "prevViews": 0,
@@ -960,17 +987,6 @@
    "topQuery": "family getaways"
   },
   {
-   "path": "/williamstown",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 9,
-   "gscPosition": 60.9,
-   "topQuery": "williamstown"
-  },
-  {
    "path": "/ballarat/eat",
    "views": 0,
    "prevViews": 0,
@@ -1002,17 +1018,6 @@
    "gscImpressions": 8,
    "gscPosition": 78.5,
    "topQuery": "melbourne cbd"
-  },
-  {
-   "path": "/port-fairy",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 8,
-   "gscPosition": 63,
-   "topQuery": "bottega toscana port fairy"
   },
   {
    "path": "/road-trips/phillip-island-day-trip",
@@ -1169,6 +1174,17 @@
    "topQuery": "kyneton"
   },
   {
+   "path": "/myrtleford",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 51,
+   "topQuery": "myrtleford"
+  },
+  {
    "path": "/rye/eat",
    "views": 0,
    "prevViews": 0,
@@ -1288,17 +1304,6 @@
    "gscImpressions": 5,
    "gscPosition": 33,
    "topQuery": "bed and breakfast mansfield"
-  },
-  {
-   "path": "/myrtleford",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 46,
-   "topQuery": "myrtleford"
   },
   {
    "path": "/myrtleford/eat",
@@ -1543,6 +1548,28 @@
    "topQuery": "omeo"
   },
   {
+   "path": "/omeo/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 4,
+   "gscPosition": 73,
+   "topQuery": "accommodation in omeo vic"
+  },
+  {
+   "path": "/port-campbell/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 4,
+   "gscPosition": 58.5,
+   "topQuery": "cafe port campbell"
+  },
+  {
    "path": "/swan-hill",
    "views": 0,
    "prevViews": 0,
@@ -1750,28 +1777,6 @@
    "gscImpressions": 3,
    "gscPosition": 43.7,
    "topQuery": "mornington peninsula places to visit"
-  },
-  {
-   "path": "/omeo/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 75.3,
-   "topQuery": "accommodation in omeo vic"
-  },
-  {
-   "path": "/port-campbell/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 48.7,
-   "topQuery": "cafe port campbell"
   },
   {
    "path": "/richmond/stay",
@@ -2661,8 +2666,8 @@
   {
    "query": "1004 mornington-flinders road red hill vic 3937",
    "clicks": 0,
-   "impressions": 21,
-   "position": 27.3,
+   "impressions": 22,
+   "position": 28.7,
    "page": "/red-hill"
   },
   {
@@ -2729,6 +2734,13 @@
    "page": "/sorrento/eat"
   },
   {
+   "query": "victours",
+   "clicks": 3,
+   "impressions": 13,
+   "position": 4.1,
+   "page": "/"
+  },
+  {
    "query": "things to do lorne",
    "clicks": 0,
    "impressions": 13,
@@ -2762,13 +2774,6 @@
    "impressions": 13,
    "position": 77.8,
    "page": "/southbank/stay"
-  },
-  {
-   "query": "victours",
-   "clicks": 3,
-   "impressions": 12,
-   "position": 4.2,
-   "page": "/"
   },
   {
    "query": "mornington",
@@ -2855,6 +2860,13 @@
    "page": "/daylesford/do"
   },
   {
+   "query": "110 metung road metung vic 3904",
+   "clicks": 0,
+   "impressions": 9,
+   "position": 65.7,
+   "page": "/metung"
+  },
+  {
    "query": "all you can eat mornington",
    "clicks": 0,
    "impressions": 9,
@@ -2883,10 +2895,10 @@
    "page": "/lorne"
   },
   {
-   "query": "110 metung road metung vic 3904",
+   "query": "110 metung road metung",
    "clicks": 0,
    "impressions": 8,
-   "position": 63.3,
+   "position": 68.5,
    "page": "/metung"
   },
   {
@@ -2951,13 +2963,6 @@
    "impressions": 7,
    "position": 73,
    "page": "/road-trips/mornington-peninsula-day-trip"
-  },
-  {
-   "query": "110 metung road metung",
-   "clicks": 0,
-   "impressions": 7,
-   "position": 65.3,
-   "page": "/metung"
   },
   {
    "query": "main st mornington restaurants",
@@ -3400,6 +3405,11 @@
    "date": "2026-10-29",
    "clicks": 0,
    "impressions": 15
+  },
+  {
+   "date": "2026-10-30",
+   "clicks": 0,
+   "impressions": 13
   }
  ]
 }

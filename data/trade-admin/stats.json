@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-01T19:00:10.720Z",
+ "generatedAt": "2026-11-02T19:00:10.883Z",
  "period": {
-  "start": "2026-10-04",
-  "end": "2026-10-31"
+  "start": "2026-10-05",
+  "end": "2026-11-01"
  },
  "gscPeriod": {
-  "start": "2026-10-02",
-  "end": "2026-10-29"
+  "start": "2026-10-03",
+  "end": "2026-10-30"
  },
  "sources": {
   "ga4": true,
@@ -19,7 +19,7 @@
   "users": 10,
   "cta": {},
   "gscClicks": 0,
-  "gscImpressions": 1
+  "gscImpressions": 30
  },
  "daily": [
   {
@@ -41,9 +41,20 @@
    "users": 6,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null
+   "gscImpressions": 2,
+   "gscPosition": 87,
+   "topQuery": "best invoice app for tradesmen"
+  },
+  {
+   "path": "/quote-builder",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 86,
+   "topQuery": "tradesman quote template"
   },
   {
    "path": "/how-we-make-money",
@@ -58,17 +69,6 @@
   },
   {
    "path": "/job-management-software",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null
-  },
-  {
-   "path": "/quote-builder",
    "views": 1,
    "prevViews": 0,
    "users": 1,
@@ -96,17 +96,138 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
+   "gscImpressions": 21,
+   "gscPosition": 66.5,
+   "topQuery": "servicem8 vs tradify"
+  },
+  {
+   "path": "/builder-quote-template",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 83,
+   "topQuery": "builder quote"
+  },
+  {
+   "path": "/electrician-quote-template",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 100,
+   "topQuery": "electrician quotes"
+  },
+  {
+   "path": "/cleaning-invoice-template",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
    "gscImpressions": 1,
-   "gscPosition": 61,
-   "topQuery": "service mate vs tradify"
+   "gscPosition": 69,
+   "topQuery": "cleaning invoice template"
+  },
+  {
+   "path": "/painting-quote-template",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 100,
+   "topQuery": "commercial painting quotes"
   }
  ],
  "queries": [
   {
+   "query": "servicem8 vs tradify",
+   "clicks": 0,
+   "impressions": 9,
+   "position": 61.7,
+   "page": "/tradify-vs-servicem8"
+  },
+  {
    "query": "service mate vs tradify",
    "clicks": 0,
+   "impressions": 4,
+   "position": 69.8,
+   "page": "/tradify-vs-servicem8"
+  },
+  {
+   "query": "servicem8 pricing",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 76.8,
+   "page": "/tradify-vs-servicem8"
+  },
+  {
+   "query": "best invoice app for tradesmen",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 87,
+   "page": "/"
+  },
+  {
+   "query": "tradesman quote template",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 82.5,
+   "page": "/builder-quote-template"
+  },
+  {
+   "query": "electrician quotes",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 100,
+   "page": "/electrician-quote-template"
+  },
+  {
+   "query": "fieldhive vs servicem8",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 64,
+   "page": "/tradify-vs-servicem8"
+  },
+  {
+   "query": "builder quote",
+   "clicks": 0,
    "impressions": 1,
-   "position": 61,
+   "position": 87,
+   "page": "/builder-quote-template"
+  },
+  {
+   "query": "cleaning invoice template",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 69,
+   "page": "/cleaning-invoice-template"
+  },
+  {
+   "query": "commercial painting quotes",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 100,
+   "page": "/painting-quote-template"
+  },
+  {
+   "query": "servicem8 tradify comparison",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 59,
+   "page": "/tradify-vs-servicem8"
+  },
+  {
+   "query": "servicem8 vs",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 68,
    "page": "/tradify-vs-servicem8"
   }
  ],
@@ -140,6 +261,11 @@
    "date": "2026-10-29",
    "clicks": 0,
    "impressions": 1
+  },
+  {
+   "date": "2026-10-30",
+   "clicks": 0,
+   "impressions": 28
   }
  ]
 }

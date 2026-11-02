@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-01T19:00:10.720Z",
+ "generatedAt": "2026-11-02T19:00:10.883Z",
  "period": {
-  "start": "2026-10-04",
-  "end": "2026-10-31"
+  "start": "2026-10-05",
+  "end": "2026-11-01"
  },
  "gscPeriod": {
-  "start": "2026-10-02",
-  "end": "2026-10-29"
+  "start": "2026-10-03",
+  "end": "2026-10-30"
  },
  "sources": {
   "ga4": true,
@@ -19,7 +19,7 @@
   "users": 9,
   "cta": {},
   "gscClicks": 0,
-  "gscImpressions": 82
+  "gscImpressions": 89
  },
  "daily": [
   {
@@ -46,8 +46,8 @@
    "users": 4,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 60,
-   "gscPosition": 14.6,
+   "gscImpressions": 65,
+   "gscPosition": 14.1,
    "topQuery": "community services placement"
   },
   {
@@ -101,9 +101,20 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 30.5,
+   "gscImpressions": 5,
+   "gscPosition": 30.2,
    "topQuery": "resume builder help"
+  },
+  {
+   "path": "/find-staff",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 47,
+   "topQuery": "hr support ringwood"
   },
   {
    "path": "/free-daily-journal",
@@ -126,39 +137,28 @@
    "gscImpressions": 1,
    "gscPosition": 31,
    "topQuery": "product information support"
-  },
-  {
-   "path": "/find-staff",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 45,
-   "topQuery": "hr support ringwood"
   }
  ],
  "queries": [
   {
    "query": "community help",
    "clicks": 0,
-   "impressions": 16,
-   "position": 31.3,
+   "impressions": 18,
+   "position": 28.3,
    "page": "/"
   },
   {
    "query": "community services placement",
    "clicks": 0,
-   "impressions": 13,
-   "position": 7.2,
+   "impressions": 14,
+   "position": 7.4,
    "page": "/"
   },
   {
    "query": "community service placement",
    "clicks": 0,
-   "impressions": 9,
-   "position": 12.8,
+   "impressions": 10,
+   "position": 12.9,
    "page": "/"
   },
   {
@@ -225,6 +225,13 @@
    "page": "/"
   },
   {
+   "query": "hr support ringwood",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 47,
+   "page": "/find-staff"
+  },
+  {
    "query": "assistance with social economic and community participation",
    "clicks": 0,
    "impressions": 1,
@@ -278,6 +285,13 @@
    "clicks": 0,
    "impressions": 1,
    "position": 14,
+   "page": "/"
+  },
+  {
+   "query": "communityhelp",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 10,
    "page": "/"
   },
   {
@@ -344,11 +358,11 @@
    "page": "/resume-builder"
   },
   {
-   "query": "hr support ringwood",
+   "query": "make a resume free",
    "clicks": 0,
    "impressions": 1,
-   "position": 45,
-   "page": "/find-staff"
+   "position": 29,
+   "page": "/resume-builder"
   }
  ],
  "gscDaily": [
@@ -396,6 +410,11 @@
    "date": "2026-10-29",
    "clicks": 0,
    "impressions": 23
+  },
+  {
+   "date": "2026-10-30",
+   "clicks": 0,
+   "impressions": 11
   }
  ]
 }
