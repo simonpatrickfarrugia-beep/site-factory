@@ -570,9 +570,10 @@ async function openDraft(brand, key, org) {
       else await api('/api/prospects/start', { brand, target: t.key, organisation: v.org, email: $('#d-email').value, contact_name: $('#d-contact').value, contact_role: $('#d-role').value, website: $('#d-web').value, evidence_url: $('#d-evidence').value, template_id: d.id, subject: fill($('#d-subject').value, v) });
       const to = $('#d-email').value.trim(), subj = fill($('#d-subject').value, v), bod = fill($('#d-body').value, v);
       if (isPhone()) {
-        // Phones: open the mail app (Outlook, if it's the default) with the email filled in.
+        // Phones: Outlook on the web in the browser (signed in as the IMN/CHC mailbox), so the work
+        // account in the Outlook app is never used. The From picker works there.
         if (w) w.close();
-        location.href = 'mailto:' + encodeURIComponent(to) + '?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(bod);
+        location.href = 'https://outlook.office.com/mail/deeplink/compose?to=' + encodeURIComponent(to) + '&subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(bod);
       } else {
         const url = 'https://outlook.office.com/mail/deeplink/compose?to=' + encodeURIComponent(to) + '&subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(bod);
         if (w) { w.opener = null; w.location.href = url; } else { location.href = url; }
