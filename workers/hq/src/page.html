@@ -131,6 +131,7 @@ textarea{min-height:70px;resize:vertical}
 .field input,.field select{width:100%;font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
 .mail{display:grid;gap:8px}
 .mail textarea{min-height:300px;font:14px/1.5 var(--body)}
+.phone-only{display:none}@media (max-width:640px){.phone-only{display:block}}
 .copy-bar{flex-wrap:wrap;gap:6px;align-items:center;margin-top:8px}.copy-bar .btn{padding:6px 10px}
 .card-wrap{display:grid;gap:4px;margin-bottom:8px}.card-wrap .card{margin-bottom:0}.retry{justify-self:start;padding:6px 12px;font-size:.9rem}
 .preview{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:.9rem;max-height:340px;overflow:auto;overflow-wrap:anywhere}
@@ -538,6 +539,7 @@ async function openDraft(brand, key, org) {
       <button class="btn ghost" id="d-copysubj">2. Copy subject</button>
       <button class="btn ghost" id="d-copy2">3. Copy email</button>
     </div>
+    <p class="empty phone-only" style="padding:0 0 4px"><b>On your phone:</b> the email opens in your mail app. Check <b>From</b> is the brand address, not your work account.</p>
     <p class="empty" style="padding:0">The brand signature is added automatically when you send. The card moves to Sent by itself once it's gone.</p>`;
   if (org) {
     $('#d-org').value = org.name || ''; $('#d-email').value = org.contact_email || ''; $('#d-contact').value = org.contact_name || '';
@@ -585,7 +587,9 @@ async function openDraft(brand, key, org) {
         // Phones: Outlook on the web in the browser (signed in as the IMN/CHC mailbox), so the work
         // account in the Outlook app is never used. The From picker works there.
         if (w) w.close();
-        location.href = 'https://outlook.office.com/mail/deeplink/compose?to=' + encodeURIComponent(to) + '&subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(bod);
+        // The Outlook app catches outlook.office.com links but ignores the compose part, so phones use a mailto
+        // link: the mail app opens a new email with To, subject and body filled in. Check the From account there.
+        location.href = 'mailto:' + encodeURIComponent(to).replace(/%40/g, '@') + '?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(bod);
       } else {
         const url = 'https://outlook.office.com/mail/deeplink/compose?to=' + encodeURIComponent(to) + '&subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(bod);
         if (w) { w.opener = null; w.location.href = url; } else { location.href = url; }
