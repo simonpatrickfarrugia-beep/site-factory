@@ -6,6 +6,7 @@
 import { getSingleton } from '../../src/lib/data';
 import type { Route } from '../../src/lib/routes';
 import { calculate, aud } from '../../src/lib/pay-tax';
+import { monthlyRepayment } from '../../src/lib/mortgage';
 import type { Pages, RateFile } from './model';
 import brandConfig from './brand.config';
 
@@ -18,6 +19,9 @@ export const SALARIES = [
   ...Array.from({ length: 15 }, (_, i) => 160000 + i * 10000),
 ];
 export const salaryPath = (n: number) => `salary/${n}-after-tax`;
+/** Loan sizes that get their own page ("500k mortgage repayments": 1,300 searches a month in AU, 3 Nov 2026). */
+export const LOANS = [...Array.from({ length: 17 }, (_, i) => 200000 + i * 50000), 1200000, 1500000];
+export const loanPath = (n: number) => `mortgage-repayments/${n}`;
 
 export function routes(): Route[] {
   const pages = getSingleton<Pages>('pages');
@@ -42,6 +46,7 @@ export function routes(): Route[] {
   });
   const popular = [50000, 60000, 70000, 80000, 90000, 100000, 120000, 150000].map((n) => ({ href: `/${salaryPath(n)}`, label: `${aud(n)} after tax` }));
   const out: Route[] = [];
+  const loanName = (n: number) => (n >= 1_000_000 ? `$${n / 1_000_000}m` : `$${n / 1000}k`);
 
   out.push({
     path: '',
@@ -60,8 +65,27 @@ export function routes(): Route[] {
       faqSchema(pages.mortgage.faq),
       crumbs([{ name: 'Pay calculator', path: '' }, { name: 'Mortgage repayment calculator', path: 'mortgage-repayment-calculator' }]),
     ],
-    props: { page: pages.mortgage, rates },
+    props: { page: pages.mortgage, rates, loans: LOANS.map((n) => ({ href: `/${loanPath(n)}`, label: `${loanName(n)} repayments` })) },
   });
+
+  for (const n of LOANS) {
+    const m = monthlyRepayment({ balance: n, rate: 6, years: 30, type: 'pi' });
+    out.push({
+      path: loanPath(n),
+      template: 'pcLoan',
+      seo: {
+        title: `${loanName(n)} Mortgage Repayments: ${aud(m)} a Month at 6%`,
+        rawTitle: true,
+        description: `Repayments on a ${aud(n)} home loan: ${aud(m)} a month over 30 years at 6%, weekly and fortnightly too, at rates from 5.5% to 7.5%, and what a 0.25% rise adds.`,
+      },
+      schema: [crumbs([{ name: 'Mortgage repayment calculator', path: 'mortgage-repayment-calculator' }, { name: `${loanName(n)} repayments`, path: loanPath(n) }])],
+      props: {
+        amount: n, rates,
+        nearby: LOANS.filter((x) => x !== n).map((x) => ({ n: x, href: `/${loanPath(x)}` })),
+        salaries: [80000, 100000, 120000, 150000, 200000].map((x) => ({ n: x, href: `/${salaryPath(x)}` })),
+      },
+    });
+  }
 
   out.push({
     path: 'salary',

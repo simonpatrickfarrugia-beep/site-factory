@@ -1,0 +1,68 @@
+---
+/**
+ * One loan size, worked out ("$500,000 mortgage repayments"). Every figure is computed (src/lib/mortgage.ts);
+ * the interest rates are a labelled range of example rates, never a lender's offer. The salary section uses the
+ * pay calculator's own take-home figures, so it links the two halves of the site.
+ */
+import { calculate, aud } from '../../lib/pay-tax';
+import { monthlyRepayment, perPeriod, totalInterest } from '../../lib/mortgage';
+import type { RateFile } from '../../../brands/paycalc/model';
+interface Link { n: number; href: string }
+interface Props { amount: number; rates: RateFile; nearby: Link[]; salaries: Link[] }
+const { amount, rates, nearby, salaries } = Astro.props;
+const RATES = [5.5, 6, 6.5, 7, 7.5];
+const pi = (rate: number, years: number) => monthlyRepayment({ balance: amount, rate, years, type: 'pi' });
+const k = (n: number) => (n >= 1_000_000 ? `$${n / 1_000_000}m` : `$${n / 1000}k`);
+const base = pi(6, 30);
+const per = perPeriod(base);
+const rise = pi(6.25, 30) - base;
+const io = monthlyRepayment({ balance: amount, rate: 6, years: 30, type: 'io' });
+const interest30 = totalInterest({ balance: amount, rate: 6, years: 30, type: 'pi' });
+const interest25 = totalInterest({ balance: amount, rate: 6, years: 25, type: 'pi' });
+const share = salaries.map(({ n: s, href }) => {
+  const net = calculate({ amount: s, period: 'year' }, rates).net / 12;
+  return { s, href, net, pct: Math.round((base / net) * 100) };
+});
+const calcHref = `/mortgage-repayment-calculator?owe=${amount}&rate=6&years=30&chg=0.25`;
+---
+<section class="pc-wrap pc-section">
+  <p class="pc-crumb"><a href="/mortgage-repayment-calculator">Mortgage repayment calculator</a></p>
+  <div class="pc-measure">
+    <h1 class="pc-h1">{aud(amount)} mortgage repayments</h1>
+    <p class="pc-lede">On a {aud(amount)} home loan over 30 years at 6%, principal and interest repayments are <strong>{aud(base)} a month</strong> ({aud(per.fortnight)} a fortnight or {aud(per.week)} a week). Below: the same loan at other rates and terms, what a 0.25% rate rise adds, and how it compares with take-home pay.</p>
+    <p class="pc-actions"><a class="pc-btn" href={calcHref} data-cta="loan_to_calc">Try your own rate and term</a></p>
+  </div>
+</section>
+
+<section class="pc-wrap pc-section">
+  <h2 class="pc-h2">Repayments at different rates (30 years)</h2>
+  <div class="pc-scroll">
+    <table class="pc-table">
+      <thead><tr><th scope="col">Interest rate</th><th scope="col">Weekly</th><th scope="col">Fortnightly</th><th scope="col">Monthly</th><th scope="col">Interest over the loan</th></tr></thead>
+      <tbody>
+        {RATES.map((r) => { const m = pi(r, 30); const p = perPeriod(m); return (
+          <tr><th scope="row">{r.toFixed(2)}%</th><td>{aud(p.week)}</td><td>{aud(p.fortnight)}</td><td><strong>{aud(m)}</strong></td><td>{aud(totalInterest({ balance: amount, rate: r, years: 30, type: 'pi' }))}</td></tr>
+        ); })}
+      </tbody>
+    </table>
+  </div>
+  <p class="pc-small">Example rates for comparison, not a lender's offer. Use the rate on your loan statement for your own figure. Weekly and fortnightly are the monthly repayment spread evenly over the year.</p>
+</section>
+
+<section class="pc-wrap pc-section pc-measure">
+  <h2 class="pc-h2">25 years or 30 years?</h2>
+  <p>At 6%, paying off {aud(amount)} over 25 years costs <strong>{aud(pi(6, 25))} a month</strong>, {aud(pi(6, 25) - base)} more than over 30 years. In return you pay {aud(interest30 - interest25)} less interest in total ({aud(interest25)} instead of {aud(interest30)}).</p>
+  <p>Interest only at 6%: {aud(io)} a month. Nothing comes off the {aud(amount)} you owe while it lasts.</p>
+
+  <h2 class="pc-h2">What a 0.25% rate rise adds</h2>
+  <p>The RBA moved the cash rate to {rates.cash.rate.toFixed(2)}% on {rates.cash.decidedLabel}. If your lender passes on a 0.25% rise, a {aud(amount)} loan at 6% over 30 years goes up by about <strong>{aud(rise)} a month</strong> ({aud(rise * 12)} a year, {aud((rise * 12) / 52)} a week). <a href={calcHref}>Work out your own rise</a>.</p>
+
+  <h2 class="pc-h2">Compared with take-home pay</h2>
+  <p>The {aud(base)} monthly repayment (30 years, 6%) as a share of one person's take-home pay after tax and Medicare ({rates.yearLabel} rates):</p>
+  <ul>{share.map((x) => <li><a href={x.href}>{aud(x.s)} salary</a>: {aud(x.net)} a month take-home, so the repayment is <strong>{x.pct}%</strong> of it.</li>)}</ul>
+  <p class="pc-small">A comparison, not a borrowing limit: lenders work out what you can borrow from your full income, expenses and a buffer rate. General information only, not financial advice.</p>
+
+  <h2 class="pc-h2">Other loan sizes</h2>
+  <ul class="pc-chips">{nearby.map((l) => <li><a href={l.href}>{k(l.n)} repayments</a></li>)}</ul>
+  <p><a href="/mortgage-repayment-calculator">Mortgage repayment calculator</a> · <a href="/how-we-calculate">How we calculate</a></p>
+</section>

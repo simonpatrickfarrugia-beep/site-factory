@@ -8,8 +8,8 @@ import Faq from './PcFaq.astro';
 import { aud } from '../../lib/pay-tax';
 import { rateChange, perPeriod } from '../../lib/mortgage';
 import type { RateFile, Pages } from '../../../brands/paycalc/model';
-interface Props { page: Pages['mortgage']; rates: RateFile }
-const { page, rates } = Astro.props;
+interface Props { page: Pages['mortgage']; rates: RateFile; loans: { href: string; label: string }[] }
+const { page, rates, loans } = Astro.props;
 const cash = rates.cash;
 const moved = Math.round((cash.rate - cash.previous) * 100) / 100;
 const ex = { balance: 600000, rate: 6, years: 25, type: 'pi' as const };
@@ -78,6 +78,13 @@ const sign = (n: number) => (n > 0.005 ? '+' : n < -0.005 ? '−' : '') + aud(Ma
     </table>
   </div>
   <p class="pc-small" data-m="interest">Interest over the rest of the loan: {aud(start.interestBefore)} now, {aud(start.interestAfter)} after the change.</p>
+</section>
+
+<section class="pc-band">
+  <div class="pc-wrap pc-section">
+    <h2 class="pc-h2">Repayments by loan size, worked out</h2>
+    <ul class="pc-chips">{loans.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+  </div>
 </section>
 
 <section class="pc-wrap pc-section pc-measure">
