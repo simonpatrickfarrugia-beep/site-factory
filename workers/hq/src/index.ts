@@ -332,6 +332,9 @@ async function prospects(env: Env) {
       started: list.filter((t) => t.status === 'started').length,
       next: list.filter((t) => t.score > 0).slice(0, Math.max(left, 5)),
       top: list.slice(0, 40),
+      // Every target's page, so a Radar card for a target outside the top 40 still links to its own page
+      // (e.g. the town page), not the site's home page.
+      pages: Object.fromEntries(list.filter((t) => t.page).map((t) => [t.key, t.page])),
     };
   });
   return { generated: T.generated, brands };

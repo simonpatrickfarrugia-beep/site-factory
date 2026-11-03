@@ -488,7 +488,7 @@ async function openDraft(brand, key, org) {
   let t = pb ? pb.top.concat(pb.next).find((x) => x.key === key) : null;
   if (!t && org) {
     const [seg, region] = String(key || '').split(':');
-    t = { key, segment: seg, segmentLabel: org.type || seg, regionLabel: org.region || region || '', page: null, why: '', offer: '', evidence: '', search: [], score: org.score || 0 };
+    t = { key, segment: seg, segmentLabel: org.type || seg, regionLabel: org.region || region || '', page: (pb && pb.pages && pb.pages[key]) || null, why: '', offer: '', evidence: '', search: [], score: org.score || 0 };
   }
   if (!t) return;
   const dlg = $('#sheet'); const body = $('#sheet-body');
