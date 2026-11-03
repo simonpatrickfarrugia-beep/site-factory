@@ -15,14 +15,12 @@ const T: Record<string, Record<string, Template>> = {
       subject: 'A free {region} guide for your visitors',
       body: `Hi {first_name},
 
-I'm Simon from Vic Tours ({site}), a free guide to Victoria's towns.
-
-I came across {organisation}'s visitor information and thought our {region} guide might be useful to the people you help plan a trip:
+I'm Simon from Vic Tours ({site}), a free guide to Victoria's towns. I've put together a {region} page with things to do, places to eat and stay, and a day trip plan from Melbourne:
 {page}
 
-It brings together things to do, places to eat and stay, and a day trip plan from Melbourne, free to use with no sign-up.
+You know {region} far better than we do, so I'd love your eye on it: is anything out of date, or is there a local favourite we've missed? I'm also happy to add {organisation} to the page so visitors can find you.
 
-If it's a good fit, we'd be grateful for a link from your visitor resources. And if anything in it is out of date, let me know and I'll fix it. You know {region} far better than we do.
+And if it's useful for the people you help plan a trip, we'd be grateful for a link from your visitor resources.
 
 Thanks,
 
@@ -46,18 +44,18 @@ ${OPT_OUT}`,
   },
   'community-help-co': {
     '*': {
-      subject: 'Free resume and cover letter tools for your participants',
+      subject: 'Free resume and cover letter tools for the people you help',
       body: `Hi {first_name},
 
-I'm Simon from Community Help Co ({site}). We've made a set of free job tools that might be useful for the people {organisation} works with:
+I'm Simon from Community Help Co ({site}). I spent years in employment services, and I've built a set of free job tools that might help the people {organisation} works with:
 
 - Resume builder (Australian format, saves as a PDF): {site}/resume-builder
 - Cover letter builder: {site}/cover-letter-builder
 - Job finder: {site}/job-finder
 
-They're free, there's no sign-up, and nothing people type leaves their device, so they're safe to use on a shared computer.
+They're free with no sign-up, and nothing people type leaves their device, so they're safe on a shared computer.
 
-If they'd suit your job-seeker resources, we'd be grateful for a link. Happy to hear what would make them more useful too.
+If they'd suit your job-seeker resources, we'd be grateful for a link. And I'd love to hear what would make them more useful for the people you see.
 
 Thanks,
 
