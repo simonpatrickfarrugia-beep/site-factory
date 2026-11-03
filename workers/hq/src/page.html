@@ -131,6 +131,7 @@ textarea{min-height:70px;resize:vertical}
 .field input,.field select{width:100%;font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
 .mail{display:grid;gap:8px}
 .mail textarea{min-height:300px;font:14px/1.5 var(--body)}
+.copy-bar{flex-wrap:wrap;gap:6px;align-items:center;margin-top:8px}.copy-bar .btn{padding:6px 10px}
 .card-wrap{display:grid;gap:4px;margin-bottom:8px}.card-wrap .card{margin-bottom:0}.retry{justify-self:start;padding:6px 12px;font-size:.9rem}
 .preview{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:.9rem;max-height:340px;overflow:auto;overflow-wrap:anywhere}
 .from{display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:var(--due-bg);color:var(--due);border-radius:8px;padding:8px 12px;font-size:.88rem;font-weight:600}
@@ -531,6 +532,12 @@ async function openDraft(brand, key, org) {
       <button class="btn" id="d-go">Add to board &amp; open in Outlook</button>
       <button class="btn ghost" id="d-copy">Copy email</button>
     </div>
+    <div class="row copy-bar">
+      <span class="meta">Outlook didn't open the draft? Copy and paste:</span>
+      <button class="btn ghost" id="d-copyto">1. Copy To</button>
+      <button class="btn ghost" id="d-copysubj">2. Copy subject</button>
+      <button class="btn ghost" id="d-copy2">3. Copy email</button>
+    </div>
     <p class="empty" style="padding:0">The brand signature is added automatically when you send. The card moves to Sent by itself once it's gone.</p>`;
   if (org) {
     $('#d-org').value = org.name || ''; $('#d-email').value = org.contact_email || ''; $('#d-contact').value = org.contact_name || '';
@@ -551,6 +558,9 @@ async function openDraft(brand, key, org) {
   const copy = async (text, ok) => { try { await navigator.clipboard.writeText(text); toast(ok); } catch (e) { toast('Copy failed: select the text and copy it'); } };
   if (from) $('#d-copyfrom').onclick = () => copy(from, 'From address copied');
   $('#d-copy').onclick = () => copy(fill($('#d-body').value, vals()), 'Email copied');
+  $('#d-copy2').onclick = () => copy(fill($('#d-body').value, vals()), 'Email copied');
+  $('#d-copyto').onclick = () => copy($('#d-email').value.trim(), 'To address copied');
+  $('#d-copysubj').onclick = () => copy(fill($('#d-subject').value, vals()), 'Subject copied');
   $('#d-save').onclick = async () => {
     try {
       const r = await api('/api/templates', { brand, segment: t.segment, subject: $('#d-subject').value, body: $('#d-body').value, note: $('#d-note').value });
@@ -582,7 +592,8 @@ async function openDraft(brand, key, org) {
       }
       if (org && org.stage === 'drafted') toast('Opened in Outlook again');
       else toast(d.edited ? 'Added as Drafted. Your unsaved edits count under the version you started from.' : 'Added to the board as Drafted');
-      dlg.close(); load();
+      if (!(org && org.stage === 'drafted' && isPhone())) dlg.close();
+      load();
     } catch (e) { if (w) w.close(); toast(e.message); }
   };
 }
