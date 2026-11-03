@@ -1,28 +1,28 @@
-# Site Factory brief — Mon 02 Nov 2026 (generated 00:59 UTC)
+# Site Factory brief — Tue 03 Nov 2026 (generated 03:02 UTC)
 
 _Auto-written daily by scripts/hq/brief.py. Read this first in any new chat. Refresh: scripts/claude/brief.sh_
 
 ## Headline
 
-Revenue to date **A$0.00** · sprint "First $1" ended 2 days ago · Simon has **6** open items (~34 min)
+Revenue to date **A$0.00** · sprint "First $1" ended 3 days ago · Simon has **6** open items (~34 min)
 
 ## Traffic (last 28 days)
 
 | Site | Station | Views (prev) | Last 7 days | CTA clicks | Google clicks / impressions |
 |---|---|---|---|---|---|
-| movietrailer.channel | Measure | 211 (146) | 4 3 1 7 3 4 1 | 0 | 6 / 476 |
-| victours.com.au | Launch | 70 (0) | 7 7 1 4 5 3 1 | book_tour 2, website 1, map 1 | 4 / 1905 |
-| Community Help Co | Launch | 9 (0) | 1 1 7 | 0 | 0 / 82 |
-| tradeadmin.com.au | Launch | 11 (0) | 11 1 | 0 | 0 / 1 |
+| movietrailer.channel | Measure | 194 (167) | 3 1 7 3 4 1 4 | 0 | 6 / 426 |
+| victours.com.au | Launch | 75 (0) | 7 1 4 5 3 1 5 | book_tour 2, website 1, map 1 | 4 / 1916 |
+| Community Help Co | Launch | 9 (0) | 1 1 7 | 0 | 0 / 89 |
+| tradeadmin.com.au | Launch | 11 (0) | 11 1 | 0 | 0 / 30 |
 
-- **movietrailer.channel** (stats 6h ago) — top pages: / 76, /browse 12, /movies/star-wars-episode-v---the-empire-strikes-back-1980 9, /movies/schindlers-list-1994 6, /movies/star-wars-episode-vii---the-force-awakens-2015 6
-  - Google: "ghost soldier movie 2006" 62 impr, pos 8.5; "the prestige trailer" 33 impr, pos 37.6; "the sixth sense trailer" 29 impr, pos 29.5; "home alone trailer" 26 impr, pos 46.8; "inception trailer" 17 impr, pos 39.1
-- **victours.com.au** (stats 6h ago) — top pages: / 32, /towns 6, /warburton 5, /day-trips/torquay 3, /road-trips/yarra-valley-day-trip 2
-  - Google: "melbourne accomodation southbank" 192 impr, pos 77.5; "sorrento restaurants" 72 impr, pos 87.5; "activities lorne victoria" 56 impr, pos 70.6; "1004 mornington-flinders road red hill vic 3937" 54 impr, pos 39.4; "best restaurants in mornington peninsula" 44 impr, pos 74.9
-- **Community Help Co** (stats 6h ago) — top pages: / 4, /contact 2, /job-finder 2, /about 1, /cover-letter-builder 0
-  - Google: "community services placement" 60 impr, pos 14.6; "help support" 8 impr, pos 23.8; "free cover letter" 7 impr, pos 39.9; "resume builder help" 4 impr, pos 30.5; "back to you journal pdf free download" 1 impr, pos 1
-- **tradeadmin.com.au** (stats 6h ago) — top pages: / 7, /how-we-make-money 1, /job-management-software 1, /quote-builder 1, /tradify-pricing 1
-  - Google: "service mate vs tradify" 1 impr, pos 61
+- **movietrailer.channel** (stats 8h ago) — top pages: / 65, /browse 12, /movies/star-wars-episode-v---the-empire-strikes-back-1980 8, /movies/star-wars-episode-vii---the-force-awakens-2015 6, /movies/home-alone-1990 3
+  - Google: "ghost soldier movie 2006" 52 impr, pos 8.5; "the prestige trailer" 31 impr, pos 38.4; "the sixth sense trailer" 29 impr, pos 29.5; "home alone trailer" 25 impr, pos 47.4; "phantom menace trailer" 16 impr, pos 41.2
+- **victours.com.au** (stats 8h ago) — top pages: / 33, /towns 6, /warburton 5, /daylesford 3, /day-trips/torquay 3
+  - Google: "melbourne accomodation southbank" 192 impr, pos 77.5; "sorrento restaurants" 72 impr, pos 87.5; "activities lorne victoria" 56 impr, pos 70.6; "1004 mornington-flinders road red hill vic 3937" 55 impr, pos 39.7; "best restaurants in mornington peninsula" 44 impr, pos 74.9
+- **Community Help Co** (stats 8h ago) — top pages: / 4, /contact 2, /job-finder 2, /about 1, /cover-letter-builder 0
+  - Google: "community services placement" 65 impr, pos 14.1; "help support" 8 impr, pos 23.8; "free cover letter" 7 impr, pos 39.9; "resume builder help" 5 impr, pos 30.2; "hr support ringwood" 2 impr, pos 47
+- **tradeadmin.com.au** (stats 8h ago) — top pages: / 7, /quote-builder 1, /how-we-make-money 1, /job-management-software 1, /tradify-pricing 1
+  - Google: "servicem8 vs tradify" 21 impr, pos 66.5; "best invoice app for tradesmen" 2 impr, pos 87; "builder quote" 2 impr, pos 83; "electrician quotes" 2 impr, pos 100; "tradesman quote template" 1 impr, pos 86
 
 Latest milestones: 2026-10-28 vic: First affiliate clicks (2 tour clicks); 2026-10-28 vic: First Google clicks (2 in 28 days); 2026-10-29 vic: Best day ever: 28 visits (24 Oct)
 
@@ -32,18 +32,19 @@ All checks passing ✅ (sites up, pipeline jobs fresh, live builds current, no f
 
 ## Pipeline jobs (last run)
 
-- ✅ `intake` 1h ago: Intake: 0 new trailer(s) queued. | Feed UCAP57cF-FSjJKzzXg7ntPlQ failed: YouTube feed UCAP57cF-FSjJKzzXg7ntPlQ: HTTP 500 | Feed UCtlPYzQ188v
-- ✅ `niches` 4h ago: Niches: scored 3 of 3. | Dog-friendly hotels by city: 54/100 (demand 1, money 96, ease 98, fit 28). | Pet insurance quotes by breed and stat
-- ✅ `enrich` 4h ago: Enrich: looked at 15, published 13 (Groundhog Day (1993) → /movies/groundhog-day-1993; Twins (1988) → /movies/twins-1988; The Rocky Horror P
-- ✅ `catalogue` 5h ago: Catalogue: queued 30 film(s): Groundhog Day (1993): 61090/mo, Twins (1988): 60890/mo, Once Upon a Time in the West (1968): 60890/mo, The Roc
-- ✅ `stats` 6h ago: paycalc: 38 views, 0 CTA clicks, 0 Google clicks. | trade-admin: 11 views, 0 CTA clicks, 0 Google clicks. | community-help-co: 9 views, 0 CT
-- ✅ `recheck` 7h ago: Recheck: looked at 1, published 0. Queue: 1 waiting for OMDb, 15 need review.
-- ✅ `discover` 31h ago: Discover: screened 15 new ideas for US$0.34; 3 promoted to scoring: Dog-friendly hotels by city (4 free domains), Pet insurance quotes by br
-- ✅ `competition` 4d ago: Competition: checked 4; 4 still to check (run again). | AU electric car running costs vs petrol by model: openness 49/100; big players drive
-- ✅ `ratings` 11d ago: Ratings: checked 40, updated 0; 0 never checked.
-- ✅ `keywords` 12d ago: Victorian road trips and itineraries: day trips from melbourne 2900, great alpine road 1900, weekend getaways from melbourne 1900, romantic 
-- ✅ `collections` 12d ago: Collections: created 3: 90s Family Movies (8 films, 18000/mo) → /discover/90s-family-movies; 2000s Comedy Movies (15 films, 11000/mo) → /dis
-- ✅ `collcheck` 12d ago: Collection check: 29 idea(s) checked (US$0.077). Most winnable: Tom Hanks Movies 305400/mo × 21%; Christian Bale Movies 166600/mo × 16%; 90s
+- ✅ `intake` 3h ago: Intake: 0 new trailer(s) queued. | Feed UCAP57cF-FSjJKzzXg7ntPlQ failed: YouTube feed UCAP57cF-FSjJKzzXg7ntPlQ: HTTP 404 | Feed UCtlPYzQ188v
+- ✅ `enrich` 6h ago: Enrich: looked at 15, published 13 (Clear and Present Danger (1994) → /movies/clear-and-present-danger-1994; Chinatown (1974) → /movies/chin
+- ✅ `collcheck` 7h ago: Collection check: 0 idea(s) checked (US$0.000). Most winnable: Tom Hanks Movies 305400/mo × 21%; Christian Bale Movies 166600/mo × 16%; 90s 
+- ✅ `stats` 8h ago: paycalc: 48 views, 0 CTA clicks, 0 Google clicks. | trade-admin: 11 views, 0 CTA clicks, 0 Google clicks. | community-help-co: 9 views, 0 CT
+- ✅ `demand` 9h ago: Demand: 212 searches analysed; 0 film ideas, 0 new collection ideas. Saved to reports/trailers/demand-2026-10.md.
+- ✅ `niches` 30h ago: Niches: scored 3 of 3. | Dog-friendly hotels by city: 54/100 (demand 1, money 96, ease 98, fit 28). | Pet insurance quotes by breed and stat
+- ✅ `catalogue` 31h ago: Catalogue: queued 30 film(s): Groundhog Day (1993): 61090/mo, Twins (1988): 60890/mo, Once Upon a Time in the West (1968): 60890/mo, The Roc
+- ✅ `recheck` 33h ago: Recheck: looked at 1, published 0. Queue: 1 waiting for OMDb, 15 need review.
+- ✅ `discover` 2d ago: Discover: screened 15 new ideas for US$0.34; 3 promoted to scoring: Dog-friendly hotels by city (4 free domains), Pet insurance quotes by br
+- ✅ `competition` 5d ago: Competition: checked 4; 4 still to check (run again). | AU electric car running costs vs petrol by model: openness 49/100; big players drive
+- ✅ `ratings` 12d ago: Ratings: checked 40, updated 0; 0 never checked.
+- ✅ `keywords` 13d ago: Victorian road trips and itineraries: day trips from melbourne 2900, great alpine road 1900, weekend getaways from melbourne 1900, romantic 
+- ✅ `collections` 13d ago: Collections: created 3: 90s Family Movies (8 films, 18000/mo) → /discover/90s-family-movies; 2000s Comedy Movies (15 films, 11000/mo) → /dis
 
 ## Simon's list (open)
 
@@ -66,12 +67,16 @@ Done in the last 7 days: Email Careerjet (reply to the welcome email or use thei
 
 ## Open GitHub issues
 
-- none
+- #5 📬 1 new enquiry on communityhelp.com.au [enquiry]
 
 ## Changes in the last 7 days
 
-100 commits (26 automated data updates). Hand-made changes:
+100 commits (31 automated data updates). Hand-made changes:
 
+- 2026-11-03 Leads: daily call list [skip ci]
+- 2026-11-02 IMN HQ: phones open Outlook on the web, not the mail app (keeps the work Outlook account out of it)
+- 2026-11-02 IMN HQ: phone-friendly layout
+- 2026-11-02 IMN HQ: Radar daily prospect feed (Today tab)
 - 2026-11-02 IMN HQ: affiliate programme tracker (Affiliates tab)
 - 2026-11-01 Leads: daily call list [skip ci]
 - 2026-11-01 Vic Tours: Viator products refreshed
@@ -93,10 +98,6 @@ Done in the last 7 days: Email Careerjet (reply to the welcome email or use thei
 - 2026-11-01 Free films: record silent-film audio check results
 - 2026-11-01 Free films: automatic audio check for silent-film copies
 - 2026-11-01 Prospecting: all five brands active (Simon's call, 1 Nov)
-- 2026-11-01 IMN HQ: connect Cloudflare Access (team domain + AUD)
-- 2026-11-01 IMN HQ: outreach CRM board + prospecting engine
-- 2026-11-01 Mail hub: forward partners@ (published on the trailers site)
-- 2026-11-01 Mail hub: pre-register trailers, paycalc and trade-admin domains
 
 ## Where things live
 
