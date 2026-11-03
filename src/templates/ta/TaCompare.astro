@@ -1,4 +1,5 @@
 ---
+import TaTradifyOffer from './TaTradifyOffer.astro';
 /** Job app price comparison: one page per angle (all apps, A vs B, or one app's pricing), each with the same calculator. */
 import type { Apps, ComparePage } from '../../../brands/trade-admin/model';
 interface Props { page: ComparePage; apps: Apps; focus: readonly string[] | null; slug: string; others: { href: string; label: string }[] }
@@ -55,6 +56,7 @@ const money = (n: number) => (n === 0 ? 'Free' : `$${n}`);
         </table>
         <p class="ta-small">{gstLabel[a.gst]}. {a.trial}</p>
         <p><a class="ta-btn ta-btn--quiet" href={a.url} rel="nofollow noopener" target="_blank" data-cta="app_site">See {a.name}'s pricing page</a></p>
+        {k === 'tradify' && <TaTradifyOffer source={slug} />}
       </section>
     );
   })}

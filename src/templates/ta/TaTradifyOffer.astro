@@ -1,0 +1,76 @@
+---
+/**
+ * "Get 50% off Tradify for 3 months": Trade Admin is a Tradify referral partner (approved 3 Nov 2026).
+ * Tradify's programme has no tracking link: Simon creates each trial in Tradify's Partner Portal, and the partner
+ * discount (50% off the first 3 months) is applied automatically. So this form collects the request
+ * (D1 `submissions`, form `tradify-trial`); the `enquiries` workflow alerts Simon, who sets the trial up.
+ */
+interface Props { source: string; hidden?: boolean }
+const { source, hidden = false } = Astro.props;
+---
+<section class="ta-offer" id="tradify-trial" data-offer hidden={hidden} aria-labelledby={`offer-h-${source}`}>
+  <p class="ta-offer__tag">Partner offer</p>
+  <h3 class="ta-h3" id={`offer-h-${source}`}>Try Tradify with 50% off your first 3 months</h3>
+  <p>We're a Tradify referral partner. Leave your details and Simon will set up your Tradify free trial with the partner discount already applied. Tradify then emails you a link to get started, usually within one working day.</p>
+  <form class="ta-form ta-offer__form" action="/api/submit/tradify-trial" method="post" data-offer-form>
+    <input type="hidden" name="source" value={source} />
+    <div class="ta-offer__row">
+      <label>Your name<input name="name" required maxlength="80" autocomplete="name" /></label>
+      <label>Business name<input name="business" required maxlength="100" autocomplete="organization" /></label>
+    </div>
+    <div class="ta-offer__row">
+      <label>Email<input name="email" type="email" required maxlength="120" autocomplete="email" /></label>
+      <label>Phone <span class="ta-small">(optional)</span><input name="phone" type="tel" maxlength="30" autocomplete="tel" /></label>
+    </div>
+    <div class="ta-offer__row">
+      <label>Your trade<input name="trade" maxlength="60" placeholder="e.g. electrician" /></label>
+      <label>People who'd use it<input name="people" type="number" min="1" max="200" inputmode="numeric" placeholder="e.g. 2" /></label>
+    </div>
+    <label class="ta-offer__ok"><input type="checkbox" name="consent" value="yes" required /> OK to pass these details to Tradify to set up my free trial.</label>
+    <p class="ta-hp" aria-hidden="true"><label>Leave this empty<input name="company_website" tabindex="-1" autocomplete="off" /></label></p>
+    <p><button class="ta-btn" type="submit" data-cta="tradify_offer">Set up my trial</button></p>
+    <p class="ta-offer__status" role="status" aria-live="polite" data-offer-status></p>
+    <p class="ta-small">Tradify may pay us a referral fee if you go on to a paid plan. It costs you nothing extra and doesn't change our price comparisons. <a href="/how-we-make-money">How we make money</a></p>
+  </form>
+</section>
+
+<script is:inline>
+  (function () {
+    var thanks = 'Thanks! Simon will set up your Tradify trial, usually within one working day. Watch for an email from Tradify.';
+    document.querySelectorAll('form[data-offer-form]').forEach(function (form) {
+      if (form.dataset.bound) return; form.dataset.bound = '1';
+      var status = form.querySelector('[data-offer-status]');
+      if (/[?&]sent=1/.test(location.search) && location.hash === '#tradify-trial') status.textContent = thanks;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var button = form.querySelector('button[type=submit]');
+        button.disabled = true; status.textContent = 'Sending…';
+        fetch(form.action, { method: 'POST', body: new FormData(form), headers: { accept: 'application/json' } })
+          .then(function (r) { return r.json(); })
+          .then(function (d) {
+            if (d.ok) {
+              form.reset(); status.textContent = thanks;
+              try { window.gtag && window.gtag('event', 'tradify_offer_sent', { source: form.source.value }); } catch (x) {}
+            } else status.textContent = d.message || 'Something went wrong. Please email hello@tradeadmin.com.au.';
+          })
+          .catch(function () { status.textContent = 'Something went wrong. Please email hello@tradeadmin.com.au.'; })
+          .finally(function () { button.disabled = false; });
+      });
+    });
+  })();
+</script>
+
+<style is:global>
+  .ta-offer { margin: 1.5rem 0; padding: 1.2rem 1.3rem; background: var(--panel); border: 3px solid var(--hi); border-radius: var(--radius); max-width: 44rem; }
+  .ta-offer[hidden] { display: none; }
+  .ta-offer__tag { display: inline-block; margin: 0 0 0.4rem; background: var(--hi); color: #1a1a1a; font: 800 0.8rem var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; padding: 0.15rem 0.55rem; border-radius: 4px; }
+  .ta-offer h3 { margin-top: 0; }
+  .ta-offer__form { display: grid; gap: 0.8rem; margin-top: 0.8rem; }
+  .ta-offer__row { display: grid; gap: 0.8rem; }
+  @media (min-width: 34rem) { .ta-offer__row { grid-template-columns: 1fr 1fr; } }
+  .ta-offer__form input:not([type=checkbox]) { font: inherit; padding: 0.6rem; border-radius: 6px; border: 2px solid var(--paper); width: 100%; box-sizing: border-box; }
+  .ta-offer__ok { display: flex !important; gap: 0.5rem; align-items: flex-start; font-weight: 400 !important; }
+  .ta-offer__ok input { width: 1.2rem; height: 1.2rem; margin-top: 0.15rem; flex: none; }
+  .ta-offer__status { font-weight: 700; min-height: 1em; }
+  .ta-hp { position: absolute; left: -9999px; }
+</style>
