@@ -171,6 +171,8 @@ const t = p.tips;
   const remember = root.querySelector<HTMLInputElement>('[data-remember]')!;
   const LISTS: Record<string, string> = { work: 'rb-item-job', education: 'rb-item-edu', volunteering: 'rb-item-job' };
   const track = (name: string) => { try { (window as any).gtag?.('event', `cta_${name}`); } catch {} };
+  // 'Started' = the first time someone types in the form on this visit (counts use, not just page views). Nothing typed is sent.
+  root.addEventListener('input', () => track('resume_start'), { once: true });
 
   const empty = (): Data => ({ f: { refs: 'request' }, lists: { work: [{}], education: [{}], volunteering: [] }, look: 'clean' });
 

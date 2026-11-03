@@ -112,6 +112,8 @@ const t = p.tips;
   const status = root.querySelector<HTMLElement>('.chc-form__status')!;
   const f = (k: string) => (root.querySelector<HTMLInputElement | HTMLTextAreaElement>(`[data-f="${k}"]`)?.value ?? '').trim();
   const track = (n: string) => { try { (window as any).gtag?.('event', `cta_${n}`); } catch {} };
+  // 'Started' = the first time someone types in the form on this visit (counts use, not just page views). Nothing typed is sent.
+  root.addEventListener('input', () => track('cover_start'), { once: true });
   const sentence = (s: string) => (s && !/[.!?]$/.test(s) ? s + '.' : s);
 
   function parts() {
