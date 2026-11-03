@@ -255,6 +255,54 @@
  "_todo": "Simon's to-do list shown at the top of HQ. kind: do | decide. sprint: true = counts toward the current sprint. Claude (or the daily coach / weekly autopilot) sets done: true + doneAt when Simon says 'done' or an approval email arrives.",
  "todo": [
   {
+   "id": "chc-review-quotes",
+   "kind": "do",
+   "sprint": false,
+   "mins": 2,
+   "what": "Paste the 2 best Google reviews (text + first name) into the Site Factory chat; Claude adds them to the CHC home page as quotes linked to Google",
+   "why": "Named quotes convert better than a star badge",
+   "link": "https://business.google.com",
+   "linkLabel": "Business Profile",
+   "done": false,
+   "addedAt": "2026-11-03"
+  },
+  {
+   "id": "ga4-country-check",
+   "kind": "do",
+   "sprint": false,
+   "mins": 1,
+   "what": "Monthly (1st): GA4 → movietrailer.channel property → Reports → User attributes → Country. If Australia is 20%+ of visitors, tell Claude: time to open an amazon.com.au Associates account",
+   "why": "Amazon US needs 3 sales by ~29 Mar 2027; Australian visitors can't buy through amazon.com links",
+   "link": "https://analytics.google.com",
+   "linkLabel": "GA4",
+   "done": false,
+   "addedAt": "2026-11-03"
+  },
+  {
+   "id": "imn-setup-nov",
+   "kind": "do",
+   "sprint": false,
+   "mins": 60,
+   "what": "IMN company sitting (November, when cash allows): buy imnetwork.com.au, set up IMN email, then move GitHub, Cloudflare, domains and Google accounts into Independent Media Network Pty Ltd's name",
+   "why": "Protects the business and makes the sites sellable",
+   "link": "https://www.movietrailer.channel/hq",
+   "linkLabel": "HQ",
+   "done": false,
+   "addedAt": "2026-11-03"
+  },
+  {
+   "id": "mailhub-trade-admin",
+   "kind": "do",
+   "sprint": true,
+   "mins": 15,
+   "what": "Plug tradeadmin.com.au into the mail hub (claude/MAIL-HUB.md checklist; check its existing Microsoft 365 setup first). Then Claude sets mailReady: true so Radar finds tradie prospects",
+   "why": "Trade Admin is the best money path now (Tradify partner offer live); outreach needs a brand address",
+   "link": "https://dash.cloudflare.com",
+   "linkLabel": "Cloudflare",
+   "done": false,
+   "addedAt": "2026-11-03"
+  },
+  {
    "id": "sprint-first-dollar-reset",
    "kind": "decide",
    "sprint": true,
