@@ -85,6 +85,12 @@ async function subscribe(request: Request, env: Env): Promise<Response> {
   return back(true, "You're on the list. Thanks!");
 }
 
+/** True when the form's page-load stamp (_t, added by Base.astro) is 3 seconds to 1 day old. */
+function humanTiming(stamp: string | undefined): boolean {
+  const age = Date.now() - Number(stamp);
+  return Number.isFinite(age) && age >= 3000 && age <= 86_400_000;
+}
+
 async function submit(request: Request, env: Env, form: string): Promise<Response> {
   const wantsJson = (request.headers.get('accept') ?? '').includes('application/json') || request.headers.get('sec-fetch-mode') === 'cors';
   const page = (() => { try { return new URL(request.headers.get('referer') ?? '/', request.url).pathname; } catch { return '/'; } })();
@@ -95,9 +101,10 @@ async function submit(request: Request, env: Env, form: string): Promise<Respons
   if (f.company_website) return back(true, 'Sent.'); // honeypot
   const email = (f.email ?? '').trim();
   if (!EMAIL.test(email)) return back(false, 'That email address doesn’t look right.');
+  if (!humanTiming(f._t)) return back(true, 'Sent.'); // time trap: no page-load stamp, or sent in under 3 seconds
   const data: Record<string, string> = {};
   for (const [k, v] of Object.entries(f)) {
-    if (k === 'company_website' || Object.keys(data).length >= 20) continue;
+    if (k === 'company_website' || k === '_t' || Object.keys(data).length >= 20) continue;
     data[k.slice(0, 40)] = String(v).trim().slice(0, 4000);
   }
   await env.DB.prepare('INSERT INTO submissions (id, brand, form, data, page) VALUES (?, ?, ?, ?, ?)')

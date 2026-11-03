@@ -50,7 +50,7 @@ const { source, hidden = false } = Astro.props;
           .then(function (d) {
             if (d.ok) {
               form.reset(); status.textContent = thanks;
-              try { window.gtag && window.gtag('event', 'tradify_offer_sent', { source: form.source.value }); } catch (x) {}
+              try { window.gtag && window.gtag('event', 'cta_tradify_offer_sent', { source: form.source.value }); } catch (x) {}
             } else status.textContent = d.message || 'Something went wrong. Please email hello@tradeadmin.com.au.';
           })
           .catch(function () { status.textContent = 'Something went wrong. Please email hello@tradeadmin.com.au.'; })

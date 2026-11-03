@@ -124,5 +124,15 @@ const tokenCss = `:root{${Object.entries(tokens).map(([k, v]) => `${k}:${v}`).jo
       <slot />
     </main>
     <Footer />
+      <script is:inline>
+      // Spam trap for our forms: stamp each /api form with the time the page loaded. The site Worker quietly drops
+      // posts with no stamp or sent within 3 seconds (bots post straight to the endpoint or fill forms instantly).
+      (function () {
+        var t = String(Date.now());
+        document.querySelectorAll('form[action^="/api/"]').forEach(function (f) {
+          var i = document.createElement('input'); i.type = 'hidden'; i.name = '_t'; i.value = t; f.appendChild(i);
+        });
+      })();
+    </script>
   </body>
 </html>
