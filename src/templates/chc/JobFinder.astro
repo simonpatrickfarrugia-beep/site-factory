@@ -53,6 +53,7 @@ const { book, page: p } = Astro.props;
     <h2 class="chc-h2" data-jf-head></h2>
     <p class="jf-note" data-jf-note hidden></p>
     <ol class="jf-list" data-jf-list></ol>
+    <div class="jf-widget" data-jf-widget hidden></div>
     <p><button type="button" class="chc-btn jf-more" data-jf-more hidden>Load more jobs</button></p>
     <Nudge heading="Applying but not hearing back?" text="That's common, and usually fixable. Simon works one-on-one with people to find roles that fit, sharpen applications and prepare for interviews. Start with a free chat." subject="Job search help (free chat)" cta="nudge_jobs" />
     <div class="jf-boards">
@@ -113,6 +114,30 @@ const { book, page: p } = Astro.props;
   const note = root.querySelector<HTMLElement>('[data-jf-note]')!;
   const more = root.querySelector<HTMLButtonElement>('[data-jf-more]')!;
   const boards = root.querySelector<HTMLElement>('[data-jf-boards]')!;
+  const widget = root.querySelector<HTMLElement>('[data-jf-widget]')!;
+  // Careerjet JobBox: used whenever our own /api/jobs can't reach Careerjet (their API only accepts declared server IPs,
+  // and Cloudflare Workers have none). It runs in the visitor's browser and earns from Careerjet the same way.
+  const CJ_BOX = 'https://widget.careerjet.net/job-box/13458676bdd2dff12094607172ea1a04';
+  const words = (o: ReturnType<typeof opts>) => [
+    o.hours === 'part' ? 'part time' : '', o.type === 'casual' ? 'casual' : o.type === 'temp' ? 'temporary' : o.type === 'perm' ? 'permanent' : '',
+    o.f.includes('remote') ? 'work from home' : '', o.f.includes('noexp') ? 'no experience' : '', o.f.includes('flexible') ? 'flexible hours' : '', o.q,
+  ].filter(Boolean).join(' ');
+  const showWidget = () => {
+    const o = opts();
+    widget.hidden = false;
+    widget.innerHTML = '';
+    const box = document.createElement('div');
+    box.className = 'cj-job-box';
+    box.dataset.url = CJ_BOX;
+    box.dataset.search = words(o);
+    box.dataset.location = o.where || 'Australia';
+    widget.appendChild(box);
+    document.getElementById('cj-job-box')?.remove();
+    const js = document.createElement('script');
+    js.id = 'cj-job-box'; js.async = true;
+    js.src = `https://static.careerjet.org/js/all_widget_job_box_3rd_party.min.js?t=${Date.now()}`;
+    document.body.appendChild(js);
+  };
   let all: Job[] = []; let page = 1; let pages = 0; let hits = 0;
 
   const opts = () => {
@@ -125,11 +150,11 @@ const { book, page: p } = Astro.props;
 
   const setBoards = () => {
     const o = opts();
-    const words = [o.hours === 'part' ? 'part time' : '', o.type === 'casual' ? 'casual' : o.type === 'temp' ? 'temporary' : '', o.f.includes('remote') ? 'work from home' : '', o.q].filter(Boolean).join(' ');
+    const kw = words(o);
     const where = o.where || 'Australia';
     boards.innerHTML = [
-      ['Seek', `https://www.seek.com.au/jobs?keywords=${encodeURIComponent(words)}&where=${encodeURIComponent(where)}`],
-      ['Indeed', `https://au.indeed.com/jobs?q=${encodeURIComponent(words)}&l=${encodeURIComponent(where)}`],
+      ['Seek', `https://www.seek.com.au/jobs?keywords=${encodeURIComponent(kw)}&where=${encodeURIComponent(where)}`],
+      ['Indeed', `https://au.indeed.com/jobs?q=${encodeURIComponent(kw)}&l=${encodeURIComponent(where)}`],
       ['Workforce Australia', 'https://www.workforceaustralia.gov.au/individuals/jobs/search'],
     ].map(([n, h]) => `<a class="chc-link" href="${ESC(h)}" rel="nofollow noopener" target="_blank" data-cta="board_${n.toLowerCase().replace(/\s+/g, '_')}">${ESC(n)}</a>`).join(' · ');
   };
@@ -153,7 +178,7 @@ const { book, page: p } = Astro.props;
   const load = async (next: boolean) => {
     const o = opts();
     page = next ? page + 1 : 1;
-    if (!next) { all = []; note.hidden = true; }
+    if (!next) { all = []; note.hidden = true; widget.hidden = true; widget.innerHTML = ''; }
     const q = new URLSearchParams({ q: o.q, where: o.where, hours: o.hours, type: o.type, page: String(page) });
     setBoards();
     results.hidden = false;
@@ -162,9 +187,13 @@ const { book, page: p } = Astro.props;
     try { d = await (await fetch(`/api/jobs?${q}`, { headers: { accept: 'application/json' } })).json(); }
     catch { d = { ok: false, reason: 'down', message: 'Live job search is not responding right now.' }; }
     if (!d.ok) {
-      head.textContent = d.reason === 'setup' ? 'Live job ads are coming soon' : 'Live search is down for a moment';
-      note.hidden = false; note.textContent = `${d.message ?? ''} In the meantime, these links run the same search on the big job boards.`;
-      list.innerHTML = ''; more.hidden = true; return;
+      const o2 = opts();
+      head.textContent = 'Live job ads';
+      list.innerHTML = ''; more.hidden = true;
+      showWidget();
+      if (o2.f.includes('nolicence')) { note.hidden = false; note.textContent = 'These ads come straight from Careerjet, so the "no licence or car" filter can\'t be applied here: check each ad before you apply.'; }
+      gtag('job_search', { hours: o2.hours, type: o2.type, filters: o2.f.join(',') || 'none', results: -1, mode: 'widget' });
+      return;
     }
     if (d.places?.length) { note.hidden = false; note.textContent = `Which place did you mean? Try one of: ${d.places.join(', ')}.`; }
     all = all.concat(d.jobs ?? []); pages = d.pages ?? 0; hits = d.hits ?? 0;
@@ -208,6 +237,8 @@ const { book, page: p } = Astro.props;
   .jf-tag--warn { background: #F1ECE0; color: #5B5240; }
   .jf-empty { padding: 1rem; background: #fff; border-radius: 12px; }
   .jf-more[hidden] { display: none; }
+  .jf-widget[hidden] { display: none; }
+  .jf-widget { margin-top: 0.5rem; }
   .jf-boards { margin-top: 1.5rem; }
   .jf-job__act { margin: 0.7rem 0 0; }
   .jf-tailor { display: inline-block; font-weight: 700; color: var(--forest); background: var(--mint); border-radius: 999px; padding: 0.4rem 0.9rem; text-decoration: none; margin-right: 0.4rem; }
