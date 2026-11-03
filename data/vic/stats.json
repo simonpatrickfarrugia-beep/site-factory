@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-02T19:00:10.883Z",
+ "generatedAt": "2026-11-03T19:00:11.935Z",
  "period": {
-  "start": "2026-10-05",
-  "end": "2026-11-01"
+  "start": "2026-10-06",
+  "end": "2026-11-02"
  },
  "gscPeriod": {
-  "start": "2026-10-03",
-  "end": "2026-10-30"
+  "start": "2026-10-04",
+  "end": "2026-10-31"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 75,
+  "views": 77,
   "prevViews": 0,
-  "users": 55,
+  "users": 57,
   "cta": {
    "book_tour": 2,
    "website": 1,
    "map": 1
   },
   "gscClicks": 4,
-  "gscImpressions": 1916
+  "gscImpressions": 1922
  },
  "daily": [
   {
@@ -85,14 +85,19 @@
    "date": "2026-11-01",
    "views": 5,
    "cta": 0
+  },
+  {
+   "date": "2026-11-02",
+   "views": 2,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 33,
+   "views": 35,
    "prevViews": 0,
-   "users": 20,
+   "users": 22,
    "cta": {},
    "gscClicks": 2,
    "gscImpressions": 6,
@@ -194,8 +199,8 @@
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 56,
-   "gscPosition": 70.6,
+   "gscImpressions": 57,
+   "gscPosition": 71,
    "topQuery": "activities lorne victoria"
   },
   {
@@ -410,8 +415,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 55,
-   "gscPosition": 39.7,
+   "gscImpressions": 56,
+   "gscPosition": 40.1,
    "topQuery": "1004 mornington-flinders road red hill vic 3937"
   },
   {
@@ -569,6 +574,17 @@
    "topQuery": "coffee daylesford"
   },
   {
+   "path": "/metung",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 23,
+   "gscPosition": 64.7,
+   "topQuery": "110 metung road metung vic 3904"
+  },
+  {
    "path": "/bairnsdale",
    "views": 0,
    "prevViews": 0,
@@ -589,17 +605,6 @@
    "gscImpressions": 21,
    "gscPosition": 39,
    "topQuery": "lakes entrance"
-  },
-  {
-   "path": "/metung",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 21,
-   "gscPosition": 62.7,
-   "topQuery": "110 metung road metung vic 3904"
   },
   {
    "path": "/southbank/eat",
@@ -1185,6 +1190,17 @@
    "topQuery": "myrtleford"
   },
   {
+   "path": "/road-trips/great-alpine-road",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 46.5,
+   "topQuery": "great alpine road"
+  },
+  {
    "path": "/rye/eat",
    "views": 0,
    "prevViews": 0,
@@ -1328,6 +1344,17 @@
    "topQuery": "ocean grove attractions"
   },
   {
+   "path": "/omeo/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 5,
+   "gscPosition": 71.8,
+   "topQuery": "486 omeo valley road omeo"
+  },
+  {
    "path": "/phillip-island/eat",
    "views": 0,
    "prevViews": 0,
@@ -1337,17 +1364,6 @@
    "gscImpressions": 5,
    "gscPosition": 80.2,
    "topQuery": "phillip island dining"
-  },
-  {
-   "path": "/road-trips/great-alpine-road",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 38,
-   "topQuery": "great alpine road"
   },
   {
    "path": "/rye",
@@ -1546,17 +1562,6 @@
    "gscImpressions": 4,
    "gscPosition": 45.3,
    "topQuery": "omeo"
-  },
-  {
-   "path": "/omeo/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 73,
-   "topQuery": "accommodation in omeo vic"
   },
   {
    "path": "/port-campbell/eat",
@@ -2657,18 +2662,18 @@
    "page": "/sorrento/eat"
   },
   {
+   "query": "1004 mornington-flinders road red hill vic 3937",
+   "clicks": 0,
+   "impressions": 23,
+   "position": 30.3,
+   "page": "/red-hill"
+  },
+  {
    "query": "melbourne accomodation southbank",
    "clicks": 0,
    "impressions": 23,
    "position": 72,
    "page": "/southbank/stay"
-  },
-  {
-   "query": "1004 mornington-flinders road red hill vic 3937",
-   "clicks": 0,
-   "impressions": 22,
-   "position": 28.7,
-   "page": "/red-hill"
   },
   {
    "query": "yarra valley day trip",
@@ -2818,6 +2823,13 @@
    "page": "/lakes-entrance/do"
   },
   {
+   "query": "110 metung road metung vic 3904",
+   "clicks": 0,
+   "impressions": 10,
+   "position": 67.6,
+   "page": "/metung"
+  },
+  {
    "query": "614 tongio gap road omeo vic 3898",
    "clicks": 0,
    "impressions": 10,
@@ -2860,10 +2872,10 @@
    "page": "/daylesford/do"
   },
   {
-   "query": "110 metung road metung vic 3904",
+   "query": "110 metung road metung",
    "clicks": 0,
    "impressions": 9,
-   "position": 65.7,
+   "position": 70.6,
    "page": "/metung"
   },
   {
@@ -2893,13 +2905,6 @@
    "impressions": 8,
    "position": 63.1,
    "page": "/lorne"
-  },
-  {
-   "query": "110 metung road metung",
-   "clicks": 0,
-   "impressions": 8,
-   "position": 68.5,
-   "page": "/metung"
   },
   {
    "query": "mornington peninsula restaurants",
@@ -3343,11 +3348,11 @@
    "page": "/mornington/eat"
   },
   {
-   "query": "omeo",
+   "query": "486 omeo valley road omeo",
    "clicks": 0,
    "impressions": 4,
-   "position": 56.5,
-   "page": "/omeo/do"
+   "position": 47.8,
+   "page": "/omeo"
   }
  ],
  "gscDaily": [
@@ -3410,6 +3415,11 @@
    "date": "2026-10-30",
    "clicks": 0,
    "impressions": 13
+  },
+  {
+   "date": "2026-10-31",
+   "clicks": 0,
+   "impressions": 12
   }
  ]
 }
