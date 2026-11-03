@@ -68,6 +68,7 @@ const { book, hero, audiences, services, steps, testimonials, faqs, reviews } = 
   <section class="chc-section chc-wrap">
     <h2 class="chc-h2">In their words</h2>
     {testimonials.map((t) => <blockquote class="chc-quote"><p>{t.quote}</p><footer>{t.name}, {t.context}</footer></blockquote>)}
+    {reviews && <p><a class="chc-link" href={reviews.url} rel="noopener" target="_blank" data-cta="google_reviews">Read all {reviews.count} reviews on Google</a></p>}
   </section>
 )}
 
