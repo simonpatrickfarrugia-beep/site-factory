@@ -131,6 +131,7 @@ textarea{min-height:70px;resize:vertical}
 .field input,.field select{width:100%;font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
 .mail{display:grid;gap:8px}
 .mail textarea{min-height:300px;font:14px/1.5 var(--body)}
+.card-wrap{display:grid;gap:4px;margin-bottom:8px}.card-wrap .card{margin-bottom:0}.retry{justify-self:start;padding:6px 12px;font-size:.9rem}
 .preview{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:.9rem;max-height:340px;overflow:auto;overflow-wrap:anywhere}
 .from{display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:var(--due-bg);color:var(--due);border-radius:8px;padding:8px 12px;font-size:.88rem;font-weight:600}
 .btn.ghost{background:var(--bg);color:var(--fg);border:1px solid var(--line)}
@@ -566,7 +567,8 @@ async function openDraft(brand, key, org) {
     // Open the tab inside the click (pop-up blockers allow that), then point it at Outlook once the board is updated.
     const w = isPhone() ? null : window.open('about:blank', '_blank');
     try {
-      if (org) await api('/api/orgs/' + org.id + '/drafted', { template_id: d.id, subject: fill($('#d-subject').value, v), email: $('#d-email').value, contact_name: $('#d-contact').value });
+      if (org && org.stage === 'drafted') { /* retry: already on the board as Drafted */ }
+      else if (org) await api('/api/orgs/' + org.id + '/drafted', { template_id: d.id, subject: fill($('#d-subject').value, v), email: $('#d-email').value, contact_name: $('#d-contact').value });
       else await api('/api/prospects/start', { brand, target: t.key, organisation: v.org, email: $('#d-email').value, contact_name: $('#d-contact').value, contact_role: $('#d-role').value, website: $('#d-web').value, evidence_url: $('#d-evidence').value, template_id: d.id, subject: fill($('#d-subject').value, v) });
       const to = $('#d-email').value.trim(), subj = fill($('#d-subject').value, v), bod = fill($('#d-body').value, v);
       if (isPhone()) {
@@ -578,7 +580,8 @@ async function openDraft(brand, key, org) {
         const url = 'https://outlook.office.com/mail/deeplink/compose?to=' + encodeURIComponent(to) + '&subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(bod);
         if (w) { w.opener = null; w.location.href = url; } else { location.href = url; }
       }
-      toast(d.edited ? 'Added as Drafted. Your unsaved edits count under the version you started from.' : 'Added to the board as Drafted');
+      if (org && org.stage === 'drafted') toast('Opened in Outlook again');
+      else toast(d.edited ? 'Added as Drafted. Your unsaved edits count under the version you started from.' : 'Added to the board as Drafted');
       dlg.close(); load();
     } catch (e) { if (w) w.close(); toast(e.message); }
   };
@@ -586,8 +589,8 @@ async function openDraft(brand, key, org) {
 
 function renderNeeds() {
   const orgs = state.board.orgs.filter((o) => inBrand(o.brand));
-  const card = (o, flag) => `<button class="card" style="--c:${color(o.brand)}" data-org="${o.id}"><span class="name">${esc(o.name)}</span><span class="meta">${esc(brandName(o.brand))}${o.contact_email ? ' · ' + esc(o.contact_email) : ''}</span>${o.last_note ? `<span class="last">${esc(o.last_note)}</span>` : ''}${flag}</button>`;
-  const sec = (title, list, flag, hint) => `<section class="needs"><h2>${title} <em>${list.length}</em></h2>${list.length ? list.map((o) => card(o, flag(o))).join('') : `<p class="empty" style="padding:0 0 6px">${hint}</p>`}</section>`;
+  const card = (o, flag, after = '') => `<div class="card-wrap"><button class="card" style="--c:${color(o.brand)}" data-org="${o.id}"><span class="name">${esc(o.name)}</span><span class="meta">${esc(brandName(o.brand))}${o.contact_email ? ' · ' + esc(o.contact_email) : ''}</span>${o.last_note ? `<span class="last">${esc(o.last_note)}</span>` : ''}${flag}</button>${after}</div>`;
+  const sec = (title, list, flag, hint, after = () => '') => `<section class="needs"><h2>${title} <em>${list.length}</em></h2>${list.length ? list.map((o) => card(o, flag(o), after(o))).join('') : `<p class="empty" style="padding:0 0 6px">${hint}</p>`}</section>`;
   const replied = orgs.filter((o) => o.stage === 'replied');
   const due = orgs.filter((o) => o.followUpDue);
   const drafted = orgs.filter((o) => o.stage === 'drafted');
@@ -595,7 +598,8 @@ function renderNeeds() {
   $('#view').innerHTML = `
     ${sec('Replied: answer them', replied, (o) => `<span class="pill good">Replied ${esc(ago(o.last_in || o.stage_at))}</span>`, 'No replies waiting.')}
     ${sec('Follow up (7+ days)', due, () => '<span class="pill due">Follow up</span>', 'Nothing to chase.')}
-    ${sec('Drafted: send them', drafted, (o) => `<span class="meta">Drafted ${esc(ago(o.stage_at))}</span>`, 'No drafts waiting.')}
+    ${sec('Drafted: send them', drafted, (o) => `<span class="meta">Drafted ${esc(ago(o.stage_at))}</span>`, 'No drafts waiting.', (o) => `<button class="btn ghost retry" data-retry="${o.id}">↻ Open in Outlook again</button>`)}
+    ${drafted.length ? '<p class="empty" style="padding:0 0 8px">Didn\'t reach Outlook (e.g. not signed in)? Sign in at outlook.office.com first, then tap ↻.</p>' : ''}
     ${sec('Waiting for a reply', sent, (o) => `<span class="meta">Sent ${esc(ago(o.stage_at))}</span>`, 'Nothing out yet.')}
     <button class="btn ghost" id="full-board" style="width:100%;padding:12px">Show the full board (${orgs.length})</button>`;
   $('#full-board').onclick = () => { state.fullBoard = true; renderBoard(); };
@@ -787,6 +791,7 @@ document.addEventListener('click', (e) => {
   const t = e.target.closest('button'); if (!t) return;
   if (t.dataset.view) { state.view = t.dataset.view; $('#more-menu').hidden = true; save(); render(); window.scrollTo(0, 0); }
   else if (t.dataset.brand) { state.brand = t.dataset.brand; save(); render(); }
+  else if (t.dataset.retry) { const o = state.board.orgs.find((x) => String(x.id) === t.dataset.retry); if (o) openDraft(o.brand, o.target, o); }
   else if (t.dataset.org) openOrg(Number(t.dataset.org));
   else if (t.dataset.more) { state.showAll[t.dataset.more] = !state.showAll[t.dataset.more]; renderProspect(); }
   else if (t.dataset.draft) { const [b, k] = t.dataset.draft.split('|'); openDraft(b, k); }
