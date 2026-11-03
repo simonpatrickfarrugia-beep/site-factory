@@ -20,6 +20,7 @@ export default defineBrand({
     { label: 'Salaries', href: '/salary' },
     { label: 'Tax brackets', href: '/tax-brackets' },
     { label: 'HECS', href: '/hecs-help-repayments' },
+    { label: 'Mortgage', href: '/mortgage-repayment-calculator' },
   ],
   footer: [
     { label: 'How we calculate', href: '/how-we-calculate' },

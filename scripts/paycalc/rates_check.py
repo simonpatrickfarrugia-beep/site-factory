@@ -45,6 +45,9 @@ checks = [
     # in the page we fetch. It's fixed in law at 12% from 1 July 2025 with no further rises scheduled; the July
     # new-year flag below is the prompt to re-check it by hand.
     ('Maximum super contribution base', R['sources'][4]['url'], [money(s['maxBase'])]),
+    # The RBA home page shows the current cash rate target. If it no longer shows ours, the RBA has moved
+    # (it meets about 8 times a year): update `cash` in rates.json from the new decision's media release.
+    ('RBA cash rate target', 'https://www.rba.gov.au/', [f"{R['cash']['rate']:.2f}"]),
 ]
 
 problems, news, ok = [], [], []

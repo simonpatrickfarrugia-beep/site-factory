@@ -44,6 +44,7 @@ import TaPage from './ta/TaPage.astro';
 import TaQuiz from './ta/TaQuiz.astro';
 import TaHelp from './ta/TaHelp.astro';
 import PcCalc from './pc/PcCalc.astro';
+import PcMortgage from './pc/PcMortgage.astro';
 import PcSalary from './pc/PcSalary.astro';
 import PcSalaries from './pc/PcSalaries.astro';
 import PcGuide from './pc/PcGuide.astro';
@@ -95,6 +96,7 @@ export const templates = {
   taQuiz: TaQuiz,
   taHelp: TaHelp,
   pcCalc: PcCalc,
+  pcMortgage: PcMortgage,
   pcSalary: PcSalary,
   pcSalaries: PcSalaries,
   pcGuide: PcGuide,

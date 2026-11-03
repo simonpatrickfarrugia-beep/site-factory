@@ -1,0 +1,153 @@
+---
+/**
+ * Mortgage repayment calculator with a rate-change view ("what does this rate rise cost me?").
+ * Works without JavaScript (shows the example worked out); with it, updates as you type.
+ * Maths: src/lib/mortgage.ts (tested in scripts/test-pay-tax.ts). Nothing typed leaves the browser.
+ */
+import Faq from './PcFaq.astro';
+import { aud } from '../../lib/pay-tax';
+import { rateChange, perPeriod } from '../../lib/mortgage';
+import type { RateFile, Pages } from '../../../brands/paycalc/model';
+interface Props { page: Pages['mortgage']; rates: RateFile }
+const { page, rates } = Astro.props;
+const cash = rates.cash;
+const moved = Math.round((cash.rate - cash.previous) * 100) / 100;
+const ex = { balance: 600000, rate: 6, years: 25, type: 'pi' as const };
+const start = rateChange(ex, 0.25);
+const rows = [['Week', 'week'], ['Fortnight', 'fortnight'], ['Month', 'month'], ['Year', 'year']] as const;
+const pb = perPeriod(start.before), pa = perPeriod(start.after), pd = perPeriod(start.diff);
+const sign = (n: number) => (n > 0.005 ? '+' : n < -0.005 ? '−' : '') + aud(Math.abs(n));
+---
+<section class="pc-hero">
+  <div class="pc-wrap pc-hero__grid">
+    <div class="pc-hero__intro">
+      <h1 class="pc-h1">{page.title}</h1>
+      <p class="pc-lede">{page.lede}</p>
+      <p class="pc-small">RBA cash rate: <strong>{cash.rate.toFixed(2)}%</strong>{moved !== 0 && <> ({moved > 0 ? 'up' : 'down'} {Math.abs(moved).toFixed(2)} on {cash.decidedLabel})</>}. <a href={cash.url} rel="noopener">RBA decision</a></p>
+
+      <form class="pc-form" data-mort onsubmit="return false" aria-label="Mortgage repayment calculator">
+        <div class="pc-field pc-field--pay">
+          <label for="bal">What you owe on the loan</label>
+          <div class="pc-pay">
+            <span class="pc-pay__dollar" aria-hidden="true">$</span>
+            <input id="bal" type="text" inputmode="decimal" autocomplete="off" value="600,000" data-in="balance" />
+          </div>
+        </div>
+        <div class="pc-mrow">
+          <div class="pc-field"><label for="rate">Interest rate (% a year)</label><input id="rate" type="number" min="0" max="25" step="0.01" value="6" inputmode="decimal" data-in="rate" /></div>
+          <div class="pc-field"><label for="yrs">Years left</label><input id="yrs" type="number" min="1" max="40" step="1" value="25" inputmode="numeric" data-in="years" /></div>
+        </div>
+        <fieldset class="pc-field pc-choice">
+          <legend>Repayments</legend>
+          <label><input type="radio" name="type" value="pi" checked data-in="type" /> Principal and interest</label>
+          <label><input type="radio" name="type" value="io" data-in="type" /> Interest only</label>
+        </fieldset>
+        <fieldset class="pc-field pc-choice">
+          <legend>Rate change</legend>
+          <label><input type="radio" name="chg" value="-0.25" data-in="chg" /> −0.25%</label>
+          <label><input type="radio" name="chg" value="0.25" checked data-in="chg" /> +0.25%</label>
+          <label><input type="radio" name="chg" value="0.5" data-in="chg" /> +0.50%</label>
+          <label><input type="radio" name="chg" value="1" data-in="chg" /> +1.00%</label>
+          <label><input type="radio" name="chg" value="custom" data-in="chg" /> Other</label>
+        </fieldset>
+        <div class="pc-field" data-custom hidden><label for="cust">Change in percentage points (e.g. 0.75 or −0.5)</label><input id="cust" type="number" min="-10" max="10" step="0.05" value="0.75" inputmode="decimal" data-in="custom" /></div>
+      </form>
+    </div>
+
+    <div class="pc-hero__slip">
+      <div class="pc-slip pc-mslip" aria-live="polite">
+        <div class="pc-slip__top"><span class="pc-slip__name">Your repayments</span><span class="pc-slip__year" data-m="label">rate +0.25%</span></div>
+        <p class="pc-mnow">Now: <strong data-m="beforeMonth">{aud(start.before)}</strong> a month</p>
+        <p class="pc-slip__net"><span>After the change<span class="pc-slip__per">a month</span></span><strong><mark data-m="afterMonth">{aud(start.after)}</mark></strong></p>
+        <p class="pc-mdiff" data-m="diffLine">That's <strong>{sign(pd.month)}</strong> a month, <strong>{sign(pd.week)}</strong> a week, <strong>{sign(pd.year)}</strong> a year.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pc-wrap pc-section">
+  <h2 class="pc-h2">Every repayment period</h2>
+  <div class="pc-scroll">
+    <table class="pc-table" data-mtable>
+      <thead><tr><th scope="col">Per</th><th scope="col">Now</th><th scope="col">After the change</th><th scope="col">Difference</th></tr></thead>
+      <tbody>
+        {rows.map(([label, k]) => (
+          <tr data-per-row={k}><th scope="row">{label}</th><td data-t="before">{aud(pb[k])}</td><td data-t="after"><strong>{aud(pa[k])}</strong></td><td data-t="diff">{sign(pd[k])}</td></tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="pc-small" data-m="interest">Interest over the rest of the loan: {aud(start.interestBefore)} now, {aud(start.interestAfter)} after the change.</p>
+</section>
+
+<section class="pc-wrap pc-section pc-measure">
+  <h2 class="pc-h2">How it works</h2>
+  <ul>{page.how.map((h) => <li>{h}</li>)}</ul>
+  <p class="pc-small">General information only, not financial advice. <a href="/how-we-calculate">Our sources</a>.</p>
+  <Faq items={page.faq} />
+  <p>Want to know what lands in your account each pay? <a href="/">Pay calculator</a></p>
+</section>
+
+<script>
+  import { aud } from '../../lib/pay-tax';
+  import { rateChange, perPeriod, type LoanType } from '../../lib/mortgage';
+  const form = document.querySelector<HTMLFormElement>('[data-mort]');
+  if (form) {
+    const $ = <T extends HTMLElement>(s: string) => form.querySelector<T>(s)!;
+    const out = (k: string) => document.querySelector<HTMLElement>(`[data-m="${k}"]`)!;
+    const num = (s: string) => Number(String(s).replace(/[^0-9.\-]/g, '')) || 0;
+    const sign = (n: number) => (n > 0.005 ? '+' : n < -0.005 ? '−' : '') + aud(Math.abs(n));
+    const custom = document.querySelector<HTMLElement>('[data-custom]')!;
+    const bal = $<HTMLInputElement>('[data-in="balance"]'), rate = $<HTMLInputElement>('[data-in="rate"]'), yrs = $<HTMLInputElement>('[data-in="years"]');
+    const cust = document.querySelector<HTMLInputElement>('[data-in="custom"]')!;
+    let tracked = false;
+
+    const q = new URLSearchParams(location.search);
+    if (q.get('owe')) bal.value = num(q.get('owe')!).toLocaleString('en-AU');
+    if (q.get('rate')) rate.value = String(num(q.get('rate')!));
+    if (q.get('years')) yrs.value = String(num(q.get('years')!));
+    if (q.get('type') === 'io') $<HTMLInputElement>('input[name="type"][value="io"]').checked = true;
+    if (q.get('chg')) {
+      const v = q.get('chg')!;
+      const opt = form.querySelector<HTMLInputElement>(`input[name="chg"][value="${CSS.escape(v)}"]`);
+      if (opt) opt.checked = true; else { $<HTMLInputElement>('input[name="chg"][value="custom"]').checked = true; cust.value = String(num(v)); }
+    }
+
+    const run = () => {
+      const type = $<HTMLInputElement>('input[name="type"]:checked').value as LoanType;
+      const pick = $<HTMLInputElement>('input[name="chg"]:checked').value;
+      custom.hidden = pick !== 'custom';
+      const change = pick === 'custom' ? num(cust.value) : Number(pick);
+      const loan = { balance: num(bal.value), rate: num(rate.value), years: num(yrs.value) || 25, type };
+      const r = rateChange(loan, change);
+      const b = perPeriod(r.before), a = perPeriod(r.after), d = perPeriod(r.diff);
+      out('label').textContent = `rate ${change >= 0 ? '+' : '−'}${Math.abs(change).toFixed(2)}%`;
+      out('beforeMonth').textContent = aud(r.before);
+      out('afterMonth').textContent = aud(r.after);
+      out('diffLine').innerHTML = `That's <strong>${sign(d.month)}</strong> a month, <strong>${sign(d.week)}</strong> a week, <strong>${sign(d.year)}</strong> a year.`;
+      for (const row of document.querySelectorAll<HTMLElement>('[data-mtable] [data-per-row]')) {
+        const k = row.dataset.perRow as keyof typeof b;
+        row.querySelector('[data-t="before"]')!.textContent = aud(b[k]);
+        row.querySelector('[data-t="after"]')!.innerHTML = `<strong>${aud(a[k])}</strong>`;
+        row.querySelector('[data-t="diff"]')!.textContent = sign(d[k]);
+      }
+      out('interest').textContent = `Interest over the rest of the loan: ${aud(r.interestBefore)} now, ${aud(r.interestAfter)} after the change.`;
+      const qs = new URLSearchParams({ owe: String(loan.balance), rate: String(loan.rate), years: String(loan.years), chg: String(change) });
+      if (type === 'io') qs.set('type', 'io');
+      history.replaceState(null, '', `?${qs}`);
+      if (!tracked && loan.balance > 0) { tracked = true; (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.('event', 'calc_mortgage'); }
+    };
+    bal.addEventListener('blur', () => { if (num(bal.value)) bal.value = num(bal.value).toLocaleString('en-AU'); });
+    form.addEventListener('input', run);
+    form.addEventListener('change', run);
+    if (location.search) run();
+  }
+</script>
+
+<style is:global>
+  .pc-mrow { display: flex; flex-wrap: wrap; gap: 1rem; }
+  .pc-mslip .pc-mnow { margin: 0.9rem 0 0.2rem; }
+  .pc-mslip .pc-mnow strong { font-weight: 700; }
+  .pc-mdiff { margin: 0.8rem 0 0; }
+  .pc-measure ul { padding-left: 1.2rem; display: grid; gap: 0.4rem; }
+</style>

@@ -4,6 +4,7 @@
  */
 import { readFileSync } from 'node:fs';
 import { calculate, taxOnIncome, litoFor, medicareFor, helpFor, type Rates } from '../src/lib/pay-tax.ts';
+import { monthlyRepayment, totalInterest, perPeriod as loanPer, rateChange } from '../src/lib/mortgage.ts';
 
 const rates = JSON.parse(readFileSync(new URL('../data/paycalc/rates.json', import.meta.url), 'utf8')) as Rates & { previous: { brackets: Rates['brackets']; help: Rates['help'] } };
 let fails = 0, n = 0;
@@ -66,6 +67,15 @@ eq('hourly 40 x 38', calculate({ amount: 40, period: 'hour', hours: 38 }, rates)
 eq('marginal 85,000', at(85000).marginalRate, 0.32);
 eq('marginal 85,000 + HELP', at(85000, { help: true }).marginalRate, 0.47);
 eq('marginal 50,000 (LITO phase-out)', at(50000).marginalRate, 0.335);
+
+// Mortgage maths (hand-worked with the standard amortisation formula).
+eq('loan 500k 6% 30y', monthlyRepayment({ balance: 500000, rate: 6, years: 30, type: 'pi' }), 2997.75);
+eq('loan 600k 6% 25y', monthlyRepayment({ balance: 600000, rate: 6, years: 25, type: 'pi' }), 3865.81);
+eq('loan 600k +0.25% rise', rateChange({ balance: 600000, rate: 6, years: 25, type: 'pi' }, 0.25).diff, 92.21);
+eq('interest only 500k 6%', monthlyRepayment({ balance: 500000, rate: 6, years: 30, type: 'io' }), 2500);
+eq('zero rate 120k 10y', monthlyRepayment({ balance: 120000, rate: 0, years: 10, type: 'pi' }), 1000);
+eq('fortnightly = monthly x 12/26', loanPer(2600).fortnight, 1200);
+eq('total interest 500k 6% 30y', totalInterest({ balance: 500000, rate: 6, years: 30, type: 'pi' }), 2997.75 * 360 - 500000, 2);
 
 console.log(`${n - fails}/${n} pay-tax checks passed`);
 if (fails) process.exit(1);

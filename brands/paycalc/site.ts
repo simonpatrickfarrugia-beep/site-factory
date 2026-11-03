@@ -52,6 +52,18 @@ export function routes(): Route[] {
   });
 
   out.push({
+    path: 'mortgage-repayment-calculator',
+    template: 'pcMortgage',
+    seo: { title: pages.mortgage.seoTitle, rawTitle: true, description: pages.mortgage.description },
+    schema: [
+      app('Mortgage repayment calculator', 'mortgage-repayment-calculator'),
+      faqSchema(pages.mortgage.faq),
+      crumbs([{ name: 'Pay calculator', path: '' }, { name: 'Mortgage repayment calculator', path: 'mortgage-repayment-calculator' }]),
+    ],
+    props: { page: pages.mortgage, rates },
+  });
+
+  out.push({
     path: 'salary',
     template: 'pcSalaries',
     seo: { title: pages.salary.seoTitle, rawTitle: true, description: pages.salary.description },
