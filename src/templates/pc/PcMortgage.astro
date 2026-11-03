@@ -23,7 +23,7 @@ const sign = (n: number) => (n > 0.005 ? '+' : n < -0.005 ? '−' : '') + aud(Ma
     <div class="pc-hero__intro">
       <h1 class="pc-h1">{page.title}</h1>
       <p class="pc-lede">{page.lede}</p>
-      <p class="pc-small">RBA cash rate: <strong>{cash.rate.toFixed(2)}%</strong>{moved !== 0 && <> ({moved > 0 ? 'up' : 'down'} {Math.abs(moved).toFixed(2)} on {cash.decidedLabel})</>}. <a href={cash.url} rel="noopener">RBA decision</a></p>
+      <p class="pc-small">RBA cash rate: <strong>{cash.rate.toFixed(2)}%</strong>{moved !== 0 && ` (${moved > 0 ? 'up' : 'down'} ${Math.abs(moved).toFixed(2)} on ${cash.decidedLabel})`}. <a href={cash.url} rel="noopener">RBA decision</a></p>
 
       <form class="pc-form" data-mort onsubmit="return false" aria-label="Mortgage repayment calculator">
         <div class="pc-field pc-field--pay">
