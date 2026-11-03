@@ -1,6 +1,7 @@
 ---
 import NoteCard from './NoteCard.astro';
 import BookCta from './BookCta.astro';
+import Reviews from './Reviews.astro';
 interface Props {
   book: string;
   hero: { title: string; lede: string; note: any };
@@ -9,8 +10,9 @@ interface Props {
   steps: { t: string; d: string }[];
   testimonials: { quote: string; name: string; context: string }[];
   faqs: { q: string; a: string }[];
+  reviews?: { rating: number; count: number; url: string };
 }
-const { book, hero, audiences, services, steps, testimonials, faqs } = Astro.props;
+const { book, hero, audiences, services, steps, testimonials, faqs, reviews } = Astro.props;
 ---
 <section class="chc-hero">
   <div class="chc-wrap chc-hero__grid">
@@ -22,6 +24,7 @@ const { book, hero, audiences, services, steps, testimonials, faqs } = Astro.pro
         <a class="chc-link" href="/how-it-works">How it works</a>
       </p>
       <p class="chc-small">Sessions are online on Microsoft Teams. NDIS (self-managed and plan-managed) or private.</p>
+      <Reviews reviews={reviews} />
     </div>
     <NoteCard note={hero.note} />
   </div>

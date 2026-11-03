@@ -24,6 +24,9 @@ export interface SiteInfo {
   formsEndpoint: string;
   hero: { title: string; lede: string; note: { label: string; week: string; goals: { t: string; s: 'done' | 'next' }[]; nextStep: string } };
   audiences: { t: string; d: string; href?: string; link?: string }[];
+  /** Google Business Profile reviews, copied by hand from the profile (date in `checked`). Shown as a link only:
+   *  no review text on our site, and no AggregateRating schema (Google ignores self-served review markup). */
+  reviews?: { rating: number; count: number; url: string; checked: string };
 }
 export interface Pages {
   'how-it-works': { title: string; description: string; lede: string; steps: { t: string; d: string }[] };

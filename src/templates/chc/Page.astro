@@ -1,8 +1,9 @@
 ---
 import BookCta from './BookCta.astro';
-interface Props { book: string; title: string; paragraphs: string[]; showCta?: boolean }
-const { book, title, paragraphs, showCta = false } = Astro.props;
+import Reviews from './Reviews.astro';
+interface Props { book: string; title: string; paragraphs: string[]; showCta?: boolean; reviews?: { rating: number; count: number; url: string } }
+const { book, title, paragraphs, showCta = false, reviews } = Astro.props;
 ---
-<section class="chc-pagehead"><div class="chc-wrap"><h1>{title}</h1></div></section>
+<section class="chc-pagehead"><div class="chc-wrap"><h1>{title}</h1><Reviews reviews={reviews} /></div></section>
 <div class="chc-wrap chc-section chc-prose">{paragraphs.map((p) => <p>{p}</p>)}</div>
 {showCta && <BookCta book={book} />}

@@ -48,7 +48,7 @@ export function routes(): Route[] {
     template: 'chcHome',
     seo: { title: 'Career Coaching & Job Support, Melbourne | Community Help Co', rawTitle: true, description: 'Practical 1:1 career coaching and job support from Melbourne, online across Australia, plus life goals mentoring. NDIS or private. Weekly written notes.' },
     schema: [org, { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Community Help Co', url: SITE }],
-    props: { ...common, hero: site.hero, audiences: site.audiences, services: services.map(({ slug, name, short }) => ({ slug, name, short })), steps: pages['how-it-works'].steps, testimonials, faqs: faqs.slice(0, 4) },
+    props: { ...common, hero: site.hero, audiences: site.audiences, services: services.map(({ slug, name, short }) => ({ slug, name, short })), steps: pages['how-it-works'].steps, testimonials, faqs: faqs.slice(0, 4), reviews: site.reviews },
   });
 
   for (const s of services) {
@@ -82,7 +82,7 @@ export function routes(): Route[] {
       seo: { title: p.title + SUFFIX, rawTitle: true, description: p.description },
       schema: [crumbs([{ name: 'Home', path: '' }, { name: p.title, path: slug }])],
       // The About page is about a person: lead with him, not the company name (the SEO title keeps the company name).
-      props: { ...common, title: slug === 'about' ? 'Hi, I’m Simon' : p.title, paragraphs: p.paragraphs, showCta: slug === 'about' },
+      props: { ...common, title: slug === 'about' ? 'Hi, I’m Simon' : p.title, paragraphs: p.paragraphs, showCta: slug === 'about', reviews: slug === 'about' ? site.reviews : undefined },
     });
   }
 

@@ -1,0 +1,19 @@
+---
+/** "5.0 ★ on Google · 6 reviews" link to the Google Business Profile. Link only: no review text is copied here. */
+interface Props { reviews?: { rating: number; count: number; url: string } }
+const { reviews: r } = Astro.props;
+---
+{r && r.count > 0 && (
+  <p class="chc-reviews">
+    <a href={r.url} rel="noopener" target="_blank" data-cta="google_reviews">
+      <span class="chc-reviews__stars" aria-hidden="true">★★★★★</span>
+      <strong>{r.rating.toFixed(1)}</strong> on Google · {r.count} review{r.count === 1 ? '' : 's'}
+    </a>
+  </p>
+)}
+<style is:global>
+  .chc-reviews { margin: 0.6rem 0 0; }
+  .chc-reviews a { display: inline-flex; gap: 0.4rem; align-items: center; color: var(--forest); text-decoration: none; background: #fff; border: 2px solid var(--mint); border-radius: 999px; padding: 0.35rem 0.85rem; font-size: 0.95rem; }
+  .chc-reviews a:hover { border-color: var(--forest); }
+  .chc-reviews__stars { color: #E2A400; letter-spacing: 0.05em; }
+</style>
