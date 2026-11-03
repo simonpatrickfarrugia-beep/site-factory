@@ -72,6 +72,19 @@ const tokenCss = `:root{${Object.entries(tokens).map(([k, v]) => `${k}:${v}`).jo
       <>
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${brand.analytics.ga4Id}`}></script>
         <script is:inline define:vars={{ ga4Id: brand.analytics.ga4Id }}>
+          // Owner opt-out: visit any page with ?notrack=1 once per browser/device (each site separately) and GA4
+          // ignores that device from then on; ?notrack=0 turns counting back on. Works on any network, unlike an
+          // IP filter. Uses GA's own switch (window['ga-disable-<id>']), set before the config call.
+          (function () {
+            try {
+              var m = /[?&]notrack=([01])/.exec(location.search);
+              if (m) {
+                if (m[1] === '1') localStorage.setItem('imn_notrack', '1'); else localStorage.removeItem('imn_notrack');
+                alert(m[1] === '1' ? 'Analytics off for this browser on this site. Your visits won’t be counted.' : 'Analytics back on for this browser.');
+              }
+              if (localStorage.getItem('imn_notrack') === '1') window['ga-disable-' + ga4Id] = true;
+            } catch (x) {}
+          })();
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
