@@ -2,41 +2,221 @@
  "anchor": "flights to bali",
  "location": 2036,
  "terms": [
-  {"q": "flights to bali", "label": "Bali", "slug": "bali", "kind": "overseas"},
-  {"q": "flights to japan", "label": "Japan", "slug": "japan", "kind": "overseas"},
-  {"q": "flights to fiji", "label": "Fiji", "slug": "fiji", "kind": "overseas"},
-  {"q": "flights to new zealand", "label": "New Zealand", "slug": "new-zealand", "kind": "overseas"},
-  {"q": "flights to vietnam", "label": "Vietnam", "slug": "vietnam", "kind": "overseas"},
-  {"q": "flights to thailand", "label": "Thailand", "slug": "thailand", "kind": "overseas"},
-  {"q": "flights to phuket", "label": "Phuket", "slug": "phuket", "kind": "overseas"},
-  {"q": "flights to singapore", "label": "Singapore", "slug": "singapore", "kind": "overseas"},
-  {"q": "flights to europe", "label": "Europe", "slug": "europe", "kind": "overseas"},
-  {"q": "flights to london", "label": "London", "slug": "london", "kind": "overseas"},
-  {"q": "flights to italy", "label": "Italy", "slug": "italy", "kind": "overseas"},
-  {"q": "flights to greece", "label": "Greece", "slug": "greece", "kind": "overseas"},
-  {"q": "flights to hawaii", "label": "Hawaii", "slug": "hawaii", "kind": "overseas"},
-  {"q": "flights to los angeles", "label": "Los Angeles", "slug": "los-angeles", "kind": "overseas"},
-  {"q": "flights to korea", "label": "South Korea", "slug": "south-korea", "kind": "overseas"},
-  {"q": "flights to philippines", "label": "Philippines", "slug": "philippines", "kind": "overseas"},
-  {"q": "flights to sri lanka", "label": "Sri Lanka", "slug": "sri-lanka", "kind": "overseas"},
-  {"q": "flights to vanuatu", "label": "Vanuatu", "slug": "vanuatu", "kind": "overseas"},
-  {"q": "flights to india", "label": "India", "slug": "india", "kind": "overseas"},
-  {"q": "flights to gold coast", "label": "Gold Coast", "slug": "gold-coast", "kind": "domestic"},
-  {"q": "flights to cairns", "label": "Cairns", "slug": "cairns", "kind": "domestic"},
-  {"q": "flights to hobart", "label": "Hobart", "slug": "hobart", "kind": "domestic"},
-  {"q": "flights to perth", "label": "Perth", "slug": "perth", "kind": "domestic"},
-  {"q": "flights to sydney", "label": "Sydney", "slug": "sydney", "kind": "domestic"},
-  {"q": "flights to melbourne", "label": "Melbourne", "slug": "melbourne", "kind": "domestic"},
-  {"q": "flights to brisbane", "label": "Brisbane", "slug": "brisbane", "kind": "domestic"},
-  {"q": "flights to adelaide", "label": "Adelaide", "slug": "adelaide", "kind": "domestic"},
-  {"q": "flights to darwin", "label": "Darwin", "slug": "darwin", "kind": "domestic"},
-  {"q": "flights to uluru", "label": "Uluru", "slug": "uluru", "kind": "domestic"},
-  {"q": "flights to whitsundays", "label": "Whitsundays", "slug": "whitsundays", "kind": "domestic"},
-  {"q": "cruise deals", "label": "Cruises", "slug": "cruises", "kind": "style"},
-  {"q": "ski holidays", "label": "Ski trips", "slug": "ski", "kind": "style"},
-  {"q": "all inclusive resorts", "label": "All-inclusive resorts", "slug": "all-inclusive", "kind": "style"},
-  {"q": "family holidays", "label": "Family holidays", "slug": "family", "kind": "style"},
-  {"q": "travel insurance", "label": "Travel insurance", "slug": "travel-insurance", "kind": "style"},
-  {"q": "campervan hire", "label": "Campervan hire", "slug": "campervan", "kind": "style"}
+  {
+   "q": "flights to bali",
+   "label": "Bali",
+   "slug": "bali",
+   "kind": "overseas"
+  },
+  {
+   "q": "flights to sydney",
+   "label": "Sydney",
+   "slug": "sydney",
+   "kind": "domestic"
+  },
+  {
+   "q": "flights to melbourne",
+   "label": "Melbourne",
+   "slug": "melbourne",
+   "kind": "domestic"
+  },
+  {
+   "q": "flights to brisbane",
+   "label": "Brisbane",
+   "slug": "brisbane",
+   "kind": "domestic"
+  },
+  {
+   "q": "travel insurance",
+   "label": "Travel insurance",
+   "slug": "travel-insurance",
+   "kind": "style"
+  },
+  {
+   "q": "flights to perth",
+   "label": "Perth",
+   "slug": "perth",
+   "kind": "domestic"
+  },
+  {
+   "q": "flights to adelaide",
+   "label": "Adelaide",
+   "slug": "adelaide",
+   "kind": "domestic"
+  },
+  {
+   "q": "flights to singapore",
+   "label": "Singapore",
+   "slug": "singapore",
+   "kind": "overseas"
+  },
+  {
+   "q": "flights to gold coast",
+   "label": "Gold Coast",
+   "slug": "gold-coast",
+   "kind": "domestic"
+  },
+  {
+   "q": "flights to japan",
+   "label": "Japan",
+   "slug": "japan",
+   "kind": "overseas"
+  },
+  {
+   "q": "flights to fiji",
+   "label": "Fiji",
+   "slug": "fiji",
+   "kind": "overseas"
+  },
+  {
+   "q": "flights to new zealand",
+   "label": "New Zealand",
+   "slug": "new-zealand",
+   "kind": "overseas"
+  },
+  {
+   "q": "flights to vietnam",
+   "label": "Vietnam",
+   "slug": "vietnam",
+   "kind": "overseas"
+  },
+  {
+   "q": "flights to thailand",
+   "label": "Thailand",
+   "slug": "thailand",
+   "kind": "overseas"
+  },
+  {
+   "q": "flights to phuket",
+   "label": "Phuket",
+   "slug": "phuket",
+   "kind": "overseas"
+  },
+  {
+   "q": "flights to europe",
+   "label": "Europe",
+   "slug": "europe",
+   "kind": "overseas"
+  },
+  {
+   "q": "flights to london",
+   "label": "London",
+   "slug": "london",
+   "kind": "overseas"
+  },
+  {
+   "q": "flights to italy",
+   "label": "Italy",
+   "slug": "italy",
+   "kind": "overseas"
+  },
+  {
+   "q": "flights to greece",
+   "label": "Greece",
+   "slug": "greece",
+   "kind": "overseas"
+  },
+  {
+   "q": "flights to hawaii",
+   "label": "Hawaii",
+   "slug": "hawaii",
+   "kind": "overseas"
+  },
+  {
+   "q": "flights to los angeles",
+   "label": "Los Angeles",
+   "slug": "los-angeles",
+   "kind": "overseas"
+  },
+  {
+   "q": "flights to korea",
+   "label": "South Korea",
+   "slug": "south-korea",
+   "kind": "overseas"
+  },
+  {
+   "q": "flights to philippines",
+   "label": "Philippines",
+   "slug": "philippines",
+   "kind": "overseas"
+  },
+  {
+   "q": "flights to sri lanka",
+   "label": "Sri Lanka",
+   "slug": "sri-lanka",
+   "kind": "overseas"
+  },
+  {
+   "q": "flights to vanuatu",
+   "label": "Vanuatu",
+   "slug": "vanuatu",
+   "kind": "overseas"
+  },
+  {
+   "q": "flights to india",
+   "label": "India",
+   "slug": "india",
+   "kind": "overseas"
+  },
+  {
+   "q": "flights to cairns",
+   "label": "Cairns",
+   "slug": "cairns",
+   "kind": "domestic"
+  },
+  {
+   "q": "flights to hobart",
+   "label": "Hobart",
+   "slug": "hobart",
+   "kind": "domestic"
+  },
+  {
+   "q": "flights to darwin",
+   "label": "Darwin",
+   "slug": "darwin",
+   "kind": "domestic"
+  },
+  {
+   "q": "flights to uluru",
+   "label": "Uluru",
+   "slug": "uluru",
+   "kind": "domestic"
+  },
+  {
+   "q": "flights to whitsundays",
+   "label": "Whitsundays",
+   "slug": "whitsundays",
+   "kind": "domestic"
+  },
+  {
+   "q": "cruise deals",
+   "label": "Cruises",
+   "slug": "cruises",
+   "kind": "style"
+  },
+  {
+   "q": "ski holidays",
+   "label": "Ski trips",
+   "slug": "ski",
+   "kind": "style"
+  },
+  {
+   "q": "all inclusive resorts",
+   "label": "All-inclusive resorts",
+   "slug": "all-inclusive",
+   "kind": "style"
+  },
+  {
+   "q": "family holidays",
+   "label": "Family holidays",
+   "slug": "family",
+   "kind": "style"
+  },
+  {
+   "q": "campervan hire",
+   "label": "Campervan hire",
+   "slug": "campervan",
+   "kind": "style"
+  }
  ]
 }
