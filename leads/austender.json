@@ -1,7 +1,80 @@
 {
- "generatedAt": "2026-11-03T02:26:40+00:00",
+ "generatedAt": "2026-11-04T00:41:34+00:00",
  "days": 7,
  "suppliers": [
+  {
+   "name": "Australian Grape and Wine Incorpora",
+   "abn": "",
+   "locality": "Adelaide",
+   "state": "SA",
+   "contracts": [
+    {
+     "value": 330000.0,
+     "buyer": "Austrade",
+     "buyerState": "ACT",
+     "desc": "ANMI Wine Market Activities - Canada",
+     "category": "",
+     "start": "2026-11-01",
+     "end": "2027-06-29",
+     "id": "CN4286333"
+    },
+    {
+     "value": 480600.0,
+     "buyer": "Austrade",
+     "buyerState": "ACT",
+     "desc": "ANMI Wine Market Activities in China, Europe & Aust.",
+     "category": "",
+     "start": "2026-11-01",
+     "end": "2027-06-29",
+     "id": "CN4286332"
+    }
+   ],
+   "total": 810600,
+   "score": 8.0,
+   "interstate": true,
+   "why": [
+    "based in Adelaide SA, delivering for Austrade (Canberra)",
+    "2 new government contracts in the last 7 days",
+    "work runs 8 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "Nous Group Pty. Ltd.",
+   "abn": "",
+   "locality": "Docklands",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 1422102.0,
+     "buyer": "Department of Health, Disability and Ageing",
+     "buyerState": null,
+     "desc": "Services for the Hearing Services Program Functional Review",
+     "category": "",
+     "start": "2026-10-25",
+     "end": "2027-06-29",
+     "id": "CN4286464"
+    },
+    {
+     "value": 258500.0,
+     "buyer": "Department of Health, Disability and Ageing",
+     "buyerState": null,
+     "desc": "Undertake an Evaluation of the National Clinical Quality Registry Program",
+     "category": "",
+     "start": "2026-10-12",
+     "end": "2027-02-27",
+     "id": "CN4286461"
+    }
+   ],
+   "total": 1680602,
+   "score": 6.0,
+   "interstate": false,
+   "why": [
+    "2 new government contracts in the last 7 days",
+    "work runs 8 months"
+   ],
+   "seenBefore": false
+  },
   {
    "name": "MADDOCKS",
    "abn": "",
@@ -50,88 +123,113 @@
    "seenBefore": true
   },
   {
-   "name": "KONGSBERG MARITIME PTY LTD",
+   "name": "IT Newcom Pty Limited",
    "abn": "",
-   "locality": "Fremantle",
-   "state": "WA",
+   "locality": "Forrest",
+   "state": "ACT",
    "contracts": [
     {
-     "value": 137625.27,
-     "buyer": "Department of Defence",
+     "value": 1797371.2,
+     "buyer": "Department of Health, Disability and Ageing",
      "buyerState": null,
-     "desc": "Maintenance Services",
+     "desc": "Advisory Services for the Hearing Services Program",
      "category": "",
-     "start": "2026-10-26",
+     "start": "2026-10-25",
      "end": "2027-06-29",
-     "id": "CN4286148"
-    },
-    {
-     "value": 13933.08,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Watercraft Maintenance",
-     "category": "",
-     "start": "2026-10-22",
-     "end": "2027-06-29",
-     "id": "CN4286149"
+     "id": "CN4286455"
     }
    ],
-   "total": 151558,
-   "score": 6.0,
+   "total": 1797371,
+   "score": 5.0,
    "interstate": false,
    "why": [
-    "2 new government contracts in the last 7 days",
     "work runs 8 months"
    ],
    "seenBefore": false
   },
   {
-   "name": "DURATEC AUSTRALIA",
+   "name": "Conscia Pty Ltd",
    "abn": "",
-   "locality": "Wangara",
-   "state": "WA",
+   "locality": "Kingston",
+   "state": "ACT",
    "contracts": [
     {
-     "value": 652533.71,
-     "buyer": "Department of Defence",
+     "value": 442400.0,
+     "buyer": "CSIRO",
      "buyerState": null,
-     "desc": "Repair and Maintenance",
+     "desc": "Corporate Management Advisory Services",
      "category": "",
-     "start": "2026-10-28",
-     "end": "2028-06-07",
-     "id": "CN4285956"
+     "start": "2026-12-06",
+     "end": "2027-12-05",
+     "id": "CN4286521"
     }
    ],
-   "total": 652534,
+   "total": 442400,
    "score": 5.0,
    "interstate": false,
    "why": [
-    "work runs 20 months"
+    "work runs 12 months"
    ],
    "seenBefore": false
   },
   {
-   "name": "JONES LANG LASALLE (ACT) PTY LIMITED",
+   "name": "Elite Group (ACT) Pty Ltd",
    "abn": "",
-   "locality": "Sydney",
+   "locality": "Jerrabomerra",
    "state": "NSW",
    "contracts": [
     {
-     "value": 129207.1,
-     "buyer": "National Indigenous Australians Agency",
-     "buyerState": null,
-     "desc": "Project Management",
+     "value": 74365.5,
+     "buyer": "Department of Industry, Science and Resources",
+     "buyerState": "ACT",
+     "desc": "Event production services",
      "category": "",
-     "start": "2026-10-13",
-     "end": "2027-06-29",
-     "id": "CN4285930"
+     "start": "2026-11-01",
+     "end": "2026-12-16",
+     "id": "CN4286494"
     }
    ],
-   "total": 129207,
+   "total": 74366,
+   "score": 5.0,
+   "interstate": true,
+   "why": [
+    "based in Jerrabomerra NSW, delivering for Department of Industry, Science and Resources (Canberra)"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "THE REHABILITATION COMPANY PTY LTD",
+   "abn": "",
+   "locality": "Wagga Wagga",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 50000.0,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Health Services",
+     "category": "",
+     "start": "2026-11-01",
+     "end": "2028-10-30",
+     "id": "CN4286337"
+    },
+    {
+     "value": 20000.0,
+     "buyer": "Department of Agriculture, Fisheries and Forestry",
+     "buyerState": null,
+     "desc": "Occupational Rehabilitation and Assessment Services",
+     "category": "",
+     "start": "2026-10-31",
+     "end": "2028-10-30",
+     "id": "CN4285539"
+    }
+   ],
+   "total": 70000,
    "score": 5.0,
    "interstate": false,
    "why": [
-    "work runs 9 months"
+    "2 new government contracts in the last 7 days",
+    "work runs 24 months"
    ],
    "seenBefore": false
   },
@@ -157,32 +255,6 @@
    "interstate": true,
    "why": [
     "based in Sydney NSW, delivering for Australian Institute of Health and Welfare (Canberra)",
-    "work runs 12 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "Experis Australia Pty Ltd",
-   "abn": "",
-   "locality": "Sydney",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 359018.35,
-     "buyer": "Austrade",
-     "buyerState": "ACT",
-     "desc": "Solution Developer",
-     "category": "",
-     "start": "2026-12-23",
-     "end": "2027-12-23",
-     "id": "CN4285782"
-    }
-   ],
-   "total": 359018,
-   "score": 4.0,
-   "interstate": true,
-   "why": [
-    "based in Sydney NSW, delivering for Austrade (Canberra)",
     "work runs 12 months"
    ],
    "seenBefore": true
@@ -214,32 +286,6 @@
    "seenBefore": true
   },
   {
-   "name": "FlowBuilders Pty Limited",
-   "abn": "",
-   "locality": "Sydney",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 201000.0,
-     "buyer": "Aged Care Quality and Safety Commission",
-     "buyerState": "ACT",
-     "desc": "Professional Services on Integrations Architecture",
-     "category": "",
-     "start": "2026-10-13",
-     "end": "2027-06-29",
-     "id": "CN4285303"
-    }
-   ],
-   "total": 201000,
-   "score": 4.0,
-   "interstate": true,
-   "why": [
-    "based in Sydney NSW, delivering for Aged Care Quality and Safety Commission (Canberra)",
-    "work runs 9 months"
-   ],
-   "seenBefore": true
-  },
-  {
    "name": "Mossop Group Pty Ltd",
    "abn": "",
    "locality": "Regency Park",
@@ -266,33 +312,33 @@
    "seenBefore": true
   },
   {
-   "name": "MOTT MACDONALD AUSTRALIA PTY LIMITED",
+   "name": "KONGSBERG MARITIME PTY LTD",
    "abn": "",
-   "locality": "Adelaide",
-   "state": "SA",
+   "locality": "Fremantle",
+   "state": "WA",
    "contracts": [
     {
-     "value": 144928.67,
+     "value": 137625.27,
      "buyer": "Department of Defence",
      "buyerState": null,
-     "desc": "Project Management",
+     "desc": "Maintenance Services",
      "category": "",
-     "start": "2026-11-01",
+     "start": "2026-10-26",
      "end": "2027-06-29",
-     "id": "CN4286244"
+     "id": "CN4286148"
     },
     {
-     "value": 304229.28,
+     "value": 13933.08,
      "buyer": "Department of Defence",
      "buyerState": null,
-     "desc": "Project Management",
+     "desc": "Watercraft Maintenance",
      "category": "",
-     "start": "2026-10-27",
+     "start": "2026-10-22",
      "end": "2027-06-29",
-     "id": "CN4285192"
+     "id": "CN4286149"
     }
    ],
-   "total": 449158,
+   "total": 151558,
    "score": 3.0,
    "interstate": false,
    "why": [
@@ -383,40 +429,27 @@
    "seenBefore": true
   },
   {
-   "name": "AURECON AUSTRALASIA PTY LTD",
+   "name": "MJR Tech Pty Ltd",
    "abn": "",
-   "locality": "Dockland",
-   "state": "VIC",
+   "locality": "Chifley",
+   "state": "NSW",
    "contracts": [
     {
-     "value": 684478.3,
-     "buyer": "Department of Defence",
+     "value": 64735.0,
+     "buyer": "Department of Social Services",
      "buyerState": null,
-     "desc": "Project Support Services",
+     "desc": "ICT technical & advisory services",
      "category": "",
-     "start": "2026-09-29",
-     "end": "2027-04-11",
-     "id": "CN4285329"
-    },
-    {
-     "value": 2831496.8,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Project Management and Contract Administration Services",
-     "category": "",
-     "start": "2026-10-21",
-     "end": "2031-01-29",
-     "id": "CN4285196"
+     "start": "2026-10-25",
+     "end": "2027-01-20",
+     "id": "CN4283824"
     }
    ],
-   "total": 3515975,
-   "score": 2.0,
+   "total": 64735,
+   "score": 3.0,
    "interstate": false,
-   "why": [
-    "2 new government contracts in the last 7 days",
-    "work runs 52 months"
-   ],
-   "seenBefore": true
+   "why": [],
+   "seenBefore": false
   },
   {
    "name": "RPS AAP CONSULTING PTY LTD",
@@ -530,6 +563,31 @@
    "seenBefore": true
   },
   {
+   "name": "DURATEC AUSTRALIA",
+   "abn": "",
+   "locality": "Wangara",
+   "state": "WA",
+   "contracts": [
+    {
+     "value": 652533.71,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Repair and Maintenance",
+     "category": "",
+     "start": "2026-10-28",
+     "end": "2028-06-07",
+     "id": "CN4285956"
+    }
+   ],
+   "total": 652534,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 20 months"
+   ],
+   "seenBefore": true
+  },
+  {
    "name": "McGrathNicol Advisory Partnership",
    "abn": "",
    "locality": "Sydney",
@@ -551,31 +609,6 @@
    "interstate": false,
    "why": [
     "work runs 8 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "Benjamin David Gray trading as Botanical Places",
-   "abn": "",
-   "locality": "Kambah",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 524886.43,
-     "buyer": "Australian War Memorial",
-     "buyerState": null,
-     "desc": "For the provision of horticultural maintenance services",
-     "category": "",
-     "start": "2022-10-31",
-     "end": "2025-10-30",
-     "id": "CN4285254"
-    }
-   ],
-   "total": 524886,
-   "score": 2.0,
-   "interstate": false,
-   "why": [
-    "work runs 36 months"
    ],
    "seenBefore": true
   },
@@ -705,6 +738,56 @@
    "seenBefore": true
   },
   {
+   "name": "MOTT MACDONALD AUSTRALIA PTY LIMITED",
+   "abn": "",
+   "locality": "Adelaide",
+   "state": "SA",
+   "contracts": [
+    {
+     "value": 144928.67,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Project Management",
+     "category": "",
+     "start": "2026-11-01",
+     "end": "2027-06-29",
+     "id": "CN4286244"
+    }
+   ],
+   "total": 144929,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 8 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "JONES LANG LASALLE (ACT) PTY LIMITED",
+   "abn": "",
+   "locality": "Sydney",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 129207.1,
+     "buyer": "National Indigenous Australians Agency",
+     "buyerState": null,
+     "desc": "Project Management",
+     "category": "",
+     "start": "2026-10-13",
+     "end": "2027-06-29",
+     "id": "CN4285930"
+    }
+   ],
+   "total": 129207,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 9 months"
+   ],
+   "seenBefore": true
+  },
+  {
    "name": "FENTON STRATEGIC COMMUNICATIONS PTY",
    "abn": "",
    "locality": "Melbourne",
@@ -723,31 +806,6 @@
    ],
    "total": 110000,
    "score": 2.0,
-   "interstate": false,
-   "why": [
-    "work runs 8 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "Veritas Buildings & Infrastructure Pty Ltd",
-   "abn": "",
-   "locality": "Sydney",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 4400000.0,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Project Management",
-     "category": "",
-     "start": "2026-10-26",
-     "end": "2027-06-29",
-     "id": "CN4285194"
-    }
-   ],
-   "total": 4400000,
-   "score": 1.0,
    "interstate": false,
    "why": [
     "work runs 8 months"
@@ -948,54 +1006,6 @@
    "why": [
     "work runs 18 months"
    ],
-   "seenBefore": true
-  },
-  {
-   "name": "The Missing Link Security Pty Ltd",
-   "abn": "",
-   "locality": "Artarmon",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 55660.0,
-     "buyer": "Australian Prudential Regulation Authority",
-     "buyerState": null,
-     "desc": "IT Maintenance",
-     "category": "",
-     "start": "2026-09-30",
-     "end": "2027-09-29",
-     "id": "CN4284988"
-    }
-   ],
-   "total": 55660,
-   "score": 1.0,
-   "interstate": false,
-   "why": [
-    "work runs 12 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "Anchoram Consulting",
-   "abn": "",
-   "locality": "Deakin",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 85228.0,
-     "buyer": "Australian Financial Security Authority",
-     "buyerState": null,
-     "desc": "Independent Review",
-     "category": "",
-     "start": "2026-10-08",
-     "end": "2027-01-28",
-     "id": "CN4284947"
-    }
-   ],
-   "total": 85228,
-   "score": 0.0,
-   "interstate": false,
-   "why": [],
    "seenBefore": true
   }
  ]
