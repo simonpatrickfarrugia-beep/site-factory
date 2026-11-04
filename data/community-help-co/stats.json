@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-03T19:00:11.935Z",
+ "generatedAt": "2026-11-04T19:00:11.381Z",
  "period": {
-  "start": "2026-10-06",
-  "end": "2026-11-02"
+  "start": "2026-10-07",
+  "end": "2026-11-03"
  },
  "gscPeriod": {
-  "start": "2026-10-04",
-  "end": "2026-10-31"
+  "start": "2026-10-05",
+  "end": "2026-11-01"
  },
  "sources": {
   "ga4": true,
@@ -14,12 +14,12 @@
   "notes": []
  },
  "totals": {
-  "views": 10,
+  "views": 15,
   "prevViews": 0,
-  "users": 10,
+  "users": 15,
   "cta": {},
   "gscClicks": 0,
-  "gscImpressions": 104
+  "gscImpressions": 116
  },
  "daily": [
   {
@@ -41,6 +41,11 @@
    "date": "2026-11-02",
    "views": 1,
    "cta": 0
+  },
+  {
+   "date": "2026-11-03",
+   "views": 5,
+   "cta": 0
   }
  ],
  "pages": [
@@ -51,20 +56,31 @@
    "users": 4,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 75,
-   "gscPosition": 13.1,
-   "topQuery": "community services placement"
+   "gscImpressions": 84,
+   "gscPosition": 12.7,
+   "topQuery": "community service placement"
   },
   {
    "path": "/contact",
-   "views": 2,
+   "views": 3,
    "prevViews": 0,
-   "users": 2,
+   "users": 3,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 8,
    "gscPosition": 23.8,
    "topQuery": "help support"
+  },
+  {
+   "path": "/about",
+   "views": 2,
+   "prevViews": 0,
+   "users": 2,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
   },
   {
    "path": "/job-finder",
@@ -89,7 +105,29 @@
    "topQuery": "back to you journal pdf free download"
   },
   {
-   "path": "/about",
+   "path": "/advocacy-support",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
+   "path": "/affiliate-disclosure",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null
+  },
+  {
+   "path": "/faq",
    "views": 1,
    "prevViews": 0,
    "users": 1,
@@ -106,8 +144,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 8,
-   "gscPosition": 40.5,
+   "gscImpressions": 11,
+   "gscPosition": 46.5,
    "topQuery": "free resume"
   },
   {
@@ -153,23 +191,23 @@
    "page": "/"
   },
   {
-   "query": "community services placement",
+   "query": "community service placement",
    "clicks": 0,
-   "impressions": 15,
-   "position": 7.7,
+   "impressions": 16,
+   "position": 13.3,
    "page": "/"
   },
   {
-   "query": "community service placement",
+   "query": "community services placement",
    "clicks": 0,
-   "impressions": 12,
-   "position": 13,
+   "impressions": 16,
+   "position": 7.9,
    "page": "/"
   },
   {
    "query": "local community support",
    "clicks": 0,
-   "impressions": 11,
+   "impressions": 12,
    "position": 4.1,
    "page": "/"
   },
@@ -185,6 +223,13 @@
    "clicks": 0,
    "impressions": 3,
    "position": 2.7,
+   "page": "/"
+  },
+  {
+   "query": "community support worker",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 4,
    "page": "/"
   },
   {
@@ -234,6 +279,13 @@
    "clicks": 0,
    "impressions": 2,
    "position": 71.5,
+   "page": "/resume-builder"
+  },
+  {
+   "query": "help making a resume for free",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 80.5,
    "page": "/resume-builder"
   },
   {
@@ -363,10 +415,17 @@
    "page": "/resume-builder"
   },
   {
-   "query": "help making a resume for free",
+   "query": "free resume builder australia",
    "clicks": 0,
    "impressions": 1,
-   "position": 81,
+   "position": 25,
+   "page": "/resume-builder"
+  },
+  {
+   "query": "free resume writing services",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 82,
    "page": "/resume-builder"
   },
   {
@@ -439,6 +498,11 @@
    "date": "2026-10-31",
    "clicks": 0,
    "impressions": 16
+  },
+  {
+   "date": "2026-11-01",
+   "clicks": 0,
+   "impressions": 21
   }
  ]
 }
