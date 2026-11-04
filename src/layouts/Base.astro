@@ -132,8 +132,8 @@ const featuredHeading = brand.launched && !isPrivate ? FEATURED_HEADINGS[__BRAND
     <main id="main">
       <slot />
       {featuredHeading && (
-        <aside class="wrap featured" id="featured" aria-labelledby="featured-h" hidden>
-          <h2 id="featured-h">{featuredHeading}</h2>
+        <aside class="wrap featured" id="featured" aria-labelledby="featured-h" data-heading={featuredHeading} hidden>
+          <h2 id="featured-h"></h2>
           <ul></ul>
         </aside>
       )}
@@ -162,6 +162,7 @@ const featuredHeading = brand.launched && !isPrivate ? FEATURED_HEADINGS[__BRAND
             if (i.blurb) { var s = document.createElement('span'); s.textContent = ' ' + i.blurb; li.appendChild(s); }
             ul.appendChild(li);
           });
+          box.querySelector('h2').textContent = box.getAttribute('data-heading');
           box.hidden = false;
         }).catch(function () {});
       })();
