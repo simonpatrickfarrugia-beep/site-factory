@@ -50,6 +50,13 @@ import PcSalary from './pc/PcSalary.astro';
 import PcSalaries from './pc/PcSalaries.astro';
 import PcGuide from './pc/PcGuide.astro';
 import PcPage from './pc/PcPage.astro';
+import SstHome from './sst/SstHome.astro';
+import SstReport from './sst/SstReport.astro';
+import SstReports from './sst/SstReports.astro';
+import SstDestinations from './sst/SstDestinations.astro';
+import SstDestination from './sst/SstDestination.astro';
+import SstPage from './sst/SstPage.astro';
+import SstContact from './sst/SstContact.astro';
 
 export const templates = {
   home: Home,
@@ -103,4 +110,11 @@ export const templates = {
   pcSalaries: PcSalaries,
   pcGuide: PcGuide,
   pcPage: PcPage,
+  sstHome: SstHome,
+  sstReport: SstReport,
+  sstReports: SstReports,
+  sstDestinations: SstDestinations,
+  sstDestination: SstDestination,
+  sstPage: SstPage,
+  sstContact: SstContact,
 };

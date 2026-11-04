@@ -1,0 +1,13 @@
+---
+/** Tiny 12-month line, drawn at build time. Decorative: the numbers sit next to it in text. */
+interface Props { series: number[]; w?: number; h?: number }
+const { series, w = 120, h = 28 } = Astro.props;
+const max = Math.max(1, ...series);
+const step = series.length > 1 ? w / (series.length - 1) : w;
+const pts = series.map((v, i) => `${(i * step).toFixed(1)},${(h - 2 - (v / max) * (h - 4)).toFixed(1)}`).join(' ');
+const last = series.length ? (h - 2 - (series[series.length - 1] / max) * (h - 4)).toFixed(1) : h;
+---
+<svg class="sst-spark" viewBox={`0 0 ${w} ${h}`} width={w} height={h} aria-hidden="true" focusable="false">
+  <polyline points={pts} fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke" />
+  <circle cx={w - 0.5} cy={last} r="2.4" fill="currentColor" />
+</svg>

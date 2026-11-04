@@ -114,3 +114,19 @@ export async function buildTravelData(login: string, password: string, cfg: Trav
     log,
   };
 }
+
+/** One frozen line per month, so each monthly report page keeps its own numbers after the data moves on. */
+export interface ArchiveMonth {
+  month: string; // YYYY-MM
+  updated: string;
+  terms: { slug: string; label: string; kind: TravelTerm['kind']; idx: number; yoy: number | null; mom: number | null; lowSignal: boolean }[];
+}
+export function upsertArchive(archive: ArchiveMonth[], data: TravelData, anchorSlug = 'bali'): ArchiveMonth[] {
+  const base = data.terms.find((t) => t.slug === anchorSlug)?.now || 1;
+  const entry: ArchiveMonth = {
+    month: data.updated.slice(0, 7),
+    updated: data.updated,
+    terms: data.terms.map((t) => ({ slug: t.slug, label: t.label, kind: t.kind, idx: Math.round((t.now / base) * 100), yoy: t.yoy, mom: t.mom, lowSignal: t.lowSignal })),
+  };
+  return [entry, ...archive.filter((a) => a.month !== entry.month)].sort((a, b) => b.month.localeCompare(a.month));
+}

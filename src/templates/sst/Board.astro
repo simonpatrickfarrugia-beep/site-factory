@@ -1,0 +1,40 @@
+---
+/**
+ * The departure board: one row per destination. Status reads like a flight board:
+ * CLIMBING (5%+ up on last year), COOLING (5%+ down), STEADY otherwise.
+ */
+import Spark from './Spark.astro';
+import { pct } from '../../../brands/simon-says-travel/model';
+interface Row { slug: string; label: string; idx: number; yoy: number | null; series?: number[]; link?: boolean }
+interface Props { title: string; rows: Row[]; caption?: string }
+const { title, rows, caption } = Astro.props;
+const status = (y: number | null) => (y == null ? ['–', 'na'] : y >= 0.05 ? ['Climbing', 'up'] : y <= -0.05 ? ['Cooling', 'down'] : ['Steady', 'flat']);
+const top = Math.max(1, ...rows.map((r) => r.idx));
+---
+<figure class="board">
+  <figcaption class="board__head">
+    <span class="board__title">{title}</span>
+    <span class="board__cols" aria-hidden="true"><span>Interest</span><span>vs last year</span><span>Status</span></span>
+  </figcaption>
+  <table class="board__table">
+    <caption class="sr-only">{caption ?? title}. Search interest index: Bali over the last four weeks = 100.</caption>
+    <thead class="sr-only"><tr><th scope="col">Rank</th><th scope="col">Destination</th><th scope="col">Search interest (Bali = 100)</th><th scope="col">Change on last year</th><th scope="col">Status</th></tr></thead>
+    <tbody>
+      {rows.map((r, i) => {
+        const [s, cls] = status(r.yoy);
+        return (
+          <tr class="board__row">
+            <td class="board__rank">{String(i + 1).padStart(2, '0')}</td>
+            <th scope="row" class="board__dest">
+              {r.link === false ? <span>{r.label}</span> : <a href={`/destinations/${r.slug}`}>{r.label}</a>}
+              {r.series && <Spark series={r.series} />}
+            </th>
+            <td class="board__idx"><span class="board__bar" style={`--w:${Math.max(3, (r.idx / top) * 100)}%`}></span><b>{r.idx}</b></td>
+            <td class={`board__yoy board__yoy--${cls}`}>{pct(r.yoy)}</td>
+            <td class={`board__status board__status--${cls}`}>{s}</td>
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+</figure>

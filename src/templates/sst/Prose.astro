@@ -1,0 +1,10 @@
+---
+/** Paragraphs with simple links: [text](https://… or /path). */
+interface Props { paragraphs: string[] }
+const { paragraphs } = Astro.props;
+const parts = (p: string) => p.split(/(\[[^\]]+\]\((?:https:\/\/|\/)[^)\s]*\))/).map((s) => {
+  const m = s.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+  return m ? { text: m[1], href: m[2], ext: m[2].startsWith('https://') } : { text: s, href: null, ext: false };
+});
+---
+{paragraphs.map((p) => <p>{parts(p).map((x) => (x.href ? <a href={x.href} rel={x.ext ? 'noopener' : undefined}>{x.text}</a> : x.text))}</p>)}

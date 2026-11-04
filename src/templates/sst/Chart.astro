@@ -1,0 +1,40 @@
+---
+/**
+ * 12-month weekly chart for one search, with Bali dashed behind it for scale. Drawn at build time (no JavaScript).
+ * Values are on the shared index; the y-axis is relabelled so Bali's last 4 weeks = 100.
+ */
+import { shortDay } from '../../../brands/simon-says-travel/model';
+interface Props { label: string; series: number[]; weeks: string[]; base: number; compare?: { label: string; series: number[] } | null; peak: string }
+const { label, series, weeks, base, compare = null, peak } = Astro.props;
+const W = 640, H = 240, L = 40, R = 12, T = 14, B = 30;
+const conv = (v: number) => (v / (base || 1)) * 100;
+const vals = series.map(conv), cmp = compare ? compare.series.map(conv) : [];
+const max = Math.max(10, ...vals, ...cmp);
+const nice = [10, 20, 25, 50, 100, 200, 250, 500, 1000].find((s) => max / s <= 5) ?? 1000;
+const top = Math.ceil(max / nice) * nice;
+const x = (i: number) => L + (i * (W - L - R)) / Math.max(1, weeks.length - 1);
+const y = (v: number) => T + (H - T - B) * (1 - v / top);
+const path = (a: number[]) => a.map((v, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join('');
+const ticks = Array.from({ length: Math.round(top / nice) + 1 }, (_, i) => i * nice);
+const monthTicks = weeks.map((w, i) => ({ w, i })).filter((m, k, a) => k === 0 || m.w.slice(0, 7) !== a[k - 1].w.slice(0, 7)).filter((_, k) => k % 2 === 0);
+const pi = weeks.indexOf(peak);
+---
+<figure class="chart">
+  <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Weekly search interest in ${label} over 12 months, peaking the week of ${shortDay(peak)}.`}>
+    {ticks.map((t) => (
+      <g>
+        <line x1={L} x2={W - R} y1={y(t)} y2={y(t)} class="chart__grid" />
+        <text x={L - 8} y={y(t) + 4} text-anchor="end" class="chart__tick">{t}</text>
+      </g>
+    ))}
+    {monthTicks.map((m) => <text x={x(m.i)} y={H - 8} text-anchor="middle" class="chart__tick">{new Date(m.w + 'T00:00:00Z').toLocaleDateString('en-AU', { month: 'short', timeZone: 'UTC' })}</text>)}
+    {compare && <path d={path(cmp)} class="chart__cmp" />}
+    <path d={path(vals)} class="chart__line" />
+    {pi >= 0 && <circle cx={x(pi)} cy={y(vals[pi])} r="4.5" class="chart__peak" />}
+  </svg>
+  <figcaption class="chart__key">
+    <span class="chart__swatch chart__swatch--line"></span>{label}
+    {compare && <><span class="chart__swatch chart__swatch--cmp"></span>{compare.label}</>}
+    <span class="chart__note">Weekly search interest, Australia. Bali’s last 4 weeks = 100.</span>
+  </figcaption>
+</figure>

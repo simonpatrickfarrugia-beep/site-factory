@@ -1,0 +1,9 @@
+---
+import Prose from './Prose.astro';
+interface Props { page: { h1: string; paragraphs: string[] } }
+const { page } = Astro.props;
+---
+<div class="sst-wrap sst-section sst-measure">
+  <h1 class="sst-h1">{page.h1}</h1>
+  <Prose paragraphs={page.paragraphs} />
+</div>
