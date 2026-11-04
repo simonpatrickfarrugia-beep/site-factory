@@ -10,8 +10,8 @@ export default defineBrand({
   theme: 'boarding',
   // Departure-board black with amber flap text, on warm boarding-pass paper.
   colors: { brand: '#16181D', accent: '#FFB23F' },
-  // Archivo: tight, airport-signage headlines. Instrument Sans: clean, friendly body with good figures.
-  fonts: { display: 'Archivo', body: 'Instrument Sans' },
+  // Archivo: tight, airport-signage headlines. Manrope: clean, friendly body with clear figures.
+  fonts: { display: 'Archivo', body: 'Manrope' },
   logo: { src: '/logo-mark.svg', alt: '', width: 30, height: 30 },
   favicon: '/favicon.svg',
 
