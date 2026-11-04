@@ -6,8 +6,11 @@
 //                       CHC outreach replies. Logged only, never forwarded.
 // The raw email is read once (for the text shown in IMN HQ), then forwarded. If reading fails the
 // email is still forwarded, and a database problem can never lose an email.
+// Incoming replies are triaged (triage.ts): opt-outs are recorded at once, automatic mail never counts
+// as a reply, and a "yes" moves its organisation to the front of the next morning's link check.
 
 import { emailText } from './mime';
+import { triage, type Triage } from './triage';
 
 interface Env {
   DB: D1Database;
@@ -97,12 +100,41 @@ async function log(
     if (row) { contactId = row.id; orgId = row.org_id; break; }
   }
 
-  await env.DB.prepare(
-    `INSERT OR IGNORE INTO messages (brand, direction, mail_from, mail_to, subject, message_id, thread, contact_id, org_id, body)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-  ).bind(brand, direction, headerFrom, (direction === 'out' ? others.join(',') : message.to.toLowerCase()), subject, messageId || null, thread || null, contactId, orgId, body || null).run();
+  const kind: Triage | null = direction === 'in' ? triage(subject, body, h) : null;
+  // Automatic mail and opt-outs need nothing from Simon, so they're handled on arrival.
+  const handled = kind === 'auto' || kind === 'optout';
+
+  const ins = await env.DB.prepare(
+    `INSERT OR IGNORE INTO messages (brand, direction, mail_from, mail_to, subject, message_id, thread, contact_id, org_id, body, triage, handled_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CASE WHEN ? THEN strftime('%Y-%m-%dT%H:%M:%SZ','now') END)`,
+  ).bind(brand, direction, headerFrom, (direction === 'out' ? others.join(',') : message.to.toLowerCase()), subject, messageId || null, thread || null, contactId, orgId, body || null, kind, handled ? 1 : 0).run();
+  if (!ins.meta.changes) return; // same message seen twice (e.g. To and Cc both on the hub)
+
+  // An email we sent answers whatever they last sent us.
+  if (direction === 'out' && orgId) {
+    await env.DB.prepare(`UPDATE messages SET handled_at = strftime('%Y-%m-%dT%H:%M:%SZ','now') WHERE org_id = ? AND direction = 'in' AND handled_at IS NULL`).bind(orgId).run();
+  }
+
+  // Opt-out: every contact with that address, for every brand, is never emailed again.
+  if (kind === 'optout') {
+    await env.DB.prepare(`UPDATE contacts SET opted_out_at = strftime('%Y-%m-%dT%H:%M:%SZ','now') WHERE lower(email) = ? AND opted_out_at IS NULL`).bind(headerFrom).run();
+  }
 
   if (!orgId) return;
+  if (kind === 'auto') return; // an out-of-office isn't a reply: the card stays where it is
+
+  if (kind === 'optout') {
+    const org = await env.DB.prepare('SELECT brand FROM orgs WHERE id = ?').bind(orgId).first<{ brand: string }>();
+    if (!org) return;
+    await env.DB.batch([
+      env.DB.prepare(`INSERT INTO touches (org_id, contact_id, brand, stage, channel, subject, note) VALUES (?, ?, ?, 'no', 'email', ?, 'Opted out (auto: reply triage)')`).bind(orgId, contactId, org.brand, subject),
+      env.DB.prepare(`UPDATE orgs SET stage = 'no', stage_at = strftime('%Y-%m-%dT%H:%M:%SZ','now'), next_step = NULL WHERE id = ? AND stage NOT IN ('linked','won')`).bind(orgId),
+    ]);
+    return;
+  }
+
+  // A "yes": check their page for our link first thing in the next daily run.
+  if (kind === 'positive') await env.DB.prepare('UPDATE orgs SET checked_at = NULL WHERE id = ?').bind(orgId).run();
 
   const org = await env.DB.prepare('SELECT stage, brand FROM orgs WHERE id = ?').bind(orgId).first<{ stage: string; brand: string }>();
   if (!org || LATE_STAGES.has(org.stage)) return;
@@ -111,8 +143,8 @@ async function log(
 
   await env.DB.batch([
     env.DB.prepare(
-      `INSERT INTO touches (org_id, contact_id, brand, stage, channel, subject, note) VALUES (?, ?, ?, ?, 'email', ?, 'auto: mail hub')`,
-    ).bind(orgId, contactId, org.brand, stage, subject),
+      `INSERT INTO touches (org_id, contact_id, brand, stage, channel, subject, note) VALUES (?, ?, ?, ?, 'email', ?, ?)`,
+    ).bind(orgId, contactId, org.brand, stage, subject, kind === 'positive' ? 'auto: mail hub (sounds like a yes)' : 'auto: mail hub'),
     env.DB.prepare(`UPDATE orgs SET stage = ?, stage_at = strftime('%Y-%m-%dT%H:%M:%SZ','now') WHERE id = ?`).bind(stage, orgId),
   ]);
 }

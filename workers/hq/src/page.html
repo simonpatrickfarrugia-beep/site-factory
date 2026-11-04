@@ -231,6 +231,12 @@ details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 /* ---------- Phone layout ---------- */
 .more-menu{display:none}
+.rcard .rbody,.rcard .rmore{grid-column:auto}
+.fcheck{display:flex;gap:10px;align-items:flex-start;background:var(--good-bg);border-radius:10px;padding:10px 12px;font-size:.88rem}
+.fcheck input{margin-top:3px;width:18px;height:18px;flex:none}
+.fcheck b{font-weight:600}
+.tri{display:inline-block;font:600 .7rem var(--body);padding:1px 7px;border-radius:999px;background:var(--sunk);color:var(--muted);margin-left:6px;vertical-align:middle}
+.tri.positive{background:var(--good-bg);color:var(--good)}.tri.optout{background:var(--due-bg);color:var(--due)}
 .needs h2{font:700 1.05rem var(--display);margin:6px 0 8px;display:flex;gap:8px;align-items:baseline}
 .needs h2 em{font:500 .8rem var(--mono);font-style:normal;color:var(--muted)}
 .needs .card{margin-bottom:8px}
@@ -293,13 +299,14 @@ details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px
 
 <script>
 const STAGE_LABEL = { found: 'Found', drafted: 'Drafted', sent: 'Sent', replied: 'Replied', linked: 'Linked', won: 'Won', no: 'No' };
-const state = { view: 'today', radar: null, brand: 'all', board: null, summary: null, prospects: null, replies: null, pipeline: null, affiliates: null, showAll: {}, open: {} };
+const state = { view: 'today', radar: null, brand: 'all', board: null, summary: null, prospects: null, replies: null, pipeline: null, affiliates: null, needs: null, showAll: {}, open: {} };
 try { const s = JSON.parse(localStorage.getItem('imn-hq') || '{}'); if (s.view) state.view = s.view; if (s.brand) state.brand = s.brand; } catch (e) {}
 const save = () => { try { localStorage.setItem('imn-hq', JSON.stringify({ view: state.view, brand: state.brand })); } catch (e) {} };
 
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const color = (b) => `var(--${b})`;
+const siteOf = (b) => ((state.prospects?.brands.find((x) => x.key === b) || {}).site || ({ vic: 'https://victours.com.au', 'community-help-co': 'https://communityhelp.com.au', 'trade-admin': 'https://tradeadmin.com.au', trailers: 'https://www.movietrailer.channel' }[b] || '')).replace(/\/$/, '');
 const brandName = (b) => (state.board?.brands.find((x) => x.key === b)?.name) || b;
 const ago = (iso) => {
   if (!iso) return '';
@@ -309,6 +316,14 @@ const ago = (iso) => {
   if (d < 14) return d + ' days ago';
   return new Date(iso).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
 };
+const TRI = { optout: 'Opted out', auto: 'Automatic', positive: 'Sounds like a yes', reply: 'Needs a reply' };
+const tri = (t) => t && TRI[t] ? `<span class="tri ${esc(t)}">${TRI[t]}</span>` : '';
+// Open an email in the mail app (phones: mailto) or Outlook on the web (computers). Call inside the click.
+function compose(to, subj, bod, pre) {
+  if (isPhone()) { if (pre) pre.close(); location.href = 'mailto:' + encodeURIComponent(to).replace(/%40/g, '@') + '?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(bod); return; }
+  const url = 'https://outlook.office.com/mail/deeplink/compose?to=' + encodeURIComponent(to) + '&subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(bod);
+  if (pre) { pre.opener = null; pre.location.href = url; } else { location.href = url; }
+}
 const short = (iso) => new Date(iso).toLocaleString('en-AU', { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' });
 
 async function api(path, body) {
@@ -324,8 +339,8 @@ function toast(msg) {
 
 async function load() {
   try {
-    const [board, summary, prospects, replies, pipeline, affiliates, radar] = await Promise.all([api('/api/board'), api('/api/summary'), api('/api/prospects'), api('/api/replies'), api('/api/pipeline'), api('/api/affiliates'), api('/api/radar')]);
-    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar });
+    const [board, summary, prospects, replies, pipeline, affiliates, radar, needs] = await Promise.all([api('/api/board'), api('/api/summary'), api('/api/prospects'), api('/api/replies'), api('/api/pipeline'), api('/api/affiliates'), api('/api/radar'), api('/api/needs')]);
+    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar, needs });
     $('#updated').textContent = 'Targets scored ' + new Date(prospects.generated).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
     render();
   } catch (e) {
@@ -438,7 +453,7 @@ function renderReplies() {
     <li><i class="dot" style="--c:${color(m.brand)}"></i>
       <span class="who">${m.org_name ? `<button class="linkish" data-org="${m.org_id}" style="border:0;background:none;padding:0;font-weight:600;color:var(--accent)">${esc(m.org_name)}</button>` : esc(m.mail_from)}</span>
       <time datetime="${esc(m.at)}">${esc(short(m.at))}</time>
-      <span class="subj">${esc(m.subject || '(no subject)')} · ${m.org_name ? esc(m.mail_from) + ' → ' : 'to '}${esc(m.mail_to)}</span>
+      <span class="subj">${tri(m.triage)} ${esc(m.subject || '(no subject)')} · ${m.org_name ? esc(m.mail_from) + ' → ' : 'to '}${esc(m.mail_to)}</span>
       ${m.body ? `<div class="rbody${state.open[m.id] ? '' : ' clamp'}">${esc(m.body)}</div>${m.body.length > 180 ? `<button class="rmore" data-expand="${m.id}">${state.open[m.id] ? 'Show less' : 'Show full email'}</button>` : ''}` : ''}
     </li>`).join('')}</ul>`;
 }
@@ -450,7 +465,7 @@ async function openOrg(id) {
     const d = await api('/api/orgs/' + id);
     const o = d.org; const c = d.contacts[0];
     const items = d.touches.map((t) => ({ at: t.at, text: `<strong>${esc(STAGE_LABEL[t.stage] || t.stage)}</strong>${t.subject ? ' · ' + esc(t.subject) : ''}${t.note ? ' · ' + esc(t.note) : ''}` }))
-      .concat(d.messages.map((m) => ({ at: m.at, text: (m.direction === 'in' ? 'Email in from ' + esc(m.mail_from) : 'Email out to ' + esc(m.mail_to)) + ' · ' + esc(m.subject || '') + (m.body ? `<div class="rbody" style="margin-top:6px">${esc(m.body)}</div>` : '') })))
+      .concat(d.messages.map((m) => ({ at: m.at, text: (m.direction === 'in' ? 'Email in from ' + esc(m.mail_from) + ' ' + tri(m.triage) : 'Email out to ' + esc(m.mail_to)) + ' · ' + esc(m.subject || '') + (m.body ? `<div class="rbody" style="margin-top:6px">${esc(m.body)}</div>` : '') })))
       .sort((a, z) => z.at.localeCompare(a.at));
     body.innerHTML = `
       <header><div><h2 id="sheet-title">${esc(o.name)}</h2><span class="pill" style="margin-top:6px">${esc(brandName(o.brand))}</span></div><button class="close" id="close">Close</button></header>
@@ -460,6 +475,7 @@ async function openOrg(id) {
         ${o.evidence_url ? `<dt>Links page</dt><dd><a href="${esc(o.evidence_url)}" target="_blank" rel="noopener">${esc(o.evidence_url)}</a></dd>` : ''}
         ${d.target ? `<dt>Target</dt><dd>${esc(d.target.segmentLabel)} · ${esc(d.target.regionLabel)}</dd>` : ''}
         ${o.notes ? `<dt>Notes</dt><dd>${esc(o.notes)}</dd>` : ''}
+        <dt>On our page</dt><dd>${d.featured.length ? d.featured.map((f) => `<a href="${esc(siteOf(o.brand) + f.path)}" target="_blank" rel="noopener">${esc(f.path)}</a>`).join(', ') + ' <button class="btn ghost" id="unfeature" style="padding:2px 10px">Remove</button>' : (o.brand === 'paycalc' ? 'Not available for MyPayCalc yet' : `Not featured <button class="btn ghost" id="feature" style="padding:2px 10px">Feature on ${esc(d.page ? new URL(d.page).pathname : 'our page')}</button>`)}</dd>
         ${d.links.length ? `<dt>Links won</dt><dd>${d.links.map((l) => `<a href="${esc(l.page_url)}" target="_blank" rel="noopener">${esc(l.page_url)}</a>`).join('<br>')}</dd>` : ''}
       </dl>
       <div><label>Stage</label><div class="stages" style="margin-top:6px">${state.board.stages.map((s) => `<button data-stage="${s}" aria-pressed="${o.stage === s}">${STAGE_LABEL[s]}</button>`).join('')}</div></div>
@@ -467,6 +483,8 @@ async function openOrg(id) {
       <div><label for="note">Add a note</label><textarea id="note" placeholder="What happened?"></textarea><div class="row" style="margin-top:6px"><button class="btn" id="save-note">Add note</button></div></div>
       <div><label>History</label><ul class="timeline" style="margin-top:8px">${items.map((i) => `<li><time>${esc(short(i.at))}</time><span class="t-body">${i.text}</span></li>`).join('') || '<li><span></span><span class="t-body">No history yet</span></li>'}</ul></div>`;
     $('#close').onclick = () => dlg.close();
+    if ($('#feature')) $('#feature').onclick = async () => { try { const r = await api('/api/orgs/' + id + '/feature', {}); toast('Featured on ' + r.path); await load(); openOrg(id); } catch (e) { toast(e.message); } };
+    if ($('#unfeature')) $('#unfeature').onclick = async () => { try { await api('/api/orgs/' + id + '/unfeature', {}); toast('Removed from our page'); await load(); openOrg(id); } catch (e) { toast(e.message); } };
     body.querySelectorAll('[data-stage]').forEach((b) => b.onclick = async () => {
       const note = b.dataset.stage === 'no' ? ($('#note').value.trim() || 'No') : $('#note').value.trim() || null;
       try { await api('/api/orgs/' + id + '/stage', { stage: b.dataset.stage, note }); toast('Moved to ' + STAGE_LABEL[b.dataset.stage]); await load(); openOrg(id); } catch (e) { toast(e.message); }
@@ -528,6 +546,7 @@ async function openDraft(brand, key, org) {
       <label>Preview</label>
       <div class="preview" id="d-preview"></div>
     </div>
+    ${brand !== 'paycalc' && t.page ? `<label class="fcheck"><input type="checkbox" id="d-feature" checked><span><b>Give first:</b> add them to <a href="${esc(t.page)}" target="_blank" rel="noopener">${esc(new URL(t.page).pathname)}</a> as a useful contact before you send, and say so in the email. Uses the Website field above.</span></label>` : ''}
     ${from ? `<div class="from">In Outlook, set From to <span id="d-from">${esc(from)}</span><button class="btn ghost" id="d-copyfrom" style="padding:3px 10px">Copy</button></div>` : ''}
     <div class="row go-bar">
       <button class="btn" id="d-go">Add to board &amp; open in Outlook</button>
@@ -547,7 +566,19 @@ async function openDraft(brand, key, org) {
     $('#d-go').textContent = 'Open in Outlook';
   }
   const setVer = (i) => { const v = tpl.versions[i]; Object.assign(d, { ver: i, subject: v.subject, body: v.body, id: v.id }); $('#d-subject').value = v.subject; $('#d-body').value = v.body; body.querySelectorAll('[data-ver]').forEach((b) => b.setAttribute('aria-pressed', String(Number(b.dataset.ver) === i))); preview(); };
-  const preview = () => { $('#d-preview').textContent = 'Subject: ' + fill($('#d-subject').value, vals()) + '\n\n' + fill($('#d-body').value, vals()); };
+  const giveFirst = () => !!($('#d-feature') && $('#d-feature').checked);
+  // The email text as sent: with "Give first" ticked, the sentence saying we've already featured them goes in.
+  const mailBody = () => {
+    let b = $('#d-body').value;
+    if (!giveFirst()) return b;
+    const line = (state.needs && state.needs.featureLine) || "I've already added {organisation} to that page as a useful contact, so people using it can find you too.";
+    const offer = /I'm also happy to add \{organisation\} to the page so visitors can find you\./;
+    if (offer.test(b)) return b.replace(offer, line);
+    const i = b.lastIndexOf('\n\nThanks,');
+    return i > -1 ? b.slice(0, i) + '\n\n' + line + b.slice(i) : b + '\n\n' + line;
+  };
+  const preview = () => { $('#d-preview').textContent = 'Subject: ' + fill($('#d-subject').value, vals()) + '\n\n' + fill(mailBody(), vals()); };
+  if ($('#d-feature')) $('#d-feature').onchange = preview;
   setVer(0);
   if (org && org.opener && $('#d-opener')) $('#d-opener').onclick = () => {
     const b = $('#d-body').value; const i = b.indexOf('\n\n');
@@ -559,8 +590,8 @@ async function openDraft(brand, key, org) {
   $('#close').onclick = () => dlg.close();
   const copy = async (text, ok) => { try { await navigator.clipboard.writeText(text); toast(ok); } catch (e) { toast('Copy failed: select the text and copy it'); } };
   if (from) $('#d-copyfrom').onclick = () => copy(from, 'From address copied');
-  $('#d-copy').onclick = () => copy(fill($('#d-body').value, vals()), 'Email copied');
-  $('#d-copy2').onclick = () => copy(fill($('#d-body').value, vals()), 'Email copied');
+  $('#d-copy').onclick = () => copy(fill(mailBody(), vals()), 'Email copied');
+  $('#d-copy2').onclick = () => copy(fill(mailBody(), vals()), 'Email copied');
   $('#d-copyto').onclick = () => copy($('#d-email').value.trim(), 'To address copied');
   $('#d-copysubj').onclick = () => copy(fill($('#d-subject').value, vals()), 'Subject copied');
   $('#d-save').onclick = async () => {
@@ -576,24 +607,23 @@ async function openDraft(brand, key, org) {
   };
   $('#d-go').onclick = async () => {
     const v = vals();
+    if (giveFirst() && !$('#d-web').value.trim()) { toast('Add their website for Give first (or untick it)'); $('#d-web').focus(); return; }
     // Open the tab inside the click (pop-up blockers allow that), then point it at Outlook once the board is updated.
     const w = isPhone() ? null : window.open('about:blank', '_blank');
     try {
+      let orgId = org ? org.id : null;
       if (org && org.stage === 'drafted') { /* retry: already on the board as Drafted */ }
       else if (org) await api('/api/orgs/' + org.id + '/drafted', { template_id: d.id, subject: fill($('#d-subject').value, v), email: $('#d-email').value, contact_name: $('#d-contact').value });
-      else await api('/api/prospects/start', { brand, target: t.key, organisation: v.org, email: $('#d-email').value, contact_name: $('#d-contact').value, contact_role: $('#d-role').value, website: $('#d-web').value, evidence_url: $('#d-evidence').value, template_id: d.id, subject: fill($('#d-subject').value, v) });
-      const to = $('#d-email').value.trim(), subj = fill($('#d-subject').value, v), bod = fill($('#d-body').value, v);
-      if (isPhone()) {
-        // Phones: Outlook on the web in the browser (signed in as the IMN/CHC mailbox), so the work
-        // account in the Outlook app is never used. The From picker works there.
-        if (w) w.close();
-        // The Outlook app catches outlook.office.com links but ignores the compose part, so phones use a mailto
-        // link: the mail app opens a new email with To, subject and body filled in. Check the From account there.
-        location.href = 'mailto:' + encodeURIComponent(to).replace(/%40/g, '@') + '?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(bod);
-      } else {
-        const url = 'https://outlook.office.com/mail/deeplink/compose?to=' + encodeURIComponent(to) + '&subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(bod);
-        if (w) { w.opener = null; w.location.href = url; } else { location.href = url; }
+      else orgId = (await api('/api/prospects/start', { brand, target: t.key, organisation: v.org, email: $('#d-email').value, contact_name: $('#d-contact').value, contact_role: $('#d-role').value, website: $('#d-web').value, evidence_url: $('#d-evidence').value, template_id: d.id, subject: fill($('#d-subject').value, v) })).orgId;
+      // Give first: put them on our page before the email that says so goes out.
+      if (giveFirst() && orgId) {
+        try { await api('/api/orgs/' + orgId + '/feature', { url: $('#d-web').value, name: v.org || undefined }); }
+        catch (e) { if (w) w.close(); toast('Not featured: ' + e.message + ' The card is on the board; fix it there, then open the draft again.'); load(); return; }
       }
+      const to = $('#d-email').value.trim(), subj = fill($('#d-subject').value, v), bod = fill(mailBody(), v);
+      // Phones: mailto (the mail app opens a new email with everything filled in; check From there).
+      // Computers: Outlook on the web, where the From picker works.
+      compose(to, subj, bod, w);
       if (org && org.stage === 'drafted') toast('Opened in Outlook again');
       else toast(d.edited ? 'Added as Drafted. Your unsaved edits count under the version you started from.' : 'Added to the board as Drafted');
       if (!(org && org.stage === 'drafted' && isPhone())) dlg.close();
@@ -618,6 +648,63 @@ function renderNeeds() {
     ${sec('Waiting for a reply', sent, (o) => `<span class="meta">Sent ${esc(ago(o.stage_at))}</span>`, 'Nothing out yet.')}
     <button class="btn ghost" id="full-board" style="width:100%;padding:12px">Show the full board (${orgs.length})</button>`;
   $('#full-board').onclick = () => { state.fullBoard = true; renderBoard(); };
+}
+
+// ---------- Follow-through: replies that need you, and one follow-up ----------
+function renderFollowThrough() {
+  const msgs = ((state.needs && state.needs.messages) || []).filter((m) => inBrand(m.brand));
+  const due = state.board.orgs.filter((o) => o.followUpDue && inBrand(o.brand));
+  if (!msgs.length && !due.length) return '';
+  const reply = msgs.map((m) => `
+    <article class="rcard" style="--c:${color(m.brand)}">
+      <div><h3 style="margin:0">${m.org_id ? `<button class="linkish" data-org="${m.org_id}" style="border:0;background:none;padding:0;font:inherit;font-weight:700;color:inherit;text-align:left">${esc(m.org_name || m.mail_from)}</button>` : esc(m.mail_from)}${tri(m.triage)}</h3>
+        <div class="meta">${esc(brandName(m.brand))} · ${esc(m.mail_from)} · ${esc(ago(m.at))}</div></div>
+      ${m.body ? `<div class="rbody${state.open['n' + m.id] ? '' : ' clamp'}">${esc(m.body)}</div>${m.body.length > 180 ? `<button class="rmore" data-nexpand="${m.id}">${state.open['n' + m.id] ? 'Show less' : 'Show full email'}</button>` : ''}` : `<p class="meta" style="margin:0">${esc(m.subject || '')}</p>`}
+      ${m.triage === 'positive' ? '<p class="meta" style="margin:0">Sounds like a yes: their page gets checked for your link first thing tomorrow. Say thanks!</p>' : ''}
+      <div class="ractions">
+        <button class="btn" data-nreply="${m.id}">Reply</button>
+        <button class="btn ghost" data-ndone="${m.id}">Done</button>
+        ${m.org_id ? `<button class="btn ghost" data-noptout="${m.id}">They said no thanks</button>` : ''}
+      </div>
+    </article>`).join('');
+  const fu = due.map((o) => `
+    <article class="rcard" style="--c:${color(o.brand)}">
+      <div><h3 style="margin:0"><button class="linkish" data-org="${o.id}" style="border:0;background:none;padding:0;font:inherit;font-weight:700;color:inherit;text-align:left">${esc(o.name)}</button></h3>
+        <div class="meta">${esc(brandName(o.brand))}${o.contact_email ? ' · ' + esc(o.contact_email) : ''} · sent ${esc(ago(o.stage_at))}, no reply</div></div>
+      <div class="ractions">
+        <button class="btn" data-fu="${o.id}">Write follow-up</button>
+        <button class="btn ghost" data-fuclose="${o.id}">Close, no follow-up</button>
+      </div>
+    </article>`).join('');
+  return `${msgs.length ? `<div class="today-head"><h2>Needs your reply</h2><span class="meta">${msgs.length}</span></div><div class="rlist2">${reply}</div>` : ''}
+    ${due.length ? `<div class="today-head"><h2>Follow-ups due</h2><span class="meta">One short nudge each, then it's the last email</span></div><div class="rlist2">${fu}</div>` : ''}`;
+}
+
+function openFollowUp(o) {
+  const dlg = $('#sheet'); const body = $('#sheet-body');
+  const tplF = (state.needs && state.needs.followUp) || { subject: 'Re: {subject}', body: '' };
+  const v = { first: (o.contact_name || '').split(/\s+/)[0], org: o.name, region: o.region || '', page: o.page || siteOf(o.brand), site: siteOf(o.brand) };
+  const subj = tplF.subject.replace('{subject}', o.first_subject || 'my last email');
+  body.innerHTML = `
+    <header><div><h2 id="sheet-title">Follow up: ${esc(o.name)}</h2><span class="pill" style="margin-top:6px">${esc(brandName(o.brand))} · sent ${esc(ago(o.stage_at))}</span></div><button class="close" id="close">Close</button></header>
+    <div class="mail">
+      <div class="field"><label for="f-to">To</label><input id="f-to" type="text" value="${esc(o.contact_email || '')}"></div>
+      <div class="field"><label for="f-subject">Subject</label><input id="f-subject" type="text" value="${esc(subj)}"></div>
+      <div class="field"><label for="f-body">Email</label><textarea id="f-body" style="min-height:220px">${esc(fill(tplF.body, v))}</textarea></div>
+    </div>
+    <div class="row go-bar"><button class="btn" id="f-go">Open follow-up</button><button class="btn ghost" id="f-copy">Copy email</button></div>
+    <p class="empty" style="padding:0">Send it from the brand address. This is the only follow-up: if there's still no reply in ${14} days, the card closes by itself.</p>`;
+  if (!dlg.open) dlg.showModal();
+  $('#close').onclick = () => dlg.close();
+  $('#f-copy').onclick = async () => { try { await navigator.clipboard.writeText($('#f-body').value); toast('Email copied'); } catch (e) { toast('Copy failed: select the text and copy it'); } };
+  $('#f-go').onclick = async () => {
+    const w = isPhone() ? null : window.open('about:blank', '_blank');
+    try {
+      await api('/api/orgs/' + o.id + '/followup', { subject: $('#f-subject').value });
+      compose($('#f-to').value.trim(), $('#f-subject').value, $('#f-body').value, w);
+      toast('Follow-up opened'); dlg.close(); load();
+    } catch (e) { if (w) w.close(); toast(e.message); }
+  };
 }
 
 // ---------- Today (Radar) ----------
@@ -660,6 +747,7 @@ function renderToday() {
   const seg = r.bySegment.filter((x) => inBrand(x.brand));
   const segHtml = seg.length ? `<div class="tbl"><table><thead><tr><th>Brand · type</th><th class="num">Found</th><th class="num">Drafted</th><th class="num">Dropped</th><th class="num">Replied</th><th class="num">Linked</th></tr></thead><tbody>${seg.map((x) => `<tr><td>${esc(brandName(x.brand))} · ${esc((state.prospects.brands.find((b) => b.key === x.brand)?.top.find((t) => t.segment === x.segment) || {}).segmentLabel || x.segment)}</td><td class="num">${x.found}</td><td class="num">${x.drafted}</td><td class="num">${x.dropped}</td><td class="num">${x.replied}</td><td class="num">${x.linked}</td></tr>`).join('')}</tbody></table></div>` : '';
   $('#view').innerHTML = `<div class="pgrid">
+    ${renderFollowThrough()}
     <div class="today-head"><h2>Today's prospects</h2><span class="meta">${q.length} to review${r.later ? ' · ' + r.later + ' saved for later' : ''}</span></div>
     ${q.length ? `<div class="rlist2">${cards}</div>` : empty}
     ${learned}${coach}
@@ -816,6 +904,21 @@ document.addEventListener('click', (e) => {
   else if (t.dataset.rdrop) radarReview(t.dataset.rdrop, $('#rdrop-' + t.dataset.rdrop).value, $('#rwhy-' + t.dataset.rdrop).value);
   else if (t.dataset.rlater) radarReview(t.dataset.rlater, 'later');
   else if (t.dataset.uncoach !== undefined) { const i = Number(t.dataset.uncoach); api('/api/radar/coaching', { rules: state.radar.coaching.filter((_, j) => j !== i) }).then((res) => { state.radar.coaching = res.rules; toast('Rule removed'); renderToday(); }).catch((e) => toast(e.message)); }
+  else if (t.dataset.nexpand) { state.open['n' + t.dataset.nexpand] = !state.open['n' + t.dataset.nexpand]; renderToday(); }
+  else if (t.dataset.nreply) {
+    const m = state.needs.messages.find((x) => String(x.id) === t.dataset.nreply); if (!m) return;
+    const w = isPhone() ? null : window.open('about:blank', '_blank');
+    compose(m.mail_from, /^re:/i.test(m.subject || '') ? m.subject : 'Re: ' + (m.subject || ''), '', w);
+    toast('Reply opened. It drops off this list once your reply goes out.');
+  }
+  else if (t.dataset.ndone) api('/api/messages/' + t.dataset.ndone + '/handled', {}).then(() => { toast('Ticked off'); load(); }).catch((e) => toast(e.message));
+  else if (t.dataset.noptout) {
+    const m = state.needs.messages.find((x) => String(x.id) === t.dataset.noptout); if (!m) return;
+    api('/api/orgs/' + m.org_id + '/stage', { stage: 'no', note: 'no thanks (marked in Today)' })
+      .then(() => api('/api/messages/' + m.id + '/handled', {})).then(() => { toast('Opted out. No brand contacts them again'); load(); }).catch((e) => toast(e.message));
+  }
+  else if (t.dataset.fu) { const o = state.board.orgs.find((x) => String(x.id) === t.dataset.fu); if (o) openFollowUp(o); }
+  else if (t.dataset.fuclose) api('/api/orgs/' + t.dataset.fuclose + '/close', {}).then(() => { toast('Closed: no reply'); load(); }).catch((e) => toast(e.message));
   else if (t.dataset.expand) { state.open[t.dataset.expand] = !state.open[t.dataset.expand]; renderReplies(); }
 });
 $('#sheet').addEventListener('click', (e) => { if (e.target.id === 'sheet') e.target.close(); });

@@ -37,6 +37,15 @@ const tokens = {
   '--font-body': `'${brand.fonts.body}', system-ui, sans-serif`,
 };
 const tokenCss = `:root{${Object.entries(tokens).map(([k, v]) => `${k}:${v}`).join(';')}}`;
+// "Give first" outreach: organisations featured on a page in IMN HQ show up at the bottom of that page.
+// Loaded from the site Worker (/api/featured), so they appear within minutes, with no rebuild.
+const FEATURED_HEADINGS: Record<string, string> = {
+  vic: 'Local contacts',
+  'community-help-co': 'Get help in person',
+  'trade-admin': 'Useful contacts',
+  trailers: 'Film groups we like',
+};
+const featuredHeading = brand.launched && !isPrivate ? FEATURED_HEADINGS[__BRAND__] ?? null : null;
 ---
 <!doctype html>
 <html lang="en" data-theme={brand.theme}>
@@ -122,6 +131,12 @@ const tokenCss = `:root{${Object.entries(tokens).map(([k, v]) => `${k}:${v}`).jo
     <Header />
     <main id="main">
       <slot />
+      {featuredHeading && (
+        <aside class="wrap featured" id="featured" aria-labelledby="featured-h" hidden>
+          <h2 id="featured-h">{featuredHeading}</h2>
+          <ul></ul>
+        </aside>
+      )}
     </main>
     <Footer />
       <script is:inline>
@@ -134,5 +149,23 @@ const tokenCss = `:root{${Object.entries(tokens).map(([k, v]) => `${k}:${v}`).jo
         });
       })();
     </script>
+    {featuredHeading && (
+      <script is:inline>
+      (function () {
+        var box = document.getElementById('featured'); if (!box || !window.fetch) return;
+        fetch('/api/featured?path=' + encodeURIComponent(location.pathname)).then(function (r) { return r.ok ? r.json() : { items: [] }; }).then(function (d) {
+          var items = (d && d.items) || []; if (!items.length) return;
+          var ul = box.querySelector('ul');
+          items.forEach(function (i) {
+            var li = document.createElement('li'); var a = document.createElement('a');
+            a.href = i.url; a.textContent = i.name; a.rel = 'noopener'; li.appendChild(a);
+            if (i.blurb) { var s = document.createElement('span'); s.textContent = ' ' + i.blurb; li.appendChild(s); }
+            ul.appendChild(li);
+          });
+          box.hidden = false;
+        }).catch(function () {});
+      })();
+      </script>
+    )}
   </body>
 </html>

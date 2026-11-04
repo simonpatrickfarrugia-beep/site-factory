@@ -8,6 +8,8 @@ import { defaultTemplate } from './templates';
 import { pipeline, daily } from './pipeline';
 import { listAffiliates, affiliateDetail, saveAffiliate } from './affiliates';
 import { radar, review, markDrafted, saveCoaching, kvSet } from './radar';
+import { feature, unfeature, featuredFor, followUpOpened, closeNoReply, markHandled, autoClose, needsReply, FOLLOW_UP_DAYS } from './followthrough';
+import { FOLLOW_UP, FEATURE_LINE } from './templates';
 import { ICON_SVG, ICON_180, ICON_512, MANIFEST } from './app-assets';
 
 interface Env {
@@ -25,12 +27,12 @@ type BrandCfg = { name: string; active: boolean; weeklyCap: number; perTargetCap
 const T = TARGETS as unknown as { generated: string; brands: Record<string, BrandCfg>; targets: Target[] };
 
 export const STAGES = ['found', 'drafted', 'sent', 'replied', 'linked', 'won', 'no'] as const;
-const FOLLOW_UP_DAYS = 7;
 
 export default {
   async scheduled(_event: ScheduledController, env: Env, ctx: ExecutionContext): Promise<void> {
     ctx.waitUntil(daily(env.DB, T.brands));
     ctx.waitUntil(radarTargets(env));
+    ctx.waitUntil(autoClose(env.DB).then((n) => console.log(`auto-closed ${n} cards with no reply`)));
   },
 
   async fetch(req: Request, env: Env): Promise<Response> {
@@ -54,6 +56,18 @@ export default {
       if (url.pathname === '/api/summary' && req.method === 'GET') return json(await summary(env));
       if (url.pathname === '/api/prospects' && req.method === 'GET') return json(await prospects(env));
       if (url.pathname === '/api/replies' && req.method === 'GET') return json(await replies(env));
+      if (url.pathname === '/api/needs' && req.method === 'GET') return json({ messages: await needsReply(env.DB), followUp: FOLLOW_UP, featureLine: FEATURE_LINE });
+      const mh = url.pathname.match(/^\/api\/messages\/(\d+)\/handled$/);
+      if (mh && req.method === 'POST') return json(await markHandled(env.DB, Number(mh[1])));
+      const ft = url.pathname.match(/^\/api\/orgs\/(\d+)\/(feature|unfeature|followup|close)$/);
+      if (ft && req.method === 'POST') {
+        const id = Number(ft[1]);
+        const body = (await req.json().catch(() => ({}))) as Record<string, unknown>;
+        if (ft[2] === 'feature') return json(await feature(env.DB, id, body, await orgPage(env, id)));
+        if (ft[2] === 'unfeature') return json(await unfeature(env.DB, id));
+        if (ft[2] === 'followup') return json(await followUpOpened(env.DB, id, body));
+        return json(await closeNoReply(env.DB, id, 'No reply: closed without a follow-up'));
+      }
       if (url.pathname === '/api/pipeline' && req.method === 'GET') return json(await pipeline(env.DB, T.brands));
       if (url.pathname === '/api/radar' && req.method === 'GET') return json(await radar(env.DB, targetLabel));
       if (url.pathname === '/api/radar/coaching' && req.method === 'POST') return json(await saveCoaching(env.DB, (await req.json().catch(() => ({}))) as Record<string, unknown>));
@@ -178,6 +192,7 @@ type OrgRow = {
   region: string | null; notes: string | null; stage: string; next_step: string | null; stage_at: string; created_at: string;
   target: string | null; contact_name: string | null; contact_email: string | null; opted_out_at: string | null;
   last_at: string | null; last_note: string | null; last_in: string | null;
+  out_count: number; followups: number; first_subject: string | null; featured: number;
 };
 
 async function board(env: Env) {
@@ -185,7 +200,11 @@ async function board(env: Env) {
     SELECT o.*, c.name AS contact_name, c.email AS contact_email, c.opted_out_at,
       (SELECT MAX(at) FROM touches t WHERE t.org_id = o.id) AS last_at,
       (SELECT COALESCE(t.note, t.subject) FROM touches t WHERE t.org_id = o.id ORDER BY t.at DESC, t.id DESC LIMIT 1) AS last_note,
-      (SELECT MAX(at) FROM messages m WHERE m.org_id = o.id AND m.direction = 'in') AS last_in
+      (SELECT MAX(at) FROM messages m WHERE m.org_id = o.id AND m.direction = 'in') AS last_in,
+      (SELECT COUNT(*) FROM messages m WHERE m.org_id = o.id AND m.direction = 'out') AS out_count,
+      (SELECT COUNT(*) FROM touches t WHERE t.org_id = o.id AND t.note = 'Follow-up opened') AS followups,
+      (SELECT COALESCE(t.subject, '') FROM touches t WHERE t.org_id = o.id AND t.stage IN ('drafted','sent') AND t.subject IS NOT NULL ORDER BY t.at, t.id LIMIT 1) AS first_subject,
+      (SELECT COUNT(*) FROM featured f WHERE f.org_id = o.id AND f.removed_at IS NULL) AS featured
     FROM orgs o
     LEFT JOIN contacts c ON c.id = (SELECT id FROM contacts WHERE org_id = o.id ORDER BY id LIMIT 1)
     WHERE o.stage != 'dropped' AND NOT (o.found_by = 'radar' AND o.reviewed_at IS NULL)
@@ -194,11 +213,15 @@ async function board(env: Env) {
   const now = Date.now();
   const orgs = results.map((o) => {
     const days = Math.floor((now - Date.parse(o.stage_at)) / 86400000);
+    // One follow-up only: due 7+ days after the first email, never after a follow-up has gone out.
+    const followedUp = o.followups > 0 || o.out_count >= 2;
     return {
       ...o,
       days,
-      followUpDue: o.stage === 'sent' && days >= FOLLOW_UP_DAYS,
+      followedUp,
+      followUpDue: o.stage === 'sent' && days >= FOLLOW_UP_DAYS && !followedUp,
       targetLabel: targetLabel(o.brand, o.target),
+      page: targetPage(o.brand, o.target),
     };
   });
   return { stages: STAGES, brands: brandList(), orgs };
@@ -206,6 +229,16 @@ async function board(env: Env) {
 
 function brandList() {
   return Object.entries(T.brands).map(([key, b]) => ({ key, name: b.name, active: b.active }));
+}
+
+function targetPage(brand: string, key: string | null): string | null {
+  if (!key) return null;
+  return T.targets.find((x) => x.brand === brand && x.key === key)?.page ?? null;
+}
+
+async function orgPage(env: Env, id: number): Promise<string | null> {
+  const o = await env.DB.prepare('SELECT brand, target FROM orgs WHERE id = ?').bind(id).first<{ brand: string; target: string | null }>();
+  return o ? targetPage(o.brand, o.target) : null;
 }
 
 function targetLabel(brand: string, key: string | null): string | null {
@@ -219,11 +252,12 @@ async function orgDetail(env: Env, id: number) {
   if (!org) return { error: 'Organisation not found' };
   const contacts = (await env.DB.prepare('SELECT * FROM contacts WHERE org_id = ? ORDER BY id').bind(id).all()).results;
   const touches = (await env.DB.prepare('SELECT * FROM touches WHERE org_id = ? ORDER BY at DESC, id DESC LIMIT 50').bind(id).all()).results;
-  const messages = (await env.DB.prepare('SELECT id, brand, direction, mail_from, mail_to, subject, body, at FROM messages WHERE org_id = ? ORDER BY at DESC LIMIT 50').bind(id).all()).results;
+  const messages = (await env.DB.prepare('SELECT id, brand, direction, mail_from, mail_to, subject, body, triage, at FROM messages WHERE org_id = ? ORDER BY at DESC LIMIT 50').bind(id).all()).results;
   const links = (await env.DB.prepare('SELECT * FROM links_won WHERE org_id = ? ORDER BY first_seen DESC').bind(id).all()).results;
   const o = org as { brand: string; target: string | null };
   const target = o.target ? T.targets.find((x) => x.brand === o.brand && x.key === o.target) ?? null : null;
-  return { org, contacts, touches, messages, links, target };
+  const featured = await featuredFor(env.DB, id);
+  return { org, contacts, touches, messages, links, target, featured, page: target?.page ?? null };
 }
 
 async function setStage(env: Env, id: number, stage: string, note: string | null) {
@@ -264,7 +298,9 @@ async function summary(env: Env) {
   const sentWeek = (await env.DB.prepare(`SELECT brand, COUNT(*) AS n FROM messages WHERE direction = 'out' AND org_id IS NOT NULL AND at >= ? GROUP BY brand`).bind(weekAgo).all<{ brand: string; n: number }>()).results;
   const stages = (await env.DB.prepare(`SELECT brand, stage, COUNT(*) AS n FROM orgs GROUP BY brand, stage`).all<{ brand: string; stage: string; n: number }>()).results;
   const links = (await env.DB.prepare(`SELECT brand, COUNT(*) AS n FROM links_won GROUP BY brand`).all<{ brand: string; n: number }>()).results;
-  const due = (await env.DB.prepare(`SELECT brand, COUNT(*) AS n FROM orgs WHERE stage = 'sent' AND stage_at <= ? GROUP BY brand`).bind(weekAgo).all<{ brand: string; n: number }>()).results;
+  const due = (await env.DB.prepare(`SELECT brand, COUNT(*) AS n FROM orgs o WHERE stage = 'sent' AND stage_at <= ?
+    AND NOT EXISTS (SELECT 1 FROM touches t WHERE t.org_id = o.id AND t.note = 'Follow-up opened')
+    AND (SELECT COUNT(*) FROM messages m WHERE m.org_id = o.id AND m.direction = 'out') < 2 GROUP BY brand`).bind(weekAgo).all<{ brand: string; n: number }>()).results;
   const out: Record<string, { sentWeek: number; contacted: number; replied: number; replyRate: number | null; links: number; followUps: number; byStage: Record<string, number> }> = {};
   for (const b of Object.keys(T.brands)) out[b] = { sentWeek: 0, contacted: 0, replied: 0, replyRate: null, links: 0, followUps: 0, byStage: {} };
   for (const r of sentWeek) if (out[r.brand]) out[r.brand].sentWeek = r.n;
@@ -344,7 +380,7 @@ async function prospects(env: Env) {
 
 async function replies(env: Env) {
   const { results } = await env.DB.prepare(`
-    SELECT m.id, m.brand, m.mail_from, m.mail_to, m.subject, m.body, m.at, m.org_id, o.name AS org_name, o.stage
+    SELECT m.id, m.brand, m.mail_from, m.mail_to, m.subject, m.body, m.at, m.triage, m.handled_at, m.org_id, o.name AS org_name, o.stage
     FROM messages m LEFT JOIN orgs o ON o.id = m.org_id
     WHERE m.direction = 'in' ORDER BY m.at DESC LIMIT 40
   `).all();

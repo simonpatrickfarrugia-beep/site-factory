@@ -1090,3 +1090,10 @@ main { display: block; }
 .fund-fine a { color: var(--color-accent); }
 .fund-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .fund-q { font-size: var(--step-0); margin: var(--space-4) 0 var(--space-1); }
+
+/* "Give first" featured organisations (Base.astro, filled from /api/featured). Inherits each theme's colours. */
+.featured { margin-block: var(--space-5) var(--space-4); padding-top: var(--space-3); border-top: 1px solid currentColor; border-top-color: color-mix(in srgb, currentColor 18%, transparent); }
+.featured h2 { font-size: var(--step-1); margin: 0 0 var(--space-2); }
+.featured ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+.featured li span { opacity: 0.75; }
+.featured a { font-weight: 600; }

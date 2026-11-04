@@ -141,3 +141,23 @@ export function defaultTemplate(brand: string, segment: string): Template {
   const b = T[brand] ?? T.vic;
   return b[segment] ?? b['*'];
 }
+
+// One follow-up, sent 7+ days after the first email when nothing came back. Short on purpose:
+// it points at the same page, gives an easy out, and says it's the last one.
+export const FOLLOW_UP: Template = {
+  subject: 'Re: {subject}',
+  body: `Hi {first_name},
+
+Just checking my note reached you. Here's the page again:
+{page}
+
+If it's not a fit for {organisation}, no worries at all, and this is the last you'll hear from me about it.
+
+Thanks,
+
+${OPT_OUT}`,
+};
+
+// Give first: the sentence that says we've already featured them. It replaces the "happy to add you"
+// sentence when the template has one, otherwise it goes in just before "Thanks,".
+export const FEATURE_LINE = `I've already added {organisation} to that page as a useful contact, so people using it can find you too.`;

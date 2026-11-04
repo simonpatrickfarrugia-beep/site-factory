@@ -17,6 +17,8 @@
  *   GET  /media/<film>.<lang>.vtt  subtitles for a free film (any country).
  *   GET  /api/geo            { country }: the visitor's country (Cloudflare's guess), so /watch pages only play a public
  *                            domain film where we know it's out of copyright (the US). Never stored.
+ *   GET  /api/featured?path=/daylesford  organisations we feature on that page ("give first" outreach, added in IMN HQ):
+ *                            [{ name, url, blurb }]. Read by a small script on every page (Base.astro). Cached 5 minutes.
  *   GET  /api/submit/status?since=<ISO time>  how many submissions arrived since then: a count only, never any details.
  *                            The `enquiries` GitHub workflow polls it and opens an issue (emailed to Simon) when it's above 0.
  *
@@ -281,6 +283,22 @@ async function film(request: Request, env: Env, name: string): Promise<Response>
   return new Response(obj?.body ?? null, { status: 206, headers });
 }
 
+// ---------------------------------------------------------------- featured organisations ("give first")
+async function featured(request: Request, env: Env): Promise<Response> {
+  const raw = new URL(request.url).searchParams.get('path') ?? '/';
+  const path = raw.replace(/\.html$/, '').replace(/\/+$/, '') || '/';
+  if (!/^\/[a-z0-9/_-]{0,200}$/i.test(path)) return Response.json({ items: [] });
+  let items: { name: string; url: string; blurb: string | null }[] = [];
+  try {
+    items = (await env.DB.prepare('SELECT name, url, blurb FROM featured WHERE brand = ? AND path = ? AND removed_at IS NULL ORDER BY id LIMIT 12')
+      .bind(env.BRAND, path).all<{ name: string; url: string; blurb: string | null }>()).results
+      .filter((i) => /^https?:\/\//i.test(i.url));
+  } catch (e) {
+    console.error('featured failed', e); // table missing or D1 down: the page simply shows nothing
+  }
+  return Response.json({ items }, { headers: { 'cache-control': 'public, max-age=300' } });
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const { pathname } = new URL(request.url);
@@ -325,6 +343,7 @@ export default {
       try { return await planEmail(request, env); } catch (e) { console.error('plan-email failed', e); return Response.json({ ok: false, message: 'Something went wrong. Please try again.' }, { status: 500 }); }
     }
     if (pathname === '/api/unsubscribe') return unsubscribe(request, env);
+    if (pathname === '/api/featured') return featured(request, env);
     if (pathname === '/api/geo') {
       const country = ((request as Request & { cf?: { country?: string } }).cf?.country ?? 'XX').toUpperCase();
       return Response.json({ country }, { headers: { 'cache-control': 'private, no-store' } });
