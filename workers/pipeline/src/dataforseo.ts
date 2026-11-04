@@ -193,3 +193,39 @@ export async function easyKeywords(
     cost,
   };
 }
+
+export interface TrendsSeries {
+  keywords: string[];
+  /** One point per week (or day for short ranges): ISO date the period starts, and one 0–100 value per keyword. */
+  points: { from: string; values: (number | null)[] }[];
+}
+
+/**
+ * Google Trends interest over time for up to 5 searches, scaled together (the highest point of the
+ * five = 100). Docs: https://docs.dataforseo.com/v3/keywords_data/google_trends/explore/live/
+ */
+export async function trendsExplore(
+  login: string,
+  password: string,
+  keywords: string[],
+  locationCode: number,
+  timeRange = 'past_12_months',
+): Promise<TrendsSeries & { cost: number }> {
+  const kws = keywords.slice(0, 5);
+  const { result, cost } = await dfsTask<
+    { items?: { type: string; keywords?: string[]; data?: { date_from: string; missing_data?: boolean; values?: (number | null)[] }[] }[] }[]
+  >(login, password, 'keywords_data/google_trends/explore/live', {
+    keywords: kws,
+    location_code: locationCode,
+    time_range: timeRange,
+    type: 'web',
+    item_types: ['google_trends_graph'],
+  });
+  const graph = result?.[0]?.items?.find((i) => i.type === 'google_trends_graph');
+  if (!graph?.data?.length) throw new Error(`DataForSEO trends: no graph for ${kws.join(', ')}`);
+  return {
+    keywords: graph.keywords ?? kws,
+    points: graph.data.map((d) => ({ from: d.date_from, values: kws.map((_, i) => d.values?.[i] ?? null) })),
+    cost,
+  };
+}
