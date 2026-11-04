@@ -26,7 +26,7 @@ export default defineBrand({
     { label: 'How we make money', href: '/how-we-make-money' },
     { label: 'Privacy', href: '/privacy-policy' },
   ],
-  footerNote: 'Trade Admin is run by Independent Media Network Pty Ltd, Melbourne. The builders are free and run in your browser. Some links to software may earn us a referral fee; it never changes what we recommend.',
+  footerNote: 'Some software links are affiliate (referral) links that may earn us a fee; it never changes what we recommend. Trade Admin is run by Independent Media Network Pty Ltd, Melbourne. The builders are free and run in your browser.',
 
   seo: {
     titleSuffix: ' | Trade Admin',

@@ -55,7 +55,15 @@ const money = (n: number) => (n === 0 ? 'Free' : `$${n}`);
           </tbody>
         </table>
         <p class="ta-small">{gstLabel[a.gst]}. {a.trial}</p>
-        <p><a class="ta-btn ta-btn--quiet" href={a.url} rel="nofollow noopener" target="_blank" data-cta="app_site">See {a.name}'s pricing page</a></p>
+        {a.partner ? (
+          <p class="ta-actions">
+            <a class="ta-btn" href={a.partner} rel="sponsored noopener" target="_blank" data-cta={`partner_${k}`}>Start a {a.name} free trial</a>
+            <a class="ta-btn ta-btn--quiet" href={a.url} rel="nofollow noopener" target="_blank" data-cta="app_site">See {a.name}'s pricing page</a>
+          </p>
+        ) : (
+          <p><a class="ta-btn ta-btn--quiet" href={a.url} rel="nofollow noopener" target="_blank" data-cta="app_site">See {a.name}'s pricing page</a></p>
+        )}
+        {a.partner && <p class="ta-small">We're a {a.name} referral partner: if you sign up through this link, {a.name} may pay us a fee. It costs you nothing extra and doesn't change the prices above.</p>}
         {k === 'tradify' && <TaTradifyOffer source={slug} />}
       </section>
     );

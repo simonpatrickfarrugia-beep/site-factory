@@ -1,7 +1,8 @@
 /** Content model for Trade Admin. Mirrors data/trade-admin/*.json (edited by chat). */
 export interface Faq { q: string; a: string }
 export interface Plan { name: string; price: number; per: 'month' | 'user'; jobs?: number; users?: number; sms?: number }
-export interface App { name: string; url: string; model: string; gst: 'inc' | 'ex' | 'unstated'; trial: string; plans: Plan[] }
+/** `partner`: our referral link (approved partner programmes only); shown as a rel="sponsored" trial button. */
+export interface App { name: string; url: string; partner?: string; model: string; gst: 'inc' | 'ex' | 'unstated'; trial: string; plans: Plan[] }
 export interface Apps { checked: string; note: string; apps: Record<'servicem8' | 'tradify' | 'fergus', App>; bigger: string }
 /** A trade-specific template: the builder pre-filled with that trade's usual lines (no prices: we never invent them). */
 export interface Trade {
