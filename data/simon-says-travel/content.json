@@ -1,0 +1,91 @@
+{
+ "home": {
+  "seoTitle": "Where Australians Want to Travel: Monthly Search Trends | Simon Says Travel",
+  "description": "Which holiday destinations Australians are searching for right now, what's rising and what's cooling. Monthly Google search data, ranked and explained.",
+  "kicker": "The Aussie Travel Pulse",
+  "h1": "Where Australia wants to go",
+  "lede": "Every month I read Google's search data for 36 destinations and travel styles, and turn it into a short answer: where Australians are looking, what's climbing, and what's cooling off."
+ },
+ "signup": {
+  "heading": "Get the Pulse once a month",
+  "text": "One short email when the new month's numbers land: what's up, what's down, and when Australians are booking. No spam, unsubscribe any time.",
+  "button": "Send me the Pulse"
+ },
+ "notes": {
+  "2026-11": "First edition. Two things jumped out at me. Mid-February was the single busiest week of the year for flight searches, so if you want a winter getaway, that's when everyone else is looking too. And Vietnam keeps quietly climbing while Japan, the darling of the last two years, has cooled a bit."
+ },
+ "affiliates": {
+  "stay": {
+   "label": "Check hotel prices",
+   "partner": "Wotif",
+   "template": "https://www.wotif.com/affiliate?landingPage={url}&camref=1011l6uMgR&creativeref=1100l86817&adref=PZpZVoSteG",
+   "target": "https://www.wotif.com/Hotel-Search?destination={q}"
+  },
+  "tours": {
+   "label": "Find tours and activities",
+   "partner": "Viator",
+   "template": "https://www.viator.com/searchResults/all?text={q}&pid=P00327691&mcid=42383&medium=link&medium_version=selector&campaign={c}",
+   "alt": {
+    "label": "Compare on GetYourGuide",
+    "partner": "GetYourGuide",
+    "template": "https://www.getyourguide.com/s/?q={q}&partner_id=CZLHXOV&cmp={c}"
+   }
+  }
+ },
+ "pages": {
+  "how-it-works": {
+   "seoTitle": "How the Aussie Travel Pulse Works",
+   "description": "Where the numbers come from (Google Trends, Australia), how the index works, and what it can and can't tell you.",
+   "h1": "How this works",
+   "paragraphs": [
+    "Once a month, on the 6th, the site asks Google Trends how much interest Australians have shown in 36 searches over the last 12 months, week by week. For places it's the search \"flights to …\" (for example, \"flights to bali\"), because someone searching for flights is closer to actually going than someone searching a place name. For travel styles it's searches like \"cruise deals\" and \"travel insurance\".",
+    "Google Trends only compares five searches at a time, and scales each comparison so its own busiest week is 100. So every comparison includes the same search, \"flights to bali\", and each batch is rescaled onto it. That gives one index across all 36 searches.",
+    "On the site, the index is set so Bali over the last four weeks = 100. Japan at 54 means Japan got about half as much search interest as Bali. Travel insurance at 345 means it was searched about three and a half times as often.",
+    "\"On last year\" compares the last four complete weeks with the first four weeks of the 12-month window (roughly this time last year). \"On last month\" compares the last four weeks with the four weeks before.",
+    "What it can't tell you: how many people searched (Google Trends gives relative interest, not counts), or how many actually booked. Small searches are rounded heavily by Google, so anything with too little interest is marked \"too few searches to call\" and left out of the rankings. Capital cities (Sydney, Melbourne, Brisbane) include plenty of work and family trips, not just holidays.",
+    "Data: Google Trends via DataForSEO. The numbers are refreshed automatically; the short notes are mine."
+   ]
+  },
+  "about": {
+   "seoTitle": "About Simon Says Travel",
+   "description": "Simon Says Travel is a monthly read of where Australians want to travel, based on Google search data. Run from Melbourne.",
+   "h1": "About",
+   "paragraphs": [
+    "I'm Simon Farrugia, and I live in Melbourne. Most \"where's hot this year\" lists are opinion. This site does it with data: every month it reads Google's search interest for the places Australians fly to and ranks what's rising and what's cooling.",
+    "There's no travel agency here and nothing to book through me. When you're ready to book, the links go straight to the big booking sites. Some of those links pay this site a small commission (see [how this site makes money](/affiliate-disclosure)).",
+    "Simon Says Travel is run by Independent Media Network Pty Ltd, Melbourne. Planning a trip around Victoria? My other site, [Vic Tours](https://victours.com.au), has day trips and weekend plans."
+   ]
+  },
+  "contact": {
+   "seoTitle": "Contact Simon Says Travel",
+   "description": "Questions about the numbers, a destination you'd like tracked, or a media enquiry? Send a message.",
+   "h1": "Contact",
+   "paragraphs": [
+    "Want a destination added to the monthly tracking, spotted something odd in the numbers, or writing a story and want the data? Send a message and I'll reply by email.",
+    "Journalists are welcome to quote the numbers with a link to the source page."
+   ]
+  },
+  "privacy-policy": {
+   "seoTitle": "Privacy Policy",
+   "description": "Simon Says Travel's privacy policy: what we collect (very little) and why.",
+   "h1": "Privacy policy",
+   "paragraphs": [
+    "If you join the monthly email, we store your email address, the page you signed up on and the date, so we can send you the Pulse. Every email has a one-click unsubscribe link. We never sell or share your address.",
+    "If you send a message through the contact form, we store what you sent so we can reply. We use your email address only for that reply.",
+    "When you click a link to a booking site (for example Wotif, Viator or GetYourGuide), that site may set its own cookies so it knows you came from here. Their privacy policies apply on their sites.",
+    "We may use privacy-friendly analytics to count visits and see which pages get read. It doesn't tell us who you are.",
+    "Simon Says Travel is run by Independent Media Network Pty Ltd, Melbourne. Questions about privacy: use the [contact form](/contact)."
+   ]
+  },
+  "affiliate-disclosure": {
+   "seoTitle": "How This Site Makes Money",
+   "description": "Some links on Simon Says Travel are affiliate links: if you book, the site may earn a commission at no extra cost to you.",
+   "h1": "How this site makes money",
+   "paragraphs": [
+    "Some links on this site are affiliate links, marked as sponsored. If you click one and book a hotel on Wotif, or a tour on Viator or GetYourGuide, the site may earn a small commission. You pay the same price.",
+    "The commission never changes the numbers. The rankings come straight from Google search data, and a destination ranks where it ranks whether or not there's a link to book it.",
+    "This isn't a travel agency. Nothing is booked through this site, and the booking sites handle your booking, payment and any changes."
+   ]
+  }
+ }
+}

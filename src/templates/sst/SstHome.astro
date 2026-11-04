@@ -1,0 +1,70 @@
+---
+import Board from './Board.astro';
+import Signup from './Signup.astro';
+import Spark from './Spark.astro';
+import { dayLabel, indexer, monthLabel, pct, places, type Content, type Headline, type Trends } from '../../../brands/simon-says-travel/model';
+interface Props { trends: Trends; content: Content; headlines: Headline[]; month: string; note: string | null }
+const { trends: d, content: c, headlines, month, note } = Astro.props;
+const idx = indexer(d.terms);
+const ok = places(d.terms);
+const row = (t: (typeof d.terms)[number], link = true) => ({ slug: t.slug, label: t.label, idx: idx(t), yoy: t.yoy, series: t.series, link });
+const overseas = ok.filter((t) => t.kind === 'overseas').slice(0, 10).map((t) => row(t));
+const domestic = ok.filter((t) => t.kind === 'domestic').slice(0, 10).map((t) => row(t));
+const styles = d.terms.filter((t) => t.kind === 'style' && !t.lowSignal).map((t) => row(t, false));
+const quiet = d.terms.filter((t) => t.lowSignal).map((t) => t.label);
+const icon: Record<Headline['kind'], string> = { top: '01', riser: '↑', faller: '↓', momentum: '→', peak: '★' };
+---
+<div class="sst-wrap">
+  <header class="hero">
+    <p class="hero__kicker">{c.home.kicker} · {monthLabel(month)}</p>
+    <h1 class="hero__h1">{c.home.h1}</h1>
+    <p class="hero__lede">{c.home.lede}</p>
+    <p class="hero__meta">Google search data for Australia, 12 months to the week of {dayLabel(d.weeks[d.weeks.length - 1])}. <a href="/how-it-works">How this works</a>.</p>
+  </header>
+
+  <section class="says" aria-labelledby="says-h">
+    <h2 id="says-h" class="says__h">Simon says</h2>
+    {note && <p class="says__note">{note}</p>}
+    <ol class="says__list">
+      {headlines.map((h) => (
+        <li class={`says__item says__item--${h.kind}`}>
+          <span class="says__icon" aria-hidden="true">{icon[h.kind]}</span>
+          <span>{h.text} {h.slug && <a href={`/destinations/${h.slug}`}>See the chart</a>}</span>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <div class="boards">
+    <Board title="Overseas departures" rows={overseas} caption="Top 10 overseas destinations by search interest" />
+    <Board title="Domestic departures" rows={domestic} caption="Top domestic destinations by search interest" />
+  </div>
+
+  <section class="sst-section" aria-labelledby="styles-h">
+    <h2 id="styles-h" class="sst-h2">Travel styles</h2>
+    <p class="sst-sub">Searches that hint at how Australians plan to travel, on the same scale (Bali = 100).</p>
+    <ul class="styles">
+      {styles.map((s) => (
+        <li class="styles__item">
+          <span class="styles__label">{s.label}</span>
+          <Spark series={s.series} />
+          <span class="styles__idx">{s.idx}</span>
+          <span class={`styles__yoy ${s.yoy != null && s.yoy >= 0.05 ? 'is-up' : s.yoy != null && s.yoy <= -0.05 ? 'is-down' : ''}`}>{pct(s.yoy)} on last year</span>
+        </li>
+      ))}
+    </ul>
+    {quiet.length > 0 && <p class="sst-fine">Too few searches to call this month: {quiet.join(', ')}.</p>}
+  </section>
+
+  <Signup {...c.signup} />
+
+  <section class="sst-section" aria-labelledby="read-h">
+    <h2 id="read-h" class="sst-h2">Reading the board</h2>
+    <dl class="legend">
+      <div><dt>Interest</dt><dd>Search interest over the last four weeks, where Bali = 100. Double Bali’s interest reads 200.</dd></div>
+      <div><dt>vs last year</dt><dd>The last four weeks against the same stretch a year earlier.</dd></div>
+      <div><dt>Status</dt><dd><b>Climbing</b> means up 5% or more on last year, <b>Cooling</b> down 5% or more, <b>Steady</b> anything in between.</dd></div>
+    </dl>
+    <p><a class="sst-btn" href={`/reports/${month}`}>The full {monthLabel(month)} report</a> <a class="sst-link" href="/destinations">All destinations</a></p>
+  </section>
+</div>

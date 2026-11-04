@@ -1,0 +1,21 @@
+---
+import { monthLabel, pct, type ArchiveMonth } from '../../../brands/simon-says-travel/model';
+interface Props { archive: ArchiveMonth[]; notes: Record<string, string> }
+const { archive, notes } = Astro.props;
+const top3 = (a: ArchiveMonth) => a.terms.filter((t) => t.kind === 'overseas' && !t.lowSignal).sort((x, y) => y.idx - x.idx).slice(0, 3);
+const riser = (a: ArchiveMonth) => a.terms.filter((t) => t.kind !== 'style' && !t.lowSignal && t.yoy != null && t.idx >= 15).sort((x, y) => y.yoy! - x.yoy!)[0];
+---
+<div class="sst-wrap sst-section">
+  <h1 class="sst-h1">Past reports</h1>
+  <p class="sst-lede">Every month’s Aussie Travel Pulse, newest first. Each report keeps the numbers from the month it was published, so you can see how Australia’s travel wish list shifts through the year: which places climb as winter approaches, which cool off after the summer holidays, and when the big booking weeks hit. Every number is Google search interest in Australia, on one scale where Bali = 100.</p>
+  <ul class="reports">
+    {archive.map((a) => (
+      <li class="reports__item">
+        <a class="reports__month" href={`/reports/${a.month}`}>{monthLabel(a.month)}</a>
+        <span>Top overseas: {top3(a).map((t) => t.label).join(', ')}.{riser(a) && ` Biggest climber: ${riser(a)!.label} (${pct(riser(a)!.yoy)}).`}</span>
+        {notes[a.month] && <span class="reports__note">{notes[a.month].split('. ')[0]}.</span>}
+      </li>
+    ))}
+  </ul>
+  <p class="sst-fine">A new report lands on the 6th of each month. <a href="/#signup">Get it by email</a>.</p>
+</div>

@@ -1,0 +1,35 @@
+---
+import Board from './Board.astro';
+import { monthLabel, pct, type ArchiveMonth, type Headline } from '../../../brands/simon-says-travel/model';
+interface Props { report: ArchiveMonth; prev: ArchiveMonth | null; note: string | null; isLatest: boolean; headlines: Headline[] | null }
+const { report: a, prev, note, isLatest, headlines } = Astro.props;
+const ok = a.terms.filter((t) => !t.lowSignal);
+const rows = (kind: string) => ok.filter((t) => t.kind === kind).sort((x, y) => y.idx - x.idx).map((t) => ({ slug: t.slug, label: t.label, idx: t.idx, yoy: t.yoy, link: kind !== 'style' }));
+const places = ok.filter((t) => t.kind !== 'style' && t.yoy != null);
+const risers = [...places].sort((x, y) => y.yoy! - x.yoy!).filter((t) => t.yoy! > 0).slice(0, 5);
+const fallers = [...places].sort((x, y) => x.yoy! - y.yoy!).filter((t) => t.yoy! < 0).slice(0, 5);
+const was = (slug: string) => prev?.terms.find((t) => t.slug === slug)?.idx;
+---
+<div class="sst-wrap sst-section">
+  <p class="crumb"><a href="/reports">Past reports</a></p>
+  <h1 class="sst-h1">Where Australians wanted to travel in {monthLabel(a.month)}</h1>
+  <p class="sst-lede">The Aussie Travel Pulse for {monthLabel(a.month)}: {ok.length} searches ranked by Google search interest in Australia over the four weeks to {new Date(a.updated + 'T00:00:00Z').toLocaleDateString('en-AU', { day: 'numeric', month: 'long', timeZone: 'UTC' })}, with Bali = 100.{isLatest && ' This is the latest edition.'}</p>
+  {note && <blockquote class="says__note says__note--quote"><p>{note}</p><cite>Simon</cite></blockquote>}
+  {headlines && <ul class="sst-bullets">{headlines.map((h) => <li>{h.text}</li>)}</ul>}
+
+  <div class="movers">
+    <section><h2 class="sst-h3">Biggest climbers on last year</h2><ol>{risers.map((t) => <li><a href={`/destinations/${t.slug}`}>{t.label}</a> <b class="is-up">{pct(t.yoy)}</b></li>)}</ol></section>
+    <section><h2 class="sst-h3">Biggest coolers on last year</h2><ol>{fallers.map((t) => <li><a href={`/destinations/${t.slug}`}>{t.label}</a> <b class="is-down">{pct(t.yoy)}</b></li>)}</ol></section>
+  </div>
+
+  <div class="boards">
+    <Board title="Overseas" rows={rows('overseas')} />
+    <Board title="Domestic" rows={rows('domestic')} />
+  </div>
+  <Board title="Travel styles" rows={rows('style')} />
+
+  {prev && (
+    <p class="sst-fine">Compared with the {monthLabel(prev.month)} report: {ok.filter((t) => t.kind === 'overseas').slice(0, 5).map((t) => `${t.label} ${was(t.slug) ?? '–'} → ${t.idx}`).join(', ')}.</p>
+  )}
+  <p class="sst-fine">Too few searches to call: {a.terms.filter((t) => t.lowSignal).map((t) => t.label).join(', ') || 'none'}. <a href="/how-it-works">How the numbers work</a>.</p>
+</div>

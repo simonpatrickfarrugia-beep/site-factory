@@ -1,0 +1,49 @@
+---
+/** Monthly email signup (posts to /api/subscribe on the same site, table `subscribers`, brand simon-says-travel). Works without JavaScript too. */
+interface Props { heading: string; text: string; button: string; source?: string }
+const { heading, text, button, source = Astro.url.pathname } = Astro.props;
+---
+<section class="ticket" id="signup" aria-labelledby="signup-h">
+  <div class="ticket__main">
+    <p class="ticket__kicker">Boarding pass · monthly</p>
+    <h2 id="signup-h" class="ticket__h">{heading}</h2>
+    <p class="ticket__text">{text}</p>
+    <form class="ticket__form" method="post" action="/api/subscribe" data-signup>
+      <label class="ticket__label" for="signup-email">Email address</label>
+      <div class="ticket__row">
+        <input id="signup-email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder="you@example.com" />
+        <button type="submit" data-cta="signup">{button}</button>
+      </div>
+      <input type="hidden" name="source" value={source} />
+      <input type="hidden" name="interests" value="pulse" />
+      <div class="ticket__hp" aria-hidden="true"><label>Leave this empty <input name="company_website" tabindex="-1" autocomplete="off" /></label></div>
+      <p class="ticket__msg" role="status" aria-live="polite"></p>
+      <p class="ticket__fine">Only used for Simon Says Travel emails. <a href="/privacy-policy">Privacy</a>.</p>
+    </form>
+  </div>
+  <div class="ticket__stub" aria-hidden="true"><span>SST</span><span>MEL → ?</span></div>
+</section>
+<script>
+  for (const form of document.querySelectorAll<HTMLFormElement>('form[data-signup]')) {
+    const msg = form.querySelector<HTMLElement>('.ticket__msg')!;
+    const q = new URLSearchParams(location.search).get('subscribed');
+    if (q !== null) msg.textContent = q === '1' ? "You're on the list. Thanks!" : 'That didn’t work. Check the address and try again.';
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button')!;
+      btn.disabled = true; msg.textContent = 'Adding you…';
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { accept: 'application/json' } });
+        const out = await res.json();
+        msg.textContent = out.message;
+        if (out.ok) {
+          form.querySelector<HTMLInputElement>('input[type=email]')!.value = '';
+          (window as any).gtag?.('event', 'sign_up', { method: 'email', page: location.pathname });
+        }
+      } catch {
+        msg.textContent = 'That didn’t work. Please try again.';
+      }
+      btn.disabled = false;
+    });
+  }
+</script>

@@ -1,0 +1,18 @@
+---
+import Board from './Board.astro';
+import { dayLabel } from '../../../brands/simon-says-travel/model';
+interface Dest { slug: string; label: string; kind: string; idx: number; yoy: number | null; series: number[] }
+interface Props { dests: Dest[]; weeks: string[]; updated: string }
+const { dests, updated } = Astro.props;
+const o = dests.filter((d) => d.kind === 'overseas');
+const h = dests.filter((d) => d.kind === 'domestic');
+---
+<div class="sst-wrap sst-section">
+  <h1 class="sst-h1">Destinations</h1>
+  <p class="sst-lede">{dests.length} places Australians fly to, ranked by search interest over the last four weeks (Bali = 100). Each one has its own page with a 12-month chart, its busiest and quietest months, and how it compares. Updated {dayLabel(updated)}.</p>
+  <div class="boards">
+    <Board title="Overseas" rows={o} />
+    <Board title="Domestic" rows={h} />
+  </div>
+  <p class="sst-fine">Missing a place? Some searches are too small for Google to report reliably, so they’re left out. <a href="/contact">Ask for one to be tracked</a>.</p>
+</div>

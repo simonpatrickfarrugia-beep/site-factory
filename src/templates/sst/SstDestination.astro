@@ -1,0 +1,62 @@
+---
+import Chart from './Chart.astro';
+import { monthLabel, pct, type Content, type Term } from '../../../brands/simon-says-travel/model';
+interface Props {
+  term: Term; idx: number; weeks: string[]; months: { month: string; avg: number }[]; busiest: { month: string; avg: number }; quietest: { month: string; avg: number };
+  rank: number; rankOf: number; near: { slug: string; label: string; idx: number; yoy: number | null }[]; peakLabel: string; where: string;
+  affiliates: Content['affiliates']; updated: string; vic: boolean; bali: { now: number; series: number[] };
+}
+const { term: t, idx, weeks, months, busiest, quietest, rank, rankOf, near, peakLabel, where, affiliates: aff, vic, bali } = Astro.props;
+const mName = (m: string) => monthLabel(m).split(' ')[0];
+const ratio = busiest.avg / Math.max(0.1, quietest.avg);
+const kindWord = t.kind === 'overseas' ? 'overseas' : 'domestic';
+const slugC = 'sst-' + t.slug;
+const q = encodeURIComponent(where);
+const stayHref = aff.stay.template.replace('{url}', encodeURIComponent(aff.stay.target.replace('{q}', q)));
+const tourHref = aff.tours.template.replace('{q}', q).replace('{c}', slugC);
+const altHref = aff.tours.alt.template.replace('{q}', q).replace('{c}', slugC);
+const maxM = Math.max(...months.map((m) => m.avg), 0.1);
+const yoyText = t.yoy == null ? 'too small last year to compare' : Math.abs(t.yoy) < 0.05 ? `about level with this time last year (${pct(t.yoy)})` : `${t.yoy > 0 ? 'up' : 'down'} ${pct(Math.abs(t.yoy)).replace('+', '')} on this time last year`;
+const momText = t.mom == null ? '' : Math.abs(t.mom) < 0.05 ? 'and steady on the previous four weeks' : `and ${t.mom > 0 ? 'up' : 'down'} ${pct(Math.abs(t.mom)).replace('+', '')} on the previous four weeks`;
+---
+<div class="sst-wrap sst-section">
+  <p class="crumb"><a href="/destinations">Destinations</a></p>
+  <h1 class="sst-h1">Flights to {t.label}: when Australians search</h1>
+  <p class="sst-lede">
+    {t.slug === 'bali' ? <>Bali is the benchmark for every number on this site (Bali = 100).</> : <>{t.label} scores <b>{idx}</b> on the index, where Bali = 100{idx < 100 ? <> (about {idx >= 15 ? `${Math.round(idx / 10) * 10}%` : 'a sliver'} of Bali’s search interest)</> : <> ({(idx / 100).toFixed(1)} times Bali’s search interest)</>}.</>}
+    {' '}It ranks <b>{rank} of {rankOf}</b> {kindWord} destinations we track, {yoyText}, {momText}.
+  </p>
+
+  <Chart label={`Flights to ${t.label}`} series={t.series} weeks={weeks} base={bali.now} compare={t.slug === 'bali' ? null : { label: 'Flights to Bali', series: bali.series }} peak={t.peakWeek} />
+
+  <div class="facts">
+    <div class="facts__item"><span class="facts__k">Busiest month</span><span class="facts__v">{mName(busiest.month)}</span></div>
+    <div class="facts__item"><span class="facts__k">Quietest month</span><span class="facts__v">{mName(quietest.month)}</span></div>
+    <div class="facts__item"><span class="facts__k">Peak week</span><span class="facts__v">{peakLabel.replace(/ \d{4}$/, '')}</span></div>
+    <div class="facts__item"><span class="facts__k">vs last year</span><span class="facts__v">{pct(t.yoy)}</span></div>
+  </div>
+
+  <h2 class="sst-h2">Month by month</h2>
+  <p>Over the last 12 months, searches for flights to {t.label} were highest in {monthLabel(busiest.month)} and lowest in {monthLabel(quietest.month)}{ratio >= 1.3 ? <>, about {ratio.toFixed(1)} times as busy at the top as at the bottom</> : <>, with little difference across the year</>}. The single busiest week was the week of {peakLabel}.</p>
+  <ul class="months" aria-label={`Average search interest per month for flights to ${t.label}`}>
+    {months.map((m) => <li class="months__item"><span class="months__bar" style={`--h:${Math.max(4, (m.avg / maxM) * 100)}%`}></span><span class="months__m">{mName(m.month).slice(0, 3)}</span></li>)}
+  </ul>
+  <p class="sst-fine">Search interest isn’t prices. Busy months often mean dearer fares and fuller planes; quiet months can mean better availability.</p>
+
+  <h2 class="sst-h2">Similar interest right now</h2>
+  <ul class="near">
+    {near.map((n) => <li><a href={`/destinations/${n.slug}`}>{n.label}</a> <span>{n.idx}</span> <span class={n.yoy != null && n.yoy >= 0.05 ? 'is-up' : n.yoy != null && n.yoy <= -0.05 ? 'is-down' : ''}>{pct(n.yoy)}</span></li>)}
+  </ul>
+
+  <section class="book" aria-labelledby="book-h">
+    <h2 id="book-h" class="sst-h2">Planning {t.label}?</h2>
+    <p>Nothing books through this site. When you’re ready, compare on the big booking sites:</p>
+    <p class="book__links">
+      <a class="sst-btn" href={stayHref} rel="sponsored noopener" target="_blank" data-cta="book_stay">{aff.stay.label} in {t.label}</a>
+      <a class="sst-btn sst-btn--ghost" href={tourHref} rel="sponsored noopener" target="_blank" data-cta="book_tour">{aff.tours.label}</a>
+      <a class="sst-link" href={altHref} rel="sponsored noopener" target="_blank" data-cta="book_tour">{aff.tours.alt.label}</a>
+    </p>
+    <p class="sst-fine">Hotels on {aff.stay.partner}, tours on {aff.tours.partner} or {aff.tours.alt.partner}. We may earn a commission if you book, at no extra cost to you. <a href="/affiliate-disclosure">More</a>.</p>
+    {vic && <p>Staying in Victoria longer? <a href="https://victours.com.au">Vic Tours</a> has ready-made day trips and weekends from Melbourne.</p>}
+  </section>
+</div>

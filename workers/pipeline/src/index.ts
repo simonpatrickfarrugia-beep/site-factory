@@ -20,7 +20,7 @@ import { calibrate, estimateMoney, moneyReport, type Measured, nicheReport, scor
 import { buildDemandReport } from './demand';
 import { pickTrailer } from './titles';
 import { buildCatalogue, type Candidate } from './catalogue';
-import { buildTravelData, type TravelTerms } from './travel';
+import { buildTravelData, upsertArchive, type ArchiveMonth, type TravelTerms } from './travel';
 import { cleanKeyword, domainTraffic, easyKeywords, keywordDifficulty, keywordIdeas, searchVolumes, serpTop10, type SerpResult } from './dataforseo';
 import { MARKETS, PROMOTE, discoverReport, domainFree, measure, qualifies, type Discovered } from './discover';
 import { COMPETITION_VERSION, competitionReport, pickKeywords, rootDomain, scoreCompetition, type Competition } from './competition';
@@ -121,6 +121,7 @@ const COMPETITION_REPORT = 'hq/reports/competition.md';
 const FINANCE = 'hq/finance.json';
 const TRAVEL_TERMS = 'data/simon-says-travel/terms.json';
 const TRAVEL_DATA = 'data/simon-says-travel/trends.json';
+const TRAVEL_ARCHIVE = 'data/simon-says-travel/archive.json';
 /** Only affiliate-link clicks count toward the click rate (not website, map, call or JustWatch clicks). */
 const AFFILIATE_CTA = new Set(['prime', 'disc', 'book_stay', 'book_tour', 'book_car']);
 const statsPaths = (env: Env) => (JSON.parse(env.STATS_SITES || '[]') as { path: string }[]).map((s) => s.path);
@@ -222,7 +223,7 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
 
   const files =
     job === 'travel'
-      ? [TRAVEL_TERMS]
+      ? [TRAVEL_TERMS, TRAVEL_ARCHIVE]
       : job === 'keywords'
       ? [KEYWORDS]
       : job === 'towns'
@@ -749,7 +750,9 @@ async function townsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boo
 async function travelJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean) {
   const cfg = JSON.parse(snap.files[TRAVEL_TERMS]) as TravelTerms;
   const { data, log } = await buildTravelData(env.DATAFORSEO_LOGIN!, env.DATAFORSEO_PASSWORD!, cfg, now);
-  const commit = await save(repo, snap.sha, { [TRAVEL_DATA]: JSON.stringify(data, null, 1) + '\n' }, `Simon Says Travel: monthly trends ${data.updated}\n\n${log.join('\n')}`, dryRun, log);
+  const archive = snap.files[TRAVEL_ARCHIVE] ? (JSON.parse(snap.files[TRAVEL_ARCHIVE]) as ArchiveMonth[]) : [];
+  const updatedArchive = upsertArchive(archive, data);
+  const commit = await save(repo, snap.sha, { [TRAVEL_DATA]: JSON.stringify(data, null, 1) + '\n', [TRAVEL_ARCHIVE]: JSON.stringify(updatedArchive, null, 1) + '\n' }, `Simon Says Travel: monthly trends ${data.updated}\n\n${log.join('\n')}`, dryRun, log);
   return { job: 'travel' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report: undefined as string | undefined };
 }
 
