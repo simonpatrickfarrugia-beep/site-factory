@@ -39,5 +39,6 @@ export default defineBrand({
   data: { source: 'snapshot' },
   forms: [],
   analytics: { ga4Id: 'G-4FYB501KJ1' }, // same property as the old victours.com.au site
+  // ads: { skimlinksId: '' }, // Skimlinks: paste the publisher ID here once victours.com.au is approved (see brand-schema.ts)
   payments: { enabled: false },
 });

@@ -56,6 +56,11 @@ export const brandSchema = z.object({
     /** AdSense publisher ID (public, safe to commit). Setting it adds the AdSense script, the site-verification
      *  meta tag and an ads.txt line. Unset = no ads and an ads.txt that authorises nobody. */
     adsenseClient: z.string().regex(/^ca-pub-\d{16}$/, 'AdSense publisher IDs look like ca-pub- followed by 16 digits').optional(),
+    /** Skimlinks publisher ID (public, safe to commit), from Publisher Hub → Settings → Install, e.g. '123456X1234567'.
+     *  Set it only once Skimlinks has approved this domain: the script turns plain outbound shop links into affiliate
+     *  links. Links that already carry a direct affiliate deal are marked class="noskim" so they keep 100% of the commission.
+     *  Unset = no Skimlinks script. */
+    skimlinksId: z.string().regex(/^\d+X\d+$/, 'Skimlinks IDs look like 123456X1234567').optional(),
     /** Paths that never load ads (prefix match), e.g. ['/original-films']. Private /hq pages never do. */
     exclude: z.array(z.string().startsWith('/')).default([]),
   }).default({}),

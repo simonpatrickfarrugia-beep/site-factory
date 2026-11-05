@@ -68,6 +68,12 @@ export interface Loop {
   summary: string;
   intro: string;
   days: LoopDay[];
+  /** Planning paragraphs shown under the intro. */
+  body?: string[];
+  /** Practical sections after the day plan (When to go, Driving tips, With kids...). */
+  guide?: { heading: string; paragraphs: string[] }[];
+  /** Simon's own insider tip, shown in a highlighted box when set. */
+  insider?: string;
   draft?: boolean; // hidden until its towns are published
 }
 

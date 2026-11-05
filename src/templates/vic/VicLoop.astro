@@ -8,8 +8,8 @@ interface DayView {
   stops: { slug: string; name: string }[];
   overnight: { slug: string; name: string; stay: Place[]; eat: Place[]; do: Place[] } | null;
 }
-interface Props { name: string; intro: string; nights: number; route: string; days: DayView[]; affiliates?: Record<string, any> | null }
-const { name, intro, nights, route, days, affiliates = null } = Astro.props;
+interface Props { name: string; intro: string; body?: string[]; guide?: { heading: string; paragraphs: string[] }[]; insider?: string | null; nights: number; route: string; days: DayView[]; affiliates?: Record<string, any> | null }
+const { name, intro, body = [], guide = [], insider = null, nights, route, days, affiliates = null } = Astro.props;
 const names = (ps: Place[]) => ps.map((p) => p.name).join(', ');
 ---
 <div class="wrap town">
@@ -19,6 +19,8 @@ const names = (ps: Place[]) => ps.map((p) => p.name).join(', ');
     <p class="town__lede">{intro}</p>
     <p class="count">{route}</p>
   </div>
+  {body.map((para) => <p class="town__body">{para}</p>)}
+  {insider && <aside class="loop-insider"><strong>Insider tip:</strong> {insider}</aside>}
   <AffiliateLink aff={affiliates?.cars} place="Melbourne" kind="cars" />
   <ol class="loop-days">
     {days.map((d, i) => (
@@ -43,5 +45,16 @@ const names = (ps: Place[]) => ps.map((p) => p.name).join(', ');
       </li>
     ))}
   </ol>
+  {guide.map((g) => (
+    <section class="loop-guide">
+      <h2>{g.heading}</h2>
+      {g.paragraphs.map((para) => <p class="town__body">{para}</p>)}
+    </section>
+  ))}
   <p class="count">Listings come from open data and are ordered by how complete their details are, not by payment. Check opening hours before you go.</p>
 </div>
+<style>
+  .loop-insider { margin: var(--space-3) 0; padding: 0.9rem 1rem; border-left: 4px solid var(--sign-brown); background: color-mix(in srgb, var(--sign-brown) 8%, transparent); border-radius: 6px; }
+  .loop-guide { margin-top: var(--space-4, 2rem); }
+  .loop-guide h2 { font-family: var(--font-display); }
+</style>

@@ -23,6 +23,9 @@ const fullTitle = !title ? brand.name : rawTitle ? title : `${title}${brand.seo.
 const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/') || '/';
 const adsClient = brand.launched && !isPrivate && brand.ads.adsenseClient && !brand.ads.exclude.some((p) => path === p || path.startsWith(p + '/'))
   ? brand.ads.adsenseClient : null;
+// Skimlinks follows the same rules as AdSense: launched, public, not excluded.
+const skimlinksId = brand.launched && !isPrivate && brand.ads.skimlinksId && !brand.ads.exclude.some((p) => path === p || path.startsWith(p + '/'))
+  ? brand.ads.skimlinksId : null;
 const canonical = new URL(Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/'), Astro.site).toString();
 // Google Fonts rejects the whole request if a family lacks a requested weight,
 // so ask only for weights every family on the list is likely to have.
@@ -167,6 +170,20 @@ const featuredHeading = brand.launched && !isPrivate ? FEATURED_HEADINGS[__BRAND
         }).catch(function () {});
       })();
       </script>
+    )}
+    {skimlinksId && (
+      <>
+        {/* Direct affiliate deals (rel="sponsored") already pay us in full: tell Skimlinks to leave them alone, including links added later (Trip Builder). */}
+        <script is:inline>
+          (function () {
+            function mark(root) { (root.querySelectorAll ? root.querySelectorAll('a[rel~="sponsored"]') : []).forEach(function (a) { a.classList.add('noskim'); }); }
+            mark(document);
+            new MutationObserver(function (ms) { ms.forEach(function (m) { m.addedNodes.forEach(function (n) { if (n.nodeType === 1) { if (n.matches('a[rel~="sponsored"]')) n.classList.add('noskim'); mark(n); } }); }); })
+              .observe(document.body, { childList: true, subtree: true });
+          })();
+        </script>
+        <script type="text/javascript" src={`https://s.skimresources.com/js/${skimlinksId}.skimlinks.js`}></script>
+      </>
     )}
   </body>
 </html>

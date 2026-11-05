@@ -394,7 +394,7 @@ export function routes(): Route[] {
         },
         crumbs([{ name: 'Home', path: '' }, { name: 'Road trips', path: 'road-trips' }, { name: l.name, path: `road-trips/${l.slug}` }]),
       ],
-      props: { name: l.name, intro: l.intro, nights, route: loopRoute(l), days, affiliates: content.affiliates ?? null },
+      props: { name: l.name, intro: l.intro, body: l.body ?? [], guide: l.guide ?? [], insider: l.insider ?? null, nights, route: loopRoute(l), days, affiliates: content.affiliates ?? null },
     });
   }
 
