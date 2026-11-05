@@ -9,12 +9,20 @@ interface Site {
   clicks: number; impressions: number; imprSeries: number[]; position: number | null; actions: number; money: number; moneyKeys: string[]; moneyNote?: string;
   queries: { query: string; clicks: number; impressions: number; position: number | null; page: string }[];
   topPages: { path: string; views: number }[]; notes: string[];
+  ctaSeries: number[]; money28: number;
+  all: { start: string | null; views: number; actions: number; money: number; daily: { date: string; views: number }[] } | null;
+  pageRows: { path: string; d7: number | null; p7: number | null; d28: number; p28: number; all: number | null; m28: number; mAll: number | null; impr: number; pos: number | null; q: string | null }[];
+}
+interface Project {
+  id: string; name: string; url: string; launched: string | null; day: number | null; visits: number; visitsAll: number | null;
+  money: number; tracksMoney: boolean; target: { views: number; moneyClicks: number } | null;
 }
 interface Props {
   sites: Site[];
   allQueries: { query: string; clicks: number; impressions: number; position: number | null; page: string; site: string; url: string }[];
   topPages: { path: string; views: number; site: string; url: string }[];
   total: number[]; totalDays: string[]; updated: string | null; builtAt: string;
+  progress: { projects: Project[]; level: { level: number; name: string; target: number; have: number; monthly: boolean; done: number } | null; revenue: number; todo: { open: number; done: number } };
 }
 const p = Astro.props;
 const COLORS: Record<string, string> = { paycalc: '#FFE14D', 'simon-says-travel': '#FFB23F', vic: '#7FD49B', 'trade-admin': '#F0955A', chc: '#7FB2F0', trailers: '#C9A6F2' };
@@ -40,58 +48,121 @@ const actions = sum(sites.map((s) => s.actions));
 const lastDay = p.totalDays[p.totalDays.length - 1] ?? null;
 const gscDay = sites.map((s) => s.gscLastDay).filter(Boolean).sort().pop() ?? null;
 
-// Stacked bars: visits per day for the last 28 days, one colour per site.
-const W = 720, H = 170, padB = 18, bw = W / Math.max(1, p.totalDays.length);
-const max = Math.max(1, ...p.totalDays.map((d) => sum(sites.map((s) => { const i = s.days.indexOf(d); return i >= 0 ? s.series[i] : 0; }))));
-const stacks = p.totalDays.map((d, i) => {
-  let y = H - padB;
-  const parts = sites.map((s) => {
-    const k = s.days.indexOf(d);
-    const v = k >= 0 ? s.series[k] : 0;
-    const h = (v / max) * (H - padB - 8);
-    y -= h;
-    return { id: s.id, v, y, h };
-  }).filter((x) => x.v > 0);
-  return { d, x: i * bw, parts, total: sum(parts.map((x) => x.v)) };
-});
+// Stacked bars, one colour per site: last 7 days, last 28 days, and all time (weekly bars once it's long).
+const W = 720, H = 170, padB = 18;
+const valueOn = (s: Site, d: string, allTime: boolean) => {
+  if (allTime && s.all) return s.all.daily.find((x) => x.date === d)?.views ?? 0;
+  const i = s.days.indexOf(d);
+  return i >= 0 ? s.series[i] : 0;
+};
+const addDays = (d: string, k: number) => new Date(Date.parse(d + 'T00:00:00Z') + k * 86400000).toISOString().slice(0, 10);
+const chartFor = (days: string[], allTime: boolean) => {
+  // Buckets of 1 day, or 7 days when there are more than 70 days to show.
+  const step = days.length > 70 ? 7 : 1;
+  const buckets: { from: string; to: string; days: string[] }[] = [];
+  for (let i = 0; i < days.length; i += step) buckets.push({ from: days[i], to: days[Math.min(days.length, i + step) - 1], days: days.slice(i, i + step) });
+  const bw = W / Math.max(1, buckets.length);
+  const totals = buckets.map((b) => sum(sites.map((s) => sum(b.days.map((d) => valueOn(s, d, allTime))))));
+  const max = Math.max(1, ...totals);
+  const stacks = buckets.map((b, i) => {
+    let y = H - padB;
+    const parts = sites.map((s) => {
+      const v = sum(b.days.map((d) => valueOn(s, d, allTime)));
+      const h = (v / max) * (H - padB - 8);
+      y -= h;
+      return { id: s.id, v, y, h };
+    }).filter((x) => x.v > 0);
+    return { label: step > 1 ? `Week of ${dayName(b.from)}` : dayName(b.from), x: i * bw, parts, total: totals[i] };
+  });
+  return { stacks, bw, max, first: days[0] ?? null, last: days[days.length - 1] ?? null, weekly: step > 1 };
+};
+const allStart = sites.map((s) => s.all?.start).filter(Boolean).sort()[0] ?? null;
+const allDays: string[] = [];
+if (allStart && lastDay) for (let d = allStart; d <= lastDay; d = addDays(d, 1)) allDays.push(d);
+const charts = [
+  { key: '7', label: 'last 7 days', ...chartFor(p.totalDays.slice(-7), false) },
+  { key: '28', label: 'last 28 days', ...chartFor(p.totalDays, false) },
+  { key: 'all', label: allStart ? `since ${dayName(allStart)}` : 'all time', ...chartFor(allDays.length ? allDays : p.totalDays, allDays.length > 0) },
+];
+// Period figures for the KPI cards.
+const d28 = sum(sites.map((s) => s.d28));
+const prev28 = sum(sites.map((s) => s.prev28));
+const btn7 = sum(sites.map((s) => sum(s.ctaSeries.slice(-7))));
+const hasAll = sites.some((s) => s.all);
+const allVisits = sum(sites.map((s) => s.all?.views ?? s.d28));
+const allMoney = sum(sites.map((s) => s.all?.money ?? s.money28));
+const pct = (a: number, b: number) => (b > 0 ? Math.min(100, Math.round((a / b) * 100)) : 0);
+const money$ = (v: number) => v.toLocaleString('en-AU', { style: 'currency', currency: 'AUD', maximumFractionDigits: v < 10 ? 2 : 0 });
+const pace = (pr: Project) => {
+  if (!pr.target || !pr.target.views || pr.day === null) return null;
+  const want = Math.min(1, pr.day / 90);
+  const have = pr.visits / pr.target.views;
+  if (have >= want * 1.1) return { text: 'Ahead of pace', cls: 'up' };
+  if (have >= want * 0.8) return { text: 'On pace', cls: '' };
+  return { text: 'Behind pace', cls: 'down' };
+};
+// Page review rows (client-side filter and sort).
+const pageData = JSON.stringify(
+  sites.flatMap((s) => s.pageRows.map((r) => ({ ...r, s: s.id, sn: s.name, u: s.url, mk: s.moneyKeys.length > 0 }))),
+).replace(/</g, '\\u003c');
+const has7 = sites.some((s) => s.pageRows.some((r) => r.d7 !== null));
 const spark = (xs: number[], w = 120, h = 28) => {
   const m = Math.max(1, ...xs);
   const b = w / Math.max(1, xs.length);
   return xs.map((v, i) => ({ x: i * b + 0.5, w: Math.max(1, b - 1), h: Math.max(v > 0 ? 2 : 0.6, (v / m) * h), y: h - Math.max(v > 0 ? 2 : 0.6, (v / m) * h) }));
 };
 ---
-<div class="wrap tr">
+<div class="wrap tr" id="tr" data-period="28">
   <header>
     <p class="tr__crumb"><a href="/hq">IMN HQ</a></p>
     <h1 class="tr__title">Morning traffic</h1>
     <p class="tr__meta">Updated {mel(p.updated, { weekday: 'short', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' })}. Visits up to {dayName(lastDay)}. Google searches up to {dayName(gscDay)} (Google reports 2–3 days late).</p>
   </header>
 
+  <nav class="tabs" role="tablist" aria-label="Views">
+    <button type="button" role="tab" class="tab is-on" data-tab="traffic" aria-selected="true">Traffic</button>
+    <button type="button" role="tab" class="tab" data-tab="pages" aria-selected="false">Page review</button>
+    <button type="button" role="tab" class="tab" data-tab="progress" aria-selected="false">Progress</button>
+  </nav>
+
+  <div class="pane is-on" data-pane="traffic" role="tabpanel">
+  <div class="chips" role="group" aria-label="Period">
+    <button type="button" class="chip" data-p="7">7 days</button>
+    <button type="button" class="chip is-on" data-p="28">28 days</button>
+    <button type="button" class="chip" data-p="all">All time</button>
+  </div>
+
   <section class="kpis" aria-label="All sites">
+    <div class="kpi" data-show="7"><span class="kpi__label">Visits, last 7 days</span><span class="kpi__value">{n(d7)}</span><span class={`kpi__sub ${change(d7, prev7).cls}`}>{change(d7, prev7).text || '—'} vs the 7 days before</span></div>
+    <div class="kpi" data-show="28"><span class="kpi__label">Visits, last 28 days</span><span class="kpi__value">{n(d28)}</span><span class={`kpi__sub ${change(d28, prev28).cls}`}>{change(d28, prev28).text || '—'} vs the 28 days before</span></div>
+    <div class="kpi" data-show="all"><span class="kpi__label">Visits, all time</span><span class="kpi__value">{n(allVisits)}</span><span class="kpi__sub">{hasAll && allStart ? `since ${dayName(allStart)}` : 'full history arrives with the next 6am update'}</span></div>
     <div class="kpi"><span class="kpi__label">Visits yesterday</span><span class="kpi__value">{n(yesterday)}</span><span class={`kpi__sub ${change(yesterday, weekAgo).cls}`}>{change(yesterday, weekAgo).text ? `${change(yesterday, weekAgo).text} vs same day last week` : 'same day last week: ' + n(weekAgo)}</span></div>
-    <div class="kpi"><span class="kpi__label">Visits, last 7 days</span><span class="kpi__value">{n(d7)}</span><span class={`kpi__sub ${change(d7, prev7).cls}`}>{change(d7, prev7).text || '—'} vs the 7 days before</span></div>
     <div class="kpi"><span class="kpi__label">Shown in Google, 28 days</span><span class="kpi__value">{n(impressions)}</span><span class="kpi__sub">{n(clicks)} clicks from Google</span></div>
-    <div class="kpi kpi--money"><span class="kpi__label">Money clicks, 28 days</span><span class="kpi__value">{n(money)}</span><span class="kpi__sub">{n(actions)} button clicks in total</span></div>
+    <div class="kpi kpi--money" data-show="7"><span class="kpi__label">Button clicks, 7 days</span><span class="kpi__value">{n(btn7)}</span><span class="kpi__sub">all buttons (money split is 28 days / all time)</span></div>
+    <div class="kpi kpi--money" data-show="28"><span class="kpi__label">Money clicks, 28 days</span><span class="kpi__value">{n(money)}</span><span class="kpi__sub">{n(actions)} button clicks in total</span></div>
+    <div class="kpi kpi--money" data-show="all"><span class="kpi__label">Money clicks, all time</span><span class="kpi__value">{n(allMoney)}</span><span class="kpi__sub">since each site launched</span></div>
   </section>
 
-  <section class="panel" aria-labelledby="chart-h">
-    <h2 id="chart-h">Visits per day, all sites</h2>
-    <div class="chart">
-      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Visits per day for the last ${p.totalDays.length} days, all sites stacked`}>
-        {stacks.map((s) => (
-          <g>
-            <title>{`${dayName(s.d)}: ${n(s.total)} visits`}</title>
-            {s.parts.map((x) => <rect x={s.x + 1} y={x.y} width={Math.max(1, bw - 2)} height={x.h} fill={COLORS[x.id]} rx="1.5" />)}
-            {s.parts.length === 0 && <rect x={s.x + 1} y={H - padB - 1} width={Math.max(1, bw - 2)} height="1" class="zero" />}
-          </g>
-        ))}
-        <text x="0" y={H - 4} class="axis">{dayName(p.totalDays[0] ?? null)}</text>
-        <text x={W} y={H - 4} class="axis" text-anchor="end">{dayName(lastDay)}</text>
-        <text x="0" y="10" class="axis">peak {n(max)}</text>
-      </svg>
-    </div>
-    <ul class="legend">{sites.map((s) => <li><i style={`background:${COLORS[s.id]}`}></i>{s.name}</li>)}</ul>
-  </section>
+  {charts.map((c) => (
+    <section class="panel" data-show={c.key} aria-label={`Visits ${c.label}`}>
+      <h2>Visits per {c.weekly ? 'week' : 'day'}, all sites <small>{c.label}</small></h2>
+      <div class="chart">
+        <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Visits per ${c.weekly ? 'week' : 'day'}, ${c.label}, all sites stacked`}>
+          {c.stacks.map((s) => (
+            <g>
+              <title>{`${s.label}: ${n(s.total)} visits`}</title>
+              {s.parts.map((x) => <rect x={s.x + 1} y={x.y} width={Math.max(1, c.bw - 2)} height={x.h} fill={COLORS[x.id]} rx="1.5" />)}
+              {s.parts.length === 0 && <rect x={s.x + 1} y={H - padB - 1} width={Math.max(1, c.bw - 2)} height="1" class="zero" />}
+            </g>
+          ))}
+          <text x="0" y={H - 4} class="axis">{dayName(c.first)}</text>
+          <text x={W} y={H - 4} class="axis" text-anchor="end">{dayName(c.last)}</text>
+          <text x="0" y="10" class="axis">peak {n(c.max)}</text>
+        </svg>
+      </div>
+      <ul class="legend">{sites.map((s) => <li><i style={`background:${COLORS[s.id]}`}></i>{s.name}</li>)}</ul>
+    </section>
+  ))}
 
   <section class="panel" aria-labelledby="sites-h">
     <h2 id="sites-h">Each site</h2>
@@ -111,7 +182,8 @@ const spark = (xs: number[], w = 120, h = 28) => {
                 <div class="site__nums">
                   <div><span>Yesterday</span><strong>{n(s.yesterday)}</strong></div>
                   <div><span>7 days</span><strong>{n(s.d7)}</strong>{c7.text && <em class={c7.cls}>{c7.text}</em>}</div>
-                  <div><span>28 days</span><strong>{n(s.d28)}</strong></div>
+                  <div><span>28 days</span><strong>{n(s.d28)}</strong>{change(s.d28, s.prev28).text && <em class={change(s.d28, s.prev28).cls}>{change(s.d28, s.prev28).text}</em>}</div>
+                  <div><span>All time</span><strong>{s.all ? n(s.all.views) : '—'}</strong>{s.all?.start && <em>since {dayName(s.all.start)}</em>}</div>
                   <div><span>In Google</span><strong>{n(s.impressions)}</strong><em>{n(s.clicks)} clicks{s.position ? `, avg #${s.position}` : ''}</em></div>
                   <div><span>Money clicks</span><strong>{s.moneyKeys.length ? n(s.money) : '—'}</strong>{!s.moneyKeys.length && <em>{s.moneyNote ?? 'not tracked'}</em>}</div>
                 </div>
@@ -164,9 +236,147 @@ const spark = (xs: number[], w = 120, h = 28) => {
       </table>
     </div>
   </section>
+  </div>
+
+  <div class="pane" data-pane="pages" role="tabpanel">
+    <section class="panel" aria-labelledby="pr-h">
+      <h2 id="pr-h">Page review</h2>
+      <p class="tr__meta">Every page with a visit, across all sites. Pick a period to compare each page with the period before it; sort by "Rising" or "Falling" to see what moved.{!has7 && ' 7-day page figures start with the next 6am update.'}</p>
+      <div class="filters">
+        <label>Site<select id="pr-site"><option value="">All sites</option>{sites.map((s) => <option value={s.id}>{s.name}</option>)}</select></label>
+        <label>Period<select id="pr-period"><option value="7">7 days</option><option value="28" selected>28 days</option><option value="all">All time</option></select></label>
+        <label>Sort<select id="pr-sort"><option value="v">Most visits</option><option value="up">Rising</option><option value="down">Falling</option><option value="m">Clicks</option><option value="g">Shown in Google</option></select></label>
+        <label class="grow">Find<input id="pr-q" type="search" placeholder="page path" autocomplete="off" /></label>
+      </div>
+      <p class="tr__meta" id="pr-sum" aria-live="polite"></p>
+      <div class="scroll">
+        <table class="pr">
+          <thead><tr><th scope="col">Page</th><th scope="col" class="col-site">Site</th><th scope="col">Visits</th><th scope="col" class="col-b">Before</th><th scope="col">Change</th><th scope="col" title="Money clicks where tracked, otherwise all button clicks">Clicks</th><th scope="col" class="col-g">Google</th></tr></thead>
+          <tbody id="pr-body"><tr><td colspan="7">Loading…</td></tr></tbody>
+        </table>
+      </div>
+      <p class="tr__meta">"Clicks" are money clicks on sites that track them (hotel, tour, car, trial and rent/buy buttons) and all button clicks elsewhere; for 7 days they show the 28-day figure. "Google" is impressions and average position over 28 days.</p>
+    </section>
+    <script is:inline type="application/json" id="pr-data" set:html={pageData}></script>
+  </div>
+
+  <div class="pane" data-pane="progress" role="tabpanel">
+    {p.progress.level && (
+      <section class="panel" aria-labelledby="lv-h">
+        <h2 id="lv-h">Company level</h2>
+        <div class="bar-card bar-card--level">
+          <div class="bar-row">
+            <span class="bar-label">Level {p.progress.level.done} → {p.progress.level.level}: {p.progress.level.name}</span>
+            <span class="bar-num">{money$(p.progress.level.have)} of {money$(p.progress.level.target)}{p.progress.level.monthly ? ' in a month' : ''}</span>
+          </div>
+          <div class="bar"><i style={`width:${pct(p.progress.level.have, p.progress.level.target)}%`}></i></div>
+          <div class="bar-row">
+            <span class="bar-label">Your list</span>
+            <span class="bar-num">{p.progress.todo.done} done, {p.progress.todo.open} open</span>
+          </div>
+          <div class="bar bar--soft"><i style={`width:${pct(p.progress.todo.done, p.progress.todo.done + p.progress.todo.open)}%`}></i></div>
+        </div>
+      </section>
+    )}
+    <section class="panel" aria-labelledby="pj-h">
+      <h2 id="pj-h">Each project, 90-day targets</h2>
+      <p class="tr__meta">Targets are visits (and money clicks) per 28 days, to reach by day 90 after launch. "Pace" compares how far along the visits bar is with how far along the 90 days are.</p>
+      <div class="sites">
+        {[...p.progress.projects].sort((a, b) => (b.target ? 1 : 0) - (a.target ? 1 : 0) || (a.day ?? 999) - (b.day ?? 999)).map((pr) => {
+          const pc = pace(pr);
+          return (
+            <article class="site" style={`--c:${COLORS[pr.id]}`}>
+              <div class="site__head">
+                <h3><a href={pr.url}>{pr.name}</a></h3>
+                {pc && <span class={`pace ${pc.cls}`}>{pc.text}</span>}
+              </div>
+              {pr.day !== null && (
+                <>
+                  <div class="bar-row"><span class="bar-label">Time</span><span class="bar-num">day {Math.min(pr.day, 90)} of 90{pr.day > 90 ? ' (target date passed)' : ''}</span></div>
+                  <div class="bar bar--time"><i style={`width:${pct(pr.day, 90)}%`}></i></div>
+                </>
+              )}
+              {pr.target ? (
+                <>
+                  <div class="bar-row"><span class="bar-label">Visits, 28 days</span><span class="bar-num">{n(pr.visits)} of {n(pr.target.views)} · {pct(pr.visits, pr.target.views)}%</span></div>
+                  <div class="bar"><i style={`width:${pct(pr.visits, pr.target.views)}%`}></i></div>
+                  {pr.target.moneyClicks > 0 && (
+                    <>
+                      <div class="bar-row"><span class="bar-label">Money clicks, 28 days</span><span class="bar-num">{n(pr.money)} of {n(pr.target.moneyClicks)} · {pct(pr.money, pr.target.moneyClicks)}%</span></div>
+                      <div class="bar bar--money"><i style={`width:${pct(pr.money, pr.target.moneyClicks)}%`}></i></div>
+                    </>
+                  )}
+                </>
+              ) : (
+                <p class="site__note">No 90-day target set yet. {n(pr.visits)} visits in the last 28 days{pr.visitsAll !== null ? `, ${n(pr.visitsAll)} all time` : ''}.</p>
+              )}
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  </div>
 
   <p class="tr__meta tr__foot">Visits come from Google Analytics (includes your own visits). Google searches come from Search Console. Refreshed every day at 6am Melbourne; this page rebuilds a few minutes later. Page built {mel(p.builtAt, { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' })}.</p>
 </div>
+
+<script is:inline>
+(() => {
+  const root = document.getElementById('tr');
+  if (!root) return;
+  root.classList.add('js');
+  // Tabs (remembered in the address, e.g. /hq/traffic#progress).
+  const tabs = [...root.querySelectorAll('.tab')];
+  const show = (id) => {
+    if (!tabs.some((t) => t.dataset.tab === id)) id = 'traffic';
+    tabs.forEach((t) => { const on = t.dataset.tab === id; t.classList.toggle('is-on', on); t.setAttribute('aria-selected', on ? 'true' : 'false'); });
+    root.querySelectorAll('.pane').forEach((pn) => pn.classList.toggle('is-on', pn.dataset.pane === id));
+  };
+  tabs.forEach((t) => t.addEventListener('click', () => { show(t.dataset.tab); history.replaceState(null, '', t.dataset.tab === 'traffic' ? location.pathname : '#' + t.dataset.tab); }));
+  show(location.hash.slice(1));
+  // Period chips on the Traffic tab.
+  root.querySelectorAll('.chip').forEach((c) => c.addEventListener('click', () => {
+    root.dataset.period = c.dataset.p;
+    root.querySelectorAll('.chip').forEach((x) => x.classList.toggle('is-on', x === c));
+  }));
+  // Page review.
+  let rows = [];
+  try { rows = JSON.parse(document.getElementById('pr-data').textContent || '[]'); } catch (e) { rows = []; }
+  const $ = (id) => document.getElementById(id);
+  const fmt = (v) => (v === null || v === undefined ? '—' : Number(v).toLocaleString('en-AU'));
+  const esc = (t) => String(t).replace(/[&<>"]/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[ch]);
+  const render = () => {
+    const site = $('pr-site').value, per = $('pr-period').value, sort = $('pr-sort').value, q = $('pr-q').value.trim().toLowerCase();
+    const list = rows
+      .filter((r) => (!site || r.s === site) && (!q || r.path.toLowerCase().includes(q)))
+      .map((r) => {
+        const v = per === '7' ? r.d7 : per === '28' ? r.d28 : r.all;
+        const b = per === '7' ? r.p7 : per === '28' ? r.p28 : null;
+        const m = per === 'all' ? r.mAll : r.m28;
+        return { r, v: v ?? 0, b, d: b === null ? null : (v ?? 0) - b, m: m ?? 0 };
+      })
+      .filter((x) => x.v > 0 || (x.b ?? 0) > 0);
+    const key = { v: (x) => x.v, up: (x) => x.d ?? -1e9, down: (x) => -(x.d ?? 1e9), m: (x) => x.m, g: (x) => x.r.impr }[sort];
+    list.sort((a, b) => key(b) - key(a) || b.v - a.v);
+    const total = list.reduce((t, x) => t + x.v, 0), before = list.reduce((t, x) => t + (x.b ?? 0), 0);
+    const ups = list.filter((x) => (x.d ?? 0) > 0).length, downs = list.filter((x) => (x.d ?? 0) < 0).length;
+    $('pr-sum').textContent = `${list.length} pages · ${fmt(total)} visits` + (per === 'all' ? '' : ` (before: ${fmt(before)}) · ${ups} up, ${downs} down`) + (list.length > 150 ? ' · showing the top 150' : '');
+    $('pr-body').innerHTML = list.slice(0, 150).map((x) => {
+      const r = x.r, url = r.u + (r.path === '/' ? '' : r.path);
+      let ch = '—', cls = '';
+      if (x.b !== null) {
+        if (x.b === 0) { ch = x.v > 0 ? 'new' : '—'; cls = x.v > 0 ? 'up' : ''; }
+        else { const p = Math.round(((x.v - x.b) / x.b) * 100); ch = (p > 0 ? '+' : '') + p + '%'; cls = p > 0 ? 'up' : p < 0 ? 'down' : ''; }
+      }
+      const g = r.impr ? `${fmt(r.impr)}${r.pos ? ' · #' + r.pos : ''}` : '—';
+      return `<tr><th scope="row"><a href="${esc(url)}">${esc(r.path)}</a><small class="pr__site">${esc(r.sn)}</small>${r.q ? `<small>“${esc(r.q)}”</small>` : ''}</th><td class="col-site">${esc(r.sn)}</td><td>${fmt(x.v)}</td><td class="col-b">${x.b === null ? '—' : fmt(x.b)}</td><td class="${cls}">${ch}</td><td>${x.m ? fmt(x.m) : '—'}</td><td class="col-g">${g}</td></tr>`;
+    }).join('') || '<tr><td colspan="7">No pages match.</td></tr>';
+  };
+  ['pr-site', 'pr-period', 'pr-sort'].forEach((id) => $(id).addEventListener('change', render));
+  $('pr-q').addEventListener('input', render);
+  render();
+})();
+</script>
 
 <style>
   .tr { padding-block: var(--space-5) var(--space-6); }
@@ -221,4 +431,37 @@ const spark = (xs: number[], w = 120, h = 28) => {
   tbody tr:last-child > * { border-bottom: 0; }
   .dot--m { display: none; }
   @media (max-width: 40rem) { .col-site { display: none; } .dot--m { display: inline-block; } tbody th { min-width: 0; } th, td { padding: 0.45rem 0.5rem; } }
+
+  .tabs { display: flex; gap: 0.3rem; border-bottom: 1px solid var(--line); margin: var(--space-4) 0 0; overflow-x: auto; }
+  .tab { background: none; border: 0; border-bottom: 3px solid transparent; color: var(--muted); font: 600 0.98rem var(--font-body); padding: 0.6rem 0.9rem; cursor: pointer; white-space: nowrap; }
+  .tab.is-on { color: var(--paper); border-bottom-color: var(--color-accent); }
+  .tab:focus-visible, .chip:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+  .js .pane:not(.is-on) { display: none; }
+  .tabs, .chips { display: none; }
+  .js .tabs, .js .chips { display: flex; }
+  .chips { gap: 0.4rem; margin-top: var(--space-4); flex-wrap: wrap; }
+  .chip { background: var(--panel); border: 1px solid var(--line); color: var(--muted); border-radius: 999px; padding: 0.35rem 0.9rem; font: 600 0.88rem var(--font-body); cursor: pointer; }
+  .chip.is-on { color: var(--paper); border-color: var(--color-accent); box-shadow: inset 0 0 0 1px var(--color-accent); }
+  .tr[data-period="7"] [data-show]:not([data-show="7"]),
+  .tr[data-period="28"] [data-show]:not([data-show="28"]),
+  .tr[data-period="all"] [data-show]:not([data-show="all"]) { display: none; }
+  .panel h2 small { color: var(--muted); font-weight: 500; font-size: 0.75em; margin-left: 0.4rem; }
+  .filters { display: flex; flex-wrap: wrap; gap: 0.6rem 0.8rem; margin: var(--space-3) 0 var(--space-2); }
+  .filters label { display: flex; flex-direction: column; gap: 3px; color: var(--muted); font-size: 0.78rem; min-width: 8.5rem; }
+  .filters .grow { flex: 1 1 10rem; }
+  .filters select, .filters input { background: var(--panel); color: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.45rem 0.55rem; font: 0.95rem var(--font-body); min-height: 2.4rem; }
+  .pr tbody th small { display: block; color: var(--muted); font-weight: 400; font-size: 0.78rem; }
+  .pr .pr__site { display: none; }
+  @media (max-width: 40rem) { .pr .pr__site { display: block; } .col-b, .col-g { display: none; } }
+  .bar-card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--space-3); }
+  .bar-row { display: flex; justify-content: space-between; gap: 0.8rem; margin-top: 0.7rem; font-size: 0.85rem; }
+  .bar-label { color: var(--muted); }
+  .bar-num { font-variant-numeric: tabular-nums; text-align: right; }
+  .bar { height: 12px; border-radius: 999px; background: var(--line); overflow: hidden; margin-top: 0.3rem; }
+  .bar i { display: block; height: 100%; min-width: 3px; border-radius: inherit; background: var(--c, var(--color-accent)); }
+  .bar--time i { background: var(--muted); opacity: 0.6; }
+  .bar--money i { background: var(--color-accent); }
+  .bar--soft i { background: #7fd49b; }
+  .bar-card--level .bar { height: 16px; }
+  .pace { font-size: 0.8rem; font-weight: 700; color: var(--muted); white-space: nowrap; }
 </style>

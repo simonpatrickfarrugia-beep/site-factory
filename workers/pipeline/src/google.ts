@@ -97,6 +97,42 @@ export interface Ga4Row {
   mets: number[];
 }
 
+type Ga4Body = {
+  dateRanges: { startDate: string; endDate: string }[];
+  dimensions: string[];
+  metrics: string[];
+  /** Only events whose name starts with this. */
+  eventPrefix?: string;
+  limit?: number;
+};
+const ga4Request = (body: Ga4Body) => ({
+  dateRanges: body.dateRanges,
+  dimensions: body.dimensions.map((name) => ({ name })),
+  metrics: body.metrics.map((name) => ({ name })),
+  limit: body.limit ?? 10000,
+  ...(body.eventPrefix ? { dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { matchType: 'BEGINS_WITH', value: body.eventPrefix } } } } : {}),
+});
+type Ga4Raw = { rows?: { dimensionValues: { value: string }[]; metricValues: { value: string }[] }[] };
+const ga4Rows = (data: Ga4Raw): Ga4Row[] =>
+  (data.rows ?? []).map((r) => ({ dims: r.dimensionValues.map((d) => d.value), mets: r.metricValues.map((m) => Number(m.value) || 0) }));
+
+/**
+ * Up to 5 GA4 reports in ONE request (batchRunReports). The Workers Free plan allows 50 outbound
+ * requests per run, so the daily stats job batches its reports: 2 GA4 + 2 Search Console calls per site.
+ * With more than one date range, GA4 adds a last dimension "date_range_0" / "date_range_1".
+ */
+export async function ga4Batch(token: string, propertyId: string, bodies: Ga4Body[]): Promise<Ga4Row[][]> {
+  if (bodies.length > 5) throw new Error('GA4 batch: at most 5 reports');
+  const res = await fetch(`https://analyticsdata.googleapis.com/v1beta/properties/${propertyId}:batchRunReports`, {
+    method: 'POST',
+    headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json' },
+    body: JSON.stringify({ requests: bodies.map(ga4Request) }),
+  });
+  if (!res.ok) throw new Error(`GA4: HTTP ${res.status} ${(await res.text()).slice(0, 200)}`);
+  const data = (await res.json()) as { reports?: Ga4Raw[] };
+  return bodies.map((_, i) => ga4Rows(data.reports?.[i] ?? {}));
+}
+
 export async function ga4Report(
   token: string,
   propertyId: string,

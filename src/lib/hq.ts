@@ -151,6 +151,8 @@ export function trafficProps() {
     const byDay = new Map<string, number>((s?.daily ?? []).map((d: any) => [d.date, d.views]));
     const days = period ? dayList(period.start, period.end) : [];
     const series = days.map((d) => byDay.get(d) ?? 0);
+    const ctaByDay = new Map<string, number>((s?.daily ?? []).map((d: any) => [d.date, d.cta]));
+    const ctaSeries = days.map((d) => ctaByDay.get(d) ?? 0);
     const n = series.length;
     const gscDays = s?.gscPeriod ? dayList(s.gscPeriod.start, s.gscPeriod.end) : [];
     const gscBy = new Map<string, { clicks: number; impressions: number }>((s?.gscDaily ?? []).map((d: any) => [d.date, d]));
@@ -167,6 +169,7 @@ export function trafficProps() {
       lastDay: period?.end ?? null,
       gscLastDay: s?.gscPeriod?.end ?? null,
       series,
+      ctaSeries,
       days,
       yesterday: n ? series[n - 1] : 0,
       weekAgo: n >= 8 ? series[n - 8] : null,
@@ -185,6 +188,37 @@ export function trafficProps() {
       allQueries: queries,
       topPages: pages.filter((p) => p.views > 0).slice(0, 5).map((p) => ({ path: p.path, views: p.views })),
       notes: (s?.sources?.notes ?? []) as string[],
+      money28: sum(cfg.money.map((k) => cta[k] ?? 0)),
+      // All time (since GA4 started for the site). Missing until the first stats run after 6 Nov 2026.
+      all: s?.allTime
+        ? {
+            start: s.allTime.start as string | null,
+            views: s.allTime.views as number,
+            actions: sum(Object.values(s.allTime.cta ?? {}) as number[]),
+            money: sum(cfg.money.map((k) => s.allTime.cta?.[k] ?? 0)),
+            daily: (s.allTime.daily ?? []).map((d: any) => ({ date: d.date as string, views: d.views as number })),
+          }
+        : null,
+      // Page review: every page with a visit, with each period's figures (7 days needs the 6 Nov stats run or later).
+      pageRows: pages
+        .filter((p) => p.views || p.prevViews || p.allViews || p.d7)
+        .map((p) => {
+          const moneyOf = (c: Record<string, number> | undefined) => sum(cfg.money.map((k) => c?.[k] ?? 0));
+          const btnOf = (c: Record<string, number> | undefined) => sum(Object.values(c ?? {}) as number[]);
+          return {
+            path: p.path as string,
+            d7: (p.d7 ?? null) as number | null,
+            p7: (p.prev7 ?? null) as number | null,
+            d28: p.views as number,
+            p28: p.prevViews as number,
+            all: (p.allViews ?? null) as number | null,
+            m28: cfg.money.length ? moneyOf(p.cta) : btnOf(p.cta),
+            mAll: p.allCta ? (cfg.money.length ? moneyOf(p.allCta) : btnOf(p.allCta)) : null,
+            impr: (p.gscImpressions || 0) as number,
+            pos: (p.gscPosition ?? null) as number | null,
+            q: (p.topQuery ?? null) as string | null,
+          };
+        }),
     };
   });
   const allQueries = sites
@@ -203,11 +237,51 @@ export function trafficProps() {
   const gens = sites.map((s) => s.generatedAt).filter(Boolean).sort();
   return {
     sites: sites.map(({ allQueries: _q, ...rest }) => rest),
+    progress: progressProps(sites),
     allQueries,
     topPages,
     total,
     totalDays,
     updated: gens[gens.length - 1] ?? null,
     builtAt: new Date().toISOString(),
+  };
+}
+
+/** Progress tab on /hq/traffic: each project's 90-day target as bars, plus the company level. */
+function progressProps(sites: { id: string; name: string; url: string; d28: number; money28: number; moneyKeys: string[]; all: { views: number } | null }[]) {
+  const portfolio = read<any>('hq/portfolio.json', { nodes: [], goal: null, todo: [] });
+  const finance = read<any>('hq/finance.json', { revenue: [] });
+  const idOf: Record<string, string> = { chc: 'chc' };
+  const day = (iso: string) => Math.max(0, Math.floor((Date.now() - Date.parse(iso + 'T00:00:00+11:00')) / 86400000));
+  const projects = sites.map((s) => {
+    const nd = (portfolio.nodes ?? []).find((x: any) => x.id === (idOf[s.id] ?? s.id)) ?? null;
+    const launched: string | null = nd?.launched ?? null;
+    const target = nd?.target90 ?? null;
+    return {
+      id: s.id,
+      name: s.name,
+      url: s.url,
+      launched,
+      day: launched ? day(launched) : null,
+      visits: s.d28,
+      visitsAll: s.all?.views ?? null,
+      money: s.money28,
+      tracksMoney: s.moneyKeys.length > 0,
+      target: target ? { views: Number(target.views) || 0, moneyClicks: Number(target.moneyClicks) || 0 } : null,
+    };
+  });
+  const revenue = (finance.revenue ?? []).reduce((t: number, r: any) => t + (Number(r.amount) || 0), 0);
+  const levels: { level: number; name: string; target: number; monthly?: boolean }[] = portfolio.goal?.levels ?? [];
+  // Monthly levels compare against the best month so far; level 1 against all revenue to date.
+  const byMonth = new Map<string, number>();
+  for (const r of finance.revenue ?? []) byMonth.set(r.month, (byMonth.get(r.month) ?? 0) + (Number(r.amount) || 0));
+  const bestMonth = Math.max(0, ...byMonth.values());
+  const next = levels.find((l) => (l.monthly ? bestMonth : revenue) < l.target) ?? null;
+  const todo: any[] = portfolio.todo ?? [];
+  return {
+    projects,
+    level: next ? { level: next.level, name: next.name, target: next.target, have: next.monthly ? bestMonth : revenue, monthly: !!next.monthly, done: next.level - 1 } : null,
+    revenue,
+    todo: { open: todo.filter((t) => !t.done).length, done: todo.filter((t) => t.done).length },
   };
 }

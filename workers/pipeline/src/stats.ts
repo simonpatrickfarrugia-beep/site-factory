@@ -18,6 +18,12 @@ export interface PageStats {
   gscImpressions: number;
   gscPosition: number | null;
   topQuery: string | null;
+  /** Last 7 days and the 7 before (for the page review's 7-day view). */
+  d7?: number;
+  prev7?: number;
+  /** Since the site started (GA4). */
+  allViews?: number;
+  allCta?: Record<string, number>;
 }
 
 export interface SiteStats {
@@ -32,6 +38,8 @@ export interface SiteStats {
   queries?: { query: string; clicks: number; impressions: number; position: number; page: string }[];
   /** Google clicks and impressions per day (Search Console reports with a 2–3 day delay). */
   gscDaily?: { date: string; clicks: number; impressions: number }[];
+  /** Since the site started (GA4): totals and visits per day, for the dashboard's "All time" filter. */
+  allTime?: { start: string | null; views: number; users: number; cta: Record<string, number>; daily: { date: string; views: number; cta: number }[] };
   /** Last IndexNow submission (new pages since then are submitted on the next run). */
   indexNowAt?: string | null;
 }
@@ -52,7 +60,10 @@ export function buildStats(input: {
   period: { start: string; end: string } | null;
   gscPeriod: { start: string; end: string } | null;
   notes: string[];
-  ga4: null | { pages: Ga4Row[]; prevPages: Ga4Row[]; events: Ga4Row[]; daily: Ga4Row[]; dailyEvents: Ga4Row[] };
+  ga4: null | {
+    pages: Ga4Row[]; prevPages: Ga4Row[]; events: Ga4Row[]; daily: Ga4Row[]; dailyEvents: Ga4Row[];
+    allPages?: Ga4Row[]; allEvents?: Ga4Row[]; allDaily?: Ga4Row[]; allDailyEvents?: Ga4Row[]; weekPages?: Ga4Row[];
+  };
   gsc: null | { pageQueries: GscRow[]; daily?: GscRow[] };
 }): SiteStats {
   const pages = new Map<string, PageStats>();
@@ -103,6 +114,48 @@ export function buildStats(input: {
     }
   }
 
+  // All time and 7-day page figures (optional: older runs and failed batches leave them out).
+  let allTime: SiteStats['allTime'];
+  if (input.ga4?.allPages?.length || input.ga4?.allDaily?.length) {
+    const g = input.ga4;
+    const at = { views: 0, users: 0, cta: {} as Record<string, number> };
+    for (const r of g.allPages ?? []) {
+      if (skip(r.dims[0])) continue;
+      const p = page(r.dims[0]);
+      p.allViews = (p.allViews ?? 0) + r.mets[0];
+      at.views += r.mets[0];
+      at.users += r.mets[1] ?? 0;
+    }
+    for (const r of g.allEvents ?? []) {
+      if (skip(r.dims[0])) continue;
+      const name = r.dims[1].replace(/^cta_/, '');
+      const p = page(r.dims[0]);
+      p.allCta = p.allCta ?? {};
+      p.allCta[name] = (p.allCta[name] ?? 0) + r.mets[0];
+      at.cta[name] = (at.cta[name] ?? 0) + r.mets[0];
+    }
+    const days = new Map<string, { date: string; views: number; cta: number }>();
+    for (const r of g.allDaily ?? []) {
+      const d = isoDay(r.dims[0]);
+      days.set(d, { date: d, views: r.mets[0], cta: days.get(d)?.cta ?? 0 });
+    }
+    for (const r of g.allDailyEvents ?? []) {
+      const d = isoDay(r.dims[0]);
+      const row = days.get(d) ?? { date: d, views: 0, cta: 0 };
+      row.cta += r.mets[0];
+      days.set(d, row);
+    }
+    const allDays = [...days.values()].sort((a, b) => a.date.localeCompare(b.date));
+    allTime = { start: allDays[0]?.date ?? null, ...at, daily: allDays };
+  }
+  for (const r of input.ga4?.weekPages ?? []) {
+    if (skip(r.dims[0])) continue;
+    const p = page(r.dims[0]);
+    // With two date ranges GA4 adds "date_range_0" (last 7 days) / "date_range_1" (the 7 before) as the last dimension.
+    if (r.dims[r.dims.length - 1] === 'date_range_1') p.prev7 = (p.prev7 ?? 0) + r.mets[0];
+    else p.d7 = (p.d7 ?? 0) + r.mets[0];
+  }
+
   if (input.gsc) {
     const best = new Map<string, number>();
     const weighted = new Map<string, number>();
@@ -149,8 +202,9 @@ export function buildStats(input: {
     sources: { ga4: !!input.ga4, gsc: !!input.gsc, notes: input.notes },
     totals,
     daily: [...daily.values()].sort((a, b) => a.date.localeCompare(b.date)),
-    pages: [...pages.values()].sort((a, b) => b.views - a.views || b.gscImpressions - a.gscImpressions),
+    pages: [...pages.values()].sort((a, b) => b.views - a.views || (b.allViews ?? 0) - (a.allViews ?? 0) || b.gscImpressions - a.gscImpressions),
     queries,
     gscDaily,
+    ...(allTime ? { allTime } : {}),
   };
 }

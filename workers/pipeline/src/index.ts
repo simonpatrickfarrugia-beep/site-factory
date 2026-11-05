@@ -14,7 +14,9 @@ import { enrich, intake, maxYear, recheck, type QueueItem, type Movie, type Resu
 import { commitFiles, readFiles, StaleError, type Repo } from './github';
 import { channelFeed, omdbLookup, omdbYearsForTitle, brainstormNiches, brainstormStats, judgeNiche, pickCategories, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
 import { buildCollections, minFilmsFor, winnable, MIN_OPENNESS, PERSON_MIN_FILMS, type Idea, type MovieCollection } from './collections';
-import { ga4Report, googleAccessToken, searchAnalytics, youtubeSearch } from './google';
+import { ga4Batch, googleAccessToken, searchAnalytics, youtubeSearch, type Ga4Row } from './google';
+/** GA4's earliest allowed date: "all time" reports start here and simply return nothing before a site existed. */
+const ALL_TIME_START = '2015-08-14';
 import { buildStats } from './stats';
 import { calibrate, estimateMoney, moneyReport, type Measured, nicheReport, scoreNiche, type AffiliateCatalog, type Niche } from './niches';
 import { buildDemandReport } from './demand';
@@ -496,14 +498,27 @@ async function statsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boo
     if (property && gaToken) {
       try {
         const cur = [{ startDate: period.start, endDate: period.end }];
-        const [pages, prevPages, events, daily, dailyEvents] = await Promise.all([
-          ga4Report(gaToken, property, { dateRanges: cur, dimensions: ['pagePath'], metrics: ['screenPageViews', 'activeUsers'] }),
-          ga4Report(gaToken, property, { dateRanges: [{ startDate: day(56), endDate: day(29) }], dimensions: ['pagePath'], metrics: ['screenPageViews'] }),
-          ga4Report(gaToken, property, { dateRanges: cur, dimensions: ['pagePath', 'eventName'], metrics: ['eventCount'], eventPrefix: 'cta_' }),
-          ga4Report(gaToken, property, { dateRanges: cur, dimensions: ['date'], metrics: ['screenPageViews'] }),
-          ga4Report(gaToken, property, { dateRanges: cur, dimensions: ['date', 'eventName'], metrics: ['eventCount'], eventPrefix: 'cta_' }),
+        // Two batched calls per site (Workers Free allows 50 outbound requests per run; 6 sites x 7 single calls broke it on 5 Nov).
+        const [pages, prevPages, events, daily, dailyEvents] = await ga4Batch(gaToken, property, [
+          { dateRanges: cur, dimensions: ['pagePath'], metrics: ['screenPageViews', 'activeUsers'] },
+          { dateRanges: [{ startDate: day(56), endDate: day(29) }], dimensions: ['pagePath'], metrics: ['screenPageViews'] },
+          { dateRanges: cur, dimensions: ['pagePath', 'eventName'], metrics: ['eventCount'], eventPrefix: 'cta_' },
+          { dateRanges: cur, dimensions: ['date'], metrics: ['screenPageViews'] },
+          { dateRanges: cur, dimensions: ['date', 'eventName'], metrics: ['eventCount'], eventPrefix: 'cta_' },
         ]);
-        ga4 = { pages, prevPages, events, daily, dailyEvents };
+        // All time (since GA4 started for the site) and last 7 days vs the 7 before, by page: for the dashboard's period filter.
+        const all = [{ startDate: ALL_TIME_START, endDate: period.end }];
+        const [allPages, allEvents, allDaily, allDailyEvents, weekPages] = await ga4Batch(gaToken, property, [
+          { dateRanges: all, dimensions: ['pagePath'], metrics: ['screenPageViews', 'activeUsers'] },
+          { dateRanges: all, dimensions: ['pagePath', 'eventName'], metrics: ['eventCount'], eventPrefix: 'cta_' },
+          { dateRanges: all, dimensions: ['date'], metrics: ['screenPageViews'] },
+          { dateRanges: all, dimensions: ['date', 'eventName'], metrics: ['eventCount'], eventPrefix: 'cta_' },
+          { dateRanges: [{ startDate: day(7), endDate: day(1) }, { startDate: day(14), endDate: day(8) }], dimensions: ['pagePath'], metrics: ['screenPageViews'] },
+        ]).catch((e) => {
+          log.push(`${site.name} GA4 all-time failed: ${(e as Error).message}`);
+          return [[], [], [], [], []] as Ga4Row[][];
+        });
+        ga4 = { pages, prevPages, events, daily, dailyEvents, allPages, allEvents, allDaily, allDailyEvents, weekPages };
         log.push(`${site.name} GA4: ${pages.length} page(s), ${events.reduce((t, r) => t + r.mets[0], 0)} CTA click(s).`);
       } catch (e) {
         notes.push(`GA4 not read: ${(e as Error).message}. Is ${email} a Viewer on property ${property}?`);
