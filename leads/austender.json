@@ -1,7 +1,32 @@
 {
- "generatedAt": "2026-11-04T00:41:34+00:00",
+ "generatedAt": "2026-11-05T00:56:22+00:00",
  "days": 7,
  "suppliers": [
+  {
+   "name": "XAMPLIFY SERVICES PTY LTD",
+   "abn": "",
+   "locality": "Canberra",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 2848978.56,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Maintenance and Support Services",
+     "category": "",
+     "start": "2026-10-31",
+     "end": "2027-10-30",
+     "id": "CN4286640"
+    }
+   ],
+   "total": 2848979,
+   "score": 5.0,
+   "interstate": false,
+   "why": [
+    "work runs 12 months"
+   ],
+   "seenBefore": false
+  },
   {
    "name": "Australian Grape and Wine Incorpora",
    "abn": "",
@@ -30,12 +55,169 @@
     }
    ],
    "total": 810600,
-   "score": 8.0,
+   "score": 5.0,
    "interstate": true,
    "why": [
     "based in Adelaide SA, delivering for Austrade (Canberra)",
     "2 new government contracts in the last 7 days",
     "work runs 8 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "Birchip Cropping Group",
+   "abn": "",
+   "locality": "Birchip",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 343000.0,
+     "buyer": "Grains Research and Development Corporation",
+     "buyerState": null,
+     "desc": "This investment will deliver field-based trials over three seasons to test practical Rosinweed management options under the conditions where the weed occurs. It will assess registe",
+     "category": "",
+     "start": "2026-11-12",
+     "end": "2029-08-30",
+     "id": "CN4286581"
+    }
+   ],
+   "total": 343000,
+   "score": 5.0,
+   "interstate": false,
+   "why": [
+    "work runs 34 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "KONGSBERG MARITIME PTY LTD",
+   "abn": "",
+   "locality": "Fremantle",
+   "state": "WA",
+   "contracts": [
+    {
+     "value": 89369.28,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Filter Elements",
+     "category": "",
+     "start": "2026-10-18",
+     "end": "2027-04-04",
+     "id": "CN4286865"
+    },
+    {
+     "value": 23221.59,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Valve Parts",
+     "category": "",
+     "start": "2026-10-29",
+     "end": "2027-05-27",
+     "id": "CN4286609"
+    },
+    {
+     "value": 137625.27,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Maintenance Services",
+     "category": "",
+     "start": "2026-10-26",
+     "end": "2027-06-29",
+     "id": "CN4286148"
+    },
+    {
+     "value": 13933.08,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Watercraft Maintenance",
+     "category": "",
+     "start": "2026-10-22",
+     "end": "2027-06-29",
+     "id": "CN4286149"
+    }
+   ],
+   "total": 264149,
+   "score": 5.0,
+   "interstate": false,
+   "why": [
+    "4 new government contracts in the last 7 days",
+    "work runs 8 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "Platypus Research and Development Pty Ltd",
+   "abn": "",
+   "locality": "Hume",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 221100.0,
+     "buyer": "Geoscience Australia",
+     "buyerState": null,
+     "desc": "MOBLAS Stabilisation and Maintenance",
+     "category": "",
+     "start": "2026-10-11",
+     "end": "2027-06-29",
+     "id": "CN4286842"
+    }
+   ],
+   "total": 221100,
+   "score": 5.0,
+   "interstate": false,
+   "why": [
+    "work runs 9 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "SFDC Australia Pty Limited",
+   "abn": "",
+   "locality": "Sydney",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 537199.83,
+     "buyer": "Australian Institute of Health and Welfare",
+     "buyerState": "ACT",
+     "desc": "Renewal of Tableau licensing",
+     "category": "",
+     "start": "2026-09-26",
+     "end": "2027-09-25",
+     "id": "CN4284324"
+    }
+   ],
+   "total": 537200,
+   "score": 4.0,
+   "interstate": true,
+   "why": [
+    "based in Sydney NSW, delivering for Australian Institute of Health and Welfare (Canberra)",
+    "work runs 12 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "AEROASCENT PTY LTD",
+   "abn": "",
+   "locality": "Tweed Heads",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 82858.7,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Inspection Services",
+     "category": "",
+     "start": "2026-10-14",
+     "end": "2027-06-29",
+     "id": "CN4286866"
+    }
+   ],
+   "total": 82859,
+   "score": 4.0,
+   "interstate": false,
+   "why": [
+    "work runs 9 months"
    ],
    "seenBefore": false
   },
@@ -67,278 +249,6 @@
     }
    ],
    "total": 1680602,
-   "score": 6.0,
-   "interstate": false,
-   "why": [
-    "2 new government contracts in the last 7 days",
-    "work runs 8 months"
-   ],
-   "seenBefore": false
-  },
-  {
-   "name": "MADDOCKS",
-   "abn": "",
-   "locality": "Melbourne",
-   "state": "VIC",
-   "contracts": [
-    {
-     "value": 126423.0,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Legal Services",
-     "category": "",
-     "start": "2026-10-22",
-     "end": "2027-06-29",
-     "id": "CN4285642"
-    },
-    {
-     "value": 142911.31,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Legal Services",
-     "category": "",
-     "start": "2026-10-26",
-     "end": "2027-06-29",
-     "id": "CN4285638"
-    },
-    {
-     "value": 106282.0,
-     "buyer": "Attorney-General's Department",
-     "buyerState": "ACT",
-     "desc": "Legal and Contract Adviser",
-     "category": "",
-     "start": "2026-10-19",
-     "end": "2027-02-18",
-     "id": "CN4285522"
-    }
-   ],
-   "total": 375616,
-   "score": 6.0,
-   "interstate": true,
-   "why": [
-    "based in Melbourne VIC, delivering for Attorney-General's Department (Canberra)",
-    "3 new government contracts in the last 7 days",
-    "work runs 8 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "IT Newcom Pty Limited",
-   "abn": "",
-   "locality": "Forrest",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 1797371.2,
-     "buyer": "Department of Health, Disability and Ageing",
-     "buyerState": null,
-     "desc": "Advisory Services for the Hearing Services Program",
-     "category": "",
-     "start": "2026-10-25",
-     "end": "2027-06-29",
-     "id": "CN4286455"
-    }
-   ],
-   "total": 1797371,
-   "score": 5.0,
-   "interstate": false,
-   "why": [
-    "work runs 8 months"
-   ],
-   "seenBefore": false
-  },
-  {
-   "name": "Conscia Pty Ltd",
-   "abn": "",
-   "locality": "Kingston",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 442400.0,
-     "buyer": "CSIRO",
-     "buyerState": null,
-     "desc": "Corporate Management Advisory Services",
-     "category": "",
-     "start": "2026-12-06",
-     "end": "2027-12-05",
-     "id": "CN4286521"
-    }
-   ],
-   "total": 442400,
-   "score": 5.0,
-   "interstate": false,
-   "why": [
-    "work runs 12 months"
-   ],
-   "seenBefore": false
-  },
-  {
-   "name": "Elite Group (ACT) Pty Ltd",
-   "abn": "",
-   "locality": "Jerrabomerra",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 74365.5,
-     "buyer": "Department of Industry, Science and Resources",
-     "buyerState": "ACT",
-     "desc": "Event production services",
-     "category": "",
-     "start": "2026-11-01",
-     "end": "2026-12-16",
-     "id": "CN4286494"
-    }
-   ],
-   "total": 74366,
-   "score": 5.0,
-   "interstate": true,
-   "why": [
-    "based in Jerrabomerra NSW, delivering for Department of Industry, Science and Resources (Canberra)"
-   ],
-   "seenBefore": false
-  },
-  {
-   "name": "THE REHABILITATION COMPANY PTY LTD",
-   "abn": "",
-   "locality": "Wagga Wagga",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 50000.0,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Health Services",
-     "category": "",
-     "start": "2026-11-01",
-     "end": "2028-10-30",
-     "id": "CN4286337"
-    },
-    {
-     "value": 20000.0,
-     "buyer": "Department of Agriculture, Fisheries and Forestry",
-     "buyerState": null,
-     "desc": "Occupational Rehabilitation and Assessment Services",
-     "category": "",
-     "start": "2026-10-31",
-     "end": "2028-10-30",
-     "id": "CN4285539"
-    }
-   ],
-   "total": 70000,
-   "score": 5.0,
-   "interstate": false,
-   "why": [
-    "2 new government contracts in the last 7 days",
-    "work runs 24 months"
-   ],
-   "seenBefore": false
-  },
-  {
-   "name": "SFDC Australia Pty Limited",
-   "abn": "",
-   "locality": "Sydney",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 537199.83,
-     "buyer": "Australian Institute of Health and Welfare",
-     "buyerState": "ACT",
-     "desc": "Renewal of Tableau licensing",
-     "category": "",
-     "start": "2026-09-26",
-     "end": "2027-09-25",
-     "id": "CN4284324"
-    }
-   ],
-   "total": 537200,
-   "score": 4.0,
-   "interstate": true,
-   "why": [
-    "based in Sydney NSW, delivering for Australian Institute of Health and Welfare (Canberra)",
-    "work runs 12 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "Acendre Group Pty Ltd",
-   "abn": "",
-   "locality": "Sydney",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 262590.0,
-     "buyer": "Attorney-General's Department",
-     "buyerState": "ACT",
-     "desc": "eRecruitment system",
-     "category": "",
-     "start": "2026-03-31",
-     "end": "2028-03-30",
-     "id": "CN4285520"
-    }
-   ],
-   "total": 262590,
-   "score": 4.0,
-   "interstate": true,
-   "why": [
-    "based in Sydney NSW, delivering for Attorney-General's Department (Canberra)",
-    "work runs 24 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "Mossop Group Pty Ltd",
-   "abn": "",
-   "locality": "Regency Park",
-   "state": "SA",
-   "contracts": [
-    {
-     "value": 5800000.0,
-     "buyer": "Attorney-General's Department",
-     "buyerState": "ACT",
-     "desc": "Office Fitout",
-     "category": "",
-     "start": "2026-09-30",
-     "end": "2027-03-30",
-     "id": "CN4285524"
-    }
-   ],
-   "total": 5800000,
-   "score": 3.0,
-   "interstate": true,
-   "why": [
-    "based in Regency Park SA, delivering for Attorney-General's Department (Canberra)",
-    "work runs 6 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "KONGSBERG MARITIME PTY LTD",
-   "abn": "",
-   "locality": "Fremantle",
-   "state": "WA",
-   "contracts": [
-    {
-     "value": 137625.27,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Maintenance Services",
-     "category": "",
-     "start": "2026-10-26",
-     "end": "2027-06-29",
-     "id": "CN4286148"
-    },
-    {
-     "value": 13933.08,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Watercraft Maintenance",
-     "category": "",
-     "start": "2026-10-22",
-     "end": "2027-06-29",
-     "id": "CN4286149"
-    }
-   ],
-   "total": 151558,
    "score": 3.0,
    "interstate": false,
    "why": [
@@ -429,27 +339,29 @@
    "seenBefore": true
   },
   {
-   "name": "MJR Tech Pty Ltd",
+   "name": "IT Newcom Pty Limited",
    "abn": "",
-   "locality": "Chifley",
-   "state": "NSW",
+   "locality": "Forrest",
+   "state": "ACT",
    "contracts": [
     {
-     "value": 64735.0,
-     "buyer": "Department of Social Services",
+     "value": 1797371.2,
+     "buyer": "Department of Health, Disability and Ageing",
      "buyerState": null,
-     "desc": "ICT technical & advisory services",
+     "desc": "Advisory Services for the Hearing Services Program",
      "category": "",
      "start": "2026-10-25",
-     "end": "2027-01-20",
-     "id": "CN4283824"
+     "end": "2027-06-29",
+     "id": "CN4286455"
     }
    ],
-   "total": 64735,
-   "score": 3.0,
+   "total": 1797371,
+   "score": 2.0,
    "interstate": false,
-   "why": [],
-   "seenBefore": false
+   "why": [
+    "work runs 8 months"
+   ],
+   "seenBefore": true
   },
   {
    "name": "RPS AAP CONSULTING PTY LTD",
@@ -466,74 +378,13 @@
      "start": "2026-10-12",
      "end": "2027-08-30",
      "id": "CN4286249"
-    },
-    {
-     "value": 1797021.6,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Project Management and Contract Administration Services",
-     "category": "",
-     "start": "2026-09-30",
-     "end": "2029-11-29",
-     "id": "CN4285508"
     }
    ],
-   "total": 3307620,
+   "total": 1510598,
    "score": 2.0,
    "interstate": false,
    "why": [
-    "2 new government contracts in the last 7 days",
-    "work runs 39 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "LYCHOS PTY LTD",
-   "abn": "",
-   "locality": "Beaumont",
-   "state": "SA",
-   "contracts": [
-    {
-     "value": 934027.0,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Research Agreement",
-     "category": "",
-     "start": "2026-10-06",
-     "end": "2027-06-29",
-     "id": "CN4285358"
-    }
-   ],
-   "total": 934027,
-   "score": 2.0,
-   "interstate": false,
-   "why": [
-    "work runs 9 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "Xaana Pty Ltd",
-   "abn": "",
-   "locality": "Braddon",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 764916.15,
-     "buyer": "Attorney-General's Department",
-     "buyerState": "ACT",
-     "desc": "Travel and Expense Management Services",
-     "category": "",
-     "start": "2026-10-26",
-     "end": "2028-10-26",
-     "id": "CN4285521"
-    }
-   ],
-   "total": 764916,
-   "score": 2.0,
-   "interstate": false,
-   "why": [
-    "work runs 24 months"
+    "work runs 11 months"
    ],
    "seenBefore": true
   },
@@ -609,6 +460,56 @@
    "interstate": false,
    "why": [
     "work runs 8 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "Veritas Buildings & Infrastructure Pty Ltd",
+   "abn": "",
+   "locality": "Sydney",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 554381.78,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Project Management",
+     "category": "",
+     "start": "2026-11-01",
+     "end": "2029-07-12",
+     "id": "CN4286822"
+    }
+   ],
+   "total": 554382,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 33 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "Conscia Pty Ltd",
+   "abn": "",
+   "locality": "Kingston",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 442400.0,
+     "buyer": "CSIRO",
+     "buyerState": null,
+     "desc": "Corporate Management Advisory Services",
+     "category": "",
+     "start": "2026-12-06",
+     "end": "2027-12-05",
+     "id": "CN4286521"
+    }
+   ],
+   "total": 442400,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 12 months"
    ],
    "seenBefore": true
   },
@@ -713,31 +614,6 @@
    "seenBefore": true
   },
   {
-   "name": "AUSTRALIAN MEDICO-LEGAL GROUP PTY LTD",
-   "abn": "",
-   "locality": "Sydney",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 150000.0,
-     "buyer": "Department of Agriculture, Fisheries and Forestry",
-     "buyerState": null,
-     "desc": "Occupational Rehabilitation and Assessment Services",
-     "category": "",
-     "start": "2026-10-31",
-     "end": "2028-10-30",
-     "id": "CN4285536"
-    }
-   ],
-   "total": 150000,
-   "score": 2.0,
-   "interstate": false,
-   "why": [
-    "work runs 24 months"
-   ],
-   "seenBefore": true
-  },
-  {
    "name": "MOTT MACDONALD AUSTRALIA PTY LIMITED",
    "abn": "",
    "locality": "Adelaide",
@@ -788,27 +664,27 @@
    "seenBefore": true
   },
   {
-   "name": "FENTON STRATEGIC COMMUNICATIONS PTY",
+   "name": "Elite Group (ACT) Pty Ltd",
    "abn": "",
-   "locality": "Melbourne",
-   "state": "VIC",
+   "locality": "Jerrabomerra",
+   "state": "NSW",
    "contracts": [
     {
-     "value": 110000.0,
-     "buyer": "Department of Health, Disability and Ageing",
-     "buyerState": null,
-     "desc": "Public Relations Agency for the National Tobacco and E-cigarette Campaign Phase 3",
+     "value": 74365.5,
+     "buyer": "Department of Industry, Science and Resources",
+     "buyerState": "ACT",
+     "desc": "Event production services",
      "category": "",
-     "start": "2026-10-27",
-     "end": "2027-06-29",
-     "id": "CN4285433"
+     "start": "2026-11-01",
+     "end": "2026-12-16",
+     "id": "CN4286494"
     }
    ],
-   "total": 110000,
+   "total": 74366,
    "score": 2.0,
-   "interstate": false,
+   "interstate": true,
    "why": [
-    "work runs 8 months"
+    "based in Jerrabomerra NSW, delivering for Department of Industry, Science and Resources (Canberra)"
    ],
    "seenBefore": true
   },
@@ -836,23 +712,23 @@
    "seenBefore": true
   },
   {
-   "name": "Perceptive Australia Pty Ltd",
+   "name": "CALLIDA PTY LTD",
    "abn": "",
-   "locality": "Melbourne",
-   "state": "VIC",
+   "locality": "Kingston",
+   "state": "ACT",
    "contracts": [
     {
-     "value": 218393.81,
-     "buyer": "Department of Defence",
+     "value": 137699.22,
+     "buyer": "Department of Agriculture, Fisheries and Forestry",
      "buyerState": null,
-     "desc": "Evaluation and Market Research Services",
+     "desc": "Regulatory Data Assessment and Optimisation",
      "category": "",
-     "start": "2026-09-30",
-     "end": "2027-01-30",
-     "id": "CN4285370"
+     "start": "2026-11-22",
+     "end": "2027-03-18",
+     "id": "CN4286752"
     }
    ],
-   "total": 218394,
+   "total": 137699,
    "score": 1.0,
    "interstate": false,
    "why": [],
@@ -880,31 +756,6 @@
    "interstate": false,
    "why": [
     "work runs 6 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "Australian Nursing & Midwifery Federation",
-   "abn": "",
-   "locality": "Melbourne",
-   "state": "VIC",
-   "contracts": [
-    {
-     "value": 79898.5,
-     "buyer": "Department of Health, Disability and Ageing",
-     "buyerState": null,
-     "desc": "Support for the Coalition of National Nursing and Midwifery Organisations",
-     "category": "",
-     "start": "2026-10-19",
-     "end": "2027-06-29",
-     "id": "CN4285435"
-    }
-   ],
-   "total": 79898,
-   "score": 1.0,
-   "interstate": false,
-   "why": [
-    "work runs 8 months"
    ],
    "seenBefore": true
   },
@@ -959,31 +810,6 @@
    "seenBefore": true
   },
   {
-   "name": "Allen and Clarke Consulting Group Limited Partnership",
-   "abn": "",
-   "locality": "Melbourne",
-   "state": "VIC",
-   "contracts": [
-    {
-     "value": 67783.21,
-     "buyer": "Department of Health, Disability and Ageing",
-     "buyerState": null,
-     "desc": "Development of Paediatric Cochlear Implant National Guidelines",
-     "category": "",
-     "start": "2025-06-15",
-     "end": "2026-10-29",
-     "id": "CN4285430"
-    }
-   ],
-   "total": 67783,
-   "score": 1.0,
-   "interstate": false,
-   "why": [
-    "work runs 17 months"
-   ],
-   "seenBefore": true
-  },
-  {
    "name": "DARREN BOX PTY LTD [621]",
    "abn": "",
    "locality": "Duffy",
@@ -1006,6 +832,29 @@
    "why": [
     "work runs 18 months"
    ],
+   "seenBefore": true
+  },
+  {
+   "name": "MJR Tech Pty Ltd",
+   "abn": "",
+   "locality": "Chifley",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 64735.0,
+     "buyer": "Department of Social Services",
+     "buyerState": null,
+     "desc": "ICT technical & advisory services",
+     "category": "",
+     "start": "2026-10-25",
+     "end": "2027-01-20",
+     "id": "CN4283824"
+    }
+   ],
+   "total": 64735,
+   "score": 0.0,
+   "interstate": false,
+   "why": [],
    "seenBefore": true
   }
  ]
