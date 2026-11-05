@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-04T19:00:11.381Z",
+ "generatedAt": "2026-11-05T20:58:40.842Z",
  "period": {
-  "start": "2026-10-07",
-  "end": "2026-11-03"
+  "start": "2026-10-08",
+  "end": "2026-11-04"
  },
  "gscPeriod": {
-  "start": "2026-10-05",
-  "end": "2026-11-01"
+  "start": "2026-10-06",
+  "end": "2026-11-02"
  },
  "sources": {
   "ga4": true,
@@ -14,12 +14,14 @@
   "notes": []
  },
  "totals": {
-  "views": 15,
+  "views": 20,
   "prevViews": 0,
-  "users": 15,
-  "cta": {},
+  "users": 19,
+  "cta": {
+   "journal_90": 1
+  },
   "gscClicks": 0,
-  "gscImpressions": 116
+  "gscImpressions": 122
  },
  "daily": [
   {
@@ -46,19 +48,27 @@
    "date": "2026-11-03",
    "views": 5,
    "cta": 0
+  },
+  {
+   "date": "2026-11-04",
+   "views": 5,
+   "cta": 1
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 4,
+   "views": 5,
    "prevViews": 0,
-   "users": 4,
+   "users": 5,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 84,
-   "gscPosition": 12.7,
-   "topQuery": "community service placement"
+   "gscImpressions": 88,
+   "gscPosition": 12.6,
+   "topQuery": "community services placement",
+   "allViews": 5,
+   "d7": 4,
+   "prev7": 1
   },
   {
    "path": "/contact",
@@ -69,7 +79,43 @@
    "gscClicks": 0,
    "gscImpressions": 8,
    "gscPosition": 23.8,
-   "topQuery": "help support"
+   "topQuery": "help support",
+   "allViews": 3,
+   "d7": 2,
+   "prev7": 1
+  },
+  {
+   "path": "/free-daily-journal",
+   "views": 3,
+   "prevViews": 0,
+   "users": 2,
+   "cta": {
+    "journal_90": 1
+   },
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 6,
+   "topQuery": "back to you journal pdf free download",
+   "allViews": 3,
+   "allCta": {
+    "journal_90": 1
+   },
+   "d7": 3,
+   "prev7": 0
+  },
+  {
+   "path": "/job-finder",
+   "views": 2,
+   "prevViews": 0,
+   "users": 2,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 39,
+   "topQuery": "how to get part time jobs in australia",
+   "allViews": 2,
+   "d7": 2,
+   "prev7": 0
   },
   {
    "path": "/about",
@@ -80,29 +126,10 @@
    "gscClicks": 0,
    "gscImpressions": 0,
    "gscPosition": null,
-   "topQuery": null
-  },
-  {
-   "path": "/job-finder",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null
-  },
-  {
-   "path": "/free-daily-journal",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 6,
-   "topQuery": "back to you journal pdf free download"
+   "topQuery": null,
+   "allViews": 2,
+   "d7": 2,
+   "prev7": 0
   },
   {
    "path": "/advocacy-support",
@@ -113,7 +140,10 @@
    "gscClicks": 0,
    "gscImpressions": 0,
    "gscPosition": null,
-   "topQuery": null
+   "topQuery": null,
+   "allViews": 1,
+   "d7": 1,
+   "prev7": 0
   },
   {
    "path": "/affiliate-disclosure",
@@ -124,7 +154,10 @@
    "gscClicks": 0,
    "gscImpressions": 0,
    "gscPosition": null,
-   "topQuery": null
+   "topQuery": null,
+   "allViews": 1,
+   "d7": 1,
+   "prev7": 0
   },
   {
    "path": "/faq",
@@ -135,7 +168,38 @@
    "gscClicks": 0,
    "gscImpressions": 0,
    "gscPosition": null,
-   "topQuery": null
+   "topQuery": null,
+   "allViews": 1,
+   "d7": 1,
+   "prev7": 0
+  },
+  {
+   "path": "/job-catalyst",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1,
+   "d7": 1,
+   "prev7": 0
+  },
+  {
+   "path": "/life-goals-mentoring",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1,
+   "d7": 1,
+   "prev7": 0
   },
   {
    "path": "/resume-builder",
@@ -166,8 +230,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 47.3,
+   "gscImpressions": 4,
+   "gscPosition": 47.5,
    "topQuery": "hr support ringwood"
   },
   {
@@ -191,23 +255,23 @@
    "page": "/"
   },
   {
-   "query": "community service placement",
+   "query": "community services placement",
    "clicks": 0,
-   "impressions": 16,
-   "position": 13.3,
+   "impressions": 18,
+   "position": 8.3,
    "page": "/"
   },
   {
-   "query": "community services placement",
+   "query": "community service placement",
    "clicks": 0,
-   "impressions": 16,
-   "position": 7.9,
+   "impressions": 17,
+   "position": 13.3,
    "page": "/"
   },
   {
    "query": "local community support",
    "clicks": 0,
-   "impressions": 12,
+   "impressions": 13,
    "position": 4.1,
    "page": "/"
   },
@@ -217,6 +281,13 @@
    "impressions": 4,
    "position": 14.5,
    "page": "/contact"
+  },
+  {
+   "query": "hr support ringwood",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 47.5,
+   "page": "/find-staff"
   },
   {
    "query": "community services recruitment agencies",
@@ -245,13 +316,6 @@
    "impressions": 3,
    "position": 56.7,
    "page": "/cover-letter-builder"
-  },
-  {
-   "query": "hr support ringwood",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 47.3,
-   "page": "/find-staff"
   },
   {
    "query": "simon support",
@@ -401,6 +465,13 @@
    "page": "/cover-letter-builder"
   },
   {
+   "query": "how to get part time jobs in australia",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 39,
+   "page": "/job-finder"
+  },
+  {
    "query": "product information support",
    "clicks": 0,
    "impressions": 1,
@@ -503,6 +574,51 @@
    "date": "2026-11-01",
    "clicks": 0,
    "impressions": 21
+  },
+  {
+   "date": "2026-11-02",
+   "clicks": 0,
+   "impressions": 13
   }
- ]
+ ],
+ "allTime": {
+  "start": "2026-10-27",
+  "views": 20,
+  "users": 19,
+  "cta": {
+   "journal_90": 1
+  },
+  "daily": [
+   {
+    "date": "2026-10-27",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-10-28",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-10-29",
+    "views": 7,
+    "cta": 0
+   },
+   {
+    "date": "2026-11-02",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-11-03",
+    "views": 5,
+    "cta": 0
+   },
+   {
+    "date": "2026-11-04",
+    "views": 5,
+    "cta": 1
+   }
+  ]
+ }
 }

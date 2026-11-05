@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-04T19:00:11.381Z",
+ "generatedAt": "2026-11-05T20:58:40.842Z",
  "period": {
-  "start": "2026-10-07",
-  "end": "2026-11-03"
+  "start": "2026-10-08",
+  "end": "2026-11-04"
  },
  "gscPeriod": {
-  "start": "2026-10-05",
-  "end": "2026-11-01"
+  "start": "2026-10-06",
+  "end": "2026-11-02"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 77,
+  "views": 78,
   "prevViews": 0,
-  "users": 57,
+  "users": 58,
   "cta": {
    "book_tour": 2,
    "website": 1,
    "map": 1
   },
   "gscClicks": 4,
-  "gscImpressions": 1936
+  "gscImpressions": 1956
  },
  "daily": [
   {
@@ -90,19 +90,27 @@
    "date": "2026-11-02",
    "views": 2,
    "cta": 0
+  },
+  {
+   "date": "2026-11-04",
+   "views": 1,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 35,
+   "views": 36,
    "prevViews": 0,
-   "users": 22,
+   "users": 23,
    "cta": {},
    "gscClicks": 2,
    "gscImpressions": 6,
    "gscPosition": 3,
-   "topQuery": "victours"
+   "topQuery": "victours",
+   "allViews": 205,
+   "prev7": 23,
+   "d7": 8
   },
   {
    "path": "/towns",
@@ -113,7 +121,10 @@
    "gscClicks": 1,
    "gscImpressions": 4,
    "gscPosition": 5,
-   "topQuery": "victours"
+   "topQuery": "victours",
+   "allViews": 6,
+   "prev7": 6,
+   "d7": 0
   },
   {
    "path": "/warburton",
@@ -124,7 +135,10 @@
    "gscClicks": 0,
    "gscImpressions": 1,
    "gscPosition": 55,
-   "topQuery": "waburton"
+   "topQuery": "waburton",
+   "allViews": 5,
+   "prev7": 5,
+   "d7": 0
   },
   {
    "path": "/daylesford",
@@ -135,7 +149,10 @@
    "gscClicks": 0,
    "gscImpressions": 10,
    "gscPosition": 69.6,
-   "topQuery": "daylesford"
+   "topQuery": "daylesford",
+   "allViews": 3,
+   "d7": 1,
+   "prev7": 0
   },
   {
    "path": "/day-trips/torquay",
@@ -146,7 +163,10 @@
    "gscClicks": 0,
    "gscImpressions": 0,
    "gscPosition": null,
-   "topQuery": null
+   "topQuery": null,
+   "allViews": 3,
+   "prev7": 3,
+   "d7": 0
   },
   {
    "path": "/road-trips/yarra-valley-day-trip",
@@ -157,7 +177,10 @@
    "gscClicks": 0,
    "gscImpressions": 26,
    "gscPosition": 68,
-   "topQuery": "yarra valley day trip"
+   "topQuery": "yarra valley day trip",
+   "allViews": 2,
+   "d7": 1,
+   "prev7": 0
   },
   {
    "path": "/richmond",
@@ -168,7 +191,10 @@
    "gscClicks": 0,
    "gscImpressions": 14,
    "gscPosition": 85.4,
-   "topQuery": "brunch in richmond"
+   "topQuery": "brunch in richmond",
+   "allViews": 2,
+   "d7": 1,
+   "prev7": 0
   },
   {
    "path": "/weekends",
@@ -179,7 +205,10 @@
    "gscClicks": 0,
    "gscImpressions": 2,
    "gscPosition": 95.5,
-   "topQuery": "melbourne weekend trips"
+   "topQuery": "melbourne weekend trips",
+   "allViews": 2,
+   "prev7": 2,
+   "d7": 0
   },
   {
    "path": "/road-trips/goldfields-road-trip",
@@ -190,7 +219,10 @@
    "gscClicks": 0,
    "gscImpressions": 0,
    "gscPosition": null,
-   "topQuery": null
+   "topQuery": null,
+   "allViews": 2,
+   "prev7": 2,
+   "d7": 0
   },
   {
    "path": "/lorne",
@@ -201,7 +233,10 @@
    "gscClicks": 0,
    "gscImpressions": 57,
    "gscPosition": 71,
-   "topQuery": "activities lorne victoria"
+   "topQuery": "activities lorne victoria",
+   "allViews": 1,
+   "d7": 1,
+   "prev7": 0
   },
   {
    "path": "/port-campbell",
@@ -212,7 +247,10 @@
    "gscClicks": 0,
    "gscImpressions": 21,
    "gscPosition": 57.7,
-   "topQuery": "hotel port campbell"
+   "topQuery": "hotel port campbell",
+   "allViews": 1,
+   "d7": 1,
+   "prev7": 0
   },
   {
    "path": "/collections/day-trips-from-melbourne",
@@ -223,7 +261,10 @@
    "gscClicks": 0,
    "gscImpressions": 20,
    "gscPosition": 63.4,
-   "topQuery": "melbourne day trips"
+   "topQuery": "melbourne day trips",
+   "allViews": 1,
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/rutherglen",
@@ -236,7 +277,13 @@
    "gscClicks": 0,
    "gscImpressions": 8,
    "gscPosition": 40.8,
-   "topQuery": "rutherglen victoria"
+   "topQuery": "rutherglen victoria",
+   "allViews": 1,
+   "allCta": {
+    "book_tour": 1
+   },
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/bendigo/eat",
@@ -247,7 +294,10 @@
    "gscClicks": 1,
    "gscImpressions": 6,
    "gscPosition": 62.7,
-   "topQuery": "buffet breakfast bendigo"
+   "topQuery": "buffet breakfast bendigo",
+   "allViews": 1,
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/ballarat",
@@ -261,7 +311,14 @@
    "gscClicks": 0,
    "gscImpressions": 5,
    "gscPosition": 50,
-   "topQuery": "the ballarat"
+   "topQuery": "the ballarat",
+   "allViews": 1,
+   "allCta": {
+    "book_tour": 1,
+    "website": 1
+   },
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/weekends/romantic",
@@ -272,7 +329,10 @@
    "gscClicks": 0,
    "gscImpressions": 4,
    "gscPosition": 88.8,
-   "topQuery": "couples getaway packages"
+   "topQuery": "couples getaway packages",
+   "allViews": 1,
+   "d7": 1,
+   "prev7": 0
   },
   {
    "path": "/yarra-glen",
@@ -283,7 +343,8 @@
    "gscClicks": 0,
    "gscImpressions": 4,
    "gscPosition": 58,
-   "topQuery": "yarra glen"
+   "topQuery": "yarra glen",
+   "allViews": 1
   },
   {
    "path": "/richmond/do",
@@ -296,7 +357,11 @@
    "gscClicks": 0,
    "gscImpressions": 3,
    "gscPosition": 54.3,
-   "topQuery": "places to see in richmond"
+   "topQuery": "places to see in richmond",
+   "allViews": 1,
+   "allCta": {
+    "map": 1
+   }
   },
   {
    "path": "/road-trips/murray-and-north-east-road-trip",
@@ -307,7 +372,10 @@
    "gscClicks": 0,
    "gscImpressions": 2,
    "gscPosition": 79,
-   "topQuery": "murray river road trip"
+   "topQuery": "murray river road trip",
+   "allViews": 1,
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/about",
@@ -318,7 +386,10 @@
    "gscClicks": 0,
    "gscImpressions": 1,
    "gscPosition": 7,
-   "topQuery": "victours"
+   "topQuery": "victours",
+   "allViews": 1,
+   "d7": 1,
+   "prev7": 0
   },
   {
    "path": "/day-trips",
@@ -329,7 +400,10 @@
    "gscClicks": 0,
    "gscImpressions": 1,
    "gscPosition": 94,
-   "topQuery": "day trips from melbourne"
+   "topQuery": "day trips from melbourne",
+   "allViews": 1,
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/road-trips",
@@ -340,7 +414,10 @@
    "gscClicks": 0,
    "gscImpressions": 1,
    "gscPosition": 80,
-   "topQuery": "road trips from melbourne"
+   "topQuery": "road trips from melbourne",
+   "allViews": 1,
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/weekends/daylesford-romantic-weekend",
@@ -351,7 +428,10 @@
    "gscClicks": 0,
    "gscImpressions": 1,
    "gscPosition": 50,
-   "topQuery": "daylesford accommodation for couples"
+   "topQuery": "daylesford accommodation for couples",
+   "allViews": 1,
+   "d7": 1,
+   "prev7": 0
   },
   {
    "path": "/contact",
@@ -362,7 +442,10 @@
    "gscClicks": 0,
    "gscImpressions": 0,
    "gscPosition": null,
-   "topQuery": null
+   "topQuery": null,
+   "allViews": 1,
+   "d7": 1,
+   "prev7": 0
   },
   {
    "path": "/weekends/by-train",
@@ -373,7 +456,10 @@
    "gscClicks": 0,
    "gscImpressions": 0,
    "gscPosition": null,
-   "topQuery": null
+   "topQuery": null,
+   "allViews": 1,
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/weekends/warrnambool-by-train",
@@ -384,7 +470,82 @@
    "gscClicks": 0,
    "gscImpressions": 0,
    "gscPosition": null,
-   "topQuery": null
+   "topQuery": null,
+   "allViews": 1,
+   "prev7": 1,
+   "d7": 0
+  },
+  {
+   "path": "/supplier-details/rupanyup-silo-art/r/rec00EgS6dynb2VnS",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 5
+  },
+  {
+   "path": "/plan-your-trip",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 4
+  },
+  {
+   "path": "/supplier-details/the-wonthaggi-market/r/rec0i7j6d6geQaaV6",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/regions",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
+   "path": "/supplier-details/moe-botanical-gardens/r/rec4s30VI0JO7IfcG",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
+   "path": "/supplier-details/the-block-arcade/r/recFl4NuFh1SH6zxm",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
   },
   {
    "path": "/southbank/stay",
@@ -415,8 +576,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 61,
-   "gscPosition": 42.1,
+   "gscImpressions": 69,
+   "gscPosition": 47.3,
    "topQuery": "1004 mornington-flinders road red hill vic 3937"
   },
   {
@@ -519,6 +680,17 @@
    "topQuery": "bright things to do"
   },
   {
+   "path": "/metung",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 28,
+   "gscPosition": 67.3,
+   "topQuery": "110 metung road metung vic 3904"
+  },
+  {
    "path": "/sorrento",
    "views": 0,
    "prevViews": 0,
@@ -550,17 +722,6 @@
    "gscImpressions": 25,
    "gscPosition": 56.7,
    "topQuery": "marysville holiday park"
-  },
-  {
-   "path": "/metung",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 25,
-   "gscPosition": 65.7,
-   "topQuery": "110 metung road metung vic 3904"
   },
   {
    "path": "/apollo-bay",
@@ -651,6 +812,17 @@
    "topQuery": "weekend getaways victoria"
   },
   {
+   "path": "/lakes-entrance",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 17,
+   "gscPosition": 51.8,
+   "topQuery": "lakes entrance"
+  },
+  {
    "path": "/mornington",
    "views": 0,
    "prevViews": 0,
@@ -671,17 +843,6 @@
    "gscImpressions": 17,
    "gscPosition": 70.6,
    "topQuery": "things to do in st kilda"
-  },
-  {
-   "path": "/lakes-entrance",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 16,
-   "gscPosition": 51.8,
-   "topQuery": "lakes entrance"
   },
   {
    "path": "/marysville/do",
@@ -759,6 +920,17 @@
    "gscImpressions": 12,
    "gscPosition": 59.5,
    "topQuery": "things to do bellarine peninsula"
+  },
+  {
+   "path": "/dunkeld",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 12,
+   "gscPosition": 56.7,
+   "topQuery": "dunkeld racecourse"
   },
   {
    "path": "/echuca/stay",
@@ -869,17 +1041,6 @@
    "gscImpressions": 11,
    "gscPosition": 75.3,
    "topQuery": "torquay"
-  },
-  {
-   "path": "/dunkeld",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 10,
-   "gscPosition": 55.3,
-   "topQuery": "dunkeld racecourse"
   },
   {
    "path": "/melbourne-cbd/do",
@@ -1124,6 +1285,17 @@
    "topQuery": "mornington"
   },
   {
+   "path": "/myrtleford",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 7,
+   "gscPosition": 55,
+   "topQuery": "myrtleford"
+  },
+  {
    "path": "/road-trips/great-alpine-road",
    "views": 0,
    "prevViews": 0,
@@ -1201,15 +1373,26 @@
    "topQuery": "kyneton"
   },
   {
-   "path": "/myrtleford",
+   "path": "/mansfield",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 6,
-   "gscPosition": 51,
-   "topQuery": "myrtleford"
+   "gscPosition": 42.5,
+   "topQuery": "bed and breakfast mansfield"
+  },
+  {
+   "path": "/mildura",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 48.5,
+   "topQuery": "best western chaffey international mildura"
   },
   {
    "path": "/omeo/stay",
@@ -1331,17 +1514,6 @@
    "gscImpressions": 5,
    "gscPosition": 50.8,
    "topQuery": "corporate lunch gippsland"
-  },
-  {
-   "path": "/mansfield",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 33,
-   "topQuery": "bed and breakfast mansfield"
   },
   {
    "path": "/myrtleford/eat",
@@ -1518,17 +1690,6 @@
    "gscImpressions": 4,
    "gscPosition": 40.3,
    "topQuery": "lorne restaurants"
-  },
-  {
-   "path": "/mildura",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 37.8,
-   "topQuery": "best western chaffey international mildura"
   },
   {
    "path": "/mildura/eat",
@@ -1749,6 +1910,17 @@
    "gscImpressions": 3,
    "gscPosition": 78.3,
    "topQuery": "harrietville"
+  },
+  {
+   "path": "/kyneton",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 58,
+   "topQuery": "kyneton springs"
   },
   {
    "path": "/kyneton/eat",
@@ -2002,17 +2174,6 @@
    "gscImpressions": 2,
    "gscPosition": 68.5,
    "topQuery": "bayside lady"
-  },
-  {
-   "path": "/kyneton",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 62.5,
-   "topQuery": "kyneton springs"
   },
   {
    "path": "/mansfield/do",
@@ -2532,6 +2693,17 @@
    "topQuery": "redhill"
   },
   {
+   "path": "/road-trips/great-ocean-road-3-day-itinerary",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 94,
+   "topQuery": "3 day great ocean road tour"
+  },
+  {
    "path": "/rye/stay",
    "views": 0,
    "prevViews": 0,
@@ -2664,8 +2836,8 @@
   {
    "query": "1004 mornington-flinders road red hill vic 3937",
    "clicks": 0,
-   "impressions": 25,
-   "position": 32.7,
+   "impressions": 26,
+   "position": 33.6,
    "page": "/red-hill"
   },
   {
@@ -2753,6 +2925,13 @@
    "page": "/lorne"
   },
   {
+   "query": "110 metung road metung vic 3904",
+   "clicks": 0,
+   "impressions": 13,
+   "position": 70,
+   "page": "/metung"
+  },
+  {
    "query": "accommodation melbourne southbank area",
    "clicks": 0,
    "impressions": 13,
@@ -2795,10 +2974,10 @@
    "page": "/marysville/do"
   },
   {
-   "query": "110 metung road metung vic 3904",
+   "query": "110 metung road metung",
    "clicks": 0,
    "impressions": 11,
-   "position": 68.4,
+   "position": 72.4,
    "page": "/metung"
   },
   {
@@ -2835,13 +3014,6 @@
    "impressions": 10,
    "position": 54.6,
    "page": "/lakes-entrance/do"
-  },
-  {
-   "query": "110 metung road metung",
-   "clicks": 0,
-   "impressions": 10,
-   "position": 71.4,
-   "page": "/metung"
   },
   {
    "query": "614 tongio gap road omeo vic 3898",
@@ -3033,6 +3205,13 @@
    "page": "/collections/weekend-getaways"
   },
   {
+   "query": "dunkeld racecourse",
+   "clicks": 0,
+   "impressions": 6,
+   "position": 58.7,
+   "page": "/dunkeld"
+  },
+  {
    "query": "kyneton",
    "clicks": 0,
    "impressions": 6,
@@ -3052,6 +3231,13 @@
    "impressions": 6,
    "position": 49,
    "page": "/mornington-peninsula/eat"
+  },
+  {
+   "query": "red hill brewery",
+   "clicks": 0,
+   "impressions": 6,
+   "position": 94,
+   "page": "/red-hill"
   },
   {
    "query": "restaurant sorrento",
@@ -3299,13 +3485,6 @@
    "page": "/docklands/eat"
   },
   {
-   "query": "dunkeld racecourse",
-   "clicks": 0,
-   "impressions": 4,
-   "position": 56.3,
-   "page": "/dunkeld"
-  },
-  {
    "query": "what to do in lorne victoria",
    "clicks": 0,
    "impressions": 4,
@@ -3345,13 +3524,6 @@
    "clicks": 0,
    "impressions": 4,
    "position": 74.3,
-   "page": "/mildura/stay"
-  },
-  {
-   "query": "mildura family accommodation",
-   "clicks": 0,
-   "impressions": 4,
-   "position": 67.5,
    "page": "/mildura/stay"
   }
  ],
@@ -3425,6 +3597,368 @@
    "date": "2026-11-01",
    "clicks": 0,
    "impressions": 14
+  },
+  {
+   "date": "2026-11-02",
+   "clicks": 0,
+   "impressions": 21
   }
- ]
+ ],
+ "allTime": {
+  "start": "2026-04-30",
+  "views": 261,
+  "users": 198,
+  "cta": {
+   "book_tour": 2,
+   "website": 1,
+   "map": 1
+  },
+  "daily": [
+   {
+    "date": "2026-04-30",
+    "views": 21,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-01",
+    "views": 3,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-02",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-03",
+    "views": 26,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-04",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-07",
+    "views": 3,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-08",
+    "views": 7,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-09",
+    "views": 4,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-10",
+    "views": 2,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-11",
+    "views": 3,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-12",
+    "views": 4,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-13",
+    "views": 2,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-14",
+    "views": 4,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-15",
+    "views": 4,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-16",
+    "views": 2,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-17",
+    "views": 2,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-18",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-20",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-21",
+    "views": 3,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-22",
+    "views": 2,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-23",
+    "views": 2,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-24",
+    "views": 2,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-25",
+    "views": 3,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-26",
+    "views": 5,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-27",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-28",
+    "views": 2,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-29",
+    "views": 3,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-30",
+    "views": 2,
+    "cta": 0
+   },
+   {
+    "date": "2026-05-31",
+    "views": 2,
+    "cta": 0
+   },
+   {
+    "date": "2026-06-02",
+    "views": 8,
+    "cta": 0
+   },
+   {
+    "date": "2026-06-03",
+    "views": 3,
+    "cta": 0
+   },
+   {
+    "date": "2026-06-04",
+    "views": 2,
+    "cta": 0
+   },
+   {
+    "date": "2026-06-05",
+    "views": 3,
+    "cta": 0
+   },
+   {
+    "date": "2026-06-06",
+    "views": 2,
+    "cta": 0
+   },
+   {
+    "date": "2026-06-07",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-06-09",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-06-16",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-06-17",
+    "views": 2,
+    "cta": 0
+   },
+   {
+    "date": "2026-06-23",
+    "views": 4,
+    "cta": 0
+   },
+   {
+    "date": "2026-06-24",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-06-26",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-06-27",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-06-29",
+    "views": 2,
+    "cta": 0
+   },
+   {
+    "date": "2026-07-01",
+    "views": 3,
+    "cta": 0
+   },
+   {
+    "date": "2026-07-03",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-07-04",
+    "views": 10,
+    "cta": 0
+   },
+   {
+    "date": "2026-07-07",
+    "views": 4,
+    "cta": 0
+   },
+   {
+    "date": "2026-07-09",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-07-12",
+    "views": 5,
+    "cta": 0
+   },
+   {
+    "date": "2026-07-15",
+    "views": 3,
+    "cta": 0
+   },
+   {
+    "date": "2026-07-16",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-07-17",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-07-20",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-07-22",
+    "views": 2,
+    "cta": 0
+   },
+   {
+    "date": "2026-07-23",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-10-20",
+    "views": 2,
+    "cta": 0
+   },
+   {
+    "date": "2026-10-21",
+    "views": 9,
+    "cta": 1
+   },
+   {
+    "date": "2026-10-23",
+    "views": 3,
+    "cta": 0
+   },
+   {
+    "date": "2026-10-24",
+    "views": 28,
+    "cta": 2
+   },
+   {
+    "date": "2026-10-25",
+    "views": 7,
+    "cta": 1
+   },
+   {
+    "date": "2026-10-26",
+    "views": 7,
+    "cta": 0
+   },
+   {
+    "date": "2026-10-27",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-10-28",
+    "views": 4,
+    "cta": 0
+   },
+   {
+    "date": "2026-10-29",
+    "views": 5,
+    "cta": 0
+   },
+   {
+    "date": "2026-10-30",
+    "views": 3,
+    "cta": 0
+   },
+   {
+    "date": "2026-10-31",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-11-01",
+    "views": 5,
+    "cta": 0
+   },
+   {
+    "date": "2026-11-02",
+    "views": 2,
+    "cta": 0
+   },
+   {
+    "date": "2026-11-04",
+    "views": 1,
+    "cta": 0
+   }
+  ]
+ }
 }
