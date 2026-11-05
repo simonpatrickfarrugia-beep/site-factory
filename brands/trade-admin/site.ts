@@ -31,6 +31,7 @@ export function routes(): Route[] {
   const compares = [
     { slug: 'job-management-software', name: 'Job apps compared', focus: null },
     { slug: 'tradify-vs-servicem8', name: 'Tradify vs ServiceM8', focus: ['tradify', 'servicem8'] },
+    { slug: 'tradify-vs-fergus', name: 'Tradify vs Fergus', focus: ['tradify', 'fergus'] },
     { slug: 'servicem8-pricing', name: 'ServiceM8 pricing', focus: ['servicem8'] },
     { slug: 'tradify-pricing', name: 'Tradify pricing', focus: ['tradify'] },
     { slug: 'fergus-pricing', name: 'Fergus pricing', focus: ['fergus'] },

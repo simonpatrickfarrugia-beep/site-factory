@@ -30,6 +30,7 @@ export interface Pages {
   'invoice-builder': ToolPage;
   'job-management-software': ComparePage;
   'tradify-vs-servicem8': ComparePage;
+  'tradify-vs-fergus': ComparePage;
   'servicem8-pricing': ComparePage;
   'tradify-pricing': ComparePage;
   'fergus-pricing': ComparePage;
