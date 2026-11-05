@@ -255,6 +255,18 @@
  "_todo": "Simon's to-do list shown at the top of HQ. kind: do | decide. sprint: true = counts toward the current sprint. Claude (or the daily coach / weekly autopilot) sets done: true + doneAt when Simon says 'done' or an approval email arrives.",
  "todo": [
   {
+   "id": "ta-mail-hub",
+   "kind": "do",
+   "sprint": true,
+   "mins": 15,
+   "what": "Trade Admin mail hub setup with Claude in the Site Factory chat (checklist in claude/MAIL-HUB.md). Then Claude switches Trade Admin on in IMN HQ outreach",
+   "why": "Trade Admin outreach (associations, TAFE, bookkeepers) is blocked until tradeadmin.com.au can send from Outlook",
+   "link": "https://admin.microsoft.com",
+   "linkLabel": "M365 admin",
+   "done": false,
+   "addedAt": "2026-11-05"
+  },
+  {
    "id": "chc-review-quotes",
    "kind": "do",
    "sprint": false,
