@@ -1,0 +1,27 @@
+---
+import VisitLog from './VisitLog.astro';
+import { byDay, dayLabel, timeLabel, type Species, type Visit } from '../../../brands/backyard-wild/model';
+interface Props { species: Species; visits: Visit[] }
+const { species: s, visits } = Astro.props;
+const birds = visits.reduce((n, v) => n + v.count, 0);
+const hours = visits.map((v) => Number(new Intl.DateTimeFormat('en-AU', { timeZone: 'Australia/Melbourne', hour: 'numeric', hourCycle: 'h23' }).format(new Date(v.at))));
+const morning = hours.filter((h) => h < 12).length;
+const names = { [s.slug]: s.name };
+---
+<div class="bw-wrap bw-section">
+  <p class="bw-crumb"><a href="/visitors">Visitors</a></p>
+  <h1 class="bw-h1 bw-h1--page">{s.name}</h1>
+  <p class="bw-lede">{s.note}</p>
+  <ul class="bw-facts">
+    <li><strong>{visits.length}</strong> {visits.length === 1 ? 'visit' : 'visits'}</li>
+    <li><strong>{birds}</strong> {birds === 1 ? 'bird' : 'birds'} counted</li>
+    <li>First seen <strong>{dayLabel(visits[visits.length - 1].at)}</strong> at {timeLabel(visits[visits.length - 1].at)}</li>
+    <li><strong>{morning}</strong> of {visits.length} visits before midday</li>
+  </ul>
+  {byDay(visits).map((d) => (
+    <section class="bw-day" aria-label={d.label}>
+      <h2 class="bw-h2 bw-day__h">{d.label}</h2>
+      <VisitLog visits={d.visits} names={names} linked={false} />
+    </section>
+  ))}
+</div>

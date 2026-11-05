@@ -1,0 +1,40 @@
+---
+/** The hero: the bath itself. Shows the YouTube stream when there is one, otherwise a drawn bath with a slow ripple. */
+import type { Content } from '../../../brands/backyard-wild/model';
+interface Props { stream: Content['stream'] }
+const { stream } = Astro.props;
+const label = stream.status === 'live' ? 'Live now' : stream.status === 'replay' ? 'Replay' : 'Camera coming soon';
+const text = stream[stream.status];
+---
+<figure class="bw-bath">
+  <div class={`bw-bath__frame${stream.youtubeId ? ' has-video' : ''}`}>
+    {stream.youtubeId ? (
+      <iframe
+        src={`https://www.youtube-nocookie.com/embed/${stream.youtubeId}?autoplay=1&mute=1&playsinline=1&rel=0`}
+        title="Backyard Wild bird bath camera"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    ) : (
+      <svg viewBox="0 0 400 260" role="img" aria-labelledby="bath-t">
+        <title id="bath-t">A bird bath with a small fountain, seen from above</title>
+        <ellipse cx="200" cy="130" rx="190" ry="118" fill="#2F7F8F" />
+        <ellipse cx="200" cy="130" rx="166" ry="98" fill="#3A93A2" />
+        <g class="bw-ripple" fill="none" stroke="#BFE4E6" stroke-width="2">
+          <ellipse cx="200" cy="130" rx="40" ry="24" />
+          <ellipse cx="200" cy="130" rx="40" ry="24" />
+          <ellipse cx="200" cy="130" rx="40" ry="24" />
+        </g>
+        <ellipse cx="200" cy="130" rx="30" ry="18" fill="#22414A" />
+        <circle cx="200" cy="124" r="5" fill="#BFE4E6" />
+        <ellipse cx="292" cy="160" rx="34" ry="20" fill="#8C8577" />
+        <ellipse cx="288" cy="155" rx="26" ry="13" fill="#A39C8C" />
+      </svg>
+    )}
+  </div>
+  <figcaption class="bw-bath__cap">
+    <span class={`bw-status bw-status--${stream.status}`}>{label}</span>
+    <span>{text}</span>
+  </figcaption>
+</figure>

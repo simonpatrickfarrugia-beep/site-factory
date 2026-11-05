@@ -53,7 +53,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        brand: [trailers, vic, community-help-co, shortlisted, trade-admin, paycalc, simon-says-travel]
+        brand: [trailers, vic, community-help-co, shortlisted, trade-admin, paycalc, simon-says-travel, backyard-wild]
     env:
       BRAND: ${{ matrix.brand }}
     steps:

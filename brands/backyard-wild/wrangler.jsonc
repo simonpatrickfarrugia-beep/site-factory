@@ -1,0 +1,15 @@
+{
+  // Cloudflare Worker for Backyard Wild: a Melbourne bird bath on camera. Static files only.
+  // Build:  BRAND=backyard-wild npm run build
+  // Deploy: npx wrangler deploy --config brands/backyard-wild/wrangler.jsonc
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "backyard-wild",
+  "compatibility_date": "2026-06-01",
+  "assets": {
+    "directory": "../../dist",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+  // No custom domain yet (free path). When one is bought, add:
+  // "routes": [ { "pattern": "<domain>", "custom_domain": true } ]
+}

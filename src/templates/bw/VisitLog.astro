@@ -1,0 +1,18 @@
+---
+/** A run of visits as a field-notebook log: time, bird, what it did. */
+import { doingLabel, timeLabel, type Visit } from '../../../brands/backyard-wild/model';
+interface Props { visits: Visit[]; names: Record<string, string>; linked?: boolean }
+const { visits, names, linked = true } = Astro.props;
+---
+<ol class="bw-log">
+  {visits.map((v) => (
+    <li class="bw-log__row">
+      <time class="bw-log__time" datetime={v.at}>{timeLabel(v.at)}</time>
+      <span class="bw-log__bird">
+        {linked && names[v.species] ? <a href={`/birds/${v.species}`}>{names[v.species]}</a> : (names[v.species] ?? v.species.replace(/-/g, ' '))}
+        {v.count > 1 && <span class="bw-log__count"> ×{v.count}</span>}
+      </span>
+      <span class="bw-log__doing">{doingLabel[v.doing]}</span>
+    </li>
+  ))}
+</ol>

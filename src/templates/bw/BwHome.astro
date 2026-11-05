@@ -1,0 +1,65 @@
+---
+import BathFrame from './BathFrame.astro';
+import VisitLog from './VisitLog.astro';
+import { dateLabel, dayLabel, type BuildStep, type Content, type Species, type Visit } from '../../../brands/backyard-wild/model';
+interface Props {
+  content: Content; species: Species[]; counts: Record<string, { visits: number; birds: number; last: string }>;
+  names: Record<string, string>; recent: Visit[]; build: BuildStep | null;
+}
+const { content: c, species, counts, names, recent, build } = Astro.props;
+const seen = species.filter((s) => counts[s.slug]).length;
+---
+<div class="bw-wrap">
+  <section class="bw-hero">
+    <div class="bw-hero__text">
+      <h1 class="bw-h1">{c.home.h1}</h1>
+      <p class="bw-lede">{c.home.lede}</p>
+    </div>
+    <BathFrame stream={c.stream} />
+  </section>
+
+  <section class="bw-section" aria-labelledby="recent-h">
+    <h2 id="recent-h" class="bw-h2">Latest at the bath</h2>
+    {recent.length > 0 ? (
+      <>
+        <p class="bw-sub">From {dayLabel(recent[recent.length - 1].at)} to {dayLabel(recent[0].at)}.</p>
+        <VisitLog visits={recent} names={names} linked={false} />
+        <p><a class="bw-link" href="/visitors">See every visit</a></p>
+      </>
+    ) : (
+      <p class="bw-empty">Nothing logged yet. Once the camera is up, every bird it catches lands here automatically: the time, the bird, and whether it drank, bathed or just had a look. <a href="/the-build">See where the setup is at</a>.</p>
+    )}
+  </section>
+
+  <section class="bw-section" aria-labelledby="watch-h">
+    <h2 id="watch-h" class="bw-h2">{c.watchList.h2}</h2>
+    <p class="bw-sub">{c.watchList.intro} {seen > 0 && <strong>{seen} of {species.length} spotted so far.</strong>}</p>
+    <ul class="bw-watch">
+      {species.map((s) => {
+        const t = counts[s.slug];
+        return (
+          <li class={`bw-watch__item${t ? ' is-seen' : ''}`}>
+            <span class="bw-watch__tick" aria-hidden="true">{t ? '✓' : ''}</span>
+            <div>
+              <h3 class="bw-watch__name">{t ? <a href={`/birds/${s.slug}`}>{s.name}</a> : s.name}</h3>
+              <p class="bw-watch__note">{s.note}</p>
+              <p class="bw-watch__status">{t ? `Seen ${t.visits} ${t.visits === 1 ? 'time' : 'times'}, last on ${dayLabel(t.last)}` : 'Not seen yet'}</p>
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  </section>
+
+  {build && (
+    <section class="bw-section bw-section--build" aria-labelledby="build-h">
+      <h2 id="build-h" class="bw-h2">From the build</h2>
+      <article class="bw-buildcard">
+        {build.date && <p class="bw-buildcard__date"><time datetime={build.date}>{dateLabel(build.date)}</time></p>}
+        <h3 class="bw-h3">{build.title}</h3>
+        <p>{build.body[0]}</p>
+        <p><a class="bw-link" href="/the-build">Follow the build</a></p>
+      </article>
+    </section>
+  )}
+</div>

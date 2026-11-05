@@ -1,0 +1,18 @@
+---
+import { dateLabel, type BuildStep } from '../../../brands/backyard-wild/model';
+interface Props { steps: BuildStep[] }
+const { steps } = Astro.props;
+---
+<div class="bw-wrap bw-section">
+  <h1 class="bw-h1 bw-h1--page">The build</h1>
+  <p class="bw-lede">Backyard Wild starts with one bird bath and grows from there. Every upgrade gets written up here, in order, so you can see the garden come together.</p>
+  <ol class="bw-steps">
+    {steps.map((s) => (
+      <li class={`bw-step${s.done ? ' is-done' : ''}`}>
+        <p class="bw-step__when">{s.date ? <time datetime={s.date}>{dateLabel(s.date)}</time> : 'Coming up'}</p>
+        <h2 class="bw-h3">{s.title}</h2>
+        {s.body.map((p) => <p>{p}</p>)}
+      </li>
+    ))}
+  </ol>
+</div>

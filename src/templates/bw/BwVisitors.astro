@@ -1,0 +1,40 @@
+---
+import VisitLog from './VisitLog.astro';
+import { byDay, type Species, type Visit } from '../../../brands/backyard-wild/model';
+interface Props { visits: Visit[]; names: Record<string, string>; species: Species[]; counts: Record<string, { visits: number; birds: number; last: string }> }
+const { visits, names, species, counts } = Astro.props;
+const days = byDay(visits);
+const ranked = species.filter((s) => counts[s.slug]).sort((a, b) => counts[b.slug].visits - counts[a.slug].visits);
+---
+<div class="bw-wrap bw-section">
+  <h1 class="bw-h1 bw-h1--page">Visitors</h1>
+  <p class="bw-lede">Every bird the camera has caught at the bath, newest first. The log fills itself: the camera records a clip whenever something lands, and each clip is identified and added here.</p>
+  {visits.length === 0 ? (
+    <div class="bw-empty bw-empty--big">
+      <p>The log is empty for now: the camera isn't up yet.</p>
+      <p>When it is, you'll see each visit here with its time, the bird, how many came, and what they did. In the meantime, here's <a href="/">who we expect to see</a> and <a href="/the-build">how the setup is going</a>.</p>
+    </div>
+  ) : (
+    <>
+      {ranked.length > 0 && (
+        <section aria-labelledby="tally-h">
+          <h2 id="tally-h" class="bw-h2">Most frequent visitors</h2>
+          <table class="bw-tally">
+            <thead><tr><th scope="col">Bird</th><th scope="col">Visits</th><th scope="col">Birds counted</th></tr></thead>
+            <tbody>
+              {ranked.map((s) => (
+                <tr><th scope="row"><a href={`/birds/${s.slug}`}>{s.name}</a></th><td>{counts[s.slug].visits}</td><td>{counts[s.slug].birds}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      )}
+      {days.map((d) => (
+        <section class="bw-day" aria-label={d.label}>
+          <h2 class="bw-h2 bw-day__h">{d.label}</h2>
+          <VisitLog visits={d.visits} names={names} />
+        </section>
+      ))}
+    </>
+  )}
+</div>

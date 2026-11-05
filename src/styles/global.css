@@ -1292,3 +1292,110 @@ main { display: block; }
 .contact input, .contact textarea { font: inherit; padding: 0.7rem 0.85rem; border-radius: 10px; border: 2px solid var(--paper); background: #fff; color: var(--paper); }
 .contact button { justify-self: start; margin-top: 0.8rem; border: 0; cursor: pointer; }
 .contact__msg { min-height: 1.3em; font-weight: 700; }
+
+/* ---------- Backyard Wild (sanctuary): a bird bath in a Melbourne garden ---------- */
+[data-theme='sanctuary'] {
+  color-scheme: light;
+  --ink: #E9EFE6;        /* page ground: pale gum leaf */
+  --paper: #1F3A2E;      /* text: bush green */
+  --muted: #536A5D;
+  --line: #C9D4C6;
+  --panel: #F7F9F4;
+  --water: #2F7F8F;
+  --water-deep: #22414A;
+  --wattle: #E3B53B;
+  --bark: #6B4F3A;
+  --wrap: 72rem;
+  --radius: 14px;
+  --step-0: 1.0625rem;
+}
+[data-theme='sanctuary'] body { line-height: 1.65; }
+[data-theme='sanctuary'] h1, [data-theme='sanctuary'] h2, [data-theme='sanctuary'] h3 { font-family: var(--font-display); letter-spacing: -0.02em; }
+[data-theme='sanctuary'] a { color: var(--paper); text-decoration-color: var(--water); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+[data-theme='sanctuary'] a:hover { color: var(--water); }
+[data-theme='sanctuary'] :focus-visible { outline: 3px solid var(--water); outline-offset: 2px; }
+[data-theme='sanctuary'] .site-header { background: var(--ink); border-bottom: 1px solid var(--line); }
+[data-theme='sanctuary'] .wordmark--logo { display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font: 800 1.3rem var(--font-display); letter-spacing: -0.02em; color: var(--paper); }
+[data-theme='sanctuary'] .site-nav a { text-decoration: none; font-weight: 600; }
+[data-theme='sanctuary'] .site-nav a[aria-current='page'] { text-decoration: underline; text-decoration-color: var(--wattle); text-decoration-thickness: 3px; }
+[data-theme='sanctuary'] .site-footer { background: var(--paper); color: #C7D6CC; border-top: 0; }
+[data-theme='sanctuary'] .site-footer a, [data-theme='sanctuary'] .site-footer__name { color: #F2F5EF; text-decoration-color: var(--wattle); }
+
+.bw-wrap { width: min(100% - 2rem, var(--wrap)); margin-inline: auto; }
+.bw-section { padding-block: clamp(1.75rem, 5vw, 3rem); }
+.bw-measure > * { max-width: 66ch; }
+.bw-h1 { font-size: clamp(2.5rem, 8vw, 4.6rem); line-height: 0.98; font-weight: 800; margin: 0 0 1rem; max-width: 13ch; }
+.bw-h1--page { font-size: clamp(2.2rem, 6vw, 3.4rem); max-width: 20ch; }
+.bw-h2 { font-size: clamp(1.4rem, 3.2vw, 1.85rem); font-weight: 800; margin: 0 0 0.5rem; }
+.bw-h3 { font-size: 1.2rem; font-weight: 800; margin: 0 0 0.4rem; }
+.bw-lede { font-size: clamp(1.1rem, 2.3vw, 1.28rem); max-width: 56ch; }
+.bw-sub { color: var(--muted); max-width: 62ch; margin-top: 0; }
+.bw-link { font-weight: 700; }
+.bw-crumb { margin: 0 0 0.5rem; font-weight: 700; }
+.bw-crumb a { text-decoration: none; }
+.bw-crumb a::before { content: '← '; }
+
+/* Hero: words on the left, the bath on the right */
+.bw-hero { display: grid; gap: clamp(1.5rem, 4vw, 3rem); align-items: center; padding-block: clamp(2rem, 6vw, 4rem) clamp(1rem, 3vw, 2rem); }
+@media (min-width: 52rem) { .bw-hero { grid-template-columns: 1fr 1.15fr; } }
+.bw-bath { margin: 0; }
+.bw-bath__frame { aspect-ratio: 400 / 260; border-radius: 50%; overflow: hidden; background: var(--water-deep); box-shadow: 0 0 0 10px #CFC7B6, 0 0 0 11px #B5AC98; margin: 11px; }
+.bw-bath__frame svg { display: block; width: 100%; height: 100%; }
+.bw-bath__frame.has-video { border-radius: 46% / 50%; }
+.bw-bath__frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+.bw-bath__cap { display: flex; flex-wrap: wrap; gap: 0.4rem 0.7rem; align-items: baseline; margin-top: 1.1rem; color: var(--muted); font-size: 0.98rem; }
+.bw-status { font-weight: 700; color: var(--paper); padding: 0.15rem 0.6rem; border-radius: 999px; background: #F3E3B0; }
+.bw-status--live { background: var(--water); color: #fff; }
+.bw-ripple ellipse { transform-origin: 200px 130px; opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .bw-ripple ellipse { animation: bw-ripple 6s ease-out infinite; }
+  .bw-ripple ellipse:nth-child(2) { animation-delay: 2s; }
+  .bw-ripple ellipse:nth-child(3) { animation-delay: 4s; }
+}
+@media (prefers-reduced-motion: reduce) { .bw-ripple ellipse:first-child { opacity: 0.6; transform: scale(2); } }
+@keyframes bw-ripple { 0% { transform: scale(1); opacity: 0.8; } 100% { transform: scale(3.6); opacity: 0; } }
+
+/* The visit log: a field notebook */
+.bw-log { list-style: none; margin: 0.6rem 0 1rem; padding: 0; border-top: 1px solid var(--line); max-width: 44rem; }
+.bw-log__row { display: grid; grid-template-columns: 5.2rem 1fr; gap: 0 1rem; padding: 0.65rem 0; border-bottom: 1px solid var(--line); }
+@media (min-width: 40rem) { .bw-log__row { grid-template-columns: 5.2rem 1fr auto; align-items: baseline; } }
+.bw-log__time { font-variant-numeric: tabular-nums; color: var(--muted); font-weight: 600; }
+.bw-log__bird { font-weight: 700; }
+.bw-log__count { color: var(--bark); }
+.bw-log__doing { grid-column: 2; color: var(--muted); }
+@media (min-width: 40rem) { .bw-log__doing { grid-column: auto; } }
+.bw-day { margin-top: 2rem; }
+.bw-day__h { font-size: 1.25rem; }
+.bw-empty { background: var(--panel); border: 1px dashed #A9B9AC; border-radius: var(--radius); padding: 1rem 1.2rem; max-width: 62ch; }
+.bw-empty--big { margin-top: 1.5rem; }
+.bw-empty--big p:first-child { font-weight: 700; }
+
+/* Watch list */
+.bw-watch { list-style: none; margin: 1.2rem 0 0; padding: 0; display: grid; gap: 0 2rem; }
+@media (min-width: 46rem) { .bw-watch { grid-template-columns: 1fr 1fr; } }
+.bw-watch__item { display: grid; grid-template-columns: 1.9rem 1fr; gap: 0.7rem; padding: 1rem 0; border-top: 1px solid var(--line); }
+.bw-watch__tick { width: 1.6rem; height: 1.6rem; border-radius: 50%; border: 2px solid #A9B9AC; display: grid; place-items: center; font-weight: 800; color: #fff; margin-top: 0.15rem; }
+.bw-watch__item.is-seen .bw-watch__tick { background: var(--water); border-color: var(--water); }
+.bw-watch__name { font-size: 1.12rem; font-weight: 800; margin: 0 0 0.2rem; }
+.bw-watch__note { margin: 0 0 0.3rem; }
+.bw-watch__status { margin: 0; font-size: 0.92rem; color: var(--muted); }
+.bw-watch__item.is-seen .bw-watch__status { color: var(--water); font-weight: 700; }
+
+/* Build */
+.bw-section--build { border-top: 1px solid var(--line); }
+.bw-buildcard { max-width: 62ch; }
+.bw-buildcard__date, .bw-step__when { color: var(--bark); font-weight: 700; margin: 0 0 0.25rem; }
+.bw-steps { list-style: none; margin: 2rem 0 0; padding: 0 0 0 1.6rem; border-left: 3px solid var(--line); max-width: 64ch; }
+.bw-step { position: relative; padding-bottom: 2rem; }
+.bw-step::before { content: ''; position: absolute; left: calc(-1.6rem - 10px); top: 0.35rem; width: 17px; height: 17px; border-radius: 50%; background: var(--ink); border: 3px solid #A9B9AC; }
+.bw-step.is-done::before { background: var(--wattle); border-color: var(--bark); }
+.bw-step:not(.is-done) { color: var(--muted); }
+.bw-step:not(.is-done) .bw-h3 { color: var(--paper); }
+
+/* Species page and tally */
+.bw-facts { list-style: none; padding: 0; margin: 1.2rem 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.bw-facts li { background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 0.35rem 0.9rem; }
+.bw-tally { border-collapse: collapse; margin: 0.6rem 0 1rem; min-width: min(100%, 28rem); }
+.bw-tally th, .bw-tally td { text-align: left; padding: 0.5rem 1rem 0.5rem 0; border-bottom: 1px solid var(--line); }
+.bw-tally td { font-variant-numeric: tabular-nums; }
+.bw-tally thead th { color: var(--muted); font-weight: 600; }

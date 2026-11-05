@@ -58,6 +58,12 @@ import SstDestination from './sst/SstDestination.astro';
 import SstPage from './sst/SstPage.astro';
 import SstContact from './sst/SstContact.astro';
 
+import BwHome from './bw/BwHome.astro';
+import BwVisitors from './bw/BwVisitors.astro';
+import BwBuild from './bw/BwBuild.astro';
+import BwSpecies from './bw/BwSpecies.astro';
+import BwPage from './bw/BwPage.astro';
+
 export const templates = {
   home: Home,
   originalFilms: OriginalFilms,
@@ -117,4 +123,9 @@ export const templates = {
   sstDestination: SstDestination,
   sstPage: SstPage,
   sstContact: SstContact,
+  bwHome: BwHome,
+  bwVisitors: BwVisitors,
+  bwBuild: BwBuild,
+  bwSpecies: BwSpecies,
+  bwPage: BwPage,
 };
