@@ -131,6 +131,7 @@ export function hqAnswersProps() {
  */
 const TRAFFIC_SITES: { id: string; name: string; url: string; stats: string; money: string[]; moneyNote?: string }[] = [
   { id: 'paycalc', name: 'MyPayCalc', url: 'https://mypaycalc.com.au', stats: 'data/paycalc/stats.json', money: [] as string[], moneyNote: 'ads later' },
+  { id: 'simon-says-travel', name: 'Simon Says Travel', url: 'https://simonsaystravel.com.au', stats: 'data/simon-says-travel/stats.json', money: ['book_stay', 'book_tour'] as string[], moneyNote: 'hotel and tour clicks' },
   { id: 'vic', name: 'Vic Tours', url: 'https://victours.com.au', stats: 'data/vic/stats.json', money: ['book_stay', 'book_tour', 'book_car'] },
   { id: 'trade-admin', name: 'Trade Admin', url: 'https://tradeadmin.com.au', stats: 'data/trade-admin/stats.json', money: ['quiz_trial_servicem8', 'quiz_trial_tradify', 'quiz_trial_fergus', 'partner_fergus', 'app_site'] },
   { id: 'chc', name: 'Community Help Co', url: 'https://communityhelp.com.au', stats: 'data/community-help-co/stats.json', money: [] as string[], moneyNote: 'enquiries by email' },

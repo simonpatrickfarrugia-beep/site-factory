@@ -17,7 +17,7 @@ interface Props {
   total: number[]; totalDays: string[]; updated: string | null; builtAt: string;
 }
 const p = Astro.props;
-const COLORS: Record<string, string> = { paycalc: '#FFE14D', vic: '#7FD49B', 'trade-admin': '#F0955A', chc: '#7FB2F0', trailers: '#C9A6F2' };
+const COLORS: Record<string, string> = { paycalc: '#FFE14D', 'simon-says-travel': '#FFB23F', vic: '#7FD49B', 'trade-admin': '#F0955A', chc: '#7FB2F0', trailers: '#C9A6F2' };
 const n = (v: number) => v.toLocaleString('en-AU');
 const mel = (iso: string | null, opts: Intl.DateTimeFormatOptions) => (iso ? new Date(iso).toLocaleString('en-AU', { timeZone: 'Australia/Melbourne', ...opts }) : '—');
 const dayName = (d: string | null) => (d ? new Date(d + 'T12:00:00Z').toLocaleDateString('en-AU', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' }) : '—');
