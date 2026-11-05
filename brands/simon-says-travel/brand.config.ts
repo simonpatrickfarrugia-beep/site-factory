@@ -36,7 +36,7 @@ export default defineBrand({
 
   data: { source: 'snapshot' },
   forms: [],
-  analytics: {},
+  analytics: { ga4Id: 'G-L397SZ03HE' }, // GA4 property "Simon Says Travel" (5 Nov 2026)
   ads: {},
   payments: { enabled: false },
 });
