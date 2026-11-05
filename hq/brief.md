@@ -1,30 +1,30 @@
-# Site Factory brief — Wed 04 Nov 2026 (generated 01:36 UTC)
+# Site Factory brief — Thu 05 Nov 2026 (generated 01:43 UTC)
 
 _Auto-written daily by scripts/hq/brief.py. Read this first in any new chat. Refresh: scripts/claude/brief.sh_
 
 ## Headline
 
-Revenue to date **A$0.00** · sprint "First $1" ended 4 days ago · Simon has **10** open items (~112 min)
+Revenue to date **A$0.00** · sprint "First $1" ended 5 days ago · Simon has **10** open items (~112 min)
 
 ## Traffic (last 28 days)
 
 | Site | Station | Views (prev) | Last 7 days | CTA clicks | Google clicks / impressions |
 |---|---|---|---|---|---|
-| movietrailer.channel | Measure | 194 (172) | 1 7 3 4 1 4 5 | films_banner 1 | 6 / 385 |
-| victours.com.au | Launch | 77 (0) | 1 4 5 3 1 5 2 | book_tour 2, website 1, map 1 | 4 / 1922 |
-| Community Help Co | Launch | 10 (0) | 1 1 7 1 | 0 | 0 / 104 |
-| tradeadmin.com.au | Launch | 18 (0) | 11 1 7 | 0 | 0 / 63 |
+| movietrailer.channel | Measure | 186 (181) | 7 3 4 1 4 5 1 | films_banner 1 | 6 / 348 |
+| victours.com.au | Launch | 77 (0) | 1 4 5 3 1 5 2 | book_tour 2, website 1, map 1 | 4 / 1936 |
+| Community Help Co | Launch | 15 (0) | 1 1 7 1 5 | 0 | 0 / 116 |
+| tradeadmin.com.au | Launch | 23 (0) | 11 1 7 5 | 0 | 0 / 104 |
 
-- **movietrailer.channel** (stats 7h ago) — top pages: / 65, /browse 13, /movies/star-wars-episode-v---the-empire-strikes-back-1980 8, /movies/whalefall-2026 3, /movies/batman-begins-2005 3
-  - Google: "ghost soldier movie 2006" 47 impr, pos 8.5; "the sixth sense trailer" 27 impr, pos 30.3; "the prestige trailer" 26 impr, pos 38.3; "home alone trailer" 24 impr, pos 48; "inception trailer" 15 impr, pos 39.1
+- **movietrailer.channel** (stats 7h ago) — top pages: / 62, /browse 13, /movies/star-wars-episode-v---the-empire-strikes-back-1980 8, /movies/whalefall-2026 3, /movies/batman-begins-2005 3
+  - Google: "ghost soldier movie 2006" 44 impr, pos 8.7; "the sixth sense trailer" 27 impr, pos 30.3; "the prestige trailer" 25 impr, pos 39.4; "home alone trailer" 20 impr, pos 50.3; "inception trailer" 14 impr, pos 38.9
 - **victours.com.au** (stats 7h ago) — top pages: / 35, /towns 6, /warburton 5, /daylesford 3, /day-trips/torquay 3
-  - Google: "melbourne accomodation southbank" 192 impr, pos 77.5; "sorrento restaurants" 72 impr, pos 87.5; "activities lorne victoria" 57 impr, pos 71; "1004 mornington-flinders road red hill vic 3937" 56 impr, pos 40.1; "best restaurants in mornington peninsula" 44 impr, pos 74.9
-- **Community Help Co** (stats 7h ago) — top pages: / 4, /contact 2, /job-finder 2, /free-daily-journal 1, /about 1
-  - Google: "community services placement" 75 impr, pos 13.1; "help support" 8 impr, pos 23.8; "free resume" 8 impr, pos 40.5; "free cover letter" 7 impr, pos 39.9; "hr support ringwood" 3 impr, pos 47.3
-- **tradeadmin.com.au** (stats 7h ago) — top pages: / 9, /quote-builder 3, /job-management-software 3, /how-we-make-money 1, /invoice-builder 1
-  - Google: "servicem8 vs tradify" 44 impr, pos 68.5; "painter invoice template" 6 impr, pos 84.5; "tradesman quote template" 3 impr, pos 82.3; "electrician quotes" 3 impr, pos 100; "best invoice app for tradesmen" 2 impr, pos 87
+  - Google: "melbourne accomodation southbank" 192 impr, pos 77.5; "sorrento restaurants" 72 impr, pos 87.5; "1004 mornington-flinders road red hill vic 3937" 61 impr, pos 42.1; "activities lorne victoria" 57 impr, pos 71; "best restaurants in mornington peninsula" 44 impr, pos 74.9
+- **Community Help Co** (stats 7h ago) — top pages: / 4, /contact 3, /about 2, /job-finder 2, /free-daily-journal 1
+  - Google: "community service placement" 84 impr, pos 12.7; "free resume" 11 impr, pos 46.5; "help support" 8 impr, pos 23.8; "free cover letter" 7 impr, pos 39.9; "hr support ringwood" 3 impr, pos 47.3
+- **tradeadmin.com.au** (stats 7h ago) — top pages: / 13, /job-management-software 4, /quote-builder 3, /how-we-make-money 1, /invoice-builder 1
+  - Google: "servicem8 vs tradify" 72 impr, pos 70.1; "cleaning invoice examples" 6 impr, pos 68; "painter invoice template" 6 impr, pos 84.5; "best invoice app for tradesmen" 4 impr, pos 86; "tradesman quote template" 4 impr, pos 80.5
 
-Latest milestones: 2026-10-29 vic: Best day ever: 28 visits (24 Oct); 2026-11-04 paycalc: Daily visits crossed 10 (47 visits on 2 Nov, best day yet); 2026-11-04 trade-admin: Daily visits crossed 10 (11 visits on 28 Oct)
+Latest milestones: 2026-11-04 paycalc: Daily visits crossed 10 (47 visits on 2 Nov, best day yet); 2026-11-04 trade-admin: Daily visits crossed 10 (11 visits on 28 Oct); 2026-11-05 paycalc: First Google click (1 Nov, search 'mypaycalc')
 
 ## Health
 
@@ -33,18 +33,19 @@ All checks passing ✅ (sites up, pipeline jobs fresh, live builds current, no f
 ## Pipeline jobs (last run)
 
 - ✅ `intake` 2h ago: Intake: 0 new trailer(s) queued. | Feed UCAP57cF-FSjJKzzXg7ntPlQ failed: YouTube feed UCAP57cF-FSjJKzzXg7ntPlQ: HTTP 404 | Feed UCtlPYzQ188v
-- ✅ `enrich` 5h ago: Enrich: looked at 5, published 3 (Tremors (1990) → /movies/tremors-1990; The Thing (1982) → /movies/the-thing-1982; First Blood (1982) → /mo
-- ✅ `stats` 7h ago: paycalc: 95 views, 0 CTA clicks, 0 Google clicks. | trade-admin: 18 views, 0 CTA clicks, 0 Google clicks. | community-help-co: 10 views, 0 C
-- ✅ `collections` 8h ago: Collections: created 3: 90s Romance Movies (13 films, 3920/mo) → /discover/90s-romance-movies; 2000s Action Movies (18 films, 3900/mo) → /di
-- ✅ `collcheck` 30h ago: Collection check: 0 idea(s) checked (US$0.000). Most winnable: Tom Hanks Movies 305400/mo × 21%; Christian Bale Movies 166600/mo × 16%; 90s 
-- ✅ `demand` 32h ago: Demand: 212 searches analysed; 0 film ideas, 0 new collection ideas. Saved to reports/trailers/demand-2026-10.md.
-- ✅ `niches` 2d ago: Niches: scored 3 of 3. | Dog-friendly hotels by city: 54/100 (demand 1, money 96, ease 98, fit 28). | Pet insurance quotes by breed and stat
-- ✅ `catalogue` 2d ago: Catalogue: queued 30 film(s): Groundhog Day (1993): 61090/mo, Twins (1988): 60890/mo, Once Upon a Time in the West (1968): 60890/mo, The Roc
-- ✅ `recheck` 2d ago: Recheck: looked at 1, published 0. Queue: 1 waiting for OMDb, 15 need review.
-- ✅ `discover` 3d ago: Discover: screened 15 new ideas for US$0.34; 3 promoted to scoring: Dog-friendly hotels by city (4 free domains), Pet insurance quotes by br
-- ✅ `competition` 6d ago: Competition: checked 4; 4 still to check (run again). | AU electric car running costs vs petrol by model: openness 49/100; big players drive
-- ✅ `ratings` 13d ago: Ratings: checked 40, updated 0; 0 never checked.
-- ✅ `keywords` 14d ago: Victorian road trips and itineraries: day trips from melbourne 2900, great alpine road 1900, weekend getaways from melbourne 1900, romantic 
+- ✅ `enrich` 5h ago: Enrich: looked at 1, published 0. Queue: 1 waiting for OMDb, 18 need review.
+- ✅ `travel` 6h ago: 36 searches, 9 calls, US$0.099. Top now: Sydney 38.3, Melbourne 34.8, Travel insurance 34, Brisbane 25.3, Perth 21.7.
+- ✅ `stats` 7h ago: paycalc: 107 views, 0 CTA clicks, 1 Google clicks. | trade-admin: 23 views, 0 CTA clicks, 0 Google clicks. | community-help-co: 15 views, 0 
+- ✅ `ratings` 8h ago: Ratings: checked 40, updated 0; 44 never checked.
+- ✅ `collections` 32h ago: Collections: created 3: 90s Romance Movies (13 films, 3920/mo) → /discover/90s-romance-movies; 2000s Action Movies (18 films, 3900/mo) → /di
+- ✅ `collcheck` 2d ago: Collection check: 0 idea(s) checked (US$0.000). Most winnable: Tom Hanks Movies 305400/mo × 21%; Christian Bale Movies 166600/mo × 16%; 90s 
+- ✅ `demand` 2d ago: Demand: 212 searches analysed; 0 film ideas, 0 new collection ideas. Saved to reports/trailers/demand-2026-10.md.
+- ✅ `niches` 3d ago: Niches: scored 3 of 3. | Dog-friendly hotels by city: 54/100 (demand 1, money 96, ease 98, fit 28). | Pet insurance quotes by breed and stat
+- ✅ `catalogue` 3d ago: Catalogue: queued 30 film(s): Groundhog Day (1993): 61090/mo, Twins (1988): 60890/mo, Once Upon a Time in the West (1968): 60890/mo, The Roc
+- ✅ `recheck` 3d ago: Recheck: looked at 1, published 0. Queue: 1 waiting for OMDb, 15 need review.
+- ✅ `discover` 4d ago: Discover: screened 15 new ideas for US$0.34; 3 promoted to scoring: Dog-friendly hotels by city (4 free domains), Pet insurance quotes by br
+- ✅ `competition` 7d ago: Competition: checked 4; 4 still to check (run again). | AU electric car running costs vs petrol by model: openness 49/100; big players drive
+- ✅ `keywords` 15d ago: Victorian road trips and itineraries: day trips from melbourne 2900, great alpine road 1900, weekend getaways from melbourne 1900, romantic 
 
 ## Simon's list (open)
 
@@ -59,7 +60,7 @@ All checks passing ✅ (sites up, pipeline jobs fresh, live builds current, no f
 - · [do, 10 min] Share communityhelp.com.au/resume-builder with 3 job services, schools or community groups you know (`chc-share-resume`)
 - · [do, 60 min] IMN company sitting (November, when cash allows): buy imnetwork.com.au, set up IMN email, then move GitHub, Cloudflare, domains and Google accounts into Independent Media Network Pty Ltd's name (`imn-setup-nov`)
 
-Done in the last 7 days: Email Careerjet (reply to the welcome email or use their con; Cloudflare → Workers & Pages → community-help-co → Settings ; Apply to the Expedia Group affiliate programme (covers Wotif; Sign up as a Careerjet publisher (free) with communityhelp.c; Send the Halloween movie-night page and a Vic Tours road tri; Cloudflare Email Routing: hello@victours.com.au → your Gmail; Bing Webmaster Tools: import both sites from Search Console; Cloudflare Access: login on /hq pages (both domains); Community Help Co: Cloudflare → Rules → Redirect Rules → 'Re; Community Help Co: create a Google Business Profile as a ser; Adzuna API: not paying £8/month (Simon's call, 28 Oct); Trade Admin: www.tradeadmin.com.au shows an error. In Cloudf; Trade Admin: apply to the Tradify partner programme (Fergus ; MyPayCalc: Search Console → Add property → Domain → mypaycal; MyPayCalc: GA4 → Admin → Create property 'MyPayCalc' → Web s; MyPayCalc: Cloudflare → mypaycalc.com.au → Rules → Redirect ; Bing Webmaster Tools → Add site → Import from Google Search 
+Done in the last 7 days: Email Careerjet (reply to the welcome email or use their con; Cloudflare → Workers & Pages → community-help-co → Settings ; Sign up as a Careerjet publisher (free) with communityhelp.c; MyPayCalc: Search Console → Add property → Domain → mypaycal; MyPayCalc: GA4 → Admin → Create property 'MyPayCalc' → Web s; MyPayCalc: Cloudflare → mypaycalc.com.au → Rules → Redirect ; Bing Webmaster Tools → Add site → Import from Google Search 
 
 ## Claude is on
 
@@ -75,8 +76,20 @@ Done in the last 7 days: Email Careerjet (reply to the welcome email or use thei
 
 ## Changes in the last 7 days
 
-100 commits (29 automated data updates). Hand-made changes:
+100 commits (30 automated data updates). Hand-made changes:
 
+- 2026-11-05 Vic Tours: longer road-trip guides + Skimlinks toggle
+- 2026-11-05 Leads: daily call list [skip ci]
+- 2026-11-04 HQ: milestone paycalc first Google click [skip ci]
+- 2026-11-04 Docs: Simon Says Travel notes and launch steps [skip ci]
+- 2026-11-04 Merge Simon Says Travel (new brand)
+- 2026-11-04 Simon Says Travel: Manrope body font, fuller reports intro
+- 2026-11-04 Simon Says Travel: new brand (monthly Aussie Travel Pulse)
+- 2026-11-04 Simon Says Travel: batch the biggest searches together for better precision
+- 2026-11-04 Pipeline: monthly Google Trends job for Simon Says Travel
+- 2026-11-04 Featured block: heading only written when there are organisations to show (no stray text on empty pages)
+- 2026-11-04 Outreach follow-through: give first (featured orgs on our pages), one prefilled follow-up + auto-close, reply 
+- 2026-11-04 Trade Admin: Fergus referral partner link (approved 4 Nov) on comparisons + quiz; disclosure + money page; mon
 - 2026-11-04 Leads: daily call list [skip ci]
 - 2026-11-03 HQ: milestone daily visits crossed 10 (paycalc, trade-admin) [skip ci]
 - 2026-11-03 MyPayCalc: repayments by loan size (19 pages, $200k to $1.5m)
@@ -90,18 +103,6 @@ Done in the last 7 days: Email Careerjet (reply to the welcome email or use thei
 - 2026-11-03 CHC price line (free first chat, pay per session, NDIS-claimable); give-first outreach templates
 - 2026-11-03 Forms: time-trap spam filter; 90-day targets for Trade Admin and MyPayCalc
 - 2026-11-03 CHC builders: count when someone starts filling in the resume or cover letter
-- 2026-11-03 IMN HQ: Radar draft links to the target's own page
-- 2026-11-03 GA4: owner opt-out per device (?notrack=1 / ?notrack=0)
-- 2026-11-03 Trade Admin: Tradify partner offer (50% off 3 months) form
-- 2026-11-03 CHC: '5.0 ★ on Google · 6 reviews' link on home and About
-- 2026-11-03 CHC job finder: Careerjet JobBox when the API can't be reached
-- 2026-11-03 Leads: daily call list [skip ci]
-- 2026-11-02 IMN HQ: phones open Outlook on the web, not the mail app (keeps the work Outlook account out of it)
-- 2026-11-02 IMN HQ: phone-friendly layout
-- 2026-11-02 IMN HQ: Radar daily prospect feed (Today tab)
-- 2026-11-02 IMN HQ: affiliate programme tracker (Affiliates tab)
-- 2026-11-01 Leads: daily call list [skip ci]
-- 2026-11-01 Vic Tours: Viator products refreshed
 
 ## Where things live
 
