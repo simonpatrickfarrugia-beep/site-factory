@@ -2,7 +2,7 @@ import { defineBrand } from '../../src/lib/brand-schema';
 
 export default defineBrand({
   slug: 'backyard-wild',
-  // No domain bought yet (Nov 2026: free path until it earns). Runs on backyard-wild.simonpatrickfarrugia.workers.dev.
+  // No domain bought yet (Nov 2026: free path until it earns). Runs on backyard-wild.simonpatrickfarrugia.workers.dev. YouTube: @BackyardWildAU.
   name: 'Backyard Wild',
   domain: 'backyardwild.com',
   launched: false,
@@ -24,6 +24,7 @@ export default defineBrand({
   footer: [
     { label: 'About', href: '/about' },
     { label: 'Privacy', href: '/privacy' },
+    { label: 'YouTube', href: 'https://www.youtube.com/@BackyardWildAU' },
   ],
   footerNote: 'Backyard Wild is run by Independent Media Network Pty Ltd, Melbourne. The camera points at the bird bath only, never at people, the street or the neighbours.',
 
