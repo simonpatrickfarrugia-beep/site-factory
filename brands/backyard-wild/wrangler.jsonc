@@ -1,5 +1,5 @@
 {
-  // Cloudflare Worker for Backyard Wild: a Melbourne bird bath on camera. Static files only.
+  // Cloudflare Worker for Backyard Wild: a Melbourne bird bath on camera. Static files only (no /api).
   // Build:  BRAND=backyard-wild npm run build
   // Deploy: npx wrangler deploy --config brands/backyard-wild/wrangler.jsonc
   "$schema": "../../node_modules/wrangler/config-schema.json",
