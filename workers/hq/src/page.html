@@ -340,7 +340,8 @@ function toast(msg) {
 async function load() {
   try {
     const [board, summary, prospects, replies, pipeline, affiliates, radar, needs] = await Promise.all([api('/api/board'), api('/api/summary'), api('/api/prospects'), api('/api/replies'), api('/api/pipeline'), api('/api/affiliates'), api('/api/radar'), api('/api/needs')]);
-    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar, needs });
+    const send = await api('/api/send/status').catch(() => null);
+    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar, needs, send });
     $('#updated').textContent = 'Targets scored ' + new Date(prospects.generated).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
     render();
   } catch (e) {
@@ -517,10 +518,12 @@ async function openDraft(brand, key, org) {
   let tpl;
   try { tpl = await api('/api/templates?brand=' + encodeURIComponent(brand) + '&segment=' + encodeURIComponent(t.segment)); } catch (e) { body.innerHTML = '<p class="error">' + esc(e.message) + '</p>'; return; }
   const d = { ver: 0, subject: tpl.versions[0].subject, body: tpl.versions[0].body, id: tpl.versions[0].id, edited: false };
+  const written = org && org.draft_body ? { subject: org.draft_subject || tpl.versions[0].subject, body: org.draft_body } : null;
   const from = tpl.brand.from || '';
   const vals = () => ({ first: ($('#d-contact').value.trim().split(/\s+/)[0] || ''), org: $('#d-org').value.trim(), region: t.regionLabel, page: t.page || tpl.brand.site, site: tpl.brand.site });
   body.innerHTML = `
     <header><div><h2 id="sheet-title">Draft email</h2><span class="pill" style="margin-top:6px">${esc(tpl.brand.name)} · ${esc(t.segmentLabel)} · ${esc(t.regionLabel)}</span></div><button class="close" id="close">Close</button></header>
+    <p class="empty" id="d-pre" hidden style="padding:0"><b>Radar wrote this email for them.</b> Read it, edit anything, then send.</p>
     <div class="why">
       ${org && org.why ? `<span><b>Why ${esc(org.name)} (Radar ${esc(org.score ?? '')}):</b> ${esc(org.why)}</span>` : ''}
       ${org && org.opener ? `<span><b>Suggested first line:</b> ${esc(org.opener)} <button class="btn ghost" id="d-opener" style="padding:2px 8px;margin-left:4px">Use it</button></span>` : ''}
@@ -548,8 +551,10 @@ async function openDraft(brand, key, org) {
     </div>
     ${brand !== 'paycalc' && t.page ? `<label class="fcheck"><input type="checkbox" id="d-feature" checked><span><b>Give first:</b> add them to <a href="${esc(t.page)}" target="_blank" rel="noopener">${esc(new URL(t.page).pathname)}</a> as a useful contact before you send, and say so in the email. Uses the Website field above.</span></label>` : ''}
     ${from ? `<div class="from">In Outlook, set From to <span id="d-from">${esc(from)}</span><button class="btn ghost" id="d-copyfrom" style="padding:3px 10px">Copy</button></div>` : ''}
+    ${sendLine(brand)}
     <div class="row go-bar">
-      <button class="btn" id="d-go">Add to board &amp; open in Outlook</button>
+      ${canSend(brand) ? `<button class="btn" id="d-send">Send now from ${esc(from)}</button>` : ''}
+      <button class="btn${canSend(brand) ? ' ghost' : ''}" id="d-go">Add to board &amp; open in Outlook</button>
       <button class="btn ghost" id="d-copy">Copy email</button>
     </div>
     <div class="row copy-bar">
@@ -565,6 +570,7 @@ async function openDraft(brand, key, org) {
     $('#d-role').value = org.contact_role || ''; $('#d-web').value = org.website || ''; $('#d-evidence').value = org.evidence_url || '';
     $('#d-go').textContent = 'Open in Outlook';
   }
+  if (written) $('#d-pre').hidden = false;
   const setVer = (i) => { const v = tpl.versions[i]; Object.assign(d, { ver: i, subject: v.subject, body: v.body, id: v.id }); $('#d-subject').value = v.subject; $('#d-body').value = v.body; body.querySelectorAll('[data-ver]').forEach((b) => b.setAttribute('aria-pressed', String(Number(b.dataset.ver) === i))); preview(); };
   const giveFirst = () => !!($('#d-feature') && $('#d-feature').checked);
   // The email text as sent: with "Give first" ticked, the sentence saying we've already featured them goes in.
@@ -580,6 +586,7 @@ async function openDraft(brand, key, org) {
   const preview = () => { $('#d-preview').textContent = 'Subject: ' + fill($('#d-subject').value, vals()) + '\n\n' + fill(mailBody(), vals()); };
   if ($('#d-feature')) $('#d-feature').onchange = preview;
   setVer(0);
+  if (written) { $('#d-subject').value = written.subject; $('#d-body').value = written.body; preview(); }
   if (org && org.opener && $('#d-opener')) $('#d-opener').onclick = () => {
     const b = $('#d-body').value; const i = b.indexOf('\n\n');
     $('#d-body').value = i > -1 ? b.slice(0, i + 2) + org.opener + '\n\n' + b.slice(i + 2) : org.opener + '\n\n' + b;
@@ -630,6 +637,32 @@ async function openDraft(brand, key, org) {
       load();
     } catch (e) { if (w) w.close(); toast(e.message); }
   };
+  if ($('#d-send')) $('#d-send').onclick = async () => {
+    const v = vals(); const btn = $('#d-send');
+    if (giveFirst() && !$('#d-web').value.trim()) { toast('Add their website for Give first (or untick it)'); $('#d-web').focus(); return; }
+    const to = $('#d-email').value.trim(), subj = fill($('#d-subject').value, v), bod = fill(mailBody(), v);
+    if (!confirm('Send to ' + to + ' from ' + from + '?')) return;
+    btn.disabled = true; btn.textContent = 'Sending…';
+    try {
+      let orgId = org ? org.id : null;
+      if (org) { if (org.stage !== 'drafted') await api('/api/orgs/' + org.id + '/drafted', { template_id: d.id, subject: subj, email: to, contact_name: $('#d-contact').value }); }
+      else orgId = (await api('/api/prospects/start', { brand, target: t.key, organisation: v.org, email: to, contact_name: $('#d-contact').value, contact_role: $('#d-role').value, website: $('#d-web').value, evidence_url: $('#d-evidence').value, template_id: d.id, subject: subj })).orgId;
+      if (giveFirst() && orgId) {
+        try { await api('/api/orgs/' + orgId + '/feature', { url: $('#d-web').value, name: v.org || undefined }); }
+        catch (e) { toast('Not sent: featuring failed (' + e.message + '). Fix it on the card, then send.'); load(); btn.disabled = false; return; }
+      }
+      const r = await api('/api/orgs/' + orgId + '/send', { kind: 'first', to, subject: subj, body: bod, contact_name: $('#d-contact').value });
+      state.send = r.status; toast('Sent ✓'); dlg.close(); load();
+    } catch (e) { toast(e.message); btn.disabled = false; btn.textContent = 'Send now from ' + from; load(); }
+  };
+}
+
+// One-click send: on when the Microsoft app is set up, the brand is on the mail hub, and today's ramp has room.
+function canSend(brand) { const s = state.send; return !!(s && s.configured && (s.left[brand] || 0) > 0); }
+function sendLine(brand) {
+  const s = state.send; if (!s || !s.configured) return '';
+  const left = s.left[brand] || 0;
+  return `<p class="empty" style="padding:0"><b>Sending today:</b> ${s.sentToday} sent · ${left} left for ${esc(brandName(brand))} · ${esc(s.ramp)}${left ? '' : '. Today\'s limit is reached; send tomorrow or open in Outlook.'}</p>`;
 }
 
 function renderNeeds() {
@@ -692,7 +725,7 @@ function openFollowUp(o) {
       <div class="field"><label for="f-subject">Subject</label><input id="f-subject" type="text" value="${esc(subj)}"></div>
       <div class="field"><label for="f-body">Email</label><textarea id="f-body" style="min-height:220px">${esc(fill(tplF.body, v))}</textarea></div>
     </div>
-    <div class="row go-bar"><button class="btn" id="f-go">Open follow-up</button><button class="btn ghost" id="f-copy">Copy email</button></div>
+    <div class="row go-bar">${state.send && state.send.configured ? '<button class="btn" id="f-send">Send follow-up now</button>' : ''}<button class="btn${state.send && state.send.configured ? ' ghost' : ''}" id="f-go">Open follow-up</button><button class="btn ghost" id="f-copy">Copy email</button></div>
     <p class="empty" style="padding:0">Send it from the brand address. This is the only follow-up: if there's still no reply in ${14} days, the card closes by itself.</p>`;
   if (!dlg.open) dlg.showModal();
   $('#close').onclick = () => dlg.close();
@@ -704,6 +737,16 @@ function openFollowUp(o) {
       compose($('#f-to').value.trim(), $('#f-subject').value, $('#f-body').value, w);
       toast('Follow-up opened'); dlg.close(); load();
     } catch (e) { if (w) w.close(); toast(e.message); }
+  };
+  if ($('#f-send')) $('#f-send').onclick = async () => {
+    const btn = $('#f-send'); const to = $('#f-to').value.trim();
+    if (!confirm('Send the follow-up to ' + to + '?')) return;
+    btn.disabled = true; btn.textContent = 'Sending…';
+    try {
+      await api('/api/orgs/' + o.id + '/send', { kind: 'followup', to, subject: $('#f-subject').value, body: $('#f-body').value });
+      await api('/api/orgs/' + o.id + '/followup', { subject: $('#f-subject').value });
+      toast('Follow-up sent ✓'); dlg.close(); load();
+    } catch (e) { toast(e.message); btn.disabled = false; btn.textContent = 'Send follow-up now'; }
   };
 }
 
@@ -727,7 +770,7 @@ function renderToday() {
         ${o.opener ? `<dt>Opener</dt><dd>${esc(o.opener)}</dd>` : ''}
       </dl>
       <div class="ractions">
-        <button class="btn" data-rdraft="${o.id}">Draft email</button>
+        <button class="btn" data-rdraft="${o.id}">${o.draft_body ? (state.send && state.send.configured ? 'Review &amp; send' : 'Review email') : 'Draft email'}</button>
         <span class="drop"><select id="rdrop-${o.id}" aria-label="Reason">${DROP.map(([k, l]) => `<option value="${k}">${l}</option>`).join('')}</select>
         <input id="rwhy-${o.id}" type="text" placeholder="Why? (teaches Radar)" style="min-width:150px;flex:1"><button class="btn ghost" data-rdrop="${o.id}">Drop</button></span>
         <button class="btn ghost" data-rlater="${o.id}">Later</button>

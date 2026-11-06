@@ -11,12 +11,19 @@ import { radar, review, markDrafted, saveCoaching, kvSet } from './radar';
 import { feature, unfeature, featuredFor, followUpOpened, closeNoReply, markHandled, autoClose, needsReply, FOLLOW_UP_DAYS } from './followthrough';
 import { FOLLOW_UP, FEATURE_LINE } from './templates';
 import { ICON_SVG, ICON_180, ICON_512, MANIFEST } from './app-assets';
+import { sendForOrg, sendStatus } from './send';
 
 interface Env {
   DB: D1Database;
   ACCESS_TEAM: string;   // e.g. "imn.cloudflareaccess.com" (Zero Trust team domain)
   ACCESS_AUD: string;    // Application Audience (AUD) tag of the Access application
   ALLOWED_EMAILS: string; // comma list of emails allowed in
+  // One-click send (send.ts): Entra app secrets + the sending mailbox. Unset = HQ falls back to Outlook drafts.
+  MS_TENANT_ID?: string;
+  MS_CLIENT_ID?: string;
+  MS_CLIENT_SECRET?: string;
+  MS_SENDER?: string;
+  MS_SENDERS?: string;
 }
 
 type Target = {
@@ -67,6 +74,12 @@ export default {
         if (ft[2] === 'unfeature') return json(await unfeature(env.DB, id));
         if (ft[2] === 'followup') return json(await followUpOpened(env.DB, id, body));
         return json(await closeNoReply(env.DB, id, 'No reply: closed without a follow-up'));
+      }
+      if (url.pathname === '/api/send/status' && req.method === 'GET') return json(await sendStatus(env, T.brands));
+      const sd = url.pathname.match(/^\/api\/orgs\/(\d+)\/send$/);
+      if (sd && req.method === 'POST') {
+        try { return json(await sendForOrg(env, T.brands, Number(sd[1]), (await req.json().catch(() => ({}))) as Record<string, unknown>)); }
+        catch (e) { return json({ error: (e as Error).message }); }
       }
       if (url.pathname === '/api/pipeline' && req.method === 'GET') return json(await pipeline(env.DB, T.brands));
       if (url.pathname === '/api/radar' && req.method === 'GET') return json(await radar(env.DB, targetLabel));

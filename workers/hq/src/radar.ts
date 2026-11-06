@@ -23,7 +23,7 @@ export async function kvSet(db: D1Database, k: string, v: unknown) {
 export async function radar(db: D1Database, targetLabel: (brand: string, key: string | null) => string | null) {
   const now = new Date().toISOString();
   const queue = (await db.prepare(`
-    SELECT o.id, o.brand, o.name, o.type, o.website, o.evidence_url, o.region, o.target, o.score, o.why, o.opener, o.source_url, o.created_at,
+    SELECT o.id, o.brand, o.name, o.type, o.website, o.evidence_url, o.region, o.target, o.score, o.why, o.opener, o.draft_subject, o.draft_body, o.source_url, o.created_at,
       c.name AS contact_name, c.role AS contact_role, c.email AS contact_email
     FROM orgs o LEFT JOIN contacts c ON c.id = (SELECT id FROM contacts WHERE org_id = o.id ORDER BY id LIMIT 1)
     WHERE o.found_by = 'radar' AND o.reviewed_at IS NULL AND (o.snooze_until IS NULL OR o.snooze_until <= ?)
