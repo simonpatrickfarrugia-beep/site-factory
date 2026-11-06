@@ -28,6 +28,7 @@ export default defineBrand({
     { label: 'Contact', href: '/contact' },
     { label: 'How we make money', href: '/how-we-make-money' },
     { label: 'Privacy', href: '/privacy-policy' },
+    { label: 'Affiliate disclosure', href: '/affiliate-disclosure' },
   ],
   footerNote: 'MyPayCalc is run by Independent Media Network Pty Ltd, Melbourne. Estimates for Australian residents using the ATO’s published rates. General information only, not tax advice.',
 

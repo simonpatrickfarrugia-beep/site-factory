@@ -1,0 +1,52 @@
+---
+/**
+ * One partner offer for a MyPayCalc page (data/paycalc/offers.json). Shows nothing until an offer has a url.
+ * Season: the build picks what's in season today; a tiny script re-picks by the reader's month, so a stale
+ * build never shows a tax-time offer in December. Links are labelled and rel="sponsored".
+ */
+import { getSingleton } from '../../lib/data';
+
+export interface Offer {
+  id: string; partner: string; kicker: string; heading: string; text: string; cta: string; url: string;
+  months: number[]; placements: string[]; priority: number;
+}
+interface Props { placement: 'calc' | 'salary' | 'guide' | 'mortgage' | 'loan' }
+const { placement } = Astro.props;
+const { offers } = getSingleton<{ offers: Offer[] }>('offers');
+const live = offers
+  .filter((o) => o.url && /^https:\/\//.test(o.url) && o.placements.includes(placement))
+  .sort((a, b) => a.priority - b.priority);
+const month = new Date().getMonth() + 1;
+const inSeason = (o: Offer) => !o.months.length || o.months.includes(month);
+const pick = live.find(inSeason)?.id;
+---
+{live.length > 0 && (
+  <aside class="pc-wrap pc-offer-wrap" data-offers aria-label="From our partners" hidden={!pick}>
+    {live.map((o) => (
+      <div class="pc-offer" data-offer={o.id} data-months={o.months.join(',')} hidden={o.id !== pick}>
+        <p class="pc-offer__kicker">{o.kicker} <span class="pc-offer__ad">Ad · we may earn a commission</span></p>
+        <p class="pc-offer__heading">{o.heading}</p>
+        <p class="pc-offer__text">{o.text}</p>
+        <a class="pc-btn" href={o.url} rel="sponsored nofollow noopener" target="_blank" data-cta={`offer_${o.id}`}>{o.cta}{o.partner ? ` with ${o.partner}` : ''}</a>
+        <p class="pc-small pc-offer__fine">General information only, not advice. <a href="/affiliate-disclosure">How partner links work</a>.</p>
+      </div>
+    ))}
+  </aside>
+)}
+
+<script>
+  const m = new Date().getMonth() + 1;
+  for (const box of document.querySelectorAll<HTMLElement>('[data-offers]')) {
+    let shown = false;
+    for (const o of box.querySelectorAll<HTMLElement>('[data-offer]')) {
+      const months = (o.dataset.months || '').split(',').filter(Boolean).map(Number);
+      const ok = !shown && (!months.length || months.includes(m));
+      o.hidden = !ok;
+      if (ok) shown = true;
+    }
+    box.hidden = !shown;
+    for (const a of box.querySelectorAll<HTMLAnchorElement>('[data-cta^="offer_"]')) {
+      a.addEventListener('click', () => (window as unknown as { gtag?: (...x: unknown[]) => void }).gtag?.('event', 'offer_click', { offer: a.dataset.cta }));
+    }
+  }
+</script>

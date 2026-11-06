@@ -28,4 +28,5 @@ export interface Pages {
   contact: TextPage;
   'how-we-make-money': TextPage;
   'privacy-policy': TextPage;
+  'affiliate-disclosure': TextPage;
 }

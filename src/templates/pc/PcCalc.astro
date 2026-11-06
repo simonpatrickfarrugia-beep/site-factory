@@ -2,6 +2,7 @@
 /** Home: the pay calculator. Works without JavaScript (shows $85,000 worked out); with it, updates as you type. */
 import Payslip from './Payslip.astro';
 import Faq from './PcFaq.astro';
+import PcOffer from './PcOffer.astro';
 import { calculate, perPeriod, aud, pct } from '../../lib/pay-tax';
 import type { RateFile, ToolPage } from '../../../brands/paycalc/model';
 interface Props { page: ToolPage; rates: RateFile; popular: { href: string; label: string }[] }
@@ -76,6 +77,8 @@ const engineRates = { brackets: rates.brackets, lito: rates.lito, medicare: rate
   </div>
   <p class="pc-small">Weekly, fortnightly and monthly figures are the year divided evenly. Your payslip uses the ATO’s withholding tables, so it can differ by a few dollars. <a href="/how-we-calculate">How we calculate</a>.</p>
 </section>
+
+<PcOffer placement="calc" />
 
 <section class="pc-band">
   <div class="pc-wrap pc-section">

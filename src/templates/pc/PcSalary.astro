@@ -5,6 +5,7 @@
  * next $5,000 is worth, what HECS-HELP would take.
  */
 import Payslip from './Payslip.astro';
+import PcOffer from './PcOffer.astro';
 import { calculate, perPeriod, bracketSteps, litoFor, aud, pct } from '../../lib/pay-tax';
 import type { RateFile } from '../../../brands/paycalc/model';
 interface Link { n: number; href: string }
@@ -57,6 +58,8 @@ const top = steps[steps.length - 1];
     </table>
   </div>
 </section>
+
+<PcOffer placement="salary" />
 
 <section class="pc-wrap pc-section pc-measure">
   <h2 class="pc-h2">How the tax on {aud(salary)} is worked out</h2>

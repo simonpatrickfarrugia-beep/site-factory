@@ -7,6 +7,7 @@
 import { calculate, aud } from '../../lib/pay-tax';
 import { monthlyRepayment, perPeriod, totalInterest } from '../../lib/mortgage';
 import type { RateFile } from '../../../brands/paycalc/model';
+import PcOffer from './PcOffer.astro';
 interface Link { n: number; href: string }
 interface Props { amount: number; rates: RateFile; nearby: Link[]; salaries: Link[] }
 const { amount, rates, nearby, salaries } = Astro.props;
@@ -48,6 +49,8 @@ const calcHref = `/mortgage-repayment-calculator?owe=${amount}&rate=6&years=30&c
   </div>
   <p class="pc-small">Example rates for comparison, not a lender's offer. Use the rate on your loan statement for your own figure. Weekly and fortnightly are the monthly repayment spread evenly over the year.</p>
 </section>
+
+<PcOffer placement="loan" />
 
 <section class="pc-wrap pc-section pc-measure">
   <h2 class="pc-h2">25 years or 30 years?</h2>

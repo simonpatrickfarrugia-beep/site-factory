@@ -133,7 +133,7 @@ export function routes(): Route[] {
     });
   }
 
-  for (const slug of ['how-we-calculate', 'about', 'contact', 'how-we-make-money', 'privacy-policy'] as const) {
+  for (const slug of ['how-we-calculate', 'about', 'contact', 'how-we-make-money', 'privacy-policy', 'affiliate-disclosure'] as const) {
     const p = pages[slug];
     out.push({
       path: slug,

@@ -5,6 +5,7 @@
  * Maths: src/lib/mortgage.ts (tested in scripts/test-pay-tax.ts). Nothing typed leaves the browser.
  */
 import Faq from './PcFaq.astro';
+import PcOffer from './PcOffer.astro';
 import { aud } from '../../lib/pay-tax';
 import { rateChange, perPeriod } from '../../lib/mortgage';
 import type { RateFile, Pages } from '../../../brands/paycalc/model';
@@ -79,6 +80,8 @@ const sign = (n: number) => (n > 0.005 ? '+' : n < -0.005 ? '−' : '') + aud(Ma
   </div>
   <p class="pc-small" data-m="interest">Interest over the rest of the loan: {aud(start.interestBefore)} now, {aud(start.interestAfter)} after the change.</p>
 </section>
+
+<PcOffer placement="mortgage" />
 
 <section class="pc-band">
   <div class="pc-wrap pc-section">

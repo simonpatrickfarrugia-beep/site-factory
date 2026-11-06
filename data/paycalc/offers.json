@@ -1,0 +1,53 @@
+{
+  "_readme": "Partner offers on MyPayCalc. An offer only shows once it has a url (paste the tracking link from the partner once approved). Each page shows at most one: the highest priority offer for that page that is in season (months 1-12, empty = all year). Disclosed next to the link and on /affiliate-disclosure.",
+  "offers": [
+    {
+      "id": "tax-return",
+      "partner": "",
+      "kicker": "Tax time",
+      "heading": "Getting your tax return done?",
+      "text": "Lodge online with a registered tax agent and see your refund estimate before you submit.",
+      "cta": "Start your tax return",
+      "url": "",
+      "months": [7, 8, 9, 10],
+      "placements": ["calc", "salary"],
+      "priority": 1
+    },
+    {
+      "id": "savings",
+      "partner": "",
+      "kicker": "Put it to work",
+      "heading": "Know your take-home? Give the savings part a better rate",
+      "text": "Compare high-interest savings accounts from Australian banks, then set an automatic transfer for payday.",
+      "cta": "Compare savings rates",
+      "url": "",
+      "months": [],
+      "placements": ["calc", "salary"],
+      "priority": 2
+    },
+    {
+      "id": "super",
+      "partner": "",
+      "kicker": "Your super",
+      "heading": "Check what your super fund is charging",
+      "text": "Your employer pays 12% on top. Compare fees and returns so more of it stays yours.",
+      "cta": "Compare super funds",
+      "url": "",
+      "months": [],
+      "placements": ["calc", "salary"],
+      "priority": 3
+    },
+    {
+      "id": "refinance",
+      "partner": "",
+      "kicker": "Home loan",
+      "heading": "Paying more than you need to?",
+      "text": "Compare current home loan rates and see what a lower one would take off your repayments.",
+      "cta": "Compare home loan rates",
+      "url": "",
+      "months": [],
+      "placements": ["mortgage", "loan"],
+      "priority": 1
+    }
+  ]
+}
