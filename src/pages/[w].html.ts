@@ -30,6 +30,7 @@ export const GET: APIRoute = ({ site }) => {
 <title>Free ${esc(first.name.toLowerCase())} for your website | ${esc(brand.name)}</title>
 <meta name="description" content="${esc(first.pitch)} Add it to your site with one line of code.">
 <meta name="robots" content="noindex,follow">
+<link rel="canonical" href="${origin}/widgets">
 <style>
 :root{--brand:${brand.colors.brand};--accent:${brand.colors.accent};--bg:#f6f5f2;--fg:#1b1d24;--mute:#5d6170;--line:#dddbd4;--card:#fff}
 @media (prefers-color-scheme:dark){:root{--bg:#0e1122;--fg:#f1efe9;--mute:#a7abbd;--line:#2a2f4a;--card:#161a31}}
