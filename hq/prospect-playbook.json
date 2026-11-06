@@ -1,10 +1,10 @@
 {
-  "_about": "Hand-set playbook for the prospecting engine (scripts/hq/prospects.py → hq/prospect-targets.json → IMN HQ 'Where to prospect'). One entry per brand: who to approach (segments), what we offer them, where (regions), and how much each segment is worth (weight 0-1). Organisations only, published addresses only, ≤10 emails a week per brand (claude/OUTREACH.md). Edit weights or set active:false to steer the engine. Each brand has its site and outreach From address; a segment's 'page' is the page we point that kind of organisation to (Vic towns and Trade Admin trades use their own page). mailReady = the brand's domain is on the mail hub, so Radar researches prospects for it (set true when its mail setup is done).",
+  "_about": "Hand-set playbook for the prospecting engine (scripts/hq/prospects.py → hq/prospect-targets.json → IMN HQ 'Where to prospect'). One entry per brand: who to approach (segments), what we offer them, where (regions), and how much each segment is worth (weight 0-1). Organisations only, published addresses only, sending follows the warm-up ramp in IMN HQ (week 1: 5 a day in total, week 2: 10 a day in total, then up to 10 a day per brand; claude/OUTREACH.md). weeklyCap is how many new prospects Radar may find per brand per week. Edit weights or set active:false to steer the engine. Each brand has its site and outreach From address; a segment's 'page' is the page we point that kind of organisation to (Vic towns and Trade Admin trades use their own page). mailReady = the brand's domain is on the mail hub, so Radar researches prospects for it (set true when its mail setup is done).",
   "brands": {
     "vic": {
       "name": "Vic Tours",
       "active": true,
-      "weeklyCap": 10,
+      "weeklyCap": 50,
       "regionSource": "vic-towns",
       "perTargetCap": 2,
       "segments": [
@@ -62,7 +62,7 @@
     "community-help-co": {
       "name": "Community Help Co",
       "active": true,
-      "weeklyCap": 10,
+      "weeklyCap": 50,
       "perTargetCap": 6,
       "regions": [
         {
@@ -172,7 +172,7 @@
     "trade-admin": {
       "name": "Trade Admin",
       "active": true,
-      "weeklyCap": 10,
+      "weeklyCap": 50,
       "perTargetCap": 3,
       "regionSource": "trades",
       "segments": [
@@ -227,7 +227,7 @@
     "trailers": {
       "name": "MovieTrailer.Channel",
       "active": true,
-      "weeklyCap": 10,
+      "weeklyCap": 50,
       "perTargetCap": 4,
       "regions": [
         {
@@ -313,7 +313,7 @@
     "paycalc": {
       "name": "MyPayCalc",
       "active": true,
-      "weeklyCap": 10,
+      "weeklyCap": 50,
       "perTargetCap": 4,
       "regions": [
         {
