@@ -145,7 +145,7 @@ const sign = (n: number) => (n > 0.005 ? '+' : n < -0.005 ? '−' : '') + aud(Ma
       const qs = new URLSearchParams({ owe: String(loan.balance), rate: String(loan.rate), years: String(loan.years), chg: String(change) });
       if (type === 'io') qs.set('type', 'io');
       history.replaceState(null, '', `?${qs}`);
-      if (!tracked && loan.balance > 0) { tracked = true; (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.('event', 'calc_mortgage'); }
+      if (!tracked && loan.balance > 0) { tracked = true; (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.('event', 'cta_calc_mortgage'); }
     };
     bal.addEventListener('blur', () => { if (num(bal.value)) bal.value = num(bal.value).toLocaleString('en-AU'); });
     form.addEventListener('input', run);

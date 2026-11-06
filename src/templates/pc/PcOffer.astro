@@ -2,7 +2,7 @@
 /**
  * One partner offer for a MyPayCalc page (data/paycalc/offers.json). Shows nothing until an offer has a url.
  * Season: the build picks what's in season today; a tiny script re-picks by the reader's month, so a stale
- * build never shows a tax-time offer in December. Links are labelled and rel="sponsored".
+ * build never shows a tax-time offer in December. Links are labelled and rel="sponsored". Clicks reach GA4 as cta_offer_<id> via the site-wide data-cta handler.
  */
 import { getSingleton } from '../../lib/data';
 
@@ -45,8 +45,5 @@ const pick = live.find(inSeason)?.id;
       if (ok) shown = true;
     }
     box.hidden = !shown;
-    for (const a of box.querySelectorAll<HTMLAnchorElement>('[data-cta^="offer_"]')) {
-      a.addEventListener('click', () => (window as unknown as { gtag?: (...x: unknown[]) => void }).gtag?.('event', 'offer_click', { offer: a.dataset.cta }));
-    }
   }
 </script>

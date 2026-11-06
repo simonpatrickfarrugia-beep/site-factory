@@ -147,7 +147,7 @@ const engineRates = { brackets: rates.brackets, lito: rates.lito, medicare: rate
       history.replaceState(null, '', `?${qs}`);
       if (!tracked && num(payIn.value) > 0) {
         tracked = true;
-        (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.('event', 'calc_use');
+        (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.('event', 'cta_calc_use');
       }
     };
     payIn.addEventListener('blur', () => { if (num(payIn.value)) payIn.value = num(payIn.value).toLocaleString('en-AU', { maximumFractionDigits: 2 }); });
