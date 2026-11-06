@@ -19,6 +19,7 @@
  *                            domain film where we know it's out of copyright (the US). Never stored.
  *   GET  /api/featured?path=/daylesford  organisations we feature on that page ("give first" outreach, added in IMN HQ):
  *                            [{ name, url, blurb }]. Read by a small script on every page (Base.astro). Cached 5 minutes.
+ *   GET  /api/embed/<widget>, POST /api/embed  widget data (CORS) and usage counts for embedded widgets (see embed() below).
  *   GET  /api/submit/status?since=<ISO time>  how many submissions arrived since then: a count only, never any details.
  *                            The `enquiries` GitHub workflow polls it and opens an issue (emailed to Simon) when it's above 0.
  *
@@ -299,6 +300,40 @@ async function featured(request: Request, env: Env): Promise<Response> {
   return Response.json({ items }, { headers: { 'cache-control': 'public, max-age=300' } });
 }
 
+// ---------- Widgets (src/widgets/types.ts) ----------
+// GET  /api/embed/<widget>  the widget's data (built file /embed/<widget>.json) with CORS, so other sites' pages can load it.
+// POST /api/embed           { w, e, ev, i, h } usage beacon from /embed.js: one count per day · embed · host · event · item
+//                           in D1 embed_events. No cookies, no personal data; the builder's own previews (id "preview…") are skipped.
+const CORS = { 'access-control-allow-origin': '*', 'access-control-allow-methods': 'GET, POST, OPTIONS', 'access-control-allow-headers': 'content-type' };
+const SLUG = /^[a-z0-9-]{1,60}$/;
+async function embed(request: Request, env: Env, widget?: string): Promise<Response> {
+  if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: CORS });
+  if (widget) {
+    if (request.method !== 'GET') return new Response('Method not allowed', { status: 405, headers: CORS });
+    const r = await env.ASSETS.fetch(new Request(new URL(`/embed/${widget}.json`, request.url)));
+    if (!r.ok) return new Response('Not found', { status: 404, headers: CORS });
+    return new Response(r.body, { headers: { ...CORS, 'content-type': 'application/json; charset=utf-8', 'cache-control': 'public, max-age=3600' } });
+  }
+  if (request.method !== 'POST') return new Response('Method not allowed', { status: 405, headers: CORS });
+  try {
+    const b = JSON.parse((await request.text()).slice(0, 2000)) as Record<string, unknown>;
+    const w = String(b.w ?? ''), ev = String(b.ev ?? '');
+    const id = SLUG.test(String(b.e ?? '')) ? String(b.e) : 'unknown';
+    const item = SLUG.test(String(b.i ?? '')) ? String(b.i) : '';
+    const host = String(b.h ?? '').toLowerCase().replace(/^www\./, '');
+    if (!SLUG.test(w) || !['view', 'play', 'click'].includes(ev) || !/^[a-z0-9.-]{1,120}$/.test(host) || id.startsWith('preview')) {
+      return new Response(null, { status: 204, headers: CORS });
+    }
+    const day = new Date(Date.now() + 11 * 3600_000).toISOString().slice(0, 10);
+    await env.DB.prepare(`INSERT INTO embed_events (day, brand, widget, embed_id, host, event, item, n) VALUES (?, ?, ?, ?, ?, ?, ?, 1)
+      ON CONFLICT (day, brand, widget, embed_id, host, event, item) DO UPDATE SET n = n + 1`)
+      .bind(day, env.BRAND, w, id, host, ev, item).run();
+  } catch (e) {
+    console.error('embed beacon failed', e);
+  }
+  return new Response(null, { status: 204, headers: CORS });
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const { pathname } = new URL(request.url);
@@ -352,6 +387,8 @@ export default {
       if (request.method !== 'GET') return new Response('Method not allowed', { status: 405, headers: { allow: 'GET' } });
       return jobs(request, env);
     }
+    const emb = pathname.match(/^\/api\/embed(?:\/([a-z0-9-]{1,60}))?$/);
+    if (emb) return embed(request, env, emb[1]);
     if (pathname.startsWith('/api/')) return new Response('Not found', { status: 404 });
     return env.ASSETS.fetch(request);
   },
