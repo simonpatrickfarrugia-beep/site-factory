@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-05T20:58:40.842Z",
+ "generatedAt": "2026-11-06T19:00:10.946Z",
  "period": {
-  "start": "2026-10-08",
-  "end": "2026-11-04"
+  "start": "2026-10-09",
+  "end": "2026-11-05"
  },
  "gscPeriod": {
-  "start": "2026-10-06",
-  "end": "2026-11-02"
+  "start": "2026-10-07",
+  "end": "2026-11-03"
  },
  "sources": {
   "ga4": true,
@@ -14,15 +14,48 @@
   "notes": []
  },
  "totals": {
-  "views": 0,
+  "views": 3,
   "prevViews": 0,
-  "users": 0,
+  "users": 3,
   "cta": {},
   "gscClicks": 0,
   "gscImpressions": 0
  },
- "daily": [],
- "pages": [],
+ "daily": [
+  {
+   "date": "2026-11-05",
+   "views": 3,
+   "cta": 0
+  }
+ ],
+ "pages": [
+  {
+   "path": "/",
+   "views": 3,
+   "prevViews": 0,
+   "users": 3,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 3,
+   "d7": 3
+  }
+ ],
  "queries": [],
- "gscDaily": []
+ "gscDaily": [],
+ "allTime": {
+  "start": "2026-11-05",
+  "views": 3,
+  "users": 3,
+  "cta": {},
+  "daily": [
+   {
+    "date": "2026-11-05",
+    "views": 3,
+    "cta": 0
+   }
+  ]
+ }
 }

@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-05T20:58:40.842Z",
+ "generatedAt": "2026-11-06T19:00:10.946Z",
  "period": {
-  "start": "2026-10-08",
-  "end": "2026-11-04"
+  "start": "2026-10-09",
+  "end": "2026-11-05"
  },
  "gscPeriod": {
-  "start": "2026-10-06",
-  "end": "2026-11-02"
+  "start": "2026-10-07",
+  "end": "2026-11-03"
  },
  "sources": {
   "ga4": true,
@@ -19,7 +19,7 @@
   "users": 18,
   "cta": {},
   "gscClicks": 0,
-  "gscImpressions": 135
+  "gscImpressions": 170
  },
  "daily": [
   {
@@ -56,8 +56,8 @@
    "users": 9,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 85.6,
+   "gscImpressions": 6,
+   "gscPosition": 86,
    "topQuery": "best invoice app for tradesmen",
    "allViews": 15,
    "d7": 8,
@@ -84,8 +84,8 @@
    "users": 2,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 84.6,
+   "gscImpressions": 6,
+   "gscPosition": 84.3,
    "topQuery": "tradesman quote template",
    "allViews": 3,
    "d7": 2,
@@ -168,20 +168,9 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 86,
-   "gscPosition": 70.3,
-   "topQuery": "service mate vs tradify"
-  },
-  {
-   "path": "/builder-quote-template",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 10,
-   "gscPosition": 77,
-   "topQuery": "tradesman quote template"
+   "gscImpressions": 109,
+   "gscPosition": 69.6,
+   "topQuery": "servicem8 vs tradify"
   },
   {
    "path": "/cleaning-invoice-template",
@@ -190,9 +179,31 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 10,
+   "gscImpressions": 13,
    "gscPosition": 69.1,
    "topQuery": "cleaning invoice examples"
+  },
+  {
+   "path": "/builder-quote-template",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 11,
+   "gscPosition": 77,
+   "topQuery": "tradesman quote template"
+  },
+  {
+   "path": "/electrician-invoice-template",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 7,
+   "gscPosition": 81.1,
+   "topQuery": "electrical invoice template"
   },
   {
    "path": "/painter-invoice-template",
@@ -206,15 +217,15 @@
    "topQuery": "painter invoice template"
   },
   {
-   "path": "/electrician-invoice-template",
+   "path": "/electrician-quote-template",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 79.8,
-   "topQuery": "electrical invoice"
+   "gscImpressions": 5,
+   "gscPosition": 85.8,
+   "topQuery": "electrician quotes"
   },
   {
    "path": "/plumber-invoice-template",
@@ -228,17 +239,6 @@
    "topQuery": "invoicing for plumbers"
   },
   {
-   "path": "/electrician-quote-template",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 100,
-   "topQuery": "electrician quotes"
-  },
-  {
    "path": "/painting-quote-template",
    "views": 0,
    "prevViews": 0,
@@ -248,57 +248,75 @@
    "gscImpressions": 2,
    "gscPosition": 80.5,
    "topQuery": "commercial painting quotes"
+  },
+  {
+   "path": "/carpenter-invoice-template",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 83,
+   "topQuery": "free carpentry invoice template"
   }
  ],
  "queries": [
   {
-   "query": "service mate vs tradify",
+   "query": "servicem8 vs tradify",
    "clicks": 0,
-   "impressions": 20,
-   "position": 73.5,
+   "impressions": 24,
+   "position": 60.7,
    "page": "/tradify-vs-servicem8"
   },
   {
-   "query": "servicem8 vs tradify",
+   "query": "service mate vs tradify",
    "clicks": 0,
-   "impressions": 20,
-   "position": 61.6,
+   "impressions": 22,
+   "position": 73.8,
    "page": "/tradify-vs-servicem8"
   },
   {
    "query": "servicem8 pricing",
    "clicks": 0,
-   "impressions": 13,
-   "position": 80,
-   "page": "/tradify-vs-servicem8"
-  },
-  {
-   "query": "servicem8 tradify comparison",
-   "clicks": 0,
-   "impressions": 11,
-   "position": 72.5,
+   "impressions": 18,
+   "position": 79.1,
    "page": "/tradify-vs-servicem8"
   },
   {
    "query": "tradify vs servicem8",
    "clicks": 0,
-   "impressions": 10,
-   "position": 64.2,
+   "impressions": 15,
+   "position": 58.7,
+   "page": "/tradify-vs-servicem8"
+  },
+  {
+   "query": "servicem8 tradify comparison",
+   "clicks": 0,
+   "impressions": 13,
+   "position": 72.3,
+   "page": "/tradify-vs-servicem8"
+  },
+  {
+   "query": "servicem8 vs",
+   "clicks": 0,
+   "impressions": 12,
+   "position": 78.6,
    "page": "/tradify-vs-servicem8"
   },
   {
    "query": "tradesman quote template",
    "clicks": 0,
-   "impressions": 8,
-   "position": 81.9,
+   "impressions": 10,
+   "position": 81.5,
    "page": "/builder-quote-template"
   },
   {
-   "query": "servicem8 vs",
+   "query": "best invoice app for tradesmen",
    "clicks": 0,
-   "impressions": 8,
-   "position": 76.6,
-   "page": "/tradify-vs-servicem8"
+   "impressions": 6,
+   "position": 86,
+   "page": "/"
   },
   {
    "query": "painter invoice template",
@@ -308,38 +326,31 @@
    "page": "/painter-invoice-template"
   },
   {
-   "query": "best invoice app for tradesmen",
-   "clicks": 0,
-   "impressions": 5,
-   "position": 85.6,
-   "page": "/"
-  },
-  {
    "query": "cleaning invoice examples",
    "clicks": 0,
-   "impressions": 4,
-   "position": 71.3,
+   "impressions": 5,
+   "position": 71.4,
    "page": "/cleaning-invoice-template"
   },
   {
    "query": "fieldhive vs servicem8",
    "clicks": 0,
-   "impressions": 4,
-   "position": 64,
+   "impressions": 5,
+   "position": 63.6,
    "page": "/tradify-vs-servicem8"
   },
   {
    "query": "cleaning invoice template",
    "clicks": 0,
-   "impressions": 3,
-   "position": 65.7,
+   "impressions": 4,
+   "position": 65.5,
    "page": "/cleaning-invoice-template"
   },
   {
    "query": "house cleaning invoice",
    "clicks": 0,
-   "impressions": 3,
-   "position": 69.7,
+   "impressions": 4,
+   "position": 69.8,
    "page": "/cleaning-invoice-template"
   },
   {
@@ -371,6 +382,20 @@
    "page": "/builder-quote-template"
   },
   {
+   "query": "electrical invoice template",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 82,
+   "page": "/electrician-invoice-template"
+  },
+  {
+   "query": "electrical quote template",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 64.5,
+   "page": "/electrician-quote-template"
+  },
+  {
    "query": "invoicing for plumbers",
    "clicks": 0,
    "impressions": 2,
@@ -383,6 +408,13 @@
    "impressions": 1,
    "position": 87,
    "page": "/builder-quote-template"
+  },
+  {
+   "query": "free carpentry invoice template",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 83,
+   "page": "/carpenter-invoice-template"
   },
   {
    "query": "electrical invoice",
@@ -399,17 +431,24 @@
    "page": "/electrician-invoice-template"
   },
   {
-   "query": "electrical invoice template",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 78,
-   "page": "/electrician-invoice-template"
-  },
-  {
    "query": "electrician invoice sample",
    "clicks": 0,
    "impressions": 1,
    "position": 98,
+   "page": "/electrician-invoice-template"
+  },
+  {
+   "query": "electrician invoice template",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 91,
+   "page": "/electrician-invoice-template"
+  },
+  {
+   "query": "electrician invoice template free",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 72,
    "page": "/electrician-invoice-template"
   },
   {
@@ -491,6 +530,11 @@
    "date": "2026-11-02",
    "clicks": 0,
    "impressions": 32
+  },
+  {
+   "date": "2026-11-03",
+   "clicks": 0,
+   "impressions": 36
   }
  ],
  "allTime": {

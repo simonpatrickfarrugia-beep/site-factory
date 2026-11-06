@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-05T20:58:40.842Z",
+ "generatedAt": "2026-11-06T19:00:10.946Z",
  "period": {
-  "start": "2026-10-08",
-  "end": "2026-11-04"
+  "start": "2026-10-09",
+  "end": "2026-11-05"
  },
  "gscPeriod": {
-  "start": "2026-10-06",
-  "end": "2026-11-02"
+  "start": "2026-10-07",
+  "end": "2026-11-03"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 78,
+  "views": 79,
   "prevViews": 0,
-  "users": 58,
+  "users": 59,
   "cta": {
    "book_tour": 2,
    "website": 1,
    "map": 1
   },
   "gscClicks": 4,
-  "gscImpressions": 1956
+  "gscImpressions": 1964
  },
  "daily": [
   {
@@ -95,6 +95,11 @@
    "date": "2026-11-04",
    "views": 1,
    "cta": 0
+  },
+  {
+   "date": "2026-11-05",
+   "views": 1,
+   "cta": 0
   }
  ],
  "pages": [
@@ -109,8 +114,8 @@
    "gscPosition": 3,
    "topQuery": "victours",
    "allViews": 205,
-   "prev7": 23,
-   "d7": 8
+   "prev7": 25,
+   "d7": 6
   },
   {
    "path": "/towns",
@@ -147,8 +152,8 @@
    "users": 3,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 10,
-   "gscPosition": 69.6,
+   "gscImpressions": 11,
+   "gscPosition": 69.9,
    "topQuery": "daylesford",
    "allViews": 3,
    "d7": 1,
@@ -179,8 +184,8 @@
    "gscPosition": 68,
    "topQuery": "yarra valley day trip",
    "allViews": 2,
-   "d7": 1,
-   "prev7": 0
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/richmond",
@@ -331,8 +336,8 @@
    "gscPosition": 88.8,
    "topQuery": "couples getaway packages",
    "allViews": 1,
-   "d7": 1,
-   "prev7": 0
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/yarra-glen",
@@ -430,11 +435,25 @@
    "gscPosition": 50,
    "topQuery": "daylesford accommodation for couples",
    "allViews": 1,
+   "prev7": 1,
+   "d7": 0
+  },
+  {
+   "path": "/contact",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1,
    "d7": 1,
    "prev7": 0
   },
   {
-   "path": "/contact",
+   "path": "/road-trips/western-victoria-loop",
    "views": 1,
    "prevViews": 0,
    "users": 1,
@@ -576,8 +595,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 69,
-   "gscPosition": 47.3,
+   "gscImpressions": 70,
+   "gscPosition": 47.4,
    "topQuery": "1004 mornington-flinders road red hill vic 3937"
   },
   {
@@ -658,6 +677,17 @@
    "topQuery": "great ocean road"
   },
   {
+   "path": "/metung",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 30,
+   "gscPosition": 68.8,
+   "topQuery": "110 metung road metung vic 3904"
+  },
+  {
    "path": "/south-yarra/eat",
    "views": 0,
    "prevViews": 0,
@@ -678,17 +708,6 @@
    "gscImpressions": 29,
    "gscPosition": 55.9,
    "topQuery": "bright things to do"
-  },
-  {
-   "path": "/metung",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 28,
-   "gscPosition": 67.3,
-   "topQuery": "110 metung road metung vic 3904"
   },
   {
    "path": "/sorrento",
@@ -818,8 +837,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 17,
-   "gscPosition": 51.8,
+   "gscImpressions": 18,
+   "gscPosition": 54.2,
    "topQuery": "lakes entrance"
   },
   {
@@ -1175,6 +1194,17 @@
    "topQuery": "bright things to do"
   },
   {
+   "path": "/dromana",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 8,
+   "gscPosition": 49.6,
+   "topQuery": "dromana holiday village"
+  },
+  {
    "path": "/melbourne-cbd",
    "views": 0,
    "prevViews": 0,
@@ -1219,15 +1249,15 @@
    "topQuery": "apollo bay restaurants"
   },
   {
-   "path": "/dromana",
+   "path": "/carlton",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 7,
-   "gscPosition": 43.9,
-   "topQuery": "dromana holiday village"
+   "gscPosition": 87.9,
+   "topQuery": "carlton clocktower"
   },
   {
    "path": "/dromana/eat",
@@ -1327,17 +1357,6 @@
    "gscImpressions": 7,
    "gscPosition": 48,
    "topQuery": "things to do in st kilda"
-  },
-  {
-   "path": "/carlton",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 6,
-   "gscPosition": 87,
-   "topQuery": "carlton clocktower"
   },
   {
    "path": "/castlemaine/do",
@@ -1791,6 +1810,17 @@
    "topQuery": "benjamin restaurant bairnsdale"
   },
   {
+   "path": "/belgrave",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 74.7,
+   "topQuery": "belgrave australia"
+  },
+  {
    "path": "/bellarine-peninsula",
    "views": 0,
    "prevViews": 0,
@@ -2042,17 +2072,6 @@
    "gscImpressions": 2,
    "gscPosition": 72,
    "topQuery": "ballarat cabins"
-  },
-  {
-   "path": "/belgrave",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 72,
-   "topQuery": "belgrave australia"
   },
   {
    "path": "/brunswick/do",
@@ -2836,8 +2855,8 @@
   {
    "query": "1004 mornington-flinders road red hill vic 3937",
    "clicks": 0,
-   "impressions": 26,
-   "position": 33.6,
+   "impressions": 27,
+   "position": 34.5,
    "page": "/red-hill"
   },
   {
@@ -2904,6 +2923,13 @@
    "page": "/lorne"
   },
   {
+   "query": "110 metung road metung vic 3904",
+   "clicks": 0,
+   "impressions": 14,
+   "position": 70.9,
+   "page": "/metung"
+  },
+  {
    "query": "restaurants in sorrento",
    "clicks": 0,
    "impressions": 14,
@@ -2923,13 +2949,6 @@
    "impressions": 13,
    "position": 80.2,
    "page": "/lorne"
-  },
-  {
-   "query": "110 metung road metung vic 3904",
-   "clicks": 0,
-   "impressions": 13,
-   "position": 70,
-   "page": "/metung"
   },
   {
    "query": "accommodation melbourne southbank area",
@@ -2967,18 +2986,18 @@
    "page": "/mornington/do"
   },
   {
+   "query": "110 metung road metung",
+   "clicks": 0,
+   "impressions": 12,
+   "position": 74.7,
+   "page": "/metung"
+  },
+  {
    "query": "marysville",
    "clicks": 0,
    "impressions": 11,
    "position": 48.4,
    "page": "/marysville/do"
-  },
-  {
-   "query": "110 metung road metung",
-   "clicks": 0,
-   "impressions": 11,
-   "position": 72.4,
-   "page": "/metung"
   },
   {
    "query": "614 tongio gap road omeo",
@@ -3485,6 +3504,13 @@
    "page": "/docklands/eat"
   },
   {
+   "query": "dromana holiday village",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 70.5,
+   "page": "/dromana"
+  },
+  {
    "query": "what to do in lorne victoria",
    "clicks": 0,
    "impressions": 4,
@@ -3517,13 +3543,6 @@
    "clicks": 0,
    "impressions": 4,
    "position": 68.8,
-   "page": "/mildura/stay"
-  },
-  {
-   "query": "mildura accommodation",
-   "clicks": 0,
-   "impressions": 4,
-   "position": 74.3,
    "page": "/mildura/stay"
   }
  ],
@@ -3602,12 +3621,17 @@
    "date": "2026-11-02",
    "clicks": 0,
    "impressions": 21
+  },
+  {
+   "date": "2026-11-03",
+   "clicks": 0,
+   "impressions": 16
   }
  ],
  "allTime": {
   "start": "2026-04-30",
-  "views": 261,
-  "users": 198,
+  "views": 262,
+  "users": 199,
   "cta": {
    "book_tour": 2,
    "website": 1,
@@ -3956,6 +3980,11 @@
    },
    {
     "date": "2026-11-04",
+    "views": 1,
+    "cta": 0
+   },
+   {
+    "date": "2026-11-05",
     "views": 1,
     "cta": 0
    }

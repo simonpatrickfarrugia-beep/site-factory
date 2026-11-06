@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-05T20:58:40.842Z",
+ "generatedAt": "2026-11-06T19:00:10.946Z",
  "period": {
-  "start": "2026-10-08",
-  "end": "2026-11-04"
+  "start": "2026-10-09",
+  "end": "2026-11-05"
  },
  "gscPeriod": {
-  "start": "2026-10-06",
-  "end": "2026-11-02"
+  "start": "2026-10-07",
+  "end": "2026-11-03"
  },
  "sources": {
   "ga4": true,
@@ -14,14 +14,14 @@
   "notes": []
  },
  "totals": {
-  "views": 20,
+  "views": 26,
   "prevViews": 0,
-  "users": 19,
+  "users": 23,
   "cta": {
    "journal_90": 1
   },
   "gscClicks": 0,
-  "gscImpressions": 122
+  "gscImpressions": 127
  },
  "daily": [
   {
@@ -53,22 +53,27 @@
    "date": "2026-11-04",
    "views": 5,
    "cta": 1
+  },
+  {
+   "date": "2026-11-05",
+   "views": 6,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 5,
+   "views": 10,
    "prevViews": 0,
-   "users": 5,
+   "users": 8,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 88,
-   "gscPosition": 12.6,
+   "gscImpressions": 91,
+   "gscPosition": 12.5,
    "topQuery": "community services placement",
-   "allViews": 5,
-   "d7": 4,
-   "prev7": 1
+   "allViews": 10,
+   "d7": 6,
+   "prev7": 4
   },
   {
    "path": "/contact",
@@ -77,12 +82,12 @@
    "users": 3,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 8,
-   "gscPosition": 23.8,
+   "gscImpressions": 9,
+   "gscPosition": 22.4,
    "topQuery": "help support",
    "allViews": 3,
-   "d7": 2,
-   "prev7": 1
+   "prev7": 2,
+   "d7": 1
   },
   {
    "path": "/free-daily-journal",
@@ -104,6 +109,20 @@
    "prev7": 0
   },
   {
+   "path": "/about",
+   "views": 2,
+   "prevViews": 0,
+   "users": 2,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 10,
+   "topQuery": "simon farrugia",
+   "allViews": 2,
+   "d7": 1,
+   "prev7": 1
+  },
+  {
    "path": "/job-finder",
    "views": 2,
    "prevViews": 0,
@@ -114,21 +133,21 @@
    "gscPosition": 39,
    "topQuery": "how to get part time jobs in australia",
    "allViews": 2,
-   "d7": 2,
-   "prev7": 0
+   "prev7": 2,
+   "d7": 0
   },
   {
-   "path": "/about",
-   "views": 2,
+   "path": "/resume-builder",
+   "views": 1,
    "prevViews": 0,
-   "users": 2,
+   "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2,
-   "d7": 2,
+   "gscImpressions": 11,
+   "gscPosition": 46.5,
+   "topQuery": "free resume",
+   "allViews": 1,
+   "d7": 1,
    "prev7": 0
   },
   {
@@ -202,17 +221,6 @@
    "prev7": 0
   },
   {
-   "path": "/resume-builder",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 11,
-   "gscPosition": 46.5,
-   "topQuery": "free resume"
-  },
-  {
    "path": "/cover-letter-builder",
    "views": 0,
    "prevViews": 0,
@@ -250,21 +258,21 @@
   {
    "query": "community help",
    "clicks": 0,
-   "impressions": 19,
-   "position": 27,
+   "impressions": 21,
+   "position": 25.1,
    "page": "/"
   },
   {
    "query": "community services placement",
    "clicks": 0,
-   "impressions": 18,
-   "position": 8.3,
+   "impressions": 19,
+   "position": 8.4,
    "page": "/"
   },
   {
    "query": "community service placement",
    "clicks": 0,
-   "impressions": 17,
+   "impressions": 18,
    "position": 13.3,
    "page": "/"
   },
@@ -444,6 +452,13 @@
    "page": "/"
   },
   {
+   "query": "simon farrugia",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 10,
+   "page": "/about"
+  },
+  {
    "query": "community number",
    "clicks": 0,
    "impressions": 1,
@@ -579,12 +594,17 @@
    "date": "2026-11-02",
    "clicks": 0,
    "impressions": 13
+  },
+  {
+   "date": "2026-11-03",
+   "clicks": 0,
+   "impressions": 10
   }
  ],
  "allTime": {
   "start": "2026-10-27",
-  "views": 20,
-  "users": 19,
+  "views": 26,
+  "users": 23,
   "cta": {
    "journal_90": 1
   },
@@ -618,6 +638,11 @@
     "date": "2026-11-04",
     "views": 5,
     "cta": 1
+   },
+   {
+    "date": "2026-11-05",
+    "views": 6,
+    "cta": 0
    }
   ]
  }

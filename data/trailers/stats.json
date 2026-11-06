@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-05T20:58:40.842Z",
+ "generatedAt": "2026-11-06T19:00:10.946Z",
  "period": {
-  "start": "2026-10-08",
-  "end": "2026-11-04"
+  "start": "2026-10-09",
+  "end": "2026-11-05"
  },
  "gscPeriod": {
-  "start": "2026-10-06",
-  "end": "2026-11-02"
+  "start": "2026-10-07",
+  "end": "2026-11-03"
  },
  "sources": {
   "ga4": true,
@@ -14,23 +14,18 @@
   "notes": []
  },
  "totals": {
-  "views": 185,
-  "prevViews": 185,
-  "users": 141,
+  "views": 177,
+  "prevViews": 193,
+  "users": 139,
   "cta": {
    "films_banner": 1,
    "justwatch": 1,
    "prime": 1
   },
-  "gscClicks": 3,
-  "gscImpressions": 320
+  "gscClicks": 1,
+  "gscImpressions": 294
  },
  "daily": [
-  {
-   "date": "2026-10-08",
-   "views": 8,
-   "cta": 0
-  },
   {
    "date": "2026-10-10",
    "views": 3,
@@ -150,9 +145,9 @@
  "pages": [
   {
    "path": "/",
-   "views": 61,
-   "prevViews": 121,
-   "users": 32,
+   "views": 56,
+   "prevViews": 126,
+   "users": 30,
    "cta": {
     "films_banner": 1
    },
@@ -164,7 +159,7 @@
    "allCta": {
     "films_banner": 1
    },
-   "prev7": 14,
+   "prev7": 10,
    "d7": 7
   },
   {
@@ -183,8 +178,8 @@
   },
   {
    "path": "/movies/star-wars-episode-v---the-empire-strikes-back-1980",
-   "views": 7,
-   "prevViews": 2,
+   "views": 4,
+   "prevViews": 5,
    "users": 3,
    "cta": {},
    "gscClicks": 0,
@@ -259,9 +254,9 @@
    "prevViews": 2,
    "users": 2,
    "cta": {},
-   "gscClicks": 2,
-   "gscImpressions": 2,
-   "gscPosition": 35,
+   "gscClicks": 1,
+   "gscImpressions": 1,
+   "gscPosition": 51,
    "topQuery": "whalefall 2026 full movie",
    "allViews": 4
   },
@@ -284,8 +279,8 @@
    "users": 2,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 10,
-   "gscPosition": 52.1,
+   "gscImpressions": 9,
+   "gscPosition": 53.8,
    "topQuery": "jurassic park trailer",
    "allViews": 3
   },
@@ -338,18 +333,6 @@
    "allViews": 2
   },
   {
-   "path": "/movies/little-miss-sunshine-2006",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 34.8,
-   "topQuery": "little miss sunshine movie trailer",
-   "allViews": 2
-  },
-  {
    "path": "/movies/men-in-black-1997",
    "views": 2,
    "prevViews": 0,
@@ -359,18 +342,6 @@
    "gscImpressions": 4,
    "gscPosition": 45,
    "topQuery": "men and black trailer",
-   "allViews": 2
-  },
-  {
-   "path": "/movies/lost-in-translation-2003",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 51,
-   "topQuery": "lost in translation trailer",
    "allViews": 2
   },
   {
@@ -398,14 +369,38 @@
    "allViews": 2
   },
   {
-   "path": "/movies/babel-2006",
+   "path": "/movies/little-miss-sunshine-2006",
    "views": 2,
    "prevViews": 0,
    "users": 2,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 2,
-   "gscPosition": 47,
+   "gscPosition": 51.5,
+   "topQuery": "little miss sunshine movie trailer",
+   "allViews": 2
+  },
+  {
+   "path": "/movies/lost-in-translation-2003",
+   "views": 2,
+   "prevViews": 0,
+   "users": 2,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 54,
+   "topQuery": "lost in translation movie trailer",
+   "allViews": 2
+  },
+  {
+   "path": "/movies/babel-2006",
+   "views": 2,
+   "prevViews": 0,
+   "users": 2,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 46,
    "topQuery": "babel trailer",
    "allViews": 2
   },
@@ -443,18 +438,6 @@
    "gscImpressions": 1,
    "gscPosition": 48,
    "topQuery": "private ryan trailer",
-   "allViews": 2
-  },
-  {
-   "path": "/movies/the-golden-child-1986",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 52,
-   "topQuery": "the golden child trailer",
    "allViews": 2
   },
   {
@@ -592,6 +575,18 @@
    "allViews": 2
   },
   {
+   "path": "/movies/the-golden-child-1986",
+   "views": 2,
+   "prevViews": 0,
+   "users": 2,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
    "path": "/movies/the-karate-kid-part-ii-1986",
    "views": 2,
    "prevViews": 0,
@@ -680,18 +675,6 @@
    "prev7": 0
   },
   {
-   "path": "/movies/basic-instinct-1992",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 45,
-   "topQuery": "basic instinct trailer",
-   "allViews": 1
-  },
-  {
    "path": "/movies/seabiscuit-2003",
    "views": 1,
    "prevViews": 0,
@@ -755,6 +738,18 @@
   },
   {
    "path": "/movies/anora-2024",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
+   "path": "/movies/basic-instinct-1992",
    "views": 1,
    "prevViews": 0,
    "users": 1,
@@ -943,8 +938,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 17,
-   "gscPosition": 49.8,
+   "gscImpressions": 16,
+   "gscPosition": 50.5,
    "topQuery": "home alone trailer",
    "allViews": 3
   },
@@ -966,9 +961,9 @@
    "prevViews": 2,
    "users": 0,
    "cta": {},
-   "gscClicks": 1,
-   "gscImpressions": 40,
-   "gscPosition": 8.7,
+   "gscClicks": 0,
+   "gscImpressions": 37,
+   "gscPosition": 8.8,
    "topQuery": "ghost soldier movie 2006",
    "allViews": 2
   },
@@ -979,21 +974,9 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 22,
-   "gscPosition": 42.2,
+   "gscImpressions": 21,
+   "gscPosition": 40,
    "topQuery": "the prestige trailer",
-   "allViews": 2
-  },
-  {
-   "path": "/movies/toy-story-2-1999",
-   "views": 0,
-   "prevViews": 2,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 8,
-   "topQuery": "toy story 2 tmdb",
    "allViews": 2
   },
   {
@@ -1010,6 +993,18 @@
   },
   {
    "path": "/movies/speed-1994",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/toy-story-2-1999",
    "views": 0,
    "prevViews": 2,
    "users": 0,
@@ -1087,8 +1082,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 6,
-   "gscPosition": 72.2,
+   "gscImpressions": 5,
+   "gscPosition": 77,
    "topQuery": "the hateful eight 2015 trailer",
    "allViews": 1
   },
@@ -1099,9 +1094,9 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 51.3,
-   "topQuery": "platoon movie trailer",
+   "gscImpressions": 3,
+   "gscPosition": 58,
+   "topQuery": "platoon film trailer",
    "allViews": 1
   },
   {
@@ -1295,17 +1290,6 @@
    "topQuery": "district 9 trailer"
   },
   {
-   "path": "/movies/ferris-buellers-day-off-1986",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 11,
-   "gscPosition": 42.5,
-   "topQuery": "ferris bueller trailer"
-  },
-  {
    "path": "/movies/dunkirk-2017",
    "views": 0,
    "prevViews": 0,
@@ -1317,15 +1301,15 @@
    "topQuery": "dunkirk film trailer"
   },
   {
-   "path": "/movies/ghost-1990",
+   "path": "/movies/ferris-buellers-day-off-1986",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 7,
-   "gscPosition": 31.4,
-   "topQuery": "ghost trailer"
+   "gscImpressions": 9,
+   "gscPosition": 43.9,
+   "topQuery": "ferris bueller trailer"
   },
   {
    "path": "/movies/the-blind-side-2009",
@@ -1361,15 +1345,15 @@
    "topQuery": "back to school trailer"
   },
   {
-   "path": "/movies/misty-green-2026",
+   "path": "/movies/ghost-1990",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 6,
-   "gscPosition": 21,
-   "topQuery": "download film misty green"
+   "gscImpressions": 5,
+   "gscPosition": 42.4,
+   "topQuery": "ghost trailer"
   },
   {
    "path": "/movies/insomnia-2002",
@@ -1381,6 +1365,17 @@
    "gscImpressions": 4,
    "gscPosition": 60.3,
    "topQuery": "insomnia trailer"
+  },
+  {
+   "path": "/movies/misty-green-2026",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 4,
+   "gscPosition": 28.3,
+   "topQuery": "download film misty green"
   },
   {
    "path": "/movies/pulp-fiction-1994",
@@ -1493,17 +1488,6 @@
    "topQuery": "the rock trailer"
   },
   {
-   "path": "/movies/thor-ragnarok-2017",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 64,
-   "topQuery": "thor 2017"
-  },
-  {
    "path": "/movies/twister-1996",
    "views": 0,
    "prevViews": 0,
@@ -1570,17 +1554,6 @@
    "topQuery": "trailer capitan america 2014"
   },
   {
-   "path": "/movies/following-1998",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 3,
-   "topQuery": "following 1998 trailer"
-  },
-  {
    "path": "/movies/goldeneye-1995",
    "views": 0,
    "prevViews": 0,
@@ -1645,25 +1618,14 @@
    "gscImpressions": 1,
    "gscPosition": 62,
    "topQuery": "the royal tenenbaums trailer"
-  },
-  {
-   "path": "/movies/up-2009",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 43,
-   "topQuery": "up trailor"
   }
  ],
  "queries": [
   {
    "query": "ghost soldier movie 2006",
-   "clicks": 1,
-   "impressions": 27,
-   "position": 8.7,
+   "clicks": 0,
+   "impressions": 25,
+   "position": 8.8,
    "page": "/movies/ghost-soldier-2006"
   },
   {
@@ -1681,18 +1643,18 @@
    "page": "/movies/home-alone-1990"
   },
   {
-   "query": "the prestige trailer",
-   "clicks": 0,
-   "impressions": 9,
-   "position": 44.1,
-   "page": "/movies/the-prestige-2006"
-  },
-  {
    "query": "ghost soldier 2006",
    "clicks": 0,
    "impressions": 8,
    "position": 8.3,
    "page": "/movies/ghost-soldier-2006"
+  },
+  {
+   "query": "the prestige trailer",
+   "clicks": 0,
+   "impressions": 8,
+   "position": 38.8,
+   "page": "/movies/the-prestige-2006"
   },
   {
    "query": "sixth sense trailer",
@@ -1716,18 +1678,18 @@
    "page": "/movies/district-9-2009"
   },
   {
-   "query": "ghost soldier (2006)",
-   "clicks": 0,
-   "impressions": 5,
-   "position": 9.4,
-   "page": "/movies/ghost-soldier-2006"
-  },
-  {
    "query": "ferris bueller trailer",
    "clicks": 0,
    "impressions": 4,
    "position": 40.8,
    "page": "/movies/ferris-buellers-day-off-1986"
+  },
+  {
+   "query": "ghost soldier (2006)",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 9.8,
+   "page": "/movies/ghost-soldier-2006"
   },
   {
    "query": "jurassic park trailer",
@@ -1793,13 +1755,6 @@
    "page": "/movies/inception-2010"
   },
   {
-   "query": "download film misty green",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 6.3,
-   "page": "/movies/misty-green-2026"
-  },
-  {
    "query": "the dark knight rises 2012 trailer",
    "clicks": 0,
    "impressions": 3,
@@ -1821,13 +1776,6 @@
    "page": "/discover/1991-box-office-highlights"
   },
   {
-   "query": "babel trailer",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 47,
-   "page": "/movies/babel-2006"
-  },
-  {
    "query": "back to school",
    "clicks": 0,
    "impressions": 2,
@@ -1847,13 +1795,6 @@
    "impressions": 2,
    "position": 44.5,
    "page": "/movies/ferris-buellers-day-off-1986"
-  },
-  {
-   "query": "ghost movie demi moore and patrick swayze trailer",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 4,
-   "page": "/movies/ghost-1990"
   },
   {
    "query": "trailer of home alone",
@@ -1898,20 +1839,6 @@
    "page": "/movies/little-miss-sunshine-2006"
   },
   {
-   "query": "little miss sunshine trailer",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 18,
-   "page": "/movies/little-miss-sunshine-2006"
-  },
-  {
-   "query": "lost in translation trailer",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 54.5,
-   "page": "/movies/lost-in-translation-2003"
-  },
-  {
    "query": "memento trailer",
    "clicks": 0,
    "impressions": 2,
@@ -1933,11 +1860,11 @@
    "page": "/movies/men-in-black-1997"
   },
   {
-   "query": "platoon movie trailer",
+   "query": "download film misty green",
    "clicks": 0,
    "impressions": 2,
-   "position": 45,
-   "page": "/movies/platoon-1986"
+   "position": 7,
+   "page": "/movies/misty-green-2026"
   },
   {
    "query": "pulp fiction movie trailer",
@@ -1986,13 +1913,6 @@
    "clicks": 0,
    "impressions": 2,
    "position": 73,
-   "page": "/movies/the-hateful-eight-2015"
-  },
-  {
-   "query": "the hateful eight trailer",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 64.5,
    "page": "/movies/the-hateful-eight-2015"
   },
   {
@@ -2059,13 +1979,6 @@
    "page": "/movies/the-sixth-sense-1999"
   },
   {
-   "query": "thor 2017",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 64,
-   "page": "/movies/thor-ragnarok-2017"
-  },
-  {
    "query": "true lies trailer",
    "clicks": 0,
    "impressions": 2,
@@ -2084,13 +1997,6 @@
    "clicks": 1,
    "impressions": 1,
    "position": 51,
-   "page": "/movies/whalefall-2026"
-  },
-  {
-   "query": "whalefall sa prevodom",
-   "clicks": 1,
-   "impressions": 1,
-   "position": 19,
    "page": "/movies/whalefall-2026"
   },
   {
@@ -2129,18 +2035,18 @@
    "page": "/movies/avatar-2009"
   },
   {
+   "query": "babel trailer",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 46,
+   "page": "/movies/babel-2006"
+  },
+  {
    "query": "back to school movie trailer",
    "clicks": 0,
    "impressions": 1,
    "position": 11,
    "page": "/movies/back-to-school-1986"
-  },
-  {
-   "query": "basic instinct trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 45,
-   "page": "/movies/basic-instinct-1992"
   },
   {
    "query": "trailer capitan america 2014",
@@ -2248,27 +2154,6 @@
    "page": "/movies/dunkirk-2017"
   },
   {
-   "query": "ferris bueller movie trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 34,
-   "page": "/movies/ferris-buellers-day-off-1986"
-  },
-  {
-   "query": "ferris day off trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 38,
-   "page": "/movies/ferris-buellers-day-off-1986"
-  },
-  {
-   "query": "following 1998 trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 3,
-   "page": "/movies/following-1998"
-  },
-  {
    "query": "ghost patrick swayze trailer",
    "clicks": 0,
    "impressions": 1,
@@ -2288,13 +2173,6 @@
    "impressions": 1,
    "position": 45,
    "page": "/movies/goldeneye-1995"
-  },
-  {
-   "query": "home alone 1 trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 38,
-   "page": "/movies/home-alone-1990"
   },
   {
    "query": "home alone 1990",
@@ -2358,14 +2236,93 @@
    "impressions": 1,
    "position": 52,
    "page": "/movies/jurassic-park-1993"
+  },
+  {
+   "query": "trailer for jurassic park",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 41,
+   "page": "/movies/jurassic-park-1993"
+  },
+  {
+   "query": "kiki's delivery service trailer",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 50,
+   "page": "/movies/kikis-delivery-service-1989"
+  },
+  {
+   "query": "letters from iwo jima trailer",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 11,
+   "page": "/movies/letters-from-iwo-jima-2006"
+  },
+  {
+   "query": "lost in translation movie trailer",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 44,
+   "page": "/movies/lost-in-translation-2003"
+  },
+  {
+   "query": "lost in translation trailer",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 64,
+   "page": "/movies/lost-in-translation-2003"
+  },
+  {
+   "query": "master and commander trailer",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 38,
+   "page": "/movies/master-and-commander-the-far-side-of-the-world-2003"
+  },
+  {
+   "query": "mission impossible ghost protocol 2011 trailer",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 27,
+   "page": "/movies/mission-impossible---ghost-protocol-2011"
+  },
+  {
+   "query": "misty green streaming",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 52,
+   "page": "/movies/misty-green-2026"
+  },
+  {
+   "query": "misty green witch videos",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 47,
+   "page": "/movies/misty-green-2026"
+  },
+  {
+   "query": "mystic river 2003 trailer",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 54,
+   "page": "/movies/mystic-river-2003"
+  },
+  {
+   "query": "mystic river movie trailer",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 57,
+   "page": "/movies/mystic-river-2003"
+  },
+  {
+   "query": "mystic river trailer",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 64,
+   "page": "/movies/mystic-river-2003"
   }
  ],
  "gscDaily": [
-  {
-   "date": "2026-10-06",
-   "clicks": 2,
-   "impressions": 36
-  },
   {
    "date": "2026-10-07",
    "clicks": 0,
@@ -2500,6 +2457,11 @@
    "date": "2026-11-02",
    "clicks": 0,
    "impressions": 2
+  },
+  {
+   "date": "2026-11-03",
+   "clicks": 0,
+   "impressions": 0
   }
  ],
  "allTime": {
