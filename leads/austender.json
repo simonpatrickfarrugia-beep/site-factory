@@ -1,29 +1,29 @@
 {
- "generatedAt": "2026-11-05T00:56:22+00:00",
+ "generatedAt": "2026-11-06T00:59:29+00:00",
  "days": 7,
  "suppliers": [
   {
-   "name": "XAMPLIFY SERVICES PTY LTD",
+   "name": "The Trustee for THE FITCHETT FAMILY TRUST",
    "abn": "",
-   "locality": "Canberra",
-   "state": "ACT",
+   "locality": "Bayswater",
+   "state": "VIC",
    "contracts": [
     {
-     "value": 2848978.56,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Maintenance and Support Services",
+     "value": 53680.0,
+     "buyer": "Royal Australian Mint",
+     "buyerState": "ACT",
+     "desc": "Furnace Pump Maintenance and Training",
      "category": "",
-     "start": "2026-10-31",
-     "end": "2027-10-30",
-     "id": "CN4286640"
+     "start": "2026-10-12",
+     "end": "2027-01-12",
+     "id": "CN4287054"
     }
    ],
-   "total": 2848979,
-   "score": 5.0,
-   "interstate": false,
+   "total": 53680,
+   "score": 7.0,
+   "interstate": true,
    "why": [
-    "work runs 12 months"
+    "based in Bayswater VIC, delivering for Royal Australian Mint (Canberra)"
    ],
    "seenBefore": false
   },
@@ -63,31 +63,6 @@
     "work runs 8 months"
    ],
    "seenBefore": true
-  },
-  {
-   "name": "Birchip Cropping Group",
-   "abn": "",
-   "locality": "Birchip",
-   "state": "VIC",
-   "contracts": [
-    {
-     "value": 343000.0,
-     "buyer": "Grains Research and Development Corporation",
-     "buyerState": null,
-     "desc": "This investment will deliver field-based trials over three seasons to test practical Rosinweed management options under the conditions where the weed occurs. It will assess registe",
-     "category": "",
-     "start": "2026-11-12",
-     "end": "2029-08-30",
-     "id": "CN4286581"
-    }
-   ],
-   "total": 343000,
-   "score": 5.0,
-   "interstate": false,
-   "why": [
-    "work runs 34 months"
-   ],
-   "seenBefore": false
   },
   {
    "name": "KONGSBERG MARITIME PTY LTD",
@@ -144,82 +119,6 @@
     "work runs 8 months"
    ],
    "seenBefore": true
-  },
-  {
-   "name": "Platypus Research and Development Pty Ltd",
-   "abn": "",
-   "locality": "Hume",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 221100.0,
-     "buyer": "Geoscience Australia",
-     "buyerState": null,
-     "desc": "MOBLAS Stabilisation and Maintenance",
-     "category": "",
-     "start": "2026-10-11",
-     "end": "2027-06-29",
-     "id": "CN4286842"
-    }
-   ],
-   "total": 221100,
-   "score": 5.0,
-   "interstate": false,
-   "why": [
-    "work runs 9 months"
-   ],
-   "seenBefore": false
-  },
-  {
-   "name": "SFDC Australia Pty Limited",
-   "abn": "",
-   "locality": "Sydney",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 537199.83,
-     "buyer": "Australian Institute of Health and Welfare",
-     "buyerState": "ACT",
-     "desc": "Renewal of Tableau licensing",
-     "category": "",
-     "start": "2026-09-26",
-     "end": "2027-09-25",
-     "id": "CN4284324"
-    }
-   ],
-   "total": 537200,
-   "score": 4.0,
-   "interstate": true,
-   "why": [
-    "based in Sydney NSW, delivering for Australian Institute of Health and Welfare (Canberra)",
-    "work runs 12 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "AEROASCENT PTY LTD",
-   "abn": "",
-   "locality": "Tweed Heads",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 82858.7,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Inspection Services",
-     "category": "",
-     "start": "2026-10-14",
-     "end": "2027-06-29",
-     "id": "CN4286866"
-    }
-   ],
-   "total": 82859,
-   "score": 4.0,
-   "interstate": false,
-   "why": [
-    "work runs 9 months"
-   ],
-   "seenBefore": false
   },
   {
    "name": "Nous Group Pty. Ltd.",
@@ -313,28 +212,27 @@
    "seenBefore": true
   },
   {
-   "name": "Investigation Management Australia Pty Ltd",
+   "name": "XAMPLIFY SERVICES PTY LTD",
    "abn": "",
-   "locality": "Brisbane (Efte)",
-   "state": "QLD",
+   "locality": "Canberra",
+   "state": "ACT",
    "contracts": [
     {
-     "value": 70955.5,
-     "buyer": "Australian Taxation Office",
-     "buyerState": "NSW",
-     "desc": "Provision of COMTRAC Investigation Management Platform Subscriptions",
+     "value": 2848978.56,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Maintenance and Support Services",
      "category": "",
-     "start": "2026-10-25",
-     "end": "2027-04-24",
-     "id": "CN4285829"
+     "start": "2026-10-31",
+     "end": "2027-10-30",
+     "id": "CN4286640"
     }
    ],
-   "total": 70956,
-   "score": 3.0,
-   "interstate": true,
+   "total": 2848979,
+   "score": 2.0,
+   "interstate": false,
    "why": [
-    "based in Brisbane (Efte) QLD, delivering for Australian Taxation Office (NSW)",
-    "work runs 6 months"
+    "work runs 12 months"
    ],
    "seenBefore": true
   },
@@ -385,31 +283,6 @@
    "interstate": false,
    "why": [
     "work runs 11 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "VERIAN GROUP AUSTRALIA PTY LTD",
-   "abn": "",
-   "locality": "Sydney (Efte)",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 656150.0,
-     "buyer": "Australian Taxation Office",
-     "buyerState": "NSW",
-     "desc": "Provision of Government Communications Campaign for Counter Fraud Program Research Services",
-     "category": "",
-     "start": "2026-09-20",
-     "end": "2027-04-29",
-     "id": "CN4285833"
-    }
-   ],
-   "total": 656150,
-   "score": 2.0,
-   "interstate": false,
-   "why": [
-    "work runs 7 months"
    ],
    "seenBefore": true
   },
@@ -514,52 +387,52 @@
    "seenBefore": true
   },
   {
-   "name": "1 AND ONE PTY LTD",
+   "name": "Birchip Cropping Group",
    "abn": "",
-   "locality": "Parkes",
-   "state": "ACT",
+   "locality": "Birchip",
+   "state": "VIC",
    "contracts": [
     {
-     "value": 316100.4,
-     "buyer": "Department of Defence",
+     "value": 343000.0,
+     "buyer": "Grains Research and Development Corporation",
      "buyerState": null,
-     "desc": "Technical Advisory Services",
+     "desc": "This investment will deliver field-based trials over three seasons to test practical Rosinweed management options under the conditions where the weed occurs. It will assess registe",
      "category": "",
-     "start": "2026-10-11",
-     "end": "2027-06-29",
-     "id": "CN4285721"
+     "start": "2026-11-12",
+     "end": "2029-08-30",
+     "id": "CN4286581"
     }
    ],
-   "total": 316100,
+   "total": 343000,
    "score": 2.0,
    "interstate": false,
    "why": [
-    "work runs 9 months"
+    "work runs 34 months"
    ],
    "seenBefore": true
   },
   {
-   "name": "THE REAL ESTATE INSTITUTE OF AUSTRALIA LIMITED [337]",
+   "name": "Platypus Research and Development Pty Ltd",
    "abn": "",
-   "locality": "Bundall",
-   "state": "QLD",
+   "locality": "Hume",
+   "state": "ACT",
    "contracts": [
     {
-     "value": 227150.0,
-     "buyer": "Department of Climate Change, Energy, the Environment and Water",
+     "value": 221100.0,
+     "buyer": "Geoscience Australia",
      "buyerState": null,
-     "desc": "REIA Member Engagement of Home Energy Rating",
+     "desc": "MOBLAS Stabilisation and Maintenance",
      "category": "",
-     "start": "2026-10-25",
+     "start": "2026-10-11",
      "end": "2027-06-29",
-     "id": "CN4285599"
+     "id": "CN4286842"
     }
    ],
-   "total": 227150,
+   "total": 221100,
    "score": 2.0,
    "interstate": false,
    "why": [
-    "work runs 8 months"
+    "work runs 9 months"
    ],
    "seenBefore": true
   },
@@ -689,29 +562,6 @@
    "seenBefore": true
   },
   {
-   "name": "PentenAmio PENTEN PTY LTD",
-   "abn": "",
-   "locality": "Braddon",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 374285.65,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Sensor Research and Development",
-     "category": "",
-     "start": "2026-10-08",
-     "end": "2026-12-30",
-     "id": "CN4285728"
-    }
-   ],
-   "total": 374286,
-   "score": 1.0,
-   "interstate": false,
-   "why": [],
-   "seenBefore": true
-  },
-  {
    "name": "CALLIDA PTY LTD",
    "abn": "",
    "locality": "Kingston",
@@ -735,102 +585,27 @@
    "seenBefore": true
   },
   {
-   "name": "THE TRUSTEE FOR BLUERYDGE UNIT TRUS",
+   "name": "AEROASCENT PTY LTD",
    "abn": "",
-   "locality": "Fyshwick",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 88000.0,
-     "buyer": "Australian Public Service Commission",
-     "buyerState": "ACT",
-     "desc": "2026-2815 - IRAP Assessment APSC platforms and databases",
-     "category": "",
-     "start": "2026-09-20",
-     "end": "2027-03-19",
-     "id": "CN4285636"
-    }
-   ],
-   "total": 88000,
-   "score": 1.0,
-   "interstate": false,
-   "why": [
-    "work runs 6 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "Aquamonix Pty Ltd",
-   "abn": "",
-   "locality": "Virginia",
-   "state": "QLD",
-   "contracts": [
-    {
-     "value": 73764.29,
-     "buyer": "Bureau of Meteorology",
-     "buyerState": null,
-     "desc": "FWIN Fabrication & Installation Works - Maintenance works",
-     "category": "",
-     "start": "2026-10-28",
-     "end": "2027-06-29",
-     "id": "CN4285810"
-    }
-   ],
-   "total": 73764,
-   "score": 1.0,
-   "interstate": false,
-   "why": [
-    "work runs 8 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "PROPTECH ASSOCIATION AUSTRALIA INCORPORATED [186]",
-   "abn": "",
-   "locality": "Haymarket",
+   "locality": "Tweed Heads",
    "state": "NSW",
    "contracts": [
     {
-     "value": 68750.0,
-     "buyer": "Department of Climate Change, Energy, the Environment and Water",
+     "value": 82858.7,
+     "buyer": "Department of Defence",
      "buyerState": null,
-     "desc": "Proptech Engagement for Home Energy Rating",
+     "desc": "Inspection Services",
      "category": "",
-     "start": "2026-10-25",
+     "start": "2026-10-14",
      "end": "2027-06-29",
-     "id": "CN4285598"
+     "id": "CN4286866"
     }
    ],
-   "total": 68750,
+   "total": 82859,
    "score": 1.0,
    "interstate": false,
    "why": [
-    "work runs 8 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "DARREN BOX PTY LTD [621]",
-   "abn": "",
-   "locality": "Duffy",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 67760.0,
-     "buyer": "Department of Climate Change, Energy, the Environment and Water",
-     "buyerState": null,
-     "desc": "Audit and Risk Committee Membership",
-     "category": "",
-     "start": "2026-11-30",
-     "end": "2028-05-30",
-     "id": "CN4285603"
-    }
-   ],
-   "total": 67760,
-   "score": 1.0,
-   "interstate": false,
-   "why": [
-    "work runs 18 months"
+    "work runs 9 months"
    ],
    "seenBefore": true
   },
