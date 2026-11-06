@@ -13,10 +13,12 @@ import brandConfig from './brand.config';
 const SITE = `https://${brandConfig.domain}`;
 const SUFFIX = brandConfig.seo.titleSuffix;
 
-/** Salaries that get their own page: every $5k to $150k, then every $10k to $300k. */
+/** Salaries that get their own page: every $5k to $200k, every $10k to $300k, then $350k–$500k.
+ *  (6 Nov 2026: the $160k–$300k pages already rank 6–10 for "tax on 300k"-style searches, so the long tail is widened.) */
 export const SALARIES = [
-  ...Array.from({ length: 27 }, (_, i) => 20000 + i * 5000),
-  ...Array.from({ length: 15 }, (_, i) => 160000 + i * 10000),
+  ...Array.from({ length: 37 }, (_, i) => 20000 + i * 5000),
+  ...Array.from({ length: 10 }, (_, i) => 210000 + i * 10000),
+  350000, 400000, 450000, 500000,
 ];
 export const salaryPath = (n: number) => `salary/${n}-after-tax`;
 /** Loan sizes that get their own page ("500k mortgage repayments": 1,300 searches a month in AU, 3 Nov 2026). */
