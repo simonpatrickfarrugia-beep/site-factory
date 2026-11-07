@@ -39,6 +39,6 @@ export default defineBrand({
   data: { source: 'snapshot' },
   forms: [],
   analytics: { ga4Id: 'G-4FYB501KJ1' }, // same property as the old victours.com.au site
-  // ads: { skimlinksId: '' }, // Skimlinks: paste the publisher ID here once victours.com.au is approved (see brand-schema.ts)
+  ads: { skimlinksId: '312452X1801045' }, // Skimlinks publisher ID (approved 7 Nov 2026). Leaves direct deals (rel=sponsored) alone.
   payments: { enabled: false },
 });
