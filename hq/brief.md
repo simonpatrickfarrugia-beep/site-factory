@@ -1,51 +1,51 @@
-# Site Factory brief — Fri 06 Nov 2026 (generated 01:45 UTC)
+# Site Factory brief — Sat 07 Nov 2026 (generated 01:07 UTC)
 
 _Auto-written daily by scripts/hq/brief.py. Read this first in any new chat. Refresh: scripts/claude/brief.sh_
 
 ## Headline
 
-Revenue to date **A$0.00** · sprint "First $1" ended 6 days ago · Simon has **11** open items (~127 min)
+Revenue to date **A$0.00** · sprint "First $1" ended 7 days ago · Simon has **11** open items (~127 min)
 
 ## Traffic (last 28 days)
 
 | Site | Station | Views (prev) | Last 7 days | CTA clicks | Google clicks / impressions |
 |---|---|---|---|---|---|
-| movietrailer.channel | Measure | 185 (185) | 3 4 1 4 5 1 3 | films_banner 1, justwatch 1, prime 1 | 3 / 320 |
-| victours.com.au | Launch | 78 (0) | 4 5 3 1 5 2 1 | book_tour 2, website 1, map 1 | 4 / 1956 |
-| Community Help Co | Launch | 20 (0) | 1 1 7 1 5 5 | journal_90 1 | 0 / 122 |
-| tradeadmin.com.au | Launch | 28 (0) | 11 1 7 5 5 | 0 | 0 / 135 |
+| movietrailer.channel | Measure | 177 (193) | 3 4 1 4 5 1 3 | films_banner 1, justwatch 1, prime 1 | 1 / 294 |
+| victours.com.au | Launch | 79 (0) | 5 3 1 5 2 1 1 | book_tour 2, website 1, map 1 | 4 / 1964 |
+| Community Help Co | Launch | 26 (0) | 1 1 7 1 5 5 6 | journal_90 1 | 0 / 127 |
+| tradeadmin.com.au | Launch | 28 (0) | 11 1 7 5 5 | 0 | 0 / 170 |
 
-- **movietrailer.channel** (stats 5h ago) — top pages: / 61, /browse 14, /movies/star-wars-episode-v---the-empire-strikes-back-1980 7, /movies/star-wars-episode-vii---the-force-awakens-2015 3, /movies/batman-begins-2005 3
-  - Google: "ghost soldier movie 2006" 40 impr, pos 8.7; "the sixth sense trailer" 27 impr, pos 30.3; "the prestige trailer" 22 impr, pos 42.2; "home alone trailer" 17 impr, pos 49.8; "phantom menace trailer" 13 impr, pos 42.3
-- **victours.com.au** (stats 5h ago) — top pages: / 36, /towns 6, /warburton 5, /daylesford 3, /day-trips/torquay 3
-  - Google: "melbourne accomodation southbank" 192 impr, pos 77.5; "sorrento restaurants" 72 impr, pos 87.5; "1004 mornington-flinders road red hill vic 3937" 69 impr, pos 47.3; "activities lorne victoria" 57 impr, pos 71; "best restaurants in mornington peninsula" 44 impr, pos 74.9
-- **Community Help Co** (stats 5h ago) — top pages: / 5, /contact 3, /free-daily-journal 3, /job-finder 2, /about 2
-  - Google: "community services placement" 88 impr, pos 12.6; "free resume" 11 impr, pos 46.5; "help support" 8 impr, pos 23.8; "free cover letter" 7 impr, pos 39.9; "hr support ringwood" 4 impr, pos 47.5
-- **tradeadmin.com.au** (stats 5h ago) — top pages: / 15, /job-management-software 4, /quote-builder 3, /how-we-make-money 2, /about 1
-  - Google: "service mate vs tradify" 86 impr, pos 70.3; "tradesman quote template" 10 impr, pos 77; "cleaning invoice examples" 10 impr, pos 69.1; "painter invoice template" 6 impr, pos 84.5; "best invoice app for tradesmen" 5 impr, pos 85.6
+- **movietrailer.channel** (stats 6h ago) — top pages: / 56, /browse 14, /movies/star-wars-episode-v---the-empire-strikes-back-1980 4, /movies/star-wars-episode-vii---the-force-awakens-2015 3, /movies/batman-begins-2005 3
+  - Google: "ghost soldier movie 2006" 37 impr, pos 8.8; "the sixth sense trailer" 27 impr, pos 30.3; "the prestige trailer" 21 impr, pos 40; "home alone trailer" 16 impr, pos 50.5; "phantom menace trailer" 13 impr, pos 42.3
+- **victours.com.au** (stats 6h ago) — top pages: / 36, /towns 6, /warburton 5, /daylesford 3, /day-trips/torquay 3
+  - Google: "melbourne accomodation southbank" 192 impr, pos 77.5; "sorrento restaurants" 72 impr, pos 87.5; "1004 mornington-flinders road red hill vic 3937" 70 impr, pos 47.4; "activities lorne victoria" 57 impr, pos 71; "best restaurants in mornington peninsula" 44 impr, pos 74.9
+- **Community Help Co** (stats 6h ago) — top pages: / 10, /contact 3, /free-daily-journal 3, /about 2, /job-finder 2
+  - Google: "community services placement" 91 impr, pos 12.5; "free resume" 11 impr, pos 46.5; "help support" 9 impr, pos 22.4; "free cover letter" 7 impr, pos 39.9; "hr support ringwood" 4 impr, pos 47.5
+- **tradeadmin.com.au** (stats 6h ago) — top pages: / 15, /job-management-software 4, /quote-builder 3, /how-we-make-money 2, /about 1
+  - Google: "servicem8 vs tradify" 109 impr, pos 69.6; "cleaning invoice examples" 13 impr, pos 69.1; "tradesman quote template" 11 impr, pos 77; "electrical invoice template" 7 impr, pos 81.1; "best invoice app for tradesmen" 6 impr, pos 86
 
-Latest milestones: 2026-11-04 trade-admin: Daily visits crossed 10 (11 visits on 28 Oct); 2026-11-05 paycalc: First Google click (1 Nov, search 'mypaycalc'); 2026-11-06 trailers: First affiliate click (Amazon Prime, Rocky Horror Picture Show page)
+Latest milestones: 2026-11-05 paycalc: First Google click (1 Nov, search 'mypaycalc'); 2026-11-06 trailers: First affiliate click (Amazon Prime, Rocky Horror Picture Show page); 2026-11-07 community-help-co: Best day ever: 7 visits (29 Oct), first week of data
 
 ## Health
 
-All checks passing ✅ (sites up, pipeline jobs fresh, live builds current, no failing workflows)
+- Pipeline `competition` hasn't run for 8.8 days (expected every 8)
 
 ## Pipeline jobs (last run)
 
-- ✅ `intake` 2h ago: Intake: 0 new trailer(s) queued. | Feed UCAP57cF-FSjJKzzXg7ntPlQ failed: YouTube feed UCAP57cF-FSjJKzzXg7ntPlQ: HTTP 404 | Feed UCtlPYzQ188v
-- ✅ `enrich` 5h ago: Enrich: looked at 0, published 0. Queue: 1 waiting for OMDb, 18 need review.
-- ✅ `stats` 5h ago: simon-says-travel: 0 views, 0 CTA clicks, 0 Google clicks. | paycalc: 123 views, 0 CTA clicks, 2 Google clicks. | trade-admin: 28 views, 0 C
-- ✅ `travel` 6h ago: 36 searches, 9 calls, US$0.099. Top now: Sydney 36.5, Melbourne 34, Travel insurance 33.3, Brisbane 24.3, Perth 20.9.
-- ✅ `ratings` 32h ago: Ratings: checked 40, updated 0; 44 never checked.
-- ✅ `collections` 2d ago: Collections: created 3: 90s Romance Movies (13 films, 3920/mo) → /discover/90s-romance-movies; 2000s Action Movies (18 films, 3900/mo) → /di
-- ✅ `collcheck` 3d ago: Collection check: 0 idea(s) checked (US$0.000). Most winnable: Tom Hanks Movies 305400/mo × 21%; Christian Bale Movies 166600/mo × 16%; 90s 
-- ✅ `demand` 3d ago: Demand: 212 searches analysed; 0 film ideas, 0 new collection ideas. Saved to reports/trailers/demand-2026-10.md.
-- ✅ `niches` 4d ago: Niches: scored 3 of 3. | Dog-friendly hotels by city: 54/100 (demand 1, money 96, ease 98, fit 28). | Pet insurance quotes by breed and stat
-- ✅ `catalogue` 4d ago: Catalogue: queued 30 film(s): Groundhog Day (1993): 61090/mo, Twins (1988): 60890/mo, Once Upon a Time in the West (1968): 60890/mo, The Roc
-- ✅ `recheck` 4d ago: Recheck: looked at 1, published 0. Queue: 1 waiting for OMDb, 15 need review.
-- ✅ `discover` 5d ago: Discover: screened 15 new ideas for US$0.34; 3 promoted to scoring: Dog-friendly hotels by city (4 free domains), Pet insurance quotes by br
-- ✅ `competition` 8d ago: Competition: checked 4; 4 still to check (run again). | AU electric car running costs vs petrol by model: openness 49/100; big players drive
-- ✅ `keywords` 16d ago: Victorian road trips and itineraries: day trips from melbourne 2900, great alpine road 1900, weekend getaways from melbourne 1900, romantic 
+- ✅ `intake` 1h ago: Intake: 0 new trailer(s) queued. | Feed UCAP57cF-FSjJKzzXg7ntPlQ failed: YouTube feed UCAP57cF-FSjJKzzXg7ntPlQ: HTTP 404 | Feed UCtlPYzQ188v
+- ✅ `enrich` 4h ago: Enrich: looked at 0, published 0. Queue: 1 waiting for OMDb, 18 need review.
+- ✅ `stats` 6h ago: simon-says-travel: 3 views, 0 CTA clicks, 0 Google clicks. | paycalc: 127 views, 0 CTA clicks, 2 Google clicks. | trade-admin: 28 views, 0 C
+- ✅ `travel` 29h ago: 36 searches, 9 calls, US$0.099. Top now: Sydney 36.5, Melbourne 34, Travel insurance 33.3, Brisbane 24.3, Perth 20.9.
+- ✅ `ratings` 2d ago: Ratings: checked 40, updated 0; 44 never checked.
+- ✅ `collections` 3d ago: Collections: created 3: 90s Romance Movies (13 films, 3920/mo) → /discover/90s-romance-movies; 2000s Action Movies (18 films, 3900/mo) → /di
+- ✅ `collcheck` 4d ago: Collection check: 0 idea(s) checked (US$0.000). Most winnable: Tom Hanks Movies 305400/mo × 21%; Christian Bale Movies 166600/mo × 16%; 90s 
+- ✅ `demand` 4d ago: Demand: 212 searches analysed; 0 film ideas, 0 new collection ideas. Saved to reports/trailers/demand-2026-10.md.
+- ✅ `niches` 5d ago: Niches: scored 3 of 3. | Dog-friendly hotels by city: 54/100 (demand 1, money 96, ease 98, fit 28). | Pet insurance quotes by breed and stat
+- ✅ `catalogue` 5d ago: Catalogue: queued 30 film(s): Groundhog Day (1993): 61090/mo, Twins (1988): 60890/mo, Once Upon a Time in the West (1968): 60890/mo, The Roc
+- ✅ `recheck` 5d ago: Recheck: looked at 1, published 0. Queue: 1 waiting for OMDb, 15 need review.
+- ✅ `discover` 6d ago: Discover: screened 15 new ideas for US$0.34; 3 promoted to scoring: Dog-friendly hotels by city (4 free domains), Pet insurance quotes by br
+- ✅ `competition` 9d ago: Competition: checked 4; 4 still to check (run again). | AU electric car running costs vs petrol by model: openness 49/100; big players drive
+- ✅ `keywords` 17d ago: Victorian road trips and itineraries: day trips from melbourne 2900, great alpine road 1900, weekend getaways from melbourne 1900, romantic 
 
 ## Simon's list (open)
 
@@ -77,8 +77,19 @@ Done in the last 7 days: Bing Webmaster Tools → Add site → Import from Googl
 
 ## Changes in the last 7 days
 
-100 commits (28 automated data updates). Hand-made changes:
+100 commits (30 automated data updates). Hand-made changes:
 
+- 2026-11-07 Leads: daily call list [skip ci]
+- 2026-11-06 HQ: milestone CHC best day ever (7 visits) [skip ci]
+- 2026-11-06 Widget builder: canonical link (verify-build)
+- 2026-11-06 Widget engine: one-line embeds for any brand, starting with the MovieTrailer.Channel trailer reel
+- 2026-11-06 Prospect playbook: weeklyCap 50 per brand so Radar can keep up with the send ramp
+- 2026-11-06 IMN HQ: one-click send from the brand address (Microsoft Graph) with a warm-up ramp
+- 2026-11-06 HQ: add ServiceM8 affiliate program (PartnerStack, 80% of first 12 months) [skip ci]
+- 2026-11-06 MyPayCalc: widen salary pages to every $5k to $200k, plus $350k-$500k
+- 2026-11-06 HQ: mark Fergus and Tradify partner programs approved [skip ci]
+- 2026-11-06 MyPayCalc: count calculator use and offer clicks in HQ stats (cta_ events)
+- 2026-11-06 MyPayCalc: partner offer slot (seasonal, hidden until a link is added) + affiliate disclosure page
 - 2026-11-06 Leads: daily call list [skip ci]
 - 2026-11-05 HQ: milestone first affiliate click on trailers [skip ci]
 - 2026-11-05 Morning traffic: fix stats refresh (batched GA4 calls), all-time filter, page review, progress tab
@@ -93,17 +104,6 @@ Done in the last 7 days: Bing Webmaster Tools → Add site → Import from Googl
 - 2026-11-05 Simon Says Travel: redeploy to attach www.simonsaystravel.com.au
 - 2026-11-05 Simon Says Travel: IndexNow key, health check, travel job monitored
 - 2026-11-05 Simon Says Travel: connect simonsaystravel.com.au and www
-- 2026-11-05 Vic Tours: Simon's insider tips on the Western Victoria Loop and Goldfields road trip
-- 2026-11-05 Backyard Wild: readable current nav item
-- 2026-11-05 Add Backyard Wild: Melbourne bird bath cam site (preview, noindex)
-- 2026-11-05 Vic Tours: longer road-trip guides + Skimlinks toggle
-- 2026-11-05 Leads: daily call list [skip ci]
-- 2026-11-04 HQ: milestone paycalc first Google click [skip ci]
-- 2026-11-04 Docs: Simon Says Travel notes and launch steps [skip ci]
-- 2026-11-04 Merge Simon Says Travel (new brand)
-- 2026-11-04 Simon Says Travel: Manrope body font, fuller reports intro
-- 2026-11-04 Simon Says Travel: new brand (monthly Aussie Travel Pulse)
-- 2026-11-04 Simon Says Travel: batch the biggest searches together for better precision
 
 ## Where things live
 
