@@ -5,12 +5,18 @@ interface Props { stream: Content['stream'] }
 const { stream } = Astro.props;
 const label = stream.status === 'live' ? 'Live now' : stream.status === 'replay' ? 'Replay' : 'Camera coming soon';
 const text = stream[stream.status];
+// A fixed video id wins; otherwise a live channel embeds whatever is live on it now (survives stream restarts).
+const src = stream.youtubeId
+  ? `https://www.youtube-nocookie.com/embed/${stream.youtubeId}?autoplay=1&mute=1&playsinline=1&rel=0`
+  : stream.status !== 'soon' && stream.channelId
+    ? `https://www.youtube.com/embed/live_stream?channel=${stream.channelId}&autoplay=1&mute=1&playsinline=1&rel=0`
+    : null;
 ---
 <figure class="bw-bath">
-  <div class={`bw-bath__frame${stream.youtubeId ? ' has-video' : ''}`}>
-    {stream.youtubeId ? (
+  <div class={`bw-bath__frame${src ? ' has-video' : ''}`}>
+    {src ? (
       <iframe
-        src={`https://www.youtube-nocookie.com/embed/${stream.youtubeId}?autoplay=1&mute=1&playsinline=1&rel=0`}
+        src={src}
         title="Backyard Wild bird bath camera"
         allow="autoplay; encrypted-media; picture-in-picture"
         allowfullscreen

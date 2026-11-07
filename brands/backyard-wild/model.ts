@@ -25,7 +25,7 @@ export interface BuildStep { date: string | null; title: string; done: boolean; 
 
 export interface Content {
   home: { seoTitle: string; description: string; h1: string; lede: string };
-  stream: { status: 'soon' | 'replay' | 'live'; youtubeId: string | null; soon: string; replay: string; live: string };
+  stream: { status: 'soon' | 'replay' | 'live'; youtubeId: string | null; channelId?: string; soon: string; replay: string; live: string };
   watchList: { h2: string; intro: string };
   pages: Record<string, { seoTitle: string; description: string; h1: string; paragraphs: string[] }>;
 }
