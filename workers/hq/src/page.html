@@ -198,6 +198,8 @@ details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px
 .rtop .meta{font-size:.84rem;color:var(--muted);overflow-wrap:anywhere}
 .rwhy{border-left:3px solid var(--c);padding-left:10px;margin:0;font-size:.92rem}
 .rwhy b{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.rchips{display:flex;flex-wrap:wrap;gap:6px;margin:0}.rchips span{font-size:.75rem;font-weight:600;padding:2px 9px;border-radius:999px;background:color-mix(in srgb,var(--c) 16%,transparent);border:1px solid color-mix(in srgb,var(--c) 40%,transparent)}
+.rnow{font-size:.92rem;margin:0}.rnow b{color:var(--c)}
 .rkv{display:grid;grid-template-columns:96px 1fr;gap:4px 12px;font-size:.88rem;margin:0}
 .rkv dt{color:var(--muted)}
 .rkv dd{margin:0;min-width:0;overflow-wrap:anywhere}
@@ -503,7 +505,8 @@ const fill = (text, v) => text
   .replaceAll('{organisation}', v.org || 'your organisation')
   .replaceAll('{region}', v.region || '')
   .replaceAll('{page}', v.page || v.site || '')
-  .replaceAll('{site}', (v.site || '').replace(/^https?:\/\//, ''));
+  .replaceAll('{site}', (v.site || '').replace(/^https?:\/\//, ''))
+  .replaceAll('{widget}', v.widget || v.page || v.site || '');
 
 async function openDraft(brand, key, org) {
   const pb = state.prospects.brands.find((b) => b.key === brand);
@@ -520,12 +523,15 @@ async function openDraft(brand, key, org) {
   const d = { ver: 0, subject: tpl.versions[0].subject, body: tpl.versions[0].body, id: tpl.versions[0].id, edited: false };
   const written = org && org.draft_body ? { subject: org.draft_subject || tpl.versions[0].subject, body: org.draft_body } : null;
   const from = tpl.brand.from || '';
-  const vals = () => ({ first: ($('#d-contact').value.trim().split(/\s+/)[0] || ''), org: $('#d-org').value.trim(), region: t.regionLabel, page: t.page || tpl.brand.site, site: tpl.brand.site });
+  const vals = () => ({ first: ($('#d-contact').value.trim().split(/\s+/)[0] || ''), org: $('#d-org').value.trim(), region: t.regionLabel, page: t.page || tpl.brand.site, site: tpl.brand.site, widget: (org && org.widget_url) || '' });
   body.innerHTML = `
     <header><div><h2 id="sheet-title">Draft email</h2><span class="pill" style="margin-top:6px">${esc(tpl.brand.name)} · ${esc(t.segmentLabel)} · ${esc(t.regionLabel)}</span></div><button class="close" id="close">Close</button></header>
     <p class="empty" id="d-pre" hidden style="padding:0"><b>Radar wrote this email for them.</b> Read it, edit anything, then send.</p>
     <div class="why">
+      ${org && org.why_now ? `<span><b>Why now${org.trigger_date && org.trigger_date !== 'evergreen' ? ' (' + esc(whenLabel(org.trigger_date)) + ')' : ''}:</b> ${esc(org.why_now)}</span>` : ''}
       ${org && org.why ? `<span><b>Why ${esc(org.name)} (Radar ${esc(org.score ?? '')}):</b> ${esc(org.why)}</span>` : ''}
+      ${org && org.gap ? `<span><b>Their gap:</b> ${esc(org.gap)}</span>` : ''}
+      ${org && org.widget_url ? `<span><b>Their widget preview:</b> <a href="${esc(org.widget_url)}" target="_blank" rel="noopener">open ↗</a> (fills {widget} in the email)</span>` : ''}
       ${org && org.opener ? `<span><b>Suggested first line:</b> ${esc(org.opener)} <button class="btn ghost" id="d-opener" style="padding:2px 8px;margin-left:4px">Use it</button></span>` : ''}
       <span><b>Why this target (score ${Number(t.score || 0).toFixed(0)}):</b> ${esc(t.why)}</span>
       <span><b>Offer:</b> ${esc(t.offer)}</span>
@@ -751,6 +757,17 @@ function openFollowUp(o) {
 }
 
 // ---------- Today (Radar) ----------
+// Buying signals (hq/prospect-playbook.json "_signals"): chips, why now (dated trigger), their gap, proof, the ask.
+function chips(o) {
+  let list = []; try { list = JSON.parse(o.signals || '[]'); } catch (e) { list = []; }
+  return Array.isArray(list) && list.length ? `<p class="rchips">${list.slice(0, 5).map((c) => `<span>${esc(c)}</span>`).join('')}</p>` : '';
+}
+function whenLabel(d) {
+  const t = Date.parse(d + 'T00:00:00'); if (!t) return d;
+  const days = Math.round((t - Date.now()) / 86400000);
+  const date = new Date(t).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
+  return days > 1 ? `${date}, in ${days < 14 ? days + ' days' : Math.round(days / 7) + ' weeks'}` : days >= -1 ? `${date}, now` : `${date}, passed`;
+}
 const DROP = [['not_fit', 'Not a fit'], ['no_email', 'No public email'], ['already', 'Already links to us']];
 function renderToday() {
   const r = state.radar;
@@ -762,8 +779,13 @@ function renderToday() {
         <div class="rscore">${esc(o.score ?? '–')}<small>FIT</small></div>
         <div><h3>${esc(o.name)}</h3><div class="meta">${esc(brandName(o.brand))} · ${esc(o.targetLabel || o.type || '')}</div></div>
       </div>
+      ${chips(o)}
+      ${o.why_now ? `<p class="rnow"><b>Why now${o.trigger_date && o.trigger_date !== 'evergreen' ? ' · ' + esc(whenLabel(o.trigger_date)) : ''}:</b> ${esc(o.why_now)}</p>` : ''}
       ${o.why ? `<p class="rwhy"><b>Why them</b>${esc(o.why)}</p>` : ''}
+      ${o.gap ? `<p class="rwhy"><b>Their gap</b>${esc(o.gap)}</p>` : ''}
       <dl class="rkv">
+        ${o.ask ? `<dt>The ask</dt><dd>${o.ask === 'widget' ? 'Free widget' + (o.widget_url ? ` · <a href="${esc(o.widget_url)}" target="_blank" rel="noopener">their preview ↗</a>` : '') + ', link as fallback' : 'Link from their resources page'}</dd>` : ''}
+        ${o.proof ? `<dt>Proof</dt><dd>${esc(o.proof)}</dd>` : ''}
         ${o.contact_email ? `<dt>Email</dt><dd>${esc(o.contact_email)}${o.contact_name ? ' · ' + esc(o.contact_name) : ''}${o.contact_role ? ', ' + esc(o.contact_role) : ''}${o.source_url ? ` · <a href="${esc(o.source_url)}" target="_blank" rel="noopener">where it's published ↗</a>` : ''}</dd>` : '<dt>Email</dt><dd>None found yet</dd>'}
         ${o.evidence_url ? `<dt>Links page</dt><dd><a href="${esc(o.evidence_url)}" target="_blank" rel="noopener">${esc(o.evidence_url.replace(/^https?:\/\//, ''))}</a></dd>` : ''}
         ${o.website ? `<dt>Website</dt><dd><a href="${esc(o.website)}" target="_blank" rel="noopener">${esc(o.website.replace(/^https?:\/\//, ''))}</a></dd>` : ''}

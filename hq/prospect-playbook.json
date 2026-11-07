@@ -57,7 +57,74 @@
       ],
       "site": "https://victours.com.au",
       "from": "simon@victours.com.au",
-      "mailReady": true
+      "mailReady": true,
+      "ask": {
+        "primary": "link",
+        "fallback": "link",
+        "pitch": "A free, up-to-date town guide and day trip plan for their visitors; we've already featured them on it (give first). Switches to a widget when Vic Tours has one."
+      },
+      "signals": {
+        "triggers": [
+          {
+            "key": "event",
+            "label": "Town festival, market or major event in the next 8 weeks",
+            "look": "Events calendar, 'what's on', news",
+            "points": 20,
+            "recurs": "yearly"
+          },
+          {
+            "key": "long-weekend",
+            "label": "Long weekend or school holidays coming (visitor planning season)",
+            "look": "Calendar: Melbourne Cup, Christmas/summer holidays, Labour Day, Easter",
+            "points": 10,
+            "recurs": "yearly"
+          },
+          {
+            "key": "campaign",
+            "label": "New tourism campaign, grant, new visitor centre or relaunched site in the last 3 months",
+            "look": "News / media release",
+            "points": 15
+          },
+          {
+            "key": "committee",
+            "label": "New committee, manager or tourism officer recently announced",
+            "look": "News / AGM post",
+            "points": 5
+          }
+        ],
+        "gaps": [
+          {
+            "key": "thin-plan",
+            "label": "'Plan your visit' page thin: no itineraries or day trip plan",
+            "look": "Visitor page",
+            "points": 10
+          },
+          {
+            "key": "stale",
+            "label": "Visitor info out of date (last updated 2+ years ago, past events still listed)",
+            "look": "Dates on the page",
+            "points": 10
+          },
+          {
+            "key": "broken-links",
+            "label": "Broken or dead outbound links on their resources page",
+            "look": "Click the links",
+            "points": 10
+          }
+        ],
+        "proof": [
+          "Search Console impressions for our page on their town (from stats: say 'Google already shows our {region} page N times a month')",
+          "They're already featured on our town page (give first)"
+        ],
+        "chips": [
+          "Event in N weeks",
+          "Long weekend",
+          "New campaign",
+          "Stale visitor page",
+          "Broken links",
+          "We already rank for {region}"
+        ]
+      }
     },
     "community-help-co": {
       "name": "Community Help Co",
@@ -167,7 +234,74 @@
       ],
       "site": "https://communityhelp.com.au",
       "from": "simon@communityhelp.com.au",
-      "mailReady": true
+      "mailReady": true,
+      "ask": {
+        "primary": "link",
+        "fallback": "link",
+        "pitch": "Free resume, cover letter and job tools their clients can use today, no sign-up; we list them as a place to get help in person (give first)."
+      },
+      "signals": {
+        "triggers": [
+          {
+            "key": "school-leavers",
+            "label": "School-leaver season (Nov–Feb): Year 12 finishing, first jobs, holiday work",
+            "look": "Youth / careers programs listed",
+            "points": 15,
+            "recurs": "yearly"
+          },
+          {
+            "key": "workshop",
+            "label": "Job-seeker workshop, resume clinic or employment program running this term",
+            "look": "Program / events page with dates",
+            "points": 20,
+            "recurs": "termly"
+          },
+          {
+            "key": "funding",
+            "label": "New employment program or funding announced in the last 3 months",
+            "look": "News / media release",
+            "points": 15
+          },
+          {
+            "key": "new-term",
+            "label": "New term or intake starting (TAFE, neighbourhood house program guide)",
+            "look": "Term dates / program guide",
+            "points": 10,
+            "recurs": "termly"
+          }
+        ],
+        "gaps": [
+          {
+            "key": "dead-links",
+            "label": "Job-seeker resource page with dead or outdated links",
+            "look": "Resources page",
+            "points": 10
+          },
+          {
+            "key": "no-resume-tool",
+            "label": "No resume or cover letter help listed",
+            "look": "Resources page",
+            "points": 10
+          },
+          {
+            "key": "paid-tools",
+            "label": "Points clients to paid resume tools",
+            "look": "Resources page",
+            "points": 5
+          }
+        ],
+        "proof": [
+          "Free, no sign-up, nothing to install",
+          "Real person behind it (1:1 mentoring)"
+        ],
+        "chips": [
+          "School leavers",
+          "Workshop this term",
+          "New funding",
+          "Dead resource links",
+          "No resume help listed"
+        ]
+      }
     },
     "trade-admin": {
       "name": "Trade Admin",
@@ -222,7 +356,74 @@
       ],
       "site": "https://tradeadmin.com.au",
       "from": "simon@tradeadmin.com.au",
-      "mailReady": false
+      "mailReady": false,
+      "ask": {
+        "primary": "link",
+        "fallback": "link",
+        "pitch": "A free, independent 'which job app suits my trade?' guide and quiz for their members/clients. Switches to the quiz widget when built."
+      },
+      "signals": {
+        "triggers": [
+          {
+            "key": "bas",
+            "label": "Quarterly BAS deadline within 8 weeks (28 Feb, 28 Apr, 28 Jul, 28 Oct)",
+            "look": "ATO dates; bookkeeper newsletters",
+            "points": 10,
+            "recurs": "quarterly"
+          },
+          {
+            "key": "eofy",
+            "label": "End of financial year (May–June planning)",
+            "look": "Calendar",
+            "points": 15,
+            "recurs": "yearly"
+          },
+          {
+            "key": "apprentice-intake",
+            "label": "Apprentice intake / new course start in the next 8 weeks",
+            "look": "TAFE / association course dates",
+            "points": 15,
+            "recurs": "yearly"
+          },
+          {
+            "key": "admin-content",
+            "label": "Recent post, webinar or event about admin, quoting, software or cash flow (last 3 months)",
+            "look": "Blog / events",
+            "points": 20
+          },
+          {
+            "key": "member-benefits",
+            "label": "Member benefits or resources page recently updated",
+            "look": "Page date",
+            "points": 5
+          }
+        ],
+        "gaps": [
+          {
+            "key": "no-software-guide",
+            "label": "No guidance on job management software for tradies",
+            "look": "Resources page",
+            "points": 15
+          },
+          {
+            "key": "vendor-only",
+            "label": "Only links to one vendor (looks paid), no independent comparison",
+            "look": "Resources page",
+            "points": 10
+          }
+        ],
+        "proof": [
+          "Independent: compares ServiceM8, Tradify, Fergus side by side",
+          "Trade-specific pages for their trade"
+        ],
+        "chips": [
+          "BAS due",
+          "EOFY",
+          "Apprentice intake",
+          "Wrote about admin",
+          "No software guide"
+        ]
+      }
     },
     "trailers": {
       "name": "MovieTrailer.Channel",
@@ -284,7 +485,7 @@
         {
           "key": "independent-cinema",
           "label": "Independent / repertory cinema",
-          "weight": 0.6,
+          "weight": 0.9,
           "offer": "Trailer pages for their classic screenings.",
           "evidence": "A 'classics' or repertory program page.",
           "search": [
@@ -304,11 +505,92 @@
             "library movie night {region}"
           ],
           "page": "https://www.movietrailer.channel/"
+        },
+        {
+          "key": "film-festival",
+          "label": "Film festival (classic, regional or community)",
+          "weight": 0.9,
+          "offer": "A free trailer reel for their program page, built for their season.",
+          "evidence": "A program or 'films' page listing titles, ideally without trailers.",
+          "search": [
+            "{region} film festival classic films",
+            "{region} community film festival",
+            "retro film festival {region}"
+          ],
+          "page": "https://www.movietrailer.channel/widgets"
         }
       ],
       "site": "https://www.movietrailer.channel",
       "from": "simon@movietrailer.channel",
-      "mailReady": true
+      "mailReady": true,
+      "ask": {
+        "primary": "widget",
+        "widget": "trailer-reel",
+        "builder": "https://www.movietrailer.channel/widgets",
+        "fallback": "link",
+        "pitch": "Their season's (or a matching collection's) trailers playing right on their page, updating themselves, free, one line of code."
+      },
+      "signals": {
+        "triggers": [
+          {
+            "key": "season",
+            "label": "Classic / retro season, festival or new program in the next 8 weeks",
+            "look": "Program, 'what's on', 'coming soon' or season pages with dates",
+            "points": 20,
+            "recurs": "seasonal or termly"
+          },
+          {
+            "key": "festival-dates",
+            "label": "Festival dates or call for entries just announced",
+            "look": "Festival home page / news post with dates",
+            "points": 15,
+            "recurs": "yearly"
+          },
+          {
+            "key": "new-site",
+            "label": "Website relaunched or new 'what's on' page in the last 3 months",
+            "look": "Footer 'launched' note, news post, fresh design",
+            "points": 10
+          },
+          {
+            "key": "anniversary",
+            "label": "Film anniversary or tribute screening coming up",
+            "look": "Screening listed with date",
+            "points": 10
+          }
+        ],
+        "gaps": [
+          {
+            "key": "static-posters",
+            "label": "'Coming soon' / program page shows posters or text only, no trailers",
+            "look": "Program page without video",
+            "points": 15
+          },
+          {
+            "key": "manual-trailers",
+            "label": "Trailers pasted in one by one (YouTube embeds per film) or linked out to YouTube",
+            "look": "Several separate YouTube embeds or links",
+            "points": 10
+          },
+          {
+            "key": "volunteer-run",
+            "label": "Volunteer-run, no web person (committee, 'run by volunteers')",
+            "look": "About / committee page",
+            "points": 5
+          }
+        ],
+        "proof": [
+          "Collections that match their program (e.g. 1980s action, Halloween) ready in the widget",
+          "Look-alike that installed the widget or linked (once any exist)"
+        ],
+        "chips": [
+          "Season in N weeks",
+          "Festival dates out",
+          "No trailers on program",
+          "Volunteer-run",
+          "Matching collection"
+        ]
+      }
     },
     "paycalc": {
       "name": "MyPayCalc",
@@ -388,7 +670,71 @@
       ],
       "site": "https://mypaycalc.com.au",
       "from": "simon@mypaycalc.com.au",
-      "mailReady": false
+      "mailReady": false,
+      "ask": {
+        "primary": "link",
+        "fallback": "link",
+        "pitch": "A free, ATO-accurate pay and HECS calculator for their students/clients, updated every rate change. Switches to the calculator widget when built."
+      },
+      "signals": {
+        "triggers": [
+          {
+            "key": "rba",
+            "label": "RBA decision day within 3 weeks (rate-rise calculator angle)",
+            "look": "RBA meeting dates",
+            "points": 10,
+            "recurs": "8 a year"
+          },
+          {
+            "key": "july-tax",
+            "label": "1 July tax and award wage changes (May–July)",
+            "look": "Calendar",
+            "points": 20,
+            "recurs": "yearly"
+          },
+          {
+            "key": "grad-season",
+            "label": "Graduate / first-job season (Oct–Feb) or international student intake (Feb, July)",
+            "look": "Careers events with dates",
+            "points": 15,
+            "recurs": "yearly"
+          },
+          {
+            "key": "money-workshop",
+            "label": "Money, budgeting or 'understanding your payslip' workshop this term",
+            "look": "Events page",
+            "points": 20,
+            "recurs": "termly"
+          }
+        ],
+        "gaps": [
+          {
+            "key": "old-calculator",
+            "label": "Links to an outdated or retired pay calculator, or an old tax year's rates",
+            "look": "Resources page",
+            "points": 15
+          },
+          {
+            "key": "no-pay-tool",
+            "label": "Money/budget resources but no take-home pay tool",
+            "look": "Resources page",
+            "points": 10
+          }
+        ],
+        "proof": [
+          "Every salary $20k–$500k has its own page",
+          "HECS and rate-rise calculators",
+          "Checked against ATO rates monthly"
+        ],
+        "chips": [
+          "RBA day",
+          "1 July changes",
+          "Grad season",
+          "Money workshop",
+          "Old calculator linked"
+        ]
+      }
     }
-  }
+  },
+  "_signals": "Buying signals per brand (7 Nov 2026, Simon: 'like FCBT Radar: buying signal and rationale for engagement, tailored per brand'). Radar reads this file. Every prospect gets: FIT (who they are), TRIGGER (a dated reason to email this week, verified on their own site with its real date), GAP (what's missing or broken on their site that we fix for free), PROOF (our numbers or look-alikes who said yes), chips, a score and an opener that leads with the trigger. Score = fit 0-60 + best trigger (points if 0-8 weeks away, half if 8-10 weeks) + gaps (max 20) + proof (max 10). Triggers preferred, strong evergreen fits allowed with a lower score. Trigger 10+ weeks away or just passed with a known next date: add the prospect but snooze it until ~6 weeks before the next one (re-surfaces by itself). ask.primary 'widget' = lead with the free widget (personalised builder link), link from their resources page as the fallback; 'link' = ask for the link (and give first) until the brand has a widget."
 }

@@ -61,7 +61,8 @@
     "film-society": "Film society / classic film club",
     "film-school": "Film school / university film club",
     "independent-cinema": "Independent / repertory cinema",
-    "library-film": "Library film program"
+    "library-film": "Library film program",
+    "film-festival": "Film festival (classic, regional or community)"
    }
   },
   "paycalc": {
@@ -1314,6 +1315,111 @@
   },
   {
    "brand": "trailers",
+   "key": "independent-cinema:vic",
+   "segment": "independent-cinema",
+   "segmentLabel": "Independent / repertory cinema",
+   "region": "vic",
+   "regionLabel": "Victoria",
+   "base": 90.0,
+   "why": "set in playbook",
+   "page": "https://www.movietrailer.channel/",
+   "offer": "Trailer pages for their classic screenings.",
+   "evidence": "A 'classics' or repertory program page.",
+   "search": [
+    "repertory cinema Victoria classic films",
+    "independent cinema Victoria classics"
+   ]
+  },
+  {
+   "brand": "trailers",
+   "key": "independent-cinema:nsw",
+   "segment": "independent-cinema",
+   "segmentLabel": "Independent / repertory cinema",
+   "region": "nsw",
+   "regionLabel": "New South Wales",
+   "base": 90.0,
+   "why": "set in playbook",
+   "page": "https://www.movietrailer.channel/",
+   "offer": "Trailer pages for their classic screenings.",
+   "evidence": "A 'classics' or repertory program page.",
+   "search": [
+    "repertory cinema New South Wales classic films",
+    "independent cinema New South Wales classics"
+   ]
+  },
+  {
+   "brand": "trailers",
+   "key": "film-festival:vic",
+   "segment": "film-festival",
+   "segmentLabel": "Film festival (classic, regional or community)",
+   "region": "vic",
+   "regionLabel": "Victoria",
+   "base": 90.0,
+   "why": "set in playbook",
+   "page": "https://www.movietrailer.channel/widgets",
+   "offer": "A free trailer reel for their program page, built for their season.",
+   "evidence": "A program or 'films' page listing titles, ideally without trailers.",
+   "search": [
+    "Victoria film festival classic films",
+    "Victoria community film festival",
+    "retro film festival Victoria"
+   ]
+  },
+  {
+   "brand": "trailers",
+   "key": "film-festival:nsw",
+   "segment": "film-festival",
+   "segmentLabel": "Film festival (classic, regional or community)",
+   "region": "nsw",
+   "regionLabel": "New South Wales",
+   "base": 90.0,
+   "why": "set in playbook",
+   "page": "https://www.movietrailer.channel/widgets",
+   "offer": "A free trailer reel for their program page, built for their season.",
+   "evidence": "A program or 'films' page listing titles, ideally without trailers.",
+   "search": [
+    "New South Wales film festival classic films",
+    "New South Wales community film festival",
+    "retro film festival New South Wales"
+   ]
+  },
+  {
+   "brand": "trailers",
+   "key": "independent-cinema:online",
+   "segment": "independent-cinema",
+   "segmentLabel": "Independent / repertory cinema",
+   "region": "online",
+   "regionLabel": "Online / national",
+   "base": 81.0,
+   "why": "set in playbook",
+   "page": "https://www.movietrailer.channel/",
+   "offer": "Trailer pages for their classic screenings.",
+   "evidence": "A 'classics' or repertory program page.",
+   "search": [
+    "repertory cinema Online / national classic films",
+    "independent cinema Online / national classics"
+   ]
+  },
+  {
+   "brand": "trailers",
+   "key": "film-festival:online",
+   "segment": "film-festival",
+   "segmentLabel": "Film festival (classic, regional or community)",
+   "region": "online",
+   "regionLabel": "Online / national",
+   "base": 81.0,
+   "why": "set in playbook",
+   "page": "https://www.movietrailer.channel/widgets",
+   "offer": "A free trailer reel for their program page, built for their season.",
+   "evidence": "A program or 'films' page listing titles, ideally without trailers.",
+   "search": [
+    "Online / national film festival classic films",
+    "Online / national community film festival",
+    "retro film festival Online / national"
+   ]
+  },
+  {
+   "brand": "trailers",
    "key": "film-society:qld",
    "segment": "film-society",
    "segmentLabel": "Film society / classic film club",
@@ -1382,6 +1488,41 @@
   },
   {
    "brand": "trailers",
+   "key": "independent-cinema:qld",
+   "segment": "independent-cinema",
+   "segmentLabel": "Independent / repertory cinema",
+   "region": "qld",
+   "regionLabel": "Queensland",
+   "base": 72.0,
+   "why": "set in playbook",
+   "page": "https://www.movietrailer.channel/",
+   "offer": "Trailer pages for their classic screenings.",
+   "evidence": "A 'classics' or repertory program page.",
+   "search": [
+    "repertory cinema Queensland classic films",
+    "independent cinema Queensland classics"
+   ]
+  },
+  {
+   "brand": "trailers",
+   "key": "film-festival:qld",
+   "segment": "film-festival",
+   "segmentLabel": "Film festival (classic, regional or community)",
+   "region": "qld",
+   "regionLabel": "Queensland",
+   "base": 72.0,
+   "why": "set in playbook",
+   "page": "https://www.movietrailer.channel/widgets",
+   "offer": "A free trailer reel for their program page, built for their season.",
+   "evidence": "A program or 'films' page listing titles, ideally without trailers.",
+   "search": [
+    "Queensland film festival classic films",
+    "Queensland community film festival",
+    "retro film festival Queensland"
+   ]
+  },
+  {
+   "brand": "trailers",
    "key": "film-society:wa-sa",
    "segment": "film-society",
    "segmentLabel": "Film society / classic film club",
@@ -1416,36 +1557,37 @@
   },
   {
    "brand": "trailers",
-   "key": "independent-cinema:vic",
+   "key": "independent-cinema:wa-sa",
    "segment": "independent-cinema",
    "segmentLabel": "Independent / repertory cinema",
-   "region": "vic",
-   "regionLabel": "Victoria",
-   "base": 60.0,
+   "region": "wa-sa",
+   "regionLabel": "WA and SA",
+   "base": 63.0,
    "why": "set in playbook",
    "page": "https://www.movietrailer.channel/",
    "offer": "Trailer pages for their classic screenings.",
    "evidence": "A 'classics' or repertory program page.",
    "search": [
-    "repertory cinema Victoria classic films",
-    "independent cinema Victoria classics"
+    "repertory cinema WA and SA classic films",
+    "independent cinema WA and SA classics"
    ]
   },
   {
    "brand": "trailers",
-   "key": "independent-cinema:nsw",
-   "segment": "independent-cinema",
-   "segmentLabel": "Independent / repertory cinema",
-   "region": "nsw",
-   "regionLabel": "New South Wales",
-   "base": 60.0,
+   "key": "film-festival:wa-sa",
+   "segment": "film-festival",
+   "segmentLabel": "Film festival (classic, regional or community)",
+   "region": "wa-sa",
+   "regionLabel": "WA and SA",
+   "base": 63.0,
    "why": "set in playbook",
-   "page": "https://www.movietrailer.channel/",
-   "offer": "Trailer pages for their classic screenings.",
-   "evidence": "A 'classics' or repertory program page.",
+   "page": "https://www.movietrailer.channel/widgets",
+   "offer": "A free trailer reel for their program page, built for their season.",
+   "evidence": "A program or 'films' page listing titles, ideally without trailers.",
    "search": [
-    "repertory cinema New South Wales classic films",
-    "independent cinema New South Wales classics"
+    "WA and SA film festival classic films",
+    "WA and SA community film festival",
+    "retro film festival WA and SA"
    ]
   },
   {
@@ -1463,23 +1605,6 @@
    "search": [
     "film school WA and SA student resources",
     "university film society WA and SA"
-   ]
-  },
-  {
-   "brand": "trailers",
-   "key": "independent-cinema:online",
-   "segment": "independent-cinema",
-   "segmentLabel": "Independent / repertory cinema",
-   "region": "online",
-   "regionLabel": "Online / national",
-   "base": 54.0,
-   "why": "set in playbook",
-   "page": "https://www.movietrailer.channel/",
-   "offer": "Trailer pages for their classic screenings.",
-   "evidence": "A 'classics' or repertory program page.",
-   "search": [
-    "repertory cinema Online / national classic films",
-    "independent cinema Online / national classics"
    ]
   },
   {
@@ -1518,23 +1643,6 @@
   },
   {
    "brand": "trailers",
-   "key": "independent-cinema:qld",
-   "segment": "independent-cinema",
-   "segmentLabel": "Independent / repertory cinema",
-   "region": "qld",
-   "regionLabel": "Queensland",
-   "base": 48.0,
-   "why": "set in playbook",
-   "page": "https://www.movietrailer.channel/",
-   "offer": "Trailer pages for their classic screenings.",
-   "evidence": "A 'classics' or repertory program page.",
-   "search": [
-    "repertory cinema Queensland classic films",
-    "independent cinema Queensland classics"
-   ]
-  },
-  {
-   "brand": "trailers",
    "key": "library-film:online",
    "segment": "library-film",
    "segmentLabel": "Library film program",
@@ -1548,23 +1656,6 @@
    "search": [
     "library film club Online / national",
     "library movie night Online / national"
-   ]
-  },
-  {
-   "brand": "trailers",
-   "key": "independent-cinema:wa-sa",
-   "segment": "independent-cinema",
-   "segmentLabel": "Independent / repertory cinema",
-   "region": "wa-sa",
-   "regionLabel": "WA and SA",
-   "base": 42.0,
-   "why": "set in playbook",
-   "page": "https://www.movietrailer.channel/",
-   "offer": "Trailer pages for their classic screenings.",
-   "evidence": "A 'classics' or repertory program page.",
-   "search": [
-    "repertory cinema WA and SA classic films",
-    "independent cinema WA and SA classics"
    ]
   },
   {
