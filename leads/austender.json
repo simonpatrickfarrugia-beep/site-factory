@@ -1,29 +1,119 @@
 {
- "generatedAt": "2026-11-06T00:59:29+00:00",
+ "generatedAt": "2026-11-07T00:09:34+00:00",
  "days": 7,
  "suppliers": [
   {
-   "name": "The Trustee for THE FITCHETT FAMILY TRUST",
+   "name": "HUDSON AUST PTY LTD",
    "abn": "",
-   "locality": "Bayswater",
-   "state": "VIC",
+   "locality": "Sydney",
+   "state": "NSW",
    "contracts": [
     {
-     "value": 53680.0,
-     "buyer": "Royal Australian Mint",
+     "value": 281732.0,
+     "buyer": "Department of Home Affairs",
      "buyerState": "ACT",
-     "desc": "Furnace Pump Maintenance and Training",
+     "desc": "ICT Contractor Services",
      "category": "",
-     "start": "2026-10-12",
-     "end": "2027-01-12",
-     "id": "CN4287054"
+     "start": "2026-11-08",
+     "end": "2027-06-29",
+     "id": "CN4287078"
+    },
+    {
+     "value": 23114.03,
+     "buyer": "Department of Infrastructure, Transport, Regional Development, Communications, Sport and the Arts",
+     "buyerState": null,
+     "desc": "Contractor",
+     "category": "",
+     "start": "2026-11-02",
+     "end": "2026-12-10",
+     "id": "CN4287020"
     }
    ],
-   "total": 53680,
+   "total": 304846,
+   "score": 8.0,
+   "interstate": true,
+   "why": [
+    "based in Sydney NSW, delivering for Department of Home Affairs (Canberra)",
+    "2 new government contracts in the last 7 days",
+    "work runs 8 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "CLEARED PTY LTD",
+   "abn": "",
+   "locality": "Bondi Junction",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 333293.18,
+     "buyer": "Department of Home Affairs",
+     "buyerState": "ACT",
+     "desc": "ICT Contractor Services",
+     "category": "",
+     "start": "2026-12-06",
+     "end": "2027-06-29",
+     "id": "CN4287103"
+    }
+   ],
+   "total": 333293,
    "score": 7.0,
    "interstate": true,
    "why": [
-    "based in Bayswater VIC, delivering for Royal Australian Mint (Canberra)"
+    "based in Bondi Junction NSW, delivering for Department of Home Affairs (Canberra)",
+    "work runs 7 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "ABT ASSOCIATES PTY LTD",
+   "abn": "",
+   "locality": "Brisbane",
+   "state": "QLD",
+   "contracts": [
+    {
+     "value": 105512.0,
+     "buyer": "Department of Home Affairs",
+     "buyerState": "ACT",
+     "desc": "Business Administration Services",
+     "category": "",
+     "start": "2026-09-13",
+     "end": "2027-06-29",
+     "id": "CN4287077"
+    }
+   ],
+   "total": 105512,
+   "score": 7.0,
+   "interstate": true,
+   "why": [
+    "based in Brisbane QLD, delivering for Department of Home Affairs (Canberra)",
+    "work runs 10 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "RM HASSALL & AS WHITE & OTHERS",
+   "abn": "",
+   "locality": "Newcastle",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 80000.0,
+     "buyer": "Department of Home Affairs",
+     "buyerState": "ACT",
+     "desc": "Legal Services",
+     "category": "",
+     "start": "2026-11-01",
+     "end": "2027-10-31",
+     "id": "CN4287083"
+    }
+   ],
+   "total": 80000,
+   "score": 6.0,
+   "interstate": true,
+   "why": [
+    "based in Newcastle NSW, delivering for Department of Home Affairs (Canberra)",
+    "work runs 12 months"
    ],
    "seenBefore": false
   },
@@ -63,6 +153,68 @@
     "work runs 8 months"
    ],
    "seenBefore": true
+  },
+  {
+   "name": "MADDOCKS",
+   "abn": "",
+   "locality": "Melbourne",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 273919.8,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Legal Services",
+     "category": "",
+     "start": "2026-11-04",
+     "end": "2029-11-08",
+     "id": "CN4287137"
+    },
+    {
+     "value": 108274.9,
+     "buyer": "Department of Home Affairs",
+     "buyerState": "ACT",
+     "desc": "Legal Services",
+     "category": "",
+     "start": "2026-10-21",
+     "end": "2028-01-30",
+     "id": "CN4287084"
+    }
+   ],
+   "total": 382195,
+   "score": 5.0,
+   "interstate": true,
+   "why": [
+    "based in Melbourne VIC, delivering for Department of Home Affairs (Canberra)",
+    "2 new government contracts in the last 7 days",
+    "work runs 37 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "Bevington Consulting Pty. Ltd.",
+   "abn": "",
+   "locality": "Melbourne",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 315000.0,
+     "buyer": "Clean Energy Regulator",
+     "buyerState": null,
+     "desc": "strategic advisory services",
+     "category": "",
+     "start": "2026-11-01",
+     "end": "2027-10-31",
+     "id": "CN4287316"
+    }
+   ],
+   "total": 315000,
+   "score": 5.0,
+   "interstate": false,
+   "why": [
+    "work runs 12 months"
+   ],
+   "seenBefore": false
   },
   {
    "name": "KONGSBERG MARITIME PTY LTD",
@@ -117,6 +269,104 @@
    "why": [
     "4 new government contracts in the last 7 days",
     "work runs 8 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "EBSCO AUSTRALIA SUBSCRIPTON SERVICES",
+   "abn": "",
+   "locality": "Nth Sydney",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 142713.86,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Digital Research Database",
+     "category": "",
+     "start": "2026-11-04",
+     "end": "2027-12-30",
+     "id": "CN4287158"
+    }
+   ],
+   "total": 142714,
+   "score": 5.0,
+   "interstate": false,
+   "why": [
+    "work runs 14 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "ACIL ALLEN PTY LIMITED",
+   "abn": "",
+   "locality": "Melbourne",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 172265.25,
+     "buyer": "National Emergency Management Agency",
+     "buyerState": null,
+     "desc": "NEMS Independent Assessment Project",
+     "category": "",
+     "start": "2026-10-19",
+     "end": "2027-01-31",
+     "id": "CN4287109"
+    }
+   ],
+   "total": 172265,
+   "score": 4.0,
+   "interstate": false,
+   "why": [],
+   "seenBefore": false
+  },
+  {
+   "name": "TTF PURPLE PIG DISCRETIONARY TRUST",
+   "abn": "",
+   "locality": "Thornlands",
+   "state": "QLD",
+   "contracts": [
+    {
+     "value": 86020.0,
+     "buyer": "Department of Agriculture, Fisheries and Forestry",
+     "buyerState": null,
+     "desc": "Facilitate AI Animal Disease and Pest Diagnostics Workshops",
+     "category": "",
+     "start": "2026-11-01",
+     "end": "2027-07-17",
+     "id": "CN4287288"
+    }
+   ],
+   "total": 86020,
+   "score": 4.0,
+   "interstate": false,
+   "why": [
+    "work runs 9 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "The Trustee for THE FITCHETT FAMILY TRUST",
+   "abn": "",
+   "locality": "Bayswater",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 53680.0,
+     "buyer": "Royal Australian Mint",
+     "buyerState": "ACT",
+     "desc": "Furnace Pump Maintenance and Training",
+     "category": "",
+     "start": "2026-10-12",
+     "end": "2027-01-12",
+     "id": "CN4287054"
+    }
+   ],
+   "total": 53680,
+   "score": 4.0,
+   "interstate": true,
+   "why": [
+    "based in Bayswater VIC, delivering for Royal Australian Mint (Canberra)"
    ],
    "seenBefore": true
   },
@@ -533,31 +783,6 @@
    "interstate": false,
    "why": [
     "work runs 9 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "Elite Group (ACT) Pty Ltd",
-   "abn": "",
-   "locality": "Jerrabomerra",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 74365.5,
-     "buyer": "Department of Industry, Science and Resources",
-     "buyerState": "ACT",
-     "desc": "Event production services",
-     "category": "",
-     "start": "2026-11-01",
-     "end": "2026-12-16",
-     "id": "CN4286494"
-    }
-   ],
-   "total": 74366,
-   "score": 2.0,
-   "interstate": true,
-   "why": [
-    "based in Jerrabomerra NSW, delivering for Department of Industry, Science and Resources (Canberra)"
    ],
    "seenBefore": true
   },
