@@ -1,122 +1,7 @@
 {
- "generatedAt": "2026-11-07T00:09:34+00:00",
+ "generatedAt": "2026-11-07T23:41:53+00:00",
  "days": 7,
  "suppliers": [
-  {
-   "name": "HUDSON AUST PTY LTD",
-   "abn": "",
-   "locality": "Sydney",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 281732.0,
-     "buyer": "Department of Home Affairs",
-     "buyerState": "ACT",
-     "desc": "ICT Contractor Services",
-     "category": "",
-     "start": "2026-11-08",
-     "end": "2027-06-29",
-     "id": "CN4287078"
-    },
-    {
-     "value": 23114.03,
-     "buyer": "Department of Infrastructure, Transport, Regional Development, Communications, Sport and the Arts",
-     "buyerState": null,
-     "desc": "Contractor",
-     "category": "",
-     "start": "2026-11-02",
-     "end": "2026-12-10",
-     "id": "CN4287020"
-    }
-   ],
-   "total": 304846,
-   "score": 8.0,
-   "interstate": true,
-   "why": [
-    "based in Sydney NSW, delivering for Department of Home Affairs (Canberra)",
-    "2 new government contracts in the last 7 days",
-    "work runs 8 months"
-   ],
-   "seenBefore": false
-  },
-  {
-   "name": "CLEARED PTY LTD",
-   "abn": "",
-   "locality": "Bondi Junction",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 333293.18,
-     "buyer": "Department of Home Affairs",
-     "buyerState": "ACT",
-     "desc": "ICT Contractor Services",
-     "category": "",
-     "start": "2026-12-06",
-     "end": "2027-06-29",
-     "id": "CN4287103"
-    }
-   ],
-   "total": 333293,
-   "score": 7.0,
-   "interstate": true,
-   "why": [
-    "based in Bondi Junction NSW, delivering for Department of Home Affairs (Canberra)",
-    "work runs 7 months"
-   ],
-   "seenBefore": false
-  },
-  {
-   "name": "ABT ASSOCIATES PTY LTD",
-   "abn": "",
-   "locality": "Brisbane",
-   "state": "QLD",
-   "contracts": [
-    {
-     "value": 105512.0,
-     "buyer": "Department of Home Affairs",
-     "buyerState": "ACT",
-     "desc": "Business Administration Services",
-     "category": "",
-     "start": "2026-09-13",
-     "end": "2027-06-29",
-     "id": "CN4287077"
-    }
-   ],
-   "total": 105512,
-   "score": 7.0,
-   "interstate": true,
-   "why": [
-    "based in Brisbane QLD, delivering for Department of Home Affairs (Canberra)",
-    "work runs 10 months"
-   ],
-   "seenBefore": false
-  },
-  {
-   "name": "RM HASSALL & AS WHITE & OTHERS",
-   "abn": "",
-   "locality": "Newcastle",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 80000.0,
-     "buyer": "Department of Home Affairs",
-     "buyerState": "ACT",
-     "desc": "Legal Services",
-     "category": "",
-     "start": "2026-11-01",
-     "end": "2027-10-31",
-     "id": "CN4287083"
-    }
-   ],
-   "total": 80000,
-   "score": 6.0,
-   "interstate": true,
-   "why": [
-    "based in Newcastle NSW, delivering for Department of Home Affairs (Canberra)",
-    "work runs 12 months"
-   ],
-   "seenBefore": false
-  },
   {
    "name": "Australian Grape and Wine Incorpora",
    "abn": "",
@@ -192,29 +77,41 @@
    "seenBefore": true
   },
   {
-   "name": "Bevington Consulting Pty. Ltd.",
+   "name": "HUDSON AUST PTY LTD",
    "abn": "",
-   "locality": "Melbourne",
-   "state": "VIC",
+   "locality": "Sydney",
+   "state": "NSW",
    "contracts": [
     {
-     "value": 315000.0,
-     "buyer": "Clean Energy Regulator",
-     "buyerState": null,
-     "desc": "strategic advisory services",
+     "value": 281732.0,
+     "buyer": "Department of Home Affairs",
+     "buyerState": "ACT",
+     "desc": "ICT Contractor Services",
      "category": "",
-     "start": "2026-11-01",
-     "end": "2027-10-31",
-     "id": "CN4287316"
+     "start": "2026-11-08",
+     "end": "2027-06-29",
+     "id": "CN4287078"
+    },
+    {
+     "value": 23114.03,
+     "buyer": "Department of Infrastructure, Transport, Regional Development, Communications, Sport and the Arts",
+     "buyerState": null,
+     "desc": "Contractor",
+     "category": "",
+     "start": "2026-11-02",
+     "end": "2026-12-10",
+     "id": "CN4287020"
     }
    ],
-   "total": 315000,
+   "total": 304846,
    "score": 5.0,
-   "interstate": false,
+   "interstate": true,
    "why": [
-    "work runs 12 months"
+    "based in Sydney NSW, delivering for Department of Home Affairs (Canberra)",
+    "2 new government contracts in the last 7 days",
+    "work runs 8 months"
    ],
-   "seenBefore": false
+   "seenBefore": true
   },
   {
    "name": "KONGSBERG MARITIME PTY LTD",
@@ -273,77 +170,56 @@
    "seenBefore": true
   },
   {
-   "name": "EBSCO AUSTRALIA SUBSCRIPTON SERVICES",
+   "name": "CLEARED PTY LTD",
    "abn": "",
-   "locality": "Nth Sydney",
+   "locality": "Bondi Junction",
    "state": "NSW",
    "contracts": [
     {
-     "value": 142713.86,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Digital Research Database",
+     "value": 333293.18,
+     "buyer": "Department of Home Affairs",
+     "buyerState": "ACT",
+     "desc": "ICT Contractor Services",
      "category": "",
-     "start": "2026-11-04",
-     "end": "2027-12-30",
-     "id": "CN4287158"
+     "start": "2026-12-06",
+     "end": "2027-06-29",
+     "id": "CN4287103"
     }
    ],
-   "total": 142714,
-   "score": 5.0,
-   "interstate": false,
-   "why": [
-    "work runs 14 months"
-   ],
-   "seenBefore": false
-  },
-  {
-   "name": "ACIL ALLEN PTY LIMITED",
-   "abn": "",
-   "locality": "Melbourne",
-   "state": "VIC",
-   "contracts": [
-    {
-     "value": 172265.25,
-     "buyer": "National Emergency Management Agency",
-     "buyerState": null,
-     "desc": "NEMS Independent Assessment Project",
-     "category": "",
-     "start": "2026-10-19",
-     "end": "2027-01-31",
-     "id": "CN4287109"
-    }
-   ],
-   "total": 172265,
+   "total": 333293,
    "score": 4.0,
-   "interstate": false,
-   "why": [],
-   "seenBefore": false
+   "interstate": true,
+   "why": [
+    "based in Bondi Junction NSW, delivering for Department of Home Affairs (Canberra)",
+    "work runs 7 months"
+   ],
+   "seenBefore": true
   },
   {
-   "name": "TTF PURPLE PIG DISCRETIONARY TRUST",
+   "name": "ABT ASSOCIATES PTY LTD",
    "abn": "",
-   "locality": "Thornlands",
+   "locality": "Brisbane",
    "state": "QLD",
    "contracts": [
     {
-     "value": 86020.0,
-     "buyer": "Department of Agriculture, Fisheries and Forestry",
-     "buyerState": null,
-     "desc": "Facilitate AI Animal Disease and Pest Diagnostics Workshops",
+     "value": 105512.0,
+     "buyer": "Department of Home Affairs",
+     "buyerState": "ACT",
+     "desc": "Business Administration Services",
      "category": "",
-     "start": "2026-11-01",
-     "end": "2027-07-17",
-     "id": "CN4287288"
+     "start": "2026-09-13",
+     "end": "2027-06-29",
+     "id": "CN4287077"
     }
    ],
-   "total": 86020,
+   "total": 105512,
    "score": 4.0,
-   "interstate": false,
+   "interstate": true,
    "why": [
-    "work runs 9 months"
+    "based in Brisbane QLD, delivering for Department of Home Affairs (Canberra)",
+    "work runs 10 months"
    ],
-   "seenBefore": false
+   "seenBefore": true
   },
   {
    "name": "The Trustee for THE FITCHETT FAMILY TRUST",
@@ -403,6 +279,32 @@
    "why": [
     "2 new government contracts in the last 7 days",
     "work runs 8 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "RM HASSALL & AS WHITE & OTHERS",
+   "abn": "",
+   "locality": "Newcastle",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 80000.0,
+     "buyer": "Department of Home Affairs",
+     "buyerState": "ACT",
+     "desc": "Legal Services",
+     "category": "",
+     "start": "2026-11-01",
+     "end": "2027-10-31",
+     "id": "CN4287083"
+    }
+   ],
+   "total": 80000,
+   "score": 3.0,
+   "interstate": true,
+   "why": [
+    "based in Newcastle NSW, delivering for Department of Home Affairs (Canberra)",
+    "work runs 12 months"
    ],
    "seenBefore": true
   },
@@ -662,6 +564,31 @@
    "seenBefore": true
   },
   {
+   "name": "Bevington Consulting Pty. Ltd.",
+   "abn": "",
+   "locality": "Melbourne",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 315000.0,
+     "buyer": "Clean Energy Regulator",
+     "buyerState": null,
+     "desc": "strategic advisory services",
+     "category": "",
+     "start": "2026-11-01",
+     "end": "2027-10-31",
+     "id": "CN4287316"
+    }
+   ],
+   "total": 315000,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 12 months"
+   ],
+   "seenBefore": true
+  },
+  {
    "name": "Platypus Research and Development Pty Ltd",
    "abn": "",
    "locality": "Hume",
@@ -762,6 +689,31 @@
    "seenBefore": true
   },
   {
+   "name": "EBSCO AUSTRALIA SUBSCRIPTON SERVICES",
+   "abn": "",
+   "locality": "Nth Sydney",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 142713.86,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Digital Research Database",
+     "category": "",
+     "start": "2026-11-04",
+     "end": "2027-12-30",
+     "id": "CN4287158"
+    }
+   ],
+   "total": 142714,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 14 months"
+   ],
+   "seenBefore": true
+  },
+  {
    "name": "JONES LANG LASALLE (ACT) PTY LIMITED",
    "abn": "",
    "locality": "Sydney",
@@ -787,6 +739,29 @@
    "seenBefore": true
   },
   {
+   "name": "ACIL ALLEN PTY LIMITED",
+   "abn": "",
+   "locality": "Melbourne",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 172265.25,
+     "buyer": "National Emergency Management Agency",
+     "buyerState": null,
+     "desc": "NEMS Independent Assessment Project",
+     "category": "",
+     "start": "2026-10-19",
+     "end": "2027-01-31",
+     "id": "CN4287109"
+    }
+   ],
+   "total": 172265,
+   "score": 1.0,
+   "interstate": false,
+   "why": [],
+   "seenBefore": true
+  },
+  {
    "name": "CALLIDA PTY LTD",
    "abn": "",
    "locality": "Kingston",
@@ -807,6 +782,31 @@
    "score": 1.0,
    "interstate": false,
    "why": [],
+   "seenBefore": true
+  },
+  {
+   "name": "TTF PURPLE PIG DISCRETIONARY TRUST",
+   "abn": "",
+   "locality": "Thornlands",
+   "state": "QLD",
+   "contracts": [
+    {
+     "value": 86020.0,
+     "buyer": "Department of Agriculture, Fisheries and Forestry",
+     "buyerState": null,
+     "desc": "Facilitate AI Animal Disease and Pest Diagnostics Workshops",
+     "category": "",
+     "start": "2026-11-01",
+     "end": "2027-07-17",
+     "id": "CN4287288"
+    }
+   ],
+   "total": 86020,
+   "score": 1.0,
+   "interstate": false,
+   "why": [
+    "work runs 9 months"
+   ],
    "seenBefore": true
   },
   {
