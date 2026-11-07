@@ -86,6 +86,14 @@ function senderFor(env: SendEnv, brand: string) {
   return env.MS_SENDER!;
 }
 
+/** Plain text → simple HTML in Outlook's default look: paragraphs, line breaks, clickable links. */
+function toHtml(text: string) {
+  const esc = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const link = (t: string) => t.replace(/https?:\/\/[^\s<]+[^\s<.,;:!?)"']/g, (u) => `<a href="${u}">${u}</a>`);
+  const paras = text.replace(/\r\n/g, '\n').trim().split(/\n{2,}/).map((p) => `<p style="margin:0 0 12px">${link(esc(p)).replace(/\n/g, '<br>')}</p>`);
+  return `<div style="font-family:Aptos,Calibri,Arial,sans-serif;font-size:11pt;color:#222">${paras.join('')}</div>`;
+}
+
 async function graphSend(env: SendEnv, brand: string, from: string, to: string, subject: string, body: string) {
   const mailbox = senderFor(env, brand);
   const r = await fetch(`https://graph.microsoft.com/v1.0/users/${encodeURIComponent(mailbox)}/sendMail`, {
@@ -94,7 +102,9 @@ async function graphSend(env: SendEnv, brand: string, from: string, to: string, 
     body: JSON.stringify({
       message: {
         subject,
-        body: { contentType: 'Text', content: body },
+        // HTML, not plain text: Exchange's signature rule only adds the full designed (HTML) brand signature
+        // to HTML emails; on plain-text emails it falls back to a text-only version.
+        body: { contentType: 'HTML', content: toHtml(body) },
         from: { emailAddress: { address: from } },
         toRecipients: [{ emailAddress: { address: to } }],
       },
