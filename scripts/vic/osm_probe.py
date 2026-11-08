@@ -77,7 +77,8 @@ def classify(tags):
 def probe(town):
     kind = town['kind']
     radius = RADIUS['city'] if town['name'] in BIG else RADIUS.get(kind, 3000)
-    c = centre(town['name'], kind)
+    # centreOverride in towns.json fixes places OpenStreetMap geocodes to the wrong point (e.g. Mount Buller)
+    c = tuple(town['centreOverride']) if town.get('centreOverride') else centre(town['name'], kind)
     if not c:
         return None, {'at': now(), 'error': 'place not found in OpenStreetMap'}
     lat, lon = c
