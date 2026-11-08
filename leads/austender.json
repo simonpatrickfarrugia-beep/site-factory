@@ -1,7 +1,33 @@
 {
- "generatedAt": "2026-11-07T23:41:53+00:00",
+ "generatedAt": "2026-11-08T23:48:08+00:00",
  "days": 7,
  "suppliers": [
+  {
+   "name": "IBISWORLD PTY LTD",
+   "abn": "",
+   "locality": "Melbourne",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 94066.5,
+     "buyer": "Australian Securities and Investments Commission",
+     "buyerState": "NSW",
+     "desc": "IBISWorld renewal 2026-2027",
+     "category": "",
+     "start": "2026-11-12",
+     "end": "2027-11-11",
+     "id": "CN4287341"
+    }
+   ],
+   "total": 94066,
+   "score": 6.0,
+   "interstate": true,
+   "why": [
+    "based in Melbourne VIC, delivering for Australian Securities and Investments Commission (NSW)",
+    "work runs 12 months"
+   ],
+   "seenBefore": false
+  },
   {
    "name": "Australian Grape and Wine Incorpora",
    "abn": "",
@@ -464,31 +490,6 @@
    "seenBefore": true
   },
   {
-   "name": "McGrathNicol Advisory Partnership",
-   "abn": "",
-   "locality": "Sydney",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 585609.75,
-     "buyer": "Reserve Bank of Australia",
-     "buyerState": null,
-     "desc": "Crisis management planning advisory services",
-     "category": "",
-     "start": "2026-08-03",
-     "end": "2027-03-30",
-     "id": "CN4284279"
-    }
-   ],
-   "total": 585610,
-   "score": 2.0,
-   "interstate": false,
-   "why": [
-    "work runs 8 months"
-   ],
-   "seenBefore": true
-  },
-  {
    "name": "Veritas Buildings & Infrastructure Pty Ltd",
    "abn": "",
    "locality": "Sydney",
@@ -614,56 +615,6 @@
    "seenBefore": true
   },
   {
-   "name": "MEDHEALTH PTY LIMITED",
-   "abn": "",
-   "locality": "Carlton South",
-   "state": "VIC",
-   "contracts": [
-    {
-     "value": 150000.0,
-     "buyer": "Department of Agriculture, Fisheries and Forestry",
-     "buyerState": null,
-     "desc": "Occupational Rehabilitation and Assessment Services",
-     "category": "",
-     "start": "2026-10-31",
-     "end": "2028-10-30",
-     "id": "CN4285906"
-    }
-   ],
-   "total": 150000,
-   "score": 2.0,
-   "interstate": false,
-   "why": [
-    "work runs 24 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "MEDIRECT PTY LTD",
-   "abn": "",
-   "locality": "Warriewood",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 150000.0,
-     "buyer": "Department of Agriculture, Fisheries and Forestry",
-     "buyerState": null,
-     "desc": "Occupational Rehabilitation and Assessment Services",
-     "category": "",
-     "start": "2026-10-31",
-     "end": "2028-10-30",
-     "id": "CN4285907"
-    }
-   ],
-   "total": 150000,
-   "score": 2.0,
-   "interstate": false,
-   "why": [
-    "work runs 24 months"
-   ],
-   "seenBefore": true
-  },
-  {
    "name": "MOTT MACDONALD AUSTRALIA PTY LIMITED",
    "abn": "",
    "locality": "Adelaide",
@@ -710,31 +661,6 @@
    "interstate": false,
    "why": [
     "work runs 14 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "JONES LANG LASALLE (ACT) PTY LIMITED",
-   "abn": "",
-   "locality": "Sydney",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 129207.1,
-     "buyer": "National Indigenous Australians Agency",
-     "buyerState": null,
-     "desc": "Project Management",
-     "category": "",
-     "start": "2026-10-13",
-     "end": "2027-06-29",
-     "id": "CN4285930"
-    }
-   ],
-   "total": 129207,
-   "score": 2.0,
-   "interstate": false,
-   "why": [
-    "work runs 9 months"
    ],
    "seenBefore": true
   },
