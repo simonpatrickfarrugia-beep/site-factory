@@ -249,9 +249,9 @@
     17294
    ],
    "revenueUsd": [
-    47,
-    376,
-    1638
+    46,
+    367,
+    1595
    ],
    "bestPerSaleUsd": 9,
    "programs": [
@@ -808,7 +808,7 @@
    "revenueUsd": [
     11,
     78,
-    302
+    300
    ],
    "bestPerSaleUsd": 1,
    "programs": [
@@ -1268,21 +1268,53 @@
   "scoredAt": "2026-10-29T05:15:56.891Z",
   "location": "Australia",
   "error": null,
-  "categories": [],
+  "categories": [
+   "outdoors"
+  ],
   "money": {
-   "categories": [],
+   "categories": [
+    "outdoors"
+   ],
    "visits": [
     250,
     624,
     1248
    ],
    "revenueUsd": [
-    2,
-    15,
-    56
+    3,
+    19,
+    79
    ],
-   "bestPerSaleUsd": 0,
-   "programs": []
+   "bestPerSaleUsd": 3.5,
+   "programs": [
+    {
+     "id": "ruffwear",
+     "name": "Ruffwear (dog gear)",
+     "commission": "~8%",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "amazon-au",
+     "name": "Amazon Associates Australia",
+     "commission": "By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other",
+     "approval": "easy",
+     "requirements": "Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "commissionfactory",
+     "name": "Commission Factory (Australian network)",
+     "commission": "varies by brand",
+     "approval": "easy",
+     "requirements": "Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network.",
+     "status": "rejected",
+     "verified": true
+    }
+   ]
   },
   "competition": {
    "checkedAt": "2026-10-29T05:19:51.935Z",
@@ -1806,7 +1838,7 @@
    "revenueUsd": [
     3,
     21,
-    88
+    86
    ],
    "bestPerSaleUsd": 5,
    "programs": [
@@ -2356,8 +2388,8 @@
    ],
    "revenueUsd": [
     12,
-    100,
-    453
+    97,
+    438
    ],
    "bestPerSaleUsd": 11.5,
    "programs": [
@@ -2367,7 +2399,7 @@
      "commission": "70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire)",
      "approval": "easy",
      "requirements": "Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire.",
-     "status": "not applied",
+     "status": "approved",
      "verified": true
     },
     {
@@ -2891,9 +2923,9 @@
     117896
    ],
    "revenueUsd": [
-    322,
-    2560,
-    11169
+    317,
+    2502,
+    10874
    ],
    "bestPerSaleUsd": 9,
    "programs": [
@@ -3324,9 +3356,9 @@
     12717
    ],
    "revenueUsd": [
-    37,
-    334,
-    1598
+    35,
+    321,
+    1533
    ],
    "bestPerSaleUsd": 18.33,
    "programs": [
@@ -4457,8 +4489,8 @@
    ],
    "revenueUsd": [
     5,
-    41,
-    171
+    40,
+    168
    ],
    "bestPerSaleUsd": 0.87,
    "programs": [
@@ -5415,9 +5447,9 @@
     55438
    ],
    "revenueUsd": [
-    110,
-    767,
-    3016
+    109,
+    762,
+    2989
    ],
    "bestPerSaleUsd": 1.7,
    "programs": [
@@ -5774,8 +5806,8 @@
    ],
    "revenueUsd": [
     22,
-    174,
-    758
+    170,
+    738
    ],
    "bestPerSaleUsd": 1.43,
    "programs": [
@@ -6283,8 +6315,8 @@
    ],
    "revenueUsd": [
     10,
-    79,
-    342
+    77,
+    333
    ],
    "bestPerSaleUsd": 1.4,
    "programs": [
@@ -6824,8 +6856,8 @@
    ],
    "revenueUsd": [
     59,
-    460,
-    1967
+    451,
+    1921
    ],
    "bestPerSaleUsd": 1.17,
    "programs": [
@@ -7271,9 +7303,9 @@
     204838
    ],
    "revenueUsd": [
-    197,
-    1449,
-    5950
+    195,
+    1430,
+    5853
    ],
    "bestPerSaleUsd": 1.7,
    "programs": [
@@ -7742,9 +7774,9 @@
     178312
    ],
    "revenueUsd": [
-    309,
-    2681,
-    12426
+    300,
+    2594,
+    11980
    ],
    "bestPerSaleUsd": 9,
    "programs": [
@@ -8129,9 +8161,9 @@
     549040
    ],
    "revenueUsd": [
-    1484,
-    13808,
-    66665
+    1432,
+    13261,
+    63862
    ],
    "bestPerSaleUsd": 18.33,
    "programs": [
@@ -8660,9 +8692,9 @@
     23776
    ],
    "revenueUsd": [
-    11,
-    84,
-    367
+    10,
+    82,
+    357
    ],
    "bestPerSaleUsd": 1.43,
    "programs": [
@@ -9140,8 +9172,8 @@
    ],
    "revenueUsd": [
     5,
-    52,
-    255
+    50,
+    244
    ],
    "bestPerSaleUsd": 11.33,
    "programs": [
@@ -9151,7 +9183,7 @@
      "commission": "70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire)",
      "approval": "easy",
      "requirements": "Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire.",
-     "status": "not applied",
+     "status": "approved",
      "verified": true
     },
     {
@@ -9682,8 +9714,8 @@
    ],
    "revenueUsd": [
     16,
-    143,
-    666
+    138,
+    641
    ],
    "bestPerSaleUsd": 11.33,
    "programs": [
@@ -9693,7 +9725,7 @@
      "commission": "70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire)",
      "approval": "easy",
      "requirements": "Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire.",
-     "status": "not applied",
+     "status": "approved",
      "verified": true
     },
     {
@@ -10246,8 +10278,8 @@
    ],
    "revenueUsd": [
     2,
-    18,
-    89
+    17,
+    85
    ],
    "bestPerSaleUsd": 9,
    "programs": [
@@ -10853,7 +10885,7 @@
    "revenueUsd": [
     2,
     15,
-    68
+    66
    ],
    "bestPerSaleUsd": 3.5,
    "programs": [
@@ -11394,7 +11426,7 @@
    "revenueUsd": [
     0,
     1,
-    5
+    4
    ],
    "bestPerSaleUsd": 9,
    "programs": [
@@ -13128,7 +13160,7 @@
      "commission": "70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire)",
      "approval": "easy",
      "requirements": "Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire.",
-     "status": "not applied",
+     "status": "approved",
      "verified": true
     },
     {
@@ -13466,7 +13498,7 @@
      "commission": "70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire)",
      "approval": "easy",
      "requirements": "Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire.",
-     "status": "not applied",
+     "status": "approved",
      "verified": true
     },
     {
@@ -14446,7 +14478,273 @@
    "name": "United States"
   },
   "addedAt": "2026-11-07T18:00:10.069Z",
-  "status": "new"
+  "status": "scored",
+  "score": {
+   "overall": 69,
+   "demand": 52,
+   "money": 100,
+   "ease": 82,
+   "fit": 38,
+   "totalVolume": 363000,
+   "keywords": 45,
+   "medianCpc": 5.77,
+   "avgDifficulty": 18,
+   "easyWins": [
+    {
+     "keyword": "rental cars denver airport",
+     "volume": 40500,
+     "kd": 19,
+     "cpc": 7.07
+    },
+    {
+     "keyword": "car hire denver airport",
+     "volume": 40500,
+     "kd": 23,
+     "cpc": 7.07
+    },
+    {
+     "keyword": "rental vehicle denver airport",
+     "volume": 40500,
+     "kd": 22,
+     "cpc": 7.07
+    },
+    {
+     "keyword": "car hire in denver airport",
+     "volume": 40500,
+     "kd": 19,
+     "cpc": 7.07
+    },
+    {
+     "keyword": "rental cars at denver airport denver co",
+     "volume": 40500,
+     "kd": 19,
+     "cpc": 7.07
+    },
+    {
+     "keyword": "car rental places denver airport",
+     "volume": 40500,
+     "kd": 18,
+     "cpc": 7.07
+    },
+    {
+     "keyword": "car rental agencies denver airport",
+     "volume": 40500,
+     "kd": 19,
+     "cpc": 7.07
+    },
+    {
+     "keyword": "car rental denver colorado",
+     "volume": 27100,
+     "kd": 21,
+     "cpc": 5.85
+    },
+    {
+     "keyword": "budget rental cars denver airport",
+     "volume": 5400,
+     "kd": 1,
+     "cpc": 3.07
+    },
+    {
+     "keyword": "budget rentals denver airport",
+     "volume": 5400,
+     "kd": 1,
+     "cpc": 3.07
+    },
+    {
+     "keyword": "car rental denver international airport colorado",
+     "volume": 2900,
+     "kd": 19,
+     "cpc": 6.92
+    },
+    {
+     "keyword": "cheap car rental at denver airport",
+     "volume": 2400,
+     "kd": 24,
+     "cpc": 5.77
+    }
+   ],
+   "topKeywords": [
+    {
+     "keyword": "rental cars denver airport",
+     "volume": 40500,
+     "kd": 19,
+     "cpc": 7.07
+    },
+    {
+     "keyword": "car hire denver airport",
+     "volume": 40500,
+     "kd": 23,
+     "cpc": 7.07
+    },
+    {
+     "keyword": "rental vehicle denver airport",
+     "volume": 40500,
+     "kd": 22,
+     "cpc": 7.07
+    },
+    {
+     "keyword": "car hire in denver airport",
+     "volume": 40500,
+     "kd": 19,
+     "cpc": 7.07
+    },
+    {
+     "keyword": "rental cars at denver airport denver co",
+     "volume": 40500,
+     "kd": 19,
+     "cpc": 7.07
+    },
+    {
+     "keyword": "car rental places denver airport",
+     "volume": 40500,
+     "kd": 18,
+     "cpc": 7.07
+    },
+    {
+     "keyword": "car rental agencies denver airport",
+     "volume": 40500,
+     "kd": 19,
+     "cpc": 7.07
+    },
+    {
+     "keyword": "car rental denver colorado",
+     "volume": 27100,
+     "kd": 21,
+     "cpc": 5.85
+    },
+    {
+     "keyword": "budget rental cars denver airport",
+     "volume": 5400,
+     "kd": 1,
+     "cpc": 3.07
+    },
+    {
+     "keyword": "budget rentals denver airport",
+     "volume": 5400,
+     "kd": 1,
+     "cpc": 3.07
+    },
+    {
+     "keyword": "car rental denver international airport colorado",
+     "volume": 2900,
+     "kd": 19,
+     "cpc": 6.92
+    },
+    {
+     "keyword": "cheap car rental at denver airport",
+     "volume": 2400,
+     "kd": 24,
+     "cpc": 5.77
+    },
+    {
+     "keyword": "cheap car rentals denver",
+     "volume": 2400,
+     "kd": 5,
+     "cpc": 4.86
+    },
+    {
+     "keyword": "cheap car rentals denver colorado",
+     "volume": 2400,
+     "kd": 21,
+     "cpc": 4.86
+    },
+    {
+     "keyword": "best price car rental denver airport",
+     "volume": 2400,
+     "kd": 12,
+     "cpc": 5.77
+    }
+   ],
+   "judgement": {
+    "fit": 38,
+    "verdict": "The 7.8M/mo headline is inflated: Google Ads groups near-identical queries, so most Denver rows repeat one 40,500 figure, and the sample covers one airport. The real blocker is that no free source gives rental prices by airport and car type, so price pages would be thin, scraped or stale, which is the exact pattern Google penalises. It only works as a fee and logistics site built on published airport data, with price comparison left to aggregators via affiliate links.",
+    "angle": "rentpathfinder.com: an airport car-rental fees and pickup guide, one page per US airport (start with the top 30 by BTS enplanements). Each page explains the real cost layers: concession recovery fees, customer facility charges, local taxes, shuttle or walk distance, counter location, and on-airport versus off-airport trade-offs. Each page links to aggregator search for live prices. Do not publish invented or scraped price tables.",
+    "dataSources": [
+     "BTS T-100 / Air Carrier Statistics and airport enplanement data (free, for airport ranking and traffic context)",
+     "Published airport authority rental car pages and fee schedules: concession fees, customer facility charges, shuttle info (free, manual or semi-automated extraction, re-verify quarterly)",
+     "FAA or airport authority operational data where published (counter location, shuttle frequency)",
+     "Google Places API for counter and shuttle-stop locations (paid, check caching limits in its terms)",
+     "Rentalcars.com or Discover Cars affiliate feed or deep-link API, if the programme approves you (live prices stay on their side)"
+    ],
+    "monetisation": [
+     "Rentalcars.com affiliate (commission rates and cookie terms change, verify current terms before building around them)",
+     "Discover Cars affiliate (verify current terms)",
+     "Turo referral credits on the off-airport and peer-to-peer comparison pages (check referral terms for landing-page rules)",
+     "Light display ads on long guide pages only; travel RPM on thin pages will be low"
+    ],
+    "pageTypes": [
+     "/airports/[iata]/ fees and taxes breakdown (one per airport, with the fee table from the airport's own published data)",
+     "/airports/[iata]/pickup/ counter location, shuttle type, walk time, and rental company map (only where verified)",
+     "/airports/[iata]/vs-off-airport/ on-airport versus off-airport cost structure with the fee maths shown",
+     "/car-class/[acriss-code]/ plain-English guide to car classes and typical luggage fit (generic, not price-based, one page per class, not per airport)",
+     "/cities/[city]/airport-transfer/ only where a verified transit or shuttle source exists"
+    ],
+    "risks": [
+     "No free source for rental prices by airport and car type; price tables would be scraped, stale, or invented, which is both a ToS and a thin-content problem",
+     "Aggregators (Rentalcars, Discover Cars, Kayak, Expedia) dominate these SERPs with live price tools, so affiliate CTR and conversion on a small site will be weak",
+     "Volume numbers are inflated by query grouping and a single-city sample; treat 7.8M/mo as unverified until you de-duplicate by intent",
+     "High CPCs (USD 4 to 8) show strong commercial competition, which means strong aggregator bidding and expensive paid alternatives",
+     "Affiliate programme approval may be refused or capped for a new domain with no traffic",
+     "Airport fee schedules change, and each airport has its own format, so maintenance cost per page is higher than the generator suggests",
+     "ACRISS car class codes and any published car-category taxonomies may carry licensing or attribution terms; check before reproducing them",
+     "Google may treat mass airport pages as doorway or thin content if the fee data per page is not clearly unique and useful"
+    ]
+   },
+   "costUsd": 0.114
+  },
+  "scoredAt": "2026-11-08T18:00:11.944Z",
+  "location": "United States",
+  "error": null,
+  "categories": [
+   "travel-car",
+   "travel-insurance"
+  ],
+  "money": {
+   "categories": [
+    "travel-car",
+    "travel-insurance"
+   ],
+   "visits": [
+    726,
+    1815,
+    3630
+   ],
+   "revenueUsd": [
+    10,
+    82,
+    360
+   ],
+   "bestPerSaleUsd": 10.33,
+   "programs": [
+    {
+     "id": "discovercars",
+     "name": "Discover Cars / Rentalcars (car hire)",
+     "commission": "70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire)",
+     "approval": "easy",
+     "requirements": "Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire.",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "expedia",
+     "name": "Expedia Group Affiliate",
+     "commission": "~2–6% by product",
+     "approval": "moderate",
+     "requirements": "Travel content site",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "insurance",
+     "name": "Travel insurance (World Nomads, SafetyWing, Allianz)",
+     "commission": "~10–40%",
+     "approval": "moderate",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    }
+   ]
+  }
  },
  {
   "idea": "Mattress and sleep product buyer guides by size and firmness",
@@ -14461,7 +14759,239 @@
    "name": "United States"
   },
   "addedAt": "2026-11-07T18:00:10.069Z",
-  "status": "new"
+  "status": "scored",
+  "score": {
+   "overall": 54,
+   "demand": 0,
+   "money": 100,
+   "ease": 84,
+   "fit": 38,
+   "totalVolume": 9240,
+   "keywords": 7,
+   "medianCpc": 16.72,
+   "avgDifficulty": 16,
+   "easyWins": [
+    {
+     "keyword": "best mattress for big people",
+     "volume": 8100,
+     "kd": 9,
+     "cpc": 16.9
+    }
+   ],
+   "topKeywords": [
+    {
+     "keyword": "best mattress for big people",
+     "volume": 8100,
+     "kd": 9,
+     "cpc": 16.9
+    },
+    {
+     "keyword": "best firm mattress for heavy person",
+     "volume": 210,
+     "kd": 0,
+     "cpc": 16.72
+    },
+    {
+     "keyword": "best firm mattress for heavy people",
+     "volume": 210,
+     "kd": 0,
+     "cpc": 16.72
+    },
+    {
+     "keyword": "firm mattress for heavy person",
+     "volume": 170,
+     "kd": 0,
+     "cpc": 9.32
+    },
+    {
+     "keyword": "firm mattress for heavy people",
+     "volume": 170,
+     "kd": 0,
+     "cpc": 9.32
+    },
+    {
+     "keyword": "best mattresses for big guys",
+     "volume": 110,
+     "kd": 0,
+     "cpc": 17.77
+    },
+    {
+     "keyword": "best memory foam mattress for heavy people",
+     "volume": 110,
+     "kd": 0,
+     "cpc": 24.53
+    },
+    {
+     "keyword": "best extra firm mattress for heavy person",
+     "volume": 20,
+     "kd": 0,
+     "cpc": 19.17
+    },
+    {
+     "keyword": "allswell side sleeper memory foam pillow standard queen",
+     "volume": 20,
+     "kd": null,
+     "cpc": 0.58
+    },
+    {
+     "keyword": "best mattress for side sleepers queen",
+     "volume": 10,
+     "kd": null,
+     "cpc": 27.43
+    },
+    {
+     "keyword": "extra firm mattress for heavy person",
+     "volume": 10,
+     "kd": 10,
+     "cpc": 12.28
+    },
+    {
+     "keyword": "best beds for heavy couples",
+     "volume": 10,
+     "kd": 7,
+     "cpc": 8.06
+    },
+    {
+     "keyword": "best firm mattress for plus size",
+     "volume": 10,
+     "kd": 55,
+     "cpc": 18.52
+    },
+    {
+     "keyword": "best firm mattress for big guys",
+     "volume": 10,
+     "kd": 55,
+     "cpc": 19.51
+    },
+    {
+     "keyword": "best bed for heavy couples",
+     "volume": 10,
+     "kd": 7,
+     "cpc": 12.35
+    }
+   ],
+   "judgement": {
+    "fit": 38,
+    "verdict": "The head term 'best mattress for big people' (8,100/mo, CPC $16.90) is real and commercially valuable, but the rest of the cluster is 10 to 210/mo, and the claimed 1,168,300/mo across the top 100 does not match the listed figures (about 9,000 total). Mattress SERPs are dominated by established review publishers, and the 'real data' requirement is hard to meet because spec sheets are mostly identical across brands and sales data is not free.",
+    "angle": "One authoritative guide, /best-mattress-for-heavy-people/, built on a manually verified weight-limit and firmness comparison of 15 to 20 mattresses, with a small set of supporting pages such as /firm-mattress-for-heavy-person/ and /best-mattress-for-big-guys/. Do not build hundreds of auto-generated size-by-firmness pages; the volume does not support them.",
+    "dataSources": [
+     "Manufacturer spec pages for weight limits, firmness ratings, height and warranty (manually checked, respecting each site's terms)",
+     "Google Keyword Planner or Ahrefs/Semrush for volume and difficulty validation",
+     "Affiliate network product feeds (Impact, CJ, Awin) for current pricing and availability where the programme provides them",
+     "Your own test data or verified owner reviews, if you can obtain them"
+    ],
+    "monetisation": [
+     "Mattress brand affiliate programmes (verify current terms before relying on them): Casper, Purple, Helix, Brooklyn Bedding, Nectar, Tuft & Needle",
+     "Amazon Associates for firm or heavy-duty mattress toppers and foundations (note the API and price-display restrictions)",
+     "Display ads, secondary and low-priority given the high CPC for affiliate intent"
+    ],
+    "pageTypes": [
+     "/best-mattress-for-heavy-people/ (single hand-curated guide)",
+     "/firm-mattress-for-heavy-person/ (short comparison, shares the same product set)",
+     "/mattress-topper-for-heavy-person/ (small, KD 38 term)",
+     "/mattress-weight-limits/ (one data table page, not per size)"
+    ],
+    "risks": [
+     "Data mismatch: the 1,168,300/mo total and the 4,304-keyword count are not supported by the listed figures, so the niche size is unverified.",
+     "Low per-page volume (most terms 10 to 210/mo) makes mass-generated pages economically and SEO-wise weak, and thin-content risk is high.",
+     "Sales data is not free or public; scraping brand sites or Amazon prices may breach terms.",
+     "Brand affiliate programmes are often gated, change commission structures, or exclude coupon or content sites; the quoted $50 to $150 per sale is unverified.",
+     "Weight, back pain and sleep health claims touch YMYL territory and need accurate, cited, reviewed content.",
+     "Strong incumbents (large review sites and sleep publications) dominate the head term; KD 9 may understate real competition.",
+     "The three domains are unregistered as of 2026-11-07 and may have been taken since; check availability before branding around them."
+    ]
+   },
+   "costUsd": 0.105
+  },
+  "scoredAt": "2026-11-08T18:00:11.944Z",
+  "location": "United States",
+  "error": null,
+  "categories": [
+   "outdoors",
+   "travel-stays"
+  ],
+  "money": {
+   "categories": [
+    "outdoors",
+    "travel-stays"
+   ],
+   "visits": [
+    18,
+    46,
+    92
+   ],
+   "revenueUsd": [
+    0,
+    2,
+    8
+   ],
+   "bestPerSaleUsd": 9,
+   "programs": [
+    {
+     "id": "booking",
+     "name": "Booking.com Affiliate Partner",
+     "commission": "Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay)",
+     "approval": "moderate",
+     "requirements": "Content site about travel; tax form + payment details (W-8BEN-E for AU companies)",
+     "status": "applying",
+     "verified": true
+    },
+    {
+     "id": "hotelgroups",
+     "name": "Hotel groups (Marriott, Hilton, IHG)",
+     "commission": "~3–7%",
+     "approval": "moderate",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "expedia",
+     "name": "Expedia Group Affiliate",
+     "commission": "~2–6% by product",
+     "approval": "moderate",
+     "requirements": "Travel content site",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "ruffwear",
+     "name": "Ruffwear (dog gear)",
+     "commission": "~8%",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "rei",
+     "name": "REI",
+     "commission": "5% per sale",
+     "approval": "moderate",
+     "requirements": "Apply via AvantLink with site + audience details; $50 payout threshold",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "amazon-us-outdoors",
+     "name": "Amazon Associates US: sports and outdoors",
+     "commission": "3%",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "impact",
+     "name": "Impact (affiliate network)",
+     "commission": "varies by brand",
+     "approval": "moderate",
+     "requirements": "Publisher account; verify site by meta tag; then apply to each brand",
+     "status": "applying",
+     "verified": true
+    }
+   ]
+  }
  },
  {
   "idea": "Heat pump and furnace installer cost by state",
@@ -14476,6 +15006,167 @@
    "name": "United States"
   },
   "addedAt": "2026-11-07T18:00:10.069Z",
-  "status": "new"
+  "status": "scored",
+  "score": {
+   "overall": 52,
+   "demand": 0,
+   "money": 100,
+   "ease": 81,
+   "fit": 36,
+   "totalVolume": 140,
+   "keywords": 0,
+   "medianCpc": 5.45,
+   "avgDifficulty": 19,
+   "easyWins": [],
+   "topKeywords": [
+    {
+     "keyword": "ny state heat pump rebate",
+     "volume": 40,
+     "kd": 26,
+     "cpc": 5.55
+    },
+    {
+     "keyword": "ny heat pump rebate",
+     "volume": 30,
+     "kd": 0,
+     "cpc": 5.57
+    },
+    {
+     "keyword": "new york state heat pump rebate",
+     "volume": 30,
+     "kd": 43,
+     "cpc": 5.45
+    },
+    {
+     "keyword": "heat pump rebate new york",
+     "volume": 10,
+     "kd": 16,
+     "cpc": null
+    },
+    {
+     "keyword": "new york state hot water heater rebate",
+     "volume": 10,
+     "kd": 16,
+     "cpc": 3.3
+    },
+    {
+     "keyword": "nyc heat pump rebate",
+     "volume": 10,
+     "kd": 14,
+     "cpc": 3.41
+    },
+    {
+     "keyword": "heat pump water heater rebate new york",
+     "volume": 10,
+     "kd": null,
+     "cpc": null
+    }
+   ],
+   "judgement": {
+    "fit": 36,
+    "verdict": "The free data exists, but the core promise of installer cost by state has no free, verifiable source, so the cost figures would be AI-filled and exactly the thin content Google penalises. The keyword evidence is also weak: the listed rebate queries are 10-40/mo each, and the claimed 745,100/mo across the top 100 doesn't match them.",
+    "angle": "A state-level heat pump savings and rebate calculator, /[state]/heat-pump-rebates, built from DSIRE incentives, EIA residential fuel and electricity prices, and NOAA heating degree days. Show running-cost comparisons per state, not installer prices, with a lead CTA only after the calculator. Test 5 states before building 50.",
+    "dataSources": [
+     "EIA Open Data API v2 (free key): residential electricity, natural gas, heating oil and propane prices by state",
+     "DSIRE (dsireusa.org) incentive database downloads, checked against each program's own page",
+     "NOAA NCEI Climate Data Online (free token): heating degree days by state or climate division",
+     "Federal IRS Form 5695 / 25C credit text (verify current status, which may have ended after 2025)"
+    ],
+    "monetisation": [
+     "HVAC installer lead sales at $25-75 per qualified lead, with TCPA-compliant consent capture",
+     "EnergySage partner or referral arrangement (confirm current terms)",
+     "Display ads on calculator pages, only after traffic is proven",
+     "Utility or state-program referral links where programs allow them"
+    ],
+    "pageTypes": [
+     "/[state]/heat-pump-rebates: incentive list from DSIRE with last-verified date per program",
+     "/[state]/heating-cost-calculator: annual running-cost comparison from EIA prices and HDD, one page per state",
+     "/[state]/heat-pump-vs-gas-furnace: fuel-cost comparison using state prices and climate zone",
+     "/[state]/[city]/heat-pump-savings: only for the largest metros, with local price data, otherwise skip"
+    ],
+    "risks": [
+     "No free installer cost dataset exists. Any installed-cost figure is unsourced or AI-estimated, which is the main thin-content risk.",
+     "Per-state rebate queries are tiny (10-40/mo). Fifty state pages may bring little traffic; the 745,100 figure needs checking in Keyword Planner before any build.",
+     "Federal residential efficiency credits changed in 2025, so incentive pages can go stale fast. A maintenance cost is built in.",
+     "Rebate programs open, close and change funding; DSIRE lags, so each page needs a last-verified date and a review process.",
+     "Lead sales carry consent and TCPA exposure, and lead buyers may reject low-quality leads.",
+     "Money-related YMYL scrutiny applies to savings and rebate claims; wrong numbers create legal and trust exposure.",
+     "Established competitors (EnergySage, utility sites, government pages) already rank for these terms, so a small site has little room.",
+     "Domains are unregistered as of 2026-11-07 and nothing in the notes shows ranking or demand data, so the niche is unproven."
+    ]
+   },
+   "costUsd": 0.103
+  },
+  "scoredAt": "2026-11-08T18:00:11.944Z",
+  "location": "United States",
+  "error": null,
+  "categories": [
+   "books",
+   "outdoors"
+  ],
+  "money": {
+   "categories": [
+    "books",
+    "outdoors"
+   ],
+   "visits": [
+    0,
+    1,
+    1
+   ],
+   "revenueUsd": [
+    0,
+    0,
+    0
+   ],
+   "bestPerSaleUsd": 4.33,
+   "programs": [
+    {
+     "id": "ruffwear",
+     "name": "Ruffwear (dog gear)",
+     "commission": "~8%",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "rei",
+     "name": "REI",
+     "commission": "5% per sale",
+     "approval": "moderate",
+     "requirements": "Apply via AvantLink with site + audience details; $50 payout threshold",
+     "status": "not applied",
+     "verified": true
+    },
+    {
+     "id": "bookshop",
+     "name": "Bookshop.org affiliates",
+     "commission": "check (commonly quoted ~10%)",
+     "approval": "easy",
+     "requirements": "check",
+     "status": "not applied",
+     "verified": false
+    },
+    {
+     "id": "amazon-us-outdoors",
+     "name": "Amazon Associates US: sports and outdoors",
+     "commission": "3%",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    },
+    {
+     "id": "amazon-us-books",
+     "name": "Amazon Associates US: physical books",
+     "commission": "4.5%",
+     "approval": "easy",
+     "requirements": "Same Associates account",
+     "status": "approved",
+     "verified": true
+    }
+   ]
+  }
  }
 ]

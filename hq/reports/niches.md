@@ -1,6 +1,6 @@
 # Niche finder
 
-Updated 2026-11-01. Google searches in the United States unless an idea says otherwise (Market column). Score = 30% demand + 25% money (CPC) + 25% ease (SEO difficulty) + 20% fit (Claude: data source, automation, monetisation, risk).
+Updated 2026-11-08. Google searches in the United States unless an idea says otherwise (Market column). Score = 30% demand + 25% money (CPC) + 25% ease (SEO difficulty) + 20% fit (Claude: data source, automation, monetisation, risk).
 
 Add ideas by chat: "score these niches: …". Rules: launch at most one new site a month, only while the last one is on track.
 
@@ -15,32 +15,35 @@ Add ideas by chat: "score these niches: …". Rules: launch at most one new site
 | 5 | TV shows: where to watch | United States | **73** | 91 | 91 | 68 | 30 | 5,543,800 | $3.55 | 32 |
 | 6 | Anime: where to watch and watch order | United States | **70** | 100 | 66 | 60 | 42 | 20,483,800 | $1.31 | 40 |
 | 7 | AU electric car running costs vs petrol by model | Australia | **69** | 56 | 80 | 92 | 48 | 462,460 | $2.29 | 8 |
-| 8 | AU solar and home battery payback by postcode | Australia | **66** | 37 | 100 | 89 | 38 | 124,800 | $8.88 | 11 |
-| 9 | US cost of living by city | United States | **66** | 70 | 71 | 63 | 56 | 1,271,660 | $1.62 | 37 |
-| 10 | Victoria: where to stay by town | Australia | **66** | 63 | 69 | 90 | 38 | 780,660 | $1.51 | 10 |
-| 11 | AU stamp duty and home buying costs by state | Australia | **64** | 59 | 89 | 66 | 38 | 597,090 | $3.19 | 34 |
-| 12 | Video games: release dates and trailers | United States | **62** | 100 | 32 | 62 | 40 | 14,104,000 | $0.35 | 38 |
-| 13 | AU electricity prices by postcode and retailer | Australia | **61** | 36 | 100 | 71 | 38 | 120,850 | $10.97 | 29 |
-| 14 | Board games | United States | **61** | 78 | 32 | 84 | 42 | 2,245,200 | $0.35 | 16 |
-| 15 | Victoria: things to do by town | Australia | **60** | 52 | 47 | 95 | 42 | 353,780 | $0.63 | 5 |
-| 16 | Retro game finder: where to play classic games today (US) | United States | **58** | 71 | 31 | 81 | 42 | 1,393,340 | $0.34 | 19 |
-| 17 | AU suburb profiles: prices, rent and demographics | Australia | **55** | 14 | 82 | 89 | 38 | 26,730 | $2.48 | 11 |
-| 18 | Dog-friendly hotels by city | United States | **54** | 1 | 96 | 98 | 28 | 10,970 | $4.21 | 2 |
-| 19 | Book series in reading order | United States | **53** | 90 | 25 | 50 | 38 | 4,912,700 | $0.27 | — |
-| 20 | Movie soundtracks and film music | United States | **53** | 79 | 0 | 81 | 45 | 2,377,600 | $0.08 | 19 |
-| 21 | Pet insurance quotes by breed and state | United States | **52** | 0 | 100 | 89 | 22 | 310 | $18.53 | 11 |
-| 22 | Victoria: where to eat by town | Australia | **51** | 40 | 41 | 96 | 22 | 155,710 | $0.50 | 4 |
-| 23 | Australian clothing brands directory (beason.com.au) | Australia | **50** | 43 | 61 | 60 | 34 | 189,760 | $1.09 | 40 |
-| 24 | Australian winter wear: beanies, jackets and knitwear | Australia | **50** | 13 | 57 | 96 | 38 | 24,330 | $0.92 | 4 |
-| 25 | US public library branches by city | United States | **46** | 22 | 54 | 77 | 34 | 45,100 | $0.84 | 23 |
-| 26 | Retro game finder: where to play classic games today (AU) | Australia | **42** | 31 | 19 | 82 | 38 | 84,660 | $0.21 | 18 |
-| 27 | Australian loungewear and comfortwear brands | Australia | **42** | 0 | 55 | 90 | 28 | 7,150 | $0.86 | 10 |
-| 28 | Hurricane history by coastal state | United States | **33** | 0 | 0 | 97 | 42 | 30 | — | 3 |
-| 29 | US airport runway and elevation facts | United States | **33** | 0 | 0 | 100 | 42 | 730 | — | 0 |
-| 30 | US school district enrollment by county | United States | **31** | 0 | 0 | 95 | 38 | 20 | — | 5 |
-| 31 | Freshwater fish species by state | United States | **28** | 0 | 0 | 94 | 22 | 650 | $0.03 | 6 |
-| 32 | Rail travel times between NSW stations | Australia | **21** | 0 | 0 | 50 | 44 | 0 | — | — |
-| 33 | Dog walking and boarding rates by city | United States | **21** | 0 | 0 | 50 | 42 | 0 | — | — |
+| 8 | Car rental cost by airport and car type | United States | **69** | 52 | 100 | 82 | 38 | 363,000 | $5.77 | 18 |
+| 9 | AU solar and home battery payback by postcode | Australia | **66** | 37 | 100 | 89 | 38 | 124,800 | $8.88 | 11 |
+| 10 | US cost of living by city | United States | **66** | 70 | 71 | 63 | 56 | 1,271,660 | $1.62 | 37 |
+| 11 | Victoria: where to stay by town | Australia | **66** | 63 | 69 | 90 | 38 | 780,660 | $1.51 | 10 |
+| 12 | AU stamp duty and home buying costs by state | Australia | **64** | 59 | 89 | 66 | 38 | 597,090 | $3.19 | 34 |
+| 13 | Video games: release dates and trailers | United States | **62** | 100 | 32 | 62 | 40 | 14,104,000 | $0.35 | 38 |
+| 14 | AU electricity prices by postcode and retailer | Australia | **61** | 36 | 100 | 71 | 38 | 120,850 | $10.97 | 29 |
+| 15 | Board games | United States | **61** | 78 | 32 | 84 | 42 | 2,245,200 | $0.35 | 16 |
+| 16 | Victoria: things to do by town | Australia | **60** | 52 | 47 | 95 | 42 | 353,780 | $0.63 | 5 |
+| 17 | Retro game finder: where to play classic games today (US) | United States | **58** | 71 | 31 | 81 | 42 | 1,393,340 | $0.34 | 19 |
+| 18 | AU suburb profiles: prices, rent and demographics | Australia | **55** | 14 | 82 | 89 | 38 | 26,730 | $2.48 | 11 |
+| 19 | Dog-friendly hotels by city | United States | **54** | 1 | 96 | 98 | 28 | 10,970 | $4.21 | 2 |
+| 20 | Mattress and sleep product buyer guides by size and firmness | United States | **54** | 0 | 100 | 84 | 38 | 9,240 | $16.72 | 16 |
+| 21 | Book series in reading order | United States | **53** | 90 | 25 | 50 | 38 | 4,912,700 | $0.27 | — |
+| 22 | Movie soundtracks and film music | United States | **53** | 79 | 0 | 81 | 45 | 2,377,600 | $0.08 | 19 |
+| 23 | Pet insurance quotes by breed and state | United States | **52** | 0 | 100 | 89 | 22 | 310 | $18.53 | 11 |
+| 24 | Heat pump and furnace installer cost by state | United States | **52** | 0 | 100 | 81 | 36 | 140 | $5.45 | 19 |
+| 25 | Victoria: where to eat by town | Australia | **51** | 40 | 41 | 96 | 22 | 155,710 | $0.50 | 4 |
+| 26 | Australian clothing brands directory (beason.com.au) | Australia | **50** | 43 | 61 | 60 | 34 | 189,760 | $1.09 | 40 |
+| 27 | Australian winter wear: beanies, jackets and knitwear | Australia | **50** | 13 | 57 | 96 | 38 | 24,330 | $0.92 | 4 |
+| 28 | US public library branches by city | United States | **46** | 22 | 54 | 77 | 34 | 45,100 | $0.84 | 23 |
+| 29 | Retro game finder: where to play classic games today (AU) | Australia | **42** | 31 | 19 | 82 | 38 | 84,660 | $0.21 | 18 |
+| 30 | Australian loungewear and comfortwear brands | Australia | **42** | 0 | 55 | 90 | 28 | 7,150 | $0.86 | 10 |
+| 31 | Hurricane history by coastal state | United States | **33** | 0 | 0 | 97 | 42 | 30 | — | 3 |
+| 32 | US airport runway and elevation facts | United States | **33** | 0 | 0 | 100 | 42 | 730 | — | 0 |
+| 33 | US school district enrollment by county | United States | **31** | 0 | 0 | 95 | 38 | 20 | — | 5 |
+| 34 | Freshwater fish species by state | United States | **28** | 0 | 0 | 94 | 22 | 650 | $0.03 | 6 |
+| 35 | Rail travel times between NSW stations | Australia | **21** | 0 | 0 | 50 | 44 | 0 | — | — |
+| 36 | Dog walking and boarding rates by city | United States | **21** | 0 | 0 | 50 | 42 | 0 | — | — |
 
 ## US take-home pay by salary and state: 77/100
 
@@ -412,6 +415,59 @@ _Seeds: anime watch order, where to watch anime, best anime, anime streaming, an
 | electric car charging installation | 2,900 | 4 | $15.38 |
 
 _Seeds: ev charging cost, electric car running costs, byd atto 3 price, ev vs petrol cost, tesla model y range, cheapest electric car australia. Data cost: US$0.114._
+
+## Car rental cost by airport and car type: 69/100
+
+**Verdict:** The 7.8M/mo headline is inflated: Google Ads groups near-identical queries, so most Denver rows repeat one 40,500 figure, and the sample covers one airport. The real blocker is that no free source gives rental prices by airport and car type, so price pages would be thin, scraped or stale, which is the exact pattern Google penalises. It only works as a fee and logistics site built on published airport data, with price comparison left to aggregators via affiliate links.
+
+**Site angle:** rentpathfinder.com: an airport car-rental fees and pickup guide, one page per US airport (start with the top 30 by BTS enplanements). Each page explains the real cost layers: concession recovery fees, customer facility charges, local taxes, shuttle or walk distance, counter location, and on-airport versus off-airport trade-offs. Each page links to aggregator search for live prices. Do not publish invented or scraped price tables.
+
+**Data sources:** BTS T-100 / Air Carrier Statistics and airport enplanement data (free, for airport ranking and traffic context); Published airport authority rental car pages and fee schedules: concession fees, customer facility charges, shuttle info (free, manual or semi-automated extraction, re-verify quarterly); FAA or airport authority operational data where published (counter location, shuttle frequency); Google Places API for counter and shuttle-stop locations (paid, check caching limits in its terms); Rentalcars.com or Discover Cars affiliate feed or deep-link API, if the programme approves you (live prices stay on their side)
+
+**Money:** Rentalcars.com affiliate (commission rates and cookie terms change, verify current terms before building around them); Discover Cars affiliate (verify current terms); Turo referral credits on the off-airport and peer-to-peer comparison pages (check referral terms for landing-page rules); Light display ads on long guide pages only; travel RPM on thin pages will be low
+
+**Page types:** /airports/[iata]/ fees and taxes breakdown (one per airport, with the fee table from the airport's own published data); /airports/[iata]/pickup/ counter location, shuttle type, walk time, and rental company map (only where verified); /airports/[iata]/vs-off-airport/ on-airport versus off-airport cost structure with the fee maths shown; /car-class/[acriss-code]/ plain-English guide to car classes and typical luggage fit (generic, not price-based, one page per class, not per airport); /cities/[city]/airport-transfer/ only where a verified transit or shuttle source exists
+
+**Risks:** No free source for rental prices by airport and car type; price tables would be scraped, stale, or invented, which is both a ToS and a thin-content problem; Aggregators (Rentalcars, Discover Cars, Kayak, Expedia) dominate these SERPs with live price tools, so affiliate CTR and conversion on a small site will be weak; Volume numbers are inflated by query grouping and a single-city sample; treat 7.8M/mo as unverified until you de-duplicate by intent; High CPCs (USD 4 to 8) show strong commercial competition, which means strong aggregator bidding and expensive paid alternatives; Affiliate programme approval may be refused or capped for a new domain with no traffic; Airport fee schedules change, and each airport has its own format, so maintenance cost per page is higher than the generator suggests; ACRISS car class codes and any published car-category taxonomies may carry licensing or attribution terms; check before reproducing them; Google may treat mass airport pages as doorway or thin content if the fee data per page is not clearly unique and useful
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| rental cars denver airport | 40,500 | 19 | $7.07 |
+| car hire denver airport | 40,500 | 23 | $7.07 |
+| rental vehicle denver airport | 40,500 | 22 | $7.07 |
+| car hire in denver airport | 40,500 | 19 | $7.07 |
+| rental cars at denver airport denver co | 40,500 | 19 | $7.07 |
+| car rental places denver airport | 40,500 | 18 | $7.07 |
+| car rental agencies denver airport | 40,500 | 19 | $7.07 |
+| car rental denver colorado | 27,100 | 21 | $5.85 |
+| budget rental cars denver airport | 5,400 | 1 | $3.07 |
+| budget rentals denver airport | 5,400 | 1 | $3.07 |
+| car rental denver international airport colorado | 2,900 | 19 | $6.92 |
+| cheap car rental at denver airport | 2,400 | 24 | $5.77 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| rental cars denver airport | 40,500 | 19 | $7.07 |
+| car hire denver airport | 40,500 | 23 | $7.07 |
+| rental vehicle denver airport | 40,500 | 22 | $7.07 |
+| car hire in denver airport | 40,500 | 19 | $7.07 |
+| rental cars at denver airport denver co | 40,500 | 19 | $7.07 |
+| car rental places denver airport | 40,500 | 18 | $7.07 |
+| car rental agencies denver airport | 40,500 | 19 | $7.07 |
+| car rental denver colorado | 27,100 | 21 | $5.85 |
+| budget rental cars denver airport | 5,400 | 1 | $3.07 |
+| budget rentals denver airport | 5,400 | 1 | $3.07 |
+| car rental denver international airport colorado | 2,900 | 19 | $6.92 |
+| cheap car rental at denver airport | 2,400 | 24 | $5.77 |
+| cheap car rentals denver | 2,400 | 5 | $4.86 |
+| cheap car rentals denver colorado | 2,400 | 21 | $4.86 |
+| best price car rental denver airport | 2,400 | 12 | $5.77 |
+
+_Seeds: cheap car rental at denver airport, suv rental cost orlando, one way car rental boston to new york. Data cost: US$0.114._
 
 ## AU solar and home battery payback by postcode: 66/100
 
@@ -985,6 +1041,48 @@ _Seeds: best suburbs to buy in melbourne, suburb profile, median house price, ch
 
 _Seeds: pet friendly hotels in austin, dog friendly hotels with no weight limit, hotels that allow two dogs in denver. Data cost: US$0.107._
 
+## Mattress and sleep product buyer guides by size and firmness: 54/100
+
+**Verdict:** The head term 'best mattress for big people' (8,100/mo, CPC $16.90) is real and commercially valuable, but the rest of the cluster is 10 to 210/mo, and the claimed 1,168,300/mo across the top 100 does not match the listed figures (about 9,000 total). Mattress SERPs are dominated by established review publishers, and the 'real data' requirement is hard to meet because spec sheets are mostly identical across brands and sales data is not free.
+
+**Site angle:** One authoritative guide, /best-mattress-for-heavy-people/, built on a manually verified weight-limit and firmness comparison of 15 to 20 mattresses, with a small set of supporting pages such as /firm-mattress-for-heavy-person/ and /best-mattress-for-big-guys/. Do not build hundreds of auto-generated size-by-firmness pages; the volume does not support them.
+
+**Data sources:** Manufacturer spec pages for weight limits, firmness ratings, height and warranty (manually checked, respecting each site's terms); Google Keyword Planner or Ahrefs/Semrush for volume and difficulty validation; Affiliate network product feeds (Impact, CJ, Awin) for current pricing and availability where the programme provides them; Your own test data or verified owner reviews, if you can obtain them
+
+**Money:** Mattress brand affiliate programmes (verify current terms before relying on them): Casper, Purple, Helix, Brooklyn Bedding, Nectar, Tuft & Needle; Amazon Associates for firm or heavy-duty mattress toppers and foundations (note the API and price-display restrictions); Display ads, secondary and low-priority given the high CPC for affiliate intent
+
+**Page types:** /best-mattress-for-heavy-people/ (single hand-curated guide); /firm-mattress-for-heavy-person/ (short comparison, shares the same product set); /mattress-topper-for-heavy-person/ (small, KD 38 term); /mattress-weight-limits/ (one data table page, not per size)
+
+**Risks:** Data mismatch: the 1,168,300/mo total and the 4,304-keyword count are not supported by the listed figures, so the niche size is unverified.; Low per-page volume (most terms 10 to 210/mo) makes mass-generated pages economically and SEO-wise weak, and thin-content risk is high.; Sales data is not free or public; scraping brand sites or Amazon prices may breach terms.; Brand affiliate programmes are often gated, change commission structures, or exclude coupon or content sites; the quoted $50 to $150 per sale is unverified.; Weight, back pain and sleep health claims touch YMYL territory and need accurate, cited, reviewed content.; Strong incumbents (large review sites and sleep publications) dominate the head term; KD 9 may understate real competition.; The three domains are unregistered as of 2026-11-07 and may have been taken since; check availability before branding around them.
+
+**Easy wins** (500+ searches, difficulty ≤ 30):
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| best mattress for big people | 8,100 | 9 | $16.90 |
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| best mattress for big people | 8,100 | 9 | $16.90 |
+| best firm mattress for heavy person | 210 | 0 | $16.72 |
+| best firm mattress for heavy people | 210 | 0 | $16.72 |
+| firm mattress for heavy person | 170 | 0 | $9.32 |
+| firm mattress for heavy people | 170 | 0 | $9.32 |
+| best mattresses for big guys | 110 | 0 | $17.77 |
+| best memory foam mattress for heavy people | 110 | 0 | $24.53 |
+| best extra firm mattress for heavy person | 20 | 0 | $19.17 |
+| allswell side sleeper memory foam pillow standard queen | 20 | — | $0.58 |
+| best mattress for side sleepers queen | 10 | — | $27.43 |
+| extra firm mattress for heavy person | 10 | 10 | $12.28 |
+| best beds for heavy couples | 10 | 7 | $8.06 |
+| best firm mattress for plus size | 10 | 55 | $18.52 |
+| best firm mattress for big guys | 10 | 55 | $19.51 |
+| best bed for heavy couples | 10 | 7 | $12.35 |
+
+_Seeds: best mattress for side sleepers queen, firm mattress for heavy person, mattress for bad back twin xl. Data cost: US$0.105._
+
 ## Book series in reading order: 53/100
 
 **Verdict:** The data is free and workable, since Wikidata has series membership and ordinals for thousands of series, but these are mostly franchise-level queries with weak monetisation (CPCs around $0.20-0.45, and books pay low affiliate commissions) and strong incumbents such as Wikipedia, Fandom wikis, publisher sites and Reddit. It only makes sense as a long-tail utility site, not a head-term play.
@@ -1109,6 +1207,34 @@ _Seeds: movie soundtrack, film score, soundtrack vinyl, best movie soundtracks, 
 | british shorthair cat insurance | 10 | 43 | — |
 
 _Seeds: how much is pet insurance for a labrador, cheapest dog insurance for senior dog, cat insurance cost by breed. Data cost: US$0.105._
+
+## Heat pump and furnace installer cost by state: 52/100
+
+**Verdict:** The free data exists, but the core promise of installer cost by state has no free, verifiable source, so the cost figures would be AI-filled and exactly the thin content Google penalises. The keyword evidence is also weak: the listed rebate queries are 10-40/mo each, and the claimed 745,100/mo across the top 100 doesn't match them.
+
+**Site angle:** A state-level heat pump savings and rebate calculator, /[state]/heat-pump-rebates, built from DSIRE incentives, EIA residential fuel and electricity prices, and NOAA heating degree days. Show running-cost comparisons per state, not installer prices, with a lead CTA only after the calculator. Test 5 states before building 50.
+
+**Data sources:** EIA Open Data API v2 (free key): residential electricity, natural gas, heating oil and propane prices by state; DSIRE (dsireusa.org) incentive database downloads, checked against each program's own page; NOAA NCEI Climate Data Online (free token): heating degree days by state or climate division; Federal IRS Form 5695 / 25C credit text (verify current status, which may have ended after 2025)
+
+**Money:** HVAC installer lead sales at $25-75 per qualified lead, with TCPA-compliant consent capture; EnergySage partner or referral arrangement (confirm current terms); Display ads on calculator pages, only after traffic is proven; Utility or state-program referral links where programs allow them
+
+**Page types:** /[state]/heat-pump-rebates: incentive list from DSIRE with last-verified date per program; /[state]/heating-cost-calculator: annual running-cost comparison from EIA prices and HDD, one page per state; /[state]/heat-pump-vs-gas-furnace: fuel-cost comparison using state prices and climate zone; /[state]/[city]/heat-pump-savings: only for the largest metros, with local price data, otherwise skip
+
+**Risks:** No free installer cost dataset exists. Any installed-cost figure is unsourced or AI-estimated, which is the main thin-content risk.; Per-state rebate queries are tiny (10-40/mo). Fifty state pages may bring little traffic; the 745,100 figure needs checking in Keyword Planner before any build.; Federal residential efficiency credits changed in 2025, so incentive pages can go stale fast. A maintenance cost is built in.; Rebate programs open, close and change funding; DSIRE lags, so each page needs a last-verified date and a review process.; Lead sales carry consent and TCPA exposure, and lead buyers may reject low-quality leads.; Money-related YMYL scrutiny applies to savings and rebate claims; wrong numbers create legal and trust exposure.; Established competitors (EnergySage, utility sites, government pages) already rank for these terms, so a small site has little room.; Domains are unregistered as of 2026-11-07 and nothing in the notes shows ranking or demand data, so the niche is unproven.
+
+**Biggest searches:**
+
+| Search | /mo | Difficulty | CPC |
+|---|---:|---:|---:|
+| ny state heat pump rebate | 40 | 26 | $5.55 |
+| ny heat pump rebate | 30 | 0 | $5.57 |
+| new york state heat pump rebate | 30 | 43 | $5.45 |
+| heat pump rebate new york | 10 | 16 | — |
+| new york state hot water heater rebate | 10 | 16 | $3.30 |
+| nyc heat pump rebate | 10 | 14 | $3.41 |
+| heat pump water heater rebate new york | 10 | — | — |
+
+_Seeds: heat pump installation cost in minnesota, furnace replacement cost in ohio, heat pump rebate in new york. Data cost: US$0.103._
 
 ## Victoria: where to eat by town: 51/100
 
@@ -1561,36 +1687,38 @@ _Seeds: dog boarding cost in portland oregon, dog daycare prices near seattle, h
 
 Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits × affiliate clicks × conversion × payout (average of the top 3 matching programmes), plus display ads. These numbers rank ideas against each other; they are not forecasts. They get replaced by our own measured rates as our sites earn.
 
-**Model:** Calibrated from 339 page views, 2 affiliate clicks and 0 reported sales (trailers, vic, community-help-co, trade-admin, paycalc): click rate 4.4% (assumed 5.0%), conversion 5.0% (assumed 5.0%). The assumption weighs as much as 2,000 views / 200 clicks, so real data takes over as it grows.
+**Model:** Calibrated from 475 page views, 3 affiliate clicks and 0 reported sales (trailers, vic, community-help-co, trade-admin, paycalc, simon-says-travel): click rate 4.2% (assumed 5.0%), conversion 4.9% (assumed 5.0%). The assumption weighs as much as 2,000 views / 200 clicks, so real data takes over as it grows.
 
 | Idea | Market | Visits/mo (mid) | Est. revenue/mo (low · mid · high) | Avg payout per sale | Score |
 |---|---|---:|---|---:|---:|
-| Dog breeds | United States | 274,520 | $1,484 · **$13,808** · $66,665 | $18.33 | 75 |
-| US national parks and hiking trails | United States | 89,156 | $309 · **$2,681** · $12,426 | $9 | 74 |
-| US take-home pay by salary and state | United States | 58,948 | $322 · **$2,560** · $11,169 | $9 | 77 |
-| Anime: where to watch and watch order | United States | 102,419 | $197 · **$1,449** · $5,950 | $1.7 | 70 |
-| TV shows: where to watch | United States | 27,719 | $110 · **$767** · $3,016 | $1.7 | 73 |
-| Video games: release dates and trailers | United States | 70,520 | $59 · **$460** · $1,967 | $1.17 | 62 |
-| AU pay and tax calculators (take-home pay by salary) | Australia | 8,647 | $47 · **$376** · $1,638 | $9 | 76 |
-| US cost of living by city | United States | 6,358 | $37 · **$334** · $1,598 | $18.33 | 66 |
-| Book series in reading order | United States | 24,564 | $22 · **$174** · $758 | $1.43 | 53 |
-| Victoria: where to stay by town | Australia | 3,903 | $16 · **$143** · $666 | $11.33 | 66 |
-| AU electric car running costs vs petrol by model | Australia | 2,312 | $12 · **$100** · $453 | $11.5 | 69 |
-| Movie soundtracks and film music | United States | 11,888 | $11 · **$84** · $367 | $1.43 | 53 |
-| Board games | United States | 11,226 | $10 · **$79** · $342 | $1.4 | 61 |
-| AU stamp duty and home buying costs by state | Australia | 2,985 | $11 · **$78** · $302 | $1 | 64 |
-| Victoria: things to do by town | Australia | 1,769 | $5 · **$52** · $255 | $11.33 | 60 |
-| Retro game finder: where to play classic games today (US) | United States | 6,967 | $5 · **$41** · $171 | $0.87 | 58 |
-| AU electricity prices by postcode and retailer | Australia | 604 | $3 · **$21** · $88 | $5 | 61 |
-| Victoria: where to eat by town | Australia | 779 | $2 · **$18** · $89 | $9 | 51 |
-| AU solar and home battery payback by postcode | Australia | 624 | $2 · **$15** · $56 | $0 | 66 |
-| Australian clothing brands directory (beason.com.au) | Australia | 949 | $2 · **$15** · $68 | $3.5 | 50 |
+| Dog breeds | United States | 274,520 | $1,432 · **$13,261** · $63,862 | $18.33 | 75 |
+| US national parks and hiking trails | United States | 89,156 | $300 · **$2,594** · $11,980 | $9 | 74 |
+| US take-home pay by salary and state | United States | 58,948 | $317 · **$2,502** · $10,874 | $9 | 77 |
+| Anime: where to watch and watch order | United States | 102,419 | $195 · **$1,430** · $5,853 | $1.7 | 70 |
+| TV shows: where to watch | United States | 27,719 | $109 · **$762** · $2,989 | $1.7 | 73 |
+| Video games: release dates and trailers | United States | 70,520 | $59 · **$451** · $1,921 | $1.17 | 62 |
+| AU pay and tax calculators (take-home pay by salary) | Australia | 8,647 | $46 · **$367** · $1,595 | $9 | 76 |
+| US cost of living by city | United States | 6,358 | $35 · **$321** · $1,533 | $18.33 | 66 |
+| Book series in reading order | United States | 24,564 | $22 · **$170** · $738 | $1.43 | 53 |
+| Victoria: where to stay by town | Australia | 3,903 | $16 · **$138** · $641 | $11.33 | 66 |
+| AU electric car running costs vs petrol by model | Australia | 2,312 | $12 · **$97** · $438 | $11.5 | 69 |
+| Movie soundtracks and film music | United States | 11,888 | $10 · **$82** · $357 | $1.43 | 53 |
+| Car rental cost by airport and car type | United States | 1,815 | $10 · **$82** · $360 | $10.33 | 69 |
+| AU stamp duty and home buying costs by state | Australia | 2,985 | $11 · **$78** · $300 | $1 | 64 |
+| Board games | United States | 11,226 | $10 · **$77** · $333 | $1.4 | 61 |
+| Victoria: things to do by town | Australia | 1,769 | $5 · **$50** · $244 | $11.33 | 60 |
+| Retro game finder: where to play classic games today (US) | United States | 6,967 | $5 · **$40** · $168 | $0.87 | 58 |
+| AU electricity prices by postcode and retailer | Australia | 604 | $3 · **$21** · $86 | $5 | 61 |
+| AU solar and home battery payback by postcode | Australia | 624 | $3 · **$19** · $79 | $3.5 | 66 |
+| Victoria: where to eat by town | Australia | 779 | $2 · **$17** · $85 | $9 | 51 |
+| Australian clothing brands directory (beason.com.au) | Australia | 949 | $2 · **$15** · $66 | $3.5 | 50 |
 | AU suburb profiles: prices, rent and demographics | Australia | 134 | $1 · **$5** · $23 | $9 | 55 |
 | Retro game finder: where to play classic games today (AU) | Australia | 423 | $0 · **$3** · $11 | $1 | 42 |
 | Australian winter wear: beanies, jackets and knitwear | Australia | 122 | $0 · **$3** · $15 | $9 | 50 |
 | Dog-friendly hotels by city | United States | 55 | $0 · **$3** · $16 | $18.33 | 54 |
 | US public library branches by city | United States | 226 | $0 · **$2** · $9 | $1.43 | 46 |
-| Australian loungewear and comfortwear brands | Australia | 36 | $0 · **$1** · $5 | $9 | 42 |
+| Mattress and sleep product buyer guides by size and firmness | United States | 46 | $0 · **$2** · $8 | $9 | 54 |
+| Australian loungewear and comfortwear brands | Australia | 36 | $0 · **$1** · $4 | $9 | 42 |
 | Hurricane history by coastal state | United States | 0 | $0 · **$0** · $0 | $3.83 | 33 |
 | Freshwater fish species by state | United States | 3 | $0 · **$0** · $0 | $7 | 28 |
 | Rail travel times between NSW stations | Australia | 0 | $0 · **$0** · $0 | $11.33 | 21 |
@@ -1598,6 +1726,7 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | US airport runway and elevation facts | United States | 4 | $0 · **$0** · $1 | $11.33 | 33 |
 | Pet insurance quotes by breed and state | United States | 2 | $0 · **$0** · $0 | $18.33 | 52 |
 | Dog walking and boarding rates by city | United States | 0 | $0 · **$0** · $0 | $18.33 | 21 |
+| Heat pump and furnace installer cost by state | United States | 1 | $0 · **$0** · $0 | $4.33 | 52 |
 
 ## Programmes to consider, by idea
 
@@ -1699,7 +1828,7 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 
 | Programme | Pays | Approval | To qualify | Status |
 |---|---|---|---|---|
-| Discover Cars / Rentalcars (car hire) | 70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire) | easy | Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire. | not applied |
+| Discover Cars / Rentalcars (car hire) | 70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire) | easy | Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire. | approved |
 | Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
 | Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
@@ -1712,7 +1841,7 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 
 | Programme | Pays | Approval | To qualify | Status |
 |---|---|---|---|---|
-| Discover Cars / Rentalcars (car hire) | 70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire) | easy | Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire. | not applied |
+| Discover Cars / Rentalcars (car hire) | 70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire) | easy | Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire. | approved |
 | Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
 
 ### Movie soundtracks and film music
@@ -1724,6 +1853,20 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Amazon Associates US: physical books | 4.5% | easy | Same Associates account | approved |
 | Amazon Associates US: DVD and Blu-ray | 2.5% | easy | Same Associates account | approved |
 
+### Car rental cost by airport and car type
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Discover Cars / Rentalcars (car hire) | 70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire) | easy | Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire. | approved |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
+| Travel insurance (World Nomads, SafetyWing, Allianz) | ~10–40% | moderate | check | not applied |
+
+### AU stamp duty and home buying costs by state
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
+
 ### Board games
 
 | Programme | Pays | Approval | To qualify | Status |
@@ -1734,17 +1877,11 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Humble Bundle partner *(check)* | check | easy | check | not applied |
 | Amazon Associates US: video games | 1% physical / 2% digital | easy | Same Associates account | approved |
 
-### AU stamp duty and home buying costs by state
-
-| Programme | Pays | Approval | To qualify | Status |
-|---|---|---|---|---|
-| Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
-
 ### Victoria: things to do by town
 
 | Programme | Pays | Approval | To qualify | Status |
 |---|---|---|---|---|
-| Discover Cars / Rentalcars (car hire) | 70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire) | easy | Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire. | not applied |
+| Discover Cars / Rentalcars (car hire) | 70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire) | easy | Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire. | approved |
 | Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
 | Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
@@ -1771,6 +1908,14 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | rejected |
 | Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
 
+### AU solar and home battery payback by postcode
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Ruffwear (dog gear) | ~8% | easy | check | not applied |
+| Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | rejected |
+
 ### Victoria: where to eat by town
 
 | Programme | Pays | Approval | To qualify | Status |
@@ -1783,12 +1928,6 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | approved |
 | Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | rejected |
 | Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
-
-### AU solar and home battery payback by postcode
-
-| Programme | Pays | Approval | To qualify | Status |
-|---|---|---|---|---|
-| _No programme in the catalogue yet: research needed_ | | | | |
 
 ### Australian clothing brands directory (beason.com.au)
 
@@ -1852,6 +1991,18 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Amazon Associates US: physical books | 4.5% | easy | Same Associates account | approved |
 | Amazon Associates US: DVD and Blu-ray | 2.5% | easy | Same Associates account | approved |
 
+### Mattress and sleep product buyer guides by size and firmness
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
+| Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
+| Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
+| Ruffwear (dog gear) | ~8% | easy | check | not applied |
+| REI | 5% per sale | moderate | Apply via AvantLink with site + audience details; $50 payout threshold | not applied |
+| Amazon Associates US: sports and outdoors | 3% | easy | Same Associates account | approved |
+| Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
+
 ### Australian loungewear and comfortwear brands
 
 | Programme | Pays | Approval | To qualify | Status |
@@ -1890,7 +2041,7 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 
 | Programme | Pays | Approval | To qualify | Status |
 |---|---|---|---|---|
-| Discover Cars / Rentalcars (car hire) | 70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire) | easy | Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire. | not applied |
+| Discover Cars / Rentalcars (car hire) | 70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire) | easy | Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire. | approved |
 | Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
 | Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
@@ -1914,7 +2065,7 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 
 | Programme | Pays | Approval | To qualify | Status |
 |---|---|---|---|---|
-| Discover Cars / Rentalcars (car hire) | 70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire) | easy | Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire. | not applied |
+| Discover Cars / Rentalcars (car hire) | 70% of Discover Cars' profit on the hire + 30% of Full Coverage revenue (their worked example: ~£17 on a 7-day hire) | easy | Free sign-up with your website URL; no stated traffic minimum. Paid monthly by PayPal or wire. | approved |
 | Booking.com Affiliate Partner | Revenue share, up to ~40% of Booking's commission (roughly 4% of the stay) | moderate | Content site about travel; tax form + payment details (W-8BEN-E for AU companies) | applying |
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
 | Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
@@ -1944,6 +2095,16 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Amazon Associates US: pet supplies | 3% | easy | Same Associates account | approved |
 | Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
 
+### Heat pump and furnace installer cost by state
+
+| Programme | Pays | Approval | To qualify | Status |
+|---|---|---|---|---|
+| Ruffwear (dog gear) | ~8% | easy | check | not applied |
+| REI | 5% per sale | moderate | Apply via AvantLink with site + audience details; $50 payout threshold | not applied |
+| Bookshop.org affiliates *(check)* | check (commonly quoted ~10%) | easy | check | not applied |
+| Amazon Associates US: sports and outdoors | 3% | easy | Same Associates account | approved |
+| Amazon Associates US: physical books | 4.5% | easy | Same Associates account | approved |
+
 ## Ad networks (when traffic qualifies)
 
 | Network | Minimum traffic | Notes |
@@ -1954,4 +2115,4 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Mediavine | 50,000 sessions | Strong in lifestyle; check Journey (smaller-site tier) terms |
 | Ezoic | 250,000 users (raised Feb 2026) |  |
 
-_Catalogue: hq/affiliate-programs.json (31 programmes, updated 2026-10-21). "(check)" = terms not yet verified from a current source._
+_Catalogue: hq/affiliate-programs.json (32 programmes, updated 2026-11-07). "(check)" = terms not yet verified from a current source._
