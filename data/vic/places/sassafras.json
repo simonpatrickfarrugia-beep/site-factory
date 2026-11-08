@@ -1,0 +1,896 @@
+{
+ "town": "Sassafras",
+ "slug": "sassafras",
+ "centre": [
+  -37.8628502,
+  145.3536965
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-11-08T21:22:45+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n854422691",
+   "name": "Indian by Nature",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8479639,
+   "lon": 145.3608205,
+   "tags": {
+    "phone": "+61 3 9751 0111",
+    "cuisine": "indian",
+    "addr:housenumber": "1526",
+    "addr:street": "Mount Dandenong Tourist Road",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n1339244621",
+   "name": "Olinda Tea House",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8608726,
+   "lon": 145.3757937,
+   "tags": {
+    "website": "https://www.olindateahouse.com.au",
+    "phone": "+61 3 9751 0556;+61 458 996 666",
+    "opening_hours": "Mo, We, Th 10:00-21:00; Fr-Su 10:00-22:00",
+    "cuisine": "regional",
+    "wheelchair": "yes",
+    "internet_access": "no",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n1885689436",
+   "name": "Pig & Whistle Tavern",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.844611,
+   "lon": 145.3607574,
+   "tags": {
+    "website": "https://www.pigandwhistletavern.com/",
+    "phone": "+61 3 9751 2366",
+    "opening_hours": "We-Su 12:00-22:00",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "1429",
+    "addr:street": "Mount Dandenong Tourist Road",
+    "addr:suburb": "Olinda",
+    "addr:postcode": "3788",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n1885964227",
+   "name": "The Mount Dandenong Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8479155,
+   "lon": 145.3615048,
+   "tags": {
+    "website": "https://mountdandenonghotel.com.au/",
+    "phone": "+61 3 9751 1202",
+    "opening_hours": "Mo-Su 11:00-22:00",
+    "addr:housenumber": "1451",
+    "addr:street": "Mount Dandenong Tourist Road",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n2160180250",
+   "name": "Genies Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8845744,
+   "lon": 145.3694945,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2160202853",
+   "name": "Kallista Deli & Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8845178,
+   "lon": 145.3695596,
+   "tags": {
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2528710970",
+   "name": "Wild Oak",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8475657,
+   "lon": 145.360192,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2536195750",
+   "name": "Tavlock Retreat",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -37.8405385,
+   "lon": 145.3579504,
+   "tags": {
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "n3069453771",
+   "name": "Marybrooke Manor",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.8814004,
+   "lon": 145.3639993,
+   "tags": {
+    "cuisine": "Modern_Australian",
+    "addr:housenumber": "10",
+    "addr:street": "Sherbrooke Road",
+    "addr:suburb": "Sherbrooke",
+    "addr:postcode": "3789",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n3105431045",
+   "name": "Serenity Point Lookout",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -37.8441717,
+   "lon": 145.3726984,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n3291533146",
+   "name": "Seasons at Cloudehill",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.861114,
+   "lon": 145.3769658,
+   "tags": {
+    "website": "https://cloudehill.com.au/seasons-restaurant",
+    "phone": "+61 3 9751 0168",
+    "opening_hours": "Mo-Fr 09:30-16:00; Sa, Su 09:00-16:30; PH 09:30-16:00",
+    "addr:housenumber": "89",
+    "addr:street": "Olinda - Monbulk Road",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n3885405423",
+   "name": "Miss Marple's Tearoom",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8634597,
+   "lon": 145.3535286,
+   "tags": {
+    "website": "https://www.missmarplestearoom.com",
+    "phone": "+61 3 9755 1610",
+    "opening_hours": "Mo-Fr 11:00-16:00; Sa, Su 11:00-16:30",
+    "addr:housenumber": "382",
+    "addr:street": "Mount Dandenong Tourist Road",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n3979169669",
+   "name": "Pie In The Sky",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8555467,
+   "lon": 145.3657428,
+   "tags": {
+    "cuisine": "pies",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4118936292",
+   "name": "Olinda Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8557375,
+   "lon": 145.3649085,
+   "tags": {
+    "phone": "+61 3 9751 0466",
+    "opening_hours": "09:00-16:00",
+    "addr:housenumber": "13-17",
+    "addr:street": "Olinda - Monbulk Road",
+    "addr:postcode": "3788",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n4208843194",
+   "name": "Piggery cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8754532,
+   "lon": 145.3552972,
+   "tags": {
+    "website": "https://www.piggerycafe.com.au/",
+    "phone": "+61 3 9691 3888",
+    "opening_hours": "Mo-Fr 10:00-17:00; Sa-Su 09:00-17:00",
+    "addr:housenumber": "1",
+    "addr:street": "Sherbrooke Road",
+    "addr:postcode": "3789",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n5209276539",
+   "name": "Woolrich Lookout",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -37.8599202,
+   "lon": 145.3820043,
+   "tags": {
+    "website": "https://visitdandenongranges.com.au",
+    "wheelchair": "yes",
+    "addr:housenumber": "10",
+    "addr:street": "Chalet Road",
+    "addr:suburb": "Olinda",
+    "addr:postcode": "3788",
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n5369805065",
+   "name": "Olinda Pizza",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8476557,
+   "lon": 145.3606284,
+   "tags": {
+    "cuisine": "pizza",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5599492246",
+   "name": "King Henry Arts Cafe",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.868786,
+   "lon": 145.3513627,
+   "tags": {
+    "addr:housenumber": "320",
+    "addr:street": "Mount Dandenong Tourist Road",
+    "addr:suburb": "Sassafras",
+    "addr:postcode": "3787",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5599492247",
+   "name": "Dine Divine",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8643411,
+   "lon": 145.3521778,
+   "tags": {
+    "website": "https://www.dinedivine.net.au",
+    "phone": "+61 3 9755 1489",
+    "opening_hours": "Fr 11:30-21:00; Sa, Su 09:00-21:00",
+    "addr:housenumber": "345",
+    "addr:street": "Mount Dandenong Tourist Road",
+    "addr:suburb": "Sassafras",
+    "addr:postcode": "3787",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5599492255",
+   "name": "Ripe Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8636742,
+   "lon": 145.3533768,
+   "tags": {
+    "website": "https://www.ripecafesassafras.com",
+    "phone": "+61 3 9755 2100",
+    "opening_hours": "Mo-Fr 08:00-15:00; Sa-Su 08:00-16:00",
+    "outdoor_seating": "yes",
+    "internet_access": "wlan",
+    "addr:housenumber": "376-378",
+    "addr:street": "Mount Dandenong Tourist Road",
+    "addr:suburb": "Sassafras",
+    "addr:postcode": "3787",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n5599492256",
+   "name": "Sassafras Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8622229,
+   "lon": 145.3539465,
+   "tags": {
+    "addr:housenumber": "391",
+    "addr:street": "Mount Dandenong Tourist Road",
+    "addr:suburb": "Sassafras",
+    "addr:postcode": "3787",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n5891949949",
+   "name": "Kallista Tearoom",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.882481,
+   "lon": 145.3710766,
+   "tags": {
+    "website": "https://www.kallista-tearooms.com.au",
+    "phone": "+61 3 9755 2659",
+    "opening_hours": "Mo-Fr 09:00-17:00; Sa, Su 08:00-17:00",
+    "addr:housenumber": "103",
+    "addr:street": "Monbulk Road",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n5891949951",
+   "name": "BYO",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8868783,
+   "lon": 145.3401622,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5938282908",
+   "name": "Ranges Cafe & Bar",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8558233,
+   "lon": 145.3645099,
+   "tags": {
+    "website": "https://ranges.yolasite.com",
+    "phone": "+61 3 9751 2133",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "5",
+    "addr:street": "Olinda - Monbulk Road",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n5938282921",
+   "name": "Fortnums",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.861833,
+   "lon": 145.3538825,
+   "tags": {
+    "website": "https://www.fortnums.com.au/",
+    "phone": "+61 3 9755 1200",
+    "opening_hours": "Mo 11:30-16:00; Tu-Fr 11:00-16:00; Sa 11:00-17:00; Su 11:30-17:00",
+    "addr:housenumber": "395",
+    "addr:street": "Mount Dandenong Tourist Road",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n5938485910",
+   "name": "Kelly’s",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.8471388,
+   "lon": 145.3602955,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n6193804000",
+   "name": "Storehouse Sassafras",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.863743,
+   "lon": 145.3532681,
+   "tags": {
+    "website": "https://www.storehouseroastery.com/",
+    "phone": "+61 3 8201 8991",
+    "opening_hours": "Mo-Fr 08:00-15:00; Sa-Su 08:00-16:00",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "372",
+    "addr:street": "Mount Dandenong Tourist Road",
+    "addr:suburb": "Sassafras",
+    "addr:postcode": "3787",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n7660491895",
+   "name": "Mad Raven Pizza",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8842804,
+   "lon": 145.3698434,
+   "tags": {
+    "website": "https://www.madravenhotstonepizza.com.au/",
+    "phone": "6139755 2911",
+    "cuisine": "pizza",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n8796706208",
+   "name": "Villa D'Amour at Maison Belle Retreat",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -37.8391454,
+   "lon": 145.3515508,
+   "tags": {
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "n9220805142",
+   "name": "Lookout Rock",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -37.8530854,
+   "lon": 145.3798793,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n11477874190",
+   "name": "Storehouse Roastery Olinda",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.8483208,
+   "lon": 145.3611832,
+   "tags": {
+    "website": "https://www.storehouseroastery.com/",
+    "addr:housenumber": "1544",
+    "addr:street": "Mount Dandenong Tourist Road",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11630199598",
+   "name": "Dudley's",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8558987,
+   "lon": 145.3654567,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11630199600",
+   "name": "Emma Jennings Gallery",
+   "group": "do",
+   "type": "gallery",
+   "lat": -37.8558386,
+   "lon": 145.3658728,
+   "tags": {
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "n11700943269",
+   "name": "Lochiel Luxury Accommodation",
+   "group": "stay",
+   "type": "apartment",
+   "lat": -37.8542225,
+   "lon": 145.3632399,
+   "tags": {
+    "website": "https://www.lochielaccommodation.com/",
+    "internet_access": "wlan",
+    "addr:housenumber": "1590-1594",
+    "addr:street": "Mount Dandenong Tourist Road",
+    "tourism": "apartment"
+   }
+  },
+  {
+   "id": "n12265732636",
+   "name": "White Ginger",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8479972,
+   "lon": 145.3608423,
+   "tags": {
+    "cuisine": "thai",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n14208031389",
+   "name": "Arcadia Cottages",
+   "group": "stay",
+   "type": "apartment",
+   "lat": -37.8509276,
+   "lon": 145.3668841,
+   "tags": {
+    "website": "https://arcadiacottages.com.au/",
+    "phone": "+61 3 9751 1017",
+    "internet_access": "wlan",
+    "addr:housenumber": "188-190",
+    "addr:street": "Falls Road",
+    "addr:suburb": "Olinda",
+    "addr:postcode": "3788",
+    "tourism": "apartment"
+   }
+  },
+  {
+   "id": "w31833099",
+   "name": "Pirianda Gardens",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8758548,
+   "lon": 145.3776003,
+   "tags": {
+    "wikidata": "Q69301804",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w46096628",
+   "name": "Alfred Nicholas Memorial Gardens",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.8746124,
+   "lon": 145.3588393,
+   "tags": {
+    "wikidata": "Q68654324",
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w49826140",
+   "name": "Cuckoo",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8579395,
+   "lon": 145.3684032,
+   "tags": {
+    "website": "https://www.cuckoorestaurant.com.au/",
+    "cuisine": "german",
+    "addr:housenumber": "508",
+    "addr:street": "Mount Dandenong Tourist Road",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w328324217",
+   "name": "George Tindale Memorial Gardens",
+   "group": "do",
+   "type": "park",
+   "lat": -37.880193,
+   "lon": 145.3659131,
+   "tags": {
+    "wikidata": "Q68778220",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w328326628",
+   "name": "Ferny Creek Recreation Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8751857,
+   "lon": 145.3467493,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w478365467",
+   "name": "R J Hamer Arboretum",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8531122,
+   "lon": 145.3820917,
+   "tags": {
+    "website": "https://www.parks.vic.gov.au/places-to-see/parks/rj-hamer-arboretum",
+    "dog": "leashed",
+    "wikidata": "Q69388133",
+    "addr:housenumber": "10",
+    "addr:street": "Chalet Road",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w478365468",
+   "name": "Olinda Precinct",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8517986,
+   "lon": 145.3753876,
+   "tags": {
+    "website": "https://www.parks.vic.gov.au/places-to-see/parks/olinda-golf-course",
+    "opening_hours": "24/7",
+    "addr:housenumber": "75-77",
+    "addr:street": "Olinda - Monbulk Road",
+    "addr:suburb": "Olinda",
+    "addr:postcode": "3788",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w570847087",
+   "name": "Sassafras Village Green",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8629323,
+   "lon": 145.3532095,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w583230759",
+   "name": "O'Donohue Picnic Ground",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8835276,
+   "lon": 145.3574547,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w588817427",
+   "name": "Colehurst Crescent Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.8645842,
+   "lon": 145.3594758,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w588823544",
+   "name": "Wicks Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.8570878,
+   "lon": 145.3205904,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w588823547",
+   "name": "Wicks East Nature Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.8577533,
+   "lon": 145.3220791,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w666394526",
+   "name": "Olinda G165 Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.8618646,
+   "lon": 145.3620548,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w666394531",
+   "name": "Sassafras G163 Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.8687558,
+   "lon": 145.3507614,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w666394532",
+   "name": "Olinda G166 Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.8624606,
+   "lon": 145.3654545,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w666394548",
+   "name": "Olinda G167 Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.8561098,
+   "lon": 145.3673867,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w666614999",
+   "name": "Olinda Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.8589446,
+   "lon": 145.3776679,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w666624915",
+   "name": "Fiddlers Green Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.8509279,
+   "lon": 145.3634597,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w817129690",
+   "name": "Como Cottage",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -37.8563429,
+   "lon": 145.3640692,
+   "tags": {
+    "website": "https://comocottages.com.au/",
+    "phone": "+61 3 9751 2264",
+    "addr:housenumber": "2",
+    "addr:street": "Everest Crescent",
+    "addr:suburb": "Olinda",
+    "addr:postcode": "3788",
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "w1138641338",
+   "name": "Peter Delahenty Art Studio",
+   "group": "do",
+   "type": "gallery",
+   "lat": -37.8565976,
+   "lon": 145.3655508,
+   "tags": {
+    "addr:housenumber": "545",
+    "addr:street": "Mount Dandenong Tourist Road",
+    "tourism": "gallery"
+   }
+  },
+  {
+   "id": "w1143875594",
+   "name": "Howard Norman Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8488201,
+   "lon": 145.361393,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1251133252",
+   "name": "Citrine Bistro & Bar",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.8566351,
+   "lon": 145.365754,
+   "tags": {
+    "cuisine": "contemporary",
+    "addr:housenumber": "543",
+    "addr:street": "Mount Dandenong Tourist Road",
+    "addr:suburb": "Olinda",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w1390926414",
+   "name": "Dunns Hill",
+   "group": "do",
+   "type": "park",
+   "lat": -37.8785647,
+   "lon": 145.3365073,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1537352482",
+   "name": "Olinda Swimming Pool Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.856678,
+   "lon": 145.3745373,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "r8308966",
+   "name": "Sassafras Creek Nature Conservation Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.8857436,
+   "lon": 145.4066537,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r9212908",
+   "name": "Singleton Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.8356644,
+   "lon": 145.3514857,
+   "tags": {
+    "description": "This part of Dandenong Ranges National Park is known locally as Singleton Reserve",
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r9212909",
+   "name": "Dandenong Ranges National Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.8511752,
+   "lon": 145.3529985,
+   "tags": {
+    "website": "https://www.parks.vic.gov.au/places-to-see/parks/dandenong-ranges-national-park",
+    "wikidata": "Q1159404",
+    "wikipedia": "en:Dandenong Ranges National Park",
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r9212918",
+   "name": "Rainbow Gully Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.851674,
+   "lon": 145.3527186,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r9261126",
+   "name": "Olinda G168 Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.8520827,
+   "lon": 145.3681285,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r9261127",
+   "name": "Ferny Creek Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.8719086,
+   "lon": 145.3520276,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}

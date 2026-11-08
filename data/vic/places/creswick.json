@@ -1,0 +1,262 @@
+{
+ "town": "Creswick",
+ "slug": "creswick",
+ "centre": [
+  -37.4245857,
+  143.8939669
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-11-08T21:15:52+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n2492965993",
+   "name": "The American Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.4249136,
+   "lon": 143.8943638,
+   "tags": {
+    "website": "https://www.theamericancreswick.com.au/",
+    "addr:street": "Albert Street",
+    "addr:suburb": "Creswick",
+    "addr:postcode": "3363",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n2493012589",
+   "name": "The Farmers Arms",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.4216156,
+   "lon": 143.8945549,
+   "tags": {
+    "addr:street": "Albert Street",
+    "addr:suburb": "Creswick",
+    "addr:postcode": "3363",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n2493012601",
+   "name": "Smokeytown Cafe",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.4241414,
+   "lon": 143.8943235,
+   "tags": {
+    "phone": "+61 3 5345 1557",
+    "cuisine": "regional",
+    "addr:housenumber": "77",
+    "addr:street": "Albert Street",
+    "addr:suburb": "Creswick",
+    "addr:postcode": "3363",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2493012604",
+   "name": "Red Fox Deli",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.4237431,
+   "lon": 143.8945542,
+   "tags": {
+    "phone": "+61 3 5345 1414",
+    "cuisine": "coffee_shop",
+    "internet_access": "no",
+    "addr:housenumber": "67a",
+    "addr:street": "Albert Street",
+    "addr:suburb": "Creswick",
+    "addr:postcode": "3363",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n2649672942",
+   "name": "Creswick Bakery",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.4233453,
+   "lon": 143.8946923,
+   "tags": {
+    "phone": "+61 3 5345 1095",
+    "cuisine": "pie,sandwich,cakes",
+    "internet_access": "no",
+    "addr:housenumber": "61a",
+    "addr:street": "Albert Street",
+    "addr:suburb": "Creswick",
+    "addr:postcode": "3363",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n4064875839",
+   "name": "Koala Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.4413612,
+   "lon": 143.912121,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "n4067972191",
+   "name": "Meg's Place",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.4229579,
+   "lon": 143.8952974,
+   "tags": {
+    "addr:housenumber": "56",
+    "addr:street": "Albert Street",
+    "addr:suburb": "Creswick",
+    "addr:postcode": "3363",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w126532416",
+   "name": "RACV Goldfields Resort Golf Course",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -37.4440388,
+   "lon": 143.8929773,
+   "tags": {
+    "wikidata": "Q7373776",
+    "wikipedia": "en:Royal Automobile Club of Victoria",
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w211854838",
+   "name": "RACV Goldfields Resort",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.4442899,
+   "lon": 143.8908603,
+   "tags": {
+    "website": "https://www.racv.com.au/",
+    "wikidata": "Q7373776",
+    "addr:housenumber": "1500",
+    "addr:street": "Midland Highway",
+    "addr:suburb": "Creswick",
+    "addr:postcode": "3363",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w387733994",
+   "name": "Creswick Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.4190432,
+   "lon": 143.8937115,
+   "tags": {
+    "website": "https://www.creswickmotel.com/",
+    "addr:housenumber": "2",
+    "addr:street": "Cushing Avenue",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w387733995",
+   "name": "Creswick Caravan Park and Camping Ground",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -37.4179765,
+   "lon": 143.8905085,
+   "tags": {
+    "website": "www.creswickcaravanpark.com.au",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w666620608",
+   "name": "Creswick Natural Features Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.4382086,
+   "lon": 143.8937624,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w666620662",
+   "name": "Creswick North Natural Features Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.3998522,
+   "lon": 143.905115,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w757751728",
+   "name": "Sebel Creswick Forest Resort",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.445133,
+   "lon": 143.8888131,
+   "tags": {
+    "website": "https://all.accor.com/",
+    "description": "No on-site reception, all interactions are with the Melbourne office.",
+    "internet_access": "yes",
+    "addr:housenumber": "1500",
+    "addr:street": "Midland Highway",
+    "addr:suburb": "Creswick",
+    "addr:postcode": "3363",
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w763007142",
+   "name": "Creswick Skate and Splash Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.4218098,
+   "lon": 143.8955915,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1034328571",
+   "name": "Apex Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.4247214,
+   "lon": 143.8921752,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "r9266565",
+   "name": "St Georges Lake Flora Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.4285407,
+   "lon": 143.9023114,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r20171453",
+   "name": "Creswick Regional Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.4477856,
+   "lon": 143.9121597,
+   "tags": {
+    "wikidata": "Q14946560",
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}

@@ -1,0 +1,117 @@
+{
+ "town": "Wye River",
+ "slug": "wye-river",
+ "centre": [
+  -38.6333083,
+  143.8896997
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-11-08T21:21:24+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n863348329",
+   "name": "Wye River General Store",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.6347852,
+   "lon": 143.8905258,
+   "tags": {
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n863349549",
+   "name": "Wye Beach Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -38.6359763,
+   "lon": 143.8907378,
+   "tags": {
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n863351111",
+   "name": "Scully Mill Farm",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -38.6298494,
+   "lon": 143.8959169,
+   "tags": {
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "n863351701",
+   "name": "The Deck House",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -38.6409195,
+   "lon": 143.8922307,
+   "tags": {
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "w204763502",
+   "name": "Big4 Wye River Tourist Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -38.6359234,
+   "lon": 143.8878318,
+   "tags": {
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w204763505",
+   "name": "Wye River Foreshore Camping Reserve",
+   "group": "stay",
+   "type": "camp_site",
+   "lat": -38.6337708,
+   "lon": 143.8923489,
+   "tags": {
+    "tourism": "camp_site"
+   }
+  },
+  {
+   "id": "r6592912",
+   "name": "Great Ocean Road",
+   "group": "do",
+   "type": "attraction",
+   "lat": -38.5607579,
+   "lon": 143.4679704,
+   "tags": {
+    "website": "https://www.visitgreatoceanroad.org.au/",
+    "wikidata": "Q74046",
+    "wikipedia": "en:Great Ocean Road",
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "r9212144",
+   "name": "Great Otway National Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.5896224,
+   "lon": 143.7149334,
+   "tags": {
+    "wikidata": "Q68472",
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r9212146",
+   "name": "Wye River Coastal Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.6354202,
+   "lon": 143.8916664,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}

@@ -2,22 +2,779 @@
  "town": "Mount Buller",
  "slug": "mount-buller",
  "centre": [
-  -37.269437,
-  146.4338655
+  -37.1465,
+  146.442
  ],
  "radiusM": 3000,
- "fetchedAt": "2026-11-01T21:18:02+00:00",
+ "fetchedAt": "2026-11-08T21:08:44+00:00",
  "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
  "places": [
   {
-   "id": "n1886268390",
-   "name": "Upper Jamieson Hut Campsite",
-   "group": "stay",
-   "type": "camp_site",
-   "lat": -37.2573264,
-   "lon": 146.44825,
+   "id": "n281356379",
+   "name": "Kofler's Restaurant",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.1478022,
+   "lon": 146.4309456,
    "tags": {
-    "tourism": "camp_site"
+    "wikidata": "Q137768826",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n281367209",
+   "name": "Spurs",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.1422155,
+   "lon": 146.4404238,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n610901403",
+   "name": "Sleepy Hollow",
+   "group": "do",
+   "type": "viewpoint",
+   "lat": -37.1474972,
+   "lon": 146.4588093,
+   "tags": {
+    "tourism": "viewpoint"
+   }
+  },
+  {
+   "id": "n1785478296",
+   "name": "Cattlemans Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.1464316,
+   "lon": 146.4491007,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n4007313443",
+   "name": "ABOM Bistro",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.1458783,
+   "lon": 146.4465513,
+   "tags": {
+    "website": "https://abom.com.au/#dining",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4007313444",
+   "name": "Birdcage Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.1459197,
+   "lon": 146.448277,
+   "tags": {
+    "website": "https://thebirdcage.net.au/",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n4007313446",
+   "name": "Pat's Italian",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.1461028,
+   "lon": 146.4498846,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4007313447",
+   "name": "Mt Buller Fish & Chippery",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.1462859,
+   "lon": 146.4498909,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4007313448",
+   "name": "The Villager Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.1466774,
+   "lon": 146.449269,
+   "tags": {
+    "cuisine": "pizza",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n4007313449",
+   "name": "The Whitt",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.1457418,
+   "lon": 146.4456614,
+   "tags": {
+    "website": "https://www.skivictoria.com.au/restaurant/",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4007313450",
+   "name": "Kaptan's Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.1473384,
+   "lon": 146.4454796,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4007313451",
+   "name": "Grimus Grind",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.1474325,
+   "lon": 146.4454349,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n10855407006",
+   "name": "Buller Huts Trail",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.1459096,
+   "lon": 146.4302623,
+   "tags": {
+    "website": "https://www.bullerhutstrail.com.au",
+    "opening_hours": "24/7",
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n11524323963",
+   "name": "Alpine Retreat",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.146747,
+   "lon": 146.4519723,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n11524345967",
+   "name": "National Alpine Museum of Australia",
+   "group": "do",
+   "type": "museum",
+   "lat": -37.1450692,
+   "lon": 146.4487847,
+   "tags": {
+    "website": "https://www.nama.org.au/",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "n13982300659",
+   "name": "Harry Burns",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.1463038,
+   "lon": 146.4445157,
+   "tags": {
+    "website": "https://www.harryburns.com.au/",
+    "phone": "+61 3 5777 6010",
+    "opening_hours": "Mo-Fr 09:00+; Sa-Su 08:00+",
+    "addr:housenumber": "232",
+    "addr:street": "Summit Road",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w166090578",
+   "name": "Bombora Apartments",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.14868,
+   "lon": 146.4459619,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w166090580",
+   "name": "Hima Flats",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1488667,
+   "lon": 146.4458772,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167144592",
+   "name": "Arlberg Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.1460671,
+   "lon": 146.4435507,
+   "tags": {
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w167145011",
+   "name": "Buller Central",
+   "group": "stay",
+   "type": "hostel",
+   "lat": -37.1467547,
+   "lon": 146.449208,
+   "tags": {
+    "tourism": "hostel"
+   }
+  },
+  {
+   "id": "w167145013",
+   "name": "Melbourne University Sport Alpine Lodge",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1469661,
+   "lon": 146.4501922,
+   "tags": {
+    "website": "https://sport.unimelb.edu.au/court-venue-hire/alpine-lodge-hire",
+    "internet_access": "wlan",
+    "addr:housenumber": "9",
+    "addr:street": "Cow Camp Lane",
+    "addr:suburb": "Mount Buller",
+    "addr:postcode": "3723",
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145015",
+   "name": "Australian Women’s Ski Club",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1470972,
+   "lon": 146.4487661,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145018",
+   "name": "Pension Grimus",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.1473708,
+   "lon": 146.4453708,
+   "tags": {
+    "website": "https://www.pensiongrimus.com.au/",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w167145020",
+   "name": "ACV",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.147423,
+   "lon": 146.4479518,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145021",
+   "name": "Mawson",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1475715,
+   "lon": 146.4477714,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145024",
+   "name": "Southern Cross Lodge",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1471622,
+   "lon": 146.4498307,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145028",
+   "name": "Black Forest Lodge",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1470487,
+   "lon": 146.4476384,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145033",
+   "name": "Eltham",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1477194,
+   "lon": 146.4474115,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145037",
+   "name": "University Ski Lodge",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1473091,
+   "lon": 146.4483819,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145038",
+   "name": "Moose Apartments",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1471126,
+   "lon": 146.4490348,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145043",
+   "name": "Apira Ski Club",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1470751,
+   "lon": 146.4494611,
+   "tags": {
+    "website": "https://apira.org.au/",
+    "addr:housenumber": "13",
+    "addr:street": "The Avenue",
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145199",
+   "name": "Courchevel",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1470752,
+   "lon": 146.4463498,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145200",
+   "name": "Snowmass Apartments",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1472002,
+   "lon": 146.4470014,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145201",
+   "name": "BMW Ski Club",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1471516,
+   "lon": 146.4461151,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145202",
+   "name": "Double B Ski Club",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1484836,
+   "lon": 146.4460332,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145204",
+   "name": "Dandenong / Firn",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1475108,
+   "lon": 146.4463284,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145206",
+   "name": "Timberline",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1480107,
+   "lon": 146.4463031,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145208",
+   "name": "Mt Buller Chalet Hotel & Suites",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.145836,
+   "lon": 146.4482014,
+   "tags": {
+    "website": "https://www.mtbullerchalet.com.au/",
+    "phone": "+61 3 5777 6566",
+    "addr:housenumber": "5",
+    "addr:street": "Summit Road",
+    "addr:suburb": "Mount Buller",
+    "addr:postcode": "3723",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w167145210",
+   "name": "Courchevel Apartments",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1474024,
+   "lon": 146.4465667,
+   "tags": {
+    "addr:housenumber": "22",
+    "addr:street": "The Avenue",
+    "addr:suburb": "Mount Buller",
+    "addr:postcode": "3723",
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145214",
+   "name": "Black Tulip Ski Club",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1482065,
+   "lon": 146.4461413,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145219",
+   "name": "The Avenue",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1471318,
+   "lon": 146.4471974,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145330",
+   "name": "ABOM Hotel & Apartments",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.1457539,
+   "lon": 146.4465309,
+   "tags": {
+    "addr:housenumber": "16",
+    "addr:street": "Athletes Walk",
+    "addr:suburb": "Mount Buller",
+    "addr:postcode": "3723",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w167145334",
+   "name": "The Peak",
+   "group": "stay",
+   "type": "apartment",
+   "lat": -37.1462377,
+   "lon": 146.4519533,
+   "tags": {
+    "tourism": "apartment"
+   }
+  },
+  {
+   "id": "w167145335",
+   "name": "Alpine Retreat",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.1468306,
+   "lon": 146.4521055,
+   "tags": {
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w167145820",
+   "name": "Mitre Ski Club",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1493912,
+   "lon": 146.4457077,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145821",
+   "name": "Bull Run Skiosk",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.1521013,
+   "lon": 146.4430249,
+   "tags": {
+    "opening_hours": "\"winter\"",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w167145823",
+   "name": "Nomad Ski Club",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1490036,
+   "lon": 146.4451631,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145825",
+   "name": "Mansfield Ski Club",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1485613,
+   "lon": 146.4442266,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145827",
+   "name": "Collegians Ski Club",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1490206,
+   "lon": 146.4448411,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145828",
+   "name": "Ski View Apartments",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1487458,
+   "lon": 146.444567,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145832",
+   "name": "Patscherkofel Lodge",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1484317,
+   "lon": 146.4455114,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145835",
+   "name": "The Christiana Apartments",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1485072,
+   "lon": 146.4450303,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145838",
+   "name": "Gliss Ski Club",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1486034,
+   "lon": 146.444796,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145843",
+   "name": "Akla Ski Club",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1490758,
+   "lon": 146.4459237,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167145844",
+   "name": "RAN Ski Club",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1492114,
+   "lon": 146.4458307,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167146082",
+   "name": "Tirol",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.1447699,
+   "lon": 146.4398425,
+   "tags": {
+    "opening_hours": "\"winter\"",
+    "cuisine": "italian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w167147107",
+   "name": "Wombat Kiosk",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.1539097,
+   "lon": 146.4335114,
+   "tags": {
+    "website": "https://www.mtbuller.com.au/Winter/resort-info/the-village/bars-restaurants/details/wombat-kiosk",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w167147516",
+   "name": "Brackenwood (3-4)",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1462425,
+   "lon": 146.4525283,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167147520",
+   "name": "Brackenwood (1-2)",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1464194,
+   "lon": 146.4524442,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167147947",
+   "name": "Duck Inn",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.1454353,
+   "lon": 146.4550362,
+   "tags": {
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w167147956",
+   "name": "Enzian",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.1476374,
+   "lon": 146.4520758,
+   "tags": {
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w167147957",
+   "name": "Ajax",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.147305,
+   "lon": 146.4535688,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w167148006",
+   "name": "Winterhaven",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1474472,
+   "lon": 146.4530474,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w167148265",
+   "name": "Preston",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.1486049,
+   "lon": 146.4556746,
+   "tags": {
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "w502027324",
+   "name": "Breathtaker All Suite Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.1477053,
+   "lon": 146.445125,
+   "tags": {
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w645140195",
+   "name": "Ski Club of Victoria",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.145614,
+   "lon": 146.4455696,
+   "tags": {
+    "tourism": "hotel"
    }
   },
   {
@@ -30,29 +787,6 @@
    "tags": {
     "website": "https://www.parks.vic.gov.au/places-to-see/parks/alpine-national-park",
     "wikidata": "Q1291186",
-    "leisure": "nature_reserve"
-   }
-  },
-  {
-   "id": "r16351708",
-   "name": "The Governors Remote and Natural Area",
-   "group": "do",
-   "type": "nature_reserve",
-   "lat": -37.2659137,
-   "lon": 146.3871409,
-   "tags": {
-    "leisure": "nature_reserve"
-   }
-  },
-  {
-   "id": "r20306077",
-   "name": "Upper Goulburn State Forest",
-   "group": "do",
-   "type": "nature_reserve",
-   "lat": -37.4146947,
-   "lon": 146.34586,
-   "tags": {
-    "wikidata": "Q115804184",
     "leisure": "nature_reserve"
    }
   }

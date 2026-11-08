@@ -1,0 +1,48 @@
+{
+ "town": "Jindivick",
+ "slug": "jindivick",
+ "centre": [
+  -38.0270748,
+  145.8992883
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-11-08T21:26:53+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n2139871171",
+   "name": "Harvest Kitchen Cafe",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.027964,
+   "lon": 145.9002592,
+   "tags": {
+    "cuisine": "regional",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "r9261035",
+   "name": "Jindivick G78 Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.0113712,
+   "lon": 145.8882337,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r20302072",
+   "name": "Labertouche State Forest",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.9921848,
+   "lon": 145.8480509,
+   "tags": {
+    "wikidata": "Q115804184",
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}

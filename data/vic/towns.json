@@ -2322,8 +2322,20 @@
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
   "probe": {
-   "at": "2026-11-01T21:16:29+00:00",
-   "error": "Overpass unavailable"
+   "at": "2026-11-08T21:07:55+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -37.8559054,
+    145.3649682
+   ],
+   "counts": {
+    "stay": 5,
+    "eat": 25,
+    "do": 31
+   },
+   "withWebsite": 20,
+   "withHours": 14,
+   "total": 61
   },
   "published": false
  },
@@ -2339,20 +2351,20 @@
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
   "probe": {
-   "at": "2026-11-01T21:18:02+00:00",
+   "at": "2026-11-08T21:08:44+00:00",
    "radiusM": 3000,
    "centre": [
-    -37.269437,
-    146.4338655
+    -37.1465,
+    146.442
    ],
    "counts": {
-    "stay": 1,
-    "eat": 0,
-    "do": 3
+    "stay": 47,
+    "eat": 16,
+    "do": 4
    },
-   "withWebsite": 1,
-   "withHours": 0,
-   "total": 4
+   "withWebsite": 12,
+   "withHours": 4,
+   "total": 67
   },
   "published": false,
   "centreOverride": [
@@ -2639,8 +2651,20 @@
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
   "probe": {
-   "at": "2026-11-01T21:46:37+00:00",
-   "error": "Overpass unavailable"
+   "at": "2026-11-08T21:14:05+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -38.5214924,
+    145.369394
+   ],
+   "counts": {
+    "stay": 8,
+    "eat": 12,
+    "do": 14
+   },
+   "withWebsite": 8,
+   "withHours": 4,
+   "total": 34
   },
   "published": false
  },
@@ -2716,8 +2740,20 @@
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
   "probe": {
-   "at": "2026-11-01T22:08:24+00:00",
-   "error": "Overpass unavailable"
+   "at": "2026-11-08T21:15:52+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -37.4245857,
+    143.8939669
+   ],
+   "counts": {
+    "stay": 5,
+    "eat": 5,
+    "do": 8
+   },
+   "withWebsite": 5,
+   "withHours": 0,
+   "total": 18
   },
   "published": false
  },
@@ -2871,7 +2907,22 @@
    "eat": null
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null,
+  "probe": {
+   "at": "2026-11-08T21:21:24+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -38.6333083,
+    143.8896997
+   ],
+   "counts": {
+    "stay": 5,
+    "eat": 1,
+    "do": 3
+   },
+   "withWebsite": 1,
+   "withHours": 0,
+   "total": 9
+  },
   "published": false
  },
  {
@@ -2924,7 +2975,22 @@
    "eat": 320
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null,
+  "probe": {
+   "at": "2026-11-08T21:22:45+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -37.8628502,
+    145.3536965
+   ],
+   "counts": {
+    "stay": 6,
+    "eat": 29,
+    "do": 31
+   },
+   "withWebsite": 22,
+   "withHours": 13,
+   "total": 66
+  },
   "published": false
  },
  {
@@ -2938,7 +3004,22 @@
    "eat": 30
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null,
+  "probe": {
+   "at": "2026-11-08T21:24:09+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -37.4018868,
+    144.5873582
+   ],
+   "counts": {
+    "stay": 0,
+    "eat": 3,
+    "do": 10
+   },
+   "withWebsite": 1,
+   "withHours": 0,
+   "total": 13
+  },
   "published": false
  },
  {
@@ -2952,7 +3033,22 @@
    "eat": 10
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null,
+  "probe": {
+   "at": "2026-11-08T21:25:26+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -37.2940636,
+    143.7865803
+   ],
+   "counts": {
+    "stay": 6,
+    "eat": 5,
+    "do": 12
+   },
+   "withWebsite": 1,
+   "withHours": 0,
+   "total": 23
+  },
   "published": false
  },
  {
@@ -2980,7 +3076,22 @@
    "eat": null
   },
   "volumeCheckedAt": "2026-10-19T11:35:32.174Z",
-  "probe": null,
+  "probe": {
+   "at": "2026-11-08T21:26:53+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -38.0270748,
+    145.8992883
+   ],
+   "counts": {
+    "stay": 0,
+    "eat": 1,
+    "do": 2
+   },
+   "withWebsite": 0,
+   "withHours": 0,
+   "total": 3
+  },
   "published": false
  },
  {
@@ -3074,7 +3185,22 @@
   "volume": null,
   "volumes": null,
   "volumeCheckedAt": null,
-  "probe": null,
+  "probe": {
+   "at": "2026-11-08T21:28:15+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -38.3543449,
+    144.9537421
+   ],
+   "counts": {
+    "stay": 0,
+    "eat": 31,
+    "do": 31
+   },
+   "withWebsite": 12,
+   "withHours": 4,
+   "total": 62
+  },
   "published": false
  }
 ]
