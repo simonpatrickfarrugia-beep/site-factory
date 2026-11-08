@@ -47,8 +47,9 @@ export interface QueueItem {
   publishedAt: string | null;
   /** Where it came from. Missing = studio feed (older items). */
   source?: 'feed' | 'demand' | 'chat' | 'catalogue';
-  /** new = not looked up yet; pending = not in OMDb yet (rechecked monthly); review = needs a person. */
-  status: 'new' | 'pending' | 'review';
+  /** new = not looked up yet; pending = not in OMDb yet (rechecked monthly); review = needs a person;
+   *  rejected = not a film (label promo, box set). Kept in the queue so intake doesn't re-add it from the feed. */
+  status: 'new' | 'pending' | 'review' | 'rejected';
   /** Why it is waiting, e.g. "NEEDS REVIEW: ...". */
   note: string | null;
   foundAt: string;
