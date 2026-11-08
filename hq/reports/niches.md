@@ -1687,35 +1687,35 @@ _Seeds: dog boarding cost in portland oregon, dog daycare prices near seattle, h
 
 Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits × affiliate clicks × conversion × payout (average of the top 3 matching programmes), plus display ads. These numbers rank ideas against each other; they are not forecasts. They get replaced by our own measured rates as our sites earn.
 
-**Model:** Calibrated from 475 page views, 3 affiliate clicks and 0 reported sales (trailers, vic, community-help-co, trade-admin, paycalc, simon-says-travel): click rate 4.2% (assumed 5.0%), conversion 4.9% (assumed 5.0%). The assumption weighs as much as 2,000 views / 200 clicks, so real data takes over as it grows.
+**Model:** Calibrated from 493 page views, 3 affiliate clicks and 0 reported sales (trailers, vic, community-help-co, trade-admin, paycalc, simon-says-travel): click rate 4.1% (assumed 5.0%), conversion 4.9% (assumed 5.0%). The assumption weighs as much as 2,000 views / 200 clicks, so real data takes over as it grows.
 
 | Idea | Market | Visits/mo (mid) | Est. revenue/mo (low · mid · high) | Avg payout per sale | Score |
 |---|---|---:|---|---:|---:|
-| Dog breeds | United States | 274,520 | $1,432 · **$13,261** · $63,862 | $18.33 | 75 |
-| US national parks and hiking trails | United States | 89,156 | $300 · **$2,594** · $11,980 | $9 | 74 |
-| US take-home pay by salary and state | United States | 58,948 | $317 · **$2,502** · $10,874 | $9 | 77 |
-| Anime: where to watch and watch order | United States | 102,419 | $195 · **$1,430** · $5,853 | $1.7 | 70 |
-| TV shows: where to watch | United States | 27,719 | $109 · **$762** · $2,989 | $1.7 | 73 |
-| Video games: release dates and trailers | United States | 70,520 | $59 · **$451** · $1,921 | $1.17 | 62 |
-| AU pay and tax calculators (take-home pay by salary) | Australia | 8,647 | $46 · **$367** · $1,595 | $9 | 76 |
-| US cost of living by city | United States | 6,358 | $35 · **$321** · $1,533 | $18.33 | 66 |
-| Book series in reading order | United States | 24,564 | $22 · **$170** · $738 | $1.43 | 53 |
-| Victoria: where to stay by town | Australia | 3,903 | $16 · **$138** · $641 | $11.33 | 66 |
-| AU electric car running costs vs petrol by model | Australia | 2,312 | $12 · **$97** · $438 | $11.5 | 69 |
-| Movie soundtracks and film music | United States | 11,888 | $10 · **$82** · $357 | $1.43 | 53 |
-| Car rental cost by airport and car type | United States | 1,815 | $10 · **$82** · $360 | $10.33 | 69 |
+| Dog breeds | United States | 274,520 | $1,425 · **$13,186** · $63,481 | $18.33 | 75 |
+| US national parks and hiking trails | United States | 89,156 | $299 · **$2,582** · $11,919 | $9 | 74 |
+| US take-home pay by salary and state | United States | 58,948 | $316 · **$2,495** · $10,834 | $9 | 77 |
+| Anime: where to watch and watch order | United States | 102,419 | $195 · **$1,428** · $5,839 | $1.7 | 70 |
+| TV shows: where to watch | United States | 27,719 | $109 · **$761** · $2,986 | $1.7 | 73 |
+| Video games: release dates and trailers | United States | 70,520 | $58 · **$450** · $1,915 | $1.17 | 62 |
+| AU pay and tax calculators (take-home pay by salary) | Australia | 8,647 | $46 · **$366** · $1,589 | $9 | 76 |
+| US cost of living by city | United States | 6,358 | $35 · **$320** · $1,524 | $18.33 | 66 |
+| Book series in reading order | United States | 24,564 | $22 · **$170** · $735 | $1.43 | 53 |
+| Victoria: where to stay by town | Australia | 3,903 | $16 · **$137** · $638 | $11.33 | 66 |
+| AU electric car running costs vs petrol by model | Australia | 2,312 | $12 · **$96** · $436 | $11.5 | 69 |
+| Movie soundtracks and film music | United States | 11,888 | $10 · **$82** · $356 | $1.43 | 53 |
+| Car rental cost by airport and car type | United States | 1,815 | $10 · **$82** · $359 | $10.33 | 69 |
 | AU stamp duty and home buying costs by state | Australia | 2,985 | $11 · **$78** · $300 | $1 | 64 |
-| Board games | United States | 11,226 | $10 · **$77** · $333 | $1.4 | 61 |
-| Victoria: things to do by town | Australia | 1,769 | $5 · **$50** · $244 | $11.33 | 60 |
-| Retro game finder: where to play classic games today (US) | United States | 6,967 | $5 · **$40** · $168 | $0.87 | 58 |
+| Board games | United States | 11,226 | $10 · **$77** · $332 | $1.4 | 61 |
+| Victoria: things to do by town | Australia | 1,769 | $5 · **$50** · $242 | $11.33 | 60 |
+| Retro game finder: where to play classic games today (US) | United States | 6,967 | $5 · **$40** · $167 | $0.87 | 58 |
 | AU electricity prices by postcode and retailer | Australia | 604 | $3 · **$21** · $86 | $5 | 61 |
 | AU solar and home battery payback by postcode | Australia | 624 | $3 · **$19** · $79 | $3.5 | 66 |
 | Victoria: where to eat by town | Australia | 779 | $2 · **$17** · $85 | $9 | 51 |
 | Australian clothing brands directory (beason.com.au) | Australia | 949 | $2 · **$15** · $66 | $3.5 | 50 |
-| AU suburb profiles: prices, rent and demographics | Australia | 134 | $1 · **$5** · $23 | $9 | 55 |
+| AU suburb profiles: prices, rent and demographics | Australia | 134 | $1 · **$5** · $22 | $9 | 55 |
 | Retro game finder: where to play classic games today (AU) | Australia | 423 | $0 · **$3** · $11 | $1 | 42 |
 | Australian winter wear: beanies, jackets and knitwear | Australia | 122 | $0 · **$3** · $15 | $9 | 50 |
-| Dog-friendly hotels by city | United States | 55 | $0 · **$3** · $16 | $18.33 | 54 |
+| Dog-friendly hotels by city | United States | 55 | $0 · **$3** · $15 | $18.33 | 54 |
 | US public library branches by city | United States | 226 | $0 · **$2** · $9 | $1.43 | 46 |
 | Mattress and sleep product buyer guides by size and firmness | United States | 46 | $0 · **$2** · $8 | $9 | 54 |
 | Australian loungewear and comfortwear brands | Australia | 36 | $0 · **$1** · $4 | $9 | 42 |
