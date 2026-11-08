@@ -112,6 +112,7 @@ export function routes(): Route[] {
     out.push({
       path: slug,
       template: slug === 'contact' ? 'sstContact' : 'sstPage',
+      noindex: slug === 'contact', // a form page with nothing to rank for (quality gate: thin)
       seo: { title: p.seoTitle, description: p.description },
       schema: slug === 'about' ? [org] : [],
       props: { page: p },
