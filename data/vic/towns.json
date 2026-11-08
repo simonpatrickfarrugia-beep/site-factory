@@ -530,9 +530,9 @@
   ],
   "kmFromMelbourne": 81,
   "counts": {
-   "stay": 32,
-   "eat": 71,
-   "do": 59
+   "stay": 26,
+   "eat": 57,
+   "do": 45
   }
  },
  {
@@ -2307,7 +2307,7 @@
   "counts": {
    "stay": 2,
    "eat": 43,
-   "do": 35
+   "do": 34
   }
  },
  {
@@ -2337,7 +2337,17 @@
    "withHours": 14,
    "total": 61
   },
-  "published": false
+  "published": true,
+  "centre": [
+   -37.8559054,
+   145.3649682
+  ],
+  "kmFromMelbourne": 36,
+  "counts": {
+   "stay": 5,
+   "eat": 25,
+   "do": 31
+  }
  },
  {
   "name": "Mount Buller",
@@ -2366,11 +2376,21 @@
    "withHours": 4,
    "total": 67
   },
-  "published": false,
+  "published": true,
   "centreOverride": [
    -37.1465,
    146.442
-  ]
+  ],
+  "centre": [
+   -37.1465,
+   146.442
+  ],
+  "kmFromMelbourne": 150,
+  "counts": {
+   "stay": 47,
+   "eat": 16,
+   "do": 3
+  }
  },
  {
   "name": "Woodend",
@@ -2666,7 +2686,17 @@
    "withHours": 4,
    "total": 34
   },
-  "published": false
+  "published": true,
+  "centre": [
+   -38.5214924,
+   145.369394
+  ],
+  "kmFromMelbourne": 86,
+  "counts": {
+   "stay": 8,
+   "eat": 12,
+   "do": 11
+  }
  },
  {
   "name": "Point Lonsdale",
@@ -2755,7 +2785,8 @@
    "withHours": 0,
    "total": 18
   },
-  "published": false
+  "published": false,
+  "note": "Held back: 18 places in OpenStreetMap (probe 8 Nov)"
  },
  {
   "name": "Wilsons Promontory",
@@ -2923,7 +2954,8 @@
    "withHours": 0,
    "total": 9
   },
-  "published": false
+  "published": false,
+  "note": "Held back: 9 places (probe 8 Nov)"
  },
  {
   "name": "Harrietville",
@@ -2991,7 +3023,8 @@
    "withHours": 13,
    "total": 66
   },
-  "published": false
+  "published": false,
+  "note": "Held back: 1.3 km from Olinda, whose page covers the same places (probe 8 Nov)"
  },
  {
   "name": "Mount Macedon",
@@ -3020,7 +3053,8 @@
    "withHours": 0,
    "total": 13
   },
-  "published": false
+  "published": false,
+  "note": "Held back: 13 places, no accommodation listed (probe 8 Nov)"
  },
  {
   "name": "Clunes",
@@ -3049,7 +3083,8 @@
    "withHours": 0,
    "total": 23
   },
-  "published": false
+  "published": false,
+  "note": "Held back: 23 places, only 5 to eat (probe 8 Nov)"
  },
  {
   "name": "High Country",
@@ -3092,7 +3127,8 @@
    "withHours": 0,
    "total": 3
   },
-  "published": false
+  "published": false,
+  "note": "Held back: 3 places (probe 8 Nov)"
  },
  {
   "name": "Tarra Bulga",
@@ -3201,6 +3237,7 @@
    "withHours": 4,
    "total": 62
   },
-  "published": false
+  "published": false,
+  "note": "Held back: 1.7 km from Dromana, which covers Arthurs Seat and the chairlift; no accommodation listed (probe 8 Nov)"
  }
 ]

@@ -271,6 +271,18 @@
   "belgrave": {
    "intro": "Belgrave is the gateway to the Dandenong Ranges and the home station of Puffing Billy, the century-old steam railway. Sherbrooke Forest and the Dandenong Ranges National Park walks are minutes away.",
    "region": "Dandenong Ranges"
+  },
+  "olinda": {
+   "intro": "Olinda is a village high in the Dandenong Ranges, about an hour east of Melbourne, known for its tearooms, galleries and cool-climate gardens. The National Rhododendron Garden and the William Ricketts Sanctuary are close by, and Sassafras, with more cafés and shops, is a few minutes down the road. The ranges are cooler than the city and often misty, so bring a layer.",
+   "region": "Dandenong Ranges"
+  },
+  "mount-buller": {
+   "intro": "Mount Buller is Victoria’s biggest ski resort and the closest major one to Melbourne, about three hours’ drive via Mansfield. In winter the village is lifts, ski lodges and après; from late spring it becomes a mountain-biking and hiking base, and the National Alpine Museum of Australia is in the village. In the snow season, resort entry fees apply and you must carry chains.",
+   "region": "High Country"
+  },
+  "san-remo": {
+   "intro": "San Remo is the fishing town on the mainland side of the bridge to Phillip Island. Pelicans are fed on the foreshore at noon each day, and the town has fish and chips, cafés, motels and caravan parks. It makes a handy base for the island’s Penguin Parade and for the Bass Coast beaches.",
+   "region": "Gippsland"
   }
  },
  "collections": [
@@ -1225,6 +1237,16 @@
    "body": [
     "Bright is the most popular base, with the Great Alpine Road climbing from Harrietville to Mount Hotham. Beechworth and Myrtleford add gold-era history and food, and Mansfield is the gateway to Mount Buller and Lake Eildon.",
     "In winter, alpine roads may require snow chains: check VicRoads and the resorts before you drive. Autumn colours around Bright are a highlight from April."
+   ]
+  },
+  {
+   "slug": "dandenong-ranges",
+   "name": "Dandenong Ranges",
+   "label": "Dandenong Ranges",
+   "intro": "The Dandenong Ranges are the forested hills on Melbourne’s eastern edge: tall mountain ash, tree ferns, tearooms and gardens, under an hour from the city.",
+   "body": [
+    "Belgrave is the southern gateway and the home station of Puffing Billy, the steam railway. Olinda and Sassafras sit higher up along the Mount Dandenong Tourist Road, with cafés, gardens and lookouts across Melbourne.",
+    "Most of the forest is Dandenong Ranges National Park, including Sherbrooke Forest. It’s cooler and often wetter up here than in the city, so bring a layer."
    ]
   }
  ]
