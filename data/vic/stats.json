@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-07T19:00:10.367Z",
+ "generatedAt": "2026-11-08T19:00:11.030Z",
  "period": {
-  "start": "2026-10-10",
-  "end": "2026-11-06"
+  "start": "2026-10-11",
+  "end": "2026-11-07"
  },
  "gscPeriod": {
-  "start": "2026-10-08",
-  "end": "2026-11-04"
+  "start": "2026-10-09",
+  "end": "2026-11-05"
  },
  "sources": {
   "ga4": true,
@@ -23,7 +23,7 @@
    "map": 1
   },
   "gscClicks": 4,
-  "gscImpressions": 1982
+  "gscImpressions": 1992
  },
  "daily": [
   {
@@ -119,8 +119,8 @@
    "gscPosition": 3,
    "topQuery": "victours",
    "allViews": 208,
-   "prev7": 23,
-   "d7": 8
+   "prev7": 16,
+   "d7": 7
   },
   {
    "path": "/towns",
@@ -132,9 +132,7 @@
    "gscImpressions": 4,
    "gscPosition": 5,
    "topQuery": "victours",
-   "allViews": 6,
-   "prev7": 6,
-   "d7": 0
+   "allViews": 6
   },
   {
    "path": "/warburton",
@@ -146,9 +144,7 @@
    "gscImpressions": 1,
    "gscPosition": 55,
    "topQuery": "waburton",
-   "allViews": 5,
-   "prev7": 5,
-   "d7": 0
+   "allViews": 5
   },
   {
    "path": "/daylesford",
@@ -216,9 +212,7 @@
    "gscImpressions": 2,
    "gscPosition": 95.5,
    "topQuery": "melbourne weekend trips",
-   "allViews": 2,
-   "prev7": 2,
-   "d7": 0
+   "allViews": 2
   },
   {
    "path": "/road-trips/goldfields-road-trip",
@@ -230,9 +224,7 @@
    "gscImpressions": 0,
    "gscPosition": null,
    "topQuery": null,
-   "allViews": 2,
-   "prev7": 2,
-   "d7": 0
+   "allViews": 2
   },
   {
    "path": "/lorne",
@@ -272,9 +264,7 @@
    "gscImpressions": 20,
    "gscPosition": 63.4,
    "topQuery": "melbourne day trips",
-   "allViews": 1,
-   "prev7": 1,
-   "d7": 0
+   "allViews": 1
   },
   {
    "path": "/melbourne-cbd",
@@ -340,9 +330,7 @@
    "allCta": {
     "book_tour": 1,
     "website": 1
-   },
-   "prev7": 1,
-   "d7": 0
+   }
   },
   {
    "path": "/day-trips",
@@ -354,9 +342,7 @@
    "gscImpressions": 5,
    "gscPosition": 84.4,
    "topQuery": "day excursions from melbourne",
-   "allViews": 1,
-   "prev7": 1,
-   "d7": 0
+   "allViews": 1
   },
   {
    "path": "/weekends/romantic",
@@ -439,9 +425,7 @@
    "gscImpressions": 1,
    "gscPosition": 80,
    "topQuery": "road trips from melbourne",
-   "allViews": 1,
-   "prev7": 1,
-   "d7": 0
+   "allViews": 1
   },
   {
    "path": "/weekends/daylesford-romantic-weekend",
@@ -495,9 +479,7 @@
    "gscImpressions": 0,
    "gscPosition": null,
    "topQuery": null,
-   "allViews": 1,
-   "prev7": 1,
-   "d7": 0
+   "allViews": 1
   },
   {
    "path": "/weekends/warrnambool-by-train",
@@ -641,6 +623,17 @@
    "topQuery": "mornington main street restaurants"
   },
   {
+   "path": "/omeo",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 36,
+   "gscPosition": 63.5,
+   "topQuery": "614 tongio gap road omeo"
+  },
+  {
    "path": "/mildura/stay",
    "views": 0,
    "prevViews": 0,
@@ -650,17 +643,6 @@
    "gscImpressions": 35,
    "gscPosition": 70.8,
    "topQuery": "accommodation mildura"
-  },
-  {
-   "path": "/omeo",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 35,
-   "gscPosition": 62.8,
-   "topQuery": "614 tongio gap road omeo"
   },
   {
    "path": "/lorne/do",
@@ -685,6 +667,17 @@
    "topQuery": "accommodation melbourne city center"
   },
   {
+   "path": "/metung",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 34,
+   "gscPosition": 70.3,
+   "topQuery": "110 metung road metung vic 3904"
+  },
+  {
    "path": "/great-ocean-road",
    "views": 0,
    "prevViews": 0,
@@ -694,17 +687,6 @@
    "gscImpressions": 31,
    "gscPosition": 64.2,
    "topQuery": "great ocean road"
-  },
-  {
-   "path": "/metung",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 31,
-   "gscPosition": 69.2,
-   "topQuery": "110 metung road metung vic 3904"
   },
   {
    "path": "/south-yarra/eat",
@@ -784,6 +766,17 @@
    "topQuery": "coffee daylesford"
   },
   {
+   "path": "/mount-hotham",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 22,
+   "gscPosition": 73.5,
+   "topQuery": "mount hotham"
+  },
+  {
    "path": "/bairnsdale",
    "views": 0,
    "prevViews": 0,
@@ -826,17 +819,6 @@
    "gscImpressions": 20,
    "gscPosition": 40.1,
    "topQuery": "daylesford"
-  },
-  {
-   "path": "/mount-hotham",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 20,
-   "gscPosition": 73.1,
-   "topQuery": "mount hotham"
   },
   {
    "path": "/collections/weekend-getaways",
@@ -938,6 +920,28 @@
    "topQuery": "echuca moama attractions"
   },
   {
+   "path": "/queenscliff",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 13,
+   "gscPosition": 66.7,
+   "topQuery": "things to do in queenscliff"
+  },
+  {
+   "path": "/torquay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 13,
+   "gscPosition": 76.7,
+   "topQuery": "torquay"
+  },
+  {
    "path": "/south-yarra",
    "views": 0,
    "prevViews": 0,
@@ -991,28 +995,6 @@
    "gscImpressions": 12,
    "gscPosition": 87.4,
    "topQuery": "lorne accommodation victoria"
-  },
-  {
-   "path": "/queenscliff",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 12,
-   "gscPosition": 66.2,
-   "topQuery": "things to do in queenscliff"
-  },
-  {
-   "path": "/torquay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 12,
-   "gscPosition": 75.8,
-   "topQuery": "torquay"
   },
   {
    "path": "/williamstown",
@@ -1136,6 +1118,17 @@
    "topQuery": "things to do in queenscliff"
   },
   {
+   "path": "/carlton",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 9,
+   "gscPosition": 84.2,
+   "topQuery": "carlton clocktower"
+  },
+  {
    "path": "/footscray",
    "views": 0,
    "prevViews": 0,
@@ -1213,17 +1206,6 @@
    "topQuery": "bright things to do"
   },
   {
-   "path": "/carlton",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 8,
-   "gscPosition": 86.8,
-   "topQuery": "carlton clocktower"
-  },
-  {
    "path": "/dromana",
    "views": 0,
    "prevViews": 0,
@@ -1233,6 +1215,17 @@
    "gscImpressions": 8,
    "gscPosition": 49.6,
    "topQuery": "dromana holiday village"
+  },
+  {
+   "path": "/omeo/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 8,
+   "gscPosition": 71.1,
+   "topQuery": "486 omeo valley road omeo"
   },
   {
    "path": "/road-trips/phillip-island-day-trip",
@@ -1343,17 +1336,6 @@
    "gscImpressions": 7,
    "gscPosition": 55,
    "topQuery": "myrtleford"
-  },
-  {
-   "path": "/omeo/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 7,
-   "gscPosition": 71.4,
-   "topQuery": "486 omeo valley road omeo"
   },
   {
    "path": "/road-trips/great-alpine-road",
@@ -2896,6 +2878,13 @@
    "page": "/southbank/stay"
   },
   {
+   "query": "110 metung road metung vic 3904",
+   "clicks": 0,
+   "impressions": 16,
+   "position": 71.5,
+   "page": "/metung"
+  },
+  {
    "query": "southbank melbourne accomodation",
    "clicks": 0,
    "impressions": 16,
@@ -2908,13 +2897,6 @@
    "impressions": 15,
    "position": 48.9,
    "page": "/bright"
-  },
-  {
-   "query": "110 metung road metung vic 3904",
-   "clicks": 0,
-   "impressions": 15,
-   "position": 71.4,
-   "page": "/metung"
   },
   {
    "query": "accommodation melbourne southbank",
@@ -2959,6 +2941,20 @@
    "page": "/lorne"
   },
   {
+   "query": "110 metung road metung",
+   "clicks": 0,
+   "impressions": 13,
+   "position": 75.2,
+   "page": "/metung"
+  },
+  {
+   "query": "614 tongio gap road omeo",
+   "clicks": 0,
+   "impressions": 13,
+   "position": 64.8,
+   "page": "/omeo"
+  },
+  {
    "query": "accommodation melbourne southbank area",
    "clicks": 0,
    "impressions": 13,
@@ -2992,20 +2988,6 @@
    "impressions": 12,
    "position": 40.3,
    "page": "/mornington/do"
-  },
-  {
-   "query": "110 metung road metung",
-   "clicks": 0,
-   "impressions": 12,
-   "position": 74.7,
-   "page": "/metung"
-  },
-  {
-   "query": "614 tongio gap road omeo",
-   "clicks": 0,
-   "impressions": 12,
-   "position": 63.1,
-   "page": "/omeo"
   },
   {
    "query": "marysville",
@@ -3183,6 +3165,13 @@
    "page": "/mornington-peninsula/eat"
   },
   {
+   "query": "486 omeo valley road omeo",
+   "clicks": 0,
+   "impressions": 7,
+   "position": 57.3,
+   "page": "/omeo/stay"
+  },
+  {
    "query": "polperro bistro red hill",
    "clicks": 0,
    "impressions": 7,
@@ -3265,13 +3254,6 @@
    "impressions": 6,
    "position": 49,
    "page": "/mornington-peninsula/eat"
-  },
-  {
-   "query": "486 omeo valley road omeo",
-   "clicks": 0,
-   "impressions": 6,
-   "position": 55.3,
-   "page": "/omeo/stay"
   },
   {
    "query": "red hill brewery",
@@ -3639,6 +3621,11 @@
    "date": "2026-11-04",
    "clicks": 0,
    "impressions": 19
+  },
+  {
+   "date": "2026-11-05",
+   "clicks": 0,
+   "impressions": 11
   }
  ],
  "allTime": {
