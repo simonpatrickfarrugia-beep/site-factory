@@ -1,8 +1,8 @@
 # Trailer channel catalogue candidates
 
-Updated 2026-11-01. Monthly Google searches in United States for "<film> movie" + "<film> trailer". Any year; films still in cinemas wait until they can be rented or streamed.
+Updated 2026-11-08. Monthly Google searches in United States for "<film> movie" + "<film> trailer". Any year; films still in cinemas wait until they can be rented or streamed.
 
-86 waiting · 140 sent to the pipeline · 1 already on the site · 0 skipped.
+56 waiting · 170 sent to the pipeline · 1 already on the site · 0 skipped.
 
 Add films by chat: "add candidates: <theme or list>". The weekly run queues the most-searched ones.
 
@@ -31,36 +31,6 @@ Add films by chat: "add candidates: <theme or list>". The weekly run queues the 
 
 | Film | Searches/mo | Theme |
 |---|---:|---|
-| The Evil Dead (1981) | 33,240 | 80s horror |
-| Tron (1982) | 32,500 | 80s sci-fi & fantasy |
-| Highlander (1986) | 28,100 | 80s sci-fi & fantasy |
-| Heathers (1988) | 27,820 | Cult classics |
-| The Breakfast Club (1985) | 27,580 | 80s comedy |
-| The Killer (1989) | 27,580 | Hong Kong action |
-| Indiana Jones and the Temple of Doom (1984) | 27,360 | 80s action |
-| Tango & Cash (1989) | 27,310 | 80s action |
-| Anchorman: The Legend of Ron Burgundy (2004) | 27,120 | 2000s crowd-pleasers |
-| Monsters, Inc. (2001) | 23,800 | Family classics |
-| The Fly (1986) | 22,680 | 80s horror |
-| Innerspace (1987) | 22,460 | 80s sci-fi & fantasy |
-| Mad Max 2 (1981) | 22,370 | 80s action |
-| Picnic at Hanging Rock (1975) | 22,370 | Australian classics |
-| Ip Man (2008) | 22,370 | Hong Kong action |
-| Father of the Bride (1991) | 19,100 | 90s comedy |
-| Blade Runner (1982) | 18,980 | 80s sci-fi & fantasy |
-| Notting Hill (1999) | 18,820 | 90s favourites |
-| One Flew Over the Cuckoo's Nest (1975) | 18,580 | 70s New Hollywood |
-| Hard Boiled (1992) | 18,490 | Hong Kong action |
-| Rear Window (1954) | 18,420 | Classic Hollywood |
-| Hausu (1977) | 18,420 | Cult classics |
-| Roman Holiday (1953) | 18,310 | Classic Hollywood |
-| Withnail & I (1987) | 18,270 | Cult classics |
-| Network (1976) | 18,240 | 70s New Hollywood |
-| The Wild Bunch (1969) | 18,190 | Westerns |
-| Bill & Ted's Excellent Adventure (1989) | 18,120 | 80s comedy |
-| The Godfather Part II (1974) | 18,110 | 70s New Hollywood |
-| The Warriors (1979) | 16,700 | Cult classics |
-| Animal Kingdom (2010) | 16,400 | Australian classics |
 | Hero (2002) | 15,520 | Hong Kong action |
 | WarGames (1983) | 15,390 | 80s sci-fi & fantasy |
 | Hellraiser (1987) | 15,190 | 80s horror |
@@ -91,3 +61,29 @@ Add films by chat: "add candidates: <theme or list>". The weekly run queues the 
 | All the President's Men (1976) | 4,610 | 70s New Hollywood |
 | The Adventures of Priscilla, Queen of the Desert (1994) | 4,600 | Australian classics |
 | Dawn of the Dead (1978) | 4,080 | 70s horror |
+| Crocodile Dundee (1986) | 4,000 | Australian classics |
+| Suspiria (1977) | 3,990 | 70s horror |
+| Fright Night (1985) | 3,860 | 80s horror |
+| Dog Day Afternoon (1975) | 3,860 | 70s New Hollywood |
+| Re-Animator (1985) | 3,670 | 80s horror |
+| An American Werewolf in London (1981) | 3,650 | 80s horror |
+| The Castle (1997) | 3,650 | Australian classics |
+| Strictly Ballroom (1992) | 3,040 | Australian classics |
+| Once Upon a Time in China (1991) | 2,970 | Hong Kong action |
+| Breaker Morant (1980) | 2,430 | Australian classics |
+| Indiana Jones and the Last Crusade (1989) | 2,070 | 80s action |
+| The Dish (2000) | 1,670 | Australian classics |
+| Japanese Story (2003) | 1,010 | Australian classics |
+| Lantana (2001) | 740 | Australian classics |
+| Romper Stomper (1992) | 500 | Australian classics |
+| Wake in Fright (1971) | 390 | Australian classics |
+| Big Trouble in Little China (1986) | — | 80s action |
+| The Naked Gun: From the Files of Police Squad! (1988) | — | 80s comedy |
+| The Lost Boys (1987) | — | 80s horror |
+| Child's Play (1988) | — | 80s horror |
+| Close Encounters of the Third Kind (1977) | — | 70s New Hollywood |
+| The Texas Chain Saw Massacre (1974) | — | 70s horror |
+| Mean Girls (2004) | — | 2000s crowd-pleasers |
+| Children of Men (2006) | — | 2000s crowd-pleasers |
+| Butch Cassidy and the Sundance Kid (1969) | — | Westerns |
+| Honey, I Shrunk the Kids (1989) | — | Family classics |
