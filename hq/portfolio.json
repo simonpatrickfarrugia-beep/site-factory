@@ -184,7 +184,7 @@
  "actions": [
   {
    "who": "Claude",
-   "what": "Publish the next Vic towns weekly (12 probed 1 Nov)",
+   "what": "Publish the next Vic towns weekly (10 probed 8 Nov; the queue of new towns is nearly empty, so adding more towns next)",
    "site": "vic"
   },
   {
@@ -260,7 +260,7 @@
    "sprint": true,
    "mins": 15,
    "what": "Trade Admin mail hub setup with Claude in the Site Factory chat (checklist in claude/MAIL-HUB.md). Then Claude switches Trade Admin on in IMN HQ outreach",
-   "why": "Trade Admin outreach (associations, TAFE, bookkeepers) is blocked until tradeadmin.com.au can send from Outlook",
+   "why": "Trade Admin is the best money path now (Tradify + Fergus partner links live); outreach to associations, TAFE and bookkeepers needs a brand address",
    "link": "https://admin.microsoft.com",
    "linkLabel": "M365 admin",
    "done": false,
@@ -303,18 +303,6 @@
    "addedAt": "2026-11-03"
   },
   {
-   "id": "mailhub-trade-admin",
-   "kind": "do",
-   "sprint": true,
-   "mins": 15,
-   "what": "Plug tradeadmin.com.au into the mail hub (claude/MAIL-HUB.md checklist; check its existing Microsoft 365 setup first). Then Claude sets mailReady: true so Radar finds tradie prospects",
-   "why": "Trade Admin is the best money path now (Tradify partner offer live); outreach needs a brand address",
-   "link": "https://dash.cloudflare.com",
-   "linkLabel": "Cloudflare",
-   "done": false,
-   "addedAt": "2026-11-03"
-  },
-  {
    "id": "sprint-first-dollar-reset",
    "kind": "decide",
    "sprint": true,
@@ -325,6 +313,18 @@
    "linkLabel": "HQ",
    "done": false,
    "addedAt": "2026-11-01"
+  },
+  {
+   "id": "cf-media-kit",
+   "kind": "do",
+   "sprint": true,
+   "mins": 5,
+   "what": "Commission Factory replied 6 Nov asking for a media kit before they approve. Say 'media kit' in the Site Factory chat: Claude makes a 1-page PDF with real numbers, you reply to their email with it attached",
+   "why": "Commission Factory unlocks Australian brands (hotels, car hire, tours) for Vic Tours and MyPayCalc",
+   "link": "https://mail.google.com/mail/u/0/#search/from%3Aaffiliates%40commissionfactory.com",
+   "linkLabel": "Gmail",
+   "done": false,
+   "addedAt": "2026-11-08"
   },
   {
    "id": "careerjet-ip",
