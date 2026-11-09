@@ -1,6 +1,6 @@
 # Competition check
 
-Updated 2026-10-29. Google top 10 for each niche's best keywords. A slot is **beatable** when a forum (Reddit, Quora, Fandom...) or a small site (under 30k est. search visits/month) holds it. **Openness** 0-100 weights the top 3 positions most. Rough guide: 40+ open, 20-40 possible with a strong angle, under 20 owned by big brands.
+Updated 2026-11-09. Google top 10 for each niche's best keywords. A slot is **beatable** when a forum (Reddit, Quora, Fandom...) or a small site (under 30k est. search visits/month) holds it. **Openness** 0-100 weights the top 3 positions most. Rough guide: 40+ open, 20-40 possible with a strong angle, under 20 owned by big brands.
 
 | Idea | Openness | Keywords checked | Biggest players |
 |---|---:|---:|---|
@@ -31,6 +31,9 @@ Updated 2026-10-29. Google top 10 for each niche's best keywords. A slot is **be
 | US national parks and hiking trails | **11** | 1 | britannica.com (39.9M), hilton.com (16.4M), aaa.com (5.1M), maryland.gov (4.9M) |
 | US take-home pay by salary and state | **6** | 6 | adp.com (6.5M), paycheckcity.com (269k), indeed.com (40.8M), glassdoor.com (6.0M) |
 | Rail travel times between NSW stations | **0** | 0 | — |
+| US school district enrollment by county | **0** | 1 | google.com (566.1M) |
+| US airport runway and elevation facts | **0** | 2 | google.com (566.1M) |
+| US public library branches by city | **0** | 6 | google.com (566.1M) |
 
 ## AU suburb profiles: prices, rent and demographics (openness 64)
 
@@ -313,3 +316,27 @@ Updated 2026-10-29. Google top 10 for each niche's best keywords. A slot is **be
 
 | Keyword | /mo | Openness | Beatable slots | Top 3 |
 |---|---:|---:|---|---|
+
+## US school district enrollment by county (openness 0)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| how many students in austin isd | 20 | 0 | — | google.com, google.com, google.com |
+
+## US airport runway and elevation facts (openness 0)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| how many runways does jfk have | 720 | 0 | — | google.com, google.com, google.com |
+| elevation of albuquerque airport | 10 | 0 | — | google.com, google.com, google.com |
+
+## US public library branches by city (openness 0)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| libraries in tulsa oklahoma | 9,900 | 0 | — | google.com, google.com, google.com |
+| city of tulsa library | 9,900 | 0 | — | google.com, google.com, google.com |
+| tulsa public library | 1,900 | 0 | — | google.com, google.com, google.com |
+| downtown tulsa library | 720 | 0 | — | google.com, google.com, google.com |
+| tulsa library hours | 480 | 0 | — | google.com, google.com, google.com |
+| hardesty library tulsa | 480 | 0 | — | google.com, google.com, google.com |
