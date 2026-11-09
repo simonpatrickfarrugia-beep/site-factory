@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-08T19:00:11.030Z",
+ "generatedAt": "2026-11-09T19:00:10.002Z",
  "period": {
-  "start": "2026-10-11",
-  "end": "2026-11-07"
+  "start": "2026-10-12",
+  "end": "2026-11-08"
  },
  "gscPeriod": {
-  "start": "2026-10-09",
-  "end": "2026-11-05"
+  "start": "2026-10-10",
+  "end": "2026-11-06"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 83,
+  "views": 85,
   "prevViews": 0,
-  "users": 63,
+  "users": 65,
   "cta": {
    "book_tour": 2,
    "website": 1,
    "map": 1
   },
   "gscClicks": 4,
-  "gscImpressions": 1992
+  "gscImpressions": 2002
  },
  "daily": [
   {
@@ -105,22 +105,27 @@
    "date": "2026-11-06",
    "views": 4,
    "cta": 0
+  },
+  {
+   "date": "2026-11-08",
+   "views": 2,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 39,
+   "views": 41,
    "prevViews": 0,
-   "users": 26,
+   "users": 28,
    "cta": {},
    "gscClicks": 2,
    "gscImpressions": 6,
    "gscPosition": 3,
    "topQuery": "victours",
-   "allViews": 208,
-   "prev7": 16,
-   "d7": 7
+   "allViews": 210,
+   "prev7": 13,
+   "d7": 8
   },
   {
    "path": "/towns",
@@ -157,8 +162,8 @@
    "gscPosition": 69.9,
    "topQuery": "daylesford",
    "allViews": 3,
-   "d7": 1,
-   "prev7": 0
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/day-trips/torquay",
@@ -181,8 +186,8 @@
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 26,
-   "gscPosition": 68,
+   "gscImpressions": 27,
+   "gscPosition": 69.1,
    "topQuery": "yarra valley day trip",
    "allViews": 2,
    "prev7": 1,
@@ -199,8 +204,8 @@
    "gscPosition": 85.4,
    "topQuery": "brunch in richmond",
    "allViews": 2,
-   "d7": 1,
-   "prev7": 0
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/weekends",
@@ -237,8 +242,8 @@
    "gscPosition": 71,
    "topQuery": "activities lorne victoria",
    "allViews": 1,
-   "d7": 1,
-   "prev7": 0
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/port-campbell",
@@ -251,8 +256,8 @@
    "gscPosition": 59,
    "topQuery": "hotel port campbell",
    "allViews": 1,
-   "d7": 1,
-   "prev7": 0
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/collections/day-trips-from-melbourne",
@@ -295,9 +300,7 @@
    "allViews": 1,
    "allCta": {
     "book_tour": 1
-   },
-   "prev7": 1,
-   "d7": 0
+   }
   },
   {
    "path": "/bendigo/eat",
@@ -309,9 +312,7 @@
    "gscImpressions": 6,
    "gscPosition": 62.7,
    "topQuery": "buffet breakfast bendigo",
-   "allViews": 1,
-   "prev7": 1,
-   "d7": 0
+   "allViews": 1
   },
   {
    "path": "/ballarat",
@@ -397,9 +398,7 @@
    "gscImpressions": 3,
    "gscPosition": 86,
    "topQuery": "murray river road trip",
-   "allViews": 1,
-   "prev7": 1,
-   "d7": 0
+   "allViews": 1
   },
   {
    "path": "/about",
@@ -623,6 +622,17 @@
    "topQuery": "mornington main street restaurants"
   },
   {
+   "path": "/metung",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 36,
+   "gscPosition": 70.8,
+   "topQuery": "110 metung road metung vic 3904"
+  },
+  {
    "path": "/omeo",
    "views": 0,
    "prevViews": 0,
@@ -667,15 +677,15 @@
    "topQuery": "accommodation melbourne city center"
   },
   {
-   "path": "/metung",
+   "path": "/bright",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 34,
-   "gscPosition": 70.3,
-   "topQuery": "110 metung road metung vic 3904"
+   "gscImpressions": 32,
+   "gscPosition": 57.6,
+   "topQuery": "bright things to do"
   },
   {
    "path": "/great-ocean-road",
@@ -698,17 +708,6 @@
    "gscImpressions": 30,
    "gscPosition": 59.2,
    "topQuery": "south yarra restaurants"
-  },
-  {
-   "path": "/bright",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 29,
-   "gscPosition": 55.9,
-   "topQuery": "bright things to do"
   },
   {
    "path": "/sorrento",
@@ -909,6 +908,17 @@
    "topQuery": "wineries near wangaratta"
   },
   {
+   "path": "/south-yarra",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 13,
+   "gscPosition": 71.2,
+   "topQuery": "south yarra"
+  },
+  {
    "path": "/echuca/do",
    "views": 0,
    "prevViews": 0,
@@ -940,17 +950,6 @@
    "gscImpressions": 13,
    "gscPosition": 76.7,
    "topQuery": "torquay"
-  },
-  {
-   "path": "/south-yarra",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 12,
-   "gscPosition": 69.8,
-   "topQuery": "south yarra"
   },
   {
    "path": "/bellarine-peninsula/do",
@@ -1129,6 +1128,17 @@
    "topQuery": "carlton clocktower"
   },
   {
+   "path": "/dromana",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 9,
+   "gscPosition": 54,
+   "topQuery": "dromana holiday village"
+  },
+  {
    "path": "/footscray",
    "views": 0,
    "prevViews": 0,
@@ -1204,17 +1214,6 @@
    "gscImpressions": 8,
    "gscPosition": 44.8,
    "topQuery": "bright things to do"
-  },
-  {
-   "path": "/dromana",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 8,
-   "gscPosition": 49.6,
-   "topQuery": "dromana holiday village"
   },
   {
    "path": "/omeo/stay",
@@ -1415,6 +1414,17 @@
    "topQuery": "bed and breakfast mansfield"
   },
   {
+   "path": "/rye",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 62.7,
+   "topQuery": "rye hotel by nightcap plus"
+  },
+  {
    "path": "/rye/eat",
    "views": 0,
    "prevViews": 0,
@@ -1468,6 +1478,17 @@
    "gscImpressions": 5,
    "gscPosition": 73.8,
    "topQuery": "anglesea 3230"
+  },
+  {
+   "path": "/beechworth",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 5,
+   "gscPosition": 59,
+   "topQuery": "beechworth"
   },
   {
    "path": "/castlemaine",
@@ -1558,17 +1579,6 @@
    "topQuery": "phillip island dining"
   },
   {
-   "path": "/rye",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 66.2,
-   "topQuery": "rye hotel by nightcap plus"
-  },
-  {
    "path": "/torquay/eat",
    "views": 0,
    "prevViews": 0,
@@ -1589,17 +1599,6 @@
    "gscImpressions": 4,
    "gscPosition": 58.3,
    "topQuery": "barwon heads"
-  },
-  {
-   "path": "/beechworth",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 48.8,
-   "topQuery": "(intitle:hibernian or hibernian) -\"stock price\" -\"investor relations\" -\"financial results\" site:.com.au"
   },
   {
    "path": "/bright/stay",
@@ -2871,18 +2870,18 @@
    "page": "/lorne"
   },
   {
+   "query": "110 metung road metung vic 3904",
+   "clicks": 0,
+   "impressions": 17,
+   "position": 71.5,
+   "page": "/metung"
+  },
+  {
    "query": "accomodation melbourne southbank",
    "clicks": 0,
    "impressions": 17,
    "position": 76.9,
    "page": "/southbank/stay"
-  },
-  {
-   "query": "110 metung road metung vic 3904",
-   "clicks": 0,
-   "impressions": 16,
-   "position": 71.5,
-   "page": "/metung"
   },
   {
    "query": "southbank melbourne accomodation",
@@ -2920,6 +2919,13 @@
    "page": "/lorne"
   },
   {
+   "query": "110 metung road metung",
+   "clicks": 0,
+   "impressions": 14,
+   "position": 76.1,
+   "page": "/metung"
+  },
+  {
    "query": "restaurants in sorrento",
    "clicks": 0,
    "impressions": 14,
@@ -2939,13 +2945,6 @@
    "impressions": 13,
    "position": 80.2,
    "page": "/lorne"
-  },
-  {
-   "query": "110 metung road metung",
-   "clicks": 0,
-   "impressions": 13,
-   "position": 75.2,
-   "page": "/metung"
   },
   {
    "query": "614 tongio gap road omeo",
@@ -3081,6 +3080,13 @@
    "page": "/st-kilda/do"
   },
   {
+   "query": "visit bright",
+   "clicks": 0,
+   "impressions": 8,
+   "position": 64,
+   "page": "/bright"
+  },
+  {
    "query": "group activities lorne",
    "clicks": 0,
    "impressions": 8,
@@ -3198,13 +3204,6 @@
    "impressions": 6,
    "position": 87.5,
    "page": "/bellarine-peninsula"
-  },
-  {
-   "query": "visit bright",
-   "clicks": 0,
-   "impressions": 6,
-   "position": 60.3,
-   "page": "/bright"
   },
   {
    "query": "things to do in castlemaine",
@@ -3424,6 +3423,13 @@
    "page": "/bellarine-peninsula/do"
   },
   {
+   "query": "bright attractions",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 48,
+   "page": "/bright"
+  },
+  {
    "query": "restaurant carlton",
    "clicks": 0,
    "impressions": 4,
@@ -3527,13 +3533,6 @@
    "impressions": 4,
    "position": 54.5,
    "page": "/melbourne-cbd/stay"
-  },
-  {
-   "query": "accommodation mildura",
-   "clicks": 0,
-   "impressions": 4,
-   "position": 68.8,
-   "page": "/mildura/stay"
   }
  ],
  "gscDaily": [
@@ -3626,12 +3625,17 @@
    "date": "2026-11-05",
    "clicks": 0,
    "impressions": 11
+  },
+  {
+   "date": "2026-11-06",
+   "clicks": 0,
+   "impressions": 14
   }
  ],
  "allTime": {
   "start": "2026-04-30",
-  "views": 266,
-  "users": 203,
+  "views": 268,
+  "users": 205,
   "cta": {
    "book_tour": 2,
    "website": 1,
@@ -3991,6 +3995,11 @@
    {
     "date": "2026-11-06",
     "views": 4,
+    "cta": 0
+   },
+   {
+    "date": "2026-11-08",
+    "views": 2,
     "cta": 0
    }
   ]

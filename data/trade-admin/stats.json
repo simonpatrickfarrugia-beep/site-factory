@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-08T19:00:11.030Z",
+ "generatedAt": "2026-11-09T19:00:10.002Z",
  "period": {
-  "start": "2026-10-11",
-  "end": "2026-11-07"
+  "start": "2026-10-12",
+  "end": "2026-11-08"
  },
  "gscPeriod": {
-  "start": "2026-10-09",
-  "end": "2026-11-05"
+  "start": "2026-10-10",
+  "end": "2026-11-06"
  },
  "sources": {
   "ga4": true,
@@ -19,7 +19,7 @@
   "users": 18,
   "cta": {},
   "gscClicks": 0,
-  "gscImpressions": 213
+  "gscImpressions": 241
  },
  "daily": [
   {
@@ -84,8 +84,8 @@
    "users": 2,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 8,
-   "gscPosition": 83.6,
+   "gscImpressions": 10,
+   "gscPosition": 84.5,
    "topQuery": "tradesman quote template",
    "allViews": 3,
    "d7": 2,
@@ -168,8 +168,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 133,
-   "gscPosition": 71.3,
+   "gscImpressions": 152,
+   "gscPosition": 72.1,
    "topQuery": "servicem8 vs tradify"
   },
   {
@@ -179,8 +179,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 21,
-   "gscPosition": 68.5,
+   "gscImpressions": 22,
+   "gscPosition": 68.8,
    "topQuery": "cleaning invoice examples"
   },
   {
@@ -190,8 +190,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 14,
-   "gscPosition": 78,
+   "gscImpressions": 17,
+   "gscPosition": 78.9,
    "topQuery": "tradesman quote template"
   },
   {
@@ -245,9 +245,20 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 74,
+   "gscImpressions": 3,
+   "gscPosition": 81.7,
    "topQuery": "progress claim template"
+  },
+  {
+   "path": "/carpenter-invoice-template",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 69.3,
+   "topQuery": "free carpentry quote"
   },
   {
    "path": "/painting-quote-template",
@@ -259,81 +270,70 @@
    "gscImpressions": 2,
    "gscPosition": 80.5,
    "topQuery": "commercial painting quotes"
-  },
-  {
-   "path": "/carpenter-invoice-template",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 83,
-   "topQuery": "free carpentry invoice template"
   }
  ],
  "queries": [
   {
    "query": "servicem8 vs tradify",
    "clicks": 0,
-   "impressions": 26,
-   "position": 60.8,
+   "impressions": 28,
+   "position": 60.7,
    "page": "/tradify-vs-servicem8"
   },
   {
    "query": "service mate vs tradify",
    "clicks": 0,
-   "impressions": 23,
-   "position": 74.3,
+   "impressions": 25,
+   "position": 74,
    "page": "/tradify-vs-servicem8"
   },
   {
    "query": "servicem8 pricing",
    "clicks": 0,
-   "impressions": 23,
-   "position": 80.2,
+   "impressions": 25,
+   "position": 80.6,
    "page": "/tradify-vs-servicem8"
   },
   {
    "query": "servicem8 tradify comparison",
    "clicks": 0,
-   "impressions": 19,
-   "position": 76.6,
+   "impressions": 25,
+   "position": 79.3,
    "page": "/tradify-vs-servicem8"
   },
   {
    "query": "servicem8 vs",
    "clicks": 0,
-   "impressions": 18,
-   "position": 78.7,
+   "impressions": 21,
+   "position": 79.1,
    "page": "/tradify-vs-servicem8"
   },
   {
    "query": "tradify vs servicem8",
    "clicks": 0,
-   "impressions": 17,
-   "position": 60.4,
+   "impressions": 19,
+   "position": 61.9,
    "page": "/tradify-vs-servicem8"
   },
   {
    "query": "tradesman quote template",
    "clicks": 0,
-   "impressions": 14,
-   "position": 80.6,
+   "impressions": 16,
+   "position": 81.3,
    "page": "/builder-quote-template"
   },
   {
    "query": "cleaning invoice examples",
    "clicks": 0,
-   "impressions": 11,
-   "position": 68.5,
+   "impressions": 12,
+   "position": 69,
    "page": "/cleaning-invoice-template"
   },
   {
    "query": "fieldhive vs servicem8",
    "clicks": 0,
-   "impressions": 7,
-   "position": 63.7,
+   "impressions": 8,
+   "position": 64.1,
    "page": "/tradify-vs-servicem8"
   },
   {
@@ -365,6 +365,13 @@
    "page": "/cleaning-invoice-template"
   },
   {
+   "query": "free carpentry quote",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 73.3,
+   "page": "/builder-quote-template"
+  },
+  {
    "query": "electrician quotes",
    "clicks": 0,
    "impressions": 4,
@@ -381,8 +388,8 @@
   {
    "query": "progress claim template",
    "clicks": 0,
-   "impressions": 2,
-   "position": 74,
+   "impressions": 3,
+   "position": 81.7,
    "page": "/builder-invoice-template"
   },
   {
@@ -496,6 +503,20 @@
    "impressions": 1,
    "position": 96,
    "page": "/plumber-invoice-template"
+  },
+  {
+   "query": "tradie quotes",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 87,
+   "page": "/quote-builder"
+  },
+  {
+   "query": "servicem8 cost",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 58,
+   "page": "/tradify-vs-servicem8"
   }
  ],
  "gscDaily": [
@@ -563,6 +584,11 @@
    "date": "2026-11-05",
    "clicks": 0,
    "impressions": 18
+  },
+  {
+   "date": "2026-11-06",
+   "clicks": 0,
+   "impressions": 27
   }
  ],
  "allTime": {

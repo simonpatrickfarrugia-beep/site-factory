@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-08T19:00:11.030Z",
+ "generatedAt": "2026-11-09T19:00:10.002Z",
  "period": {
-  "start": "2026-10-11",
-  "end": "2026-11-07"
+  "start": "2026-10-12",
+  "end": "2026-11-08"
  },
  "gscPeriod": {
-  "start": "2026-10-09",
-  "end": "2026-11-05"
+  "start": "2026-10-10",
+  "end": "2026-11-06"
  },
  "sources": {
   "ga4": true,
@@ -14,12 +14,12 @@
   "notes": []
  },
  "totals": {
-  "views": 165,
+  "views": 166,
   "prevViews": 0,
-  "users": 83,
+  "users": 84,
   "cta": {},
-  "gscClicks": 3,
-  "gscImpressions": 405
+  "gscClicks": 4,
+  "gscImpressions": 447
  },
  "daily": [
   {
@@ -71,22 +71,27 @@
    "date": "2026-11-07",
    "views": 12,
    "cta": 0
+  },
+  {
+   "date": "2026-11-08",
+   "views": 1,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 157,
+   "views": 158,
    "prevViews": 0,
-   "users": 75,
+   "users": 76,
    "cta": {},
-   "gscClicks": 2,
-   "gscImpressions": 104,
-   "gscPosition": 67.2,
-   "topQuery": "pay calculator",
-   "allViews": 157,
-   "d7": 122,
-   "prev7": 35
+   "gscClicks": 3,
+   "gscImpressions": 115,
+   "gscPosition": 66.2,
+   "topQuery": "mypaycalc",
+   "allViews": 158,
+   "d7": 113,
+   "prev7": 45
   },
   {
    "path": "/hecs-help-repayments",
@@ -95,8 +100,8 @@
    "users": 2,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 39,
-   "gscPosition": 63.3,
+   "gscImpressions": 40,
+   "gscPosition": 62.4,
    "topQuery": "hecs repayment calculator fortnightly",
    "allViews": 2,
    "d7": 2,
@@ -179,8 +184,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 152,
-   "gscPosition": 70.4,
+   "gscImpressions": 167,
+   "gscPosition": 69.7,
    "topQuery": "what tax bracket am i in australia"
   },
   {
@@ -190,8 +195,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 15,
-   "gscPosition": 9.8,
+   "gscImpressions": 18,
+   "gscPosition": 9.2,
    "topQuery": "mypaycalc"
   },
   {
@@ -201,8 +206,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 1,
-   "gscImpressions": 12,
-   "gscPosition": 3.6,
+   "gscImpressions": 15,
+   "gscPosition": 3.7,
    "topQuery": "mypaycalc"
   },
   {
@@ -212,8 +217,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 12,
-   "gscPosition": 6.9,
+   "gscImpressions": 15,
+   "gscPosition": 7.1,
    "topQuery": "mypaycalc"
   },
   {
@@ -256,9 +261,20 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 8,
+   "gscImpressions": 6,
+   "gscPosition": 7.8,
    "topQuery": "mypaycalc"
+  },
+  {
+   "path": "/salary/140000-after-tax",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 47.7,
+   "topQuery": "140 000 after tax australia"
   },
   {
    "path": "/salary/270000-after-tax",
@@ -270,17 +286,6 @@
    "gscImpressions": 5,
    "gscPosition": 5.6,
    "topQuery": "270000/26"
-  },
-  {
-   "path": "/salary/140000-after-tax",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 52.5,
-   "topQuery": "140 000 after tax australia"
   },
   {
    "path": "/salary/170000-after-tax",
@@ -338,6 +343,28 @@
    "topQuery": "65000 plus super"
   },
   {
+   "path": "/salary/135000-after-tax",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 55.5,
+   "topQuery": "135k salary after tax australia"
+  },
+  {
+   "path": "/salary/20000-after-tax",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 22,
+   "topQuery": "20000 per year monthly salary"
+  },
+  {
    "path": "/salary/240000-after-tax",
    "views": 0,
    "prevViews": 0,
@@ -380,17 +407,6 @@
    "gscImpressions": 1,
    "gscPosition": 11,
    "topQuery": "105000-45000"
-  },
-  {
-   "path": "/salary/135000-after-tax",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 51,
-   "topQuery": "tax on 135000 australia"
   },
   {
    "path": "/salary/145000-after-tax",
@@ -484,29 +500,29 @@
  "queries": [
   {
    "query": "mypaycalc",
-   "clicks": 3,
-   "impressions": 66,
-   "position": 5,
+   "clicks": 4,
+   "impressions": 80,
+   "position": 5.1,
    "page": "/"
   },
   {
    "query": "pay calculator",
    "clicks": 0,
-   "impressions": 15,
-   "position": 85.7,
+   "impressions": 17,
+   "position": 86.4,
    "page": "/"
   },
   {
    "query": "what tax bracket am i in australia",
    "clicks": 0,
-   "impressions": 13,
-   "position": 69.7,
+   "impressions": 15,
+   "position": 69.1,
    "page": "/tax-brackets"
   },
   {
    "query": "pay calculator australia",
    "clicks": 0,
-   "impressions": 9,
+   "impressions": 10,
    "position": 82.2,
    "page": "/"
   },
@@ -518,6 +534,20 @@
    "page": "/tax-brackets"
   },
   {
+   "query": "australia tax brackets",
+   "clicks": 0,
+   "impressions": 8,
+   "position": 75.8,
+   "page": "/tax-brackets"
+  },
+  {
+   "query": "current tax brackets australia",
+   "clicks": 0,
+   "impressions": 8,
+   "position": 69.3,
+   "page": "/tax-brackets"
+  },
+  {
    "query": "tax brackets 2021",
    "clicks": 0,
    "impressions": 8,
@@ -525,10 +555,10 @@
    "page": "/tax-brackets"
   },
   {
-   "query": "australia tax brackets",
+   "query": "tax brackets australia",
    "clicks": 0,
-   "impressions": 7,
-   "position": 76.4,
+   "impressions": 8,
+   "position": 64.4,
    "page": "/tax-brackets"
   },
   {
@@ -539,31 +569,17 @@
    "page": "/tax-brackets"
   },
   {
-   "query": "current tax brackets australia",
+   "query": "online pay calculator australia",
    "clicks": 0,
    "impressions": 6,
-   "position": 68.5,
-   "page": "/tax-brackets"
-  },
-  {
-   "query": "tax brackets australia",
-   "clicks": 0,
-   "impressions": 6,
-   "position": 65.3,
-   "page": "/tax-brackets"
+   "position": 80.2,
+   "page": "/"
   },
   {
    "query": "australian pay calculator",
    "clicks": 0,
    "impressions": 5,
    "position": 83.8,
-   "page": "/"
-  },
-  {
-   "query": "online pay calculator australia",
-   "clicks": 0,
-   "impressions": 5,
-   "position": 87,
    "page": "/"
   },
   {
@@ -581,6 +597,13 @@
    "page": "/"
   },
   {
+   "query": "salary and pay calculator",
+   "clicks": 0,
+   "impressions": 5,
+   "position": 94.8,
+   "page": "/"
+  },
+  {
    "query": "hecs repayment calculator fortnightly",
    "clicks": 0,
    "impressions": 5,
@@ -593,13 +616,6 @@
    "impressions": 5,
    "position": 89.4,
    "page": "/tax-brackets"
-  },
-  {
-   "query": "salary and pay calculator",
-   "clicks": 0,
-   "impressions": 4,
-   "position": 95,
-   "page": "/"
   },
   {
    "query": "salary calculator",
@@ -707,6 +723,13 @@
    "page": "/tax-brackets"
   },
   {
+   "query": "tax brackets 2022",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 60.7,
+   "page": "/tax-brackets"
+  },
+  {
    "query": "tax brackets 2026",
    "clicks": 0,
    "impressions": 3,
@@ -728,6 +751,13 @@
    "page": "/"
   },
   {
+   "query": "fortnightly payroll",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 89.5,
+   "page": "/"
+  },
+  {
    "query": "gross pay estimator 2019",
    "clicks": 0,
    "impressions": 2,
@@ -739,6 +769,13 @@
    "clicks": 0,
    "impressions": 2,
    "position": 90,
+   "page": "/"
+  },
+  {
+   "query": "pay calculator for australia",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 64,
    "page": "/"
   },
   {
@@ -854,13 +891,6 @@
    "page": "/tax-brackets"
   },
   {
-   "query": "tax brackets 2022",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 63.5,
-   "page": "/tax-brackets"
-  },
-  {
    "query": "tax brackets 2023",
    "clicks": 0,
    "impressions": 2,
@@ -952,13 +982,6 @@
    "page": "/"
   },
   {
-   "query": "fortnightly payroll",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 89,
-   "page": "/"
-  },
-  {
    "query": "fortnightly tax calculator 2022",
    "clicks": 0,
    "impressions": 1,
@@ -1008,13 +1031,6 @@
    "page": "/"
   },
   {
-   "query": "pay calculator for australia",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 79,
-   "page": "/"
-  },
-  {
    "query": "pay rate after tax",
    "clicks": 0,
    "impressions": 1,
@@ -1054,6 +1070,13 @@
    "clicks": 0,
    "impressions": 1,
    "position": 90,
+   "page": "/"
+  },
+  {
+   "query": "weekly net pay calculator australia",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 84,
    "page": "/"
   },
   {
@@ -1174,13 +1197,6 @@
    "impressions": 1,
    "position": 74,
    "page": "/hecs-help-repayments"
-  },
-  {
-   "query": "how much help debt do i pay",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 56,
-   "page": "/hecs-help-repayments"
   }
  ],
  "gscDaily": [
@@ -1228,12 +1244,17 @@
    "date": "2026-11-05",
    "clicks": 1,
    "impressions": 74
+  },
+  {
+   "date": "2026-11-06",
+   "clicks": 1,
+   "impressions": 50
   }
  ],
  "allTime": {
   "start": "2026-10-29",
-  "views": 165,
-  "users": 83,
+  "views": 166,
+  "users": 84,
   "cta": {},
   "daily": [
    {
@@ -1284,6 +1305,11 @@
    {
     "date": "2026-11-07",
     "views": 12,
+    "cta": 0
+   },
+   {
+    "date": "2026-11-08",
+    "views": 1,
     "cta": 0
    }
   ]

@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-08T19:00:11.030Z",
+ "generatedAt": "2026-11-09T19:00:10.002Z",
  "period": {
-  "start": "2026-10-11",
-  "end": "2026-11-07"
+  "start": "2026-10-12",
+  "end": "2026-11-08"
  },
  "gscPeriod": {
-  "start": "2026-10-09",
-  "end": "2026-11-05"
+  "start": "2026-10-10",
+  "end": "2026-11-06"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 40,
+  "views": 43,
   "prevViews": 0,
-  "users": 32,
+  "users": 35,
   "cta": {
    "email_chat": 1,
    "google_reviews": 1,
    "journal_90": 1
   },
   "gscClicks": 0,
-  "gscImpressions": 142
+  "gscImpressions": 151
  },
  "daily": [
   {
@@ -70,43 +70,48 @@
    "date": "2026-11-07",
    "views": 9,
    "cta": 2
+  },
+  {
+   "date": "2026-11-08",
+   "views": 3,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 18,
+   "views": 20,
    "prevViews": 0,
-   "users": 11,
+   "users": 13,
    "cta": {
     "email_chat": 1,
     "google_reviews": 1
    },
    "gscClicks": 0,
-   "gscImpressions": 102,
-   "gscPosition": 11.9,
+   "gscImpressions": 109,
+   "gscPosition": 11.5,
    "topQuery": "community services placement",
-   "allViews": 18,
+   "allViews": 20,
    "allCta": {
     "email_chat": 1,
     "google_reviews": 1
    },
-   "d7": 14,
+   "d7": 16,
    "prev7": 4
   },
   {
    "path": "/contact",
-   "views": 3,
+   "views": 4,
    "prevViews": 0,
-   "users": 3,
+   "users": 4,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 9,
-   "gscPosition": 22.4,
+   "gscImpressions": 10,
+   "gscPosition": 20.4,
    "topQuery": "help support",
-   "allViews": 3,
-   "prev7": 2,
-   "d7": 1
+   "allViews": 4,
+   "d7": 2,
+   "prev7": 2
   },
   {
    "path": "/about",
@@ -115,8 +120,8 @@
    "users": 3,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 9.5,
+   "gscImpressions": 3,
+   "gscPosition": 7,
    "topQuery": "simon farrugia",
    "allViews": 3,
    "d7": 2,
@@ -287,22 +292,29 @@
   {
    "query": "community services placement",
    "clicks": 0,
-   "impressions": 22,
-   "position": 8.8,
+   "impressions": 23,
+   "position": 8.9,
    "page": "/"
   },
   {
    "query": "community service placement",
    "clicks": 0,
-   "impressions": 20,
-   "position": 13.2,
+   "impressions": 21,
+   "position": 12.8,
    "page": "/"
   },
   {
    "query": "local community support",
    "clicks": 0,
-   "impressions": 14,
-   "position": 4.1,
+   "impressions": 15,
+   "position": 3.9,
+   "page": "/"
+  },
+  {
+   "query": "help community",
+   "clicks": 0,
+   "impressions": 6,
+   "position": 22.2,
    "page": "/"
   },
   {
@@ -397,13 +409,6 @@
    "page": "/resume-builder"
   },
   {
-   "query": "help community",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 62.5,
-   "page": "/"
-  },
-  {
    "query": "assistance with social economic and community participation",
    "clicks": 0,
    "impressions": 1,
@@ -464,6 +469,20 @@
    "clicks": 0,
    "impressions": 1,
    "position": 6,
+   "page": "/"
+  },
+  {
+   "query": "jobs in hillside",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 6,
+   "page": "/"
+  },
+  {
+   "query": "what jobs can you get with a cert 4 in community services",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 10,
    "page": "/"
   },
   {
@@ -659,12 +678,17 @@
    "date": "2026-11-05",
    "clicks": 1,
    "impressions": 10
+  },
+  {
+   "date": "2026-11-06",
+   "clicks": 0,
+   "impressions": 10
   }
  ],
  "allTime": {
   "start": "2026-10-27",
-  "views": 40,
-  "users": 32,
+  "views": 43,
+  "users": 35,
   "cta": {
    "email_chat": 1,
    "google_reviews": 1,
@@ -715,6 +739,11 @@
     "date": "2026-11-07",
     "views": 9,
     "cta": 2
+   },
+   {
+    "date": "2026-11-08",
+    "views": 3,
+    "cta": 0
    }
   ]
  }
