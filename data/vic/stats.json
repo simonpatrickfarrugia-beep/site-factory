@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-09T19:00:10.002Z",
+ "generatedAt": "2026-11-10T19:00:10.598Z",
  "period": {
-  "start": "2026-10-12",
-  "end": "2026-11-08"
+  "start": "2026-10-13",
+  "end": "2026-11-09"
  },
  "gscPeriod": {
-  "start": "2026-10-10",
-  "end": "2026-11-06"
+  "start": "2026-10-11",
+  "end": "2026-11-07"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 85,
+  "views": 87,
   "prevViews": 0,
-  "users": 65,
+  "users": 67,
   "cta": {
    "book_tour": 2,
    "website": 1,
    "map": 1
   },
   "gscClicks": 4,
-  "gscImpressions": 2002
+  "gscImpressions": 2019
  },
  "daily": [
   {
@@ -110,22 +110,27 @@
    "date": "2026-11-08",
    "views": 2,
    "cta": 0
+  },
+  {
+   "date": "2026-11-09",
+   "views": 2,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 41,
+   "views": 42,
    "prevViews": 0,
-   "users": 28,
+   "users": 29,
    "cta": {},
    "gscClicks": 2,
    "gscImpressions": 6,
    "gscPosition": 3,
    "topQuery": "victours",
-   "allViews": 210,
-   "prev7": 13,
-   "d7": 8
+   "allViews": 211,
+   "prev7": 9,
+   "d7": 7
   },
   {
    "path": "/towns",
@@ -272,6 +277,20 @@
    "allViews": 1
   },
   {
+   "path": "/st-kilda",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 17,
+   "gscPosition": 70.6,
+   "topQuery": "things to do in st kilda",
+   "allViews": 1,
+   "d7": 1,
+   "prev7": 0
+  },
+  {
    "path": "/melbourne-cbd",
    "views": 1,
    "prevViews": 0,
@@ -346,6 +365,18 @@
    "allViews": 1
   },
   {
+   "path": "/road-trips/murray-and-north-east-road-trip",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 4,
+   "gscPosition": 89.3,
+   "topQuery": "murray river road trip",
+   "allViews": 1
+  },
+  {
    "path": "/weekends/romantic",
    "views": 1,
    "prevViews": 0,
@@ -387,18 +418,6 @@
    "allCta": {
     "map": 1
    }
-  },
-  {
-   "path": "/road-trips/murray-and-north-east-road-trip",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 86,
-   "topQuery": "murray river road trip",
-   "allViews": 1
   },
   {
    "path": "/about",
@@ -490,9 +509,7 @@
    "gscImpressions": 0,
    "gscPosition": null,
    "topQuery": null,
-   "allViews": 1,
-   "prev7": 1,
-   "d7": 0
+   "allViews": 1
   },
   {
    "path": "/supplier-details/rupanyup-silo-art/r/rec00EgS6dynb2VnS",
@@ -611,6 +628,17 @@
    "topQuery": "best restaurants in mornington peninsula"
   },
   {
+   "path": "/metung",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 40,
+   "gscPosition": 71.5,
+   "topQuery": "110 metung road metung vic 3904"
+  },
+  {
    "path": "/mornington/eat",
    "views": 0,
    "prevViews": 0,
@@ -622,25 +650,14 @@
    "topQuery": "mornington main street restaurants"
   },
   {
-   "path": "/metung",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 36,
-   "gscPosition": 70.8,
-   "topQuery": "110 metung road metung vic 3904"
-  },
-  {
    "path": "/omeo",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 36,
-   "gscPosition": 63.5,
+   "gscImpressions": 37,
+   "gscPosition": 64.4,
    "topQuery": "614 tongio gap road omeo"
   },
   {
@@ -749,8 +766,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 23,
-   "gscPosition": 75,
+   "gscImpressions": 24,
+   "gscPosition": 75.5,
    "topQuery": "apollo bay"
   },
   {
@@ -820,6 +837,17 @@
    "topQuery": "daylesford"
   },
   {
+   "path": "/lakes-entrance",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 19,
+   "gscPosition": 56.1,
+   "topQuery": "lakes entrance"
+  },
+  {
    "path": "/collections/weekend-getaways",
    "views": 0,
    "prevViews": 0,
@@ -831,17 +859,6 @@
    "topQuery": "weekend getaways victoria"
   },
   {
-   "path": "/lakes-entrance",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 18,
-   "gscPosition": 54.2,
-   "topQuery": "lakes entrance"
-  },
-  {
    "path": "/mornington",
    "views": 0,
    "prevViews": 0,
@@ -851,17 +868,6 @@
    "gscImpressions": 17,
    "gscPosition": 56.6,
    "topQuery": "mornington"
-  },
-  {
-   "path": "/st-kilda",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 17,
-   "gscPosition": 70.6,
-   "topQuery": "things to do in st kilda"
   },
   {
    "path": "/marysville/do",
@@ -952,6 +958,17 @@
    "topQuery": "torquay"
   },
   {
+   "path": "/williamstown",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 13,
+   "gscPosition": 70.5,
+   "topQuery": "williamstown"
+  },
+  {
    "path": "/bellarine-peninsula/do",
    "views": 0,
    "prevViews": 0,
@@ -996,15 +1013,15 @@
    "topQuery": "lorne accommodation victoria"
   },
   {
-   "path": "/williamstown",
+   "path": "/southbank",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 12,
-   "gscPosition": 68.9,
-   "topQuery": "williamstown"
+   "gscPosition": 75,
+   "topQuery": "9 riverside quay"
   },
   {
    "path": "/ballarat/do",
@@ -1062,6 +1079,28 @@
    "topQuery": "places to eat st kilda"
   },
   {
+   "path": "/dromana",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 10,
+   "gscPosition": 57.9,
+   "topQuery": "dromana holiday village"
+  },
+  {
+   "path": "/footscray",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 10,
+   "gscPosition": 53.6,
+   "topQuery": "footscray"
+  },
+  {
    "path": "/melbourne-cbd/do",
    "views": 0,
    "prevViews": 0,
@@ -1095,17 +1134,6 @@
    "topQuery": "bottega toscana port fairy"
   },
   {
-   "path": "/southbank",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 10,
-   "gscPosition": 71.9,
-   "topQuery": "9 riverside quay"
-  },
-  {
    "path": "/queenscliff/do",
    "views": 0,
    "prevViews": 0,
@@ -1128,28 +1156,6 @@
    "topQuery": "carlton clocktower"
   },
   {
-   "path": "/dromana",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 9,
-   "gscPosition": 54,
-   "topQuery": "dromana holiday village"
-  },
-  {
-   "path": "/footscray",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 9,
-   "gscPosition": 49.1,
-   "topQuery": "footscray"
-  },
-  {
    "path": "/great-ocean-road/stay",
    "views": 0,
    "prevViews": 0,
@@ -1159,6 +1165,17 @@
    "gscImpressions": 9,
    "gscPosition": 70.3,
    "topQuery": "great ocean road accommodation"
+  },
+  {
+   "path": "/omeo/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 9,
+   "gscPosition": 69.3,
+   "topQuery": "486 omeo valley road omeo"
   },
   {
    "path": "/road-trips/mornington-peninsula-day-trip",
@@ -1214,17 +1231,6 @@
    "gscImpressions": 8,
    "gscPosition": 44.8,
    "topQuery": "bright things to do"
-  },
-  {
-   "path": "/omeo/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 8,
-   "gscPosition": 71.1,
-   "topQuery": "486 omeo valley road omeo"
   },
   {
    "path": "/road-trips/phillip-island-day-trip",
@@ -1348,6 +1354,17 @@
    "topQuery": "great alpine road"
   },
   {
+   "path": "/rye",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 7,
+   "gscPosition": 67,
+   "topQuery": "rye hotel by nightcap plus"
+  },
+  {
    "path": "/shepparton/do",
    "views": 0,
    "prevViews": 0,
@@ -1368,6 +1385,17 @@
    "gscImpressions": 7,
    "gscPosition": 48,
    "topQuery": "things to do in st kilda"
+  },
+  {
+   "path": "/beechworth",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 65.5,
+   "topQuery": "beechworth"
   },
   {
    "path": "/castlemaine/do",
@@ -1412,17 +1440,6 @@
    "gscImpressions": 6,
    "gscPosition": 42.5,
    "topQuery": "bed and breakfast mansfield"
-  },
-  {
-   "path": "/rye",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 6,
-   "gscPosition": 62.7,
-   "topQuery": "rye hotel by nightcap plus"
   },
   {
    "path": "/rye/eat",
@@ -1478,17 +1495,6 @@
    "gscImpressions": 5,
    "gscPosition": 73.8,
    "topQuery": "anglesea 3230"
-  },
-  {
-   "path": "/beechworth",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 59,
-   "topQuery": "beechworth"
   },
   {
    "path": "/castlemaine",
@@ -1621,6 +1627,17 @@
    "gscImpressions": 4,
    "gscPosition": 48.8,
    "topQuery": "restaurants castlemaine vic"
+  },
+  {
+   "path": "/collections/goldfields-towns",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 4,
+   "gscPosition": 54.5,
+   "topQuery": "gold mining town victoria"
   },
   {
    "path": "/collingwood/do",
@@ -1896,17 +1913,6 @@
    "gscImpressions": 3,
    "gscPosition": 58.7,
    "topQuery": "food and wine tours"
-  },
-  {
-   "path": "/collections/goldfields-towns",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 44,
-   "topQuery": "gold mining town victoria"
   },
   {
    "path": "/geelong/do",
@@ -2856,6 +2862,13 @@
    "page": "/southbank/stay"
   },
   {
+   "query": "110 metung road metung vic 3904",
+   "clicks": 0,
+   "impressions": 20,
+   "position": 71.8,
+   "page": "/metung"
+  },
+  {
    "query": "yarra valley day trip",
    "clicks": 0,
    "impressions": 18,
@@ -2868,13 +2881,6 @@
    "impressions": 17,
    "position": 66,
    "page": "/lorne"
-  },
-  {
-   "query": "110 metung road metung vic 3904",
-   "clicks": 0,
-   "impressions": 17,
-   "position": 71.5,
-   "page": "/metung"
   },
   {
    "query": "accomodation melbourne southbank",
@@ -2898,6 +2904,13 @@
    "page": "/bright"
   },
   {
+   "query": "110 metung road metung",
+   "clicks": 0,
+   "impressions": 15,
+   "position": 77.1,
+   "page": "/metung"
+  },
+  {
    "query": "accommodation melbourne southbank",
    "clicks": 0,
    "impressions": 15,
@@ -2917,13 +2930,6 @@
    "impressions": 14,
    "position": 73.6,
    "page": "/lorne"
-  },
-  {
-   "query": "110 metung road metung",
-   "clicks": 0,
-   "impressions": 14,
-   "position": 76.1,
-   "page": "/metung"
   },
   {
    "query": "restaurants in sorrento",
@@ -3339,6 +3345,13 @@
    "page": "/mount-hotham"
   },
   {
+   "query": "omeo",
+   "clicks": 0,
+   "impressions": 5,
+   "position": 64.6,
+   "page": "/omeo/do"
+  },
+  {
    "query": "phillip island things to do",
    "clicks": 0,
    "impressions": 5,
@@ -3507,6 +3520,13 @@
    "page": "/dromana"
   },
   {
+   "query": "footscray",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 70.8,
+   "page": "/footscray"
+  },
+  {
    "query": "what to do in lorne victoria",
    "clicks": 0,
    "impressions": 4,
@@ -3519,20 +3539,6 @@
    "impressions": 4,
    "position": 49.8,
    "page": "/marysville"
-  },
-  {
-   "query": "accommodation in melbourne cbd",
-   "clicks": 0,
-   "impressions": 4,
-   "position": 47,
-   "page": "/melbourne-cbd/stay"
-  },
-  {
-   "query": "accommodation melbourne cbd",
-   "clicks": 0,
-   "impressions": 4,
-   "position": 54.5,
-   "page": "/melbourne-cbd/stay"
   }
  ],
  "gscDaily": [
@@ -3630,12 +3636,17 @@
    "date": "2026-11-06",
    "clicks": 0,
    "impressions": 14
+  },
+  {
+   "date": "2026-11-07",
+   "clicks": 0,
+   "impressions": 19
   }
  ],
  "allTime": {
   "start": "2026-04-30",
-  "views": 268,
-  "users": 205,
+  "views": 270,
+  "users": 207,
   "cta": {
    "book_tour": 2,
    "website": 1,
@@ -3999,6 +4010,11 @@
    },
    {
     "date": "2026-11-08",
+    "views": 2,
+    "cta": 0
+   },
+   {
+    "date": "2026-11-09",
     "views": 2,
     "cta": 0
    }
