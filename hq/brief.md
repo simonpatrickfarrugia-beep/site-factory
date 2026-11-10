@@ -1,28 +1,28 @@
-# Site Factory brief — Mon 09 Nov 2026 (generated 01:10 UTC)
+# Site Factory brief — Tue 10 Nov 2026 (generated 03:46 UTC)
 
 _Auto-written daily by scripts/hq/brief.py. Read this first in any new chat. Refresh: scripts/claude/brief.sh_
 
 ## Headline
 
-Revenue to date **A$0.00** · sprint "First $1" ended 9 days ago · Simon has **11** open items (~117 min)
+Revenue to date **A$0.00** · sprint "First $1" ended 10 days ago · Simon has **11** open items (~117 min)
 
 ## Traffic (last 28 days)
 
 | Site | Station | Views (prev) | Last 7 days | CTA clicks | Google clicks / impressions |
 |---|---|---|---|---|---|
-| movietrailer.channel | Measure | 174 (196) | 3 4 1 4 5 1 3 | films_banner 1, justwatch 1, prime 1 | 1 / 232 |
-| victours.com.au | Launch | 83 (0) | 3 1 5 2 1 1 4 | book_tour 2, website 1, map 1 | 4 / 1992 |
-| Community Help Co | Launch | 40 (0) | 7 1 5 5 6 5 9 | email_chat 1, google_reviews 1, journal_90 1 | 0 / 142 |
-| tradeadmin.com.au | Launch | 28 (0) | 11 1 7 5 5 | 0 | 0 / 213 |
+| movietrailer.channel | Measure | 159 (208) | 4 1 4 5 1 3 1 | films_banner 1, justwatch 1, prime 1 | 1 / 202 |
+| victours.com.au | Launch | 85 (0) | 1 5 2 1 1 4 2 | book_tour 2, website 1, map 1 | 4 / 2002 |
+| Community Help Co | Launch | 43 (0) | 1 5 5 6 5 9 3 | email_chat 1, google_reviews 1, journal_90 1 | 0 / 151 |
+| tradeadmin.com.au | Launch | 28 (0) | 11 1 7 5 5 | 0 | 0 / 241 |
 
-- **movietrailer.channel** (stats 6h ago) — top pages: / 55, /browse 14, /movies/star-wars-episode-v---the-empire-strikes-back-1980 4, /movies/star-wars-episode-vii---the-force-awakens-2015 3, /movies/batman-begins-2005 3
-  - Google: "ghost soldier movie 2006" 27 impr, pos 8.7; "sixth sense trailer" 25 impr, pos 31.4; "the prestige trailer" 17 impr, pos 45.1; "home alone trailer" 14 impr, pos 49.3; "phantom menace trailer" 13 impr, pos 42.3
-- **victours.com.au** (stats 6h ago) — top pages: / 39, /towns 6, /warburton 5, /daylesford 3, /day-trips/torquay 3
+- **movietrailer.channel** (stats 9h ago) — top pages: / 47, /browse 14, /movies/batman-begins-2005 3, /movies/schindlers-list-1994 2, /movies/star-wars-episode-v---the-empire-strikes-back-1980 2
+  - Google: "the sixth sense trailer" 22 impr, pos 34.2; "the prestige trailer" 16 impr, pos 46.4; "ghost soldier movie 2006" 14 impr, pos 8.3; "home alone trailer" 13 impr, pos 50.6; "jurassic park film trailer" 12 impr, pos 65.8
+- **victours.com.au** (stats 9h ago) — top pages: / 41, /towns 6, /warburton 5, /daylesford 3, /day-trips/torquay 3
   - Google: "melbourne accomodation southbank" 192 impr, pos 77.5; "1004 mornington-flinders road red hill vic 3937" 73 impr, pos 48.8; "sorrento restaurants" 72 impr, pos 87.5; "activities lorne victoria" 57 impr, pos 71; "best restaurants in mornington peninsula" 44 impr, pos 74.9
-- **Community Help Co** (stats 6h ago) — top pages: / 18, /contact 3, /about 3, /free-daily-journal 3, /job-finder 3
-  - Google: "community services placement" 102 impr, pos 11.9; "free resume" 11 impr, pos 46.5; "help support" 9 impr, pos 22.4; "free cover letter" 7 impr, pos 39.9; "hr support ringwood" 7 impr, pos 42
-- **tradeadmin.com.au** (stats 6h ago) — top pages: / 15, /job-management-software 4, /quote-builder 3, /how-we-make-money 2, /about 1
-  - Google: "servicem8 vs tradify" 133 impr, pos 71.3; "cleaning invoice examples" 21 impr, pos 68.5; "tradesman quote template" 14 impr, pos 78; "tradesman quote template" 8 impr, pos 83.6; "electrical invoice template" 8 impr, pos 78.8
+- **Community Help Co** (stats 9h ago) — top pages: / 20, /contact 4, /about 3, /free-daily-journal 3, /job-finder 3
+  - Google: "community services placement" 109 impr, pos 11.5; "free resume" 11 impr, pos 46.5; "help support" 10 impr, pos 20.4; "free cover letter" 7 impr, pos 39.9; "hr support ringwood" 7 impr, pos 42
+- **tradeadmin.com.au** (stats 9h ago) — top pages: / 15, /job-management-software 4, /quote-builder 3, /how-we-make-money 2, /about 1
+  - Google: "servicem8 vs tradify" 152 impr, pos 72.1; "cleaning invoice examples" 22 impr, pos 68.8; "tradesman quote template" 17 impr, pos 78.9; "tradesman quote template" 10 impr, pos 84.5; "electrical invoice template" 8 impr, pos 78.8
 
 Latest milestones: 2026-11-06 trailers: First affiliate click (Amazon Prime, Rocky Horror Picture Show page); 2026-11-07 community-help-co: Best day ever: 7 visits (29 Oct), first week of data; 2026-11-08 community-help-co: First Google clicks (6 in 28 days, Search Console daily data)
 
@@ -32,20 +32,20 @@ All checks passing ✅ (sites up, pipeline jobs fresh, live builds current, no f
 
 ## Pipeline jobs (last run)
 
-- ✅ `intake` 1h ago: Intake: 0 new trailer(s) queued. | Feed UCtlPYzQ188v4gHQ5VyikNiw failed: YouTube feed UCtlPYzQ188v4gHQ5VyikNiw: HTTP 404 | Feed UCotn1stsIkE
-- ✅ `niches` 4h ago: Niches: scored 0 of 0. | Calibrated from 493 page views, 3 affiliate clicks and 0 reported sales (trailers, vic, community-help-co, trade-ad
-- ✅ `enrich` 4h ago: Enrich: looked at 15, published 12 (The Evil Dead (1981) → /movies/the-evil-dead-1981; Tron (1982) → /movies/tron-1982; Highlander (1986) → 
-- ✅ `catalogue` 5h ago: Catalogue: queued 30 film(s): The Evil Dead (1981): 33240/mo, Tron (1982): 32500/mo, Highlander (1986): 28100/mo, Heathers (1988): 27820/mo,
-- ✅ `stats` 6h ago: simon-says-travel: 3 views, 0 CTA clicks, 0 Google clicks. | paycalc: 165 views, 0 CTA clicks, 3 Google clicks. | trade-admin: 28 views, 0 C
-- ✅ `discover` 31h ago: Discover: screened 15 new ideas for US$0.35; 3 promoted to scoring: Car rental cost by airport and car type (1 free domains), Mattress and s
-- ✅ `travel` 3d ago: 36 searches, 9 calls, US$0.099. Top now: Sydney 36.5, Melbourne 34, Travel insurance 33.3, Brisbane 24.3, Perth 20.9.
-- ✅ `ratings` 4d ago: Ratings: checked 40, updated 0; 44 never checked.
-- ✅ `collections` 5d ago: Collections: created 3: 90s Romance Movies (13 films, 3920/mo) → /discover/90s-romance-movies; 2000s Action Movies (18 films, 3900/mo) → /di
-- ✅ `collcheck` 6d ago: Collection check: 0 idea(s) checked (US$0.000). Most winnable: Tom Hanks Movies 305400/mo × 21%; Christian Bale Movies 166600/mo × 16%; 90s 
-- ✅ `demand` 6d ago: Demand: 212 searches analysed; 0 film ideas, 0 new collection ideas. Saved to reports/trailers/demand-2026-10.md.
-- ✅ `recheck` 7d ago: Recheck: looked at 1, published 0. Queue: 1 waiting for OMDb, 15 need review.
-- ✅ `competition` 11d ago: Competition: checked 4; 4 still to check (run again). | AU electric car running costs vs petrol by model: openness 49/100; big players drive
-- ✅ `keywords` 19d ago: Victorian road trips and itineraries: day trips from melbourne 2900, great alpine road 1900, weekend getaways from melbourne 1900, romantic 
+- ✅ `intake` 4h ago: Intake: 0 new trailer(s) queued.
+- ✅ `enrich` 7h ago: Enrich: looked at 15, published 13 (Father of the Bride (1991) → /movies/father-of-the-bride-1991; Blade Runner (1982) → /movies/blade-runne
+- ✅ `stats` 9h ago: simon-says-travel: 3 views, 0 CTA clicks, 0 Google clicks. | paycalc: 166 views, 0 CTA clicks, 4 Google clicks. | trade-admin: 28 views, 0 C
+- ✅ `competition` 10h ago: Competition: checked 4; 7 still to check (run again). | Rail travel times between NSW stations: openness 0/100; big players none (US$0). | U
+- ✅ `niches` 31h ago: Niches: scored 0 of 0. | Calibrated from 493 page views, 3 affiliate clicks and 0 reported sales (trailers, vic, community-help-co, trade-ad
+- ✅ `catalogue` 32h ago: Catalogue: queued 30 film(s): The Evil Dead (1981): 33240/mo, Tron (1982): 32500/mo, Highlander (1986): 28100/mo, Heathers (1988): 27820/mo,
+- ✅ `discover` 2d ago: Discover: screened 15 new ideas for US$0.35; 3 promoted to scoring: Car rental cost by airport and car type (1 free domains), Mattress and s
+- ✅ `travel` 4d ago: 36 searches, 9 calls, US$0.099. Top now: Sydney 36.5, Melbourne 34, Travel insurance 33.3, Brisbane 24.3, Perth 20.9.
+- ✅ `ratings` 5d ago: Ratings: checked 40, updated 0; 44 never checked.
+- ✅ `collections` 6d ago: Collections: created 3: 90s Romance Movies (13 films, 3920/mo) → /discover/90s-romance-movies; 2000s Action Movies (18 films, 3900/mo) → /di
+- ✅ `collcheck` 7d ago: Collection check: 0 idea(s) checked (US$0.000). Most winnable: Tom Hanks Movies 305400/mo × 21%; Christian Bale Movies 166600/mo × 16%; 90s 
+- ✅ `demand` 7d ago: Demand: 212 searches analysed; 0 film ideas, 0 new collection ideas. Saved to reports/trailers/demand-2026-10.md.
+- ✅ `recheck` 8d ago: Recheck: looked at 1, published 0. Queue: 1 waiting for OMDb, 15 need review.
+- ✅ `keywords` 20d ago: Victorian road trips and itineraries: day trips from melbourne 2900, great alpine road 1900, weekend getaways from melbourne 1900, romantic 
 
 ## Simon's list (open)
 
@@ -71,13 +71,13 @@ All checks passing ✅ (sites up, pipeline jobs fresh, live builds current, no f
 
 ## Open GitHub issues
 
-- #6 Site Factory health check: something needs attention [health]
 - #5 📬 1 new enquiry on communityhelp.com.au [enquiry]
 
 ## Changes in the last 7 days
 
-100 commits (26 automated data updates). Hand-made changes:
+100 commits (30 automated data updates). Hand-made changes:
 
+- 2026-11-10 Leads: daily call list [skip ci]
 - 2026-11-08 Leads: daily call list [skip ci]
 - 2026-11-08 Vic Tours: Viator products refreshed
 - 2026-11-08 HQ: weekly brief 8 Nov + autopilot log [skip ci]
@@ -102,7 +102,6 @@ All checks passing ✅ (sites up, pipeline jobs fresh, live builds current, no f
 - 2026-11-06 Prospect playbook: weeklyCap 50 per brand so Radar can keep up with the send ramp
 - 2026-11-06 IMN HQ: one-click send from the brand address (Microsoft Graph) with a warm-up ramp
 - 2026-11-06 HQ: add ServiceM8 affiliate program (PartnerStack, 80% of first 12 months) [skip ci]
-- 2026-11-06 MyPayCalc: widen salary pages to every $5k to $200k, plus $350k-$500k
 
 ## Where things live
 
