@@ -248,6 +248,8 @@ export function routes(): Route[] {
       : { '@context': 'https://schema.org', '@type': 'Movie', name: m.name, url, dateCreated: m.year, genre: m.genres, director: people(m.director), actor: people(m.cast), duration: `PT${m.runtimeMinutes}M`, description: m.summary };
     if (f) { schema.video = fullFilmVideo(f, url); schema.image = image; }
     out.push({
+      // No write-up yet (only a trailer and facts): live for visitors, kept out of Google until it has one.
+      noindex: !f && !u && !synthetic && (m.summary ?? '').trim().split(/\s+/).filter(Boolean).length < 40,
       path: `movies/${m.slug}`,
       template: 'movie',
       seo: { ...(f ? freeSeo(m, f) : u ? upcomingSeo(m, u) : movieSeo(m)), rawTitle: true, image },
@@ -295,7 +297,8 @@ export function routes(): Route[] {
     if (MERGED[c.slug]) continue;
     const list = moviesIn(c);
     out.push({
-      noindex: list.length < MIN_INDEXED_FILMS,
+      // Kept out of Google until they have at least 4 films and a proper introduction (a bare list of trailers is thin).
+      noindex: list.length < MIN_INDEXED_FILMS || (c.introHtml ?? '').replace(/<[^>]+>/g, ' ').trim().split(/\s+/).filter(Boolean).length < 30,
       path: `discover/${c.slug}`,
       template: 'collection',
       seo: {

@@ -106,19 +106,19 @@ const faq = [
       {m.tagline && <p class="movie__tagline">{m.tagline}</p>}
     </header>
 
-    <section class="watch" aria-labelledby="watch-heading">
-      <h2 id="watch-heading">{free ? 'Prefer it restored and in HD? Rent or buy it' : 'Rent, buy or stream it'}</h2>
-      <p class="button-row">
-        <a class="button" href={primeUrl} rel="sponsored noopener" target="_blank" data-cta="prime" aria-label={`Watch ${m.name} now on Prime Video`}>Watch now <span class="button__via">on Prime Video</span></a>
-        <a class="button button--quiet" href={discUrl} rel="sponsored noopener" target="_blank" data-cta="disc">Buy on DVD &amp; Blu-ray</a>
-        <a class="button button--quiet" href={justWatchUrl} rel="noopener" target="_blank" data-cta="justwatch">Where else to stream</a>
-      </p>
-    </section>
 
     <div class="movie__body">
       <div class="movie__story prose">
         {(m.summary || m.synopsis) && <p class="lede">{m.summary || m.synopsis}</p>}
         {free?.watchIf && <p><strong>Watch it if</strong> {free.watchIf}</p>}
+        <section class="watch" aria-labelledby="watch-heading">
+          <h2 id="watch-heading">{free ? 'Prefer it restored and in HD? Rent or buy it' : 'Rent, buy or stream it'}</h2>
+          <p class="button-row">
+            <a class="button" href={primeUrl} rel="sponsored noopener" target="_blank" data-cta="prime" aria-label={`Watch ${m.name} now on Prime Video`}>Watch now <span class="button__via">on Prime Video</span></a>
+            <a class="button button--quiet" href={discUrl} rel="sponsored noopener" target="_blank" data-cta="disc">Buy on DVD &amp; Blu-ray</a>
+            <a class="button button--quiet" href={justWatchUrl} rel="noopener" target="_blank" data-cta="justwatch">Where else to stream</a>
+          </p>
+        </section>
 
         {upcoming && (
           <section class="free-film" aria-labelledby="free-heading">
