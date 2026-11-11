@@ -16,6 +16,8 @@ session has them (DECISIONS.md, PRODUCTION-LINE.md, VIC-TOURS.md, DOG-BREEDS.md,
 Other workflows you can dispatch: vic-probe (inputs count, slugs), vic-photos, domain-check, health, indexnow.
 
 ## Routine
+Respect `goal.rules` in `hq/portfolio.json` (now: no new brands until the first dollar; grow the live sites only).
+
 1. **Health**: open GitHub issues labelled `health` and `review`. Fix what's clearly fixable (failed job, broken page, thin page).
    A 90-day review issue becomes a "decide" todo for Simon; don't decide it.
 2. **Affiliate inbox**: Gmail, read-only, last 8 days:
@@ -37,7 +39,14 @@ Other workflows you can dispatch: vic-probe (inputs count, slugs), vic-photos, d
 7. **Simon's list**: keep `todo` short and current: tick done items, remove stale ones, every item has mins, why and a direct link,
    never more than ~10 open. When a level is reached, say so loudly, move goal.sprint to the next level (deadline ~6 weeks out) and add
    its 3–5 steps with `sprint: true`. Watch the Amazon Associates deadline in notes. Keep `actions` current.
-8. **Log** decisions in `hq/reports/autopilot-log.md` (dated section).
+8. **Ready for you (approve, don't do)**: Simon's time is the scarcest resource, so for every open todo item without `ready`,
+   do all the prep Claude can within the hard rules, then set `ready` = {what, link, at} and cut `mins` to the approve time:
+   - writing → the finished text (reply, application answers, post), as a Gmail draft (never sent) or in the item itself
+   - a file he must send (media kit, PDF) → build it from real numbers only; commit it under `hq/ready/` (public: nothing private)
+   - a form or setup → the exact values to paste, in order, with full URLs
+   - a decision → a one-line recommendation and the reason, so he can reply "yes"
+   Leave the item as is when the prep needs something only Simon has (a sign-in, payment, his own words): add what's missing to `why`.
+9. **Log** decisions in `hq/reports/autopilot-log.md` (dated section).
 
 ## Log the run (always, even if something failed)
 `python3 scripts/hq/log_run.py weekly-autopilot ok "<one-line summary>"` (use `fail` and say why if a step failed), commit
@@ -48,5 +57,5 @@ Write `hq/reports/weekly/<YYYY-MM-DD>.md`, commit it, and send it as your final 
 - "Level X → next: <name> (<days> days left in the sprint)"
 - Scoreboard per site: visits (28 days) and change, affiliate clicks, Google clicks, day X of 90 vs target90
 - What I did this week (3–6 bullets), incl. affiliate buttons switched on and todo items ticked
-- Your list: "<N> left, about <M> min" + top 3 open items (decide first) with links; rest at https://www.movietrailer.channel/hq
+- Your list: "<N> left, about <M> min, <R> ready for you to approve" + top 3 open items (ready ones first, then decide) with links; rest at https://www.movietrailer.channel/hq
 - One honest line: on track for the next level or not, and the biggest blocker

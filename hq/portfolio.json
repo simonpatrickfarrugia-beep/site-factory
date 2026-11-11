@@ -154,7 +154,7 @@
    "id": "dogs",
    "group": "ideas",
    "name": "Dog breeds",
-   "status": "parked",
+   "status": "paused",
    "note": "Score 75 · Parked 23 Oct (Simon: no for now)"
   },
   {
@@ -175,7 +175,7 @@
    "id": "shortlisted",
    "group": "business",
    "name": "Shortlisted",
-   "status": "building",
+   "status": "paused",
    "note": "B2B lead gen (business travel first): preview built 23 Oct; daily AusTender call list live",
    "station": "Build",
    "url": null
@@ -194,17 +194,12 @@
   },
   {
    "who": "Claude",
-   "what": "Template the content engine during the dog breeds build",
-   "site": "factory"
-  },
-  {
-   "who": "Claude",
    "what": "Cover letter builder for Community Help Co (after the resume builder, live 23 Oct)",
    "site": "chc"
   },
   {
    "who": "Claude",
-   "what": "Fix trailer queue items stuck on 'no OMDb match' (13 well-known films like Casablanca)",
+   "what": "Check the 18 trailer films retried after the OMDb fix (11 Nov) publish; review any still stuck",
    "site": "trailers"
   }
  ],
@@ -250,9 +245,16 @@
    "name": "First $1",
    "deadline": "2026-10-31",
    "why": "Prove the loop: a real visitor clicks an affiliate link and buys."
-  }
+  },
+  "rules": [
+   {
+    "rule": "No new brands until the first dollar. Grow the live sites; new builds wait.",
+    "by": "Simon",
+    "at": "2026-11-11"
+   }
+  ]
  },
- "_todo": "Simon's to-do list shown at the top of HQ. kind: do | decide. sprint: true = counts toward the current sprint. Claude (or the daily coach / weekly autopilot) sets done: true + doneAt when Simon says 'done' or an approval email arrives.",
+ "_todo": "Simon's to-do list shown at the top of HQ. kind: do | decide. sprint: true = counts toward the current sprint. ready: {what, link?, at} = Claude has already done the prep (drafts, files, exact values to paste), so Simon only approves; set by the weekly autopilot or a chat session, shown first in the morning report. Claude (or the weekly autopilot) sets done: true + doneAt when Simon says 'done' or an approval email arrives. parked = items for paused brands, kept out of the list until the pause lifts.",
  "todo": [
   {
    "id": "ta-mail-hub",
@@ -516,17 +518,6 @@
    "doneAt": "2026-10-28"
   },
   {
-   "id": "networks",
-   "kind": "do",
-   "sprint": false,
-   "mins": 10,
-   "what": "Join Awin (Impact applied 28 Oct, in review)",
-   "why": "Ready for dog breeds (Embrace pet insurance is on Impact)",
-   "link": "https://www.awin.com",
-   "linkLabel": "Awin",
-   "done": false
-  },
-  {
    "id": "targets",
    "kind": "decide",
    "sprint": false,
@@ -636,25 +627,6 @@
    "mins": 10,
    "what": "Share communityhelp.com.au/resume-builder with 3 job services, schools or community groups you know",
    "why": "Links from real organisations are what will get it found on Google",
-   "done": false
-  },
-  {
-   "id": "sl-domain",
-   "kind": "do",
-   "sprint": false,
-   "mins": 5,
-   "what": "Buy shortlisted.com.au (about A$25/yr at an AU registrar, with IMN's ABN)",
-   "why": "Locks the name before someone else does; Cloudflare can't sell .com.au",
-   "done": false
-  },
-  {
-   "id": "sl-import",
-   "kind": "do",
-   "sprint": false,
-   "mins": 3,
-   "what": "Cloudflare → Workers & Pages → Create → Import repository → site-factory. Name: shortlisted. Build: BRAND=shortlisted npm run build. Deploy: npx wrangler deploy --config brands/shortlisted/wrangler.jsonc",
-   "why": "Gives Shortlisted its preview link",
-   "link": "https://dash.cloudflare.com",
    "done": false
   },
   {
@@ -785,6 +757,39 @@
   }
  ],
  "notes": [
-  "Amazon Associates needs 3 qualifying sales by ~29 Mar 2027 or the account closes."
+  "Amazon Associates needs 3 qualifying sales by ~29 Mar 2027 or the account closes.",
+  "11 Nov 2026: new brands paused until the first dollar (Simon). Dog breeds and Shortlisted on hold; their todo items moved to `parked`."
+ ],
+ "parked": [
+  {
+   "id": "networks",
+   "kind": "do",
+   "sprint": false,
+   "mins": 10,
+   "what": "Join Awin (Impact applied 28 Oct, in review)",
+   "why": "Ready for dog breeds (Embrace pet insurance is on Impact)",
+   "link": "https://www.awin.com",
+   "linkLabel": "Awin",
+   "done": false
+  },
+  {
+   "id": "sl-domain",
+   "kind": "do",
+   "sprint": false,
+   "mins": 5,
+   "what": "Buy shortlisted.com.au (about A$25/yr at an AU registrar, with IMN's ABN)",
+   "why": "Locks the name before someone else does; Cloudflare can't sell .com.au",
+   "done": false
+  },
+  {
+   "id": "sl-import",
+   "kind": "do",
+   "sprint": false,
+   "mins": 3,
+   "what": "Cloudflare → Workers & Pages → Create → Import repository → site-factory. Name: shortlisted. Build: BRAND=shortlisted npm run build. Deploy: npx wrangler deploy --config brands/shortlisted/wrangler.jsonc",
+   "why": "Gives Shortlisted its preview link",
+   "link": "https://dash.cloudflare.com",
+   "done": false
+  }
  ]
 }

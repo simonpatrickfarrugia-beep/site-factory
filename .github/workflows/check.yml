@@ -9,7 +9,39 @@ on:
     branches: ['**']
   pull_request:
 jobs:
+  plan:
+    # Works out which brands this push touches (scripts/ci-plan.mjs) so unaffected sites aren't rebuilt.
+    # Unknown files, new branches, big diffs or any API hiccup -> build everything.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    outputs:
+      brands: ${{ steps.p.outputs.brands }}
+      workers: ${{ steps.p.outputs.workers }}
+    steps:
+      - uses: actions/checkout@v5
+      - name: Skill tests (AI workers' job descriptions)
+        run: node scripts/test-skills.mjs
+      - id: p
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BASE: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+          HEAD: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+        run: |
+          files='*'
+          if [ -n "$BASE" ] && [ "$BASE" != "0000000000000000000000000000000000000000" ]; then
+            if out=$(gh api "repos/$GITHUB_REPOSITORY/compare/$BASE...$HEAD" --jq '[.files | length, (.files[].filename)] | .[]' 2>/dev/null); then
+              n=$(echo "$out" | head -1)
+              if [ "$n" -lt 300 ]; then files=$(echo "$out" | tail -n +2); fi
+            fi
+          fi
+          result=$(printf '%s\n' "$files" | node scripts/ci-plan.mjs)
+          echo "$result"
+          echo "brands=$(echo "$result" | node -e "console.log(JSON.stringify(JSON.parse(require('fs').readFileSync(0,'utf8')).brands))")" >> "$GITHUB_OUTPUT"
+          echo "workers=$(echo "$result" | node -e "console.log(JSON.parse(require('fs').readFileSync(0,'utf8')).workers)")" >> "$GITHUB_OUTPUT"
+          echo "::notice title=Build plan::$result"
   pipeline:
+    needs: plan
+    if: needs.plan.outputs.workers == 'true'
     runs-on: ubuntu-24.04  # pinned: ubuntu-latest moved to 26.04 in Oct 2026 and broke the Playwright install
     timeout-minutes: 5
     steps:
@@ -48,12 +80,14 @@ jobs:
             exit 1
           fi
   build:
+    needs: plan
+    if: needs.plan.outputs.brands != '[]'
     runs-on: ubuntu-24.04  # pinned: ubuntu-latest moved to 26.04 in Oct 2026 and broke the Playwright install
     timeout-minutes: 10
     strategy:
       fail-fast: false
       matrix:
-        brand: [trailers, vic, community-help-co, shortlisted, trade-admin, paycalc, simon-says-travel, backyard-wild]
+        brand: ${{ fromJSON(needs.plan.outputs.brands) }}
     env:
       BRAND: ${{ matrix.brand }}
     steps:

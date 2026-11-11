@@ -37,7 +37,10 @@ Follow `CLAUDE.md`. The only repo changes allowed here: recording a milestone (s
 6. **📞 Day job**: top 3 from `leads/latest.md` (company (city) — why — opener in quotes), then
    https://github.com/simonpatrickfarrugia-beep/site-factory/blob/main/leads/latest.md . If the file isn't dated today (Melbourne) or has
    no prospects: "No new call list today". Then: "FCBT Radar topped up at 8:45: review when you can."
-7. **✅ Today's one thing**: first open todo item (decide items first) with its link, then "N left on your list".
+7. **📦 Ready for you** (only if any open todo item has `ready`): one line each: what Claude prepared, its link, and the
+   approve step in a few words (e.g. "reply to CF with the attached PDF"). These are approve-only: Simon checks and sends.
+8. **✅ Today's one thing**: the first open item WITH `ready` if there is one (decide items first), otherwise the first open
+   item (decide first), with its link, then "N left on your list (M ready to approve)".
    On the 1st of the month also remind him of `ga4-country-check`.
 
 ## Log the run (always, even if something failed)
