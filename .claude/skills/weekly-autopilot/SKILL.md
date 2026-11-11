@@ -39,6 +39,10 @@ Other workflows you can dispatch: vic-probe (inputs count, slugs), vic-photos, d
    its 3–5 steps with `sprint: true`. Watch the Amazon Associates deadline in notes. Keep `actions` current.
 8. **Log** decisions in `hq/reports/autopilot-log.md` (dated section).
 
+## Log the run (always, even if something failed)
+`python3 scripts/hq/log_run.py weekly-autopilot ok "<one-line summary>"` (use `fail` and say why if a step failed), commit
+`HQ: weekly-autopilot run [skip ci]`, push. The daily health check flags this worker if the log goes stale.
+
 ## Weekly brief
 Write `hq/reports/weekly/<YYYY-MM-DD>.md`, commit it, and send it as your final message. One phone screen:
 - "Level X → next: <name> (<days> days left in the sprint)"

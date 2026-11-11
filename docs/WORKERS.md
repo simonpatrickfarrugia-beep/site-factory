@@ -25,6 +25,11 @@ To change what a worker does, edit its SKILL.md and push. The scheduled task pic
 Day-job workers (FCBT Radar 8:45 top-up and bonus top-up) are deliberately **not** in this repo: they're Simon's employer work,
 kept separate from IMN, and this repo is public.
 
+## Health
+Each worker's last step runs `scripts/hq/log_run.py <worker> ok|fail "<note>"`, which updates its entry in `hq/runs.json`.
+The daily `health` workflow (09:40 Melbourne) checks those entries against `workersMaxAgeDays` in `hq/health.json`
+and opens a `health` issue (GitHub emails Simon) if a worker failed or went quiet, e.g. after a usage-limit stop.
+
 ## Scheduled task prompt (the whole thing)
 
 ```

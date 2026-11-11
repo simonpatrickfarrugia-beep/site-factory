@@ -6,7 +6,7 @@ description: Simon's one daily morning report (sites, Radar queue, day-job call 
 # Morning report
 
 Simon's ONLY daily ping from Claude, so it replaces separate notifications. One phone screen.
-Follow `CLAUDE.md`. The only repo change allowed here is recording a milestone (step 0).
+Follow `CLAUDE.md`. The only repo changes allowed here: recording a milestone (step 0) and logging the run (last step).
 
 ## Data
 - Stats per site: `data/{trailers,vic,community-help-co,trade-admin,paycalc}/stats.json`
@@ -40,4 +40,8 @@ Follow `CLAUDE.md`. The only repo change allowed here is recording a milestone (
 7. **✅ Today's one thing**: first open todo item (decide items first) with its link, then "N left on your list".
    On the 1st of the month also remind him of `ga4-country-check`.
 
-Send the report as your final message.
+## Log the run (always, even if something failed)
+`python3 scripts/hq/log_run.py morning-report ok "<one-line summary>"` (use `fail` and say why if a step failed), commit
+`HQ: morning-report run [skip ci]`, push. The daily health check flags this worker if the log goes stale.
+
+Then send the report as your final message.

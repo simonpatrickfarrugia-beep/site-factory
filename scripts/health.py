@@ -68,6 +68,26 @@ for f in cfg['freshFiles']:
     except Exception as e:
         problems.append(f"{f['path']}: unreadable ({str(e)[:100]})")
 
+# 3b. AI workers (claude.ai scheduled tasks) logged a recent, successful run in hq/runs.json
+try:
+    wruns = json.load(open('hq/runs.json')).get('workers', {})
+except Exception as e:
+    wruns = {}
+    problems.append(f'hq/runs.json unreadable ({str(e)[:100]})')
+wsince = datetime.fromisoformat(cfg.get('workersSince', cfg['trackingSince'])).replace(tzinfo=timezone.utc)
+for w, max_days in cfg.get('workersMaxAgeDays', {}).items():
+    last = wruns.get(w)
+    if last and not last.get('ok', True):
+        problems.append(f"AI worker `{w}` reported a problem {age_days(last['at']):.1f} days ago: {last.get('note', '')}")
+    elif last and age_days(last['at']) > max_days:
+        problems.append(f"AI worker `{w}` hasn't run for {age_days(last['at']):.1f} days (expected within {max_days}). Check claude.ai scheduled tasks: usage limit or a failed run.")
+    elif not last and (now - wsince).total_seconds() / 86400 > max_days:
+        problems.append(f"AI worker `{w}` has no logged run since {cfg.get('workersSince')}. Check claude.ai scheduled tasks.")
+    elif last:
+        ok.append(f"AI worker `{w}` OK {age_days(last['at']):.1f} days ago")
+    else:
+        ok.append(f"AI worker `{w}`: waiting for first logged run")
+
 # 4. Each workflow's latest run on main (in the last 26 hours) didn't fail; a later success clears an earlier failure
 try:
     out = subprocess.run(['gh', 'api', f"repos/{os.environ['GITHUB_REPOSITORY']}/actions/runs?per_page=100&branch=main",

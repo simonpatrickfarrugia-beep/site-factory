@@ -24,7 +24,7 @@ Data: Cloudflare D1 (see `CLAUDE.md`), via the Cloudflare D1 query tool.
   is not the event date. Past events don't count as "why now" (see re-surfacing).
 - Skip anyone already in the database (compare name, website domain and email loosely across ALL brands), any email in contacts with
   `opted_out_at`, and organisations whose page already links to the brand's domain.
-- Only INSERT into orgs, contacts, touches; and upsert hq_kv keys `radar_playbook` and `radar_last_run`. Never UPDATE or DELETE anything else.
+- Only INSERT into orgs, contacts, touches; and upsert hq_kv keys `radar_playbook` and `radar_last_run`. Never UPDATE or DELETE anything else. In the repo, only `hq/runs.json` (run log).
 
 ## Step 1 — Read
 - Playbook: `hq/prospect-playbook.json` (`_signals` = the method; per brand `ask`, `signals` with points and where to look, gaps, proof, chips).
@@ -85,6 +85,10 @@ trigger_date = next date and snooze_until = 6 weeks before it (ISO). Snoozed add
 
 ## Step 4 — Record the run
 Upsert `radar_last_run` the same way with v = JSON {at, added, snoozed, note ("3 Vic, 2 trailers, 1 snoozed to Feb")}.
+
+## Log the run (always, even if something failed)
+`python3 scripts/hq/log_run.py imn-radar ok "<one-line summary>"` (use `fail` and say why if a step failed), commit
+`HQ: imn-radar run [skip ci]`, push. The daily health check flags this worker if the log goes stale.
 
 ## Step 5 — Summary for Simon (3 lines)
 Added and snoozed (by brand), the hottest one (score, why now, gap), the biggest playbook change.

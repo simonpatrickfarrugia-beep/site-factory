@@ -1,0 +1,4 @@
+{
+ "_about": "Last run of each AI worker (claude.ai scheduled task). Each skill's final step updates only its own entry. Checked daily by scripts/health.py (limits in hq/health.json).",
+ "workers": {}
+}
