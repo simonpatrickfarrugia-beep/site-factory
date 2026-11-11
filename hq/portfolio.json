@@ -320,13 +320,18 @@
    "id": "cf-media-kit",
    "kind": "do",
    "sprint": true,
-   "mins": 5,
-   "what": "Commission Factory replied 6 Nov asking for a media kit before they approve. Say 'media kit' in the Site Factory chat: Claude makes a 1-page PDF with real numbers, you reply to their email with it attached",
+   "mins": 1,
+   "what": "Approve and send the Commission Factory reply: it's drafted in Gmail Drafts with the media kit PDF attached (real 28-day numbers for Vic Tours and MyPayCalc)",
    "why": "Commission Factory unlocks Australian brands (hotels, car hire, tours) for Vic Tours and MyPayCalc",
-   "link": "https://mail.google.com/mail/u/0/#search/from%3Aaffiliates%40commissionfactory.com",
-   "linkLabel": "Gmail",
+   "link": "https://mail.google.com/mail/u/0/#drafts",
+   "linkLabel": "Gmail drafts",
    "done": false,
-   "addedAt": "2026-11-08"
+   "addedAt": "2026-11-08",
+   "ready": {
+    "what": "Media kit PDF + reply drafted in Gmail",
+    "link": "https://mail.google.com/mail/u/0/#drafts",
+    "at": "2026-11-11"
+   }
   },
   {
    "id": "careerjet-ip",
