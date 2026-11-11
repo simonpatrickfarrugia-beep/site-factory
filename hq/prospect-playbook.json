@@ -11,7 +11,7 @@
         {
           "key": "visitor-centre",
           "label": "Visitor information centre / tourism association",
-          "weight": 1.0,
+          "weight": 0.7,
           "offer": "The free {region} day trip plan and town guide for their visitors' page.",
           "evidence": "A 'plan your visit' or 'useful links' page that already links to outside guides.",
           "search": [
@@ -23,7 +23,7 @@
         {
           "key": "traders",
           "label": "Traders' group / chamber of commerce",
-          "weight": 0.8,
+          "weight": 1.0,
           "offer": "A free guide that sends day-trippers to {region}'s main street, to share with members or link from their site.",
           "evidence": "A members or 'visit our town' page with outside links.",
           "search": [
@@ -35,7 +35,7 @@
         {
           "key": "council",
           "label": "Council tourism / events page",
-          "weight": 0.6,
+          "weight": 0.5,
           "offer": "The {region} guide as a free resource on their visitor or events page.",
           "evidence": "A council 'visiting {region}' page listing resources.",
           "search": [
@@ -46,7 +46,7 @@
         {
           "key": "history",
           "label": "Historical society / museum",
-          "weight": 0.4,
+          "weight": 0.8,
           "offer": "Their museum featured in the {region} guide; a link back from their 'getting here' page.",
           "evidence": "A 'getting here' or 'local attractions' page.",
           "search": [
@@ -124,7 +124,10 @@
           "Broken links",
           "We already rank for {region}"
         ]
-      }
+      },
+      "_notes": [
+        "11 Nov 2026: weights rebalanced (traders 1.0, history 0.8, visitor centres 0.7, council 0.5). Radar kept coming back empty on visitor centres: many are council-run with no own site or links page. Traders' groups and museums have their own sites and a reason to link (their main street / their museum is featured)."
+      ]
     },
     "community-help-co": {
       "name": "Community Help Co",

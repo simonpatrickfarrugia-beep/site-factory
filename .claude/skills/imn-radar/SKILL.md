@@ -57,6 +57,9 @@ and the brand's trigger "look" hints; WebSearch, then WebFetch their own pages).
   and a published email (and its page).
 SCORE 0-100 = fit (0-60) + trigger (its points if 0-8 weeks away, half if 8-10, 0 if evergreen) + gaps (max 20) + proof (max 10).
 Quality over quantity: skip weak or unverifiable finds.
+DEAD ENDS: if an organisation has no website of its own, no published email, or no page that links out, don't stop: try the brand's
+next target in the same region (another segment), then the next region. Only end a brand empty-handed after 3 dead ends,
+and name them in radar_last_run's note.
 RE-SURFACE: strong fit but trigger 10+ weeks away, or just passed with the next date published or clearly recurring → add with
 trigger_date = next date and snooze_until = 6 weeks before it (ISO). Snoozed adds don't count toward Needed.
 
