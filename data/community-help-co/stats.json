@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-10T19:00:10.598Z",
+ "generatedAt": "2026-11-11T12:49:45.317Z",
  "period": {
-  "start": "2026-10-13",
-  "end": "2026-11-09"
+  "start": "2026-10-14",
+  "end": "2026-11-10"
  },
  "gscPeriod": {
-  "start": "2026-10-11",
-  "end": "2026-11-07"
+  "start": "2026-10-12",
+  "end": "2026-11-08"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 67,
+  "views": 68,
   "prevViews": 0,
-  "users": 48,
+  "users": 49,
   "cta": {
    "journal_90": 3,
    "email_chat": 1,
    "google_reviews": 1
   },
   "gscClicks": 1,
-  "gscImpressions": 162
+  "gscImpressions": 173
  },
  "daily": [
   {
@@ -80,29 +80,34 @@
    "date": "2026-11-09",
    "views": 24,
    "cta": 2
+  },
+  {
+   "date": "2026-11-10",
+   "views": 1,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 23,
+   "views": 24,
    "prevViews": 0,
-   "users": 16,
+   "users": 17,
    "cta": {
     "email_chat": 1,
     "google_reviews": 1
    },
    "gscClicks": 1,
-   "gscImpressions": 117,
-   "gscPosition": 11.1,
+   "gscImpressions": 123,
+   "gscPosition": 10.9,
    "topQuery": "community services placement",
-   "allViews": 23,
+   "allViews": 24,
    "allCta": {
     "email_chat": 1,
     "google_reviews": 1
    },
-   "d7": 19,
-   "prev7": 4
+   "d7": 20,
+   "prev7": 3
   },
   {
    "path": "/contact",
@@ -115,8 +120,8 @@
    "gscPosition": 18.8,
    "topQuery": "community help",
    "allViews": 8,
-   "d7": 6,
-   "prev7": 2
+   "d7": 5,
+   "prev7": 3
   },
   {
    "path": "/resume-builder",
@@ -172,12 +177,12 @@
    "users": 3,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 3,
+   "gscImpressions": 6,
    "gscPosition": 7,
    "topQuery": "simon farrugia",
    "allViews": 3,
-   "d7": 2,
-   "prev7": 1
+   "prev7": 2,
+   "d7": 1
   },
   {
    "path": "/life-goals-mentoring",
@@ -218,8 +223,8 @@
    "gscPosition": null,
    "topQuery": null,
    "allViews": 2,
-   "d7": 2,
-   "prev7": 0
+   "d7": 1,
+   "prev7": 1
   },
   {
    "path": "/affiliate-disclosure",
@@ -232,8 +237,8 @@
    "gscPosition": null,
    "topQuery": null,
    "allViews": 2,
-   "d7": 2,
-   "prev7": 0
+   "d7": 1,
+   "prev7": 1
   },
   {
    "path": "/faq",
@@ -246,8 +251,8 @@
    "gscPosition": null,
    "topQuery": null,
    "allViews": 2,
-   "d7": 2,
-   "prev7": 0
+   "d7": 1,
+   "prev7": 1
   },
   {
    "path": "/job-catalyst",
@@ -284,8 +289,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 8,
-   "gscPosition": 41.6,
+   "gscImpressions": 10,
+   "gscPosition": 39.8,
    "topQuery": "hr support ringwood"
   },
   {
@@ -311,29 +316,29 @@
   {
    "query": "community services placement",
    "clicks": 0,
-   "impressions": 24,
-   "position": 8.9,
+   "impressions": 25,
+   "position": 8.8,
    "page": "/"
   },
   {
    "query": "community service placement",
    "clicks": 0,
-   "impressions": 22,
+   "impressions": 23,
    "position": 12.6,
    "page": "/"
   },
   {
    "query": "local community support",
    "clicks": 0,
-   "impressions": 15,
+   "impressions": 16,
    "position": 3.9,
    "page": "/"
   },
   {
    "query": "hr support ringwood",
    "clicks": 0,
-   "impressions": 7,
-   "position": 41.9,
+   "impressions": 9,
+   "position": 39.8,
    "page": "/find-staff"
   },
   {
@@ -342,6 +347,13 @@
    "impressions": 6,
    "position": 22.2,
    "page": "/"
+  },
+  {
+   "query": "simon farrugia",
+   "clicks": 0,
+   "impressions": 5,
+   "position": 8,
+   "page": "/about"
   },
   {
    "query": "help support",
@@ -386,18 +398,18 @@
    "page": "/"
   },
   {
+   "query": "community service job",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 6.5,
+   "page": "/"
+  },
+  {
    "query": "work in community services",
    "clicks": 0,
    "impressions": 2,
    "position": 8.5,
    "page": "/"
-  },
-  {
-   "query": "simon farrugia",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 9.5,
-   "page": "/about"
   },
   {
    "query": "simon support",
@@ -470,13 +482,6 @@
    "page": "/"
   },
   {
-   "query": "community service job",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 7,
-   "page": "/"
-  },
-  {
    "query": "community services jobs",
    "clicks": 0,
    "impressions": 1,
@@ -498,6 +503,13 @@
    "page": "/"
   },
   {
+   "query": "jobs in community services",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 13,
+   "page": "/"
+  },
+  {
    "query": "jobs in hillside",
    "clicks": 0,
    "impressions": 1,
@@ -516,6 +528,13 @@
    "clicks": 0,
    "impressions": 1,
    "position": 14,
+   "page": "/"
+  },
+  {
+   "query": "community helps",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 2,
    "page": "/"
   },
   {
@@ -707,12 +726,17 @@
    "date": "2026-11-07",
    "clicks": 2,
    "impressions": 14
+  },
+  {
+   "date": "2026-11-08",
+   "clicks": 2,
+   "impressions": 19
   }
  ],
  "allTime": {
   "start": "2026-10-27",
-  "views": 67,
-  "users": 48,
+  "views": 68,
+  "users": 49,
   "cta": {
    "journal_90": 3,
    "email_chat": 1,
@@ -773,6 +797,151 @@
     "date": "2026-11-09",
     "views": 24,
     "cta": 2
+   },
+   {
+    "date": "2026-11-10",
+    "views": 1,
+    "cta": 0
+   }
+  ]
+ },
+ "traffic": {
+  "channels": [
+   {
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 24
+   },
+   {
+    "source": "google",
+    "medium": "organic",
+    "sessions": 5
+   },
+   {
+    "source": "chatgpt.com",
+    "medium": "ai-assistant",
+    "sessions": 4
+   },
+   {
+    "source": "tradeadmin.com.au",
+    "medium": "referral",
+    "sessions": 1
+   }
+  ],
+  "referrers": [
+   {
+    "url": "https://www.google.com/",
+    "views": 4
+   },
+   {
+    "url": "android-app://com.google.android.gm/",
+    "views": 1
+   },
+   {
+    "url": "android-app://com.google.android.googlequicksearchbox/",
+    "views": 1
+   },
+   {
+    "url": "https://tradeadmin.com.au/",
+    "views": 1
+   }
+  ],
+  "daily": [
+   {
+    "date": "2026-10-28",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
+   },
+   {
+    "date": "2026-10-29",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 3
+   },
+   {
+    "date": "2026-11-02",
+    "source": "chatgpt.com",
+    "medium": "ai-assistant",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-03",
+    "source": "chatgpt.com",
+    "medium": "ai-assistant",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-04",
+    "source": "chatgpt.com",
+    "medium": "ai-assistant",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-04",
+    "source": "tradeadmin.com.au",
+    "medium": "referral",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-05",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 3
+   },
+   {
+    "date": "2026-11-06",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 2
+   },
+   {
+    "date": "2026-11-06",
+    "source": "google",
+    "medium": "organic",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-07",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 9
+   },
+   {
+    "date": "2026-11-08",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-08",
+    "source": "google",
+    "medium": "organic",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-09",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 3
+   },
+   {
+    "date": "2026-11-09",
+    "source": "google",
+    "medium": "organic",
+    "sessions": 3
+   },
+   {
+    "date": "2026-11-09",
+    "source": "chatgpt.com",
+    "medium": "ai-assistant",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-10",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
    }
   ]
  }

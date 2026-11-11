@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-10T19:00:10.598Z",
+ "generatedAt": "2026-11-11T12:49:45.317Z",
  "period": {
-  "start": "2026-10-13",
-  "end": "2026-11-09"
+  "start": "2026-10-14",
+  "end": "2026-11-10"
  },
  "gscPeriod": {
-  "start": "2026-10-11",
-  "end": "2026-11-07"
+  "start": "2026-10-12",
+  "end": "2026-11-08"
  },
  "sources": {
   "ga4": true,
@@ -64,6 +64,11 @@
    "date": "2026-11-07",
    "clicks": 0,
    "impressions": 0
+  },
+  {
+   "date": "2026-11-08",
+   "clicks": 0,
+   "impressions": 0
   }
  ],
  "allTime": {
@@ -76,6 +81,24 @@
     "date": "2026-11-05",
     "views": 3,
     "cta": 0
+   }
+  ]
+ },
+ "traffic": {
+  "channels": [
+   {
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 3
+   }
+  ],
+  "referrers": [],
+  "daily": [
+   {
+    "date": "2026-11-05",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 3
    }
   ]
  }

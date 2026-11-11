@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-10T19:00:10.598Z",
+ "generatedAt": "2026-11-11T12:49:45.317Z",
  "period": {
-  "start": "2026-10-13",
-  "end": "2026-11-09"
+  "start": "2026-10-14",
+  "end": "2026-11-10"
  },
  "gscPeriod": {
-  "start": "2026-10-11",
-  "end": "2026-11-07"
+  "start": "2026-10-12",
+  "end": "2026-11-08"
  },
  "sources": {
   "ga4": true,
@@ -14,12 +14,12 @@
   "notes": []
  },
  "totals": {
-  "views": 176,
+  "views": 199,
   "prevViews": 0,
   "users": 91,
   "cta": {},
   "gscClicks": 4,
-  "gscImpressions": 501
+  "gscImpressions": 580
  },
  "daily": [
   {
@@ -81,22 +81,27 @@
    "date": "2026-11-09",
    "views": 10,
    "cta": 0
+  },
+  {
+   "date": "2026-11-10",
+   "views": 23,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 163,
+   "views": 186,
    "prevViews": 0,
    "users": 79,
    "cta": {},
    "gscClicks": 3,
-   "gscImpressions": 134,
-   "gscPosition": 68.3,
-   "topQuery": "pay calculator",
-   "allViews": 163,
-   "prev7": 92,
-   "d7": 71
+   "gscImpressions": 144,
+   "gscPosition": 66.9,
+   "topQuery": "mypaycalc",
+   "allViews": 186,
+   "prev7": 103,
+   "d7": 83
   },
   {
    "path": "/hecs-help-repayments",
@@ -105,12 +110,12 @@
    "users": 3,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 40,
-   "gscPosition": 62.4,
-   "topQuery": "hecs repayment calculator fortnightly",
+   "gscImpressions": 59,
+   "gscPosition": 67.2,
+   "topQuery": "hecs repayment",
    "allViews": 4,
-   "d7": 4,
-   "prev7": 0
+   "d7": 3,
+   "prev7": 1
   },
   {
    "path": "/contact",
@@ -133,9 +138,9 @@
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 198,
-   "gscPosition": 71.9,
-   "topQuery": "what tax bracket am i in australia",
+   "gscImpressions": 233,
+   "gscPosition": 73.4,
+   "topQuery": "australian tax brackets",
    "allViews": 1,
    "d7": 1,
    "prev7": 0
@@ -147,8 +152,8 @@
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 18,
-   "gscPosition": 9.2,
+   "gscImpressions": 22,
+   "gscPosition": 8.5,
    "topQuery": "mypaycalc",
    "allViews": 1,
    "d7": 1,
@@ -231,8 +236,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 1,
-   "gscImpressions": 15,
-   "gscPosition": 3.7,
+   "gscImpressions": 20,
+   "gscPosition": 4.1,
    "topQuery": "mypaycalc"
   },
   {
@@ -242,8 +247,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 15,
-   "gscPosition": 7.1,
+   "gscImpressions": 19,
+   "gscPosition": 7.5,
    "topQuery": "mypaycalc"
   },
   {
@@ -390,6 +395,17 @@
    "topQuery": "80000 after tax australia"
   },
   {
+   "path": "/salary/120000-after-tax",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 90.5,
+   "topQuery": "120000 after tax australia"
+  },
+  {
    "path": "/salary/20000-after-tax",
    "views": 0,
    "prevViews": 0,
@@ -526,16 +542,23 @@
   {
    "query": "mypaycalc",
    "clicks": 4,
-   "impressions": 80,
+   "impressions": 96,
    "position": 5.1,
    "page": "/"
   },
   {
    "query": "pay calculator",
    "clicks": 0,
-   "impressions": 18,
-   "position": 86.3,
+   "impressions": 19,
+   "position": 86.2,
    "page": "/"
+  },
+  {
+   "query": "australian tax brackets",
+   "clicks": 0,
+   "impressions": 17,
+   "position": 88.3,
+   "page": "/tax-brackets"
   },
   {
    "query": "what tax bracket am i in australia",
@@ -547,22 +570,29 @@
   {
    "query": "pay calculator australia",
    "clicks": 0,
-   "impressions": 12,
-   "position": 83,
+   "impressions": 13,
+   "position": 83.3,
    "page": "/"
   },
   {
    "query": "australia tax brackets",
    "clicks": 0,
-   "impressions": 10,
-   "position": 75.8,
+   "impressions": 11,
+   "position": 76.7,
    "page": "/tax-brackets"
   },
   {
-   "query": "australian tax brackets",
+   "query": "tax brackets",
    "clicks": 0,
-   "impressions": 10,
-   "position": 85.7,
+   "impressions": 11,
+   "position": 85.6,
+   "page": "/tax-brackets"
+  },
+  {
+   "query": "tax brackets australia",
+   "clicks": 0,
+   "impressions": 11,
+   "position": 71.4,
    "page": "/tax-brackets"
   },
   {
@@ -573,11 +603,11 @@
    "page": "/tax-brackets"
   },
   {
-   "query": "tax brackets australia",
+   "query": "pay after tax",
    "clicks": 0,
-   "impressions": 10,
-   "position": 69.6,
-   "page": "/tax-brackets"
+   "impressions": 9,
+   "position": 78.9,
+   "page": "/"
   },
   {
    "query": "paycalculator",
@@ -587,32 +617,46 @@
    "page": "/"
   },
   {
-   "query": "tax brackets",
-   "clicks": 0,
-   "impressions": 9,
-   "position": 84.2,
-   "page": "/tax-brackets"
-  },
-  {
-   "query": "pay after tax",
-   "clicks": 0,
-   "impressions": 8,
-   "position": 78.8,
-   "page": "/"
-  },
-  {
    "query": "tax brackets 2021",
    "clicks": 0,
-   "impressions": 8,
-   "position": 53.1,
+   "impressions": 9,
+   "position": 55.7,
    "page": "/tax-brackets"
   },
   {
    "query": "online pay calculator australia",
    "clicks": 0,
-   "impressions": 7,
-   "position": 81,
+   "impressions": 8,
+   "position": 82.3,
    "page": "/"
+  },
+  {
+   "query": "tax brackets 2026",
+   "clicks": 0,
+   "impressions": 7,
+   "position": 70.9,
+   "page": "/tax-brackets"
+  },
+  {
+   "query": "hecs repayment",
+   "clicks": 0,
+   "impressions": 6,
+   "position": 78,
+   "page": "/hecs-help-repayments"
+  },
+  {
+   "query": "aus tax brackets",
+   "clicks": 0,
+   "impressions": 6,
+   "position": 79.8,
+   "page": "/tax-brackets"
+  },
+  {
+   "query": "tax bracket",
+   "clicks": 0,
+   "impressions": 6,
+   "position": 92.2,
+   "page": "/tax-brackets"
   },
   {
    "query": "australian pay calculator",
@@ -643,24 +687,10 @@
    "page": "/salary/300000-after-tax"
   },
   {
-   "query": "aus tax brackets",
-   "clicks": 0,
-   "impressions": 5,
-   "position": 77.4,
-   "page": "/tax-brackets"
-  },
-  {
    "query": "income tax brackets australia",
    "clicks": 0,
    "impressions": 5,
    "position": 89.4,
-   "page": "/tax-brackets"
-  },
-  {
-   "query": "tax bracket",
-   "clicks": 0,
-   "impressions": 5,
-   "position": 91.4,
    "page": "/tax-brackets"
   },
   {
@@ -671,10 +701,10 @@
    "page": "/tax-brackets"
   },
   {
-   "query": "tax brackets 2026",
+   "query": "tax threshold 2026",
    "clicks": 0,
    "impressions": 5,
-   "position": 68.6,
+   "position": 82.2,
    "page": "/tax-brackets"
   },
   {
@@ -683,6 +713,13 @@
    "impressions": 4,
    "position": 32.8,
    "page": "/"
+  },
+  {
+   "query": "hecs repayment threshold",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 52,
+   "page": "/hecs-help-repayments"
   },
   {
    "query": "tax on 25000",
@@ -697,6 +734,13 @@
    "impressions": 4,
    "position": 69.8,
    "page": "/tax-brackets"
+  },
+  {
+   "query": "gross pay estimator 2019",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 45,
+   "page": "/"
   },
   {
    "query": "pay calculator for australia",
@@ -720,10 +764,10 @@
    "page": "/"
   },
   {
-   "query": "hecs repayment",
+   "query": "2026 help compulsory repayment credit",
    "clicks": 0,
    "impressions": 3,
-   "position": 79.7,
+   "position": 94.7,
    "page": "/hecs-help-repayments"
   },
   {
@@ -731,6 +775,13 @@
    "clicks": 0,
    "impressions": 3,
    "position": 60.7,
+   "page": "/hecs-help-repayments"
+  },
+  {
+   "query": "how much help debt do i pay",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 65.7,
    "page": "/hecs-help-repayments"
   },
   {
@@ -776,10 +827,10 @@
    "page": "/tax-brackets"
   },
   {
-   "query": "tax threshold 2026",
+   "query": "tax rates 2026",
    "clicks": 0,
    "impressions": 3,
-   "position": 85.3,
+   "position": 80,
    "page": "/tax-brackets"
   },
   {
@@ -808,13 +859,6 @@
    "clicks": 0,
    "impressions": 2,
    "position": 89.5,
-   "page": "/"
-  },
-  {
-   "query": "gross pay estimator 2019",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 45.5,
    "page": "/"
   },
   {
@@ -853,6 +897,13 @@
    "page": "/hecs-help-repayments"
   },
   {
+   "query": "hecs debt threshold 2025",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 79.5,
+   "page": "/hecs-help-repayments"
+  },
+  {
    "query": "hecs debt threshold 2026",
    "clicks": 0,
    "impressions": 2,
@@ -860,10 +911,24 @@
    "page": "/hecs-help-repayments"
   },
   {
-   "query": "hecs repayment threshold",
+   "query": "hecs interest rate 2026",
    "clicks": 0,
    "impressions": 2,
-   "position": 39,
+   "position": 89,
+   "page": "/hecs-help-repayments"
+  },
+  {
+   "query": "how much hecs should i be paying",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 79,
+   "page": "/hecs-help-repayments"
+  },
+  {
+   "query": "when do you start paying hecs",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 82,
    "page": "/hecs-help-repayments"
   },
   {
@@ -879,6 +944,13 @@
    "impressions": 2,
    "position": 52,
    "page": "/salary/110000-after-tax"
+  },
+  {
+   "query": "120000 after tax australia",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 90.5,
+   "page": "/salary/120000-after-tax"
   },
   {
    "query": "140 000 after tax australia",
@@ -900,6 +972,13 @@
    "impressions": 2,
    "position": 3,
    "page": "/salary/270000-after-tax"
+  },
+  {
+   "query": "2022 tax rates",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 26.5,
+   "page": "/tax-brackets"
   },
   {
    "query": "ato tax thresholds 2026",
@@ -955,6 +1034,34 @@
    "clicks": 0,
    "impressions": 2,
    "position": 59,
+   "page": "/tax-brackets"
+  },
+  {
+   "query": "tax brackets aus",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 77,
+   "page": "/tax-brackets"
+  },
+  {
+   "query": "tax brackets australia 2026",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 71.5,
+   "page": "/tax-brackets"
+  },
+  {
+   "query": "tax rates 2025-26",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 83,
+   "page": "/tax-brackets"
+  },
+  {
+   "query": "tax threshold 2021",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 60,
    "page": "/tax-brackets"
   },
   {
@@ -1112,6 +1219,13 @@
    "page": "/"
   },
   {
+   "query": "salary pay calculator australia",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 89,
+   "page": "/"
+  },
+  {
    "query": "take home salary australia",
    "clicks": 0,
    "impressions": 1,
@@ -1124,104 +1238,6 @@
    "impressions": 1,
    "position": 84,
    "page": "/"
-  },
-  {
-   "query": "2026 help compulsory repayment credit",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 90,
-   "page": "/hecs-help-repayments"
-  },
-  {
-   "query": "ato hecs",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 54,
-   "page": "/hecs-help-repayments"
-  },
-  {
-   "query": "hecs debt reduction calculator",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 79,
-   "page": "/hecs-help-repayments"
-  },
-  {
-   "query": "hecs debt repayment threshold 2026",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 52,
-   "page": "/hecs-help-repayments"
-  },
-  {
-   "query": "hecs how much do i owe",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 78,
-   "page": "/hecs-help-repayments"
-  },
-  {
-   "query": "hecs payment rates",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 91,
-   "page": "/hecs-help-repayments"
-  },
-  {
-   "query": "hecs repayment rates",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 72,
-   "page": "/hecs-help-repayments"
-  },
-  {
-   "query": "hecs repayment threshold 2025",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 76,
-   "page": "/hecs-help-repayments"
-  },
-  {
-   "query": "hecs threshold 2022",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 61,
-   "page": "/hecs-help-repayments"
-  },
-  {
-   "query": "help debt repayment",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 95,
-   "page": "/hecs-help-repayments"
-  },
-  {
-   "query": "help debt repayment threshold",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 53,
-   "page": "/hecs-help-repayments"
-  },
-  {
-   "query": "help repayment",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 71,
-   "page": "/hecs-help-repayments"
-  },
-  {
-   "query": "help repayment threshold",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 33,
-   "page": "/hecs-help-repayments"
-  },
-  {
-   "query": "help tax table 2026",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 9,
-   "page": "/hecs-help-repayments"
   }
  ],
  "gscDaily": [
@@ -1279,11 +1295,16 @@
    "date": "2026-11-07",
    "clicks": 0,
    "impressions": 67
+  },
+  {
+   "date": "2026-11-08",
+   "clicks": 0,
+   "impressions": 88
   }
  ],
  "allTime": {
   "start": "2026-10-29",
-  "views": 176,
+  "views": 199,
   "users": 91,
   "cta": {},
   "daily": [
@@ -1346,6 +1367,206 @@
     "date": "2026-11-09",
     "views": 10,
     "cta": 0
+   },
+   {
+    "date": "2026-11-10",
+    "views": 23,
+    "cta": 0
+   }
+  ]
+ },
+ "traffic": {
+  "channels": [
+   {
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 73
+   },
+   {
+    "source": "bing",
+    "medium": "organic",
+    "sessions": 12
+   },
+   {
+    "source": "google",
+    "medium": "organic",
+    "sessions": 3
+   },
+   {
+    "source": "duckduckgo",
+    "medium": "organic",
+    "sessions": 1
+   },
+   {
+    "source": "movietrailer.channel",
+    "medium": "referral",
+    "sessions": 1
+   }
+  ],
+  "referrers": [
+   {
+    "url": "https://www.bing.com/",
+    "views": 13
+   },
+   {
+    "url": "https://www.google.com/",
+    "views": 2
+   },
+   {
+    "url": "https://www.movietrailer.channel/",
+    "views": 2
+   },
+   {
+    "url": "android-app://com.google.android.googlequicksearchbox/",
+    "views": 1
+   },
+   {
+    "url": "https://bing.com/",
+    "views": 1
+   },
+   {
+    "url": "https://duckduckgo.com/",
+    "views": 1
+   }
+  ],
+  "daily": [
+   {
+    "date": "2026-10-29",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 29
+   },
+   {
+    "date": "2026-10-30",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 8
+   },
+   {
+    "date": "2026-10-31",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-01",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 10
+   },
+   {
+    "date": "2026-11-02",
+    "source": "bing",
+    "medium": "organic",
+    "sessions": 5
+   },
+   {
+    "date": "2026-11-02",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-02",
+    "source": "duckduckgo",
+    "medium": "organic",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-03",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 3
+   },
+   {
+    "date": "2026-11-03",
+    "source": "bing",
+    "medium": "organic",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-03",
+    "source": "google",
+    "medium": "organic",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-03",
+    "source": "movietrailer.channel",
+    "medium": "referral",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-04",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 2
+   },
+   {
+    "date": "2026-11-05",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 3
+   },
+   {
+    "date": "2026-11-05",
+    "source": "bing",
+    "medium": "organic",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-06",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 10
+   },
+   {
+    "date": "2026-11-06",
+    "source": "bing",
+    "medium": "organic",
+    "sessions": 2
+   },
+   {
+    "date": "2026-11-07",
+    "source": "google",
+    "medium": "organic",
+    "sessions": 2
+   },
+   {
+    "date": "2026-11-07",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-07",
+    "source": "bing",
+    "medium": "organic",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-08",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-09",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 2
+   },
+   {
+    "date": "2026-11-09",
+    "source": "bing",
+    "medium": "organic",
+    "sessions": 2
+   },
+   {
+    "date": "2026-11-10",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 2
    }
   ]
  }

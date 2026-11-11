@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-10T19:00:10.598Z",
+ "generatedAt": "2026-11-11T12:49:45.317Z",
  "period": {
-  "start": "2026-10-13",
-  "end": "2026-11-09"
+  "start": "2026-10-14",
+  "end": "2026-11-10"
  },
  "gscPeriod": {
-  "start": "2026-10-11",
-  "end": "2026-11-07"
+  "start": "2026-10-12",
+  "end": "2026-11-08"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 87,
+  "views": 89,
   "prevViews": 0,
-  "users": 67,
+  "users": 69,
   "cta": {
    "book_tour": 2,
    "website": 1,
    "map": 1
   },
   "gscClicks": 4,
-  "gscImpressions": 2019
+  "gscImpressions": 2051
  },
  "daily": [
   {
@@ -115,22 +115,27 @@
    "date": "2026-11-09",
    "views": 2,
    "cta": 0
+  },
+  {
+   "date": "2026-11-10",
+   "views": 2,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 42,
+   "views": 44,
    "prevViews": 0,
-   "users": 29,
+   "users": 31,
    "cta": {},
    "gscClicks": 2,
    "gscImpressions": 6,
    "gscPosition": 3,
    "topQuery": "victours",
-   "allViews": 211,
-   "prev7": 9,
-   "d7": 7
+   "allViews": 213,
+   "d7": 9,
+   "prev7": 8
   },
   {
    "path": "/towns",
@@ -243,8 +248,8 @@
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 57,
-   "gscPosition": 71,
+   "gscImpressions": 58,
+   "gscPosition": 70.9,
    "topQuery": "activities lorne victoria",
    "allViews": 1,
    "prev7": 1,
@@ -334,6 +339,18 @@
    "allViews": 1
   },
   {
+   "path": "/day-trips",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 83.5,
+   "topQuery": "day excursions from melbourne",
+   "allViews": 1
+  },
+  {
    "path": "/ballarat",
    "views": 1,
    "prevViews": 0,
@@ -351,18 +368,6 @@
     "book_tour": 1,
     "website": 1
    }
-  },
-  {
-   "path": "/day-trips",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 84.4,
-   "topQuery": "day excursions from melbourne",
-   "allViews": 1
   },
   {
    "path": "/road-trips/murray-and-north-east-road-trip",
@@ -601,8 +606,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 73,
-   "gscPosition": 48.8,
+   "gscImpressions": 74,
+   "gscPosition": 49,
    "topQuery": "1004 mornington-flinders road red hill vic 3937"
   },
   {
@@ -634,8 +639,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 40,
-   "gscPosition": 71.5,
+   "gscImpressions": 41,
+   "gscPosition": 71.8,
    "topQuery": "110 metung road metung vic 3904"
   },
   {
@@ -733,8 +738,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 26,
-   "gscPosition": 63.3,
+   "gscImpressions": 27,
+   "gscPosition": 63.7,
    "topQuery": "sorrento"
   },
   {
@@ -813,6 +818,17 @@
    "gscImpressions": 21,
    "gscPosition": 39,
    "topQuery": "lakes entrance"
+  },
+  {
+   "path": "/queenscliff",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 21,
+   "gscPosition": 70.4,
+   "topQuery": "things to do in queenscliff"
   },
   {
    "path": "/southbank/eat",
@@ -903,6 +919,50 @@
    "topQuery": "romantic getaways victoria for couples"
   },
   {
+   "path": "/torquay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 15,
+   "gscPosition": 76.3,
+   "topQuery": "torquay"
+  },
+  {
+   "path": "/williamstown",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 15,
+   "gscPosition": 71.7,
+   "topQuery": "williamstown"
+  },
+  {
+   "path": "/dunkeld",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 14,
+   "gscPosition": 60.1,
+   "topQuery": "dunkeld racecourse"
+  },
+  {
+   "path": "/omeo/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 14,
+   "gscPosition": 68.6,
+   "topQuery": "486 omeo valley road omeo"
+  },
+  {
    "path": "/wangaratta",
    "views": 0,
    "prevViews": 0,
@@ -936,39 +996,6 @@
    "topQuery": "echuca moama attractions"
   },
   {
-   "path": "/queenscliff",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 13,
-   "gscPosition": 66.7,
-   "topQuery": "things to do in queenscliff"
-  },
-  {
-   "path": "/torquay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 13,
-   "gscPosition": 76.7,
-   "topQuery": "torquay"
-  },
-  {
-   "path": "/williamstown",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 13,
-   "gscPosition": 70.5,
-   "topQuery": "williamstown"
-  },
-  {
    "path": "/bellarine-peninsula/do",
    "views": 0,
    "prevViews": 0,
@@ -978,17 +1005,6 @@
    "gscImpressions": 12,
    "gscPosition": 59.5,
    "topQuery": "things to do bellarine peninsula"
-  },
-  {
-   "path": "/dunkeld",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 12,
-   "gscPosition": 56.7,
-   "topQuery": "dunkeld racecourse"
   },
   {
    "path": "/echuca/stay",
@@ -1079,6 +1095,28 @@
    "topQuery": "places to eat st kilda"
   },
   {
+   "path": "/anglesea",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 10,
+   "gscPosition": 67.3,
+   "topQuery": "geelong to anglesea"
+  },
+  {
+   "path": "/carlton",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 10,
+   "gscPosition": 83.4,
+   "topQuery": "carlton clocktower"
+  },
+  {
    "path": "/dromana",
    "views": 0,
    "prevViews": 0,
@@ -1145,17 +1183,6 @@
    "topQuery": "things to do in queenscliff"
   },
   {
-   "path": "/carlton",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 9,
-   "gscPosition": 84.2,
-   "topQuery": "carlton clocktower"
-  },
-  {
    "path": "/great-ocean-road/stay",
    "views": 0,
    "prevViews": 0,
@@ -1165,17 +1192,6 @@
    "gscImpressions": 9,
    "gscPosition": 70.3,
    "topQuery": "great ocean road accommodation"
-  },
-  {
-   "path": "/omeo/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 9,
-   "gscPosition": 69.3,
-   "topQuery": "486 omeo valley road omeo"
   },
   {
    "path": "/road-trips/mornington-peninsula-day-trip",
@@ -1486,17 +1502,6 @@
    "topQuery": "cheap getaways victoria"
   },
   {
-   "path": "/anglesea",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 73.8,
-   "topQuery": "anglesea 3230"
-  },
-  {
    "path": "/castlemaine",
    "views": 0,
    "prevViews": 0,
@@ -1506,6 +1511,17 @@
    "gscImpressions": 5,
    "gscPosition": 73.4,
    "topQuery": "things to do in castlemaine"
+  },
+  {
+   "path": "/collections/food-and-wine-weekends",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 5,
+   "gscPosition": 67,
+   "topQuery": "food & wine tours"
   },
   {
    "path": "/day-trips/castlemaine",
@@ -1902,17 +1918,6 @@
    "gscImpressions": 3,
    "gscPosition": 63.7,
    "topQuery": "accommodation carlton victoria australia"
-  },
-  {
-   "path": "/collections/food-and-wine-weekends",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 58.7,
-   "topQuery": "food and wine tours"
   },
   {
    "path": "/geelong/do",
@@ -2864,8 +2869,8 @@
   {
    "query": "110 metung road metung vic 3904",
    "clicks": 0,
-   "impressions": 20,
-   "position": 71.8,
+   "impressions": 21,
+   "position": 72.3,
    "page": "/metung"
   },
   {
@@ -2923,6 +2928,13 @@
    "impressions": 15,
    "position": 74.9,
    "page": "/southbank/stay"
+  },
+  {
+   "query": "things to do in queenscliff",
+   "clicks": 0,
+   "impressions": 14,
+   "position": 65.6,
+   "page": "/queenscliff"
   },
   {
    "query": "lorne attractions",
@@ -3002,13 +3014,6 @@
    "page": "/marysville/do"
   },
   {
-   "query": "things to do in queenscliff",
-   "clicks": 0,
-   "impressions": 10,
-   "position": 61.1,
-   "page": "/queenscliff"
-  },
-  {
    "query": "apollo bay",
    "clicks": 0,
    "impressions": 10,
@@ -3079,6 +3084,13 @@
    "page": "/mornington/eat"
   },
   {
+   "query": "things to do queenscliff",
+   "clicks": 0,
+   "impressions": 9,
+   "position": 71.4,
+   "page": "/queenscliff"
+  },
+  {
    "query": "things to do in st kilda",
    "clicks": 0,
    "impressions": 9,
@@ -3105,6 +3117,20 @@
    "impressions": 8,
    "position": 99,
    "page": "/mornington-peninsula/eat"
+  },
+  {
+   "query": "179 day avenue omeo vic 3898",
+   "clicks": 0,
+   "impressions": 8,
+   "position": 75,
+   "page": "/omeo/stay"
+  },
+  {
+   "query": "486 omeo valley road omeo",
+   "clicks": 0,
+   "impressions": 8,
+   "position": 59.3,
+   "page": "/omeo/stay"
   },
   {
    "query": "brunch in richmond",
@@ -3175,13 +3201,6 @@
    "impressions": 7,
    "position": 54.1,
    "page": "/mornington-peninsula/eat"
-  },
-  {
-   "query": "486 omeo valley road omeo",
-   "clicks": 0,
-   "impressions": 7,
-   "position": 57.3,
-   "page": "/omeo/stay"
   },
   {
    "query": "polperro bistro red hill",
@@ -3359,13 +3378,6 @@
    "page": "/phillip-island/do"
   },
   {
-   "query": "things to do queenscliff",
-   "clicks": 0,
-   "impressions": 5,
-   "position": 67.8,
-   "page": "/queenscliff"
-  },
-  {
    "query": "yarra valley day tour",
    "clicks": 0,
    "impressions": 5,
@@ -3532,13 +3544,6 @@
    "impressions": 4,
    "position": 81.8,
    "page": "/lorne"
-  },
-  {
-   "query": "marysville holiday park",
-   "clicks": 0,
-   "impressions": 4,
-   "position": 49.8,
-   "page": "/marysville"
   }
  ],
  "gscDaily": [
@@ -3641,12 +3646,17 @@
    "date": "2026-11-07",
    "clicks": 0,
    "impressions": 19
+  },
+  {
+   "date": "2026-11-08",
+   "clicks": 0,
+   "impressions": 33
   }
  ],
  "allTime": {
   "start": "2026-04-30",
-  "views": 270,
-  "users": 207,
+  "views": 272,
+  "users": 209,
   "cta": {
    "book_tour": 2,
    "website": 1,
@@ -4017,6 +4027,141 @@
     "date": "2026-11-09",
     "views": 2,
     "cta": 0
+   },
+   {
+    "date": "2026-11-10",
+    "views": 2,
+    "cta": 0
+   }
+  ]
+ },
+ "traffic": {
+  "channels": [
+   {
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 32
+   },
+   {
+    "source": "google",
+    "medium": "organic",
+    "sessions": 15
+   },
+   {
+    "source": "movietrailer.channel",
+    "medium": "referral",
+    "sessions": 10
+   },
+   {
+    "source": "scriblihelp.com",
+    "medium": "referral",
+    "sessions": 1
+   }
+  ],
+  "referrers": [
+   {
+    "url": "https://www.google.com/",
+    "views": 16
+   },
+   {
+    "url": "android-app://com.google.android.googlequicksearchbox/",
+    "views": 8
+   },
+   {
+    "url": "android-app://com.google.android.gm/",
+    "views": 1
+   },
+   {
+    "url": "https://dashboard.commissionfactory.com/",
+    "views": 1
+   },
+   {
+    "url": "https://scriblihelp.com/",
+    "views": 1
+   },
+   {
+    "url": "https://www.movietrailer.channel/",
+    "views": 1
+   }
+  ],
+  "daily": [
+   {
+    "date": "2026-10-28",
+    "source": "movietrailer.channel",
+    "medium": "referral",
+    "sessions": 2
+   },
+   {
+    "date": "2026-10-29",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
+   },
+   {
+    "date": "2026-10-29",
+    "source": "movietrailer.channel",
+    "medium": "referral",
+    "sessions": 1
+   },
+   {
+    "date": "2026-10-30",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
+   },
+   {
+    "date": "2026-10-31",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-01",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 4
+   },
+   {
+    "date": "2026-11-02",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 2
+   },
+   {
+    "date": "2026-11-04",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-05",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-06",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 3
+   },
+   {
+    "date": "2026-11-08",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 2
+   },
+   {
+    "date": "2026-11-09",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 2
+   },
+   {
+    "date": "2026-11-10",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 2
    }
   ]
  }
