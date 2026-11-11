@@ -124,6 +124,11 @@ export function routes(): Route[] {
   for (const b of bundles) (bundlesByTown.get(b.town.slug) ?? bundlesByTown.set(b.town.slug, []).get(b.town.slug)!).push(b);
   const byKm = [...towns].sort((a, b) => (a.kmFromMelbourne ?? 0) - (b.kmFromMelbourne ?? 0));
   const isNeighbourhood = (t: Town) => t.kind === 'suburb';
+  /** "24 places to stay, 18 places to eat and drink and 10 things to do", leaving out any zero (no "0 places to stay"). */
+  const countsLine = (c: { stay: number; eat: number; do: number }) => {
+    const parts = [c.stay && `${c.stay} places to stay`, c.eat && `${c.eat} places to eat and drink`, c.do && `${c.do} things to do`].filter(Boolean) as string[];
+    return parts.length > 1 ? `${parts.slice(0, -1).join(', ')} and ${parts[parts.length - 1]}` : parts[0] ?? 'places to stay, eat and play';
+  };
   const out: Route[] = [];
 
   // Home
@@ -203,7 +208,7 @@ export function routes(): Route[] {
         title: `${t.name}: where to stay, eat and things to do` + SUFFIX,
         rawTitle: true,
         image: photoUrl(t.slug),
-        description: `${t.name}, ${km < 3 ? 'in central Melbourne' : `${km} km from Melbourne`}: ${totals.stay} places to stay, ${totals.eat} places to eat and drink and ${totals.do} things to do, with addresses, hours and maps.`,
+        description: `${t.name}, ${km < 3 ? 'in central Melbourne' : `${km} km from Melbourne`}: ${countsLine(totals)}, with addresses, hours and maps.`,
       },
       schema: [
         {
@@ -278,7 +283,7 @@ export function routes(): Route[] {
         title: `${r.name}: where to stay, eat and things to do` + SUFFIX,
         rawTitle: true,
         image: photoUrl(...r.towns.map((x) => x.slug)),
-        description: `The ${r.name}, town by town: ${r.towns.length} towns, ${totals.stay} places to stay, ${totals.eat} places to eat and drink and ${totals.do} things to do.`,
+        description: `The ${r.name}, town by town: ${r.towns.length} towns, ${countsLine(totals)}.`,
       },
       schema: [
         { '@context': 'https://schema.org', '@type': 'TouristDestination', name: `${r.name}, Victoria`, description: r.intro, url: `${SITE}/${r.slug}`, includesAttraction: r.towns.map((t) => ({ '@type': 'TouristDestination', name: t.name, url: `${SITE}/${t.slug}` })) },

@@ -176,3 +176,33 @@ export async function indexNow(host: string, key: string, urls: string[]): Promi
   });
   return res.status;
 }
+
+export interface UrlInspection {
+  url: string;
+  verdict: string; // PASS | NEUTRAL | FAIL | VERDICT_UNSPECIFIED
+  coverage: string; // e.g. "Submitted and indexed", "Crawled - currently not indexed", "Discovered - currently not indexed"
+  lastCrawl: string | null;
+  googleCanonical: string | null;
+  robots: string | null;
+  fetch: string | null;
+}
+
+/** Search Console URL Inspection: is this page in Google's index, and if not, why. Quota 2,000/day per property. */
+export async function inspectUrl(token: string, site: string, url: string): Promise<UrlInspection> {
+  const res = await fetch('https://searchconsole.googleapis.com/v1/urlInspection/index:inspect', {
+    method: 'POST',
+    headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json' },
+    body: JSON.stringify({ inspectionUrl: url, siteUrl: site, languageCode: 'en-AU' }),
+  });
+  if (!res.ok) throw new Error(`URL inspection ${url}: HTTP ${res.status} ${(await res.text()).slice(0, 200)}`);
+  const r = ((await res.json()) as { inspectionResult?: { indexStatusResult?: Record<string, string> } }).inspectionResult?.indexStatusResult ?? {};
+  return {
+    url,
+    verdict: r.verdict ?? 'VERDICT_UNSPECIFIED',
+    coverage: r.coverageState ?? 'unknown',
+    lastCrawl: r.lastCrawlTime ?? null,
+    googleCanonical: r.googleCanonical ?? null,
+    robots: r.robotsTxtState ?? null,
+    fetch: r.pageFetchState ?? null,
+  };
+}

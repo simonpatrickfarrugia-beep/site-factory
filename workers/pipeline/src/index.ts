@@ -14,7 +14,7 @@ import { enrich, intake, maxYear, recheck, type QueueItem, type Movie, type Resu
 import { commitFiles, readFiles, StaleError, type Repo } from './github';
 import { channelFeed, omdbFind, omdbLookup, omdbYearsForTitle, brainstormNiches, brainstormStats, judgeNiche, pickCategories, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
 import { buildCollections, minFilmsFor, winnable, MIN_OPENNESS, PERSON_MIN_FILMS, type Idea, type MovieCollection } from './collections';
-import { ga4Batch, googleAccessToken, searchAnalytics, youtubeSearch, type Ga4Row } from './google';
+import { ga4Batch, googleAccessToken, inspectUrl, searchAnalytics, youtubeSearch, type Ga4Row, type UrlInspection } from './google';
 /** GA4's earliest allowed date: "all time" reports start here and simply return nothing before a site existed. */
 const ALL_TIME_START = '2015-08-14';
 import { buildStats } from './stats';
@@ -74,7 +74,7 @@ export interface Env {
   STATUS?: KVNamespace;
 }
 
-type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections' | 'stats' | 'niches' | 'towns' | 'keywords' | 'competition' | 'collcheck' | 'ratings' | 'discover' | 'travel';
+type Job = 'intake' | 'enrich' | 'recheck' | 'demand' | 'catalogue' | 'collections' | 'stats' | 'niches' | 'towns' | 'keywords' | 'competition' | 'collcheck' | 'ratings' | 'discover' | 'travel' | 'indexcheck';
 
 /**
  * Workers Free allows 5 cron schedules per ACCOUNT, so the pipeline uses two (see wrangler.jsonc)
@@ -141,7 +141,7 @@ export default {
 
   async fetch(req: Request, env: Env): Promise<Response> {
     const url = new URL(req.url);
-    const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue|collections|stats|niches|competition|collcheck|towns|keywords|ratings|discover|travel)$/);
+    const m = url.pathname.match(/^\/run\/(intake|enrich|recheck|demand|catalogue|collections|stats|niches|competition|collcheck|towns|keywords|ratings|discover|travel|indexcheck)$/);
     if (url.pathname === '/status') {
       if (!env.RUN_KEY || url.searchParams.get('key') !== env.RUN_KEY) return new Response('Forbidden\n', { status: 403 });
       const status = (await env.STATUS?.get('runs', 'json')) ?? {};
@@ -215,6 +215,7 @@ const NEEDS: Record<Job, (keyof Env)[]> = {
   discover: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD', 'ANTHROPIC_API_KEY'],
   collcheck: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD'],
   travel: ['GITHUB_TOKEN', 'DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD'],
+    indexcheck: ['GITHUB_TOKEN', 'GSC_SERVICE_ACCOUNT'],
 };
 
 export async function run(job: Job, env: Env, dryRun: boolean) {
@@ -226,6 +227,8 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
   const files =
     job === 'travel'
       ? [TRAVEL_TERMS, TRAVEL_ARCHIVE]
+      : job === 'indexcheck'
+      ? [VIC_TOWNS]
       : job === 'keywords'
       ? [KEYWORDS]
       : job === 'towns'
@@ -261,6 +264,7 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
   if (job === 'towns') return townsJob(env, repo, snap, now, dryRun);
   if (job === 'keywords') return keywordsJob(env, repo, snap, now, dryRun);
   if (job === 'travel') return travelJob(env, repo, snap, now, dryRun);
+  if (job === 'indexcheck') return indexCheckJob(env, repo, snap, now, dryRun);
   if (job === 'collections') return collectionsJob(env, repo, snap, now, dryRun, maxYear({ now, minAgeYears }));
 
   const state: State = {
@@ -772,6 +776,44 @@ async function travelJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: bo
   const updatedArchive = upsertArchive(archive, data);
   const commit = await save(repo, snap.sha, { [TRAVEL_DATA]: JSON.stringify(data, null, 1) + '\n', [TRAVEL_ARCHIVE]: JSON.stringify(updatedArchive, null, 1) + '\n' }, `Simon Says Travel: monthly trends ${data.updated}\n\n${log.join('\n')}`, dryRun, log);
   return { job: 'travel' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report: undefined as string | undefined };
+}
+
+/**
+ * Index check (manual, Vic Tours): asks Search Console's URL Inspection API whether the first pages in the live sitemap
+ * (home, hubs, then towns most-searched first) are in Google's index, and why not. Writes reports/vic/index-status.md.
+ * Free; ~40 pages per run (Workers free plan: 50 outgoing calls).
+ */
+const INDEX_REPORT = 'reports/vic/index-status.md';
+async function indexCheckJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean) {
+  const site = 'sc-domain:victours.com.au';
+  const log: string[] = [];
+  const xml = await (await fetch('https://victours.com.au/sitemap.xml')).text();
+  const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]).slice(0, 40);
+  const token = await googleAccessToken(env.GSC_SERVICE_ACCOUNT!, 'https://www.googleapis.com/auth/webmasters.readonly');
+  const rows: UrlInspection[] = [];
+  for (const u of urls) {
+    try {
+      rows.push(await inspectUrl(token, site, u));
+    } catch (e) {
+      log.push((e as Error).message);
+      if (/HTTP 403|HTTP 429/.test((e as Error).message)) break;
+    }
+  }
+  const counts = new Map<string, number>();
+  for (const r of rows) counts.set(r.coverage, (counts.get(r.coverage) ?? 0) + 1);
+  const summary = [...counts].sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}: ${v}`).join(' · ');
+  log.unshift(`Index check: ${rows.length} of ${urls.length} Vic pages inspected. ${summary}`);
+  const day = (iso: string | null) => (iso ? iso.slice(0, 10) : '—');
+  const md = [
+    '# Vic Tours: is Google indexing the pages?', '',
+    `Checked ${now.toISOString().slice(0, 10)} with the Search Console URL Inspection API: the first ${rows.length} pages of the live sitemap (home, hubs, then towns, most-searched first).`, '',
+    `**${summary || 'no results'}**`, '',
+    '| Page | Google says | Last crawled | Fetch | Google\'s canonical |', '|---|---|---|---|---|',
+    ...rows.map((r) => `| ${r.url.replace('https://victours.com.au', '') || '/'} | ${r.coverage} | ${day(r.lastCrawl)} | ${r.fetch ?? '—'} | ${r.googleCanonical && r.googleCanonical !== r.url ? r.googleCanonical : 'same'} |`),
+    '', ...(log.length > 1 ? ['## Errors', '', ...log.slice(1).map((l) => `- ${l}`), ''] : []),
+  ].join('\n');
+  const commit = await save(repo, snap.sha, { [INDEX_REPORT]: md }, `Vic Tours: index check [skip ci]\n\n${log[0]}`, dryRun, log);
+  return { job: 'indexcheck' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report: md as string | undefined };
 }
 
 async function keywordsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean) {
