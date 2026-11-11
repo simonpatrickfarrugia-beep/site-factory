@@ -34,6 +34,15 @@ export interface SiteStats {
   totals: { views: number; prevViews: number; users: number; cta: Record<string, number>; gscClicks: number; gscImpressions: number };
   daily: { date: string; views: number; cta: number }[];
   pages: PageStats[];
+  /**
+   * Where visits come from (GA4, last 28 days): sessions by source/medium, the outside pages that sent visitors
+   * (self-referrals removed), and sources per day for the last 14 days so a spike can be traced to who shared the link.
+   */
+  traffic?: {
+    channels: { source: string; medium: string; sessions: number }[];
+    referrers: { url: string; views: number }[];
+    daily: { date: string; source: string; medium: string; sessions: number }[];
+  };
   /** Top Google searches across the whole site (by impressions), for the morning dashboard. */
   queries?: { query: string; clicks: number; impressions: number; position: number; page: string }[];
   /** Google clicks and impressions per day (Search Console reports with a 2–3 day delay). */
@@ -206,5 +215,25 @@ export function buildStats(input: {
     queries,
     gscDaily,
     ...(allTime ? { allTime } : {}),
+  };
+}
+
+/** Shapes GA4 source/referrer rows into SiteStats.traffic. `host` = the site's own domain (its referrals are dropped). */
+export function buildTraffic(host: string, channels: Ga4Row[], referrers: Ga4Row[], daily: Ga4Row[], since: string): NonNullable<SiteStats['traffic']> {
+  const own = (u: string) => {
+    try {
+      return new URL(u).hostname.replace(/^www\./, '').endsWith(host);
+    } catch {
+      return true; // "(not set)" and junk
+    }
+  };
+  const iso = (d: string) => `${d.slice(0, 4)}-${d.slice(4, 6)}-${d.slice(6, 8)}`;
+  return {
+    channels: channels.map((r) => ({ source: r.dims[0], medium: r.dims[1], sessions: r.mets[0] })).sort((a, b) => b.sessions - a.sessions).slice(0, 15),
+    referrers: referrers.filter((r) => r.dims[0] && !own(r.dims[0])).map((r) => ({ url: r.dims[0], views: r.mets[0] })).sort((a, b) => b.views - a.views).slice(0, 20),
+    daily: daily
+      .map((r) => ({ date: iso(r.dims[0]), source: r.dims[1], medium: r.dims[2], sessions: r.mets[0] }))
+      .filter((r) => r.date >= since)
+      .sort((a, b) => (a.date === b.date ? b.sessions - a.sessions : a.date < b.date ? -1 : 1)),
   };
 }

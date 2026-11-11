@@ -33,6 +33,10 @@ Follow `CLAUDE.md`. The only repo changes allowed here: recording a milestone (s
 3. **📨 Radar**: N prospects waiting (by brand) + the top one in a few words. https://imn-hq.simonpatrickfarrugia.workers.dev
 4. **📊 Sites**: one line each: yesterday's visits vs 7-day average, money clicks yesterday, 28-day visits with % vs prevViews,
    and for sites with target90 "day X of 90, Y% of visit target". If generatedAt is 30+ hours old: "Stats didn't refresh".
+   **Where from** (from `traffic`, when present): for any site with a visits spike yesterday, name the source behind it from
+   `traffic.daily`; and once a week (Mondays) the top 3 outside sources of the last 28 days. Name a referrer page when
+   `traffic.referrers` has one that sent 3+ views and isn't a search engine or social site: that's an organisation sharing
+   the link. Say "Radar can find more like <org>". Never guess a source the data doesn't show.
 5. **🔎 Google**: total clicks and impressions (28 days, all sites); the best-placed page in the top 20 if any (path, position, query).
 6. **📞 Day job**: top 3 from `leads/latest.md` (company (city) — why — opener in quotes), then
    https://github.com/simonpatrickfarrugia-beep/site-factory/blob/main/leads/latest.md . If the file isn't dated today (Melbourne) or has

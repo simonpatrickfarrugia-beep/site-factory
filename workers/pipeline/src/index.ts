@@ -17,7 +17,7 @@ import { buildCollections, minFilmsFor, winnable, MIN_OPENNESS, PERSON_MIN_FILMS
 import { ga4Batch, googleAccessToken, inspectUrl, searchAnalytics, youtubeSearch, type Ga4Row, type UrlInspection } from './google';
 /** GA4's earliest allowed date: "all time" reports start here and simply return nothing before a site existed. */
 const ALL_TIME_START = '2015-08-14';
-import { buildStats } from './stats';
+import { buildStats, buildTraffic } from './stats';
 import { calibrate, estimateMoney, moneyReport, type Measured, nicheReport, scoreNiche, type AffiliateCatalog, type Niche } from './niches';
 import { buildDemandReport } from './demand';
 import { pickTrailer, sameFilmTitle } from './titles';
@@ -548,6 +548,22 @@ async function statsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boo
       }
     }
     const stats = buildStats({ now, period: ga4 ? period : null, gscPeriod: gsc ? gscPeriod : null, notes, ga4, gsc });
+    // Where visits come from: one more batched GA4 call per site (sources, outside referrer pages, sources by day).
+    if (ga4 && property && gaToken) {
+      try {
+        const cur = [{ startDate: period.start, endDate: period.end }];
+        const [ch, refs, byDay] = await ga4Batch(gaToken, property, [
+          { dateRanges: cur, dimensions: ['sessionSource', 'sessionMedium'], metrics: ['sessions'] },
+          { dateRanges: cur, dimensions: ['pageReferrer'], metrics: ['screenPageViews'] },
+          { dateRanges: [{ startDate: day(14), endDate: period.end }], dimensions: ['date', 'sessionSource', 'sessionMedium'], metrics: ['sessions'] },
+        ]);
+        const host = (site.gsc ?? '').replace(/^sc-domain:/, '').replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+        stats.traffic = buildTraffic(host || '-', ch, refs, byDay, day(14));
+        log.push(`${site.name} sources: ${stats.traffic.channels.slice(0, 3).map((c) => `${c.source}/${c.medium} ${c.sessions}`).join(', ')}`);
+      } catch (e) {
+        log.push(`${site.name} GA4 sources failed: ${(e as Error).message}`);
+      }
+    }
     changes[site.path] = JSON.stringify(stats, null, 1) + '\n';
     log.unshift(`${site.name}: ${stats.totals.views} views, ${Object.values(stats.totals.cta).reduce((x, y) => x + y, 0)} CTA clicks, ${stats.totals.gscClicks} Google clicks.`);
   }
