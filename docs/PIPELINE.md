@@ -1,7 +1,7 @@
 # Trailer pipeline (movietrailer.channel)
 
 Builds the trailer catalogue from what people in the **USA** search for. **Any year**, as long as the film can be rented or streamed (films still in cinemas wait until they've been out 90 days, `AVAILABLE_AFTER_DAYS`). *(Until 18 Oct evening: older films only, Australian volumes.)*
-Only films at least 10 years old are added (`MIN_AGE_YEARS`), chosen by what people search for.
+Films are chosen by what people search for. The age cutoff `MIN_AGE_YEARS` is `0` (off) since 18 Oct.
 One Cloudflare Worker, `trailer-pipeline`, in `workers/pipeline/`. Replaces the Make.com scenarios.
 
 | Job | When (Melbourne time) | What it does |
