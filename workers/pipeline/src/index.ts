@@ -791,13 +791,11 @@ async function indexCheckJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun
   const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]).slice(0, 40);
   const token = await googleAccessToken(env.GSC_SERVICE_ACCOUNT!, 'https://www.googleapis.com/auth/webmasters.readonly');
   const rows: UrlInspection[] = [];
-  for (const u of urls) {
-    try {
-      rows.push(await inspectUrl(token, site, u));
-    } catch (e) {
-      log.push((e as Error).message);
-      if (/HTTP 403|HTTP 429/.test((e as Error).message)) break;
-    }
+  // 8 at a time: one by one takes longer than the 4-minute run limit; Google allows 600 inspections a minute.
+  for (let i = 0; i < urls.length; i += 8) {
+    const batch = await Promise.allSettled(urls.slice(i, i + 8).map((u) => inspectUrl(token, site, u)));
+    for (const b of batch) b.status === 'fulfilled' ? rows.push(b.value) : log.push((b.reason as Error).message);
+    if (log.some((l) => /HTTP 403|HTTP 429/.test(l))) break;
   }
   const counts = new Map<string, number>();
   for (const r of rows) counts.set(r.coverage, (counts.get(r.coverage) ?? 0) + 1);
