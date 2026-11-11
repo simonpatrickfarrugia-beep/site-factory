@@ -15,12 +15,15 @@ To change what a worker does, edit its SKILL.md and push. The scheduled task pic
 
 ## Roster
 
-| Worker | Skill | When (Melbourne) | Connectors it needs | Writes to |
-|---|---|---|---|---|
-| Morning report | `morning-report` | daily 08:56 | Cloudflare (D1 read), GitHub | `hq/milestones.json` only |
-| Weekly autopilot | `weekly-autopilot` | Mon 07:59 | GitHub, Gmail (read), Cloudflare | repo data, todo, reports |
-| IMN Radar | `imn-radar` | weekdays 07:34 | Cloudflare (D1), web search | D1 orgs/contacts/touches, hq_kv |
-| RBA rate day | `rba-rate-day` | each RBA decision day 15:15 | GitHub, web search | `data/paycalc/rates.json` |
+| Worker | Skill | When (Melbourne) | Model | Connectors (only these) | Writes to |
+|---|---|---|---|---|---|
+| Morning report | `morning-report` | daily 08:56 | Sonnet | Cloudflare, Claude Code Remote | `hq/milestones.json`, `hq/runs.json` |
+| IMN Radar | `imn-radar` | weekdays 07:34 | Opus | Cloudflare, Claude Code Remote | D1 orgs/contacts/touches, hq_kv, `hq/runs.json` |
+| Weekly autopilot | `weekly-autopilot` | Mon 07:59 | Opus | Gmail (read), Claude Code Remote | repo data, todo, reports, `hq/runs.json` |
+| RBA rate day | `rba-rate-day` | each RBA decision day 15:15 | Opus | Claude Code Remote | `data/paycalc/rates.json` |
+
+Claude Code Remote is what lets a scheduled run attach and push to this repo; web search is built in.
+Sonnet for reading and formatting, Opus where the job is research or judgement.
 
 Day-job workers (FCBT Radar 8:45 top-up and bonus top-up) are deliberately **not** in this repo: they're Simon's employer work,
 kept separate from IMN, and this repo is public.
@@ -40,4 +43,10 @@ Read CLAUDE.md, then read and follow .claude/skills/<name>/SKILL.md exactly.
 ## Adding a worker
 1. Write `.claude/skills/<name>/SKILL.md` (frontmatter `name`, `description`; then steps, what it may write, the final message).
 2. Try it once in a chat: "run the <name> skill".
-3. Create the scheduled task with the prompt above and only the connectors in its row. Add the row here.
+3. Create the scheduled task with the prompt above and only the connectors in its row. Add the row here,
+   and add the worker to `workersMaxAgeDays` in `hq/health.json` so a silent failure gets noticed.
+
+## Why the repo stays public
+GitHub Actions uses ~8,000 minutes a month here (measured 11 Nov 2026; the 8-brand "Check build" on every push is ~6,400).
+Private repos get 2,000 free minutes, so going private would stop the builds and daily jobs mid-month or cost ~US$50/month.
+Private material (Project docs, finances, day-job lists) goes in a separate private repo instead.

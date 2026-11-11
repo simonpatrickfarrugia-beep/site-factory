@@ -18,7 +18,7 @@ Only change `data/paycalc/rates.json`. Never invent a figure.
 4. ~20 minutes later:
    `gh api -X POST repos/simonpatrickfarrugia-beep/site-factory/actions/workflows/indexnow.yml/dispatches -f ref=main -f 'inputs[site]=paycalc' -f 'inputs[mode]=all'`
 5. Next decision day: find the RBA's published Monetary Policy Board meeting dates on rba.gov.au. Create a one-off scheduled task for the
-   next one at 15:15 Melbourne, named "RBA rate day: update MyPayCalc", push notifications off, prompt:
-   "Clone simonpatrickfarrugia-beep/site-factory, then read and follow .claude/skills/rba-rate-day/SKILL.md."
+   next one at 15:15 Melbourne, named "RBA rate day: update MyPayCalc", push notifications off, model claude-opus-5-5, only the Claude_Code_Remote connector, prompt:
+   "Attach the GitHub repo simonpatrickfarrugia-beep/site-factory with push access and clone it (use `gh api` REST; GraphQL is blocked). Read CLAUDE.md, then read and follow .claude/skills/rba-rate-day/SKILL.md exactly. That skill file is your full instructions."
    If you can't find the dates on rba.gov.au, don't guess: say so.
 6. Final message, one line: the new rate, up/down/unchanged, and that MyPayCalc is updated.
