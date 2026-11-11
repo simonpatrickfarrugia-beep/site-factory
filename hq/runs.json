@@ -1,4 +1,10 @@
 {
  "_about": "Last run of each AI worker (claude.ai scheduled task). Each skill's final step updates only its own entry. Checked daily by scripts/health.py (limits in hq/health.json).",
- "workers": {}
+ "workers": {
+  "imn-radar": {
+   "at": "2026-11-11T20:52:00Z",
+   "ok": true,
+   "note": "Added 3 (1 Vic: Main Street Mornington 82; 2 CHC: Chisholm, Wodonga TAFE SJCs); needed 4; 3 Vic dead ends"
+  }
+ }
 }
