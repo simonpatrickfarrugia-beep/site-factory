@@ -193,6 +193,7 @@ export async function inspectUrl(token: string, site: string, url: string): Prom
     method: 'POST',
     headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json' },
     body: JSON.stringify({ inspectionUrl: url, siteUrl: site, languageCode: 'en-AU' }),
+    signal: AbortSignal.timeout(20000),
   });
   if (!res.ok) throw new Error(`URL inspection ${url}: HTTP ${res.status} ${(await res.text()).slice(0, 200)}`);
   const r = ((await res.json()) as { inspectionResult?: { indexStatusResult?: Record<string, string> } }).inspectionResult?.indexStatusResult ?? {};

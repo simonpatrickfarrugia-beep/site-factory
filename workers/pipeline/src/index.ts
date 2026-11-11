@@ -781,14 +781,14 @@ async function travelJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: bo
 /**
  * Index check (manual, Vic Tours): asks Search Console's URL Inspection API whether the first pages in the live sitemap
  * (home, hubs, then towns most-searched first) are in Google's index, and why not. Writes reports/vic/index-status.md.
- * Free; ~40 pages per run (Workers free plan: 50 outgoing calls).
+ * Free; 24 pages per run, 8 at a time, 20 s each at most (the run workflow allows 4 minutes).
  */
 const INDEX_REPORT = 'reports/vic/index-status.md';
 async function indexCheckJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean) {
   const site = 'sc-domain:victours.com.au';
   const log: string[] = [];
   const xml = await (await fetch('https://victours.com.au/sitemap.xml')).text();
-  const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]).slice(0, 40);
+  const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]).slice(0, 24);
   const token = await googleAccessToken(env.GSC_SERVICE_ACCOUNT!, 'https://www.googleapis.com/auth/webmasters.readonly');
   const rows: UrlInspection[] = [];
   // 8 at a time: one by one takes longer than the 4-minute run limit; Google allows 600 inspections a minute.
