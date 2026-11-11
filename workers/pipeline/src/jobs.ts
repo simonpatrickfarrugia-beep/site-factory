@@ -8,7 +8,7 @@
  * Jobs work on plain data (movies + queue) and never touch the network directly,
  * so they can be tested with fake services.
  */
-import { cleanTitle, extractBracketYear, extractYear, isTrailer, slugify, titleKey } from './titles';
+import { cleanTitle, extractBracketYear, extractYear, isTrailer, sameFilmTitle, slugify, titleKey } from './titles';
 import type { Copy, FeedVideo, OmdbMovie } from './sources';
 
 /** Same shape as brands/trailers/model.ts (kept separate so the Worker has no Astro imports). */
@@ -325,7 +325,7 @@ export function notYetAvailable(m: OmdbMovie, svc: Pick<Services, 'now' | 'avail
 
 /** Returns why an OMDb result is the wrong film, or null if it's right. */
 export function mismatch(item: QueueItem, m: OmdbMovie): string | null {
-  if (titleKey(m.Title) !== titleKey(item.title)) return `OMDb returned "${m.Title}"`;
+  if (!sameFilmTitle(item.title, m.Title)) return `OMDb returned "${m.Title}"`;
   const y = Number(yearOf(m));
   if (!y) return 'OMDb has no year';
   // Classic labels post new trailers for old films, so the upload date says nothing about the film's year.

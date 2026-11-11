@@ -87,6 +87,36 @@ export async function omdbLookup(apiKey: string, title: string, year: number | n
   return { ...body, Title: stripYear(body.Title) };
 }
 
+/**
+ * Find a film robustly. The exact-title lookup (`t=`) misses some classics ("Casablanca" 1942 → not found) and can
+ * return podcast/YouTube episodes OMDb lists as movies ("150 Army of Darkness"). When it misses or returns the wrong
+ * title, search (`s=`, title + year), keep only results whose title and year match exactly, and fetch that one by
+ * IMDb id (`i=`). `spend()` takes one call from the run's budget and returns false when none are left.
+ */
+export async function omdbFind(
+  apiKey: string,
+  title: string,
+  year: number | null,
+  sameTitle: (a: string, b: string) => boolean,
+  spend: () => boolean,
+): Promise<OmdbMovie | null> {
+  const first = await omdbLookup(apiKey, title, year);
+  if (first && sameTitle(title, first.Title)) return first;
+  if (!spend()) return first;
+  const q = new URLSearchParams({ apikey: apiKey, s: title, type: 'movie' });
+  if (year) q.set('y', String(year));
+  const res = await fetch(`https://www.omdbapi.com/?${q}`);
+  if (!res.ok) return first;
+  const body = (await res.json()) as { Response: string; Search?: { Title: string; Year: string; imdbID: string }[] };
+  const hits = body.Response === 'True' ? body.Search ?? [] : [];
+  const hit = hits.find((m) => sameTitle(title, stripYear(m.Title)) && (!year || Math.abs(Number(m.Year.slice(0, 4)) - year) <= 1));
+  if (!hit || !spend()) return first;
+  const res2 = await fetch(`https://www.omdbapi.com/?${new URLSearchParams({ apikey: apiKey, i: hit.imdbID, plot: 'short' })}`);
+  if (!res2.ok) return first;
+  const m = (await res2.json()) as OmdbMovie & { Response: string };
+  return m.Response === 'True' ? { ...m, Title: stripYear(m.Title) } : first;
+}
+
 export interface Copy {
   tagline: string;
   summary: string;

@@ -12,7 +12,7 @@
 import { media } from './media';
 import { enrich, intake, maxYear, recheck, type QueueItem, type Movie, type Result, type State } from './jobs';
 import { commitFiles, readFiles, StaleError, type Repo } from './github';
-import { channelFeed, omdbLookup, omdbYearsForTitle, brainstormNiches, brainstormStats, judgeNiche, pickCategories, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
+import { channelFeed, omdbFind, omdbLookup, omdbYearsForTitle, brainstormNiches, brainstormStats, judgeNiche, pickCategories, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
 import { buildCollections, minFilmsFor, winnable, MIN_OPENNESS, PERSON_MIN_FILMS, type Idea, type MovieCollection } from './collections';
 import { ga4Batch, googleAccessToken, searchAnalytics, youtubeSearch, type Ga4Row } from './google';
 /** GA4's earliest allowed date: "all time" reports start here and simply return nothing before a site existed. */
@@ -20,7 +20,7 @@ const ALL_TIME_START = '2015-08-14';
 import { buildStats } from './stats';
 import { calibrate, estimateMoney, moneyReport, type Measured, nicheReport, scoreNiche, type AffiliateCatalog, type Niche } from './niches';
 import { buildDemandReport } from './demand';
-import { pickTrailer } from './titles';
+import { pickTrailer, sameFilmTitle } from './titles';
 import { buildCatalogue, type Candidate } from './catalogue';
 import { buildTravelData, upsertArchive, type ArchiveMonth, type TravelTerms } from './travel';
 import { cleanKeyword, domainTraffic, easyKeywords, keywordDifficulty, keywordIdeas, searchVolumes, serpTop10, type SerpResult } from './dataforseo';
@@ -268,9 +268,12 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
     queue: snap.files[QUEUE] ? (JSON.parse(snap.files[QUEUE]) as QueueItem[]) : [],
   };
 
+  const budget = { left: CALL_BUDGET };
   const svc = {
     feed: channelFeed,
-    omdb: (t: string, y: number | null) => omdbLookup(env.OMDB_API_KEY, t, y),
+    // Fallback search costs up to 2 extra calls; keep 3 in reserve for the item's trailer search and Claude copy.
+    omdb: (t: string, y: number | null) =>
+      omdbFind(env.OMDB_API_KEY, t, y, sameFilmTitle, () => (budget.left > 3 ? (budget.left--, true) : false)),
     sameTitle: (t: string) => omdbYearsForTitle(env.OMDB_API_KEY, t),
     copy: (m: Parameters<typeof writeCopy>[2]) => writeCopy(env.ANTHROPIC_API_KEY, env.ANTHROPIC_MODEL, m),
     trailer: async (title: string, year: string | null) => {
@@ -278,7 +281,7 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
       const hit = pickTrailer(await youtubeSearch(env.YOUTUBE_API_KEY, `${title} ${year ?? ''} official trailer`), title, year);
       return hit ? { youtubeId: hit.youtubeId, title: hit.title } : null;
     },
-    budget: { left: CALL_BUDGET },
+    budget,
     now,
     minAgeYears,
     availableAfterDays: Number(env.AVAILABLE_AFTER_DAYS ?? '90') || 0,

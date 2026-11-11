@@ -72,6 +72,17 @@ export function cleanTitle(videoTitle: string): string {
   return t;
 }
 
+/**
+ * Same film title? Equal keys, or OMDb's title is ours plus a subtitle ("Mad Max 2" → "Mad Max 2: The Road Warrior",
+ * "Dr. Strangelove" → "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb"). Years are checked separately.
+ */
+export function sameFilmTitle(ours: string, theirs: string): boolean {
+  if (titleKey(ours) === titleKey(theirs)) return true;
+  const norm = (t: string) => t.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/&/g, 'and').replace(/\s+/g, ' ').trim();
+  const a = norm(ours), b = norm(theirs);
+  return a.length >= 4 && b.startsWith(a) && /^(:|\s+or[:,\s])/.test(b.slice(a.length));
+}
+
 /** Comparison key: lower case, letters and digits only, no leading "the", "&" = "and", no "Episode VII". */
 export function titleKey(title: string): string {
   return title
