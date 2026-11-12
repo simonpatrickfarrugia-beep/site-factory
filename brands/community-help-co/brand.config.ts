@@ -25,6 +25,7 @@ export default defineBrand({
   ],
   footer: [
     { label: 'How it works', href: '/how-it-works' },
+    { label: 'Clinics for organisations', href: '/job-catalyst-clinics' },
     { label: 'Cover letter builder', href: '/cover-letter-builder' },
     { label: 'Advocacy support', href: '/advocacy-support' },
     { label: 'About Simon', href: '/about' },
@@ -41,7 +42,7 @@ export default defineBrand({
   },
 
   data: { source: 'snapshot' },
-  forms: ['enquiry', 'referral'],
+  forms: ['enquiry', 'referral', 'clinic'],
   analytics: { ga4Id: 'G-W507HD781R' }, // GA4 property "Community Help Co" (27 Oct 2026)
   payments: { enabled: false },
 });

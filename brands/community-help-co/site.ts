@@ -145,6 +145,24 @@ export function routes(): Route[] {
     });
   }
 
+  const jc = (pages as unknown as Record<string, any>)['job-catalyst-clinics'];
+  if (jc) {
+    out.push({
+      path: 'job-catalyst-clinics',
+      template: 'chcClinics',
+      seo: { title: jc.seoTitle, rawTitle: true, description: jc.description },
+      schema: [
+        {
+          '@context': 'https://schema.org', '@type': 'Service', name: jc.title, description: jc.description, serviceType: 'Employment coaching',
+          provider: { '@id': `${SITE}/#org` }, areaServed: { '@type': 'City', name: 'Melbourne' }, url: `${SITE}/job-catalyst-clinics`,
+          offers: jc.blocks.map((b: { name: string; price: number }) => ({ '@type': 'Offer', name: b.name, price: String(b.price), priceCurrency: 'AUD', valueAddedTaxIncluded: true })),
+        },
+        crumbs([{ name: 'Home', path: '' }, { name: 'Job Catalyst', path: 'job-catalyst' }, { name: jc.title, path: 'job-catalyst-clinics' }]),
+      ],
+      props: { email: site.email, endpoint: site.formsEndpoint, page: jc },
+    });
+  }
+
   out.push({
     path: 'faq',
     template: 'chcFaq',

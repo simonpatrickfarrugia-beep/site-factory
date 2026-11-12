@@ -42,7 +42,7 @@ export const brandSchema = z.object({
     base: z.string().regex(/^app[A-Za-z0-9]{14}$/).optional(),
   }).refine((d) => d.source !== 'airtable' || !!d.base, 'Airtable source needs a base ID'),
 
-  forms: z.array(z.enum(['contact', 'quote', 'supplier-signup', 'enquiry', 'referral', 'shortlist'])).default([]),
+  forms: z.array(z.enum(['contact', 'quote', 'supplier-signup', 'enquiry', 'referral', 'shortlist', 'clinic'])).default([]),
 
   analytics: z.object({
     /** Cloudflare Web Analytics site token (public, safe to commit). */

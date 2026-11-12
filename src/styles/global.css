@@ -536,6 +536,14 @@ main { display: block; }
 @media (prefers-reduced-motion: reduce) { .chc-note { transform: none; } }
 
 /* Services as plain rows, not identical cards */
+.chc-prices { list-style: none; padding: 0; margin: 0 0 1rem; display: grid; gap: 0.9rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+.chc-prices li { background: #fff; border: 2px solid var(--line); border-radius: 12px; padding: 1.1rem 1.2rem; display: grid; gap: 0.25rem; }
+.chc-prices h3 { font-size: 1.25rem; margin: 0; }
+.chc-prices p { margin: 0; }
+.chc-prices__detail { color: var(--muted); }
+.chc-prices__amount { font-family: var(--font-display); font-weight: 700; font-size: 2rem; color: var(--forest); }
+.chc-orglink { margin-top: 1rem; }
+.chc-fineprint { font-size: 0.8rem; line-height: 1.5; color: var(--muted); max-width: 46rem; margin: 0; }
 .chc-services { list-style: none; padding: 0; margin: 0; border-top: 2px solid var(--forest); }
 .chc-services li { padding-block: 1.4rem; border-bottom: 1px solid var(--line); display: grid; gap: 0.4rem; }
 @media (min-width: 52rem) { .chc-services li { grid-template-columns: 22rem 1fr; gap: 2rem; align-items: baseline; } }

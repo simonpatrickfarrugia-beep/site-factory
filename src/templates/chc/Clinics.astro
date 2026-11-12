@@ -1,0 +1,126 @@
+---
+/** /job-catalyst-clinics: block bookings for organisations, with every price published. The form posts to /api/submit/clinic (D1). */
+interface Block { name: string; detail: string; sessions: string; price: number; perPerson: number }
+interface Props {
+  email: string;
+  endpoint: string;
+  page: {
+    title: string; lede: string; gstNote: string; blocks: Block[]; priceNotes: string[];
+    steps: { t: string; d: string }[]; needs: string[]; limits: string[];
+    cancellation: string; why: string; pricing: string;
+  };
+}
+const { email, endpoint, page: p } = Astro.props;
+const money = (n: number) => '$' + n.toLocaleString('en-AU');
+---
+<section class="chc-pagehead">
+  <div class="chc-wrap">
+    <h1>{p.title}</h1>
+    <p class="chc-lede">{p.lede}</p>
+    <p class="chc-hero__actions"><a class="chc-btn" href="#book" data-cta="clinic_jump">Book a clinic</a></p>
+  </div>
+</section>
+
+<section class="chc-wrap chc-section" id="prices">
+  <h2 class="chc-h2">Prices</h2>
+  <ul class="chc-prices">
+    {p.blocks.map((b) => (
+      <li>
+        <h3>{b.name}</h3>
+        <p class="chc-prices__detail">{b.detail}</p>
+        <p class="chc-prices__amount">{money(b.price)}</p>
+        <p class="chc-small">{b.sessions} · about {money(b.perPerson)} per person</p>
+      </li>
+    ))}
+  </ul>
+  <p class="chc-small"><strong>{p.gstNote}</strong></p>
+  <ul class="chc-list">{p.priceNotes.map((n) => <li>{n}</li>)}</ul>
+</section>
+
+<section class="chc-section chc-band">
+  <div class="chc-wrap">
+    <h2 class="chc-h2">What happens in each session</h2>
+    <ol class="chc-steps">{p.steps.map((st) => <li><h3>{st.t}</h3><p>{st.d}</p></li>)}</ol>
+  </div>
+</section>
+
+<div class="chc-wrap chc-section chc-two">
+  <section>
+    <h2 class="chc-h2">What we need from you</h2>
+    <ul class="chc-list chc-list--ticks">{p.needs.map((n) => <li>{n}</li>)}</ul>
+  </section>
+  <section>
+    <h2 class="chc-h2">Honest limits</h2>
+    <ul class="chc-list">{p.limits.map((n) => <li>{n}</li>)}</ul>
+  </section>
+</div>
+
+<section class="chc-wrap chc-section chc-section--tight">
+  <div class="chc-funding">
+    <h2>Cancellations</h2>
+    <p>{p.cancellation}</p>
+  </div>
+</section>
+
+<section class="chc-wrap chc-section chc-section--tight chc-prose">
+  <h2 class="chc-h2">Why I do this</h2>
+  <p>{p.why}</p>
+</section>
+
+<div class="chc-wrap chc-section chc-forms">
+  <section id="book">
+    <h2 class="chc-h2">Book a clinic</h2>
+    <p>Tell us a little about your organisation and the dates that suit. Simon will email you back, usually within a working day, to confirm.</p>
+    <form class="chc-form" data-form action={`${endpoint}/submit/clinic`} method="post">
+      <label>Your name<input name="name" autocomplete="name" required /></label>
+      <label>Organisation<input name="organisation" autocomplete="organization" required /></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required /></label>
+      <label>Phone <span class="chc-opt">(optional)</span><input name="phone" type="tel" autocomplete="tel" /></label>
+      <label>Block
+        <select name="block" required>
+          {p.blocks.map((b) => <option value={`${b.name} (${money(b.price)})`}>{b.name}: {money(b.price)}</option>)}
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
+      </label>
+      <fieldset>
+        <legend>Where?</legend>
+        <label class="chc-choice"><input type="radio" name="format" value="in person" required /> In person</label>
+        <label class="chc-choice"><input type="radio" name="format" value="online (Teams)" /> Online (Teams)</label>
+      </fieldset>
+      <label>Suburb <span class="chc-opt">(for in-person clinics)</span><input name="suburb" /></label>
+      <label>Preferred dates<input name="dates" placeholder="e.g. any Tuesday in December" required /></label>
+      <label>About how many clients? <span class="chc-opt">(optional)</span><input name="clients" inputmode="numeric" /></label>
+      <label>Anything else? <span class="chc-opt">(optional)</span><textarea name="message" rows="4"></textarea></label>
+      <p class="chc-hint">Please don't include clients' names, health details or NDIS numbers here. We'll sort those out privately.</p>
+      <input class="chc-hp" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <button class="chc-btn" type="submit">Send booking request</button>
+      <p class="chc-form__status" role="status" aria-live="polite"></p>
+    </form>
+    <p class="chc-small">Prefer email? <a class="chc-link" href={`mailto:${email}?subject=Job%20Catalyst%20Clinic%20booking`}>{email}</a></p>
+  </section>
+</div>
+
+<section class="chc-wrap chc-section chc-section--tight">
+  <p class="chc-fineprint">{p.pricing}</p>
+</section>
+
+<script is:inline define:vars={{ email }}>
+  document.querySelectorAll('form[data-form]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var status = form.querySelector('.chc-form__status');
+      var button = form.querySelector('button[type=submit]');
+      button.disabled = true;
+      status.textContent = 'Sending…';
+      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { accept: 'application/json' } })
+        .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+        .then(function () {
+          form.reset();
+          status.textContent = 'Sent, thanks. Simon will email you back, usually within a working day.';
+          if (window.gtag) window.gtag('event', 'cta_clinic_booking');
+        })
+        .catch(function () { status.textContent = "That didn't send. Please email " + email + ' instead.'; })
+        .finally(function () { button.disabled = false; });
+    });
+  });
+</script>

@@ -29,6 +29,7 @@ import ChcJobFinder from './chc/JobFinder.astro';
 import ChcJournal from './chc/Journal.astro';
 import ChcResumeBuilder from './chc/ResumeBuilder.astro';
 import ChcCoverLetter from './chc/CoverLetter.astro';
+import ChcClinics from './chc/Clinics.astro';
 import VicBundle from './vic/VicBundle.astro';
 import VicBundles from './vic/VicBundles.astro';
 import VicTripBuilder from './vic/VicTripBuilder.astro';
@@ -95,6 +96,7 @@ export const templates = {
   chcJournal: ChcJournal,
   chcResumeBuilder: ChcResumeBuilder,
   chcCoverLetter: ChcCoverLetter,
+  chcClinics: ChcClinics,
   vicBundle: VicBundle,
   vicBundles: VicBundles,
   vicTripBuilder: VicTripBuilder,

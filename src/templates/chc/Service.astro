@@ -2,7 +2,7 @@
 import BookCta from './BookCta.astro';
 interface Props {
   book: string;
-  service: { name: string; lede: string; whoFor: string[]; included: string[]; funding: string };
+  service: { name: string; lede: string; whoFor: string[]; included: string[]; funding: string; orgLink?: { text: string; href: string; label: string } };
   steps: { t: string; d: string }[];
   others: { slug: string; name: string; short: string }[];
 }
@@ -32,6 +32,7 @@ const { book, service: s, steps, others } = Astro.props;
     <h2>Funding</h2>
     <p>{s.funding}</p>
   </div>
+  {s.orgLink && <p class="chc-orglink">{s.orgLink.text} <a class="chc-link" href={s.orgLink.href} data-cta="clinic_link">{s.orgLink.label} →</a></p>}
 </section>
 
 <section class="chc-section chc-band">

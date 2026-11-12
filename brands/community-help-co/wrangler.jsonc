@@ -16,7 +16,7 @@
   },
   // JOBS: live job ads at /api/jobs (Careerjet v4 API). The Careerjet API key is a Worker SECRET named CAREERJET_KEY,
   // set in the Cloudflare dashboard (Workers → community-help-co → Settings → Variables and Secrets), never here.
-  "vars": { "BRAND": "community-help-co", "FORMS": "enquiry,referral", "JOBS": "1" },
+  "vars": { "BRAND": "community-help-co", "FORMS": "enquiry,referral,clinic", "JOBS": "1" },
   "d1_databases": [
     { "binding": "DB", "database_name": "site-factory-forms", "database_id": "5441b63f-1ab8-484f-a6c7-0a0af4302774" }
   ],
