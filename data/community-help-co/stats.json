@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-11T19:00:09.914Z",
+ "generatedAt": "2026-11-12T19:00:12.283Z",
  "period": {
-  "start": "2026-10-14",
-  "end": "2026-11-10"
+  "start": "2026-10-15",
+  "end": "2026-11-11"
  },
  "gscPeriod": {
-  "start": "2026-10-12",
-  "end": "2026-11-08"
+  "start": "2026-10-13",
+  "end": "2026-11-09"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 68,
+  "views": 69,
   "prevViews": 0,
-  "users": 49,
+  "users": 50,
   "cta": {
    "journal_90": 3,
    "email_chat": 1,
    "google_reviews": 1
   },
   "gscClicks": 1,
-  "gscImpressions": 173
+  "gscImpressions": 179
  },
  "daily": [
   {
@@ -85,29 +85,34 @@
    "date": "2026-11-10",
    "views": 1,
    "cta": 0
+  },
+  {
+   "date": "2026-11-11",
+   "views": 1,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 24,
+   "views": 25,
    "prevViews": 0,
-   "users": 17,
+   "users": 18,
    "cta": {
     "email_chat": 1,
     "google_reviews": 1
    },
    "gscClicks": 1,
-   "gscImpressions": 123,
-   "gscPosition": 10.9,
+   "gscImpressions": 126,
+   "gscPosition": 10.8,
    "topQuery": "community services placement",
-   "allViews": 24,
+   "allViews": 25,
    "allCta": {
     "email_chat": 1,
     "google_reviews": 1
    },
    "d7": 20,
-   "prev7": 3
+   "prev7": 4
   },
   {
    "path": "/contact",
@@ -121,7 +126,7 @@
    "topQuery": "community help",
    "allViews": 8,
    "d7": 5,
-   "prev7": 3
+   "prev7": 2
   },
   {
    "path": "/resume-builder",
@@ -153,8 +158,8 @@
    "allCta": {
     "journal_90": 3
    },
-   "d7": 5,
-   "prev7": 1
+   "d7": 3,
+   "prev7": 3
   },
   {
    "path": "/job-finder",
@@ -163,8 +168,8 @@
    "users": 4,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 39,
+   "gscImpressions": 2,
+   "gscPosition": 31,
    "topQuery": "how to get part time jobs in australia",
    "allViews": 6,
    "d7": 4,
@@ -177,7 +182,7 @@
    "users": 3,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 6,
+   "gscImpressions": 7,
    "gscPosition": 7,
    "topQuery": "simon farrugia",
    "allViews": 3,
@@ -195,8 +200,8 @@
    "gscPosition": null,
    "topQuery": null,
    "allViews": 3,
-   "d7": 3,
-   "prev7": 0
+   "d7": 2,
+   "prev7": 1
   },
   {
    "path": "/cover-letter-builder",
@@ -265,8 +270,8 @@
    "gscPosition": null,
    "topQuery": null,
    "allViews": 2,
-   "d7": 2,
-   "prev7": 0
+   "d7": 1,
+   "prev7": 1
   },
   {
    "path": "/how-it-works",
@@ -289,7 +294,7 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 10,
+   "gscImpressions": 11,
    "gscPosition": 39.8,
    "topQuery": "hr support ringwood"
   },
@@ -316,15 +321,15 @@
   {
    "query": "community services placement",
    "clicks": 0,
-   "impressions": 25,
+   "impressions": 26,
    "position": 8.8,
    "page": "/"
   },
   {
    "query": "community service placement",
    "clicks": 0,
-   "impressions": 23,
-   "position": 12.6,
+   "impressions": 24,
+   "position": 12.3,
    "page": "/"
   },
   {
@@ -337,7 +342,7 @@
   {
    "query": "hr support ringwood",
    "clicks": 0,
-   "impressions": 9,
+   "impressions": 10,
    "position": 39.8,
    "page": "/find-staff"
   },
@@ -351,8 +356,8 @@
   {
    "query": "simon farrugia",
    "clicks": 0,
-   "impressions": 5,
-   "position": 8,
+   "impressions": 6,
+   "position": 7.8,
    "page": "/about"
   },
   {
@@ -431,6 +436,13 @@
    "impressions": 2,
    "position": 6,
    "page": "/free-daily-journal"
+  },
+  {
+   "query": "how to get part time jobs in australia",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 31,
+   "page": "/job-finder"
   },
   {
    "query": "free resume",
@@ -517,6 +529,13 @@
    "page": "/"
   },
   {
+   "query": "people who help with money",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 10,
+   "page": "/"
+  },
+  {
    "query": "what jobs can you get with a cert 4 in community services",
    "clicks": 0,
    "impressions": 1,
@@ -578,13 +597,6 @@
    "impressions": 1,
    "position": 30,
    "page": "/cover-letter-builder"
-  },
-  {
-   "query": "how to get part time jobs in australia",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 39,
-   "page": "/job-finder"
   },
   {
    "query": "product information support",
@@ -731,12 +743,17 @@
    "date": "2026-11-08",
    "clicks": 2,
    "impressions": 19
+  },
+  {
+   "date": "2026-11-09",
+   "clicks": 0,
+   "impressions": 12
   }
  ],
  "allTime": {
   "start": "2026-10-27",
-  "views": 68,
-  "users": 49,
+  "views": 69,
+  "users": 50,
   "cta": {
    "journal_90": 3,
    "email_chat": 1,
@@ -802,6 +819,11 @@
     "date": "2026-11-10",
     "views": 1,
     "cta": 0
+   },
+   {
+    "date": "2026-11-11",
+    "views": 1,
+    "cta": 0
    }
   ]
  },
@@ -810,7 +832,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 24
+    "sessions": 25
    },
    {
     "source": "google",
@@ -847,12 +869,6 @@
    }
   ],
   "daily": [
-   {
-    "date": "2026-10-28",
-    "source": "(direct)",
-    "medium": "(none)",
-    "sessions": 1
-   },
    {
     "date": "2026-10-29",
     "source": "(direct)",
@@ -939,6 +955,12 @@
    },
    {
     "date": "2026-11-10",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-11",
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 1

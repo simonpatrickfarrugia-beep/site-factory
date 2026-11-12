@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-11T19:00:09.914Z",
+ "generatedAt": "2026-11-12T19:00:12.283Z",
  "period": {
-  "start": "2026-10-14",
-  "end": "2026-11-10"
+  "start": "2026-10-15",
+  "end": "2026-11-11"
  },
  "gscPeriod": {
-  "start": "2026-10-12",
-  "end": "2026-11-08"
+  "start": "2026-10-13",
+  "end": "2026-11-09"
  },
  "sources": {
   "ga4": true,
@@ -14,23 +14,18 @@
   "notes": []
  },
  "totals": {
-  "views": 155,
-  "prevViews": 190,
-  "users": 127,
+  "views": 154,
+  "prevViews": 186,
+  "users": 126,
   "cta": {
    "films_banner": 1,
    "justwatch": 1,
    "prime": 1
   },
   "gscClicks": 1,
-  "gscImpressions": 135
+  "gscImpressions": 124
  },
  "daily": [
-  {
-   "date": "2026-10-14",
-   "views": 1,
-   "cta": 0
-  },
   {
    "date": "2026-10-15",
    "views": 80,
@@ -136,21 +131,21 @@
   {
    "path": "/",
    "views": 44,
-   "prevViews": 123,
+   "prevViews": 118,
    "users": 27,
    "cta": {
     "films_banner": 1
    },
    "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
+   "gscImpressions": 2,
+   "gscPosition": 57.5,
+   "topQuery": "movietr",
    "allViews": 184,
    "allCta": {
     "films_banner": 1
    },
-   "prev7": 8,
-   "d7": 3
+   "prev7": 7,
+   "d7": 2
   },
   {
    "path": "/browse",
@@ -163,8 +158,8 @@
    "gscPosition": null,
    "topQuery": null,
    "allViews": 14,
-   "d7": 1,
-   "prev7": 1
+   "prev7": 2,
+   "d7": 0
   },
   {
    "path": "/movies/batman-begins-2005",
@@ -221,9 +216,9 @@
    "users": 2,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 54,
-   "topQuery": "true lies trailer",
+   "gscImpressions": 2,
+   "gscPosition": 60,
+   "topQuery": "true lies movie trailer",
    "allViews": 4
   },
   {
@@ -299,18 +294,6 @@
    "allViews": 3
   },
   {
-   "path": "/movies/mystic-river-2003",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 60.8,
-   "topQuery": "mystic river 2003 trailer",
-   "allViews": 2
-  },
-  {
    "path": "/movies/men-in-black-1997",
    "views": 2,
    "prevViews": 0,
@@ -323,15 +306,27 @@
    "allViews": 2
   },
   {
+   "path": "/movies/mystic-river-2003",
+   "views": 2,
+   "prevViews": 0,
+   "users": 2,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 4,
+   "gscPosition": 62.5,
+   "topQuery": "mystic river 2003 trailer",
+   "allViews": 2
+  },
+  {
    "path": "/movies/lost-in-translation-2003",
    "views": 2,
    "prevViews": 0,
    "users": 2,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 54,
-   "topQuery": "lost in translation movie trailer",
+   "gscImpressions": 1,
+   "gscPosition": 64,
+   "topQuery": "lost in translation trailer",
    "allViews": 2
   },
   {
@@ -653,18 +648,6 @@
    "d7": 0
   },
   {
-   "path": "/movies/whalefall-2026",
-   "views": 1,
-   "prevViews": 3,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 1,
-   "gscImpressions": 1,
-   "gscPosition": 51,
-   "topQuery": "whalefall 2026 full movie",
-   "allViews": 4
-  },
-  {
    "path": "/contact",
    "views": 1,
    "prevViews": 0,
@@ -750,9 +733,7 @@
    "gscImpressions": 0,
    "gscPosition": null,
    "topQuery": null,
-   "allViews": 1,
-   "prev7": 1,
-   "d7": 0
+   "allViews": 1
   },
   {
    "path": "/movies/raiders-of-the-lost-ark-1981",
@@ -844,8 +825,8 @@
     "justwatch": 1,
     "prime": 1
    },
-   "d7": 1,
-   "prev7": 0
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/movies/the-sandlot-1993",
@@ -860,14 +841,26 @@
    "allViews": 1
   },
   {
+   "path": "/movies/whalefall-2026",
+   "views": 0,
+   "prevViews": 4,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 1,
+   "gscImpressions": 1,
+   "gscPosition": 51,
+   "topQuery": "whalefall 2026 full movie",
+   "allViews": 4
+  },
+  {
    "path": "/movies/home-alone-1990",
    "views": 0,
    "prevViews": 3,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 13,
-   "gscPosition": 50.6,
+   "gscImpressions": 12,
+   "gscPosition": 52,
    "topQuery": "home alone trailer",
    "allViews": 3
   },
@@ -891,7 +884,7 @@
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 12,
-   "gscPosition": 48.4,
+   "gscPosition": 53.1,
    "topQuery": "the prestige trailer",
    "allViews": 2
   },
@@ -1010,21 +1003,9 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 44.5,
-   "topQuery": "inception the movie trailer",
-   "allViews": 1
-  },
-  {
-   "path": "/movies/inglourious-basterds-2009",
-   "views": 0,
-   "prevViews": 1,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
    "gscImpressions": 1,
-   "gscPosition": 98,
-   "topQuery": "inglourious basterds trailer",
+   "gscPosition": 38,
+   "topQuery": "inception the movie trailer",
    "allViews": 1
   },
   {
@@ -1077,6 +1058,18 @@
   },
   {
    "path": "/movies/good-will-hunting-1998",
+   "views": 0,
+   "prevViews": 1,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
+   "path": "/movies/inglourious-basterds-2009",
    "views": 0,
    "prevViews": 1,
    "users": 0,
@@ -1262,20 +1255,9 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 10,
-   "gscPosition": 52.1,
+   "gscImpressions": 9,
+   "gscPosition": 54.4,
    "topQuery": "district 9 trailer"
-  },
-  {
-   "path": "/movies/the-silence-of-the-lambs-1991",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 8,
-   "gscPosition": 38,
-   "topQuery": "silence of the lambs trailer"
   },
   {
    "path": "/movies/dunkirk-2017",
@@ -1289,15 +1271,15 @@
    "topQuery": "dunkerque movie trailer"
   },
   {
-   "path": "/movies/the-blind-side-2009",
+   "path": "/movies/the-silence-of-the-lambs-1991",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 64.2,
-   "topQuery": "the blind side 2009 trailer"
+   "gscImpressions": 6,
+   "gscPosition": 41.3,
+   "topQuery": "silence of the lambs trailer"
   },
   {
    "path": "/movies/insomnia-2002",
@@ -1309,6 +1291,17 @@
    "gscImpressions": 4,
    "gscPosition": 60.3,
    "topQuery": "insomnia trailer"
+  },
+  {
+   "path": "/movies/the-blind-side-2009",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 62.3,
+   "topQuery": "the blind side 2009 trailer"
   },
   {
    "path": "/movies/the-dark-knight-rises-2012",
@@ -1342,17 +1335,6 @@
    "gscImpressions": 2,
    "gscPosition": 73,
    "topQuery": "back to school"
-  },
-  {
-   "path": "/movies/ferris-buellers-day-off-1986",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 41,
-   "topQuery": "ferris bueller trailer"
   },
   {
    "path": "/movies/pulp-fiction-1994",
@@ -1436,8 +1418,8 @@
   {
    "query": "home alone trailer",
    "clicks": 0,
-   "impressions": 7,
-   "position": 45,
+   "impressions": 6,
+   "position": 46.8,
    "page": "/movies/home-alone-1990"
   },
   {
@@ -1455,13 +1437,6 @@
    "page": "/movies/jurassic-park-1993"
   },
   {
-   "query": "district 9 trailer",
-   "clicks": 0,
-   "impressions": 4,
-   "position": 54.8,
-   "page": "/movies/district-9-2009"
-  },
-  {
    "query": "jurassic park trailer",
    "clicks": 0,
    "impressions": 4,
@@ -1476,11 +1451,18 @@
    "page": "/movies/the-sixth-sense-1999"
   },
   {
-   "query": "silence of the lambs trailer",
+   "query": "district 9 trailer",
    "clicks": 0,
    "impressions": 3,
-   "position": 34,
-   "page": "/movies/the-silence-of-the-lambs-1991"
+   "position": 62.7,
+   "page": "/movies/district-9-2009"
+  },
+  {
+   "query": "movietr",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 57.5,
+   "page": "/"
   },
   {
    "query": "back to school",
@@ -1546,6 +1528,13 @@
    "page": "/movies/the-prestige-2006"
   },
   {
+   "query": "silence of the lambs trailer",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 39,
+   "page": "/movies/the-silence-of-the-lambs-1991"
+  },
+  {
    "query": "the silence of the lambs trailer",
    "clicks": 0,
    "impressions": 2,
@@ -1558,13 +1547,6 @@
    "impressions": 2,
    "position": 59,
    "page": "/movies/the-sixth-sense-1999"
-  },
-  {
-   "query": "true lies trailer",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 49.5,
-   "page": "/movies/true-lies-1994"
   },
   {
    "query": "whalefall 2026 full movie",
@@ -1686,20 +1668,6 @@
    "page": "/movies/dunkirk-2017"
   },
   {
-   "query": "ferris bueller trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 36,
-   "page": "/movies/ferris-buellers-day-off-1986"
-  },
-  {
-   "query": "ferris bueller's day off trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 46,
-   "page": "/movies/ferris-buellers-day-off-1986"
-  },
-  {
    "query": "goldeneye trailer",
    "clicks": 0,
    "impressions": 1,
@@ -1726,20 +1694,6 @@
    "impressions": 1,
    "position": 38,
    "page": "/movies/inception-2010"
-  },
-  {
-   "query": "inception trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 51,
-   "page": "/movies/inception-2010"
-  },
-  {
-   "query": "inglourious basterds trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 98,
-   "page": "/movies/inglourious-basterds-2009"
   },
   {
    "query": "insomnia film trailer",
@@ -1777,13 +1731,6 @@
    "page": "/movies/kikis-delivery-service-1989"
   },
   {
-   "query": "lost in translation movie trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 44,
-   "page": "/movies/lost-in-translation-2003"
-  },
-  {
    "query": "lost in translation trailer",
    "clicks": 0,
    "impressions": 1,
@@ -1816,13 +1763,6 @@
    "clicks": 0,
    "impressions": 1,
    "position": 75,
-   "page": "/movies/mystic-river-2003"
-  },
-  {
-   "query": "trailer mystic river",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 54,
    "page": "/movies/mystic-river-2003"
   },
   {
@@ -1931,24 +1871,10 @@
    "page": "/movies/the-blind-side-2009"
   },
   {
-   "query": "the blind side movie trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 42,
-   "page": "/movies/the-blind-side-2009"
-  },
-  {
    "query": "the blind side preview",
    "clicks": 0,
    "impressions": 1,
    "position": 67,
-   "page": "/movies/the-blind-side-2009"
-  },
-  {
-   "query": "the blind side trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 92,
    "page": "/movies/the-blind-side-2009"
   },
   {
@@ -2015,13 +1941,6 @@
    "page": "/movies/the-hurt-locker-2009"
   },
   {
-   "query": "prestige movie trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 6,
-   "page": "/movies/the-prestige-2006"
-  },
-  {
    "query": "the prestige movie trailer",
    "clicks": 0,
    "impressions": 1,
@@ -2047,13 +1966,6 @@
    "clicks": 0,
    "impressions": 1,
    "position": 23,
-   "page": "/movies/the-silence-of-the-lambs-1991"
-  },
-  {
-   "query": "trailer for silence of the lambs",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 32,
    "page": "/movies/the-silence-of-the-lambs-1991"
   },
   {
@@ -2099,6 +2011,13 @@
    "page": "/movies/true-lies-1994"
   },
   {
+   "query": "true lies trailer",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 57,
+   "page": "/movies/true-lies-1994"
+  },
+  {
    "query": "twister 1996 trailer",
    "clicks": 0,
    "impressions": 1,
@@ -2118,14 +2037,16 @@
    "impressions": 1,
    "position": 59,
    "page": "/movies/home-alone-1990"
+  },
+  {
+   "query": "prestige trailer",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 62,
+   "page": "/movies/the-prestige-2006"
   }
  ],
  "gscDaily": [
-  {
-   "date": "2026-10-12",
-   "clicks": 0,
-   "impressions": 15
-  },
   {
    "date": "2026-10-13",
    "clicks": 1,
@@ -2260,6 +2181,11 @@
    "date": "2026-11-08",
    "clicks": 0,
    "impressions": 0
+  },
+  {
+   "date": "2026-11-09",
+   "clicks": 0,
+   "impressions": 3
   }
  ],
  "allTime": {
@@ -2534,7 +2460,7 @@
    {
     "source": "google",
     "medium": "organic",
-    "sessions": 10
+    "sessions": 9
    },
    {
     "source": "chatgpt.com",
@@ -2562,21 +2488,11 @@
     "views": 1
    },
    {
-    "url": "https://www.google.com/",
-    "views": 1
-   },
-   {
     "url": "https://yandex.com/",
     "views": 1
    }
   ],
   "daily": [
-   {
-    "date": "2026-10-28",
-    "source": "(direct)",
-    "medium": "(none)",
-    "sessions": 2
-   },
    {
     "date": "2026-10-30",
     "source": "(direct)",

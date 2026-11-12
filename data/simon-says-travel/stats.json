@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-11T19:00:09.914Z",
+ "generatedAt": "2026-11-12T19:00:12.283Z",
  "period": {
-  "start": "2026-10-14",
-  "end": "2026-11-10"
+  "start": "2026-10-15",
+  "end": "2026-11-11"
  },
  "gscPeriod": {
-  "start": "2026-10-12",
-  "end": "2026-11-08"
+  "start": "2026-10-13",
+  "end": "2026-11-09"
  },
  "sources": {
   "ga4": true,
@@ -19,7 +19,7 @@
   "users": 3,
   "cta": {},
   "gscClicks": 0,
-  "gscImpressions": 0
+  "gscImpressions": 1
  },
  "daily": [
   {
@@ -41,9 +41,28 @@
    "topQuery": null,
    "allViews": 3,
    "d7": 3
+  },
+  {
+   "path": "/destinations/japan",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 11,
+   "topQuery": "when should australians book japan flights in 2026"
   }
  ],
- "queries": [],
+ "queries": [
+  {
+   "query": "when should australians book japan flights in 2026",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 11,
+   "page": "/destinations/japan"
+  }
+ ],
  "gscDaily": [
   {
    "date": "2026-11-04",
@@ -69,6 +88,11 @@
    "date": "2026-11-08",
    "clicks": 0,
    "impressions": 0
+  },
+  {
+   "date": "2026-11-09",
+   "clicks": 0,
+   "impressions": 1
   }
  ],
  "allTime": {
