@@ -1,60 +1,53 @@
-# Call list — Wed 11 Nov 2026
+# Call list — Thu 12 Nov 2026
 
 _SMEs that won Australian Government contracts in the last 7 days (AusTender). Interstate work = flights. Wash every lead first: check Salesforce for existing contact, and that CT and Corporate Traveller aren't already prospecting or trading with them. Then find the person who books travel (office manager, ops, finance, EA). Company details only; check the Do Not Call Register rules for any number you use. Bulk lookup file: leads/latest.csv._
 
-**1. R.G.M. MAINTENANCE PTY LTD** — Stuart QLD · $155,690 · score 7.0
-- Why: 4 new government contracts in the last 7 days
-- Work: Services and Inspections
+**1. RAPID-TECH EQUIPMENT PTY LTD** — Knox City Centre VIC · $64,240 · score 8.0
+- Why: based in Knox City Centre VIC, delivering for Department of Industry, Science and Resources (Canberra); work runs 8 months
+- Work: Procurement of DC Calibrators for the Low-Frequency Section of the National Measurement Institute's Physical Metrology Branch.
 - Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
-- Opener: "Congrats on the Department of Defence contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=R.G.M.+MAINTENANCE+PTY+LTD) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=R.G.M.+MAINTENANCE+PTY+LTD)
+- Opener: "Congrats on the Department of Industry, Science and Resources contract. With the team in Knox City Centre and the work in Canberra, who's looking after flights and accommodation for it?"
+- Find: [Google](https://www.google.com/search?q=RAPID-TECH+EQUIPMENT+PTY+LTD) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=RAPID-TECH+EQUIPMENT+PTY+LTD)
 
-**2. FACE2FACE RECRUITMENT** — Deakin ACT · $216,264 · score 4.0
-- Why: new government contract
-- Work: Engagement of one APS 5 Project Support Officer and two APS 6 Senior Project Officers to support delivery of the Post-Incident Review into the July 2026 National Telstra Major Outa
+**2. PFM Advisory Services Pty Ltd** — Kingston ACT · $195,000 · score 6.0
+- Why: 2 new government contracts in the last 7 days; work runs 25 months
+- Work: Provision of Audit and Risk Committee Chair Services
 - Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
-- Opener: "Congrats on the Department of Infrastructure, Transport, Regional Development, Communications, Sport and the Arts contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=FACE2FACE+RECRUITMENT) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=FACE2FACE+RECRUITMENT)
+- Opener: "Congrats on the Department of Health, Disability and Ageing contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=PFM+Advisory+Services+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=PFM+Advisory+Services+Pty+Ltd)
 
-**3. WILLIAM BUCK (NSW) PTY LIMITED** — Barton ACT · $80,000 · score 4.0
+**3. Konica Minolta Business Solutions** — North Ryde NSW · $413,023 · score 5.0
+- Why: work runs 36 months
+- Work: MFD Refresh and Ongoing Support and Maintenance
+- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
+- Opener: "Congrats on the Australian Competition and Consumer Commission contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=Konica+Minolta+Business+Solutions) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Konica+Minolta+Business+Solutions)
+
+**4. Gulanga Pty Ltd ta Gulanga** — Kingston ACT · $165,550 · score 5.0
+- Why: work runs 7 months
+- Work: Maintenance and support
+- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
+- Opener: "Congrats on the Fair Work Commission contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=Gulanga+Pty+Ltd+ta+Gulanga) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Gulanga+Pty+Ltd+ta+Gulanga)
+
+**5. Security Consulting Group Pty Ltd** — Melbourne VIC · $164,912 · score 5.0
+- Why: work runs 6 months
+- Work: Security Sys Tech and Cap Framework Review
+- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
+- Opener: "Congrats on the Department of Parliamentary Services contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=Security+Consulting+Group+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Security+Consulting+Group+Pty+Ltd)
+
+**6. ALS Water and Hydrographics Pty Ltd** — Stafford QLD · $129,836 · score 5.0
+- Why: work runs 9 months
+- Work: FWIN Fabrication & Installation Works - Maintenance Works
+- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
+- Opener: "Congrats on the Bureau of Meteorology contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=ALS+Water+and+Hydrographics+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=ALS+Water+and+Hydrographics+Pty+Ltd)
+
+**7. K2 International LLC** — Delaplane · $58,763 · score 4.0
 - Why: work runs 8 months
-- Work: Specialist assurance and advisory services supporting the Shared Services Hub, including assurance reviews, control testing, risk assessment and continuous improvement.
+- Work: Facility maintenance and repair services
 - Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
-- Opener: "Congrats on the Department of Industry, Science and Resources contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=WILLIAM+BUCK+%28NSW%29+PTY+LIMITED) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=WILLIAM+BUCK+%28NSW%29+PTY+LIMITED)
-
-**4. ROBUST POLICY ANALYSIS PTY LTD** — Deakin ACT · $77,440 · score 4.0
-- Why: work runs 18 months
-- Work: Research Support Services
-- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
-- Opener: "Congrats on the Department of Defence contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=ROBUST+POLICY+ANALYSIS+PTY+LTD) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=ROBUST+POLICY+ANALYSIS+PTY+LTD)
-
-**5. KEYSIGHT TECHNOLOGIES PTY LTD** — Mulgrave VIC · $77,141 · score 4.0
-- Why: work runs 32 months
-- Work: Calibration and Maintenance
-- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
-- Opener: "Congrats on the Department of Defence contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=KEYSIGHT+TECHNOLOGIES+PTY+LTD) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=KEYSIGHT+TECHNOLOGIES+PTY+LTD)
-
-**6. Integrity Partners Australia Pty Ltd** — Sutton NSW · $96,000 · score 3.0
-- Why: new government contract
-- Work: 27ACMA015 - Employee experience and work environment review
-- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
-- Opener: "Congrats on the Australian Communications and Media Authority contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=Integrity+Partners+Australia+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Integrity+Partners+Australia+Pty+Ltd)
-
-**7. ALLUVIUM CONSULTING AUSTRALIA PTY LTD [039]** — East Melbourne VIC · $75,746 · score 3.0
-- Why: new government contract
-- Work: Assessment of risk of WRP non-compliance
-- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
-- Opener: "Congrats on the Department of Climate Change, Energy, the Environment and Water contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=ALLUVIUM+CONSULTING+AUSTRALIA+PTY+LTD+%5B039%5D) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=ALLUVIUM+CONSULTING+AUSTRALIA+PTY+LTD+%5B039%5D)
-
-**8. IRRADIATE SECURITY PTY LTD** — Canberra ACT · $58,625 · score 3.0
-- Why: new government contract
-- Work: IDP Security Review
-- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
-- Opener: "Congrats on the Digital Transformation Agency contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=IRRADIATE+SECURITY+PTY+LTD) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=IRRADIATE+SECURITY+PTY+LTD)
+- Opener: "Congrats on the Department of Foreign Affairs and Trade contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=K2+International+LLC) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=K2+International+LLC)
 
