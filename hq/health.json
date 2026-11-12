@@ -55,7 +55,8 @@
  "workersMaxAgeDays": {
   "morning-report": 1.5,
   "imn-radar": 4,
-  "weekly-autopilot": 8
+  "weekly-autopilot": 8,
+  "opportunity-engine": 9
  },
  "_workersNote": "AI workers log each run in hq/runs.json (last step of their skill). imn-radar runs weekdays only, so 4 days covers a weekend."
 }

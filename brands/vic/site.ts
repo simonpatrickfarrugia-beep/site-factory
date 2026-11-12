@@ -205,7 +205,7 @@ export function routes(): Route[] {
       path: t.slug,
       template: 'vicTown',
       seo: {
-        title: `${t.name}: where to stay, eat and things to do` + SUFFIX,
+        title: `${t.name}: Things to Do, Where to Stay & Eat` + SUFFIX,
         rawTitle: true,
         image: photoUrl(t.slug),
         description: `${t.name}, ${km < 3 ? 'in central Melbourne' : `${km} km from Melbourne`}: ${countsLine(totals)}, with addresses, hours and maps.`,

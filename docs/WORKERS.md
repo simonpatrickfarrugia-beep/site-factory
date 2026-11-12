@@ -21,6 +21,7 @@ To change what a worker does, edit its SKILL.md and push. The scheduled task pic
 | IMN Radar | `imn-radar` | weekdays 07:34 | Opus | Cloudflare, Claude Code Remote | D1 orgs/contacts/touches, hq_kv, `hq/runs.json` |
 | Weekly autopilot | `weekly-autopilot` | Mon 07:59 | Opus | Gmail (read), Claude Code Remote | repo data, todo, reports, `hq/runs.json` |
 | RBA rate day | `rba-rate-day` | each RBA decision day 15:15 | Opus | Claude Code Remote | `data/paycalc/rates.json` |
+| Opportunity engine | `opportunity-engine` | Tue 07:47 | Opus | Claude Code Remote | titles in code/data, `hq/opportunities.json`, `hq/ready/opportunities/`, todo, `hq/reports/opportunity-log.md`, `hq/runs.json` |
 
 Claude Code Remote is what lets a scheduled run attach and push to this repo; web search is built in.
 Sonnet for reading and formatting, Opus where the job is research or judgement.

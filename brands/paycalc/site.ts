@@ -104,9 +104,10 @@ export function routes(): Route[] {
       path: salaryPath(n),
       template: 'pcSalary',
       seo: {
-        title: `${aud(n)} After Tax in Australia ${Y}: ${aud(r.net)} a Year`,
+        // People search "tax on 300k" as much as "300k after tax": the title answers both (opportunity engine, 12 Nov 2026).
+        title: `${aud(n)} After Tax Australia ${Y}: ${aud(r.net)} Take-Home, ${aud(r.incomeTax + r.medicare)} Tax`,
         rawTitle: true,
-        description: `On ${aud(n)} (${k}) a year you take home ${aud(r.net)} in ${Y}: ${aud(r.net / 12)} a month, ${aud(r.net / 26)} a fortnight or ${aud(r.net / 52)} a week, after tax and Medicare.`,
+        description: `Tax on ${aud(n)} (${k}) in ${Y} is ${aud(r.incomeTax + r.medicare)} including Medicare, so you take home ${aud(r.net)} a year: ${aud(r.net / 12)} a month, ${aud(r.net / 26)} a fortnight or ${aud(r.net / 52)} a week.`,
       },
       schema: [
         crumbs([{ name: 'Pay calculator', path: '' }, { name: 'Salaries', path: 'salary' }, { name: `${aud(n)} after tax`, path: salaryPath(n) }]),

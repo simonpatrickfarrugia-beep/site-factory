@@ -100,8 +100,9 @@ export interface Content {
 // Stay: "accommodation <town>" and "hotels <town>" are the big AU searches (DataForSEO, 29 Oct 2026); "best"/"top rated" are tiny and we have no ratings.
 export const GROUP_LABEL: Record<Group, { title: (town: string) => string; seoTitle?: (town: string) => string; short: string; noun: string }> = {
   stay: { title: (t) => `Accommodation in ${t}`, seoTitle: (t) => `${t} Accommodation & Hotels: Where to Stay`, short: 'Stay', noun: 'places to stay' },
-  eat: { title: (t) => `Where to eat in ${t}`, short: 'Eat', noun: 'places to eat and drink' },
-  do: { title: (t) => `Things to do in ${t}`, short: 'Do', noun: 'things to do' },
+  // seoTitles lead with the words people search: "sorrento restaurants", "things to do in ballarat" (opportunity engine, 12 Nov 2026).
+  eat: { title: (t) => `Where to eat in ${t}`, seoTitle: (t) => `${t} Restaurants & Cafes: Where to Eat`, short: 'Eat', noun: 'places to eat and drink' },
+  do: { title: (t) => `Things to do in ${t}`, seoTitle: (t) => `Things to Do in ${t}: Attractions & Activities`, short: 'Do', noun: 'things to do' },
 };
 
 export const TYPE_LABEL: Record<string, string> = {
