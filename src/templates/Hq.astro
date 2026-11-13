@@ -18,6 +18,7 @@ interface Props {
   goal?: { level: number; next: any; total: number; thisMonth: number; sprint: any; daysLeft: number | null; levels: any[] } | null;
   moneyMap?: { idea: string; market: string; low: number; mid: number; high: number; perSale: number }[];
   programs?: { name: string; commission: string; approval: string; requirements: string; status: string; verified: boolean; markets: string }[];
+  funnel?: any;
   builtAt: string;
 }
 const p = Astro.props;
@@ -54,6 +55,16 @@ const revTotal = p.finance.revenue.reduce((s, r) => s + r.amount, 0);
 const oneOff = p.finance.costs.reduce((s, c) => s + c.amount, 0);
 const running = p.finance.monthlyRunning.reduce((s, c) => s + c.amount, 0);
 const live = p.nodes.filter((x) => x.status === 'live').length;
+const F = p.funnel;
+// Funnel bar width: log scale so 3,000 search views and 1 money click both stay readable.
+const widthOf = (f: { value: number }[], v: number) => {
+  const max = Math.max(1, ...f.map((x) => x.value));
+  return Math.max(16, Math.round((Math.log10(v + 1) / Math.log10(max + 1)) * 100));
+};
+const rate = (a: number, b: number) => (a > 0 ? (b / a) * 100 : null);
+const pct = (r: number | null) => (r === null ? '–' : r >= 10 ? `${Math.round(r)}%` : r >= 1 ? `${r.toFixed(1)}%` : r > 0 ? `${r.toFixed(2)}%` : '0%');
+const SEV: Record<number, string> = { 3: 'Critical', 2: 'Leak', 1: 'Watch' };
+const ago = (iso: string | null) => (iso ? new Date(iso).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', timeZone: 'Australia/Melbourne' }) : null);
 ---
 <div class="wrap hq">
   <header class="hq__head">
@@ -69,6 +80,63 @@ const live = p.nodes.filter((x) => x.status === 'live').length;
     <div class="kpi kpi--money"><span class="kpi__label">Revenue to date</span><span class="kpi__value">${n(revTotal)}</span><span class="kpi__sub">{p.finance.revenue.length ? `${p.finance.revenue.length} payout(s) logged` : 'First payout pending'}</span></div>
     <div class="kpi"><span class="kpi__label">Running costs</span><span class="kpi__value">${n(running)}<small>/mo</small></span><span class="kpi__sub">${n(oneOff)} one-off so far</span></div>
   </section>
+
+
+  {F && (
+    <section class="panel fx" id="funnel" aria-label="Growth funnel">
+      <h2>Growth funnel <small>· last 28 days, all brands</small></h2>
+      <p class="muted fx__lede">Two funnels feed IMN. Outreach wins partners who send visitors; Google sends the rest. Red marks the biggest leak in each.</p>
+      <div class="fx__pair">
+        {[
+          { title: 'Outreach → partners', f: F.outreachFunnel, leak: F.outreachLeak, foot: `${F.sent7} sent in the last 7 days · goal ${F.goal7}`, link: F.crm, linkLabel: 'Open the outreach board' },
+          { title: 'Search → visits → money', f: F.trafficFunnel, leak: F.trafficLeak, foot: 'Money clicks = affiliate and trial clicks', link: '/hq/traffic', linkLabel: 'Morning traffic' },
+        ].map((col) => (
+          <div class="fx__col">
+            <h3>{col.title}</h3>
+            <ol class="fx__list">
+              {col.f.map((st: any, i: number) => {
+                const r = i > 0 ? rate(col.f[i - 1].value, st.value) : null;
+                return (
+                  <li class={`fx__step${i === col.leak ? ' is-leak' : ''}`}>
+                    {i > 0 && <span class={`fx__rate${i === col.leak ? ' is-leak' : ''}`}>↓ {pct(r)} move on{i === col.leak && ' · biggest leak'}</span>}
+                    <div class="fx__bar" style={`--w:${widthOf(col.f, st.value)}%;--i:${i}`}>
+                      <span class="fx__val">{st.key === 'revenue' ? `$${n(st.value)}` : n(st.value)}</span>
+                      <span class="fx__lab">{st.label}</span>
+                    </div>
+                    <span class="fx__sub">{st.sub}</span>
+                  </li>
+                );
+              })}
+            </ol>
+            <p class="fx__foot">{col.foot} · <a href={col.link}>{col.linkLabel}</a></p>
+          </div>
+        ))}
+      </div>
+      {F.brands.some((b: any) => !b.ga4ok && b.statsAt) && <p class="fx__warn">⚠️ Visits for {F.brands.filter((b: any) => !b.ga4ok && b.statsAt).map((b: any) => b.name).join(', ')} didn’t refresh this morning, so visits and clicks read low today.</p>}
+    </section>
+  )}
+
+  {F && (
+    <section class="panel bn" id="bottlenecks">
+      <h2>Bottlenecks <small>· {F.bottlenecks.length} found, worst first</small></h2>
+      {F.bottlenecks.length === 0 ? <p>No bottlenecks detected. Keep the outreach rhythm going.</p> : (
+        <ol class="bn__list">
+          {F.bottlenecks.map((b: any) => (
+            <li class={`bn__item bn--${b.sev}`}>
+              <div class="bn__top">
+                <span class={`bn__sev bn__sev--${b.sev}`}>{SEV[b.sev]}</span>
+                <span class="bn__stage">blocks: {b.stage}</span>
+                <span class={`bn__who who who--${b.who.toLowerCase()}`}>{b.who}</span>
+              </div>
+              <p class="bn__title">{b.title}</p>
+              <p class="bn__detail">{b.detail}</p>
+              <p class="bn__fix"><b>Fix:</b> {b.fix}{b.link && <> <a class="todo__go" href={b.link} target="_blank" rel="noopener">{b.linkLabel ?? 'Open'}</a></>}</p>
+            </li>
+          ))}
+        </ol>
+      )}
+    </section>
+  )}
 
   <section class="panel todo" id="todo">
     <h2>Simon: still to do <small>· {open.length} left · about {openMins} min</small></h2>
@@ -149,6 +217,72 @@ const live = p.nodes.filter((x) => x.status === 'live').length;
     <p class="legend"><span class="key key--live"></span>Live <span class="key key--building"></span>Building <span class="key key--idea"></span>Idea <span class="key key--paused"></span>Paused</p>
   </section>
 
+
+  {F && (
+    <section class="panel mail" id="email">
+      <h2>Email connections <small>· {F.lanes[0].brands.length} connected · {F.lanes[2].brands.length} not</small></h2>
+      <p class="muted">A brand can only do outreach once its email works end to end. Updated {F.mailUpdated}.</p>
+      <div class="lanes">
+        {F.lanes.map((lane: any) => (
+          <div class={`lane lane--${lane.key}`}>
+            <h3><span class={`lane__dot lane__dot--${lane.key}`}></span>{lane.label} <small>{lane.brands.length}</small></h3>
+            <p class="lane__hint">{lane.hint}</p>
+            {lane.brands.length === 0 && <p class="lane__empty">None</p>}
+            {lane.brands.map((b: any) => (
+              <article class="mcard">
+                <p class="mcard__name">{b.name}</p>
+                <p class="mcard__addr">{b.mail.address ?? 'no address yet'}</p>
+                <ul class="mcard__steps">
+                  {F.mailSteps.map((st: any) => <li class={b.mail.steps?.[st.key] ? 'ok' : 'no'} title={st.help}><span aria-hidden="true">{b.mail.steps?.[st.key] ? '✓' : '✕'}</span>{st.label}</li>)}
+                </ul>
+                <p class="mcard__note">{b.mail.note}</p>
+                <p class="mcard__out">{b.mailReady ? <span class="pill pill--on">Outreach on</span> : b.inOutreach ? <span class="pill pill--off">Outreach blocked</span> : <span class="pill">Not in outreach</span>}</p>
+              </article>
+            ))}
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {F && (
+    <section class="panel pipe" id="pipeline">
+      <h2>Brand pipeline</h2>
+      <p class="muted">Each brand from first contact to money. Bright cells have something in them; red is where it stops. Outreach as of {ago(F.outreachAsOf)}.</p>
+      <div class="pipe__grid">
+        {F.brands.map((b: any) => {
+          const o = b.outreach ?? { found: 0, sent: 0, replied: 0, linked: 0, waiting: 0 };
+          const cells = [
+            { l: 'Found', v: o.found }, { l: 'Sent', v: o.sent }, { l: 'Replied', v: o.replied }, { l: 'Linked', v: o.linked },
+            { l: 'Seen', v: b.seen }, { l: 'Visits', v: b.ga4ok ? b.visits : null }, { l: 'Clicks', v: b.ga4ok ? b.actions : null }, { l: 'Money', v: b.tracksMoney ? (b.ga4ok ? b.money : null) : null },
+          ];
+          const stop = (xs: any[]) => { const i = xs.findIndex((c, k) => k > 0 && c.v === 0 && (xs[k - 1].v ?? 0) > 0); return i; };
+          const s1 = stop(cells.slice(0, 4)), s2 = stop(cells.slice(4));
+          return (
+            <article class="deal">
+              <header class="deal__head">
+                <h3><a href={b.url} target="_blank" rel="noopener">{b.name}</a></h3>
+                <span class={`pill pill--${b.mail?.state ?? 'none'}`}>{b.mail ? (b.mail.state === 'on' ? '✉ connected' : b.mail.state === 'part' ? '✉ partly' : '✉ not connected') : '✉ none'}</span>
+              </header>
+              <p class="deal__row-label">Outreach{o.waiting > 0 && <b class="deal__warn"> · {o.waiting} drafts waiting</b>}</p>
+              <ol class="strip">{cells.slice(0, 4).map((c, i) => <li class={`${c.v ? 'has' : ''}${i === s1 ? ' stop' : ''}`}><b>{c.v === null ? '–' : n(c.v)}</b><span>{c.l}</span></li>)}</ol>
+              <p class="deal__row-label">Site{!b.ga4ok && <b class="deal__warn"> · visits didn’t refresh today</b>}{!b.tracksMoney && b.moneyNote && <small> · money: {b.moneyNote}</small>}</p>
+              <ol class="strip">{cells.slice(4).map((c, i) => <li class={`${c.v ? 'has' : ''}${i === s2 ? ' stop' : ''}`}><b>{c.v === null ? '–' : n(c.v)}</b><span>{c.l}</span></li>)}</ol>
+              {b.target && b.ga4ok && (
+                <div class="deal__target">
+                  <div class="bar"><span style={`width:${Math.min(100, Math.round((b.visits / b.target.views) * 100))}%`}></span></div>
+                  <p class="muted">{Math.round((b.visits / b.target.views) * 100)}% of the {n(b.target.views)}-visit target{b.day !== null && ` · day ${Math.min(b.day, 90)} of 90`}{b.position && ` · Google position ~${b.position}`}</p>
+                </div>
+              )}
+              <p class="card__foot"><a href={`${b.url}/hq/stats`} target="_blank" rel="noopener">Site dashboard</a></p>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  )}
+
+  {!F && (
   <section class="panel">
     <h2>Websites</h2>
     <div class="cards">
@@ -181,6 +315,7 @@ const live = p.nodes.filter((x) => x.status === 'live').length;
       })}
     </div>
   </section>
+  )}
 
   <section class="panel">
     <h2>Engines</h2>
@@ -350,4 +485,79 @@ const live = p.nodes.filter((x) => x.status === 'live').length;
   .niches li { position: relative; isolation: isolate; padding: 0.35rem 0.6rem; border-radius: 6px; overflow: hidden; }
   .niches .bar { position: absolute; inset: 0 auto 0 0; width: var(--w); background: color-mix(in srgb, var(--color-accent) 18%, transparent); z-index: -1; }
   .niches small { color: var(--muted); margin-left: 0.3rem; }
+
+  /* Growth funnel */
+  .fx { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--space-4) var(--space-3); }
+  .fx__lede { margin-top: -0.4rem; font-size: 0.92rem; }
+  .fx__pair { display: grid; gap: var(--space-5); margin-top: var(--space-3); }
+  @media (min-width: 52rem) { .fx__pair { grid-template-columns: 1fr 1fr; } }
+  .fx__col h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 0 0 0.6rem; text-align: center; }
+  .fx__list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; align-items: center; }
+  .fx__step { width: 100%; display: flex; flex-direction: column; align-items: center; }
+  .fx__bar { width: var(--w); min-width: 9.5rem; display: flex; align-items: baseline; justify-content: center; gap: 0.45rem; padding: 0.6rem 0.8rem;
+    background: color-mix(in srgb, var(--color-accent) calc(100% - var(--i) * 15%), var(--ink)); color: var(--ink);
+    clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 100%, 10px 100%); border-radius: 4px; transition: width .4s; }
+  .fx__val { font-family: var(--font-display); font-weight: 800; font-size: 1.35rem; font-variant-numeric: tabular-nums; line-height: 1; }
+  .fx__lab { font-weight: 700; font-size: 0.82rem; white-space: nowrap; }
+  .fx__sub { font-size: 0.72rem; color: var(--muted); margin: 0.2rem 0 0.1rem; text-align: center; }
+  .fx__rate { font-size: 0.75rem; font-weight: 700; color: var(--muted); margin: 0.35rem 0 0.25rem; }
+  .fx__rate.is-leak { color: #f08a7e; }
+  .fx__step.is-leak .fx__bar { outline: 2px solid #f08a7e; outline-offset: 3px; }
+  .fx__foot { text-align: center; font-size: 0.82rem; color: var(--muted); margin: 0.8rem 0 0; }
+  .fx__foot a, .fx__lede a { color: var(--color-accent); }
+  .fx__warn { font-size: 0.85rem; margin: var(--space-3) 0 0; color: var(--muted); }
+  /* Bottlenecks */
+  .bn__list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-3); }
+  @media (min-width: 52rem) { .bn__list { grid-template-columns: 1fr 1fr; } }
+  .bn__item { background: var(--panel); border: 1px solid var(--line); border-left: 5px solid #8d90ad; border-radius: var(--radius); padding: var(--space-3); min-width: 0; }
+  .bn--3 { border-left-color: #f08a7e; } .bn--2 { border-left-color: var(--color-accent); }
+  .bn__top { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+  .bn__sev { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.12rem 0.5rem; border-radius: 999px; background: #8d90ad; color: var(--ink); }
+  .bn__sev--3 { background: #f08a7e; } .bn__sev--2 { background: var(--color-accent); }
+  .bn__stage { font-size: 0.75rem; color: var(--muted); }
+  .bn__who { margin: 0 0 0 auto; }
+  .bn__title { font-weight: 800; font-size: 1.05rem; margin: 0.5rem 0 0.2rem; }
+  .bn__detail { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.5rem; }
+  .bn__fix { font-size: 0.9rem; margin: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+  /* Email lanes */
+  .lanes { display: grid; gap: var(--space-3); }
+  @media (min-width: 52rem) { .lanes { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .lane { background: color-mix(in srgb, var(--panel) 70%, transparent); border: 1px dashed var(--line); border-radius: var(--radius); padding: var(--space-3); min-width: 0; }
+  .lane h3 { display: flex; align-items: center; gap: 0.45rem; font-size: 1rem; margin: 0; }
+  .lane h3 small { margin-left: auto; color: var(--muted); font-weight: 700; }
+  .lane__hint, .lane__empty { font-size: 0.8rem; color: var(--muted); margin: 0.15rem 0 0.6rem; }
+  .lane__dot { width: 10px; height: 10px; border-radius: 50%; background: #8d90ad; }
+  .lane__dot--on { background: #7fd49b; } .lane__dot--part { background: var(--color-accent); } .lane__dot--off { background: #f08a7e; }
+  .mcard { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 0.7rem; margin-top: 0.6rem; }
+  .mcard__name { font-weight: 800; margin: 0; }
+  .mcard__addr { font-size: 0.8rem; color: var(--muted); margin: 0 0 0.45rem; overflow-wrap: anywhere; }
+  .mcard__steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem 0.5rem; font-size: 0.8rem; }
+  .mcard__steps li { display: flex; gap: 0.35rem; align-items: center; }
+  .mcard__steps li span { display: inline-grid; place-items: center; width: 1.05rem; height: 1.05rem; border-radius: 50%; font-size: 0.65rem; font-weight: 900; flex: none; }
+  .mcard__steps .ok span { background: #7fd49b; color: var(--ink); } .mcard__steps .no span { background: color-mix(in srgb, #f08a7e 30%, transparent); color: #f08a7e; }
+  .mcard__steps .no { color: var(--muted); }
+  .mcard__note { font-size: 0.8rem; color: var(--muted); margin: 0.5rem 0 0.4rem; }
+  .mcard__out { margin: 0; }
+  .pill { display: inline-block; font-size: 0.72rem; font-weight: 700; border-radius: 999px; padding: 0.12rem 0.55rem; background: var(--line); white-space: nowrap; }
+  .pill--on { background: #7fd49b; color: var(--ink); } .pill--part { background: var(--color-accent); color: var(--ink); } .pill--off { background: #f08a7e; color: var(--ink); }
+  /* Brand pipeline */
+  .pipe__grid { display: grid; gap: var(--space-3); }
+  @media (min-width: 52rem) { .pipe__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .deal { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--space-3); min-width: 0; }
+  .deal__head { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+  .deal__head h3 { font-family: var(--font-display); font-size: 1.2rem; margin: 0; }
+  .deal__head h3 a { color: var(--paper); }
+  .deal__row-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 0.7rem 0 0.3rem; }
+  .deal__row-label small { text-transform: none; letter-spacing: 0; }
+  .deal__warn { color: #f08a7e; text-transform: none; letter-spacing: 0; }
+  .strip { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 3px; }
+  .strip li { position: relative; display: flex; flex-direction: column; align-items: center; padding: 0.4rem 0.2rem 0.35rem; background: var(--line); clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 50%, calc(100% - 7px) 100%, 0 100%, 7px 50%); }
+  .strip li:first-child { clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 50%, calc(100% - 7px) 100%, 0 100%); }
+  .strip li b { font-variant-numeric: tabular-nums; font-size: 1rem; }
+  .strip li span { font-size: 0.66rem; color: var(--muted); }
+  .strip li.has { background: color-mix(in srgb, var(--color-accent) 75%, var(--ink)); color: var(--ink); }
+  .strip li.has span { color: var(--ink); opacity: 0.8; }
+  .strip li.stop { background: color-mix(in srgb, #f08a7e 35%, var(--panel)); }
+  .deal__target { margin-top: 0.6rem; }
+  .deal__target p { font-size: 0.8rem; margin: 0.15rem 0 0; }
 </style>

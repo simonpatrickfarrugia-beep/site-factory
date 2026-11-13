@@ -106,6 +106,7 @@ export function hqProps() {
       const daysLeft = g.sprint ? Math.ceil((Date.parse(g.sprint.deadline + 'T23:59:59+11:00') - Date.now()) / 86400000) : null;
       return { level: reached.length, next, total: all, thisMonth, sprint: g.sprint ?? null, daysLeft, levels: g.levels };
     })(),
+    funnel: funnelProps(),
     builtAt: new Date().toISOString(),
   };
 }
@@ -283,5 +284,156 @@ function progressProps(sites: { id: string; name: string; url: string; d28: numb
     level: next ? { level: next.level, name: next.name, target: next.target, have: next.monthly ? bestMonth : revenue, monthly: !!next.monthly, done: next.level - 1 } : null,
     revenue,
     todo: { open: todo.filter((t) => !t.done).length, done: todo.filter((t) => t.done).length },
+  };
+}
+
+/**
+ * Sales-funnel view for IMN HQ: the whole portfolio as one funnel (outreach → partners, Google → visits → money),
+ * brand email connections, a per-brand pipeline board and auto-detected bottlenecks.
+ * Sources: data/<brand>/stats.json, hq/outreach.json (D1 snapshot), hq/mail.json, hq/prospect-targets.json, hq/finance.json, hq/portfolio.json.
+ */
+const HQ_CRM = 'https://imn-hq.simonpatrickfarrugia.workers.dev';
+// Money CTA keys per brand (CLAUDE.md "Money clicks" plus the quiz trial buttons).
+const MONEY_KEYS: Record<string, string[]> = {
+  trailers: ['prime', 'disc'],
+  vic: ['book_stay', 'book_tour', 'book_car'],
+  'simon-says-travel': ['book_stay', 'book_tour'],
+  'trade-admin': ['tradify_offer_sent', 'partner_fergus', 'quiz_trial_fergus', 'quiz_trial_tradify', 'quiz_trial_servicem8', 'app_site'],
+};
+const NODE_ID: Record<string, string> = { 'community-help-co': 'chc' };
+
+type Sev = 3 | 2 | 1;
+export interface Bottleneck { sev: Sev; brand: string | null; title: string; detail: string; fix: string; who: 'Simon' | 'Claude'; link?: string; linkLabel?: string; stage: string }
+
+export function funnelProps() {
+  const sum = (xs: number[]) => xs.reduce((a, b) => a + b, 0);
+  const outreach = read<any>('hq/outreach.json', { asOf: null, brands: {} });
+  const mail = read<any>('hq/mail.json', { steps: [], brands: [] });
+  const targets = read<any>('hq/prospect-targets.json', { brands: {} });
+  const finance = read<any>('hq/finance.json', { revenue: [] });
+  const portfolio = read<any>('hq/portfolio.json', { nodes: [], todo: [] });
+  const todo: any[] = portfolio.todo ?? [];
+  const now = Date.now();
+  const daysSince = (iso: string | null) => (iso ? Math.floor((now - Date.parse(iso)) / 86400000) : null);
+
+  const brands = TRAFFIC_SITES.map((cfg) => {
+    const slug = cfg.id === 'chc' ? 'community-help-co' : cfg.id;
+    const s = read<any>(cfg.stats, null);
+    const t = s?.totals ?? { views: 0, users: 0, cta: {}, gscClicks: 0, gscImpressions: 0 };
+    const cta: Record<string, number> = t.cta ?? {};
+    const keys = MONEY_KEYS[slug] ?? [];
+    const pages: any[] = s?.pages ?? [];
+    const imp = sum(pages.map((p) => p.gscImpressions || 0));
+    const position = imp ? Math.round(sum(pages.map((p) => (p.gscPosition ?? 0) * (p.gscImpressions || 0))) / imp) : null;
+    const node = (portfolio.nodes ?? []).find((n: any) => n.id === (NODE_ID[slug] ?? slug)) ?? null;
+    const o = outreach.brands?.[slug] ?? null;
+    const m = (mail.brands ?? []).find((b: any) => b.brand === slug) ?? null;
+    const stepsDone = m ? Object.values(m.steps ?? {}).filter(Boolean).length : 0;
+    const stepsAll = (mail.steps ?? []).length || 4;
+    const tcfg = targets.brands?.[slug] ?? null;
+    return {
+      slug,
+      name: cfg.name,
+      url: cfg.url,
+      ga4ok: !!s?.sources?.ga4,
+      statsAt: s?.generatedAt ?? null,
+      seen: t.gscImpressions ?? 0,
+      googleClicks: t.gscClicks ?? 0,
+      position,
+      visits: t.views ?? 0,
+      actions: sum(Object.values(cta)),
+      money: sum(keys.map((k) => cta[k] ?? 0)),
+      tracksMoney: keys.length > 0,
+      moneyNote: cfg.moneyNote ?? null,
+      target: node?.target90 ?? null,
+      day: node?.launched ? Math.floor((now - Date.parse(node.launched + 'T00:00:00+11:00')) / 86400000) : null,
+      outreach: o,
+      inOutreach: !!tcfg,
+      mailReady: !!tcfg?.mailReady,
+      mail: m ? { address: m.address, steps: m.steps, note: m.note, todo: m.todo ?? null, done: stepsDone, all: stepsAll, state: stepsDone === stepsAll ? 'on' : stepsDone > 0 ? 'part' : 'off' } : null,
+    };
+  });
+
+  const revenue = sum((finance.revenue ?? []).map((r: any) => Number(r.amount) || 0));
+  const tot = (f: (b: (typeof brands)[number]) => number) => sum(brands.map(f));
+  const stage = (key: string, label: string, value: number, sub: string) => ({ key, label, value, sub });
+  const outreachFunnel = [
+    stage('found', 'Prospects found', tot((b) => b.outreach?.found ?? 0), 'organisations that could share a link'),
+    stage('sent', 'Emails sent', tot((b) => b.outreach?.sent ?? 0), 'first emails out the door'),
+    stage('replied', 'Replies', tot((b) => b.outreach?.replied ?? 0), 'conversations started'),
+    stage('linked', 'Links won', tot((b) => b.outreach?.linked ?? 0), 'partners now sending visitors'),
+  ];
+  const trafficFunnel = [
+    stage('seen', 'Seen on Google', tot((b) => b.seen), 'times a page showed in search'),
+    stage('visits', 'Visits', tot((b) => b.visits), 'page views, all sites'),
+    stage('actions', 'Button clicks', tot((b) => b.actions), 'tools, maps, quizzes, partner links'),
+    stage('money', 'Money clicks', tot((b) => b.money), 'affiliate and trial clicks'),
+    stage('revenue', 'Revenue', revenue, 'A$ paid out'),
+  ];
+  // Biggest leak: the step with the lowest pass-through rate where the step before has volume.
+  const leakOf = (f: { value: number }[]) => {
+    let at = -1, worst = Infinity;
+    for (let i = 1; i < f.length; i++) {
+      if (f[i - 1].value < 3) continue;
+      const r = f[i].value / f[i - 1].value;
+      if (r < worst) { worst = r; at = i; }
+    }
+    return at;
+  };
+
+  // Bottlenecks, worst first. Each one names the stage it blocks, the fix and who does it.
+  const out: Bottleneck[] = [];
+  const todoLink = (id: string) => todo.find((x) => x.id === id && !x.done) ?? null;
+  for (const b of brands) {
+    const o = b.outreach;
+    if (o?.waiting > 0) {
+      const age = daysSince(o.oldestWaiting);
+      out.push({ sev: 3, brand: b.name, stage: 'Emails sent', title: `${o.waiting} ${b.name} emails drafted, not sent`, detail: `Ready in IMN HQ${age !== null ? ` for up to ${age} days` : ''}. Every one is a warm prospect going cold.`, fix: 'Open the outreach board and send the best 5 today (about 10 min).', who: 'Simon', link: HQ_CRM, linkLabel: 'Outreach board' });
+    }
+    if (b.inOutreach && !b.mailReady) {
+      const t = b.mail?.todo ? todoLink(b.mail.todo) : null;
+      const hands = b.slug === 'trade-admin';
+      out.push({ sev: hands ? 3 : 1, brand: b.name, stage: 'Prospects found', title: `${b.name} email not connected`, detail: hands ? 'Outreach can’t start, so the 30-day Trade Admin push has no visitors coming in.' : 'No outreach possible yet. Fine while it’s on autopilot.', fix: `Do the mail hub setup with Claude in the Site Factory chat (${t?.mins ?? 15} min). Then Radar starts queuing ${b.name} prospects.`, who: 'Simon', link: t?.link ?? 'https://admin.microsoft.com', linkLabel: t?.linkLabel ?? 'M365 admin' });
+    }
+    if (b.mail && b.mail.state === 'part' && !b.mail.steps?.track && b.mailReady) {
+      out.push({ sev: 1, brand: b.name, stage: 'Replies', title: `${b.name} replies aren’t tracked`, detail: 'Its mailbox isn’t on the mail hub, so replies don’t show in IMN HQ.', fix: 'Mark replies by hand on the board for now; Claude can move it onto the hub later.', who: 'Claude' });
+    }
+    if (b.seen >= 150 && b.googleClicks / b.seen < 0.005) {
+      out.push({ sev: 2, brand: b.name, stage: 'Visits', title: `${b.name}: Google shows it, nobody clicks`, detail: `${b.seen.toLocaleString('en-AU')} search views, ${b.googleClicks} clicks${b.position ? `, average position ${b.position}` : ''}. Page 1 starts at 10.`, fix: 'Opportunity engine: sharpen the most-seen pages and deepen the one closest to page 1.', who: 'Claude' });
+    }
+    if (b.tracksMoney && b.ga4ok && b.visits >= 20 && b.money === 0) {
+      out.push({ sev: 2, brand: b.name, stage: 'Money clicks', title: `${b.name}: ${b.visits} visits, 0 money clicks`, detail: 'Visitors arrive but nobody reaches a partner link.', fix: 'Move the partner offer higher on the most-visited pages and add a clearer next step.', who: 'Claude' });
+    }
+    if (!b.ga4ok && b.statsAt) {
+      out.push({ sev: 1, brand: b.name, stage: 'Visits', title: `${b.name} visits didn’t refresh`, detail: 'Google Analytics didn’t answer this morning, so visits show 0 here.', fix: 'Claude re-runs the stats job; the morning job now retries on its own.', who: 'Claude' });
+    }
+  }
+  const mailBrands = brands.filter((b) => b.mailReady);
+  const sent7 = tot((b) => b.outreach?.sent7 ?? 0);
+  const goal7 = mailBrands.length * 25;
+  if (mailBrands.length && sent7 < goal7 / 2) {
+    out.push({ sev: 3, brand: null, stage: 'Emails sent', title: `Only ${sent7} outreach emails sent this week`, detail: `Target is 5 a day per connected brand (${goal7} a week across ${mailBrands.length}). Outreach is the only lever that works this early: Google takes months.`, fix: 'Block 15 minutes each morning to send what Radar has queued.', who: 'Simon', link: HQ_CRM, linkLabel: 'Outreach board' });
+  }
+  out.sort((a, b) => b.sev - a.sev);
+
+  const lanes = [
+    { key: 'on', label: 'Connected', hint: 'Can send, sign and track' },
+    { key: 'part', label: 'Partly connected', hint: 'Works, with gaps' },
+    { key: 'off', label: 'Not connected', hint: 'Can’t do outreach yet' },
+  ];
+  return {
+    outreachFunnel,
+    trafficFunnel,
+    outreachLeak: leakOf(outreachFunnel),
+    trafficLeak: leakOf(trafficFunnel.slice(0, 4)),
+    sent7,
+    goal7,
+    bottlenecks: out,
+    mailSteps: mail.steps ?? [],
+    mailUpdated: mail.updated ?? null,
+    lanes: lanes.map((l) => ({ ...l, brands: brands.filter((b) => b.mail?.state === l.key) })),
+    brands,
+    crm: HQ_CRM,
+    outreachAsOf: outreach.asOf ?? null,
   };
 }

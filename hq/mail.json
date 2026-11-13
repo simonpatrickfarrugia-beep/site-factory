@@ -1,0 +1,18 @@
+{
+ "_note": "Brand email connections for IMN HQ. Steps follow the mail hub checklist (claude/MAIL-HUB.md in the Site Factory project). Claude ticks a step when Simon confirms it or a test passes. Outreach on/off comes from mailReady in hq/prospect-targets.json.",
+ "updated": "2026-11-14",
+ "steps": [
+  { "key": "receive", "label": "Receives", "help": "Mail to hello@ and simon@ lands in Outlook" },
+  { "key": "send", "label": "Sends as brand", "help": "Outlook sends from the brand address" },
+  { "key": "sign", "label": "Signature", "help": "Brand signature added automatically" },
+  { "key": "track", "label": "CRM tracking", "help": "Sent mail and replies log to IMN HQ (crm@ copy + imn-mail)" }
+ ],
+ "brands": [
+  { "brand": "vic", "name": "Vic Tours", "address": "simon@victours.com.au", "steps": { "receive": true, "send": true, "sign": true, "track": true }, "note": "Live since 1 Nov. Fully tested." },
+  { "brand": "trailers", "name": "Movie Trailer Channel", "address": "simon@movietrailer.channel", "steps": { "receive": true, "send": true, "sign": true, "track": true }, "note": "Live. First outreach email logged 9 Nov." },
+  { "brand": "community-help-co", "name": "Community Help Co", "address": "simon@communityhelp.com.au", "steps": { "receive": true, "send": true, "sign": true, "track": false }, "note": "Its own Microsoft 365 mailbox, not on the hub, so replies don't log to IMN HQ yet. Mark them by hand." },
+  { "brand": "trade-admin", "name": "Trade Admin", "address": "simon@tradeadmin.com.au", "steps": { "receive": false, "send": false, "sign": false, "track": false }, "note": "Not connected. 15-minute mail hub setup unlocks outreach.", "todo": "ta-mail-hub" },
+  { "brand": "paycalc", "name": "MyPayCalc", "address": "simon@mypaycalc.com.au", "steps": { "receive": false, "send": false, "sign": false, "track": false }, "note": "Not connected. Autopilot site, so it can wait until after Trade Admin." },
+  { "brand": "simon-says-travel", "name": "Simon Says Travel", "address": null, "steps": { "receive": false, "send": false, "sign": false, "track": false }, "note": "No brand email yet. Not in outreach." }
+ ]
+}

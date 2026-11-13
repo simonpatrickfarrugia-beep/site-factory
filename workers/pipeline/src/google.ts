@@ -123,11 +123,17 @@ const ga4Rows = (data: Ga4Raw): Ga4Row[] =>
  */
 export async function ga4Batch(token: string, propertyId: string, bodies: Ga4Body[]): Promise<Ga4Row[][]> {
   if (bodies.length > 5) throw new Error('GA4 batch: at most 5 reports');
-  const res = await fetch(`https://analyticsdata.googleapis.com/v1beta/properties/${propertyId}:batchRunReports`, {
+  const call = () => fetch(`https://analyticsdata.googleapis.com/v1beta/properties/${propertyId}:batchRunReports`, {
     method: 'POST',
     headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json' },
     body: JSON.stringify({ requests: bodies.map(ga4Request) }),
   });
+  // GA4 sometimes answers 502/503 for a moment (14 Nov 2026: 3 sites zeroed). One retry after a short pause.
+  let res = await call();
+  if (res.status >= 500) {
+    await new Promise((r) => setTimeout(r, 1500));
+    res = await call();
+  }
   if (!res.ok) throw new Error(`GA4: HTTP ${res.status} ${(await res.text()).slice(0, 200)}`);
   const data = (await res.json()) as { reports?: Ga4Raw[] };
   return bodies.map((_, i) => ga4Rows(data.reports?.[i] ?? {}));

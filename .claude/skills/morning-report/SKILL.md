@@ -6,7 +6,7 @@ description: Simon's one daily morning report (sites, Radar queue, day-job call 
 # Morning report
 
 Simon's ONLY daily ping from Claude, so it replaces separate notifications. One phone screen.
-Follow `CLAUDE.md`. The only repo changes allowed here: recording a milestone (step 0) and logging the run (last step).
+Follow `CLAUDE.md`. The only repo changes allowed here: recording a milestone (step 0), refreshing `hq/outreach.json` (below) and logging the run (last step).
 
 ## Data
 - Stats per site: `data/{trailers,vic,community-help-co,trade-admin,paycalc}/stats.json`
@@ -21,6 +21,16 @@ Follow `CLAUDE.md`. The only repo changes allowed here: recording a milestone (s
   - Radar waiting: `SELECT brand, COUNT(*) n FROM orgs WHERE found_by='radar' AND reviewed_at IS NULL AND (snooze_until IS NULL OR snooze_until <= strftime('%Y-%m-%dT%H:%M:%SZ','now')) GROUP BY brand`;
     top one: `SELECT brand, name, why, score FROM orgs WHERE found_by='radar' AND reviewed_at IS NULL ORDER BY score DESC LIMIT 1`
   - Outreach replies, last 24 h: `SELECT brand, mail_from, subject FROM messages WHERE direction='in' AND at > ?`
+
+
+## Refresh the HQ outreach funnel (before the report)
+IMN HQ's Growth funnel, Bottlenecks and Brand pipeline read `hq/outreach.json`. Run these read-only queries, then rewrite
+`brands` in that file (keep `_note`, set `asOf` to now in UTC). Every brand in `hq/prospect-targets.json` gets an entry (zeros if none).
+- Funnel per brand ("ever reached" counts):
+  `WITH t AS (SELECT id oid, stage s FROM orgs UNION ALL SELECT org_id, stage FROM touches), r AS (SELECT o.id, o.brand, o.stage, o.stage_at, MAX(CASE t.s WHEN 'drafted' THEN 1 WHEN 'sent' THEN 2 WHEN 'replied' THEN 3 WHEN 'linked' THEN 4 WHEN 'won' THEN 5 ELSE 0 END) best FROM orgs o JOIN t ON t.oid = o.id GROUP BY o.id) SELECT brand, COUNT(*) found, SUM(best>=1) drafted, SUM(best>=2) sent, SUM(best>=3) replied, SUM(best>=4) linked, SUM(stage='drafted') waiting, SUM(stage='dropped') dropped, MIN(CASE WHEN stage='drafted' THEN stage_at END) oldest_waiting, (SELECT MAX(at) FROM touches x WHERE x.brand=r.brand AND x.stage='sent') last_sent, (SELECT COUNT(*) FROM messages m WHERE m.brand=r.brand AND m.direction='in') mail_in, (SELECT COUNT(*) FROM messages m WHERE m.brand=r.brand AND m.direction='out') mail_out FROM r GROUP BY brand`
+- Sent in the last 7 days: `SELECT brand, COUNT(DISTINCT org_id) n FROM touches WHERE stage='sent' AND at > ? GROUP BY brand` (param: now minus 7 days).
+Map columns to keys: found, drafted, sent, replied, linked, waiting, dropped, oldestWaiting, lastSent, sent7, mailIn, mailOut.
+Commit with the milestone/log commit (`[skip ci]` is NOT used for this file: HQ must rebuild to show it), message `HQ: outreach snapshot`.
 
 ## Report
 0. **New milestone** (not already in `hq/milestones.json` `hit`): lead with it. Counts: first money click per site, first Google click per site,
