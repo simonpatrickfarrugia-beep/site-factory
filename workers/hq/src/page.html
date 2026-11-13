@@ -20,12 +20,12 @@
   --bg:#F3F1EC; --surface:#FFFFFF; --sunk:#E9E6DF; --fg:#1D1F22; --muted:#666A70; --line:#DAD6CD;
   --accent:#2F4AD0; --accent-ink:#FFFFFF; --due:#B5530F; --due-bg:#FCEBDD; --good:#1E7A4C; --good-bg:#E1F2E8; --bad:#9A2F2F;
   --display:"Bricolage Grotesque",Georgia,serif; --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
-  --vic:#00653B; --community-help-co:#1F6F5B; --trade-admin:#E8641B; --trailers:#C68A12; --paycalc:#152B4D;
+  --vic:#00653B; --community-help-co:#1F6F5B; --trade-admin:#E8641B; --trailers:#C68A12; --paycalc:#152B4D; --backyard-wild:#5B7F2A; --simon-says-travel:#7A4FB5;
 }
 @media (prefers-color-scheme:dark){:root{
   --bg:#15171A; --surface:#1E2125; --sunk:#26292E; --fg:#ECEDEF; --muted:#A1A6AD; --line:#33373D;
   --accent:#8EA2FF; --accent-ink:#0E1330; --due:#F4A261; --due-bg:#3A2716; --good:#7FD8A6; --good-bg:#16301F; --bad:#F08A8A;
-  --vic:#4FBF86; --community-help-co:#5FC7A8; --trade-admin:#F2924F; --trailers:#F2B53A; --paycalc:#8FB0E8; color-scheme:dark}}
+  --vic:#4FBF86; --community-help-co:#5FC7A8; --trade-admin:#F2924F; --trailers:#F2B53A; --paycalc:#8FB0E8; --backyard-wild:#9CCB5E; --simon-says-travel:#B79BEA; color-scheme:dark}}
 *{box-sizing:border-box}
 html,body{margin:0}
 body{background:var(--bg);color:var(--fg);font:15px/1.5 var(--body);-webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -1097,7 +1097,8 @@ function renderHq() {
         <ul>${state.hq.steps.map((st) => `<li class="${m.steps[st.key] ? 'ok' : 'no'}" title="${esc(st.help)}"><i>${m.steps[st.key] ? '✓' : '✕'}</i>${esc(st.label)}</li>`).join('')}</ul>
         <span class="meta">${m.lastIn || m.lastOut ? `Last in ${esc(ago(m.lastIn) || '–')} · last out ${esc(ago(m.lastOut) || '–')}` : esc(m.note || '')}</span>
         <span class="pill ${m.mailReady ? 'good' : m.inOutreach ? 'due' : ''}">${m.mailReady ? 'Outreach on' : m.inOutreach ? 'Outreach blocked' : 'Not in outreach'}</span></article>`).join('') : '<p class="empty">None</p>'}</div>`; }).join('')}</div></section>` : '';
-  const brands = state.board.brands.filter((b) => inBrand(b.key));
+  const extra = (state.hq?.mail || []).filter((m) => !m.inOutreach && state.brand === 'all').map((m) => ({ key: m.brand, name: m.name, extra: m }));
+  const brands = state.board.brands.filter((b) => inBrand(b.key)).concat(extra);
   const pipeHtml = `<section class="sec"><div class="today-head"><h2>Brand pipeline</h2><span class="meta">Tap a brand to filter everything to it</span></div><div class="deals">${brands.map((b) => {
     const f = state.pipeline.funnel.find((x) => x.key === b.key);
     const st = (k) => f?.steps.find((x) => x.stage === k)?.count || 0;
@@ -1106,8 +1107,8 @@ function renderHq() {
     const waiting = state.board.orgs.filter((o) => o.brand === b.key && o.stage === 'drafted').length;
     return `<article class="deal" style="--c:${color(b.key)}"><header><button class="deal__name" data-brand="${b.key}">${esc(b.name)}</button>
       <span class="pill ${m ? (m.state === 'on' ? 'good' : m.state === 'part' ? '' : 'due') : ''}">✉ ${m ? (m.state === 'on' ? 'connected' : m.state === 'part' ? 'partly' : 'not connected') : '–'}</span></header>
-      <p class="hqf__label">Outreach${waiting ? ` · <b class="warn">${waiting} drafts waiting</b>` : ''}</p>
-      ${chevrons([{ l: 'Found', v: st('found') }, { l: 'Sent', v: st('sent') }, { l: 'Replied', v: st('replied') }, { l: 'Linked', v: st('linked') }], { small: true, leak: false })}
+      ${b.extra ? `<p class="meta" style="margin:8px 0 0">${esc(b.extra.note || 'Not in outreach yet.')}</p>` : `<p class="hqf__label">Outreach${waiting ? ` · <b class="warn">${waiting} drafts waiting</b>` : ''}</p>
+      ${chevrons([{ l: 'Found', v: st('found') }, { l: 'Sent', v: st('sent') }, { l: 'Replied', v: st('replied') }, { l: 'Linked', v: st('linked') }], { small: true, leak: false })}`}
       ${s ? `<p class="hqf__label">Site${s.ga4 ? '' : ' · <b class="warn">visits didn’t refresh</b>'}</p>${chevrons([{ l: 'Seen', v: s.seen }, { l: 'Visits', v: s.ga4 ? s.visits : null }, { l: 'Clicks', v: s.ga4 ? s.clicks : null }, { l: 'Money', v: s.tracksMoney && s.ga4 ? s.money : null }], { small: true, leak: false })}` : ''}
     </article>`; }).join('')}</div></section>`;
   $('#view').innerHTML = funnel + bnHtml + mailHtml + pipeHtml;
