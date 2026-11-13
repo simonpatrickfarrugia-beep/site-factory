@@ -1,11 +1,76 @@
 {
  "_note": "Outreach funnel snapshot from D1 (orgs + touches + messages), counts only, no names. Refreshed each morning by the morning-report skill (SQL in .claude/skills/morning-report/SKILL.md). Stage counts are 'ever reached': an org that was sent and then replied counts in both.",
- "asOf": "2026-11-13T21:40:00Z",
+ "asOf": "2026-11-13T21:58:00Z",
  "brands": {
-  "vic": { "found": 3, "drafted": 3, "sent": 3, "replied": 1, "linked": 1, "waiting": 0, "dropped": 1, "oldestWaiting": null, "lastSent": "2026-11-12T11:26:53Z", "sent7": 2, "mailIn": 7, "mailOut": 6 },
-  "trailers": { "found": 4, "drafted": 1, "sent": 1, "replied": 0, "linked": 0, "waiting": 0, "dropped": 2, "oldestWaiting": null, "lastSent": "2026-11-08T23:52:45Z", "sent7": 1, "mailIn": 1, "mailOut": 1 },
-  "community-help-co": { "found": 15, "drafted": 13, "sent": 1, "replied": 0, "linked": 0, "waiting": 12, "dropped": 2, "oldestWaiting": "2026-11-02T12:22:27Z", "lastSent": "2026-11-03T08:25:45Z", "sent7": 0, "mailIn": 0, "mailOut": 0 },
-  "trade-admin": { "found": 0, "drafted": 0, "sent": 0, "replied": 0, "linked": 0, "waiting": 0, "dropped": 0, "oldestWaiting": null, "lastSent": null, "sent7": 0, "mailIn": 0, "mailOut": 0 },
-  "paycalc": { "found": 0, "drafted": 0, "sent": 0, "replied": 0, "linked": 0, "waiting": 0, "dropped": 0, "oldestWaiting": null, "lastSent": null, "sent7": 0, "mailIn": 0, "mailOut": 0 }
+  "vic": {
+   "found": 3,
+   "drafted": 3,
+   "sent": 3,
+   "replied": 1,
+   "linked": 1,
+   "waiting": 0,
+   "dropped": 1,
+   "oldestWaiting": null,
+   "lastSent": "2026-11-12T11:26:53Z",
+   "sent7": 2,
+   "mailIn": 7,
+   "mailOut": 6
+  },
+  "trailers": {
+   "found": 4,
+   "drafted": 1,
+   "sent": 1,
+   "replied": 0,
+   "linked": 0,
+   "waiting": 0,
+   "dropped": 2,
+   "oldestWaiting": null,
+   "lastSent": "2026-11-08T23:52:45Z",
+   "sent7": 1,
+   "mailIn": 1,
+   "mailOut": 1
+  },
+  "community-help-co": {
+   "found": 15,
+   "drafted": 13,
+   "sent": 1,
+   "replied": 0,
+   "linked": 0,
+   "waiting": 12,
+   "dropped": 2,
+   "oldestWaiting": "2026-11-02T12:22:27Z",
+   "lastSent": "2026-11-03T08:25:45Z",
+   "sent7": 0,
+   "mailIn": 0,
+   "mailOut": 0
+  },
+  "trade-admin": {
+   "found": 0,
+   "drafted": 0,
+   "sent": 0,
+   "replied": 0,
+   "linked": 0,
+   "waiting": 0,
+   "dropped": 0,
+   "oldestWaiting": null,
+   "lastSent": null,
+   "sent7": 0,
+   "mailIn": 0,
+   "mailOut": 0
+  },
+  "paycalc": {
+   "found": 0,
+   "drafted": 0,
+   "sent": 0,
+   "replied": 0,
+   "linked": 0,
+   "waiting": 0,
+   "dropped": 0,
+   "oldestWaiting": null,
+   "lastSent": null,
+   "sent7": 0,
+   "mailIn": 0,
+   "mailOut": 0
+  }
  }
 }
