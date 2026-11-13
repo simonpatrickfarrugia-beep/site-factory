@@ -272,6 +272,61 @@ details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px
   details.fold summary{cursor:pointer;font-weight:600;padding:6px 0}
 }
 @media (min-width:641px){ .mob-only{display:none!important} }
+
+/* Funnel tab */
+.hqf{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:6px}
+.hqf__label{font:600 .72rem var(--body);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:10px 0 2px}
+.hqf__key{margin:6px 0 0;font-size:.8rem}
+.chev{list-style:none;padding:0;margin:0;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:4px}
+.chev li{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px 14px 10px;min-width:0;background:var(--sunk);color:var(--muted);
+  clip-path:polygon(0 0,calc(100% - 12px) 0,100% 50%,calc(100% - 12px) 100%,0 100%,12px 50%)}
+.chev li:first-child{clip-path:polygon(0 0,calc(100% - 12px) 0,100% 50%,calc(100% - 12px) 100%,0 100%);border-radius:8px 0 0 8px}
+.chev li.has{background:color-mix(in srgb,var(--accent) calc(100% - var(--i) * 13%),var(--surface));color:var(--accent-ink)}
+.chev li.leak{background:var(--due-bg);color:var(--due)}
+.chev b{font:500 1.45rem/1.05 var(--mono);font-variant-numeric:tabular-nums}
+.chev span{font-size:.74rem;font-weight:600;line-height:1.2;overflow-wrap:anywhere}
+.chev em{font:600 .7rem var(--mono);font-style:normal;opacity:.85;margin-top:2px}
+.chev.sm li{padding:7px 10px 6px}
+.chev.sm b{font-size:1rem}
+.chev.sm span{font-size:.66rem}
+@media (max-width:640px){.chev:not(.sm){grid-auto-flow:row;grid-auto-columns:auto;gap:3px}
+  .chev:not(.sm) li{flex-direction:row;justify-content:space-between;gap:10px;padding:10px 14px;margin-inline:calc(var(--i) * 4%);clip-path:polygon(0 0,100% 0,calc(100% - 8px) 100%,8px 100%);border-radius:6px}
+  .chev:not(.sm) li:first-child{clip-path:polygon(0 0,100% 0,calc(100% - 8px) 100%,8px 100%)}
+  .chev:not(.sm) span{flex:1;text-align:left;font-size:.85rem}
+  .chev.sm li{padding:6px 4px 5px 10px}}
+.bns{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+@media (max-width:640px){.bns{grid-template-columns:1fr}}
+.bnc{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--muted);border-radius:12px;padding:12px 14px;display:grid;gap:4px;min-width:0}
+.bnc.s3{border-left-color:var(--bad)} .bnc.s2{border-left-color:var(--due)}
+.bnc h3{font:700 1.05rem var(--display);margin:4px 0 0}
+.bnc p{margin:0;font-size:.9rem}
+.bnc>div{margin-top:6px}
+.bnc .btn{text-decoration:none;display:inline-block}
+.bnc__top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.bnc__top .pill{margin-left:auto}
+.sev{font:700 .66rem var(--body);text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;border-radius:999px;background:var(--sunk);color:var(--muted)}
+.sev.s3{background:var(--bad);color:var(--surface)} .sev.s2{background:var(--due-bg);color:var(--due)}
+.lanes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+@media (max-width:640px){.lanes{grid-template-columns:1fr}}
+.lane{background:var(--sunk);border-radius:12px;padding:10px;display:grid;gap:8px;align-content:start;min-width:0}
+.lane h3{font:600 .8rem var(--body);text-transform:uppercase;letter-spacing:.08em;margin:2px 4px 0;display:flex;align-items:center;gap:7px}
+.lane h3 i{width:9px;height:9px;border-radius:50%;background:var(--muted)}
+.lane.on h3 i{background:var(--good)} .lane.part h3 i{background:var(--due)} .lane.off h3 i{background:var(--bad)}
+.lane h3 em{margin-left:auto;font:500 .78rem var(--mono);font-style:normal}
+.lane>.meta{margin:0 4px;font-size:.8rem}
+.mc{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--c,var(--line));border-radius:9px;padding:10px 12px;display:grid;gap:5px;min-width:0}
+.mc__addr{font-size:.78rem;overflow-wrap:anywhere}
+.mc ul{list-style:none;padding:0;margin:2px 0;display:grid;grid-template-columns:1fr 1fr;gap:3px 8px;font-size:.8rem}
+.mc li{display:flex;align-items:center;gap:6px}
+.mc li i{display:inline-grid;place-items:center;width:17px;height:17px;border-radius:50%;font-style:normal;font-size:.62rem;font-weight:800;flex:none}
+.mc li.ok i{background:var(--good-bg);color:var(--good)} .mc li.no{color:var(--muted)} .mc li.no i{background:var(--due-bg);color:var(--bad)}
+.mc .meta{font-size:.78rem}
+.deals{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px}
+@media (max-width:640px){.deals{grid-template-columns:1fr}}
+.deal{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:12px;padding:12px 14px;min-width:0}
+.deal header{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.deal__name{border:0;background:none;padding:0;font:700 1.1rem var(--display);text-align:left}
+.warn{color:var(--due);text-transform:none;letter-spacing:0}
 </style>
 </head>
 <body>
@@ -279,11 +334,12 @@ details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px
   <div class="bar">
     <h1>IMN HQ <small id="updated">Outreach</small></h1>
     <div class="tabs" role="tablist">
-      <button role="tab" id="tab-today" aria-selected="true" data-view="today">Today</button>
+      <button role="tab" id="tab-hq" aria-selected="true" data-view="hq">Funnel</button>
+      <button role="tab" id="tab-today" aria-selected="false" data-view="today">Today</button>
       <button role="tab" id="tab-board" aria-selected="false" data-view="board">Board</button>
       <button role="tab" id="tab-prospect" aria-selected="false" data-desk data-view="prospect">Prospect</button>
       <button role="tab" id="tab-pipeline" aria-selected="false" data-desk data-view="pipeline">Pipeline</button>
-      <button role="tab" id="tab-replies" aria-selected="false" data-view="replies">Replies</button>
+      <button role="tab" id="tab-replies" aria-selected="false" data-desk data-view="replies">Replies</button>
       <button class="mob-only" id="more-btn" aria-haspopup="true" aria-expanded="false">More</button>
       <button role="tab" id="tab-affiliates" aria-selected="false" data-desk data-view="affiliates">Affiliates</button>
     </div>
@@ -291,7 +347,7 @@ details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px
   <div class="chips" id="chips" aria-label="Filter by brand"></div>
 </div></div>
 
-<div class="more-menu" id="more-menu" hidden><button data-view="prospect">Prospect</button><button data-view="pipeline">Pipeline</button><button data-view="affiliates">Affiliates</button></div>
+<div class="more-menu" id="more-menu" hidden><button data-view="replies">Replies</button><button data-view="prospect">Prospect</button><button data-view="pipeline">Pipeline</button><button data-view="affiliates">Affiliates</button></div>
 <main class="wrap">
   <section class="strip" id="strip" aria-label="This week"></section>
   <section id="view"></section>
@@ -301,9 +357,9 @@ details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px
 
 <script>
 const STAGE_LABEL = { found: 'Found', drafted: 'Drafted', sent: 'Sent', replied: 'Replied', linked: 'Linked', won: 'Won', no: 'No' };
-const state = { view: 'today', radar: null, brand: 'all', board: null, summary: null, prospects: null, replies: null, pipeline: null, affiliates: null, needs: null, showAll: {}, open: {} };
-try { const s = JSON.parse(localStorage.getItem('imn-hq') || '{}'); if (s.view) state.view = s.view; if (s.brand) state.brand = s.brand; } catch (e) {}
-const save = () => { try { localStorage.setItem('imn-hq', JSON.stringify({ view: state.view, brand: state.brand })); } catch (e) {} };
+const state = { view: 'hq', hq: null, radar: null, brand: 'all', board: null, summary: null, prospects: null, replies: null, pipeline: null, affiliates: null, needs: null, showAll: {}, open: {} };
+try { const s = JSON.parse(localStorage.getItem('imn-hq2') || '{}'); if (s.view) state.view = s.view; if (s.brand) state.brand = s.brand; } catch (e) {}
+const save = () => { try { localStorage.setItem('imn-hq2', JSON.stringify({ view: state.view, brand: state.brand })); } catch (e) {} };
 
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -343,7 +399,8 @@ async function load() {
   try {
     const [board, summary, prospects, replies, pipeline, affiliates, radar, needs] = await Promise.all([api('/api/board'), api('/api/summary'), api('/api/prospects'), api('/api/replies'), api('/api/pipeline'), api('/api/affiliates'), api('/api/radar'), api('/api/needs')]);
     const send = await api('/api/send/status').catch(() => null);
-    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar, needs, send });
+    const hq = await api('/api/hq').catch(() => null);
+    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar, needs, send, hq });
     $('#updated').textContent = 'Targets scored ' + new Date(prospects.generated).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
     render();
   } catch (e) {
@@ -352,9 +409,10 @@ async function load() {
 }
 
 function render() {
-  document.querySelectorAll('.tabs button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.view === state.view || (b.id === 'more-btn' && ['prospect', 'pipeline', 'affiliates'].includes(state.view)))));
+  document.querySelectorAll('.tabs button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.view === state.view || (b.id === 'more-btn' && ['replies', 'prospect', 'pipeline', 'affiliates'].includes(state.view)))));
   renderChips(); renderStrip();
-  if (state.view === 'today') renderToday();
+  if (state.view === 'hq') renderHq();
+  else if (state.view === 'today') renderToday();
   else if (state.view === 'board') renderBoard();
   else if (state.view === 'prospect') renderProspect();
   else if (state.view === 'pipeline') renderPipeline();
@@ -955,9 +1013,110 @@ function renderPipeline() {
     <section class="sec"><h2>Template performance</h2>${tplHtml}</section>`;
 }
 
+
+// ---------- Funnel tab: one funnel from first contact to money, bottlenecks, email connections, brand pipeline ----------
+const pctTxt = (a, b) => { if (!a) return '–'; const r = (100 * b) / a; return r >= 10 ? Math.round(r) + '%' : r >= 1 ? r.toFixed(1) + '%' : r > 0 ? r.toFixed(2) + '%' : '0%'; };
+const nf = (v) => Number(v || 0).toLocaleString('en-AU');
+function leakAt(steps) {
+  let at = -1, worst = Infinity;
+  for (let i = 1; i < steps.length; i++) { if (steps[i - 1].v < 3) continue; const r = steps[i].v / steps[i - 1].v; if (r < worst) { worst = r; at = i; } }
+  return at;
+}
+function chevrons(steps, opts = {}) {
+  const leak = opts.leak === false ? -1 : leakAt(steps);
+  return `<ol class="chev${opts.small ? ' sm' : ''}">${steps.map((st, i) => `
+    <li class="${st.v ? 'has' : ''}${i === leak ? ' leak' : ''}" style="--i:${i}">
+      <b>${st.v === null ? '–' : nf(st.v)}</b><span>${esc(st.l)}</span>
+      ${i > 0 && !opts.small ? `<em>${i === leak ? '▼ ' : ''}${pctTxt(steps[i - 1].v, st.v)}</em>` : ''}
+    </li>`).join('')}</ol>`;
+}
+function hqData() {
+  const keys = Object.keys(state.summary).filter(inBrand);
+  const fun = state.pipeline.funnel.filter((f) => inBrand(f.key));
+  const step = (st) => fun.reduce((a, f) => a + (f.steps.find((x) => x.stage === st)?.count || 0), 0);
+  const sites = state.hq ? Object.entries(state.hq.sites).filter(([k]) => inBrand(k)) : [];
+  const ssum = (f) => sites.reduce((a, [, s]) => a + (f(s) || 0), 0);
+  const orgs = state.board.orgs.filter((o) => inBrand(o.brand));
+  return {
+    keys, fun, sites, orgs,
+    outreach: [{ l: 'Found', v: step('found') }, { l: 'Drafted', v: step('drafted') }, { l: 'Sent', v: step('sent') }, { l: 'Replied', v: step('replied') }, { l: 'Linked', v: step('linked') }],
+    site: [{ l: 'Seen on Google', v: ssum((s) => s.seen) }, { l: 'Visits', v: ssum((s) => s.visits) }, { l: 'Button clicks', v: ssum((s) => s.clicks) }, { l: 'Money clicks', v: ssum((s) => s.money) }],
+    sentWeek: keys.reduce((a, k) => a + (state.summary[k].sentWeek || 0), 0),
+  };
+}
+function bottlenecks(d) {
+  const out = [];
+  const go = (view, label, brand) => `<button class="btn" data-hqgo="${view}|${brand || ''}">${label} →</button>`;
+  const byBrand = {};
+  d.orgs.filter((o) => o.stage === 'drafted').forEach((o) => { (byBrand[o.brand] = byBrand[o.brand] || []).push(o); });
+  for (const [b, list] of Object.entries(byBrand)) {
+    const oldest = Math.max(...list.map((o) => o.days || 0));
+    out.push({ sev: 3, rank: 0, brand: b, stage: 'Sent', title: `${list.length} ${brandName(b)} email${list.length > 1 ? 's' : ''} drafted, not sent`, detail: `Waiting up to ${oldest} day${oldest === 1 ? '' : 's'}. A draft earns nothing until it goes out.`, fix: 'Send the best 5 now. Drop the ones you wouldn’t send.', who: 'Simon', act: go('board', 'Open drafts', b) });
+  }
+  const needs = (state.needs?.messages || []).filter((m) => inBrand(m.brand));
+  if (needs.length) out.push({ sev: 3, rank: 1, brand: null, stage: 'Replied', title: `${needs.length} repl${needs.length > 1 ? 'ies' : 'y'} waiting for you`, detail: 'Someone answered. Fast replies win links.', fix: 'Reply today, even a one-liner.', who: 'Simon', act: go('today', 'Open replies') });
+  const due = d.orgs.filter((o) => o.followUpDue);
+  if (due.length) out.push({ sev: 2, brand: null, stage: 'Replied', title: `${due.length} follow-up${due.length > 1 ? 's' : ''} due`, detail: 'Sent 7+ days ago with no answer. One short nudge often doubles replies.', fix: 'Send the one-line follow-up from Today.', who: 'Simon', act: go('today', 'Open follow-ups') });
+  const rq = (state.radar?.queue || []).filter((o) => inBrand(o.brand));
+  if (rq.length) out.push({ sev: 2, brand: null, stage: 'Drafted', title: `${rq.length} Radar prospect${rq.length > 1 ? 's' : ''} to review`, detail: 'Found and researched, waiting for your yes or no.', fix: 'Draft the good ones, drop the rest (it teaches Radar).', who: 'Simon', act: go('today', 'Review prospects') });
+  for (const m of (state.hq?.mail || []).filter((x) => inBrand(x.brand))) {
+    if (m.inOutreach && !m.mailReady) out.push({ sev: m.brand === 'trade-admin' ? 3 : 1, brand: m.brand, stage: 'Found', title: `${m.name} email not connected`, detail: m.brand === 'trade-admin' ? 'Radar can’t queue Trade Admin prospects, so the 30-day push has no outreach.' : 'No outreach yet. Fine while it’s on autopilot.', fix: 'Do the 15-minute mail hub setup with Claude in the Site Factory chat.', who: 'Simon', act: '<a class="btn" href="https://admin.microsoft.com" target="_blank" rel="noopener">M365 admin ↗</a>' });
+    else if (m.mailReady && !m.steps.track) out.push({ sev: 1, brand: m.brand, stage: 'Replied', title: `${m.name} replies aren’t tracked`, detail: 'Not on the mail hub, so replies don’t appear here on their own.', fix: 'Mark replies on the card by hand for now.', who: 'Simon' });
+  }
+  const live = (state.hq?.mail || []).filter((m) => m.mailReady && inBrand(m.brand)).length;
+  const goal = live * 25;
+  if (live && d.sentWeek < goal / 2) out.push({ sev: 3, rank: 2, brand: null, stage: 'Sent', title: `${d.sentWeek} sent this week, goal ${goal}`, detail: `5 a day for each of ${live} connected brand${live > 1 ? 's' : ''}. Outreach is the fastest lever while Google warms up.`, fix: 'Block 15 minutes each morning: Today → send what’s queued.', who: 'Simon', act: go('today', 'Start today’s sends') });
+  if (state.send && !state.send.configured) out.push({ sev: 1, brand: null, stage: 'Sent', title: 'One-click send is off', detail: 'Each email opens in Outlook instead of sending from here.', fix: 'Add the 3 Microsoft secrets to imn-hq when you have 10 minutes (Claude can walk you through it).', who: 'Simon' });
+  for (const [k, s] of d.sites) {
+    if (!s.ga4) continue;
+    if (s.seen >= 150 && s.googleClicks / s.seen < 0.005) out.push({ sev: 2, brand: k, stage: 'Visits', title: `${brandName(k)}: Google shows it, nobody clicks`, detail: `${nf(s.seen)} search views, ${s.googleClicks} clicks${s.position ? ', average position ' + s.position : ''}. Page 1 starts at 10.`, fix: 'Opportunity engine sharpens the most-seen pages.', who: 'Claude' });
+    if (s.tracksMoney && s.visits >= 20 && s.money === 0) out.push({ sev: 2, brand: k, stage: 'Money', title: `${brandName(k)}: ${s.visits} visits, 0 money clicks`, detail: 'Visitors arrive but nobody reaches a partner link.', fix: 'Move the partner offer higher on the most-visited pages.', who: 'Claude' });
+  }
+  return out.sort((a, b) => b.sev - a.sev || (a.rank ?? 9) - (b.rank ?? 9));
+}
+function renderHq() {
+  const d = hqData();
+  const bn = bottlenecks(d);
+  const SEV = { 3: 'Critical', 2: 'Leak', 1: 'Watch' };
+  const asOf = state.hq && Object.values(state.hq.sites)[0]?.asOf;
+  const funnel = `<section class="hqf">
+    <div class="today-head"><h2>Growth funnel</h2><span class="meta">Outreach is live · site numbers last 28 days${asOf ? ', updated ' + esc(ago(asOf)) : ''}</span></div>
+    <p class="hqf__label">Outreach → partners</p>${chevrons(d.outreach)}
+    <p class="hqf__label">Search → visits → money</p>${state.hq ? chevrons(d.site) : '<p class="empty">Site numbers unavailable right now.</p>'}
+    <p class="meta hqf__key">% = share that moved on from the step before. ▼ marks the biggest leak.</p>
+  </section>`;
+  const bnHtml = `<section class="sec"><div class="today-head"><h2>Bottlenecks</h2><span class="meta">${bn.length} found, worst first</span></div>
+    ${bn.length ? `<div class="bns">${bn.map((b) => `<article class="bnc s${b.sev}" ${b.brand ? `style="--c:${color(b.brand)}"` : ''}>
+      <div class="bnc__top"><span class="sev s${b.sev}">${SEV[b.sev]}</span><span class="meta">blocks: ${esc(b.stage)}</span><span class="pill">${esc(b.who)}</span></div>
+      <h3>${esc(b.title)}</h3><p class="meta">${esc(b.detail)}</p><p><b>Fix:</b> ${esc(b.fix)}</p>${b.act ? `<div>${b.act}</div>` : ''}</article>`).join('')}</div>` : '<div class="hint"><strong>No bottlenecks.</strong> Keep the daily sending rhythm going.</div>'}</section>`;
+  const mail = (state.hq?.mail || []).filter((m) => inBrand(m.brand));
+  const lanes = [['on', 'Connected', 'Sends, signs and tracks'], ['part', 'Partly connected', 'Works, with gaps'], ['off', 'Not connected', 'No outreach yet']];
+  const mailHtml = state.hq ? `<section class="sec"><div class="today-head"><h2>Email connections</h2><span class="meta">${mail.filter((m) => m.state === 'on').length} connected · ${mail.filter((m) => m.state === 'off').length} not · checklist ${esc(state.hq.mailUpdated)}</span></div>
+    <div class="lanes">${lanes.map(([k, label, hint]) => { const list = mail.filter((m) => m.state === k); return `<div class="lane ${k}"><h3><i></i>${label} <em>${list.length}</em></h3><p class="meta">${hint}</p>
+      ${list.length ? list.map((m) => `<article class="mc" style="--c:${color(m.brand)}"><b>${esc(m.name)}</b><span class="meta mc__addr">${esc(m.address || 'no address yet')}</span>
+        <ul>${state.hq.steps.map((st) => `<li class="${m.steps[st.key] ? 'ok' : 'no'}" title="${esc(st.help)}"><i>${m.steps[st.key] ? '✓' : '✕'}</i>${esc(st.label)}</li>`).join('')}</ul>
+        <span class="meta">${m.lastIn || m.lastOut ? `Last in ${esc(ago(m.lastIn) || '–')} · last out ${esc(ago(m.lastOut) || '–')}` : esc(m.note || '')}</span>
+        <span class="pill ${m.mailReady ? 'good' : m.inOutreach ? 'due' : ''}">${m.mailReady ? 'Outreach on' : m.inOutreach ? 'Outreach blocked' : 'Not in outreach'}</span></article>`).join('') : '<p class="empty">None</p>'}</div>`; }).join('')}</div></section>` : '';
+  const brands = state.board.brands.filter((b) => inBrand(b.key));
+  const pipeHtml = `<section class="sec"><div class="today-head"><h2>Brand pipeline</h2><span class="meta">Tap a brand to filter everything to it</span></div><div class="deals">${brands.map((b) => {
+    const f = state.pipeline.funnel.find((x) => x.key === b.key);
+    const st = (k) => f?.steps.find((x) => x.stage === k)?.count || 0;
+    const s = state.hq?.sites[b.key];
+    const m = (state.hq?.mail || []).find((x) => x.brand === b.key);
+    const waiting = state.board.orgs.filter((o) => o.brand === b.key && o.stage === 'drafted').length;
+    return `<article class="deal" style="--c:${color(b.key)}"><header><button class="deal__name" data-brand="${b.key}">${esc(b.name)}</button>
+      <span class="pill ${m ? (m.state === 'on' ? 'good' : m.state === 'part' ? '' : 'due') : ''}">✉ ${m ? (m.state === 'on' ? 'connected' : m.state === 'part' ? 'partly' : 'not connected') : '–'}</span></header>
+      <p class="hqf__label">Outreach${waiting ? ` · <b class="warn">${waiting} drafts waiting</b>` : ''}</p>
+      ${chevrons([{ l: 'Found', v: st('found') }, { l: 'Sent', v: st('sent') }, { l: 'Replied', v: st('replied') }, { l: 'Linked', v: st('linked') }], { small: true, leak: false })}
+      ${s ? `<p class="hqf__label">Site${s.ga4 ? '' : ' · <b class="warn">visits didn’t refresh</b>'}</p>${chevrons([{ l: 'Seen', v: s.seen }, { l: 'Visits', v: s.ga4 ? s.visits : null }, { l: 'Clicks', v: s.ga4 ? s.clicks : null }, { l: 'Money', v: s.tracksMoney && s.ga4 ? s.money : null }], { small: true, leak: false })}` : ''}
+    </article>`; }).join('')}</div></section>`;
+  $('#view').innerHTML = funnel + bnHtml + mailHtml + pipeHtml;
+}
+
 document.addEventListener('click', (e) => {
   const t = e.target.closest('button'); if (!t) return;
-  if (t.dataset.view) { state.view = t.dataset.view; $('#more-menu').hidden = true; save(); render(); window.scrollTo(0, 0); }
+  if (t.dataset.hqgo) { const [v, b] = t.dataset.hqgo.split('|'); state.view = v; if (b) state.brand = b; if (v === 'board') state.fullBoard = true; save(); render(); window.scrollTo(0, 0); }
+  else if (t.dataset.view) { state.view = t.dataset.view; $('#more-menu').hidden = true; save(); render(); window.scrollTo(0, 0); }
   else if (t.dataset.brand) { state.brand = t.dataset.brand; save(); render(); }
   else if (t.dataset.retry) { const o = state.board.orgs.find((x) => String(x.id) === t.dataset.retry); if (o) openDraft(o.brand, o.target, o); }
   else if (t.dataset.org) openOrg(Number(t.dataset.org));
