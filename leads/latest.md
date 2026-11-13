@@ -1,53 +1,46 @@
-# Call list — Thu 12 Nov 2026
+# Call list — Fri 13 Nov 2026
 
 _SMEs that won Australian Government contracts in the last 7 days (AusTender). Interstate work = flights. Wash every lead first: check Salesforce for existing contact, and that CT and Corporate Traveller aren't already prospecting or trading with them. Then find the person who books travel (office manager, ops, finance, EA). Company details only; check the Do Not Call Register rules for any number you use. Bulk lookup file: leads/latest.csv._
 
-**1. RAPID-TECH EQUIPMENT PTY LTD** — Knox City Centre VIC · $64,240 · score 8.0
-- Why: based in Knox City Centre VIC, delivering for Department of Industry, Science and Resources (Canberra); work runs 8 months
-- Work: Procurement of DC Calibrators for the Low-Frequency Section of the National Measurement Institute's Physical Metrology Branch.
+**1. SHAPE AUSTRALIA PTY LIMITED** — Adelaide SA · $717,900 · score 5.0
+- Why: work runs 17 months
+- Work: Project Management
 - Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
-- Opener: "Congrats on the Department of Industry, Science and Resources contract. With the team in Knox City Centre and the work in Canberra, who's looking after flights and accommodation for it?"
-- Find: [Google](https://www.google.com/search?q=RAPID-TECH+EQUIPMENT+PTY+LTD) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=RAPID-TECH+EQUIPMENT+PTY+LTD)
+- Opener: "Congrats on the Department of Defence contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=SHAPE+AUSTRALIA+PTY+LIMITED) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=SHAPE+AUSTRALIA+PTY+LIMITED)
 
-**2. PFM Advisory Services Pty Ltd** — Kingston ACT · $195,000 · score 6.0
-- Why: 2 new government contracts in the last 7 days; work runs 25 months
-- Work: Provision of Audit and Risk Committee Chair Services
+**2. Bardach Pty Ltd** — Belconnen ACT · $579,214 · score 5.0
+- Why: work runs 24 months
+- Work: Financial Advisory and Data Modelling Services
 - Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
-- Opener: "Congrats on the Department of Health, Disability and Ageing contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=PFM+Advisory+Services+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=PFM+Advisory+Services+Pty+Ltd)
+- Opener: "Congrats on the Director of National Parks contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=Bardach+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Bardach+Pty+Ltd)
 
-**3. Konica Minolta Business Solutions** — North Ryde NSW · $413,023 · score 5.0
+**3. LACHLAN VALLY LANDSCAPING and PAVING** — Cowra NSW · $394,538 · score 5.0
 - Why: work runs 36 months
-- Work: MFD Refresh and Ongoing Support and Maintenance
+- Work: Horticultural Maintenance - Western NSW War Cemeteries
 - Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
-- Opener: "Congrats on the Australian Competition and Consumer Commission contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=Konica+Minolta+Business+Solutions) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Konica+Minolta+Business+Solutions)
+- Opener: "Congrats on the Department of Veterans' Affairs contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=LACHLAN+VALLY+LANDSCAPING+and+PAVING) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=LACHLAN+VALLY+LANDSCAPING+and+PAVING)
 
-**4. Gulanga Pty Ltd ta Gulanga** — Kingston ACT · $165,550 · score 5.0
-- Why: work runs 7 months
-- Work: Maintenance and support
+**4. HORIZON ONE RECRUITMENT PTY LTD** — Braddon ACT · $341,966 · score 5.0
+- Why: work runs 12 months
+- Work: Monitoring Evaluation and Learning Lead (Canberra)
 - Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
-- Opener: "Congrats on the Fair Work Commission contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=Gulanga+Pty+Ltd+ta+Gulanga) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Gulanga+Pty+Ltd+ta+Gulanga)
+- Opener: "Congrats on the Department of Foreign Affairs and Trade - Australian Aid Program contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=HORIZON+ONE+RECRUITMENT+PTY+LTD) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=HORIZON+ONE+RECRUITMENT+PTY+LTD)
 
-**5. Security Consulting Group Pty Ltd** — Melbourne VIC · $164,912 · score 5.0
-- Why: work runs 6 months
-- Work: Security Sys Tech and Cap Framework Review
+**5. JFD AUSTRALIA PTY LTD** — Kirrawee NSW · $440,000 · score 4.0
+- Why: new government contract
+- Work: Corrective Maintenance
 - Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
-- Opener: "Congrats on the Department of Parliamentary Services contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=Security+Consulting+Group+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=Security+Consulting+Group+Pty+Ltd)
+- Opener: "Congrats on the Department of Defence contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=JFD+AUSTRALIA+PTY+LTD) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=JFD+AUSTRALIA+PTY+LTD)
 
-**6. ALS Water and Hydrographics Pty Ltd** — Stafford QLD · $129,836 · score 5.0
-- Why: work runs 9 months
-- Work: FWIN Fabrication & Installation Works - Maintenance Works
+**6. PEEKAY CONSOLIDATED PTY LTD ATF GK SIMKISS FAMILY TRUST** — Ashburton, Melbourne VIC · $69,978 · score 3.0
+- Why: new government contract
+- Work: Comprehensive Due Diligence Assessment of Adam Smith International (Australia)
 - Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
-- Opener: "Congrats on the Bureau of Meteorology contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=ALS+Water+and+Hydrographics+Pty+Ltd) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=ALS+Water+and+Hydrographics+Pty+Ltd)
-
-**7. K2 International LLC** — Delaplane · $58,763 · score 4.0
-- Why: work runs 8 months
-- Work: Facility maintenance and repair services
-- Wash: ☐ Salesforce · ☐ CT · ☐ Corporate Traveller
-- Opener: "Congrats on the Department of Foreign Affairs and Trade contract. Will the team be travelling to deliver it, and who books that travel today?"
-- Find: [Google](https://www.google.com/search?q=K2+International+LLC) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=K2+International+LLC)
+- Opener: "Congrats on the Department of Foreign Affairs and Trade - Australian Aid Program contract. Will the team be travelling to deliver it, and who books that travel today?"
+- Find: [Google](https://www.google.com/search?q=PEEKAY+CONSOLIDATED+PTY+LTD+ATF+GK+SIMKISS+FAMILY+TRUST) · [LinkedIn](https://www.linkedin.com/search/results/companies/?keywords=PEEKAY+CONSOLIDATED+PTY+LTD+ATF+GK+SIMKISS+FAMILY+TRUST)
 
