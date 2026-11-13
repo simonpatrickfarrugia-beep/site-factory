@@ -303,7 +303,7 @@ const MONEY_KEYS: Record<string, string[]> = {
 const NODE_ID: Record<string, string> = { 'community-help-co': 'chc' };
 
 type Sev = 3 | 2 | 1;
-export interface Bottleneck { sev: Sev; brand: string | null; title: string; detail: string; fix: string; who: 'Simon' | 'Claude'; link?: string; linkLabel?: string; stage: string }
+export interface Bottleneck { sev: Sev; rank?: number; brand: string | null; title: string; detail: string; fix: string; who: 'Simon' | 'Claude'; link?: string; linkLabel?: string; stage: string }
 
 export function funnelProps() {
   const sum = (xs: number[]) => xs.reduce((a, b) => a + b, 0);
@@ -316,7 +316,8 @@ export function funnelProps() {
   const now = Date.now();
   const daysSince = (iso: string | null) => (iso ? Math.floor((now - Date.parse(iso)) / 86400000) : null);
 
-  const brands = TRAFFIC_SITES.map((cfg) => {
+  const ORDER = ['trade-admin', 'community-help-co', 'vic', 'trailers', 'paycalc', 'simon-says-travel'];
+  const brands = [...TRAFFIC_SITES].sort((a, b) => ORDER.indexOf(a.id === 'chc' ? 'community-help-co' : a.id) - ORDER.indexOf(b.id === 'chc' ? 'community-help-co' : b.id)).map((cfg) => {
     const slug = cfg.id === 'chc' ? 'community-help-co' : cfg.id;
     const s = read<any>(cfg.stats, null);
     const t = s?.totals ?? { views: 0, users: 0, cta: {}, gscClicks: 0, gscImpressions: 0 };
@@ -388,7 +389,7 @@ export function funnelProps() {
     const o = b.outreach;
     if (o?.waiting > 0) {
       const age = daysSince(o.oldestWaiting);
-      out.push({ sev: 3, brand: b.name, stage: 'Emails sent', title: `${o.waiting} ${b.name} emails drafted, not sent`, detail: `Ready in IMN HQ${age !== null ? ` for up to ${age} days` : ''}. Every one is a warm prospect going cold.`, fix: 'Open the outreach board and send the best 5 today (about 10 min).', who: 'Simon', link: HQ_CRM, linkLabel: 'Outreach board' });
+      out.push({ sev: 3, rank: 0, brand: b.name, stage: 'Emails sent', title: `${o.waiting} ${b.name} emails drafted, not sent`, detail: `Ready in IMN HQ${age !== null ? ` for up to ${age} days` : ''}. Every one is a warm prospect going cold.`, fix: 'Open the outreach board and send the best 5 today (about 10 min).', who: 'Simon', link: HQ_CRM, linkLabel: 'Outreach board' });
     }
     if (b.inOutreach && !b.mailReady) {
       const t = b.mail?.todo ? todoLink(b.mail.todo) : null;
@@ -404,9 +405,10 @@ export function funnelProps() {
     if (b.tracksMoney && b.ga4ok && b.visits >= 20 && b.money === 0) {
       out.push({ sev: 2, brand: b.name, stage: 'Money clicks', title: `${b.name}: ${b.visits} visits, 0 money clicks`, detail: 'Visitors arrive but nobody reaches a partner link.', fix: 'Move the partner offer higher on the most-visited pages and add a clearer next step.', who: 'Claude' });
     }
-    if (!b.ga4ok && b.statsAt) {
-      out.push({ sev: 1, brand: b.name, stage: 'Visits', title: `${b.name} visits didn’t refresh`, detail: 'Google Analytics didn’t answer this morning, so visits show 0 here.', fix: 'Claude re-runs the stats job; the morning job now retries on its own.', who: 'Claude' });
-    }
+  }
+  const stale = brands.filter((b) => !b.ga4ok && b.statsAt);
+  if (stale.length) {
+    out.push({ sev: 1, brand: null, stage: 'Visits', title: `Visits didn’t refresh for ${stale.length} site${stale.length > 1 ? 's' : ''}`, detail: `Google Analytics didn’t answer this morning for ${stale.map((b) => b.name).join(', ')}, so their visits show as – here.`, fix: 'Claude re-runs the stats job; the morning job now retries on its own.', who: 'Claude' });
   }
   const mailBrands = brands.filter((b) => b.mailReady);
   const sent7 = tot((b) => b.outreach?.sent7 ?? 0);
@@ -414,7 +416,7 @@ export function funnelProps() {
   if (mailBrands.length && sent7 < goal7 / 2) {
     out.push({ sev: 3, brand: null, stage: 'Emails sent', title: `Only ${sent7} outreach emails sent this week`, detail: `Target is 5 a day per connected brand (${goal7} a week across ${mailBrands.length}). Outreach is the only lever that works this early: Google takes months.`, fix: 'Block 15 minutes each morning to send what Radar has queued.', who: 'Simon', link: HQ_CRM, linkLabel: 'Outreach board' });
   }
-  out.sort((a, b) => b.sev - a.sev);
+  out.sort((a, b) => b.sev - a.sev || (a.rank ?? 1) - (b.rank ?? 1));
 
   const lanes = [
     { key: 'on', label: 'Connected', hint: 'Can send, sign and track' },

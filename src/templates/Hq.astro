@@ -130,7 +130,8 @@ const ago = (iso: string | null) => (iso ? new Date(iso).toLocaleDateString('en-
               </div>
               <p class="bn__title">{b.title}</p>
               <p class="bn__detail">{b.detail}</p>
-              <p class="bn__fix"><b>Fix:</b> {b.fix}{b.link && <> <a class="todo__go" href={b.link} target="_blank" rel="noopener">{b.linkLabel ?? 'Open'}</a></>}</p>
+              <p class="bn__fix"><b>Fix:</b> {b.fix}</p>
+              {b.link && <p class="bn__go"><a class="todo__go" href={b.link} target="_blank" rel="noopener">{b.linkLabel ?? 'Open'} →</a></p>}
             </li>
           ))}
         </ol>
@@ -518,7 +519,8 @@ const ago = (iso: string | null) => (iso ? new Date(iso).toLocaleDateString('en-
   .bn__who { margin: 0 0 0 auto; }
   .bn__title { font-weight: 800; font-size: 1.05rem; margin: 0.5rem 0 0.2rem; }
   .bn__detail { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.5rem; }
-  .bn__fix { font-size: 0.9rem; margin: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+  .bn__fix { font-size: 0.9rem; margin: 0; }
+  .bn__go { margin: 0.55rem 0 0; }
   /* Email lanes */
   .lanes { display: grid; gap: var(--space-3); }
   @media (min-width: 52rem) { .lanes { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
