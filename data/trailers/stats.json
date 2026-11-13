@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-12T19:00:12.283Z",
+ "generatedAt": "2026-11-13T19:00:10.643Z",
  "period": {
-  "start": "2026-10-15",
-  "end": "2026-11-11"
+  "start": "2026-10-16",
+  "end": "2026-11-12"
  },
  "gscPeriod": {
-  "start": "2026-10-13",
-  "end": "2026-11-09"
+  "start": "2026-10-14",
+  "end": "2026-11-10"
  },
  "sources": {
   "ga4": true,
@@ -14,23 +14,18 @@
   "notes": []
  },
  "totals": {
-  "views": 154,
-  "prevViews": 186,
-  "users": 126,
+  "views": 75,
+  "prevViews": 262,
+  "users": 47,
   "cta": {
    "films_banner": 1,
    "justwatch": 1,
    "prime": 1
   },
-  "gscClicks": 1,
-  "gscImpressions": 124
+  "gscClicks": 0,
+  "gscImpressions": 82
  },
  "daily": [
-  {
-   "date": "2026-10-15",
-   "views": 80,
-   "cta": 0
-  },
   {
    "date": "2026-10-16",
    "views": 1,
@@ -125,14 +120,19 @@
    "date": "2026-11-09",
    "views": 1,
    "cta": 0
+  },
+  {
+   "date": "2026-11-12",
+   "views": 1,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 44,
-   "prevViews": 118,
-   "users": 27,
+   "views": 42,
+   "prevViews": 116,
+   "users": 25,
    "cta": {
     "films_banner": 1
    },
@@ -162,186 +162,6 @@
    "d7": 0
   },
   {
-   "path": "/movies/batman-begins-2005",
-   "views": 3,
-   "prevViews": 1,
-   "users": 3,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 4
-  },
-  {
-   "path": "/movies/schindlers-list-1994",
-   "views": 2,
-   "prevViews": 9,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 58,
-   "topQuery": "trailer schindler's list",
-   "allViews": 11
-  },
-  {
-   "path": "/movies/star-wars-episode-v---the-empire-strikes-back-1980",
-   "views": 2,
-   "prevViews": 7,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 9
-  },
-  {
-   "path": "/movies/star-wars-episode-vii---the-force-awakens-2015",
-   "views": 2,
-   "prevViews": 4,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 6
-  },
-  {
-   "path": "/movies/true-lies-1994",
-   "views": 2,
-   "prevViews": 2,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 60,
-   "topQuery": "true lies movie trailer",
-   "allViews": 4
-  },
-  {
-   "path": "/movies/independence-day-1996",
-   "views": 2,
-   "prevViews": 2,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 4
-  },
-  {
-   "path": "/movies/lethal-weapon-1987",
-   "views": 2,
-   "prevViews": 2,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 4
-  },
-  {
-   "path": "/movies/jurassic-park-1993",
-   "views": 2,
-   "prevViews": 1,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 11,
-   "gscPosition": 67.7,
-   "topQuery": "jurassic park film trailer",
-   "allViews": 3
-  },
-  {
-   "path": "/movies/robocop-1987",
-   "views": 2,
-   "prevViews": 1,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 3
-  },
-  {
-   "path": "/movies/star-wars-episode-viii---the-last-jedi-2017",
-   "views": 2,
-   "prevViews": 1,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 3
-  },
-  {
-   "path": "/movies/the-wind-rises-2013",
-   "views": 2,
-   "prevViews": 1,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 3
-  },
-  {
-   "path": "/movies/men-in-black-1997",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 45,
-   "topQuery": "men and black trailer",
-   "allViews": 2
-  },
-  {
-   "path": "/movies/mystic-river-2003",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 62.5,
-   "topQuery": "mystic river 2003 trailer",
-   "allViews": 2
-  },
-  {
-   "path": "/movies/lost-in-translation-2003",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 64,
-   "topQuery": "lost in translation trailer",
-   "allViews": 2
-  },
-  {
-   "path": "/movies/the-departed-2006",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 42,
-   "topQuery": "departed trailer",
-   "allViews": 2
-  },
-  {
    "path": "/free-classic-movies",
    "views": 2,
    "prevViews": 0,
@@ -354,270 +174,6 @@
    "allViews": 2,
    "prev7": 2,
    "d7": 0
-  },
-  {
-   "path": "/movies/babel-2006",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/die-hard-1988",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/godzilla-2014",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/letters-from-iwo-jima-2006",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/little-miss-sunshine-2006",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/master-and-commander-the-far-side-of-the-world-2003",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/my-neighbors-the-yamadas-1999",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/only-yesterday-1991",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/revenge-of-the-ninja-1983",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/saving-private-ryan-1998",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/star-wars-episode-ii---attack-of-the-clones-2002",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/star-wars-episode-iii---revenge-of-the-sith-2005",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/star-wars-episode-ix---the-rise-of-skywalker-2019",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/terminator-2-judgment-day-1991",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/the-golden-child-1986",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/the-karate-kid-part-ii-1986",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/the-lost-world-jurassic-park-1997",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/the-matrix-1999",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/the-queen-2006",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/theres-something-about-mary-1998",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/top-gun-1986",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/total-recall-1990",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
   },
   {
    "path": "/movies/weird-science-1985",
@@ -646,6 +202,32 @@
    "allViews": 2,
    "prev7": 2,
    "d7": 0
+  },
+  {
+   "path": "/movies/batman-begins-2005",
+   "views": 1,
+   "prevViews": 3,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 4
+  },
+  {
+   "path": "/movies/the-imitation-game-2014",
+   "views": 1,
+   "prevViews": 1,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2,
+   "d7": 1,
+   "prev7": 0
   },
   {
    "path": "/contact",
@@ -748,55 +330,7 @@
    "allViews": 1
   },
   {
-   "path": "/movies/seabiscuit-2003",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 1
-  },
-  {
-   "path": "/movies/the-firm-1993",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 1
-  },
-  {
    "path": "/movies/the-fugitive-1993",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 1
-  },
-  {
-   "path": "/movies/the-imitation-game-2014",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 1
-  },
-  {
-   "path": "/movies/the-lord-of-the-rings-the-return-of-the-king-2003",
    "views": 1,
    "prevViews": 0,
    "users": 1,
@@ -841,15 +375,87 @@
    "allViews": 1
   },
   {
+   "path": "/movies/schindlers-list-1994",
+   "views": 0,
+   "prevViews": 11,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 58,
+   "topQuery": "trailer schindler's list",
+   "allViews": 11
+  },
+  {
+   "path": "/movies/star-wars-episode-v---the-empire-strikes-back-1980",
+   "views": 0,
+   "prevViews": 9,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 9
+  },
+  {
+   "path": "/movies/star-wars-episode-vii---the-force-awakens-2015",
+   "views": 0,
+   "prevViews": 6,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 6
+  },
+  {
+   "path": "/movies/true-lies-1994",
+   "views": 0,
+   "prevViews": 4,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 60,
+   "topQuery": "true lies movie trailer",
+   "allViews": 4
+  },
+  {
+   "path": "/movies/independence-day-1996",
+   "views": 0,
+   "prevViews": 4,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 4
+  },
+  {
+   "path": "/movies/lethal-weapon-1987",
+   "views": 0,
+   "prevViews": 4,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 4
+  },
+  {
    "path": "/movies/whalefall-2026",
    "views": 0,
    "prevViews": 4,
    "users": 0,
    "cta": {},
-   "gscClicks": 1,
-   "gscImpressions": 1,
-   "gscPosition": 51,
-   "topQuery": "whalefall 2026 full movie",
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
    "allViews": 4
   },
   {
@@ -859,9 +465,57 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 12,
-   "gscPosition": 52,
+   "gscImpressions": 11,
+   "gscPosition": 53.5,
    "topQuery": "home alone trailer",
+   "allViews": 3
+  },
+  {
+   "path": "/movies/jurassic-park-1993",
+   "views": 0,
+   "prevViews": 3,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 11,
+   "gscPosition": 67.7,
+   "topQuery": "jurassic park film trailer",
+   "allViews": 3
+  },
+  {
+   "path": "/movies/robocop-1987",
+   "views": 0,
+   "prevViews": 3,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 3
+  },
+  {
+   "path": "/movies/star-wars-episode-viii---the-last-jedi-2017",
+   "views": 0,
+   "prevViews": 3,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 3
+  },
+  {
+   "path": "/movies/the-wind-rises-2013",
+   "views": 0,
+   "prevViews": 3,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
    "allViews": 3
   },
   {
@@ -883,9 +537,45 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 12,
-   "gscPosition": 53.1,
+   "gscImpressions": 9,
+   "gscPosition": 58,
    "topQuery": "the prestige trailer",
+   "allViews": 2
+  },
+  {
+   "path": "/movies/men-in-black-1997",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 52.3,
+   "topQuery": "men and black trailer",
+   "allViews": 2
+  },
+  {
+   "path": "/movies/babel-2006",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/die-hard-1988",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
    "allViews": 2
   },
   {
@@ -901,7 +591,283 @@
    "allViews": 2
   },
   {
+   "path": "/movies/godzilla-2014",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/letters-from-iwo-jima-2006",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/little-miss-sunshine-2006",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/lost-in-translation-2003",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/master-and-commander-the-far-side-of-the-world-2003",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/my-neighbors-the-yamadas-1999",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/mystic-river-2003",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/only-yesterday-1991",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/revenge-of-the-ninja-1983",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/saving-private-ryan-1998",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
    "path": "/movies/speed-1994",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/star-wars-episode-ii---attack-of-the-clones-2002",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/star-wars-episode-iii---revenge-of-the-sith-2005",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/star-wars-episode-ix---the-rise-of-skywalker-2019",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/terminator-2-judgment-day-1991",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/the-departed-2006",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/the-golden-child-1986",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/the-karate-kid-part-ii-1986",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/the-lost-world-jurassic-park-1997",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/the-matrix-1999",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/the-queen-2006",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/theres-something-about-mary-1998",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/top-gun-1986",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/total-recall-1990",
    "views": 0,
    "prevViews": 2,
    "users": 0,
@@ -955,21 +921,9 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 11,
-   "gscPosition": 53.3,
+   "gscImpressions": 8,
+   "gscPosition": 59,
    "topQuery": "the sixth sense trailer",
-   "allViews": 1
-  },
-  {
-   "path": "/movies/star-wars-episode-i---the-phantom-menace-1999",
-   "views": 0,
-   "prevViews": 1,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 9,
-   "gscPosition": 42.1,
-   "topQuery": "star wars episode 1 trailer",
    "allViews": 1
   },
   {
@@ -994,18 +948,6 @@
    "gscImpressions": 3,
    "gscPosition": 58,
    "topQuery": "platoon film trailer",
-   "allViews": 1
-  },
-  {
-   "path": "/movies/inception-2010",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 38,
-   "topQuery": "inception the movie trailer",
    "allViews": 1
   },
   {
@@ -1141,7 +1083,43 @@
    "allViews": 1
   },
   {
+   "path": "/movies/seabiscuit-2003",
+   "views": 0,
+   "prevViews": 1,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
+   "path": "/movies/star-wars-episode-i---the-phantom-menace-1999",
+   "views": 0,
+   "prevViews": 1,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
    "path": "/movies/the-dark-knight-2008",
+   "views": 0,
+   "prevViews": 1,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
+   "path": "/movies/the-firm-1993",
    "views": 0,
    "prevViews": 1,
    "users": 0,
@@ -1166,6 +1144,18 @@
   },
   {
    "path": "/movies/the-lion-king-1994",
+   "views": 0,
+   "prevViews": 1,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
+   "path": "/movies/the-lord-of-the-rings-the-return-of-the-king-2003",
    "views": 0,
    "prevViews": 1,
    "users": 0,
@@ -1237,6 +1227,18 @@
    "allViews": 1
   },
   {
+   "path": "/movies/inception-2010",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
    "path": "/movies/the-punisher-lundgren",
    "views": 0,
    "prevViews": 0,
@@ -1255,31 +1257,9 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 9,
-   "gscPosition": 54.4,
-   "topQuery": "district 9 trailer"
-  },
-  {
-   "path": "/movies/dunkirk-2017",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
    "gscImpressions": 7,
-   "gscPosition": 46.6,
-   "topQuery": "dunkerque movie trailer"
-  },
-  {
-   "path": "/movies/the-silence-of-the-lambs-1991",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 6,
-   "gscPosition": 41.3,
-   "topQuery": "silence of the lambs trailer"
+   "gscPosition": 63.9,
+   "topQuery": "district 9 trailer"
   },
   {
    "path": "/movies/insomnia-2002",
@@ -1288,20 +1268,20 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 60.3,
-   "topQuery": "insomnia trailer"
+   "gscImpressions": 5,
+   "gscPosition": 59.8,
+   "topQuery": "insomnia film trailer"
   },
   {
-   "path": "/movies/the-blind-side-2009",
+   "path": "/movies/the-silence-of-the-lambs-1991",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 62.3,
-   "topQuery": "the blind side 2009 trailer"
+   "gscImpressions": 4,
+   "gscPosition": 49.3,
+   "topQuery": "the silence of the lambs trailer"
   },
   {
    "path": "/movies/the-dark-knight-rises-2012",
@@ -1326,26 +1306,15 @@
    "topQuery": "air force one movie"
   },
   {
-   "path": "/movies/back-to-school-1986",
+   "path": "/movies/the-blind-side-2009",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 2,
-   "gscPosition": 73,
-   "topQuery": "back to school"
-  },
-  {
-   "path": "/movies/pulp-fiction-1994",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 55,
-   "topQuery": "pulp fiction trailer"
+   "gscPosition": 68.5,
+   "topQuery": "the blind side preview"
   },
   {
    "path": "/movies/aladdin-1992",
@@ -1359,6 +1328,17 @@
    "topQuery": "aladdin 1992 trailer"
   },
   {
+   "path": "/movies/back-to-school-1986",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 85,
+   "topQuery": "back to school"
+  },
+  {
    "path": "/movies/goldeneye-1995",
    "views": 0,
    "prevViews": 0,
@@ -1370,17 +1350,6 @@
    "topQuery": "goldeneye trailer"
   },
   {
-   "path": "/movies/kikis-delivery-service-1989",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 50,
-   "topQuery": "kiki's delivery service trailer"
-  },
-  {
    "path": "/movies/reservoir-dogs-1992",
    "views": 0,
    "prevViews": 0,
@@ -1390,44 +1359,15 @@
    "gscImpressions": 1,
    "gscPosition": 54,
    "topQuery": "reservoir dogs trailer"
-  },
-  {
-   "path": "/movies/the-hurt-locker-2009",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 63,
-   "topQuery": "the hurt locker trailer"
-  },
-  {
-   "path": "/movies/twister-1996",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 30,
-   "topQuery": "twister 1996 trailer"
   }
  ],
  "queries": [
   {
    "query": "home alone trailer",
    "clicks": 0,
-   "impressions": 6,
-   "position": 46.8,
-   "page": "/movies/home-alone-1990"
-  },
-  {
-   "query": "the prestige trailer",
-   "clicks": 0,
    "impressions": 5,
-   "position": 53.6,
-   "page": "/movies/the-prestige-2006"
+   "position": 49.2,
+   "page": "/movies/home-alone-1990"
   },
   {
    "query": "jurassic park film trailer",
@@ -1442,6 +1382,13 @@
    "impressions": 4,
    "position": 63.3,
    "page": "/movies/jurassic-park-1993"
+  },
+  {
+   "query": "the prestige trailer",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 57,
+   "page": "/movies/the-prestige-2006"
   },
   {
    "query": "the sixth sense trailer",
@@ -1465,18 +1412,18 @@
    "page": "/"
   },
   {
-   "query": "back to school",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 73,
-   "page": "/movies/back-to-school-1986"
-  },
-  {
    "query": "trailer of home alone",
    "clicks": 0,
    "impressions": 2,
    "position": 47,
    "page": "/movies/home-alone-1990"
+  },
+  {
+   "query": "insomnia film trailer",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 60,
+   "page": "/movies/insomnia-2002"
   },
   {
    "query": "insomnia trailer",
@@ -1493,46 +1440,11 @@
    "page": "/movies/men-in-black-1997"
   },
   {
-   "query": "men in black trailer",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 39.5,
-   "page": "/movies/men-in-black-1997"
-  },
-  {
-   "query": "star wars episode 1 trailer",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 43.5,
-   "page": "/movies/star-wars-episode-i---the-phantom-menace-1999"
-  },
-  {
    "query": "the hateful eight 2015 trailer",
    "clicks": 0,
    "impressions": 2,
    "position": 73,
    "page": "/movies/the-hateful-eight-2015"
-  },
-  {
-   "query": "the prestige film trailer",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 44.5,
-   "page": "/movies/the-prestige-2006"
-  },
-  {
-   "query": "trailer the prestige",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 51.5,
-   "page": "/movies/the-prestige-2006"
-  },
-  {
-   "query": "silence of the lambs trailer",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 39,
-   "page": "/movies/the-silence-of-the-lambs-1991"
   },
   {
    "query": "the silence of the lambs trailer",
@@ -1547,13 +1459,6 @@
    "impressions": 2,
    "position": 59,
    "page": "/movies/the-sixth-sense-1999"
-  },
-  {
-   "query": "whalefall 2026 full movie",
-   "clicks": 1,
-   "impressions": 1,
-   "position": 51,
-   "page": "/movies/whalefall-2026"
   },
   {
    "query": "air force one movie",
@@ -1577,6 +1482,13 @@
    "page": "/movies/aladdin-1992"
   },
   {
+   "query": "back to school",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 85,
+   "page": "/movies/back-to-school-1986"
+  },
+  {
    "query": "district 9 film trailer",
    "clicks": 0,
    "impressions": 1,
@@ -1591,24 +1503,10 @@
    "page": "/movies/district-9-2009"
   },
   {
-   "query": "district9",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 2,
-   "page": "/movies/district-9-2009"
-  },
-  {
    "query": "dystrykt 9 zwiastun",
    "clicks": 0,
    "impressions": 1,
    "position": 59,
-   "page": "/movies/district-9-2009"
-  },
-  {
-   "query": "trailer district 9",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 41,
    "page": "/movies/district-9-2009"
   },
   {
@@ -1617,55 +1515,6 @@
    "impressions": 1,
    "position": 71,
    "page": "/movies/district-9-2009"
-  },
-  {
-   "query": "dunkerque movie trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 38,
-   "page": "/movies/dunkirk-2017"
-  },
-  {
-   "query": "dunkirk 2017 trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 34,
-   "page": "/movies/dunkirk-2017"
-  },
-  {
-   "query": "dunkirk film trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 57,
-   "page": "/movies/dunkirk-2017"
-  },
-  {
-   "query": "dunkirk movie 2017 trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 35,
-   "page": "/movies/dunkirk-2017"
-  },
-  {
-   "query": "dunkirk preview",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 74,
-   "page": "/movies/dunkirk-2017"
-  },
-  {
-   "query": "dunkirk trailer 2017",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 37,
-   "page": "/movies/dunkirk-2017"
-  },
-  {
-   "query": "film dunkirk trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 51,
-   "page": "/movies/dunkirk-2017"
   },
   {
    "query": "goldeneye trailer",
@@ -1689,20 +1538,6 @@
    "page": "/movies/home-alone-1990"
   },
   {
-   "query": "inception the movie trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 38,
-   "page": "/movies/inception-2010"
-  },
-  {
-   "query": "insomnia film trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 62,
-   "page": "/movies/insomnia-2002"
-  },
-  {
    "query": "trailer insomnia",
    "clicks": 0,
    "impressions": 1,
@@ -1724,46 +1559,11 @@
    "page": "/movies/jurassic-park-1993"
   },
   {
-   "query": "kiki's delivery service trailer",
+   "query": "men in black trailer",
    "clicks": 0,
    "impressions": 1,
-   "position": 50,
-   "page": "/movies/kikis-delivery-service-1989"
-  },
-  {
-   "query": "lost in translation trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 64,
-   "page": "/movies/lost-in-translation-2003"
-  },
-  {
-   "query": "mystic river 2003 trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 54,
-   "page": "/movies/mystic-river-2003"
-  },
-  {
-   "query": "mystic river movie trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 57,
-   "page": "/movies/mystic-river-2003"
-  },
-  {
-   "query": "mystic river trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 64,
-   "page": "/movies/mystic-river-2003"
-  },
-  {
-   "query": "mystic river trailer deutsch",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 75,
-   "page": "/movies/mystic-river-2003"
+   "position": 56,
+   "page": "/movies/men-in-black-1997"
   },
   {
    "query": "platoon film trailer",
@@ -1787,20 +1587,6 @@
    "page": "/movies/platoon-1986"
   },
   {
-   "query": "pulp fiction trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 71,
-   "page": "/movies/pulp-fiction-1994"
-  },
-  {
-   "query": "trailer for pulp fiction",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 39,
-   "page": "/movies/pulp-fiction-1994"
-  },
-  {
    "query": "reservoir dogs trailer",
    "clicks": 0,
    "impressions": 1,
@@ -1813,62 +1599,6 @@
    "impressions": 1,
    "position": 58,
    "page": "/movies/schindlers-list-1994"
-  },
-  {
-   "query": "episode 1 star wars trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 40,
-   "page": "/movies/star-wars-episode-i---the-phantom-menace-1999"
-  },
-  {
-   "query": "phantom menace trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 40,
-   "page": "/movies/star-wars-episode-i---the-phantom-menace-1999"
-  },
-  {
-   "query": "star wars 1999 trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 42,
-   "page": "/movies/star-wars-episode-i---the-phantom-menace-1999"
-  },
-  {
-   "query": "star wars ep 1 trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 42,
-   "page": "/movies/star-wars-episode-i---the-phantom-menace-1999"
-  },
-  {
-   "query": "star wars trailer phantom menace",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 40,
-   "page": "/movies/star-wars-episode-i---the-phantom-menace-1999"
-  },
-  {
-   "query": "trailer phantom menace",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 41,
-   "page": "/movies/star-wars-episode-i---the-phantom-menace-1999"
-  },
-  {
-   "query": "trailer star wars episode 1",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 47,
-   "page": "/movies/star-wars-episode-i---the-phantom-menace-1999"
-  },
-  {
-   "query": "the blind side 2009 trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 50,
-   "page": "/movies/the-blind-side-2009"
   },
   {
    "query": "the blind side preview",
@@ -1906,13 +1636,6 @@
    "page": "/movies/the-dark-knight-rises-2012"
   },
   {
-   "query": "departed trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 42,
-   "page": "/movies/the-departed-2006"
-  },
-  {
    "query": "the hateful 8 trailer",
    "clicks": 0,
    "impressions": 1,
@@ -1934,11 +1657,11 @@
    "page": "/movies/the-hateful-eight-2015"
   },
   {
-   "query": "the hurt locker trailer",
+   "query": "the prestige film trailer",
    "clicks": 0,
    "impressions": 1,
-   "position": 63,
-   "page": "/movies/the-hurt-locker-2009"
+   "position": 52,
+   "page": "/movies/the-prestige-2006"
   },
   {
    "query": "the prestige movie trailer",
@@ -1962,18 +1685,11 @@
    "page": "/movies/the-silence-of-the-lambs-1991"
   },
   {
-   "query": "silence of the lambs preview",
+   "query": "silence of the lambs trailer",
    "clicks": 0,
    "impressions": 1,
-   "position": 23,
+   "position": 50,
    "page": "/movies/the-silence-of-the-lambs-1991"
-  },
-  {
-   "query": "six sense trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 40,
-   "page": "/movies/the-sixth-sense-1999"
   },
   {
    "query": "sixth sense trailer",
@@ -1990,20 +1706,6 @@
    "page": "/movies/the-sixth-sense-1999"
   },
   {
-   "query": "the sixth sense 1999 trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 34,
-   "page": "/movies/the-sixth-sense-1999"
-  },
-  {
-   "query": "trailer für the sixth sense",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 40,
-   "page": "/movies/the-sixth-sense-1999"
-  },
-  {
    "query": "true lies movie trailer",
    "clicks": 0,
    "impressions": 1,
@@ -2016,13 +1718,6 @@
    "impressions": 1,
    "position": 57,
    "page": "/movies/true-lies-1994"
-  },
-  {
-   "query": "twister 1996 trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 30,
-   "page": "/movies/twister-1996"
   },
   {
    "query": "home alone film trailer",
@@ -2044,14 +1739,16 @@
    "impressions": 1,
    "position": 62,
    "page": "/movies/the-prestige-2006"
+  },
+  {
+   "query": "trailer the prestige",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 65,
+   "page": "/movies/the-prestige-2006"
   }
  ],
  "gscDaily": [
-  {
-   "date": "2026-10-13",
-   "clicks": 1,
-   "impressions": 51
-  },
   {
    "date": "2026-10-14",
    "clicks": 0,
@@ -2186,12 +1883,17 @@
    "date": "2026-11-09",
    "clicks": 0,
    "impressions": 3
+  },
+  {
+   "date": "2026-11-10",
+   "clicks": 0,
+   "impressions": 1
   }
  ],
  "allTime": {
   "start": "2026-09-13",
-  "views": 372,
-  "users": 234,
+  "views": 373,
+  "users": 235,
   "cta": {
    "films_banner": 1,
    "justwatch": 1,
@@ -2447,6 +2149,11 @@
     "date": "2026-11-09",
     "views": 1,
     "cta": 0
+   },
+   {
+    "date": "2026-11-12",
+    "views": 1,
+    "cta": 0
    }
   ]
  },
@@ -2455,7 +2162,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 36
+    "sessions": 34
    },
    {
     "source": "google",
@@ -2537,6 +2244,12 @@
    },
    {
     "date": "2026-11-09",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-12",
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 1

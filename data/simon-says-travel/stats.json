@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-12T19:00:12.283Z",
+ "generatedAt": "2026-11-13T19:00:10.643Z",
  "period": {
-  "start": "2026-10-15",
-  "end": "2026-11-11"
+  "start": "2026-10-16",
+  "end": "2026-11-12"
  },
  "gscPeriod": {
-  "start": "2026-10-13",
-  "end": "2026-11-09"
+  "start": "2026-10-14",
+  "end": "2026-11-10"
  },
  "sources": {
   "ga4": true,
@@ -14,9 +14,9 @@
   "notes": []
  },
  "totals": {
-  "views": 3,
+  "views": 4,
   "prevViews": 0,
-  "users": 3,
+  "users": 4,
   "cta": {},
   "gscClicks": 0,
   "gscImpressions": 1
@@ -26,21 +26,27 @@
    "date": "2026-11-05",
    "views": 3,
    "cta": 0
+  },
+  {
+   "date": "2026-11-12",
+   "views": 1,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 3,
+   "views": 4,
    "prevViews": 0,
-   "users": 3,
+   "users": 4,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 0,
    "gscPosition": null,
    "topQuery": null,
-   "allViews": 3,
-   "d7": 3
+   "allViews": 4,
+   "prev7": 3,
+   "d7": 1
   },
   {
    "path": "/destinations/japan",
@@ -93,17 +99,27 @@
    "date": "2026-11-09",
    "clicks": 0,
    "impressions": 1
+  },
+  {
+   "date": "2026-11-10",
+   "clicks": 0,
+   "impressions": 1
   }
  ],
  "allTime": {
   "start": "2026-11-05",
-  "views": 3,
-  "users": 3,
+  "views": 4,
+  "users": 4,
   "cta": {},
   "daily": [
    {
     "date": "2026-11-05",
     "views": 3,
+    "cta": 0
+   },
+   {
+    "date": "2026-11-12",
+    "views": 1,
     "cta": 0
    }
   ]
@@ -113,7 +129,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 3
+    "sessions": 4
    }
   ],
   "referrers": [],
@@ -123,6 +139,12 @@
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 3
+   },
+   {
+    "date": "2026-11-12",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
    }
   ]
  }
