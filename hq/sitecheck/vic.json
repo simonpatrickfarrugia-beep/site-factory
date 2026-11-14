@@ -1,0 +1,484 @@
+{
+ "id": "vic",
+ "name": "victours.com.au",
+ "url": "https://victours.com.au",
+ "owner": "imn",
+ "scannedAt": "2026-11-14T21:44:23Z",
+ "stage": "building",
+ "stageWhy": "no revenue in the last 60 days",
+ "cadenceDays": 7,
+ "nextDue": "2026-11-22",
+ "score": 82,
+ "grade": "B",
+ "areas": {
+  "health": {
+   "score": 71,
+   "grade": "C",
+   "label": "Broken pages & links"
+  },
+  "tracking": {
+   "score": 100,
+   "grade": "A",
+   "label": "Tracking & money links"
+  },
+  "indexing": {
+   "score": 51,
+   "grade": "F",
+   "label": "Sitemap & indexing"
+  },
+  "seo": {
+   "score": 79,
+   "grade": "C",
+   "label": "Titles, descriptions & schema"
+  },
+  "content": {
+   "score": 100,
+   "grade": "A",
+   "label": "Thin & duplicate pages"
+  },
+  "speed": {
+   "score": null,
+   "grade": null,
+   "label": "Speed"
+  },
+  "google": {
+   "score": 100,
+   "grade": "A",
+   "label": "Google trend"
+  },
+  "rivals": {
+   "score": null,
+   "grade": null,
+   "label": "Competitors"
+  }
+ },
+ "pages": 311,
+ "findings": [
+  {
+   "id": "robots-blocks",
+   "area": "indexing",
+   "severity": "blocker",
+   "title": "robots.txt blocks the whole site",
+   "fix": "Remove \"Disallow: /\" from robots.txt.",
+   "pages": [
+    "/robots.txt"
+   ],
+   "count": 1,
+   "detail": "",
+   "impact": 10.0,
+   "broken": true
+  },
+  {
+   "id": "broken-internal",
+   "area": "health",
+   "severity": "high",
+   "title": "6 broken internal link(s)",
+   "fix": "Point the links at a live page (or add a redirect).",
+   "pages": [
+    "/weekends/belgrave-by-train",
+    "/day-trips/castlemaine",
+    "/weekends/castlemaine-by-train",
+    "/weekends/castlemaine-on-a-budget",
+    "/day-trips/sorrento",
+    "/weekends/sorrento-on-a-budget",
+    "/day-trips/healesville",
+    "/weekends/healesville-on-a-budget"
+   ],
+   "count": 10,
+   "detail": "/belgrave/stay (404) on 1 page(s); /castlemaine/stay (404) on 3 page(s); /sorrento/stay (404) on 2 page(s); /healesville/stay (404) on 2 page(s); /kyneton/stay (404) on 1 page(s); /dromana/stay (404) on 1 page(s)",
+   "impact": 5.1,
+   "broken": true
+  },
+  {
+   "id": "broken-outside",
+   "area": "health",
+   "severity": "medium",
+   "title": "7 outside link(s) go to a missing page",
+   "fix": "Update or remove the links (often an official website that moved).",
+   "pages": [
+    "/day-trips/torquay",
+    "/great-ocean-road",
+    "/great-ocean-road/do",
+    "/torquay",
+    "/torquay/do",
+    "/gippsland",
+    "/gippsland/eat",
+    "/phillip-island"
+   ],
+   "count": 32,
+   "detail": "https://ansmtorquay.wordpress.com/ (410); https://www.laporchetta.com/store-locations/suburb/phillip-island (404); https://www.thebottleofmilk.com/ (no answer); http://www.urbanspoon.com/r/346/1815273/restaurant/Victoria/A-Mini-Kitchen-Rye (no answer); https://lacollinapizzeria.com.au (no answer); https://cellscafe.com.au (no answer)",
+   "impact": 3.3,
+   "broken": true
+  },
+  {
+   "id": "seo-title",
+   "area": "seo",
+   "severity": "medium",
+   "title": "28 title outside 30–65 characters",
+   "fix": "Rewrite to 30–65 characters with the main search first.",
+   "pages": [
+    "/phillip-island/do",
+    "/lakes-entrance/do",
+    "/barwon-heads/do",
+    "/harrietville/do",
+    "/mornington-peninsula",
+    "/mornington-peninsula/stay",
+    "/mornington-peninsula/eat",
+    "/mornington-peninsula/do"
+   ],
+   "count": 28,
+   "detail": "",
+   "impact": 3.0,
+   "broken": false
+  },
+  {
+   "id": "seo-words",
+   "area": "seo",
+   "severity": "low",
+   "title": "7 page(s) under 250 words",
+   "fix": "Fine for tools; for guides add the answer people search for.",
+   "pages": [
+    "/towns",
+    "/metung",
+    "/flinders",
+    "/about",
+    "/how-we-build-our-guides",
+    "/contact",
+    "/affiliate-disclosure"
+   ],
+   "count": 7,
+   "detail": "",
+   "impact": 1.2,
+   "broken": false
+  },
+  {
+   "id": "schema-missing",
+   "area": "seo",
+   "severity": "low",
+   "title": "7 page(s) have no schema",
+   "fix": "Add WebPage/BreadcrumbList (or the page's own type) so Google understands it.",
+   "pages": [
+    "/towns",
+    "/road-trips",
+    "/about",
+    "/how-we-build-our-guides",
+    "/contact",
+    "/privacy-policy",
+    "/affiliate-disclosure"
+   ],
+   "count": 7,
+   "detail": "",
+   "impact": 1.2,
+   "broken": false
+  },
+  {
+   "id": "seo-desc",
+   "area": "seo",
+   "severity": "low",
+   "title": "5 description outside 70–160 characters",
+   "fix": "Rewrite to 70–160 characters: what the page gives the searcher.",
+   "pages": [
+    "/high-country/eat",
+    "/road-trips/great-ocean-road-3-day-itinerary",
+    "/about",
+    "/privacy-policy",
+    "/affiliate-disclosure"
+   ],
+   "count": 5,
+   "detail": "",
+   "impact": 1.0,
+   "broken": false
+  }
+ ],
+ "google": {
+  "impr7": 131,
+  "imprPrev7": 110,
+  "clicks7": 0,
+  "clicksPrev7": 0,
+  "impr28": 2101,
+  "clicks28": 4,
+  "views28": 89,
+  "viewsPrev28": 0,
+  "recentViews": 6,
+  "lastGa4Day": "2026-11-10",
+  "gscTo": "2026-11-11"
+ },
+ "queries": [
+  {
+   "query": "sorrento restaurants",
+   "position": 85.8,
+   "impressions": 30
+  },
+  {
+   "query": "1004 mornington-flinders road red hill vic 3937",
+   "position": 35.6,
+   "impressions": 28
+  },
+  {
+   "query": "110 metung road metung vic 3904",
+   "position": 73.9,
+   "impressions": 24
+  },
+  {
+   "query": "melbourne accomodation southbank",
+   "position": 72,
+   "impressions": 23
+  },
+  {
+   "query": "yarra valley day trip",
+   "position": 68.5,
+   "impressions": 18
+  },
+  {
+   "query": "activities lorne victoria",
+   "position": 66,
+   "impressions": 17
+  },
+  {
+   "query": "accomodation melbourne southbank",
+   "position": 76.9,
+   "impressions": 17
+  },
+  {
+   "query": "110 metung road metung",
+   "position": 78.1,
+   "impressions": 16
+  },
+  {
+   "query": "southbank melbourne accomodation",
+   "position": 83.4,
+   "impressions": 16
+  },
+  {
+   "query": "bright things to do",
+   "position": 48.9,
+   "impressions": 15
+  },
+  {
+   "query": "accommodation melbourne southbank",
+   "position": 81.5,
+   "impressions": 15
+  },
+  {
+   "query": "melbourne southbank accomodation",
+   "position": 74.9,
+   "impressions": 15
+  },
+  {
+   "query": "things to do in queenscliff",
+   "position": 65.6,
+   "impressions": 14
+  },
+  {
+   "query": "lorne attractions",
+   "position": 73.6,
+   "impressions": 14
+  },
+  {
+   "query": "179 day avenue omeo vic 3898",
+   "position": 72.6,
+   "impressions": 14
+  },
+  {
+   "query": "restaurants in sorrento",
+   "position": 95.9,
+   "impressions": 14
+  },
+  {
+   "query": "victours",
+   "position": 4.1,
+   "impressions": 13
+  },
+  {
+   "query": "things to do lorne",
+   "position": 80.2,
+   "impressions": 13
+  },
+  {
+   "query": "614 tongio gap road omeo",
+   "position": 64.8,
+   "impressions": 13
+  },
+  {
+   "query": "accommodation melbourne southbank area",
+   "position": 78.2,
+   "impressions": 13
+  },
+  {
+   "query": "accomodation in southbank melbourne",
+   "position": 78.2,
+   "impressions": 13
+  },
+  {
+   "query": "melbourne southbank accommodation",
+   "position": 73.8,
+   "impressions": 13
+  },
+  {
+   "query": "southbank accommodation melbourne",
+   "position": 77.8,
+   "impressions": 13
+  },
+  {
+   "query": "mornington",
+   "position": 40.3,
+   "impressions": 12
+  },
+  {
+   "query": "486 omeo valley road omeo",
+   "position": 62.5,
+   "impressions": 12
+  },
+  {
+   "query": "marysville",
+   "position": 48.4,
+   "impressions": 11
+  },
+  {
+   "query": "apollo bay",
+   "position": 76.2,
+   "impressions": 10
+  },
+  {
+   "query": "daylesford",
+   "position": 48.2,
+   "impressions": 10
+  },
+  {
+   "query": "lakes entrance",
+   "position": 54.6,
+   "impressions": 10
+  },
+  {
+   "query": "614 tongio gap road omeo vic 3898",
+   "position": 68.4,
+   "impressions": 10
+  },
+  {
+   "query": "1004 mornington-flinders road red hill",
+   "position": 24.3,
+   "impressions": 10
+  },
+  {
+   "query": "accommodation in melbourne southbank",
+   "position": 80.8,
+   "impressions": 10
+  },
+  {
+   "query": "melbourne accommodation southbank",
+   "position": 70.8,
+   "impressions": 10
+  },
+  {
+   "query": "things to do in daylesford",
+   "position": 50.2,
+   "impressions": 9
+  },
+  {
+   "query": "all you can eat mornington",
+   "position": 59.6,
+   "impressions": 9
+  },
+  {
+   "query": "mornington main street restaurants",
+   "position": 56.2,
+   "impressions": 9
+  },
+  {
+   "query": "things to do queenscliff",
+   "position": 71.4,
+   "impressions": 9
+  },
+  {
+   "query": "things to do in st kilda",
+   "position": 67.1,
+   "impressions": 9
+  },
+  {
+   "query": "visit bright",
+   "position": 64,
+   "impressions": 8
+  },
+  {
+   "query": "melbourne day trips",
+   "position": 75.8,
+   "impressions": 8
+  },
+  {
+   "query": "group activities lorne",
+   "position": 63.1,
+   "impressions": 8
+  },
+  {
+   "query": "mornington peninsula restaurants",
+   "position": 99,
+   "impressions": 8
+  },
+  {
+   "query": "brunch in richmond",
+   "position": 93.5,
+   "impressions": 8
+  },
+  {
+   "query": "best restaurants sorrento",
+   "position": 95.6,
+   "impressions": 8
+  },
+  {
+   "query": "pubs in sorrento",
+   "position": 87.8,
+   "impressions": 8
+  },
+  {
+   "query": "south yarra restaurants",
+   "position": 51,
+   "impressions": 8
+  },
+  {
+   "query": "accom melbourne southbank",
+   "position": 80.4,
+   "impressions": 8
+  },
+  {
+   "query": "south bank accommodation melbourne",
+   "position": 71.6,
+   "impressions": 8
+  },
+  {
+   "query": "bright victoria",
+   "position": 58.6,
+   "impressions": 7
+  },
+  {
+   "query": "mornington peninsula day tour",
+   "position": 73,
+   "impressions": 7
+  }
+ ],
+ "live": null,
+ "costUsd": 0,
+ "speed": [
+  {
+   "url": "https://victours.com.au/",
+   "error": "HTTP Error 429: Too Many Requests"
+  }
+ ],
+ "quality": {
+  "summary": "311 indexable pages · average 412 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
+  "thin": 0,
+  "near": 0
+ },
+ "links": {
+  "internal": 370,
+  "outside": 4890,
+  "checkedOutside": 150,
+  "unsureOutside": 3
+ },
+ "affiliateOk": 546,
+ "secs": 76,
+ "change": {
+  "first": true
+ },
+ "history": [],
+ "issue": "open"
+}

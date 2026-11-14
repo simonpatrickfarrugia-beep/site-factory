@@ -1,0 +1,29 @@
+{
+ "sites": {
+  "vic": {
+   "name": "victours.com.au",
+   "url": "https://victours.com.au",
+   "owner": "imn",
+   "scannedAt": "2026-11-14T21:44:23Z",
+   "score": 82,
+   "grade": "B",
+   "change": null,
+   "first": true,
+   "stage": "building",
+   "cadenceDays": 7,
+   "nextDue": "2026-11-22",
+   "topFix": "robots.txt blocks the whole site",
+   "broken": 3,
+   "newIssues": 0,
+   "fixed": 0,
+   "costUsd": 0
+  }
+ },
+ "updated": "2026-11-14T21:44:23Z",
+ "lastRun": {
+  "at": "2026-11-14T21:44:23Z",
+  "scanned": [
+   "vic"
+  ]
+ }
+}
