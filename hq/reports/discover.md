@@ -1,6 +1,6 @@
 # Niche discovery (weekly)
 
-Updated 2026-11-07. Every Sunday Claude proposes new site ideas that can earn per sale or signup (ads-only ideas are skipped), and each is screened for **lots of searches with little competition**: related Google searches that contain the topic's own words, with 100+ a month **and** SEO difficulty 25 or less. 15 ideas screened this week for about US$0.35.
+Updated 2026-11-14. Every Sunday Claude proposes new site ideas that can earn per sale or signup (ads-only ideas are skipped), and each is screened for **lots of searches with little competition**: related Google searches that contain the topic's own words, with 100+ a month **and** SEO difficulty 25 or less. 0 ideas screened this week for about US$0.00.
 
 - **Easy searches**: how many related searches pass that bar (a site needs many pages, so breadth matters).
 - **Opportunity**: easy volume, weighted by money (CPC) and breadth. Use it to rank, not as a forecast.
@@ -11,27 +11,6 @@ Updated 2026-11-07. Every Sunday Claude proposes new site ideas that can earn pe
 
 | # | Idea | Market | Opportunity | Easy searches | Easy volume/mo | Median CPC | Earns from | Biggest easy searches |
 |---:|---|---|---:|---:|---:|---:|---|---|
-| 1 | ⭐ Car rental cost by airport and car type | US | **23,601,900** | 31,684 | 7,867,300 | $3.72 | Rentalcars.com / Discover Cars affiliate ~4-8% per booking; Turo referral credits | budget car rental (1,220,000, kd 15); national car rental (823,000, kd 0); hertz car rental (450,000, kd 0) |
-| 2 | ⭐ Mattress and sleep product buyer guides by size and firmness | US | **3,504,900** | 4,304 | 1,168,300 | $2.68 | Mattress affiliate programmes (Casper, Purple, Helix-style) ~$50-150 per sale or 5-10% | side sleeper pillow (90,500, kd 12); memory foam mattress topper (74,000, kd 0); dormeo mattress topper (49,500, kd 0) |
-| 3 | ⭐ Heat pump and furnace installer cost by state | US | **2,235,300** | 4,128 | 745,100 | $3.28 | HVAC installer lead buyers ~$25-75 per lead; EnergySage-style referral | bed bug heat treatment (60,500, kd 7); water specific heat capacity (33,100, kd 15); air source heat pump (27,100, kd 20) |
-| 4 | Ski resort lift ticket and lesson deals by state | US | **1,689,673** | 2,074 | 705,500 | $1.90 | Ski pass resellers (Liftopia, Ikon-style referral) ~5-10% per pass; REI/Backcountry gear ~4-8% | heavenly ski resort (74,000, kd 0); sugar mountain ski resort (49,500, kd 13); high mountain ski resort (40,500, kd 6) |
-| 5 | Generator and backup power sizing by state | US | **1,217,580** | 995 | 468,300 | $2.10 | Amazon Associates ~3-4% on $500-2000 generators; generator installer leads ~$25-60 | generac generator cost (40,500, kd 11); portable generator for home (22,200, kd 18); portable generators for camping (18,100, kd 11) |
-| 6 | Tide-pool and fishing charter booking by port | US | **1,077,684** | 11,528 | 869,100 | $0.74 | Viator or GetYourGuide fishing tours ~8% of $150-300 booking; charter marketplaces (Captain Experience style) ~10% | bass fishing gear (74,000, kd 19); fly fishing rod (40,500, kd 3); spinning fishing rod (22,200, kd 0) |
-| 7 | Solar lead quotes by US state and utility | US | **887,580** | 403 | 295,860 | $7.03 | Solar installer lead buyers ~$30-100 per qualified lead; EnergySage referral ~$20-50 | how many planets are in our solar system (49,500, kd 19); how many planets are in the solar system (18,100, kd 23); what are the biggest planets in our solar system (12,100, kd 20) |
-| 8 | Pet travel insurance and kennel cost by city | US | **690,360** | 1,538 | 230,120 | $4.71 | Pet insurance leads ~$30-60 per quote (Trupanion/Healthy Paws style); Rover referral ~$20 per booking | dog kennel cough vaccination (33,100, kd 0); dog kennel outdoor (33,100, kd 0); dog boarding facility (12,100, kd 21) |
-| 9 | Pool and hot tub delivery by zip | US | **426,420** | 540 | 142,140 | $3.25 | Pool supply affiliates ~5-8%; installer leads ~$20-50 | inground pool cost (12,100, kd 4); fiberglass pool cost (6,600, kd 0); above ground pool installation cost (6,600, kd 0) |
-| 10 | Whale and wildlife watching tours by town | US | **384,066** | 183 | 146,590 | $2.12 | Viator/GetYourGuide wildlife tours ~8% of $60-120 per ticket | gray whale cove (22,200, kd 3); bar harbor whale watching (8,100, kd 4); cape cod whale tour (8,100, kd 13) |
-| 11 | Cruise port and shore excursion booking by port | US | **336,139** | 161 | 120,480 | $2.29 | Viator/GetYourGuide excursions ~8%; cruise booking affiliates ~$50-100 per booking | fort lauderdale cruise port (18,100, kd 16); miami cruise port parking (12,100, kd 6); safe cruise parking miami (6,600, kd 5) |
-| 12 | Bicycle e-bike hire and bike shop by trail | US | **246,871** | 916 | 142,700 | $1.23 | REI and Backcountry gear ~4-8%; Bike rental booking marketplaces ~10% | mackinac island bike rentals (8,100, kd 0); dirt bike rentals (5,400, kd 0); rent a bike nyc (4,400, kd 15) |
-| 13 | Moving truck and storage unit cost by route | US | **233,550** | 110 | 77,850 | $6.07 | Moving quote leads ~$10-40 per lead; self storage affiliates (SpareFoot style) ~$10-25 per rental | how much is a storage unit (12,100, kd 4); how much does a storage unit cost (6,600, kd 2); how much is a storage unit per month (6,600, kd 2) |
-| 14 | Melbourne and Victoria ski lodge and cabin stays | AU | **95,875** | 110 | 49,420 | $1.44 | Booking.com / Expedia affiliate ~4% of A$200 stay; Viator snow tours ~8% | log cabin penrith (5,400, kd 4); cradle mountain lodge accommodation (5,400, kd 25); mid city motor lodge orange (1,300, kd 0) |
-| 15 | Campervan and RV hire by city | US | **18,633** | 41 | 8,810 | $3.19 | Outdoorsy / RVshare referral ~$50-100 per booking or % of rental; RV insurance quotes ~$20-60 per lead | class b campervan rental (720, kd 22); class c motorhome floor plans (480, kd 7); mercedes benz motorhome rental (390, kd 10) |
-
-## Domains for this week's ⭐ ideas
-
-- **Car rental cost by airport and car type**: ❌ rentroute.com · ❌ airportrental.com · ❌ carhirehub.com · ❌ rentalroster.com · ✅ rentpathfinder.com · ❌ airrentals.com
-- **Mattress and sleep product buyer guides by size and firmness**: ✅ mattressroster.com · ✅ sleepsizer.com · ✅ matchmattress.com · ❌ mattressdeal.com · ❌ sleepfit.com · ❌ bedpick.com
-- **Heat pump and furnace installer cost by state**: ✅ heatroster.com · ✅ furnacepath.com · ❌ heatquote.com · ❌ heatpumpfinder.com · ✅ hvacroster.com · ✅ thermpath.com
 
 ## All-time leaderboard
 
