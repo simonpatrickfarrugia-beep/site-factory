@@ -36,10 +36,6 @@
 
 ## What changed
 
-- "servicem8 vs": new in top 5: fergus.com, nextminute.com, unknown site, memate.com.au, coastworksai.com.au · dropped out: google.com, google.com, google.com, google.com, google.com
-- "servicem8 pricing": new in top 5: capterra.com.au, customcrms.com.au, reactiveweb.com.au, skillmammoth.com, tradieautomate.com · dropped out: google.com, google.com, google.com, google.com, google.com
-- "service mate vs tradify": new in top 5: growthlocal.com.au, ityourservice.com.au, trackyatradie.com, unknown site, sleeplesstradesman.com · dropped out: google.com, google.com, google.com, google.com, google.com
-- "tradesman quote template": new in top 5: kr.pinterest.com, contractortalk.com, etsy.com, in.pinterest.com, pinterest.com · dropped out: google.com, google.com, google.com, google.com, google.com
 - Fixed: /: 3 files block the first paint
 - Fixed: /tradify-vs-servicem8: 3 files block the first paint
 - Fixed: "servicem8 tradify comparison": we're not in the top 10 (Search Console avg 81); google.com leads

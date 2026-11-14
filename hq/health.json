@@ -41,6 +41,11 @@
    "path": "data/vic/stats.json",
    "field": "generatedAt",
    "maxAgeDays": 1.5
+  },
+  {
+   "path": "hq/sitecheck/index.json",
+   "field": "updated",
+   "maxAgeDays": 1.5
   }
  ],
  "versionSites": [

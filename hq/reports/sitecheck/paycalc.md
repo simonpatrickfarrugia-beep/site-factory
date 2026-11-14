@@ -36,11 +36,6 @@
 
 ## What changed
 
-- "mypaycalc": new in top 5: unknown site, apps.microsoft.com, austaxai.com.au, deductit.com.au, fairworkmate.com.au · dropped out: google.com, google.com, google.com, google.com, google.com
-- "pay calculator": new in top 5: woholmate.site, mydailycalc.com, paymecalculator.com.au, toolkitau.com, netpaymate.com.au · dropped out: google.com, google.com, google.com, google.com, google.com
-- "australian tax brackets": new in top 5: data.gov.au, taxaustralia.com.au, au.talent.com, youtube.com, heed.finance · dropped out: google.com, google.com, google.com, google.com, google.com
-- "what tax bracket am i in australia": new in top 5: perthmobiletax.com.au, netactuary.com.au, tmbank.com.au, lemonadebeachaccounting.com.au, unknown site · dropped out: google.com, google.com, google.com, google.com, google.com
-- "current tax brackets australia": new in top 5: data.gov.au, parlinfo.aph.gov.au, autaxcalc.com, youtube.com, privacyaustralia.net · dropped out: google.com, google.com, google.com, google.com, google.com
 - Fixed: /: 3 files block the first paint
 - Fixed: /tax-brackets: 3 files block the first paint
 

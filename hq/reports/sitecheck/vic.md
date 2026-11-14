@@ -36,11 +36,6 @@
 
 ## What changed
 
-- "sorrento restaurants": new in top 5: mapquest.com, foodandwinewithlove.com.au, instagram.com, magicpin.com, foodandwinewithlove.com.au · dropped out: google.com, google.com, google.com, google.com, google.com
-- "melbourne accomodation southbank": new in top 5: tripadvisor.com.au, jetstar.com, booking.com, trivago.co.nz, booking.com · dropped out: google.com, google.com, google.com, google.com, google.com
-- "yarra valley day trip": new in top 5: australia.com, localingtours.com, tripadvisor.com.au, restaurantsyarravalley.com.au, gowest.com.au · dropped out: google.com, google.com, google.com, google.com, google.com
-- "activities lorne victoria": new in top 5: lornevictoria.com.au, cassiethehag.com, visitmelbourne.com, tripadvisor.com.au, expedia.com.au · dropped out: google.com, google.com, google.com, google.com, google.com
-- "bright things to do": new in top 5: visitbright.com.au, visitbright.com.au, tripadvisor.co.nz, au.trip.com, visitbright.com.au · dropped out: google.com, google.com, google.com, google.com, google.com
 - Fixed: /: 3 files block the first paint
 - Fixed: /towns: 3 files block the first paint
 

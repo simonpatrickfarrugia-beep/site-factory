@@ -36,11 +36,6 @@
 
 ## What changed
 
-- "home alone trailer": new in top 5: unknown site, unknown site, unknown site, 15min.lt, ign.com · dropped out: google.com, google.com, google.com, google.com, google.com
-- "jurassic park film trailer": new in top 5: unknown site, dailymotion.com, saffarazzi.com, rottentomatoes.com, unknown site · dropped out: google.com, google.com, google.com, google.com, google.com
-- "the sixth sense trailer": new in top 5: tv.apple.com, video.sky.it, facebook.com, unknown site, themoviedb.org · dropped out: google.com, google.com, google.com, google.com, google.com
-- "district 9 trailer": new in top 5: cinema.everyeye.it, ecartelera.com, moviejones.de, allocine.fr, youtube.com · dropped out: google.com, google.com, google.com, google.com, google.com
-- "the prestige trailer": new in top 5: ebay.co.uk, imdb.com, youtube.com, reddit.com, mymovies.it · dropped out: google.com, google.com, google.com, google.com, google.com
 - Fixed: 1 broken internal link(s)
 - Fixed: /: 3 files block the first paint
 - Fixed: /browse: 3 files block the first paint

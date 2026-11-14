@@ -32,7 +32,6 @@
 
 ## What changed
 
-- "when should australians book japan flights in 2026": new in top 5: helloroam.com, unknown site, unknown site, skyceylon.com.au, bookmytrip.com.au · dropped out: google.com, google.com, google.com, google.com, google.com
 - Fixed: /: 3 files block the first paint
 - Fixed: /destinations/japan: 3 files block the first paint
 

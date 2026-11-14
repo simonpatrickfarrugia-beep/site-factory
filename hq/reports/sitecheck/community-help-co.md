@@ -36,10 +36,6 @@
 
 ## What changed
 
-- "community help": new in top 5: goldcoast.qld.gov.au, ntcommunity.org.au, qld.gov.au, findhelptas.org.au, innersydneyvoice.org.au · dropped out: google.com, google.com, google.com, google.com, google.com
-- "community services placement": new in top 5: facebook.com, au.indeed.com, au.indeed.com, au.indeed.com, au.indeed.com · dropped out: google.com, google.com, google.com, google.com, google.com
-- "local community support": new in top 5: mercycare.com.au, servicedirectory.cesphn.org.au, localkind.org.au, brisbane.qld.gov.au, commsatwork.org · dropped out: google.com, google.com, google.com, google.com, google.com
-- "simon farrugia": new in top 5: unknown site, facebook.com, facebook.com, facebook.com, unknown site · dropped out: google.com, google.com, google.com, google.com, google.com
 - New: "hr support ringwood": we're not in the top 10 (Search Console avg 39); careerhub.com leads
 - Fixed: /: 3 files block the first paint
 - Fixed: /contact: 3 files block the first paint
