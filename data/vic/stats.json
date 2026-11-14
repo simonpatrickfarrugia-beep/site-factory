@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-13T21:39:39.483Z",
+ "generatedAt": "2026-11-14T19:00:10.444Z",
  "period": {
-  "start": "2026-10-16",
-  "end": "2026-11-12"
+  "start": "2026-10-17",
+  "end": "2026-11-13"
  },
  "gscPeriod": {
-  "start": "2026-10-14",
-  "end": "2026-11-10"
+  "start": "2026-10-15",
+  "end": "2026-11-11"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 91,
+  "views": 89,
   "prevViews": 0,
-  "users": 71,
+  "users": 69,
   "cta": {
    "book_tour": 2,
    "website": 1,
    "map": 1
   },
   "gscClicks": 4,
-  "gscImpressions": 2089
+  "gscImpressions": 2101
  },
  "daily": [
   {
@@ -120,27 +120,22 @@
    "date": "2026-11-10",
    "views": 2,
    "cta": 0
-  },
-  {
-   "date": "2026-11-12",
-   "views": 2,
-   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 46,
+   "views": 44,
    "prevViews": 0,
-   "users": 33,
+   "users": 31,
    "cta": {},
    "gscClicks": 2,
    "gscImpressions": 6,
    "gscPosition": 3,
    "topQuery": "victours",
-   "allViews": 215,
-   "d7": 10,
-   "prev7": 6
+   "allViews": 213,
+   "prev7": 8,
+   "d7": 5
   },
   {
    "path": "/towns",
@@ -303,9 +298,9 @@
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 10,
-   "gscPosition": 82.4,
-   "topQuery": "day trips melbourne victoria",
+   "gscImpressions": 11,
+   "gscPosition": 82,
+   "topQuery": "melbourne day trips",
    "allViews": 1
   },
   {
@@ -319,8 +314,8 @@
    "gscPosition": 78.5,
    "topQuery": "melbourne cbd",
    "allViews": 1,
-   "d7": 1,
-   "prev7": 0
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/rutherglen",
@@ -433,9 +428,7 @@
    "gscImpressions": 1,
    "gscPosition": 7,
    "topQuery": "victours",
-   "allViews": 1,
-   "prev7": 1,
-   "d7": 0
+   "allViews": 1
   },
   {
    "path": "/road-trips",
@@ -471,9 +464,7 @@
    "gscImpressions": 0,
    "gscPosition": null,
    "topQuery": null,
-   "allViews": 1,
-   "prev7": 1,
-   "d7": 0
+   "allViews": 1
   },
   {
    "path": "/road-trips/western-victoria-loop",
@@ -603,8 +594,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 79,
-   "gscPosition": 51.3,
+   "gscImpressions": 80,
+   "gscPosition": 51.7,
    "topQuery": "1004 mornington-flinders road red hill vic 3937"
   },
   {
@@ -619,6 +610,17 @@
    "topQuery": "sorrento restaurants"
   },
   {
+   "path": "/metung",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 45,
+   "gscPosition": 73.2,
+   "topQuery": "110 metung road metung vic 3904"
+  },
+  {
    "path": "/mornington-peninsula/eat",
    "views": 0,
    "prevViews": 0,
@@ -630,15 +632,15 @@
    "topQuery": "best restaurants in mornington peninsula"
   },
   {
-   "path": "/metung",
+   "path": "/omeo",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 43,
-   "gscPosition": 72.2,
-   "topQuery": "110 metung road metung vic 3904"
+   "gscImpressions": 38,
+   "gscPosition": 65.2,
+   "topQuery": "614 tongio gap road omeo"
   },
   {
    "path": "/mornington/eat",
@@ -650,17 +652,6 @@
    "gscImpressions": 37,
    "gscPosition": 66.9,
    "topQuery": "mornington main street restaurants"
-  },
-  {
-   "path": "/omeo",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 37,
-   "gscPosition": 64.4,
-   "topQuery": "614 tongio gap road omeo"
   },
   {
    "path": "/mildura/stay",
@@ -773,6 +764,17 @@
    "topQuery": "apollo bay"
   },
   {
+   "path": "/omeo/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 24,
+   "gscPosition": 68.9,
+   "topQuery": "179 day avenue omeo vic 3898"
+  },
+  {
    "path": "/daylesford/eat",
    "views": 0,
    "prevViews": 0,
@@ -859,17 +861,6 @@
    "gscImpressions": 20,
    "gscPosition": 57.5,
    "topQuery": "lakes entrance"
-  },
-  {
-   "path": "/omeo/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 20,
-   "gscPosition": 69.2,
-   "topQuery": "179 day avenue omeo vic 3898"
   },
   {
    "path": "/collections/weekend-getaways",
@@ -1026,6 +1017,17 @@
    "topQuery": "lorne accommodation victoria"
   },
   {
+   "path": "/rye",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 12,
+   "gscPosition": 78.6,
+   "topQuery": "rye"
+  },
+  {
    "path": "/southbank",
    "views": 0,
    "prevViews": 0,
@@ -1169,17 +1171,6 @@
    "topQuery": "bottega toscana port fairy"
   },
   {
-   "path": "/rye",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 10,
-   "gscPosition": 75.4,
-   "topQuery": "rye"
-  },
-  {
    "path": "/queenscliff/do",
    "views": 0,
    "prevViews": 0,
@@ -1211,6 +1202,17 @@
    "gscImpressions": 9,
    "gscPosition": 70.3,
    "topQuery": "great ocean road accommodation"
+  },
+  {
+   "path": "/mildura",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 9,
+   "gscPosition": 53.9,
+   "topQuery": "mildura tours"
   },
   {
    "path": "/road-trips/mornington-peninsula-day-trip",
@@ -1277,17 +1279,6 @@
    "gscImpressions": 8,
    "gscPosition": 51,
    "topQuery": "mansfield"
-  },
-  {
-   "path": "/mildura",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 8,
-   "gscPosition": 52.8,
-   "topQuery": "mildura tours"
   },
   {
    "path": "/road-trips/phillip-island-day-trip",
@@ -2859,8 +2850,8 @@
   {
    "query": "110 metung road metung vic 3904",
    "clicks": 0,
-   "impressions": 23,
-   "position": 72.9,
+   "impressions": 24,
+   "position": 73.9,
    "page": "/metung"
   },
   {
@@ -2892,6 +2883,13 @@
    "page": "/southbank/stay"
   },
   {
+   "query": "110 metung road metung",
+   "clicks": 0,
+   "impressions": 16,
+   "position": 78.1,
+   "page": "/metung"
+  },
+  {
    "query": "southbank melbourne accomodation",
    "clicks": 0,
    "impressions": 16,
@@ -2904,13 +2902,6 @@
    "impressions": 15,
    "position": 48.9,
    "page": "/bright"
-  },
-  {
-   "query": "110 metung road metung",
-   "clicks": 0,
-   "impressions": 15,
-   "position": 77.1,
-   "page": "/metung"
   },
   {
    "query": "accommodation melbourne southbank",
@@ -2939,6 +2930,13 @@
    "impressions": 14,
    "position": 73.6,
    "page": "/lorne"
+  },
+  {
+   "query": "179 day avenue omeo vic 3898",
+   "clicks": 0,
+   "impressions": 14,
+   "position": 72.6,
+   "page": "/omeo/stay"
   },
   {
    "query": "restaurants in sorrento",
@@ -3004,10 +3002,10 @@
    "page": "/mornington/do"
   },
   {
-   "query": "179 day avenue omeo vic 3898",
+   "query": "486 omeo valley road omeo",
    "clicks": 0,
    "impressions": 12,
-   "position": 73.1,
+   "position": 62.5,
    "page": "/omeo/stay"
   },
   {
@@ -3037,13 +3035,6 @@
    "impressions": 10,
    "position": 54.6,
    "page": "/lakes-entrance/do"
-  },
-  {
-   "query": "486 omeo valley road omeo",
-   "clicks": 0,
-   "impressions": 10,
-   "position": 62,
-   "page": "/omeo/stay"
   },
   {
    "query": "614 tongio gap road omeo vic 3898",
@@ -3116,6 +3107,13 @@
    "page": "/bright"
   },
   {
+   "query": "melbourne day trips",
+   "clicks": 0,
+   "impressions": 8,
+   "position": 75.8,
+   "page": "/collections/day-trips-from-melbourne"
+  },
+  {
    "query": "group activities lorne",
    "clicks": 0,
    "impressions": 8,
@@ -3177,13 +3175,6 @@
    "impressions": 7,
    "position": 58.6,
    "page": "/bright"
-  },
-  {
-   "query": "melbourne day trips",
-   "clicks": 0,
-   "impressions": 7,
-   "position": 75.4,
-   "page": "/collections/day-trips-from-melbourne"
   },
   {
    "query": "mornington peninsula day tour",
@@ -3277,11 +3268,25 @@
    "page": "/mornington-peninsula/eat"
   },
   {
+   "query": "omeo",
+   "clicks": 0,
+   "impressions": 6,
+   "position": 69.7,
+   "page": "/omeo"
+  },
+  {
    "query": "red hill brewery",
    "clicks": 0,
    "impressions": 6,
    "position": 94,
    "page": "/red-hill"
+  },
+  {
+   "query": "rye",
+   "clicks": 0,
+   "impressions": 6,
+   "position": 94.5,
+   "page": "/rye"
   },
   {
    "query": "restaurant sorrento",
@@ -3366,13 +3371,6 @@
    "impressions": 5,
    "position": 84.8,
    "page": "/mount-hotham"
-  },
-  {
-   "query": "omeo",
-   "clicks": 0,
-   "impressions": 5,
-   "position": 64.6,
-   "page": "/omeo/do"
   },
   {
    "query": "phillip island things to do",
@@ -3534,13 +3532,6 @@
    "impressions": 4,
    "position": 43.5,
    "page": "/docklands/eat"
-  },
-  {
-   "query": "dromana holiday village",
-   "clicks": 0,
-   "impressions": 4,
-   "position": 70.5,
-   "page": "/dromana"
   }
  ],
  "gscDaily": [
@@ -3658,12 +3649,17 @@
    "date": "2026-11-10",
    "clicks": 0,
    "impressions": 20
+  },
+  {
+   "date": "2026-11-11",
+   "clicks": 0,
+   "impressions": 13
   }
  ],
  "allTime": {
   "start": "2026-04-30",
-  "views": 274,
-  "users": 211,
+  "views": 272,
+  "users": 209,
   "cta": {
    "book_tour": 2,
    "website": 1,
@@ -4039,11 +4035,6 @@
     "date": "2026-11-10",
     "views": 2,
     "cta": 0
-   },
-   {
-    "date": "2026-11-12",
-    "views": 2,
-    "cta": 0
    }
   ]
  },
@@ -4052,7 +4043,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 34
+    "sessions": 32
    },
    {
     "source": "google",
@@ -4097,12 +4088,6 @@
    }
   ],
   "daily": [
-   {
-    "date": "2026-10-30",
-    "source": "(direct)",
-    "medium": "(none)",
-    "sessions": 1
-   },
    {
     "date": "2026-10-31",
     "source": "(direct)",
@@ -4153,12 +4138,6 @@
    },
    {
     "date": "2026-11-10",
-    "source": "(direct)",
-    "medium": "(none)",
-    "sessions": 2
-   },
-   {
-    "date": "2026-11-12",
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 2

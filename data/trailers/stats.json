@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-13T21:39:39.483Z",
+ "generatedAt": "2026-11-14T19:00:10.444Z",
  "period": {
-  "start": "2026-10-16",
-  "end": "2026-11-12"
+  "start": "2026-10-17",
+  "end": "2026-11-13"
  },
  "gscPeriod": {
-  "start": "2026-10-14",
-  "end": "2026-11-10"
+  "start": "2026-10-15",
+  "end": "2026-11-11"
  },
  "sources": {
   "ga4": true,
@@ -14,23 +14,18 @@
   "notes": []
  },
  "totals": {
-  "views": 75,
-  "prevViews": 262,
-  "users": 47,
+  "views": 74,
+  "prevViews": 258,
+  "users": 46,
   "cta": {
    "films_banner": 1,
    "justwatch": 1,
    "prime": 1
   },
   "gscClicks": 0,
-  "gscImpressions": 82
+  "gscImpressions": 75
  },
  "daily": [
-  {
-   "date": "2026-10-16",
-   "views": 1,
-   "cta": 0
-  },
   {
    "date": "2026-10-17",
    "views": 1,
@@ -122,7 +117,7 @@
    "cta": 0
   },
   {
-   "date": "2026-11-12",
+   "date": "2026-11-13",
    "views": 1,
    "cta": 0
   }
@@ -130,9 +125,9 @@
  "pages": [
   {
    "path": "/",
-   "views": 42,
-   "prevViews": 116,
-   "users": 25,
+   "views": 43,
+   "prevViews": 113,
+   "users": 26,
    "cta": {
     "films_banner": 1
    },
@@ -140,12 +135,12 @@
    "gscImpressions": 2,
    "gscPosition": 57.5,
    "topQuery": "movietr",
-   "allViews": 184,
+   "allViews": 185,
    "allCta": {
     "films_banner": 1
    },
-   "prev7": 7,
-   "d7": 2
+   "prev7": 5,
+   "d7": 3
   },
   {
    "path": "/browse",
@@ -185,9 +180,7 @@
    "gscImpressions": 0,
    "gscPosition": null,
    "topQuery": null,
-   "allViews": 2,
-   "prev7": 2,
-   "d7": 0
+   "allViews": 2
   },
   {
    "path": "/original-films",
@@ -214,20 +207,6 @@
    "gscPosition": null,
    "topQuery": null,
    "allViews": 4
-  },
-  {
-   "path": "/movies/the-imitation-game-2014",
-   "views": 1,
-   "prevViews": 1,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2,
-   "d7": 1,
-   "prev7": 0
   },
   {
    "path": "/contact",
@@ -319,18 +298,6 @@
   },
   {
    "path": "/movies/raiders-of-the-lost-ark-1981",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 1
-  },
-  {
-   "path": "/movies/the-fugitive-1993",
    "views": 1,
    "prevViews": 0,
    "users": 1,
@@ -435,18 +402,6 @@
    "allViews": 4
   },
   {
-   "path": "/movies/lethal-weapon-1987",
-   "views": 0,
-   "prevViews": 4,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 4
-  },
-  {
    "path": "/movies/whalefall-2026",
    "views": 0,
    "prevViews": 4,
@@ -459,16 +414,16 @@
    "allViews": 4
   },
   {
-   "path": "/movies/home-alone-1990",
+   "path": "/movies/lethal-weapon-1987",
    "views": 0,
    "prevViews": 3,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 11,
-   "gscPosition": 53.5,
-   "topQuery": "home alone trailer",
-   "allViews": 3
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 4
   },
   {
    "path": "/movies/jurassic-park-1993",
@@ -483,15 +438,15 @@
    "allViews": 3
   },
   {
-   "path": "/movies/robocop-1987",
+   "path": "/movies/home-alone-1990",
    "views": 0,
    "prevViews": 3,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
+   "gscImpressions": 10,
+   "gscPosition": 53.5,
+   "topQuery": "home alone trailer",
    "allViews": 3
   },
   {
@@ -519,6 +474,18 @@
    "allViews": 3
   },
   {
+   "path": "/movies/robocop-1987",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 3
+  },
+  {
    "path": "/movies/masters-of-the-universe",
    "views": 0,
    "prevViews": 0,
@@ -537,8 +504,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 9,
-   "gscPosition": 58,
+   "gscImpressions": 8,
+   "gscPosition": 58.6,
    "topQuery": "the prestige trailer",
    "allViews": 2
   },
@@ -921,7 +888,7 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 8,
+   "gscImpressions": 6,
    "gscPosition": 59,
    "topQuery": "the sixth sense trailer",
    "allViews": 1
@@ -1131,6 +1098,30 @@
    "allViews": 1
   },
   {
+   "path": "/movies/the-fugitive-1993",
+   "views": 0,
+   "prevViews": 1,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
+   "path": "/movies/the-imitation-game-2014",
+   "views": 0,
+   "prevViews": 1,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
    "path": "/movies/the-incredible-hulk-2008",
    "views": 0,
    "prevViews": 1,
@@ -1257,8 +1248,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 7,
-   "gscPosition": 63.9,
+   "gscImpressions": 6,
+   "gscPosition": 64.7,
    "topQuery": "district 9 trailer"
   },
   {
@@ -1268,20 +1259,9 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 59.8,
-   "topQuery": "insomnia film trailer"
-  },
-  {
-   "path": "/movies/the-silence-of-the-lambs-1991",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
    "gscImpressions": 4,
-   "gscPosition": 49.3,
-   "topQuery": "the silence of the lambs trailer"
+   "gscPosition": 60,
+   "topQuery": "insomnia film trailer"
   },
   {
    "path": "/movies/the-dark-knight-rises-2012",
@@ -1295,15 +1275,15 @@
    "topQuery": "the dark knight rises 2012 trailer"
   },
   {
-   "path": "/movies/air-force-one-1997",
+   "path": "/movies/the-silence-of-the-lambs-1991",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 77,
-   "topQuery": "air force one movie"
+   "gscImpressions": 3,
+   "gscPosition": 51,
+   "topQuery": "silence of the lambs movie trailer"
   },
   {
    "path": "/movies/the-blind-side-2009",
@@ -1315,6 +1295,17 @@
    "gscImpressions": 2,
    "gscPosition": 68.5,
    "topQuery": "the blind side preview"
+  },
+  {
+   "path": "/movies/air-force-one-1997",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 84,
+   "topQuery": "air force one movie"
   },
   {
    "path": "/movies/aladdin-1992",
@@ -1359,6 +1350,17 @@
    "gscImpressions": 1,
    "gscPosition": 54,
    "topQuery": "reservoir dogs trailer"
+  },
+  {
+   "path": "/discover/1999-box-office-highlights",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 49,
+   "topQuery": "box office 1999"
   }
  ],
  "queries": [
@@ -1384,13 +1386,6 @@
    "page": "/movies/jurassic-park-1993"
   },
   {
-   "query": "the prestige trailer",
-   "clicks": 0,
-   "impressions": 4,
-   "position": 57,
-   "page": "/movies/the-prestige-2006"
-  },
-  {
    "query": "the sixth sense trailer",
    "clicks": 0,
    "impressions": 4,
@@ -1403,6 +1398,13 @@
    "impressions": 3,
    "position": 62.7,
    "page": "/movies/district-9-2009"
+  },
+  {
+   "query": "the prestige trailer",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 58.3,
+   "page": "/movies/the-prestige-2006"
   },
   {
    "query": "movietr",
@@ -1447,31 +1449,10 @@
    "page": "/movies/the-hateful-eight-2015"
   },
   {
-   "query": "the silence of the lambs trailer",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 46,
-   "page": "/movies/the-silence-of-the-lambs-1991"
-  },
-  {
-   "query": "the 6th sense trailer",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 59,
-   "page": "/movies/the-sixth-sense-1999"
-  },
-  {
    "query": "air force one movie",
    "clicks": 0,
    "impressions": 1,
    "position": 84,
-   "page": "/movies/air-force-one-1997"
-  },
-  {
-   "query": "air force one trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 70,
    "page": "/movies/air-force-one-1997"
   },
   {
@@ -1503,13 +1484,6 @@
    "page": "/movies/district-9-2009"
   },
   {
-   "query": "dystrykt 9 zwiastun",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 59,
-   "page": "/movies/district-9-2009"
-  },
-  {
    "query": "trailer for district 9",
    "clicks": 0,
    "impressions": 1,
@@ -1529,20 +1503,6 @@
    "impressions": 1,
    "position": 52,
    "page": "/movies/home-alone-1990"
-  },
-  {
-   "query": "home alone preview",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 54,
-   "page": "/movies/home-alone-1990"
-  },
-  {
-   "query": "trailer insomnia",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 59,
-   "page": "/movies/insomnia-2002"
   },
   {
    "query": "jurassic park movie trailer",
@@ -1692,17 +1652,24 @@
    "page": "/movies/the-silence-of-the-lambs-1991"
   },
   {
-   "query": "sixth sense trailer",
+   "query": "the silence of the lambs trailer",
    "clicks": 0,
    "impressions": 1,
-   "position": 60,
-   "page": "/movies/the-sixth-sense-1999"
+   "position": 48,
+   "page": "/movies/the-silence-of-the-lambs-1991"
   },
   {
    "query": "sjätte sinnet trailer",
    "clicks": 0,
    "impressions": 1,
    "position": 52,
+   "page": "/movies/the-sixth-sense-1999"
+  },
+  {
+   "query": "the 6th sense trailer",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 60,
    "page": "/movies/the-sixth-sense-1999"
   },
   {
@@ -1718,6 +1685,13 @@
    "impressions": 1,
    "position": 57,
    "page": "/movies/true-lies-1994"
+  },
+  {
+   "query": "box office 1999",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 49,
+   "page": "/discover/1999-box-office-highlights"
   },
   {
    "query": "home alone film trailer",
@@ -1749,11 +1723,6 @@
   }
  ],
  "gscDaily": [
-  {
-   "date": "2026-10-14",
-   "clicks": 0,
-   "impressions": 10
-  },
   {
    "date": "2026-10-15",
    "clicks": 0,
@@ -1886,6 +1855,11 @@
   },
   {
    "date": "2026-11-10",
+   "clicks": 0,
+   "impressions": 1
+  },
+  {
+   "date": "2026-11-11",
    "clicks": 0,
    "impressions": 1
   }
@@ -2151,7 +2125,7 @@
     "cta": 0
    },
    {
-    "date": "2026-11-12",
+    "date": "2026-11-13",
     "views": 1,
     "cta": 0
    }
@@ -2162,7 +2136,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 34
+    "sessions": 33
    },
    {
     "source": "google",
@@ -2200,12 +2174,6 @@
    }
   ],
   "daily": [
-   {
-    "date": "2026-10-30",
-    "source": "(direct)",
-    "medium": "(none)",
-    "sessions": 4
-   },
    {
     "date": "2026-10-31",
     "source": "yandex",
@@ -2249,7 +2217,7 @@
     "sessions": 1
    },
    {
-    "date": "2026-11-12",
+    "date": "2026-11-13",
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 1
