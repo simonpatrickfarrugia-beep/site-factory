@@ -1,107 +1,7 @@
 {
- "generatedAt": "2026-11-13T01:12:41+00:00",
+ "generatedAt": "2026-11-14T00:55:20+00:00",
  "days": 7,
  "suppliers": [
-  {
-   "name": "SHAPE AUSTRALIA PTY LIMITED",
-   "abn": "",
-   "locality": "Adelaide",
-   "state": "SA",
-   "contracts": [
-    {
-     "value": 717900.5,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Project Management",
-     "category": "",
-     "start": "2026-11-09",
-     "end": "2028-04-05",
-     "id": "CN4288366"
-    }
-   ],
-   "total": 717900,
-   "score": 5.0,
-   "interstate": false,
-   "why": [
-    "work runs 17 months"
-   ],
-   "seenBefore": false
-  },
-  {
-   "name": "Bardach Pty Ltd",
-   "abn": "",
-   "locality": "Belconnen",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 579214.43,
-     "buyer": "Director of National Parks",
-     "buyerState": null,
-     "desc": "Financial Advisory and Data Modelling Services",
-     "category": "",
-     "start": "2025-12-03",
-     "end": "2027-12-02",
-     "id": "CN4288399"
-    }
-   ],
-   "total": 579214,
-   "score": 5.0,
-   "interstate": false,
-   "why": [
-    "work runs 24 months"
-   ],
-   "seenBefore": false
-  },
-  {
-   "name": "LACHLAN VALLY LANDSCAPING and PAVING",
-   "abn": "",
-   "locality": "Cowra",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 394538.49,
-     "buyer": "Department of Veterans' Affairs",
-     "buyerState": null,
-     "desc": "Horticultural Maintenance - Western NSW War Cemeteries",
-     "category": "",
-     "start": "2026-10-31",
-     "end": "2029-10-30",
-     "id": "CN4288527"
-    }
-   ],
-   "total": 394538,
-   "score": 5.0,
-   "interstate": false,
-   "why": [
-    "work runs 36 months"
-   ],
-   "seenBefore": false
-  },
-  {
-   "name": "HORIZON ONE RECRUITMENT PTY LTD",
-   "abn": "",
-   "locality": "Braddon",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 341965.8,
-     "buyer": "Department of Foreign Affairs and Trade - Australian Aid Program",
-     "buyerState": null,
-     "desc": "Monitoring Evaluation and Learning Lead (Canberra)",
-     "category": "",
-     "start": "2026-11-13",
-     "end": "2027-11-12",
-     "id": "CN4288360"
-    }
-   ],
-   "total": 341966,
-   "score": 5.0,
-   "interstate": false,
-   "why": [
-    "work runs 12 months"
-   ],
-   "seenBefore": false
-  },
   {
    "name": "RAPID-TECH EQUIPMENT PTY LTD",
    "abn": "",
@@ -127,6 +27,31 @@
     "work runs 8 months"
    ],
    "seenBefore": true
+  },
+  {
+   "name": "Norton Rose Fullbright Australia",
+   "abn": "",
+   "locality": "Sydney",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 58000.0,
+     "buyer": "Attorney-General's Department",
+     "buyerState": "ACT",
+     "desc": "Request for legal advice",
+     "category": "",
+     "start": "2026-10-09",
+     "end": "2026-10-29",
+     "id": "CN4288544"
+    }
+   ],
+   "total": 58000,
+   "score": 5.0,
+   "interstate": true,
+   "why": [
+    "based in Sydney NSW, delivering for Attorney-General's Department (Canberra)"
+   ],
+   "seenBefore": false
   },
   {
    "name": "ALINEA INTERNATIONAL PTY LTD",
@@ -173,29 +98,6 @@
     "work runs 9 months"
    ],
    "seenBefore": true
-  },
-  {
-   "name": "JFD AUSTRALIA PTY LTD",
-   "abn": "",
-   "locality": "Kirrawee",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 440000.0,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Corrective Maintenance",
-     "category": "",
-     "start": "2026-10-22",
-     "end": "2027-01-28",
-     "id": "CN4288431"
-    }
-   ],
-   "total": 440000,
-   "score": 4.0,
-   "interstate": false,
-   "why": [],
-   "seenBefore": false
   },
   {
    "name": "1 AND ONE PTY LTD",
@@ -504,29 +406,6 @@
    "seenBefore": true
   },
   {
-   "name": "PEEKAY CONSOLIDATED PTY LTD ATF GK SIMKISS FAMILY TRUST",
-   "abn": "",
-   "locality": "Ashburton, Melbourne",
-   "state": "VIC",
-   "contracts": [
-    {
-     "value": 69977.6,
-     "buyer": "Department of Foreign Affairs and Trade - Australian Aid Program",
-     "buyerState": null,
-     "desc": "Comprehensive Due Diligence Assessment of Adam Smith International (Australia)",
-     "category": "",
-     "start": "2026-11-11",
-     "end": "2027-04-29",
-     "id": "CN4288358"
-    }
-   ],
-   "total": 69978,
-   "score": 3.0,
-   "interstate": false,
-   "why": [],
-   "seenBefore": false
-  },
-  {
    "name": "ORYGEN T/A ORYGEN RESEARCH CENTRE",
    "abn": "",
    "locality": "Parkville",
@@ -573,6 +452,56 @@
    "interstate": false,
    "why": [
     "work runs 12 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "SHAPE AUSTRALIA PTY LIMITED",
+   "abn": "",
+   "locality": "Adelaide",
+   "state": "SA",
+   "contracts": [
+    {
+     "value": 717900.5,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Project Management",
+     "category": "",
+     "start": "2026-11-09",
+     "end": "2028-04-05",
+     "id": "CN4288366"
+    }
+   ],
+   "total": 717900,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 17 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "Bardach Pty Ltd",
+   "abn": "",
+   "locality": "Belconnen",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 579214.43,
+     "buyer": "Director of National Parks",
+     "buyerState": null,
+     "desc": "Financial Advisory and Data Modelling Services",
+     "category": "",
+     "start": "2025-12-03",
+     "end": "2027-12-02",
+     "id": "CN4288399"
+    }
+   ],
+   "total": 579214,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 24 months"
    ],
    "seenBefore": true
   },
@@ -677,6 +606,31 @@
    "seenBefore": true
   },
   {
+   "name": "LACHLAN VALLY LANDSCAPING and PAVING",
+   "abn": "",
+   "locality": "Cowra",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 394538.49,
+     "buyer": "Department of Veterans' Affairs",
+     "buyerState": null,
+     "desc": "Horticultural Maintenance - Western NSW War Cemeteries",
+     "category": "",
+     "start": "2026-10-31",
+     "end": "2029-10-30",
+     "id": "CN4288527"
+    }
+   ],
+   "total": 394538,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 36 months"
+   ],
+   "seenBefore": true
+  },
+  {
    "name": "SWORDFISH COMPUTING PTY LTD",
    "abn": "",
    "locality": "Adelaide",
@@ -733,6 +687,31 @@
    "interstate": false,
    "why": [
     "2 new government contracts in the last 7 days"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "HORIZON ONE RECRUITMENT PTY LTD",
+   "abn": "",
+   "locality": "Braddon",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 341965.8,
+     "buyer": "Department of Foreign Affairs and Trade - Australian Aid Program",
+     "buyerState": null,
+     "desc": "Monitoring Evaluation and Learning Lead (Canberra)",
+     "category": "",
+     "start": "2026-11-13",
+     "end": "2027-11-12",
+     "id": "CN4288360"
+    }
+   ],
+   "total": 341966,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 12 months"
    ],
    "seenBefore": true
   },
@@ -909,6 +888,29 @@
    "why": [
     "work runs 38 months"
    ],
+   "seenBefore": true
+  },
+  {
+   "name": "JFD AUSTRALIA PTY LTD",
+   "abn": "",
+   "locality": "Kirrawee",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 440000.0,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Corrective Maintenance",
+     "category": "",
+     "start": "2026-10-22",
+     "end": "2027-01-28",
+     "id": "CN4288431"
+    }
+   ],
+   "total": 440000,
+   "score": 1.0,
+   "interstate": false,
+   "why": [],
    "seenBefore": true
   },
   {
@@ -1098,6 +1100,29 @@
     }
    ],
    "total": 75746,
+   "score": 0.0,
+   "interstate": false,
+   "why": [],
+   "seenBefore": true
+  },
+  {
+   "name": "PEEKAY CONSOLIDATED PTY LTD ATF GK SIMKISS FAMILY TRUST",
+   "abn": "",
+   "locality": "Ashburton, Melbourne",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 69977.6,
+     "buyer": "Department of Foreign Affairs and Trade - Australian Aid Program",
+     "buyerState": null,
+     "desc": "Comprehensive Due Diligence Assessment of Adam Smith International (Australia)",
+     "category": "",
+     "start": "2026-11-11",
+     "end": "2027-04-29",
+     "id": "CN4288358"
+    }
+   ],
+   "total": 69978,
    "score": 0.0,
    "interstate": false,
    "why": [],
