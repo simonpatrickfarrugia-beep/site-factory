@@ -1,0 +1,408 @@
+{
+ "id": "simon-says-travel",
+ "name": "simonsaystravel.com.au",
+ "url": "https://simonsaystravel.com.au",
+ "owner": "imn",
+ "scannedAt": "2026-11-14T21:52:19Z",
+ "stage": "building",
+ "stageWhy": "no revenue in the last 60 days",
+ "cadenceDays": 7,
+ "nextDue": "2026-11-22",
+ "score": 87,
+ "grade": "B",
+ "areas": {
+  "health": {
+   "score": 100,
+   "grade": "A",
+   "label": "Broken pages & links"
+  },
+  "tracking": {
+   "score": 100,
+   "grade": "A",
+   "label": "Tracking & money links"
+  },
+  "indexing": {
+   "score": 68,
+   "grade": "D",
+   "label": "Sitemap & indexing"
+  },
+  "seo": {
+   "score": 70,
+   "grade": "C",
+   "label": "Titles, descriptions & schema"
+  },
+  "content": {
+   "score": 100,
+   "grade": "A",
+   "label": "Thin & duplicate pages"
+  },
+  "speed": {
+   "score": 93,
+   "grade": "A",
+   "label": "Speed"
+  },
+  "google": {
+   "score": 100,
+   "grade": "A",
+   "label": "Google trend"
+  },
+  "rivals": {
+   "score": 35,
+   "grade": "F",
+   "label": "Competitors"
+  }
+ },
+ "pages": 27,
+ "findings": [
+  {
+   "id": "seo-title",
+   "area": "seo",
+   "severity": "medium",
+   "title": "1 title outside 30–65 characters",
+   "fix": "Rewrite to 30–65 characters with the main search first.",
+   "pages": [
+    "/"
+   ],
+   "count": 1,
+   "detail": "",
+   "impact": 12.3,
+   "broken": false
+  },
+  {
+   "id": "few-pages-in-google",
+   "area": "indexing",
+   "severity": "medium",
+   "title": "Google shows only 1 of 27 pages",
+   "fix": "Normal for a new site; if it stays low after 2 months, cut or merge weak pages and earn a few links.",
+   "pages": [],
+   "count": 1,
+   "detail": "",
+   "impact": 7.5,
+   "broken": false
+  },
+  {
+   "id": "not-indexed",
+   "area": "indexing",
+   "severity": "high",
+   "title": "6 of your top 8 pages aren't in Google's index",
+   "fix": "Make the page more useful than what ranks, link to it from the home page, then request indexing in Search Console.",
+   "pages": [
+    "/reports",
+    "/reports/2026-11",
+    "/destinations",
+    "/destinations/sydney",
+    "/destinations/melbourne",
+    "/destinations/brisbane"
+   ],
+   "count": 6,
+   "detail": "/reports: Discovered – currently not indexed; /reports/2026-11: Discovered – currently not indexed; /destinations: Discovered – currently not indexed; /destinations/sydney: Discovered – currently not indexed; /destinations/melbourne: Discovered – currently not indexed",
+   "impact": 5.0,
+   "broken": false
+  },
+  {
+   "id": "seo-og",
+   "area": "seo",
+   "severity": "low",
+   "title": "27 page(s) without a share image",
+   "fix": "Add an og:image so shared links show a picture.",
+   "pages": [
+    "/",
+    "/reports",
+    "/reports/2026-11",
+    "/destinations",
+    "/destinations/sydney",
+    "/destinations/melbourne",
+    "/destinations/brisbane",
+    "/destinations/perth"
+   ],
+   "count": 27,
+   "detail": "",
+   "impact": 5,
+   "broken": false
+  },
+  {
+   "id": "speed-blocking-home",
+   "area": "speed",
+   "severity": "low",
+   "title": "/: 3 files block the first paint",
+   "fix": "Add defer/async to scripts in <head>, inline critical CSS.",
+   "pages": [
+    "/"
+   ],
+   "count": 1,
+   "detail": "",
+   "impact": 4.9,
+   "broken": false
+  },
+  {
+   "id": "rival-when-should-australians-book-japan-flights-in-2026",
+   "area": "rivals",
+   "severity": "medium",
+   "title": "\"when should australians book japan flights in 2026\": we're not in the top 10 (Search Console avg 10); google.com leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/destinations/japan"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "impact": 2.7,
+   "broken": false
+  },
+  {
+   "id": "seo-words",
+   "area": "seo",
+   "severity": "low",
+   "title": "24 page(s) under 250 words",
+   "fix": "Fine for tools; for guides add the answer people search for.",
+   "pages": [
+    "/reports",
+    "/destinations",
+    "/destinations/sydney",
+    "/destinations/melbourne",
+    "/destinations/brisbane",
+    "/destinations/perth",
+    "/destinations/adelaide",
+    "/destinations/bali"
+   ],
+   "count": 24,
+   "detail": "",
+   "impact": 1.1,
+   "broken": false
+  },
+  {
+   "id": "speed-blocking-destinations-japan",
+   "area": "speed",
+   "severity": "low",
+   "title": "/destinations/japan: 3 files block the first paint",
+   "fix": "Add defer/async to scripts in <head>, inline critical CSS.",
+   "pages": [
+    "/destinations/japan"
+   ],
+   "count": 1,
+   "detail": "",
+   "impact": 1.1,
+   "broken": false
+  },
+  {
+   "id": "schema-missing",
+   "area": "seo",
+   "severity": "low",
+   "title": "3 page(s) have no schema",
+   "fix": "Add WebPage/BreadcrumbList (or the page's own type) so Google understands it.",
+   "pages": [
+    "/how-it-works",
+    "/privacy-policy",
+    "/affiliate-disclosure"
+   ],
+   "count": 3,
+   "detail": "",
+   "impact": 1.0,
+   "broken": false
+  }
+ ],
+ "google": {
+  "impr7": 3,
+  "imprPrev7": 0,
+  "clicks7": 0,
+  "clicksPrev7": 0,
+  "impr28": 2,
+  "clicks28": 0,
+  "views28": 6,
+  "viewsPrev28": 0,
+  "recentViews": 6,
+  "lastGa4Day": "2026-11-13",
+  "gscTo": "2026-11-11"
+ },
+ "queries": [
+  {
+   "query": "when should australians book japan flights in 2026",
+   "position": 10.5,
+   "impressions": 2
+  }
+ ],
+ "live": {
+  "serps": [
+   {
+    "keyword": "when should australians book japan flights in 2026",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESsgEBxCJF1_J9YaJdghgHZKApCtNdLWd-qTtN0Hyw_ePDvRW-Wm4iPtpk8nSxXbfMaErpHh1hEzCKfhYODUjjwldN2FywrZ56pzPdt7EZaUAdGW9JBbFS-9vCWcxj9oAcdsZC-4QbkAufg_fEeWuMrAdSfw0QMXBE86WQxbEUuTQ0zQEgGXTy56jQBH0M6uwmvKktiIAzgT8dCqMfcXdFqYCspjLR1WaYSamiLUQqnn0jiV9q&gsessionid=KpPvXr1IXmN1FBs9F8pGhCiciSsVzBZDKvlS53SVGOn1aCKqKx01nQ",
+      "title": "How early should we purchase flight ticket - Japan Forum"
+     },
+     {
+      "rank": 2,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAES0AEBxCJF18mzsue9BRoByOXdCNRyDJChO1oAh5J4beFeQEy5llF1NihYqq75tNLn0uLH-Hf9ppfvKdLRLRWd--cUJQNBgFh5FxBzk_JVs8FkRcxQA6xKAvH-aTC63XpvaU69_gtE9PPm_co6XdzXIisGC0Y2rFvQEghNkoEQ4-C3-3zDipsCa2QuT9nJN59TPyzT1XsdgSOzXHUSPlQYcf-9uduAGrGB_m-rHMSrLUu9GC5pvLh_zP1WH3pR4h0g_9OI_1KY85Yk6izC58WIa5Fi&gsessionid=KpPvXr1IXmN1FBs9F8pGhCiciSsVzBZDKvlS53SVGOn1aCKqKx01nQ",
+      "title": "If you want to travel 🇦🇺🇨🇦out of your country by the end ..."
+     },
+     {
+      "rank": 3,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESsAEBxCJF1yRFoRyoF2sktdRV9ZmD453GTfefr9NDKXs4jjaZlf5LyhG9ncsfeztmJx6uYv7jsysVd8WjewHIFoCpdOQ4M2AqmB87tppnc3JlxKvv4MrAkX0defBsDzeQub1Qu4WTVFcgkbwUqX5-e7zdG1magC5rnvrXb4_AL6bFwI_qpeeIqT7D02GCR069P5XgYIQgpJOj0sk6zKno82em5D6WReV2WST-AEoHWUXLLQ&gsessionid=KpPvXr1IXmN1FBs9F8pGhCiciSsVzBZDKvlS53SVGOn1aCKqKx01nQ",
+      "title": "Is travelling to Japan risky in 2026? - Japan Forum"
+     },
+     {
+      "rank": 4,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAES4AEBxCJF1wjrmHt3iKULsKt_myZLeB727bLn6PDsB1XiQufotTcUAcMPrjco03FNDYhqFHNpLJ7g7SS5pbi61zWdXKJhnEQDfD0l0MXKbApf8BBLx_3a-_CnFqbi8cd_qHIlKWmphE2_DwJgeet0cVRhhdVeSeBWQNe4F0w5iM6eUB143AMXIpfdQTlRQE480r63QMaw612UM9uNC-AC3jbUJhi7ObdR_dEH1lBb2LBQ5H005htwC4rJvrPHLE7pXmB2p2_sMMMM6g3B1vJo4SJdExyRxBpFjIY1jj097aHA4Q&gsessionid=KpPvXr1IXmN1FBs9F8pGhCiciSsVzBZDKvlS53SVGOn1aCKqKx01nQ",
+      "title": "Scott Morrison hints at Japan travel bubble with Australia"
+     },
+     {
+      "rank": 5,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESqwEBxCJF17N8fCLDUbVctTsK-ySJ6kaFsALnnO3fI_iBEiYpYmLD-6cVzI_Q449NFwsvh3kE4-kO4bi74JXyosPJRRtoWHWz4IHRzFNKbp18QpcoPBLoVrG-ZoJdR5bNlOPTVXRpanRvW5our433LdBNTwoT_YJJYuEQ_qi5dZUeBH9aU-WWD8czt2GS9cMIO9lEyg4KA0Ur2SfdYn9RLbs-8jVYQ2T_sCkE9Nw&gsessionid=KpPvXr1IXmN1FBs9F8pGhCiciSsVzBZDKvlS53SVGOn1aCKqKx01nQ",
+      "title": "Booking flights for next Cherry Blossom - Japan Forum"
+     },
+     {
+      "rank": 6,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAEShAEBxCJF10YcdrB5Gxz_mWh1xxrhbWJ0FfRm8sGoBuIhjknEVnWG4zatx9TH5JlT6whfiqrMDfoxIBimuSFkFm6Zj5UgXu4TAgOV4JhVpR6EtEWSafHgEiHXgaA9iGyYuQjQprwmFO4gKSIeqssW6124iAupNksO7d860IrSbFB3lMMxvg8&gsessionid=KpPvXr1IXmN1FBs9F8pGhCiciSsVzBZDKvlS53SVGOn1aCKqKx01nQ",
+      "title": "How far in advance to book Tokyo and Osaka holidays for ..."
+     },
+     {
+      "rank": 7,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESxwEBxCJF1_rWXvNU_US5tPriTUCZVLoppslGwzd5bZTgkfPmNEBEDDhfHEg_lanDWwOW_qMTna8cdZzScJdgxohDo3AOkcF6nF38McFvqYA993IABJyZDUiHMKtEwQ1hL2EKjcHvLIO6u51xR_AGY3NG7sTRempkSWbK7YJx3Ky2HbaV2wtXp-vsbDbeHFRfpH8Q1AES754wqLTcrfPyM7wd5dG8-NGkjKd9nfMKn0kwKl6qCkt9XkIBzmUx9kHEL2j3dsxbfeHg&gsessionid=KpPvXr1IXmN1FBs9F8pGhCiciSsVzBZDKvlS53SVGOn1aCKqKx01nQ",
+      "title": "Travel in 2026: Expect digital passports, crowded hotspots ..."
+     },
+     {
+      "rank": 8,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAEShAEBxCJF11miPdFmKK2ZSJCP7Pzv6ZqNi0ZySzwQgDAoaIzhMQHbiJBQhn1VPQdHH-hVa5hVYeSyRSMyH01ovF6m-RvSzYR9RY0w8--sI2aYEAdbP1H8vK4X_TEMCAacxZqfsuuFO-1uAeAS-WrJlbUB5mpmlzS1UBxq_14B1FrCeld3cPc&gsessionid=KpPvXr1IXmN1FBs9F8pGhCiciSsVzBZDKvlS53SVGOn1aCKqKx01nQ",
+      "title": "I'm planning to travel to Australia on 5 February 2026. Can ..."
+     },
+     {
+      "rank": 9,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESgwEBxCJF12muJQsbulTSdW5PQXlqDPjnYZPlolh8_Cql9eHEjCMsABfa8cuvuGjULpergnkbb4ISQRCWMAhwGN5RfBSvH7BZK_RD_miA453fxgD_YAHm_Msgyy2_xRpUmeG4RkYU8gng6GxlcTZ8C8nKiEyU0KFHfFfwFCGClI6_EyQtgQ&gsessionid=KpPvXr1IXmN1FBs9F8pGhCiciSsVzBZDKvlS53SVGOn1aCKqKx01nQ",
+      "title": "Good day! May I know what is the best month to book a ..."
+     }
+    ],
+    "impressions": 2,
+    "gscPosition": 10.5,
+    "ourPage": "/destinations/japan",
+    "ourRank": null
+   }
+  ],
+  "index": [
+   {
+    "url": "https://simonsaystravel.com.au/",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-06T10:02:02Z",
+    "googleCanonical": "https://simonsaystravel.com.au/",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://simonsaystravel.com.au/destinations/japan",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-06T07:12:15Z",
+    "googleCanonical": "https://simonsaystravel.com.au/destinations/japan",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://simonsaystravel.com.au/reports",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered – currently not indexed",
+    "lastCrawl": null,
+    "googleCanonical": null,
+    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+   },
+   {
+    "url": "https://simonsaystravel.com.au/reports/2026-11",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered – currently not indexed",
+    "lastCrawl": null,
+    "googleCanonical": null,
+    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+   },
+   {
+    "url": "https://simonsaystravel.com.au/destinations",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered – currently not indexed",
+    "lastCrawl": null,
+    "googleCanonical": null,
+    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+   },
+   {
+    "url": "https://simonsaystravel.com.au/destinations/sydney",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered – currently not indexed",
+    "lastCrawl": null,
+    "googleCanonical": null,
+    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+   },
+   {
+    "url": "https://simonsaystravel.com.au/destinations/melbourne",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered – currently not indexed",
+    "lastCrawl": null,
+    "googleCanonical": null,
+    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+   },
+   {
+    "url": "https://simonsaystravel.com.au/destinations/brisbane",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered – currently not indexed",
+    "lastCrawl": null,
+    "googleCanonical": null,
+    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+   }
+  ],
+  "error": null
+ },
+ "costUsd": 0.002,
+ "speed": [
+  {
+   "url": "https://simonsaystravel.com.au/",
+   "lite": true,
+   "serverSecs": 0.13,
+   "htmlKb": 38,
+   "blocking": 3,
+   "images": 1,
+   "noDims": 0,
+   "imageKb": 0,
+   "psiError": "HTTP Error 429: Too Many Requests"
+  },
+  {
+   "url": "https://simonsaystravel.com.au/destinations/japan",
+   "lite": true,
+   "serverSecs": 0.13,
+   "htmlKb": 14,
+   "blocking": 3,
+   "images": 1,
+   "noDims": 0,
+   "imageKb": 0,
+   "psiError": "HTTP Error 429: Too Many Requests"
+  }
+ ],
+ "quality": {
+  "summary": "27 indexable pages · average 140 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
+  "thin": 0,
+  "near": 0
+ },
+ "links": {
+  "internal": 28,
+  "outside": 59,
+  "checkedOutside": 2,
+  "unsureOutside": 0
+ },
+ "affiliateOk": 57,
+ "secs": 139,
+ "change": {
+  "first": true
+ },
+ "history": [],
+ "issue": null
+}

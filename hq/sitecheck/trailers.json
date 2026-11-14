@@ -1,0 +1,966 @@
+{
+ "id": "trailers",
+ "name": "movietrailer.channel",
+ "url": "https://www.movietrailer.channel",
+ "owner": "imn",
+ "scannedAt": "2026-11-14T21:52:19Z",
+ "stage": "building",
+ "stageWhy": "no revenue in the last 60 days",
+ "cadenceDays": 7,
+ "nextDue": "2026-11-22",
+ "score": 86,
+ "grade": "B",
+ "areas": {
+  "health": {
+   "score": 84,
+   "grade": "B",
+   "label": "Broken pages & links"
+  },
+  "tracking": {
+   "score": 100,
+   "grade": "A",
+   "label": "Tracking & money links"
+  },
+  "indexing": {
+   "score": 76,
+   "grade": "C",
+   "label": "Sitemap & indexing"
+  },
+  "seo": {
+   "score": 79,
+   "grade": "C",
+   "label": "Titles, descriptions & schema"
+  },
+  "content": {
+   "score": 100,
+   "grade": "A",
+   "label": "Thin & duplicate pages"
+  },
+  "speed": {
+   "score": 94,
+   "grade": "A",
+   "label": "Speed"
+  },
+  "google": {
+   "score": 100,
+   "grade": "A",
+   "label": "Google trend"
+  },
+  "rivals": {
+   "score": 35,
+   "grade": "F",
+   "label": "Competitors"
+  }
+ },
+ "pages": 384,
+ "findings": [
+  {
+   "id": "not-indexed",
+   "area": "indexing",
+   "severity": "high",
+   "title": "6 of your top 8 pages aren't in Google's index",
+   "fix": "Make the page more useful than what ranks, link to it from the home page, then request indexing in Search Console.",
+   "pages": [
+    "/browse",
+    "/movies/weird-science-1985",
+    "/free-classic-movies",
+    "/movies/anora-2024",
+    "/movies/basic-instinct-1992",
+    "/movies/batman-begins-2005"
+   ],
+   "count": 6,
+   "detail": "/browse: Discovered – currently not indexed; /movies/weird-science-1985: Discovered – currently not indexed; /free-classic-movies: Discovered – currently not indexed; /movies/anora-2024: Discovered – currently not indexed; /movies/basic-instinct-1992: Discovered – currently not indexed",
+   "impact": 10.4,
+   "broken": false
+  },
+  {
+   "id": "few-pages-in-google",
+   "area": "indexing",
+   "severity": "medium",
+   "title": "Google shows only 21 of 384 pages",
+   "fix": "Normal for a new site; if it stays low after 2 months, cut or merge weak pages and earn a few links.",
+   "pages": [],
+   "count": 1,
+   "detail": "",
+   "impact": 7.5,
+   "broken": false
+  },
+  {
+   "id": "broken-internal",
+   "area": "health",
+   "severity": "high",
+   "title": "1 broken internal link(s)",
+   "fix": "Point the links at a live page (or add a redirect).",
+   "pages": [
+    "/movies/carnival-of-souls-1962",
+    "/movies/doa-1949",
+    "/movies/dr-jekyll-and-mr-hyde-1920",
+    "/movies/his-girl-friday-1940",
+    "/movies/night-of-the-living-dead-1968"
+   ],
+   "count": 5,
+   "detail": "/movies/${t.dataset.page} (404) on 12 page(s)",
+   "impact": 5.3,
+   "broken": true
+  },
+  {
+   "id": "speed-blocking-home",
+   "area": "speed",
+   "severity": "low",
+   "title": "/: 3 files block the first paint",
+   "fix": "Add defer/async to scripts in <head>, inline critical CSS.",
+   "pages": [
+    "/"
+   ],
+   "count": 1,
+   "detail": "",
+   "impact": 3.2,
+   "broken": false
+  },
+  {
+   "id": "seo-title",
+   "area": "seo",
+   "severity": "medium",
+   "title": "5 title outside 30–65 characters",
+   "fix": "Rewrite to 30–65 characters with the main search first.",
+   "pages": [
+    "/movies/pirates-of-the-caribbean-the-curse-of-the-black-pearl-2003",
+    "/movies/dr-strangelove-or-how-i-learned-to-stop-worrying-and-love-the-bomb-1964",
+    "/studio-ghibli-where-to-watch",
+    "/original-films",
+    "/about"
+   ],
+   "count": 5,
+   "detail": "",
+   "impact": 2.8,
+   "broken": false
+  },
+  {
+   "id": "seo-og",
+   "area": "seo",
+   "severity": "low",
+   "title": "9 page(s) without a share image",
+   "fix": "Add an og:image so shared links show a picture.",
+   "pages": [
+    "/movies/dracula-1931",
+    "/movies/frankenstein-1931",
+    "/discover",
+    "/browse",
+    "/original-films",
+    "/about",
+    "/contact",
+    "/terms"
+   ],
+   "count": 9,
+   "detail": "",
+   "impact": 1.9,
+   "broken": false
+  },
+  {
+   "id": "schema-missing",
+   "area": "seo",
+   "severity": "low",
+   "title": "7 page(s) have no schema",
+   "fix": "Add WebPage/BreadcrumbList (or the page's own type) so Google understands it.",
+   "pages": [
+    "/discover",
+    "/browse",
+    "/original-films",
+    "/about",
+    "/contact",
+    "/terms",
+    "/privacy-policy"
+   ],
+   "count": 7,
+   "detail": "",
+   "impact": 1.9,
+   "broken": false
+  },
+  {
+   "id": "speed-blocking-browse",
+   "area": "speed",
+   "severity": "low",
+   "title": "/browse: 3 files block the first paint",
+   "fix": "Add defer/async to scripts in <head>, inline critical CSS.",
+   "pages": [
+    "/browse"
+   ],
+   "count": 1,
+   "detail": "",
+   "impact": 1.7,
+   "broken": false
+  },
+  {
+   "id": "seo-words",
+   "area": "seo",
+   "severity": "low",
+   "title": "11 page(s) under 250 words",
+   "fix": "Fine for tools; for guides add the answer people search for.",
+   "pages": [
+    "/movies/once-upon-a-time-in-hollywood-2016",
+    "/movies/whalefall-2026",
+    "/movies/mad-max-1979",
+    "/movies/its-a-wonderful-life-1946",
+    "/movies/the-deer-hunter-1978",
+    "/movies/the-wicker-man-1973",
+    "/movies/the-evil-dead-1981",
+    "/movies/heathers-1988"
+   ],
+   "count": 11,
+   "detail": "",
+   "impact": 1.1,
+   "broken": false
+  },
+  {
+   "id": "seo-desc",
+   "area": "seo",
+   "severity": "low",
+   "title": "2 description outside 70–160 characters",
+   "fix": "Rewrite to 70–160 characters: what the page gives the searcher.",
+   "pages": [
+    "/terms",
+    "/privacy-policy"
+   ],
+   "count": 2,
+   "detail": "",
+   "impact": 1.0,
+   "broken": false
+  },
+  {
+   "id": "rival-home-alone-trailer",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"home alone trailer\": we're not in the top 10 (Search Console avg 49); google.com leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/movies/home-alone-1990"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "impact": 1.0,
+   "broken": false
+  },
+  {
+   "id": "rival-jurassic-park-film-trailer",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"jurassic park film trailer\": we're not in the top 10 (Search Console avg 77); google.com leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/movies/jurassic-park-1993"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "impact": 1.0,
+   "broken": false
+  },
+  {
+   "id": "rival-the-sixth-sense-trailer",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"the sixth sense trailer\": we're not in the top 10 (Search Console avg 60); google.com leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/movies/the-sixth-sense-1999"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "impact": 1.0,
+   "broken": false
+  },
+  {
+   "id": "rival-district-9-trailer",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"district 9 trailer\": we're not in the top 10 (Search Console avg 63); google.com leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/movies/district-9-2009"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "impact": 1.0,
+   "broken": false
+  },
+  {
+   "id": "rival-the-prestige-trailer",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"the prestige trailer\": we're not in the top 10 (Search Console avg 58); google.com leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/movies/the-prestige-2006"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "impact": 1.0,
+   "broken": false
+  }
+ ],
+ "google": {
+  "impr7": 10,
+  "imprPrev7": 9,
+  "clicks7": 0,
+  "clicksPrev7": 0,
+  "impr28": 75,
+  "clicks28": 0,
+  "views28": 74,
+  "viewsPrev28": 258,
+  "recentViews": 3,
+  "lastGa4Day": "2026-11-13",
+  "gscTo": "2026-11-11"
+ },
+ "queries": [
+  {
+   "query": "home alone trailer",
+   "position": 49.2,
+   "impressions": 5
+  },
+  {
+   "query": "jurassic park film trailer",
+   "position": 76.8,
+   "impressions": 5
+  },
+  {
+   "query": "jurassic park trailer",
+   "position": 63.3,
+   "impressions": 4
+  },
+  {
+   "query": "the sixth sense trailer",
+   "position": 60.5,
+   "impressions": 4
+  },
+  {
+   "query": "district 9 trailer",
+   "position": 62.7,
+   "impressions": 3
+  },
+  {
+   "query": "the prestige trailer",
+   "position": 58.3,
+   "impressions": 3
+  },
+  {
+   "query": "movietr",
+   "position": 57.5,
+   "impressions": 2
+  },
+  {
+   "query": "trailer of home alone",
+   "position": 47,
+   "impressions": 2
+  },
+  {
+   "query": "insomnia film trailer",
+   "position": 60,
+   "impressions": 2
+  },
+  {
+   "query": "insomnia trailer",
+   "position": 60,
+   "impressions": 2
+  },
+  {
+   "query": "men and black trailer",
+   "position": 50.5,
+   "impressions": 2
+  },
+  {
+   "query": "the hateful eight 2015 trailer",
+   "position": 73,
+   "impressions": 2
+  },
+  {
+   "query": "air force one movie",
+   "position": 84,
+   "impressions": 1
+  },
+  {
+   "query": "aladdin 1992 trailer",
+   "position": 49,
+   "impressions": 1
+  },
+  {
+   "query": "back to school",
+   "position": 85,
+   "impressions": 1
+  },
+  {
+   "query": "district 9 film trailer",
+   "position": 63,
+   "impressions": 1
+  },
+  {
+   "query": "district 9 movie trailer",
+   "position": 66,
+   "impressions": 1
+  },
+  {
+   "query": "trailer for district 9",
+   "position": 71,
+   "impressions": 1
+  },
+  {
+   "query": "goldeneye trailer",
+   "position": 45,
+   "impressions": 1
+  },
+  {
+   "query": "home alone movie trailer",
+   "position": 52,
+   "impressions": 1
+  },
+  {
+   "query": "jurassic park movie trailer",
+   "position": 56,
+   "impressions": 1
+  },
+  {
+   "query": "movie trailer jurassic park",
+   "position": 52,
+   "impressions": 1
+  },
+  {
+   "query": "men in black trailer",
+   "position": 56,
+   "impressions": 1
+  },
+  {
+   "query": "platoon film trailer",
+   "position": 60,
+   "impressions": 1
+  },
+  {
+   "query": "platoon movie trailer",
+   "position": 59,
+   "impressions": 1
+  },
+  {
+   "query": "platoon trailer",
+   "position": 55,
+   "impressions": 1
+  },
+  {
+   "query": "reservoir dogs trailer",
+   "position": 54,
+   "impressions": 1
+  },
+  {
+   "query": "trailer schindler's list",
+   "position": 58,
+   "impressions": 1
+  },
+  {
+   "query": "the blind side preview",
+   "position": 67,
+   "impressions": 1
+  },
+  {
+   "query": "trailer for the blind side",
+   "position": 70,
+   "impressions": 1
+  },
+  {
+   "query": "the dark knight rises 2012 trailer",
+   "position": 50,
+   "impressions": 1
+  },
+  {
+   "query": "the dark knight rises movie trailer",
+   "position": 58,
+   "impressions": 1
+  },
+  {
+   "query": "the dark knight rises trailer",
+   "position": 58,
+   "impressions": 1
+  },
+  {
+   "query": "the hateful 8 trailer",
+   "position": 77,
+   "impressions": 1
+  },
+  {
+   "query": "the hateful eight movie trailer",
+   "position": 81,
+   "impressions": 1
+  },
+  {
+   "query": "the hateful eight trailer",
+   "position": 81,
+   "impressions": 1
+  },
+  {
+   "query": "the prestige film trailer",
+   "position": 52,
+   "impressions": 1
+  },
+  {
+   "query": "the prestige movie trailer",
+   "position": 56,
+   "impressions": 1
+  },
+  {
+   "query": "the prestige preview",
+   "position": 59,
+   "impressions": 1
+  },
+  {
+   "query": "silence of the lambs movie trailer",
+   "position": 55,
+   "impressions": 1
+  },
+  {
+   "query": "silence of the lambs trailer",
+   "position": 50,
+   "impressions": 1
+  },
+  {
+   "query": "the silence of the lambs trailer",
+   "position": 48,
+   "impressions": 1
+  },
+  {
+   "query": "sjätte sinnet trailer",
+   "position": 52,
+   "impressions": 1
+  },
+  {
+   "query": "the 6th sense trailer",
+   "position": 60,
+   "impressions": 1
+  },
+  {
+   "query": "true lies movie trailer",
+   "position": 63,
+   "impressions": 1
+  },
+  {
+   "query": "true lies trailer",
+   "position": 57,
+   "impressions": 1
+  },
+  {
+   "query": "box office 1999",
+   "position": 49,
+   "impressions": 1
+  },
+  {
+   "query": "home alone film trailer",
+   "position": 84,
+   "impressions": 1
+  },
+  {
+   "query": "home alone trailer 1990",
+   "position": 59,
+   "impressions": 1
+  },
+  {
+   "query": "prestige trailer",
+   "position": 62,
+   "impressions": 1
+  }
+ ],
+ "live": {
+  "serps": [
+   {
+    "keyword": "home alone trailer",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESaAHEIkXXS_HWY_mhwLbaT_OAXFy7SygnlCa4FWxNNgheEWS3yK7-nGgYsewuFp7vaqZedIzSIOR9A0HnHajKGqBfGbleT8EsT_IYYiy1f0EeR1S5CIZLzqjtQtEfKu7B5cemjQcrYKEF&gsessionid=LOKacdP93jl2CHkY8BcbLphifm8o9xi1IngYJAFOaB99YBgkBpKsPw",
+      "title": "Home Alone (1990) Trailer #1 | Movieclips Classic Trailers"
+     },
+     {
+      "rank": 2,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESaAHEIkXXJt921Qx7QFWBLp4psP7ifAjJi6sXgY80NU0c1uSsn3yESZjhMeNaflbwz6NGwxTcTnr5pOG41Z15o-OnBh2hr0iyDEF58EH3ph9sR3rROTy69g5ZGGnhAx1XABVnwPV3u-9y&gsessionid=LOKacdP93jl2CHkY8BcbLphifm8o9xi1IngYJAFOaB99YBgkBpKsPw",
+      "title": "Disney Jr. - Mickey's Home Alone Special Trailer"
+     },
+     {
+      "rank": 3,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESZAHEIkXXHlZLQTIjqFT-IMXOJXvS_7FNDtWWOKayhMnCDLC2lnQ51ava8i83IxlE9fCEkj9yicibqrewPopb4xDKuodHN4cdCrL0XtK_L2L53xomjq9sPj16wGGQmXWWh09qk28&gsessionid=LOKacdP93jl2CHkY8BcbLphifm8o9xi1IngYJAFOaB99YBgkBpKsPw",
+      "title": "Home Alone"
+     },
+     {
+      "rank": 4,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESwwEBxCJF10gdMkT-4OHXGzLcg-RDoVrPMeuTaRn4xCWg2r0DlWBTj1P9mkh91Dm5f1XG0vX7rlIcE9g9geruR88utcJ7JhCSVAp7PBh7y6LzdY1vj4EkrC0UH8Fz9j2y9d-ShgN8MPcMJ_U8bC-ytQu9bCi8-jiL9vz0dFeKTKa82TR5w7DaU6H_3ne-sGnUtiW-8w8aQUj3dIeur4VusJNjLlbP0uuZY9skjwzG2miOqKUQxB-bJo0ud-GGJteMsxCVg48&gsessionid=LOKacdP93jl2CHkY8BcbLphifm8o9xi1IngYJAFOaB99YBgkBpKsPw",
+      "title": "Home Alone - Official Trailer"
+     },
+     {
+      "rank": 5,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESaAHEIkXXZMf9c65HnTtaLIpMNfT3TsUP2J_sNFbxp6FqB2eL0D89UKO1DBCoJBLpizR71Fq7_OlWAitdMx6NMyItXqmqlDNo60lqQEqB8ro3SijEUaC1BzrGmPqQQ3ostPcIrmqhKxG-&gsessionid=LOKacdP93jl2CHkY8BcbLphifm8o9xi1IngYJAFOaB99YBgkBpKsPw",
+      "title": "Mickey's Home Alone - Trailer I Disney TVA Specials"
+     },
+     {
+      "rank": 6,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESzQEBxCJF1_jaPuLzLEwyyPijVnv1rsl3a_J_rFGCa2rfOUS0KoHK40o59Sgxga7w4v57B1ylg5lj1o1-w6qqzq_bV-SdEzMh4Dv7CbnjQy9fC9-pB6PPPTgQBI5m1BZ9Tp1uOldKjs4-0iRd3G7gPeRF3MID1ZdJlxa0iDkwUyZKG9WGfVAB5ZxBou6i2MTpxe74xsp8ea-lF4ODQXqrS7F5S2CLzh-WUbMTfmpV8-q320tW6IkrS7kmSEXHAVLrAHrb51n4bBrMTnH41Rll&gsessionid=LOKacdP93jl2CHkY8BcbLphifm8o9xi1IngYJAFOaB99YBgkBpKsPw",
+      "title": "Mickey's Home Alone Trailer Premieres Nov 26 on Disney Jr"
+     },
+     {
+      "rank": 7,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESjQEBxCJF19hiQvDhTYin7KKsTPyFmg2--A8c8x3drpIE1XzFfvAzBpfjriI7vpCL9fZU6kjqj-vrKn8oHO7UlVt_kB1i0_Iau13ZOr9Zkm380FtqhcLw4DIZz9lVwjfkzoe_pJjjD_l2sNe--lmgBxStkpo0G7yxJp7OPZIZQDdOm9b89NUjJEd1TnZsHwg&gsessionid=LOKacdP93jl2CHkY8BcbLphifm8o9xi1IngYJAFOaB99YBgkBpKsPw",
+      "title": "Mickey's Home Alone - Trailer : r/television"
+     },
+     {
+      "rank": 8,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESpAEBxCJF1wnbSXJ3K66dXxeUKs59SiSiLfsA4zbPAdrjYBqzrbTZPagUlwfi70ksCDf1lyIxVcFe9gFjr-R1KtrfLiM1EQSdB5znwoEZFfpGW02iFUwB2qQhAreXH0li-42py40mYERo519_NE05_p8X8Hd5Z8iHDirwSNwfBCPQGfdK1MEpFQNH3WvNCpNSUBP82PSK1jolApN_6SPpJoOfK55qMg&gsessionid=LOKacdP93jl2CHkY8BcbLphifm8o9xi1IngYJAFOaB99YBgkBpKsPw",
+      "title": "A trailer for the next 'Home Alone' movie is here"
+     }
+    ],
+    "impressions": 5,
+    "gscPosition": 49.2,
+    "ourPage": "/movies/home-alone-1990",
+    "ourRank": null
+   },
+   {
+    "keyword": "jurassic park film trailer",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESaAHEIkXXiFzlyWvQFz9lRRvMRb0KwnLoQzqmA_6naFm73PaQTBnkRbKYxqIdU88Fxx_yy_yMgtcKVgsYm5m-ZmZv1TwmvvQD2NaD0KxDiW8DBSsVBQmhpjo6cD5OdljQM3tOnf7SOGhP&gsessionid=1G8HMHAJskGpVZA5DtvlImJ5B8IxeYuE7rmwm4VfV-RmBonsDRArmg",
+      "title": "Jurassic park 1993 3D --Trailer HD"
+     },
+     {
+      "rank": 2,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESegHEIkXXE5uDcd2C4eYhAimrf7qE4mmnhvDjg3ZO7wPLHVdh8UygYq93aTc_jHQyJYGSudgd9NJVGvcvXELyPxgAOFnZVW-aSyCPgrBqatfm94VDZaW6KkUZVXjbhEL8yfpiNAaEX10Zg6WqIaO__lBcA341T0ADTAtj&gsessionid=1G8HMHAJskGpVZA5DtvlImJ5B8IxeYuE7rmwm4VfV-RmBonsDRArmg",
+      "title": "Jurassic Park Trailer OV"
+     },
+     {
+      "rank": 3,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESmAEBxCJF11kbrGiEB09Mc2c9LweRn9BqHHMRqmIvJBEOp1NM4ySyOY2z0LazjszWTNVltXpTwNNIpHBNGidP5qahG8aC3Xcx_280P08u-Bi_rscCso3dOhpM36XIxaqd3THO-UAJjumuFDMPoQdy7A7sii0Q9AesSXZ6STVf842Sp9H7el1nNKNqaJOr7xy90hmPkwGpmyHVqA&gsessionid=1G8HMHAJskGpVZA5DtvlImJ5B8IxeYuE7rmwm4VfV-RmBonsDRArmg",
+      "title": "JURASSIC PARK (1993) – Movie | Teaser Trailer | Amblin ..."
+     },
+     {
+      "rank": 4,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESbgHEIkXXh3uEthrlt2KeBDEhAKi3NGOhku1nxB_jmeWnxPhJ9BP6xq9vuCeIN2ULvrVdARd58rDtemU_eojLj1ySR7EQtqdOsFEUsIXXFq7rH-0UA31TFnCVkZt2eiHwREOd0X5f8TJ2iZ2Pi2vC&gsessionid=1G8HMHAJskGpVZA5DtvlImJ5B8IxeYuE7rmwm4VfV-RmBonsDRArmg",
+      "title": "Jurassic Park Trailers and Videos"
+     },
+     {
+      "rank": 5,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAEShQEBxCJF16d_RFnRZIV4qF9PVg_ena-ckGPEHP71MOt6nyQB-ZBG9wZusfvzCRRdUcfkPgnVWfkJtQJWbQ14zZnxWy0bxGj368Pb2ABW47bIZiZVp1Q02vUig9n15xtm4JkZehk0E307kISueYiraqiJhLoNBS_UZWx82AjUfF1-TDIJjV1y&gsessionid=1G8HMHAJskGpVZA5DtvlImJ5B8IxeYuE7rmwm4VfV-RmBonsDRArmg",
+      "title": "Jurassic Park Films Honest Trailers"
+     },
+     {
+      "rank": 6,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESbQHEIkXXRO9clLNzuiZWx3uc55_dOJyE8HXGS5ZhQHdfU36jRSWRmWvT2IzCo6fT5asfSjGIwkn166i2fL4YnLuC82A2pHQoSW_QrHmNqoAtIlegK_UnkFuDM8Hhwko7iTy36AiF2_W_saG40vY&gsessionid=1G8HMHAJskGpVZA5DtvlImJ5B8IxeYuE7rmwm4VfV-RmBonsDRArmg",
+      "title": "Jurassic Park"
+     },
+     {
+      "rank": 7,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESfwHEIkXXqSe5t05bpDUUP_ozPXGSz7PNDA4ujyfRfj5R7XBvgO96UdY0ej-RbF8r27JEclcmNDhdC5QZgFXlfxKWKgLOqG-uKURQmkqv42FQCg3dHpAw9n8pI6cfLvFgDnvapuYAfTPmOW6tKagb-xrAZc8ZRszQnm908vZkeeU&gsessionid=1G8HMHAJskGpVZA5DtvlImJ5B8IxeYuE7rmwm4VfV-RmBonsDRArmg",
+      "title": "Jurassic Park: Official Clip - The Sick Triceratops"
+     }
+    ],
+    "impressions": 5,
+    "gscPosition": 76.8,
+    "ourPage": "/movies/jurassic-park-1993",
+    "ourRank": null
+   },
+   {
+    "keyword": "the sixth sense trailer",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESzQEBxCJF1yOaGaG7XZh2Yhp-IdCH8u4hzJBbLWoxelW6JYL8jSGqUj-_2eqlJkBv1gWpPtmk8nysL-8ugL5-atSXAYDFFAwVBWVr58xbi6t3q4_7-hUMrz1PWoXjOPl3GNU7HeOuCOEs5R1hLkw-8_oWg8QfEKG-Qb9SiejSm76lSUp51RApaR1YmFV_GnWA3uE4JIYc1a09tuZHLLxsqUyGGhd3ylKkpZyDcKRE9CD1-LFhjXLcdG50FMguzgPxMjIJw4iwOh4xLi6fhDIp&gsessionid=iaqh251YwMKLnCa6KxTl2v5CAIXmyJr6baOuFEpcU7cmEws3Qj0BSQ",
+      "title": "El sexto sentido - Tráiler oficial"
+     },
+     {
+      "rank": 2,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESoAEBxCJF17ACYnqRxCG59-WO8uyhLBwaxZbsh1is_-X7dh9M-Q3pWMDlWC2vDHbbnUBSNVa9skSldW8Crtj8xbgwj2lEdMsEboCfv9J0IpJ01H4Yjp63niLFCCjHy7sn6laWlnq18hyB48sBsnOZP-i3GrcYXSrW2ujdEZwcBU_UIhFOcOr_bR6V5Pprt0Pb86MtPaitsAMq1MuYVfTvJmMJ&gsessionid=iaqh251YwMKLnCa6KxTl2v5CAIXmyJr6baOuFEpcU7cmEws3Qj0BSQ",
+      "title": "The Sixth Sense (1999) - Trailers"
+     },
+     {
+      "rank": 3,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESkgEBxCJF19d5pGYxVUP7WaL1tX2c00UGLMqhNs7WIzcRRr2TTujpOIxifiPUUf-eFQW2w9IRfJ8Eg9Ipl2sqOTXJBy8RumOmlYSpjg9YKmt8D8t22ksaMLYqZCNmOXAv3S2wnffWorDkv9vvByFL3200lHbb6Y5g4pxnCeFstoPs679Dmlp0C_UFWgw6K6qLkC-G9Q&gsessionid=iaqh251YwMKLnCa6KxTl2v5CAIXmyJr6baOuFEpcU7cmEws3Qj0BSQ",
+      "title": "The Sixth Sense (1999)"
+     },
+     {
+      "rank": 4,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESkQEBxCJF19GBCID5Ze8Qgacf1A0faGZhMptMsrmMjzvx6l6Pom7l0imqlrPYDMO3FtNYa5Ppd3nR7BLeiBKbE1kGYWYdM9kUdOQMHYo2qcDFj8-kOgFL2t8RPpBkvrXZlaUY8XqPU2zbEGYh-DhhFglAnlYxqjHt7tLGnzR5DF9Lm2_hRlFZtg9FCh0g8yphcXCG&gsessionid=iaqh251YwMKLnCa6KxTl2v5CAIXmyJr6baOuFEpcU7cmEws3Qj0BSQ",
+      "title": "Si. - ¿Has sentido que se te erizan los vellos del brazo?"
+     },
+     {
+      "rank": 5,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESaAHEIkXXWjxVMRSQ1dq_nPQpE_Sym-ru2BYAsre1lT2MHd1KzN-L154gNYDqTA8cddSBO8bd9VfLgTpxCUscGKOng49JPKnQrA-d9LCG2rEe0WpHoc16n2M6uF-z7dUfDxnJhsNEOzyU&gsessionid=iaqh251YwMKLnCa6KxTl2v5CAIXmyJr6baOuFEpcU7cmEws3Qj0BSQ",
+      "title": "The Sixth Sense (1999) TV Spot In Theaters August 6 (July 20 ..."
+     },
+     {
+      "rank": 6,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESYwHEIkXXrHzYr9ufJRoOTwwoxz8FcCCCoAP4C7EXYqhpEtb6vKI0W1u22FF6quhSQbRvr3nAM9AHteMs0uBqOmMLoyyiPR_B9Gaerb268t3IuomD_LZlAIAGt3a-tAvQQiNXog&gsessionid=iaqh251YwMKLnCa6KxTl2v5CAIXmyJr6baOuFEpcU7cmEws3Qj0BSQ",
+      "title": "The Sixth Sense (1999) – Trailer (feb 2016)"
+     },
+     {
+      "rank": 7,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESdAHEIkXX4dqIoplOPYd_TK-M_hjY_JagJhwodhyc74cfYKe-gP8MHenG_uhmbXZk2kieL00T4WdXU83LU4h10E4l7wqejK7pYyolbiJ_FaIAhhTdJrU-9SJ4Tg-6VjE0sIjgbFN-uiLZIPhUNXOIqwWsi01H&gsessionid=iaqh251YwMKLnCa6KxTl2v5CAIXmyJr6baOuFEpcU7cmEws3Qj0BSQ",
+      "title": "The Sixth Sense | Offizieller Trailer"
+     },
+     {
+      "rank": 8,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESmAEBxCJF122HyIT7M7v3ANpzEnojJ5VTtWYjWjiqTY5YmDNJsE1rsNmWgWddfGIG3NodxSq7T-ZxMtsY3sOo7mtQxUpp0zHBspvhN9HOYXGLqmzlPewkMLNyOLFy2HcG7xjngdpyX0A5Ia7o9SH0x3OCutO50VoH4I9d9ZZ4YbzTyzeAxBWERGUnrBk8zl-d_rLy2a3jB5PNyA&gsessionid=iaqh251YwMKLnCa6KxTl2v5CAIXmyJr6baOuFEpcU7cmEws3Qj0BSQ",
+      "title": "THE SIXTH SENSE - IL SESTO SENSO - il trailer"
+     }
+    ],
+    "impressions": 4,
+    "gscPosition": 60.5,
+    "ourPage": "/movies/the-sixth-sense-1999",
+    "ourRank": null
+   },
+   {
+    "keyword": "district 9 trailer",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAEScQHEIkXXYBMHmufXk_SmVQD46NBPTpJTssowDDdg0adfWtDLYdlFST7iJkxSZ4wxhAVfjmeCU96REoCVpuatTHuYekNNs5Bpht9Yot-Jga4JgW-rBUbtJ9ni_AeqPrZVuvcOoF_uUR2jpXvth7GIVM5z&gsessionid=jY1veOfkx4cDpA4dJEAY1nOL676ud7P6pMZHv1kCsFJipomZurj26A",
+      "title": "District 9 | Film 2009 - Kritik - Trailer - News"
+     },
+     {
+      "rank": 2,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESggEBxCJF1-vnRJrycXVfnn-7X9DXP8dLipMZ0oRi158zTqMQERpDwBfQUccKbFtqLxG5tf-hiWvSLIxVDLJl7o_OB3CBBmWRNCoF7wLH-oDPWOm74IFuZvX9b-G_7Z0Xlw1X6L8kBpqr_YBGSX1p1sfqxYf_MLtvmHlzDPKKLCrRVFgH&gsessionid=jY1veOfkx4cDpA4dJEAY1nOL676ud7P6pMZHv1kCsFJipomZurj26A",
+      "title": "District 9 : Full Trailer - Everyeye Cinema"
+     },
+     {
+      "rank": 3,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESgQEBxCJF14gGVnwC14COguOg_gXXzERY0Mzh_nFAYkMD7tSHU0jvroLmZp0XMR2ZN7Wq4lHsg2K3DdN48fV8OadHhNJWpiei6KgUyXud43hHV-pqQdNgGnJNG6X0nQ85sg5772znwigrqWf4br7whs1uqd9GkQ_7WDA3fNVg5g5qZoo&gsessionid=jY1veOfkx4cDpA4dJEAY1nOL676ud7P6pMZHv1kCsFJipomZurj26A",
+      "title": "Movietrailer District 9 - Trailer 3 english"
+     },
+     {
+      "rank": 4,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESaAHEIkXXYpLqpDmoGfMlrwWGgaZvlnKaEUg5-hCrWAqfabsddmehBp4Jz0PTHIU_zCuwfygpLXVgHMBzkvAB02evwQr1tcq8BZue77ZHjS_Lkov7RltQoqsjp1YhfCxgAo1Y_Q55ebvh&gsessionid=jY1veOfkx4cDpA4dJEAY1nOL676ud7P6pMZHv1kCsFJipomZurj26A",
+      "title": "District 9 (2009) - Trailer HD Subtitulado al español"
+     },
+     {
+      "rank": 5,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESaQHEIkXXYDk3XfDQ8W-id89BTHDpmPjd0Gk_uxpQlP5J2Q-ENlZHv8Fez0XmTxVV3p4rJILDnx0FhIvw3yU3DCv2ZNac8cdogDJ62tysa0ERiyAN1XwV2kd9uT0RBpNxDGbSvfXQSOKwbg&gsessionid=jY1veOfkx4cDpA4dJEAY1nOL676ud7P6pMZHv1kCsFJipomZurj26A",
+      "title": "District 9 (2009): cast, trailer and where to watch"
+     },
+     {
+      "rank": 6,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESkgEBxCJF12lZ4bq-1gtCZ0AChsX1f7kjW3cXskJeRWYdOqNg_YHBcHwHHqjxXVeU_00BC8dyu-_MzgLKyNkWITKBMHxLyJaQfH0_GC9QY4WhgbQglOfmkp3H_iyYLvGHIsttcwSBMvThPGSFTAPhHRaOdWH6Sbg-1NQ7RUApzbZfzuMfiIgLuRV9ODg3kpYPSP_P3Q&gsessionid=jY1veOfkx4cDpA4dJEAY1nOL676ud7P6pMZHv1kCsFJipomZurj26A",
+      "title": "Trailer du film District 9 - District 9 Bande-annonce VF"
+     },
+     {
+      "rank": 7,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESaQHEIkXXJNRyt-XAYLCm9s0plWfONHkc02NW4M60VFc3aCI8Hq3uk-rWSsxE4eWn4p9SifSb26p4-8haAQXGJRXNWydmoW-HDgZiGMW9t4aE8IQDSGs8Xfj8pmFBkT-Sfy5K2If1I5berw&gsessionid=jY1veOfkx4cDpA4dJEAY1nOL676ud7P6pMZHv1kCsFJipomZurj26A",
+      "title": "District 9"
+     },
+     {
+      "rank": 8,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESgQEBxCJF16RfG_cHcVKSy_OQu843XMVtciVkdTgVAue72Z1dI7qaE7_4iN-5DYD7HDoUIEbmpxTp4uS1f6rCLZPrBKIDe4TPHuBzFQWHdBAKeG0zDK3xdctCMMgiUDccnkMjlTjuv8KBDEM0H4q8bDBLQYELUzFLHpuU7CJORtN_-1o&gsessionid=jY1veOfkx4cDpA4dJEAY1nOL676ud7P6pMZHv1kCsFJipomZurj26A",
+      "title": "Movietrailer District 9 - Trailer 2 english"
+     }
+    ],
+    "impressions": 3,
+    "gscPosition": 62.7,
+    "ourPage": "/movies/district-9-2009",
+    "ourRank": null
+   },
+   {
+    "keyword": "the prestige trailer",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESaAHEIkXXOLVIs-VC2FmKKiVKj82DCNoenkm4qnFkk-XngaGbfZZ7oJaGKy4cM_yGuLTfVfjXouDm6NxxrAMTG0OaDE0hABcz6mylE_Tf9Qx66cE84QIYY1J58ck_ppE9l5_9dX0oEXld&gsessionid=9hAF_7xHyfJZ_cI_5b6yyk0GeTL1ixq0Hm9mPtYQknWq6o00-jzSWw",
+      "title": "The Prestige Trailer, Superhero Edition"
+     },
+     {
+      "rank": 2,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESawHEIkXXAlFdTKWDYA5FTIJr4NoWCgpp-wiv34KU9m4HQ9QdqJ1MFk59Bq2XTplqnP0CLcikCfJ_m5xDNboNu5E8wqrDeJBuktUNFL3LO4IXv9xa02xtjLOPKWDHUOgnq1rjyqxuRZIgvqky&gsessionid=9hAF_7xHyfJZ_cI_5b6yyk0GeTL1ixq0Hm9mPtYQknWq6o00-jzSWw",
+      "title": "TRAILER - The Prestige (2006)"
+     },
+     {
+      "rank": 3,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESZwHEIkXXOeIHzPOhVENl_CBys05aXsa6yP8oHAKo4dMH3pCHLNaeAUkDttM86CtJ5RwFX4LVaMFxrIgfQRFIPeFbgq0NPnRwGvOQHzKlLcmpQcXHUIlXlJLDkRkznfy1oMQhPr7NwRY&gsessionid=9hAF_7xHyfJZ_cI_5b6yyk0GeTL1ixq0Hm9mPtYQknWq6o00-jzSWw",
+      "title": "The Prestige"
+     },
+     {
+      "rank": 4,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESbQHEIkXX3HpL_hNd0peWwQhkirw9pQypM4eq5rbo5MuzLA4pQc4nxrRmQlXagk0u59O1NpoolBaPw73jxnLpbW85So029tjCShRAtPpKZKVgy4Nw1dB9bOUUug9WJZ25ODIXAGsPrVdDZsLI8J8&gsessionid=9hAF_7xHyfJZ_cI_5b6yyk0GeTL1ixq0Hm9mPtYQknWq6o00-jzSWw",
+      "title": "The Prestige - Trailers & Videos"
+     },
+     {
+      "rank": 5,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESaAHEIkXX8-dJvJXqff3dEXEeFf_iSCw5vmG8ojyHUjDVvOE6CblwmkJtby5G5_623oAaAfatcT0jekN_ETnesC5pU0nlaupS8X9RyqQtREEMY4iS5RfIZhO7F9P51r6R8GsTKtDs6udB&gsessionid=9hAF_7xHyfJZ_cI_5b6yyk0GeTL1ixq0Hm9mPtYQknWq6o00-jzSWw",
+      "title": "The Prestige 2006 Trailer | Christopher Nolan Movie"
+     },
+     {
+      "rank": 6,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESZQHEIkXXJWVaCRBSFh4c3s5d-XQZuk0j2yujUkl4DrnWIltB0sQT5_sN9bGOC5XxnZc9klUV2fOpDuWH0V37CPaf0yYAjGq2KvPJxKwatqOPpQiWQ4vYTbLF14Sfn6mDKm4kaqS6&gsessionid=9hAF_7xHyfJZ_cI_5b6yyk0GeTL1ixq0Hm9mPtYQknWq6o00-jzSWw",
+      "title": "The Prestige"
+     },
+     {
+      "rank": 7,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESaAHEIkXXtI93VFaJGx0vXdyH9xCZmduDhj4I-Owulhjgqvp-G2BTJ4MFjMj4QCSlAjTa1heGVCz4q59BJjg75fLNNSzcvUQMFoCHytrgp4nG-LbTVlkBEolDSqhS0l4fA5B4SESgrbGg&gsessionid=9hAF_7xHyfJZ_cI_5b6yyk0GeTL1ixq0Hm9mPtYQknWq6o00-jzSWw",
+      "title": "Trailer: The Prestige"
+     },
+     {
+      "rank": 8,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESYgHEIkXX7lnt9ObgGZCJ0817wn3qJ_baGNm6gbFTrvSmDtrWUvTY2J8COPU92VWWjSRQbeuMPMYVomxIoF7lgHdVmmj_FgmjheXnnTQKF4F6IN7meEB1au2LPFidRHAfsykY&gsessionid=9hAF_7xHyfJZ_cI_5b6yyk0GeTL1ixq0Hm9mPtYQknWq6o00-jzSWw",
+      "title": "The Prestige (2006)"
+     }
+    ],
+    "impressions": 3,
+    "gscPosition": 58.3,
+    "ourPage": "/movies/the-prestige-2006",
+    "ourRank": null
+   }
+  ],
+  "index": [
+   {
+    "url": "https://www.movietrailer.channel/",
+    "verdict": "NEUTRAL",
+    "coverage": "Page with redirect",
+    "lastCrawl": "2026-10-11T09:54:44Z",
+    "googleCanonical": "https://movietrailer.channel/",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://www.movietrailer.channel/browse",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered – currently not indexed",
+    "lastCrawl": null,
+    "googleCanonical": null,
+    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+   },
+   {
+    "url": "https://www.movietrailer.channel/movies/weird-science-1985",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered – currently not indexed",
+    "lastCrawl": null,
+    "googleCanonical": null,
+    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+   },
+   {
+    "url": "https://www.movietrailer.channel/free-classic-movies",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered – currently not indexed",
+    "lastCrawl": null,
+    "googleCanonical": null,
+    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+   },
+   {
+    "url": "https://www.movietrailer.channel/original-films",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-10-31T10:50:37Z",
+    "googleCanonical": "https://www.movietrailer.channel/original-films",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://www.movietrailer.channel/movies/anora-2024",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered – currently not indexed",
+    "lastCrawl": null,
+    "googleCanonical": null,
+    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+   },
+   {
+    "url": "https://www.movietrailer.channel/movies/basic-instinct-1992",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered – currently not indexed",
+    "lastCrawl": null,
+    "googleCanonical": null,
+    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+   },
+   {
+    "url": "https://www.movietrailer.channel/movies/batman-begins-2005",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered – currently not indexed",
+    "lastCrawl": null,
+    "googleCanonical": null,
+    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+   }
+  ],
+  "error": null
+ },
+ "costUsd": 0.01,
+ "speed": [
+  {
+   "url": "https://www.movietrailer.channel/",
+   "lite": true,
+   "serverSecs": 0.2,
+   "htmlKb": 59,
+   "blocking": 3,
+   "images": 16,
+   "noDims": 0,
+   "imageKb": 365,
+   "psiError": "HTTP Error 429: Too Many Requests"
+  },
+  {
+   "url": "https://www.movietrailer.channel/browse",
+   "lite": true,
+   "serverSecs": 0.08,
+   "htmlKb": 174,
+   "blocking": 3,
+   "images": 368,
+   "noDims": 0,
+   "imageKb": 381,
+   "psiError": "HTTP Error 429: Too Many Requests"
+  }
+ ],
+ "quality": {
+  "summary": "384 indexable pages · average 250 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
+  "thin": 0,
+  "near": 0
+ },
+ "links": {
+  "internal": 418,
+  "outside": 1099,
+  "checkedOutside": 150,
+  "unsureOutside": 6
+ },
+ "affiliateOk": 970,
+ "secs": 159,
+ "change": {
+  "first": true
+ },
+ "history": [],
+ "issue": "open"
+}

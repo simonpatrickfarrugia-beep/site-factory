@@ -3,17 +3,17 @@
  "name": "victours.com.au",
  "url": "https://victours.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-14T21:44:23Z",
+ "scannedAt": "2026-11-14T21:52:19Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
  "nextDue": "2026-11-22",
- "score": 82,
+ "score": 89,
  "grade": "B",
  "areas": {
   "health": {
-   "score": 71,
-   "grade": "C",
+   "score": 89,
+   "grade": "B",
    "label": "Broken pages & links"
   },
   "tracking": {
@@ -22,8 +22,8 @@
    "label": "Tracking & money links"
   },
   "indexing": {
-   "score": 51,
-   "grade": "F",
+   "score": 100,
+   "grade": "A",
    "label": "Sitemap & indexing"
   },
   "seo": {
@@ -37,8 +37,8 @@
    "label": "Thin & duplicate pages"
   },
   "speed": {
-   "score": null,
-   "grade": null,
+   "score": 79,
+   "grade": "C",
    "label": "Speed"
   },
   "google": {
@@ -47,47 +47,26 @@
    "label": "Google trend"
   },
   "rivals": {
-   "score": null,
-   "grade": null,
+   "score": 35,
+   "grade": "F",
    "label": "Competitors"
   }
  },
  "pages": 311,
  "findings": [
   {
-   "id": "robots-blocks",
-   "area": "indexing",
-   "severity": "blocker",
-   "title": "robots.txt blocks the whole site",
-   "fix": "Remove \"Disallow: /\" from robots.txt.",
+   "id": "speed-img-home",
+   "area": "speed",
+   "severity": "high",
+   "title": "/: 1,776 KB of images in the first 15",
+   "fix": "Resize images to the size shown (max ~1600px wide), serve WebP/AVIF, lazy-load below the fold.",
    "pages": [
-    "/robots.txt"
+    "/"
    ],
    "count": 1,
    "detail": "",
-   "impact": 10.0,
-   "broken": true
-  },
-  {
-   "id": "broken-internal",
-   "area": "health",
-   "severity": "high",
-   "title": "6 broken internal link(s)",
-   "fix": "Point the links at a live page (or add a redirect).",
-   "pages": [
-    "/weekends/belgrave-by-train",
-    "/day-trips/castlemaine",
-    "/weekends/castlemaine-by-train",
-    "/weekends/castlemaine-on-a-budget",
-    "/day-trips/sorrento",
-    "/weekends/sorrento-on-a-budget",
-    "/day-trips/healesville",
-    "/weekends/healesville-on-a-budget"
-   ],
-   "count": 10,
-   "detail": "/belgrave/stay (404) on 1 page(s); /castlemaine/stay (404) on 3 page(s); /sorrento/stay (404) on 2 page(s); /healesville/stay (404) on 2 page(s); /kyneton/stay (404) on 1 page(s); /dromana/stay (404) on 1 page(s)",
-   "impact": 5.1,
-   "broken": true
+   "impact": 9.6,
+   "broken": false
   },
   {
    "id": "broken-outside",
@@ -132,6 +111,20 @@
    "broken": false
   },
   {
+   "id": "speed-blocking-home",
+   "area": "speed",
+   "severity": "low",
+   "title": "/: 3 files block the first paint",
+   "fix": "Add defer/async to scripts in <head>, inline critical CSS.",
+   "pages": [
+    "/"
+   ],
+   "count": 1,
+   "detail": "",
+   "impact": 1.9,
+   "broken": false
+  },
+  {
    "id": "seo-words",
    "area": "seo",
    "severity": "low",
@@ -172,6 +165,76 @@
    "broken": false
   },
   {
+   "id": "rival-melbourne-accomodation-southbank",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"melbourne accomodation southbank\": we're not in the top 10 (Search Console avg 72); google.com leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/southbank/stay"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "impact": 1.2,
+   "broken": false
+  },
+  {
+   "id": "speed-blocking-towns",
+   "area": "speed",
+   "severity": "low",
+   "title": "/towns: 3 files block the first paint",
+   "fix": "Add defer/async to scripts in <head>, inline critical CSS.",
+   "pages": [
+    "/towns"
+   ],
+   "count": 1,
+   "detail": "",
+   "impact": 1.1,
+   "broken": false
+  },
+  {
+   "id": "rival-sorrento-restaurants",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"sorrento restaurants\": we're not in the top 10 (Search Console avg 86); google.com leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/sorrento/eat"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "impact": 1.1,
+   "broken": false
+  },
+  {
+   "id": "rival-yarra-valley-day-trip",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"yarra valley day trip\": we're not in the top 10 (Search Console avg 68); google.com leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/road-trips/yarra-valley-day-trip"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "impact": 1.1,
+   "broken": false
+  },
+  {
+   "id": "rival-activities-lorne-victoria",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"activities lorne victoria\": we're not in the top 10 (Search Console avg 66); google.com leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/lorne"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "impact": 1.1,
+   "broken": false
+  },
+  {
    "id": "seo-desc",
    "area": "seo",
    "severity": "low",
@@ -186,6 +249,20 @@
    ],
    "count": 5,
    "detail": "",
+   "impact": 1.0,
+   "broken": false
+  },
+  {
+   "id": "rival-bright-things-to-do",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"bright things to do\": we're not in the top 10 (Search Console avg 49); google.com leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/bright"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
    "impact": 1.0,
    "broken": false
   }
@@ -455,12 +532,429 @@
    "impressions": 7
   }
  ],
- "live": null,
- "costUsd": 0,
+ "live": {
+  "serps": [
+   {
+    "keyword": "sorrento restaurants",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESeQHEIkXXbvfoscoEo1AGHtY-zWbDiwZAmJe4c7i3nugtYh7-gPtq8-tqEZEzeUEt7tmyfsgj8WlYMZ2AVlqZw9DX5Z8drXO5dyj7k7fCosC_B6kpE2UNn6oSPhi2hA2znnL8tfIeGZbm7M6s_jnxXh8rKihuAC4b38g&gsessionid=nfaDOns3U3gF4FLXQ7n0pOCrspoKqfhGbMG064_3C7ymmEEniXZ16w",
+      "title": "Best Restaurants Near You in Sorrento ..."
+     },
+     {
+      "rank": 2,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESegHEIkXXCqgHT9u3lpyBQjuuGrSoD64nMAHolNmydNmcI4dEuL0ojCvxWq920wQyTCOk6lyIFzUxcLpDuDIotuS0JxoeqI8jM_kNZ2tOuUTOUInIW2AhbZJ-yefZxfeaD6Eyl0rUIv2iM396dgSQBG5zPKinkfF7-yd1&gsessionid=nfaDOns3U3gF4FLXQ7n0pOCrspoKqfhGbMG064_3C7ymmEEniXZ16w",
+      "title": "Best Restaurants Near You in Sorrento"
+     },
+     {
+      "rank": 3,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESeQHEIkXXDK_R0PP4uSJaLcUmPJ30d26PaWTskojLM6iBiKvlWhubeA8rM5TgzmbkHaeGL32R3NavESXzJAVk0qwG4gTLnM0BvXrVuWQBINzeksCbFP8VlO0nNHClA5eSJiBXKZRFxvxFI1iCrYNxbRQWX9VquZn6xOA&gsessionid=nfaDOns3U3gF4FLXQ7n0pOCrspoKqfhGbMG064_3C7ymmEEniXZ16w",
+      "title": "Top Restaurants & Cafes in Sorrento"
+     },
+     {
+      "rank": 4,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESlgEBxCJF15rggnaWd0I8_K1QYuaSG5NBLfm4tsm3L58bxIMCDEliLFlM4HNBv0k0DE9BcPIcKUfqnf60uXL7vyX1U0RIxEy99HL0xljCyYuLtGgMNrLcMAPcCS5jfy-eMxPmGT3ZKsYMDCmdeuFR6zOgWW39J0_LLIKKcQujylx3ZvTrgxugeBulH_daKD74LlIA97IMKQQ&gsessionid=nfaDOns3U3gF4FLXQ7n0pOCrspoKqfhGbMG064_3C7ymmEEniXZ16w",
+      "title": "Best Restaurants in Sorrento VIC"
+     },
+     {
+      "rank": 5,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESggEBxCJF19MCjU2_-9IPT1yu8dGA5afExC4XFcApmkUjJ1HT-Qo6NdYu4HYW6GTCfGcNgAxLl9G_COepPJ7_eSEalW81qTDS_DxklQTB3yWQuSOVrvRitYMiUXakiuuZdvBCqPOEB35Jxf-3ordSg6GKtwi8Xzokym_RYYTeDYNIW8fS&gsessionid=nfaDOns3U3gF4FLXQ7n0pOCrspoKqfhGbMG064_3C7ymmEEniXZ16w",
+      "title": "Places To Eat In Sorrento Victoria"
+     },
+     {
+      "rank": 6,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESagHEIkXXRV6dvaD3zSWqVOSDZBgnmFAVFAqIHacbVGXso4WFLQfTdOAwLKxB5Vqh8gTRBuYmyx8CtHTp8fJ2bhWVXVG5LW7FbyTIzzFfBo7yaSrVrTTtXoYSFmNrjHr6oVDUH4VslhMEl8I&gsessionid=nfaDOns3U3gF4FLXQ7n0pOCrspoKqfhGbMG064_3C7ymmEEniXZ16w",
+      "title": "Food & Drink"
+     },
+     {
+      "rank": 7,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESlAEBxCJF17LDiVjIhsnWq_PrTxav4qdD_wNjFJjlksWNPkGHZqNeF56QvoEOh3zrjMrYubhLa6fS15AXWxnGmIiONLQVh5VrU4niMax6J39KVKzPoE4zzwOOGmGxHiB6Do6532q3Axz9OQc0t1yG09Jvr6NURVdkBEJb-bJoq9ptKD00BKl3PIDPFJWHApoi4QyPQI5N&gsessionid=nfaDOns3U3gF4FLXQ7n0pOCrspoKqfhGbMG064_3C7ymmEEniXZ16w",
+      "title": "Where to eat: the 24 best restaurants in Sorrento"
+     },
+     {
+      "rank": 8,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESoQEBxCJF12R8ts5l5Ju8_igVlyC5WPzDBGqYEE3l0nOxpIuCNwt8byDKvm5ulolqTJvwGi3Dw14aqbsJKxviXVAdda7qaOxOQC1ZH-3h6XWHWL_LajFSZWRErr-J149DdA9PFk_wSsqJqNEIUqf5yYVciS8k20T9TCDra--btylD9Wm7YM9268T2PGHN9zu3cM8h0e4e1sPVqL4JvZumxfcP5Q&gsessionid=nfaDOns3U3gF4FLXQ7n0pOCrspoKqfhGbMG064_3C7ymmEEniXZ16w",
+      "title": "Best Australian Food in Sorrento VIC"
+     },
+     {
+      "rank": 9,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESfQHEIkXXviSkdSWFVkMdrtewqomYiMyZUsnOEJpBbFTvc_r6BHY2OU6B8WmE3YlhJM7WxB-E38Lf6qLzL71PK1fG8oFVxJH4c8fDLfZTu_IfcheoQvt_IYKjnR_ch7qR3a1pf6yxlsPiDkdaGR6-BoMhReq0Ewp5YJOt8bA6&gsessionid=nfaDOns3U3gF4FLXQ7n0pOCrspoKqfhGbMG064_3C7ymmEEniXZ16w",
+      "title": "Restaurants, Bars & Cafes - Mornington Peninsula"
+     }
+    ],
+    "impressions": 30,
+    "gscPosition": 85.8,
+    "ourPage": "/sorrento/eat",
+    "ourRank": null
+   },
+   {
+    "keyword": "melbourne accomodation southbank",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESiwEBxCJF10j1wChfnWcwqSYQ1ZAtO1f0qzq0sGLRSoBGnH9vR9nKXEnctly_D5Ghrw7HuJ5Rqo-dR4pMuiKW-Rdd8eH-kYDOPg0IVMSw_OwAC4iXFL8KvsjM7Pw7kgMTrI9uCTnvYfCGGIUh086EX6-IGn3BC9fA8W8aDZG0jCvHIW9f-mdKSlBWvjtQ&gsessionid=cBYTpYspblnlf7n3WCDNJqcQdYSHxhJ1r5HvY6TNaZ81dn_N9bZZQw",
+      "title": "https://www.agoda.com/apartment-in-southbank-h9743..."
+     },
+     {
+      "rank": 2,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESjgEBxCJF16bdgFWSoAuNdgi-a96XS8MDhopnrhz4vEXhVNwrkGEn3i8eRFQakrVTjww9Ns-EyrJ4-K3blsiEKuiiMZclidAFPSSkYqP2yZm1A0KtCaMSaaXIgZPI0Mjdl_rLwI5inZESiuEjLsJ1_HUz1WFNqG0Nn9rxUmqb5SX21cypEGvFwzVpkiAogLnh&gsessionid=cBYTpYspblnlf7n3WCDNJqcQdYSHxhJ1r5HvY6TNaZ81dn_N9bZZQw",
+      "title": "Best Hotels Near Southbank (Melbourne)"
+     },
+     {
+      "rank": 3,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESfgHEIkXXrYAEW3lh8Igas0QTTPVAB6z9rlChtpWeueALwSNpDVrYbGLFSw3HEJS4L3BDLn4NUVOoiICh9efz25qeA3OaZVSSTIdm6-I887nWql5QkEZfPFETkBYZNspDK2ddfuLmP4vk0NK2DLW5239Y1Qa8Fjza8J7Cfv997w&gsessionid=cBYTpYspblnlf7n3WCDNJqcQdYSHxhJ1r5HvY6TNaZ81dn_N9bZZQw",
+      "title": "Hotels in Melbourne Southbank"
+     },
+     {
+      "rank": 4,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAEShwEBxCJF1_5Q0NBOftC_ZhpyHCdQckJ3CxZPlC8U0zfPWiH6uGoULubGDRDmSH39XwfM05cYScm08bUcHhWHiI3Bu6B32qKKVE230SXKi1_nbM54I_pQ6y60Cy0ZaomvHs7LVnKuAznEWDnu21NWzdAI4R9TKLBbooai6FzjffyvHC5nUf61X0I&gsessionid=cBYTpYspblnlf7n3WCDNJqcQdYSHxhJ1r5HvY6TNaZ81dn_N9bZZQw",
+      "title": "Alojamientos cerca de Teatro Southbank, Melbourne"
+     },
+     {
+      "rank": 5,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESmQEBxCJF122nHs3KWDybU12mE4Do6c0da_a1VVIf-YUUD9TrIYbx00AhEBNGTuw2sdd6xR1OEeHleVWGRTBny4H99KVRO20i8kuob4OYLdW4tt705fvg7e8phuJYXNdKGziQjac-5fsWezILfBE2ssDZYlxRORMQMEHN4ACr5ECsJDFF3b_kwHQZlk8Yw6PqE57CkIHMdGtTqaY&gsessionid=cBYTpYspblnlf7n3WCDNJqcQdYSHxhJ1r5HvY6TNaZ81dn_N9bZZQw",
+      "title": "4-Star Hotels in Southbank - Melbourne"
+     },
+     {
+      "rank": 6,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESeQHEIkXXQ3WgbjeD9-FIZH63iY2Z_ffNegfX70czqAPfPp2jnGyXPWIeZ0RH7_eAq4aCKHHCWRVqSM-KkKvPGQ6WJvGTISlE_MfbE5UYqmYEhgF2sFd0bQbKb5Pv1ycDCiFSXicXSPAbNVKL7k6Et0FqAJR0LCNbUoU&gsessionid=cBYTpYspblnlf7n3WCDNJqcQdYSHxhJ1r5HvY6TNaZ81dn_N9bZZQw",
+      "title": "Top Apartments in Southbank with Necessary Facilities"
+     },
+     {
+      "rank": 7,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESjQEBxCJF1xHdR4rJYVJpNe4TbZAMajXZ9f27dvIhxRbFE_IuD1XeaN4ZMfA0QkbF3TTMH5hT7exLTvx5BjVRaEjVmb0bP3vy4K888rZnlT45b4rBtpfssqZrFhRNj6-SC4gJzfD_EY9lfLtdZyN6ckTOX8XxO7KwrtXKlXmt_d8m4ccXSDjq6RT8HmBQ_FY&gsessionid=cBYTpYspblnlf7n3WCDNJqcQdYSHxhJ1r5HvY6TNaZ81dn_N9bZZQw",
+      "title": "Alojamientos en Southbank, Melbourne"
+     },
+     {
+      "rank": 8,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESkAEBxCJF1xC-ELTvpN-fzQRwIGTI0aV-Nt8h2MKrlUkOf2G0ZJZb7IAYNBFP3J_4H8_CUTAwixcuvCSgdqc_SwLoSy18cBxuDVKQnHL3AuldDztvdzIgXiwb3BddzhSqBPyvoP5pbFXEbWkz0fm08eiPHQ3kXgoyl4_VXlKIgGXEIfy34JANENyTproZk171JXw&gsessionid=cBYTpYspblnlf7n3WCDNJqcQdYSHxhJ1r5HvY6TNaZ81dn_N9bZZQw",
+      "title": "𝗧𝗛𝗘 𝟭𝟬 𝗕𝗘𝗦𝗧 Hotels in Southbank (Melbourne) of 2026"
+     },
+     {
+      "rank": 9,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESdgHEIkXXGs7ExKhsazGhUn0dNy0G1UtXrymtI221AzmUfdVyPrY5AAx8iNJUctmQpMSATO-clilhi27ZfmcewO91FOWFA-04F0q9Ceu4NA5vS0nV4ktBCD141SnKC-fle_Semutv1p7FAVnpkXOQbIdJvWZI9U4&gsessionid=cBYTpYspblnlf7n3WCDNJqcQdYSHxhJ1r5HvY6TNaZ81dn_N9bZZQw",
+      "title": "Best Where to Stay in Southbank - Melbourne Spots"
+     }
+    ],
+    "impressions": 23,
+    "gscPosition": 72,
+    "ourPage": "/southbank/stay",
+    "ourRank": null
+   },
+   {
+    "keyword": "yarra valley day trip",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESjQEBxCJF16fLDA0oa7nHN87MWi8SBXF0xIauk0H__OYDvqfyOQsped3mRC5BkyX9-6pJighkR1hUQQmeiw69zQrJruiPSxW-uEQ-iaY-TdN6FC2-lEqPzIjRUduppZpF4qsj8AkvBR2eo06oYlA5iYxLC6mHQ134yih3fXF7eRvkXqlQ4mbQgMw-uHr5rqQ&gsessionid=mlxISRXI4MF7tPKaSRLeCm6FM7TXMq-HqOdCpCIqPPnih3i0w-5TKw",
+      "title": "Weekend Wanders: A Guide to the Yarra Valley"
+     },
+     {
+      "rank": 2,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAEScgHEIkXX_JM7Q8Er_n0HRJr_lw5VhJ7axGj4Mcmq9XQE5cDzTdAHS7CpsY97-Km8L3S-WIrXMPWoU5sFNzuVa3xZj4G3Wm2GhQna_h7Gdr6GmhxSBd4-6n8EMhFRt3WlS-Qc9nMw7gJu8mXCiPnlr6_-Bw&gsessionid=mlxISRXI4MF7tPKaSRLeCm6FM7TXMq-HqOdCpCIqPPnih3i0w-5TKw",
+      "title": "Yarra Valley Day Trip From Melbourne"
+     },
+     {
+      "rank": 3,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAEScQHEIkXXtxc5ZMuKgvYyj6GLtxBN0TadCGnLM8hQrp7Pm7lS5jG2XvClNKiUsJ8XinCkXKGoed3yFAHIERT12_6PMU2End38tm2yoCBFEqMGMfj58pHFFtqhUF81V9WV_R5HG2odrn460N7D40fc9fFw&gsessionid=mlxISRXI4MF7tPKaSRLeCm6FM7TXMq-HqOdCpCIqPPnih3i0w-5TKw",
+      "title": "Tours & Experiences - Visit Yarra Valley"
+     },
+     {
+      "rank": 4,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESqgEBxCJF10W9lroId88wqyoYD3lIakqbRyHq09Vs6k8MJ_qXZZ2VxBwoIdgLuNPcp8W-NmyNhm0sc1gdLkFpB1NintBsq65qjh-ptaLSFFolFpSnfTPHB6mXBoTX6HrrAzVs8rFu7wQeZc5fNzXn3Pdnx5h47JMwSXLjECq5-GjknAFEHDq_cu1DrDoaMVZ3vYFVvrxWtYU95ZVS00FPx_0YbgX5lRI_b9PB2Q&gsessionid=mlxISRXI4MF7tPKaSRLeCm6FM7TXMq-HqOdCpCIqPPnih3i0w-5TKw",
+      "title": "Road trips and itineraries, Yarra Valley and Dandenong ..."
+     },
+     {
+      "rank": 5,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESfQHEIkXX0iO8Ru27ORh2ZCnD0UNLOK-U-Vth6qtj5NwZc7nebXwJaDA4vhJQMWws4B-MyZXo1FqtDsGcFHaC1CxQo--SkPCyKz9ZgfPwz0YZWG-IMgovpbuSyO-n5Vh9pEPUExRysxfoV6tnvRWGZqZofq1f4_1dmT7KBT0R&gsessionid=mlxISRXI4MF7tPKaSRLeCm6FM7TXMq-HqOdCpCIqPPnih3i0w-5TKw",
+      "title": "Day Trips from Yarra Valley"
+     },
+     {
+      "rank": 6,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESfAHEIkXX_s91RV3NlQIoIDEMigvpxJucdElaPUrdqcXp2aHYU5oTRcQwAInFArxSv4VLUcsTE2u_09_Pfhh62mn4Hc7cC2QFZ9Xe1mWyJK8Myo-kqE_sbJdE7lR-VOXtOCcRlo2WZMx5GE5XqiXehoc72FYL-nSYTAnnkwU&gsessionid=mlxISRXI4MF7tPKaSRLeCm6FM7TXMq-HqOdCpCIqPPnih3i0w-5TKw",
+      "title": "Yarra Valley Day Trip"
+     },
+     {
+      "rank": 7,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESkwEBxCJF18b7L1rwJ4FabNmlqprMO5NkNcsTDbZvrGJgRDCYWyWfl-4uMM4VA6k3Vgm7YG7hquZoMTheA_dWK3IOXepV80xZo7-5WhTV41lcurVkhglDDwM-D89bzQHyDsuWJttPENwOI34fiA6nVDMwwG-akuP7_RqlV0s_wTO2Z_1QLX7zlj-yseSjcWG65zy259o&gsessionid=mlxISRXI4MF7tPKaSRLeCm6FM7TXMq-HqOdCpCIqPPnih3i0w-5TKw",
+      "title": "Yarra Valley Day Trip From Melbourne"
+     },
+     {
+      "rank": 8,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESdQHEIkXXwxQ1EBS2i-oaULY9hAKUH6KyK9XV1RJrqT7eVHO8R84ha7YPHjrwIKn6I8tnxCCBt7ma9IuDBvPWR8uSbhwUDWpJ0egtoN27H_wWilWQQhIfF9Jcdd13Aimu9ofvsSYU980-7W9aNcwiKM7LfdqR1w&gsessionid=mlxISRXI4MF7tPKaSRLeCm6FM7TXMq-HqOdCpCIqPPnih3i0w-5TKw",
+      "title": "Yarra Valley Wine & Wildlife – Private Day Tour"
+     },
+     {
+      "rank": 9,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESngEBxCJF10G1erIdljmFOs7k5oew4ujNz61xdObOEsJV-vCyFPQInX-JdyZAsQRekrahJxtFppE1UdDaiFNeRGf36yB7ul6oCOGtLj6JH8fichR2EmtOpCDkYuOpkDGz5ATJ7CaTtwBlPr064a70apXj05y6VYZoocPSR6fiZHX0cH_c2AQ9yEADOWydKXKz1U3J9SJtD_sg4qVdCwhvcw&gsessionid=mlxISRXI4MF7tPKaSRLeCm6FM7TXMq-HqOdCpCIqPPnih3i0w-5TKw",
+      "title": "Melbourne to Yarra Valley: The Ultimate Day Trip Guide"
+     }
+    ],
+    "impressions": 18,
+    "gscPosition": 68.5,
+    "ourPage": "/road-trips/yarra-valley-day-trip",
+    "ourRank": null
+   },
+   {
+    "keyword": "activities lorne victoria",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESiAEBxCJF10hWxjDbaMq8tEvxB4A-E6VKoEA89ZkJjUJm5cSRo7GsziT-OQF6LAaloqY55zwuiq8_1WinjcEhcsQi-UIWUfsEDzSJO38Zfz2Orxs7eK3ppt7rByMdUk81eGFXRbsjTTBYmaoVrkXdHCcEtRUKS-QQVmqJfz3gu_eS0Mp--QsdQdLm&gsessionid=_YtAaKghkAp5ctAAim7qN8H9ielXh-pdT2Z66mmPf0jjC0KZnwybXA",
+      "title": "Explore Lorne - Australia - Tripadvisor"
+     },
+     {
+      "rank": 2,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESdAHEIkXXCOP5YJfpnZjMJy9dUfKLdosJsjbn4TJuklVflCfbgJHPaaV3d9M7V8r0P9N3yzO_vzE8U2mMJr4oQn0CeCKuYnBiC6udANjDGX7Lh-O9nCWdzSTIZpPc86OY5hXNva3Fzni9nauICY2PtJpXrOyS&gsessionid=_YtAaKghkAp5ctAAim7qN8H9ielXh-pdT2Z66mmPf0jjC0KZnwybXA",
+      "title": "Attractions in Lorne, VIC"
+     },
+     {
+      "rank": 3,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESigEBxCJF18IbhyGUhxuh-JmV-lCBZIuEqjOFwZsTiZwAY5o16j1uFU1g6JxCZTAieAcu2fxrItgPbli6fZZWeseKwlBgkOy1EZWbAnsLgN7rE4Pia28U0xBJF02OzNsg4u0hSuekrjLE3GuLrf4jYP_byzVamSBoZUL_Rb3JPD6UlssxrqYIYm6P4hk&gsessionid=_YtAaKghkAp5ctAAim7qN8H9ielXh-pdT2Z66mmPf0jjC0KZnwybXA",
+      "title": "Lorne Tours, Lessons & Transport - Melbourne Localista"
+     },
+     {
+      "rank": 4,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAES_AEBxCJF11u-cd6RS5Z9AG9x6n2Znehf5Y4L-PWC42qoBbP3ymza7YjyAKLOgKuWbZWWWH3VR6DH5wCgcjIxKGhQAWud6MVjasxNvOGeEUJ9XYZx7It0bqoXVvJ8s1k1IC3qAT7ycNwjHbqbDTwin4bhYF0uA9AGa9aGJrskbVojRh6uo-4C4RkRqJuMI-kY8ZlDrQXPCaMuxAgEgG7Gblr6W7o6J45t7--C0D77ff1IFm580MCkiGD6sQ-XnMLEqgJ1caci_QfWz7KbSjdxdsnZ3nPMXA2yaJRF1A2MMOsG-ddQTbNR0cUX_hIZKBaj6CnbdFOH29Wsss9D2c8&gsessionid=_YtAaKghkAp5ctAAim7qN8H9ielXh-pdT2Z66mmPf0jjC0KZnwybXA",
+      "title": "A Local's Guide to Things to Do in Lorne: The Great Ocean ..."
+     },
+     {
+      "rank": 5,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESewHEIkXXjvkPR8ToGLDPXBUct-6LTushOSWoTCN-4FxZhb_7u82CjHJtS35e1CepU8ZdCLXt2_t1yOOZfZ1ixVly-GW56DB1rAMAxS-60UhBd5ZJ35w-AX1MHo_DxdNSfZkYAhDgIBObe5KXxVTIsLwS0U3iNI5WwtfWnQ&gsessionid=_YtAaKghkAp5ctAAim7qN8H9ielXh-pdT2Z66mmPf0jjC0KZnwybXA",
+      "title": "Best Things to Do in Lorne"
+     },
+     {
+      "rank": 6,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESdQHEIkXXOimrmSHahHjbmhUoskHgcygnyDE7rSNaNp1hX7yvpuKSwFeQmvK5UFuW-oQW0dhKv_ydF9U7ygrQlSCkx__2osvFUZSKQc_1bgBhxU8qzLqKgEpNauEmvVqVd0tuNXMOcXH5ZmsXHwYWoXOu4gLVVw&gsessionid=_YtAaKghkAp5ctAAim7qN8H9ielXh-pdT2Z66mmPf0jjC0KZnwybXA",
+      "title": "https://www.expedia.com.au/things-to-do/search?rid..."
+     },
+     {
+      "rank": 7,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESfQHEIkXXZQ5riB6h717Y_FRtwJYjTGNma2MWTAFE2bDWFwlvWNOUP1USgoQ6R2aYZPESsxorDmUOdRVJB2fJ81KdD024YlzdR7-3rcj0B6wK8BzCadkgPGEM-SHb8vUOr78p1X3PYpqM-Z4J9QxNa0GOXEb3NyWIODxPItys&gsessionid=_YtAaKghkAp5ctAAim7qN8H9ielXh-pdT2Z66mmPf0jjC0KZnwybXA",
+      "title": "5 Things to Do and Places to Visit in Lorne Victoria"
+     },
+     {
+      "rank": 8,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESeQHEIkXXsmRAS1cwhEQhcZzVxSuAP5-SKmSUc1qB2RFDdOXrOPMFV8UI3rw5k_YeZ1edwKqktvPSAcEvUH2tszstSz9OuIQZjlo4M5kUbFZspFVdIo3N_pSSPTkytA4vfsEhoTPn0aQsQsvPLwpc_1naCFpOM5V9eMo&gsessionid=_YtAaKghkAp5ctAAim7qN8H9ielXh-pdT2Z66mmPf0jjC0KZnwybXA",
+      "title": "Family Activites"
+     },
+     {
+      "rank": 9,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESfwHEIkXX1DqfeCi89Uk_kTb2YtwRIN0yOsMBW1-YoKHl25sazSHsCBnXuS1L_R5xmhaTNgZ7FDtuNhgrwvUANtqCrTqxV8innwwSuILBGnlpPmkcBqX8a76rwoS54erkkRQv2YdcrMUnutiDUQwfFGdUTi9959YAtcWsrD5SE7c&gsessionid=_YtAaKghkAp5ctAAim7qN8H9ielXh-pdT2Z66mmPf0jjC0KZnwybXA",
+      "title": "Things To Do In And Around Lorne"
+     }
+    ],
+    "impressions": 17,
+    "gscPosition": 66,
+    "ourPage": "/lorne",
+    "ourRank": null
+   },
+   {
+    "keyword": "bright things to do",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESgQIBxCJF1_fCDnBrua9oCP89uXKM4NLsTaSzfuHbT7ZH-7hwgq02Yf_BmpHxg0asKOEKKYaAVOKRNGGlxGqTuQJg_g21pjSsLVAbyHlZoUnKYsLztgH0DHbU99jAGJpCyqaLSx9hq6JHbL8D7e_xMVHSLMgkjJydeX2DUB5ilIq_XGXcaZoB3ggXnzqvjT5NxboF6sZA0ubSYxnJ_EO6dp6CGQptc0thAfDxNK30QEv1MdSdHPgmUUwoq1aaVHyJSkokfU-u5aW9JJigMptbZ9MmYhxGZykoFoph6EZwI9t5aAt1bKPoRAUdxAuRRq4dEWudgV9iN7YwDTz6yuRtbLb-7g&gsessionid=8Hms5kTRZlORUR7L_t-r_e4V9BSXGAk0MGsiyTFgTh4vNlsumCPc8Q",
+      "title": "The best things to do in Bright"
+     },
+     {
+      "rank": 2,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAES6AEBxCJF18dPGjGw2Crbp72QCc64oH5aFelI4wxmBrntq0u-9b_dmNAtjBw35RG-vuNv1AIKkIz0rU3ISrMFjTR5luntTWSVbYOLeD4U6EVFrKp1XZBsk1StO7jCcQuRfsZ25QOFu1fDH10EwzSCpuvNgpcuXeGuLukdmcUj0M1ktohCUEHjDlQvbKioWWlgJnCvjvuvS8R9om5Nb__faobX-CUI6Fr5TrtiIYokZBJ3tSrX3DljyVhR4WrlYsuJ-8mpzmkTOkYEONOao1Yf0aWlHVYk3ZlJSqU0sEZdlNRNajLErwPUv04R&gsessionid=8Hms5kTRZlORUR7L_t-r_e4V9BSXGAk0MGsiyTFgTh4vNlsumCPc8Q",
+      "title": "The best things to do in Bright"
+     },
+     {
+      "rank": 3,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESkQEBxCJF173cHXfik9npAv-ZmwHiPI5NFiJwWckJmQ_vWXoxcVHii2ndfi8jx6zkxGiR806RsssQS0qyiQoXBEew9ysStd1B8ToZS6NcXhrE6d9l7s-GLl_bvHeDssB8AfIMi8rsGY_-dOpShFQDYLvsrBZgLTpBNE7NUoQg8nVqNuzuDg7p3sdmxvCYIlHr3kD7&gsessionid=8Hms5kTRZlORUR7L_t-r_e4V9BSXGAk0MGsiyTFgTh4vNlsumCPc8Q",
+      "title": "Things to Do in Bright: 3-Day Victoria Guide | Find What's On"
+     },
+     {
+      "rank": 4,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAEShAEBxCJF12PoHcqiq2tkXZ_tFcEZ6xog7nsTs5JpZtB0Hr6P6U7a0gQlg6BUqLozEIkEchXdTVTZ5jyCDxO4JgOoT1XwZrPhu3fEHZ3f7Sn4qXEZ5NeVrsprs8--Woxa_2-IjS_a9j_XxTddZjTIkEplwQWETzyDgc9bkJdOQAISUTKyDaM&gsessionid=8Hms5kTRZlORUR7L_t-r_e4V9BSXGAk0MGsiyTFgTh4vNlsumCPc8Q",
+      "title": "Bright, Victoria - Best Things to Do in Victoria'sHigh Country"
+     },
+     {
+      "rank": 5,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESjgEBxCJF1yh6WC-GKbHdReh2YXgUY93D63gSeFmOKUAIy6H9jqpENR-A70o73TjOsRTPgoiRYP1I6CDrKBJw0aYlrzB0I7Q6eSlZypQGd6lu5-xn0EuUz-aUqpTYHa5nUuXJm76oPhJH-rrwtBMibvhaSAqR08D5W3LE0XefG291Lx69asBLdUe3bNTzgz10&gsessionid=8Hms5kTRZlORUR7L_t-r_e4V9BSXGAk0MGsiyTFgTh4vNlsumCPc8Q",
+      "title": "THE 10 BEST Things to Do in Bright (2026) - Tripadvisor"
+     },
+     {
+      "rank": 6,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESoAEBxCJF1xVXRHyD5vpm9xnNWC6TQbKASphx18GIDms3PGdFV14SLCegEhjV4qB6nzpuj8viOpD6J16KLM8jXFtEyZwcWwmTDZ4FtRJzbYBQ0x3nwy-Y300-W03DGsxnEP-XpG_Jk6dYkEmjmYweL6H69tq3qt8EgYZ5DritWZFiZGNcH0JUITBztljUCoPZ5YU7l99Y_des8IMXm4f2AAZE&gsessionid=8Hms5kTRZlORUR7L_t-r_e4V9BSXGAk0MGsiyTFgTh4vNlsumCPc8Q",
+      "title": "The best things to do in Bright"
+     },
+     {
+      "rank": 7,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESjwEBxCJF17H8JlfHN0TZWsLh86KmgVikaphJMP8zO5lVGnpEHwrmSEMxaTu3fWov9wt-qgsG2SFU6OccsXF3n9rbjRhrtyBJPF_TJHMc5Fc4Jghl-aa2Y8aAACTTBrkCBV2cmWup-ivbgtKhmiPvX2CHjmAUxcBv13JzpxRrMBvnhyyO7fNnrVuHIQ9ZHg8-GQ&gsessionid=8Hms5kTRZlORUR7L_t-r_e4V9BSXGAk0MGsiyTFgTh4vNlsumCPc8Q",
+      "title": "THE 10 BEST Things to Do in Bright (2026)"
+     },
+     {
+      "rank": 8,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESoAEBxCJF15kWAot-MAXXjood8MRLqrB7U32syhwIeuAXr963-5absrKV1vzPhDG7FNl8Hc_6yy0E5yf06--qIwEnkGVIhurMb44qWV-u80NVIzjtBvoLHedKAwN0ZPATfh-e4MyZTesIbnbPTghcUeqMRqATE7F93--CdCv8pz4ADZbZBUl1XpteOI747eYnFbJQC0haf1M7L5D1DhIlCXUI&gsessionid=8Hms5kTRZlORUR7L_t-r_e4V9BSXGAk0MGsiyTFgTh4vNlsumCPc8Q",
+      "title": "The best things to do in Bright"
+     },
+     {
+      "rank": 9,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAES7AEBxCJF12x35yPwEw7jpCbq0t4iOsWOgy1biJLqeX8lSnva2PsuAboe6e0K9ropkc0hIRRRCwxDmxX7xKa-EBsxI48i1dq4GAChNzUIG-6SdrSIXNhieiEgl5DANn8iqtCEj9z9jZAdSNFYLKHSWxV2Ppfqh2TKjyVGhGbnCUg4am5Ca3SfN0BUavnx79WeHcXkpbRRCI39fCq0UwAusq4P1RddeWDfzYH8XNW3cbkj6LZLJANjIS8tfQ44bFWbSpJesrjevj70Ldt7CXljIy4EkuE7eOruj6GBouW0sZgVc0RrwkWrT8yub2odWA&gsessionid=8Hms5kTRZlORUR7L_t-r_e4V9BSXGAk0MGsiyTFgTh4vNlsumCPc8Q",
+      "title": "The best things to do in Bright"
+     },
+     {
+      "rank": 10,
+      "domain": "google.com",
+      "url": "https://google.com/goto?url=CAESoAEBxCJF1yyKjxSlmhcsawX0o6q9qnp-iKhp-aJYn0yPxY1p9rs5P8NZ-vIQz1fMZIumQ3ui5D3Amw8BNxZzeudMocrs-O5xJ6f1AhdrlRiH7MKhlQSglFYtcco_QghTisu7dL3Q5T5FByfMb0ls50f4tlyDx_c3l1ajTege3UBWwRCoRu2I3Kx1YzYyvYeamyVVP9J9tqa1qxRyUlACWcOF&gsessionid=8Hms5kTRZlORUR7L_t-r_e4V9BSXGAk0MGsiyTFgTh4vNlsumCPc8Q",
+      "title": "The best things to do in Bright"
+     }
+    ],
+    "impressions": 15,
+    "gscPosition": 48.9,
+    "ourPage": "/bright",
+    "ourRank": null
+   }
+  ],
+  "index": [
+   {
+    "url": "https://victours.com.au/",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-10-24T17:56:27Z",
+    "googleCanonical": "https://victours.com.au/",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://victours.com.au/towns",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-10-28T01:09:32Z",
+    "googleCanonical": "https://victours.com.au/towns",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://victours.com.au/warburton",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-14T14:07:50Z",
+    "googleCanonical": "https://victours.com.au/warburton",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://victours.com.au/red-hill",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-05T15:00:07Z",
+    "googleCanonical": "https://victours.com.au/red-hill",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://victours.com.au/lorne",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-08T23:39:40Z",
+    "googleCanonical": "https://victours.com.au/lorne",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://victours.com.au/daylesford",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-06T23:53:32Z",
+    "googleCanonical": "https://victours.com.au/daylesford",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://victours.com.au/sorrento/eat",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-10-22T11:19:25Z",
+    "googleCanonical": "https://victours.com.au/sorrento/eat",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://victours.com.au/road-trips/yarra-valley-day-trip",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-08T16:09:36Z",
+    "googleCanonical": "https://victours.com.au/road-trips/yarra-valley-day-trip",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   }
+  ],
+  "error": null
+ },
+ "costUsd": 0.01,
  "speed": [
   {
    "url": "https://victours.com.au/",
-   "error": "HTTP Error 429: Too Many Requests"
+   "lite": true,
+   "serverSecs": 0.08,
+   "htmlKb": 51,
+   "blocking": 3,
+   "images": 11,
+   "noDims": 0,
+   "imageKb": 1776,
+   "psiError": "HTTP Error 429: Too Many Requests"
+  },
+  {
+   "url": "https://victours.com.au/towns",
+   "lite": true,
+   "serverSecs": 0.06,
+   "htmlKb": 32,
+   "blocking": 3,
+   "images": 1,
+   "noDims": 0,
+   "imageKb": 0,
+   "psiError": "HTTP Error 429: Too Many Requests"
   }
  ],
  "quality": {
@@ -469,16 +963,45 @@
   "near": 0
  },
  "links": {
-  "internal": 370,
+  "internal": 364,
   "outside": 4890,
   "checkedOutside": 150,
   "unsureOutside": 3
  },
  "affiliateOk": 546,
- "secs": 76,
+ "secs": 219,
  "change": {
-  "first": true
+  "first": false,
+  "since": "2026-11-14T21:44:23Z",
+  "score": 7,
+  "newIssues": [
+   "/: 1,776 KB of images in the first 15",
+   "/: 3 files block the first paint",
+   "\"melbourne accomodation southbank\": we're not in the top 10 (Search Console avg 72); google.com leads",
+   "/towns: 3 files block the first paint",
+   "\"sorrento restaurants\": we're not in the top 10 (Search Console avg 86); google.com leads",
+   "\"yarra valley day trip\": we're not in the top 10 (Search Console avg 68); google.com leads",
+   "\"activities lorne victoria\": we're not in the top 10 (Search Console avg 66); google.com leads",
+   "\"bright things to do\": we're not in the top 10 (Search Console avg 49); google.com leads"
+  ],
+  "fixed": [
+   "robots.txt blocks the whole site",
+   "6 broken internal link(s)"
+  ],
+  "impr28": 0,
+  "clicks28": 0,
+  "views28": 0,
+  "rivals": [],
+  "positions": []
  },
- "history": [],
+ "history": [
+  {
+   "at": "2026-11-14T21:44:23Z",
+   "score": 82,
+   "grade": "B",
+   "impr28": 2101,
+   "clicks28": 4
+  }
+ ],
  "issue": "open"
 }
