@@ -118,9 +118,20 @@ export interface SerpResult {
   title: string;
 }
 
+/**
+ * Since Nov 2026 Google often wraps organic links as google.com/goto?url=<encrypted>, so DataForSEO reports
+ * domain "google.com" for every result (found by the site check, 15 Nov 2026). The breadcrumb still shows the real site.
+ */
+function realDomain(domain: string, url?: string, breadcrumb?: string) {
+  const d = domain.replace(/^www\./, '');
+  if (d !== 'google.com' || !/google\.com\/(goto|url)\b/.test(url ?? '')) return d;
+  const m = (breadcrumb ?? '').match(/^(?:https?:\/\/)?([a-z0-9.-]+\.[a-z]{2,})/i);
+  return m ? m[1].toLowerCase().replace(/^www\./, '') : 'unknown site';
+}
+
 /** Google top-10 organic results for one keyword (SERP API, live/regular, ~US$0.002 per keyword). */
 export async function serpTop10(login: string, password: string, keyword: string, locationCode: number): Promise<{ items: SerpResult[]; cost: number }> {
-  const { result, cost } = await dfsTask<{ items?: { type: string; rank_group: number; domain?: string; url?: string; title?: string }[] }[]>(
+  const { result, cost } = await dfsTask<{ items?: { type: string; rank_group: number; domain?: string; url?: string; title?: string; breadcrumb?: string }[] }[]>(
     login,
     password,
     'serp/google/organic/live/regular',
@@ -129,7 +140,7 @@ export async function serpTop10(login: string, password: string, keyword: string
   const items = (result?.[0]?.items ?? [])
     .filter((i) => i.type === 'organic' && i.domain)
     .slice(0, 10)
-    .map((i) => ({ rank: i.rank_group, domain: i.domain!.replace(/^www\./, ''), url: i.url ?? '', title: (i.title ?? '').slice(0, 90) }));
+    .map((i) => ({ rank: i.rank_group, domain: realDomain(i.domain!, i.url, i.breadcrumb), url: i.url ?? '', title: (i.title ?? '').slice(0, 90) }));
   return { items, cost };
 }
 

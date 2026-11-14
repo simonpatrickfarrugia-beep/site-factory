@@ -150,6 +150,7 @@ def check_links(crawl_out, cfg):
     for u, p in pages.items():
         for href, rel, cta in links_of(p['body']):
             if href.startswith(('mailto:', 'tel:', '#', 'javascript:', 'sms:')): continue
+            if '${' in href or '{{' in href: continue  # a template inside a script, not a real link
             full = urllib.parse.urljoin(u, href).split('#')[0]
             sp = urllib.parse.urlsplit(full)
             if sp.scheme not in ('http', 'https'): continue
@@ -260,7 +261,8 @@ def robots_blocks_all(txt):
 def speed_lite(url, body, secs):
     """Our own speed signals when PageSpeed is unavailable: server time, HTML size, blocking files, image weight."""
     head = (re.search(r'<head.*?</head>', body, re.S | re.I) or [''])[0] if body else ''
-    blocking = len(re.findall(r'<script\b(?![^>]*\b(?:async|defer|type="module"))[^>]*\bsrc=', head, re.I)) + len(re.findall(r'<link\b[^>]*rel="stylesheet"', head, re.I))
+    # Only scripts that stop the page drawing; one or two stylesheets are normal for Astro.
+    blocking = len(re.findall(r'<script\b(?![^>]*\b(?:async|defer|type="module"))[^>]*\bsrc=', head, re.I)) + max(0, len(re.findall(r'<link\b[^>]*rel="stylesheet"', head, re.I)) - 2)
     imgs = re.findall(r'<img\b[^>]*>', body or '', re.I)
     no_dims = sum(1 for i in imgs if not (re.search(r'\bwidth=', i) and re.search(r'\bheight=', i)))
     srcs = list(dict.fromkeys(urllib.parse.urljoin(url, html.unescape(m)) for i in imgs[:15] for m in re.findall(r'\bsrc="([^"]+)"', i)))
