@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-14T00:55:20+00:00",
+ "generatedAt": "2026-11-14T23:59:14+00:00",
  "days": 7,
  "suppliers": [
   {
@@ -27,31 +27,6 @@
     "work runs 8 months"
    ],
    "seenBefore": true
-  },
-  {
-   "name": "Norton Rose Fullbright Australia",
-   "abn": "",
-   "locality": "Sydney",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 58000.0,
-     "buyer": "Attorney-General's Department",
-     "buyerState": "ACT",
-     "desc": "Request for legal advice",
-     "category": "",
-     "start": "2026-10-09",
-     "end": "2026-10-29",
-     "id": "CN4288544"
-    }
-   ],
-   "total": 58000,
-   "score": 5.0,
-   "interstate": true,
-   "why": [
-    "based in Sydney NSW, delivering for Attorney-General's Department (Canberra)"
-   ],
-   "seenBefore": false
   },
   {
    "name": "ALINEA INTERNATIONAL PTY LTD",
@@ -837,6 +812,31 @@
    "interstate": false,
    "why": [
     "work runs 8 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "Norton Rose Fullbright Australia",
+   "abn": "",
+   "locality": "Sydney",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 58000.0,
+     "buyer": "Attorney-General's Department",
+     "buyerState": "ACT",
+     "desc": "Request for legal advice",
+     "category": "",
+     "start": "2026-10-09",
+     "end": "2026-10-29",
+     "id": "CN4288544"
+    }
+   ],
+   "total": 58000,
+   "score": 2.0,
+   "interstate": true,
+   "why": [
+    "based in Sydney NSW, delivering for Attorney-General's Department (Canberra)"
    ],
    "seenBefore": true
   },
