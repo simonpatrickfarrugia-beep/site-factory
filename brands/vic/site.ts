@@ -9,6 +9,7 @@ import { GROUP_LABEL, TYPE_LABEL, address, prettyHours, website, type Content, t
 import { AUDIENCE, vicBundleSets, type Audience, type Station, type TownExtras, type VicBundle } from './bundles';
 import { walkMins, type Item } from '../../src/lib/bundles';
 import viatorData from '../../data/vic/viator.json';
+import shoots from '../../data/vic/shoots.json';
 
 const SITE = 'https://victours.com.au';
 const SUFFIX = ' | Vic Tours';
@@ -696,6 +697,13 @@ export function routes(): Route[] {
   }
 
   }
+  // Content shoot offer for Victorian businesses (slots + deposit: data/vic/shoots.json).
+  out.push({
+    path: 'partners',
+    template: 'vicPartners',
+    seo: { title: 'Photos and a video reel for your business' + SUFFIX, rawTitle: true, description: `Pro photos, a 30–60s video reel and a featured spot on Vic Tours for $${shoots.price} inc. GST. We come to you anywhere in Victoria. Only 6 shoots a weekend.` },
+    props: { price: shoots.price, deposit: shoots.deposit, perDay: shoots.perDay, depositUrl: shoots.depositUrl, weekends: shoots.weekends },
+  });
   for (const p of content.pages) {
     out.push({ path: p.slug, template: 'vicPage', seo: { title: p.title + SUFFIX, rawTitle: true, description: p.description }, props: { title: p.title, paragraphs: p.paragraphs } });
   }

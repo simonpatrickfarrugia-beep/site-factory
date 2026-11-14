@@ -17,6 +17,7 @@ import VicTown from './vic/Town.astro';
 import VicTownSection from './vic/TownSection.astro';
 import VicCollection from './vic/VicCollection.astro';
 import VicPage from './vic/VicPage.astro';
+import VicPartners from './vic/VicPartners.astro';
 import VicLoop from './vic/VicLoop.astro';
 import VicLoops from './vic/VicLoops.astro';
 import ChcHome from './chc/Home.astro';
@@ -84,6 +85,7 @@ export const templates = {
   vicTownSection: VicTownSection,
   vicCollection: VicCollection,
   vicPage: VicPage,
+  vicPartners: VicPartners,
   vicLoop: VicLoop,
   vicLoops: VicLoops,
   chcHome: ChcHome,

@@ -24,6 +24,7 @@ export default defineBrand({
   footer: [
     { label: 'About', href: '/about' },
     { label: 'How we build our guides', href: '/how-we-build-our-guides' },
+    { label: 'For businesses', href: '/partners' },
     { label: 'Contact', href: '/contact' },
     { label: 'Privacy', href: '/privacy-policy' },
     { label: 'Affiliate disclosure', href: '/affiliate-disclosure' },

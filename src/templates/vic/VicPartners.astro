@@ -1,0 +1,198 @@
+---
+/**
+ * victours.com.au/partners — the content shoot offer for Victorian businesses.
+ * Slots: data/vic/shoots.json (3 Saturday + 3 Sunday per weekend; counts = deposits actually paid, never faked).
+ * Reserve form → D1 `submissions` (form `shoot-booking`) → enquiries workflow alerts Simon.
+ * If a Stripe Payment Link is set (depositUrl), the visitor goes straight on to pay the deposit.
+ * Every outside figure on this page is cited to its source below it.
+ */
+interface Weekend { sat: string; satBooked: number; sunBooked: number }
+interface Props { price: number; deposit: number; perDay: number; depositUrl: string; weekends: Weekend[] }
+const { price, deposit, perDay, depositUrl, weekends } = Astro.props;
+const balance = price - deposit;
+
+const fmt = (iso: string, addDays = 0) => {
+  const d = new Date(iso + 'T00:00:00+11:00');
+  d.setUTCDate(d.getUTCDate() + addDays);
+  return d.toLocaleDateString('en-AU', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'Australia/Melbourne' });
+};
+const days = weekends.flatMap((w) => [
+  { id: `${w.sat}-sat`, end: w.sat, label: fmt(w.sat), left: Math.max(0, perDay - w.satBooked) },
+  { id: `${w.sat}-sun`, end: w.sat, label: fmt(w.sat, 1), left: Math.max(0, perDay - w.sunBooked) },
+]);
+const weekendRows = weekends.map((w, i) => ({ sat: w.sat, label: `${fmt(w.sat)} – ${fmt(w.sat, 1)}`, days: days.slice(i * 2, i * 2 + 2) }));
+const totalLeft = days.reduce((n, d) => n + d.left, 0);
+---
+<div class="wrap vp">
+  <p class="vp__tag">For Victorian businesses</p>
+  <h1 class="page-title page-title--big">Pro photos and a video reel for your business, plus a featured spot on Vic Tours</h1>
+  <p class="vp__lede">We come to you anywhere in Victoria, shoot your place properly and hand you everything ready to post. Only <strong>6 shoots a weekend</strong>: 3 on Saturday, 3 on Sunday.</p>
+
+  <section class="vp__price" aria-labelledby="vp-price">
+    <h2 id="vp-price" class="vp__h2">What you get</h2>
+    <ul class="vp__list">
+      <li><strong>1 video reel</strong>, 30–60 seconds, edited for Instagram, Facebook and TikTok</li>
+      <li><strong>10 edited photos</strong>, consistent look, ready for your website and booking listings</li>
+      <li><strong>A featured spot on Vic Tours for 90 days</strong> on your town's page, with a write-up</li>
+      <li><strong>Your files within 7 days</strong>, and you can use them anywhere</li>
+    </ul>
+    <div class="vp__compare">
+      <div class="vp__was">
+        <p class="vp__small">Hiring a photographer, videographer and editor separately in Melbourne</p>
+        <p class="vp__big vp__strike">$1,400+</p>
+      </div>
+      <div class="vp__now">
+        <p class="vp__small">Vic Tours content shoot</p>
+        <p class="vp__big">${price}</p>
+        <p class="vp__small">inc. GST · ${deposit} deposit locks your slot</p>
+      </div>
+    </div>
+    <p class="vp__src">How we got $1,400+: a mid-level Melbourne photographer for 2 hours at $150–$250 an hour (<a href="https://www.twine.net/find/photographers/au/melbourne" rel="nofollow noopener" target="_blank">Twine</a>), a single-operator location video shoot from $950 for a half day, and editing at $100–$250 an hour (<a href="https://vidico.com/news/video-production-rates-australia/" rel="nofollow noopener" target="_blank">Vidico, 2026 rates</a>). Plus the featured spot, which you can't buy separately.</p>
+  </section>
+
+  <section aria-labelledby="vp-why">
+    <h2 id="vp-why" class="vp__h2">Why it pays for itself</h2>
+    <div class="vp__stats">
+      <div class="vp__stat"><p class="vp__big">19%</p><p>more bookings for Airbnb listings that switched to professional photos</p><p class="vp__src">Airbnb's own analysis of its Pro Photo program (<a href="https://www.airbnb.com/professional_photography" rel="nofollow noopener" target="_blank">airbnb.com</a>)</p></div>
+      <div class="vp__stat"><p class="vp__big">21%</p><p>more earnings for those hosts than others in their area</p><p class="vp__src">Same Airbnb analysis</p></div>
+      <div class="vp__stat"><p class="vp__big">225%</p><p>more likely to get a booking enquiry on Tripadvisor with photos than without</p><p class="vp__src">Tripadvisor, reported by <a href="https://www.accomnews.com.au/?p=11815" rel="nofollow noopener" target="_blank">AccomNews</a></p></div>
+    </div>
+    <p>Old phone photos, mismatched lighting and photos from five years ago tell guests the place hasn't been looked after either. A matching set of bright, recent photos and one good reel fixes that across your website, Google profile and booking listings in one go.</p>
+  </section>
+
+  <section aria-labelledby="vp-slots" id="slots">
+    <h2 id="vp-slots" class="vp__h2">Open weekends</h2>
+    <p><strong data-total-left>{totalLeft}</strong> of {days.length} slots left across the next {weekends.length} weekends. You pick the day; we'll call to set a time, and line up the trip with other businesses nearby.</p>
+    <div class="vp__weekends">
+      {weekendRows.map((w) => (
+        <div class="vp__weekend" data-end={w.sat}>
+          <p class="vp__wk">{w.label}</p>
+          {w.days.map((d) => (
+            <p class={d.left ? 'vp__day' : 'vp__day vp__day--full'}>
+              <span>{d.label.split(' ')[0]}</span>
+              <span class="vp__dots" aria-hidden="true">{Array.from({ length: perDay }, (_, i) => <i class={i < perDay - d.left ? 'on' : ''}></i>)}</span>
+              <span>{d.left ? `${d.left} left` : 'Booked out'}</span>
+            </p>
+          ))}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="vp__form-wrap" aria-labelledby="vp-book" id="reserve">
+    <h2 id="vp-book" class="vp__h2">Reserve your slot</h2>
+    <p>Pay the ${deposit} deposit and the day is yours. The ${balance} balance is only due once your photos and reel are ready; paying it unlocks your download link.</p>
+    <form class="vp__form" action="/api/submit/shoot-booking" method="post" data-shoot-form data-deposit={depositUrl}>
+      <div class="vp__row">
+        <label>Your name<input name="name" required maxlength="80" autocomplete="name" /></label>
+        <label>Business name<input name="business" required maxlength="100" autocomplete="organization" /></label>
+      </div>
+      <div class="vp__row">
+        <label>Email<input name="email" type="email" required maxlength="120" autocomplete="email" /></label>
+        <label>Phone<input name="phone" type="tel" required maxlength="30" autocomplete="tel" /></label>
+      </div>
+      <div class="vp__row">
+        <label>Town<input name="town" required maxlength="60" placeholder="e.g. Daylesford" /></label>
+        <label>Day you'd like
+          <select name="day" required>
+            <option value="">Choose a day</option>
+            {weekendRows.map((w) => (
+              <optgroup label={w.label} data-end={w.sat}>
+                {w.days.map((d) => <option value={d.id} disabled={!d.left}>{d.label}{d.left ? ` · ${d.left} left` : ' · booked out'}</option>)}
+              </optgroup>
+            ))}
+          </select>
+        </label>
+      </div>
+      <label>Anything we should know? <span class="vp__small">(optional)</span><textarea name="notes" maxlength="1000" rows="3" placeholder="What you'd like shown off, best time of day, parking…"></textarea></label>
+      <label class="vp__ok"><input type="checkbox" name="terms" value="yes" required /> I've read the terms below.</label>
+      <p class="vp__hp" aria-hidden="true"><label>Leave this empty<input name="company_website" tabindex="-1" autocomplete="off" /></label></p>
+      <p><button class="button" type="submit" data-cta="shoot_reserve">{depositUrl ? `Reserve and pay $${deposit} deposit` : 'Reserve my slot'}</button></p>
+      <p class="vp__status" role="status" aria-live="polite" data-shoot-status></p>
+    </form>
+  </section>
+
+  <section class="prose" aria-labelledby="vp-terms">
+    <h2 id="vp-terms" class="vp__h2">The fine print</h2>
+    <ul>
+      <li><strong>Price:</strong> ${price} including GST: ${deposit} deposit now, ${balance} when your content is ready. Your slot is only locked once the deposit is paid.</li>
+      <li><strong>Deposit:</strong> non-refundable, but you can move your shoot once if weather or illness gets in the way.</li>
+      <li><strong>Where:</strong> anywhere in Victoria. We'll confirm the time by phone after you reserve.</li>
+      <li><strong>Your files:</strong> delivered within 7 days of the shoot. Use them anywhere you like. Vic Tours may also use them to feature your business and your town on victours.com.au.</li>
+      <li><strong>Featured spot:</strong> clearly labelled as featured. Paying never buys a place in our road trips or our own recommendations; those stay independent.</li>
+    </ul>
+    <p>Questions first? Email <a href="mailto:hello@victours.com.au">hello@victours.com.au</a>.</p>
+  </section>
+</div>
+
+<script is:inline>
+  (function () {
+    // Hide weekends that have already passed since the last build.
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    document.querySelectorAll('[data-end]').forEach(function (el) {
+      var sun = new Date(el.getAttribute('data-end') + 'T00:00:00'); sun.setDate(sun.getDate() + 1);
+      if (sun < today) el.remove();
+    });
+    var form = document.querySelector('form[data-shoot-form]');
+    if (!form || form.dataset.bound) return; form.dataset.bound = '1';
+    var status = form.querySelector('[data-shoot-status]');
+    var deposit = form.getAttribute('data-deposit');
+    var fail = 'Something went wrong. Please email hello@victours.com.au and we’ll hold your day.';
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var button = form.querySelector('button[type=submit]');
+      button.disabled = true; status.textContent = 'Sending…';
+      var email = form.email.value;
+      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { accept: 'application/json' } })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (!d.ok) { status.textContent = d.message || fail; return; }
+          try { window.gtag && window.gtag('event', 'cta_shoot_reserve', { day: form.day.value }); } catch (x) {}
+          if (deposit) {
+            status.textContent = 'Taking you to the secure deposit page…';
+            location.href = deposit + (deposit.indexOf('?') < 0 ? '?' : '&') + 'prefilled_email=' + encodeURIComponent(email);
+          } else {
+            form.reset();
+            status.textContent = 'Thanks! Simon will text or email you the deposit link within a day. Your slot is locked once it’s paid.';
+          }
+        })
+        .catch(function () { status.textContent = fail; })
+        .finally(function () { button.disabled = false; });
+    });
+  })();
+</script>
+
+<style is:global>
+  .vp { padding-block: var(--space-5); }
+  .vp__tag { display: inline-block; margin: 0 0 0.5rem; background: var(--color-accent); color: #fff; font: 800 0.8rem var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; padding: 0.2rem 0.6rem; border-radius: 4px; }
+  .vp__lede { font-size: var(--step-1); max-width: var(--measure); }
+  .vp__h2 { margin: var(--space-5) 0 var(--space-3); }
+  .vp__list { padding-left: 1.2rem; display: grid; gap: 0.4rem; max-width: var(--measure); }
+  .vp__compare { display: grid; gap: 0.8rem; grid-template-columns: 1fr 1fr; margin: 1.2rem 0 0.6rem; max-width: 36rem; }
+  .vp__was, .vp__now, .vp__stat, .vp__weekend { background: var(--panel); border-radius: var(--radius); padding: 1rem; }
+  .vp__now { box-shadow: inset 0 0 0 3px var(--color-accent); }
+  .vp__big { font: 800 2.2rem/1.1 var(--font-display); margin: 0.2rem 0; }
+  .vp__strike { text-decoration: line-through; opacity: 0.6; }
+  .vp__small, .vp__src { font-size: var(--step--1); color: var(--muted); margin: 0; }
+  .vp__src { margin-top: 0.4rem; max-width: var(--measure); }
+  .vp__src a { color: inherit; }
+  .vp__stats { display: grid; gap: 0.8rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); margin-bottom: 1rem; }
+  .vp__stat p { margin: 0.2rem 0; }
+  .vp__weekends { display: grid; gap: 0.8rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+  .vp__wk { font: 800 1rem var(--font-display); margin: 0 0 0.4rem; }
+  .vp__day { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; margin: 0.3rem 0; }
+  .vp__day--full { opacity: 0.55; }
+  .vp__dots { display: inline-flex; gap: 4px; }
+  .vp__dots i { width: 12px; height: 12px; border-radius: 50%; box-shadow: inset 0 0 0 2px var(--paper); }
+  .vp__dots i.on { background: var(--color-accent); box-shadow: none; }
+  .vp__form-wrap { margin-top: var(--space-5); padding: 1.2rem; background: var(--panel); border-radius: var(--radius); max-width: 44rem; }
+  .vp__form { display: grid; gap: 0.8rem; }
+  .vp__form label { display: grid; gap: 0.3rem; font-weight: 700; }
+  .vp__row { display: grid; gap: 0.8rem; }
+  @media (min-width: 34rem) { .vp__row { grid-template-columns: 1fr 1fr; } }
+  .vp__form input:not([type=checkbox]), .vp__form select, .vp__form textarea { font: inherit; padding: 0.6rem; border-radius: 6px; border: 2px solid var(--paper); width: 100%; box-sizing: border-box; }
+  .vp__ok { display: flex !important; gap: 0.5rem; align-items: flex-start; font-weight: 400 !important; }
+  .vp__ok input { width: 1.2rem; height: 1.2rem; margin-top: 0.15rem; flex: none; }
+  .vp__status { font-weight: 700; min-height: 1em; }
+  .vp__hp { position: absolute; left: -9999px; }
+</style>
