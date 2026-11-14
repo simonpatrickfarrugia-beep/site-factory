@@ -552,7 +552,7 @@ export function routes(): Route[] {
           title: bundleLabel(b),
           sub: b.audience === 'daytrip' ? `Day trip · about ${b.town.kmFromMelbourne ?? 0} km from Melbourne` : `2 days, 1 night · ${b.audience === 'train' && b.station ? `${b.station.name} station` : b.town.kmFromMelbourne && b.town.kmFromMelbourne >= 3 ? `${b.town.kmFromMelbourne} km from Melbourne` : 'Melbourne'}`,
           intro: intro(b),
-          town: { name: T, slug: b.town.slug, centre: b.town.centre ?? null, km: b.town.kmFromMelbourne ?? 0 },
+          town: { name: T, slug: b.town.slug, centre: b.town.centre ?? null, km: b.town.kmFromMelbourne ?? 0, sections: GROUPS.filter((g) => inGroup(b.town.slug, g).length > ON_HUB) },
           days, swaps, gettingThere: gettingThere(b), tips: TIPS[b.audience],
           related: related.filter((r, i, a) => a.findIndex((x) => x.href === r.href) === i).slice(0, 6),
           hub: { href: `/${AUDIENCE[b.audience].hubPath}`, label: AUDIENCE[b.audience].hubTitle },

@@ -239,11 +239,52 @@ def run_quality(crawl_out, brand):
     return dict(summary=summary.strip(), fails=fails, warns=warns, **nums)
 
 
+def robots_blocks_all(txt):
+    """True only when the group for every crawler (User-agent: *) disallows the whole site.
+    Cloudflare's managed robots.txt blocks AI training bots (GPTBot…) with their own groups; that's fine."""
+    agents, rules, groups = [], [], []
+    for line in txt.splitlines():
+        line = line.split('#', 1)[0].strip()
+        if ':' not in line: continue
+        k, v = [x.strip() for x in line.split(':', 1)]
+        k = k.lower()
+        if k == 'user-agent':
+            if rules: groups.append((agents, rules)); agents, rules = [], []
+            agents.append(v.lower())
+        elif k in ('allow', 'disallow'):
+            rules.append((k, v))
+    if agents: groups.append((agents, rules))
+    return any('*' in a and ('disallow', '/') in r and not any(k == 'allow' and v == '/' for k, v in r) for a, r in groups)
+
+
+def speed_lite(url, body, secs):
+    """Our own speed signals when PageSpeed is unavailable: server time, HTML size, blocking files, image weight."""
+    head = (re.search(r'<head.*?</head>', body, re.S | re.I) or [''])[0] if body else ''
+    blocking = len(re.findall(r'<script\b(?![^>]*\b(?:async|defer|type="module"))[^>]*\bsrc=', head, re.I)) + len(re.findall(r'<link\b[^>]*rel="stylesheet"', head, re.I))
+    imgs = re.findall(r'<img\b[^>]*>', body or '', re.I)
+    no_dims = sum(1 for i in imgs if not (re.search(r'\bwidth=', i) and re.search(r'\bheight=', i)))
+    srcs = list(dict.fromkeys(urllib.parse.urljoin(url, html.unescape(m)) for i in imgs[:15] for m in re.findall(r'\bsrc="([^"]+)"', i)))
+    total = 0
+    for src in srcs:
+        code, _, _, hdrs, _ = get(src, method='HEAD')
+        try: total += int((hdrs or {}).get('content-length') or 0)
+        except Exception: pass
+    return dict(url=url, lite=True, serverSecs=round(secs, 2), htmlKb=round(len((body or '').encode()) / 1024), blocking=blocking, images=len(imgs), noDims=no_dims, imageKb=round(total / 1024))
+
+
 def pagespeed(url):
     key = os.environ.get('PSI_KEY', '')
     api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?' + urllib.parse.urlencode({'url': url, 'strategy': 'mobile', 'category': 'performance', **({'key': key} if key else {})})
+    for attempt in range(3):
+        try:
+            d = json.load(urllib.request.urlopen(urllib.request.Request(api, headers={'user-agent': UA}), timeout=90))
+            break
+        except urllib.error.HTTPError as e:
+            if e.code != 429 or attempt == 2: return dict(url=url, error=str(e)[:120])
+            time.sleep(20 * (attempt + 1))
+        except Exception as e:
+            return dict(url=url, error=str(e)[:120])
     try:
-        d = json.load(urllib.request.urlopen(urllib.request.Request(api, headers={'user-agent': UA}), timeout=90))
         lh = d['lighthouseResult']
         a = lh['audits']
         return dict(url=url, score=round(lh['categories']['performance']['score'] * 100), lcp=round(a['largest-contentful-paint']['numericValue'] / 1000, 1),
@@ -352,7 +393,7 @@ def build_findings(site, c, links, aff_bad, schema, quality, facts, speed, trend
     if noindex_in_map: add('noindex-in-sitemap', 'indexing', 'medium', f'{len(noindex_in_map)} noindex page(s) listed in the sitemap', 'Leave noindex pages out of the sitemap.', noindex_in_map)
     canon_off = [f['url'] for f in facts if f['canonical'] and f['canonical'].rstrip('/') != f['url'].rstrip('/')]
     if canon_off: add('canonical-mismatch', 'indexing', 'medium', f'{len(canon_off)} page(s) point their canonical elsewhere', 'A sitemap page should be its own canonical.', canon_off)
-    if c['robots'] and re.search(r'(?im)^disallow:\s*/\s*$', c['robots']): add('robots-blocks', 'indexing', 'blocker', 'robots.txt blocks the whole site', 'Remove "Disallow: /" from robots.txt.', [base + '/robots.txt'], broken=True)
+    if c['robots'] and robots_blocks_all(c['robots']): add('robots-blocks', 'indexing', 'blocker', 'robots.txt blocks the whole site', 'Remove "Disallow: /" from robots.txt.', [base + '/robots.txt'], broken=True)
     if c['robots'] and 'sitemap:' not in c['robots'].lower(): add('robots-no-sitemap', 'indexing', 'low', 'robots.txt doesn\'t name the sitemap', f'Add "Sitemap: {base}/sitemap.xml".', [base + '/robots.txt'])
     idx = (live or {}).get('index') or []
     notidx = [x for x in idx if not x.get('error') and (x.get('verdict') == 'FAIL' or re.search(r'not indexed|unknown to google|excluded|blocked', (x.get('coverage') or ''), re.I))]
@@ -389,6 +430,15 @@ def build_findings(site, c, links, aff_bad, schema, quality, facts, speed, trend
                                 [base + m for w in quality['warns'] if 'near-duplicate' in w for m in re.findall(r'(/[\w\-/]*) ≈', w)][:20])
     # Speed
     for s in speed:
+        if s.get('lite'):
+            p_ = path(s['url']); slug = (p_.strip('/') or 'home').replace('/', '-')
+            if s['imageKb'] > 1500: add('speed-img-' + slug, 'speed', 'high', f'{p_}: {s["imageKb"]:,} KB of images in the first 15', 'Resize images to the size shown (max ~1600px wide), serve WebP/AVIF, lazy-load below the fold.', [s['url']])
+            elif s['imageKb'] > 800: add('speed-img-' + slug, 'speed', 'medium', f'{p_}: {s["imageKb"]:,} KB of images in the first 15', 'Resize and compress the biggest images; lazy-load below the fold.', [s['url']])
+            if s['htmlKb'] > 250: add('speed-html-' + slug, 'speed', 'medium', f'{p_}: {s["htmlKb"]:,} KB of HTML', 'Move long inlined data out of the page or load it on demand.', [s['url']])
+            if s['serverSecs'] > 1.5: add('speed-server-' + slug, 'speed', 'medium', f'{p_}: took {s["serverSecs"]}s to arrive', 'Check the page is served as a static file (not through the Worker) and cached.', [s['url']])
+            if s['blocking'] > 1: add('speed-blocking-' + slug, 'speed', 'low', f'{p_}: {s["blocking"]} files block the first paint', 'Add defer/async to scripts in <head>, inline critical CSS.', [s['url']])
+            if s['noDims'] > 2: add('speed-cls-' + slug, 'speed', 'low', f'{p_}: {s["noDims"]} images without width/height', 'Give images width and height so the page doesn\'t jump while loading.', [s['url']])
+            continue
         if s.get('error'): continue
         if s['score'] < 50 or s['lcp'] > 4: sev = 'high'
         elif s['score'] < 75 or s['lcp'] > 2.5 or s['cls'] > 0.1: sev = 'medium'
@@ -428,7 +478,7 @@ def grades(F, links, quality, speed, trend, live, n_pages):
         score['rivals'] = round(100 * (0.25 + 0.75 * top10 / len(serps))) if top10 else 35
     else:
         score['rivals'] = None
-    if not [s for s in speed if not s.get('error')]: score['speed'] = None
+    if not [s for s in speed if not s.get('error')]: score['speed'] = None  # lite results count as checked
     letter = lambda v: None if v is None else 'A' if v >= 90 else 'B' if v >= 80 else 'C' if v >= 70 else 'D' if v >= 55 else 'F'
     weights = dict(health=3, tracking=3, indexing=2, seo=1.5, content=1.5, speed=1, google=1, rivals=1)
     vals = [(score[k], weights[k]) for k, _ in AREAS if score[k] is not None]
@@ -489,7 +539,9 @@ def card_md(card):
         L += [f'- "{m["query"]}": position {m["was"]} → {m["now"]}' for m in d['positions']]
         L += [f'- New: {t}' for t in d['newIssues'][:6]] + [f'- Fixed: {t}' for t in d['fixed'][:6]]
     sp = [s for s in card['speed'] if not s.get('error')]
-    if sp: L += ['', '## Speed (phones)', ''] + [f'- {urllib.parse.urlsplit(s["url"]).path or "/"}: score {s["score"]}, LCP {s["lcp"]}s, CLS {s["cls"]}, blocking {s["tbt"]} ms' for s in sp]
+    if sp: L += ['', '## Speed (phones)', ''] + [(f'- {urllib.parse.urlsplit(s["url"]).path or "/"}: PageSpeed unavailable ({s.get("psiError", "")[:40]}), own check: arrived in {s["serverSecs"]}s, HTML {s["htmlKb"]} KB, '
+                                                  f'images {s["imageKb"]:,} KB (first 15), {s["blocking"]} blocking files, {s["noDims"]} images without size') if s.get('lite') else
+                                                 f'- {urllib.parse.urlsplit(s["url"]).path or "/"}: score {s["score"]}, LCP {s["lcp"]}s, CLS {s["cls"]}, blocking {s["tbt"]} ms' for s in sp]
     L += ['', '## All findings', '', '| # | Area | Severity | Impact | Finding |', '|---:|---|---|---:|---|']
     L += [f'| {i} | {f["area"]} | {f["severity"]} | {f["impact"]} | {f["title"]} |' for i, f in enumerate(card['findings'], 1)]
     L += ['', f'Links: {card["links"]["internal"]} internal, {card["links"]["outside"]} outside ({card["links"]["checkedOutside"]} checked; {card["links"]["unsureOutside"]} block robots, not counted). '
@@ -540,7 +592,14 @@ def scan(site, cfg, args, prev, stage, why, days):
     trend = google_trend(stats)
     tm = traffic_map(stats)
     busiest = sorted((f['url'] for f in facts), key=lambda u: -tm.get(urllib.parse.urlsplit(u).path.rstrip('/') or '/', 0))
-    speed = [] if args.no_speed else [pagespeed(u) for u in list(dict.fromkeys([c['base'] + '/'] + busiest[:1]))]
+    speed = []
+    if not args.no_speed:
+        for u in list(dict.fromkeys([c['base'] + '/'] + [b for b in busiest if b.rstrip('/') != c['base']][:1])):
+            r = pagespeed(u)
+            if r.get('error'):
+                pg = c['pages'].get(u) or c['pages'].get(u.rstrip('/')) or {}
+                r = {**speed_lite(u, pg.get('body', ''), pg.get('secs', 0)), 'psiError': r['error']}
+            speed.append(r)
     kws = pick_keywords(stats, cfg['keywordsPerSite'])
     live = None
     if not args.no_live and (kws or busiest):

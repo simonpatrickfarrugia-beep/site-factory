@@ -9,13 +9,14 @@ import viator from '../../../data/vic/viator.json';
 interface PlaceView { name: string; kind: string; address: string | null; hours: string | null; website: string | null; map: string; dist: string | null }
 interface StepView { when: string; text: string; place: PlaceView | null }
 interface Props {
-  title: string; sub: string; intro: string[]; town: { name: string; slug: string; centre?: [number, number] | null; km?: number };
+  title: string; sub: string; intro: string[]; town: { name: string; slug: string; centre?: [number, number] | null; km?: number; sections?: string[] };
   days: { title: string; steps: StepView[] }[];
   swaps: { label: string; places: PlaceView[] }[];
   gettingThere: string[]; tips: string[];
   related: { href: string; label: string }[]; hub: { href: string; label: string };
   affiliates?: Record<string, any> | null; showTours: boolean; showStay?: boolean; root?: { href: string; label: string };
 }
+const sec = (g: string) => (!Astro.props.town.sections || Astro.props.town.sections.includes(g) ? `/${Astro.props.town.slug}/${g}` : `/${Astro.props.town.slug}#${g}`);
 const { title, sub, intro, town, days, swaps, gettingThere, tips, related, hub, affiliates = null, showTours, showStay = true, root = { href: '/weekends', label: 'Weekend plans' } } = Astro.props;
 type Tour = { title: string; url: string; from: number | null; mins: number | null };
 // Inside a plan the reader is already going there, so only entry tickets sit on a step. Guided tours from Melbourne
@@ -79,7 +80,8 @@ const hrs = (m: number | null) => (m ? (m >= 90 ? `${Math.round(m / 30) / 2} hou
     {showStay && <AffiliateLink aff={affiliates?.stay} place={town.name} kind="stay" />}
     {showTours && <AffiliateLink aff={affiliates?.tours} place={town.name} kind="tours" />}
     {isDayTrip && <AffiliateLink aff={affiliates?.cars} place="Melbourne" kind="cars" />}
-    <p>Every place to stay in {town.name}, with addresses and maps: <a href={`/${town.slug}/stay`}>where to stay in {town.name}</a>. More food: <a href={`/${town.slug}/eat`}>where to eat</a>. More to see: <a href={`/${town.slug}/do`}>things to do</a>.</p>
+    {/* Section pages exist only when a town has more places than its hub shows (site check, 15 Nov 2026: 6 links were 404s). */}
+    <p>Every place to stay in {town.name}, with addresses and maps: <a href={sec('stay')}>where to stay in {town.name}</a>. More food: <a href={sec('eat')}>where to eat</a>. More to see: <a href={sec('do')}>things to do</a>.</p>
   </section>
 
   {swaps.length > 0 && (
