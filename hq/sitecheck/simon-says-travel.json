@@ -3,12 +3,12 @@
  "name": "simonsaystravel.com.au",
  "url": "https://simonsaystravel.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-14T21:52:19Z",
+ "scannedAt": "2026-11-14T22:17:22Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
  "nextDue": "2026-11-22",
- "score": 87,
+ "score": 88,
  "grade": "B",
  "areas": {
   "health": {
@@ -37,7 +37,7 @@
    "label": "Thin & duplicate pages"
   },
   "speed": {
-   "score": 93,
+   "score": 100,
    "grade": "A",
    "label": "Speed"
   },
@@ -121,30 +121,16 @@
    "broken": false
   },
   {
-   "id": "speed-blocking-home",
-   "area": "speed",
-   "severity": "low",
-   "title": "/: 3 files block the first paint",
-   "fix": "Add defer/async to scripts in <head>, inline critical CSS.",
-   "pages": [
-    "/"
-   ],
-   "count": 1,
-   "detail": "",
-   "impact": 4.9,
-   "broken": false
-  },
-  {
    "id": "rival-when-should-australians-book-japan-flights-in-2026",
    "area": "rivals",
    "severity": "medium",
-   "title": "\"when should australians book japan flights in 2026\": we're not in the top 10 (Search Console avg 10); google.com leads",
+   "title": "\"when should australians book japan flights in 2026\": we're not in the top 10 (Search Console avg 10); helloroam.com leads",
    "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
    "pages": [
     "/destinations/japan"
    ],
    "count": 1,
-   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "detail": "Top 5: 1. helloroam.com, 2. unknown site, 3. unknown site, 4. skyceylon.com.au, 5. bookmytrip.com.au",
    "impact": 2.7,
    "broken": false
   },
@@ -165,20 +151,6 @@
     "/destinations/bali"
    ],
    "count": 24,
-   "detail": "",
-   "impact": 1.1,
-   "broken": false
-  },
-  {
-   "id": "speed-blocking-destinations-japan",
-   "area": "speed",
-   "severity": "low",
-   "title": "/destinations/japan: 3 files block the first paint",
-   "fix": "Add defer/async to scripts in <head>, inline critical CSS.",
-   "pages": [
-    "/destinations/japan"
-   ],
-   "count": 1,
    "detail": "",
    "impact": 1.1,
    "broken": false
@@ -227,57 +199,51 @@
     "top": [
      {
       "rank": 1,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESsgEBxCJF1_J9YaJdghgHZKApCtNdLWd-qTtN0Hyw_ePDvRW-Wm4iPtpk8nSxXbfMaErpHh1hEzCKfhYODUjjwldN2FywrZ56pzPdt7EZaUAdGW9JBbFS-9vCWcxj9oAcdsZC-4QbkAufg_fEeWuMrAdSfw0QMXBE86WQxbEUuTQ0zQEgGXTy56jQBH0M6uwmvKktiIAzgT8dCqMfcXdFqYCspjLR1WaYSamiLUQqnn0jiV9q&gsessionid=KpPvXr1IXmN1FBs9F8pGhCiciSsVzBZDKvlS53SVGOn1aCKqKx01nQ",
-      "title": "How early should we purchase flight ticket - Japan Forum"
+      "domain": "helloroam.com",
+      "url": "https://google.com/goto?url=CAESrQEBxCJF14UVAlZyeExb8Onnq8ZBfAKPdwngZ6Pxca6uYJFT2B0j-fLoF0jo5wRBmSlLJooP69iiN2BXF3bpHAK-64k6V_cN3tgRUNLTntksObX8LlRxBVIyuDRBvfQeFvb67RzzOcVQK18erU7bUyxRmNBGCHJtfonoQTt4EFClWbQSsvkNz8PlluLJH1gTdN-QoFkpcN_GhId4xrDeZBPM7YBfGuGIeE89zCiotA&gsessionid=wURRH_3izA3x9AVBfrYpLKuH1PuINaV7Vr2dslPh6_DA8fKSMbgveA",
+      "title": "Flights to Japan From Australia: Everything"
      },
      {
       "rank": 2,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAES0AEBxCJF18mzsue9BRoByOXdCNRyDJChO1oAh5J4beFeQEy5llF1NihYqq75tNLn0uLH-Hf9ppfvKdLRLRWd--cUJQNBgFh5FxBzk_JVs8FkRcxQA6xKAvH-aTC63XpvaU69_gtE9PPm_co6XdzXIisGC0Y2rFvQEghNkoEQ4-C3-3zDipsCa2QuT9nJN59TPyzT1XsdgSOzXHUSPlQYcf-9uduAGrGB_m-rHMSrLUu9GC5pvLh_zP1WH3pR4h0g_9OI_1KY85Yk6izC58WIa5Fi&gsessionid=KpPvXr1IXmN1FBs9F8pGhCiciSsVzBZDKvlS53SVGOn1aCKqKx01nQ",
-      "title": "If you want to travel 🇦🇺🇨🇦out of your country by the end ..."
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAES1gEBxCJF17c2_McwYPiBkXs-QwGA816P1qDK3Z2LjmJp7bC_BNwLO9YKEsv8I6gp6NWnP-LnSkSCsFl6x6pkeIQna6VDFSaCesEVWiTsvyg2vU4sjszRyOX9dNQgKTCoKaGyK6jaoTnUNpVpCSyOe6eqatopkQSqQ73TeyLGUSOxAPce-9SLeNjjM7i7j_9rudoetDKC6z9AHIhKwIDBQuQZQ7KioHTbsVIn0IBwsc2V3xJKbXtOZqMAPzmoJPutqPhMwWNrSGoJGQcxDxQE1V4OzsMmQ5z9&gsessionid=wURRH_3izA3x9AVBfrYpLKuH1PuINaV7Vr2dslPh6_DA8fKSMbgveA",
+      "title": "When to Book Flights to Japan: 3–6 Month Travel Tip for ..."
      },
      {
       "rank": 3,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESsAEBxCJF1yRFoRyoF2sktdRV9ZmD453GTfefr9NDKXs4jjaZlf5LyhG9ncsfeztmJx6uYv7jsysVd8WjewHIFoCpdOQ4M2AqmB87tppnc3JlxKvv4MrAkX0defBsDzeQub1Qu4WTVFcgkbwUqX5-e7zdG1magC5rnvrXb4_AL6bFwI_qpeeIqT7D02GCR069P5XgYIQgpJOj0sk6zKno82em5D6WReV2WST-AEoHWUXLLQ&gsessionid=KpPvXr1IXmN1FBs9F8pGhCiciSsVzBZDKvlS53SVGOn1aCKqKx01nQ",
-      "title": "Is travelling to Japan risky in 2026? - Japan Forum"
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAESfwHEIkXXYbQJLdRc0ZNNBmx6teLH2PFOjD9pjFkLByXZrfPJXCkOlJzeh_ifxwwbSzbevBG2RuyyO2ViXSX30p2xAyuNeF7U9IBRQiU5mZf2My2zuobNCWdgdda00-_lghfHWSG3KvpWf1OVVgnUjLhRfm8-i5-vMz-S-Rnojug&gsessionid=wURRH_3izA3x9AVBfrYpLKuH1PuINaV7Vr2dslPh6_DA8fKSMbgveA",
+      "title": "When to book Brisbane to Japan flights for September ..."
      },
      {
       "rank": 4,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAES4AEBxCJF1wjrmHt3iKULsKt_myZLeB727bLn6PDsB1XiQufotTcUAcMPrjco03FNDYhqFHNpLJ7g7SS5pbi61zWdXKJhnEQDfD0l0MXKbApf8BBLx_3a-_CnFqbi8cd_qHIlKWmphE2_DwJgeet0cVRhhdVeSeBWQNe4F0w5iM6eUB143AMXIpfdQTlRQE480r63QMaw612UM9uNC-AC3jbUJhi7ObdR_dEH1lBb2LBQ5H005htwC4rJvrPHLE7pXmB2p2_sMMMM6g3B1vJo4SJdExyRxBpFjIY1jj097aHA4Q&gsessionid=KpPvXr1IXmN1FBs9F8pGhCiciSsVzBZDKvlS53SVGOn1aCKqKx01nQ",
-      "title": "Scott Morrison hints at Japan travel bubble with Australia"
+      "domain": "skyceylon.com.au",
+      "url": "https://google.com/goto?url=CAESowEBxCJF11J26Sc9sRQ6ePwepxafhxqRyydVurEXmJrigbZx69qM8IsW-K1LPmJ1G4preaLg3a_V8ORUUkMFGnogVzXYKVi6972ZDFZ0oJpk2oxK1uhbqQpmv0SmcT2DiQ_k86FSEilx3IhFWii7SpQcy5Lm4lnxeJ3dcZYyksBBkCZlJn00musbELw8XLhITGPzb4mPuRCMLscOF-NVhT9puUu8&gsessionid=wURRH_3izA3x9AVBfrYpLKuH1PuINaV7Vr2dslPh6_DA8fKSMbgveA",
+      "title": "The Complete 2026 Guide to Finding the Best Airfares"
      },
      {
       "rank": 5,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESqwEBxCJF17N8fCLDUbVctTsK-ySJ6kaFsALnnO3fI_iBEiYpYmLD-6cVzI_Q449NFwsvh3kE4-kO4bi74JXyosPJRRtoWHWz4IHRzFNKbp18QpcoPBLoVrG-ZoJdR5bNlOPTVXRpanRvW5our433LdBNTwoT_YJJYuEQ_qi5dZUeBH9aU-WWD8czt2GS9cMIO9lEyg4KA0Ur2SfdYn9RLbs-8jVYQ2T_sCkE9Nw&gsessionid=KpPvXr1IXmN1FBs9F8pGhCiciSsVzBZDKvlS53SVGOn1aCKqKx01nQ",
-      "title": "Booking flights for next Cherry Blossom - Japan Forum"
+      "domain": "bookmytrip.com.au",
+      "url": "https://google.com/goto?url=CAESjQEBxCJF1wO-A6AyRpDkHLvTm9rlzCZbBwFd3CxVWVnFudPCj1M-dwtSgDtHvG07lGRIHW74krt2ImbwHFAEICbWX4l8SgrwpX9zb2eLLu4j3NjvesLnn1hvrnAO2J3ZF8wO-8sNMBGWamt9tOhaFzuB_viSqYIEynjPay-iwxvlZF-18qQ173H_RhhX5hU&gsessionid=wURRH_3izA3x9AVBfrYpLKuH1PuINaV7Vr2dslPh6_DA8fKSMbgveA",
+      "title": "Flights from Australia to Japan: Find Affordable Deals Today"
      },
      {
       "rank": 6,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEShAEBxCJF10YcdrB5Gxz_mWh1xxrhbWJ0FfRm8sGoBuIhjknEVnWG4zatx9TH5JlT6whfiqrMDfoxIBimuSFkFm6Zj5UgXu4TAgOV4JhVpR6EtEWSafHgEiHXgaA9iGyYuQjQprwmFO4gKSIeqssW6124iAupNksO7d860IrSbFB3lMMxvg8&gsessionid=KpPvXr1IXmN1FBs9F8pGhCiciSsVzBZDKvlS53SVGOn1aCKqKx01nQ",
-      "title": "How far in advance to book Tokyo and Osaka holidays for ..."
+      "domain": "qantas.com",
+      "url": "https://google.com/goto?url=CAESjgEBxCJF17mj0FsA0u9PXAjEfCPb3glEQ6QJzmBEFMgY4HHW4Jjz0_khr6nEtmaRS5CInsXba8GP_fJAL6HlTOlS_d-uW_ItxOHl7ITYBoug3ATee7-0nt5FQxd6X5V6fRQbzQuxn2ISib6Wjvu8N4xIUAh08pctCIZbhMW6O-FsSDgOVge3-b_zVhiBvfLf&gsessionid=wURRH_3izA3x9AVBfrYpLKuH1PuINaV7Vr2dslPh6_DA8fKSMbgveA",
+      "title": "Read before you leave – Tokyo | Travel Insider"
      },
      {
       "rank": 7,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESxwEBxCJF1_rWXvNU_US5tPriTUCZVLoppslGwzd5bZTgkfPmNEBEDDhfHEg_lanDWwOW_qMTna8cdZzScJdgxohDo3AOkcF6nF38McFvqYA993IABJyZDUiHMKtEwQ1hL2EKjcHvLIO6u51xR_AGY3NG7sTRempkSWbK7YJx3Ky2HbaV2wtXp-vsbDbeHFRfpH8Q1AES754wqLTcrfPyM7wd5dG8-NGkjKd9nfMKn0kwKl6qCkt9XkIBzmUx9kHEL2j3dsxbfeHg&gsessionid=KpPvXr1IXmN1FBs9F8pGhCiciSsVzBZDKvlS53SVGOn1aCKqKx01nQ",
-      "title": "Travel in 2026: Expect digital passports, crowded hotspots ..."
+      "domain": "rowofthreeblog.com",
+      "url": "https://google.com/goto?url=CAESnwEBxCJF18XU-5HCUM199eyJ7ptCfn4BxJH7_kMsvPjp1TIxRCJF0GU_JCcTwBI-Jrb3V5oQfp19h6k7Z2c11OfZ6vP3s9E1hIlWVdJvBn42LNdJUOSzWnIjjSh2YLQCtQ3j3S-Ty-jg31Es7Pup5nru2XqFH67ZVXqGNZdZIcWtlXiV82cfOQoaaWvdUMQBnkCO25gmdth2iE8Q3hclIvI&gsessionid=wURRH_3izA3x9AVBfrYpLKuH1PuINaV7Vr2dslPh6_DA8fKSMbgveA",
+      "title": "Best Time to Book Flights From Australia: How Far Ahead & ..."
      },
      {
       "rank": 8,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEShAEBxCJF11miPdFmKK2ZSJCP7Pzv6ZqNi0ZySzwQgDAoaIzhMQHbiJBQhn1VPQdHH-hVa5hVYeSyRSMyH01ovF6m-RvSzYR9RY0w8--sI2aYEAdbP1H8vK4X_TEMCAacxZqfsuuFO-1uAeAS-WrJlbUB5mpmlzS1UBxq_14B1FrCeld3cPc&gsessionid=KpPvXr1IXmN1FBs9F8pGhCiciSsVzBZDKvlS53SVGOn1aCKqKx01nQ",
-      "title": "I'm planning to travel to Australia on 5 February 2026. Can ..."
-     },
-     {
-      "rank": 9,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESgwEBxCJF12muJQsbulTSdW5PQXlqDPjnYZPlolh8_Cql9eHEjCMsABfa8cuvuGjULpergnkbb4ISQRCWMAhwGN5RfBSvH7BZK_RD_miA453fxgD_YAHm_Msgyy2_xRpUmeG4RkYU8gng6GxlcTZ8C8nKiEyU0KFHfFfwFCGClI6_EyQtgQ&gsessionid=KpPvXr1IXmN1FBs9F8pGhCiciSsVzBZDKvlS53SVGOn1aCKqKx01nQ",
-      "title": "Good day! May I know what is the best month to book a ..."
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAESfwHEIkXX1-rdF920Xxtow5sPipSKcO5ohhL0rL7xbvzvJ9YuO7u-YIyekbMLoFpmO7vVIcigmUxiXkJrx6uE9tHWDrDMptWoYaoEkbhHFXqMHHnC5_lRvszP3UHD1fTggiEkgeKl6qK4THQnfzxgEOQWO4NEnjrOUYBg8PLat9Y&gsessionid=wURRH_3izA3x9AVBfrYpLKuH1PuINaV7Vr2dslPh6_DA8fKSMbgveA",
+      "title": "When do best flight deals to Japan come around?"
      }
     ],
     "impressions": 2,
@@ -367,9 +333,9 @@
   {
    "url": "https://simonsaystravel.com.au/",
    "lite": true,
-   "serverSecs": 0.13,
+   "serverSecs": 0.06,
    "htmlKb": 38,
-   "blocking": 3,
+   "blocking": 1,
    "images": 1,
    "noDims": 0,
    "imageKb": 0,
@@ -378,9 +344,9 @@
   {
    "url": "https://simonsaystravel.com.au/destinations/japan",
    "lite": true,
-   "serverSecs": 0.13,
+   "serverSecs": 0.12,
    "htmlKb": 14,
-   "blocking": 3,
+   "blocking": 1,
    "images": 1,
    "noDims": 0,
    "imageKb": 0,
@@ -399,10 +365,49 @@
   "unsureOutside": 0
  },
  "affiliateOk": 57,
- "secs": 139,
+ "secs": 136,
  "change": {
-  "first": true
+  "first": false,
+  "since": "2026-11-14T21:52:19Z",
+  "score": 1,
+  "newIssues": [],
+  "fixed": [
+   "/: 3 files block the first paint",
+   "/destinations/japan: 3 files block the first paint"
+  ],
+  "impr28": 0,
+  "clicks28": 0,
+  "views28": 0,
+  "rivals": [
+   {
+    "keyword": "when should australians book japan flights in 2026",
+    "new": [
+     "helloroam.com",
+     "unknown site",
+     "unknown site",
+     "skyceylon.com.au",
+     "bookmytrip.com.au"
+    ],
+    "dropped": [
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com"
+    ],
+    "ours": null
+   }
+  ],
+  "positions": []
  },
- "history": [],
+ "history": [
+  {
+   "at": "2026-11-14T21:52:19Z",
+   "score": 87,
+   "grade": "B",
+   "impr28": 2,
+   "clicks28": 0
+  }
+ ],
  "issue": null
 }

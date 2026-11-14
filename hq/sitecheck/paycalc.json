@@ -3,7 +3,7 @@
  "name": "mypaycalc.com.au",
  "url": "https://mypaycalc.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-14T21:52:19Z",
+ "scannedAt": "2026-11-14T22:17:22Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
@@ -37,7 +37,7 @@
    "label": "Thin & duplicate pages"
   },
   "speed": {
-   "score": 94,
+   "score": 100,
    "grade": "A",
    "label": "Speed"
   },
@@ -58,13 +58,13 @@
    "id": "rival-mypaycalc",
    "area": "rivals",
    "severity": "medium",
-   "title": "\"mypaycalc\": we're not in the top 10 (Search Console avg 5); google.com leads",
+   "title": "\"mypaycalc\": we're not in the top 10 (Search Console avg 5); unknown site leads",
    "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
    "pages": [
     "/"
    ],
    "count": 1,
-   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "detail": "Top 5: 1. unknown site, 2. apps.microsoft.com, 3. austaxai.com.au, 4. deductit.com.au, 5. fairworkmate.com.au",
    "impact": 10.9,
    "broken": false
   },
@@ -90,30 +90,16 @@
    "broken": false
   },
   {
-   "id": "speed-blocking-home",
-   "area": "speed",
-   "severity": "low",
-   "title": "/: 3 files block the first paint",
-   "fix": "Add defer/async to scripts in <head>, inline critical CSS.",
-   "pages": [
-    "/"
-   ],
-   "count": 1,
-   "detail": "",
-   "impact": 4.3,
-   "broken": false
-  },
-  {
    "id": "rival-pay-calculator",
    "area": "rivals",
    "severity": "low",
-   "title": "\"pay calculator\": we're not in the top 10 (Search Console avg 86); google.com leads",
+   "title": "\"pay calculator\": we're not in the top 10 (Search Console avg 86); woholmate.site leads",
    "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
    "pages": [
     "/"
    ],
    "count": 1,
-   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "detail": "Top 5: 1. woholmate.site, 2. mydailycalc.com, 3. paymecalculator.com.au, 4. toolkitau.com, 5. netpaymate.com.au",
    "impact": 4.3,
    "broken": false
   },
@@ -139,30 +125,16 @@
    "broken": false
   },
   {
-   "id": "speed-blocking-tax-brackets",
-   "area": "speed",
-   "severity": "low",
-   "title": "/tax-brackets: 3 files block the first paint",
-   "fix": "Add defer/async to scripts in <head>, inline critical CSS.",
-   "pages": [
-    "/tax-brackets"
-   ],
-   "count": 1,
-   "detail": "",
-   "impact": 1.2,
-   "broken": false
-  },
-  {
    "id": "rival-australian-tax-brackets",
    "area": "rivals",
    "severity": "low",
-   "title": "\"australian tax brackets\": we're not in the top 10 (Search Console avg 88); google.com leads",
+   "title": "\"australian tax brackets\": we're not in the top 10 (Search Console avg 88); data.gov.au leads",
    "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
    "pages": [
     "/tax-brackets"
    ],
    "count": 1,
-   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "detail": "Top 5: 1. data.gov.au, 2. taxaustralia.com.au, 3. au.talent.com, 4. youtube.com, 5. heed.finance",
    "impact": 1.2,
    "broken": false
   },
@@ -170,13 +142,13 @@
    "id": "rival-what-tax-bracket-am-i-in-australia",
    "area": "rivals",
    "severity": "low",
-   "title": "\"what tax bracket am i in australia\": we're not in the top 10 (Search Console avg 69); google.com leads",
+   "title": "\"what tax bracket am i in australia\": we're not in the top 10 (Search Console avg 69); perthmobiletax.com.au leads",
    "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
    "pages": [
     "/tax-brackets"
    ],
    "count": 1,
-   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "detail": "Top 5: 1. perthmobiletax.com.au, 2. netactuary.com.au, 3. tmbank.com.au, 4. lemonadebeachaccounting.com.au, 5. unknown site",
    "impact": 1.2,
    "broken": false
   },
@@ -184,13 +156,13 @@
    "id": "rival-current-tax-brackets-australia",
    "area": "rivals",
    "severity": "low",
-   "title": "\"current tax brackets australia\": we're not in the top 10 (Search Console avg 73); google.com leads",
+   "title": "\"current tax brackets australia\": we're not in the top 10 (Search Console avg 73); data.gov.au leads",
    "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
    "pages": [
     "/tax-brackets"
    ],
    "count": 1,
-   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "detail": "Top 5: 1. data.gov.au, 2. parlinfo.aph.gov.au, 3. autaxcalc.com, 4. youtube.com, 5. privacyaustralia.net",
    "impact": 1.2,
    "broken": false
   },
@@ -501,57 +473,57 @@
     "top": [
      {
       "rank": 1,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAES0gEBxCJF1yZBkIL8o60e2s05yK46JhVMRmFAhC1l7oKzaF1ic-5A4lDiMFR8UUgKuJgYBXp3X7sYVBEWMzlJJ1dBBn6shu8CFSS4PzBodexmMTNWBNB0mzIPimujHiD9ExUtyPbhRnM-2e9US49lczdOaxr1zkSr2--DhpCWpoZQyAPbaDUgRVpuwQ3SdAb0MmB5qR7hAserHI-9zjmyndMV98S4Dhtf9KFFr8nZHfRLexjfsaQdbUsC8nR_xSpflQxi3Vqx1poIqwZFLB3vu2IxaMc&gsessionid=BVHudAEK5g3AMcCVj_DzMpygPeGZ3iXk_mOOVQVAfds9j0XKg5ZsFA",
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAES0gEBxCJF13U6kfdvaX6HwJ1Xm2c488YzxAFkNMh3gM9oycCsbrpBeobpQ95h8VHY92IyPIEYNHsA-Ng9BHvg_1moM_r5AZ4hYH9HY_VZHXTGrswSpN0MTrKFTDwfQMl_h4hfL9nLiShoWqY6CukTsJoSh1iOBu_ZsO0OAsNb8743AZvRg5OaOmjZ7nZPkAYgPQdFMriNhCPsrOabM4o1p3e_qUl2hL5Qq-HPHQEBFsK98dSHU882U51k8plSo8RUc9EyQHXMbS1cUnMN7dfTwwpZ0bk&gsessionid=oIEHRupCki8O7Wis9QvaSygGw1clLAFloNE9XXff1QfYDJY0HCTUkg",
       "title": "Pay calculator is a handy tool to help you understand your ..."
      },
      {
       "rank": 2,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESgwEBxCJF1yELSrkHkl92l14ttNGewQO_HddKizvzHgBs0pcrvjsCU9XZ4fWj-j4Z5dwPSFfudJbW5KHUm9cyf5CMkc42ztMcpTYwwTgz4IDbPE-Ah7iDySr1cIs5nWjQBiQXK4PF1IX18EhxiNvsV2qEpeDuOzeFp_6X5ZwOKl21vsjgfw&gsessionid=BVHudAEK5g3AMcCVj_DzMpygPeGZ3iXk_mOOVQVAfds9j0XKg5ZsFA",
-      "title": "Australian Salary Calculator - App Store"
+      "domain": "apps.microsoft.com",
+      "url": "https://google.com/goto?url=CAESegHEIkXXcE_XgpxOoib5_-ET9k_7ugsqzC5megiERVqG7sqyD-ifXR8rONL8yJVDwvzoqfSBq-BjD9M8kCbXN_QjovjZEuUG3X_PedFHACqaYFvm1veof9TOgXzM8bqc3Gj_j7yrbZijyGNKgL-G-veFO6ykBoeVj2Ux&gsessionid=oIEHRupCki8O7Wis9QvaSygGw1clLAFloNE9XXff1QfYDJY0HCTUkg",
+      "title": "Australia Pay Calculator - 在Windows 上下載並安裝"
      },
      {
       "rank": 3,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESbAHEIkXXqJ3id3-5ZDHaX42MWyY6S_NWuzjX0d96xjg-T3MLBUQP3P61fO7-RLgjFC2b8zLYcBo1hZ6rmv08nLigqbZAFIiSETVlmykCUicTQwT_fGjIuwJ92vGswOA_IPAHbpIe8sZyBW5jnA&gsessionid=BVHudAEK5g3AMcCVj_DzMpygPeGZ3iXk_mOOVQVAfds9j0XKg5ZsFA",
+      "domain": "austaxai.com.au",
+      "url": "https://google.com/goto?url=CAESbAHEIkXX-SKqt3h3YLNavuLNqPCDLfRuYB2oDzZcxWmqk290e8-CsUtkDGman-ljgvzKkixA1Kz_XKfbOg-l3RQLKBJfX9chVTIj985KLqxqlaBO1yqzx1MbMVk6CgCfwSwhkM2CKvBOJjYW7A&gsessionid=oIEHRupCki8O7Wis9QvaSygGw1clLAFloNE9XXff1QfYDJY0HCTUkg",
       "title": "Fortnightly Tax Calculator Australia FY2025-26 | Net Pay"
      },
      {
       "rank": 4,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESegHEIkXX4dI0Pv-9mIW5CoiL-CtmSb2jF8bu0Nibp1sFLANHKWatWh_wcBRX72jeaOKInHzKvXvHJ3984S2_4hWVOU1J93ZIFwFPs-0dqcwT6IF-_TZwQ1Be7OF3okApaEXcly2iiCqGdhKlWsg8S3I3m5pM4rwBp6L5&gsessionid=BVHudAEK5g3AMcCVj_DzMpygPeGZ3iXk_mOOVQVAfds9j0XKg5ZsFA",
-      "title": "Australia Pay Calculator - 在Windows 上下載並安裝"
-     },
-     {
-      "rank": 5,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESXAHEIkXXZqqMnH_Sf0XUU_BeYH7SH9noyURAbkIusfZPMmPuKgwnQayf2_hjENMARESGEPsQqS_vAFwgVxsj1MLMRvLP5pShmySIueYMWX-KOq5SYC9nWd2xXjl2&gsessionid=BVHudAEK5g3AMcCVj_DzMpygPeGZ3iXk_mOOVQVAfds9j0XKg5ZsFA",
-      "title": "Pay Calculator VIC"
-     },
-     {
-      "rank": 6,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESYwHEIkXXMlxgOvMDNSUCbewSuIbnvJ-vPlpjoK8kc8aXefj66p0AQWxOaImGedHhWlc5UodesRDyNjyGyLNnPcXeC3kTz4Ml8mQ3rKsVatXMp9PRzitp9Y7GSkeJhFRkJG3eHg&gsessionid=BVHudAEK5g3AMcCVj_DzMpygPeGZ3iXk_mOOVQVAfds9j0XKg5ZsFA",
+      "domain": "deductit.com.au",
+      "url": "https://google.com/goto?url=CAESYwHEIkXXGyfV5pBNUj14Hq1kYFJCJfFUTjddgEjKmHzSw-p-NMdaOd3gOAmh0VrggSPCNUVUH_TlT6pd7ruTN0tKQcwO4f1ogFFHJyFu669C8iTUzvApIhjDvM8HYhVayvEHzw&gsessionid=oIEHRupCki8O7Wis9QvaSygGw1clLAFloNE9XXff1QfYDJY0HCTUkg",
       "title": "Australian pay calculator - Deductit - Tax Deductions in Australia"
      },
      {
-      "rank": 7,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESbwHEIkXXFenkeRpzqj-g6lrWwAGM4O_U6q_vP-jReznKBohdAgdaJI2G85N66OB4Y29I6q6oE5604KlzEe4J6bwf4g_BKJT3Nb2lX4cXX6dx-J3lT3dD0bf8KooYO3-IQnGOEa6jB91H-eCnOMmuNw&gsessionid=BVHudAEK5g3AMcCVj_DzMpygPeGZ3iXk_mOOVQVAfds9j0XKg5ZsFA",
+      "rank": 5,
+      "domain": "fairworkmate.com.au",
+      "url": "https://google.com/goto?url=CAESbwHEIkXXI2MznRl-GaGPYccG2F09jjRkqhGGLk8ueTkbO0reVt9H18QxOMRGYXblbkQNBYxHaBJwoq1Z1o6mUn3BN3PJAGsIj-Z1w_KOK06n0m-cYjVtfdouT31dFtoiyD7kstTZuz53FZ9zI6gI8g&gsessionid=oIEHRupCki8O7Wis9QvaSygGw1clLAFloNE9XXff1QfYDJY0HCTUkg",
       "title": "Salary to Hourly Rate Calculator - FairWorkMate"
      },
      {
-      "rank": 8,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESewHEIkXXUpW0lWeOaXR5ogyqeuprpho7Sx1r1bClmJI1IUonrcjVFtDby1fQU3f4qnbvqiblQru1akeVUd_UYsQa0k3TGP3MQm9OTKVcAK_o6uJvCjPyfm7Dhd45-yTYZRhALDoMccFNo5RVIMjoJ3475h2jodtK7AK24Q&gsessionid=BVHudAEK5g3AMcCVj_DzMpygPeGZ3iXk_mOOVQVAfds9j0XKg5ZsFA",
+      "rank": 6,
+      "domain": "play.google.com",
+      "url": "https://play.google.com/store/apps/details?id=com.paychecklink.calculator&hl=en_AU",
+      "title": "Paycheck Calculator – Apps on Google Play"
+     },
+     {
+      "rank": 7,
+      "domain": "paycalculatorau.com",
+      "url": "https://google.com/goto?url=CAESewHEIkXXEL7XFjtDjmJeeLfA37krLw6NAVIccsw2vr36MsoQ8QrgSiXr6DACvY1pvk9wQOXY6gpPDpWlixESLNYEvTIXU087oSV9xIszpgjpPf9Xru6-fz5K_CUW1UIxD3iHkzzg4SCD4m6HrvNc-C5veQ3r-9VNfGqJ2A&gsessionid=oIEHRupCki8O7Wis9QvaSygGw1clLAFloNE9XXff1QfYDJY0HCTUkg",
       "title": "Monthly Salary After Tax Calculator Australia (2026-27)"
      },
      {
+      "rank": 8,
+      "domain": "aftertaxpaycalculator.com.au",
+      "url": "https://google.com/goto?url=CAESYgHEIkXXMBfHd1W95ITc2oALY6CMriR1rDa5ybNcbXT15GNDTeLihEW709g0Y814O7DwC9cKfE2221FOJH6uBwJBwm6j5WiOrM4aELXRoVYSlefXKDrRKyRenS9MVSU3FY0U&gsessionid=oIEHRupCki8O7Wis9QvaSygGw1clLAFloNE9XXff1QfYDJY0HCTUkg",
+      "title": "After Tax Pay Calculator Australia | Take Home Pay Calculator"
+     },
+     {
       "rank": 9,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESWQHEIkXXzby3GIoswn4lJEnS-1DnV8wyLsXzLaKLPTmeK71rG-wg8mlwSQLjwJH-ZSdR8w831u0okU0T3NYkiwdoebEeYqV_4fQPhsRYX3-_HsQgNvkqsHl3&gsessionid=BVHudAEK5g3AMcCVj_DzMpygPeGZ3iXk_mOOVQVAfds9j0XKg5ZsFA",
-      "title": "PAYE Calculator NZ – Take-Home Pay After Tax 2026/27"
+      "domain": "taxreturn.com.au",
+      "url": "https://google.com/goto?url=CAESegHEIkXXMZHiCJirs4Mj7vXrx8i4wKQtbHcfApkR1NrEuGVVk9TOxe15XhL5M0wJBB0BRg460K8T1JbB7wv-tPlccbF0XVNhIqeLxmvQ2650ivN8syVXjhxqoWJU87llCGNIciu617Fl9_i3RNSz7IMP7HeObKXGIDjX&gsessionid=oIEHRupCki8O7Wis9QvaSygGw1clLAFloNE9XXff1QfYDJY0HCTUkg",
+      "title": "Income Tax Calculator 2025 - Tax Return Australia"
      }
     ],
     "impressions": 129,
@@ -564,57 +536,57 @@
     "top": [
      {
       "rank": 1,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESWgHEIkXXSz6U1ijHwNNi-npdUYzW-fhWQnZZ-jqCFuLskGIhmvzlHkpzE8tC3tcaNPdk9KaCqwQuj6oRcz0JHB_H0SNkaD-gpaNK83HVZ1uFJNi9AJMV2OImqg&gsessionid=tnhEl5lAtihv5cTWZ6lQ-hlxFFzi5brYPvGJCADklyjjB_ARaE5bSw",
-      "title": "pay calculator"
+      "domain": "woholmate.site",
+      "url": "https://google.com/goto?url=CAESYwHEIkXXwX-JQ7I7h-950MEE9ey0Coikh_DrP_oFnCL7c4v-qxvQEoQE9tfa6CeBp3jvAxPowW4hk5xnMdo3Q-NkSf0kZ318uHgwKJWY0jiUJg_Q4spreuTA5NxUtzit23Tiwg&gsessionid=3lqBwuZioDY7fVZY_br1vjnuVCvl2nPC5_lPUT0XDcFe9lYRrgZo1g",
+      "title": "Wage Calculator - Fair Work Rates - WoHol Mate"
      },
      {
       "rank": 2,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESbAHEIkXXUrNVQ5s2eJZ-MBD-LjSZhmIisq1GD8Z3AL6pTSb-vaR-zRQ5Yc4n6TjEAfVp8VQGhbARZ-W1P55fWJgNOEUK4KT6NUAh8aqygdyyEstV7EpTBOtF82t5sHc9PW3k7Ir-DdL79I_fUw&gsessionid=tnhEl5lAtihv5cTWZ6lQ-hlxFFzi5brYPvGJCADklyjjB_ARaE5bSw",
-      "title": "Find your award - Pay Calculator - Fair Work Ombudsman"
+      "domain": "mydailycalc.com",
+      "url": "https://google.com/goto?url=CAESVQHEIkXXmu-C8hVJsGsKCB-KsRu95rARUSUWlNvoDdboonj9-Jp4Fjcmxllj43iI1r-cwQ1UK-lcLejQi8jY4FHV2cZwh5OGBgNixfbIU7kOKCZPaEk&gsessionid=3lqBwuZioDY7fVZY_br1vjnuVCvl2nPC5_lPUT0XDcFe9lYRrgZo1g",
+      "title": "Australian Salary & Tax Calculator 2026–27 – Take-Home Pay"
      },
      {
       "rank": 3,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESXwHEIkXXeNnPfm3qM2IqvSakvAldtZ1qHGyBKeRk1CWoa0PtAconB_AvfbwV0wdFrC7acrl3dppOwekQx5gM1ZWFhEomyeFFIfz8WKVYLIiBdt1jQ47j67ZUevFh0MJa&gsessionid=tnhEl5lAtihv5cTWZ6lQ-hlxFFzi5brYPvGJCADklyjjB_ARaE5bSw",
-      "title": "Pay Calculator - Fair Work Ombudsman"
+      "domain": "paymecalculator.com.au",
+      "url": "https://google.com/goto?url=CAESXAHEIkXXQOXWC290h7yPj1rH-4MCqm9VtHg74XYEAcuhAbAysgVLGdPTGG738UfhXNZv5-XRPUKLjZxXu6VuuC2m7C9k8NRUBAExnBEFYnUD0Juq_-iYNUH9Qfte&gsessionid=3lqBwuZioDY7fVZY_br1vjnuVCvl2nPC5_lPUT0XDcFe9lYRrgZo1g",
+      "title": "Untitled"
      },
      {
       "rank": 4,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESbwHEIkXXAanhbxYFbCwVRYbYhpJisnqrMvexdJApXemXsS64h1m6m6IPGNe64pF69DfMBWOHCRTh_GD4-tuH67flnqJvaUrgMh6ASrqNVi0Ob1KCuIBo68Z32FWPDbdipg7On7lkn80eaGUq-JfM-w&gsessionid=tnhEl5lAtihv5cTWZ6lQ-hlxFFzi5brYPvGJCADklyjjB_ARaE5bSw",
-      "title": "Pay Calculator Australia 2026-27"
+      "domain": "toolkitau.com",
+      "url": "https://google.com/goto?url=CAESWQHEIkXX0R2hVn5_YTY__NStxFQSo0eigRB8rFoHjynaxjjCPD1VOhrM9R6Wl7r2FhxiHHpKBOfyHPoM6OOeg6tdCk6jwxkSlXTKhX8majwAvEhWnyLlaOg-&gsessionid=3lqBwuZioDY7fVZY_br1vjnuVCvl2nPC5_lPUT0XDcFe9lYRrgZo1g",
+      "title": "Free Australian Calculators and Tools | ToolkitAU"
      },
      {
       "rank": 5,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESXwHEIkXXKily_uephxYoiCCqzTs-OVYB2fFUPYKj7sQ3z2v1kwx-DOxcw8B7iCZAvn1ocfmm-HGwKSoiPseXUFpWC33fJXMELRalwe7DBwYL86FBJbaYTbvWjP6FjspF&gsessionid=tnhEl5lAtihv5cTWZ6lQ-hlxFFzi5brYPvGJCADklyjjB_ARaE5bSw",
-      "title": "Pay Calculator | Wage, Salary & Take-Home Pay After Tax"
+      "domain": "netpaymate.com.au",
+      "url": "https://google.com/goto?url=CAESWwHEIkXXqoIpI1nypAAYRmWoOjyvZn_9KJ6PKcjsYQCps31HQetepkebuFnCQcz5neHTTaHyBd-hE5Bq4KbqpGjqOgpdv7V4U4hVupi8PGXNz2quAWhYFSKhtpI&gsessionid=3lqBwuZioDY7fVZY_br1vjnuVCvl2nPC5_lPUT0XDcFe9lYRrgZo1g",
+      "title": "Australian Tax & Salary Calculators | NetPayMate"
      },
      {
       "rank": 6,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESdQHEIkXXpZi1a5wfMWSRaDys6Xm8FrkIGlxO-f7yuUKeEpj9ZwW_WYpW_lrYfS5TNRjDB_KmV-tDX_eS2NSx3faaDmsABjhSddj-SFBHuMMqwCN0fihNrPgYlglKX_d6QBNbAz_8hiCWa3orWbrxX5aYXnL8Cw&gsessionid=tnhEl5lAtihv5cTWZ6lQ-hlxFFzi5brYPvGJCADklyjjB_ARaE5bSw",
-      "title": "SEEK Pay Calculator - Find Out Your Take Home Pay and Taxes"
+      "domain": "paycalculator.net.au",
+      "url": "https://google.com/goto?url=CAESWQHEIkXXGuCHva-jbQsP5gCKkx_QIzMFJH57o2hy1smGeRYxGo6wTy6lRPWPQimJwLzHR-sx2PKf786fuR-2U4Y957EU8kil2fdBEq1h6zOroGOTM8xoGvwJ&gsessionid=3lqBwuZioDY7fVZY_br1vjnuVCvl2nPC5_lPUT0XDcFe9lYRrgZo1g",
+      "title": "paycalculator.net.au"
      },
      {
       "rank": 7,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESeQHEIkXXI0lBO9DcNUldMKS3haMLik_3ymbH-Kq2AxEzSvAlomAwz_XSRfhPd2EY4jjUmJ_95nbcbamIWz3BKf11TL_ypbyxUUfZqxUlBG5BHO39aKt00lcwN5beFl799mcwrAS9DztXTU0fHUWmfi1ZWlukEKo5ID8&gsessionid=tnhEl5lAtihv5cTWZ6lQ-hlxFFzi5brYPvGJCADklyjjB_ARaE5bSw",
-      "title": "Income tax calculator - Moneysmart.gov.au"
+      "domain": "salary-calc-au.com",
+      "url": "https://google.com/goto?url=CAESWAHEIkXX3WUjOsHNvvE0McbcmecJRfGc_-k_wUpCa2ENlXUCc7rhlvEP2mANBJNsrrDNIdsAct8GevY8Wv_rKEh7uNCjMzb_nugQtgV1r917o2lJDyFlH_c&gsessionid=3lqBwuZioDY7fVZY_br1vjnuVCvl2nPC5_lPUT0XDcFe9lYRrgZo1g",
+      "title": "Australian Salary Calculator 2024-25 – Free Take-Home Pay ..."
      },
      {
       "rank": 8,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESUwHEIkXXtUzqt_5OQuIGM92cI78cg8GGhTgRTiDGltAH_uBnCHQa5QgKj1zjlwHtTlX8ZSWqnM_DGJ3D1RmsPJy10-bv1OmWFIIIJl_t7RmdMExV&gsessionid=tnhEl5lAtihv5cTWZ6lQ-hlxFFzi5brYPvGJCADklyjjB_ARaE5bSw",
-      "title": "Pay Calculator Australia 2026-27 | Wage, Salary & Take ..."
+      "domain": "play.google.com",
+      "url": "https://play.google.com/store/apps/details?id=au.softwarehouse.paycalculatoraustralia&hl=fil",
+      "title": "Pay Calculator Australia - Mga App sa ..."
      },
      {
       "rank": 9,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESfAHEIkXXEFIEdm82aNQcpco4s-eUSN_u9DeoocRthYuR5mKk1fS4O4JXfmEAPVevHBUj8qTBEBl2vJ6QJG7OK4QS0L1xDh_LqJqlMHUa37DOWPi8bYXG7j1pq0TJ7_mR5KI_tHgzcqG3DUM_dA9bKNwaT6YEqkxRgr9pQsQ&gsessionid=tnhEl5lAtihv5cTWZ6lQ-hlxFFzi5brYPvGJCADklyjjB_ARaE5bSw",
-      "title": "Salary Packaging Calculator | Accesspay"
+      "domain": "paycalculatorhub.com",
+      "url": "https://google.com/goto?url=CAESWgHEIkXXD5YbSZBn9BpmDMzlWGDI1RlJXUT9WZa0e6RilgvyLkiwYwgSEyKtGOM5UV2Usbf1kjgMkkgDsDnYMsW6w5Umm0HbIPu2cq0DS8fiGazfPJ6PLyI0sQ&gsessionid=3lqBwuZioDY7fVZY_br1vjnuVCvl2nPC5_lPUT0XDcFe9lYRrgZo1g",
+      "title": "Pay Calculator Hub Australia | Salary & Hourly Pay Converters"
      }
     ],
     "impressions": 21,
@@ -627,51 +599,51 @@
     "top": [
      {
       "rank": 1,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEShgEBxCJF11VKnCuZoCfDg8NO0dOk3RCbJE2Ilq4x7nf-VY9OuKgTvSKsQS1vtzdqftbDqhyq9_mIAjs3dMkT8NF8mHNPzR1ILFFFTN1QHdi7FMVXI34QENw9DRWcFA-UzMcCXJmi8x657PEM0Ay4uzk4svopycuM9hO8O3O2NdL1Lrt16FKEog&gsessionid=MUIZrMPiYjvaX-3F53TmTRPhwv7JoqZEYZcegM3vi5wrfuKbtS3nAg",
-      "title": "Tax rates – Australian resident"
+      "domain": "data.gov.au",
+      "url": "https://google.com/goto?url=CAEStwEBxCJF17w3Cv37KtoGb8Ro4_gV6rk5e0dR9Z9vSuEdDWAXk6w2UqVRWq3DY7dH3O07vRSPLZUuIos0-zS2FvAJREq27EmsS16SmHsJkhbLA-99PsIZJvCVb0zlfUiEQY3K3uhpS4brg871Mr7nlxdTM5LYMDyMMNekqyVFzxQ7I1yCPTDsgOLtAH8pxwsmsnyiung7g16IqTDBQAdprdBonTZ4C5cT8vb1hnmHYUt7_F2GCCaNN0A&gsessionid=DobilpwCm-lNRUc-1DrrpF1g_JCqoBIYrb42MbDsrbtegn-NDzywFw",
+      "title": "https://data.gov.au/data/dataset/taxation-statisti..."
      },
      {
       "rank": 2,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESbgHEIkXXdPx1_TeW_WjeiND7fVW-NyLCk-HbiDYJcwr9AbAoqFvZa_k3rptnsHjrFiaeythxd8S34U4YA8wrNtTDtfvBzWXuFfqUAT_7PdiAWOctM4bl25xICiEEYqvm7ITm6-ZR9ds9BwClAecg&gsessionid=MUIZrMPiYjvaX-3F53TmTRPhwv7JoqZEYZcegM3vi5wrfuKbtS3nAg",
-      "title": "Income tax - Moneysmart.gov.au"
+      "domain": "taxaustralia.com.au",
+      "url": "https://google.com/goto?url=CAESWQHEIkXX9sBC3CU2jXaagjL4R4QTbyius-JACEvXy5VChlGw4zftnMrCFLzefUw4Edip23bY4AhPcXx9dkiZvSssidJIKzfwOoCmr69a806d2S5TSXR8vfjF&gsessionid=DobilpwCm-lNRUc-1DrrpF1g_JCqoBIYrb42MbDsrbtegn-NDzywFw",
+      "title": "Untitled"
      },
      {
       "rank": 3,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESggEBxCJF12pxmPrfrLXTwZHVMsCXpzc9kaPZYvgZMu01X1UGICI3UjnQSOHdT8Nf-S0tXksOyI-ji9RjTe2u7cOLykLM4maAuARjv8Yey3qSnc7LbrurISLXU_PTLGK54IewSSVcsUtjUSDYeXlxe8Wlsv2VmmvL174aEN08gYIaYOwx&gsessionid=MUIZrMPiYjvaX-3F53TmTRPhwv7JoqZEYZcegM3vi5wrfuKbtS3nAg",
-      "title": "Australian income tax brackets and rates (2026 ... - Super Guide"
+      "domain": "au.talent.com",
+      "url": "https://google.com/goto?url=CAEScQHEIkXXZ9hXdfRqSRba5be-o4g26MlHGdRT0KIrushLn0ks81dHItLmPvD5Ws_RIqM4E2qJn6J8g_lWBsJh7NnFcO-j4VITlZNHe0uFVnzU4Ramt7iKwBSRuckdPlluRVNJlkijsnLLAKpShNmT73fO&gsessionid=DobilpwCm-lNRUc-1DrrpF1g_JCqoBIYrb42MbDsrbtegn-NDzywFw",
+      "title": "https://au.talent.com/tax-calculator/Australia-90420"
      },
      {
       "rank": 4,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESjwEBxCJF13R-Aoz4vQbvuNrOfrQJJZ7dTcXvvgFBFENqfkyuuaKn1Lx45KFzwX4FFhWvr_uWMj0OQNx_vX85vS9zTbg_O7BheKERlq5oV0DSJnpJMs4_BxP4AoOo_u3fPjBKvAO3U4kmqi3V2VWoiHWrkf_LaC_AsF_qY4X2ZZ7Dhgh0kqtkO0xyuzKde0ZtVA&gsessionid=MUIZrMPiYjvaX-3F53TmTRPhwv7JoqZEYZcegM3vi5wrfuKbtS3nAg",
-      "title": "Tax in Australia | Australia Tax Guide"
+      "domain": "youtube.com",
+      "url": "https://google.com/goto?url=CAESaAHEIkXX3B3gyLZ5rijqUBTsH-7LQVU5YMlkx1tKH526ShEeQB90vvhD1eY__qBkXpZvuTXEk6auZhHVo1wYfkEj_xolwRfYUjLhTT_U_DbpCLt9OMrN7FN6X-ErPqlf_iaqyDedotnH&gsessionid=DobilpwCm-lNRUc-1DrrpF1g_JCqoBIYrb42MbDsrbtegn-NDzywFw",
+      "title": "How Tax Brackets Really Work in Australia"
      },
      {
       "rank": 5,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEShwEBxCJF1-GMOSgTw6Yy6L_GHFqv8B856KsccPbJWmREUUiCc-neV1lWLuEl20pk3as6_E8FlrbyUEx2FQbxawht_j635k-LnqQBh4VtqctUGpkbfaZ-EN_TfS83aE6XwtivAPudZmDoxFHKJ2SeTagzKNOanuNvVJ88ow9h07xIbJxYcJF-NA4&gsessionid=MUIZrMPiYjvaX-3F53TmTRPhwv7JoqZEYZcegM3vi5wrfuKbtS3nAg",
-      "title": "Australia - Individual - Taxes on personal income"
+      "domain": "heed.finance",
+      "url": "https://google.com/goto?url=CAESXwHEIkXX9Rfr2ct3zy27z3aiK75ClS_6Y3qL-4s0nbTPgWZLnCQH7LIqRlG0QzrnKHNvd5hdtHHS8_maVFBnBTs9UzVST867eGHc2dVwUNYxknJrKoycMJ72JfUV4Cae&gsessionid=DobilpwCm-lNRUc-1DrrpF1g_JCqoBIYrb42MbDsrbtegn-NDzywFw",
+      "title": "Australia Tax Rates 2026: Income Tax & Residency | Heed"
      },
      {
       "rank": 6,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESbAHEIkXX3OQu4fInN58fvr3b20OXJtXVANibyrqAvUg7sFjVxwft80IyIGowzMXLnfY7kvaIzuNKJJ-VZ3oqbKoOjNGIkpp-__LBS5_rD3LOOWesEmLN01uEoMrw8o-auh7SkOkvfkB3sk85Bw&gsessionid=MUIZrMPiYjvaX-3F53TmTRPhwv7JoqZEYZcegM3vi5wrfuKbtS3nAg",
-      "title": "Australian Tax Brackets 2026–27: How Much Will You Pay?"
+      "domain": "youtube.com",
+      "url": "https://google.com/goto?url=CAESaAHEIkXX22pWKMQH9-Cfghi8dTWssL093fH3nv_405iosmevIcXgkapd6cl9bqOn9Vr0Q0sfjSniWefnaqNogu4SEc3SA2F5fGdYGVkbKO5M0jCHL8LQMgFMjCTyvQ-r5tAllarYIxGT&gsessionid=DobilpwCm-lNRUc-1DrrpF1g_JCqoBIYrb42MbDsrbtegn-NDzywFw",
+      "title": "Why Your Pay Rise Feels Smaller in Australia"
      },
      {
       "rank": 7,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEScQHEIkXXxxHnqOau0juCNisuXkA3oUuNU3kGNlaHtEUzlRtF63bkSw-aYO_sQu_a0JeThrAlRjB6LBVsWDwBHfO5TeH-DJTbeYJu0v9XE7gyIRb4lOqsiinq4b0_s5GCMixcjsRn_j9ks-TmD2RySJYq&gsessionid=MUIZrMPiYjvaX-3F53TmTRPhwv7JoqZEYZcegM3vi5wrfuKbtS3nAg",
-      "title": "Australian Tax Rates - NetActuary.com.au"
+      "domain": "boanco.com.au",
+      "url": "https://google.com/goto?url=CAESjwEBxCJF1xesctwqbOmf80orn7SgivOJYEqVc6gS3fhkOq4OFGPlAnjshcuzR26TN2E4jehy7vsoMYmLrABm6LzIk5hFfXxZX_Q6JYyq89mk_Zcl7acyIdGYdbpye2B2cXsLzQMX20KiGMw_nW7gaXccdw6ieSlkmZcLApD9S9wZrr-C-vNIaOdmlHzM7ZHRjg&gsessionid=DobilpwCm-lNRUc-1DrrpF1g_JCqoBIYrb42MbDsrbtegn-NDzywFw",
+      "title": "Tax Brackets 2024: Australian Income Tax Rates | BOA"
      },
      {
       "rank": 8,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEScgHEIkXXr_G_HhuLX5fmfRxE8KlU8XJe54ciJVEfxv7jUccSSaG8-ULlILZSPHyXF37x6klFCS16fFFLgVxiWtCzoUo_mEmaJ_b_ucymQ57mFAwPFOqqgBLjvs_aakfV1_jdEHTWjqJ6Cf2DbWNXIwIBlg&gsessionid=MUIZrMPiYjvaX-3F53TmTRPhwv7JoqZEYZcegM3vi5wrfuKbtS3nAg",
-      "title": "Income tax in Australia"
+      "domain": "autaxcalc.com",
+      "url": "https://google.com/goto?url=CAESVwHEIkXXfGcK3Da802kEbLGikQy7CAUxMXo1dJqQiY0Mc1TBFtV-ZUW7m8Dmx7PuH677NcA6WMqh4-M4aAFk_zvBpYxzcsaXUoUP3xNVye1N-5QOb1wRxA&gsessionid=DobilpwCm-lNRUc-1DrrpF1g_JCqoBIYrb42MbDsrbtegn-NDzywFw",
+      "title": "Tax, Property & Money Guides for Australians | AU Tax Calc"
      }
     ],
     "impressions": 17,
@@ -684,57 +656,57 @@
     "top": [
      {
       "rank": 1,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESgAEBxCJF13-nw2g6foT4DJTyqx40MTYlFFJ3E17LtwEesnOWg_C1bTRyEsUeHJVVsOmR9IlnCmCre6wRfAMYzx4B2mEj1TA-3OW1Q4VgmFH13Tggl1MZgI23lJjMatGRPCUg_AOwKkNmHNoVmQRKL-D3ekF5XBf81ookyX-pUYVg3g&gsessionid=YMHYpqdZNDIJDYRVaRtD6kZjICOktvgggTz_dTK8Gc-psy4PaJ4K6Q",
-      "title": "Understanding the Australian Income Tax System"
+      "domain": "perthmobiletax.com.au",
+      "url": "https://google.com/goto?url=CAEShAEBxCJF199_Ygc-KtP_ohUHnFCFNSk5jmy_2Wrgk9iTwe1b4vZSLidYoSae28cgnw3ReAO2IzDGtCOaI0L0oFEIqI1vR9KRsXx1c0vKYv5DJxBRY0lBMik8JUJCC5rE3Nd1jMLs2qy9SZv5G_np2bBx4E9eiQT5S5Fg5BhgMj87bBaR-ZQ&gsessionid=woXWpcgogabhuWbL7Btjig3lzTYKiT19SupQj2t2p3TeSgbyKpmBzA",
+      "title": "Australian Income Tax Brackets for 2024–25"
      },
      {
       "rank": 2,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEScQHEIkXXITcRd1pDOlCTUpRPiBTNejxAiyCcZORnzpxfyJL0G0qFlCcIUY3lRG4_Hty7GK457jir7-VSUxCQgDRF-T26goSUcvCicav7IRi7W9r4BEZA6t_WRfo9IlBJRr0VLJSZQpHiJ_eFY2pNcbXX&gsessionid=YMHYpqdZNDIJDYRVaRtD6kZjICOktvgggTz_dTK8Gc-psy4PaJ4K6Q",
+      "domain": "netactuary.com.au",
+      "url": "https://google.com/goto?url=CAEScQHEIkXX7dqfLpsJxF0cCI_l7Hl3ZNVWjJIMToU3hS61QqqB1hD2nP5lh_aFJFsFk0Xa7nEvMh2M0-Fs_lTDHSYTqSw37aCDKW_u5bJtDB1klWkqpPW__ndid18_rtAjuO4iNhKC4KKTjdRE815Sr_iV&gsessionid=woXWpcgogabhuWbL7Btjig3lzTYKiT19SupQj2t2p3TeSgbyKpmBzA",
       "title": "Australian Tax Rates - NetActuary.com.au"
      },
      {
       "rank": 3,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEShAEBxCJF1_kgCX3uOt2uqxnilVccoGvmbAHCdiKrMKQ8rvu_Tz-vAZv9LQQaystaXFdwx30yjOHDuxkwf5d1lMyWcPJdmlzuGZhmDQAg8B9njOnB3eNLk5B8s67-YOIIgaNZffIAuRmngkuHC3-txC7-3dtHiODRKXJRqFGACQtMRo4T4KE&gsessionid=YMHYpqdZNDIJDYRVaRtD6kZjICOktvgggTz_dTK8Gc-psy4PaJ4K6Q",
-      "title": "Australian Income Tax Brackets for 2024–25"
-     },
-     {
-      "rank": 4,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESdwHEIkXXmjHLmC9EMiI67pJ_CCgcuVpdof7wVLvqHCJ3psGMEiD4IBKXsjhF29KMgD0bRJ0W9CsRWMCXqTofwcJ8iuvto8EfBuzjF-tK86YTtUkaYldN02sE0OMOUaZTWt1wVsxcmwr2r_K5htIpXq9riq9RGHsb&gsessionid=YMHYpqdZNDIJDYRVaRtD6kZjICOktvgggTz_dTK8Gc-psy4PaJ4K6Q",
+      "domain": "tmbank.com.au",
+      "url": "https://google.com/goto?url=CAESdwHEIkXX9cUtoCcCeq0q9GK2eN9akZpv035uAIt_-NvQ4pyn4x-uY0p9P0m_8o4SVccSqbiF5ViM6OSU4v5J__pY0t0VSVAR1L6CLZ5XdYMxl9DmNjpYqa0tFSIq1CtNGuHH149jdx5qhd3L-L1SMpqyf5Q9nu-7&gsessionid=woXWpcgogabhuWbL7Btjig3lzTYKiT19SupQj2t2p3TeSgbyKpmBzA",
       "title": "Income Tax Calculator"
      },
      {
+      "rank": 4,
+      "domain": "lemonadebeachaccounting.com.au",
+      "url": "https://google.com/goto?url=CAESfwHEIkXXEzSt6tXMYJ1KfkX4xQ3EnuyFReotn_dXMk96E-MujM6Isqea8FclvSNyEaPr9LOvuasvUkUBFEhhYno8eisEIHKUtXIPH42n6-mCy3FCvnwvbTQPflJjKUzExnbpQV7iLWiheREpOvgYCD7ufcZ2JOrRNfd2DnDsKxY&gsessionid=woXWpcgogabhuWbL7Btjig3lzTYKiT19SupQj2t2p3TeSgbyKpmBzA",
+      "title": "The Basics of Tax Brackets: Understanding How Your Income ..."
+     },
+     {
       "rank": 5,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESaAHEIkXXrHLmuWZX4ibxMvwyIQRPeab0QVcG9CFM0D_S03N6a_yg32F9KGMY-WxueLra69sX4uWiupeoYLsA7BaOSSD4v2HmDImgt4YwtveZpj-PJdsCrloIdGgqvoF6bA46Ihhk5orv&gsessionid=YMHYpqdZNDIJDYRVaRtD6kZjICOktvgggTz_dTK8Gc-psy4PaJ4K6Q",
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAESaAHEIkXXdDIlG49p-NQ_M6lCEd3a6vrfdg0QHRCyYlu8Nr_pUXBh12ZiuPxQldadvFJrwtnhTZTHwXegyv0R8bmJo20eJJEFpATIQAyVNpkcWviyjcmYObubhWcUK8WOmBLMJw5aHido&gsessionid=woXWpcgogabhuWbL7Btjig3lzTYKiT19SupQj2t2p3TeSgbyKpmBzA",
       "title": "How Australian Tax Brackets Work in 2026"
      },
      {
       "rank": 6,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESagHEIkXXE2yDE4yxolIvMu3VDpQ-SnfcciM0Wf-ogczkOaasnfkVJ9k7AzS9DpyQ4tXoffrlPQbRaOxHMxbV06K-BG7lXiAmpmNwtgmGJqH-H_6xX-2-7hdvI2OKqIBB1DV0qyXocqDiYQE&gsessionid=YMHYpqdZNDIJDYRVaRtD6kZjICOktvgggTz_dTK8Gc-psy4PaJ4K6Q",
+      "domain": "thechristiepartners.com.au",
+      "url": "https://google.com/goto?url=CAESagHEIkXXAJj1RXyQNY-es-g1ARfAqdJ9ZOE7bArCyGW0Za7OKK50tW4VZOrMji-7VkjHOrnHwqsCesb1aB5C4XmYzP_SW0Ta0XQBcEO4zqaTBeDjzuSrMHz680HQBtT62238SvdkOLHUmLQ&gsessionid=woXWpcgogabhuWbL7Btjig3lzTYKiT19SupQj2t2p3TeSgbyKpmBzA",
       "title": "Australian Personal tax rates"
      },
      {
       "rank": 7,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESfwHEIkXXLELCFgdm1fZ8JFj0CpEoh4LAXKCikG9ZhX2uonO4kw6fY_Vsvrh_CPMxzCqlk_Z4paIp-eR6aVCNo4RBGXRm0y7rRpMww9BGdTgKGrgYK7r17nlh-z2wAfJUSDnE59DSSC5Hloa64zVaWx9P3AGKe0nEGn3K0ui2GZU&gsessionid=YMHYpqdZNDIJDYRVaRtD6kZjICOktvgggTz_dTK8Gc-psy4PaJ4K6Q",
-      "title": "The Basics of Tax Brackets: Understanding How Your Income ..."
+      "domain": "blog.onqrecruitment.com.au",
+      "url": "https://google.com/goto?url=CAESfwHEIkXXxo9-ACG-2-2oZg-HxvaQa1-M_S6vFgmav96Lx9eO5Rdl79RBHMt1D-8BZm9s4Gg_y40xYSKya8qpLjd04cYXM2LW_Lkh4OKF1rTtlU3L3erVqhn89T2qRd1Ot-jZ1J5qlXB9ammJyd2yHGs31slyWfH61t2cpHM7eko&gsessionid=woXWpcgogabhuWbL7Btjig3lzTYKiT19SupQj2t2p3TeSgbyKpmBzA",
+      "title": "Understanding Tax Brackets in Australia for Job Seekers"
      },
      {
       "rank": 8,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESfwHEIkXXI75grYirsxwgrAt5mh6ZXHUO2m4gyHXMzexks6CuVEWdYEQhbfzsYVh6LjsM286HNr_6DI8nW52JKOONVa_pGwyhqn2my3LR2MLOMH5TqtaDxaNySe6_eOSApmCRQ9fiUwOghyxzUczEBWWZj2SCLyAjQTP1M7DiVyM&gsessionid=YMHYpqdZNDIJDYRVaRtD6kZjICOktvgggTz_dTK8Gc-psy4PaJ4K6Q",
-      "title": "Understanding Australian Tax Brackets | QuickBooks Australia"
+      "domain": "grattan.edu.au",
+      "url": "https://google.com/goto?url=CAESuAEBxCJF15nyeGhwFOFx0WI_hQ0nl_tpSkc2yzMFaucHOQR1pENrHzmkSukL2Hw5kxf_M38LJsXDUyoWA6Qg3wNNAiYOtD0QdtBz4r8rshnAucyvvSpkj9M745GMDUBLyfr-R9SqSDwelpavJcHkGIDzuE9OjWfqSveY6iq1QYtOB-YPlWzG_RSSh9-sFwB4ZSPHUbseZ-U0gPfUP7GYaLvrqZQcuawf4aRZ4O4jDiXvXXw9f444C7Na&gsessionid=woXWpcgogabhuWbL7Btjig3lzTYKiT19SupQj2t2p3TeSgbyKpmBzA",
+      "title": "What do Australians earn and own? Grattan Institute's 2025 ..."
      },
      {
       "rank": 9,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESfwHEIkXXc6MsLLBT_FWIS53Ia996EN4WYSegkdjsFdYVbtyP2_uRaVbGuB2ykeegTUYQhQPU_yofdFcLPrc0zN2Myqmxlvt5PmMgr5iQcqymI2bAYay4stRhXmb2VXd5302iDpxWQcEGDR-_g43uung2eseky9MGOA3aQd2cB8M&gsessionid=YMHYpqdZNDIJDYRVaRtD6kZjICOktvgggTz_dTK8Gc-psy4PaJ4K6Q",
-      "title": "Understanding Tax Brackets in Australia for Job Seekers"
+      "domain": "quickbooks.intuit.com",
+      "url": "https://google.com/goto?url=CAESfwHEIkXX3OOk1HpD2riyk-O5cI-P54Kdcr0x06Wu2KGdez4tcJSRdSi5ASTNv08o_FKV2Nxr21D9BT3bSBBgzggWayxqxFesh_5EieAz7-WDMITDjvYyg4occ0wz7nWWtjYTh6NcXbfVQ7MVSafkPmuhWKcqrrewUzaCCC38Nq0&gsessionid=woXWpcgogabhuWbL7Btjig3lzTYKiT19SupQj2t2p3TeSgbyKpmBzA",
+      "title": "Understanding Australian Tax Brackets | QuickBooks Australia"
      }
     ],
     "impressions": 16,
@@ -747,57 +719,57 @@
     "top": [
      {
       "rank": 1,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEScQHEIkXXDhajoTnLboZkm6bhLSzaK-WshQjs7j_UTDoXm3Ob5vgwzaIqHQ-iynD0r-BsRHqQvYt2C7CnOqczmaKBaLlfDexyskuNmG9ANidlhIsdBYV0pIsJbtS3ricoe2VLWRMCQgvyHFEIeP8Jr7Gs&gsessionid=RwTDI1sE-BCPfiBZX9EglM6v86ox0RALCd1yrwmzzZTxmpguzvTr_Q",
-      "title": "Australian Tax Rates - NetActuary.com.au"
+      "domain": "data.gov.au",
+      "url": "https://google.com/goto?url=CAESpwEBxCJF1-SAyckKm3CAMlJ5H200-bqRmtWq2G_j_T5pCuPBUNsXY0KY_EEUEj6Pv15A2tTNhu5MgeXJFOmMtlt1qBh9V-9nVKlrhXOr1tJRBqctlVnUMD7UlbFc_TyQq_6Iwrcw6fpGgva5RWgPQ3EufL8VzY4D0RvnWTlp18LksWgirPovp9Q5Bhz_ui5xV7jFy0_teKBWJB15Vf5sJIWWxziujKGSdQ&gsessionid=QAXI9gn8f2U4b4gmYnnMrAvGkTZoh02tzLeBEGuQn4FDpfTjLHkftg",
+      "title": "https://data.gov.au/data/dataset/taxation-statisti..."
      },
      {
       "rank": 2,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESawHEIkXXqzDUCp_6TphzI5J4l3wMSfLGGASDyJbSb8MlZZMx-i7ZkBpv1Lab_OYDpJmLSTwE4rHleklX_majlHUxaky0s3wvMfr8wmNz3chpDFdPrYcJjO0d-5H4-g9j15EakjsMtDzWcG_S&gsessionid=RwTDI1sE-BCPfiBZX9EglM6v86ox0RALCd1yrwmzzZTxmpguzvTr_Q",
-      "title": "Australian Tax Rates and Thresholds for 2022-2023"
+      "domain": "parlinfo.aph.gov.au",
+      "url": "https://google.com/goto?url=CAESsAEBxCJF18urCWoZpW5A0RcFsg2rZZ9oSfIeHvw_uAdxZdPBu0M_ISwTONjfkeXJzwWytDjJFnkoZ2gdrt1_NBvJJQqpDM5Xns2pIgktEtcPEdZTPBvCc9AKpz1Da81gy42UCE0oZtocOySqa2A626u0yd4yZuiptcmvzbfNQaOeHbjxoWDVA1_m-FwqioUD06OT9494BYQEl4TpkVH2fnnX0lQ24F2vpAkI9oLd1-G3YQ&gsessionid=QAXI9gn8f2U4b4gmYnnMrAvGkTZoh02tzLeBEGuQn4FDpfTjLHkftg",
+      "title": "hansard_frag.pdf"
      },
      {
       "rank": 3,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEScQHEIkXXpaTK8QjekJCcxp-HNCTNXQXha3D26-v-R9vZgtzYeB461CjdFzOkfqm5WrOYP3qg8LBOXC6OPd4XwyDjlOc7YFzRQ55jobAlQQ1Nu2k4E-fspmIK9fvYBxxMtUJ15SEhpA5fYB0H5TlAwjfH&gsessionid=RwTDI1sE-BCPfiBZX9EglM6v86ox0RALCd1yrwmzzZTxmpguzvTr_Q",
-      "title": "What are the Australian tax brackets? - Hnry"
+      "domain": "autaxcalc.com",
+      "url": "https://google.com/goto?url=CAESVwHEIkXXYmVX3dlnUC5S3CSgCsRNPNIWmPGUr8NU19zsOInPoDT8WhW_lBI2S-PgWTARRiMaveiSrQyFpoPedMKcvYRgZu2v1s5cE1sVkPDgJKEkgotu1A&gsessionid=QAXI9gn8f2U4b4gmYnnMrAvGkTZoh02tzLeBEGuQn4FDpfTjLHkftg",
+      "title": "Tax, Property & Money Guides for Australians | AU Tax Calc"
      },
      {
       "rank": 4,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEShAEBxCJF15dSDsMfzkeRlAtH7bt7lHgaphSzrIjBwiU_gELhlvi8vhd0-_A4vvNgwD6OpcnBoY6Cdtg-zameZ85F69fKx5K0R4nnNhLh5NcH7ufMmBAeKBteQsucLIjHF9TBvXtTjh400AN5z5MvTgRDGmWpXhyzONJuy3mO29BAmiLQtIk&gsessionid=RwTDI1sE-BCPfiBZX9EglM6v86ox0RALCd1yrwmzzZTxmpguzvTr_Q",
-      "title": "Australian Income Tax Brackets for 2024–25"
+      "domain": "youtube.com",
+      "url": "https://google.com/goto?url=CAESaAHEIkXXQUqsf2vJvx7zg6DP5mrk4HjvdQc53LRaCXq66_tk7NH5B7hHRMeGrLdF1-o0QOCYJ71pAF6_0m8SZR2Q-sr2pxrWqc8_mYSiMN4WKWVUOT3M5PZQAEVXrdl2k00wb0SyisKs&gsessionid=QAXI9gn8f2U4b4gmYnnMrAvGkTZoh02tzLeBEGuQn4FDpfTjLHkftg",
+      "title": "Why Your Pay Rise Feels Smaller in Australia"
      },
      {
       "rank": 5,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESagHEIkXX-rx9gbAj202HZCPZ1JRdTgPTUQl3MKazrfJ4ajo-N9UXUsJxS5pQ7tPTuz-EZBM4U5ZqK90JEFK5_gf2Xggbdnl4I11QNyKhLxIiTeyv3kDPFhRMuG6NI8SSlwjRA6lkLNcQOh4&gsessionid=RwTDI1sE-BCPfiBZX9EglM6v86ox0RALCd1yrwmzzZTxmpguzvTr_Q",
-      "title": "Australian Personal tax rates"
+      "domain": "privacyaustralia.net",
+      "url": "https://google.com/goto?url=CAESeQHEIkXXyJNGnVZGbPTZQZCke0QDCPq_WgSTj7DRCiKxAJ_eph6Id9c9t1SZcB4TkkA9LDGRuHKKdYy9xFsOmlHH3lmrS5VFw8jRC7sXsJPOofIPxji1TgTOZvjsJTSO6qwMBtcp6GMwE1kLJxUavmlF-CZreAHCCyg&gsessionid=QAXI9gn8f2U4b4gmYnnMrAvGkTZoh02tzLeBEGuQn4FDpfTjLHkftg",
+      "title": "Australian Income Tax Brackets & Rates (2023–2024)"
      },
      {
       "rank": 6,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESgQEBxCJF11uXWXzxYt1K1webHZqgTjIZ5uqxwwNjd2w8w3W_aY3VEhZB7rGjRCO5jDiCwulfoSQyMbgEGpf2yjwICcU7TmRhTH24hsykXpsdvhd36qMMup0qFWW0njpCygxv02qOMkkfxPRhrKdOiU_rAPw_ppXvuQ73XFMohQsinv8&gsessionid=RwTDI1sE-BCPfiBZX9EglM6v86ox0RALCd1yrwmzzZTxmpguzvTr_Q",
-      "title": "From Tax Brackets to Deductions: Navigating Income ..."
+      "domain": "youtube.com",
+      "url": "https://google.com/goto?url=CAESaAHEIkXX7hXVdj1NnlRK6eEG4p4zD0IRI4DFJN748Y3Ev0I-tg0Vyqw4t4EI0Xn4Vkxj4ACCiXr0UTubd8ZsYnbc3SOjglr6MHx7ltIK-Eor8jvd2PHmCDQxh94jdFte9b2GJG--AmV0&gsessionid=QAXI9gn8f2U4b4gmYnnMrAvGkTZoh02tzLeBEGuQn4FDpfTjLHkftg",
+      "title": "Australian Tax Brackets 2026–27 Explained"
      },
      {
       "rank": 7,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESaQHEIkXX4yPOKHxOi8WxBTuK5Nbtuu3YXmWPm1sU99NZu8bmqHe5sRqvYwbLJ9zxoQ-HugP2j4iK7KoAtBED5dzIr2CooiqrinvaDHpok3td2eZJwfq1_RxpTk1sx_17K74pT7wL5RSyuw&gsessionid=RwTDI1sE-BCPfiBZX9EglM6v86ox0RALCd1yrwmzzZTxmpguzvTr_Q",
-      "title": "Tax cut calculator"
+      "domain": "perthtaxation.com.au",
+      "url": "https://google.com/goto?url=CAESZAHEIkXXolj-mmlW6RQ_tQ_RNLOxrJbuKqIFwtwCCsQRx-f8IBqbdv2RUTMhbaHxlexvpTl5gtAWIFkUQuWOvdAaGiwNrDXmYByfSUKRGiszTVAHb93JUYl-f3VyPaIfnDLcHLI&gsessionid=QAXI9gn8f2U4b4gmYnnMrAvGkTZoh02tzLeBEGuQn4FDpfTjLHkftg",
+      "title": "Resources"
      },
      {
       "rank": 8,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESgAEBxCJF19RqWI47C9Owi_ppLLytnm6vy2EaJNZWmmBbuqoCRf-S2xmsfi3eNHPJ0ziLiAPSPNq3e2CIKZzgnQf3D2_MOwhvG7wdB3_wZ2PsiCKlUwDhOCBV1cOE1f9HqauvjSy8JjYz-J7IiQAX-3XaBLMojxqXSyhgl-jl--mQrQ&gsessionid=RwTDI1sE-BCPfiBZX9EglM6v86ox0RALCd1yrwmzzZTxmpguzvTr_Q",
-      "title": "Understanding the Australian Income Tax System"
+      "domain": "infinity22.co",
+      "url": "https://google.com/goto?url=CAESewHEIkXXhPTe4FUtuvmNCYR0jnDkOPm1qt3sfXhMTM5MVAJUJuyKljsbjch3BtZpGWYKwpR8gWKLPMUDSgFUHpcqvv0UMG5xUyBXKgTFDvx3fkN6-pFizYcec2XnsOXDhTO7XOiFBQoPnhLsJq0bDdUsFr3rL0VR41_1wA&gsessionid=QAXI9gn8f2U4b4gmYnnMrAvGkTZoh02tzLeBEGuQn4FDpfTjLHkftg",
+      "title": "2025 Australian Tax Rates for Residents"
      },
      {
       "rank": 9,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESaAHEIkXXlH6tmDU6K7i5Fr_fsqTSc-3sf-w1ARIKlLaS3trjSRnspQoOQ0wSvYScbXt1ybCOalp0fNAJ-ylA56U0UlqrvdyTD48EIoRiek3RxZWsgQYq74eFF8hz_mKwYPwpKyN9GN_6&gsessionid=RwTDI1sE-BCPfiBZX9EglM6v86ox0RALCd1yrwmzzZTxmpguzvTr_Q",
-      "title": "How Australian Tax Brackets Work in 2026"
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAESaAHEIkXXrDb8RUkzwQnd1SNDzDS-PX2OHQzTaj9PcupBxFoohVJN1fHIKKxnYVlqRcOrOlLedQLpdQZF7KdoetGoZhrcPD3Dt7n-cZbnnhxpYuqX1e_5UqyFaaghCQ_lY8-lPlOKycZh&gsessionid=QAXI9gn8f2U4b4gmYnnMrAvGkTZoh02tzLeBEGuQn4FDpfTjLHkftg",
+      "title": "How Tax Brackets Really Work in Australia"
      }
     ],
     "impressions": 10,
@@ -887,9 +859,9 @@
   {
    "url": "https://mypaycalc.com.au/",
    "lite": true,
-   "serverSecs": 0.13,
+   "serverSecs": 0.08,
    "htmlKb": 19,
-   "blocking": 3,
+   "blocking": 1,
    "images": 1,
    "noDims": 0,
    "imageKb": 0,
@@ -898,9 +870,9 @@
   {
    "url": "https://mypaycalc.com.au/tax-brackets",
    "lite": true,
-   "serverSecs": 0.11,
+   "serverSecs": 0.08,
    "htmlKb": 12,
-   "blocking": 3,
+   "blocking": 1,
    "images": 1,
    "noDims": 0,
    "imageKb": 0,
@@ -919,10 +891,121 @@
   "unsureOutside": 5
  },
  "affiliateOk": 0,
- "secs": 153,
+ "secs": 145,
  "change": {
-  "first": true
+  "first": false,
+  "since": "2026-11-14T21:52:19Z",
+  "score": 0,
+  "newIssues": [],
+  "fixed": [
+   "/: 3 files block the first paint",
+   "/tax-brackets: 3 files block the first paint"
+  ],
+  "impr28": 0,
+  "clicks28": 0,
+  "views28": 0,
+  "rivals": [
+   {
+    "keyword": "mypaycalc",
+    "new": [
+     "unknown site",
+     "apps.microsoft.com",
+     "austaxai.com.au",
+     "deductit.com.au",
+     "fairworkmate.com.au"
+    ],
+    "dropped": [
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com"
+    ],
+    "ours": null
+   },
+   {
+    "keyword": "pay calculator",
+    "new": [
+     "woholmate.site",
+     "mydailycalc.com",
+     "paymecalculator.com.au",
+     "toolkitau.com",
+     "netpaymate.com.au"
+    ],
+    "dropped": [
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com"
+    ],
+    "ours": null
+   },
+   {
+    "keyword": "australian tax brackets",
+    "new": [
+     "data.gov.au",
+     "taxaustralia.com.au",
+     "au.talent.com",
+     "youtube.com",
+     "heed.finance"
+    ],
+    "dropped": [
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com"
+    ],
+    "ours": null
+   },
+   {
+    "keyword": "what tax bracket am i in australia",
+    "new": [
+     "perthmobiletax.com.au",
+     "netactuary.com.au",
+     "tmbank.com.au",
+     "lemonadebeachaccounting.com.au",
+     "unknown site"
+    ],
+    "dropped": [
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com"
+    ],
+    "ours": null
+   },
+   {
+    "keyword": "current tax brackets australia",
+    "new": [
+     "data.gov.au",
+     "parlinfo.aph.gov.au",
+     "autaxcalc.com",
+     "youtube.com",
+     "privacyaustralia.net"
+    ],
+    "dropped": [
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com"
+    ],
+    "ours": null
+   }
+  ],
+  "positions": []
  },
- "history": [],
+ "history": [
+  {
+   "at": "2026-11-14T21:52:19Z",
+   "score": 91,
+   "grade": "A",
+   "impr28": 715,
+   "clicks28": 4
+  }
+ ],
  "issue": null
 }

@@ -3,12 +3,12 @@
  "name": "communityhelp.com.au",
  "url": "https://communityhelp.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-14T21:52:19Z",
+ "scannedAt": "2026-11-14T22:17:22Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
  "nextDue": "2026-11-22",
- "score": 93,
+ "score": 94,
  "grade": "A",
  "areas": {
   "health": {
@@ -37,7 +37,7 @@
    "label": "Thin & duplicate pages"
   },
   "speed": {
-   "score": 93,
+   "score": 100,
    "grade": "A",
    "label": "Speed"
   },
@@ -58,13 +58,13 @@
    "id": "rival-community-help",
    "area": "rivals",
    "severity": "medium",
-   "title": "\"community help\": we're not in the top 10 (Search Console avg 17); google.com leads",
+   "title": "\"community help\": we're not in the top 10 (Search Console avg 17); goldcoast.qld.gov.au leads",
    "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
    "pages": [
     "/"
    ],
    "count": 1,
-   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "detail": "Top 5: 1. goldcoast.qld.gov.au, 2. ntcommunity.org.au, 3. qld.gov.au, 4. findhelptas.org.au, 5. innersydneyvoice.org.au",
    "impact": 6.7,
    "broken": false
   },
@@ -72,13 +72,13 @@
    "id": "rival-community-services-placement",
    "area": "rivals",
    "severity": "medium",
-   "title": "\"community services placement\": we're not in the top 10 (Search Console avg 9); google.com leads",
+   "title": "\"community services placement\": we're not in the top 10 (Search Console avg 9); facebook.com leads",
    "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
    "pages": [
     "/"
    ],
    "count": 1,
-   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "detail": "Top 5: 1. facebook.com, 2. au.indeed.com, 3. au.indeed.com, 4. au.indeed.com, 5. au.indeed.com",
    "impact": 6.7,
    "broken": false
   },
@@ -86,13 +86,13 @@
    "id": "rival-local-community-support",
    "area": "rivals",
    "severity": "medium",
-   "title": "\"local community support\": we're not in the top 10 (Search Console avg 4); google.com leads",
+   "title": "\"local community support\": we're not in the top 10 (Search Console avg 4); mercycare.com.au leads",
    "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
    "pages": [
     "/"
    ],
    "count": 1,
-   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "detail": "Top 5: 1. mercycare.com.au, 2. servicedirectory.cesphn.org.au, 3. localkind.org.au, 4. brisbane.qld.gov.au, 5. commsatwork.org",
    "impact": 6.7,
    "broken": false
   },
@@ -115,28 +115,14 @@
    "id": "rival-simon-farrugia",
    "area": "rivals",
    "severity": "medium",
-   "title": "\"simon farrugia\": we're not in the top 10 (Search Console avg 8); google.com leads",
+   "title": "\"simon farrugia\": we're not in the top 10 (Search Console avg 8); unknown site leads",
    "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
    "pages": [
     "/about"
    ],
    "count": 1,
-   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "detail": "Top 5: 1. unknown site, 2. facebook.com, 3. facebook.com, 4. facebook.com, 5. unknown site",
    "impact": 2.9,
-   "broken": false
-  },
-  {
-   "id": "speed-blocking-home",
-   "area": "speed",
-   "severity": "low",
-   "title": "/: 3 files block the first paint",
-   "fix": "Add defer/async to scripts in <head>, inline critical CSS.",
-   "pages": [
-    "/"
-   ],
-   "count": 1,
-   "detail": "",
-   "impact": 2.7,
    "broken": false
   },
   {
@@ -155,20 +141,6 @@
    "broken": false
   },
   {
-   "id": "speed-blocking-contact",
-   "area": "speed",
-   "severity": "low",
-   "title": "/contact: 3 files block the first paint",
-   "fix": "Add defer/async to scripts in <head>, inline critical CSS.",
-   "pages": [
-    "/contact"
-   ],
-   "count": 1,
-   "detail": "",
-   "impact": 1.4,
-   "broken": false
-  },
-  {
    "id": "seo-words",
    "area": "seo",
    "severity": "low",
@@ -182,6 +154,20 @@
    "count": 3,
    "detail": "",
    "impact": 1.3,
+   "broken": false
+  },
+  {
+   "id": "rival-hr-support-ringwood",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"hr support ringwood\": we're not in the top 10 (Search Console avg 39); careerhub.com leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/find-staff"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. careerhub.com, 2. careerhub.com, 3. jobs.careers.vic.gov.au, 4. socialvitalitysolutions.com.au, 5. seekfind.com.au",
+   "impact": 1.0,
    "broken": false
   }
  ],
@@ -457,51 +443,51 @@
     "top": [
      {
       "rank": 1,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEScgHEIkXXnUpuy7N0HZxMDTLHarJY7mYdK7Sd4SyIXYLEJFnBn6aHz-5pWDb7MdTnIPLOWP1bEVK9qJTGDUyV54oX8bUyGCWlpdcR1BZeOAQm1SUlHiWLGWRqmuDHXfmFZqyWQAg0s8Y5GrutrxDbYhTvVg&gsessionid=oNPn-ru_VYZ38VyRyIBWtUT2uIxIMX_9UhkSh1WP_auOZEfz4A1rgg",
-      "title": "Communities@Work – Dịch vụ thanh thiếu niên tại Canberra"
+      "domain": "goldcoast.qld.gov.au",
+      "url": "https://google.com/goto?url=CAESfwHEIkXXl0RlcMRteDNz5LUfNkNr7X3YtKXZwC_Zr77JgJMbdWqbh1CE-B6PsLJWwC4V58pjP2eBTdoEWeDk96HHv-Ny2vr8iHbG8TqbUFSYeRvJKwOFdHsJtmfSlSoFTAYsbyhqIKvDuN8y8mBtHFM5rat9gSkzouhnG801hgc&gsessionid=rqgyy3r0hYwahihaIBJXpBsntiUKnA6-XjoEPQ2bVV9g8t63u65xdA",
+      "title": "Supporting our community"
      },
      {
       "rank": 2,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESjQEBxCJF1zOudvw0_yhOegFy7OqK4FG_LQhgz5ZF_6ulVbnR327Ep8vSfeoPieT5DcKMAPaeDO5-qMql-zPlrC509mUHDQgduGewKRrGrypOJG2I5L-W4KfxcRrZgadkJfvYMe8ML5ftxPK7JvV1SY-EAFgVcKLAonKMtMLh5XaJYcsuaiVCMADpCGt9Grg&gsessionid=oNPn-ru_VYZ38VyRyIBWtUT2uIxIMX_9UhkSh1WP_auOZEfz4A1rgg",
-      "title": "https://www.nsw.gov.au/news-and-events/news/new-18..."
+      "domain": "ntcommunity.org.au",
+      "url": "https://google.com/goto?url=CAESXAHEIkXXTMC-xj82_PnlNGM0dP_BdcbzT_uBZXVX0eBTnB_DmBUaZM0QWQtVTtIKCIQFTDL5Re2b80Gd1rpK99WBosYvNil_fqH8ZbsUzPeVDuHwDrVQGVJ3A902&gsessionid=rqgyy3r0hYwahihaIBJXpBsntiUKnA6-XjoEPQ2bVV9g8t63u65xdA",
+      "title": "NTcommunity"
      },
      {
       "rank": 3,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESiQEBxCJF1z6DO9N8I53DbsFo1Ba3rFIJV5_FJgO3O7kg4nBP1fzDZHNWkMSQeCeOzkB9lMm12CjZsbf3TXPUzjca_JsUtdT-xklxnZS32cPP7V-i26XcMITLQuJ5ae8LeqA9J0QwRo8yVkoRMbJFzujEoH5Qk4Ung31E9VBWkyFZzdAmY5LhIGkh5Q&gsessionid=oNPn-ru_VYZ38VyRyIBWtUT2uIxIMX_9UhkSh1WP_auOZEfz4A1rgg",
-      "title": "https://neighbourhoodcentresqueensland.cmail19.com..."
+      "domain": "qld.gov.au",
+      "url": "https://google.com/goto?url=CAESgwEBxCJF1y4tAxLYt_QGt3JtsvegzX9GU4xZki_TaDCFRdg99dU4RPXPW0U3tQsJlOZJ61UfyTvvl9DkZYNwf0suKndvS67icUBY_ag5E9C4_D0Wd9i4RGijaVXy2fv9i-LGYj216Gfjr4u8GqlcXmGfhAHD-rODVp2ED165z7vj4pgM-A&gsessionid=rqgyy3r0hYwahihaIBJXpBsntiUKnA6-XjoEPQ2bVV9g8t63u65xdA",
+      "title": "Community Support Contacts List - Brisbane Region"
      },
      {
       "rank": 4,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESVwHEIkXXZm8rz4W-EHNEfiWlqklR0nOZMCK4mBHHwmUvuM41c_gWo3R6-MZ6TgnPdgblaxxQiXSeYCd6ooJRBdv3Tr1i7qdx17PRkxCb0bst5vssjUi84Q&gsessionid=oNPn-ru_VYZ38VyRyIBWtUT2uIxIMX_9UhkSh1WP_auOZEfz4A1rgg",
-      "title": "https://communityassist.au/"
+      "domain": "findhelptas.org.au",
+      "url": "https://google.com/goto?url=CAESWAHEIkXXkqPc_13Dy_gvNKSxhg8CiOFQ_kPJwfe0wZ5HwUP70A5BNckBh4IjScNZyj9ZbXm5HiNCCHl0jsQTlojsFGk59PjtkewEdni7w-j3Aur9dnQzHw0&gsessionid=rqgyy3r0hYwahihaIBJXpBsntiUKnA6-XjoEPQ2bVV9g8t63u65xdA",
+      "title": "Find Help Tas"
      },
      {
       "rank": 5,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEShAEBxCJF1_6wmJ0mKrvIDTiZnxsPSs4Ypk_YsLOg6naVtjj6xhGPYauPIeOE2GxR7Klfhq5dhIm42jtblAVT17y4vNlsMv-808pIVBU3Ow9Ild7TvE-YVVTGGOUvMiuJtrb7DiLHm3I7GyRhYYwf8R8KIIH3A83VA9rAgUMOL951dtgftpI&gsessionid=oNPn-ru_VYZ38VyRyIBWtUT2uIxIMX_9UhkSh1WP_auOZEfz4A1rgg",
-      "title": "How to Get Help | Canberra and the ACT"
+      "domain": "innersydneyvoice.org.au",
+      "url": "https://google.com/goto?url=CAEShAEBxCJF1_W8WBH43Uutgr7wXAzFWjJvZyF04PKE8R4zu5XfJWjINnln54KG6YjWbpNHmn4vR_yjjoJlRShJipZk3_pPwYIipDyJcKBqPnWaVOiycDHh49DkdvDqMurRZHRetaUXroG20Mv6DYrffCSFgd0FJ22_9brny-syGa4NFFx1uYA&gsessionid=rqgyy3r0hYwahihaIBJXpBsntiUKnA6-XjoEPQ2bVV9g8t63u65xdA",
+      "title": "Community Support Directory | Inner Sydney Voice News"
      },
      {
       "rank": 6,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESkQEBxCJF195FIbQ-TrA84jUIXiuedSxsCbD2bNIKdE7zfQ-RRIjHjYivmZdYFs_-shwq_jFTn0GWO3fH6xw5sqWJYOYP_Qov74ulgcDLX6Go06NKr6xRJeH9gIsZpUkT0PR5WPrkb4uQ34ft_tzfDg8bVq7GRJ0e15CrSbsNQ3kXaUk0cMmbDAZdu57SbBlT-YHW&gsessionid=oNPn-ru_VYZ38VyRyIBWtUT2uIxIMX_9UhkSh1WP_auOZEfz4A1rgg",
-      "title": "https://participate.melbourne.vic.gov.au/prepared-..."
+      "domain": "greaterdandenong.vic.gov.au",
+      "url": "https://google.com/goto?url=CAESfAHEIkXXVK2kEZmudVvvMwAOBlBECUfDM4_lzW7VaLKk2vha2iypR3mlz7ZYLvwyu6rbvfaj2QPoL02ETgoFcxrVSu_IGozTidEAbtLSsJgA0v5J0KG3UPrH8__WBvniqVCn3psKgK4_gHXV2ipNwRKiDwdbivi9Y-hiQwc&gsessionid=rqgyy3r0hYwahihaIBJXpBsntiUKnA6-XjoEPQ2bVV9g8t63u65xdA",
+      "title": "Community Care Services"
      },
      {
       "rank": 7,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESegHEIkXXYKd8P_O1ACrc1yBXw8mWuVdN5Nr263PceM7arQQoOnOciAkwaN5niY1HLxiBOOhRVYOfSAwh0blJ_WXtepD_saXp94jpe8e4SC8yOIKhBeRWDytc-j0C53yBgPwZorbV6SkJShXski_rZmShYz_74CUPRO6P&gsessionid=oNPn-ru_VYZ38VyRyIBWtUT2uIxIMX_9UhkSh1WP_auOZEfz4A1rgg",
-      "title": "Canberra Community Support Website"
+      "domain": "communitysolutions.org.au",
+      "url": "https://google.com/goto?url=CAESXwHEIkXXni7_ykpnYGXboBI1oaEoHsd1tL1WrG8xHW5P72K5eT2wnGPxzC7mZEWiEIlCZ_Iolo5OJH7UcS7LYRh4XJbmNb4yuSxhFQOL4K9pKWGGsWailvgTA0VnAaPL&gsessionid=rqgyy3r0hYwahihaIBJXpBsntiUKnA6-XjoEPQ2bVV9g8t63u65xdA",
+      "title": "Community Solutions | Support built around you"
      },
      {
       "rank": 8,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESbgHEIkXX0XoCgf3mZ4b-9hcEI1hAn1drX4LexblbPuvTBUD7c3qKaY9eWooOADSYz0dk2E9cnlap6ZTjNNOgkmimwBF3TngzS7xRsz7nmmfKCAHFdPg5-Fk0Pb4aHEVbSvew-c2AjkI2_zOor6bI&gsessionid=oNPn-ru_VYZ38VyRyIBWtUT2uIxIMX_9UhkSh1WP_auOZEfz4A1rgg",
-      "title": "Community Options | Fyshwick ACT"
+      "domain": "dcj.nsw.gov.au",
+      "url": "https://google.com/goto?url=CAESbQHEIkXXVIUMNepfriLxHqiUCX8bWGVETdYQLXNz7tZN8-5tgjA2B90wpKHL9XZrvpJh7BJSjFXGuxfI3OrDwyGp6YKN4-Lq992WJF975RwS01NDxLMnp9cuowQjQuGEhdYsQK7EkGiXDKqapK0&gsessionid=rqgyy3r0hYwahihaIBJXpBsntiUKnA6-XjoEPQ2bVV9g8t63u65xdA",
+      "title": "Crisis numbers and helplines | Communities and Justice"
      }
     ],
     "impressions": 36,
@@ -514,57 +500,57 @@
     "top": [
      {
       "rank": 1,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESYQHEIkXX6tgGtPURQVTUvAfJ0XktWRiZTg7xV6OC1Xp8RmGr6WseoS29lZztUTKbPNyPX3XwbelEHcYsPas1Z6DIfGLpF_byX3ou6k67ypMPc_NMSf179gt7dHv1KDhUKWM&gsessionid=8N6r9HPa5JPHKKhRc_NxWmxZ2DbY9pDHJX6OffM6zSGMYAjbSWvL9Q",
-      "title": "Work Placement - Australian College of Community ..."
+      "domain": "facebook.com",
+      "url": "https://google.com/goto?url=CAEShQEBxCJF1yQCuXsJL4OKA6Ttd5Dl8WeBMCQP2qE3Eg7MUUPsSF3SjvNJPLwMBPMBjyJYAG7MzMp-OwTSUJR7HB3AKcE55eOFiA2hWkxUmAta2-i08b9NLBBZAtIZw1PE_vl0l0syuFLJw886ruDvV-QkubIGqxrsbTAp--9k-K-_6tkZifuS&gsessionid=FmXyTKmjNEhpFF0_JMDT0D6-qg5fBEYnIPE4GKwreXy2nMeIQkWCbQ",
+      "title": "Placement Opportunity Inquiry for Community Services ..."
      },
      {
       "rank": 2,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESlAEBxCJF110dmnpkMlylrTI2XJdeQw-AUjt6omx_Q-8bcxkQ1kgPQ5DNx-H2HesxjdE8rzjoesfvkfa012IWNqcL8fjdKhZgQJBX-p5dA5hEN7NQsoO4PXVj4VFi9tFcfzgIBQPrG6E6gH6rC53SoztGAvDCojDzhl7oapM8lGa7qtKWzHk9MklXwreSKEdLHAeaAoMs&gsessionid=8N6r9HPa5JPHKKhRc_NxWmxZ2DbY9pDHJX6OffM6zSGMYAjbSWvL9Q",
-      "title": "Student Placement, Community Services jobs in Liverpool ..."
+      "domain": "au.indeed.com",
+      "url": "https://google.com/goto?url=CAESkAEBxCJF15dKwB2_BUWropf-gT-XRswt3ylFmo-ae1LF7ju-PbVrU7qy178twojiLs4EnpIA0MWTsYQ-A_iZBZEbmY4vNDTze9raOOXeY8SCQUgcKjnFvSvfHldJDmhfIkINaw3I3hFmPeaYBKVejXPH-EaPpDJwgx9sOOk82RqZytahaceNRkC1uDwqj06hajc&gsessionid=FmXyTKmjNEhpFF0_JMDT0D6-qg5fBEYnIPE4GKwreXy2nMeIQkWCbQ",
+      "title": "Community services placement jobs in Rottnest Island WA"
      },
      {
       "rank": 3,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESmQEBxCJF11-e0S9kkMt2GZ89Jux0FmpfKUM-vgZ26TOSMus4_-oJwXyBB7iDBJL_dGcF5rNFgdlHxx4nu8CDGYPNYlnzxdWDDexlf9kKoAu8u4u0SL5o_uWKvYxUR1DpdEQeJv2lG8Ab2UhvdJNFNCFaiOJny549igYajdG4fFWfgKdK6GML2W86IqaILXIJqDK9_twgz7Dr3Ac&gsessionid=8N6r9HPa5JPHKKhRc_NxWmxZ2DbY9pDHJX6OffM6zSGMYAjbSWvL9Q",
-      "title": "Student placement, community services jobs in West ..."
+      "domain": "au.indeed.com",
+      "url": "https://google.com/goto?url=CAESkgEBxCJF12-SvstUXNaPcV44PupG8Pi0wkkB17uzj6EY-JcZyp9ibWCy4b082wPo526mgOAYwxEYwjA1VRdH5esd1dPZWutfh4Zk_VGXLocc-yYKltd4xCWfzw2wQObBTKYcb-R87IcS2pyKo4FJlj0hD0kmsOjRpSp4ayU_kXExlx4Lt3pURKKU4IIdtEn8ippoVw&gsessionid=FmXyTKmjNEhpFF0_JMDT0D6-qg5fBEYnIPE4GKwreXy2nMeIQkWCbQ",
+      "title": "Student placement, community services jobs in Nerrina VIC"
      },
      {
       "rank": 4,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESbgHEIkXX8TmzXX2ge9-PXStYbsRPH3Jn1HcMICwDhD_Xt9QYVhK_Pb8D04HeROwc6Dnq-Cn8OzTwoHwhgwcHlAoqwyD4DihLLKS3wmLOtJAWqWQSzHYQl5kIHPRj1lx8LSQLIaekEjOwVViLSoBl&gsessionid=8N6r9HPa5JPHKKhRc_NxWmxZ2DbY9pDHJX6OffM6zSGMYAjbSWvL9Q",
-      "title": "Student placements | MCM"
+      "domain": "au.indeed.com",
+      "url": "https://google.com/goto?url=CAESiwEBxCJF1yjU1H2NpCIYcc6TohuLRzbprBWgyHboeROYH2tQuU63d2IiwZtKkkAIhgf2Eaj6pH4TGC91GXhzcpp2w8N1ESkMbsbuSkBzupfE2phZqvUgOHGHF0bgxnL8kZuhWMpOOA7PaHHd_1mqX72KVo50Iz4RFfMrU3dUHowNlCOn8YSqKS_m7l-G&gsessionid=FmXyTKmjNEhpFF0_JMDT0D6-qg5fBEYnIPE4GKwreXy2nMeIQkWCbQ",
+      "title": "Community services placement jobs in O'Connor WA"
      },
      {
       "rank": 5,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESjwEBxCJF1x8ZdtA9XndynUdfQU-k0cvmW2-guaVe3AVbJdZcg0KT7OEES6-xAIUiQycv_jZGUfraslXCjexv8dL2dgZtWMzlGMaZnjw4SsqAzPvlFyw9jCJDP-AStys197Q949VUK_pAuLpaJSC8I9KtYK6maTWaqKecRB0jMeNHDBN_8JA_jQcx0A_nCBYSvg&gsessionid=8N6r9HPa5JPHKKhRc_NxWmxZ2DbY9pDHJX6OffM6zSGMYAjbSWvL9Q",
-      "title": "Student Placement, Community Services jobs in Perth Wa"
+      "domain": "au.indeed.com",
+      "url": "https://google.com/goto?url=CAESiQEBxCJF16kf-RSBWtZceexdR_KbOUDNCx1TUDI9u-BKm7H9SkiFxjjm44umeCIwcLZSPq6tGUKU-OCbhCHPEFc9pj4MNKs76kgOEXsz-_QpLYfrW3Qeo_4nBZAM7insLaBBF5voXyuSRQ4Oqzrmym5FKdEslev9XjXCdmCQZakdpSTTPfNUlXLNdA&gsessionid=FmXyTKmjNEhpFF0_JMDT0D6-qg5fBEYnIPE4GKwreXy2nMeIQkWCbQ",
+      "title": "Community services placement jobs in Meldale QLD"
      },
      {
       "rank": 6,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESagHEIkXXAvZqZf7Ao8fC2I1oi2iG9kEBkzXgfuGQP7XCEJMPk7rmIwyMl0pno_g3qDoKPaiB8Ac8aBGQppMlpxCxVJmERY9JOl7DGcX91RnE5VE52tZehFJAuvJyZ0e9ViI1yRLTVsJsFCU&gsessionid=8N6r9HPa5JPHKKhRc_NxWmxZ2DbY9pDHJX6OffM6zSGMYAjbSWvL9Q",
-      "title": "Student Placement & Research"
+      "domain": "au.indeed.com",
+      "url": "https://google.com/goto?url=CAESmgEBxCJF19GQiAfIlrYrPuNEEIL8VftZjJhNEmu4ac1F4S2Yi4_G9W2NlriTnHzrpOp9ag-n3V25jE3p1FGLHovbywlBBIUfJ74v9nhF_dN8CuikEMBU_6F2Bwr4L5FnU38KGmXq0Q0ZtWodL1v9AWCpkYeKaN8hnkBFGxKIXe1OSlze-W0YVOgNI36uJV_5czwBmwSePPVLNBeC&gsessionid=FmXyTKmjNEhpFF0_JMDT0D6-qg5fBEYnIPE4GKwreXy2nMeIQkWCbQ",
+      "title": "Student placement community services jobs in Springvale ..."
      },
      {
       "rank": 7,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESmQEBxCJF1_wMp-21gNY817EetPjOOLep_67JsJG7jl0PAUbYu_qcl1grdrrD2yQugBpHHhYZxkuKtiz0SDYqxjkfKzcyW238gq1RpuWmwfPvm-HGfbyvaKdURPJOcZu6LSGMcpnMK2Nx83ynafol4bhE2www2io2VUsACMRX0Quad64FUK4BYOM79rMcCyk21pm7qaroXSJd70w&gsessionid=8N6r9HPa5JPHKKhRc_NxWmxZ2DbY9pDHJX6OffM6zSGMYAjbSWvL9Q",
-      "title": "What to expect on a Community Services Work Placement"
+      "domain": "au.indeed.com",
+      "url": "https://google.com/goto?url=CAESqgEBxCJF14xbkFlk8GXIZe_H93Ul1FFfNst7fa5rMiMVm69fCE_65qC8Tc0o8g5474s4oAsVaVfvaiMxl3L6DBo5cZaWf5aXo2yOozlrfhWWjZAEdcvi05kQgUAcb3OsHBwFpZEGirR6py3EcbZLuZIU2K3MLmTrmPG4UtazedyiQEJbZJzHGJB8XTK7HOI49thVYt1t0ZsSlsaDCpHRLtubsXWI9MlHQaq3rA&gsessionid=FmXyTKmjNEhpFF0_JMDT0D6-qg5fBEYnIPE4GKwreXy2nMeIQkWCbQ",
+      "title": "Melbourne South Eastern Suburbs VIC"
      },
      {
       "rank": 8,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESaAHEIkXXO_mv6BX8dAyMBGFcfi_cnbJ7InNshakufioTaxq3Tv-qaVNicHGUmboisHsiWXZMLbrZukIBbKcPBfnNwsyIKMrG3ty_X0KtCuVNQol9ACQpdxzFdu8h3A-RPv6587QW2Wx_&gsessionid=8N6r9HPa5JPHKKhRc_NxWmxZ2DbY9pDHJX6OffM6zSGMYAjbSWvL9Q",
-      "title": "CMRH Student Placements"
+      "domain": "au.indeed.com",
+      "url": "https://google.com/goto?url=CAESiwEBxCJF1yCHQ4q977Noh_qH5qdefGMWktbHSTp6r1pq_B51zyyQGxUc5CnZoDmxQbFhCcGvmlT4tYfI7wtlsIYXP3HmhbNiugNOyfX0q1GmdbXxBqZ6fyk2h2q_is204hpGcRyL6zr5ttaXA9Lp_i7rsZevrKsPUikGmQoGwU_51gneE3uTFyFZGd29&gsessionid=FmXyTKmjNEhpFF0_JMDT0D6-qg5fBEYnIPE4GKwreXy2nMeIQkWCbQ",
+      "title": "Community services placement jobs in Ingleburn NSW"
      },
      {
       "rank": 9,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESgwEBxCJF13BUIzbypBHHmd9-XwEVNtj0A6DrUXLxnuAhJsSYZ3MeHm7IIiTLN4gOcD2iBt5VJfYCZzubH0y5phQlMYN0rgagaopJzwNVhFK_hfT_uayzwNopYL-vjWlSqSFcUp4mZDzW7Jvx1l9wPFxzOlScMBwh_tl9aL5mmY2_hnsZaw&gsessionid=8N6r9HPa5JPHKKhRc_NxWmxZ2DbY9pDHJX6OffM6zSGMYAjbSWvL9Q",
-      "title": "Student Placements in Social Services Melbourne | PRONIA"
+      "domain": "au.indeed.com",
+      "url": "https://google.com/goto?url=CAESjwEBxCJF14R1xknuQKjvCFQD8aYuW6ER5w06jndteIy86ZTc2GvOE_h-I1aWGQQRfroNPpriu_SISt-bSdFIqgqBsb1gRdFLmob6qHTFvpIpYRMUdR4gklBcyHS9uAP-23-lhgGmm_5mW0lRaObj1gS7F5MknDaGCy4g8G39dcxpL-xFg-YvFEuOCH6QZYF1cw&gsessionid=FmXyTKmjNEhpFF0_JMDT0D6-qg5fBEYnIPE4GKwreXy2nMeIQkWCbQ",
+      "title": "Community services placement jobs in Ashgrove East QLD"
      }
     ],
     "impressions": 28,
@@ -577,57 +563,51 @@
     "top": [
      {
       "rank": 1,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEShAEBxCJF1yHxbJS0etgZCISQVqDlD9uYWIgoyget0WxBiYmIcyH-TWC0C8gMrpqe2iQAFzydPoxed4MzYeXG7vYa12ixL7-4bYDV24RNOPBh-nhUdniTk0mN-__PX1AZewhDTFSh-Ghc7baQIsAc-l9Ecr63Kj0SiteaKpieFSi8CEiFhR0&gsessionid=01kfOKM9qabIFN8h4QRkSGOvl50yHeXcrCdqDtZRkuZPO3cKR_4lPw",
-      "title": "https://govolunteer.com.au/organisation/details/24..."
+      "domain": "mercycare.com.au",
+      "url": "https://google.com/goto?url=CAESbAHEIkXXElOjjpHsGXCJr6dQPfpjAaTV4YQXoxTrMq5xLcIzcwth7S5FI5ryK5JuD573ecA5tvHvPouYnWqrkdD-1BhmR0izWlfjIytlX3vKXZtGafo6gOpI2BY2bgP_ClQvltQjpM1VQrEB8A&gsessionid=NNvQDp2fvkozExFBtdEmbGj2C9WfNkIFZJ7IX2AOfSLCsiRNkLE6ZQ",
+      "title": "Community Services - Mercy Care"
      },
      {
       "rank": 2,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESkQEBxCJF14gQUqixvvjnoU0FCuS1SmG9nkB4n5cunUHX-7EWruhCQHGH0bXgkUud_sTCOTbIdGDV4CwSTE-1VPSsQnB9kK1UyMcKgHX0otrKoF9MkITitI9CXyDq4WkGXJRA5HHyFDAi7MyZTCAs9viQYkq1P78lQxNHVDBY0EXr-0qOEMj2Iz6sLMo4ciqzZ1Hm&gsessionid=01kfOKM9qabIFN8h4QRkSGOvl50yHeXcrCdqDtZRkuZPO3cKR_4lPw",
-      "title": "Criterion in support of local charities"
+      "domain": "servicedirectory.cesphn.org.au",
+      "url": "https://google.com/goto?url=CAESlwEBxCJF15Dt2EQa0kxKiSUhkzKHtbLdnXwWMY4So9QZjlYd_nCTcWxoU7r9VpmHRUiuBWBEQK5N4rAai1dqEmsZSRpZk4peDF4aBNQ6VEuMIwFwsWxXbd1fpcnH5bWC0NHF5qoSJKpfceGWb-bkkCrZBQ5-H1FEQbQw93qwvcDVgIGuqpC9Sp0lAAQLWh6IYgCPxXFWsr4H&gsessionid=NNvQDp2fvkozExFBtdEmbGj2C9WfNkIFZJ7IX2AOfSLCsiRNkLE6ZQ",
+      "title": "Community Support Services"
      },
      {
       "rank": 3,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESuQEBxCJF1-hUI_1vYywZHbub510j198CtYN8ijD65Y1jp6RclHHmZ7xD4z7jfFXaUQMiCOAzbS9OLcVUH_yXp_U4r3ArWUo0Cyqtc9MRVa6db-AtKIPTmB_49yekOi9OZcLKcIbQRgynxbjyoU9oVYVUhmWexW20pAQyboNUWW7aGLMUpZ5ePlPlQ6o-HM8GQoluxHnPlzTrdVtYhuzsAmX0cjJ3jLO6nyt-OgrcstELkqhA26ISKbKOig&gsessionid=01kfOKM9qabIFN8h4QRkSGOvl50yHeXcrCdqDtZRkuZPO3cKR_4lPw",
-      "title": "https://www.correctiveservices.dcj.nsw.gov.au/cont..."
+      "domain": "localkind.org.au",
+      "url": "https://google.com/goto?url=CAESWgHEIkXX_e46vpoChVsxVdIQt7eu7iRdY_NYTLq8qtc1LEwDRqFM-hgCb1u2-EeIRdPyhONOsU0R9IFe0ItZ0uEZSSpyZq-k2rybz2bPwlX-Kz2IW1AajzNllw&gsessionid=NNvQDp2fvkozExFBtdEmbGj2C9WfNkIFZJ7IX2AOfSLCsiRNkLE6ZQ",
+      "title": "Home - LocalKind Northern Beaches"
      },
      {
       "rank": 4,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESgAEBxCJF1wPOaZWO9eXtqa6Ygu1v8LviUgeJvN81uDci0IMCXYKl9DTFofhIKQ40tr0ajQlj0xIRUFqa-viHoYrNqg9_L5THHxhgPmcl_mIQTeu_IhtKqE-WY6CwU1cmD0cQq82Y2Ba5useNimle2YsTcnu3T4T7pgILrw5eclTF2w&gsessionid=01kfOKM9qabIFN8h4QRkSGOvl50yHeXcrCdqDtZRkuZPO3cKR_4lPw",
-      "title": "Perth Asian Community Centre Inc"
+      "domain": "brisbane.qld.gov.au",
+      "url": "https://google.com/goto?url=CAESjwEBxCJF1zbFknAV5l6QuYk67J4rstRnQesLheiBF3Z3RIpOT8qSN_qSpCmQnvH1PGdCVu1VnBszKoR8rX-V13kiUuRVB1vKl9UyUEDrNQa3AdCa3Q3kPtkOGB9LDgM8ikRPIYy7VYf8428QqYOBlujxxD7CThT_yeWE5uFxd0ti8T4YAYX1NrALIuk_vbiOcA&gsessionid=NNvQDp2fvkozExFBtdEmbGj2C9WfNkIFZJ7IX2AOfSLCsiRNkLE6ZQ",
+      "title": "Support for community"
      },
      {
       "rank": 5,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESmAEBxCJF1w-hQBzRbjfnhIahC_u7tg4ezuSVnfQYDc-sbIEGLC7jtjh8gHEBeivJsrSh5Tprg-MPCFam1GxKNnm9LklkdD9xHjHI-rAexEestKdA9Q6FghXJBHisLZti8JbP4NLMgwWquc4TB397BEGyjuMZl4lPNE0XBx_WcDslvAEIHoUrpKVfXo2nfZTAOFP1Gk1sjOL7BQ&gsessionid=01kfOKM9qabIFN8h4QRkSGOvl50yHeXcrCdqDtZRkuZPO3cKR_4lPw",
-      "title": "TOP 10 BEST Community Service/Non-Profit in Brisbane ..."
+      "domain": "commsatwork.org",
+      "url": "https://google.com/goto?url=CAESbAHEIkXXmiw9R6WKRJlNJJgQIqJBD2uGRmedtwRplskZ7oyjoLdXc4JaAHdYwhuc9lftufhAkQ5gOHTY3eM6cRAtldDzM7mR5TK57C4xm5uQZtwSQtsjV81yYjWBOXHu4AzI_Xoy2a1l7RQe7A&gsessionid=NNvQDp2fvkozExFBtdEmbGj2C9WfNkIFZJ7IX2AOfSLCsiRNkLE6ZQ",
+      "title": "Community Services"
      },
      {
       "rank": 6,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESYAHEIkXXYkjoKA-beapieyqBkKf5uFHuSgO9EbPa7-ju8Su-KvBzJJP7D0AH6dB6C2an0_r1Phbr39rEOdBgQQkUBHO9kzDHrV3CtIIAbbn6VEvZUmpXntoRCRZ-iUTOLQ&gsessionid=01kfOKM9qabIFN8h4QRkSGOvl50yHeXcrCdqDtZRkuZPO3cKR_4lPw",
-      "title": "Community Groups Perth & Western Australia"
+      "domain": "connectgreaterbendigo.com.au",
+      "url": "https://google.com/goto?url=CAESsgEBxCJF12CwRmZWeHdyZXVfW9xI5QMcw21TvGDEu61lIoseNhHurteUnLrGR2n9zZIUlsqKykMW-8L2t6B8hr7RtZUKEidGcTQmPq9qUKQkPW2_aqUjvQ75FADESc3TvEhESkw8j5-xJO0cG3LG9Xl00DnvfsoP8ix_M_iSUmNQBLMVdfloow6YxC-SKAw0Q3LgVE1bXpWZQq_A5OsruyYMVRO4_ISeCmGfzxSatJxOFDKk&gsessionid=NNvQDp2fvkozExFBtdEmbGj2C9WfNkIFZJ7IX2AOfSLCsiRNkLE6ZQ",
+      "title": "Community organisations and support groups"
      },
      {
       "rank": 7,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESogEBxCJF11pP9XI9byDYiORrR24dyXas5Px9aqfvmjZEapavFxEWd-RZ8aZBesn6GksSrLXscEqaaui0z4MqBlyEPO8hX7oJqc9nhZ_iMfWIruJ7V041YMG7vEGsSoke9DVcJMQ3DLhd1JFG8LDG4WdxA0ctuzR_0IT9ojRZl6i03vn1EszknDqRpOefSN00eAFpaoLFcBCimtSizVU_i-4g4oo&gsessionid=01kfOKM9qabIFN8h4QRkSGOvl50yHeXcrCdqDtZRkuZPO3cKR_4lPw",
-      "title": "TOP 10 BEST Community Service/Non-Profit in Perth ..."
+      "domain": "findhelptas.org.au",
+      "url": "https://google.com/goto?url=CAESWAHEIkXXol3flcAAShPnB-O9L9eb4zLP5QGsKd3mzJCY_yO9pzwRw8s1Pyg5VX9oai3fxdT3PJIHEzIoCt-S-MQfl2_6EhXKT3oR3ehTx1ip4u-c8_wPomg&gsessionid=NNvQDp2fvkozExFBtdEmbGj2C9WfNkIFZJ7IX2AOfSLCsiRNkLE6ZQ",
+      "title": "Find Help Tas"
      },
      {
       "rank": 8,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESfgHEIkXXzKEPagNuxUva8dhY0e4UdNDCQ1b2s7FkMiBdRY_oqQd0tcHyPFV73ydRNQswCg9ZgV4Dik4IYXWvCa3hGabp4VNPkl20yK6zzaXWRqQA7Ojwoau0V4S8smLYjwbW09JXlh-i7MA3k_xM2QKiyG57Nc6m_oYRkjMoWg&gsessionid=01kfOKM9qabIFN8h4QRkSGOvl50yHeXcrCdqDtZRkuZPO3cKR_4lPw",
-      "title": "10 BEST Community Services in Sydney NSW | Localsearch"
-     },
-     {
-      "rank": 9,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESUgHEIkXXelspE2prZQ_n97vIn1A_PnswBPNWUr4zVVwrQQMkCxdCRJXsy4fuffMGgkp_-HNrrBqRV3DdPzq6AzgESDCDPaJjpc01Ga8gCop5CCA&gsessionid=01kfOKM9qabIFN8h4QRkSGOvl50yHeXcrCdqDtZRkuZPO3cKR_4lPw",
-      "title": "Success Community Service"
+      "domain": "frankston.vic.gov.au",
+      "url": "https://google.com/goto?url=CAESsAEBxCJF1xvIbbYAr7zw9FMG2HVqx_s0pcnGQ_c_DUGJNg-s_e35X4S_t1WcJXWXvJwATdnXpQNAhgqAg-YIIiInJEOMJZDlyJoj5Bg2Sf5m6G72v0zNJCeVpFxQhd0m4i_AwCS4Thm71nXBNQqW-DdizQY7JrkN0hVwgUys9DQdqnRff2S-xoulqaLTShJ59BusLl45KYGLC9UUBuGYqxvvfTgX0P_kXBTrkapREDkzag&gsessionid=NNvQDp2fvkozExFBtdEmbGj2C9WfNkIFZJ7IX2AOfSLCsiRNkLE6ZQ",
+      "title": "Assistance and resources"
      }
     ],
     "impressions": 17,
@@ -637,7 +617,62 @@
    },
    {
     "keyword": "hr support ringwood",
-    "error": "DataForSEO serp/google/organic/live/regular: Internal SE Server Error.",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "careerhub.com",
+      "url": "https://google.com/goto?url=CAEScgHEIkXXUlwq-pvAOH8d5rhdz-f4F6r6iFERNPiQVHzHAbowtm1sAyG2fL-3XBFkBwsPOE_7jAldAVeif5Ojlb9rc7f52Iro5Mk251L5BuWdqpfHPH5xVzuAC8gN38z4ZuDgiFsGU5SSTTy-3PavQfyYaQ&gsessionid=mY2C8U_UwpJ_mhifZWf60RjAcnXs0dZ0_8vB3LziseUyd06D7fz9vA",
+      "title": "CareerHub"
+     },
+     {
+      "rank": 2,
+      "domain": "careerhub.com",
+      "url": "https://google.com/goto?url=CAEScAHEIkXXOMksI6zdPmidyY9ArNpg2BoeVX9GlzA5BKdf609QWk-jztZPqAoaek5HNjyGb1vYHTAWXu1wFcyKJc2-z-p3jhGb24CeIsLptTdZkiwhJAivPTaiHoOIF3lwUV0N0slo5XvGJRq8B9BPt3U&gsessionid=mY2C8U_UwpJ_mhifZWf60RjAcnXs0dZ0_8vB3LziseUyd06D7fz9vA",
+      "title": "Aveo - CareerHub"
+     },
+     {
+      "rank": 3,
+      "domain": "jobs.careers.vic.gov.au",
+      "url": "https://google.com/goto?url=CAES_gEBxCJF16lwNlx4tBSGwg6X3QlblgDnZ8Qv6gMRuzdUFIloFlpwBT10MXRWOkOA0C2QQWBJvUlVlCJLoHO5yqxXuHDYNiqJW-rE8r1ZL-1Qk0zt5l7NBiTTH5ZFwu3n0-4qSgKc_b7nsuJWNTjdSpatHa42WB_sw2aWO0yjyqfnYb02dRWlfjs3LxmHYxDAzl2N6otmnqeGD5JaxgBO1WYjtphV_nXIUSBrK-rrwYOW1rNSQRYfx7SDPD9d-guQm19G0JHTaoxoNwc3pD7AmYq-kvyNT7p0xumcoRx4lu97P31AVBTbCH8x1AYeAYv5UDQ1fT6JqUM2AJuJtLHMGQ&gsessionid=mY2C8U_UwpJ_mhifZWf60RjAcnXs0dZ0_8vB3LziseUyd06D7fz9vA",
+      "title": "https://jobs.careers.vic.gov.au/jobtools/b_fileupl..."
+     },
+     {
+      "rank": 4,
+      "domain": "socialvitalitysolutions.com.au",
+      "url": "https://google.com/goto?url=CAEScQHEIkXXuOHRp_spW6GpznOjJYyAflZnQ6-GHIGVBHVhnHJIkZU1HpuY2XxXy7kNKOEdmmPIpnoEyQ5xzGJ4Myba20T47PhxDUf35ZhB321zg-deFCw_rmJR9KKvMIbpQybiM5vWR40Vv-AZxubg6E0q&gsessionid=mY2C8U_UwpJ_mhifZWf60RjAcnXs0dZ0_8vB3LziseUyd06D7fz9vA",
+      "title": "https://www.socialvitalitysolutions.com.au/workforce"
+     },
+     {
+      "rank": 5,
+      "domain": "seekfind.com.au",
+      "url": "https://google.com/goto?url=CAESyAEBxCJF18hrPZzsnxTuMZ8wvV4Dwi0_E6vBIc0G8JkxU93P2G-StVePa2hqcr0lseIsEs1T3a_6KNJYb9zS9R0ZjTpX9kP1FGPhW5m11M4rnS8jXXavcnFhrHED0PFQMm2jnyfR9OoxCkwGtFCrtMqozMsOjOgbUAWugaIawxSPQjZnbGWC-J1HyyTtogfIRaK7_NBX0Yyhi3173rUfboGRRQap8_40X_g1ThRSobD6Z1be-qS5kyeKT39fcBp8Ii5deHMdf0Ad3Q&gsessionid=mY2C8U_UwpJ_mhifZWf60RjAcnXs0dZ0_8vB3LziseUyd06D7fz9vA",
+      "title": "Australia's Fair Business Directory - SeekFind"
+     },
+     {
+      "rank": 6,
+      "domain": "dlook.com.au",
+      "url": "https://google.com/goto?url=CAESkgEBxCJF18t6x4LybpwTOFs7PZJRVqNXavXfA_TckapOjMRglevToLZI71VtZIpehDZK1_SPpdAlVHW4Pac-AFZsbpb0xGLAXovMx17LlByfGbRXZusO-lY1aPy5qstAPWp8P7p0qYwqzL-79qwiCq7F1WdH6FyZ0QgdyEvPu9ULS91kLFLD4rFsIsI2nw3pQuutCQ&gsessionid=mY2C8U_UwpJ_mhifZWf60RjAcnXs0dZ0_8vB3LziseUyd06D7fz9vA",
+      "title": "Ringwood North's Best Community services organisations ..."
+     },
+     {
+      "rank": 7,
+      "domain": "futureconnect.org.au",
+      "url": "https://google.com/goto?url=CAESfAHEIkXXOibyFV96-oXzfhXjjix1SCY6NizeVQqlyAkkWv_EjNa-VE9KS-aeNms3LfDJ2gG6GL8o2SRtKFBj71tJfGlXkPcFUQzloSc8w7UVOVX05jdAaJITVyfO3TGffyzgKV5jrIhaG2g67lj9asgZjHK-xINU-uaEMQ0&gsessionid=mY2C8U_UwpJ_mhifZWf60RjAcnXs0dZ0_8vB3LziseUyd06D7fz9vA",
+      "title": "Employment - Future Connect"
+     },
+     {
+      "rank": 8,
+      "domain": "hrandstaffingsolutions.com.au",
+      "url": "https://google.com/goto?url=CAESbQHEIkXXc6HSCjeFvYGRTCKzUdSDgshpN4gBBdeFMlYSc__hPr5xq2f2f-NX4-AXkuJbcIJ8d57e847WU4xEWLZnr2oQ_rkrhE8Bsd727tPr3TC6dAsMyrDSAg3Jk8V2nYJY7l7WmLJSoBq20uU&gsessionid=mY2C8U_UwpJ_mhifZWf60RjAcnXs0dZ0_8vB3LziseUyd06D7fz9vA",
+      "title": "500"
+     },
+     {
+      "rank": 9,
+      "domain": "mapquest.com",
+      "url": "https://google.com/goto?url=CAESjAEBxCJF12_n4yico7D2ZmECn1F_239oDjens-1-E5Fohktf4F2runxCmOCjFww_nh5u-Q09dbXx5q4LPxSr3KYfvCYHYksHysYVHJnbuy6cUF2h1CUahGrwJBXlXiBGicAC8-i1Kdb_V-zLrtYSPFnatZbQy7Z8BBM-x3Fz7Ny8mPIiUDqV_8JS9xxE7w&gsessionid=mY2C8U_UwpJ_mhifZWf60RjAcnXs0dZ0_8vB3LziseUyd06D7fz9vA",
+      "title": "Mission Australia - DMS Employment, 41-43 Ringwood St ..."
+     }
+    ],
     "impressions": 12,
     "gscPosition": 38.8,
     "ourPage": "/find-staff",
@@ -648,57 +683,57 @@
     "top": [
      {
       "rank": 1,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESaQHEIkXXoQ-1fcpgUeoeE8cli2P_vcVoXdMbzBLeD149s78ClGYaEI6PGMBMKc3bXJgk5RJB_pEc3zAtCPSH-XtdnWIZ7-R3MFm1yweANBGbU5R-t6G9gV-LnOOW3UlXI7UbELgKGabamw&gsessionid=pUv79ZSSLPAEa_oOXjelfTz_18onhpvLApIoz5OpKvAaP8VjoUtgGg",
-      "title": "Simon Farrugia (@simon.farrugia.796)"
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAESaAHEIkXX7JzgIUeT8T4tD1AN8HKJlQE46JgJ21_-uiLOY-rjU4k1r-xwx09X9nm1OHvD-cLWlrTGwOwGH4OPdsbTBbSTyV2i57Ez5vMq8R1gUx12sWqULKBwPKPcKOU71QVuQ38Pzjbp&gsessionid=L5mlF9KXnd7XV3oPY4aRVzN6KlBrmI1X5l-dawqSy2qX196v2ciAkg",
+      "title": "Simone Farrugia"
      },
      {
       "rank": 2,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESaQHEIkXXNmqVsFB_6JlNPYKogRlpz6EZPHx2L-euP2SgDMEfgjoQkZeOtSUpUmlLqzGOrC8az6cN_WmQAU3EWG3mRIoBKtDGaICBwxup62Sl4vu63sxgk7Yp69RD8eAabf3T_iyCiH28Yg&gsessionid=pUv79ZSSLPAEa_oOXjelfTz_18onhpvLApIoz5OpKvAaP8VjoUtgGg",
-      "title": "Simon Farrugia"
+      "domain": "facebook.com",
+      "url": "https://google.com/goto?url=CAESawHEIkXX03uupL0wDSSssehyDH0-7fkXHTscL8RKsNS5ZWsHBdprFz3fCIa-jepXULtukz-vFSKmzjRmUdFgICEY0xDO8gOA9Ar0ElThXWfD6Sp__yORnBEhzmaH9AbPHzgPq0RSEEL70bvc&gsessionid=L5mlF9KXnd7XV3oPY4aRVzN6KlBrmI1X5l-dawqSy2qX196v2ciAkg",
+      "title": "Simon Farrugia (@simoski)"
      },
      {
       "rank": 3,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESZgHEIkXXK82OHKT6fanbcUwyF_HXfO21TEURzN2mZRD0vFVPOb9cmoVqZpZE-h4JmfC_tV3Bz6fmZ-dFiJiAGsENGlPqCDEeqGpItMjXWxwFfLy5gQ9WPES0ipt6q3A0JXF5Ae-1sw&gsessionid=pUv79ZSSLPAEa_oOXjelfTz_18onhpvLApIoz5OpKvAaP8VjoUtgGg",
-      "title": "Simon Farrugia (@simon_farrugia)"
+      "domain": "facebook.com",
+      "url": "https://google.com/goto?url=CAESZQHEIkXXz9jYdPriA3ubk41D0witJovavLQxwrhnocxnRZWpV-wYnb6Klat4yBh9xo2z2tzs5thEi-n2wSG-rnAfUxuw8junRyGR9ktaaoN5ooD2v296ssxDN0NOAHtYJtu-ic4z&gsessionid=L5mlF9KXnd7XV3oPY4aRVzN6KlBrmI1X5l-dawqSy2qX196v2ciAkg",
+      "title": "Simon Peter Farrugia (@simone.arru.79)"
      },
      {
       "rank": 4,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESaQHEIkXXquYAyj6s6mY-JxnKEyqD8sUljGxBxUfJuv85O-Vi9hgTQIwTe6hhCsu24LK7mRD6tmeIsBi0pKVbq1ri5-DgN2qhajAQKN7NT1gk5rfJzXckKLHLUkoJ8KxIVK_eCVvxg2Hvtw&gsessionid=pUv79ZSSLPAEa_oOXjelfTz_18onhpvLApIoz5OpKvAaP8VjoUtgGg",
+      "domain": "facebook.com",
+      "url": "https://google.com/goto?url=CAESaQHEIkXXCy5p56myXaly4esuk9aaCukUA-HrHV6RY_LP4qF4CZuj21LFHon95SNbD16_-oxWaL56vNwqVXNxre1LfhOcVJkE1AjaI3FUmRip-XebgQlucI8fCBMazESS8lHYa3dnVlaUnA&gsessionid=L5mlF9KXnd7XV3oPY4aRVzN6KlBrmI1X5l-dawqSy2qX196v2ciAkg",
       "title": "Simon Farrugia"
      },
      {
       "rank": 5,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESkwEBxCJF1-jKCwHy3__VQUDDfIyDSs-NnRJ4OQHdNmB8CmwjlTy2EZIx1MplB0GFN0L88SDR3EgBdteNZiSOMjYs5ot9mmiSmW9GSrWtBziFKx_66plb2MK7Vaf9f3_qzZJfovYPh2ozaSrIWuhlkvtbORFCHDalh062_hlnbFFauAQZZKvqS4C5PkYVP-YaaJucLkU&gsessionid=pUv79ZSSLPAEa_oOXjelfTz_18onhpvLApIoz5OpKvAaP8VjoUtgGg",
-      "title": "Man to stand trial over fiery crash"
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAESwgEBxCJF17xK2SDVDVRJs3pnMO_5IaM6OE2Mqg5M3hlHeYh8FtiKNqNT5hRrgCuck6tq11zVfMmzpMKCF491tssKs3WaBhTFwg6S-KCvgH0T5_CJJzaPdsV8uvN9GknyrpxrskKDkU1HP4x6G3MO67A5Gj9wyyQvID3g_lPhW8SU7i1rLgcEiIMKnFHHF9gICu4NtQg2uOyDeZElbmMqrtUxC50NxIf8tDQn__LoblNcGYU7VWhkLEmoQ1nMAyxYAe6d4g&gsessionid=L5mlF9KXnd7XV3oPY4aRVzN6KlBrmI1X5l-dawqSy2qX196v2ciAkg",
+      "title": "Simon Farrugia (@simon_farrugia_)"
      },
      {
       "rank": 6,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESZQHEIkXXexxw3PjTf-OU7LsZGhYdeXs-ScmeYOQqgNp04OflpJ226XgSnrmgHDTOa71CXxmhZEZp1ZXp2dS-MfC3sQDjA9lGR-rpbHKQW6hc_kbBlYEvNWH5Ubom6sA68Vbpwdnu&gsessionid=pUv79ZSSLPAEa_oOXjelfTz_18onhpvLApIoz5OpKvAaP8VjoUtgGg",
-      "title": "Simon Peter Farrugia (@simone.arru.79)"
+      "domain": "smh.com.au",
+      "url": "https://google.com/goto?url=CAESkwEBxCJF11UbrpnicaWTPzRv18Q2HJq1QNDarVMiZ3rpe3F_YJcc26I7XrHRxaLI9t7C88GFyZCjWSg7OW2UmVFudUmDtLRswr5T60B-bY12nQOOHo7hv5XWAE3_RYyA4l_BzwqGiSHZvErP8BCZSu72iw0a-glDAbQIirjftsqNPm74T7Oj55_oP52EcQnd0Yclbew&gsessionid=L5mlF9KXnd7XV3oPY4aRVzN6KlBrmI1X5l-dawqSy2qX196v2ciAkg",
+      "title": "Man to stand trial over fiery crash"
      },
      {
       "rank": 7,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEScQHEIkXXkfAKtSAZXqNPtkygZrdxeSdvB__RMVggikcolx7eGClm6tTTkQouXY0W8o0f_gGrtrcbiwuz6tiCBZ682-YNPwVVPvHtVkynVzm-0O9xX6UXMU2m3UkS98lhaQnuJcEToE91KNqly_iaHbxz&gsessionid=pUv79ZSSLPAEa_oOXjelfTz_18onhpvLApIoz5OpKvAaP8VjoUtgGg",
-      "title": "Simon Farrugia Email & Phone Number"
+      "domain": "facebook.com",
+      "url": "https://google.com/goto?url=CAESaQHEIkXXlDQ1w0iZUVBs2kbXfFKZ685CPGnsnCCv1fFQdtyA68CsifC4_b2551MnYK8pbO3HOO6V6t24Yxk-cStRVibyjbsOJTs1y1v5drwxzZ27ghp8qGxFJWu52Wj199HXJgWP-6zG8g&gsessionid=L5mlF9KXnd7XV3oPY4aRVzN6KlBrmI1X5l-dawqSy2qX196v2ciAkg",
+      "title": "Simon Farrugia"
      },
      {
       "rank": 8,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESawHEIkXX-GM-Ehb1kdazdYPdhN3ZQWDNh0c4Fg2HWJ_5-xWDb5JnZkFwFCMY0eDg0mIiQ23tmRJl9W4CJcJPO9DZp7R5DtpKxKB2-Iz85fHZY45pV-leu04qjgE5-nKeHn3kxbLtqx044AqI&gsessionid=pUv79ZSSLPAEa_oOXjelfTz_18onhpvLApIoz5OpKvAaP8VjoUtgGg",
-      "title": "Simon Farrugia (@simoski)"
+      "domain": "news.com.au",
+      "url": "https://google.com/goto?url=CAESwQEBxCJF1yaoNeDT66XY4-iaDp1G_GYuMhFwq7pDPFSBpVdzCie8jhGmFo6uL6z1woG7AV2h2ip95ybx8K5FJmupDTaHwSt6ERQu6PcjSMhcMGu9lAd5BKmNOUM_hr3rBZv5YbAb3B93DG9VHbk5rz8a7vD1N0Ekwz9knRQoj8n8ieg2m3ZuCh2ax8yIdJIn9qxRy0hSQcPCehX2xvZxbgr2SOhTRW614AYaP1UzHSr2xvm4vEQSRSmemlCVMY_PAJf1&gsessionid=L5mlF9KXnd7XV3oPY4aRVzN6KlBrmI1X5l-dawqSy2qX196v2ciAkg",
+      "title": "Simon Farrugia cleared over fatal Melbourne crash"
      },
      {
       "rank": 9,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESaAHEIkXXrBY_TMmK1Q0eUADDdQ2SzT4rWOEIHbaGcuQIds_e0bKmhjJFQkX0z1Hvhv2tFK7N5AfoeXZgdDc8SZB8umX6rV6vBgDB7oScMUjWvqFYKdthWxJ9Rcd_2DBqegg6cTaOhDbS&gsessionid=pUv79ZSSLPAEa_oOXjelfTz_18onhpvLApIoz5OpKvAaP8VjoUtgGg",
-      "title": "Simone Farrugia"
+      "domain": "facebook.com",
+      "url": "https://google.com/goto?url=CAESaQHEIkXXmgikvYDy0xtQLtDGfC3OXZiEYCtQFEAFH-JK3bDMHt0_7pNA7KD1I5Z_yDQsA0k95mXyjlFFeP8LZ3Bn8f9lnfFMc0Bwd-Gz1YdOFaWKgfugyM7KbGrealGKT04e6vwniMVonw&gsessionid=L5mlF9KXnd7XV3oPY4aRVzN6KlBrmI1X5l-dawqSy2qX196v2ciAkg",
+      "title": "Simon Farrugia (@simon.farrugia.796)"
      }
     ],
     "impressions": 6,
@@ -783,14 +818,14 @@
   ],
   "error": null
  },
- "costUsd": 0.008,
+ "costUsd": 0.01,
  "speed": [
   {
    "url": "https://communityhelp.com.au/",
    "lite": true,
-   "serverSecs": 0.1,
+   "serverSecs": 0.06,
    "htmlKb": 15,
-   "blocking": 3,
+   "blocking": 1,
    "images": 2,
    "noDims": 0,
    "imageKb": 0,
@@ -799,9 +834,9 @@
   {
    "url": "https://communityhelp.com.au/contact",
    "lite": true,
-   "serverSecs": 0.12,
+   "serverSecs": 0.09,
    "htmlKb": 12,
-   "blocking": 3,
+   "blocking": 1,
    "images": 1,
    "noDims": 0,
    "imageKb": 0,
@@ -820,10 +855,105 @@
   "unsureOutside": 1
  },
  "affiliateOk": 0,
- "secs": 161,
+ "secs": 146,
  "change": {
-  "first": true
+  "first": false,
+  "since": "2026-11-14T21:52:19Z",
+  "score": 1,
+  "newIssues": [
+   "\"hr support ringwood\": we're not in the top 10 (Search Console avg 39); careerhub.com leads"
+  ],
+  "fixed": [
+   "/: 3 files block the first paint",
+   "/contact: 3 files block the first paint"
+  ],
+  "impr28": 0,
+  "clicks28": 0,
+  "views28": 0,
+  "rivals": [
+   {
+    "keyword": "community help",
+    "new": [
+     "goldcoast.qld.gov.au",
+     "ntcommunity.org.au",
+     "qld.gov.au",
+     "findhelptas.org.au",
+     "innersydneyvoice.org.au"
+    ],
+    "dropped": [
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com"
+    ],
+    "ours": null
+   },
+   {
+    "keyword": "community services placement",
+    "new": [
+     "facebook.com",
+     "au.indeed.com",
+     "au.indeed.com",
+     "au.indeed.com",
+     "au.indeed.com"
+    ],
+    "dropped": [
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com"
+    ],
+    "ours": null
+   },
+   {
+    "keyword": "local community support",
+    "new": [
+     "mercycare.com.au",
+     "servicedirectory.cesphn.org.au",
+     "localkind.org.au",
+     "brisbane.qld.gov.au",
+     "commsatwork.org"
+    ],
+    "dropped": [
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com"
+    ],
+    "ours": null
+   },
+   {
+    "keyword": "simon farrugia",
+    "new": [
+     "unknown site",
+     "facebook.com",
+     "facebook.com",
+     "facebook.com",
+     "unknown site"
+    ],
+    "dropped": [
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com"
+    ],
+    "ours": null
+   }
+  ],
+  "positions": []
  },
- "history": [],
+ "history": [
+  {
+   "at": "2026-11-14T21:52:19Z",
+   "score": 93,
+   "grade": "A",
+   "impr28": 198,
+   "clicks28": 2
+  }
+ ],
  "issue": null
 }

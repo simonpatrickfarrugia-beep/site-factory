@@ -3,12 +3,12 @@
  "name": "tradeadmin.com.au",
  "url": "https://tradeadmin.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-14T21:52:19Z",
+ "scannedAt": "2026-11-14T22:17:22Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
  "nextDue": "2026-11-22",
- "score": 91,
+ "score": 92,
  "grade": "A",
  "areas": {
   "health": {
@@ -37,7 +37,7 @@
    "label": "Thin & duplicate pages"
   },
   "speed": {
-   "score": 93,
+   "score": 100,
    "grade": "A",
    "label": "Speed"
   },
@@ -85,58 +85,16 @@
    "broken": false
   },
   {
-   "id": "speed-blocking-home",
-   "area": "speed",
-   "severity": "low",
-   "title": "/: 3 files block the first paint",
-   "fix": "Add defer/async to scripts in <head>, inline critical CSS.",
-   "pages": [
-    "/"
-   ],
-   "count": 1,
-   "detail": "",
-   "impact": 2.3,
-   "broken": false
-  },
-  {
-   "id": "speed-blocking-tradify-vs-servicem8",
-   "area": "speed",
-   "severity": "low",
-   "title": "/tradify-vs-servicem8: 3 files block the first paint",
-   "fix": "Add defer/async to scripts in <head>, inline critical CSS.",
-   "pages": [
-    "/tradify-vs-servicem8"
-   ],
-   "count": 1,
-   "detail": "",
-   "impact": 2.0,
-   "broken": false
-  },
-  {
-   "id": "rival-servicem8-tradify-comparison",
-   "area": "rivals",
-   "severity": "low",
-   "title": "\"servicem8 tradify comparison\": we're not in the top 10 (Search Console avg 81); google.com leads",
-   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
-   "pages": [
-    "/tradify-vs-servicem8"
-   ],
-   "count": 1,
-   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
-   "impact": 2.0,
-   "broken": false
-  },
-  {
    "id": "rival-servicem8-vs",
    "area": "rivals",
    "severity": "low",
-   "title": "\"servicem8 vs\": we're not in the top 10 (Search Console avg 82); google.com leads",
+   "title": "\"servicem8 vs\": we're not in the top 10 (Search Console avg 82); fergus.com leads",
    "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
    "pages": [
     "/tradify-vs-servicem8"
    ],
    "count": 1,
-   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "detail": "Top 5: 1. fergus.com, 2. nextminute.com, 3. unknown site, 4. memate.com.au, 5. coastworksai.com.au",
    "impact": 2.0,
    "broken": false
   },
@@ -144,13 +102,13 @@
    "id": "rival-servicem8-pricing",
    "area": "rivals",
    "severity": "low",
-   "title": "\"servicem8 pricing\": we're not in the top 10 (Search Console avg 82); google.com leads",
+   "title": "\"servicem8 pricing\": we're not in the top 10 (Search Console avg 82); capterra.com.au leads",
    "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
    "pages": [
     "/tradify-vs-servicem8"
    ],
    "count": 1,
-   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "detail": "Top 5: 1. capterra.com.au, 2. customcrms.com.au, 3. reactiveweb.com.au, 4. skillmammoth.com, 5. tradieautomate.com",
    "impact": 2.0,
    "broken": false
   },
@@ -158,13 +116,13 @@
    "id": "rival-service-mate-vs-tradify",
    "area": "rivals",
    "severity": "low",
-   "title": "\"service mate vs tradify\": we're not in the top 10 (Search Console avg 76); google.com leads",
+   "title": "\"service mate vs tradify\": we're not in the top 10 (Search Console avg 76); growthlocal.com.au leads",
    "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
    "pages": [
     "/tradify-vs-servicem8"
    ],
    "count": 1,
-   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "detail": "Top 5: 1. growthlocal.com.au, 2. ityourservice.com.au, 3. trackyatradie.com, 4. unknown site, 5. sleeplesstradesman.com",
    "impact": 2.0,
    "broken": false
   },
@@ -188,13 +146,13 @@
    "id": "rival-tradesman-quote-template",
    "area": "rivals",
    "severity": "low",
-   "title": "\"tradesman quote template\": we're not in the top 10 (Search Console avg 80); google.com leads",
+   "title": "\"tradesman quote template\": we're not in the top 10 (Search Console avg 80); kr.pinterest.com leads",
    "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
    "pages": [
     "/builder-quote-template"
    ],
    "count": 1,
-   "detail": "Top 5: 1. google.com, 2. google.com, 3. google.com, 4. google.com, 5. google.com",
+   "detail": "Top 5: 1. kr.pinterest.com, 2. contractortalk.com, 3. etsy.com, 4. in.pinterest.com, 5. pinterest.com",
    "impact": 1.1,
    "broken": false
   }
@@ -453,62 +411,7 @@
   "serps": [
    {
     "keyword": "servicem8 tradify comparison",
-    "top": [
-     {
-      "rank": 1,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEShQEBxCJF1-1_LCYaScCsTXCGg7OwfMKc17g1r1XDJRrtEpq-dHJO06G5JbLFZYC3-sDkLIvGVSavYx9A2mr1WC5h4mVf6-q0ZEvaMhbNWvw9qXjG4mc_Bs228TCbOWugX96w5vQxBTPqgXRVjd8HAIz45aTi_OcKTSkJMdXEKCW-zIuF46t7&gsessionid=rUfHqzXfVbSd48PJIbDX6Qu14bHcyQ8NPv6EJJVZ96_VAqvP8eUEsQ",
-      "title": "Tradify Vs Powered Now: Which Job Management ..."
-     },
-     {
-      "rank": 2,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEShQEBxCJF10-QyhxaSEqgY2X9C0O7UhVHRhxXZ3jp0Gx_D0xaeBADAm3jsLSaPKjDIHMigFdsauy-EKgvpiKMsRKr1D8EJMWmtLnUrkimTZGNnWaSjNMsAPqyzGYEgTHb8gGVBbyjpbd1lr92PPDc_OLMDeXWEC_YTIf6f8JgO-h0Jkv73viZ&gsessionid=rUfHqzXfVbSd48PJIbDX6Qu14bHcyQ8NPv6EJJVZ96_VAqvP8eUEsQ",
-      "title": "Tradify Vs Powered Now: Which Job Management ..."
-     },
-     {
-      "rank": 3,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESdQHEIkXXMpmMEBScCOZP1XqfQWTzfhqyGlzte73PqKMUw5u8aMhtLNAgFxyammKyjcufAzBlUb6Dx07SNUgwcmKCjJM3vYfyrJHEuHbowIYbrceZzImA9eW-_1EM8OT7vzywOZRcYnugNH5F2f_moJ5jd75yng&gsessionid=rUfHqzXfVbSd48PJIbDX6Qu14bHcyQ8NPv6EJJVZ96_VAqvP8eUEsQ",
-      "title": "ServiceM8 vs Tradify 2024 Feature Guide | Software Review"
-     },
-     {
-      "rank": 4,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESdQHEIkXXYmlBQneAtLjcdKq6PQTTkhwARlkV_29M6R6jmKNkGqRUjVSCAcrYlrTe9-YbwfOFQtIjQJkcvelZxoNyJJHJY0CUs5mI8-XGQ4SYsjJdkurGCY7Zr6Y2jU6Gu9CvRpqSUPqA1q45M2eCq2Tw-9W2Ww&gsessionid=rUfHqzXfVbSd48PJIbDX6Qu14bHcyQ8NPv6EJJVZ96_VAqvP8eUEsQ",
-      "title": "ServiceM8 vs TradiePad: Which One Actually Fits Your ..."
-     },
-     {
-      "rank": 5,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESdAHEIkXXZ8cRJxJppIcrjGehgy6oXx1GXsc2YGe3PIGkXd37rctLMTL2JK-BdhjltqMJE1hEdG90bn1PUsiSNtCmyyCoG-YnBBKh7Ae54ZuDMXYjH4ypwXHy6WynxWi8Vv4AVVbXnyhkkGruYXDK5QCjpCaT&gsessionid=rUfHqzXfVbSd48PJIbDX6Qu14bHcyQ8NPv6EJJVZ96_VAqvP8eUEsQ",
-      "title": "Best Free Apps for Tradies in 2026: Compared - TheBrickBook"
-     },
-     {
-      "rank": 6,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESmQEBxCJF17xFa0wXEIyM15cDBaI_xrExGgZhavt_ROR1YAANRtTzD_G_gD-UO1cjAJITeo0RLicM7JZriOWmVHIl2XjmKP2XYcXOy04YhGHpdnlJuex0U52AXO91_Pa9A0DcPWiv1mjLQDCRKDPA0qICdPFoMb7ub4nfzZicGL9fjKSiis0oS1ijlZWgIjEgD4BWltMh8N1wFGM&gsessionid=rUfHqzXfVbSd48PJIbDX6Qu14bHcyQ8NPv6EJJVZ96_VAqvP8eUEsQ",
-      "title": "ServiceM8 vs Tradify vs Jobber: Field Service Software ..."
-     },
-     {
-      "rank": 7,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAES2wEBxCJF161xDgj3j01uhei86A7tqmZyEgUSaTXcu7dsDxKiBm91hzZqqPJIvTNNPDRwgGu2yzjFzEHZCsxAkU7verEn0i2mlOvGnC5mxM9B-BDGUzvcOzFHiQcWqfwCDHnZOp9g8qfzQL-H4A1gVeEN44XC4hcHxCDrDRo6wgUUpoPFybcpfnm52MuIcOQDKbFw-vamH2-FwtMAyGZ7PWRdp56svksNklCjAjJhmD7yPuDDUXQgq8TaW-hs95-I1e2ZQgo3Gp1EgL8zKciQljISt9EnEoVAllVoawA&gsessionid=rUfHqzXfVbSd48PJIbDX6Qu14bHcyQ8NPv6EJJVZ96_VAqvP8eUEsQ",
-      "title": "Using ServiceM8 or Tradify? 🛠️ Leave It To Me is your ..."
-     },
-     {
-      "rank": 8,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESdAHEIkXXdW_xuHz6mv8GyQ7uNH9hbHEeYJ8cBHyP01x_2E1vVK28nb7dvc2-DDTMjE-3puNohvHZIwxk-kdEGzhw9PpGaXiRwq9Qg3gx_2Y-MmnP4M1_hlgqRSQ5Pk00GClYaZseb_IhDxflneifIaXI2Ubt&gsessionid=rUfHqzXfVbSd48PJIbDX6Qu14bHcyQ8NPv6EJJVZ96_VAqvP8eUEsQ",
-      "title": "ServiceM8 vs Tradify vs AI Agents - For Australian Plumbers"
-     },
-     {
-      "rank": 9,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESdgHEIkXXqJZe8en37sb_At1DvEYFt_-RkY2Btv5HXPJyvSS5XvJgTk3AgYUy289yMkqDY_Pp-MrAmGsCdIvfoWtCn4Iy2ZxGJbwGrvH9mSBUAfy-rT_Sm_7O_L6qbkFWiUG3sXkgFiARxKd1_yn9uCXvfRZoE3M&gsessionid=rUfHqzXfVbSd48PJIbDX6Qu14bHcyQ8NPv6EJJVZ96_VAqvP8eUEsQ",
-      "title": "Best Job Management Software for Tradespeople in 2026"
-     }
-    ],
+    "error": "DataForSEO serp/google/organic/live/regular: Internal SE Server Error.",
     "impressions": 45,
     "gscPosition": 81.2,
     "ourPage": "/tradify-vs-servicem8",
@@ -519,51 +422,51 @@
     "top": [
      {
       "rank": 1,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESeAHEIkXXhlovk6rJubsUAhP1Rp-NaqtKYHCs4xQAqNaSfCi60Zhu-mAW8FEtuEoXx0SGEnJIkiLd3TcQ3wPFYFJkHpaeDbIaM3x8rxr55vDWaK-AjZ79Q6UGy60Gv7WJX6-fnhCggw9BsfaMa-ifeKPgMuC2uTiojw&gsessionid=qJDYOvXxETjWzp3WwtjIv2eJqfgbNhmstdiogHFbRt3Tfqp1prSZBg",
-      "title": "ServiceM8 Alternative for Builders"
-     },
-     {
-      "rank": 2,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESZwHEIkXX4cOOX1wANy0v-sswOVFFNNDtuU_yg6FkKKb1w4_YLrd3qJjyxnc8n2zarX5ydhd2SVp2lOphuETKbHKHbSXDPrXN0GsaAFGRle6Tp3GwdjAd_m3bqh2YHZ_CwVPs0uZ4zXM&gsessionid=qJDYOvXxETjWzp3WwtjIv2eJqfgbNhmstdiogHFbRt3Tfqp1prSZBg",
+      "domain": "fergus.com",
+      "url": "https://google.com/goto?url=CAESZwHEIkXXG6vxiVldVHQkWS9dg0mQmfKThKMiGhsOE3IuCHqss2wBU1tcH2IspEj-ybVV4-pSFxLB-4jdoJ_vgOd3O3u-NDDHomL2A1uvGFPkDvNjZJG0RSYaQy8rXSs0oDwA3iMqigk&gsessionid=FygmhG_V0X8vb0JbNzcIY124dJU8JtjV8klsdachxqvZNc0BLQuF4A",
       "title": "ServiceM8 Alternative: Cut Admin by 50%"
      },
      {
+      "rank": 2,
+      "domain": "nextminute.com",
+      "url": "https://google.com/goto?url=CAESeAHEIkXXCUx1R1nQj5KBv0s5uF4uN6VupyjY5YMXpyfKNPxH8crdtFRguvdFN-zgFJ3tV25pgA1UvVuFAuVAAtNjlAz-E7dnZmWYT-aCPHuqNOIoMxfHeyKeTkVwSD86XYsvS2B0P-Lvza_p3gsA8mwfH-aZpY7eDA&gsessionid=FygmhG_V0X8vb0JbNzcIY124dJU8JtjV8klsdachxqvZNc0BLQuF4A",
+      "title": "ServiceM8 Alternative for Builders"
+     },
+     {
       "rank": 3,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEShQEBxCJF1yHvIUgzosWCZ7GmjVEKfTIX0MVkYDXLbw-Kq-YSAPqUmqsVNhCcaETCPlGC4SIamU2dDHpVP9r6Ho4szPPxogvcRPKJ2NpI_8i_SB-UZpBrnu3cI423fK2IwNP0-TGieYTtlJyoLKQMPGwtalG0pcM57LU5H3fvowDggwJlg7lX&gsessionid=qJDYOvXxETjWzp3WwtjIv2eJqfgbNhmstdiogHFbRt3Tfqp1prSZBg",
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAEShQEBxCJF1-GWDAA_FZ7yWzxj3MgOxglZMQ47I4D-NK26XMBmDOqeKsWDTn-rXg5hsk_iVc8dt5D8J5bUDK2OMnJ-XDz4QrZasF9USfkdSCFgaDvp07nFRudFlgi4xNvNCoQrdQYUdvkRn8o96hPswiOCIcQLK_GiKuUSo1UwwKW-QIuXq4Um&gsessionid=FygmhG_V0X8vb0JbNzcIY124dJU8JtjV8klsdachxqvZNc0BLQuF4A",
       "title": "Hey, has anyone swapped from tradify over to serviceM8?"
      },
      {
       "rank": 4,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESbgHEIkXXTnKynKiPpCbp8Yz6y547RsD7Gvguk25LvVIfGkw05Ske9rPEIpg9tFSrDVOUKHnJFS2wgOKC3XLegT_cNRPaL3JII6ZYMBo_0yqBmsoXvonLWwNFhHkQO8Bzs_tYPFQy-Sm77HD7D3zS&gsessionid=qJDYOvXxETjWzp3WwtjIv2eJqfgbNhmstdiogHFbRt3Tfqp1prSZBg",
+      "domain": "memate.com.au",
+      "url": "https://google.com/goto?url=CAESbgHEIkXX0rNy2m5H2GD5OWnRV27ucFGftvHpqTAXTjxxQ5IBeXbhGNfFHR6jHU2XHrcHt7X2b8-XfaaIfVaYbAuE6tkqLxOg2oks8dhaDXPyGHERp71OZFTug6Pn-wL4lc6Y88gj57kP-rzftMZ7&gsessionid=FygmhG_V0X8vb0JbNzcIY124dJU8JtjV8klsdachxqvZNc0BLQuF4A",
       "title": "Compare MeMate vs ServiceM8 | Smarter Job ..."
      },
      {
       "rank": 5,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESewHEIkXX0z5z2Fsb_pFOpYDgfrEJqb7WDsattivUSXnqVmnzPWv57iKoOt8PCxWglnrvuDRLARftHpIFQnORaoYntb8oBfeQARhlQEZNIeTMKUETfpu5_bSduZDnPSJ_wrQ0l9EnKOwD7NAuyZXC9Ihjplh8Zy9dLjwefw&gsessionid=qJDYOvXxETjWzp3WwtjIv2eJqfgbNhmstdiogHFbRt3Tfqp1prSZBg",
+      "domain": "coastworksai.com.au",
+      "url": "https://google.com/goto?url=CAESewHEIkXXI-bve4LUPia8NeV7zRlf_eM9Co8ttERR91Jv6Xu-zhHHaLiObsz7JM_v5Ld3x7FStfI5G9Jfb6VgSBJg3Sb497JdEP5v4dS_gh7nBh7DqFBdt5vX27pYiYrXYydtlS4j0yDztqKNlfUQc4b9OIWq2ZcQvUoyYg&gsessionid=FygmhG_V0X8vb0JbNzcIY124dJU8JtjV8klsdachxqvZNc0BLQuF4A",
       "title": "ServiceM8 vs Tradify comparison: which one fits your trade ..."
      },
      {
       "rank": 6,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESgQEBxCJF1wISZkEHgvS7AnaQlN34jqsCd0OGHf8cFROQtSj5zuaNCcoXNeBg22PEyqgsC0l8WvXQUrHt1yL1DFq5z75Z-n0A5-_xD53eWoTXnc63Gh3CEXOXJFL2Z_HhNsPn5bJtM1EaeSXv4MaXUdeOvLpwQLgpWcRm6ZA3jpdXcgw&gsessionid=qJDYOvXxETjWzp3WwtjIv2eJqfgbNhmstdiogHFbRt3Tfqp1prSZBg",
+      "domain": "tradieflow.net.au",
+      "url": "https://google.com/goto?url=CAESgQEBxCJF1x2cdh8YklG-S0bOLDGJnRoRTbX8D8QsOUhF2Pl3X5FB51M_r-BIrxZh6_Q_04U_dmvYAu4BmtK6u4KxZp0DFab0nURUAxN-bKkoUz1QjI6L-moJc0F0X1dezh4i0dtsZiwWpSugIMzvDUVZnydG7pKLmCB4wEdWNI2ie_U&gsessionid=FygmhG_V0X8vb0JbNzcIY124dJU8JtjV8klsdachxqvZNc0BLQuF4A",
       "title": "ServiceM8 vs simPRO for Australian Tradies (2026 Comparison)"
      },
      {
       "rank": 7,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEScQHEIkXX9KLYi8f08RrfXCEOnTq7IcK1UekpoRkFR9PZL_JvD68D1j6Fvohfzz1gSYpNB0GpQmPZMP8WPA9kBSkKjGnMOH1FmyhaugJs_6Md7Dz22fNGVGyogqcNaWLyZ55drti1gQriQ2g5AkP4AmOB&gsessionid=qJDYOvXxETjWzp3WwtjIv2eJqfgbNhmstdiogHFbRt3Tfqp1prSZBg",
+      "domain": "stackpick.com.au",
+      "url": "https://google.com/goto?url=CAEScQHEIkXXE7VWB8dxnSE6jVJhxkOQcW4Zn94vapKhaC5WRrY3BkNSCEwf5ESS-zDADPwLYwWO4HZ1ujhAquAmIWa04Zr0s73harLrJYZZfos9-5Rp5vWCfHRjv81JJ2m7hj_fM3rXFfDnAP9Y6HRF9Fb7&gsessionid=FygmhG_V0X8vb0JbNzcIY124dJU8JtjV8klsdachxqvZNc0BLQuF4A",
       "title": "ServiceM8 Review Australia 2026: AUD Pricing, Pros and Cons"
      },
      {
       "rank": 8,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEShQEBxCJF13vbZuSBvctAYbS3jhd4lfpJDJn1hBhX5HBLrTikAP2bkyLnYaWi-yuEdzWg9eGE1QvOqVjMuVtvzC45Dtjrf624HL35Xglaxx8d50utscMB2ENulJJMLGlmds4MOYVOb6j08QfzLFDTMGMr2Bq0F4k-xOX2HDNqEDKRgPoun_gg&gsessionid=qJDYOvXxETjWzp3WwtjIv2eJqfgbNhmstdiogHFbRt3Tfqp1prSZBg",
-      "title": "What are better scheduling tools than ServiceM8?"
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAESpQEBxCJF11a-YXIHrinskAvUtWYHDDImLgN9st-K3rwOM4ik_XC44x3WapQi0IidR9Kxk9o4-3HJl93bLuL3P_E1YnU0vtXlYWiH8ACIp4rheKCVvDRdMA6tQ6WlWL2EXSMg2kLst_3zT_IyX-rh1a-xWzz_WQsi4J_3mlaH1b-VXm4phGL6ZWyTnar3U0X97aGvQ4T66vNgE9rJu17_Z3-txBF9rYg&gsessionid=FygmhG_V0X8vb0JbNzcIY124dJU8JtjV8klsdachxqvZNc0BLQuF4A",
+      "title": "Is it good to learn work management softwares like ..."
      }
     ],
     "impressions": 41,
@@ -576,57 +479,57 @@
     "top": [
      {
       "rank": 1,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEScwHEIkXX_nOFUUECEqE-unVcN4oqfH36BYGvvPQtoZgtfot91ZiKRTegqjQnm2uwwb8Y3f92ZawhC0JBzeddZtTLPC3ccjLERgIOiEuXnp3TX7hbdf1N6OS744KPGMkYFXLGP33vOFKOxSIZkSVSubAxHFE&gsessionid=9j6OIJVJMO6FNIxTJZq51XUzwg2A0Hzes1y0yLKg1-uvG_JoHKaykw",
-      "title": "ServiceTrade vs ServiceM8 Cost (2026): One Winner for ROI"
+      "domain": "capterra.com.au",
+      "url": "https://google.com/goto?url=CAEScgHEIkXXEt_kO9-ksRegaSBy946VmTOQQD5Rocft8kik2CQx2qbHOgk1Kku6aVZAM0gl2pDJa4R_fEgPQvRbpiz-38d7HuMNcoO1Ry_kFJxMPET7RABrahPvKq9dg6Vl9wGnCK0jPYKn64RnRUIVF9oR2g&gsessionid=JjV57nvLZPmMzBGkKmvhgSW1w9BkZV3B7_6Vya76nbwF1ufy2vLU9Q",
+      "title": "ServiceM8 Cost & Reviews"
      },
      {
       "rank": 2,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESbQHEIkXXtddymskOcDPkdi1c_uBG0bsJoJC8L5B9uldvugWhodBxN4I2Yh4MUlFPGgpS5TdZ5OhQAHz3tKLgBjapRTOhMOp5IbKbRGuAyiw3GwJ0gRfa2JqhqprIyaou46XuPp3lurmb3KcoFr4&gsessionid=9j6OIJVJMO6FNIxTJZq51XUzwg2A0Hzes1y0yLKg1-uvG_JoHKaykw",
-      "title": "Fixify vs ServiceM8 (2026): Pricing & Hidden Fees Revealed"
+      "domain": "customcrms.com.au",
+      "url": "https://google.com/goto?url=CAESZgHEIkXXZXl5w3UEu0Sq2R_VlaAZ1O-GSipJYV3NV9TdXuFlgNGVEx8yHsq5OUZrbhSO_6msfDpY3kmP2ozGFi80idoOsaTcCTJmCWChLIy0jojIbJE1T9KpvwBme9FkFF1n7UBG1g&gsessionid=JjV57nvLZPmMzBGkKmvhgSW1w9BkZV3B7_6Vya76nbwF1ufy2vLU9Q",
+      "title": "ServiceM8 Pricing: The Five-Year Cost - Custom CRMs"
      },
      {
       "rank": 3,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESwgEBxCJF15hFQ2nj3MbHjxxek08SBa0-m063HSFU9fvWZFkeGVbhu74LXX4iG8yr7sduUO1n1SbAUYBEMTEPEOE2gCnSRiUe5K244VAJ8EZtdTXtknX4b1ZwjbbEqDZwu2WZL8F466m1hmNqpTk5hTPP6WzI_N0R--Ai3NMTn4YnUbBa2zbgtKUjL3yMuKdrnjCz_BWXILLSLN1FjDvUGAx9hsttAdGtNpd_KrnvPF2rVSXmds6E8oiJDLZ3eo1U-QGv3Q&gsessionid=9j6OIJVJMO6FNIxTJZq51XUzwg2A0Hzes1y0yLKg1-uvG_JoHKaykw",
-      "title": "ServiceM8"
+      "domain": "reactiveweb.com.au",
+      "url": "https://google.com/goto?url=CAESfQHEIkXXoDUd3qaACAHK_IOqJzB0MxbpnoCQntSPhDlqnWdB3qYX1TLPqOxpI7qyel6ho4pZI9Fx1iUa0wOsL-IwYG065gtgz2Hc-aiYQjJQCxTjsFheJ3KGaHtBHBiVJgMZozAxjKyKAC3d5B53fEpPnzW5gAwDUngIVSWw&gsessionid=JjV57nvLZPmMzBGkKmvhgSW1w9BkZV3B7_6Vya76nbwF1ufy2vLU9Q",
+      "title": "ServiceM8 vs Tradify Pricing Compared (Australia, 2026)"
      },
      {
       "rank": 4,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAES0gEBxCJF18ZmBX6pu2iCacaAIl5bMSaQ0U7K533g8OoPkAfk4Ln_bKK6z4njHAmhQEmsWdUKwLKxMYNTHdkOfPZ2Hjsnm_0brQh27SW5RP59pRobITKsK42G2SMlZyA_ZYXUuHsTTJQ79MAb1dHaq7XAwBzhNv-7T35Xj2cvlEpXkxFotThgF_tvzPVYzFMv4eYEoyMQlruHromjioTiQlLc4nEUDQV0Hlz7Z_9GsEYy-if8iCGCiAf25z-6F5jH1wpyw8_qWzIXwq0Xq8nuSurE8iw&gsessionid=9j6OIJVJMO6FNIxTJZq51XUzwg2A0Hzes1y0yLKg1-uvG_JoHKaykw",
-      "title": "What is the cost of ServiceM8"
+      "domain": "skillmammoth.com",
+      "url": "https://google.com/goto?url=CAESawHEIkXXGbYlnn1AWPiY484M6-8NdYF-lqiSpr0F1SfhSfXaTvyvKc97EVaXv-MYWMjRYf2zlPj7tZq9TTvJfoEyg6zAPbLW1Jcmw3UYwNwVc_sOLAVDIJB8MGBlcjkgGt3eywtxij0kq2oA&gsessionid=JjV57nvLZPmMzBGkKmvhgSW1w9BkZV3B7_6Vya76nbwF1ufy2vLU9Q",
+      "title": "ServiceM8 Pricing: 9 Verified Prices, Checked October 2026"
      },
      {
       "rank": 5,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESeQHEIkXXfJgVyqT-BJkV1sc1YH3U2Cb32wiuY9kOhwBI0LqsCNiRKhkjcN7IWnqmSVp2kDz-TbPxKQHCTp5hI3kFO6J8CbK98wQn30Wd-PhtQlmtXB8fEDUMWKMulUjqxdeps5dPw4T8gza5UTK-_5T7Cddo5lgW77A&gsessionid=9j6OIJVJMO6FNIxTJZq51XUzwg2A0Hzes1y0yLKg1-uvG_JoHKaykw",
-      "title": "ServiceM8 vs ServSuite Software Cost (2026)"
+      "domain": "tradieautomate.com",
+      "url": "https://google.com/goto?url=CAEShgEBxCJF1z91iwp2QRY-tNSHD9fh4GUZxcAMu0CtTz12sFDWsv5c6tLWnHD_JWQsUtePKDh0FlXUMfxGNt_zGtJcZ-VKkLASX2O_A6i0F3-TTHQng_ht6Cy3rfzm0r5niqEMneDeIQqEtgSEHM-K8EMcjho6A5pWQlt6kzWBb_JsUmI-WQ422Q&gsessionid=JjV57nvLZPmMzBGkKmvhgSW1w9BkZV3B7_6Vya76nbwF1ufy2vLU9Q",
+      "title": "ServiceM8 vs simPRO 2026: Australia Honest Comparison ..."
      },
      {
       "rank": 6,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESagHEIkXX9KA0ZPk0xZOUmotSKvJFEP5dUEiadcgyQ6Krw_0Dj4csTWHbmrPIvlQC_g2jBo7aYKMMWOqGbrpu7XIAumG_jDNF050ZKsAOOxrHecrOZAU6n2NWvaRI8v9k6I_8shOQ51Lq-N8&gsessionid=9j6OIJVJMO6FNIxTJZq51XUzwg2A0Hzes1y0yLKg1-uvG_JoHKaykw",
-      "title": "ServiceM8 vs IFS (2026): Pricing & Hidden Fees Revealed"
+      "domain": "tooleduppro.com",
+      "url": "https://google.com/goto?url=CAESbgHEIkXXtw_AaPE2DPlJEcizf_AC_ORRzoXqzOFAiv24CE0CPYbgAx4dQtk6zLnPv9Sp9-sRgOT-5OTbDsz5xjK2zo975qZuttMxVZGZgKSzDiYP53p48jlLEKwG2rPltctzaD486sq1dVQZM8er&gsessionid=JjV57nvLZPmMzBGkKmvhgSW1w9BkZV3B7_6Vya76nbwF1ufy2vLU9Q",
+      "title": "ServiceM8 Pricing 2026: Per-Job Cost Breakdown for ..."
      },
      {
       "rank": 7,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESbQHEIkXXugEgpARHf-ESmCOHS9_p3G4-GcuS81a7io9uv9HMBxhFsm6rHizM2XHnNSWyrsHJlgsvWhbNce68yPKj4bfQVlZTXR1ZptcnpIJK75uZ3BYl1j2br1LncoQ6B0kjfQLa4gUTBMVJ_0c&gsessionid=9j6OIJVJMO6FNIxTJZq51XUzwg2A0Hzes1y0yLKg1-uvG_JoHKaykw",
-      "title": "ServiceM8 vs Fergus Cost (2026): One Winner for ROI"
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAESZwHEIkXXk2SWNaUZxPI9LHD2ybqsU0FdsKje_KKo6pC6_foS2GRueV7zFHYD-cbFTuKuZ3Am46UoJWk2zKbdvMFCFGBLDI5uvkFpyb5zMraV0-V1SbIM_9LtpvNy8JL0GNxBMJTISZw&gsessionid=JjV57nvLZPmMzBGkKmvhgSW1w9BkZV3B7_6Vya76nbwF1ufy2vLU9Q",
+      "title": "Pricing and planning is simple with servicem8"
      },
      {
       "rank": 8,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESZwHEIkXXbr_feyrrhi17G11ybuEt89VncceTzeaWpCAA-cpRqAqFRWqdLyoGCHY6RVfEkBACEVO-Dj6oDUuWG8NUVtfuNgKTR2hm-1IYurD10p4IbCFU6EYry3aEtHO94nJ-iZ9BexA&gsessionid=9j6OIJVJMO6FNIxTJZq51XUzwg2A0Hzes1y0yLKg1-uvG_JoHKaykw",
-      "title": "ServiceM8 pricing 2026: it counts jobs, not users"
+      "domain": "softwarebuddy.co.uk",
+      "url": "https://google.com/goto?url=CAESmAEBxCJF1-aMvcQWhIwcrYW8QF5Kp4J_IL4UQxYu6130z5J55dJLEt6drXH5bRMMC49hTPgi4Ua3Dgv0QzSiSSpVpYOazVcAY6XyVIOChRUfmIjgcPyBaoqctXt-MxGIWPktVjgH6vGQ0Dv33gmRhx4kufaPh5IjbC9E7Ncn0JvzykvueM0tqY-6xJKkaCZw5f8rjYmLR0olrw&gsessionid=JjV57nvLZPmMzBGkKmvhgSW1w9BkZV3B7_6Vya76nbwF1ufy2vLU9Q",
+      "title": "How to choose the right ServiceM8 price plan for your ..."
      },
      {
       "rank": 9,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESdwHEIkXX5WnrJFOkYeDZngwjraOgTJqOmfhNO9-YiNQb4g-ZZ50ttTu91daH6VZeyxp4YwIUL6te8j-bq9c4jWCI8uvOrCrguJt93LvsxXk1ScvimPw0hoZXaHbS9JdEsHOLO1f69CXeEDy9PszF8QVHvnUCKOsx&gsessionid=9j6OIJVJMO6FNIxTJZq51XUzwg2A0Hzes1y0yLKg1-uvG_JoHKaykw",
-      "title": "ProBusinessTools vs ServiceM8 Cost (2026)"
+      "domain": "servicebay.io",
+      "url": "https://google.com/goto?url=CAEScAHEIkXXqWNerw2gZGgXw21-oeV9YUBesZbj95tRiD11HNqZmWgO8t2LBxVxPyE0pibiyL2UI8LTp_kx3j5CC7MocCWLuXjWgwI9SNcaZsBt81ZYd5nGhtVW0fAsQqo2Z2Gt-HPSzS_brAAPAJz4ETo&gsessionid=JjV57nvLZPmMzBGkKmvhgSW1w9BkZV3B7_6Vya76nbwF1ufy2vLU9Q",
+      "title": "Servicebay vs ServiceM8: The Honest Australian ..."
      }
     ],
     "impressions": 36,
@@ -639,45 +542,45 @@
     "top": [
      {
       "rank": 1,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESegHEIkXXVO3KKbJgVHCJYixhDkaDn11n75lxh51XNbz8zNZ6asZArqkf_8Gz9UdZ1T3znBqbK3ExA7r3bfIbPBj5jd7-sUMfv4GXzkrbjh-51nd0cNSlLBBUvbmZHEfR-6j2hTdglKldmLf64e20S3u9ZGtF8aQ80ahN&gsessionid=lNhYue9OOeO5FjBhele777Yz2WE_h48c851S_-gfjE-xG2G6xgArYw",
-      "title": "ServiceM8 vs Tradify Comparison"
+      "domain": "growthlocal.com.au",
+      "url": "https://google.com/goto?url=CAESewHEIkXXOe3Enk-rru4ITT-6IxVVEQquZsLusPjaCfEUyVfy5LitG8eYoByP1Xi_KmDQelCK6pbKxMxHtHNYeMk_7PAxw8YTsm_WMfAETQ3wxSOurVS5v4y3F106jSEcycHHfjgWokRf2fkYcGgXdGYQteAW_iC0cU-c1Q&gsessionid=V-ymB-aspYrVY6Fi7yDeT24TGhMEfFov-En8QKtexXWO49G_I-ZZwQ",
+      "title": "ServiceM8 vs Tradify vs Jobber: Which Is Best?"
      },
      {
       "rank": 2,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEShQEBxCJF162U8jwuT8DYvl-FEanN_Cs84iG68DPefL7HIHsR6vEHC2UcliFDo3G5J_P1txkWYMfi75tY9bcJseesQCUsuuEvVmn2pHHU09F13Dfkq2Vnmfp815kYK933VfXA5QfWBVIoQo6PWJxUiuDsAGKsxRBQTnIRCJQGThEjo-u8w3Cd&gsessionid=lNhYue9OOeO5FjBhele777Yz2WE_h48c851S_-gfjE-xG2G6xgArYw",
-      "title": "Hey, has anyone swapped from tradify over to serviceM8?"
+      "domain": "ityourservice.com.au",
+      "url": "https://google.com/goto?url=CAESggEBxCJF12Pa3qYgWnzdF0xVhyiFVDdFGT2MSrsGg4vlAtPlJdRu8444eMdAeuXyQlhR8w34NdGs9pI7A6ls92v8RnZEIJxcuPec6fJ2vTcVqrakOB_5pl8nSjmCUZvA1q3p796K4aLcVtlHpzSxpESnmIp1RivWL9xzS1Py8AMvykYT&gsessionid=V-ymB-aspYrVY6Fi7yDeT24TGhMEfFov-En8QKtexXWO49G_I-ZZwQ",
+      "title": "ServiceM8 vs Tradify vs Simpro for Tradies | IT Your Service"
      },
      {
       "rank": 3,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEShwEBxCJF1_uvrI8vnAcFsEdc4wRVo7BJuC0JdtIidKurHcAIAc43V5OmaUwWDUs9n3tQNXU_dd5aSI7oiFfclBFPttoyPc7zcyLGQVoZ-MOKfQkVl7zNnkI1EEB8e80pLE5pkHtS5SES1pnvtb4W_rjNtqf8_YEvM0UUEuCVGebiGZpxEgr9N40&gsessionid=lNhYue9OOeO5FjBhele777Yz2WE_h48c851S_-gfjE-xG2G6xgArYw",
-      "title": "ServiceM8 vs Tradify - 2026 Comparison"
+      "domain": "trackyatradie.com",
+      "url": "https://google.com/goto?url=CAESeQHEIkXXc47vYZydzTwjoHPtKm63tk2BmFWl2S1tmZCCETNmmQjqstXfCpt0b_I42jOI2A1M00FtGB_mKwQ7vc_r9IWtJU2b7lsdqza-xlEe6-z9VkH1yt9q0lm06GGXwOFQleTlgabSrdrgToHAzp9D7RyzHQLl6yw&gsessionid=V-ymB-aspYrVY6Fi7yDeT24TGhMEfFov-En8QKtexXWO49G_I-ZZwQ",
+      "title": "TrackYaTradie vs ServiceM8 - Which Is Better for Tradies?"
      },
      {
       "rank": 4,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESlgEBxCJF1ySJlHUYgbyJyxc5nx5CLiE_KJT4KZ9JdlOM7KWYRQ7JiDftKU4RtXOYc03j7v2-7J-8QXn8jJoapweJe8WPgj4zl-kiX3okaYF-aupBgaT5xns4pYW-xj0MglONqGGUQ32Jv5pnV7AuJM1yHvBckfIplNa87euA__mgyM7RAU8nLaQlxhKdh6rRcGVKejXk220&gsessionid=lNhYue9OOeO5FjBhele777Yz2WE_h48c851S_-gfjE-xG2G6xgArYw",
-      "title": "ServiceM8 vs Tradify vs Fergus: Which Fits Your Trade?"
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAEShQEBxCJF1xka82Phn3Yj23j8gyBuUHUC754gEhbWXjDLOCFLBWy7suvXTBIDLrBtIXPKRSCVgoHrFRQvpLmptMYKU1fnpNUZ7WpgEbXWqGTdk490WMQupYh_zKnAfje3mFnL7s-D_5tJWu8dIzMMBBuGTadAMYLnu3216wqZx8QztsJBmywX&gsessionid=V-ymB-aspYrVY6Fi7yDeT24TGhMEfFov-En8QKtexXWO49G_I-ZZwQ",
+      "title": "Hi, I'm currently using Tradify as my software for ..."
      },
      {
       "rank": 5,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAEScAHEIkXXTJmmVGgoBlMmzkCx64uEvR38ZtoOdj9vf5_xA3hXBQAWed08NMxZLcHs8nuYbcaUISEdnv-TEdF32cfaVvuAT-BcEY3QSGN7KRT2aFxZUNMXJlfa-2Q12LMIt4Eb-vLmlNV-2QZAKp3Hav8&gsessionid=lNhYue9OOeO5FjBhele777Yz2WE_h48c851S_-gfjE-xG2G6xgArYw",
-      "title": "Tradify vs ServiceM8: Best Job Software for Tradies | iTrade"
+      "domain": "sleeplesstradesman.com",
+      "url": "https://google.com/goto?url=CAESegHEIkXXQG8NXyQ_xc8ktasSCbtCVaOxW6M_J5SoExu2_4O5iJaD1oDFOMybMqK6vH_oZC2x9TE-92Nj5mQR2B-zjDc0TuhJegYmDrlMZesyz-xO1LjhV7sQmq9bu-RbKyE8qVsxxZ0bwrZoh4sXRDfmMyXqlpkc3_lv&gsessionid=V-ymB-aspYrVY6Fi7yDeT24TGhMEfFov-En8QKtexXWO49G_I-ZZwQ",
+      "title": "ServiceM8 vs Tradify UK 2026"
      },
      {
       "rank": 6,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESegHEIkXXq_QVPm6Nim8gi5Bcd4sDDWeebSSbGl2eqRrdzONaqrObmqWb6as5w9B3tLbIX62KF1s4wQeEUD0c1Tw6VVzB_UPUZ6T-0MB_Pdj4ag5VMBDhHS4N2gkysVhzyh4pA_rgR5DF8Y7DCd1Gdmu9WEavHk2GsF9_&gsessionid=lNhYue9OOeO5FjBhele777Yz2WE_h48c851S_-gfjE-xG2G6xgArYw",
-      "title": "Tradify vs ServiceM8 | Compare Job Management Apps"
+      "domain": "profitgeeks.com.au",
+      "url": "https://google.com/goto?url=CAESfwHEIkXX4vi3Qj9O2ko82V2znPkfrfZvAjfY8-KSAq9fsSNS1ag2Ai3p_NGMl3tA9H65PSW4eFeq2zvpWXPf4f5OweS2o27eglBd9wJPWWRH_11u74vAgEfjmzUAXkiXCXuH5qmhCAmWjF6I1d4OxlCFi-_IZuhJdmW4ZT9Trv0&gsessionid=V-ymB-aspYrVY6Fi7yDeT24TGhMEfFov-En8QKtexXWO49G_I-ZZwQ",
+      "title": "ServiceM8 vs Tradify vs simPRO for Tradie Marketing"
      },
      {
       "rank": 7,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESewHEIkXXSNaBsJgrBhwJ1qw0_ObCgsLxpmol15EgZegtkHKuHoyEmg4sqdO59U1cxEtS5K3d3VEXqqqFiB3_OkPX8TfqoGl5DOg8BclYlHzApSLQdHQWqNcpnwh1TGRuyIaWW3lipDi4wnKNCf5w8buI2u9_dz6PeXf9aw&gsessionid=lNhYue9OOeO5FjBhele777Yz2WE_h48c851S_-gfjE-xG2G6xgArYw",
-      "title": "ServiceM8 vs Tradify vs Jobber: Which Is Best?"
+      "domain": "facebook.com",
+      "url": "https://google.com/goto?url=CAESeQHEIkXXsZ0XhZEeonalspPkQcLuGM4xyEl8IiNwGXq_PqxyEdWvsE4IfFEKwcmGoNyeOYyGS7H8yrrQko13FVOmRjS9vTlXwwiMqswV-K23PutdsyTCJ4cjwC_mmjBKKP_qM9eenpGONC4r2Z2hEOi5JW6p4s6yhZw&gsessionid=V-ymB-aspYrVY6Fi7yDeT24TGhMEfFov-En8QKtexXWO49G_I-ZZwQ",
+      "title": "ServiceMate Vs Tradify: Which Is Best for Your Trade ..."
      }
     ],
     "impressions": 32,
@@ -690,51 +593,51 @@
     "top": [
      {
       "rank": 1,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESbAHEIkXXr42O7NKoF2B8ElgPBoR5XMa_OBg2cIyuiVapyKONzE9vaqZE3efehsT5WfxoA-xk2DhvLQa24ulzfCZ0OgA5lEf5E8UJCEL5X7JyzJhpAJrne9BHwI47bSnaekF-4wbnzpZeaD8-tg&gsessionid=HtwCyFQ32QxWe01L3MPAMd6iIsq_Eyh6jsulEkmHGpdCqhvC2w8ewQ",
-      "title": "Buildsoft Business Resource - Tradies Template Pack"
+      "domain": "kr.pinterest.com",
+      "url": "https://google.com/goto?url=CAESbgHEIkXXH1-p5OZiH1mn7YXekS99Qw3C8NLoxyb7YsWxJFMmvWazN5WA_KhjktR7DkF7fo2iW88nFz4fqiipyW094NU7AHhDQ9tJDUDNjQJxdDB4XSi_4zdLcg-lS8_P_aWlIa5AdRAHI7MMRMNI&gsessionid=vOEmfZpAShs2iTT4puyiGAk_MdhUnD_3t7vUM3K1Ko8MfR7xDr1N4g",
+      "title": "All Quote Templates Archives"
      },
      {
       "rank": 2,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESjQEBxCJF1yGkAKAK_HsIhh98Lx8r4jYHaVAwQP1wXXb7IQKcLNaCCq1g1sYdaPJ01cKPJlBYsrmHosFhaNjBzMg77ZAki7UGp9OaREe7FZiuE7MsphBCwpAtz_LT31dbNIFGgjNcZVI8o6lnzyJUzTebQ9SerUcX_tNuWmiUumHmzjuy8ajLOLfwaups8GQ&gsessionid=HtwCyFQ32QxWe01L3MPAMd6iIsq_Eyh6jsulEkmHGpdCqhvC2w8ewQ",
-      "title": "Quote Template for Contractors: Formats, Tools, and ..."
-     },
-     {
-      "rank": 3,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESfQHEIkXXrSWVYT7J2PUewGIUbvFwFV7VorNUncZEYexMOAUM-KbcIDa_bjLPLF6PDMXCvZOorD85KlYkSh2Ag49Nef2IzsdfLnCXf441qYMTQGAfvVYLWJD3COMBHz2u2p9u-PBKdFBozVWdURYgPX8ycFXfq1g-kVvtpq6T&gsessionid=HtwCyFQ32QxWe01L3MPAMd6iIsq_Eyh6jsulEkmHGpdCqhvC2w8ewQ",
-      "title": "Contractor Quote Template - Free Online Quote Generator"
-     },
-     {
-      "rank": 4,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESjQEBxCJF12ZdTn7AdP99uYsR4QdpDIIoKjSOXe_3MXE_s-v03rZyXgUZSYtZ9XMIv5MD6Hzi9THHRCwjYKLHAsVGsXNDzRvmUliyRjyQiB9rM_Eaki3VdB689UljMitahpKhXAmP1lUvDCEiW9-YsAGhzyq7PPLbG9WTLo1itid5yJPRSARj5RXShn_HYLU&gsessionid=HtwCyFQ32QxWe01L3MPAMd6iIsq_Eyh6jsulEkmHGpdCqhvC2w8ewQ",
-      "title": "Quote Template for Contractors: Formats, Tools, and ..."
-     },
-     {
-      "rank": 5,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESbAHEIkXX7BqwYIFMqbSJOP81qf9iJJDdhBaiEH5nIB20I58B53vLGW_XmDtPgUerFdggxP86U5QRhpBf5_0SGT-fH8rTm69Sb-MsQl7kO79nz2dJVpCqPzDvhr-FXksm448yNm5QpIZG7UTgdg&gsessionid=HtwCyFQ32QxWe01L3MPAMd6iIsq_Eyh6jsulEkmHGpdCqhvC2w8ewQ",
-      "title": "Free Quote & Estimate Template for Tradesmen (UK)"
-     },
-     {
-      "rank": 6,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESfwHEIkXXBpz-bpYSUcUY5hVZq5L7a83VAtGUXUtIm0Sk0v_we2Hw2REnHtf7dHqP-jvDG85BMd7km9MX2jmq1kKiS8oG-4Yg7eei5H5n4PVa5kuGQVH-9KzwTY_-JIOITh9Uhp271fKeg1gs2IQG1xPqyWFfLow6A7j27a1e2jo&gsessionid=HtwCyFQ32QxWe01L3MPAMd6iIsq_Eyh6jsulEkmHGpdCqhvC2w8ewQ",
-      "title": "Labor Quote Template"
-     },
-     {
-      "rank": 7,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESegHEIkXXxogSUGHaj7SFVSd_TxG0nWNktuz3-3EsSy1wix3dCHvFjZp2hEQWo8jOK-ISbEyVXOfsgLDgDDSTrAs_T9aGV0VAMCe7txpIyrAcu2JZRQe4in-41dyehi9aLpdzTCj6RfJ-vOsVQz4W_O2OMijn-UhiMVLu&gsessionid=HtwCyFQ32QxWe01L3MPAMd6iIsq_Eyh6jsulEkmHGpdCqhvC2w8ewQ",
+      "domain": "contractortalk.com",
+      "url": "https://google.com/goto?url=CAESegHEIkXXmZcrJ2eKrsxxN9a4-UhK7LireiCgff-QZWWSuTMzGcpbZLjHDa3HncRuwEYquP55BI7rsvovGVjnxZITOKwJP93wMu8o79ZBuRG1PTCf0wONnNlCJjK7LAdoNhjGSGcZR4D2wi8_48B6A08Ov02fK_v71tQa&gsessionid=vOEmfZpAShs2iTT4puyiGAk_MdhUnD_3t7vUM3K1Ko8MfR7xDr1N4g",
       "title": "Quote template"
      },
      {
+      "rank": 3,
+      "domain": "etsy.com",
+      "url": "https://google.com/goto?url=CAESkQEBxCJF1xkBlRjml8IWc-TVrfQe6VljOv3MJRjrxyvKMiUheBAbwenbwieL90x_F4TQVLmrE036cHmxR7gu0eHGtPtnaFbrER1DOclU2elEE9pmx-Po3HEidxBxZfGGthP0bVh13whby8tp8_c9b3Fl56w3lGeCAplPwxvSno95l6fDf127AYOXD_1rY-VcfHry&gsessionid=vOEmfZpAShs2iTT4puyiGAk_MdhUnD_3t7vUM3K1Ko8MfR7xDr1N4g",
+      "title": "https://www.etsy.com/listing/4355197163/editable-c..."
+     },
+     {
+      "rank": 4,
+      "domain": "in.pinterest.com",
+      "url": "https://google.com/goto?url=CAESogEBxCJF1_zhI5UHXR5fxMvwhUdoZtGmOXbbPKbGP98JuN08WZj5NXEaYC9lK-LjSb7_uGOpBxFd_CkIDn-A8ubK7zq--ORT7UpmuGsAZUiK_GhrfuksIMYkvaP1NT92uFnvzIAKoWw_Kysvs_t94_44eNG1W4MmYntRerabjwfLT6dWIV2mOkpi1iFxAtOreaI14108KSAd7MTEVsy-mcYKXRw&gsessionid=vOEmfZpAShs2iTT4puyiGAk_MdhUnD_3t7vUM3K1Ko8MfR7xDr1N4g",
+      "title": "Job Quotation Template For Trade Labor | EmetOnlineBlog"
+     },
+     {
+      "rank": 5,
+      "domain": "pinterest.com",
+      "url": "https://google.com/goto?url=CAESbgHEIkXXCF92ubvXtI63FKnzoYaL00YqJRntSl0Jzd7Eu6g2EPq5NQGg5Tn7O3pN5h7Q0GiQqff11Gut0XUBj1Si56OfecX-W1E6O4LDZzABdzupATmqgZ7UJE809FdiYu_9zAa7s187mMx6h4Zp&gsessionid=vOEmfZpAShs2iTT4puyiGAk_MdhUnD_3t7vUM3K1Ko8MfR7xDr1N4g",
+      "title": "FREE 6+ Builder Quotation Samples & Templates in PDF"
+     },
+     {
+      "rank": 6,
+      "domain": "pinterest.com",
+      "url": "https://google.com/goto?url=CAESbQHEIkXXmZyYF5NVm6_jQulTNfKH5QlZry6iDwgSMN7bDyC5O9nil-_QfxezPW_n7P2qF2WTh7mD23NRp8Wo8zufEpHzKWTIn7b29GQEnNHR5TTYhDEufn4w_fnCMNQ3vE1tdEHNrGY-XEqw86Y&gsessionid=vOEmfZpAShs2iTT4puyiGAk_MdhUnD_3t7vUM3K1Ko8MfR7xDr1N4g",
+      "title": "9+ Free Word Quote Templates"
+     },
+     {
+      "rank": 7,
+      "domain": "pinterest.com",
+      "url": "https://google.com/goto?url=CAESfwHEIkXXcaLrU4Ae79UCWtMLuCsr6s6OdJYtLXa-upKcsP1xLJJO4oYZBxW9W1hAfip8AKuUk8ixgp8h4qiFQFa9u_Ey5KVC7u0rZzx8hByEpJdwc7pak_sT1aGCFMwNIMRkE-PwqE5_5ICF1Zf4SLuJYlJN5bO2myQX5Dtm0Os&gsessionid=vOEmfZpAShs2iTT4puyiGAk_MdhUnD_3t7vUM3K1Ko8MfR7xDr1N4g",
+      "title": "Labor Quote Template"
+     },
+     {
       "rank": 8,
-      "domain": "google.com",
-      "url": "https://google.com/goto?url=CAESfgHEIkXX_snBfCSoZparz_vSHYgVzumM6dQNlhigH7BLlY4mo0zms6Q1Yj0TACfPsPkdskHuZZ6iu50XGyoYPZQo7dnbMoarPtlFNBLIBikHckLax5QUO2MvsBzEpccfX2WFiDfhvcSH-tg_rDL4lAc0AK_nvFl__DL1Byw9sA&gsessionid=HtwCyFQ32QxWe01L3MPAMd6iIsq_Eyh6jsulEkmHGpdCqhvC2w8ewQ",
-      "title": "Free Handyman Quote Template (Australia)"
+      "domain": "quotetemplates.org",
+      "url": "https://google.com/goto?url=CAESdwHEIkXXTg2-Fhs_pEMyTwIq7F4Q5KOY1zOIjokQilX24Qx7ZMUIpH04cVAj9-Y0tErlS-3md68KktPnqYICJlwWQoc1rVoLn4pxrkaDal4k9tQo_svnsd7W6wdCrHYu3FAtpP2jEtKhbz7PbF2fOz2wmZr9Ohdz&gsessionid=vOEmfZpAShs2iTT4puyiGAk_MdhUnD_3t7vUM3K1Ko8MfR7xDr1N4g",
+      "title": "6+ Free Construction Quote Templates | Download Formats"
      }
     ],
     "impressions": 27,
@@ -819,14 +722,14 @@
   ],
   "error": null
  },
- "costUsd": 0.01,
+ "costUsd": 0.008,
  "speed": [
   {
    "url": "https://tradeadmin.com.au/",
    "lite": true,
-   "serverSecs": 0.14,
+   "serverSecs": 0.1,
    "htmlKb": 12,
-   "blocking": 3,
+   "blocking": 1,
    "images": 1,
    "noDims": 0,
    "imageKb": 0,
@@ -835,9 +738,9 @@
   {
    "url": "https://tradeadmin.com.au/tradify-vs-servicem8",
    "lite": true,
-   "serverSecs": 0.21,
+   "serverSecs": 0.1,
    "htmlKb": 18,
-   "blocking": 3,
+   "blocking": 1,
    "images": 1,
    "noDims": 0,
    "imageKb": 0,
@@ -856,10 +759,104 @@
   "unsureOutside": 0
  },
  "affiliateOk": 3,
- "secs": 148,
+ "secs": 149,
  "change": {
-  "first": true
+  "first": false,
+  "since": "2026-11-14T21:52:19Z",
+  "score": 1,
+  "newIssues": [],
+  "fixed": [
+   "/: 3 files block the first paint",
+   "/tradify-vs-servicem8: 3 files block the first paint",
+   "\"servicem8 tradify comparison\": we're not in the top 10 (Search Console avg 81); google.com leads"
+  ],
+  "impr28": 0,
+  "clicks28": 0,
+  "views28": 0,
+  "rivals": [
+   {
+    "keyword": "servicem8 vs",
+    "new": [
+     "fergus.com",
+     "nextminute.com",
+     "unknown site",
+     "memate.com.au",
+     "coastworksai.com.au"
+    ],
+    "dropped": [
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com"
+    ],
+    "ours": null
+   },
+   {
+    "keyword": "servicem8 pricing",
+    "new": [
+     "capterra.com.au",
+     "customcrms.com.au",
+     "reactiveweb.com.au",
+     "skillmammoth.com",
+     "tradieautomate.com"
+    ],
+    "dropped": [
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com"
+    ],
+    "ours": null
+   },
+   {
+    "keyword": "service mate vs tradify",
+    "new": [
+     "growthlocal.com.au",
+     "ityourservice.com.au",
+     "trackyatradie.com",
+     "unknown site",
+     "sleeplesstradesman.com"
+    ],
+    "dropped": [
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com"
+    ],
+    "ours": null
+   },
+   {
+    "keyword": "tradesman quote template",
+    "new": [
+     "kr.pinterest.com",
+     "contractortalk.com",
+     "etsy.com",
+     "in.pinterest.com",
+     "pinterest.com"
+    ],
+    "dropped": [
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com",
+     "google.com"
+    ],
+    "ours": null
+   }
+  ],
+  "positions": []
  },
- "history": [],
+ "history": [
+  {
+   "at": "2026-11-14T21:52:19Z",
+   "score": 91,
+   "grade": "A",
+   "impr28": 379,
+   "clicks28": 0
+  }
+ ],
  "issue": null
 }
