@@ -1,13 +1,30 @@
 {
-  "_about": "Vic Tours content shoots (victours.com.au/partners). Counts only, never business names: this repo is public. 'sat'/'sun' = deposits PAID for that day (max 3 each). Simon tells Claude when a deposit lands and Claude bumps the count. depositUrl = the public Stripe Payment Link for the $150 deposit (empty until Simon creates it).",
+  "live": false,
+  "_about": "Vic Tours content shoots (victours.com.au/partners). Counts only, never business names: this repo is public. 'sat'/'sun' = deposits PAID for that day (max 3 each). Simon tells Claude when a deposit lands and Claude bumps the count. depositUrl = the public Stripe Payment Link for the $150 deposit (empty until Simon creates it). live=false hides the page (paused 14 Nov 2026: no capacity to deliver yet).",
   "price": 450,
   "deposit": 150,
   "perDay": 3,
   "depositUrl": "",
   "weekends": [
-    { "sat": "2026-11-21", "satBooked": 0, "sunBooked": 0 },
-    { "sat": "2026-11-28", "satBooked": 0, "sunBooked": 0 },
-    { "sat": "2026-12-05", "satBooked": 0, "sunBooked": 0 },
-    { "sat": "2026-12-12", "satBooked": 0, "sunBooked": 0 }
+    {
+      "sat": "2026-11-21",
+      "satBooked": 0,
+      "sunBooked": 0
+    },
+    {
+      "sat": "2026-11-28",
+      "satBooked": 0,
+      "sunBooked": 0
+    },
+    {
+      "sat": "2026-12-05",
+      "satBooked": 0,
+      "sunBooked": 0
+    },
+    {
+      "sat": "2026-12-12",
+      "satBooked": 0,
+      "sunBooked": 0
+    }
   ]
 }

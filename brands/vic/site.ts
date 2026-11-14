@@ -698,7 +698,7 @@ export function routes(): Route[] {
 
   }
   // Content shoot offer for Victorian businesses (slots + deposit: data/vic/shoots.json).
-  out.push({
+  if (shoots.live) out.push({
     path: 'partners',
     template: 'vicPartners',
     seo: { title: 'Photos and a video reel for your business' + SUFFIX, rawTitle: true, description: `Pro photos, a 30–60s video reel and a featured spot on Vic Tours for $${shoots.price} inc. GST. We come to you anywhere in Victoria. Only 6 shoots a weekend.` },
