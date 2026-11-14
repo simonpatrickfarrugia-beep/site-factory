@@ -14,6 +14,7 @@ import { enrich, intake, maxYear, recheck, type QueueItem, type Movie, type Resu
 import { commitFiles, readFiles, StaleError, type Repo } from './github';
 import { channelFeed, omdbFind, omdbLookup, omdbYearsForTitle, brainstormNiches, brainstormStats, judgeNiche, pickCategories, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
 import { buildCollections, minFilmsFor, winnable, MIN_OPENNESS, PERSON_MIN_FILMS, type Idea, type MovieCollection } from './collections';
+import { siteCheck, type SiteCheckRequest } from './sitecheck';
 import { ga4Batch, googleAccessToken, inspectUrl, searchAnalytics, youtubeSearch, type Ga4Row, type UrlInspection } from './google';
 /** GA4's earliest allowed date: "all time" reports start here and simply return nothing before a site existed. */
 const ALL_TIME_START = '2015-08-14';
@@ -155,6 +156,15 @@ export default {
       if (!kws.length) return Response.json({ error: 'no keywords' }, { status: 400 });
       const vols = await searchVolumes(env.DATAFORSEO_LOGIN, env.DATAFORSEO_PASSWORD, kws, Number(url.searchParams.get('loc') ?? 2840));
       return Response.json({ volumes: Object.fromEntries(kws.map((k) => [k, vols.get(cleanKeyword(k)) ?? null])) }, { headers: { 'cache-control': 'no-store' } });
+    }
+    // Site check (scripts/sitecheck/run.py): Google top 10 per search + index status per page. Read-only, ~US$0.002 per search.
+    if (url.pathname === '/sitecheck' && req.method === 'POST') {
+      if (!env.RUN_KEY || url.searchParams.get('key') !== env.RUN_KEY) return new Response('Forbidden\n', { status: 403 });
+      try {
+        return Response.json(await siteCheck(env, (await req.json()) as SiteCheckRequest), { headers: { 'cache-control': 'no-store' } });
+      } catch (e) {
+        return Response.json({ error: (e as Error).message }, { status: 500 });
+      }
     }
     // Film uploads for the free classic movies (see ./media.ts).
     if (url.pathname.startsWith('/media/')) {

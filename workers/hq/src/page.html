@@ -327,6 +327,17 @@ details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px
 .deal header{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .deal__name{border:0;background:none;padding:0;font:700 1.1rem var(--display);text-align:left}
 .warn{color:var(--due);text-transform:none;letter-spacing:0}
+.grade{display:inline-flex;align-items:baseline;gap:4px;font:700 1.3rem/1 var(--display);color:var(--g)}
+.grade small{font:500 .78rem var(--mono);color:var(--muted)}
+.grade.big{font-size:2.6rem}
+.chk__btn{all:unset;display:grid;gap:6px;cursor:pointer;width:100%}
+.chk__btn p{margin:0}
+.chk__head{display:flex;gap:14px;align-items:center}
+.chk__fixes,.chk__list{margin:6px 0 0;padding-left:18px;display:grid;gap:8px}
+.chk__list{list-style:disc}
+.chk__areas{list-style:none;padding:0;margin:6px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px}
+.chk__areas .grade{font-size:1rem;min-width:56px}
+.sev-blocker{background:var(--bad);color:#fff}.sev-high{background:var(--due-bg);color:var(--due)}
 </style>
 </head>
 <body>
@@ -342,12 +353,13 @@ details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px
       <button role="tab" id="tab-replies" aria-selected="false" data-desk data-view="replies">Replies</button>
       <button class="mob-only" id="more-btn" aria-haspopup="true" aria-expanded="false">More</button>
       <button role="tab" id="tab-affiliates" aria-selected="false" data-desk data-view="affiliates">Affiliates</button>
+      <button role="tab" id="tab-checks" aria-selected="false" data-desk data-view="checks">Site check</button>
     </div>
   </div>
   <div class="chips" id="chips" aria-label="Filter by brand"></div>
 </div></div>
 
-<div class="more-menu" id="more-menu" hidden><button data-view="replies">Replies</button><button data-view="prospect">Prospect</button><button data-view="pipeline">Pipeline</button><button data-view="affiliates">Affiliates</button></div>
+<div class="more-menu" id="more-menu" hidden><button data-view="replies">Replies</button><button data-view="prospect">Prospect</button><button data-view="pipeline">Pipeline</button><button data-view="affiliates">Affiliates</button><button data-view="checks">Site check</button></div>
 <main class="wrap">
   <section class="strip" id="strip" aria-label="This week"></section>
   <section id="view"></section>
@@ -400,7 +412,8 @@ async function load() {
     const [board, summary, prospects, replies, pipeline, affiliates, radar, needs] = await Promise.all([api('/api/board'), api('/api/summary'), api('/api/prospects'), api('/api/replies'), api('/api/pipeline'), api('/api/affiliates'), api('/api/radar'), api('/api/needs')]);
     const send = await api('/api/send/status').catch(() => null);
     const hq = await api('/api/hq').catch(() => null);
-    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar, needs, send, hq });
+    const checks = await api('/api/sitecheck').catch(() => null);
+    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar, needs, send, hq, checks });
     $('#updated').textContent = 'Targets scored ' + new Date(prospects.generated).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
     render();
   } catch (e) {
@@ -409,7 +422,7 @@ async function load() {
 }
 
 function render() {
-  document.querySelectorAll('.tabs button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.view === state.view || (b.id === 'more-btn' && ['replies', 'prospect', 'pipeline', 'affiliates'].includes(state.view)))));
+  document.querySelectorAll('.tabs button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.view === state.view || (b.id === 'more-btn' && ['replies', 'prospect', 'pipeline', 'affiliates', 'checks'].includes(state.view)))));
   renderChips(); renderStrip();
   if (state.view === 'hq') renderHq();
   else if (state.view === 'today') renderToday();
@@ -417,6 +430,7 @@ function render() {
   else if (state.view === 'prospect') renderProspect();
   else if (state.view === 'pipeline') renderPipeline();
   else if (state.view === 'affiliates') renderAffiliates();
+  else if (state.view === 'checks') renderChecks();
   else renderReplies();
 }
 
@@ -431,6 +445,18 @@ function renderChips() {
 function inBrand(b) { return state.brand === 'all' || state.brand === b; }
 
 function renderStrip() {
+  if (state.view === 'checks') {
+    const list = checkList();
+    const avg = list.length ? Math.round(list.reduce((a, c) => a + c.score, 0) / list.length) : '–';
+    const broken = list.reduce((a, c) => a + (c.broken || 0), 0);
+    const next = list.map((c) => c.nextDue).sort()[0];
+    $('#strip').innerHTML = `
+      <div class="stat"><b>${list.length}</b><span>Sites with a report card</span></div>
+      <div class="stat"><b>${avg}</b><span>Average score /100</span></div>
+      <div class="stat${broken ? ' due' : ''}"><b>${broken}</b><span>Broken things to fix</span></div>
+      <div class="stat"><b>${next ? esc(new Date(next).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' })) : '–'}</b><span>Next scan</span></div>`;
+    return;
+  }
   if (state.view === 'affiliates') {
     const items = affItems();
     const c = (f) => items.filter(f).length;
@@ -970,6 +996,50 @@ async function openAffiliate(id) {
   };
 }
 
+// ---------- Site check ----------
+const GRADE_C = { A: 'var(--good)', B: 'var(--good)', C: 'var(--accent)', D: 'var(--due)', F: 'var(--bad)' };
+function checkList() {
+  const s = state.checks?.sites || {};
+  return Object.entries(s).map(([id, c]) => ({ id, ...c })).filter((c) => inBrand(c.id)).sort((a, z) => a.score - z.score);
+}
+const gradeBadge = (g, score, big) => `<span class="grade${big ? ' big' : ''}" style="--g:${GRADE_C[g] || 'var(--muted)'}">${esc(g || '–')}<small>${score ?? ''}</small></span>`;
+const signed = (n) => (n > 0 ? '+' : '') + n;
+function renderChecks() {
+  const list = checkList();
+  if (!state.checks) { $('#view').innerHTML = '<p class="empty">Site check data unavailable right now.</p>'; return; }
+  if (!list.length) { $('#view').innerHTML = '<div class="hint"><strong>No report cards yet.</strong> The first scans run at 06:30 each morning (3 sites a day).</div>'; return; }
+  $('#view').innerHTML = `<div class="today-head"><h2>Report cards</h2><span class="meta">Weekly while a site isn't earning, fortnightly once it earns, monthly once steady · worst first · tap for the fixes</span></div>
+    <div class="deals">${list.map((c) => `<article class="deal chk" style="--c:${color(c.id)}"><button class="chk__btn" data-check="${esc(c.id)}">
+      <header><span class="deal__name">${esc(c.name)}</span>${gradeBadge(c.grade, c.score)}</header>
+      <p class="meta">${c.first ? 'First scan' : `<span class="delta ${c.change > 0 ? 'up' : c.change < 0 ? 'down' : ''}">${signed(c.change)}</span> since last`} · scanned ${esc(ago(c.scannedAt))} · next ${esc(new Date(c.nextDue).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' }))} (every ${c.cadenceDays} days)</p>
+      ${c.topFix ? `<p><b>Top fix:</b> ${esc(c.topFix)}</p>` : '<p>Nothing to fix 🎉</p>'}
+      <p class="meta">${c.broken ? `<b class="warn">${c.broken} broken</b> · ` : ''}${c.newIssues ? c.newIssues + ' new · ' : ''}${c.fixed ? c.fixed + ' fixed · ' : ''}${esc(c.stage)}</p>
+    </button></article>`).join('')}</div>`;
+}
+async function openCheck(id) {
+  const dlg = $('#sheet'); const body = $('#sheet-body');
+  body.innerHTML = '<p>Loading…</p>'; if (!dlg.open) dlg.showModal();
+  let c;
+  try { c = await api('/api/sitecheck/' + encodeURIComponent(id)); } catch (e) { body.innerHTML = '<p class="error">' + esc(e.message) + '</p>'; return; }
+  if (c.error) { body.innerHTML = '<p class="error">' + esc(c.error) + '</p>'; return; }
+  const d = c.change || {}; const g = c.google || {};
+  const fixes = (c.findings || []).slice(0, 5).map((f, i) => `<li><b>${i + 1}. ${esc(f.title)}</b> <span class="pill sev-${esc(f.severity)}">${esc(f.severity)}</span><br>${esc(f.fix)}${f.pages?.length ? `<br><span class="meta">${f.pages.slice(0, 4).map(esc).join(' · ')}</span>` : ''}${f.detail ? `<br><span class="meta">${esc(f.detail)}</span>` : ''}</li>`).join('');
+  const areas = Object.values(c.areas || {}).map((a) => `<li>${gradeBadge(a.grade, a.score)} ${esc(a.label)}</li>`).join('');
+  const serps = (c.live?.serps || []).filter((r) => !r.error).map((r) => `<li><b>“${esc(r.keyword)}”</b> · us ${r.ourRank ? '#' + r.ourRank : 'not in top 10'}${r.gscPosition ? ` (avg ${r.gscPosition})` : ''}<br><span class="meta">${(r.top || []).slice(0, 5).map((t) => t.rank + '. ' + esc(t.domain)).join(' · ')}</span></li>`).join('');
+  const moved = d.first ? '' : [...(d.rivals || []).map((m) => `“${esc(m.keyword)}”: ${[m.new.length ? 'new in top 5: ' + m.new.map(esc).join(', ') : '', m.dropped.length ? 'out: ' + m.dropped.map(esc).join(', ') : '', m.ours ? `us ${m.ours[0] || '–'} → ${m.ours[1] || '–'}` : ''].filter(Boolean).join(' · ')}`),
+    ...(d.positions || []).map((m) => `“${esc(m.query)}”: position ${m.was} → ${m.now}`), ...(d.newIssues || []).slice(0, 5).map((t) => 'New: ' + esc(t)), ...(d.fixed || []).slice(0, 5).map((t) => 'Fixed: ' + esc(t))];
+  body.innerHTML = `
+    <header><div><h2 id="sheet-title">${esc(c.name)}</h2><span class="meta">Scanned ${esc(ago(c.scannedAt))} · ${c.pages} pages · next ${esc(c.nextDue)} (${esc(c.stageWhy)})</span></div><button class="close" id="close">Close</button></header>
+    <div class="chk__head">${gradeBadge(c.grade, c.score, true)}<p>${d.first ? 'First scan: next time this shows what changed.' : `<b>Since ${esc((d.since || '').slice(0, 10))}:</b> score ${signed(d.score)} · Google impressions ${signed(d.impr28)} · clicks ${signed(d.clicks28)} · visits ${signed(d.views28)}`}</p></div>
+    <div><label>Top 5 fixes (biggest impact first)</label><ol class="chk__fixes">${fixes || '<li>Nothing to fix 🎉</li>'}</ol></div>
+    <div><label>Report card</label><ul class="chk__areas">${areas}</ul></div>
+    <div><label>Google (last 7 days)</label><p>${(g.impr7 || 0).toLocaleString()} impressions (${signed((g.impr7 || 0) - (g.imprPrev7 || 0))}) · ${g.clicks7 || 0} clicks · data to ${esc(g.gscTo || '–')}</p></div>
+    ${serps ? `<div><label>Who's on top for your top searches</label><ul class="chk__list">${serps}</ul></div>` : ''}
+    ${moved.length ? `<div><label>What changed</label><ul class="chk__list">${moved.map((x) => `<li>${x}</li>`).join('')}</ul></div>` : ''}
+    <div class="row"><a class="btn ghost" style="text-decoration:none" href="https://github.com/simonpatrickfarrugia-beep/site-factory/blob/main/hq/reports/sitecheck/${encodeURIComponent(c.id)}.md" target="_blank" rel="noopener">Full report ↗</a></div>`;
+  $('#close').onclick = () => dlg.close();
+}
+
 // ---------- Pipeline ----------
 function spark(series) {
   if (!series || series.length < 2) return '';
@@ -1125,6 +1195,7 @@ document.addEventListener('click', (e) => {
   else if (t.dataset.draft) { const [b, k] = t.dataset.draft.split('|'); openDraft(b, k); }
   else if (t.id === 'more-btn') { const m = $('#more-menu'); m.hidden = !m.hidden; t.setAttribute('aria-expanded', String(!m.hidden)); }
   else if (t.dataset.aff) openAffiliate(t.dataset.aff);
+  else if (t.dataset.check) openCheck(t.dataset.check);
   else if (t.dataset.rdraft) { const o = state.radar.queue.find((x) => String(x.id) === t.dataset.rdraft); if (o) openDraft(o.brand, o.target, o); }
   else if (t.dataset.rdrop) radarReview(t.dataset.rdrop, $('#rdrop-' + t.dataset.rdrop).value, $('#rwhy-' + t.dataset.rdrop).value);
   else if (t.dataset.rlater) radarReview(t.dataset.rlater, 'later');

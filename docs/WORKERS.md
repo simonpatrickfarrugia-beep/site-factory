@@ -8,7 +8,7 @@ Three layers, each with one job:
 | **Skills** | Each worker's job description (what to read, do, write, report) | `.claude/skills/<name>/SKILL.md` |
 | **Schedule** | When a worker runs: a claude.ai scheduled task whose prompt just points at its skill | claude.ai → scheduled tasks |
 
-Code jobs that don't need judgement (stats, intake, enrich, health, leads, brief) stay as GitHub workflows and the pipeline Worker:
+Code jobs that don't need judgement (stats, intake, enrich, health, leads, brief, site check) stay as GitHub workflows and the pipeline Worker:
 they're free, fast and don't use Claude usage. Use an AI worker only where judgement or research is the job.
 
 To change what a worker does, edit its SKILL.md and push. The scheduled task picks it up on the next run; no prompt editing.

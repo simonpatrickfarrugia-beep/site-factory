@@ -77,6 +77,15 @@ if hits:
     md += ['Latest milestones: ' + '; '.join(f'{h["date"]} {h["site"]}: {h["what"]}' for h in sorted(hits, key=lambda h: h['date'])[-3:]), '']
 
 # Health
+# Site check report cards (hq/sitecheck/index.json, docs/SITECHECK.md)
+try:
+    sc = json.load(open('hq/sitecheck/index.json')).get('sites', {})
+    if sc:
+        md += ['## Site check', '', ' · '.join(f"{c['name']} **{c['grade']} {c['score']}**" + (f" ({c['change']:+d})" if not c.get('first') and c.get('change') is not None else '') + (f", {c['broken']} broken" if c.get('broken') else '')
+                                     for c in sorted(sc.values(), key=lambda c: c['score'])), '',
+               *[f"- {c['name']}: top fix: {c['topFix']} (next scan {c['nextDue']})" for c in sorted(sc.values(), key=lambda c: c['score']) if c.get('topFix')], '']
+except FileNotFoundError:
+    pass
 md += ['## Health', '']
 if os.path.exists('health.md'):
     h = open('health.md').read()

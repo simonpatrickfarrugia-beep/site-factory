@@ -1,0 +1,51 @@
+# Site check: one report card per site (errors, quality, SEO gaps, competitor moves), fixes ranked by impact.
+# Daily at 06:30 Melbourne summer time (after the 06:00 stats job). Only sites that are due get scanned:
+# weekly while not earning, fortnightly once earning, monthly once steady (hq/sitecheck.json, docs/SITECHECK.md).
+# Cards: hq/sitecheck/<id>.json + hq/reports/sitecheck/<id>.md → IMN HQ "Site check" tab and the morning report.
+# Anything broken opens (or updates) an issue labelled "sitecheck"; it closes itself after a clean scan.
+name: sitecheck
+on:
+  schedule:
+    - cron: '30 19 * * *'
+  workflow_dispatch:
+    inputs:
+      site:
+        description: 'Site id to scan now (vic, trailers, community-help-co, trade-admin, paycalc, simon-says-travel), "all", or blank for whatever is due'
+        required: false
+        default: ''
+      live:
+        description: Include the Google top-10 + index check (DataForSEO, ~US$0.01 per site)
+        type: boolean
+        default: true
+permissions:
+  contents: write
+  issues: write
+concurrency:
+  group: sitecheck
+  cancel-in-progress: false
+jobs:
+  scan:
+    runs-on: ubuntu-24.04  # pinned: ubuntu-latest moved to 26.04 in Oct 2026 and broke the Playwright install
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - name: Scan
+        env:
+          PIPELINE_RUN_KEY: ${{ secrets.PIPELINE_RUN_KEY }}
+          GH_TOKEN: ${{ github.token }}
+          SITE: ${{ inputs.site }}
+          LIVE: ${{ github.event_name == 'schedule' || inputs.live }}
+        run: |
+          args=()
+          [ -n "$SITE" ] && args+=(--site "$SITE")
+          [ "$LIVE" = "true" ] || args+=(--no-live)
+          python3 scripts/sitecheck/run.py "${args[@]}"
+      - name: Save cards
+        run: |
+          git config user.name "site-check"
+          git config user.email "actions@users.noreply.github.com"
+          git add hq/sitecheck hq/reports/sitecheck 2>/dev/null || true
+          if git diff --cached --quiet; then echo "nothing to save"; exit 0; fi
+          git commit -q -m "Site check: $(cat sitecheck-summary.txt | cut -c1-120) [skip ci]"
+          for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done
+          echo "::notice title=sitecheck::$(cat sitecheck-summary.txt)"

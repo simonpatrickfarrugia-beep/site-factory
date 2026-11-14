@@ -13,6 +13,7 @@ import { FOLLOW_UP, FEATURE_LINE } from './templates';
 import { ICON_SVG, ICON_180, ICON_512, MANIFEST } from './app-assets';
 import { sendForOrg, sendStatus } from './send';
 import { hq } from './funnel';
+import { siteCheckIndex, siteCheckCard } from './sitecheck';
 
 interface Env {
   DB: D1Database;
@@ -63,6 +64,9 @@ export default {
       if (url.pathname === '/api/board' && req.method === 'GET') return json(await board(env));
       if (url.pathname === '/api/summary' && req.method === 'GET') return json(await summary(env));
       if (url.pathname === '/api/hq' && req.method === 'GET') return json(await hq(env.DB, T.brands));
+      if (url.pathname === '/api/sitecheck' && req.method === 'GET') return json(await siteCheckIndex());
+      const sc = url.pathname.match(/^\/api\/sitecheck\/([a-z0-9-]{1,60})$/);
+      if (sc && req.method === 'GET') return json(await siteCheckCard(sc[1]));
       if (url.pathname === '/api/prospects' && req.method === 'GET') return json(await prospects(env));
       if (url.pathname === '/api/replies' && req.method === 'GET') return json(await replies(env));
       if (url.pathname === '/api/needs' && req.method === 'GET') return json({ messages: await needsReply(env.DB), followUp: FOLLOW_UP, featureLine: FEATURE_LINE });

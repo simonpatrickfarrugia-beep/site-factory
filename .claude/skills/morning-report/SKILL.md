@@ -14,6 +14,7 @@ Follow `CLAUDE.md`. The only repo changes allowed here: recording a milestone (s
 - Money clicks: the CTA keys listed in `CLAUDE.md`.
 - `hq/portfolio.json` (nodes[] with launched + target90 {views, moneyClicks}; todo[]), `hq/finance.json`, `hq/milestones.json`.
 - `leads/latest.md`: today's business-travel call list for Simon's day job.
+- `hq/sitecheck/index.json`: latest site check report card per site (sites{id: name, scannedAt, score, grade, change, first, topFix, broken, nextDue}).
 - D1, read-only (SELECT only, values via params):
   - New forms, last 24 h: `SELECT brand, form, COUNT(*) n FROM submissions WHERE created_at > ? GROUP BY brand, form`.
     `tradify-trial` = a tradie wants a Tradify trial (Simon sets it up in Tradify's Partner Portal); `enquiry`/`referral` = CHC; `admin-help`/`pitch` = interest forms. Ignore `plan-email`.
@@ -47,6 +48,9 @@ Commit with the milestone/log commit (`[skip ci]` is NOT used for this file: HQ 
    `traffic.daily`; and once a week (Mondays) the top 3 outside sources of the last 28 days. Name a referrer page when
    `traffic.referrers` has one that sent 3+ views and isn't a search engine or social site: that's an organisation sharing
    the link. Say "Radar can find more like <org>". Never guess a source the data doesn't show.
+4b. **🩺 Site check** (only if a card's `scannedAt` is in the last 24 h): ONE line, e.g.
+   "victours.com.au B 82 (+4) · top fix: 3 broken internal links · 2 broken". Several new cards: same line, separated by " · ".
+   Link: https://imn-hq.simonpatrickfarrugia.workers.dev (More → Site check). Broken things already have a `sitecheck` GitHub issue; don't repeat them under Needs you.
 5. **🔎 Google**: total clicks and impressions (28 days, all sites); the best-placed page in the top 20 if any (path, position, query).
 6. **📞 Day job**: top 3 from `leads/latest.md` (company (city) — why — opener in quotes), then
    https://github.com/simonpatrickfarrugia-beep/site-factory/blob/main/leads/latest.md . If the file isn't dated today (Melbourne) or has
