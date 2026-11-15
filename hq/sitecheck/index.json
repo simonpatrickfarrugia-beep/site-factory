@@ -96,10 +96,10 @@
    "name": "movietrailer.channel",
    "url": "https://www.movietrailer.channel",
    "owner": "imn",
-   "scannedAt": "2026-11-15T08:38:56Z",
+   "scannedAt": "2026-11-15T08:53:20Z",
    "score": 98,
    "grade": "A",
-   "change": 1,
+   "change": 0,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
@@ -117,21 +117,6 @@
      "area": "indexing",
      "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 57 pages on 16 Dec 2026, cut or merge weak pages and earn a few links.",
      "pages": [],
-     "detail": "",
-     "broken": false
-    },
-    {
-     "id": "seo-og",
-     "title": "8 page(s) without a share image",
-     "severity": "low",
-     "area": "seo",
-     "fix": "Add an og:image so shared links show a picture.",
-     "pages": [
-      "/movies/dracula-1931",
-      "/movies/frankenstein-1931",
-      "/discover",
-      "/original-films"
-     ],
      "detail": "",
      "broken": false
     },
@@ -514,9 +499,9 @@
    ]
   }
  },
- "updated": "2026-11-15T08:38:56Z",
+ "updated": "2026-11-15T08:53:20Z",
  "lastRun": {
-  "at": "2026-11-15T08:38:56Z",
+  "at": "2026-11-15T08:53:20Z",
   "scanned": [
    "trailers"
   ]

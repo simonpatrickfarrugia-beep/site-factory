@@ -3,7 +3,7 @@
  "name": "movietrailer.channel",
  "url": "https://www.movietrailer.channel",
  "owner": "imn",
- "scannedAt": "2026-11-15T08:38:56Z",
+ "scannedAt": "2026-11-15T08:53:20Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
@@ -27,8 +27,8 @@
    "label": "Sitemap & indexing"
   },
   "seo": {
-   "score": 87,
-   "grade": "B",
+   "score": 90,
+   "grade": "A",
    "label": "Titles, descriptions & schema"
   },
   "content": {
@@ -64,27 +64,6 @@
    "count": 1,
    "detail": "",
    "impact": 3,
-   "broken": false
-  },
-  {
-   "id": "seo-og",
-   "area": "seo",
-   "severity": "low",
-   "title": "8 page(s) without a share image",
-   "fix": "Add an og:image so shared links show a picture.",
-   "pages": [
-    "/movies/dracula-1931",
-    "/movies/frankenstein-1931",
-    "/discover",
-    "/original-films",
-    "/about",
-    "/contact",
-    "/terms",
-    "/privacy-policy"
-   ],
-   "count": 8,
-   "detail": "",
-   "impact": 1.2,
    "broken": false
   },
   {
@@ -399,7 +378,7 @@
   {
    "url": "https://www.movietrailer.channel/",
    "lite": true,
-   "serverSecs": 0.21,
+   "serverSecs": 0.09,
    "htmlKb": 64,
    "blocking": 1,
    "images": 31,
@@ -410,7 +389,7 @@
   {
    "url": "https://www.movietrailer.channel/browse",
    "lite": true,
-   "serverSecs": 0.1,
+   "serverSecs": 0.09,
    "htmlKb": 175,
    "blocking": 1,
    "images": 368,
@@ -431,14 +410,14 @@
   "unsureOutside": 48
  },
  "affiliateOk": 970,
- "secs": 136,
+ "secs": 131,
  "change": {
   "first": false,
-  "since": "2026-11-15T08:28:31Z",
-  "score": 1,
+  "since": "2026-11-15T08:38:56Z",
+  "score": 0,
   "newIssues": [],
   "fixed": [
-   "5 title outside 30–65 characters"
+   "8 page(s) without a share image"
   ],
   "impr28": 0,
   "clicks28": 0,
@@ -471,6 +450,13 @@
   {
    "at": "2026-11-15T08:28:31Z",
    "score": 97,
+   "grade": "A",
+   "impr28": 112,
+   "clicks28": 0
+  },
+  {
+   "at": "2026-11-15T08:38:56Z",
+   "score": 98,
    "grade": "A",
    "impr28": 112,
    "clicks28": 0
