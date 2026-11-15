@@ -11,7 +11,7 @@
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-22",
+   "nextDue": "2026-11-21",
    "topFix": "/: 1,776 KB of images in the first 15",
    "broken": 1,
    "newIssues": 0,
@@ -96,35 +96,20 @@
    "name": "movietrailer.channel",
    "url": "https://www.movietrailer.channel",
    "owner": "imn",
-   "scannedAt": "2026-11-14T22:17:22Z",
-   "score": 90,
+   "scannedAt": "2026-11-15T07:41:10Z",
+   "score": 96,
    "grade": "A",
-   "change": 4,
+   "change": 6,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
    "nextDue": "2026-11-22",
-   "topFix": "6 of your top 8 pages aren't in Google's index",
+   "topFix": "Google shows only 21 of 384 pages",
    "broken": 0,
    "newIssues": 0,
-   "fixed": 3,
-   "costUsd": 0.01,
+   "fixed": 6,
+   "costUsd": 0,
    "top": [
-    {
-     "id": "not-indexed",
-     "title": "6 of your top 8 pages aren't in Google's index",
-     "severity": "high",
-     "area": "indexing",
-     "fix": "Make the page more useful than what ranks, link to it from the home page, then request indexing in Search Console.",
-     "pages": [
-      "/browse",
-      "/movies/weird-science-1985",
-      "/free-classic-movies",
-      "/movies/anora-2024"
-     ],
-     "detail": "/browse: Discovered – currently not indexed; /movies/weird-science-1985: Discovered – currently not indexed; /free-classic-movies: Discovered – currently not indexed; /movies/anora-2024: Discovered – ",
-     "broken": false
-    },
     {
      "id": "few-pages-in-google",
      "title": "Google shows only 21 of 384 pages",
@@ -152,7 +137,7 @@
     },
     {
      "id": "seo-og",
-     "title": "9 page(s) without a share image",
+     "title": "8 page(s) without a share image",
      "severity": "low",
      "area": "seo",
      "fix": "Add an og:image so shared links show a picture.",
@@ -160,22 +145,37 @@
       "/movies/dracula-1931",
       "/movies/frankenstein-1931",
       "/discover",
-      "/browse"
+      "/original-films"
      ],
      "detail": "",
      "broken": false
     },
     {
      "id": "schema-missing",
-     "title": "7 page(s) have no schema",
+     "title": "6 page(s) have no schema",
      "severity": "low",
      "area": "seo",
      "fix": "Add WebPage/BreadcrumbList (or the page's own type) so Google understands it.",
      "pages": [
       "/discover",
-      "/browse",
       "/original-films",
-      "/about"
+      "/about",
+      "/contact"
+     ],
+     "detail": "",
+     "broken": false
+    },
+    {
+     "id": "seo-words",
+     "title": "11 page(s) under 250 words",
+     "severity": "low",
+     "area": "seo",
+     "fix": "Fine for tools; for guides add the answer people search for.",
+     "pages": [
+      "/movies/once-upon-a-time-in-hollywood-2016",
+      "/movies/whalefall-2026",
+      "/movies/mad-max-1979",
+      "/movies/its-a-wonderful-life-1946"
      ],
      "detail": "",
      "broken": false
@@ -193,7 +193,7 @@
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-22",
+   "nextDue": "2026-11-21",
    "topFix": "\"community help\": we're not in the top 10 (Search Console avg 17); goldcoast.qld.gov.au leads",
    "broken": 0,
    "newIssues": 1,
@@ -274,7 +274,7 @@
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-22",
+   "nextDue": "2026-11-21",
    "topFix": "1 of your top 8 pages aren't in Google's index",
    "broken": 0,
    "newIssues": 0,
@@ -356,7 +356,7 @@
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-22",
+   "nextDue": "2026-11-21",
    "topFix": "\"mypaycalc\": we're not in the top 10 (Search Console avg 5); unknown site leads",
    "broken": 0,
    "newIssues": 0,
@@ -442,7 +442,7 @@
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-22",
+   "nextDue": "2026-11-21",
    "topFix": "1 title outside 30–65 characters",
    "broken": 0,
    "newIssues": 0,
@@ -516,16 +516,11 @@
    ]
   }
  },
- "updated": "2026-11-14T22:17:22Z",
+ "updated": "2026-11-15T07:41:10Z",
  "lastRun": {
-  "at": "2026-11-14T22:17:22Z",
+  "at": "2026-11-15T07:41:10Z",
   "scanned": [
-   "trailers",
-   "vic",
-   "community-help-co",
-   "trade-admin",
-   "paycalc",
-   "simon-says-travel"
+   "trailers"
   ]
  }
 }
