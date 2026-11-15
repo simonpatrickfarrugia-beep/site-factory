@@ -4,45 +4,33 @@
    "name": "victours.com.au",
    "url": "https://victours.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-14T22:17:22Z",
-   "score": 90,
+   "scannedAt": "2026-11-15T09:26:58Z",
+   "score": 95,
    "grade": "A",
-   "change": 1,
+   "change": 5,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-21",
-   "topFix": "/: 1,776 KB of images in the first 15",
+   "nextDue": "2026-11-22",
+   "topFix": "9 outside link(s) go to a missing page",
    "broken": 1,
    "newIssues": 0,
-   "fixed": 2,
-   "costUsd": 0.01,
+   "fixed": 6,
+   "costUsd": 0,
    "top": [
     {
-     "id": "speed-img-home",
-     "title": "/: 1,776 KB of images in the first 15",
-     "severity": "high",
-     "area": "speed",
-     "fix": "Resize images to the size shown (max ~1600px wide), serve WebP/AVIF, lazy-load below the fold.",
-     "pages": [
-      "/"
-     ],
-     "detail": "",
-     "broken": false
-    },
-    {
      "id": "broken-outside",
-     "title": "7 outside link(s) go to a missing page",
+     "title": "9 outside link(s) go to a missing page",
      "severity": "medium",
      "area": "health",
      "fix": "Update or remove the links (often an official website that moved).",
      "pages": [
-      "/day-trips/torquay",
       "/great-ocean-road",
-      "/great-ocean-road/do",
-      "/torquay"
+      "/great-ocean-road/eat",
+      "/warrnambool",
+      "/warrnambool/eat"
      ],
-     "detail": "https://ansmtorquay.wordpress.com/ (410); https://www.laporchetta.com/store-locations/suburb/phillip-island (404); https://www.thebottleofmilk.com/ (no answer); http://www.urbanspoon.com/r/346/1815273",
+     "detail": "https://www.seanchai.com.au (no answer); https://ansmtorquay.wordpress.com/ (410); https://allsmiles.com.au/ (no answer); https://www.laporchetta.com/store-locations/suburb/phillip-island (404); https",
      "broken": true
     },
     {
@@ -86,6 +74,21 @@
       "/road-trips",
       "/about",
       "/how-we-build-our-guides"
+     ],
+     "detail": "",
+     "broken": false
+    },
+    {
+     "id": "seo-desc",
+     "title": "5 description outside 70–160 characters",
+     "severity": "low",
+     "area": "seo",
+     "fix": "Rewrite to 70–160 characters: what the page gives the searcher.",
+     "pages": [
+      "/high-country/eat",
+      "/road-trips/great-ocean-road-3-day-itinerary",
+      "/about",
+      "/privacy-policy"
      ],
      "detail": "",
      "broken": false
@@ -471,11 +474,11 @@
    ]
   }
  },
- "updated": "2026-11-15T09:13:18Z",
+ "updated": "2026-11-15T09:26:58Z",
  "lastRun": {
-  "at": "2026-11-15T09:13:18Z",
+  "at": "2026-11-15T09:26:58Z",
   "scanned": [
-   "trailers"
+   "vic"
   ]
  }
 }
