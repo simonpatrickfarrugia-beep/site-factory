@@ -180,7 +180,9 @@ async function process(state: State, svc: Services, limit: number, which: QueueI
 
   for (const item of items) {
     // Each item needs up to 2 calls (OMDb, then Claude), +1 to find its trailer, +1 to check remakes when it has no year.
-    if (svc.budget.left < 2 + (item.youtubeId ? 0 : 1) + (item.year ? 0 : 1)) {
+    // The OMDb fallback (search + fetch by id, see omdbFind) only runs while more than 3 calls are left, so start an
+    // item only with 6+ left: otherwise a classic like Casablanca misses the fallback and lands in review as "no match".
+    if (svc.budget.left < Math.max(6, 2 + (item.youtubeId ? 0 : 1) + (item.year ? 0 : 1))) {
       r.log.push('Stopped early: call budget used up; the rest wait for the next run.');
       break;
     }
