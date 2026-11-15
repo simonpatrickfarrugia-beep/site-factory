@@ -279,10 +279,10 @@
   "channelId": null,
   "publishedAt": null,
   "source": "catalogue",
-  "status": "new",
+  "status": "review",
   "foundAt": "2026-11-08T20:00:10.647Z",
-  "lastChecked": "2026-11-12T21:00:10.706Z",
-  "note": "Retry (autopilot 16 Nov): earlier miss likely from the OMDb fallback being skipped on a low call budget"
+  "lastChecked": "2026-11-15T21:32:36.346Z",
+  "note": "NEEDS REVIEW: OMDb returned \"Hard Boiled (1992) - Tough Guy Bulls**t\""
  },
  {
   "title": "Atonement",
@@ -292,10 +292,10 @@
   "channelId": "UCtlPYzQ188v4gHQ5VyikNiw",
   "publishedAt": "2026-11-10T22:24:50+00:00",
   "source": "feed",
-  "status": "new",
-  "note": "Autopilot 16 Nov: trailer names Kenneth Branagh, Boyd Holbrook, Hiam Abbass, so the 2026 film",
+  "status": "pending",
+  "note": "Waiting for digital release (released 02 Oct 2026); rechecked monthly",
   "foundAt": "2026-11-11T00:00:32.686Z",
-  "lastChecked": "2026-11-12T21:00:10.706Z"
+  "lastChecked": "2026-11-15T21:32:36.346Z"
  },
  {
   "title": "A Fox Under a Pink Moon",
@@ -311,45 +311,6 @@
   "lastChecked": "2026-11-12T21:00:10.706Z"
  },
  {
-  "title": "Wolf Creek",
-  "year": 2005,
-  "youtubeId": null,
-  "videoTitle": null,
-  "channelId": null,
-  "publishedAt": null,
-  "source": "catalogue",
-  "status": "new",
-  "note": "theme: Australian classics",
-  "foundAt": "2026-11-15T20:00:10.569Z",
-  "lastChecked": null
- },
- {
-  "title": "Commando",
-  "year": 1985,
-  "youtubeId": null,
-  "videoTitle": null,
-  "channelId": null,
-  "publishedAt": null,
-  "source": "catalogue",
-  "status": "new",
-  "note": "theme: 80s action",
-  "foundAt": "2026-11-15T20:00:10.569Z",
-  "lastChecked": null
- },
- {
-  "title": "Police Story",
-  "year": 1985,
-  "youtubeId": null,
-  "videoTitle": null,
-  "channelId": null,
-  "publishedAt": null,
-  "source": "catalogue",
-  "status": "new",
-  "note": "theme: Hong Kong action",
-  "foundAt": "2026-11-15T20:00:10.569Z",
-  "lastChecked": null
- },
- {
   "title": "Drunken Master II",
   "year": 1994,
   "youtubeId": null,
@@ -357,23 +318,10 @@
   "channelId": null,
   "publishedAt": null,
   "source": "catalogue",
-  "status": "new",
-  "note": "theme: Hong Kong action",
+  "status": "review",
+  "note": "NEEDS REVIEW: no OMDb match",
   "foundAt": "2026-11-15T20:00:10.569Z",
-  "lastChecked": null
- },
- {
-  "title": "The Truman Show",
-  "year": 1998,
-  "youtubeId": null,
-  "videoTitle": null,
-  "channelId": null,
-  "publishedAt": null,
-  "source": "catalogue",
-  "status": "new",
-  "note": "theme: 90s favourites",
-  "foundAt": "2026-11-15T20:00:10.569Z",
-  "lastChecked": null
+  "lastChecked": "2026-11-15T21:32:36.346Z"
  },
  {
   "title": "Kung Fu Hustle",
@@ -383,10 +331,10 @@
   "channelId": null,
   "publishedAt": null,
   "source": "catalogue",
-  "status": "new",
-  "note": "theme: Hong Kong action",
+  "status": "review",
+  "note": "NEEDS REVIEW: no OMDb match",
   "foundAt": "2026-11-15T20:00:10.569Z",
-  "lastChecked": null
+  "lastChecked": "2026-11-15T21:32:36.346Z"
  },
  {
   "title": "Rabbit-Proof Fence",
@@ -396,10 +344,10 @@
   "channelId": null,
   "publishedAt": null,
   "source": "catalogue",
-  "status": "new",
-  "note": "theme: Australian classics",
+  "status": "review",
+  "note": "NEEDS REVIEW: no official trailer found on YouTube",
   "foundAt": "2026-11-15T20:00:10.569Z",
-  "lastChecked": null
+  "lastChecked": "2026-11-15T21:32:36.346Z"
  },
  {
   "title": "A Clockwork Orange",
@@ -409,49 +357,10 @@
   "channelId": null,
   "publishedAt": null,
   "source": "catalogue",
-  "status": "new",
-  "note": "theme: 70s New Hollywood",
+  "status": "review",
+  "note": "NEEDS REVIEW: no OMDb match",
   "foundAt": "2026-11-15T20:00:10.569Z",
-  "lastChecked": null
- },
- {
-  "title": "Liar Liar",
-  "year": 1997,
-  "youtubeId": null,
-  "videoTitle": null,
-  "channelId": null,
-  "publishedAt": null,
-  "source": "catalogue",
-  "status": "new",
-  "note": "theme: 90s comedy",
-  "foundAt": "2026-11-15T20:00:10.569Z",
-  "lastChecked": null
- },
- {
-  "title": "Breakfast at Tiffany's",
-  "year": 1961,
-  "youtubeId": null,
-  "videoTitle": null,
-  "channelId": null,
-  "publishedAt": null,
-  "source": "catalogue",
-  "status": "new",
-  "note": "theme: Classic Hollywood",
-  "foundAt": "2026-11-15T20:00:10.569Z",
-  "lastChecked": null
- },
- {
-  "title": "The Omen",
-  "year": 1976,
-  "youtubeId": null,
-  "videoTitle": null,
-  "channelId": null,
-  "publishedAt": null,
-  "source": "catalogue",
-  "status": "new",
-  "note": "theme: 70s horror",
-  "foundAt": "2026-11-15T20:00:10.569Z",
-  "lastChecked": null
+  "lastChecked": "2026-11-15T21:32:36.346Z"
  },
  {
   "title": "Muriel's Wedding",
@@ -461,10 +370,10 @@
   "channelId": null,
   "publishedAt": null,
   "source": "catalogue",
-  "status": "new",
-  "note": "theme: Australian classics",
+  "status": "review",
+  "note": "NEEDS REVIEW: no OMDb match",
   "foundAt": "2026-11-15T20:00:10.569Z",
-  "lastChecked": null
+  "lastChecked": "2026-11-15T21:32:36.346Z"
  },
  {
   "title": "North by Northwest",
