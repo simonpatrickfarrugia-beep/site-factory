@@ -132,7 +132,7 @@ export function routes(): Route[] {
     out.push({
       path: slug,
       template: 'taPage',
-      seo: { title: p.title + SUFFIX, rawTitle: true, description: p.description },
+      seo: { title: (p.seoTitle ?? p.title) + SUFFIX, rawTitle: true, description: p.description },
       schema: [crumbs([{ name: 'Home', path: '' }, { name: p.title, path: slug }])],
       props: { title: p.title, paragraphs: p.paragraphs },
     });

@@ -27,7 +27,7 @@ export interface HelpPage {
   title: string; seoTitle: string; description: string; lede: string;
   how: { t: string; d: string }[]; note: string; privacy: string; thanks: string; faq: Faq[];
 }
-export interface TextPage { title: string; description: string; paragraphs: string[] }
+export interface TextPage { title: string; seoTitle?: string; description: string; paragraphs: string[] }
 export interface Pages {
   home: { title: string; lede: string; tools: { href: string; t: string; d: string }[]; why: { t: string; d: string }[] };
   'quote-builder': ToolPage;
