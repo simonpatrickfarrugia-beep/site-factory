@@ -13,6 +13,14 @@ import shoots from '../../data/vic/shoots.json';
 
 const SITE = 'https://victours.com.au';
 const SUFFIX = ' | Vic Tours';
+// Town/region section <title>: keep it within 65 characters (site check rule). Long town names drop the
+// brand suffix first, then fall back to the short heading, so the searched words always lead.
+function sectionTitle(g: Group, name: string, count: number): string {
+  const L = GROUP_LABEL[g];
+  const main = L.seoTitle?.(name) ?? `${L.title(name)}: ${count} ${L.noun}`;
+  for (const c of [main + SUFFIX, main, L.title(name) + SUFFIX]) if (c.length <= 65) return c;
+  return L.title(name);
+}
 const GROUPS: Group[] = ['stay', 'eat', 'do'];
 const ON_HUB = 6; // places shown per section on a town page
 const MAX_LIST = 300; // full list pages show the best-documented 300 (keeps big-city pages fast on phones)
@@ -251,7 +259,7 @@ export function routes(): Route[] {
         // visitors, kept out of Google so it judges the site on the plans and country towns (growth audit, 29 Oct 2026).
         noindex: isNeighbourhood(t),
         seo: {
-          title: (GROUP_LABEL[g].seoTitle?.(t.name) ?? `${GROUP_LABEL[g].title(t.name)}: ${all.length} ${GROUP_LABEL[g].noun}`) + SUFFIX,
+          title: sectionTitle(g, t.name, all.length),
           rawTitle: true,
           image: photoUrl(t.slug),
           description: g === 'stay' ? `Accommodation in ${t.name}, Victoria: ${all.length} places to stay, including ${kinds}. Addresses, websites and maps, plus hotel prices.` : `${all.length} ${GROUP_LABEL[g].noun} in ${t.name}, Victoria, including ${kinds}. Addresses, opening hours, websites and maps.`,
@@ -314,7 +322,7 @@ export function routes(): Route[] {
         path: `${r.slug}/${g}`,
         template: 'vicTownSection',
         seo: {
-          title: (GROUP_LABEL[g].seoTitle?.(r.name) ?? `${GROUP_LABEL[g].title(r.name)}: ${all.length} ${GROUP_LABEL[g].noun}`) + SUFFIX,
+          title: sectionTitle(g, r.name, all.length),
           rawTitle: true,
           image: photoUrl(...r.towns.map((x) => x.slug)),
           description: `${all.length} ${GROUP_LABEL[g].noun} across the ${r.name} (${r.towns.map((t) => t.name).slice(0, 5).join(', ')}${r.towns.length > 5 ? ' and more' : ''}). Addresses, hours, websites and maps.`,

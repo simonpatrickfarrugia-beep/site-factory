@@ -243,7 +243,7 @@
   ],
   "sprint": {
    "name": "First $1",
-   "deadline": "2026-10-31",
+   "deadline": "2026-11-30",
    "why": "Prove the loop: a real visitor clicks an affiliate link and buys."
   },
   "rules": [
@@ -307,7 +307,7 @@
    "done": false,
    "addedAt": "2026-11-03",
    "ready": {
-    "what": "Claude has the sitting prepped: imnetwork.com.au still free (checked 15 Nov), the mail hub already accepts it, and a step-by-step checklist with exact values is in the Project doc claude/IMN-SETUP.md. Only cost: the domain (~A$20–30/yr).",
+    "what": "Most of the sitting is done (15 Nov): domain, DNS, email receiving, Google account, Cloudflare renamed. Left: DKIM enable, send test, Google owner access, login emails, GitHub move. Progress in claude/IMN-SETUP.md.",
     "at": "2026-11-15"
    }
   },
@@ -320,12 +320,10 @@
    "why": "Keeps the HQ countdown honest; affiliate buttons are live on Vic and Amazon on trailers, so it's now traffic, not setup",
    "link": "https://www.movietrailer.channel/hq",
    "linkLabel": "HQ",
-   "done": false,
+   "done": true,
    "addedAt": "2026-11-01",
-   "ready": {
-    "what": "Claude has the change ready: sprint 'First $1' deadline 2026-10-31 → 2026-11-30 (15 days from 15 Nov). Reply 'yes' (or another date) and it's live on HQ.",
-    "at": "2026-11-15"
-   }
+   "doneAt": "2026-11-15",
+   "note": "Deadline moved to 30 Nov (Simon asked Claude to action waiting items, 15 Nov)."
   },
   {
    "id": "cf-media-kit",
