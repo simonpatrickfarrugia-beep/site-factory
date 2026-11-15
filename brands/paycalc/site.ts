@@ -105,7 +105,8 @@ export function routes(): Route[] {
       template: 'pcSalary',
       seo: {
         // People search "tax on 300k" as much as "300k after tax": the title answers both (opportunity engine, 12 Nov 2026).
-        title: `${aud(n)} After Tax Australia ${Y}: ${aud(r.net)} Take-Home, ${aud(r.incomeTax + r.medicare)} Tax`,
+        // "Net", not "Take-Home", keeps every salary title inside 65 characters (auto-fix, 16 Nov 2026).
+        title: `${aud(n)} After Tax Australia ${Y}: ${aud(r.net)} Net, ${aud(r.incomeTax + r.medicare)} Tax`,
         rawTitle: true,
         description: `Tax on ${aud(n)} (${k}) in ${Y} is ${aud(r.incomeTax + r.medicare)} including Medicare, so you take home ${aud(r.net)} a year: ${aud(r.net / 12)} a month, ${aud(r.net / 26)} a fortnight or ${aud(r.net / 52)} a week.`,
       },
