@@ -20,6 +20,7 @@ const icon: Record<Headline['kind'], string> = { top: '01', riser: '↑', faller
     <h1 class="hero__h1">{c.home.h1}</h1>
     <p class="hero__lede">{c.home.lede}</p>
     <p class="hero__meta">Google search data for Australia, 12 months to the week of {dayLabel(d.weeks[d.weeks.length - 1])}. <a href="/how-it-works">How this works</a>.</p>
+    <p class="hero__meta"><a href={`/reports/${month}`}>Read the full {monthLabel(month)} report</a> · <a href="/destinations">All {ok.length} destinations</a> · <a href="/reports">Past reports</a></p>
   </header>
 
   <section class="says" aria-labelledby="says-h">

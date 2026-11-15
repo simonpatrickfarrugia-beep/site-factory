@@ -52,7 +52,8 @@ export function routes(): Route[] {
     template: 'sstReports',
     seo: { title: 'Past Reports: The Aussie Travel Pulse, Month by Month', rawTitle: true, description: 'Every monthly Aussie Travel Pulse: where Australians were searching to travel, what was rising and what was cooling, month by month.' },
     schema: [crumbs([{ name: 'This month', path: '' }, { name: 'Past reports', path: 'reports' }])],
-    props: { archive, notes: c.notes },
+    lastmod: latest?.updated ?? d.updated,
+    props: { archive, notes: c.notes, headlines: lines, latestMonth: month },
   });
   for (const a of archive) {
     const prev = archive.find((x) => x.month < a.month) ?? null;
@@ -101,6 +102,8 @@ export function routes(): Route[] {
       props: {
         term: t, idx: idx(t), weeks: d.weeks, months, busiest, quietest, rank, rankOf: sameKind.length,
         near: near.map((x) => ({ slug: x.slug, label: x.label, idx: idx(x), yoy: x.yoy })),
+        all: sameKind.map((x) => ({ slug: x.slug, label: x.label, idx: idx(x) })),
+        month,
         peakLabel: dayLabel(t.peakWeek), where, affiliates: c.affiliates, updated: d.updated,
         vic: t.slug === 'melbourne',
         bali: { now: d.terms.find((x) => x.slug === 'bali')?.now ?? 1, series: d.terms.find((x) => x.slug === 'bali')?.series ?? [] },

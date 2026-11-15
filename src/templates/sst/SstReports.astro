@@ -1,13 +1,21 @@
 ---
-import { monthLabel, pct, type ArchiveMonth } from '../../../brands/simon-says-travel/model';
-interface Props { archive: ArchiveMonth[]; notes: Record<string, string> }
-const { archive, notes } = Astro.props;
+import { monthLabel, pct, type ArchiveMonth, type Headline } from '../../../brands/simon-says-travel/model';
+interface Props { archive: ArchiveMonth[]; notes: Record<string, string>; headlines: Headline[]; latestMonth: string }
+const { archive, notes, headlines, latestMonth } = Astro.props;
 const top3 = (a: ArchiveMonth) => a.terms.filter((t) => t.kind === 'overseas' && !t.lowSignal).sort((x, y) => y.idx - x.idx).slice(0, 3);
 const riser = (a: ArchiveMonth) => a.terms.filter((t) => t.kind !== 'style' && !t.lowSignal && t.yoy != null && t.idx >= 15).sort((x, y) => y.yoy! - x.yoy!)[0];
 ---
 <div class="sst-wrap sst-section">
   <h1 class="sst-h1">Past reports</h1>
   <p class="sst-lede">Every month’s Aussie Travel Pulse, newest first. Each report keeps the numbers from the month it was published, so you can see how Australia’s travel wish list shifts through the year: which places climb as winter approaches, which cool off after the summer holidays, and when the big booking weeks hit. Every number is Google search interest in Australia, on one scale where Bali = 100.</p>
+  {headlines.length > 0 && (
+    <section aria-labelledby="latest-h">
+      <h2 id="latest-h" class="sst-h2">The {monthLabel(latestMonth)} report in short</h2>
+      <ul class="sst-bullets">{headlines.map((h) => <li>{h.text} {h.slug && <a href={`/destinations/${h.slug}`}>See the chart</a>}</li>)}</ul>
+      <p><a class="sst-btn" href={`/reports/${latestMonth}`}>Read the {monthLabel(latestMonth)} report</a> <a class="sst-link" href="/destinations">Every destination’s 12-month chart</a></p>
+    </section>
+  )}
+  <h2 class="sst-h2">All reports</h2>
   <ul class="reports">
     {archive.map((a) => (
       <li class="reports__item">

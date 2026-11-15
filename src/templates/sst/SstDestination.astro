@@ -4,9 +4,10 @@ import { monthLabel, pct, type Content, type Term } from '../../../brands/simon-
 interface Props {
   term: Term; idx: number; weeks: string[]; months: { month: string; avg: number }[]; busiest: { month: string; avg: number }; quietest: { month: string; avg: number };
   rank: number; rankOf: number; near: { slug: string; label: string; idx: number; yoy: number | null }[]; peakLabel: string; where: string;
+  all: { slug: string; label: string; idx: number }[]; month: string;
   affiliates: Content['affiliates']; updated: string; vic: boolean; bali: { now: number; series: number[] };
 }
-const { term: t, idx, weeks, months, busiest, quietest, rank, rankOf, near, peakLabel, where, affiliates: aff, vic, bali } = Astro.props;
+const { term: t, idx, weeks, months, busiest, quietest, rank, rankOf, near, peakLabel, where, affiliates: aff, vic, bali, all, month } = Astro.props;
 const mName = (m: string) => monthLabel(m).split(' ')[0];
 const ratio = busiest.avg / Math.max(0.1, quietest.avg);
 const kindWord = t.kind === 'overseas' ? 'overseas' : 'domestic';
@@ -16,6 +17,13 @@ const stayHref = aff.stay.template.replace('{url}', encodeURIComponent(aff.stay.
 const tourHref = aff.tours.template.replace('{q}', q).replace('{c}', slugC);
 const altHref = aff.tours.alt.template.replace('{q}', q).replace('{c}', slugC);
 const maxM = Math.max(...months.map((m) => m.avg), 0.1);
+// Month averages on the site-wide scale (Bali's last four weeks = 100), so the table reads like the boards.
+const toIdx = (v: number) => Math.round((v / Math.max(0.1, bali.now)) * 100);
+const ranked = [...months].sort((a, b) => b.avg - a.avg);
+const busy3 = ranked.slice(0, 3).map((m) => mName(m.month));
+const quiet3 = ranked.slice(-3).reverse().map((m) => mName(m.month));
+const leader = all[0];
+const list3 = (a: string[]) => `${a.slice(0, -1).join(', ')} and ${a[a.length - 1]}`;
 const yoyText = t.yoy == null ? 'too small last year to compare' : Math.abs(t.yoy) < 0.05 ? `about level with this time last year (${pct(t.yoy)})` : `${t.yoy > 0 ? 'up' : 'down'} ${pct(Math.abs(t.yoy)).replace('+', '')} on this time last year`;
 const momText = t.mom == null ? '' : Math.abs(t.mom) < 0.05 ? 'and steady on the previous four weeks' : `and ${t.mom > 0 ? 'up' : 'down'} ${pct(Math.abs(t.mom)).replace('+', '')} on the previous four weeks`;
 ---
@@ -41,11 +49,29 @@ const momText = t.mom == null ? '' : Math.abs(t.mom) < 0.05 ? 'and steady on the
   <ul class="months" aria-label={`Average search interest per month for flights to ${t.label}`}>
     {months.map((m) => <li class="months__item"><span class="months__bar" style={`--h:${Math.max(4, (m.avg / maxM) * 100)}%`}></span><span class="months__m">{mName(m.month).slice(0, 3)}</span></li>)}
   </ul>
+  <table class="sst-table">
+    <caption class="sst-fine">Average search interest per month for flights to {t.label} (Bali over the last four weeks = 100)</caption>
+    <thead><tr><th scope="col">Month</th><th scope="col">Interest</th><th scope="col">Rank of 12</th></tr></thead>
+    <tbody>{months.map((m) => <tr><th scope="row">{monthLabel(m.month)}</th><td>{toIdx(m.avg)}</td><td>{ranked.findIndex((r) => r.month === m.month) + 1}</td></tr>)}</tbody>
+  </table>
   <p class="sst-fine">Search interest isn’t prices. Busy months often mean dearer fares and fuller planes; quiet months can mean better availability.</p>
+
+  <h2 class="sst-h2">Quick answers</h2>
+  <dl class="qa">
+    <div><dt>When do Australians search most for flights to {t.label}?</dt><dd>The three busiest months of the last 12 were {list3(busy3)}, with the single busiest week starting {peakLabel}.</dd></div>
+    <div><dt>When is it quietest?</dt><dd>{list3(quiet3)} had the least search interest. Quieter months can mean more seats to choose from; check fares on the dates you want.</dd></div>
+    <div><dt>Is {t.label} more popular than last year?</dt><dd>Over the last four weeks it is {yoyText}{momText ? `, ${momText}` : ''}.</dd></div>
+    <div><dt>How does it rank?</dt><dd>{rank === 1 ? `${t.label} is the most searched ${kindWord} destination we track right now.` : `${t.label} is number ${rank} of ${rankOf} ${kindWord} destinations we track. ${leader.label} leads on ${leader.idx}.`} See all of them on <a href={`/reports/${month}`}>the {monthLabel(month)} report</a>.</dd></div>
+  </dl>
 
   <h2 class="sst-h2">Similar interest right now</h2>
   <ul class="near">
     {near.map((n) => <li><a href={`/destinations/${n.slug}`}>{n.label}</a> <span>{n.idx}</span> <span class={n.yoy != null && n.yoy >= 0.05 ? 'is-up' : n.yoy != null && n.yoy <= -0.05 ? 'is-down' : ''}>{pct(n.yoy)}</span></li>)}
+  </ul>
+
+  <h2 class="sst-h2">All {kindWord} destinations</h2>
+  <ul class="near near--all">
+    {all.filter((x) => x.slug !== t.slug).map((x) => <li><a href={`/destinations/${x.slug}`}>{x.label}</a> <span>{x.idx}</span></li>)}
   </ul>
 
   <section class="book" aria-labelledby="book-h">

@@ -31,5 +31,6 @@ const was = (slug: string) => prev?.terms.find((t) => t.slug === slug)?.idx;
   {prev && (
     <p class="sst-fine">Compared with the {monthLabel(prev.month)} report: {ok.filter((t) => t.kind === 'overseas').slice(0, 5).map((t) => `${t.label} ${was(t.slug) ?? '–'} → ${t.idx}`).join(', ')}.</p>
   )}
+  <p>Every destination above has its own page with a 12-month chart, its busiest and quietest months and how it ranks: start with {rows('domestic').slice(0, 3).map((t, i, arr) => <><a href={`/destinations/${t.slug}`}>{t.label}</a>{i < arr.length - 2 ? ', ' : i === arr.length - 2 ? ' or ' : ''}</>)}, or see <a href="/destinations">all destinations</a>.</p>
   <p class="sst-fine">Too few searches to call: {a.terms.filter((t) => t.lowSignal).map((t) => t.label).join(', ') || 'none'}. <a href="/how-it-works">How the numbers work</a>.</p>
 </div>

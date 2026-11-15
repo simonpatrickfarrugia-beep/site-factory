@@ -1290,6 +1290,14 @@ main { display: block; }
 .near { list-style: none; padding: 0; margin: 0.4rem 0 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .near li { background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 0.35rem 0.8rem; display: inline-flex; gap: 0.5rem; }
 .near a { font-weight: 700; }
+.sst-table { border-collapse: collapse; width: 100%; max-width: 30rem; margin: 0.8rem 0; font-variant-numeric: tabular-nums; }
+.sst-table caption { caption-side: bottom; text-align: left; padding-top: 0.4rem; }
+.sst-table th, .sst-table td { text-align: left; padding: 0.35rem 0.6rem; border-bottom: 1px solid var(--line); }
+.sst-table td { text-align: right; }
+.sst-table thead th { font: 800 0.72rem var(--font-display); letter-spacing: 0.12em; text-transform: uppercase; }
+.qa { display: grid; gap: 0.9rem; margin: 0.6rem 0 1.4rem; }
+.qa dt { font-weight: 800; }
+.qa dd { margin: 0.2rem 0 0; }
 .book { margin-top: 2rem; padding: clamp(1.1rem, 3vw, 1.6rem); border: 2px solid var(--paper); border-radius: var(--radius); }
 .book .sst-h2 { margin-top: 0; }
 .book__links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.2rem 0.4rem; }
