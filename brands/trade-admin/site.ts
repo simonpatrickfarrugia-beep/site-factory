@@ -95,6 +95,7 @@ export function routes(): Route[] {
       schema: [
         { '@context': 'https://schema.org', '@type': 'Article', headline: p.title, description: p.description, dateModified: apps.checked, author: { '@type': 'Person', name: 'Simon Farrugia' }, publisher: { '@id': `${SITE}/#org` }, url: `${SITE}/${c.slug}` },
         crumbs([{ name: 'Home', path: '' }, ...(c.slug === 'job-management-software' ? [] : [{ name: 'Job apps compared', path: 'job-management-software' }]), { name: p.title, path: c.slug }]),
+        ...(p.faq?.length ? [faqSchema(p.faq)] : []),
       ],
       props: { page: p, apps, focus: c.focus, slug: c.slug, others: compareLinks.filter((l) => l.href !== `/${c.slug}`) },
     });

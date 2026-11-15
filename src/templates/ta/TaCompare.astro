@@ -2,12 +2,16 @@
 import TaTradifyOffer from './TaTradifyOffer.astro';
 /** Job app price comparison: one page per angle (all apps, A vs B, or one app's pricing), each with the same calculator. */
 import type { Apps, ComparePage } from '../../../brands/trade-admin/model';
+import { costRows, cheapestPerApp } from '../../lib/ta-costs';
 interface Props { page: ComparePage; apps: Apps; focus: readonly string[] | null; slug: string; others: { href: string; label: string }[] }
 const { page, apps, focus, slug, others } = Astro.props;
 const keys = (focus ?? Object.keys(apps.apps)) as (keyof Apps['apps'])[];
 const checked = new Date(apps.checked).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
 const gstLabel = { inc: 'Prices include GST', ex: 'Prices exclude GST (add 10%)', unstated: "The pricing page doesn't say whether prices include GST" } as const;
 const money = (n: number) => (n === 0 ? 'Free' : `$${n}`);
+// Worked examples, computed at build time from the same prices and maths as the calculator.
+const scenarioApps = Object.fromEntries(keys.map((k) => [k, apps.apps[k]]));
+const scenarios = (page.scenarios ?? []).map((s) => ({ ...s, rows: cheapestPerApp(costRows(scenarioApps, s.people, s.jobs)) }));
 ---
 <div class="ta-wrap ta-section">
   {slug !== 'job-management-software' && <p class="ta-crumb"><a href="/job-management-software">Job apps compared</a></p>}
@@ -28,6 +32,27 @@ const money = (n: number) => (n === 0 ? 'Free' : `$${n}`);
     <p class="ta-small">Monthly cost on the cheapest plan that fits your numbers, including GST where we can work it out. Plans differ in features, so the cheapest isn't always the best fit: check what each plan includes.</p>
   </section>
   <p class="ta-quizlink"><a href="/which-job-app" data-cta="quiz_start">Not sure which fits? Answer 3 quick questions →</a></p>
+
+  {scenarios.length > 0 && (
+    <section aria-labelledby="ex-h">
+      <h2 id="ex-h" class="ta-h2">What a typical trade business would pay</h2>
+      <p class="ta-measure">Each app's cheapest plan that fits, per month. Tap a row to open it in the calculator.</p>
+      <div class="ta-scroll">
+        <table class="ta-table">
+          <thead><tr><th scope="col">Business</th>{scenarios[0].rows.map((_, i) => <th scope="col">{i === 0 ? 'Cheapest' : i === 1 ? 'Next' : 'Then'}</th>)}</tr></thead>
+          <tbody>
+            {scenarios.map((s) => (
+              <tr>
+                <th scope="row"><a href={`/job-management-software?people=${s.people}&jobs=${s.jobs}#calc-h`}>{s.label}</a><br /><span class="ta-small">{s.people} {s.people === 1 ? 'person' : 'people'}, {s.jobs} jobs a month</span></th>
+                {s.rows.map((r) => <td>{r.app} {r.plan}<br />{r.text}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="ta-small">Tradify prices have GST added. * Fergus's pricing page doesn't say whether its prices include GST.</p>
+    </section>
+  )}
 
   {page.body && (
     <section class="ta-measure" aria-labelledby="body-h">
@@ -70,6 +95,13 @@ const money = (n: number) => (n === 0 ? 'Free' : `$${n}`);
   })}
 
   {!focus && <p class="ta-measure">{apps.bigger}</p>}
+
+  {page.faq && page.faq.length > 0 && (
+    <section class="ta-faq ta-measure" aria-labelledby="faq-h">
+      <h2 id="faq-h" class="ta-h2">Common questions</h2>
+      {page.faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
+    </section>
+  )}
 
   <section class="ta-band ta-band--inline">
     <h2 class="ta-h2">Only a few jobs a month?</h2>

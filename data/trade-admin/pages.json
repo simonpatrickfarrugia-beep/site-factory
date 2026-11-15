@@ -17,6 +17,11 @@
     "href": "/which-job-app",
     "t": "Which job app?",
     "d": "Three questions, then ServiceM8, Tradify and Fergus ranked by what they'd cost your business."
+   },
+   {
+    "href": "/job-management-software",
+    "t": "Job apps compared",
+    "d": "ServiceM8, Tradify and Fergus on their own published prices, with what a sole trader, a small crew and a growing business would pay."
    }
   ],
   "why": [
@@ -102,7 +107,65 @@
     "Second: how many new jobs do you create a month? That's what moves ServiceM8's price. Tradify and Fergus don't cap jobs.",
     "Most small crews land on ServiceM8 as the cheapest; very busy sole traders often find Tradify cheaper. Whatever the calculator says, use the free trials on a real week of work before you pay."
    ]
-  }
+  },
+  "scenarios": [
+   {
+    "label": "Sole trader, quiet month",
+    "people": 1,
+    "jobs": 20
+   },
+   {
+    "label": "Sole trader, steady",
+    "people": 1,
+    "jobs": 45
+   },
+   {
+    "label": "Busy sole trader",
+    "people": 1,
+    "jobs": 100
+   },
+   {
+    "label": "Owner plus an apprentice",
+    "people": 2,
+    "jobs": 40
+   },
+   {
+    "label": "Small crew",
+    "people": 5,
+    "jobs": 150
+   },
+   {
+    "label": "Growing business",
+    "people": 10,
+    "jobs": 400
+   }
+  ],
+  "faq": [
+   {
+    "q": "What's the cheapest job management app for a sole trader?",
+    "a": "It depends on your job count. Up to 30 new jobs a month, ServiceM8's free plan costs nothing (1 user). Up to 50 jobs, ServiceM8 Starter is $29 a month. Past 50 jobs, ServiceM8 jumps to $79 (Growing), so Tradify Lite at $48 plus GST (about $53) becomes cheaper, with Fergus Essentials listed from $53."
+   },
+   {
+    "q": "Which app is cheapest for a team?",
+    "a": "Usually ServiceM8, because every paid plan includes unlimited users and you pay by job volume. A crew of 5 doing 150 jobs a month would pay $79 on ServiceM8 Growing, against about $264 on Tradify Lite and from $265 on Fergus Essentials, which both charge per person."
+   },
+   {
+    "q": "Do these prices include GST?",
+    "a": "ServiceM8's prices include GST. Tradify's exclude it, so we add 10%. Fergus's pricing page doesn't say either way, so we show its prices as listed."
+   },
+   {
+    "q": "Is there a free job management app?",
+    "a": "ServiceM8 has a free plan for 1 user and up to 30 new jobs a month. Tradify has a 14-day free trial, and Fergus has a free trial plus a free 1-hour onboarding session. If you only do a few jobs, our free quote and invoice builders may be all you need."
+   },
+   {
+    "q": "Do Tradify and Fergus limit how many jobs I can do?",
+    "a": "No. Both charge per user per month with no cap on jobs, so a busy one-person business pays the same whether it does 50 or 500 jobs."
+   },
+   {
+    "q": "What about AroFlo or simPRO?",
+    "a": "They're aimed at larger businesses (roughly 10+ staff, service contracts and assets) and quote prices on request, so we can't compare them on published prices."
+   }
+  ]
  },
  "tradify-vs-servicem8": {
   "title": "Tradify vs ServiceM8: which costs less for your business?",

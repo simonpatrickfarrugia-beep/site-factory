@@ -848,6 +848,7 @@ main { display: block; }
 .ta-calc__inputs label { display: grid; gap: 0.25rem; font-weight: 700; }
 .ta-calc__inputs input { width: 8rem; font: inherit; font-size: 1.15rem; padding: 0.5rem 0.6rem; border: 2px solid var(--paper); border-radius: 4px; }
 .ta-table { width: 100%; border-collapse: collapse; font-size: 0.98rem; }
+.ta-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .ta-table th, .ta-table td { text-align: left; padding: 0.55rem 0.5rem; border-bottom: 1px solid var(--line); vertical-align: top; }
 .ta-table thead th { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; border-bottom: 2px solid var(--paper); }
 .ta-table td:nth-child(2) { font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 700; }

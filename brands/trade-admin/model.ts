@@ -11,7 +11,11 @@ export interface Trade {
 }
 export interface Trades { checked: string; trades: Trade[] }
 export interface ToolPage { title: string; seoTitle: string; description: string; lede: string; faq: Faq[] }
-export interface ComparePage { title: string; seoTitle: string; description: string; lede: string; body?: { h: string; p: string[] } }
+/** `scenarios`: worked examples (costs computed from apps.json at build time). `faq`: shown on the page and as FAQPage schema. */
+export interface ComparePage {
+  title: string; seoTitle: string; description: string; lede: string; body?: { h: string; p: string[] };
+  scenarios?: { label: string; people: number; jobs: number }[]; faq?: Faq[];
+}
 export interface QuizOption { label: string; value: string }
 export interface QuizPage {
   title: string; seoTitle: string; description: string; lede: string;
