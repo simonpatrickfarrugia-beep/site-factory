@@ -87,6 +87,18 @@ export async function omdbLookup(apiKey: string, title: string, year: number | n
   return { ...body, Title: stripYear(body.Title) };
 }
 
+/** OMDb lookup by IMDb id (`i=`), for films whose title lookup and search both miss (set `imdbId` on the queue item). */
+export async function omdbById(apiKey: string, imdbId: string): Promise<OmdbMovie | null> {
+  const res = await fetch(`https://www.omdbapi.com/?${new URLSearchParams({ apikey: apiKey, i: imdbId, plot: 'short' })}`);
+  if (!res.ok) throw new Error(`OMDb: HTTP ${res.status}`);
+  const body = (await res.json()) as OmdbMovie & { Response: string; Error?: string };
+  if (body.Response !== 'True') {
+    if (body.Error && !/not found|incorrect imdb/i.test(body.Error)) throw new Error(`OMDb: ${body.Error}`);
+    return null;
+  }
+  return { ...body, Title: stripYear(body.Title) };
+}
+
 /**
  * Find a film robustly. The exact-title lookup (`t=`) misses some classics ("Casablanca" 1942 → not found) and can
  * return podcast/YouTube episodes OMDb lists as movies ("150 Army of Darkness"). When it misses or returns the wrong

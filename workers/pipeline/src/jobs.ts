@@ -47,6 +47,8 @@ export interface QueueItem {
   publishedAt: string | null;
   /** Where it came from. Missing = studio feed (older items). */
   source?: 'feed' | 'demand' | 'chat' | 'catalogue';
+  /** Optional IMDb id (tt…): enrich looks the film up by id first, for classics OMDb's title lookup and search miss. */
+  imdbId?: string | null;
   /** new = not looked up yet; pending = not in OMDb yet (rechecked monthly); review = needs a person;
    *  rejected = not a film (label promo, box set). Kept in the queue so intake doesn't re-add it from the feed. */
   status: 'new' | 'pending' | 'review' | 'rejected';
@@ -63,7 +65,7 @@ export interface State {
 
 export interface Services {
   feed(channelId: string): Promise<FeedVideo[]>;
-  omdb(title: string, year: number | null): Promise<OmdbMovie | null>;
+  omdb(title: string, year: number | null, imdbId?: string | null): Promise<OmdbMovie | null>;
   copy(m: OmdbMovie): Promise<Copy>;
   /** Every OMDb film with this title (to catch remakes when the trailer gives no year). */
   sameTitle(title: string): Promise<{ Title: string; Year: string }[]>;
@@ -189,7 +191,7 @@ async function process(state: State, svc: Services, limit: number, which: QueueI
     svc.budget.left--;
     let found: OmdbMovie | null;
     try {
-      found = await svc.omdb(item.title, item.year);
+      found = await svc.omdb(item.title, item.year, item.imdbId);
     } catch (e) {
       r.log.push(`OMDb failed for "${item.title}": ${(e as Error).message}`);
       if (/limit/i.test((e as Error).message)) break;

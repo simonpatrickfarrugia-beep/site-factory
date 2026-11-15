@@ -12,7 +12,7 @@
 import { media } from './media';
 import { enrich, intake, maxYear, recheck, type QueueItem, type Movie, type Result, type State } from './jobs';
 import { commitFiles, readFiles, StaleError, type Repo } from './github';
-import { channelFeed, omdbFind, omdbLookup, omdbYearsForTitle, brainstormNiches, brainstormStats, judgeNiche, pickCategories, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
+import { channelFeed, omdbById, omdbFind, omdbLookup, omdbYearsForTitle, brainstormNiches, brainstormStats, judgeNiche, pickCategories, setAnthropicWorkspace, suggestCandidates, writeCollectionCopy, writeCopy } from './sources';
 import { buildCollections, minFilmsFor, winnable, MIN_OPENNESS, PERSON_MIN_FILMS, type Idea, type MovieCollection } from './collections';
 import { siteCheck, type SiteCheckRequest } from './sitecheck';
 import { ga4Batch, googleAccessToken, inspectUrl, searchAnalytics, youtubeSearch, type Ga4Row, type UrlInspection } from './google';
@@ -286,7 +286,8 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
   const svc = {
     feed: channelFeed,
     // Fallback search costs up to 2 extra calls; keep 3 in reserve for the item's trailer search and Claude copy.
-    omdb: (t: string, y: number | null) =>
+    omdb: async (t: string, y: number | null, imdbId?: string | null) =>
+      (imdbId ? await omdbById(env.OMDB_API_KEY, imdbId) : null) ??
       omdbFind(env.OMDB_API_KEY, t, y, sameFilmTitle, () => (budget.left > 3 ? (budget.left--, true) : false)),
     sameTitle: (t: string) => omdbYearsForTitle(env.OMDB_API_KEY, t),
     copy: (m: Parameters<typeof writeCopy>[2]) => writeCopy(env.ANTHROPIC_API_KEY, env.ANTHROPIC_MODEL, m),
