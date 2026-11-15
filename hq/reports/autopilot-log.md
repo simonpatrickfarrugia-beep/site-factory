@@ -16,3 +16,13 @@
 - Affiliates: no new approvals or earnings in Gmail (31 Oct–8 Nov). Commission Factory asked for a media kit on 6 Nov after Simon's re-application: status → applying, todo added. Fergus/Tradify welcomes already recorded.
 - Todo: merged the duplicate Trade Admin mail-hub items. Sprint "First $1" left as is (level not reached; Simon's decide item still open).
 - Niches job: nothing waiting (scored 0); calibration 4.1% click rate. Priority report refreshed.
+
+## 2026-11-16 · Weekly autopilot
+- Health: no open `health` or `review` issues; all checks passing. (Open #5 is a Community Help Co enquiry from 2 Nov: Simon's to reply and close.)
+- Affiliates: Commission Factory declined again on 12 Nov after the media kit ("established inbound traffic and decent engagement" needed). Status → declined; re-apply once traffic grows. HQ now lists declined programmes last. No approvals or earnings otherwise (Viator mails were promos).
+- Vic: towns list still exhausted (64 published; the rest are regions, held or duplicates). Added a "decide" item proposing 27 new towns to volume-check (~US$0.05). Nothing probed or published this week.
+- Quality: all brands clean in the latest Check build (0 thin, 0 near-dup, 0 hard fails).
+- Trailers: 16 classics (Casablanca, Se7en, Mary Poppins…) were still in review after the 11 Nov OMDb fix. Likely cause: an item started with too few calls left, so omdbFind skipped its search fallback and the film landed in review as "no match". Enrich now starts an item only with 6+ calls left; the 16 are back to `new`. Atonement: trailer names Kenneth Branagh, Boyd Holbrook and Hiam Abbass, so set to 2026 (the age cutoff will skip it). Still ambiguous for Simon: "Soul Patrol", "The Second Act"; "A Fox Under a Pink Moon" needs genres by hand. No Christmas collection yet: due from late November (next run).
+- Money model: niches scored 0 (nothing waiting); calibration 4.1% click rate, 4.9% conversion. Priority report refreshed.
+- Todo: Agoda and resume-sharing items prepped (answers link, ready-to-paste message). Cover letter builder is live, so it came off Claude's list. Sprint "First $1" unchanged (deadline 30 Nov, not reached).
+- Public repo hygiene: reworded a done item that named Simon's employer.

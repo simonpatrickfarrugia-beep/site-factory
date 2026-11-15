@@ -184,7 +184,7 @@
  "actions": [
   {
    "who": "Claude",
-   "what": "Publish the next Vic towns weekly (10 probed 8 Nov; the queue of new towns is nearly empty, so adding more towns next)",
+   "what": "Publish the next Vic towns weekly (list exhausted 8 Nov; waiting on Simon's yes to volume-check 27 new towns)",
    "site": "vic"
   },
   {
@@ -194,12 +194,7 @@
   },
   {
    "who": "Claude",
-   "what": "Cover letter builder for Community Help Co (after the resume builder, live 23 Oct)",
-   "site": "chc"
-  },
-  {
-   "who": "Claude",
-   "what": "Check the 18 trailer films retried after the OMDb fix (11 Nov) publish; review any still stuck",
+   "what": "Trailers: 16 classics (Casablanca, Se7en…) still stuck after the 11 Nov OMDb fix; budget guard fixed and re-queued 16 Nov. Check they publish",
    "site": "trailers"
   }
  ],
@@ -262,7 +257,7 @@
    "sprint": true,
    "mins": 15,
    "what": "Trade Admin mail hub setup with Claude in the Site Factory chat (checklist in claude/MAIL-HUB.md). Then Claude switches Trade Admin on in IMN HQ outreach",
-   "why": "Trade Admin is the best money path now (Tradify + Fergus partner links live); outreach to associations, TAFE and bookkeepers needs a brand address",
+   "why": "Trade Admin is the best money path now (Tradify + Fergus partner links live); outreach to associations, TAFE and bookkeepers needs a brand address. Needs your Microsoft 365 admin sign-in, so Claude can't prep further.",
    "link": "https://admin.microsoft.com",
    "linkLabel": "M365 admin",
    "done": false,
@@ -385,7 +380,12 @@
    "link": "https://partners.agoda.com",
    "linkLabel": "Agoda Partners",
    "done": false,
-   "brand": "vic"
+   "brand": "vic",
+   "ready": {
+    "what": "Answers ready to tap-copy at https://www.movietrailer.channel/hq/signup (Vic Tours). Heads-up: Commission Factory declined us on 12 Nov for low traffic, so Agoda may too; still worth 5 minutes.",
+    "link": "https://www.movietrailer.channel/hq/signup",
+    "at": "2026-11-16"
+   }
   },
   {
    "id": "careerjet",
@@ -636,11 +636,18 @@
    "id": "chc-share-resume",
    "kind": "do",
    "sprint": false,
-   "mins": 10,
+   "mins": 5,
    "what": "Share communityhelp.com.au/resume-builder with 3 job services, schools or community groups you know",
    "why": "Links from real organisations are what will get it found on Google",
    "done": false,
-   "brand": "community-help-co"
+   "brand": "community-help-co",
+   "ready": {
+    "what": "Message ready to paste (text, email or Facebook): \"Hi, I run Community Help Co in Melbourne. We've made a free resume builder for job seekers: no sign-up, nothing is stored on a server, and it saves a clean A4 PDF. There's a free cover letter builder too. https://communityhelp.com.au/resume-builder Please feel free to pass it on to anyone you're helping into work. Thanks, Simon\"",
+    "link": "https://communityhelp.com.au/resume-builder",
+    "at": "2026-11-16"
+   },
+   "link": "https://communityhelp.com.au/resume-builder",
+   "linkLabel": "Resume builder"
   },
   {
    "id": "adzuna",
@@ -659,7 +666,7 @@
    "kind": "decide",
    "sprint": false,
    "mins": 2,
-   "what": "Shortlisted: OK the 'How we make money' wording (says the founder works for a travel management company, without naming it) — decided: never name Flight Centre (Simon, 23 Oct)",
+   "what": "Shortlisted: OK the 'How we make money' wording (says the founder works for a travel management company, without naming it) — decided: never name the employer (Simon, 23 Oct)",
    "why": "Being upfront protects you and the brand",
    "link": "https://github.com/simonpatrickfarrugia-beep/site-factory/blob/main/data/shortlisted/pages.json",
    "done": true,
@@ -801,6 +808,23 @@
     "at": "2026-11-12"
    },
    "brand": "paycalc"
+  },
+  {
+   "id": "vic-next-towns",
+   "kind": "decide",
+   "sprint": false,
+   "mins": 1,
+   "what": "Vic Tours has published every town on its list (64 live). OK to add 27 more towns and check their Google searches (about US$0.05 of DataForSEO)? Reply 'yes towns' in the Site Factory chat",
+   "why": "Each new town page is a new way in from Google and carries the tour, stay and car-hire buttons. Candidates: Yackandandah, Mount Beauty, Paynesville, Sale, Traralgon, Warragul, Hamilton, Portland, Colac, Benalla, Yarrawonga, Heathcote, Ararat, Stawell, Frankston, Wonthaggi, Venus Bay, Kinglake, Nagambie, Timboon, Skenes Creek, Gisborne, Emerald, Maryborough, Dinner Plain, Mount Martha, Blairgowrie.",
+   "link": "https://www.movietrailer.channel/hq",
+   "linkLabel": "HQ",
+   "done": false,
+   "addedAt": "2026-11-16",
+   "brand": "vic",
+   "ready": {
+    "what": "Recommend yes: the list is ready to drop into data/vic/towns.json and the towns job checks them in one call (well under the US$1 cap). Towns with 25+ places get published the week after.",
+    "at": "2026-11-16"
+   }
   }
  ],
  "notes": [
