@@ -210,32 +210,20 @@
    "name": "tradeadmin.com.au",
    "url": "https://tradeadmin.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-14T22:17:22Z",
-   "score": 92,
+   "scannedAt": "2026-11-15T20:08:38Z",
+   "score": 98,
    "grade": "A",
-   "change": 1,
+   "change": 6,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-21",
-   "topFix": "1 of your top 8 pages aren't in Google's index",
+   "nextDue": "2026-11-23",
+   "topFix": "3 title outside 30–65 characters",
    "broken": 0,
    "newIssues": 0,
-   "fixed": 3,
-   "costUsd": 0.008,
+   "fixed": 5,
+   "costUsd": 0,
    "top": [
-    {
-     "id": "not-indexed",
-     "title": "1 of your top 8 pages aren't in Google's index",
-     "severity": "high",
-     "area": "indexing",
-     "fix": "Make the page more useful than what ranks, link to it from the home page, then request indexing in Search Console.",
-     "pages": [
-      "/job-management-software"
-     ],
-     "detail": "/job-management-software: Discovered – currently not indexed",
-     "broken": false
-    },
     {
      "id": "seo-title",
      "title": "3 title outside 30–65 characters",
@@ -251,39 +239,17 @@
      "broken": false
     },
     {
-     "id": "rival-servicem8-vs",
-     "title": "\"servicem8 vs\": we're not in the top 10 (Search Console avg 82); fergus.com leads",
+     "id": "seo-words",
+     "title": "3 page(s) under 250 words",
      "severity": "low",
-     "area": "rivals",
-     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "area": "seo",
+     "fix": "Fine for tools; for guides add the answer people search for.",
      "pages": [
-      "/tradify-vs-servicem8"
+      "/about",
+      "/contact",
+      "/how-we-make-money"
      ],
-     "detail": "Top 5: 1. fergus.com, 2. nextminute.com, 3. unknown site, 4. memate.com.au, 5. coastworksai.com.au",
-     "broken": false
-    },
-    {
-     "id": "rival-servicem8-pricing",
-     "title": "\"servicem8 pricing\": we're not in the top 10 (Search Console avg 82); capterra.com.au leads",
-     "severity": "low",
-     "area": "rivals",
-     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
-     "pages": [
-      "/tradify-vs-servicem8"
-     ],
-     "detail": "Top 5: 1. capterra.com.au, 2. customcrms.com.au, 3. reactiveweb.com.au, 4. skillmammoth.com, 5. tradieautomate.com",
-     "broken": false
-    },
-    {
-     "id": "rival-service-mate-vs-tradify",
-     "title": "\"service mate vs tradify\": we're not in the top 10 (Search Console avg 76); growthlocal.com.au leads",
-     "severity": "low",
-     "area": "rivals",
-     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
-     "pages": [
-      "/tradify-vs-servicem8"
-     ],
-     "detail": "Top 5: 1. growthlocal.com.au, 2. ityourservice.com.au, 3. trackyatradie.com, 4. unknown site, 5. sleeplesstradesman.com",
+     "detail": "",
      "broken": false
     }
    ]
@@ -385,7 +351,7 @@
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-23",
+   "nextDue": "2026-11-22",
    "topFix": "1 title outside 30–65 characters",
    "broken": 0,
    "newIssues": 0,
@@ -461,11 +427,11 @@
    ]
   }
  },
- "updated": "2026-11-15T18:59:19Z",
+ "updated": "2026-11-15T20:08:38Z",
  "lastRun": {
-  "at": "2026-11-15T18:59:19Z",
+  "at": "2026-11-15T20:08:38Z",
   "scanned": [
-   "simon-says-travel"
+   "trade-admin"
   ]
  }
 }
