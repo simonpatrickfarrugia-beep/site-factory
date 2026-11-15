@@ -2,6 +2,7 @@
 import RoadSign from '../../components/vic/RoadSign.astro';
 import Signup from '../../components/vic/Signup.astro';
 import type { Photo } from '../../../brands/vic/model';
+import { photoAttrs } from '../../lib/vic-photo';
 interface SignTown { slug: string; name: string; km: number; region: string }
 interface DayTrip { href: string; title: string; town: string | null; km: number; photo: Photo | null; line: string }
 interface Tile { href: string; title: string; count: number; photo: Photo | null; example: string | null }
@@ -16,6 +17,10 @@ interface Props {
 const { towns, neighbourhoods, collections, loops, dayTrips = [], weekendTiles = [] } = Astro.props;
 /** Towns shown before the rest fold away (the full list stays in the page for search engines). */
 const SHOW = 10;
+/** Cards: ~80vw on phones (scroll row), half width on tablets, a third of the 64rem wrap on desktop. */
+const cardImg = (p: Photo) => photoAttrs(p, 500, [330, 500, 960], '(min-width: 64rem) 21rem, (min-width: 40rem) 46vw, 80vw');
+/** Weekend tiles: half width, a quarter on desktop. Below the fold, so lazy. */
+const tileImg = (p: Photo) => photoAttrs(p, 330, [250, 330, 500], '(min-width: 64rem) 16rem, 50vw');
 const credit = (p: Photo) => `Photo: ${p.artist}, ${p.license}, via Wikimedia Commons`;
 ---
 <div class="wrap home">
@@ -42,7 +47,7 @@ const credit = (p: Photo) => `Photo: ${p.artist}, ${p.license}, via Wikimedia Co
           <li class="card">
             <a class="card__link" href={d.href}>
               <span class="card__img">
-                {d.photo ? <img src={d.photo.url} alt={`${d.town ?? d.title}, Victoria`} width={d.photo.width} height={d.photo.height} loading={i < 2 ? 'eager' : 'lazy'} decoding="async" referrerpolicy="no-referrer" /> : <span class="card__noimg" />}
+                {d.photo ? <img {...cardImg(d.photo)} alt={`${d.town ?? d.title}, Victoria`} width={d.photo.width} height={d.photo.height} loading={i < 2 ? 'eager' : 'lazy'} decoding="async" referrerpolicy="no-referrer" /> : <span class="card__noimg" />}
                 <span class="card__sign">{d.title}</span>
               </span>
               <span class="card__meta">{d.town ? `${d.town} · ` : ''}{d.km} km from Melbourne</span>
@@ -67,7 +72,7 @@ const credit = (p: Photo) => `Photo: ${p.artist}, ${p.license}, via Wikimedia Co
         {weekendTiles.map((t) => (
           <li>
             <a class="tile" href={t.href}>
-              {t.photo && <img src={t.photo.url} alt="" width={t.photo.width} height={t.photo.height} decoding="async" referrerpolicy="no-referrer" />}
+              {t.photo && <img {...tileImg(t.photo)} alt="" width={t.photo.width} height={t.photo.height} loading="lazy" decoding="async" referrerpolicy="no-referrer" />}
               <span class="tile__text"><strong>{t.title}</strong><span>{t.count} plans{t.example ? `, like ${t.example}` : ''}</span></span>
             </a>
             {t.photo && <a class="card__credit" href={t.photo.page} rel="nofollow noopener" target="_blank">{credit(t.photo)}</a>}

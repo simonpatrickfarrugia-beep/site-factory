@@ -2,6 +2,7 @@
 /** Hub of ready-made weekend plans: all audiences (/weekends) or one audience (/weekends/romantic, …). */
 import RoadSign from '../../components/vic/RoadSign.astro';
 import Signup from '../../components/vic/Signup.astro';
+import { photoAttrs } from '../../lib/vic-photo';
 interface Card { href: string; town: string; km: number; summary: string; highlights: string[]; photo?: { url: string; width?: number; height?: number; artist: string; license: string; page: string } | null }
 interface Group { title: string; href?: string; intro?: string; cards: Card[] }
 interface Props { title: string; intro: string[]; groups: Group[]; others: { href: string; label: string }[]; crumb?: { href: string; label: string } | null }
@@ -18,7 +19,7 @@ const { title, intro, groups, others, crumb = { href: '/weekends', label: 'Weeke
       {g.intro && <p>{g.intro}</p>}
       {g.cards.map((c) => (
         <article class="loop-card bcard">
-          {c.photo && <a class="bcard__img" href={c.href} tabindex="-1" aria-hidden="true"><img src={c.photo.url} alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" /></a>}
+          {c.photo && <a class="bcard__img" href={c.href} tabindex="-1" aria-hidden="true"><img {...photoAttrs(c.photo, 250, [120, 250, 330], '(min-width: 52rem) 168px, 112px')} alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" /></a>}
           <a class="loop-card__name" href={c.href}>{c.town}</a>
           <p class="loop-card__route">{c.km >= 3 ? `${c.km} km from Melbourne` : 'Central Melbourne'}</p>
           <p>{c.summary}</p>

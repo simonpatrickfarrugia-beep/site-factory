@@ -4,6 +4,7 @@ import PlaceRow from '../../components/vic/PlaceRow.astro';
 import AffiliateLink from '../../components/vic/AffiliateLink.astro';
 import PhotoFig from '../../components/vic/Photo.astro';
 import MiniMap from '../../components/vic/MiniMap.astro';
+import { photoAttrs } from '../../lib/vic-photo';
 import { GROUP_LABEL, type Group, type Place } from '../../../brands/vic/model';
 interface Props {
   town: { name: string; slug: string; km: number; region: string; intro: string; tips: string[]; centre?: [number, number] | null };
@@ -41,7 +42,7 @@ const { town, sections, nearby, collections, affiliates = null, photo = null, pl
           {plans.map((p) => (
             <li>
               <a class="plan" href={p.href} data-cta="town_plan">
-                {p.photo?.url ? <img class="plan__img" src={p.photo.url} alt="" width="96" height="96" loading="lazy" decoding="async" referrerpolicy="no-referrer" /> : <span class="plan__img plan__img--none" aria-hidden="true" />}
+                {p.photo?.url ? <img class="plan__img" {...photoAttrs(p.photo, 250, [120, 250], '96px')} alt="" width="96" height="96" loading="lazy" decoding="async" referrerpolicy="no-referrer" /> : <span class="plan__img plan__img--none" aria-hidden="true" />}
                 <span class="plan__text">
                   <span class="plan__kind">{p.kind}</span>
                   <strong class="plan__title">{p.title}</strong>

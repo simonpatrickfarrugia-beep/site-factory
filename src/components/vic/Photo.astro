@@ -1,10 +1,15 @@
 ---
 import type { Photo } from '../../../brands/vic/model';
+import { photoAttrs } from '../../lib/vic-photo';
 interface Props { photo: Photo; alt: string; size?: 'hero' | 'thumb' }
 const { photo, alt, size = 'hero' } = Astro.props;
+// Hero: up to 44rem wide. Thumb: 96px square (250 covers 2x screens).
+const img = size === 'hero'
+  ? photoAttrs(photo, 960, [500, 960, 1280], '(min-width: 46rem) 44rem, 100vw')
+  : photoAttrs(photo, 250, [120, 250], '96px');
 ---
 <figure class={`photo photo--${size}`}>
-  <img src={photo.url} alt={alt} width={photo.width} height={photo.height} loading={size === 'hero' ? 'eager' : 'lazy'} decoding="async" referrerpolicy="no-referrer" />
+  <img {...img} alt={alt} width={photo.width} height={photo.height} loading={size === 'hero' ? 'eager' : 'lazy'} decoding="async" referrerpolicy="no-referrer" />
   {size === 'hero' && (
     <figcaption>Photo: <a href={photo.page} rel="nofollow noopener" target="_blank">{photo.artist}</a>, {photo.license}, via Wikimedia Commons</figcaption>
   )}
