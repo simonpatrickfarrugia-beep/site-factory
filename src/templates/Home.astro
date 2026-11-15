@@ -8,11 +8,14 @@ type Card = { slug: string; name: string; year: string | null; youtubeId: string
 interface Props {
   stream: { slug: string; name: string; youtubeId: string }[];
   latest: Card[];
+  popular?: Card[];
+  freeNow?: (Card & { image?: string | null; badge?: string | null })[];
+  freeTotal?: number;
   featured: { slug: string; name: string; tagline: string | null; count: number; youtubeId: string | null }[];
   totals: { movies: number; collections: number };
   allSlugs: string[];
 }
-const { stream, latest, featured, totals, allSlugs } = Astro.props;
+const { stream, latest, popular = [], freeNow = [], freeTotal = 0, featured, totals, allSlugs } = Astro.props;
 ---
 <FundBanner />
 <section class="spotlight" aria-labelledby="home-title">
@@ -44,6 +47,31 @@ const { stream, latest, featured, totals, allSlugs } = Astro.props;
       {latest.map((m) => <MovieCard {...m} />)}
     </div>
   </section>
+
+  {popular.length > 0 && (
+    <section class="band" aria-labelledby="popular">
+      <div class="band__head">
+        <h2 id="popular">Popular right now</h2>
+        <a class="text-link" href="/browse">Browse all {totals.movies} trailers</a>
+      </div>
+      <div class="grid grid--cards">
+        {popular.map((m) => <MovieCard {...m} />)}
+      </div>
+    </section>
+  )}
+
+  {freeNow.length > 0 && (
+    <section class="band" aria-labelledby="free-now">
+      <div class="band__head">
+        <h2 id="free-now">Watch free tonight</h2>
+        <a class="text-link" href="/free-classic-movies">All {freeTotal} free classic movies</a>
+      </div>
+      <p>Public domain classics that play in full, free and legally, right on the page.</p>
+      <div class="grid grid--cards">
+        {freeNow.map((m) => <MovieCard {...m} />)}
+      </div>
+    </section>
+  )}
 
   {featured.length > 0 && (
     <section class="band" aria-labelledby="collections">

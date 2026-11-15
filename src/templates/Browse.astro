@@ -5,8 +5,10 @@ interface Props {
   movies: { slug: string; name: string; year: string | null; youtubeId: string; image?: string | null; badge?: string | null; genres: string[] }[];
   genres: string[];
   decades: string[];
+  freeTotal?: number;
+  collectionsTotal?: number;
 }
-const { movies, genres, decades } = Astro.props;
+const { movies, genres, decades, freeTotal = 0, collectionsTotal = 0 } = Astro.props;
 const letterOf = (name: string) => {
   const c = name.replace(/^(the|a|an)\s+/i, '').charAt(0).toUpperCase();
   return /[A-Z]/.test(c) ? c : '#';
@@ -17,7 +19,8 @@ const letters = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ', '#'];
 <div class="wrap">
   <header class="page-head">
     <h1 class="display">Every trailer</h1>
-    <p class="page-head__lede">Search by title, or narrow it down by genre and decade.</p>
+    <p class="page-head__lede">All {movies.length} films in the catalog. Search by title, or narrow it down by genre and decade.</p>
+    <p>Each film page has the official trailer, the facts that help you choose (runtime, rating, how it was received) and where to rent, buy or stream it in the US.{freeTotal > 0 && <> Films marked <strong>Watch free</strong> are public domain and play in full: see all <a href="/free-classic-movies">{freeTotal} free classic movies</a>.</>}{collectionsTotal > 0 && <> For a whole movie night, try one of our <a href="/discover">{collectionsTotal} collections</a> by director, decade or mood.</>}</p>
   </header>
 
   <form class="filters" role="search" data-filters>

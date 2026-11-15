@@ -186,6 +186,20 @@ export function routes(): Route[] {
   const card = (m: Movie) => ({ slug: m.slug, name: m.name, year: m.year, youtubeId: m.youtubeId });
 
   const newest = [...movies].sort(byNewest);
+  /** Film pages people actually visit (GA4, data/trailers/stats.json), so the home page links Google straight to them. */
+  const popularFilms = () => {
+    const pagesSeen = ((getSingleton('stats') as { pages?: { path: string; allViews?: number; views?: number }[] } | null)?.pages ?? [])
+      .filter((p) => p.path.startsWith('/movies/'))
+      .sort((a, b) => (b.allViews ?? b.views ?? 0) - (a.allViews ?? a.views ?? 0));
+    const inLatest = new Set(newest.slice(0, 10).map((m) => m.slug));
+    const picks: Movie[] = [];
+    for (const p of pagesSeen) {
+      const m = movies.find((x) => `/movies/${x.slug}` === p.path);
+      if (m && !inLatest.has(m.slug) && !picks.includes(m)) picks.push(m);
+      if (picks.length === 10) break;
+    }
+    return picks.map(card);
+  };
   const featured = collections.filter((c) => c.featured);
   const out: Route[] = [];
 
@@ -216,6 +230,9 @@ export function routes(): Route[] {
     props: {
       stream: movies.map((m) => ({ slug: m.slug, name: m.name, youtubeId: m.youtubeId })),
       latest: newest.slice(0, 10).map(card),
+      popular: popularFilms(),
+      freeNow: free.slice(0, 5).map((f) => ({ ...freeCard(f), youtubeId: '', badge: 'Watch free' })),
+      freeTotal: free.length,
       featured: featured.map(collectionCard),
       totals: { movies: movies.length, collections: collections.length },
       allSlugs: movies.map((m) => m.slug),
@@ -347,12 +364,19 @@ export function routes(): Route[] {
     seo: {
       title: 'Browse All Movie Trailers' + SUFFIX,
       rawTitle: true,
-      description: 'Browse every movie trailer in our catalog — search by title, filter by genre and year, or jump to a letter.',
+      description: clip(`Browse all ${movies.length + freeOnly.length} movie trailers: search by title, filter by genre and decade, see where to watch each film, and find ${free.length} classics free.`),
+      image: thumb(newest[0].youtubeId),
     },
+    schema: [
+      { '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Browse all movie trailers', url: `${SITE}/browse`, isPartOf: { '@type': 'WebSite', name: 'MovieTrailer.Channel', url: SITE } },
+      breadcrumbs([{ name: 'Home', path: '' }, { name: 'Browse', path: 'browse' }]),
+    ],
     props: {
       movies: [...movies.map((m) => ({ ...card(m), image: null as string | null, badge: freeByMovie.has(m.slug) ? 'Watch free' : null, genres: m.genres })), ...freeOnly.map((f) => ({ ...freeCard(f), youtubeId: '', badge: 'Watch free', genres: f.genres }))],
       genres,
       decades,
+      freeTotal: free.length,
+      collectionsTotal: collections.length,
     },
   });
 
