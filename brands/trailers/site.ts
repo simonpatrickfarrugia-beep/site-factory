@@ -352,6 +352,10 @@ export function routes(): Route[] {
       rawTitle: true,
       description: 'Browse curated collections of movie trailers — award winners, box office highlights, hidden gems, and more.',
     },
+    schema: [
+      { '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Discover movie collections', url: `${SITE}/discover`, isPartOf: { '@type': 'WebSite', name: 'MovieTrailer.Channel', url: SITE } },
+      breadcrumbs([{ name: 'Home', path: '' }, { name: 'Discover', path: 'discover' }]),
+    ],
     props: {
       featured: featured.map(collectionCard),
       others: collections.filter((c) => !c.featured).map(collectionCard),
@@ -413,6 +417,12 @@ export function routes(): Route[] {
 
   // Original films: a share of what the site earns goes into producing original films (31 Oct 2026).
   // No affiliate links on this page (CI-checked), and never tie the fund to affiliate clicks or purchases.
+  const originalFaqs = [
+    { q: 'Does it cost me anything?', a: 'No. Using the site is free, and we will never ask you for money for the films.' },
+    { q: 'Where does the money come from?', a: 'From what the site earns as a business, such as ads. It is not a donation or a crowdfunding campaign, and we are not raising money from the public.' },
+    { q: 'Who decides what gets made?', a: 'The filmmakers. We choose which projects to back; the writer and director keep creative control of the film.' },
+    { q: 'Who runs this?', a: 'MovieTrailer.Channel is published by Independent Media Network Pty Ltd in Melbourne, Australia. Questions: hello@movietrailer.channel.' },
+  ];
   out.push({
     path: 'original-films',
     template: 'originalFilms',
@@ -421,13 +431,13 @@ export function routes(): Route[] {
       rawTitle: true,
       description: 'MovieTrailer.Channel puts a share of what it earns into producing original films, with writers and directors in creative control. Filmmakers can pitch us.',
     },
+    schema: [
+      { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Original films', url: `${SITE}/original-films`, isPartOf: { '@type': 'WebSite', name: 'MovieTrailer.Channel', url: SITE } },
+      { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: originalFaqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+      breadcrumbs([{ name: 'Home', path: '' }, { name: 'Original films', path: 'original-films' }]),
+    ],
     props: {
-      faqs: [
-        { q: 'Does it cost me anything?', a: 'No. Using the site is free, and we will never ask you for money for the films.' },
-        { q: 'Where does the money come from?', a: 'From what the site earns as a business, such as ads. It is not a donation or a crowdfunding campaign, and we are not raising money from the public.' },
-        { q: 'Who decides what gets made?', a: 'The filmmakers. We choose which projects to back; the writer and director keep creative control of the film.' },
-        { q: 'Who runs this?', a: 'MovieTrailer.Channel is published by Independent Media Network Pty Ltd in Melbourne, Australia. Questions: hello@movietrailer.channel.' },
-      ],
+      faqs: originalFaqs,
     },
   });
 
@@ -471,6 +481,16 @@ export function routes(): Route[] {
       path: p.slug,
       template: 'page',
       seo: { title: p.seoTitle, rawTitle: true, description: p.description },
+      schema: [
+        {
+          '@context': 'https://schema.org',
+          '@type': p.slug === 'about' ? 'AboutPage' : p.slug === 'contact' ? 'ContactPage' : 'WebPage',
+          name: p.title,
+          url: `${SITE}/${p.slug}`,
+          isPartOf: { '@type': 'WebSite', name: 'MovieTrailer.Channel', url: SITE },
+        },
+        breadcrumbs([{ name: 'Home', path: '' }, { name: p.title, path: p.slug }]),
+      ],
       props: { title: p.title, blocks: p.blocks },
     });
   }
