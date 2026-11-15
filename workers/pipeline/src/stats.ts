@@ -73,7 +73,7 @@ export function buildStats(input: {
     pages: Ga4Row[]; prevPages: Ga4Row[]; events: Ga4Row[]; daily: Ga4Row[]; dailyEvents: Ga4Row[];
     allPages?: Ga4Row[]; allEvents?: Ga4Row[]; allDaily?: Ga4Row[]; allDailyEvents?: Ga4Row[]; weekPages?: Ga4Row[];
   };
-  gsc: null | { pageQueries: GscRow[]; daily?: GscRow[] };
+  gsc: null | { pageQueries: GscRow[]; pages?: GscRow[]; daily?: GscRow[] };
 }): SiteStats {
   const pages = new Map<string, PageStats>();
   const page = (path: string) => {
@@ -168,17 +168,31 @@ export function buildStats(input: {
   if (input.gsc) {
     const best = new Map<string, number>();
     const weighted = new Map<string, number>();
+    const byPage = input.gsc.pages?.length ? input.gsc.pages : null;
     for (const r of input.gsc.pageQueries) {
+      const path = pathOf(r.keys[0]);
+      if (skip(path)) continue;
+      const p = page(path);
+      if (r.impressions > (best.get(p.path) ?? -1)) {
+        best.set(p.path, r.impressions);
+        p.topQuery = r.keys[1];
+      }
+      if (byPage) continue;
+      p.gscClicks += r.clicks;
+      p.gscImpressions += r.impressions;
+      weighted.set(p.path, (weighted.get(p.path) ?? 0) + r.position * r.impressions);
+      totals.gscClicks += r.clicks;
+      totals.gscImpressions += r.impressions;
+    }
+    // Page-only rows include searches Google hides from page+query rows (rare/anonymised queries),
+    // so they give the true clicks/impressions per page and in total. Older runs without them fall back to the sum above.
+    for (const r of byPage ?? []) {
       const path = pathOf(r.keys[0]);
       if (skip(path)) continue;
       const p = page(path);
       p.gscClicks += r.clicks;
       p.gscImpressions += r.impressions;
       weighted.set(p.path, (weighted.get(p.path) ?? 0) + r.position * r.impressions);
-      if (r.impressions > (best.get(p.path) ?? -1)) {
-        best.set(p.path, r.impressions);
-        p.topQuery = r.keys[1];
-      }
       totals.gscClicks += r.clicks;
       totals.gscImpressions += r.impressions;
     }

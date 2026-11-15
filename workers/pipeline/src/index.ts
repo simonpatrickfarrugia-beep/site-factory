@@ -549,6 +549,8 @@ async function statsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boo
     if (site.gsc && gscToken) {
       try {
         gsc = { pageQueries: await searchAnalytics(gscToken, site.gsc, gscPeriod.start, gscPeriod.end, ['page', 'query'], 25000) };
+        // Page-only totals: page+query rows leave out searches Google anonymises, undercounting pages seen in Google.
+        gsc.pages = await searchAnalytics(gscToken, site.gsc, gscPeriod.start, gscPeriod.end, ['page'], 25000).catch(() => []);
         // Daily totals for the morning dashboard's trend line (one extra call per site; Search Console is free).
         gsc.daily = await searchAnalytics(gscToken, site.gsc, gscPeriod.start, gscPeriod.end, ['date'], 100).catch(() => []);
         log.push(`${site.name} Search Console: ${gsc.pageQueries.length} row(s).`);

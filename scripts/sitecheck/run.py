@@ -91,6 +91,16 @@ def stage_of(site, finance, portfolio, stats):
     return 'earning', f'A${recent:,.2f} revenue in the last 60 days'
 
 
+def launch_date(site):
+    """Launch day from hq/portfolio.json (node id = brand, or the site id), else None."""
+    nodes = (rd('hq/portfolio.json', {}) or {}).get('nodes', [])
+    node = next((n for n in nodes if n.get('id') in (site.get('brand'), site.get('id'), site.get('portfolio'))), {})
+    try:
+        return datetime.strptime(node['launched'], '%Y-%m-%d').date()
+    except (KeyError, TypeError, ValueError):
+        return None
+
+
 def cadence(cfg, stage):
     if stage.startswith('client:'):
         return cfg['carePlans'].get(stage.split(':', 1)[1], 30)
@@ -403,7 +413,14 @@ def build_findings(site, c, links, aff_bad, schema, quality, facts, speed, trend
                    [x['url'] for x in notidx], '; '.join(f'{path(x["url"])}: {x["coverage"]}' for x in notidx[:5]))
     seen_pages = sum(1 for p in (stats or {}).get('pages') or [] if (p.get('gscImpressions') or 0) > 0)
     if stats is not None and len(pages200) >= 10 and seen_pages < 0.15 * len(pages200):
-        add('few-pages-in-google', 'indexing', 'medium', f'Google shows only {seen_pages} of {len(pages200)} pages', 'Normal for a new site; if it stays low after 2 months, cut or merge weak pages and earn a few links.')
+        # Google takes ~2 months to show most pages of a new site: until then this is a watch item, not a fix.
+        launched = launch_date(site)
+        due = launched + timedelta(days=60) if launched else None
+        if due and TODAY < due:
+            add('few-pages-in-google', 'indexing', 'low', f'Google shows only {seen_pages} of {len(pages200)} pages (site is {(TODAY - launched).days} days old)',
+                f'Nothing to do yet: new sites take about 2 months to show in Google. If it is still under {int(0.15 * len(pages200))} pages on {due:%-d %b %Y}, cut or merge weak pages and earn a few links.')
+        else:
+            add('few-pages-in-google', 'indexing', 'medium', f'Google shows only {seen_pages} of {len(pages200)} pages', 'Cut or merge weak pages (noindex the thinnest), link the best ones from the home page, and earn a few links from other sites.')
     # SEO basics
     groups = {}
     for f in facts:
