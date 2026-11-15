@@ -21,6 +21,8 @@ function sectionTitle(g: Group, name: string, count: number): string {
   for (const c of [main + SUFFIX, main, L.title(name) + SUFFIX]) if (c.length <= 65) return c;
   return L.title(name);
 }
+// First option within 65 characters (else the last): long names drop the brand suffix so the title stays in range.
+const within65 = (...o: string[]) => o.find((x) => x.length <= 65) ?? o[o.length - 1];
 const GROUPS: Group[] = ['stay', 'eat', 'do'];
 const ON_HUB = 6; // places shown per section on a town page
 const MAX_LIST = 300; // full list pages show the best-documented 300 (keeps big-city pages fast on phones)
@@ -189,6 +191,7 @@ export function routes(): Route[] {
     path: 'towns',
     template: 'vicTowns',
     seo: { title: 'All towns and neighbourhoods' + SUFFIX, rawTitle: true, description: 'Every Victorian town and Melbourne neighbourhood in the Vic Tours guide, grouped by region.' },
+    schema: [crumbs([{ name: 'Home', path: '' }, { name: 'Towns', path: 'towns' }])],
     props: {
       groups: [...regions].map(([region, list]) => ({ region, href: regionHref(region), towns: list })),
       comingSoon: getCollection<Town>('towns').filter((t) => !t.published).length,
@@ -214,7 +217,7 @@ export function routes(): Route[] {
       path: t.slug,
       template: 'vicTown',
       seo: {
-        title: `${t.name}: Things to Do, Where to Stay & Eat` + SUFFIX,
+        title: within65(`${t.name}: Things to Do, Where to Stay & Eat` + SUFFIX, `${t.name}: Things to Do, Where to Stay & Eat`),
         rawTitle: true,
         image: photoUrl(t.slug),
         description: `${t.name}, ${km < 3 ? 'in central Melbourne' : `${km} km from Melbourne`}: ${countsLine(totals)}, with addresses, hours and maps.`,
@@ -289,7 +292,7 @@ export function routes(): Route[] {
       path: r.slug,
       template: 'vicTown',
       seo: {
-        title: `${r.name}: where to stay, eat and things to do` + SUFFIX,
+        title: within65(`${r.name}: where to stay, eat and things to do` + SUFFIX, `${r.name}: where to stay, eat and things to do`),
         rawTitle: true,
         image: photoUrl(...r.towns.map((x) => x.slug)),
         description: `The ${r.name}, town by town: ${r.towns.length} towns, ${countsLine(totals)}.`,
@@ -371,6 +374,7 @@ export function routes(): Route[] {
       path: 'road-trips',
       template: 'vicLoops',
       seo: { title: 'Road trips from Melbourne' + SUFFIX, rawTitle: true, description: 'Self-drive road trips from Melbourne, planned day by day, with where to stay, eat and what to do at every stop.' },
+      schema: [crumbs([{ name: 'Home', path: '' }, { name: 'Road trips', path: 'road-trips' }])],
       props: { loops: loops.map((l) => ({ slug: l.slug, name: l.name, summary: l.summary, route: loopRoute(l), days: l.days.length })) },
     });
   }
@@ -713,7 +717,9 @@ export function routes(): Route[] {
     props: { price: shoots.price, deposit: shoots.deposit, perDay: shoots.perDay, depositUrl: shoots.depositUrl, weekends: shoots.weekends },
   });
   for (const p of content.pages) {
-    out.push({ path: p.slug, template: 'vicPage', seo: { title: p.title + SUFFIX, rawTitle: true, description: p.description }, props: { title: p.title, paragraphs: p.paragraphs } });
+    // Breadcrumb schema on the guide's own pages; legal pages (privacy, disclosure) are left as they are.
+    const legal = ['privacy-policy', 'affiliate-disclosure'].includes(p.slug);
+    out.push({ path: p.slug, template: 'vicPage', seo: { title: p.title + SUFFIX, rawTitle: true, description: p.description }, schema: legal ? [] : [crumbs([{ name: 'Home', path: '' }, { name: p.title, path: p.slug }])], props: { title: p.title, paragraphs: p.paragraphs } });
   }
   return out;
 }
