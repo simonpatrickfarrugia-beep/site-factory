@@ -2,9 +2,9 @@
  "_about": "Last run of each AI worker (claude.ai scheduled task). Each skill's final step updates only its own entry. Checked daily by scripts/health.py (limits in hq/health.json).",
  "workers": {
   "imn-radar": {
-   "at": "2026-11-12T20:51:28Z",
-   "ok": true,
-   "note": "3 CHC added (Swinburne, SuniTAFE, Bendigo TAFE); Vic and trailers empty after dead ends"
+   "at": "2026-11-15T20:35:02Z",
+   "ok": false,
+   "note": "Cloudflare connector needs reconnecting: no D1 access, so no targets, dedupe or inserts; 0 added"
   },
   "morning-report": {
    "at": "2026-11-14T21:57:36Z",
