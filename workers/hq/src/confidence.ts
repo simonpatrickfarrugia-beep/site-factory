@@ -70,7 +70,7 @@ export async function confidence(db: D1Database, live: { due: number; ready: num
   const macro = file.macro;
   const sliding = macro.sites.filter((s) => s.trend === 'down');
   const verdict = microStatus === 'red' || macro.status === 'red' ? 'stalled'
-    : microStatus === 'green' && macro.status !== 'red' && sliding.length === 0 ? 'on track' : 'drifting';
+    : microStatus === 'green' && sliding.length === 0 ? 'on track' : 'drifting';
   // The one thing: the worst bit of this week's work first (that's in Simon's hands), then the weakest site.
   const worst = items.filter((i) => i.status !== 'green').sort((a, z) => SCORE[a.status] - SCORE[z.status] || z.weight - a.weight)[0];
   const weakSite = [...macro.sites].sort((a, z) => SCORE[a.status] - SCORE[z.status] || (a.trend === 'down' ? -1 : 0) - (z.trend === 'down' ? -1 : 0))[0];
