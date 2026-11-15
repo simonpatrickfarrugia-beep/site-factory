@@ -935,7 +935,23 @@
    "eat": 6600
   },
   "volume": 9380,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-15T21:23:33+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -38.1946636,
+    146.5381646
+   ],
+   "counts": {
+    "stay": 9,
+    "eat": 33,
+    "do": 91
+   },
+   "withWebsite": 7,
+   "withHours": 1,
+   "total": 133
+  }
  },
  {
   "name": "Frankston",
@@ -947,7 +963,23 @@
    "eat": 8100
   },
   "volume": 9300,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-15T21:25:44+00:00",
+   "radiusM": 1500,
+   "centre": [
+    -38.1457064,
+    145.1263742
+   ],
+   "counts": {
+    "stay": 5,
+    "eat": 46,
+    "do": 10
+   },
+   "withWebsite": 27,
+   "withHours": 12,
+   "total": 61
+  }
  },
  {
   "name": "Brunswick",
@@ -1657,7 +1689,23 @@
    "eat": 3600
   },
   "volume": 5080,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-15T21:27:02+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -38.1588674,
+    145.933629
+   ],
+   "counts": {
+    "stay": 5,
+    "eat": 34,
+    "do": 31
+   },
+   "withWebsite": 22,
+   "withHours": 9,
+   "total": 70
+  }
  },
  {
   "name": "Collingwood",
@@ -1708,7 +1756,23 @@
    "eat": 1900
   },
   "volume": 4800,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-15T21:28:34+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -37.9321282,
+    145.4407282
+   ],
+   "counts": {
+    "stay": 0,
+    "eat": 8,
+    "do": 16
+   },
+   "withWebsite": 7,
+   "withHours": 4,
+   "total": 24
+  }
  },
  {
   "name": "Great Ocean Road",
@@ -1773,7 +1837,23 @@
    "eat": 1300
   },
   "volume": 4700,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-15T21:41:47+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -36.0141692,
+    146.0063494
+   ],
+   "counts": {
+    "stay": 13,
+    "eat": 18,
+    "do": 13
+   },
+   "withWebsite": 13,
+   "withHours": 1,
+   "total": 44
+  }
  },
  {
   "name": "Bairnsdale",
@@ -1980,7 +2060,23 @@
    "eat": 2900
   },
   "volume": 4170,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-15T21:47:09+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -37.7433872,
+    142.0242865
+   ],
+   "counts": {
+    "stay": 7,
+    "eat": 26,
+    "do": 22
+   },
+   "withWebsite": 14,
+   "withHours": 18,
+   "total": 55
+  }
  },
  {
   "name": "Dandenong Ranges",
@@ -2123,7 +2219,11 @@
    "eat": 1300
   },
   "volume": 3790,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-15T21:56:49+00:00",
+   "error": "Overpass unavailable"
+  }
  },
  {
   "name": "Portland",
@@ -2135,7 +2235,23 @@
    "eat": 720
   },
   "volume": 3710,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-15T21:58:12+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -38.3456231,
+    141.6042304
+   ],
+   "counts": {
+    "stay": 5,
+    "eat": 11,
+    "do": 21
+   },
+   "withWebsite": 5,
+   "withHours": 1,
+   "total": 37
+  }
  },
  {
   "name": "Grampians",
@@ -2200,7 +2316,23 @@
    "eat": 1300
   },
   "volume": 3320,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-15T21:59:24+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -37.0467582,
+    143.7375721
+   ],
+   "counts": {
+    "stay": 4,
+    "eat": 12,
+    "do": 10
+   },
+   "withWebsite": 3,
+   "withHours": 1,
+   "total": 26
+  }
  },
  {
   "name": "Brighton",
@@ -2329,7 +2461,23 @@
    "eat": 320
   },
   "volume": 2940,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-15T22:01:09+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -38.1094463,
+    147.0656717
+   ],
+   "counts": {
+    "stay": 16,
+    "eat": 34,
+    "do": 18
+   },
+   "withWebsite": 38,
+   "withHours": 31,
+   "total": 68
+  }
  },
  {
   "name": "Benalla",
@@ -2341,7 +2489,23 @@
    "eat": 880
   },
   "volume": 2870,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-15T22:02:36+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -36.5517611,
+    145.9833562
+   ],
+   "counts": {
+    "stay": 4,
+    "eat": 8,
+    "do": 17
+   },
+   "withWebsite": 4,
+   "withHours": 1,
+   "total": 29
+  }
  },
  {
   "name": "Mallacoota",
@@ -2422,7 +2586,23 @@
    "eat": 390
   },
   "volume": 2580,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-15T22:08:59+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -37.2658785,
+    142.9797325
+   ],
+   "counts": {
+    "stay": 1,
+    "eat": 0,
+    "do": 4
+   },
+   "withWebsite": 1,
+   "withHours": 0,
+   "total": 5
+  }
  },
  {
   "name": "Hepburn Springs",

@@ -1,0 +1,938 @@
+{
+ "town": "Warragul",
+ "slug": "warragul",
+ "centre": [
+  -38.1588674,
+  145.933629
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-11-15T21:27:02+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n566151351",
+   "name": "Warragul & District Historical Society Museum",
+   "group": "do",
+   "type": "museum",
+   "lat": -38.1638535,
+   "lon": 145.9310201,
+   "tags": {
+    "website": "https://warragulhistory.org.au/",
+    "phone": "+61 3 5604 7560",
+    "opening_hours": "Feb-Nov: Su[2],Su[4] 14:00-16:00; Feb-Nov: Th 10:00-14:00",
+    "addr:housenumber": "72",
+    "addr:street": "Queen Street",
+    "addr:suburb": "Warragul",
+    "addr:postcode": "3820",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "n1629719324",
+   "name": "Bukhara",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.1620021,
+   "lon": 145.9293362,
+   "tags": {
+    "cuisine": "indian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2243165404",
+   "name": "La Passion",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.1634749,
+   "lon": 145.9310776,
+   "tags": {
+    "website": "https://la-passion.com.au/",
+    "opening_hours": "Mo-Su 10:00-21:15",
+    "cuisine": "italian",
+    "addr:housenumber": "73",
+    "addr:street": "Queen Street",
+    "addr:postcode": "3820",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2243172833",
+   "name": "Club Hotel Warragul",
+   "group": "eat",
+   "type": "pub",
+   "lat": -38.1631628,
+   "lon": 145.9299269,
+   "tags": {
+    "website": "https://www.clubhotelwarragul.com.au/",
+    "phone": "+61 3 5623 1636",
+    "addr:housenumber": "51",
+    "addr:street": "Queen Street",
+    "addr:suburb": "Warragul",
+    "addr:postcode": "3820",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n2243601982",
+   "name": "Warragul Club Bistro",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.1608769,
+   "lon": 145.9291867,
+   "tags": {
+    "website": "https://www.warragulclub.com.au/",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n2243602907",
+   "name": "Warragul Sporting & Social Club Downtowner",
+   "group": "eat",
+   "type": "bar",
+   "lat": -38.1606576,
+   "lon": 145.9293154,
+   "tags": {
+    "website": "https://www.warragulclub.com.au/",
+    "amenity": "bar"
+   }
+  },
+  {
+   "id": "n4777771224",
+   "name": "Frankie's Café",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.1616689,
+   "lon": 145.9306823,
+   "tags": {
+    "website": "http://www.frankiescafeespressobar.com.au",
+    "phone": "+61 3 5623 1196",
+    "opening_hours": "Mo-Fr 06:00-17:00; Sa-Su 06:30-15:00",
+    "addr:housenumber": "28",
+    "addr:street": "Victoria Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n5044292541",
+   "name": "Celebration Tonight",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.1631068,
+   "lon": 145.9336392,
+   "tags": {
+    "cuisine": "indian",
+    "addr:housenumber": "24",
+    "addr:street": "Mason Street",
+    "addr:suburb": "Warragul",
+    "addr:postcode": "3820",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n9131027426",
+   "name": "Commercial Hotel Warragul",
+   "group": "eat",
+   "type": "pub",
+   "lat": -38.1639936,
+   "lon": 145.9331227,
+   "tags": {
+    "phone": "+61 3 5627 0714",
+    "addr:housenumber": "115",
+    "addr:street": "Queen Street",
+    "addr:suburb": "Warragul",
+    "addr:postcode": "3820",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n9291713866",
+   "name": "Newmason",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.1626961,
+   "lon": 145.9331642,
+   "tags": {
+    "website": "https://www.newmason.net/",
+    "phone": "+61 3 5618 3160",
+    "cuisine": "pizza;burger;italian",
+    "wheelchair": "yes",
+    "addr:housenumber": "25",
+    "addr:street": "Mason Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n9291713867",
+   "name": "Mercure Hotel",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -38.1628984,
+   "lon": 145.9330576,
+   "tags": {
+    "brand": "Mercure",
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "n9291835584",
+   "name": "The Courthouse Restaurant",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.1609183,
+   "lon": 145.9322802,
+   "tags": {
+    "website": "https://www.courthousewarragul.com/",
+    "phone": "+61 3 5622 2442",
+    "wheelchair": "yes",
+    "addr:housenumber": "72",
+    "addr:street": "Smith Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n9292779562",
+   "name": "Nature at Work Aquarium",
+   "group": "do",
+   "type": "aquarium",
+   "lat": -38.1671149,
+   "lon": 145.9433338,
+   "tags": {
+    "website": "https://www.natureatwork.com.au/",
+    "opening_hours": "Mo 10:00-18:00; We-Fr 10:00-18:00; Sa 10:00-17:00",
+    "addr:housenumber": "168",
+    "addr:street": "Queen Street",
+    "tourism": "aquarium"
+   }
+  },
+  {
+   "id": "n9294822743",
+   "name": "Bandolier Brewing",
+   "group": "eat",
+   "type": "pub",
+   "lat": -38.1662422,
+   "lon": 145.9482511,
+   "tags": {
+    "website": "https://bandolierbrewing.com/",
+    "opening_hours": "Fr 15:00 - 23:00; Sa 13:00 - 23:00; Su 13:00 - 19:00",
+    "cuisine": "mexican",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "132",
+    "addr:street": "North Road",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n9298296994",
+   "name": "Pie Face",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.1648154,
+   "lon": 145.9361992,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "brand": "Pie Face",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9301676706",
+   "name": "Warragul Thai",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.1635265,
+   "lon": 145.929838,
+   "tags": {
+    "phone": "+61 3 5623 3222",
+    "cuisine": "thai",
+    "addr:housenumber": "56",
+    "addr:street": "Queen Street",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n9301714307",
+   "name": "Okami All-you-can-eat Japanese",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.1649971,
+   "lon": 145.934625,
+   "tags": {
+    "website": "https://okamirestaurant.com.au/warragulbooking",
+    "phone": "+61 3 5623 3987",
+    "cuisine": "japanese",
+    "brand": "Okami",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n9501864689",
+   "name": "Bank",
+   "group": "eat",
+   "type": "pub",
+   "lat": -38.16308,
+   "lon": 145.9307469,
+   "tags": {
+    "website": "https://www.bankwarragul.com.au/",
+    "addr:housenumber": "5-7",
+    "addr:street": "Smith Street",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n9501864692",
+   "name": "The Bean Scene",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.161896,
+   "lon": 145.9309388,
+   "tags": {
+    "website": "https://beanscenearound.com.au/cafe/",
+    "cuisine": "coffee_shop",
+    "addr:housenumber": "12-14",
+    "addr:street": "Warragul Plaza",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9506718768",
+   "name": "Streatside Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.1630353,
+   "lon": 145.9324819,
+   "tags": {
+    "website": "https://www.streatsidecafeeatery.com.au/",
+    "cuisine": "coffee_shop",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "1-2",
+    "addr:street": "Williams Square",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9506739022",
+   "name": "Coffee On Queen",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.1639025,
+   "lon": 145.9325604,
+   "tags": {
+    "phone": "+61 3 5623 4901",
+    "cuisine": "coffee_shop",
+    "outdoor_seating": "no",
+    "addr:housenumber": "109",
+    "addr:street": "Queen Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9506739031",
+   "name": "Little Tea Cups",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.1627344,
+   "lon": 145.9321941,
+   "tags": {
+    "outdoor_seating": "no",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9805310074",
+   "name": "Earth Market Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.1617939,
+   "lon": 145.9302208,
+   "tags": {
+    "outdoor_seating": "no",
+    "addr:housenumber": "35",
+    "addr:street": "Victoria Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9886413991",
+   "name": "Taco Bill",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.1604211,
+   "lon": 145.9296349,
+   "tags": {
+    "cuisine": "mexican",
+    "brand": "Taco Bill",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n9886413992",
+   "name": "Warragul Noodle and Dumpling",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.1604548,
+   "lon": 145.9322838,
+   "tags": {
+    "cuisine": "noodle",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n9886414003",
+   "name": "Chilli Bites",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.1601907,
+   "lon": 145.9320096,
+   "tags": {
+    "cuisine": "indian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n9886414008",
+   "name": "Jade Chinese Cuisine",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.1595905,
+   "lon": 145.9320148,
+   "tags": {
+    "cuisine": "chinese",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n9886808649",
+   "name": "Apple Spice Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.1630109,
+   "lon": 145.9307556,
+   "tags": {
+    "website": "https://applespicecafe.com.au/",
+    "opening_hours": "We-Fr 10:30-15:00; Sa-Su 09:00-14:00",
+    "addr:housenumber": "1",
+    "addr:street": "Victoria Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9886808659",
+   "name": "South Brew Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.1631701,
+   "lon": 145.9306883,
+   "tags": {
+    "phone": "+61 3 5622 3645",
+    "opening_hours": "Mo 08:00-15:00; Tu-Fr 07:30-15:00; Sa 07:30-15:00; Su 08:00-15:00",
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n9886808668",
+   "name": "Whitegrain",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.1632714,
+   "lon": 145.9302929,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n12125697679",
+   "name": "Pika Sushi",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.1619132,
+   "lon": 145.9313114,
+   "tags": {
+    "website": "https://pikasushi.com.au/",
+    "phone": "+61 416 446 340",
+    "opening_hours": "Mo-Sa 17:00-20:00",
+    "cuisine": "sushi",
+    "addr:housenumber": "25",
+    "addr:street": "Smith Street",
+    "addr:suburb": "Warragul",
+    "addr:postcode": "3820",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "w44754099",
+   "name": "Civic Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.158096,
+   "lon": 145.9344224,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w46149945",
+   "name": "Western Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.154234,
+   "lon": 145.9208298,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w58325259",
+   "name": "Warragul Country Club",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -38.1458021,
+   "lon": 145.9233744,
+   "tags": {
+    "website": "https://trafalgargolf.com.au/",
+    "phone": "+61 3 5623 2353;+61 3 5623 2135",
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w139052742",
+   "name": "Warragul Gardens Holiday Park & Retirement Village",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -38.1633741,
+   "lon": 145.9249429,
+   "tags": {
+    "website": "https://warragulcaravanpark.com.au/",
+    "phone": "+61 3 5623 2707",
+    "internet_access": "wlan",
+    "addr:housenumber": "44",
+    "addr:street": "Burke Street",
+    "addr:suburb": "Warragul",
+    "addr:postcode": "3820",
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w158514482",
+   "name": "Rotary Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1584787,
+   "lon": 145.9237,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w158514492",
+   "name": "Brooker Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1491884,
+   "lon": 145.9319784,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w287658982",
+   "name": "Penaluna Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.146649,
+   "lon": 145.9049353,
+   "tags": {
+    "addr:housenumber": "1",
+    "addr:street": "Willandra Circuit",
+    "addr:suburb": "Warragul",
+    "addr:postcode": "3820",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w307981133",
+   "name": "Railway Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -38.1634156,
+   "lon": 145.931596,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w400675855",
+   "name": "Kestle Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1503642,
+   "lon": 145.9097952,
+   "tags": {
+    "addr:housenumber": "26",
+    "addr:street": "Crole Drive",
+    "addr:suburb": "Warragul",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w459700240",
+   "name": "MacArthur Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1547238,
+   "lon": 145.9381914,
+   "tags": {
+    "addr:housenumber": "16",
+    "addr:street": "MacArthur Street",
+    "addr:suburb": "Warragul",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w484901221",
+   "name": "Kiah Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1506248,
+   "lon": 145.9391282,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w715723356",
+   "name": "Pederson Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1564407,
+   "lon": 145.947176,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w776405527",
+   "name": "Burke Street Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1636893,
+   "lon": 145.92588,
+   "tags": {
+    "opening_hours": "24/7",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w954101394",
+   "name": "Comfort Inn and Suites Warragul",
+   "group": "stay",
+   "type": "motel",
+   "lat": -38.1561009,
+   "lon": 145.918239,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w1007154632",
+   "name": "Twenty One Drive-Through Coffee",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.1660426,
+   "lon": 145.9395112,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w1011432656",
+   "name": "Warragul Views Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -38.1729022,
+   "lon": 145.9377479,
+   "tags": {
+    "website": "https://www.warragulviewsmotorinn.com.au/",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w1031517045",
+   "name": "Untitled Cafe & Bar",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.1635657,
+   "lon": 145.9317098,
+   "tags": {
+    "website": "https://untitledcafebar.com.au/",
+    "phone": "+61 3 5623 3273",
+    "cuisine": "coffee_shop;burger;sandwich",
+    "description": "NB The sign out the front actually says \"Untitled Cafe\" - that's the name of the cafe, not a placeholder text.",
+    "outdoor_seating": "no",
+    "addr:housenumber": "85",
+    "addr:street": "Queen Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w1031517047",
+   "name": "Logan's Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.1636212,
+   "lon": 145.9317938,
+   "tags": {
+    "phone": "+61 3 5623 1661",
+    "addr:housenumber": "89",
+    "addr:street": "Queen Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w1031517051",
+   "name": "Coffee Lane",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.1634109,
+   "lon": 145.9320623,
+   "tags": {
+    "website": "https://www.coffeelane.com.au/",
+    "cuisine": "coffee_shop",
+    "outdoor_seating": "no",
+    "addr:housenumber": "95",
+    "addr:street": "Queen Street",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w1053465689",
+   "name": "Edinburgh Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -38.1602381,
+   "lon": 145.924079,
+   "tags": {
+    "website": "https://www.edinburghmotorinn.com.au/",
+    "phone": "+61 3 5622 3339",
+    "internet_access": "wlan",
+    "addr:housenumber": "61",
+    "addr:street": "Princes Highway",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w1227258177",
+   "name": "Wild Bean Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.1660768,
+   "lon": 145.9331308,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "brand": "Wild Bean Cafe",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w1311807269",
+   "name": "Boronia Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1474044,
+   "lon": 145.9286695,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1311958057",
+   "name": "Strachan Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1525381,
+   "lon": 145.9170898,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1318317373",
+   "name": "Kelly Koochew Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1433215,
+   "lon": 145.9092523,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1324621204",
+   "name": "Baxter Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1631163,
+   "lon": 145.9225263,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1324621230",
+   "name": "McMillan Heights Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1644034,
+   "lon": 145.919864,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1324621275",
+   "name": "Cunningham Court Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1609026,
+   "lon": 145.9185733,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1324621277",
+   "name": "F.T. Davey Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1605108,
+   "lon": 145.9233405,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1337623614",
+   "name": "Hamilton Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1464714,
+   "lon": 145.9165105,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1355914210",
+   "name": "Reserve No 1",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1536525,
+   "lon": 145.9089009,
+   "tags": {
+    "description": "For drainage & recreation purposes",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1367254599",
+   "name": "Mitchell Court Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1633915,
+   "lon": 145.9171729,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1377705163",
+   "name": "Scenic Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1549343,
+   "lon": 145.9263832,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1393487703",
+   "name": "Ellen Close Linear Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1440087,
+   "lon": 145.944068,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1393487704",
+   "name": "Jacaranda Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1429076,
+   "lon": 145.933987,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1414226895",
+   "name": "Vantage Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1774488,
+   "lon": 145.9211335,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1414226896",
+   "name": "Ridge Top Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1803393,
+   "lon": 145.9204735,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1415309542",
+   "name": "Harmony Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1600612,
+   "lon": 145.9236737,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1426147975",
+   "name": "Leichardt Court Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1635239,
+   "lon": 145.917716,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1434588681",
+   "name": "Moroka Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.1691383,
+   "lon": 145.9128091,
+   "tags": {
+    "leisure": "park"
+   }
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "town": "Ararat",
+ "slug": "ararat",
+ "centre": [
+  -37.2658785,
+  142.9797325
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-11-15T22:08:59+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "w168840838",
+   "name": "Aradale Golf Club",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -37.2805935,
+   "lon": 142.9541379,
+   "tags": {
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w168850611",
+   "name": "Aradale Asylum",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.2778227,
+   "lon": 142.9589534,
+   "tags": {
+    "website": "https://www.aradale.com.au/",
+    "tourism": "attraction",
+    "amenity": "former_hospital"
+   }
+  },
+  {
+   "id": "w420186709",
+   "name": "Pyrenees Caravan Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -37.270432,
+   "lon": 142.9506521,
+   "tags": {
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w666624928",
+   "name": "Noahs Ark Dam Natural Features Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.2506863,
+   "lon": 142.9554072,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r20174021",
+   "name": "Ararat Regional Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.2278975,
+   "lon": 142.9253716,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}
