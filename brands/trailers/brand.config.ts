@@ -7,6 +7,7 @@ export default defineBrand({
   domain: 'www.movietrailer.channel',
   launched: true, // live on movietrailer.channel since the DNS cutover
 
+  shareImage: '/share.png', // default og:image; film pages use the trailer thumbnail or a free-film still
   theme: 'cinematic',
   colors: { brand: '#12162B', accent: '#F2B53A' }, // late-night broadcast indigo, marquee amber
   fonts: { display: 'Big Shoulders Display', body: 'Instrument Sans' },
