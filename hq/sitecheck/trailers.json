@@ -3,12 +3,12 @@
  "name": "movietrailer.channel",
  "url": "https://www.movietrailer.channel",
  "owner": "imn",
- "scannedAt": "2026-11-15T08:28:31Z",
+ "scannedAt": "2026-11-15T08:38:56Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
  "nextDue": "2026-11-22",
- "score": 97,
+ "score": 98,
  "grade": "A",
  "areas": {
   "health": {
@@ -27,8 +27,8 @@
    "label": "Sitemap & indexing"
   },
   "seo": {
-   "score": 79,
-   "grade": "C",
+   "score": 87,
+   "grade": "B",
    "label": "Titles, descriptions & schema"
   },
   "content": {
@@ -64,24 +64,6 @@
    "count": 1,
    "detail": "",
    "impact": 3,
-   "broken": false
-  },
-  {
-   "id": "seo-title",
-   "area": "seo",
-   "severity": "medium",
-   "title": "5 title outside 30–65 characters",
-   "fix": "Rewrite to 30–65 characters with the main search first.",
-   "pages": [
-    "/movies/pirates-of-the-caribbean-the-curse-of-the-black-pearl-2003",
-    "/movies/dr-strangelove-or-how-i-learned-to-stop-worrying-and-love-the-bomb-1964",
-    "/studio-ghibli-where-to-watch",
-    "/original-films",
-    "/about"
-   ],
-   "count": 5,
-   "detail": "",
-   "impact": 2.8,
    "broken": false
   },
   {
@@ -417,7 +399,7 @@
   {
    "url": "https://www.movietrailer.channel/",
    "lite": true,
-   "serverSecs": 0.07,
+   "serverSecs": 0.21,
    "htmlKb": 64,
    "blocking": 1,
    "images": 31,
@@ -428,7 +410,7 @@
   {
    "url": "https://www.movietrailer.channel/browse",
    "lite": true,
-   "serverSecs": 0.11,
+   "serverSecs": 0.1,
    "htmlKb": 175,
    "blocking": 1,
    "images": 368,
@@ -449,24 +431,20 @@
   "unsureOutside": 48
  },
  "affiliateOk": 970,
- "secs": 133,
+ "secs": 136,
  "change": {
   "first": false,
-  "since": "2026-11-15T07:41:10Z",
+  "since": "2026-11-15T08:28:31Z",
   "score": 1,
   "newIssues": [],
-  "fixed": [],
-  "impr28": 37,
+  "fixed": [
+   "5 title outside 30–65 characters"
+  ],
+  "impr28": 0,
   "clicks28": 0,
   "views28": 0,
   "rivals": [],
-  "positions": [
-   {
-    "query": "insomnia trailer",
-    "was": 60,
-    "now": 65
-   }
-  ]
+  "positions": []
  },
  "history": [
   {
@@ -488,6 +466,13 @@
    "score": 96,
    "grade": "A",
    "impr28": 75,
+   "clicks28": 0
+  },
+  {
+   "at": "2026-11-15T08:28:31Z",
+   "score": 97,
+   "grade": "A",
+   "impr28": 112,
    "clicks28": 0
   }
  ],

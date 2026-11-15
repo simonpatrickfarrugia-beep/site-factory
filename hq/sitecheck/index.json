@@ -96,8 +96,8 @@
    "name": "movietrailer.channel",
    "url": "https://www.movietrailer.channel",
    "owner": "imn",
-   "scannedAt": "2026-11-15T08:28:31Z",
-   "score": 97,
+   "scannedAt": "2026-11-15T08:38:56Z",
+   "score": 98,
    "grade": "A",
    "change": 1,
    "first": false,
@@ -107,7 +107,7 @@
    "topFix": "Google shows only 31 of 384 pages (site is 29 days old)",
    "broken": 0,
    "newIssues": 0,
-   "fixed": 0,
+   "fixed": 1,
    "costUsd": 0,
    "top": [
     {
@@ -117,21 +117,6 @@
      "area": "indexing",
      "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 57 pages on 16 Dec 2026, cut or merge weak pages and earn a few links.",
      "pages": [],
-     "detail": "",
-     "broken": false
-    },
-    {
-     "id": "seo-title",
-     "title": "5 title outside 30–65 characters",
-     "severity": "medium",
-     "area": "seo",
-     "fix": "Rewrite to 30–65 characters with the main search first.",
-     "pages": [
-      "/movies/pirates-of-the-caribbean-the-curse-of-the-black-pearl-2003",
-      "/movies/dr-strangelove-or-how-i-learned-to-stop-worrying-and-love-the-bomb-1964",
-      "/studio-ghibli-where-to-watch",
-      "/original-films"
-     ],
      "detail": "",
      "broken": false
     },
@@ -176,6 +161,19 @@
       "/movies/whalefall-2026",
       "/movies/mad-max-1979",
       "/movies/its-a-wonderful-life-1946"
+     ],
+     "detail": "",
+     "broken": false
+    },
+    {
+     "id": "seo-desc",
+     "title": "2 description outside 70–160 characters",
+     "severity": "low",
+     "area": "seo",
+     "fix": "Rewrite to 70–160 characters: what the page gives the searcher.",
+     "pages": [
+      "/terms",
+      "/privacy-policy"
      ],
      "detail": "",
      "broken": false
@@ -516,9 +514,9 @@
    ]
   }
  },
- "updated": "2026-11-15T08:28:31Z",
+ "updated": "2026-11-15T08:38:56Z",
  "lastRun": {
-  "at": "2026-11-15T08:28:31Z",
+  "at": "2026-11-15T08:38:56Z",
   "scanned": [
    "trailers"
   ]
