@@ -4,35 +4,20 @@
    "name": "victours.com.au",
    "url": "https://victours.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-15T09:26:58Z",
-   "score": 95,
+   "scannedAt": "2026-11-15T09:43:32Z",
+   "score": 96,
    "grade": "A",
-   "change": 5,
+   "change": 1,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
    "nextDue": "2026-11-22",
-   "topFix": "9 outside link(s) go to a missing page",
+   "topFix": "28 title outside 30–65 characters",
    "broken": 1,
    "newIssues": 0,
-   "fixed": 6,
+   "fixed": 0,
    "costUsd": 0,
    "top": [
-    {
-     "id": "broken-outside",
-     "title": "9 outside link(s) go to a missing page",
-     "severity": "medium",
-     "area": "health",
-     "fix": "Update or remove the links (often an official website that moved).",
-     "pages": [
-      "/great-ocean-road",
-      "/great-ocean-road/eat",
-      "/warrnambool",
-      "/warrnambool/eat"
-     ],
-     "detail": "https://www.seanchai.com.au (no answer); https://ansmtorquay.wordpress.com/ (410); https://allsmiles.com.au/ (no answer); https://www.laporchetta.com/store-locations/suburb/phillip-island (404); https",
-     "broken": true
-    },
     {
      "id": "seo-title",
      "title": "28 title outside 30–65 characters",
@@ -47,6 +32,21 @@
      ],
      "detail": "",
      "broken": false
+    },
+    {
+     "id": "broken-outside",
+     "title": "1 outside link(s) go to a missing page",
+     "severity": "medium",
+     "area": "health",
+     "fix": "Update or remove the links (often an official website that moved).",
+     "pages": [
+      "/geelong",
+      "/geelong/eat",
+      "/weekends/geelong-by-train",
+      "/weekends/geelong-romantic-weekend"
+     ],
+     "detail": "https://fleurwolves.com/ (no answer)",
+     "broken": true
     },
     {
      "id": "seo-words",
@@ -474,9 +474,9 @@
    ]
   }
  },
- "updated": "2026-11-15T09:26:58Z",
+ "updated": "2026-11-15T09:43:32Z",
  "lastRun": {
-  "at": "2026-11-15T09:26:58Z",
+  "at": "2026-11-15T09:43:32Z",
   "scanned": [
    "vic"
   ]

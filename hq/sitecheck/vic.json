@@ -3,17 +3,17 @@
  "name": "victours.com.au",
  "url": "https://victours.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-15T09:26:58Z",
+ "scannedAt": "2026-11-15T09:43:32Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
  "nextDue": "2026-11-22",
- "score": 95,
+ "score": 96,
  "grade": "A",
  "areas": {
   "health": {
-   "score": 88,
-   "grade": "B",
+   "score": 92,
+   "grade": "A",
    "label": "Broken pages & links"
   },
   "tracking": {
@@ -55,27 +55,6 @@
  "pages": 311,
  "findings": [
   {
-   "id": "broken-outside",
-   "area": "health",
-   "severity": "medium",
-   "title": "9 outside link(s) go to a missing page",
-   "fix": "Update or remove the links (often an official website that moved).",
-   "pages": [
-    "/great-ocean-road",
-    "/great-ocean-road/eat",
-    "/warrnambool",
-    "/warrnambool/eat",
-    "/weekends/warrnambool-by-train",
-    "/day-trips/torquay",
-    "/great-ocean-road/do",
-    "/torquay"
-   ],
-   "count": 38,
-   "detail": "https://www.seanchai.com.au (no answer); https://ansmtorquay.wordpress.com/ (410); https://allsmiles.com.au/ (no answer); https://www.laporchetta.com/store-locations/suburb/phillip-island (404); https://www.thebottleofmilk.com/ (no answer); http://www.urbanspoon.com/r/346/1815273/restaurant/Victoria/A-Mini-Kitchen-Rye (no answer)",
-   "impact": 3.6,
-   "broken": true
-  },
-  {
    "id": "seo-title",
    "area": "seo",
    "severity": "medium",
@@ -95,6 +74,23 @@
    "detail": "",
    "impact": 3.0,
    "broken": false
+  },
+  {
+   "id": "broken-outside",
+   "area": "health",
+   "severity": "medium",
+   "title": "1 outside link(s) go to a missing page",
+   "fix": "Update or remove the links (often an official website that moved).",
+   "pages": [
+    "/geelong",
+    "/geelong/eat",
+    "/weekends/geelong-by-train",
+    "/weekends/geelong-romantic-weekend"
+   ],
+   "count": 4,
+   "detail": "https://fleurwolves.com/ (no answer)",
+   "impact": 2.5,
+   "broken": true
   },
   {
    "id": "seo-words",
@@ -426,7 +422,7 @@
   {
    "url": "https://victours.com.au/",
    "lite": true,
-   "serverSecs": 0.14,
+   "serverSecs": 0.06,
    "htmlKb": 55,
    "blocking": 1,
    "images": 11,
@@ -437,7 +433,7 @@
   {
    "url": "https://victours.com.au/towns",
    "lite": true,
-   "serverSecs": 0.12,
+   "serverSecs": 0.07,
    "htmlKb": 32,
    "blocking": 1,
    "images": 1,
@@ -453,28 +449,21 @@
  },
  "links": {
   "internal": 364,
-  "outside": 4890,
+  "outside": 4885,
   "checkedOutside": 150,
   "unsureOutside": 3
  },
  "affiliateOk": 546,
- "secs": 197,
+ "secs": 188,
  "change": {
   "first": false,
-  "since": "2026-11-14T22:17:22Z",
-  "score": 5,
+  "since": "2026-11-15T09:26:58Z",
+  "score": 1,
   "newIssues": [],
-  "fixed": [
-   "/: 1,776 KB of images in the first 15",
-   "\"melbourne accomodation southbank\": we're not in the top 10 (Search Console avg 72); tripadvisor.com.au leads",
-   "\"sorrento restaurants\": we're not in the top 10 (Search Console avg 86); mapquest.com leads",
-   "\"yarra valley day trip\": we're not in the top 10 (Search Console avg 68); australia.com leads",
-   "\"activities lorne victoria\": we're not in the top 10 (Search Console avg 66); lornevictoria.com.au leads",
-   "\"bright things to do\": we're not in the top 10 (Search Console avg 49); visitbright.com.au leads"
-  ],
-  "impr28": 628,
-  "clicks28": 1,
-  "views28": 2,
+  "fixed": [],
+  "impr28": 0,
+  "clicks28": 0,
+  "views28": 0,
   "rivals": [],
   "positions": []
  },
@@ -499,6 +488,13 @@
    "grade": "A",
    "impr28": 2101,
    "clicks28": 4
+  },
+  {
+   "at": "2026-11-15T09:26:58Z",
+   "score": 95,
+   "grade": "A",
+   "impr28": 2729,
+   "clicks28": 5
   }
  ],
  "issue": "open"
