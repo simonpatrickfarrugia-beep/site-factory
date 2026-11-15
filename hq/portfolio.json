@@ -184,7 +184,7 @@
  "actions": [
   {
    "who": "Claude",
-   "what": "Publish the next Vic towns weekly (list exhausted 8 Nov; waiting on Simon's yes to volume-check 27 new towns)",
+   "what": "Publish the next Vic towns: 30 new towns volume-checked 16 Nov, top 12 probed; publish those with 25+ places",
    "site": "vic"
   },
   {
@@ -195,6 +195,11 @@
   {
    "who": "Claude",
    "what": "Trailers: 16 classics (Casablanca, Se7en…) still stuck after the 11 Nov OMDb fix; budget guard fixed and re-queued 16 Nov. Check they publish",
+   "site": "trailers"
+  },
+  {
+   "who": "Claude",
+   "what": "Christmas Movies collection live 16 Nov: add the 15 queued Christmas films as they publish; unfeature after 6 Jan",
    "site": "trailers"
   }
  ],
@@ -783,14 +788,15 @@
    "why": "6,600 searches a month for Sorrento food; Google shows us at ~position 90 with 0 clicks. Your picks make the page original.",
    "link": "https://github.com/simonpatrickfarrugia-beep/site-factory/blob/main/hq/ready/opportunities/2026-11-12-vic-sorrento-restaurants.md",
    "linkLabel": "Draft",
-   "done": false,
+   "done": true,
    "addedAt": "2026-11-12",
    "ready": {
     "what": "Draft ready: add your line and reply 'publish <slug>'",
     "link": "https://github.com/simonpatrickfarrugia-beep/site-factory/blob/main/hq/ready/opportunities/2026-11-12-vic-sorrento-restaurants.md",
     "at": "2026-11-12"
    },
-   "brand": "vic"
+   "brand": "vic",
+   "doneAt": "2026-11-16"
   },
   {
    "id": "opp-tax-brackets-history",
@@ -818,13 +824,14 @@
    "why": "Each new town page is a new way in from Google and carries the tour, stay and car-hire buttons. Candidates: Yackandandah, Mount Beauty, Paynesville, Sale, Traralgon, Warragul, Hamilton, Portland, Colac, Benalla, Yarrawonga, Heathcote, Ararat, Stawell, Frankston, Wonthaggi, Venus Bay, Kinglake, Nagambie, Timboon, Skenes Creek, Gisborne, Emerald, Maryborough, Dinner Plain, Mount Martha, Blairgowrie.",
    "link": "https://www.movietrailer.channel/hq",
    "linkLabel": "HQ",
-   "done": false,
+   "done": true,
    "addedAt": "2026-11-16",
    "brand": "vic",
    "ready": {
     "what": "Recommend yes: the list is ready to drop into data/vic/towns.json and the towns job checks them in one call (well under the US$1 cap). Towns with 25+ places get published the week after.",
     "at": "2026-11-16"
-   }
+   },
+   "doneAt": "2026-11-16"
   }
  ],
  "notes": [

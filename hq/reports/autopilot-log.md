@@ -26,3 +26,9 @@
 - Money model: niches scored 0 (nothing waiting); calibration 4.1% click rate, 4.9% conversion. Priority report refreshed.
 - Todo: Agoda and resume-sharing items prepped (answers link, ready-to-paste message). Cover letter builder is live, so it came off Claude's list. Sprint "First $1" unchanged (deadline 30 Nov, not reached).
 - Public repo hygiene: reworded a done item that named Simon's employer.
+
+## 2026-11-16 · Follow-up with Simon (chat)
+- "Yes towns": added 27 towns to data/vic/towns.json; towns job checked 30 places (27 new + 3 stale). Top: Traralgon 9,380, Frankston 9,300, Warragul 5,080, Emerald 4,800, Yarrawonga 4,700. Sale, Hamilton, Portland, Emerald and Maryborough share names with places outside Victoria, so their numbers are likely inflated. Probed the top 12 (vic-probe).
+- Sorrento eat page: Simon delegated the picks. Wrote three factual paragraphs (no first-person claims): The Baths by the pier (seafood, bay views; weekendnotes.com review), the 1875 limestone Continental Hotel, now the InterContinental Sorrento (Heritage Victoria; bosshunting.com.au 2022), Stringers Cafe ~350 m from the pier, All Smiles at the ocean beach. OSM still calls it "The Continental Hotel".
+- Christmas: new featured collection /discover/christmas-movies with 10 catalogue films + 15 queued (Elf, Polar Express, Nightmare Before Christmas, Grinch…). All 15 published after three enrich runs.
+- OMDb root cause: the budget-guard fix didn't help; title lookup and search both miss many classics (Casablanca, Kung Fu Hustle, A Clockwork Orange). Added optional `imdbId` on queue items (looked up first with `i=`; a wrong id fails the mismatch check). Ids set for 37 films; 27 published so far. Note: OMDb's Year follows US release for some (Gone with the Wind → 1940, Mary Poppins → 1965).
