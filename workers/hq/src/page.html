@@ -463,8 +463,8 @@ async function load() {
     const [board, summary, prospects, replies, pipeline, affiliates, radar, needs] = await Promise.all([api('/api/board'), api('/api/summary'), api('/api/prospects'), api('/api/replies'), api('/api/pipeline'), api('/api/affiliates'), api('/api/radar'), api('/api/needs')]);
     const send = await api('/api/send/status').catch(() => null);
     const hq = await api('/api/hq').catch(() => null);
-    const [checks, apps, conf] = await Promise.all([api('/api/sitecheck').catch(() => null), api('/api/apps').catch(() => null), api('/api/confidence').catch(() => null)]);
-    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar, needs, send, hq, checks, apps, conf });
+    const [checks, apps, conf, jobs] = await Promise.all([api('/api/sitecheck').catch(() => null), api('/api/apps').catch(() => null), api('/api/confidence').catch(() => null), api('/api/jobs').catch(() => null)]);
+    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar, needs, send, hq, checks, apps, conf, jobs: jobs?.jobs || [] });
     $('#updated').textContent = 'Targets scored ' + new Date(prospects.generated).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
     render();
     const deep = location.hash.match(/^#app=([a-z0-9-]+)$/); // e.g. …/#app=vic opens that app (links from the morning report)
@@ -1118,6 +1118,28 @@ function notesFor(id) {
   return out.sort((a, z) => (SEV_RANK[a.sev] ?? 4) - (SEV_RANK[z.sev] ?? 4));
 }
 const KIND = { broken: '🔴 Broken', fix: '🛠 Fix', issue: '🐙 Issue', form: '📥 New form', reply: '💬 Reply', outreach: '📨 Outreach', todo: '✅ To-do', decide: '🤔 Decide' };
+// ---------- Claude queue (workers/hq/src/jobs.ts; picked up hourly by the claude-queue worker) ----------
+const JOB_LABEL = { queued: '⏳ Queued for Claude', working: '🔧 Claude is on it', done: '✅ Done', decide: '🤔 Needs your call', failed: '⚠️ Didn’t work', cancelled: 'Cancelled' };
+const jobsFor = (site) => (state.jobs || []).filter((j) => j.site === site && j.status !== 'cancelled');
+const activeJob = (site, title) => (state.jobs || []).find((j) => j.site === site && j.title === title && (j.status === 'queued' || j.status === 'working'));
+function jobPill(site, title) { const j = activeJob(site, title); return j ? `<span class="meta"><b>${JOB_LABEL[j.status]}</b> · ${esc(ago(j.created_at))}</span>` : ''; }
+function jobLi(j) {
+  return `<li class="note ${j.status === 'decide' || j.status === 'failed' ? 'n-high' : ''}"><span class="note__kind">${JOB_LABEL[j.status] || esc(j.status)}${j.kind === 'auto' ? ' · auto-fix' : ''} · ${esc(ago(j.done_at || j.created_at))}</span>
+    <b>${esc(j.title)}</b>${j.summary ? `<span class="meta">${esc(j.summary)}</span>` : ''}
+    ${j.commit_sha ? `<a class="meta" href="https://github.com/${REPO}/commit/${esc(j.commit_sha)}" target="_blank" rel="noopener">See the change ↗</a>` : ''}
+    ${j.status === 'queued' ? `<div class="row"><button class="btn ghost" data-jcancel="${j.id}">Cancel</button></div>` : ''}</li>`;
+}
+async function refreshJobs() { const r = await api('/api/jobs').catch(() => null); if (r) state.jobs = r.jobs; }
+function renderJobsLine() {
+  const js = state.jobs || []; if (!js.length) return '';
+  const wk = Date.now() - 7 * 86400000;
+  const q = js.filter((j) => j.status === 'queued' || j.status === 'working').length;
+  const done = js.filter((j) => j.status === 'done' && Date.parse(j.done_at || j.created_at) > wk).length;
+  const auto = js.filter((j) => j.status === 'done' && j.kind === 'auto' && Date.parse(j.done_at || j.created_at) > wk).length;
+  const dec = js.filter((j) => j.status === 'decide' || j.status === 'failed');
+  const stuck = js.filter((j) => j.status === 'queued' && Date.now() - Date.parse(j.created_at) > 3 * 3600000 && new Date().getHours() >= 8).length;
+  return `<details class="conf"><summary>🤖 Claude: ${q} queued · ${done} done this week${auto ? ` (${auto} auto-fixes)` : ''}${dec.length ? ` · <b>${dec.length} need you</b>` : ''}${stuck ? ` · <b>${stuck} waiting 3h+: check the Claude queue scheduled task</b>` : ''}<em>tap to see</em></summary><ul class="notes">${js.filter((j) => j.status !== 'cancelled').slice(0, 15).map(jobLi).join('')}</ul></details>`;
+}
 // ---------- Confidence panel (top of Home): micro (this week), macro (90 days), predictor. docs/CONFIDENCE.md ----------
 function spark(xs) {
   if (!xs || !xs.length) return '';
@@ -1161,6 +1183,7 @@ function renderHome() {
   $('#view').innerHTML = `<section class="home">
     <p class="home__hello">${hello}, Simon. <b>${total}</b> thing${total === 1 ? '' : 's'} across ${apps.length} apps.</p>
     ${renderConfidence()}
+    ${renderJobsLine()}
     <h2 class="home__h">IMN sites</h2><div class="apps">${apps.filter((c) => c.owner !== 'client').map(icon).join('')}</div>
     ${clients.length ? `<h2 class="home__h">Clients</h2><div class="apps">${clients.map(icon).join('')}</div>` : ''}
     <div class="dock">${dock.map(([v, i, l]) => `<button class="app" data-view="${v}"><span class="app__icon">${i}</span><span class="app__name">${l}</span></button>`).join('')}</div>
@@ -1184,13 +1207,20 @@ function openApp(id) {
     <div><label>Notifications (${notes.length})</label>
       ${notes.length ? `<ul class="notes">${notes.map((n, i) => `<li class="note n-${esc(n.sev)}"><div class="note__top"><span class="note__kind">${KIND[n.kind] || ''}</span></div>
         <b>${esc(n.title)}</b>${n.detail ? `<span class="meta">${esc(n.detail)}</span>` : ''}
-        <div class="row">${n.prompt ? `<button class="btn" data-fix="${i}">Fix with Claude</button>` : ''}${n.open ? `<button class="btn ghost" data-go="${i}">Open</button>` : ''}${n.link ? `<a class="btn ghost" style="text-decoration:none" href="${esc(n.link)}" target="_blank" rel="noopener">Link ↗</a>` : ''}</div></li>`).join('')}</ul>` : '<p class="empty">All clear 🎉</p>'}
+        ${jobPill(id, n.title)}<div class="row">${n.prompt && !activeJob(id, n.title) ? `<button class="btn" data-queue="${i}">🤖 Queue for Claude</button><button class="btn ghost" data-fix="${i}">Do it now in chat</button>` : ''}${n.open ? `<button class="btn ghost" data-go="${i}">Open</button>` : ''}${n.link ? `<a class="btn ghost" style="text-decoration:none" href="${esc(n.link)}" target="_blank" rel="noopener">Link ↗</a>` : ''}</div></li>`).join('')}</ul>` : '<p class="empty">All clear 🎉</p>'}
     </div>
-    <p class="meta">“Fix with Claude” copies a ready-made brief and opens the Site Factory project: start a new chat there and paste.</p>`;
+    ${jobsFor(id).length ? `<div><label>Claude’s work (last 14 days)</label><ul class="notes">${jobsFor(id).map(jobLi).join('')}</ul></div>` : ''}
+    <p class="meta">“Queue for Claude” hands the job to Claude, who picks it up within the hour (7am–11pm), does it under the house rules and reports back here. Anything that costs money, sends email or deletes comes back to you as a decision. “Do it now in chat” copies the brief for a chat instead.</p>`;
   if (!dlg.open) dlg.showModal();
   $('#close').onclick = () => dlg.close();
   $('#ask-claude').onclick = () => handoff(general);
   body.querySelectorAll('[data-fix]').forEach((b) => b.onclick = () => handoff(state.appNotes[Number(b.dataset.fix)].prompt));
+  body.querySelectorAll('[data-queue]').forEach((b) => b.onclick = async () => {
+    const n = state.appNotes[Number(b.dataset.queue)]; b.disabled = true;
+    try { await api('/api/jobs', { site: id, title: n.title, prompt: n.prompt, kind: n.kind === 'fix' || n.kind === 'broken' ? 'fix' : 'ask' }); toast('Queued: Claude picks it up within the hour'); await refreshJobs(); openApp(id); }
+    catch (e) { b.disabled = false; toast(e.message); }
+  });
+  body.querySelectorAll('[data-jcancel]').forEach((b) => b.onclick = async () => { await api('/api/jobs/' + b.dataset.jcancel + '/cancel', {}).catch(() => {}); await refreshJobs(); openApp(id); });
   body.querySelectorAll('[data-go]').forEach((b) => b.onclick = () => {
     const o = state.appNotes[Number(b.dataset.go)].open; dlg.close();
     if (o.check) { openCheck(o.check); return; }
@@ -1411,6 +1441,7 @@ document.addEventListener('click', (e) => {
   else if (t.dataset.aff) openAffiliate(t.dataset.aff);
   else if (t.dataset.check) openCheck(t.dataset.check);
   else if (t.dataset.app) openApp(t.dataset.app);
+  else if (t.dataset.jcancel && !t.closest('#sheet')) { api('/api/jobs/' + t.dataset.jcancel + '/cancel', {}).catch(() => {}).then(refreshJobs).then(render); }
   else if (t.dataset.confOpen) { const o = t.dataset.confOpen; if (o.startsWith('app:')) openApp(o.slice(4)); else if (o === 'imn') openApp('imn'); else { state.view = o; save(); render(); window.scrollTo(0, 0); } }
   else if (t.dataset.rdraft) { const o = state.radar.queue.find((x) => String(x.id) === t.dataset.rdraft); if (o) openDraft(o.brand, o.target, o); }
   else if (t.dataset.rdrop) radarReview(t.dataset.rdrop, $('#rdrop-' + t.dataset.rdrop).value, $('#rwhy-' + t.dataset.rdrop).value);

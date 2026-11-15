@@ -22,6 +22,8 @@ To change what a worker does, edit its SKILL.md and push. The scheduled task pic
 | Weekly autopilot | `weekly-autopilot` | Mon 07:59 | Opus | Gmail (read), Claude Code Remote | repo data, todo, reports, `hq/runs.json` |
 | RBA rate day | `rba-rate-day` | each RBA decision day 15:15 | Opus | Claude Code Remote | `data/paycalc/rates.json` |
 | Opportunity engine | `opportunity-engine` | Tue 07:47 | Opus | Claude Code Remote | titles in code/data, `hq/opportunities.json`, `hq/ready/opportunities/`, todo, `hq/reports/opportunity-log.md`, `hq/runs.json` |
+| Claude queue | `claude-queue` | hourly 07:03–23:03 | Opus | Cloudflare, Claude Code Remote | whatever the queued job needs (under CLAUDE.md), D1 `claude_jobs` status |
+| Auto-fix | `auto-fix` | daily 10:47 | Opus | Cloudflare, Claude Code Remote | safe site check fixes in code/data, D1 `claude_jobs` log, `hq/runs.json` |
 
 Claude Code Remote is what lets a scheduled run attach and push to this repo; web search is built in.
 Sonnet for reading and formatting, Opus where the job is research or judgement.
@@ -30,6 +32,7 @@ Day-job workers (FCBT Radar 8:45 top-up and bonus top-up) are deliberately **not
 kept separate from IMN, and this repo is public.
 
 ## Health
+`claude-queue` isn't in the health check (most hourly runs find nothing and log nothing): IMN HQ flags a job still queued after 3 hours.
 Each worker's last step runs `scripts/hq/log_run.py <worker> ok|fail "<note>"`, which updates its entry in `hq/runs.json`.
 The daily `health` workflow (09:40 Melbourne) checks those entries against `workersMaxAgeDays` in `hq/health.json`
 and opens a `health` issue (GitHub emails Simon) if a worker failed or went quiet, e.g. after a usage-limit stop.

@@ -19,7 +19,10 @@ Adding a client = adding an entry there. The **IMN** app holds company-wide item
 | ✅ To-do / 🤔 Decide | `hq/portfolio.json` → `todo` items with `brand` = the site id (no brand = IMN) |
 
 ## Working on one
-- **Fix with Claude** copies a ready-made brief (site, repo, the finding, the rules) to the clipboard and opens the
+- **Queue for Claude** (default): saves the job in D1 `claude_jobs`; the `claude-queue` worker picks it up within the hour (07:00–23:00),
+  does it under CLAUDE.md and writes back status + a one-line summary (✅ done, 🤔 needs your call, ⚠️ didn't work). The `auto-fix`
+  worker clears safe site check fixes daily and logs them there too. Home shows "🤖 Claude: N queued · M done this week".
+- **Do it now in chat** (was Fix with Claude) copies a ready-made brief (site, repo, the finding, the rules) to the clipboard and opens the
   Site Factory project in Claude; start a new chat and paste. Full repo access, no extra cost.
 - **Ask Claude about <site>** does the same with a general brief (report card + stats, "the one thing that would move it").
 - **Open** jumps to the right HQ tab (Radar, Outreach, Replies, Affiliates) or the report card.

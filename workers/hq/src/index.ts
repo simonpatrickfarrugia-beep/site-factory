@@ -16,6 +16,7 @@ import { hq } from './funnel';
 import { siteCheckIndex, siteCheckCard } from './sitecheck';
 import { apps } from './apps';
 import { confidence } from './confidence';
+import { listJobs, queueJob, cancelJob } from './jobs';
 
 interface Env {
   DB: D1Database;
@@ -67,6 +68,10 @@ export default {
       if (url.pathname === '/api/summary' && req.method === 'GET') return json(await summary(env));
       if (url.pathname === '/api/hq' && req.method === 'GET') return json(await hq(env.DB, T.brands));
       if (url.pathname === '/api/apps' && req.method === 'GET') return json(await apps(env.DB));
+      if (url.pathname === '/api/jobs' && req.method === 'GET') return json(await listJobs(env.DB));
+      if (url.pathname === '/api/jobs' && req.method === 'POST') return json(await queueJob(env.DB, (await req.json().catch(() => ({}))) as Record<string, unknown>));
+      const jc = url.pathname.match(/^\/api\/jobs\/(\d+)\/cancel$/);
+      if (jc && req.method === 'POST') return json(await cancelJob(env.DB, Number(jc[1])));
       if (url.pathname === '/api/confidence' && req.method === 'GET') {
         const [b, r] = await Promise.all([board(env), radar(env.DB, targetLabel)]);
         return json(await confidence(env.DB, {
