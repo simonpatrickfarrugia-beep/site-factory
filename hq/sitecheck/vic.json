@@ -3,16 +3,16 @@
  "name": "victours.com.au",
  "url": "https://victours.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-15T09:43:32Z",
+ "scannedAt": "2026-11-15T09:53:21Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
  "nextDue": "2026-11-22",
- "score": 96,
+ "score": 98,
  "grade": "A",
  "areas": {
   "health": {
-   "score": 92,
+   "score": 100,
    "grade": "A",
    "label": "Broken pages & links"
   },
@@ -74,23 +74,6 @@
    "detail": "",
    "impact": 3.0,
    "broken": false
-  },
-  {
-   "id": "broken-outside",
-   "area": "health",
-   "severity": "medium",
-   "title": "1 outside link(s) go to a missing page",
-   "fix": "Update or remove the links (often an official website that moved).",
-   "pages": [
-    "/geelong",
-    "/geelong/eat",
-    "/weekends/geelong-by-train",
-    "/weekends/geelong-romantic-weekend"
-   ],
-   "count": 4,
-   "detail": "https://fleurwolves.com/ (no answer)",
-   "impact": 2.5,
-   "broken": true
   },
   {
    "id": "seo-words",
@@ -422,7 +405,7 @@
   {
    "url": "https://victours.com.au/",
    "lite": true,
-   "serverSecs": 0.06,
+   "serverSecs": 0.05,
    "htmlKb": 55,
    "blocking": 1,
    "images": 11,
@@ -433,7 +416,7 @@
   {
    "url": "https://victours.com.au/towns",
    "lite": true,
-   "serverSecs": 0.07,
+   "serverSecs": 0.04,
    "htmlKb": 32,
    "blocking": 1,
    "images": 1,
@@ -454,13 +437,15 @@
   "unsureOutside": 3
  },
  "affiliateOk": 546,
- "secs": 188,
+ "secs": 136,
  "change": {
   "first": false,
-  "since": "2026-11-15T09:26:58Z",
-  "score": 1,
+  "since": "2026-11-15T09:43:32Z",
+  "score": 2,
   "newIssues": [],
-  "fixed": [],
+  "fixed": [
+   "1 outside link(s) go to a missing page"
+  ],
   "impr28": 0,
   "clicks28": 0,
   "views28": 0,
@@ -495,7 +480,14 @@
    "grade": "A",
    "impr28": 2729,
    "clicks28": 5
+  },
+  {
+   "at": "2026-11-15T09:43:32Z",
+   "score": 96,
+   "grade": "A",
+   "impr28": 2729,
+   "clicks28": 5
   }
  ],
- "issue": "open"
+ "issue": "closed"
 }
