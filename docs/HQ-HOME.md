@@ -2,6 +2,7 @@
 
 IMN HQ (https://imn-hq.simonpatrickfarrugia.workers.dev) opens on **Home**: a phone-style home screen where every site is a
 client app. A red badge counts what needs Simon; tap the app to see the notifications and act on them.
+Above the apps sits the **confidence panel** (on track / drifting / stalled, this week, 90 days, forecast): docs/CONFIDENCE.md.
 
 ## Apps = clients
 The client registry is `hq/sitecheck.json` → `sites` (`id`, `name`, `label` under the icon, `icon` emoji, `owner`).

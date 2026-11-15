@@ -15,6 +15,7 @@ import { sendForOrg, sendStatus } from './send';
 import { hq } from './funnel';
 import { siteCheckIndex, siteCheckCard } from './sitecheck';
 import { apps } from './apps';
+import { confidence } from './confidence';
 
 interface Env {
   DB: D1Database;
@@ -66,6 +67,14 @@ export default {
       if (url.pathname === '/api/summary' && req.method === 'GET') return json(await summary(env));
       if (url.pathname === '/api/hq' && req.method === 'GET') return json(await hq(env.DB, T.brands));
       if (url.pathname === '/api/apps' && req.method === 'GET') return json(await apps(env.DB));
+      if (url.pathname === '/api/confidence' && req.method === 'GET') {
+        const [b, r] = await Promise.all([board(env), radar(env.DB, targetLabel)]);
+        return json(await confidence(env.DB, {
+          due: b.orgs.filter((o) => o.followUpDue).length,
+          ready: b.orgs.filter((o) => o.stage === 'drafted').length + ((r as { queue?: unknown[] }).queue?.length ?? 0),
+          senders: Object.values(T.brands).filter((x) => x.active && x.mailReady && x.from).length,
+        }));
+      }
       if (url.pathname === '/api/sitecheck' && req.method === 'GET') return json(await siteCheckIndex());
       const sc = url.pathname.match(/^\/api\/sitecheck\/([a-z0-9-]{1,60})$/);
       if (sc && req.method === 'GET') return json(await siteCheckCard(sc[1]));

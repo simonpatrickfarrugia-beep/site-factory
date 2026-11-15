@@ -328,6 +328,31 @@ details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px
 .deal__name{border:0;background:none;padding:0;font:700 1.1rem var(--display);text-align:left}
 .warn{color:var(--due);text-transform:none;letter-spacing:0}
 body.on-home .chips,body.on-home .strip{display:none}
+.conf{background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--cc,var(--line));border-radius:14px;padding:12px 14px;margin:0 0 14px;display:grid;gap:8px}
+.conf.green{--cc:var(--good)}.conf.amber{--cc:var(--due)}.conf.red{--cc:var(--bad)}
+.conf__top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.conf__verdict{font:700 1.35rem/1.1 var(--display);text-transform:capitalize}
+.conf__line{margin:0;font-size:.92rem}
+.conf__fix{all:unset;cursor:pointer;display:grid;gap:2px;background:var(--sunk);border-radius:10px;padding:9px 11px}
+.conf__fix b{font-size:.95rem}.conf__fix span{font-size:.8rem;color:var(--muted)}
+.conf__dials{display:flex;gap:6px;flex-wrap:wrap}
+.dial{display:inline-flex;align-items:center;gap:6px;font:600 .78rem var(--body);padding:4px 10px;border-radius:999px;background:var(--sunk)}
+.dot{width:10px;height:10px;border-radius:50%;flex:none;background:var(--muted)}
+.dot.green{background:var(--good)}.dot.amber{background:var(--due)}.dot.red{background:var(--bad)}
+.conf details{border-top:1px solid var(--line);padding-top:6px}
+.conf summary{cursor:pointer;font:600 .86rem var(--body);display:flex;align-items:center;gap:7px;list-style:none}
+.conf summary::-webkit-details-marker{display:none}
+.conf summary em{margin-left:auto;font-style:normal;font-weight:400;font-size:.78rem;color:var(--muted)}
+.conf ul{list-style:none;padding:0;margin:8px 0 2px;display:grid;gap:7px}
+.conf li{display:grid;grid-template-columns:12px 1fr auto;gap:4px 8px;align-items:start;font-size:.86rem}
+.conf li .dot{margin-top:4px}
+.conf li small{grid-column:2/4;color:var(--muted);font-size:.76rem}
+.conf li b{font:500 .86rem var(--mono);white-space:nowrap}
+.conf table{width:100%;border-collapse:collapse;font-size:.8rem;margin-top:6px}
+.conf th,.conf td{text-align:left;padding:5px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+.conf td span{display:block;color:var(--muted);font-size:.72rem}
+.conf .meta{font-size:.76rem;margin:6px 0 0}
+.spark{vertical-align:middle}
 .home{padding:6px 0 24px}
 .home__hello{font:500 1.05rem var(--body);margin:6px 2px 14px}
 .home__h{font:600 .78rem var(--body);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:14px 2px 10px}
@@ -438,8 +463,8 @@ async function load() {
     const [board, summary, prospects, replies, pipeline, affiliates, radar, needs] = await Promise.all([api('/api/board'), api('/api/summary'), api('/api/prospects'), api('/api/replies'), api('/api/pipeline'), api('/api/affiliates'), api('/api/radar'), api('/api/needs')]);
     const send = await api('/api/send/status').catch(() => null);
     const hq = await api('/api/hq').catch(() => null);
-    const [checks, apps] = await Promise.all([api('/api/sitecheck').catch(() => null), api('/api/apps').catch(() => null)]);
-    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar, needs, send, hq, checks, apps });
+    const [checks, apps, conf] = await Promise.all([api('/api/sitecheck').catch(() => null), api('/api/apps').catch(() => null), api('/api/confidence').catch(() => null)]);
+    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar, needs, send, hq, checks, apps, conf });
     $('#updated').textContent = 'Targets scored ' + new Date(prospects.generated).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
     render();
     const deep = location.hash.match(/^#app=([a-z0-9-]+)$/); // e.g. …/#app=vic opens that app (links from the morning report)
@@ -1093,6 +1118,33 @@ function notesFor(id) {
   return out.sort((a, z) => (SEV_RANK[a.sev] ?? 4) - (SEV_RANK[z.sev] ?? 4));
 }
 const KIND = { broken: '🔴 Broken', fix: '🛠 Fix', issue: '🐙 Issue', form: '📥 New form', reply: '💬 Reply', outreach: '📨 Outreach', todo: '✅ To-do', decide: '🤔 Decide' };
+// ---------- Confidence panel (top of Home): micro (this week), macro (90 days), predictor. docs/CONFIDENCE.md ----------
+function spark(xs) {
+  if (!xs || !xs.length) return '';
+  const max = Math.max(1, ...xs), w = 56, h = 16, step = w / Math.max(1, xs.length - 1);
+  const pts = xs.map((v, i) => `${(i * step).toFixed(1)},${(h - 1 - (v / max) * (h - 2)).toFixed(1)}`).join(' ');
+  return `<svg class="spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true"><polyline points="${pts}" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>`;
+}
+function renderConfidence() {
+  const c = state.conf;
+  if (!c || c.error) return c?.error ? `<p class="meta">${esc(c.error)}</p>` : '';
+  const col = { 'on track': 'green', drifting: 'amber', stalled: 'red' }[c.verdict];
+  const arrow = { up: '↗', flat: '→', down: '↘' };
+  const n = (x) => Number(x || 0).toLocaleString('en-AU');
+  const micro = c.micro.items.map((i) => `<li><i class="dot ${i.status}"></i><span>${esc(i.label)}</span><b>${n(i.value)}${i.target ? ' / ' + n(i.target) : ''}</b>${i.note || i.status !== 'green' ? `<small>${esc(i.note || '')}${i.note && i.status !== 'green' ? ' · ' : ''}${i.status !== 'green' ? esc(i.fix) : ''}</small>` : ''}</li>`).join('');
+  const macro = c.macro.sites.map((m) => `<li><i class="dot ${m.status}"></i><span>${esc(m.name)} <span title="Google impressions, last 8 weeks">${spark(m.imprWeeks)}</span></span><b>${arrow[m.trend]} ${n(m.views28)}${m.target ? ' / ' + n(m.target.views) : ''}</b><small>${m.why.map(esc).join(' · ')}${m.money28 != null ? ` · money clicks ${m.money28}${m.target?.moneyClicks ? ' / ' + m.target.moneyClicks : ''}` : ''}${m.target && !m.targetConfirmed ? ' · target provisional' : ''}</small></li>`).join('');
+  const cell = (r) => `${n(r.likely)}<span>${n(r.low)}–${n(r.high)}</span>`;
+  const pred = `<table><thead><tr><th>Visits a month</th><th>3 mo</th><th>6 mo</th><th>12 mo</th></tr></thead><tbody>${c.predict.map((p) => `<tr><th>${esc(p.name)}${p.rows[0].money ? `<span class="meta">money clicks ${p.rows.map((r) => r.money.likely).join(' → ')}</span>` : ''}</th>${p.rows.map((r) => `<td>${cell(r.visits)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+  const acc = c.accuracy.scored ? `Past forecasts: ${c.accuracy.hits} of ${c.accuracy.scored} landed in the range (${Math.round(c.accuracy.hitRate * 100)}%). Likely line adjusted ×${c.accuracy.calibration}.` : `No forecast has come due yet: first check ${c.accuracy.firstCheck ? new Date(c.accuracy.firstCheck).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' }) : 'soon'}. Until then it's a starting estimate from typical new sites, not proof.`;
+  return `<section class="conf ${col}" aria-label="Confidence check">
+    <div class="conf__top"><span class="conf__verdict">${esc(c.verdict)}</span><span class="conf__dials"><span class="dial"><i class="dot ${c.micro.status}"></i>This week</span><span class="dial"><i class="dot ${c.macro.status}"></i>90 days</span></span></div>
+    <p class="conf__line">${esc(c.line)}</p>
+    <button class="conf__fix" data-conf-open="${esc(c.fixFirst.open || '')}"><b>Fix first: ${esc(c.fixFirst.text)}</b><span>${esc(c.fixFirst.why)}</span></button>
+    <details><summary><i class="dot ${c.micro.status}"></i>This week: your work<em>green if it got done, whatever Google does</em></summary><ul>${micro}</ul></details>
+    <details><summary><i class="dot ${c.macro.status}"></i>90 days: trajectory<em>${esc(c.macro.summary)}</em></summary><ul>${macro}</ul><p class="meta">28-day visits vs each site's 90-day target on a new-site ramp. No site goes red before ${c.rules.minRedAge} days live.</p></details>
+    <details><summary>🔮 Forecast<em>likely, with low–high range</em></summary>${pred}<p class="meta">${esc(acc)}</p></details>
+  </section>`;
+}
 function renderHome() {
   const apps = clientsList();
   if (!state.apps) { $('#view').innerHTML = '<p class="empty">Couldn’t load the apps right now. Pull to refresh.</p>'; return; }
@@ -1108,6 +1160,7 @@ function renderHome() {
   const clients = apps.filter((c) => c.owner === 'client');
   $('#view').innerHTML = `<section class="home">
     <p class="home__hello">${hello}, Simon. <b>${total}</b> thing${total === 1 ? '' : 's'} across ${apps.length} apps.</p>
+    ${renderConfidence()}
     <h2 class="home__h">IMN sites</h2><div class="apps">${apps.filter((c) => c.owner !== 'client').map(icon).join('')}</div>
     ${clients.length ? `<h2 class="home__h">Clients</h2><div class="apps">${clients.map(icon).join('')}</div>` : ''}
     <div class="dock">${dock.map(([v, i, l]) => `<button class="app" data-view="${v}"><span class="app__icon">${i}</span><span class="app__name">${l}</span></button>`).join('')}</div>
@@ -1358,6 +1411,7 @@ document.addEventListener('click', (e) => {
   else if (t.dataset.aff) openAffiliate(t.dataset.aff);
   else if (t.dataset.check) openCheck(t.dataset.check);
   else if (t.dataset.app) openApp(t.dataset.app);
+  else if (t.dataset.confOpen) { const o = t.dataset.confOpen; if (o.startsWith('app:')) openApp(o.slice(4)); else if (o === 'imn') openApp('imn'); else { state.view = o; save(); render(); window.scrollTo(0, 0); } }
   else if (t.dataset.rdraft) { const o = state.radar.queue.find((x) => String(x.id) === t.dataset.rdraft); if (o) openDraft(o.brand, o.target, o); }
   else if (t.dataset.rdrop) radarReview(t.dataset.rdrop, $('#rdrop-' + t.dataset.rdrop).value, $('#rwhy-' + t.dataset.rdrop).value);
   else if (t.dataset.rlater) radarReview(t.dataset.rlater, 'later');

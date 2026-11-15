@@ -22,6 +22,11 @@ jobs:
           RUN_KEY: ${{ secrets.PIPELINE_RUN_KEY }}
           GH_TOKEN: ${{ github.token }}
         run: python3 scripts/health.py > /dev/null
+      - name: Confidence panel (IMN HQ Home; docs/CONFIDENCE.md)
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/hq/confidence.py
       - name: Write brief
         env:
           RUN_KEY: ${{ secrets.PIPELINE_RUN_KEY }}
@@ -33,7 +38,7 @@ jobs:
       - name: Commit
         run: |
           git config user.name "Site Factory brief" && git config user.email "brief@movietrailer.channel"
-          git add hq/brief.md hq/prospect-targets.json
+          git add hq/brief.md hq/prospect-targets.json hq/confidence.json hq/confidence-history.json hq/forecasts.json
           git diff --cached --quiet && exit 0
           git commit -m "HQ: daily brief [skip ci]"
           for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done

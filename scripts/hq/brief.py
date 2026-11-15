@@ -76,6 +76,14 @@ hits = milestones.get('hit', [])
 if hits:
     md += ['Latest milestones: ' + '; '.join(f'{h["date"]} {h["site"]}: {h["what"]}' for h in sorted(hits, key=lambda h: h['date'])[-3:]), '']
 
+# Confidence panel (scripts/hq/confidence.py; IMN HQ adds outreach live and the top line)
+conf = load('hq/confidence.json')
+if conf:
+    md += ['## Confidence', '', f"90 days: **{conf['macro']['status']}** ({conf['macro']['summary']}). This week (repo work): " +
+           ', '.join(f"{i['label'].lower()} {i['value']}/{i['target']} {i['status']}" for i in conf['micro']['items']) +
+           '. Outreach and the top line: IMN HQ Home.', '']
+    md += [f"- {m['name']}: {m['status']}, trend {m['trend']} — {m['why'][0]}" for m in conf['macro']['sites']] + ['']
+
 # Health
 # Site check report cards (hq/sitecheck/index.json, docs/SITECHECK.md)
 try:
