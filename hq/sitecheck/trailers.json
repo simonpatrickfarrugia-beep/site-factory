@@ -3,7 +3,7 @@
  "name": "movietrailer.channel",
  "url": "https://www.movietrailer.channel",
  "owner": "imn",
- "scannedAt": "2026-11-15T09:04:19Z",
+ "scannedAt": "2026-11-15T09:13:18Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
@@ -27,7 +27,7 @@
    "label": "Sitemap & indexing"
   },
   "seo": {
-   "score": 93,
+   "score": 97,
    "grade": "A",
    "label": "Titles, descriptions & schema"
   },
@@ -85,21 +85,6 @@
    "count": 11,
    "detail": "",
    "impact": 1.1,
-   "broken": false
-  },
-  {
-   "id": "seo-desc",
-   "area": "seo",
-   "severity": "low",
-   "title": "2 description outside 70–160 characters",
-   "fix": "Rewrite to 70–160 characters: what the page gives the searcher.",
-   "pages": [
-    "/terms",
-    "/privacy-policy"
-   ],
-   "count": 2,
-   "detail": "",
-   "impact": 1.0,
    "broken": false
   }
  ],
@@ -391,14 +376,14 @@
   "unsureOutside": 48
  },
  "affiliateOk": 970,
- "secs": 135,
+ "secs": 132,
  "change": {
   "first": false,
-  "since": "2026-11-15T08:53:20Z",
-  "score": 1,
+  "since": "2026-11-15T09:04:19Z",
+  "score": 0,
   "newIssues": [],
   "fixed": [
-   "6 page(s) have no schema"
+   "2 description outside 70–160 characters"
   ],
   "impr28": 0,
   "clicks28": 0,
@@ -445,6 +430,13 @@
   {
    "at": "2026-11-15T08:53:20Z",
    "score": 98,
+   "grade": "A",
+   "impr28": 112,
+   "clicks28": 0
+  },
+  {
+   "at": "2026-11-15T09:04:19Z",
+   "score": 99,
    "grade": "A",
    "impr28": 112,
    "clicks28": 0

@@ -1,14 +1,13 @@
 # Site check: movietrailer.channel
 
-**A · 99/100** · scanned 2026-11-15 09:04 UTC · 384 pages · next scan 2026-11-22 (no revenue in the last 60 days, every 7 days)
+**A · 99/100** · scanned 2026-11-15 09:13 UTC · 384 pages · next scan 2026-11-22 (no revenue in the last 60 days, every 7 days)
 
-**Since 2026-11-15:** score +1 · Google impressions (28 days) 0 · clicks 0 · visits 0 · fixed 1
+**Since 2026-11-15:** score 0 · Google impressions (28 days) 0 · clicks 0 · visits 0 · fixed 1
 
 ## Top 5 fixes
 
 1. **Google shows only 31 of 384 pages (site is 29 days old)** (low, impact 3). Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 57 pages on 16 Dec 2026, cut or merge weak pages and earn a few links.
 2. **11 page(s) under 250 words** (low, impact 1.1). Fine for tools; for guides add the answer people search for. Pages: /movies/once-upon-a-time-in-hollywood-2016, /movies/whalefall-2026, /movies/mad-max-1979, /movies/its-a-wonderful-life-1946
-3. **2 description outside 70–160 characters** (low, impact 1.0). Rewrite to 70–160 characters: what the page gives the searcher. Pages: /terms, /privacy-policy
 
 ## Report card
 
@@ -17,7 +16,7 @@
 | Broken pages & links | A | 100 |
 | Tracking & money links | A | 100 |
 | Sitemap & indexing | A | 97 |
-| Titles, descriptions & schema | A | 93 |
+| Titles, descriptions & schema | A | 97 |
 | Thin & duplicate pages | A | 100 |
 | Speed | A | 100 |
 | Google trend | A | 100 |
@@ -29,7 +28,7 @@
 
 ## What changed
 
-- Fixed: 6 page(s) have no schema
+- Fixed: 2 description outside 70–160 characters
 
 ## Speed (phones)
 
@@ -42,7 +41,6 @@
 |---:|---|---|---:|---|
 | 1 | indexing | low | 3 | Google shows only 31 of 384 pages (site is 29 days old) |
 | 2 | seo | low | 1.1 | 11 page(s) under 250 words |
-| 3 | seo | low | 1.0 | 2 description outside 70–160 characters |
 
 Links: 417 internal, 1099 outside (150 checked; 48 block robots, not counted). Affiliate links tagged correctly: 970. Live Google check cost US$0.000.
 

@@ -96,10 +96,10 @@
    "name": "movietrailer.channel",
    "url": "https://www.movietrailer.channel",
    "owner": "imn",
-   "scannedAt": "2026-11-15T09:04:19Z",
+   "scannedAt": "2026-11-15T09:13:18Z",
    "score": 99,
    "grade": "A",
-   "change": 1,
+   "change": 0,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
@@ -131,19 +131,6 @@
       "/movies/whalefall-2026",
       "/movies/mad-max-1979",
       "/movies/its-a-wonderful-life-1946"
-     ],
-     "detail": "",
-     "broken": false
-    },
-    {
-     "id": "seo-desc",
-     "title": "2 description outside 70–160 characters",
-     "severity": "low",
-     "area": "seo",
-     "fix": "Rewrite to 70–160 characters: what the page gives the searcher.",
-     "pages": [
-      "/terms",
-      "/privacy-policy"
      ],
      "detail": "",
      "broken": false
@@ -484,9 +471,9 @@
    ]
   }
  },
- "updated": "2026-11-15T09:04:19Z",
+ "updated": "2026-11-15T09:13:18Z",
  "lastRun": {
-  "at": "2026-11-15T09:04:19Z",
+  "at": "2026-11-15T09:13:18Z",
   "scanned": [
    "trailers"
   ]
