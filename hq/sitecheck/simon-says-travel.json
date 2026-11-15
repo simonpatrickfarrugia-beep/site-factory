@@ -3,13 +3,13 @@
  "name": "simonsaystravel.com.au",
  "url": "https://simonsaystravel.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-14T22:17:22Z",
+ "scannedAt": "2026-11-15T18:59:19Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
- "nextDue": "2026-11-22",
- "score": 88,
- "grade": "B",
+ "nextDue": "2026-11-23",
+ "score": 96,
+ "grade": "A",
  "areas": {
   "health": {
    "score": 100,
@@ -22,12 +22,12 @@
    "label": "Tracking & money links"
   },
   "indexing": {
-   "score": 68,
-   "grade": "D",
+   "score": 92,
+   "grade": "A",
    "label": "Sitemap & indexing"
   },
   "seo": {
-   "score": 70,
+   "score": 74,
    "grade": "C",
    "label": "Titles, descriptions & schema"
   },
@@ -47,8 +47,8 @@
    "label": "Google trend"
   },
   "rivals": {
-   "score": 35,
-   "grade": "F",
+   "score": null,
+   "grade": null,
    "label": "Competitors"
   }
  },
@@ -72,31 +72,12 @@
    "id": "few-pages-in-google",
    "area": "indexing",
    "severity": "medium",
-   "title": "Google shows only 1 of 27 pages",
-   "fix": "Normal for a new site; if it stays low after 2 months, cut or merge weak pages and earn a few links.",
+   "title": "Google shows only 2 of 27 pages",
+   "fix": "Cut or merge weak pages (noindex the thinnest), link the best ones from the home page, and earn a few links from other sites.",
    "pages": [],
    "count": 1,
    "detail": "",
    "impact": 7.5,
-   "broken": false
-  },
-  {
-   "id": "not-indexed",
-   "area": "indexing",
-   "severity": "high",
-   "title": "6 of your top 8 pages aren't in Google's index",
-   "fix": "Make the page more useful than what ranks, link to it from the home page, then request indexing in Search Console.",
-   "pages": [
-    "/reports",
-    "/reports/2026-11",
-    "/destinations",
-    "/destinations/sydney",
-    "/destinations/melbourne",
-    "/destinations/brisbane"
-   ],
-   "count": 6,
-   "detail": "/reports: Discovered – currently not indexed; /reports/2026-11: Discovered – currently not indexed; /destinations: Discovered – currently not indexed; /destinations/sydney: Discovered – currently not indexed; /destinations/melbourne: Discovered – currently not indexed",
-   "impact": 5.0,
    "broken": false
   },
   {
@@ -121,38 +102,21 @@
    "broken": false
   },
   {
-   "id": "rival-when-should-australians-book-japan-flights-in-2026",
-   "area": "rivals",
-   "severity": "medium",
-   "title": "\"when should australians book japan flights in 2026\": we're not in the top 10 (Search Console avg 10); helloroam.com leads",
-   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
-   "pages": [
-    "/destinations/japan"
-   ],
-   "count": 1,
-   "detail": "Top 5: 1. helloroam.com, 2. unknown site, 3. unknown site, 4. skyceylon.com.au, 5. bookmytrip.com.au",
-   "impact": 2.7,
-   "broken": false
-  },
-  {
    "id": "seo-words",
    "area": "seo",
    "severity": "low",
-   "title": "24 page(s) under 250 words",
+   "title": "5 page(s) under 250 words",
    "fix": "Fine for tools; for guides add the answer people search for.",
    "pages": [
     "/reports",
     "/destinations",
-    "/destinations/sydney",
-    "/destinations/melbourne",
-    "/destinations/brisbane",
-    "/destinations/perth",
-    "/destinations/adelaide",
-    "/destinations/bali"
+    "/about",
+    "/privacy-policy",
+    "/affiliate-disclosure"
    ],
-   "count": 24,
+   "count": 5,
    "detail": "",
-   "impact": 1.1,
+   "impact": 1.0,
    "broken": false
   },
   {
@@ -173,167 +137,37 @@
   }
  ],
  "google": {
-  "impr7": 3,
+  "impr7": 4,
   "imprPrev7": 0,
   "clicks7": 0,
   "clicksPrev7": 0,
-  "impr28": 2,
+  "impr28": 4,
   "clicks28": 0,
-  "views28": 6,
+  "views28": 8,
   "viewsPrev28": 0,
-  "recentViews": 6,
-  "lastGa4Day": "2026-11-13",
-  "gscTo": "2026-11-11"
+  "recentViews": 5,
+  "lastGa4Day": "2026-11-14",
+  "gscTo": "2026-11-12"
  },
  "queries": [
   {
    "query": "when should australians book japan flights in 2026",
    "position": 10.5,
    "impressions": 2
+  },
+  {
+   "query": "flights to japan 2027",
+   "position": 94,
+   "impressions": 1
   }
  ],
- "live": {
-  "serps": [
-   {
-    "keyword": "when should australians book japan flights in 2026",
-    "top": [
-     {
-      "rank": 1,
-      "domain": "helloroam.com",
-      "url": "https://google.com/goto?url=CAESrQEBxCJF14UVAlZyeExb8Onnq8ZBfAKPdwngZ6Pxca6uYJFT2B0j-fLoF0jo5wRBmSlLJooP69iiN2BXF3bpHAK-64k6V_cN3tgRUNLTntksObX8LlRxBVIyuDRBvfQeFvb67RzzOcVQK18erU7bUyxRmNBGCHJtfonoQTt4EFClWbQSsvkNz8PlluLJH1gTdN-QoFkpcN_GhId4xrDeZBPM7YBfGuGIeE89zCiotA&gsessionid=wURRH_3izA3x9AVBfrYpLKuH1PuINaV7Vr2dslPh6_DA8fKSMbgveA",
-      "title": "Flights to Japan From Australia: Everything"
-     },
-     {
-      "rank": 2,
-      "domain": "unknown site",
-      "url": "https://google.com/goto?url=CAES1gEBxCJF17c2_McwYPiBkXs-QwGA816P1qDK3Z2LjmJp7bC_BNwLO9YKEsv8I6gp6NWnP-LnSkSCsFl6x6pkeIQna6VDFSaCesEVWiTsvyg2vU4sjszRyOX9dNQgKTCoKaGyK6jaoTnUNpVpCSyOe6eqatopkQSqQ73TeyLGUSOxAPce-9SLeNjjM7i7j_9rudoetDKC6z9AHIhKwIDBQuQZQ7KioHTbsVIn0IBwsc2V3xJKbXtOZqMAPzmoJPutqPhMwWNrSGoJGQcxDxQE1V4OzsMmQ5z9&gsessionid=wURRH_3izA3x9AVBfrYpLKuH1PuINaV7Vr2dslPh6_DA8fKSMbgveA",
-      "title": "When to Book Flights to Japan: 3–6 Month Travel Tip for ..."
-     },
-     {
-      "rank": 3,
-      "domain": "unknown site",
-      "url": "https://google.com/goto?url=CAESfwHEIkXXYbQJLdRc0ZNNBmx6teLH2PFOjD9pjFkLByXZrfPJXCkOlJzeh_ifxwwbSzbevBG2RuyyO2ViXSX30p2xAyuNeF7U9IBRQiU5mZf2My2zuobNCWdgdda00-_lghfHWSG3KvpWf1OVVgnUjLhRfm8-i5-vMz-S-Rnojug&gsessionid=wURRH_3izA3x9AVBfrYpLKuH1PuINaV7Vr2dslPh6_DA8fKSMbgveA",
-      "title": "When to book Brisbane to Japan flights for September ..."
-     },
-     {
-      "rank": 4,
-      "domain": "skyceylon.com.au",
-      "url": "https://google.com/goto?url=CAESowEBxCJF11J26Sc9sRQ6ePwepxafhxqRyydVurEXmJrigbZx69qM8IsW-K1LPmJ1G4preaLg3a_V8ORUUkMFGnogVzXYKVi6972ZDFZ0oJpk2oxK1uhbqQpmv0SmcT2DiQ_k86FSEilx3IhFWii7SpQcy5Lm4lnxeJ3dcZYyksBBkCZlJn00musbELw8XLhITGPzb4mPuRCMLscOF-NVhT9puUu8&gsessionid=wURRH_3izA3x9AVBfrYpLKuH1PuINaV7Vr2dslPh6_DA8fKSMbgveA",
-      "title": "The Complete 2026 Guide to Finding the Best Airfares"
-     },
-     {
-      "rank": 5,
-      "domain": "bookmytrip.com.au",
-      "url": "https://google.com/goto?url=CAESjQEBxCJF1wO-A6AyRpDkHLvTm9rlzCZbBwFd3CxVWVnFudPCj1M-dwtSgDtHvG07lGRIHW74krt2ImbwHFAEICbWX4l8SgrwpX9zb2eLLu4j3NjvesLnn1hvrnAO2J3ZF8wO-8sNMBGWamt9tOhaFzuB_viSqYIEynjPay-iwxvlZF-18qQ173H_RhhX5hU&gsessionid=wURRH_3izA3x9AVBfrYpLKuH1PuINaV7Vr2dslPh6_DA8fKSMbgveA",
-      "title": "Flights from Australia to Japan: Find Affordable Deals Today"
-     },
-     {
-      "rank": 6,
-      "domain": "qantas.com",
-      "url": "https://google.com/goto?url=CAESjgEBxCJF17mj0FsA0u9PXAjEfCPb3glEQ6QJzmBEFMgY4HHW4Jjz0_khr6nEtmaRS5CInsXba8GP_fJAL6HlTOlS_d-uW_ItxOHl7ITYBoug3ATee7-0nt5FQxd6X5V6fRQbzQuxn2ISib6Wjvu8N4xIUAh08pctCIZbhMW6O-FsSDgOVge3-b_zVhiBvfLf&gsessionid=wURRH_3izA3x9AVBfrYpLKuH1PuINaV7Vr2dslPh6_DA8fKSMbgveA",
-      "title": "Read before you leave – Tokyo | Travel Insider"
-     },
-     {
-      "rank": 7,
-      "domain": "rowofthreeblog.com",
-      "url": "https://google.com/goto?url=CAESnwEBxCJF18XU-5HCUM199eyJ7ptCfn4BxJH7_kMsvPjp1TIxRCJF0GU_JCcTwBI-Jrb3V5oQfp19h6k7Z2c11OfZ6vP3s9E1hIlWVdJvBn42LNdJUOSzWnIjjSh2YLQCtQ3j3S-Ty-jg31Es7Pup5nru2XqFH67ZVXqGNZdZIcWtlXiV82cfOQoaaWvdUMQBnkCO25gmdth2iE8Q3hclIvI&gsessionid=wURRH_3izA3x9AVBfrYpLKuH1PuINaV7Vr2dslPh6_DA8fKSMbgveA",
-      "title": "Best Time to Book Flights From Australia: How Far Ahead & ..."
-     },
-     {
-      "rank": 8,
-      "domain": "unknown site",
-      "url": "https://google.com/goto?url=CAESfwHEIkXX1-rdF920Xxtow5sPipSKcO5ohhL0rL7xbvzvJ9YuO7u-YIyekbMLoFpmO7vVIcigmUxiXkJrx6uE9tHWDrDMptWoYaoEkbhHFXqMHHnC5_lRvszP3UHD1fTggiEkgeKl6qK4THQnfzxgEOQWO4NEnjrOUYBg8PLat9Y&gsessionid=wURRH_3izA3x9AVBfrYpLKuH1PuINaV7Vr2dslPh6_DA8fKSMbgveA",
-      "title": "When do best flight deals to Japan come around?"
-     }
-    ],
-    "impressions": 2,
-    "gscPosition": 10.5,
-    "ourPage": "/destinations/japan",
-    "ourRank": null
-   }
-  ],
-  "index": [
-   {
-    "url": "https://simonsaystravel.com.au/",
-    "verdict": "PASS",
-    "coverage": "Submitted and indexed",
-    "lastCrawl": "2026-11-06T10:02:02Z",
-    "googleCanonical": "https://simonsaystravel.com.au/",
-    "robots": "ALLOWED",
-    "fetch": "SUCCESSFUL"
-   },
-   {
-    "url": "https://simonsaystravel.com.au/destinations/japan",
-    "verdict": "PASS",
-    "coverage": "Submitted and indexed",
-    "lastCrawl": "2026-11-06T07:12:15Z",
-    "googleCanonical": "https://simonsaystravel.com.au/destinations/japan",
-    "robots": "ALLOWED",
-    "fetch": "SUCCESSFUL"
-   },
-   {
-    "url": "https://simonsaystravel.com.au/reports",
-    "verdict": "NEUTRAL",
-    "coverage": "Discovered – currently not indexed",
-    "lastCrawl": null,
-    "googleCanonical": null,
-    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
-   },
-   {
-    "url": "https://simonsaystravel.com.au/reports/2026-11",
-    "verdict": "NEUTRAL",
-    "coverage": "Discovered – currently not indexed",
-    "lastCrawl": null,
-    "googleCanonical": null,
-    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
-   },
-   {
-    "url": "https://simonsaystravel.com.au/destinations",
-    "verdict": "NEUTRAL",
-    "coverage": "Discovered – currently not indexed",
-    "lastCrawl": null,
-    "googleCanonical": null,
-    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
-   },
-   {
-    "url": "https://simonsaystravel.com.au/destinations/sydney",
-    "verdict": "NEUTRAL",
-    "coverage": "Discovered – currently not indexed",
-    "lastCrawl": null,
-    "googleCanonical": null,
-    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
-   },
-   {
-    "url": "https://simonsaystravel.com.au/destinations/melbourne",
-    "verdict": "NEUTRAL",
-    "coverage": "Discovered – currently not indexed",
-    "lastCrawl": null,
-    "googleCanonical": null,
-    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
-   },
-   {
-    "url": "https://simonsaystravel.com.au/destinations/brisbane",
-    "verdict": "NEUTRAL",
-    "coverage": "Discovered – currently not indexed",
-    "lastCrawl": null,
-    "googleCanonical": null,
-    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
-   }
-  ],
-  "error": null
- },
- "costUsd": 0.002,
+ "live": null,
+ "costUsd": 0,
  "speed": [
   {
    "url": "https://simonsaystravel.com.au/",
    "lite": true,
-   "serverSecs": 0.06,
+   "serverSecs": 0.2,
    "htmlKb": 38,
    "blocking": 1,
    "images": 1,
@@ -344,8 +178,8 @@
   {
    "url": "https://simonsaystravel.com.au/destinations/japan",
    "lite": true,
-   "serverSecs": 0.12,
-   "htmlKb": 14,
+   "serverSecs": 0.2,
+   "htmlKb": 16,
    "blocking": 1,
    "images": 1,
    "noDims": 0,
@@ -354,7 +188,7 @@
   }
  ],
  "quality": {
-  "summary": "27 indexable pages · average 140 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
+  "summary": "27 indexable pages · average 233 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
   "thin": 0,
   "near": 0
  },
@@ -365,19 +199,19 @@
   "unsureOutside": 0
  },
  "affiliateOk": 57,
- "secs": 136,
+ "secs": 123,
  "change": {
   "first": false,
-  "since": "2026-11-14T21:52:19Z",
-  "score": 1,
+  "since": "2026-11-14T22:17:22Z",
+  "score": 8,
   "newIssues": [],
   "fixed": [
-   "/: 3 files block the first paint",
-   "/destinations/japan: 3 files block the first paint"
+   "6 of your top 8 pages aren't in Google's index",
+   "\"when should australians book japan flights in 2026\": we're not in the top 10 (Search Console avg 10); helloroam.com leads"
   ],
-  "impr28": 0,
+  "impr28": 2,
   "clicks28": 0,
-  "views28": 0,
+  "views28": 2,
   "rivals": [],
   "positions": []
  },
@@ -385,6 +219,13 @@
   {
    "at": "2026-11-14T21:52:19Z",
    "score": 87,
+   "grade": "B",
+   "impr28": 2,
+   "clicks28": 0
+  },
+  {
+   "at": "2026-11-14T22:17:22Z",
+   "score": 88,
    "grade": "B",
    "impr28": 2,
    "clicks28": 0

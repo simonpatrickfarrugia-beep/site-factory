@@ -378,19 +378,19 @@
    "name": "simonsaystravel.com.au",
    "url": "https://simonsaystravel.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-14T22:17:22Z",
-   "score": 88,
-   "grade": "B",
-   "change": 1,
+   "scannedAt": "2026-11-15T18:59:19Z",
+   "score": 96,
+   "grade": "A",
+   "change": 8,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-21",
+   "nextDue": "2026-11-23",
    "topFix": "1 title outside 30–65 characters",
    "broken": 0,
    "newIssues": 0,
    "fixed": 2,
-   "costUsd": 0.002,
+   "costUsd": 0,
    "top": [
     {
      "id": "seo-title",
@@ -406,27 +406,12 @@
     },
     {
      "id": "few-pages-in-google",
-     "title": "Google shows only 1 of 27 pages",
+     "title": "Google shows only 2 of 27 pages",
      "severity": "medium",
      "area": "indexing",
-     "fix": "Normal for a new site; if it stays low after 2 months, cut or merge weak pages and earn a few links.",
+     "fix": "Cut or merge weak pages (noindex the thinnest), link the best ones from the home page, and earn a few links from other sites.",
      "pages": [],
      "detail": "",
-     "broken": false
-    },
-    {
-     "id": "not-indexed",
-     "title": "6 of your top 8 pages aren't in Google's index",
-     "severity": "high",
-     "area": "indexing",
-     "fix": "Make the page more useful than what ranks, link to it from the home page, then request indexing in Search Console.",
-     "pages": [
-      "/reports",
-      "/reports/2026-11",
-      "/destinations",
-      "/destinations/sydney"
-     ],
-     "detail": "/reports: Discovered – currently not indexed; /reports/2026-11: Discovered – currently not indexed; /destinations: Discovered – currently not indexed; /destinations/sydney: Discovered – currently not ",
      "broken": false
     },
     {
@@ -445,25 +430,42 @@
      "broken": false
     },
     {
-     "id": "rival-when-should-australians-book-japan-flights-in-2026",
-     "title": "\"when should australians book japan flights in 2026\": we're not in the top 10 (Search Console avg 10); helloroam.com leads",
-     "severity": "medium",
-     "area": "rivals",
-     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "id": "seo-words",
+     "title": "5 page(s) under 250 words",
+     "severity": "low",
+     "area": "seo",
+     "fix": "Fine for tools; for guides add the answer people search for.",
      "pages": [
-      "/destinations/japan"
+      "/reports",
+      "/destinations",
+      "/about",
+      "/privacy-policy"
      ],
-     "detail": "Top 5: 1. helloroam.com, 2. unknown site, 3. unknown site, 4. skyceylon.com.au, 5. bookmytrip.com.au",
+     "detail": "",
+     "broken": false
+    },
+    {
+     "id": "schema-missing",
+     "title": "3 page(s) have no schema",
+     "severity": "low",
+     "area": "seo",
+     "fix": "Add WebPage/BreadcrumbList (or the page's own type) so Google understands it.",
+     "pages": [
+      "/how-it-works",
+      "/privacy-policy",
+      "/affiliate-disclosure"
+     ],
+     "detail": "",
      "broken": false
     }
    ]
   }
  },
- "updated": "2026-11-15T09:53:21Z",
+ "updated": "2026-11-15T18:59:19Z",
  "lastRun": {
-  "at": "2026-11-15T09:53:21Z",
+  "at": "2026-11-15T18:59:19Z",
   "scanned": [
-   "vic"
+   "simon-says-travel"
   ]
  }
 }
