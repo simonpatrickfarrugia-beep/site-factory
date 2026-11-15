@@ -52,6 +52,8 @@ function movieSchema(m: Movie) {
 const TITLE_MAX = 60;
 const DESC_MAX = 158;
 const fitTitle = (...options: string[]) => options.find((t) => t.length <= TITLE_MAX) ?? options[options.length - 1];
+/** Main title before a subtitle ("Dr. Strangelove or: How I…" → "Dr. Strangelove"), for films whose full name won't fit. */
+const shortName = (name: string) => name.split(/\s+or:\s+|:\s+/)[0].trim() || name;
 const clip = (text: string, max = DESC_MAX) => {
   const t = text.replace(/\s+/g, ' ').trim();
   if (t.length <= max) return t;
@@ -64,7 +66,8 @@ const clip = (text: string, max = DESC_MAX) => {
  */
 function movieSeo(m: Movie) {
   const ny = `${m.name}${m.year ? ` (${m.year})` : ''}`;
-  const title = fitTitle(`Where to Watch ${ny}: Stream, Rent & Trailer`, `Where to Watch ${ny} + Trailer`, `Where to Watch ${ny}`, `${m.name}: Where to Watch`);
+  const title = fitTitle(`Where to Watch ${ny}: Stream, Rent & Trailer`, `Where to Watch ${ny} + Trailer`, `Where to Watch ${ny}`, `${m.name}: Where to Watch`,
+    `Where to Watch ${shortName(m.name)}${m.year ? ` (${m.year})` : ''}`, `${shortName(m.name)}: Where to Watch`);
   const lead = `Where to watch ${ny}: stream, rent or buy it in the US, plus the official trailer.`;
   const description = m.synopsis ? clip(`${lead} ${m.synopsis}`) : clip(lead);
   return { title, description };
@@ -150,13 +153,13 @@ export function routes(): Route[] {
     const ny = `${m.name}${m.year ? ` (${m.year})` : ''}`;
     // "& Trailer" only when the page really has one.
     const title = m.youtubeId
-      ? fitTitle(`Watch ${ny} Free: Full Movie & Trailer`, `Watch ${ny} Free: Full Movie`, `${ny}: Watch Free`, `Watch ${m.name} Free`)
-      : fitTitle(`Watch ${ny} Free: Full Movie`, `${ny}: Watch Free`, `Watch ${m.name} Free`);
+      ? fitTitle(`Watch ${ny} Free: Full Movie & Trailer`, `Watch ${ny} Free: Full Movie`, `${ny}: Watch Free`, `Watch ${m.name} Free`, `Watch ${shortName(m.name)}${m.year ? ` (${m.year})` : ''} Free`)
+      : fitTitle(`Watch ${ny} Free: Full Movie`, `${ny}: Watch Free`, `Watch ${m.name} Free`, `Watch ${shortName(m.name)}${m.year ? ` (${m.year})` : ''} Free`);
     return { title, description: clip(`Watch ${ny} free: the full film, public domain in the US and legal to stream. ${f.about}`) };
   }
   function upcomingSeo(m: Movie, u: { freeOn: string }) {
     const ny = `${m.name}${m.year ? ` (${m.year})` : ''}`;
-    const title = fitTitle(`${ny}: Where to Watch & Free from ${u.freeOn.replace('1 January ', 'Jan ')}`, `${ny}: Where to Watch`, ny);
+    const title = fitTitle(`${ny}: Where to Watch & Free from ${u.freeOn.replace('1 January ', 'Jan ')}`, `${ny}: Where to Watch`, ny, `${shortName(m.name)}${m.year ? ` (${m.year})` : ''}: Where to Watch`);
     return { title, description: clip(`${ny} enters the US public domain on ${u.freeOn}: watch the full film free here from that day. Until then: where to rent, buy or stream it.`) };
   }
 
@@ -388,7 +391,7 @@ export function routes(): Route[] {
       path: 'studio-ghibli-where-to-watch',
       template: 'collection',
       seo: {
-        title: 'Studio Ghibli Movies: Where to Watch Every Film' + SUFFIX,
+        title: fitTitle('Studio Ghibli Movies: Where to Watch Every Film' + SUFFIX, 'Studio Ghibli Movies: Where to Watch Every Film'),
         rawTitle: true,
         description:
           'Where to stream, rent, or buy every Studio Ghibli movie — Spirited Away, My Neighbor Totoro, Princess Mononoke, and more, all in one place.',
@@ -414,7 +417,7 @@ export function routes(): Route[] {
     path: 'original-films',
     template: 'originalFilms',
     seo: {
-      title: 'Original Films: What This Site Earns Helps Make New Films' + SUFFIX,
+      title: fitTitle('Original Films: What This Site Earns Helps Make New Films' + SUFFIX, 'Original Films: What This Site Earns Helps Make New Films'),
       rawTitle: true,
       description: 'MovieTrailer.Channel puts a share of what it earns into producing original films, with writers and directors in creative control. Filmmakers can pitch us.',
     },
