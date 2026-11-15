@@ -96,26 +96,26 @@
    "name": "movietrailer.channel",
    "url": "https://www.movietrailer.channel",
    "owner": "imn",
-   "scannedAt": "2026-11-15T07:41:10Z",
-   "score": 96,
+   "scannedAt": "2026-11-15T08:28:31Z",
+   "score": 97,
    "grade": "A",
-   "change": 6,
+   "change": 1,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
    "nextDue": "2026-11-22",
-   "topFix": "Google shows only 21 of 384 pages",
+   "topFix": "Google shows only 31 of 384 pages (site is 29 days old)",
    "broken": 0,
    "newIssues": 0,
-   "fixed": 6,
+   "fixed": 0,
    "costUsd": 0,
    "top": [
     {
      "id": "few-pages-in-google",
-     "title": "Google shows only 21 of 384 pages",
-     "severity": "medium",
+     "title": "Google shows only 31 of 384 pages (site is 29 days old)",
+     "severity": "low",
      "area": "indexing",
-     "fix": "Normal for a new site; if it stays low after 2 months, cut or merge weak pages and earn a few links.",
+     "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 57 pages on 16 Dec 2026, cut or merge weak pages and earn a few links.",
      "pages": [],
      "detail": "",
      "broken": false
@@ -516,9 +516,9 @@
    ]
   }
  },
- "updated": "2026-11-15T07:41:10Z",
+ "updated": "2026-11-15T08:28:31Z",
  "lastRun": {
-  "at": "2026-11-15T07:41:10Z",
+  "at": "2026-11-15T08:28:31Z",
   "scanned": [
    "trailers"
   ]

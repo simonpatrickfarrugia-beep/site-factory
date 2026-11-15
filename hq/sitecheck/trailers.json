@@ -3,12 +3,12 @@
  "name": "movietrailer.channel",
  "url": "https://www.movietrailer.channel",
  "owner": "imn",
- "scannedAt": "2026-11-15T07:41:10Z",
+ "scannedAt": "2026-11-15T08:28:31Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
  "nextDue": "2026-11-22",
- "score": 96,
+ "score": 97,
  "grade": "A",
  "areas": {
   "health": {
@@ -22,7 +22,7 @@
    "label": "Tracking & money links"
   },
   "indexing": {
-   "score": 92,
+   "score": 97,
    "grade": "A",
    "label": "Sitemap & indexing"
   },
@@ -57,13 +57,13 @@
   {
    "id": "few-pages-in-google",
    "area": "indexing",
-   "severity": "medium",
-   "title": "Google shows only 21 of 384 pages",
-   "fix": "Normal for a new site; if it stays low after 2 months, cut or merge weak pages and earn a few links.",
+   "severity": "low",
+   "title": "Google shows only 31 of 384 pages (site is 29 days old)",
+   "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 57 pages on 16 Dec 2026, cut or merge weak pages and earn a few links.",
    "pages": [],
    "count": 1,
    "detail": "",
-   "impact": 7.5,
+   "impact": 3,
    "broken": false
   },
   {
@@ -166,13 +166,13 @@
   "imprPrev7": 9,
   "clicks7": 0,
   "clicksPrev7": 0,
-  "impr28": 75,
+  "impr28": 112,
   "clicks28": 0,
   "views28": 74,
-  "viewsPrev28": 258,
+  "viewsPrev28": 259,
   "recentViews": 3,
   "lastGa4Day": "2026-11-13",
-  "gscTo": "2026-11-11"
+  "gscTo": "2026-11-12"
  },
  "queries": [
   {
@@ -186,23 +186,23 @@
    "impressions": 5
   },
   {
-   "query": "jurassic park trailer",
-   "position": 63.3,
-   "impressions": 4
-  },
-  {
-   "query": "the sixth sense trailer",
-   "position": 60.5,
-   "impressions": 4
-  },
-  {
    "query": "district 9 trailer",
    "position": 62.7,
    "impressions": 3
   },
   {
+   "query": "jurassic park trailer",
+   "position": 66,
+   "impressions": 3
+  },
+  {
    "query": "the prestige trailer",
    "position": 58.3,
+   "impressions": 3
+  },
+  {
+   "query": "the sixth sense trailer",
+   "position": 59.3,
    "impressions": 3
   },
   {
@@ -217,11 +217,6 @@
   },
   {
    "query": "insomnia film trailer",
-   "position": 60,
-   "impressions": 2
-  },
-  {
-   "query": "insomnia trailer",
    "position": 60,
    "impressions": 2
   },
@@ -243,11 +238,6 @@
   {
    "query": "aladdin 1992 trailer",
    "position": 49,
-   "impressions": 1
-  },
-  {
-   "query": "back to school",
-   "position": 85,
    "impressions": 1
   },
   {
@@ -273,6 +263,11 @@
   {
    "query": "home alone movie trailer",
    "position": 52,
+   "impressions": 1
+  },
+  {
+   "query": "insomnia trailer",
+   "position": 65,
    "impressions": 1
   },
   {
@@ -308,11 +303,6 @@
   {
    "query": "reservoir dogs trailer",
    "position": 54,
-   "impressions": 1
-  },
-  {
-   "query": "trailer schindler's list",
-   "position": 58,
    "impressions": 1
   },
   {
@@ -381,11 +371,6 @@
    "impressions": 1
   },
   {
-   "query": "the silence of the lambs trailer",
-   "position": 48,
-   "impressions": 1
-  },
-  {
    "query": "sjätte sinnet trailer",
    "position": 52,
    "impressions": 1
@@ -398,11 +383,6 @@
   {
    "query": "true lies movie trailer",
    "position": 63,
-   "impressions": 1
-  },
-  {
-   "query": "true lies trailer",
-   "position": 57,
    "impressions": 1
   },
   {
@@ -424,6 +404,11 @@
    "query": "prestige trailer",
    "position": 62,
    "impressions": 1
+  },
+  {
+   "query": "trailer the prestige",
+   "position": 65,
+   "impressions": 1
   }
  ],
  "live": null,
@@ -432,7 +417,7 @@
   {
    "url": "https://www.movietrailer.channel/",
    "lite": true,
-   "serverSecs": 0.13,
+   "serverSecs": 0.07,
    "htmlKb": 64,
    "blocking": 1,
    "images": 31,
@@ -443,7 +428,7 @@
   {
    "url": "https://www.movietrailer.channel/browse",
    "lite": true,
-   "serverSecs": 0.16,
+   "serverSecs": 0.11,
    "htmlKb": 175,
    "blocking": 1,
    "images": 368,
@@ -464,25 +449,24 @@
   "unsureOutside": 48
  },
  "affiliateOk": 970,
- "secs": 135,
+ "secs": 133,
  "change": {
   "first": false,
-  "since": "2026-11-14T22:17:22Z",
-  "score": 6,
+  "since": "2026-11-15T07:41:10Z",
+  "score": 1,
   "newIssues": [],
-  "fixed": [
-   "6 of your top 8 pages aren't in Google's index",
-   "\"home alone trailer\": we're not in the top 10 (Search Console avg 49); unknown site leads",
-   "\"jurassic park film trailer\": we're not in the top 10 (Search Console avg 77); unknown site leads",
-   "\"the sixth sense trailer\": we're not in the top 10 (Search Console avg 60); tv.apple.com leads",
-   "\"district 9 trailer\": we're not in the top 10 (Search Console avg 63); cinema.everyeye.it leads",
-   "\"the prestige trailer\": we're not in the top 10 (Search Console avg 58); ebay.co.uk leads"
-  ],
-  "impr28": 0,
+  "fixed": [],
+  "impr28": 37,
   "clicks28": 0,
   "views28": 0,
   "rivals": [],
-  "positions": []
+  "positions": [
+   {
+    "query": "insomnia trailer",
+    "was": 60,
+    "now": 65
+   }
+  ]
  },
  "history": [
   {
@@ -495,6 +479,13 @@
   {
    "at": "2026-11-14T22:17:22Z",
    "score": 90,
+   "grade": "A",
+   "impr28": 75,
+   "clicks28": 0
+  },
+  {
+   "at": "2026-11-15T07:41:10Z",
+   "score": 96,
    "grade": "A",
    "impr28": 75,
    "clicks28": 0
