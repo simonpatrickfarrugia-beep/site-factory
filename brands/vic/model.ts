@@ -1,4 +1,5 @@
 /** Content model for Vic Tours. Mirrors data/vic/*.json. */
+import linkFixes from '../../data/vic/link-fixes.json';
 
 export type Group = 'stay' | 'eat' | 'do';
 
@@ -153,7 +154,14 @@ export function address(t: Record<string, string>): string | null {
 export const website = (t: Record<string, string>) => {
   const w = t.website || t['contact:website'];
   if (!w) return null;
-  return /^https?:\/\//.test(w) ? w : `https://${w}`;
+  const url = /^https?:\/\//.test(w) ? w : `https://${w}`;
+  // Dead or moved sites (data/vic/link-fixes.json): swap in the new URL, or show no link.
+  const fix = (linkFixes.links as Record<string, { to: string | null }>)[url];
+  if (fix) return fix.to;
+  let host = '';
+  try { host = new URL(url).hostname; } catch { return null; }
+  if (linkFixes.hostsGone.some((h) => host === h || host.endsWith(`.${h}`))) return null;
+  return url;
 };
 export const phone = (t: Record<string, string>) => t.phone || t['contact:phone'] || null;
 export const mapUrl = (p: Place) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${p.name} ${p.lat},${p.lon}`)}`;

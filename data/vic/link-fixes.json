@@ -1,0 +1,11 @@
+{
+ "_why": "Place websites from OpenStreetMap that are dead or moved. Applied by website() in brands/vic/model.ts, so they survive OSM refreshes. Value = new URL, or null to show no website link. Checked by hand; say when.",
+ "hostsGone": ["urbanspoon.com"],
+ "links": {
+  "https://ansmtorquay.wordpress.com/": { "to": "https://australiannationalsurfingmuseum.com.au/", "checked": "2026-11-15", "note": "Old blog 410; official museum site" },
+  "https://www.laporchetta.com/store-locations/suburb/phillip-island": { "to": "https://laporchetta.com.au/phillip-island/", "checked": "2026-11-15", "note": "Old page 404; La Porchetta's Phillip Island page" },
+  "https://www.thebottleofmilk.com/": { "to": null, "checked": "2026-11-15", "note": "Domain doesn't resolve (3 checks)" },
+  "https://lacollinapizzeria.com.au": { "to": null, "checked": "2026-11-15", "note": "Domain doesn't exist; restaurant still open, no site found" },
+  "https://cellscafe.com.au": { "to": null, "checked": "2026-11-15", "note": "Domain doesn't exist; cafe still open, no site found" }
+ }
+}
