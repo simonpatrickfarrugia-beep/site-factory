@@ -96,10 +96,10 @@
    "name": "movietrailer.channel",
    "url": "https://www.movietrailer.channel",
    "owner": "imn",
-   "scannedAt": "2026-11-15T08:53:20Z",
-   "score": 98,
+   "scannedAt": "2026-11-15T09:04:19Z",
+   "score": 99,
    "grade": "A",
-   "change": 0,
+   "change": 1,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
@@ -117,21 +117,6 @@
      "area": "indexing",
      "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 57 pages on 16 Dec 2026, cut or merge weak pages and earn a few links.",
      "pages": [],
-     "detail": "",
-     "broken": false
-    },
-    {
-     "id": "schema-missing",
-     "title": "6 page(s) have no schema",
-     "severity": "low",
-     "area": "seo",
-     "fix": "Add WebPage/BreadcrumbList (or the page's own type) so Google understands it.",
-     "pages": [
-      "/discover",
-      "/original-films",
-      "/about",
-      "/contact"
-     ],
      "detail": "",
      "broken": false
     },
@@ -499,9 +484,9 @@
    ]
   }
  },
- "updated": "2026-11-15T08:53:20Z",
+ "updated": "2026-11-15T09:04:19Z",
  "lastRun": {
-  "at": "2026-11-15T08:53:20Z",
+  "at": "2026-11-15T09:04:19Z",
   "scanned": [
    "trailers"
   ]

@@ -3,12 +3,12 @@
  "name": "movietrailer.channel",
  "url": "https://www.movietrailer.channel",
  "owner": "imn",
- "scannedAt": "2026-11-15T08:53:20Z",
+ "scannedAt": "2026-11-15T09:04:19Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
  "nextDue": "2026-11-22",
- "score": 98,
+ "score": 99,
  "grade": "A",
  "areas": {
   "health": {
@@ -27,7 +27,7 @@
    "label": "Sitemap & indexing"
   },
   "seo": {
-   "score": 90,
+   "score": 93,
    "grade": "A",
    "label": "Titles, descriptions & schema"
   },
@@ -64,25 +64,6 @@
    "count": 1,
    "detail": "",
    "impact": 3,
-   "broken": false
-  },
-  {
-   "id": "schema-missing",
-   "area": "seo",
-   "severity": "low",
-   "title": "6 page(s) have no schema",
-   "fix": "Add WebPage/BreadcrumbList (or the page's own type) so Google understands it.",
-   "pages": [
-    "/discover",
-    "/original-films",
-    "/about",
-    "/contact",
-    "/terms",
-    "/privacy-policy"
-   ],
-   "count": 6,
-   "detail": "",
-   "impact": 1.2,
    "broken": false
   },
   {
@@ -378,7 +359,7 @@
   {
    "url": "https://www.movietrailer.channel/",
    "lite": true,
-   "serverSecs": 0.09,
+   "serverSecs": 0.11,
    "htmlKb": 64,
    "blocking": 1,
    "images": 31,
@@ -389,7 +370,7 @@
   {
    "url": "https://www.movietrailer.channel/browse",
    "lite": true,
-   "serverSecs": 0.09,
+   "serverSecs": 0.07,
    "htmlKb": 175,
    "blocking": 1,
    "images": 368,
@@ -410,14 +391,14 @@
   "unsureOutside": 48
  },
  "affiliateOk": 970,
- "secs": 131,
+ "secs": 135,
  "change": {
   "first": false,
-  "since": "2026-11-15T08:38:56Z",
-  "score": 0,
+  "since": "2026-11-15T08:53:20Z",
+  "score": 1,
   "newIssues": [],
   "fixed": [
-   "8 page(s) without a share image"
+   "6 page(s) have no schema"
   ],
   "impr28": 0,
   "clicks28": 0,
@@ -456,6 +437,13 @@
   },
   {
    "at": "2026-11-15T08:38:56Z",
+   "score": 98,
+   "grade": "A",
+   "impr28": 112,
+   "clicks28": 0
+  },
+  {
+   "at": "2026-11-15T08:53:20Z",
    "score": 98,
    "grade": "A",
    "impr28": 112,
