@@ -50,7 +50,7 @@ Commit with the milestone/log commit (`[skip ci]` is NOT used for this file: HQ 
    the link. Say "Radar can find more like <org>". Never guess a source the data doesn't show.
 4b. **🩺 Site check** (only if a card's `scannedAt` is in the last 24 h): ONE line, e.g.
    "victours.com.au B 82 (+4) · top fix: 3 broken internal links · 2 broken". Several new cards: same line, separated by " · ".
-   Link: https://imn-hq.simonpatrickfarrugia.workers.dev (More → Site check). Broken things already have a `sitecheck` GitHub issue; don't repeat them under Needs you.
+   Link straight to that site's app: https://imn-hq.simonpatrickfarrugia.workers.dev/#app=<site id> (e.g. #app=vic): it opens with the fixes and a "Fix with Claude" button on each. Broken things already have a `sitecheck` GitHub issue; don't repeat them under Needs you.
 5. **🔎 Google**: total clicks and impressions (28 days, all sites); the best-placed page in the top 20 if any (path, position, query).
 6. **📞 Day job**: top 3 from `leads/latest.md` (company (city) — why — opener in quotes), then
    https://github.com/simonpatrickfarrugia-beep/site-factory/blob/main/leads/latest.md . If the file isn't dated today (Melbourne) or has

@@ -14,6 +14,7 @@ import { ICON_SVG, ICON_180, ICON_512, MANIFEST } from './app-assets';
 import { sendForOrg, sendStatus } from './send';
 import { hq } from './funnel';
 import { siteCheckIndex, siteCheckCard } from './sitecheck';
+import { apps } from './apps';
 
 interface Env {
   DB: D1Database;
@@ -64,6 +65,7 @@ export default {
       if (url.pathname === '/api/board' && req.method === 'GET') return json(await board(env));
       if (url.pathname === '/api/summary' && req.method === 'GET') return json(await summary(env));
       if (url.pathname === '/api/hq' && req.method === 'GET') return json(await hq(env.DB, T.brands));
+      if (url.pathname === '/api/apps' && req.method === 'GET') return json(await apps(env.DB));
       if (url.pathname === '/api/sitecheck' && req.method === 'GET') return json(await siteCheckIndex());
       const sc = url.pathname.match(/^\/api\/sitecheck\/([a-z0-9-]{1,60})$/);
       if (sc && req.method === 'GET') return json(await siteCheckCard(sc[1]));

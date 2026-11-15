@@ -16,7 +16,81 @@
    "broken": 1,
    "newIssues": 0,
    "fixed": 2,
-   "costUsd": 0.01
+   "costUsd": 0.01,
+   "top": [
+    {
+     "id": "speed-img-home",
+     "title": "/: 1,776 KB of images in the first 15",
+     "severity": "high",
+     "area": "speed",
+     "fix": "Resize images to the size shown (max ~1600px wide), serve WebP/AVIF, lazy-load below the fold.",
+     "pages": [
+      "/"
+     ],
+     "detail": "",
+     "broken": false
+    },
+    {
+     "id": "broken-outside",
+     "title": "7 outside link(s) go to a missing page",
+     "severity": "medium",
+     "area": "health",
+     "fix": "Update or remove the links (often an official website that moved).",
+     "pages": [
+      "/day-trips/torquay",
+      "/great-ocean-road",
+      "/great-ocean-road/do",
+      "/torquay"
+     ],
+     "detail": "https://ansmtorquay.wordpress.com/ (410); https://www.laporchetta.com/store-locations/suburb/phillip-island (404); https://www.thebottleofmilk.com/ (no answer); http://www.urbanspoon.com/r/346/1815273",
+     "broken": true
+    },
+    {
+     "id": "seo-title",
+     "title": "28 title outside 30–65 characters",
+     "severity": "medium",
+     "area": "seo",
+     "fix": "Rewrite to 30–65 characters with the main search first.",
+     "pages": [
+      "/phillip-island/do",
+      "/lakes-entrance/do",
+      "/barwon-heads/do",
+      "/harrietville/do"
+     ],
+     "detail": "",
+     "broken": false
+    },
+    {
+     "id": "seo-words",
+     "title": "7 page(s) under 250 words",
+     "severity": "low",
+     "area": "seo",
+     "fix": "Fine for tools; for guides add the answer people search for.",
+     "pages": [
+      "/towns",
+      "/metung",
+      "/flinders",
+      "/about"
+     ],
+     "detail": "",
+     "broken": false
+    },
+    {
+     "id": "schema-missing",
+     "title": "7 page(s) have no schema",
+     "severity": "low",
+     "area": "seo",
+     "fix": "Add WebPage/BreadcrumbList (or the page's own type) so Google understands it.",
+     "pages": [
+      "/towns",
+      "/road-trips",
+      "/about",
+      "/how-we-build-our-guides"
+     ],
+     "detail": "",
+     "broken": false
+    }
+   ]
   },
   "trailers": {
    "name": "movietrailer.channel",
@@ -34,7 +108,79 @@
    "broken": 0,
    "newIssues": 0,
    "fixed": 3,
-   "costUsd": 0.01
+   "costUsd": 0.01,
+   "top": [
+    {
+     "id": "not-indexed",
+     "title": "6 of your top 8 pages aren't in Google's index",
+     "severity": "high",
+     "area": "indexing",
+     "fix": "Make the page more useful than what ranks, link to it from the home page, then request indexing in Search Console.",
+     "pages": [
+      "/browse",
+      "/movies/weird-science-1985",
+      "/free-classic-movies",
+      "/movies/anora-2024"
+     ],
+     "detail": "/browse: Discovered – currently not indexed; /movies/weird-science-1985: Discovered – currently not indexed; /free-classic-movies: Discovered – currently not indexed; /movies/anora-2024: Discovered – ",
+     "broken": false
+    },
+    {
+     "id": "few-pages-in-google",
+     "title": "Google shows only 21 of 384 pages",
+     "severity": "medium",
+     "area": "indexing",
+     "fix": "Normal for a new site; if it stays low after 2 months, cut or merge weak pages and earn a few links.",
+     "pages": [],
+     "detail": "",
+     "broken": false
+    },
+    {
+     "id": "seo-title",
+     "title": "5 title outside 30–65 characters",
+     "severity": "medium",
+     "area": "seo",
+     "fix": "Rewrite to 30–65 characters with the main search first.",
+     "pages": [
+      "/movies/pirates-of-the-caribbean-the-curse-of-the-black-pearl-2003",
+      "/movies/dr-strangelove-or-how-i-learned-to-stop-worrying-and-love-the-bomb-1964",
+      "/studio-ghibli-where-to-watch",
+      "/original-films"
+     ],
+     "detail": "",
+     "broken": false
+    },
+    {
+     "id": "seo-og",
+     "title": "9 page(s) without a share image",
+     "severity": "low",
+     "area": "seo",
+     "fix": "Add an og:image so shared links show a picture.",
+     "pages": [
+      "/movies/dracula-1931",
+      "/movies/frankenstein-1931",
+      "/discover",
+      "/browse"
+     ],
+     "detail": "",
+     "broken": false
+    },
+    {
+     "id": "schema-missing",
+     "title": "7 page(s) have no schema",
+     "severity": "low",
+     "area": "seo",
+     "fix": "Add WebPage/BreadcrumbList (or the page's own type) so Google understands it.",
+     "pages": [
+      "/discover",
+      "/browse",
+      "/original-films",
+      "/about"
+     ],
+     "detail": "",
+     "broken": false
+    }
+   ]
   },
   "community-help-co": {
    "name": "communityhelp.com.au",
@@ -52,7 +198,70 @@
    "broken": 0,
    "newIssues": 1,
    "fixed": 2,
-   "costUsd": 0.01
+   "costUsd": 0.01,
+   "top": [
+    {
+     "id": "rival-community-help",
+     "title": "\"community help\": we're not in the top 10 (Search Console avg 17); goldcoast.qld.gov.au leads",
+     "severity": "medium",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/"
+     ],
+     "detail": "Top 5: 1. goldcoast.qld.gov.au, 2. ntcommunity.org.au, 3. qld.gov.au, 4. findhelptas.org.au, 5. innersydneyvoice.org.au",
+     "broken": false
+    },
+    {
+     "id": "rival-community-services-placement",
+     "title": "\"community services placement\": we're not in the top 10 (Search Console avg 9); facebook.com leads",
+     "severity": "medium",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/"
+     ],
+     "detail": "Top 5: 1. facebook.com, 2. au.indeed.com, 3. au.indeed.com, 4. au.indeed.com, 5. au.indeed.com",
+     "broken": false
+    },
+    {
+     "id": "rival-local-community-support",
+     "title": "\"local community support\": we're not in the top 10 (Search Console avg 4); mercycare.com.au leads",
+     "severity": "medium",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/"
+     ],
+     "detail": "Top 5: 1. mercycare.com.au, 2. servicedirectory.cesphn.org.au, 3. localkind.org.au, 4. brisbane.qld.gov.au, 5. commsatwork.org",
+     "broken": false
+    },
+    {
+     "id": "seo-title",
+     "title": "2 title outside 30–65 characters",
+     "severity": "medium",
+     "area": "seo",
+     "fix": "Rewrite to 30–65 characters with the main search first.",
+     "pages": [
+      "/job-finder",
+      "/job-catalyst-clinics"
+     ],
+     "detail": "",
+     "broken": false
+    },
+    {
+     "id": "rival-simon-farrugia",
+     "title": "\"simon farrugia\": we're not in the top 10 (Search Console avg 8); unknown site leads",
+     "severity": "medium",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/about"
+     ],
+     "detail": "Top 5: 1. unknown site, 2. facebook.com, 3. facebook.com, 4. facebook.com, 5. unknown site",
+     "broken": false
+    }
+   ]
   },
   "trade-admin": {
    "name": "tradeadmin.com.au",
@@ -70,7 +279,71 @@
    "broken": 0,
    "newIssues": 0,
    "fixed": 3,
-   "costUsd": 0.008
+   "costUsd": 0.008,
+   "top": [
+    {
+     "id": "not-indexed",
+     "title": "1 of your top 8 pages aren't in Google's index",
+     "severity": "high",
+     "area": "indexing",
+     "fix": "Make the page more useful than what ranks, link to it from the home page, then request indexing in Search Console.",
+     "pages": [
+      "/job-management-software"
+     ],
+     "detail": "/job-management-software: Discovered – currently not indexed",
+     "broken": false
+    },
+    {
+     "id": "seo-title",
+     "title": "3 title outside 30–65 characters",
+     "severity": "medium",
+     "area": "seo",
+     "fix": "Rewrite to 30–65 characters with the main search first.",
+     "pages": [
+      "/tradify-vs-fergus",
+      "/contact",
+      "/privacy-policy"
+     ],
+     "detail": "",
+     "broken": false
+    },
+    {
+     "id": "rival-servicem8-vs",
+     "title": "\"servicem8 vs\": we're not in the top 10 (Search Console avg 82); fergus.com leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/tradify-vs-servicem8"
+     ],
+     "detail": "Top 5: 1. fergus.com, 2. nextminute.com, 3. unknown site, 4. memate.com.au, 5. coastworksai.com.au",
+     "broken": false
+    },
+    {
+     "id": "rival-servicem8-pricing",
+     "title": "\"servicem8 pricing\": we're not in the top 10 (Search Console avg 82); capterra.com.au leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/tradify-vs-servicem8"
+     ],
+     "detail": "Top 5: 1. capterra.com.au, 2. customcrms.com.au, 3. reactiveweb.com.au, 4. skillmammoth.com, 5. tradieautomate.com",
+     "broken": false
+    },
+    {
+     "id": "rival-service-mate-vs-tradify",
+     "title": "\"service mate vs tradify\": we're not in the top 10 (Search Console avg 76); growthlocal.com.au leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/tradify-vs-servicem8"
+     ],
+     "detail": "Top 5: 1. growthlocal.com.au, 2. ityourservice.com.au, 3. trackyatradie.com, 4. unknown site, 5. sleeplesstradesman.com",
+     "broken": false
+    }
+   ]
   },
   "paycalc": {
    "name": "mypaycalc.com.au",
@@ -88,7 +361,75 @@
    "broken": 0,
    "newIssues": 0,
    "fixed": 2,
-   "costUsd": 0.01
+   "costUsd": 0.01,
+   "top": [
+    {
+     "id": "rival-mypaycalc",
+     "title": "\"mypaycalc\": we're not in the top 10 (Search Console avg 5); unknown site leads",
+     "severity": "medium",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/"
+     ],
+     "detail": "Top 5: 1. unknown site, 2. apps.microsoft.com, 3. austaxai.com.au, 4. deductit.com.au, 5. fairworkmate.com.au",
+     "broken": false
+    },
+    {
+     "id": "seo-og",
+     "title": "81 page(s) without a share image",
+     "severity": "low",
+     "area": "seo",
+     "fix": "Add an og:image so shared links show a picture.",
+     "pages": [
+      "/",
+      "/mortgage-repayment-calculator",
+      "/mortgage-repayments/200000",
+      "/mortgage-repayments/250000"
+     ],
+     "detail": "",
+     "broken": false
+    },
+    {
+     "id": "rival-pay-calculator",
+     "title": "\"pay calculator\": we're not in the top 10 (Search Console avg 86); woholmate.site leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/"
+     ],
+     "detail": "Top 5: 1. woholmate.site, 2. mydailycalc.com, 3. paymecalculator.com.au, 4. toolkitau.com, 5. netpaymate.com.au",
+     "broken": false
+    },
+    {
+     "id": "seo-title",
+     "title": "55 title outside 30–65 characters",
+     "severity": "medium",
+     "area": "seo",
+     "fix": "Rewrite to 30–65 characters with the main search first.",
+     "pages": [
+      "/salary",
+      "/salary/30000-after-tax",
+      "/salary/35000-after-tax",
+      "/salary/40000-after-tax"
+     ],
+     "detail": "",
+     "broken": false
+    },
+    {
+     "id": "rival-australian-tax-brackets",
+     "title": "\"australian tax brackets\": we're not in the top 10 (Search Console avg 88); data.gov.au leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/tax-brackets"
+     ],
+     "detail": "Top 5: 1. data.gov.au, 2. taxaustralia.com.au, 3. au.talent.com, 4. youtube.com, 5. heed.finance",
+     "broken": false
+    }
+   ]
   },
   "simon-says-travel": {
    "name": "simonsaystravel.com.au",
@@ -106,7 +447,73 @@
    "broken": 0,
    "newIssues": 0,
    "fixed": 2,
-   "costUsd": 0.002
+   "costUsd": 0.002,
+   "top": [
+    {
+     "id": "seo-title",
+     "title": "1 title outside 30–65 characters",
+     "severity": "medium",
+     "area": "seo",
+     "fix": "Rewrite to 30–65 characters with the main search first.",
+     "pages": [
+      "/"
+     ],
+     "detail": "",
+     "broken": false
+    },
+    {
+     "id": "few-pages-in-google",
+     "title": "Google shows only 1 of 27 pages",
+     "severity": "medium",
+     "area": "indexing",
+     "fix": "Normal for a new site; if it stays low after 2 months, cut or merge weak pages and earn a few links.",
+     "pages": [],
+     "detail": "",
+     "broken": false
+    },
+    {
+     "id": "not-indexed",
+     "title": "6 of your top 8 pages aren't in Google's index",
+     "severity": "high",
+     "area": "indexing",
+     "fix": "Make the page more useful than what ranks, link to it from the home page, then request indexing in Search Console.",
+     "pages": [
+      "/reports",
+      "/reports/2026-11",
+      "/destinations",
+      "/destinations/sydney"
+     ],
+     "detail": "/reports: Discovered – currently not indexed; /reports/2026-11: Discovered – currently not indexed; /destinations: Discovered – currently not indexed; /destinations/sydney: Discovered – currently not ",
+     "broken": false
+    },
+    {
+     "id": "seo-og",
+     "title": "27 page(s) without a share image",
+     "severity": "low",
+     "area": "seo",
+     "fix": "Add an og:image so shared links show a picture.",
+     "pages": [
+      "/",
+      "/reports",
+      "/reports/2026-11",
+      "/destinations"
+     ],
+     "detail": "",
+     "broken": false
+    },
+    {
+     "id": "rival-when-should-australians-book-japan-flights-in-2026",
+     "title": "\"when should australians book japan flights in 2026\": we're not in the top 10 (Search Console avg 10); helloroam.com leads",
+     "severity": "medium",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/destinations/japan"
+     ],
+     "detail": "Top 5: 1. helloroam.com, 2. unknown site, 3. unknown site, 4. skyceylon.com.au, 5. bookmytrip.com.au",
+     "broken": false
+    }
+   ]
   }
  },
  "updated": "2026-11-14T22:17:22Z",

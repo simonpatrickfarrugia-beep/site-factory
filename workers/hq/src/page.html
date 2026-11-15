@@ -327,6 +327,31 @@ details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px
 .deal header{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .deal__name{border:0;background:none;padding:0;font:700 1.1rem var(--display);text-align:left}
 .warn{color:var(--due);text-transform:none;letter-spacing:0}
+body.on-home .chips,body.on-home .strip{display:none}
+.home{padding:6px 0 24px}
+.home__hello{font:500 1.05rem var(--body);margin:6px 2px 14px}
+.home__h{font:600 .78rem var(--body);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:14px 2px 10px}
+.apps{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:18px 10px}
+.app{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;min-width:0}
+.app:focus-visible .app__icon{outline:3px solid var(--accent);outline-offset:2px}
+.app__icon{position:relative;width:64px;height:64px;border-radius:16px;display:grid;place-items:center;font-size:2rem;background:color-mix(in srgb,var(--c,var(--accent)) 22%,var(--surface));border:1px solid color-mix(in srgb,var(--c,var(--accent)) 45%,var(--line));box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.app__icon.sm{width:44px;height:44px;border-radius:12px;font-size:1.4rem;flex:none}
+.app__name{font-size:.78rem;font-weight:600;line-height:1.2;max-width:84px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.badge{position:absolute;top:-6px;right:-6px;min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:#E5342B;color:#fff;font:700 .75rem/22px var(--body);box-shadow:0 0 0 2px var(--bg)}
+.app__grade{position:absolute;bottom:-5px;left:-5px;font:700 .68rem/18px var(--mono);font-style:normal;min-width:18px;padding:0 4px;border-radius:6px;background:var(--surface);border:1px solid var(--line)}
+.dock{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:26px;padding:12px 8px;border-radius:22px;background:var(--sunk)}
+.dock .app__icon{background:var(--surface);border-color:var(--line)}
+.apphead{display:flex;gap:12px;align-items:center}
+.appstats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.appstats div{background:var(--sunk);border-radius:10px;padding:8px;text-align:center}
+.appstats b{display:block;font:500 1.15rem var(--mono)}
+.appstats span{font-size:.72rem;color:var(--muted)}
+.btn.ask{width:100%;padding:12px;font-size:1rem}
+.notes{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:10px}
+.note{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--muted);border-radius:10px;padding:10px 12px;display:grid;gap:4px}
+.note.n-blocker{border-left-color:var(--bad)}.note.n-high{border-left-color:var(--due)}.note.n-medium{border-left-color:var(--accent)}
+.note__kind{font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.note .row{margin-top:4px}
 .grade{display:inline-flex;align-items:baseline;gap:4px;font:700 1.3rem/1 var(--display);color:var(--g)}
 .grade small{font:500 .78rem var(--mono);color:var(--muted)}
 .grade.big{font-size:2.6rem}
@@ -345,7 +370,8 @@ details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px
   <div class="bar">
     <h1>IMN HQ <small id="updated">Outreach</small></h1>
     <div class="tabs" role="tablist">
-      <button role="tab" id="tab-hq" aria-selected="true" data-view="hq">Funnel</button>
+      <button role="tab" id="tab-home" aria-selected="true" data-view="home">Home</button>
+      <button role="tab" id="tab-hq" aria-selected="false" data-desk data-view="hq">Funnel</button>
       <button role="tab" id="tab-today" aria-selected="false" data-view="today">Today</button>
       <button role="tab" id="tab-board" aria-selected="false" data-view="board">Board</button>
       <button role="tab" id="tab-prospect" aria-selected="false" data-desk data-view="prospect">Prospect</button>
@@ -359,7 +385,7 @@ details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px
   <div class="chips" id="chips" aria-label="Filter by brand"></div>
 </div></div>
 
-<div class="more-menu" id="more-menu" hidden><button data-view="replies">Replies</button><button data-view="prospect">Prospect</button><button data-view="pipeline">Pipeline</button><button data-view="affiliates">Affiliates</button><button data-view="checks">Site check</button></div>
+<div class="more-menu" id="more-menu" hidden><button data-view="hq">Funnel</button><button data-view="replies">Replies</button><button data-view="prospect">Prospect</button><button data-view="pipeline">Pipeline</button><button data-view="affiliates">Affiliates</button><button data-view="checks">Site check</button></div>
 <main class="wrap">
   <section class="strip" id="strip" aria-label="This week"></section>
   <section id="view"></section>
@@ -369,8 +395,8 @@ details.ideas summary{cursor:pointer;font:700 1.05rem var(--display);padding:4px
 
 <script>
 const STAGE_LABEL = { found: 'Found', drafted: 'Drafted', sent: 'Sent', replied: 'Replied', linked: 'Linked', won: 'Won', no: 'No' };
-const state = { view: 'hq', hq: null, radar: null, brand: 'all', board: null, summary: null, prospects: null, replies: null, pipeline: null, affiliates: null, needs: null, showAll: {}, open: {} };
-try { const s = JSON.parse(localStorage.getItem('imn-hq2') || '{}'); if (s.view) state.view = s.view; if (s.brand) state.brand = s.brand; } catch (e) {}
+const state = { view: 'home', apps: null, hq: null, radar: null, brand: 'all', board: null, summary: null, prospects: null, replies: null, pipeline: null, affiliates: null, needs: null, showAll: {}, open: {} };
+try { const s = JSON.parse(localStorage.getItem('imn-hq2') || '{}'); if (s.view && location.hash === '#keep') state.view = s.view; if (s.brand) state.brand = s.brand; } catch (e) {}
 const save = () => { try { localStorage.setItem('imn-hq2', JSON.stringify({ view: state.view, brand: state.brand })); } catch (e) {} };
 
 const $ = (s) => document.querySelector(s);
@@ -412,19 +438,23 @@ async function load() {
     const [board, summary, prospects, replies, pipeline, affiliates, radar, needs] = await Promise.all([api('/api/board'), api('/api/summary'), api('/api/prospects'), api('/api/replies'), api('/api/pipeline'), api('/api/affiliates'), api('/api/radar'), api('/api/needs')]);
     const send = await api('/api/send/status').catch(() => null);
     const hq = await api('/api/hq').catch(() => null);
-    const checks = await api('/api/sitecheck').catch(() => null);
-    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar, needs, send, hq, checks });
+    const [checks, apps] = await Promise.all([api('/api/sitecheck').catch(() => null), api('/api/apps').catch(() => null)]);
+    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar, needs, send, hq, checks, apps });
     $('#updated').textContent = 'Targets scored ' + new Date(prospects.generated).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
     render();
+    const deep = location.hash.match(/^#app=([a-z0-9-]+)$/); // e.g. …/#app=vic opens that app (links from the morning report)
+    if (deep) openApp(deep[1]);
   } catch (e) {
     $('#view').innerHTML = '<p class="error">' + esc(e.message) + '</p>';
   }
 }
 
 function render() {
-  document.querySelectorAll('.tabs button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.view === state.view || (b.id === 'more-btn' && ['replies', 'prospect', 'pipeline', 'affiliates', 'checks'].includes(state.view)))));
+  document.querySelectorAll('.tabs button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.view === state.view || (b.id === 'more-btn' && ['hq', 'replies', 'prospect', 'pipeline', 'affiliates', 'checks'].includes(state.view)))));
+  document.body.classList.toggle('on-home', state.view === 'home');
   renderChips(); renderStrip();
-  if (state.view === 'hq') renderHq();
+  if (state.view === 'home') renderHome();
+  else if (state.view === 'hq') renderHq();
   else if (state.view === 'today') renderToday();
   else if (state.view === 'board') renderBoard();
   else if (state.view === 'prospect') renderProspect();
@@ -445,6 +475,7 @@ function renderChips() {
 function inBrand(b) { return state.brand === 'all' || state.brand === b; }
 
 function renderStrip() {
+  if (state.view === 'home') { $('#strip').innerHTML = ''; return; }
   if (state.view === 'checks') {
     const list = checkList();
     const avg = list.length ? Math.round(list.reduce((a, c) => a + c.score, 0) / list.length) : '–';
@@ -996,6 +1027,136 @@ async function openAffiliate(id) {
   };
 }
 
+// ---------- Home: every site is a client app with notifications ----------
+// Data: /api/apps (client registry, to-dos, GitHub issues, new forms), /api/sitecheck (report cards), and the outreach data
+// the page already loads (Radar queue, replies, drafts, follow-ups, affiliates). "Fix with Claude" copies a ready-made
+// prompt and opens the Site Factory project in Claude, so the work happens with full repo access at no extra cost.
+const CLAUDE_PROJECT = 'https://claude.ai/project/01a14468-1a4a-76a0-b9c5-b7ad71e42bd6';
+const REPO = 'simonpatrickfarrugia-beep/site-factory';
+const IMN = { id: 'imn', name: 'IMN', label: 'IMN', url: '', icon: '🏢', owner: 'imn' };
+const SEV_RANK = { blocker: 0, high: 1, medium: 2, low: 3 };
+function clientsList() { return (state.apps?.clients || []).concat([IMN]); }
+function clientOf(text) {
+  const t = String(text || '').toLowerCase();
+  const c = (state.apps?.clients || []).find((x) => t.includes(x.name.toLowerCase()) || t.includes(x.name.toLowerCase().replace(/\..*/, '')) || t.includes(x.id.replace(/-/g, ' ')));
+  return c ? c.id : 'imn';
+}
+function claudePrompt(c, task) {
+  const site = c.id === 'imn' ? 'Independent Media Network (all sites)' : `${c.name} (${c.url}, brand ${c.id})`;
+  return `Site Factory · ${site}.\nAttach the repo ${REPO}, git pull, read CLAUDE.md and hq/brief.md.\n\n${task}\n\nFree and reversible: fix, push, wait for Check build, then tell me what changed. Anything that costs money, sends email or deletes: ask me first.`;
+}
+function notesFor(id) {
+  const out = [];
+  const c = clientsList().find((x) => x.id === id) || IMN;
+  // Site check: broken things always, then the top fixes (max 3 non-broken)
+  const card = state.checks?.sites?.[id];
+  if (card?.top) {
+    let n = 0;
+    for (const f of card.top) {
+      if (!f.broken && n >= 3) continue;
+      if (!f.broken) n++;
+      out.push({ kind: f.broken ? 'broken' : 'fix', sev: f.severity, title: f.title, detail: f.fix, open: { check: id },
+        prompt: claudePrompt(c, `Fix this from the site check report card (hq/reports/sitecheck/${id}.md, finding "${f.id}"): ${f.title}.\nSuggested fix: ${f.fix}${f.pages?.length ? '\nPages: ' + f.pages.join(', ') : ''}${f.detail ? '\nDetail: ' + f.detail : ''}\nThen re-run scripts/claude/sitecheck.sh ${id} nolive to confirm.`) });
+    }
+  }
+  // GitHub issues (health, sitecheck, enquiries…)
+  for (const i of state.apps?.issues || []) {
+    if (clientOf(i.title) !== id) continue;
+    out.push({ kind: 'issue', sev: i.labels.includes('health') || i.labels.includes('sitecheck') ? 'high' : 'medium', title: `#${i.number} ${i.title}`, detail: i.labels.join(', '), link: i.url,
+      prompt: claudePrompt(c, `Read GitHub issue #${i.number} (${i.url}): "${i.title}". Work out what it needs and fix it, or tell me what only I can do.`) });
+  }
+  // New form posts (48 h)
+  for (const f of (state.apps?.forms || []).filter((x) => x.brand === id)) {
+    out.push({ kind: 'form', sev: 'high', title: `${f.n} new ${f.form.replace(/-/g, ' ')} form${f.n > 1 ? 's' : ''}`, detail: 'Latest ' + ago(f.at),
+      prompt: claudePrompt(c, `Read the new "${f.form}" form submissions for brand ${id} from the last 48 hours (D1 site-factory-forms, table submissions, SELECT only). Tell me who they are and the exact next step for each.`) });
+  }
+  // Outreach for this brand
+  const orgs = (state.board?.orgs || []).filter((o) => o.brand === id);
+  const msgs = (state.needs?.messages || []).filter((m) => m.brand === id);
+  if (msgs.length) out.push({ kind: 'reply', sev: 'high', title: `${msgs.length} repl${msgs.length > 1 ? 'ies' : 'y'} waiting`, detail: msgs.slice(0, 2).map((m) => m.org_name || m.mail_from).join(', '), open: { view: 'replies', brand: id } });
+  const due = orgs.filter((o) => o.followUpDue).length;
+  if (due) out.push({ kind: 'outreach', sev: 'medium', title: `${due} follow-up${due > 1 ? 's' : ''} due`, detail: 'Sent 7+ days ago, no reply', open: { view: 'board', brand: id } });
+  const drafted = orgs.filter((o) => o.stage === 'drafted').length;
+  if (drafted) out.push({ kind: 'outreach', sev: 'medium', title: `${drafted} draft${drafted > 1 ? 's' : ''} to send`, detail: 'Ready in Outreach', open: { view: 'board', brand: id } });
+  const radarN = (state.radar?.queue || []).filter((o) => o.brand === id).length;
+  if (radarN) out.push({ kind: 'outreach', sev: 'medium', title: `${radarN} Radar prospect${radarN > 1 ? 's' : ''} to review`, detail: 'Approve, drop or later', open: { view: 'today', brand: id } });
+  // To-dos
+  for (const t of state.apps?.todo || []) {
+    if ((t.brand || 'imn') !== id) continue;
+    out.push({ kind: t.kind === 'decide' ? 'decide' : 'todo', sev: t.kind === 'decide' ? 'high' : 'low', title: t.what, detail: (t.mins ? `~${t.mins} min · ` : '') + (t.why || ''), link: t.link,
+      prompt: claudePrompt(c, `Help me finish my to-do "${t.id}": ${t.what}\nWhy: ${t.why || ''}\nDo all the prep you can, give me exact values to paste, and mark it done in hq/portfolio.json when I confirm.`) });
+  }
+  if (id === 'imn') {
+    const chase = (state.affiliates?.items || []).filter((i) => i.chase).length;
+    if (chase) out.push({ kind: 'outreach', sev: 'medium', title: `${chase} affiliate programme${chase > 1 ? 's' : ''} to chase`, detail: 'Applied 14+ days ago', open: { view: 'affiliates' } });
+  }
+  return out.sort((a, z) => (SEV_RANK[a.sev] ?? 4) - (SEV_RANK[z.sev] ?? 4));
+}
+const KIND = { broken: '🔴 Broken', fix: '🛠 Fix', issue: '🐙 Issue', form: '📥 New form', reply: '💬 Reply', outreach: '📨 Outreach', todo: '✅ To-do', decide: '🤔 Decide' };
+function renderHome() {
+  const apps = clientsList();
+  if (!state.apps) { $('#view').innerHTML = '<p class="empty">Couldn’t load the apps right now. Pull to refresh.</p>'; return; }
+  const total = apps.reduce((a, c) => a + notesFor(c.id).length, 0);
+  const hello = new Date().getHours() < 12 ? 'Morning' : new Date().getHours() < 18 ? 'Afternoon' : 'Evening';
+  const icon = (c) => {
+    const n = notesFor(c.id).length; const card = state.checks?.sites?.[c.id];
+    return `<button class="app" data-app="${esc(c.id)}" style="--c:${c.id === 'imn' ? 'var(--accent)' : color(c.id)}" aria-label="${esc(c.name)}${n ? ', ' + n + ' notifications' : ''}">
+      <span class="app__icon">${esc(c.icon)}${n ? `<b class="badge">${n > 99 ? '99+' : n}</b>` : ''}${card ? `<i class="app__grade">${esc(card.grade)}</i>` : ''}</span>
+      <span class="app__name">${esc(c.label || c.name)}</span></button>`;
+  };
+  const dock = [['hq', '📈', 'Funnel'], ['today', '📡', 'Radar'], ['board', '📨', 'Outreach'], ['checks', '🩺', 'Site check']];
+  const clients = apps.filter((c) => c.owner === 'client');
+  $('#view').innerHTML = `<section class="home">
+    <p class="home__hello">${hello}, Simon. <b>${total}</b> thing${total === 1 ? '' : 's'} across ${apps.length} apps.</p>
+    <h2 class="home__h">IMN sites</h2><div class="apps">${apps.filter((c) => c.owner !== 'client').map(icon).join('')}</div>
+    ${clients.length ? `<h2 class="home__h">Clients</h2><div class="apps">${clients.map(icon).join('')}</div>` : ''}
+    <div class="dock">${dock.map(([v, i, l]) => `<button class="app" data-view="${v}"><span class="app__icon">${i}</span><span class="app__name">${l}</span></button>`).join('')}</div>
+  </section>`;
+}
+function openApp(id) {
+  const c = clientsList().find((x) => x.id === id); if (!c) return;
+  const dlg = $('#sheet'); const body = $('#sheet-body');
+  const notes = notesFor(id);
+  const s = state.hq?.sites?.[id]; const card = state.checks?.sites?.[id];
+  state.appNotes = notes;
+  const stats = s ? `<div class="appstats"><div><b>${(s.seen || 0).toLocaleString()}</b><span>Google views</span></div><div><b>${s.ga4 ? (s.visits || 0).toLocaleString() : '–'}</b><span>Visits</span></div><div><b>${s.ga4 ? s.clicks || 0 : '–'}</b><span>Clicks</span></div><div><b>${s.tracksMoney ? s.money || 0 : '–'}</b><span>Money</span></div></div><p class="meta">Last 28 days</p>` : '';
+  const general = claudePrompt(c, c.id === 'imn' ? 'Let\'s work on the IMN portfolio. Start with what matters most today.' : `Let's work on ${c.name}. Read its report card (hq/reports/sitecheck/${c.id}.md) and data/${c.id}/stats.json, then tell me the one thing that would move it most this week. Wait for my go.`);
+  state.appGeneral = general;
+  body.innerHTML = `
+    <header><div class="apphead"><span class="app__icon sm" style="--c:${c.id === 'imn' ? 'var(--accent)' : color(c.id)}">${esc(c.icon)}</span><div><h2 id="sheet-title">${esc(c.name)}</h2>
+      <span class="meta">${c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.url.replace(/^https?:\/\//, ''))} ↗</a>` : 'Portfolio, money and company admin'}${card ? ` · report card <b>${esc(card.grade)} ${card.score}</b>` : ''}</span></div></div>
+      <button class="close" id="close" autofocus>Close</button></header>
+    ${stats}
+    <button class="btn ask" id="ask-claude">💬 Ask Claude about ${esc(c.id === 'imn' ? 'IMN' : c.name)}</button>
+    <div><label>Notifications (${notes.length})</label>
+      ${notes.length ? `<ul class="notes">${notes.map((n, i) => `<li class="note n-${esc(n.sev)}"><div class="note__top"><span class="note__kind">${KIND[n.kind] || ''}</span></div>
+        <b>${esc(n.title)}</b>${n.detail ? `<span class="meta">${esc(n.detail)}</span>` : ''}
+        <div class="row">${n.prompt ? `<button class="btn" data-fix="${i}">Fix with Claude</button>` : ''}${n.open ? `<button class="btn ghost" data-go="${i}">Open</button>` : ''}${n.link ? `<a class="btn ghost" style="text-decoration:none" href="${esc(n.link)}" target="_blank" rel="noopener">Link ↗</a>` : ''}</div></li>`).join('')}</ul>` : '<p class="empty">All clear 🎉</p>'}
+    </div>
+    <p class="meta">“Fix with Claude” copies a ready-made brief and opens the Site Factory project: start a new chat there and paste.</p>`;
+  if (!dlg.open) dlg.showModal();
+  $('#close').onclick = () => dlg.close();
+  $('#ask-claude').onclick = () => handoff(general);
+  body.querySelectorAll('[data-fix]').forEach((b) => b.onclick = () => handoff(state.appNotes[Number(b.dataset.fix)].prompt));
+  body.querySelectorAll('[data-go]').forEach((b) => b.onclick = () => {
+    const o = state.appNotes[Number(b.dataset.go)].open; dlg.close();
+    if (o.check) { openCheck(o.check); return; }
+    state.view = o.view; if (o.brand) state.brand = o.brand; if (o.view === 'board') state.fullBoard = false; save(); render(); window.scrollTo(0, 0);
+  });
+}
+async function handoff(prompt) {
+  let ok = false;
+  try { await navigator.clipboard.writeText(prompt); ok = true; } catch (e) {}
+  if (!ok) { // fallback for browsers that block the clipboard: show the brief to copy by hand
+    const body = $('#sheet-body');
+    body.insertAdjacentHTML('afterbegin', `<div class="field"><label>Copy this brief, then open Claude</label><textarea readonly style="min-height:160px">${esc(prompt)}</textarea><a class="btn" href="${CLAUDE_PROJECT}" target="_blank" rel="noopener" style="text-decoration:none">Open Claude ↗</a></div>`);
+    body.querySelector('textarea').select();
+    return;
+  }
+  toast('Brief copied: paste it in a new Site Factory chat');
+  window.open(CLAUDE_PROJECT, '_blank', 'noopener');
+}
+
 // ---------- Site check ----------
 const GRADE_C = { A: 'var(--good)', B: 'var(--good)', C: 'var(--accent)', D: 'var(--due)', F: 'var(--bad)' };
 function checkList() {
@@ -1196,6 +1357,7 @@ document.addEventListener('click', (e) => {
   else if (t.id === 'more-btn') { const m = $('#more-menu'); m.hidden = !m.hidden; t.setAttribute('aria-expanded', String(!m.hidden)); }
   else if (t.dataset.aff) openAffiliate(t.dataset.aff);
   else if (t.dataset.check) openCheck(t.dataset.check);
+  else if (t.dataset.app) openApp(t.dataset.app);
   else if (t.dataset.rdraft) { const o = state.radar.queue.find((x) => String(x.id) === t.dataset.rdraft); if (o) openDraft(o.brand, o.target, o); }
   else if (t.dataset.rdrop) radarReview(t.dataset.rdrop, $('#rdrop-' + t.dataset.rdrop).value, $('#rwhy-' + t.dataset.rdrop).value);
   else if (t.dataset.rlater) radarReview(t.dataset.rlater, 'later');

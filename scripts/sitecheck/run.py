@@ -631,6 +631,12 @@ def scan(site, cfg, args, prev, stage, why, days):
     return card
 
 
+def top_fixes(card):
+    """Top 5 fixes for IMN HQ's home screen notifications (each opens a prefilled Claude chat)."""
+    return [dict(id=f['id'], title=f['title'], severity=f['severity'], area=f['area'], fix=f['fix'], pages=f['pages'][:4], detail=f['detail'][:200], broken=f['broken'])
+            for f in card['findings'][:5]]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--site'); ap.add_argument('--plan', action='store_true'); ap.add_argument('--no-live', action='store_true')
@@ -669,7 +675,8 @@ def main():
         index['sites'][site['id']] = dict(name=card['name'], url=card['url'], owner=card['owner'], scannedAt=card['scannedAt'], score=card['score'], grade=card['grade'],
                                           change=card['change'].get('score'), first=card['change'].get('first', False), stage=stage, cadenceDays=days, nextDue=card['nextDue'],
                                           topFix=top['title'] if top else None, broken=sum(1 for f in card['findings'] if f['broken']), newIssues=len(card['change'].get('newIssues', [])),
-                                          fixed=len(card['change'].get('fixed', [])), costUsd=card['costUsd'])
+                                          fixed=len(card['change'].get('fixed', [])), costUsd=card['costUsd'],
+                                          top=top_fixes(card))
         done.append(card)
         print(f'   {card["grade"]} {card["score"]}/100, {len(card["findings"])} findings, top: {top["title"] if top else "-"} ({card["secs"]}s, US${card["costUsd"]:.3f})', flush=True)
     for site, prev, stage, why, days, due, last in plan:  # keep next-due dates current for sites not scanned today

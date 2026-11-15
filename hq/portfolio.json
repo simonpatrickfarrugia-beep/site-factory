@@ -254,7 +254,7 @@
    }
   ]
  },
- "_todo": "Simon's to-do list shown at the top of HQ. kind: do | decide. sprint: true = counts toward the current sprint. ready: {what, link?, at} = Claude has already done the prep (drafts, files, exact values to paste), so Simon only approves; set by the weekly autopilot or a chat session, shown first in the morning report. Claude (or the weekly autopilot) sets done: true + doneAt when Simon says 'done' or an approval email arrives. parked = items for paused brands, kept out of the list until the pause lifts.",
+ "_todo": "Simon's to-do list shown at the top of HQ. kind: do | decide. sprint: true = counts toward the current sprint. ready: {what, link?, at} = Claude has already done the prep (drafts, files, exact values to paste), so Simon only approves; set by the weekly autopilot or a chat session, shown first in the morning report. Claude (or the weekly autopilot) sets done: true + doneAt when Simon says 'done' or an approval email arrives. parked = items for paused brands, kept out of the list until the pause lifts. Optional `brand` (site id) puts the item on that app in IMN HQ's home screen; no brand = the IMN app.",
  "todo": [
   {
    "id": "ta-mail-hub",
@@ -266,7 +266,8 @@
    "link": "https://admin.microsoft.com",
    "linkLabel": "M365 admin",
    "done": false,
-   "addedAt": "2026-11-05"
+   "addedAt": "2026-11-05",
+   "brand": "trade-admin"
   },
   {
    "id": "chc-review-quotes",
@@ -278,7 +279,8 @@
    "link": "https://business.google.com",
    "linkLabel": "Business Profile",
    "done": false,
-   "addedAt": "2026-11-03"
+   "addedAt": "2026-11-03",
+   "brand": "community-help-co"
   },
   {
    "id": "ga4-country-check",
@@ -290,7 +292,8 @@
    "link": "https://analytics.google.com",
    "linkLabel": "GA4",
    "done": false,
-   "addedAt": "2026-11-03"
+   "addedAt": "2026-11-03",
+   "brand": "trailers"
   },
   {
    "id": "imn-setup-nov",
@@ -375,7 +378,8 @@
    "why": "Second hotel backup (~4–7% on completed stays)",
    "link": "https://partners.agoda.com",
    "linkLabel": "Agoda Partners",
-   "done": false
+   "done": false,
+   "brand": "vic"
   },
   {
    "id": "careerjet",
@@ -629,7 +633,8 @@
    "mins": 10,
    "what": "Share communityhelp.com.au/resume-builder with 3 job services, schools or community groups you know",
    "why": "Links from real organisations are what will get it found on Google",
-   "done": false
+   "done": false,
+   "brand": "community-help-co"
   },
   {
    "id": "adzuna",
@@ -771,7 +776,8 @@
     "what": "Draft ready: add your line and reply 'publish <slug>'",
     "link": "https://github.com/simonpatrickfarrugia-beep/site-factory/blob/main/hq/ready/opportunities/2026-11-12-vic-sorrento-restaurants.md",
     "at": "2026-11-12"
-   }
+   },
+   "brand": "vic"
   },
   {
    "id": "opp-tax-brackets-history",
@@ -787,7 +793,8 @@
     "what": "Draft ready: add your line and reply 'publish <slug>'",
     "link": "https://github.com/simonpatrickfarrugia-beep/site-factory/blob/main/hq/ready/opportunities/2026-11-12-paycalc-tax-brackets-history.md",
     "at": "2026-11-12"
-   }
+   },
+   "brand": "paycalc"
   }
  ],
  "notes": [

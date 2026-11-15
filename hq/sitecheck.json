@@ -1,5 +1,5 @@
 {
- "_about": "Site check (report card engine). Read by scripts/sitecheck/run.py from .github/workflows/sitecheck.yml (daily 06:30 Melbourne). Each site is scanned when due; cards go to hq/sitecheck/<id>.json and hq/reports/sitecheck/<id>.md, shown in IMN HQ → Site check. docs/SITECHECK.md explains it.",
+ "_about": "Site check (report card engine). Read by scripts/sitecheck/run.py from .github/workflows/sitecheck.yml (daily 06:30 Melbourne). Each site is scanned when due; cards go to hq/sitecheck/<id>.json and hq/reports/sitecheck/<id>.md, shown in IMN HQ → Site check. docs/SITECHECK.md explains it. Also the client registry for IMN HQ's home screen: every site is a client app (IMN's own sites have owner 'imn'; client studio sites owner 'client').",
  "cadenceDays": {
   "building": 7,
   "earning": 14,
@@ -17,20 +17,146 @@
  "keywordsPerSite": 5,
  "inspectPerSite": 8,
  "affiliateRules": [
-  { "host": "amazon.com", "needs": "tag=movietrailerc-20", "program": "Amazon Associates" },
-  { "host": "viator.com", "needs": "pid=P00327691", "program": "Viator" },
-  { "host": "getyourguide.com", "needs": "partner_id=CZLHXOV", "program": "GetYourGuide" },
-  { "host": "wotif.com", "needs": "camref=1011l6uMgR", "program": "Expedia Group (Wotif)" },
-  { "host": "discovercars.com", "needs": "a_aid=victours", "program": "Discover Cars" },
-  { "host": "partner.fergus.com", "needs": "v0xtphakbxr5", "program": "Fergus" }
+  {
+   "host": "amazon.com",
+   "needs": "tag=movietrailerc-20",
+   "program": "Amazon Associates"
+  },
+  {
+   "host": "viator.com",
+   "needs": "pid=P00327691",
+   "program": "Viator"
+  },
+  {
+   "host": "getyourguide.com",
+   "needs": "partner_id=CZLHXOV",
+   "program": "GetYourGuide"
+  },
+  {
+   "host": "wotif.com",
+   "needs": "camref=1011l6uMgR",
+   "program": "Expedia Group (Wotif)"
+  },
+  {
+   "host": "discovercars.com",
+   "needs": "a_aid=victours",
+   "program": "Discover Cars"
+  },
+  {
+   "host": "partner.fergus.com",
+   "needs": "v0xtphakbxr5",
+   "program": "Fergus"
+  }
  ],
  "sites": [
-  { "id": "trailers", "name": "movietrailer.channel", "url": "https://www.movietrailer.channel", "brand": "trailers", "owner": "imn", "stats": "data/trailers/stats.json", "ga4": "G-RXGCJ51YWJ", "gsc": "sc-domain:movietrailer.channel", "market": 2840, "money": ["prime", "disc"] },
-  { "id": "vic", "name": "victours.com.au", "url": "https://victours.com.au", "brand": "vic", "owner": "imn", "stats": "data/vic/stats.json", "ga4": "G-4FYB501KJ1", "gsc": "sc-domain:victours.com.au", "market": 2036, "money": ["book_stay", "book_tour", "book_car"] },
-  { "id": "community-help-co", "name": "communityhelp.com.au", "url": "https://communityhelp.com.au", "brand": "community-help-co", "owner": "imn", "stats": "data/community-help-co/stats.json", "ga4": "G-W507HD781R", "gsc": "sc-domain:communityhelp.com.au", "market": 2036, "money": ["email_chat", "job_click"] },
-  { "id": "trade-admin", "name": "tradeadmin.com.au", "url": "https://tradeadmin.com.au", "brand": "trade-admin", "owner": "imn", "stats": "data/trade-admin/stats.json", "ga4": "G-MLFVHPE242", "gsc": "sc-domain:tradeadmin.com.au", "market": 2036, "money": ["tradify_offer_sent", "partner_fergus", "quiz_trial_fergus"] },
-  { "id": "paycalc", "name": "mypaycalc.com.au", "url": "https://mypaycalc.com.au", "brand": "paycalc", "owner": "imn", "stats": "data/paycalc/stats.json", "ga4": "G-YGBQKFNMWN", "gsc": "sc-domain:mypaycalc.com.au", "market": 2036, "money": [] },
-  { "id": "simon-says-travel", "name": "simonsaystravel.com.au", "url": "https://simonsaystravel.com.au", "brand": "simon-says-travel", "owner": "imn", "stats": "data/simon-says-travel/stats.json", "ga4": "G-L397SZ03HE", "gsc": "sc-domain:simonsaystravel.com.au", "market": 2036, "money": [] }
+  {
+   "id": "trailers",
+   "name": "movietrailer.channel",
+   "url": "https://www.movietrailer.channel",
+   "brand": "trailers",
+   "owner": "imn",
+   "stats": "data/trailers/stats.json",
+   "ga4": "G-RXGCJ51YWJ",
+   "gsc": "sc-domain:movietrailer.channel",
+   "market": 2840,
+   "money": [
+    "prime",
+    "disc"
+   ],
+   "icon": "🎬",
+   "label": "Trailers"
+  },
+  {
+   "id": "vic",
+   "name": "victours.com.au",
+   "url": "https://victours.com.au",
+   "brand": "vic",
+   "owner": "imn",
+   "stats": "data/vic/stats.json",
+   "ga4": "G-4FYB501KJ1",
+   "gsc": "sc-domain:victours.com.au",
+   "market": 2036,
+   "money": [
+    "book_stay",
+    "book_tour",
+    "book_car"
+   ],
+   "icon": "🚗",
+   "label": "Vic Tours"
+  },
+  {
+   "id": "community-help-co",
+   "name": "communityhelp.com.au",
+   "url": "https://communityhelp.com.au",
+   "brand": "community-help-co",
+   "owner": "imn",
+   "stats": "data/community-help-co/stats.json",
+   "ga4": "G-W507HD781R",
+   "gsc": "sc-domain:communityhelp.com.au",
+   "market": 2036,
+   "money": [
+    "email_chat",
+    "job_click"
+   ],
+   "icon": "🤝",
+   "label": "CHC"
+  },
+  {
+   "id": "trade-admin",
+   "name": "tradeadmin.com.au",
+   "url": "https://tradeadmin.com.au",
+   "brand": "trade-admin",
+   "owner": "imn",
+   "stats": "data/trade-admin/stats.json",
+   "ga4": "G-MLFVHPE242",
+   "gsc": "sc-domain:tradeadmin.com.au",
+   "market": 2036,
+   "money": [
+    "tradify_offer_sent",
+    "partner_fergus",
+    "quiz_trial_fergus"
+   ],
+   "icon": "🔧",
+   "label": "Trade Admin"
+  },
+  {
+   "id": "paycalc",
+   "name": "mypaycalc.com.au",
+   "url": "https://mypaycalc.com.au",
+   "brand": "paycalc",
+   "owner": "imn",
+   "stats": "data/paycalc/stats.json",
+   "ga4": "G-YGBQKFNMWN",
+   "gsc": "sc-domain:mypaycalc.com.au",
+   "market": 2036,
+   "money": [],
+   "icon": "🧮",
+   "label": "MyPayCalc"
+  },
+  {
+   "id": "simon-says-travel",
+   "name": "simonsaystravel.com.au",
+   "url": "https://simonsaystravel.com.au",
+   "brand": "simon-says-travel",
+   "owner": "imn",
+   "stats": "data/simon-says-travel/stats.json",
+   "ga4": "G-L397SZ03HE",
+   "gsc": "sc-domain:simonsaystravel.com.au",
+   "market": 2036,
+   "money": [],
+   "icon": "✈️",
+   "label": "Simon Says"
+  }
  ],
- "_clientExample": { "id": "client-slug", "name": "example.com.au", "url": "https://example.com.au", "owner": "client", "carePlan": "growth", "market": 2036, "_note": "Client sites: no stats file needed (the Google parts are skipped until one exists). Their cards must NOT be committed to this public repo: run with --out pointing at the private repo." }
+ "_clientExample": {
+  "id": "client-slug",
+  "name": "example.com.au",
+  "url": "https://example.com.au",
+  "owner": "client",
+  "carePlan": "growth",
+  "market": 2036,
+  "_note": "Client sites: no stats file needed (the Google parts are skipped until one exists). Their cards must NOT be committed to this public repo: run with --out pointing at the private repo.",
+  "icon": "🏢",
+  "label": "Example Co"
+ }
 }
