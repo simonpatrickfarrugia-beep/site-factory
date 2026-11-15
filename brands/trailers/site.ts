@@ -190,7 +190,7 @@ export function routes(): Route[] {
   const popularFilms = () => {
     const pagesSeen = ((getSingleton('stats') as { pages?: { path: string; allViews?: number; views?: number }[] } | null)?.pages ?? [])
       .filter((p) => p.path.startsWith('/movies/'))
-      .sort((a, b) => (b.allViews ?? b.views ?? 0) - (a.allViews ?? a.views ?? 0));
+      .sort((a, b) => (b.views ?? 0) - (a.views ?? 0) || (b.allViews ?? 0) - (a.allViews ?? 0)); // last 28 days first, then all-time
     const inLatest = new Set(newest.slice(0, 10).map((m) => m.slug));
     const picks: Movie[] = [];
     for (const p of pagesSeen) {
