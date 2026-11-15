@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-14T19:00:10.444Z",
+ "generatedAt": "2026-11-15T08:27:11.417Z",
  "period": {
-  "start": "2026-10-17",
-  "end": "2026-11-13"
+  "start": "2026-10-18",
+  "end": "2026-11-14"
  },
  "gscPeriod": {
-  "start": "2026-10-15",
-  "end": "2026-11-11"
+  "start": "2026-10-16",
+  "end": "2026-11-12"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 89,
+  "views": 91,
   "prevViews": 0,
-  "users": 69,
+  "users": 71,
   "cta": {
    "book_tour": 2,
    "website": 1,
    "map": 1
   },
-  "gscClicks": 4,
-  "gscImpressions": 2101
+  "gscClicks": 5,
+  "gscImpressions": 2729
  },
  "daily": [
   {
@@ -120,22 +120,27 @@
    "date": "2026-11-10",
    "views": 2,
    "cta": 0
+  },
+  {
+   "date": "2026-11-12",
+   "views": 2,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 44,
+   "views": 46,
    "prevViews": 0,
-   "users": 31,
+   "users": 33,
    "cta": {},
    "gscClicks": 2,
    "gscImpressions": 6,
    "gscPosition": 3,
    "topQuery": "victours",
-   "allViews": 213,
-   "prev7": 8,
-   "d7": 5
+   "allViews": 215,
+   "d7": 7,
+   "prev7": 7
   },
   {
    "path": "/towns",
@@ -156,8 +161,8 @@
    "users": 5,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 55,
+   "gscImpressions": 3,
+   "gscPosition": 52.3,
    "topQuery": "waburton",
    "allViews": 5
   },
@@ -182,8 +187,8 @@
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
+   "gscImpressions": 1,
+   "gscPosition": 2,
    "topQuery": null,
    "allViews": 3
   },
@@ -206,8 +211,8 @@
    "users": 2,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 14,
-   "gscPosition": 85.4,
+   "gscImpressions": 16,
+   "gscPosition": 79,
    "topQuery": "brunch in richmond",
    "allViews": 2,
    "prev7": 1,
@@ -220,8 +225,8 @@
    "users": 2,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 95.5,
+   "gscImpressions": 3,
+   "gscPosition": 94.7,
    "topQuery": "melbourne weekend trips",
    "allViews": 2
   },
@@ -232,8 +237,8 @@
    "users": 2,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
+   "gscImpressions": 1,
+   "gscPosition": 9,
    "topQuery": null,
    "allViews": 2
   },
@@ -244,8 +249,8 @@
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 59,
-   "gscPosition": 71.1,
+   "gscImpressions": 66,
+   "gscPosition": 69.8,
    "topQuery": "activities lorne victoria",
    "allViews": 1,
    "prev7": 1,
@@ -258,24 +263,12 @@
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 23,
-   "gscPosition": 59,
+   "gscImpressions": 25,
+   "gscPosition": 55.3,
    "topQuery": "hotel port campbell",
    "allViews": 1,
    "prev7": 1,
    "d7": 0
-  },
-  {
-   "path": "/collections/day-trips-from-melbourne",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 20,
-   "gscPosition": 63.4,
-   "topQuery": "melbourne day trips",
-   "allViews": 1
   },
   {
    "path": "/st-kilda",
@@ -284,22 +277,22 @@
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 17,
-   "gscPosition": 70.6,
+   "gscImpressions": 24,
+   "gscPosition": 68.3,
    "topQuery": "things to do in st kilda",
    "allViews": 1,
    "d7": 1,
    "prev7": 0
   },
   {
-   "path": "/day-trips",
+   "path": "/collections/day-trips-from-melbourne",
    "views": 1,
    "prevViews": 0,
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 11,
-   "gscPosition": 82,
+   "gscImpressions": 22,
+   "gscPosition": 62.9,
    "topQuery": "melbourne day trips",
    "allViews": 1
   },
@@ -310,12 +303,36 @@
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 8,
-   "gscPosition": 78.5,
+   "gscImpressions": 17,
+   "gscPosition": 75.4,
    "topQuery": "melbourne cbd",
    "allViews": 1,
    "prev7": 1,
    "d7": 0
+  },
+  {
+   "path": "/bendigo/eat",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 1,
+   "gscImpressions": 14,
+   "gscPosition": 58.3,
+   "topQuery": "buffet breakfast bendigo",
+   "allViews": 1
+  },
+  {
+   "path": "/day-trips",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 13,
+   "gscPosition": 81.8,
+   "topQuery": "melbourne day trips",
+   "allViews": 1
   },
   {
    "path": "/rutherglen",
@@ -326,25 +343,13 @@
     "book_tour": 1
    },
    "gscClicks": 0,
-   "gscImpressions": 8,
-   "gscPosition": 40.8,
+   "gscImpressions": 9,
+   "gscPosition": 44.2,
    "topQuery": "rutherglen victoria",
    "allViews": 1,
    "allCta": {
     "book_tour": 1
    }
-  },
-  {
-   "path": "/bendigo/eat",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 1,
-   "gscImpressions": 6,
-   "gscPosition": 62.7,
-   "topQuery": "buffet breakfast bendigo",
-   "allViews": 1
   },
   {
    "path": "/ballarat",
@@ -356,14 +361,26 @@
     "website": 1
    },
    "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 50,
+   "gscImpressions": 7,
+   "gscPosition": 45.9,
    "topQuery": "the ballarat",
    "allViews": 1,
    "allCta": {
     "book_tour": 1,
     "website": 1
    }
+  },
+  {
+   "path": "/weekends/romantic",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 7,
+   "gscPosition": 86.4,
+   "topQuery": "couples getaway packages",
+   "allViews": 1
   },
   {
    "path": "/road-trips/murray-and-north-east-road-trip",
@@ -375,18 +392,6 @@
    "gscImpressions": 5,
    "gscPosition": 91.4,
    "topQuery": "murray river road trip",
-   "allViews": 1
-  },
-  {
-   "path": "/weekends/romantic",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 88.8,
-   "topQuery": "couples getaway packages",
    "allViews": 1
   },
   {
@@ -417,6 +422,32 @@
    "allCta": {
     "map": 1
    }
+  },
+  {
+   "path": "/road-trips/western-victoria-loop",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 45,
+   "topQuery": null,
+   "allViews": 1,
+   "prev7": 1,
+   "d7": 0
+  },
+  {
+   "path": "/weekends/warrnambool-by-train",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 1,
+   "gscImpressions": 2,
+   "gscPosition": 24.5,
+   "topQuery": null,
+   "allViews": 1
   },
   {
    "path": "/about",
@@ -467,33 +498,7 @@
    "allViews": 1
   },
   {
-   "path": "/road-trips/western-victoria-loop",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 1,
-   "prev7": 1,
-   "d7": 0
-  },
-  {
    "path": "/weekends/by-train",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 1
-  },
-  {
-   "path": "/weekends/warrnambool-by-train",
    "views": 1,
    "prevViews": 0,
    "users": 1,
@@ -583,8 +588,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 192,
-   "gscPosition": 77.5,
+   "gscImpressions": 193,
+   "gscPosition": 77.2,
    "topQuery": "melbourne accomodation southbank"
   },
   {
@@ -594,8 +599,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 80,
-   "gscPosition": 51.7,
+   "gscImpressions": 82,
+   "gscPosition": 52,
    "topQuery": "1004 mornington-flinders road red hill vic 3937"
   },
   {
@@ -605,8 +610,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 72,
-   "gscPosition": 87.5,
+   "gscImpressions": 73,
+   "gscPosition": 87,
    "topQuery": "sorrento restaurants"
   },
   {
@@ -616,8 +621,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 45,
-   "gscPosition": 73.2,
+   "gscImpressions": 55,
+   "gscPosition": 70.2,
    "topQuery": "110 metung road metung vic 3904"
   },
   {
@@ -627,8 +632,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 44,
-   "gscPosition": 74.9,
+   "gscImpressions": 46,
+   "gscPosition": 74.8,
    "topQuery": "best restaurants in mornington peninsula"
   },
   {
@@ -638,20 +643,9 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 38,
-   "gscPosition": 65.2,
+   "gscImpressions": 45,
+   "gscPosition": 62.9,
    "topQuery": "614 tongio gap road omeo"
-  },
-  {
-   "path": "/mornington/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 37,
-   "gscPosition": 66.9,
-   "topQuery": "mornington main street restaurants"
   },
   {
    "path": "/mildura/stay",
@@ -660,64 +654,20 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 35,
-   "gscPosition": 70.8,
+   "gscImpressions": 42,
+   "gscPosition": 64.9,
    "topQuery": "accommodation mildura"
   },
   {
-   "path": "/lorne/do",
+   "path": "/mornington/eat",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 34,
-   "gscPosition": 79.7,
-   "topQuery": "activities lorne victoria"
-  },
-  {
-   "path": "/melbourne-cbd/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 34,
-   "gscPosition": 58,
-   "topQuery": "accommodation melbourne city center"
-  },
-  {
-   "path": "/bright",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 32,
-   "gscPosition": 57.6,
-   "topQuery": "bright things to do"
-  },
-  {
-   "path": "/great-ocean-road",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 31,
-   "gscPosition": 64.2,
-   "topQuery": "great ocean road"
-  },
-  {
-   "path": "/south-yarra/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 30,
-   "gscPosition": 59.2,
-   "topQuery": "south yarra restaurants"
+   "gscImpressions": 41,
+   "gscPosition": 65.9,
+   "topQuery": "mornington main street restaurants"
   },
   {
    "path": "/sorrento",
@@ -726,9 +676,75 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 28,
-   "gscPosition": 63.1,
+   "gscImpressions": 38,
+   "gscPosition": 57.7,
    "topQuery": "sorrento"
+  },
+  {
+   "path": "/south-yarra/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 38,
+   "gscPosition": 55.3,
+   "topQuery": "south yarra restaurants"
+  },
+  {
+   "path": "/bright",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 37,
+   "gscPosition": 56.6,
+   "topQuery": "bright things to do"
+  },
+  {
+   "path": "/melbourne-cbd/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 36,
+   "gscPosition": 58.6,
+   "topQuery": "accommodation melbourne city center"
+  },
+  {
+   "path": "/great-ocean-road",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 35,
+   "gscPosition": 62.6,
+   "topQuery": "great ocean road"
+  },
+  {
+   "path": "/lorne/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 35,
+   "gscPosition": 79.4,
+   "topQuery": "activities lorne victoria"
+  },
+  {
+   "path": "/apollo-bay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 33,
+   "gscPosition": 59.4,
+   "topQuery": "apollo bay"
   },
   {
    "path": "/carlton/eat",
@@ -737,9 +753,86 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 25,
-   "gscPosition": 60.7,
+   "gscImpressions": 31,
+   "gscPosition": 60.3,
    "topQuery": "restaurant carlton"
+  },
+  {
+   "path": "/daylesford/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 30,
+   "gscPosition": 79.6,
+   "topQuery": "coffee daylesford"
+  },
+  {
+   "path": "/mount-hotham",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 30,
+   "gscPosition": 71.4,
+   "topQuery": "mount hotham"
+  },
+  {
+   "path": "/lakes-entrance",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 29,
+   "gscPosition": 56,
+   "topQuery": "lakes entrance"
+  },
+  {
+   "path": "/southbank/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 29,
+   "gscPosition": 52.6,
+   "topQuery": "restaurants in southbank melbourne"
+  },
+  {
+   "path": "/omeo/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 27,
+   "gscPosition": 62.5,
+   "topQuery": "179 day avenue omeo vic 3898"
+  },
+  {
+   "path": "/warrnambool/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 26,
+   "gscPosition": 36.8,
+   "topQuery": "warrnambool"
+  },
+  {
+   "path": "/daylesford/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 25,
+   "gscPosition": 39.1,
+   "topQuery": "daylesford"
   },
   {
    "path": "/marysville",
@@ -753,48 +846,26 @@
    "topQuery": "marysville holiday park"
   },
   {
-   "path": "/apollo-bay",
+   "path": "/bairnsdale",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 24,
-   "gscPosition": 75.5,
-   "topQuery": "apollo bay"
+   "gscPosition": 47.4,
+   "topQuery": "bairnsdale"
   },
   {
-   "path": "/omeo/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 24,
-   "gscPosition": 68.9,
-   "topQuery": "179 day avenue omeo vic 3898"
-  },
-  {
-   "path": "/daylesford/eat",
+   "path": "/lakes-entrance/do",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 23,
-   "gscPosition": 84.9,
-   "topQuery": "coffee daylesford"
-  },
-  {
-   "path": "/mount-hotham",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 23,
-   "gscPosition": 73.6,
-   "topQuery": "mount hotham"
+   "gscPosition": 38.7,
+   "topQuery": "lakes entrance"
   },
   {
    "path": "/queenscliff",
@@ -808,59 +879,15 @@
    "topQuery": "things to do in queenscliff"
   },
   {
-   "path": "/bairnsdale",
+   "path": "/collections/romantic-getaways",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 21,
-   "gscPosition": 50.2,
-   "topQuery": "bairnsdale"
-  },
-  {
-   "path": "/lakes-entrance/do",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 21,
-   "gscPosition": 39,
-   "topQuery": "lakes entrance"
-  },
-  {
-   "path": "/southbank/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 21,
-   "gscPosition": 55.5,
-   "topQuery": "restaurants in southbank melbourne"
-  },
-  {
-   "path": "/daylesford/do",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 20,
-   "gscPosition": 40.1,
-   "topQuery": "daylesford"
-  },
-  {
-   "path": "/lakes-entrance",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 20,
-   "gscPosition": 57.5,
-   "topQuery": "lakes entrance"
+   "gscPosition": 77.9,
+   "topQuery": "romantic getaways victoria for couples"
   },
   {
    "path": "/collections/weekend-getaways",
@@ -869,8 +896,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 18,
-   "gscPosition": 73.9,
+   "gscImpressions": 21,
+   "gscPosition": 71.4,
    "topQuery": "weekend getaways victoria"
   },
   {
@@ -880,8 +907,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 17,
-   "gscPosition": 56.6,
+   "gscImpressions": 21,
+   "gscPosition": 57,
    "topQuery": "mornington"
   },
   {
@@ -891,42 +918,9 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 16,
-   "gscPosition": 41.5,
+   "gscImpressions": 18,
+   "gscPosition": 38.3,
    "topQuery": "marysville"
-  },
-  {
-   "path": "/warrnambool/do",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 16,
-   "gscPosition": 37.9,
-   "topQuery": "warrnambool"
-  },
-  {
-   "path": "/collections/romantic-getaways",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 15,
-   "gscPosition": 79.9,
-   "topQuery": "romantic getaways victoria for couples"
-  },
-  {
-   "path": "/torquay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 15,
-   "gscPosition": 76.3,
-   "topQuery": "torquay"
   },
   {
    "path": "/williamstown",
@@ -935,20 +929,20 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 15,
-   "gscPosition": 71.7,
+   "gscImpressions": 18,
+   "gscPosition": 65.4,
    "topQuery": "williamstown"
   },
   {
-   "path": "/dunkeld",
+   "path": "/torquay",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 14,
-   "gscPosition": 60.1,
-   "topQuery": "dunkeld racecourse"
+   "gscImpressions": 17,
+   "gscPosition": 74.1,
+   "topQuery": "torquay"
   },
   {
    "path": "/wangaratta",
@@ -957,9 +951,97 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 14,
-   "gscPosition": 42.3,
+   "gscImpressions": 17,
+   "gscPosition": 43.5,
    "topQuery": "wineries near wangaratta"
+  },
+  {
+   "path": "/dunkeld",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 16,
+   "gscPosition": 56.1,
+   "topQuery": "dunkeld racecourse"
+  },
+  {
+   "path": "/rye",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 16,
+   "gscPosition": 81.6,
+   "topQuery": "rye"
+  },
+  {
+   "path": "/dromana",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 15,
+   "gscPosition": 49.8,
+   "topQuery": "dromana holiday village"
+  },
+  {
+   "path": "/echuca/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 15,
+   "gscPosition": 62.3,
+   "topQuery": "accom in echuca"
+  },
+  {
+   "path": "/lorne/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 15,
+   "gscPosition": 77.7,
+   "topQuery": "lorne accommodation victoria"
+  },
+  {
+   "path": "/echuca/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 14,
+   "gscPosition": 54.3,
+   "topQuery": "echuca moama attractions"
+  },
+  {
+   "path": "/harrietville",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 14,
+   "gscPosition": 48.4,
+   "topQuery": "harrietville hotel motel"
+  },
+  {
+   "path": "/southbank",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 14,
+   "gscPosition": 73.6,
+   "topQuery": "9 riverside quay"
   },
   {
    "path": "/south-yarra",
@@ -973,15 +1055,70 @@
    "topQuery": "south yarra"
   },
   {
-   "path": "/echuca/do",
+   "path": "/melbourne-cbd/do",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 13,
-   "gscPosition": 55,
-   "topQuery": "echuca moama attractions"
+   "gscPosition": 58.4,
+   "topQuery": "things to do in melbourne city"
+  },
+  {
+   "path": "/phillip-island/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 13,
+   "gscPosition": 66.2,
+   "topQuery": "phillip island things to do"
+  },
+  {
+   "path": "/port-fairy",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 13,
+   "gscPosition": 69.8,
+   "topQuery": "bottega toscana port fairy"
+  },
+  {
+   "path": "/torquay/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 13,
+   "gscPosition": 44.9,
+   "topQuery": "best lunch in torquay"
+  },
+  {
+   "path": "/anglesea",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 12,
+   "gscPosition": 62.3,
+   "topQuery": "geelong to anglesea"
+  },
+  {
+   "path": "/ballarat/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 12,
+   "gscPosition": 59.6,
+   "topQuery": "things to do in ballarat"
   },
   {
    "path": "/bellarine-peninsula/do",
@@ -995,125 +1132,15 @@
    "topQuery": "things to do bellarine peninsula"
   },
   {
-   "path": "/echuca/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 12,
-   "gscPosition": 62.6,
-   "topQuery": "accom in echuca"
-  },
-  {
-   "path": "/lorne/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 12,
-   "gscPosition": 87.4,
-   "topQuery": "lorne accommodation victoria"
-  },
-  {
-   "path": "/rye",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 12,
-   "gscPosition": 78.6,
-   "topQuery": "rye"
-  },
-  {
-   "path": "/southbank",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 12,
-   "gscPosition": 75,
-   "topQuery": "9 riverside quay"
-  },
-  {
-   "path": "/ballarat/do",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 11,
-   "gscPosition": 61.9,
-   "topQuery": "things to do in ballarat"
-  },
-  {
    "path": "/bellarine-peninsula/eat",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 11,
-   "gscPosition": 53.9,
+   "gscImpressions": 12,
+   "gscPosition": 52.9,
    "topQuery": "bellarine restaurants"
-  },
-  {
-   "path": "/day-trips/mornington",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 11,
-   "gscPosition": 42.8,
-   "topQuery": "mornington"
-  },
-  {
-   "path": "/dromana",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 11,
-   "gscPosition": 59.3,
-   "topQuery": "dromana holiday village"
-  },
-  {
-   "path": "/phillip-island/do",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 11,
-   "gscPosition": 72.2,
-   "topQuery": "phillip island things to do"
-  },
-  {
-   "path": "/st-kilda/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 11,
-   "gscPosition": 71.5,
-   "topQuery": "places to eat st kilda"
-  },
-  {
-   "path": "/anglesea",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 10,
-   "gscPosition": 67.3,
-   "topQuery": "geelong to anglesea"
   },
   {
    "path": "/carlton",
@@ -1122,9 +1149,97 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 10,
-   "gscPosition": 83.4,
+   "gscImpressions": 12,
+   "gscPosition": 71.5,
    "topQuery": "carlton clocktower"
+  },
+  {
+   "path": "/day-trips/mornington",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 12,
+   "gscPosition": 42.4,
+   "topQuery": "mornington"
+  },
+  {
+   "path": "/great-ocean-road/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 12,
+   "gscPosition": 63.3,
+   "topQuery": "great ocean road accommodation"
+  },
+  {
+   "path": "/road-trips/great-alpine-road",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 12,
+   "gscPosition": 46.8,
+   "topQuery": "great alpine road"
+  },
+  {
+   "path": "/st-kilda/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 12,
+   "gscPosition": 66.2,
+   "topQuery": "places to eat st kilda"
+  },
+  {
+   "path": "/swan-hill/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 12,
+   "gscPosition": 18.8,
+   "topQuery": "barrels swan hill"
+  },
+  {
+   "path": "/williamstown/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 12,
+   "gscPosition": 55.8,
+   "topQuery": "brunch williamstown"
+  },
+  {
+   "path": "/apollo-bay/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 11,
+   "gscPosition": 64.9,
+   "topQuery": "apollo bay restaurants"
+  },
+  {
+   "path": "/dromana/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 11,
+   "gscPosition": 58.3,
+   "topQuery": "dromana pub opening hours"
   },
   {
    "path": "/footscray",
@@ -1133,20 +1248,75 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 10,
-   "gscPosition": 53.6,
+   "gscImpressions": 11,
+   "gscPosition": 56.8,
    "topQuery": "footscray"
   },
   {
-   "path": "/melbourne-cbd/do",
+   "path": "/kyneton/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 11,
+   "gscPosition": 38.8,
+   "topQuery": "kyneton"
+  },
+  {
+   "path": "/mildura",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 11,
+   "gscPosition": 49.4,
+   "topQuery": "mildura tours"
+  },
+  {
+   "path": "/sorrento/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 11,
+   "gscPosition": 34.9,
+   "topQuery": "things to do in sorrento"
+  },
+  {
+   "path": "/beechworth",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 10,
-   "gscPosition": 58.8,
-   "topQuery": "things to do in melbourne city"
+   "gscPosition": 73,
+   "topQuery": "beechworth"
+  },
+  {
+   "path": "/healesville/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 10,
+   "gscPosition": 50.2,
+   "topQuery": "watts river cafe"
+  },
+  {
+   "path": "/mansfield",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 10,
+   "gscPosition": 50.2,
+   "topQuery": "mansfield"
   },
   {
    "path": "/mildura/do",
@@ -1160,15 +1330,59 @@
    "topQuery": "things to do in mildura"
   },
   {
-   "path": "/port-fairy",
+   "path": "/myrtleford",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 10,
-   "gscPosition": 68.9,
-   "topQuery": "bottega toscana port fairy"
+   "gscPosition": 48,
+   "topQuery": "myrtleford"
+  },
+  {
+   "path": "/ocean-grove/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 10,
+   "gscPosition": 42.5,
+   "topQuery": "ocean grove restaurants"
+  },
+  {
+   "path": "/phillip-island/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 10,
+   "gscPosition": 54.8,
+   "topQuery": "phillip island dining"
+  },
+  {
+   "path": "/weekends/family",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 10,
+   "gscPosition": 66,
+   "topQuery": "family getaways"
+  },
+  {
+   "path": "/weekends/mornington-by-train",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 10,
+   "gscPosition": 32.8,
+   "topQuery": "mornington to cranbourne"
   },
   {
    "path": "/queenscliff/do",
@@ -1182,37 +1396,70 @@
    "topQuery": "things to do in queenscliff"
   },
   {
-   "path": "/beechworth",
+   "path": "/collections/goldfields-towns",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 9,
-   "gscPosition": 75.7,
-   "topQuery": "beechworth"
+   "gscPosition": 38.1,
+   "topQuery": "gold mining town victoria"
   },
   {
-   "path": "/great-ocean-road/stay",
+   "path": "/docklands/eat",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 9,
-   "gscPosition": 70.3,
-   "topQuery": "great ocean road accommodation"
+   "gscPosition": 34.7,
+   "topQuery": "lunch docklands"
   },
   {
-   "path": "/mildura",
+   "path": "/footscray/eat",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 9,
-   "gscPosition": 53.9,
-   "topQuery": "mildura tours"
+   "gscPosition": 36.6,
+   "topQuery": "footscray restaurants"
+  },
+  {
+   "path": "/lorne/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 9,
+   "gscPosition": 38,
+   "topQuery": "lorne restaurants"
+  },
+  {
+   "path": "/myrtleford/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 9,
+   "gscPosition": 41.3,
+   "topQuery": "fez cafe myrtleford"
+  },
+  {
+   "path": "/ocean-grove",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 9,
+   "gscPosition": 54.2,
+   "topQuery": "ocean grove attractions"
   },
   {
    "path": "/road-trips/mornington-peninsula-day-trip",
@@ -1226,26 +1473,37 @@
    "topQuery": "mornington peninsula day tour"
   },
   {
-   "path": "/sorrento/do",
+   "path": "/road-trips/phillip-island-day-trip",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 9,
-   "gscPosition": 34.7,
-   "topQuery": "things to do in sorrento"
+   "gscPosition": 66,
+   "topQuery": "day tours from melbourne to phillip island"
   },
   {
-   "path": "/weekends/family",
+   "path": "/rye/eat",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 9,
-   "gscPosition": 63,
-   "topQuery": "family getaways"
+   "gscPosition": 44.3,
+   "topQuery": "restaurants in rye town"
+  },
+  {
+   "path": "/warrnambool",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 9,
+   "gscPosition": 39.2,
+   "topQuery": "places to see in warrnambool"
   },
   {
    "path": "/ballarat/eat",
@@ -1259,6 +1517,17 @@
    "topQuery": "ballarat cafes"
   },
   {
+   "path": "/belgrave/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 8,
+   "gscPosition": 29.8,
+   "topQuery": "bell tavern belgrave"
+  },
+  {
    "path": "/bright/do",
    "views": 0,
    "prevViews": 0,
@@ -1270,59 +1539,26 @@
    "topQuery": "bright things to do"
   },
   {
-   "path": "/mansfield",
+   "path": "/castlemaine/eat",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 8,
-   "gscPosition": 51,
-   "topQuery": "mansfield"
+   "gscPosition": 53.9,
+   "topQuery": "restaurants castlemaine vic"
   },
   {
-   "path": "/road-trips/phillip-island-day-trip",
+   "path": "/day-trips/castlemaine",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 8,
-   "gscPosition": 64.1,
-   "topQuery": "day tours from melbourne to phillip island"
-  },
-  {
-   "path": "/williamstown/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 8,
-   "gscPosition": 61.3,
-   "topQuery": "brunch williamstown"
-  },
-  {
-   "path": "/apollo-bay/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 7,
-   "gscPosition": 66.9,
-   "topQuery": "apollo bay restaurants"
-  },
-  {
-   "path": "/dromana/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 7,
-   "gscPosition": 65.7,
-   "topQuery": "dromana pub opening hours"
+   "gscPosition": 39.1,
+   "topQuery": "melbourne to castlemaine"
   },
   {
    "path": "/gippsland/stay",
@@ -1331,20 +1567,97 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 7,
-   "gscPosition": 49.6,
+   "gscImpressions": 8,
+   "gscPosition": 47.6,
    "topQuery": "places to stay in gippsland"
   },
   {
-   "path": "/harrietville",
+   "path": "/grampians/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 8,
+   "gscPosition": 52.8,
+   "topQuery": "grampians accom"
+  },
+  {
+   "path": "/mornington-peninsula",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 8,
+   "gscPosition": 44.3,
+   "topQuery": "mornington peninsula day trip"
+  },
+  {
+   "path": "/ocean-grove/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 8,
+   "gscPosition": 34.5,
+   "topQuery": "ocean grove attractions"
+  },
+  {
+   "path": "/warrnambool/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 8,
+   "gscPosition": 53,
+   "topQuery": "warrnambool accommodation near city centre"
+  },
+  {
+   "path": "/bright/stay",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 7,
-   "gscPosition": 56.9,
-   "topQuery": "harrietville hotel motel"
+   "gscPosition": 68.9,
+   "topQuery": "bright caravan parks map"
+  },
+  {
+   "path": "/collingwood/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 7,
+   "gscPosition": 65.7,
+   "topQuery": "collingwood dinner"
+  },
+  {
+   "path": "/daylesford/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 7,
+   "gscPosition": 53.9,
+   "topQuery": "daylesford caravan park cabins"
+  },
+  {
+   "path": "/gippsland/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 7,
+   "gscPosition": 39.7,
+   "topQuery": "corporate lunch gippsland"
   },
   {
    "path": "/healesville",
@@ -1358,6 +1671,17 @@
    "topQuery": "cherry tree cafe healesville"
   },
   {
+   "path": "/kyneton/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 7,
+   "gscPosition": 50.1,
+   "topQuery": "29 piper street kyneton cafe"
+  },
+  {
    "path": "/mornington/do",
    "views": 0,
    "prevViews": 0,
@@ -1369,26 +1693,15 @@
    "topQuery": "mornington"
   },
   {
-   "path": "/myrtleford",
+   "path": "/mount-hotham/stay",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 7,
-   "gscPosition": 55,
-   "topQuery": "myrtleford"
-  },
-  {
-   "path": "/road-trips/great-alpine-road",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 7,
-   "gscPosition": 52.1,
-   "topQuery": "great alpine road"
+   "gscPosition": 75.7,
+   "topQuery": "accommodation mt hotham vic"
   },
   {
    "path": "/shepparton/do",
@@ -1413,6 +1726,61 @@
    "topQuery": "things to do in st kilda"
   },
   {
+   "path": "/wangaratta/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 7,
+   "gscPosition": 45.3,
+   "topQuery": "the railyard wangaratta menu"
+  },
+  {
+   "path": "/weekends/budget",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 7,
+   "gscPosition": 46.9,
+   "topQuery": "cheap getaways victoria"
+  },
+  {
+   "path": "/barwon-heads",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 48.5,
+   "topQuery": "barwon heads"
+  },
+  {
+   "path": "/beechworth/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 83.3,
+   "topQuery": "beechworth b&b"
+  },
+  {
+   "path": "/castlemaine",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 63,
+   "topQuery": "things to do in castlemaine"
+  },
+  {
    "path": "/castlemaine/do",
    "views": 0,
    "prevViews": 0,
@@ -1424,37 +1792,81 @@
    "topQuery": "things to do in castlemaine"
   },
   {
-   "path": "/collingwood/eat",
+   "path": "/collections/food-and-wine-weekends",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 6,
-   "gscPosition": 62.8,
-   "topQuery": "collingwood dinner"
+   "gscPosition": 66.5,
+   "topQuery": "food and wine tours"
   },
   {
-   "path": "/kyneton/do",
+   "path": "/harrietville/stay",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 6,
-   "gscPosition": 42.7,
-   "topQuery": "kyneton"
+   "gscPosition": 83.3,
+   "topQuery": "harrietville snowline hotel harrietville vic"
   },
   {
-   "path": "/rye/eat",
+   "path": "/inverloch/eat",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 6,
-   "gscPosition": 49.7,
-   "topQuery": "restaurants in rye town"
+   "gscPosition": 48.2,
+   "topQuery": "bayside lady"
+  },
+  {
+   "path": "/kyneton",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 43.5,
+   "topQuery": "kyneton map"
+  },
+  {
+   "path": "/mansfield/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 49,
+   "topQuery": "mansfield takeaway food"
+  },
+  {
+   "path": "/port-campbell/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 53.8,
+   "topQuery": "cafe port campbell"
+  },
+  {
+   "path": "/rutherglen/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 35,
+   "topQuery": "rutherglen breakfast"
   },
   {
    "path": "/shepparton",
@@ -1468,59 +1880,59 @@
    "topQuery": "bell tower shepparton"
   },
   {
-   "path": "/warrnambool/stay",
+   "path": "/swan-hill",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 6,
-   "gscPosition": 56.5,
-   "topQuery": "warrnambool accommodation near city centre"
+   "gscPosition": 55.3,
+   "topQuery": "swan hill attractions"
   },
   {
-   "path": "/weekends/budget",
+   "path": "/weekends/castlemaine-by-train",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 6,
-   "gscPosition": 49.2,
-   "topQuery": "cheap getaways victoria"
+   "gscPosition": 26.2,
+   "topQuery": "trains to castlemaine"
   },
   {
-   "path": "/castlemaine",
+   "path": "/belgrave",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 5,
-   "gscPosition": 73.4,
-   "topQuery": "things to do in castlemaine"
+   "gscPosition": 57.2,
+   "topQuery": "belgrave australia"
   },
   {
-   "path": "/collections/food-and-wine-weekends",
+   "path": "/bendigo",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 5,
-   "gscPosition": 67,
-   "topQuery": "food & wine tours"
+   "gscPosition": 48,
+   "topQuery": "the goldmines bendigo"
   },
   {
-   "path": "/day-trips/castlemaine",
+   "path": "/collingwood/do",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 5,
-   "gscPosition": 46.2,
-   "topQuery": "melbourne to castlemaine"
+   "gscPosition": 11.2,
+   "topQuery": "things to do in collingwood"
   },
   {
    "path": "/day-trips/healesville",
@@ -1534,125 +1946,59 @@
    "topQuery": "yarra valley day trip"
   },
   {
-   "path": "/docklands/eat",
+   "path": "/mornington-peninsula/do",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 5,
-   "gscPosition": 44.8,
-   "topQuery": "lunch docklands"
+   "gscPosition": 29.6,
+   "topQuery": "mornington peninsula places to visit"
   },
   {
-   "path": "/gippsland/eat",
+   "path": "/port-fairy/eat",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 5,
-   "gscPosition": 50.8,
-   "topQuery": "corporate lunch gippsland"
+   "gscPosition": 66.6,
+   "topQuery": "gipps st fish and chips port fairy"
   },
   {
-   "path": "/myrtleford/eat",
+   "path": "/wangaratta/stay",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 5,
-   "gscPosition": 67,
-   "topQuery": "fez cafe myrtleford"
+   "gscPosition": 61.2,
+   "topQuery": "accommodation wangaratta vic"
   },
   {
-   "path": "/ocean-grove",
+   "path": "/weekends/geelong-by-train",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 5,
-   "gscPosition": 62.8,
-   "topQuery": "ocean grove attractions"
+   "gscPosition": 17.2,
+   "topQuery": null
   },
   {
-   "path": "/phillip-island/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 80.2,
-   "topQuery": "phillip island dining"
-  },
-  {
-   "path": "/torquay/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 53.8,
-   "topQuery": "best lunch in torquay"
-  },
-  {
-   "path": "/barwon-heads",
+   "path": "/bairnsdale/eat",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 4,
-   "gscPosition": 58.3,
-   "topQuery": "barwon heads"
-  },
-  {
-   "path": "/bright/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 78.5,
-   "topQuery": "bright caravan parks map"
-  },
-  {
-   "path": "/castlemaine/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 48.8,
-   "topQuery": "restaurants castlemaine vic"
-  },
-  {
-   "path": "/collections/goldfields-towns",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 54.5,
-   "topQuery": "gold mining town victoria"
-  },
-  {
-   "path": "/collingwood/do",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 11.5,
-   "topQuery": "things to do in collingwood"
+   "gscPosition": 44.3,
+   "topQuery": "benjamin restaurant bairnsdale"
   },
   {
    "path": "/day-trips/daylesford",
@@ -1666,15 +2012,15 @@
    "topQuery": "melbourne to daylesford victoria"
   },
   {
-   "path": "/daylesford/stay",
+   "path": "/echuca/eat",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 4,
-   "gscPosition": 69,
-   "topQuery": "daylesford caravan park cabins"
+   "gscPosition": 35.8,
+   "topQuery": "essen food & wine 542 high street echuca, victoria 3564 australia"
   },
   {
    "path": "/flinders",
@@ -1688,17 +2034,6 @@
    "topQuery": "flinders beach melbourne"
   },
   {
-   "path": "/footscray/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 50.5,
-   "topQuery": "footscray restaurants"
-  },
-  {
    "path": "/gippsland/do",
    "views": 0,
    "prevViews": 0,
@@ -1708,28 +2043,6 @@
    "gscImpressions": 4,
    "gscPosition": 41.3,
    "topQuery": "gippsland"
-  },
-  {
-   "path": "/kyneton",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 60.3,
-   "topQuery": "kyneton map"
-  },
-  {
-   "path": "/lorne/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 40.3,
-   "topQuery": "lorne restaurants"
   },
   {
    "path": "/mildura/eat",
@@ -1743,17 +2056,6 @@
    "topQuery": "3rd avenue mildura"
   },
   {
-   "path": "/ocean-grove/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 46,
-   "topQuery": "ocean grove restaurants"
-  },
-  {
    "path": "/omeo/do",
    "views": 0,
    "prevViews": 0,
@@ -1765,37 +2067,48 @@
    "topQuery": "omeo"
   },
   {
-   "path": "/port-campbell/eat",
+   "path": "/phillip-island/stay",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 4,
-   "gscPosition": 58.5,
-   "topQuery": "cafe port campbell"
+   "gscPosition": 59.3,
+   "topQuery": "phillip island family accommodation"
   },
   {
-   "path": "/swan-hill",
+   "path": "/port-melbourne",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 4,
-   "gscPosition": 57.5,
-   "topQuery": "swan hill attractions"
+   "gscPosition": 29,
+   "topQuery": "portmelbourne"
   },
   {
-   "path": "/warrnambool",
+   "path": "/richmond/stay",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 4,
-   "gscPosition": 41.8,
-   "topQuery": "places to see in warrnambool"
+   "gscPosition": 74.5,
+   "topQuery": "accommodation richmond"
+  },
+  {
+   "path": "/weekends/wangaratta-by-train",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 4,
+   "gscPosition": 40.5,
+   "topQuery": "train melbourne to wangaratta"
   },
   {
    "path": "/yarra-glen/do",
@@ -1820,6 +2133,72 @@
    "topQuery": "yarra valley day trip"
   },
   {
+   "path": "/yarra-valley/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 4,
+   "gscPosition": 50.8,
+   "topQuery": "yarra valley caravan park yarra junction"
+  },
+  {
+   "path": "/weekends/shepparton-by-train",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 4,
+   "gscPosition": 7.5,
+   "topQuery": null
+  },
+  {
+   "path": "/day-trips/warburton",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 4,
+   "gscPosition": 28.5,
+   "topQuery": null
+  },
+  {
+   "path": "/fitzroy/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 4,
+   "gscPosition": 12.3,
+   "topQuery": null
+  },
+  {
+   "path": "/anglesea/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 53.7,
+   "topQuery": "eumeralla scout camp"
+  },
+  {
+   "path": "/anglesea/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 27.7,
+   "topQuery": "anglesea"
+  },
+  {
    "path": "/bairnsdale/do",
    "views": 0,
    "prevViews": 0,
@@ -1831,26 +2210,26 @@
    "topQuery": "things to do in bairnsdale gippsland"
   },
   {
-   "path": "/bairnsdale/eat",
+   "path": "/ballarat/stay",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 3,
-   "gscPosition": 55.3,
-   "topQuery": "benjamin restaurant bairnsdale"
+   "gscPosition": 60,
+   "topQuery": "ballarat cabins"
   },
   {
-   "path": "/belgrave",
+   "path": "/beechworth/eat",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 3,
-   "gscPosition": 74.7,
-   "topQuery": "belgrave australia"
+   "gscPosition": 42.7,
+   "topQuery": "tiny of beechworth"
   },
   {
    "path": "/bellarine-peninsula",
@@ -1862,17 +2241,6 @@
    "gscImpressions": 3,
    "gscPosition": 88,
    "topQuery": "bellarine peninsula"
-  },
-  {
-   "path": "/bendigo",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 52,
-   "topQuery": "the goldmines bendigo"
   },
   {
    "path": "/bendigo/do",
@@ -1897,6 +2265,28 @@
    "topQuery": "brighton"
   },
   {
+   "path": "/brunswick",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 50.7,
+   "topQuery": "brunswick things to do"
+  },
+  {
+   "path": "/brunswick/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 38,
+   "topQuery": "brunswick things to do"
+  },
+  {
    "path": "/brunswick/eat",
    "views": 0,
    "prevViews": 0,
@@ -1919,6 +2309,28 @@
    "topQuery": "accommodation carlton victoria australia"
   },
   {
+   "path": "/day-trips/sorrento",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 44.3,
+   "topQuery": "where is sorrento"
+  },
+  {
+   "path": "/docklands",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 59.7,
+   "topQuery": "101 waterfront way docklands"
+  },
+  {
    "path": "/geelong/do",
    "views": 0,
    "prevViews": 0,
@@ -1930,15 +2342,37 @@
    "topQuery": "geelong attractions"
   },
   {
-   "path": "/grampians/stay",
+   "path": "/gippsland",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 3,
-   "gscPosition": 72.3,
-   "topQuery": "grampians accom"
+   "gscPosition": 84.3,
+   "topQuery": "gippsland"
+  },
+  {
+   "path": "/halls-gap/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 43.3,
+   "topQuery": "halls gap things to do"
+  },
+  {
+   "path": "/halls-gap/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 44,
+   "topQuery": "dining halls gap"
   },
   {
    "path": "/harrietville/do",
@@ -1952,48 +2386,92 @@
    "topQuery": "harrietville"
   },
   {
-   "path": "/kyneton/eat",
+   "path": "/mornington-peninsula/stay",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 3,
-   "gscPosition": 55.3,
-   "topQuery": "29 piper street kyneton cafe"
+   "gscPosition": 60.3,
+   "topQuery": "places to stay in mornington"
   },
   {
-   "path": "/mornington-peninsula",
+   "path": "/port-campbell/stay",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 3,
-   "gscPosition": 46,
-   "topQuery": "mornington peninsula day trip"
+   "gscPosition": 65,
+   "topQuery": "port campbell big 4"
   },
   {
-   "path": "/mornington-peninsula/do",
+   "path": "/road-trips/great-ocean-road-3-day-itinerary",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 3,
-   "gscPosition": 43.7,
-   "topQuery": "mornington peninsula places to visit"
+   "gscPosition": 59.7,
+   "topQuery": "3 day great ocean road tour"
   },
   {
-   "path": "/richmond/stay",
+   "path": "/south-yarra/stay",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 3,
-   "gscPosition": 98.7,
-   "topQuery": "accommodation richmond"
+   "gscPosition": 43,
+   "topQuery": "south yarra accommodation"
+  },
+  {
+   "path": "/swan-hill/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 64.3,
+   "topQuery": "swan hill attractions"
+  },
+  {
+   "path": "/swan-hill/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 45,
+   "topQuery": "accommodation swan hill"
+  },
+  {
+   "path": "/torquay/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 47.3,
+   "topQuery": "places to stay in torquay"
+  },
+  {
+   "path": "/weekends/lorne-on-a-budget",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 62.3,
+   "topQuery": "group activities lorne"
   },
   {
    "path": "/weekends/melbourne-cbd-on-a-budget",
@@ -2018,15 +2496,147 @@
    "topQuery": "honeymoon accommodation mornington peninsula"
   },
   {
-   "path": "/anglesea/do",
+   "path": "/williamstown/do",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 28.5,
-   "topQuery": "anglesea"
+   "gscImpressions": 3,
+   "gscPosition": 37.7,
+   "topQuery": "williamstown"
+  },
+  {
+   "path": "/belgrave/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 48,
+   "topQuery": null
+  },
+  {
+   "path": "/lakes-entrance/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 34.3,
+   "topQuery": null
+  },
+  {
+   "path": "/lakes-entrance/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 54.7,
+   "topQuery": null
+  },
+  {
+   "path": "/metung/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 34.3,
+   "topQuery": null
+  },
+  {
+   "path": "/port-melbourne/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 56.3,
+   "topQuery": null
+  },
+  {
+   "path": "/rutherglen/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 58.3,
+   "topQuery": null
+  },
+  {
+   "path": "/wangaratta/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 26,
+   "topQuery": null
+  },
+  {
+   "path": "/weekends/belgrave-by-train",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 25.7,
+   "topQuery": null
+  },
+  {
+   "path": "/weekends/bendigo-by-train",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 27.7,
+   "topQuery": null
+  },
+  {
+   "path": "/weekends/kyneton-by-train",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 10.3,
+   "topQuery": null
+  },
+  {
+   "path": "/weekends/lakes-entrance-on-a-budget",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 47.7,
+   "topQuery": null
+  },
+  {
+   "path": "/weekends/wangaratta-on-a-budget",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 19.7,
+   "topQuery": null
   },
   {
    "path": "/anglesea/eat",
@@ -2051,37 +2661,26 @@
    "topQuery": "apollo bay holiday homes"
   },
   {
-   "path": "/ballarat/stay",
+   "path": "/brighton/eat",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 2,
-   "gscPosition": 72,
-   "topQuery": "ballarat cabins"
+   "gscPosition": 34.5,
+   "topQuery": "ichika brighton"
   },
   {
-   "path": "/brunswick",
+   "path": "/collingwood",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 2,
-   "gscPosition": 63.5,
-   "topQuery": "brunswick things to do"
-  },
-  {
-   "path": "/brunswick/do",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 38.5,
-   "topQuery": "brunswick things to do"
+   "gscPosition": 74.5,
+   "topQuery": "collingwood melbourne"
   },
   {
    "path": "/day-trips/dromana",
@@ -2095,17 +2694,6 @@
    "topQuery": "melbourne to mornington peninsula day trip"
   },
   {
-   "path": "/docklands",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 86,
-   "topQuery": "101 waterfront way docklands"
-  },
-  {
    "path": "/echuca",
    "views": 0,
    "prevViews": 0,
@@ -2115,17 +2703,6 @@
    "gscImpressions": 2,
    "gscPosition": 63.5,
    "topQuery": "henrys echuca"
-  },
-  {
-   "path": "/echuca/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 46.5,
-   "topQuery": "essen food & wine 542 high street echuca, victoria 3564 australia"
   },
   {
    "path": "/footscray/do",
@@ -2139,15 +2716,15 @@
    "topQuery": "things to do in footscray"
   },
   {
-   "path": "/gippsland",
+   "path": "/grampians/do",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 2,
-   "gscPosition": 81.5,
-   "topQuery": "gippsland"
+   "gscPosition": 47.5,
+   "topQuery": "things to see in grampians"
   },
   {
    "path": "/great-ocean-road/do",
@@ -2161,26 +2738,37 @@
    "topQuery": "activities great ocean road"
   },
   {
-   "path": "/halls-gap/do",
+   "path": "/halls-gap",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 2,
-   "gscPosition": 39,
-   "topQuery": "halls gap things to do"
+   "gscPosition": 98.5,
+   "topQuery": "halls gap"
   },
   {
-   "path": "/harrietville/stay",
+   "path": "/halls-gap/stay",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 2,
-   "gscPosition": 93.5,
-   "topQuery": "harrietville snowline hotel harrietville vic"
+   "gscPosition": 46.5,
+   "topQuery": "daltons halls gap"
+  },
+  {
+   "path": "/high-country",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 23,
+   "topQuery": "wineries victoria high country"
   },
   {
    "path": "/inverloch/do",
@@ -2194,17 +2782,6 @@
    "topQuery": "inverloch"
   },
   {
-   "path": "/inverloch/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 68.5,
-   "topQuery": "bayside lady"
-  },
-  {
    "path": "/mansfield/do",
    "views": 0,
    "prevViews": 0,
@@ -2216,26 +2793,15 @@
    "topQuery": "mansfield"
   },
   {
-   "path": "/ocean-grove/do",
+   "path": "/marysville/eat",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 2,
-   "gscPosition": 61,
-   "topQuery": "ocean grove attractions"
-  },
-  {
-   "path": "/phillip-island/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 92.5,
-   "topQuery": "phillip island family accommodation"
+   "gscPosition": 46.5,
+   "topQuery": "keppel cafe marysville photos"
   },
   {
    "path": "/port-melbourne/do",
@@ -2249,103 +2815,26 @@
    "topQuery": "portmelbourne"
   },
   {
-   "path": "/rutherglen/eat",
+   "path": "/red-hill/do",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 2,
-   "gscPosition": 45.5,
-   "topQuery": "rutherglen breakfast"
+   "gscPosition": 27.5,
+   "topQuery": "redhill"
   },
   {
-   "path": "/swan-hill/do",
+   "path": "/weekends/mornington-on-a-budget",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 2,
-   "gscPosition": 55.5,
-   "topQuery": "swan hill attractions"
-  },
-  {
-   "path": "/swan-hill/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 10,
-   "topQuery": "barrels swan hill"
-  },
-  {
-   "path": "/swan-hill/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 47,
-   "topQuery": "accommodation swan hill"
-  },
-  {
-   "path": "/torquay/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 49.5,
-   "topQuery": "places to stay in torquay"
-  },
-  {
-   "path": "/wangaratta/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 56.5,
-   "topQuery": "the railyard wangaratta menu"
-  },
-  {
-   "path": "/weekends/lorne-on-a-budget",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 72.5,
-   "topQuery": "group activities lorne"
-  },
-  {
-   "path": "/weekends/mornington-by-train",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 24.5,
-   "topQuery": "mornington to cranbourne"
-  },
-  {
-   "path": "/williamstown/do",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 39.5,
-   "topQuery": "williamstown"
+   "gscPosition": 64,
+   "topQuery": "cheapest weekend"
   },
   {
    "path": "/yarra-valley",
@@ -2359,26 +2848,114 @@
    "topQuery": "yarra valley"
   },
   {
-   "path": "/yarra-valley/stay",
+   "path": "/bairnsdale/stay",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 2,
-   "gscPosition": 69,
-   "topQuery": "yarra valley caravan park yarra junction"
+   "gscPosition": 42,
+   "topQuery": null
   },
   {
-   "path": "/anglesea/stay",
+   "path": "/bellarine-peninsula/stay",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 47,
-   "topQuery": "eumeralla scout camp"
+   "gscImpressions": 2,
+   "gscPosition": 53.5,
+   "topQuery": null
+  },
+  {
+   "path": "/docklands/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 27,
+   "topQuery": null
+  },
+  {
+   "path": "/geelong/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 28,
+   "topQuery": null
+  },
+  {
+   "path": "/mornington/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 8,
+   "topQuery": null
+  },
+  {
+   "path": "/weekends/bairnsdale-by-train",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 27,
+   "topQuery": null
+  },
+  {
+   "path": "/weekends/bendigo-on-a-budget",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 7,
+   "topQuery": null
+  },
+  {
+   "path": "/weekends/mildura-on-a-budget",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 25,
+   "topQuery": null
+  },
+  {
+   "path": "/weekends/sorrento-on-a-budget",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 42,
+   "topQuery": null
+  },
+  {
+   "path": "/weekends/swan-hill-by-train",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 2,
+   "gscPosition": 9.5,
+   "topQuery": null
   },
   {
    "path": "/barwon-heads/do",
@@ -2403,39 +2980,6 @@
    "topQuery": "beechworth attractions"
   },
   {
-   "path": "/beechworth/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 63,
-   "topQuery": "tiny of beechworth"
-  },
-  {
-   "path": "/beechworth/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 37,
-   "topQuery": "beechworth b&b"
-  },
-  {
-   "path": "/belgrave/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 42,
-   "topQuery": "bell tavern belgrave"
-  },
-  {
    "path": "/bendigo/stay",
    "views": 0,
    "prevViews": 0,
@@ -2447,28 +2991,6 @@
    "topQuery": "tysons reef bendigo"
   },
   {
-   "path": "/brighton/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 46,
-   "topQuery": "ichika brighton"
-  },
-  {
-   "path": "/collingwood",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 87,
-   "topQuery": "collingwood melbourne"
-  },
-  {
    "path": "/day-trips/ballarat",
    "views": 0,
    "prevViews": 0,
@@ -2478,17 +3000,6 @@
    "gscImpressions": 1,
    "gscPosition": 71,
    "topQuery": "ballarat day tour"
-  },
-  {
-   "path": "/day-trips/sorrento",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 86,
-   "topQuery": "where is sorrento"
   },
   {
    "path": "/dromana/do",
@@ -2524,72 +3035,6 @@
    "topQuery": "accommodation fitzroy vic"
   },
   {
-   "path": "/grampians/do",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 50,
-   "topQuery": "things to see in grampians"
-  },
-  {
-   "path": "/halls-gap",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 99,
-   "topQuery": "halls gap"
-  },
-  {
-   "path": "/halls-gap/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 46,
-   "topQuery": "dining halls gap"
-  },
-  {
-   "path": "/halls-gap/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 45,
-   "topQuery": "daltons halls gap"
-  },
-  {
-   "path": "/healesville/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 32,
-   "topQuery": "watts river cafe"
-  },
-  {
-   "path": "/high-country",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 36,
-   "topQuery": "wineries victoria high country"
-  },
-  {
    "path": "/inverloch",
    "views": 0,
    "prevViews": 0,
@@ -2599,50 +3044,6 @@
    "gscImpressions": 1,
    "gscPosition": 79,
    "topQuery": "inverloch"
-  },
-  {
-   "path": "/mansfield/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 84,
-   "topQuery": "mansfield takeaway food"
-  },
-  {
-   "path": "/marysville/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 57,
-   "topQuery": "keppel cafe marysville photos"
-  },
-  {
-   "path": "/mornington-peninsula/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 93,
-   "topQuery": "places to stay in mornington"
-  },
-  {
-   "path": "/mount-hotham/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 91,
-   "topQuery": "accommodation mt hotham vic"
   },
   {
    "path": "/myrtleford/do",
@@ -2656,61 +3057,6 @@
    "topQuery": "myrtleford"
   },
   {
-   "path": "/port-campbell/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 57,
-   "topQuery": "port campbell big 4"
-  },
-  {
-   "path": "/port-fairy/eat",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 63,
-   "topQuery": "gipps st fish and chips port fairy"
-  },
-  {
-   "path": "/port-melbourne",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 92,
-   "topQuery": "portmelbourne"
-  },
-  {
-   "path": "/red-hill/do",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 13,
-   "topQuery": "redhill"
-  },
-  {
-   "path": "/road-trips/great-ocean-road-3-day-itinerary",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 94,
-   "topQuery": "3 day great ocean road tour"
-  },
-  {
    "path": "/rye/stay",
    "views": 0,
    "prevViews": 0,
@@ -2720,17 +3066,6 @@
    "gscImpressions": 1,
    "gscPosition": 82,
    "topQuery": "weeroona bed and breakfast"
-  },
-  {
-   "path": "/south-yarra/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 66,
-   "topQuery": "south yarra accommodation"
   },
   {
    "path": "/torquay/do",
@@ -2744,28 +3079,6 @@
    "topQuery": "what to do in torquay devon"
   },
   {
-   "path": "/wangaratta/stay",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 88,
-   "topQuery": "accommodation wangaratta vic"
-  },
-  {
-   "path": "/weekends/castlemaine-by-train",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 19,
-   "topQuery": "trains to castlemaine"
-  },
-  {
    "path": "/weekends/echuca-family-weekend",
    "views": 0,
    "prevViews": 0,
@@ -2775,17 +3088,6 @@
    "gscImpressions": 1,
    "gscPosition": 98,
    "topQuery": "echuca holiday activities"
-  },
-  {
-   "path": "/weekends/mornington-on-a-budget",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 81,
-   "topQuery": "cheapest weekend"
   },
   {
    "path": "/weekends/rye-on-a-budget",
@@ -2810,17 +3112,6 @@
    "topQuery": "places close to rosebank"
   },
   {
-   "path": "/weekends/wangaratta-by-train",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 31,
-   "topQuery": "train melbourne to wangaratta"
-  },
-  {
    "path": "/yarra-valley/eat",
    "views": 0,
    "prevViews": 0,
@@ -2830,6 +3121,259 @@
    "gscImpressions": 1,
    "gscPosition": 51,
    "topQuery": "chachi yarra valley"
+  },
+  {
+   "path": "/apollo-bay/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 41,
+   "topQuery": null
+  },
+  {
+   "path": "/bright/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 8,
+   "topQuery": null
+  },
+  {
+   "path": "/carlton/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 8,
+   "topQuery": null
+  },
+  {
+   "path": "/fitzroy",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 64,
+   "topQuery": null
+  },
+  {
+   "path": "/geelong",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 8,
+   "topQuery": null
+  },
+  {
+   "path": "/grampians/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 11,
+   "topQuery": null
+  },
+  {
+   "path": "/great-ocean-road/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 45,
+   "topQuery": null
+  },
+  {
+   "path": "/high-country/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 4,
+   "topQuery": null
+  },
+  {
+   "path": "/mansfield/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 44,
+   "topQuery": null
+  },
+  {
+   "path": "/melbourne-cbd/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 4,
+   "topQuery": null
+  },
+  {
+   "path": "/phillip-island",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 5,
+   "topQuery": null
+  },
+  {
+   "path": "/road-trips/gippsland-road-trip",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 5,
+   "topQuery": null
+  },
+  {
+   "path": "/rye/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 8,
+   "topQuery": null
+  },
+  {
+   "path": "/shepparton/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 17,
+   "topQuery": null
+  },
+  {
+   "path": "/shepparton/stay",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 43,
+   "topQuery": null
+  },
+  {
+   "path": "/south-yarra/do",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 46,
+   "topQuery": null
+  },
+  {
+   "path": "/warrnambool/eat",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 47,
+   "topQuery": null
+  },
+  {
+   "path": "/weekends/ballarat-family-weekend",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 64,
+   "topQuery": null
+  },
+  {
+   "path": "/weekends/ballarat-romantic-weekend",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 6,
+   "topQuery": null
+  },
+  {
+   "path": "/weekends/echuca-on-a-budget",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 2,
+   "topQuery": null
+  },
+  {
+   "path": "/weekends/phillip-island-family-weekend",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 59,
+   "topQuery": null
+  },
+  {
+   "path": "/weekends/phillip-island-on-a-budget",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 10,
+   "topQuery": null
+  },
+  {
+   "path": "/weekends/warrnambool-on-a-budget",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 38,
+   "topQuery": null
   }
  ],
  "queries": [
@@ -2876,18 +3420,18 @@
    "page": "/lorne"
   },
   {
+   "query": "110 metung road metung",
+   "clicks": 0,
+   "impressions": 17,
+   "position": 78.7,
+   "page": "/metung"
+  },
+  {
    "query": "accomodation melbourne southbank",
    "clicks": 0,
    "impressions": 17,
    "position": 76.9,
    "page": "/southbank/stay"
-  },
-  {
-   "query": "110 metung road metung",
-   "clicks": 0,
-   "impressions": 16,
-   "position": 78.1,
-   "page": "/metung"
   },
   {
    "query": "southbank melbourne accomodation",
@@ -3065,6 +3609,13 @@
    "page": "/southbank/stay"
   },
   {
+   "query": "melbourne day trips",
+   "clicks": 0,
+   "impressions": 9,
+   "position": 75.9,
+   "page": "/collections/day-trips-from-melbourne"
+  },
+  {
    "query": "things to do in daylesford",
    "clicks": 0,
    "impressions": 9,
@@ -3093,6 +3644,13 @@
    "page": "/queenscliff"
   },
   {
+   "query": "rye",
+   "clicks": 0,
+   "impressions": 9,
+   "position": 94.4,
+   "page": "/rye"
+  },
+  {
    "query": "things to do in st kilda",
    "clicks": 0,
    "impressions": 9,
@@ -3105,13 +3663,6 @@
    "impressions": 8,
    "position": 64,
    "page": "/bright"
-  },
-  {
-   "query": "melbourne day trips",
-   "clicks": 0,
-   "impressions": 8,
-   "position": 75.8,
-   "page": "/collections/day-trips-from-melbourne"
   },
   {
    "query": "group activities lorne",
@@ -3198,6 +3749,13 @@
    "page": "/mornington-peninsula/eat"
   },
   {
+   "query": "omeo",
+   "clicks": 0,
+   "impressions": 7,
+   "position": 72.9,
+   "page": "/omeo"
+  },
+  {
    "query": "polperro bistro red hill",
    "clicks": 0,
    "impressions": 7,
@@ -3268,25 +3826,11 @@
    "page": "/mornington-peninsula/eat"
   },
   {
-   "query": "omeo",
-   "clicks": 0,
-   "impressions": 6,
-   "position": 69.7,
-   "page": "/omeo"
-  },
-  {
    "query": "red hill brewery",
    "clicks": 0,
    "impressions": 6,
    "position": 94,
    "page": "/red-hill"
-  },
-  {
-   "query": "rye",
-   "clicks": 0,
-   "impressions": 6,
-   "position": 94.5,
-   "page": "/rye"
   },
   {
    "query": "restaurant sorrento",
@@ -3654,12 +4198,17 @@
    "date": "2026-11-11",
    "clicks": 0,
    "impressions": 13
+  },
+  {
+   "date": "2026-11-12",
+   "clicks": 0,
+   "impressions": 12
   }
  ],
  "allTime": {
   "start": "2026-04-30",
-  "views": 272,
-  "users": 209,
+  "views": 274,
+  "users": 211,
   "cta": {
    "book_tour": 2,
    "website": 1,
@@ -4035,6 +4584,11 @@
     "date": "2026-11-10",
     "views": 2,
     "cta": 0
+   },
+   {
+    "date": "2026-11-12",
+    "views": 2,
+    "cta": 0
    }
   ]
  },
@@ -4043,7 +4597,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 32
+    "sessions": 34
    },
    {
     "source": "google",
@@ -4089,12 +4643,6 @@
   ],
   "daily": [
    {
-    "date": "2026-10-31",
-    "source": "(direct)",
-    "medium": "(none)",
-    "sessions": 1
-   },
-   {
     "date": "2026-11-01",
     "source": "(direct)",
     "medium": "(none)",
@@ -4138,6 +4686,12 @@
    },
    {
     "date": "2026-11-10",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 2
+   },
+   {
+    "date": "2026-11-12",
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 2

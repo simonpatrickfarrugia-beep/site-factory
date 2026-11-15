@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-14T19:00:10.444Z",
+ "generatedAt": "2026-11-15T08:27:11.417Z",
  "period": {
-  "start": "2026-10-17",
-  "end": "2026-11-13"
+  "start": "2026-10-18",
+  "end": "2026-11-14"
  },
  "gscPeriod": {
-  "start": "2026-10-15",
-  "end": "2026-11-11"
+  "start": "2026-10-16",
+  "end": "2026-11-12"
  },
  "sources": {
   "ga4": true,
@@ -14,12 +14,12 @@
   "notes": []
  },
  "totals": {
-  "views": 6,
+  "views": 8,
   "prevViews": 0,
-  "users": 6,
+  "users": 8,
   "cta": {},
   "gscClicks": 0,
-  "gscImpressions": 2
+  "gscImpressions": 4
  },
  "daily": [
   {
@@ -28,24 +28,34 @@
    "cta": 0
   },
   {
+   "date": "2026-11-12",
+   "views": 1,
+   "cta": 0
+  },
+  {
    "date": "2026-11-13",
    "views": 3,
+   "cta": 0
+  },
+  {
+   "date": "2026-11-14",
+   "views": 1,
    "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 6,
+   "views": 8,
    "prevViews": 0,
-   "users": 6,
+   "users": 8,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
+   "gscImpressions": 1,
+   "gscPosition": 3,
    "topQuery": null,
-   "allViews": 6,
-   "d7": 3,
+   "allViews": 8,
+   "d7": 5,
    "prev7": 3
   },
   {
@@ -55,8 +65,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 10.5,
+   "gscImpressions": 3,
+   "gscPosition": 38.3,
    "topQuery": "when should australians book japan flights in 2026"
   }
  ],
@@ -66,6 +76,13 @@
    "clicks": 0,
    "impressions": 2,
    "position": 10.5,
+   "page": "/destinations/japan"
+  },
+  {
+   "query": "flights to japan 2027",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 94,
    "page": "/destinations/japan"
   }
  ],
@@ -109,12 +126,17 @@
    "date": "2026-11-11",
    "clicks": 0,
    "impressions": 1
+  },
+  {
+   "date": "2026-11-12",
+   "clicks": 0,
+   "impressions": 1
   }
  ],
  "allTime": {
   "start": "2026-11-05",
-  "views": 6,
-  "users": 6,
+  "views": 8,
+  "users": 8,
   "cta": {},
   "daily": [
    {
@@ -123,8 +145,18 @@
     "cta": 0
    },
    {
+    "date": "2026-11-12",
+    "views": 1,
+    "cta": 0
+   },
+   {
     "date": "2026-11-13",
     "views": 3,
+    "cta": 0
+   },
+   {
+    "date": "2026-11-14",
+    "views": 1,
     "cta": 0
    }
   ]
@@ -134,7 +166,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 6
+    "sessions": 8
    }
   ],
   "referrers": [],
@@ -146,10 +178,22 @@
     "sessions": 3
    },
    {
+    "date": "2026-11-12",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
+   },
+   {
     "date": "2026-11-13",
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 3
+   },
+   {
+    "date": "2026-11-14",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
    }
   ]
  }

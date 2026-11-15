@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-14T19:00:10.444Z",
+ "generatedAt": "2026-11-15T08:27:11.417Z",
  "period": {
-  "start": "2026-10-17",
-  "end": "2026-11-13"
+  "start": "2026-10-18",
+  "end": "2026-11-14"
  },
  "gscPeriod": {
-  "start": "2026-10-15",
-  "end": "2026-11-11"
+  "start": "2026-10-16",
+  "end": "2026-11-12"
  },
  "sources": {
   "ga4": true,
@@ -14,12 +14,12 @@
   "notes": []
  },
  "totals": {
-  "views": 29,
+  "views": 33,
   "prevViews": 0,
-  "users": 21,
+  "users": 25,
   "cta": {},
   "gscClicks": 0,
-  "gscImpressions": 379
+  "gscImpressions": 430
  },
  "daily": [
   {
@@ -51,6 +51,11 @@
    "date": "2026-11-11",
    "views": 1,
    "cta": 0
+  },
+  {
+   "date": "2026-11-12",
+   "views": 4,
+   "cta": 0
   }
  ],
  "pages": [
@@ -61,8 +66,8 @@
    "users": 9,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 10,
-   "gscPosition": 69.8,
+   "gscImpressions": 12,
+   "gscPosition": 58.8,
    "topQuery": "best invoice app for tradesmen",
    "allViews": 15,
    "prev7": 8,
@@ -70,17 +75,31 @@
   },
   {
    "path": "/job-management-software",
-   "views": 4,
+   "views": 5,
    "prevViews": 0,
-   "users": 1,
+   "users": 2,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 0,
    "gscPosition": null,
    "topQuery": null,
-   "allViews": 4,
+   "allViews": 5,
    "prev7": 3,
-   "d7": 0
+   "d7": 1
+  },
+  {
+   "path": "/how-we-make-money",
+   "views": 4,
+   "prevViews": 0,
+   "users": 4,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 5,
+   "topQuery": null,
+   "allViews": 4,
+   "d7": 2,
+   "prev7": 1
   },
   {
    "path": "/quote-builder",
@@ -89,25 +108,11 @@
    "users": 3,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 16,
-   "gscPosition": 84.3,
+   "gscImpressions": 20,
+   "gscPosition": 79.9,
    "topQuery": "tradesman quote template",
    "allViews": 3,
    "prev7": 2,
-   "d7": 0
-  },
-  {
-   "path": "/how-we-make-money",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2,
-   "prev7": 1,
    "d7": 0
   },
   {
@@ -117,8 +122,8 @@
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
+   "gscImpressions": 4,
+   "gscPosition": 8.5,
    "topQuery": null,
    "allViews": 1,
    "prev7": 1,
@@ -131,9 +136,23 @@
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
+   "gscImpressions": 2,
+   "gscPosition": 5,
    "topQuery": null,
+   "allViews": 1,
+   "prev7": 1,
+   "d7": 0
+  },
+  {
+   "path": "/invoice-builder",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 45,
+   "topQuery": "free australian gst invoice template",
    "allViews": 1,
    "prev7": 1,
    "d7": 0
@@ -153,20 +172,6 @@
    "prev7": 0
   },
   {
-   "path": "/invoice-builder",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 1,
-   "prev7": 1,
-   "d7": 0
-  },
-  {
    "path": "/tradify-pricing",
    "views": 1,
    "prevViews": 0,
@@ -179,14 +184,28 @@
    "allViews": 1
   },
   {
+   "path": "/which-job-app",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1,
+   "d7": 1,
+   "prev7": 0
+  },
+  {
    "path": "/tradify-vs-servicem8",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 238,
-   "gscPosition": 74.4,
+   "gscImpressions": 254,
+   "gscPosition": 73.8,
    "topQuery": "servicem8 tradify comparison"
   },
   {
@@ -196,8 +215,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 33,
-   "gscPosition": 69.6,
+   "gscImpressions": 38,
+   "gscPosition": 61.5,
    "topQuery": "cleaning invoice examples"
   },
   {
@@ -207,8 +226,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 24,
-   "gscPosition": 78.7,
+   "gscImpressions": 27,
+   "gscPosition": 79.3,
    "topQuery": "tradesman quote template"
   },
   {
@@ -218,8 +237,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 18,
-   "gscPosition": 81.1,
+   "gscImpressions": 21,
+   "gscPosition": 74.4,
    "topQuery": "electrical invoice template"
   },
   {
@@ -240,8 +259,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 7,
-   "gscPosition": 88.3,
+   "gscImpressions": 8,
+   "gscPosition": 88.4,
    "topQuery": "electrician quotes"
   },
   {
@@ -256,6 +275,17 @@
    "topQuery": "invoicing for plumbers"
   },
   {
+   "path": "/builder-invoice-template",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 46.7,
+   "topQuery": "progress claim template"
+  },
+  {
    "path": "/painting-quote-template",
    "views": 0,
    "prevViews": 0,
@@ -267,15 +297,26 @@
    "topQuery": "invoice for painting job"
   },
   {
-   "path": "/builder-invoice-template",
+   "path": "/admin-help",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 4,
+   "gscPosition": 109.3,
+   "topQuery": "hire virtual assistant for tradies"
+  },
+  {
+   "path": "/servicem8-pricing",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 3,
-   "gscPosition": 81.7,
-   "topQuery": "progress claim template"
+   "gscPosition": 32.7,
+   "topQuery": "servicem8 pricing"
   },
   {
    "path": "/carpenter-invoice-template",
@@ -300,17 +341,6 @@
    "topQuery": "tradesman quote template"
   },
   {
-   "path": "/admin-help",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 80,
-   "topQuery": "hire virtual assistant for tradies"
-  },
-  {
    "path": "/tradify-vs-fergus",
    "views": 0,
    "prevViews": 0,
@@ -327,50 +357,50 @@
   {
    "query": "servicem8 tradify comparison",
    "clicks": 0,
-   "impressions": 45,
-   "position": 81.2,
+   "impressions": 47,
+   "position": 81.1,
    "page": "/tradify-vs-servicem8"
   },
   {
    "query": "servicem8 vs",
    "clicks": 0,
-   "impressions": 41,
-   "position": 82.3,
+   "impressions": 44,
+   "position": 81.9,
    "page": "/tradify-vs-servicem8"
   },
   {
    "query": "servicem8 vs tradify",
    "clicks": 0,
-   "impressions": 39,
-   "position": 61.7,
+   "impressions": 41,
+   "position": 61.9,
    "page": "/tradify-vs-servicem8"
   },
   {
    "query": "servicem8 pricing",
    "clicks": 0,
-   "impressions": 36,
+   "impressions": 38,
    "position": 82.3,
-   "page": "/tradify-vs-servicem8"
-  },
-  {
-   "query": "service mate vs tradify",
-   "clicks": 0,
-   "impressions": 32,
-   "position": 75.8,
    "page": "/tradify-vs-servicem8"
   },
   {
    "query": "tradify vs servicem8",
    "clicks": 0,
-   "impressions": 32,
-   "position": 64.4,
+   "impressions": 37,
+   "position": 63.3,
+   "page": "/tradify-vs-servicem8"
+  },
+  {
+   "query": "service mate vs tradify",
+   "clicks": 0,
+   "impressions": 34,
+   "position": 75.8,
    "page": "/tradify-vs-servicem8"
   },
   {
    "query": "tradesman quote template",
    "clicks": 0,
-   "impressions": 27,
-   "position": 79.9,
+   "impressions": 29,
+   "position": 79.8,
    "page": "/builder-quote-template"
   },
   {
@@ -423,6 +453,13 @@
    "page": "/electrician-invoice-template"
   },
   {
+   "query": "electrician quotes",
+   "clicks": 0,
+   "impressions": 5,
+   "position": 97,
+   "page": "/electrician-quote-template"
+  },
+  {
    "query": "free carpentry quote",
    "clicks": 0,
    "impressions": 4,
@@ -437,13 +474,6 @@
    "page": "/cleaning-invoice-template"
   },
   {
-   "query": "electrician quotes",
-   "clicks": 0,
-   "impressions": 4,
-   "position": 99,
-   "page": "/electrician-quote-template"
-  },
-  {
    "query": "invoicing for plumbers",
    "clicks": 0,
    "impressions": 4,
@@ -456,6 +486,13 @@
    "impressions": 3,
    "position": 81.7,
    "page": "/builder-invoice-template"
+  },
+  {
+   "query": "builder quote",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 92.3,
+   "page": "/builder-quote-template"
   },
   {
    "query": "electrical invoice",
@@ -484,13 +521,6 @@
    "impressions": 2,
    "position": 60.5,
    "page": "/"
-  },
-  {
-   "query": "builder quote",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 90.5,
-   "page": "/builder-quote-template"
   },
   {
    "query": "builder quote template",
@@ -549,6 +579,13 @@
    "page": "/painting-quote-template"
   },
   {
+   "query": "free australian gst invoice template",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 45,
+   "page": "/invoice-builder"
+  },
+  {
    "query": "invoicing software for tradesmen",
    "clicks": 0,
    "impressions": 1,
@@ -570,6 +607,20 @@
    "page": "/admin-help"
   },
   {
+   "query": "trade business support",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 96,
+   "page": "/admin-help"
+  },
+  {
+   "query": "builder quotes",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 84,
+   "page": "/builder-quote-template"
+  },
+  {
    "query": "building quote template",
    "clicks": 0,
    "impressions": 1,
@@ -589,6 +640,13 @@
    "impressions": 1,
    "position": 83,
    "page": "/carpenter-invoice-template"
+  },
+  {
+   "query": "electrical contractor invoice terms and conditions",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 97,
+   "page": "/electrician-invoice-template"
   },
   {
    "query": "electrician invoice template",
@@ -637,6 +695,13 @@
    "clicks": 0,
    "impressions": 1,
    "position": 86,
+   "page": "/quote-builder"
+  },
+  {
+   "query": "trade quote",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 98,
    "page": "/quote-builder"
   },
   {
@@ -749,12 +814,17 @@
    "date": "2026-11-11",
    "clicks": 0,
    "impressions": 20
+  },
+  {
+   "date": "2026-11-12",
+   "clicks": 0,
+   "impressions": 26
   }
  ],
  "allTime": {
   "start": "2026-10-28",
-  "views": 29,
-  "users": 21,
+  "views": 33,
+  "users": 25,
   "cta": {},
   "daily": [
    {
@@ -786,6 +856,11 @@
     "date": "2026-11-11",
     "views": 1,
     "cta": 0
+   },
+   {
+    "date": "2026-11-12",
+    "views": 4,
+    "cta": 0
    }
   ]
  },
@@ -794,7 +869,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 15
+    "sessions": 19
    },
    {
     "source": "(not set)",
@@ -847,6 +922,12 @@
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 1
+   },
+   {
+    "date": "2026-11-12",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 4
    }
   ]
  }
