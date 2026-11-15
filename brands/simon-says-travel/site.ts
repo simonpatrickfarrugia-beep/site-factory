@@ -117,7 +117,7 @@ export function routes(): Route[] {
       template: slug === 'contact' ? 'sstContact' : 'sstPage',
       noindex: slug === 'contact', // a form page with nothing to rank for (quality gate: thin)
       seo: { title: p.seoTitle, description: p.description },
-      schema: slug === 'about' ? [org] : [],
+      schema: slug === 'about' ? [org] : slug === 'how-it-works' ? [crumbs([{ name: 'This month', path: '' }, { name: p.h1, path: slug }])] : [],
       props: { page: p },
     });
   }
