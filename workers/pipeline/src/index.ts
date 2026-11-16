@@ -443,7 +443,12 @@ async function demand(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boole
  */
 async function ratingsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean) {
   const movies = JSON.parse(snap.files[MOVIES]) as (Movie & { ratingCheckedAt?: string })[];
-  const due = [...movies].sort((a, b) => (a.ratingCheckedAt ?? '').localeCompare(b.ratingCheckedAt ?? '')).slice(0, 40);
+  // Films missing facts (director, cast, runtime, score) go first: their pages are thin until OMDb fills them in.
+  const gaps = (m: Movie) => !m.director || !m.cast.filter((c) => c !== 'N/A').length || !m.runtimeMinutes || m.imdbRating === null;
+  const due = [...movies]
+    .sort((a, b) => Number(gaps(b)) - Number(gaps(a)) || (a.ratingCheckedAt ?? '').localeCompare(b.ratingCheckedAt ?? ''))
+    .slice(0, 40);
+  let filled = 0;
   let changed = 0, checked = 0;
   const notes: string[] = [];
   for (const m of due) {
@@ -463,6 +468,25 @@ async function ratingsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: b
       notes.push(`CHECK ${m.name}: OMDb says ${r}, we have ${m.imdbRating}; not changed`);
       continue;
     }
+    // Fill only empty facts, and only when OMDb has the same title and exact year (never overwrite what we hold).
+    if (found && String(found.Year).slice(0, 4) === String(m.year) && sameFilmTitle(m.name, found.Title)) {
+      const na = (v: string | undefined) => (!v || v === 'N/A' ? null : v);
+      const got: string[] = [];
+      const cast = (na(found.Actors) ?? '').split(',').map((s) => s.trim()).filter(Boolean);
+      const runtime = parseInt(found.Runtime, 10);
+      if (!m.director && na(found.Director)) (m.director = na(found.Director)), got.push('director');
+      else if (m.director && na(found.Director) && !na(found.Director)!.includes(m.director.split(',')[0].trim()))
+        notes.push(`CHECK ${m.name} (${m.year}): director is ${m.director}, OMDb says ${found.Director}; not changed`);
+      if (!m.cast.filter((c) => c !== 'N/A').length && cast.length) (m.cast = cast), got.push('cast');
+      if (!m.runtimeMinutes && Number.isFinite(runtime) && runtime > 0) (m.runtimeMinutes = runtime), got.push('runtime');
+      if ((!m.synopsis || m.synopsis === 'N/A') && na(found.Plot)) (m.synopsis = na(found.Plot)), got.push('plot');
+      if ((!m.boxOffice || m.boxOffice === 'N/A') && na(found.BoxOffice)) (m.boxOffice = na(found.BoxOffice)), got.push('box office');
+      if (got.length) {
+        notes.push(`${m.name}: added ${got.join(', ')}`);
+        m.updated = now.toISOString();
+        filled++;
+      }
+    }
     if (found && String(found.Year).slice(0, 4) === String(m.year) && Number.isFinite(r) && r > 0 && r !== m.imdbRating) {
       notes.push(`${m.name}: ${m.imdbRating ?? '-'} → ${r}`);
       m.imdbRating = r;
@@ -470,11 +494,11 @@ async function ratingsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: b
     }
   }
   const left = movies.filter((m) => !m.ratingCheckedAt).length;
-  const log = [`Ratings: checked ${checked}, updated ${changed}; ${left} never checked.`, ...notes.slice(0, 12)];
+  const log = [`Ratings: checked ${checked}, updated ${changed}, facts added to ${filled}; ${left} never checked.`, ...notes.slice(0, 20)];
   const commit = checked
-    ? await save(repo, snap.sha, { [MOVIES]: JSON.stringify(movies, null, 1) + '\n' }, changed ? `Pipeline: IMDb scores refreshed (${changed} changed)` : 'Pipeline: IMDb scores checked [skip ci]', dryRun, log)
+    ? await save(repo, snap.sha, { [MOVIES]: JSON.stringify(movies, null, 1) + '\n' }, changed || filled ? `Pipeline: IMDb scores refreshed (${changed} changed, facts added to ${filled})` : 'Pipeline: IMDb scores checked [skip ci]', dryRun, log)
     : null;
-  return { job: 'ratings' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: changed > 0, queueChanged: false, callsLeft: null, report: undefined as string | undefined };
+  return { job: 'ratings' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: changed + filled > 0, queueChanged: false, callsLeft: null, report: undefined as string | undefined };
 }
 
 /** Sites whose dashboards the daily `stats` job refreshes (STATS_SITES in wrangler.jsonc). */
