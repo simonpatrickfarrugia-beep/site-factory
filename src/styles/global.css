@@ -1450,7 +1450,7 @@ main { display: block; }
 [data-theme='network'] a { color: var(--paper); text-underline-offset: 3px; text-decoration-color: var(--coin-deep); }
 [data-theme='network'] :focus-visible { outline: 3px solid var(--coin); outline-offset: 2px; }
 [data-theme='network'] .site-header { background: var(--ink); border-bottom: 1px solid var(--line); }
-[data-theme='network'] .site-header__inner { flex-wrap: wrap; row-gap: 0.5rem; }
+[data-theme='network'] .site-header__inner { flex-wrap: wrap; row-gap: 0.35rem; padding-block: 0.8rem 0.5rem; }
 [data-theme='network'] .wordmark--logo { display: inline-flex; align-items: center; gap: 0.55rem; text-decoration: none; font-size: 1.15rem; }
 [data-theme='network'] .wordmark { font-family: var(--font-display); font-weight: 800; color: var(--paper); letter-spacing: -0.02em; }
 [data-theme='network'] .site-nav { flex-wrap: wrap; gap: 0.3rem 1.2rem; }
