@@ -3,7 +3,7 @@
  "name": "mypaycalc.com.au",
  "url": "https://mypaycalc.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-16T00:03:15Z",
+ "scannedAt": "2026-11-16T04:53:51Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
@@ -396,7 +396,7 @@
   {
    "url": "https://mypaycalc.com.au/",
    "lite": true,
-   "serverSecs": 0.09,
+   "serverSecs": 0.05,
    "htmlKb": 19,
    "blocking": 1,
    "images": 1,
@@ -407,7 +407,7 @@
   {
    "url": "https://mypaycalc.com.au/tax-brackets",
    "lite": true,
-   "serverSecs": 0.2,
+   "serverSecs": 0.13,
    "htmlKb": 12,
    "blocking": 1,
    "images": 1,
@@ -428,33 +428,18 @@
   "unsureOutside": 5
  },
  "affiliateOk": 0,
- "secs": 126,
+ "secs": 124,
  "change": {
   "first": false,
-  "since": "2026-11-14T22:17:22Z",
-  "score": 5,
-  "newIssues": [
-   "Google impressions down 31% week on week"
-  ],
-  "fixed": [
-   "\"mypaycalc\": we're not in the top 10 (Search Console avg 5); unknown site leads",
-   "\"pay calculator\": we're not in the top 10 (Search Console avg 86); woholmate.site leads",
-   "\"australian tax brackets\": we're not in the top 10 (Search Console avg 88); data.gov.au leads",
-   "\"what tax bracket am i in australia\": we're not in the top 10 (Search Console avg 69); perthmobiletax.com.au leads",
-   "\"current tax brackets australia\": we're not in the top 10 (Search Console avg 73); data.gov.au leads",
-   "2 description outside 70–160 characters"
-  ],
-  "impr28": 309,
+  "since": "2026-11-16T00:03:15Z",
+  "score": 0,
+  "newIssues": [],
+  "fixed": [],
+  "impr28": 0,
   "clicks28": 0,
-  "views28": 1,
+  "views28": 0,
   "rivals": [],
-  "positions": [
-   {
-    "query": "pay calculator for australia",
-    "was": 56,
-    "now": 62.8
-   }
-  ]
+  "positions": []
  },
  "history": [
   {
@@ -469,6 +454,13 @@
    "score": 91,
    "grade": "A",
    "impr28": 715,
+   "clicks28": 4
+  },
+  {
+   "at": "2026-11-16T00:03:15Z",
+   "score": 96,
+   "grade": "A",
+   "impr28": 1024,
    "clicks28": 4
   }
  ],

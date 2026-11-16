@@ -1,8 +1,8 @@
 # Site check: mypaycalc.com.au
 
-**A · 96/100** · scanned 2026-11-16 00:03 UTC · 81 pages · next scan 2026-11-23 (no revenue in the last 60 days, every 7 days)
+**A · 96/100** · scanned 2026-11-16 04:53 UTC · 81 pages · next scan 2026-11-23 (no revenue in the last 60 days, every 7 days)
 
-**Since 2026-11-14:** score +5 · Google impressions (28 days) +309 · clicks 0 · visits +1 · new issues 1 · fixed 6
+**Since 2026-11-16:** score 0 · Google impressions (28 days) 0 · clicks 0 · visits 0
 
 ## Top 5 fixes
 
@@ -28,21 +28,10 @@
 
 - Last 7 days: 370 impressions (-170), 1 clicks (-2). 28 days: 1,024 impressions, 4 clicks, 201 visits. Search Console data to 2026-11-12.
 
-## What changed
-
-- "pay calculator for australia": position 56 → 62.8
-- New: Google impressions down 31% week on week
-- Fixed: "mypaycalc": we're not in the top 10 (Search Console avg 5); unknown site leads
-- Fixed: "pay calculator": we're not in the top 10 (Search Console avg 86); woholmate.site leads
-- Fixed: "australian tax brackets": we're not in the top 10 (Search Console avg 88); data.gov.au leads
-- Fixed: "what tax bracket am i in australia": we're not in the top 10 (Search Console avg 69); perthmobiletax.com.au leads
-- Fixed: "current tax brackets australia": we're not in the top 10 (Search Console avg 73); data.gov.au leads
-- Fixed: 2 description outside 70–160 characters
-
 ## Speed (phones)
 
-- /: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.09s, HTML 19 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
-- /tax-brackets: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.2s, HTML 12 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
+- /: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.05s, HTML 19 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
+- /tax-brackets: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.13s, HTML 12 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
 
 ## All findings
 
