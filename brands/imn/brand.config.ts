@@ -4,7 +4,7 @@ export default defineBrand({
   slug: 'imn',
   name: 'Independent Media Network',
   domain: 'imnetwork.com.au',
-  launched: false, // preview first; flip at cutover (custom domain on the Worker)
+  launched: true, // live 16 Nov 2026 (Simon: "let's go live")
 
   theme: 'network',
   // Deep ink with one signal colour (amber "$1 coin"). Each page keeps to two colours plus paper.

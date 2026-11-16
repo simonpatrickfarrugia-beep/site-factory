@@ -1,5 +1,5 @@
 {
-  "_about": "Independent Media Network (imnetwork.com.au): website subscription for small businesses. Edited by chat. Prices ex-GST (IMN is GST-registered). setup.promo true = founding offer (setup waived for the first setup.promoSpots clients on a 12-month plan); set false to stop. Decided by Simon 16 Nov 2026: $99/mo, $499 setup, first 10 free on 12 months + testimonial, Stripe billing, T&Cs drafted (lawyer review before client #1).",
+  "_about": "Independent Media Network (imnetwork.com.au): website subscription for small businesses. Edited by chat. Prices ex-GST (IMN is GST-registered). setup.promo true = founding offer (setup waived for the first setup.promoSpots clients on a 12-month plan); set false to stop. Decided by Simon 16 Nov 2026: $99/mo, $499 setup, first 10 free on 12 months + testimonial, Stripe billing, T&Cs drafted (lawyer review before client #1). Extra pages over 5: $99 + GST each, once (16 Nov).",
   "email": "hello@imnetwork.com.au",
   "formsEndpoint": "/api",
   "price": {
@@ -67,7 +67,7 @@
       "A person runs every job. Simon plans your site with you, checks every page before it goes live and answers your emails himself. Nothing goes live without a human signing it off."
     ]
   },
-  "change": "A change round is a small update to your site, up to 30 minutes of work: new or edited text, swapping photos, updating prices or opening hours, or adding a section to an existing page. Send your edits together in one email. Unused rounds don't carry over. A brand-new page or a redesign is quoted first.",
+  "change": "A change round is a small update to your site, up to 30 minutes of work: new or edited text, swapping photos, updating prices or opening hours, or adding a section to an existing page. Send your edits together in one email. Unused rounds don't carry over. Extra pages beyond your first 5 are $99 + GST each, once. A redesign is quoted first.",
   "sites": [
     {
       "name": "Vic Tours",
@@ -111,7 +111,7 @@
     },
     {
       "q": "What counts as a change?",
-      "a": "A small update, up to 30 minutes of work: new or edited text, swapping photos, updating prices or opening hours, or a new section on an existing page. Send your edits together in one email. Extra rounds are $50 + GST. A brand-new page or a redesign is quoted first."
+      "a": "A small update, up to 30 minutes of work: new or edited text, swapping photos, updating prices or opening hours, or a new section on an existing page. Send your edits together in one email. Extra rounds are $50 + GST. A brand-new page or a redesign is quoted first. Need more than 5 pages? Each extra page is $99 + GST, once, and stays looked after in your plan."
     },
     {
       "q": "Is there a lock-in contract?",
@@ -138,5 +138,6 @@
       "a": "Melbourne. We work with businesses anywhere in Australia, by email, phone or video call."
     }
   ],
-  "changeCapMinutes": 30
+  "changeCapMinutes": 30,
+  "extraPage": 99
 }
