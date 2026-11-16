@@ -1,15 +1,13 @@
 # Site check: victours.com.au
 
-**A · 98/100** · scanned 2026-11-16 07:21 UTC · 311 pages · next scan 2026-11-23 (no revenue in the last 60 days, every 7 days)
+**A · 99/100** · scanned 2026-11-16 08:19 UTC · 311 pages · next scan 2026-11-23 (no revenue in the last 60 days, every 7 days)
 
-**Since 2026-11-16:** score +2 · Google impressions (28 days) 0 · clicks 0 · visits 0 · fixed 1
+**Since 2026-11-16:** score +1 · Google impressions (28 days) 0 · clicks 0 · visits 0 · fixed 2
 
 ## Top 5 fixes
 
-1. **11 title outside 30–65 characters** (medium, impact 2.7). Rewrite to 30–65 characters with the main search first. Pages: /collections/beaches-and-coast, /collections/goldfields-towns, /road-trips/great-ocean-road-3-day-itinerary, /road-trips/phillip-island-day-trip
-2. **7 page(s) under 250 words** (low, impact 1.2). Fine for tools; for guides add the answer people search for. Pages: /towns, /metung, /flinders, /about
-3. **5 description outside 70–160 characters** (low, impact 1.0). Rewrite to 70–160 characters: what the page gives the searcher. Pages: /high-country/eat, /road-trips/great-ocean-road-3-day-itinerary, /about, /privacy-policy
-4. **2 page(s) have no schema** (low, impact 1.0). Add WebPage/BreadcrumbList (or the page's own type) so Google understands it. Pages: /privacy-policy, /affiliate-disclosure
+1. **3 page(s) under 250 words** (low, impact 1.2). Fine for tools; for guides add the answer people search for. Pages: /towns, /metung, /flinders
+2. **2 page(s) have no schema** (low, impact 1.0). Add WebPage/BreadcrumbList (or the page's own type) so Google understands it. Pages: /privacy-policy, /affiliate-disclosure
 
 ## Report card
 
@@ -18,7 +16,7 @@
 | Broken pages & links | A | 100 |
 | Tracking & money links | A | 100 |
 | Sitemap & indexing | A | 100 |
-| Titles, descriptions & schema | B | 81 |
+| Titles, descriptions & schema | A | 94 |
 | Thin & duplicate pages | A | 100 |
 | Speed | A | 100 |
 | Google trend | A | 100 |
@@ -30,21 +28,20 @@
 
 ## What changed
 
-- Fixed: 1 outside link(s) go to a missing page
+- Fixed: 11 title outside 30–65 characters
+- Fixed: 5 description outside 70–160 characters
 
 ## Speed (phones)
 
-- /: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.1s, HTML 55 KB, images 450 KB (first 15), 1 blocking files, 0 images without size
-- /towns: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.13s, HTML 32 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
+- /: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.05s, HTML 55 KB, images 450 KB (first 15), 1 blocking files, 0 images without size
+- /towns: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.05s, HTML 32 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
 
 ## All findings
 
 | # | Area | Severity | Impact | Finding |
 |---:|---|---|---:|---|
-| 1 | seo | medium | 2.7 | 11 title outside 30–65 characters |
-| 2 | seo | low | 1.2 | 7 page(s) under 250 words |
-| 3 | seo | low | 1.0 | 5 description outside 70–160 characters |
-| 4 | seo | low | 1.0 | 2 page(s) have no schema |
+| 1 | seo | low | 1.2 | 3 page(s) under 250 words |
+| 2 | seo | low | 1.0 | 2 page(s) have no schema |
 
 Links: 364 internal, 4884 outside (150 checked; 3 block robots, not counted). Affiliate links tagged correctly: 546. Live Google check cost US$0.000.
 

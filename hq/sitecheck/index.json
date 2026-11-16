@@ -4,61 +4,30 @@
    "name": "victours.com.au",
    "url": "https://victours.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-16T07:21:42Z",
-   "score": 98,
+   "scannedAt": "2026-11-16T08:19:28Z",
+   "score": 99,
    "grade": "A",
-   "change": 2,
+   "change": 1,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
    "nextDue": "2026-11-23",
-   "topFix": "11 title outside 30–65 characters",
+   "topFix": "3 page(s) under 250 words",
    "broken": 0,
    "newIssues": 0,
-   "fixed": 1,
+   "fixed": 2,
    "costUsd": 0,
    "top": [
     {
-     "id": "seo-title",
-     "title": "11 title outside 30–65 characters",
-     "severity": "medium",
-     "area": "seo",
-     "fix": "Rewrite to 30–65 characters with the main search first.",
-     "pages": [
-      "/collections/beaches-and-coast",
-      "/collections/goldfields-towns",
-      "/road-trips/great-ocean-road-3-day-itinerary",
-      "/road-trips/phillip-island-day-trip"
-     ],
-     "detail": "",
-     "broken": false
-    },
-    {
      "id": "seo-words",
-     "title": "7 page(s) under 250 words",
+     "title": "3 page(s) under 250 words",
      "severity": "low",
      "area": "seo",
      "fix": "Fine for tools; for guides add the answer people search for.",
      "pages": [
       "/towns",
       "/metung",
-      "/flinders",
-      "/about"
-     ],
-     "detail": "",
-     "broken": false
-    },
-    {
-     "id": "seo-desc",
-     "title": "5 description outside 70–160 characters",
-     "severity": "low",
-     "area": "seo",
-     "fix": "Rewrite to 70–160 characters: what the page gives the searcher.",
-     "pages": [
-      "/high-country/eat",
-      "/road-trips/great-ocean-road-3-day-itinerary",
-      "/about",
-      "/privacy-policy"
+      "/flinders"
      ],
      "detail": "",
      "broken": false
@@ -352,11 +321,11 @@
    ]
   }
  },
- "updated": "2026-11-16T07:33:11Z",
+ "updated": "2026-11-16T08:19:28Z",
  "lastRun": {
-  "at": "2026-11-16T07:33:11Z",
+  "at": "2026-11-16T08:19:28Z",
   "scanned": [
-   "trailers"
+   "vic"
   ]
  }
 }
