@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-15T20:43:14Z",
+ "generatedAt": "2026-11-16T01:20:31Z",
  "day": "2026-11-16",
  "micro": {
   "items": [
    {
     "key": "fixes",
     "label": "Site check fixes cleared",
-    "value": 13,
+    "value": 27,
     "target": 3,
     "status": "green",
     "unit": "",
@@ -16,7 +16,7 @@
    {
     "key": "shipped",
     "label": "Site improvements shipped",
-    "value": 18,
+    "value": 21,
     "target": 3,
     "status": "green",
     "unit": "",
@@ -26,9 +26,9 @@
    {
     "key": "todos",
     "label": "Your to-dos done",
-    "value": 2,
+    "value": 4,
     "target": 3,
-    "status": "amber",
+    "status": "green",
     "unit": "",
     "fix": "Knock off your quickest open to-do: Paste the 2 best Google reviews (text + first name) into the Site Factory chat; Claude add",
     "weight": 1
@@ -44,12 +44,44 @@
     "what": "/contact: 3 files block the first paint"
    },
    {
+    "site": "community-help-co",
+    "what": "\"community help\": we're not in the top 10 (Search Console avg 17); goldcoast.qld.gov.au leads"
+   },
+   {
+    "site": "community-help-co",
+    "what": "\"community services placement\": we're not in the top 10 (Search Console avg 9); facebook.com leads"
+   },
+   {
+    "site": "community-help-co",
+    "what": "\"local community support\": we're not in the top 10 (Search Console avg 4); mercycare.com.au leads"
+   },
+   {
+    "site": "community-help-co",
+    "what": "2 title outside 30–65 characters"
+   },
+   {
+    "site": "community-help-co",
+    "what": "\"simon farrugia\": we're not in the top 10 (Search Console avg 8); unknown site leads"
+   },
+   {
+    "site": "community-help-co",
+    "what": "2 description outside 70–160 characters"
+   },
+   {
+    "site": "community-help-co",
+    "what": "\"hr support ringwood\": we're not in the top 10 (Search Console avg 39); careerhub.com leads"
+   },
+   {
     "site": "simon-says-travel",
     "what": "6 of your top 8 pages aren't in Google's index"
    },
    {
     "site": "simon-says-travel",
     "what": "\"when should australians book japan flights in 2026\": we're not in the top 10 (Search Console avg 10); helloroam.com leads"
+   },
+   {
+    "site": "simon-says-travel",
+    "what": "1 title outside 30–65 characters"
    },
    {
     "site": "paycalc",
@@ -60,57 +92,59 @@
     "what": "/tax-brackets: 3 files block the first paint"
    },
    {
-    "site": "vic",
-    "what": "1 outside link(s) go to a missing page"
+    "site": "paycalc",
+    "what": "\"mypaycalc\": we're not in the top 10 (Search Console avg 5); unknown site leads"
    },
    {
-    "site": "trade-admin",
-    "what": "1 of your top 8 pages aren't in Google's index"
+    "site": "paycalc",
+    "what": "\"pay calculator\": we're not in the top 10 (Search Console avg 86); woholmate.site leads"
    },
    {
-    "site": "trade-admin",
-    "what": "\"servicem8 vs\": we're not in the top 10 (Search Console avg 82); fergus.com leads"
+    "site": "paycalc",
+    "what": "\"australian tax brackets\": we're not in the top 10 (Search Console avg 88); data.gov.au leads"
    },
    {
-    "site": "trade-admin",
-    "what": "\"servicem8 pricing\": we're not in the top 10 (Search Console avg 82); capterra.com.au leads"
+    "site": "paycalc",
+    "what": "\"what tax bracket am i in australia\": we're not in the top 10 (Search Console avg 69); perthmobiletax.com.au leads"
    },
    {
-    "site": "trade-admin",
-    "what": "\"service mate vs tradify\": we're not in the top 10 (Search Console avg 76); growthlocal.com.au leads"
+    "site": "paycalc",
+    "what": "\"current tax brackets australia\": we're not in the top 10 (Search Console avg 73); data.gov.au leads"
    },
    {
-    "site": "trade-admin",
-    "what": "\"tradesman quote template\": we're not in the top 10 (Search Console avg 80); kr.pinterest.com leads"
-   },
-   {
-    "site": "trailers",
+    "site": "paycalc",
     "what": "2 description outside 70–160 characters"
    }
   ],
   "shipped": {
-   "trade-admin": [
-    "Trade Admin: make /job-management-software worth indexing"
-   ],
-   "simon-says-travel": [
-    "Simon Says Travel: make hubs and destination pages worth indexing"
-   ],
    "vic": [
+    "Vic Tours: auto-fix: town and region hub titles within 65 characters; breadcrumb schema on /towns, /road-trips, /about, /how-we-build-our-guides, /contact",
     "Vic: keep town section titles within 65 chars; HQ: sprint deadline 30 Nov, IMN setup progress",
     "Vic: drop dead Fleur Wolves website link (Geelong)",
     "Vic: fix 7 dead place websites (link-fixes.json survives OSM refreshes)",
-    "Vic: right-size Wikimedia photos (srcset 330/500/960), lazy-load weekend tiles",
-    "Vic Tours: pause /partners (hidden until Simon has capacity; flip live=true in data/vic/shoots.json)"
+    "Vic: right-size Wikimedia photos (srcset 330/500/960), lazy-load weekend tiles"
+   ],
+   "paycalc": [
+    "MyPayCalc: auto-fix: 49 salary titles and the salaries hub under 65 characters (hub now says $20k to $500k, matching its list); about and how-we-make-money descriptions to 70+"
+   ],
+   "trade-admin": [
+    "Trade Admin: auto-fix: Tradify vs Fergus and Contact titles to 30–65 characters",
+    "Trade Admin: make /job-management-software worth indexing"
+   ],
+   "community-help-co": [
+    "Community Help Co: auto-fix: job finder and clinics titles under 65 characters; job finder and about descriptions under 160",
+    "Community Help Co: Job Catalyst Clinics page with published prices and booking form"
+   ],
+   "simon-says-travel": [
+    "Simon Says Travel: auto-fix: home title to 55 characters; breadcrumb schema on /how-it-works",
+    "Simon Says Travel: make hubs and destination pages worth indexing"
    ],
    "trailers": [
+    "Trailers: Christmas Movies collection (featured; 10 films now, 15 more queued); Vic: Sorrento eat guide copy",
     "Trailers: Terms and Privacy descriptions at 70-160 characters, saying what each page covers",
     "Trailers: schema on Discover, Original Films (with FAQ) and the static pages",
     "Trailers: default share image (og:image) for pages without their own picture",
-    "Trailers: fit 5 page titles to 30-65 characters (long film names, Ghibli, Original Films, About)",
-    "trailers: rank home 'Popular right now' by last-28-day views first"
-   ],
-   "community-help-co": [
-    "Community Help Co: Job Catalyst Clinics page with published prices and booking form"
+    "Trailers: fit 5 page titles to 30-65 characters (long film names, Ghibli, Original Films, About)"
    ]
   },
   "note": "Outreach (emails sent vs warm-up, follow-ups) is added live by IMN HQ from D1."
