@@ -15,6 +15,11 @@
    "at": "2026-11-15T21:05:53Z",
    "ok": true,
    "note": "CF declined (traffic); OMDb budget bug fixed, 16 films re-queued; 27 new Vic towns proposed; 2 items prepped"
+  },
+  "auto-fix": {
+   "at": "2026-11-16T00:17:09Z",
+   "ok": true,
+   "note": "9 fixes on 5 sites (SST, CHC, Trade Admin, MyPayCalc, Vic); HQ claude_jobs log skipped: Cloudflare connector needs reconnecting"
   }
  }
 }
