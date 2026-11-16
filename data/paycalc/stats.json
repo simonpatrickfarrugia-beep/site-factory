@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-15T19:00:10.813Z",
+ "generatedAt": "2026-11-16T19:00:10.177Z",
  "period": {
-  "start": "2026-10-18",
-  "end": "2026-11-14"
+  "start": "2026-10-19",
+  "end": "2026-11-15"
  },
  "gscPeriod": {
-  "start": "2026-10-16",
-  "end": "2026-11-12"
+  "start": "2026-10-17",
+  "end": "2026-11-13"
  },
  "sources": {
   "ga4": true,
@@ -14,12 +14,12 @@
   "notes": []
  },
  "totals": {
-  "views": 201,
+  "views": 202,
   "prevViews": 0,
-  "users": 93,
+  "users": 94,
   "cta": {},
   "gscClicks": 4,
-  "gscImpressions": 1024
+  "gscImpressions": 1037
  },
  "daily": [
   {
@@ -96,21 +96,26 @@
    "date": "2026-11-14",
    "views": 1,
    "cta": 0
+  },
+  {
+   "date": "2026-11-15",
+   "views": 1,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 188,
+   "views": 189,
    "prevViews": 0,
-   "users": 81,
+   "users": 82,
    "cta": {},
    "gscClicks": 3,
-   "gscImpressions": 256,
-   "gscPosition": 64.7,
+   "gscImpressions": 269,
+   "gscPosition": 65.7,
    "topQuery": "mypaycalc",
-   "allViews": 188,
-   "prev7": 122,
+   "allViews": 189,
+   "prev7": 113,
    "d7": 31
   },
   {
@@ -683,7 +688,7 @@
   {
    "query": "pay calculator australia",
    "clicks": 0,
-   "impressions": 19,
+   "impressions": 20,
    "position": 80.7,
    "page": "/"
   },
@@ -730,6 +735,13 @@
    "page": "/tax-brackets"
   },
   {
+   "query": "paycalculator",
+   "clicks": 0,
+   "impressions": 10,
+   "position": 86.4,
+   "page": "/"
+  },
+  {
    "query": "current tax brackets australia",
    "clicks": 0,
    "impressions": 10,
@@ -748,13 +760,6 @@
    "clicks": 0,
    "impressions": 9,
    "position": 78.9,
-   "page": "/"
-  },
-  {
-   "query": "paycalculator",
-   "clicks": 0,
-   "impressions": 9,
-   "position": 86.3,
    "page": "/"
   },
   {
@@ -814,6 +819,13 @@
    "page": "/tax-brackets"
   },
   {
+   "query": "calculate my pay",
+   "clicks": 0,
+   "impressions": 5,
+   "position": 80.6,
+   "page": "/"
+  },
+  {
    "query": "paycheck calculator",
    "clicks": 0,
    "impressions": 5,
@@ -854,13 +866,6 @@
    "impressions": 5,
    "position": 82.2,
    "page": "/tax-brackets"
-  },
-  {
-   "query": "calculate my pay",
-   "clicks": 0,
-   "impressions": 4,
-   "position": 75.8,
-   "page": "/"
   },
   {
    "query": "salary calculator",
@@ -909,6 +914,13 @@
    "clicks": 0,
    "impressions": 3,
    "position": 73.7,
+   "page": "/"
+  },
+  {
+   "query": "fortnightly payroll",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 91.3,
    "page": "/"
   },
   {
@@ -1028,13 +1040,6 @@
    "clicks": 0,
    "impressions": 2,
    "position": 100,
-   "page": "/"
-  },
-  {
-   "query": "fortnightly payroll",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 89.5,
    "page": "/"
   },
   {
@@ -1360,10 +1365,10 @@
    "page": "/"
   },
   {
-   "query": "calculator paycheck",
+   "query": "calculator pay",
    "clicks": 0,
    "impressions": 1,
-   "position": 45,
+   "position": 98,
    "page": "/"
   }
  ],
@@ -1447,12 +1452,17 @@
    "date": "2026-11-12",
    "clicks": 0,
    "impressions": 15
+  },
+  {
+   "date": "2026-11-13",
+   "clicks": 0,
+   "impressions": 13
   }
  ],
  "allTime": {
   "start": "2026-10-29",
-  "views": 201,
-  "users": 93,
+  "views": 202,
+  "users": 94,
   "cta": {},
   "daily": [
    {
@@ -1529,6 +1539,11 @@
     "date": "2026-11-14",
     "views": 1,
     "cta": 0
+   },
+   {
+    "date": "2026-11-15",
+    "views": 1,
+    "cta": 0
    }
   ]
  },
@@ -1537,7 +1552,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 74
+    "sessions": 75
    },
    {
     "source": "bing",
@@ -1587,12 +1602,6 @@
    }
   ],
   "daily": [
-   {
-    "date": "2026-11-01",
-    "source": "(direct)",
-    "medium": "(none)",
-    "sessions": 10
-   },
    {
     "date": "2026-11-02",
     "source": "bing",
@@ -1715,6 +1724,12 @@
    },
    {
     "date": "2026-11-14",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-15",
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 1

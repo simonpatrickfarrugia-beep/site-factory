@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-15T19:00:10.813Z",
+ "generatedAt": "2026-11-16T19:00:10.177Z",
  "period": {
-  "start": "2026-10-18",
-  "end": "2026-11-14"
+  "start": "2026-10-19",
+  "end": "2026-11-15"
  },
  "gscPeriod": {
-  "start": "2026-10-16",
-  "end": "2026-11-12"
+  "start": "2026-10-17",
+  "end": "2026-11-13"
  },
  "sources": {
   "ga4": true,
@@ -14,23 +14,18 @@
   "notes": []
  },
  "totals": {
-  "views": 74,
-  "prevViews": 259,
-  "users": 46,
+  "views": 92,
+  "prevViews": 273,
+  "users": 49,
   "cta": {
-   "films_banner": 1,
+   "films_banner": 2,
    "justwatch": 1,
    "prime": 1
   },
   "gscClicks": 0,
-  "gscImpressions": 112
+  "gscImpressions": 105
  },
  "daily": [
-  {
-   "date": "2026-10-18",
-   "views": 15,
-   "cta": 0
-  },
   {
    "date": "2026-10-19",
    "views": 11,
@@ -120,31 +115,50 @@
    "date": "2026-11-13",
    "views": 1,
    "cta": 0
+  },
+  {
+   "date": "2026-11-15",
+   "views": 33,
+   "cta": 1
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 42,
-   "prevViews": 114,
+   "views": 39,
+   "prevViews": 119,
    "users": 25,
    "cta": {
-    "films_banner": 1
+    "films_banner": 2
    },
    "gscClicks": 0,
    "gscImpressions": 7,
    "gscPosition": 20.9,
    "topQuery": "movietr",
-   "allViews": 185,
+   "allViews": 188,
    "allCta": {
-    "films_banner": 1
+    "films_banner": 2
    },
-   "prev7": 4,
-   "d7": 3
+   "d7": 5,
+   "prev7": 4
   },
   {
    "path": "/browse",
-   "views": 14,
+   "views": 33,
+   "prevViews": 7,
+   "users": 4,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 40,
+   "d7": 26,
+   "prev7": 2
+  },
+  {
+   "path": "/original-films",
+   "views": 3,
    "prevViews": 0,
    "users": 3,
    "cta": {},
@@ -152,9 +166,23 @@
    "gscImpressions": 0,
    "gscPosition": null,
    "topQuery": null,
-   "allViews": 14,
-   "prev7": 2,
-   "d7": 0
+   "allViews": 3,
+   "d7": 1,
+   "prev7": 1
+  },
+  {
+   "path": "/discover/marvel-cinematic-universe",
+   "views": 2,
+   "prevViews": 0,
+   "users": 2,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2,
+   "d7": 1,
+   "prev7": 0
   },
   {
    "path": "/free-classic-movies",
@@ -167,7 +195,7 @@
    "gscPosition": null,
    "topQuery": null,
    "allViews": 2,
-   "prev7": 2,
+   "prev7": 1,
    "d7": 0
   },
   {
@@ -183,30 +211,18 @@
    "allViews": 2
   },
   {
-   "path": "/original-films",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2,
-   "prev7": 2,
-   "d7": 0
-  },
-  {
-   "path": "/movies/batman-begins-2005",
+   "path": "/contact",
    "views": 1,
-   "prevViews": 3,
+   "prevViews": 1,
    "users": 1,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 0,
    "gscPosition": null,
    "topQuery": null,
-   "allViews": 4
+   "allViews": 2,
+   "d7": 1,
+   "prev7": 0
   },
   {
    "path": "/movies/the-imitation-game-2014",
@@ -237,30 +253,6 @@
    "d7": 0
   },
   {
-   "path": "/contact",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 1
-  },
-  {
-   "path": "/discover/marvel-cinematic-universe",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 1
-  },
-  {
    "path": "/movies/anora-2024",
    "views": 1,
    "prevViews": 0,
@@ -285,7 +277,7 @@
    "allViews": 1
   },
   {
-   "path": "/movies/his-girl-friday-1940",
+   "path": "/movies/father-of-the-bride-1991",
    "views": 1,
    "prevViews": 0,
    "users": 1,
@@ -295,8 +287,20 @@
    "gscPosition": null,
    "topQuery": null,
    "allViews": 1,
-   "prev7": 1,
-   "d7": 0
+   "d7": 1,
+   "prev7": 0
+  },
+  {
+   "path": "/movies/his-girl-friday-1940",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
   },
   {
    "path": "/movies/interstellar-2014",
@@ -416,6 +420,18 @@
    "allViews": 4
   },
   {
+   "path": "/movies/batman-begins-2005",
+   "views": 0,
+   "prevViews": 4,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 4
+  },
+  {
    "path": "/movies/independence-day-1996",
    "views": 0,
    "prevViews": 4,
@@ -446,8 +462,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 12,
-   "gscPosition": 55.3,
+   "gscImpressions": 11,
+   "gscPosition": 55.9,
    "topQuery": "home alone trailer",
    "allViews": 3
   },
@@ -458,8 +474,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 10,
-   "gscPosition": 69,
+   "gscImpressions": 8,
+   "gscPosition": 72.8,
    "topQuery": "jurassic park film trailer",
    "allViews": 3
   },
@@ -518,8 +534,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 9,
-   "gscPosition": 58.7,
+   "gscImpressions": 6,
+   "gscPosition": 51.3,
    "topQuery": "the prestige trailer",
    "allViews": 2
   },
@@ -896,18 +912,6 @@
    "allViews": 2
   },
   {
-   "path": "/movies/the-sixth-sense-1999",
-   "views": 0,
-   "prevViews": 1,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 7,
-   "gscPosition": 50.4,
-   "topQuery": "the sixth sense trailer",
-   "allViews": 1
-  },
-  {
    "path": "/movies/the-hateful-eight-2015",
    "views": 0,
    "prevViews": 1,
@@ -917,6 +921,18 @@
    "gscImpressions": 6,
    "gscPosition": 76.8,
    "topQuery": "the hateful eight 2015 trailer",
+   "allViews": 1
+  },
+  {
+   "path": "/movies/the-sixth-sense-1999",
+   "views": 0,
+   "prevViews": 1,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 49.8,
+   "topQuery": "the sixth sense trailer",
    "allViews": 1
   },
   {
@@ -1387,6 +1403,17 @@
    "topQuery": "box office 1999"
   },
   {
+   "path": "/movies/captain-america-the-winter-soldier-2014",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 94,
+   "topQuery": "captain america the winter soldier 2014 trailer"
+  },
+  {
    "path": "/discover/1994-box-office-highlights",
    "views": 0,
    "prevViews": 0,
@@ -1395,17 +1422,6 @@
    "gscClicks": 0,
    "gscImpressions": 1,
    "gscPosition": 70,
-   "topQuery": null
-  },
-  {
-   "path": "/discover/2024-oscar-winners",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 75,
    "topQuery": null
   },
   {
@@ -1455,18 +1471,18 @@
  ],
  "queries": [
   {
-   "query": "home alone trailer",
-   "clicks": 0,
-   "impressions": 5,
-   "position": 49.2,
-   "page": "/movies/home-alone-1990"
-  },
-  {
    "query": "jurassic park film trailer",
    "clicks": 0,
    "impressions": 5,
    "position": 76.8,
    "page": "/movies/jurassic-park-1993"
+  },
+  {
+   "query": "home alone trailer",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 49.3,
+   "page": "/movies/home-alone-1990"
   },
   {
    "query": "district 9 trailer",
@@ -1481,20 +1497,6 @@
    "impressions": 3,
    "position": 66,
    "page": "/movies/jurassic-park-1993"
-  },
-  {
-   "query": "the prestige trailer",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 58.3,
-   "page": "/movies/the-prestige-2006"
-  },
-  {
-   "query": "the sixth sense trailer",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 59.3,
-   "page": "/movies/the-sixth-sense-1999"
   },
   {
    "query": "movietr",
@@ -1530,6 +1532,20 @@
    "impressions": 2,
    "position": 73,
    "page": "/movies/the-hateful-eight-2015"
+  },
+  {
+   "query": "the prestige trailer",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 60,
+   "page": "/movies/the-prestige-2006"
+  },
+  {
+   "query": "the sixth sense trailer",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 62,
+   "page": "/movies/the-sixth-sense-1999"
   },
   {
    "query": "air force one movie",
@@ -1586,20 +1602,6 @@
    "impressions": 1,
    "position": 65,
    "page": "/movies/insomnia-2002"
-  },
-  {
-   "query": "jurassic park movie trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 56,
-   "page": "/movies/jurassic-park-1993"
-  },
-  {
-   "query": "movie trailer jurassic park",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 52,
-   "page": "/movies/jurassic-park-1993"
   },
   {
    "query": "men in black trailer",
@@ -1693,20 +1695,6 @@
    "page": "/movies/the-hateful-eight-2015"
   },
   {
-   "query": "the prestige film trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 52,
-   "page": "/movies/the-prestige-2006"
-  },
-  {
-   "query": "the prestige movie trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 56,
-   "page": "/movies/the-prestige-2006"
-  },
-  {
    "query": "the prestige preview",
    "clicks": 0,
    "impressions": 1,
@@ -1756,6 +1744,13 @@
    "page": "/discover/1999-box-office-highlights"
   },
   {
+   "query": "captain america the winter soldier 2014 trailer",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 94,
+   "page": "/movies/captain-america-the-winter-soldier-2014"
+  },
+  {
    "query": "home alone film trailer",
    "clicks": 0,
    "impressions": 1,
@@ -1777,6 +1772,13 @@
    "page": "/movies/the-prestige-2006"
   },
   {
+   "query": "the prestige",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 2,
+   "page": "/movies/the-prestige-2006"
+  },
+  {
    "query": "trailer the prestige",
    "clicks": 0,
    "impressions": 1,
@@ -1785,11 +1787,6 @@
   }
  ],
  "gscDaily": [
-  {
-   "date": "2026-10-16",
-   "clicks": 0,
-   "impressions": 9
-  },
   {
    "date": "2026-10-17",
    "clicks": 0,
@@ -1924,14 +1921,19 @@
    "date": "2026-11-12",
    "clicks": 0,
    "impressions": 0
+  },
+  {
+   "date": "2026-11-13",
+   "clicks": 0,
+   "impressions": 2
   }
  ],
  "allTime": {
   "start": "2026-09-13",
-  "views": 374,
-  "users": 236,
+  "views": 407,
+  "users": 242,
   "cta": {
-   "films_banner": 1,
+   "films_banner": 2,
    "justwatch": 1,
    "prime": 1
   },
@@ -2195,6 +2197,11 @@
     "date": "2026-11-13",
     "views": 1,
     "cta": 0
+   },
+   {
+    "date": "2026-11-15",
+    "views": 33,
+    "cta": 1
    }
   ]
  },
@@ -2203,17 +2210,17 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 33
+    "sessions": 31
    },
    {
     "source": "google",
     "medium": "organic",
-    "sessions": 9
+    "sessions": 5
    },
    {
     "source": "chatgpt.com",
     "medium": "ai-assistant",
-    "sessions": 1
+    "sessions": 4
    },
    {
     "source": "dataindex.pro",
@@ -2229,7 +2236,7 @@
   "referrers": [
    {
     "url": "android-app://com.google.android.googlequicksearchbox/",
-    "views": 5
+    "views": 4
    },
    {
     "url": "http://dataindex.pro/",
@@ -2241,12 +2248,6 @@
    }
   ],
   "daily": [
-   {
-    "date": "2026-11-01",
-    "source": "(direct)",
-    "medium": "(none)",
-    "sessions": 3
-   },
    {
     "date": "2026-11-02",
     "source": "(direct)",
@@ -2288,6 +2289,12 @@
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 1
+   },
+   {
+    "date": "2026-11-15",
+    "source": "chatgpt.com",
+    "medium": "ai-assistant",
+    "sessions": 3
    }
   ]
  }
