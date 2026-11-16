@@ -13,9 +13,9 @@ const { site } = Astro.props;
     {site.included.map((i) => <li>{i.t}</li>)}
   </ul>
   <dl class="imn-plan__extras">
-    <div><dt>Setup</dt><dd>${site.setup.normal} + GST, once.{site.setup.promo && <> <strong>Founding offer:</strong> no setup fee for our first {site.setup.promoSpots} clients on a {site.setup.promoTerm}-month plan.</>}</dd></div>
+    <div><dt>Setup</dt><dd>{site.setup.normal ? <>${site.setup.normal} + GST, once.</> : <>$0. Building your site is part of the plan.</>}{site.setup.promo && <> <strong>Founding offer:</strong> no setup fee for our first {site.setup.promoSpots} clients on a {site.setup.promoTerm}-month plan.</>}</dd></div>
     <div><dt>Change rounds</dt><dd>{site.includedChanges} a month, up to {site.changeCapMinutes} minutes each. Extra rounds ${site.extraChange} + GST.</dd></div>
-    <div><dt>Contract</dt><dd>Month to month{site.setup.promo && <> ({site.setup.promoTerm} months on the founding offer)</>}. <a href="/terms">Our terms</a>.</dd></div>
+    <div><dt>Contract</dt><dd>None. Month to month, cancel any time{site.setup.promo && <> ({site.setup.promoTerm} months on the founding offer)</>}. <a href="/terms">Our terms</a>.</dd></div>
   </dl>
   <a class="imn-btn imn-btn--coin imn-btn--block" href="/get-started" data-cta="start_plan">Get started</a>
 </div>

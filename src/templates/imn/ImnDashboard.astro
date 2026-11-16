@@ -1,9 +1,10 @@
 ---
 /** Example client dashboard, shown with real numbers from one of our own sites (Vic Tours), read at build time. */
 import ImnCta from './ImnCta.astro';
-import type { DemoStats, SiteInfo } from '../../../brands/imn/model';
-interface Props { site: SiteInfo; stats: DemoStats | null }
-const { site, stats } = Astro.props;
+import ImnGlance from './ImnGlance.astro';
+import type { DemoStats, Glance, SiteInfo } from '../../../brands/imn/model';
+interface Props { site: SiteInfo; stats: DemoStats | null; glance: Glance | null }
+const { site, stats, glance } = Astro.props;
 const n = (v: number) => v.toLocaleString('en-AU');
 const fmt = (d: string) => (d ? new Date(d + 'T00:00:00').toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' }) : '');
 const max = stats ? Math.max(1, ...stats.daily.map((d) => d.views)) : 1;
@@ -11,11 +12,13 @@ const pts = stats && stats.daily.length > 1 ? stats.daily.map((d, i) => `${(i / 
 ---
 <section class="imn-pagehead">
   <div class="imn-wrap">
-    <h1>Your dashboard, in plain English</h1>
-    <p class="imn-lede">Every client gets a private page that shows what their website is doing: how many people visit, what they searched on Google to find you, and which pages they read.</p>
+    <h1>Confidence at a glance</h1>
+    <p class="imn-lede">Every client gets a private dashboard. One light tells you if all is well. Underneath: your site's health, how often Google shows you, who visits and what we fixed for you.</p>
   </div>
 </section>
 <div class="imn-wrap imn-section">
+  {glance && <ImnGlance g={glance} />}
+  {glance && <h2 class="imn-h2 imn-gap">Visits and Google, in plain English</h2>}
   {stats ? (
     <div class="imn-dash">
       <div class="imn-dash__head">
@@ -53,6 +56,6 @@ const pts = stats && stats.daily.length > 1 ? stats.daily.map((d, i) => `${(i / 
   ) : (
     <p>The example numbers aren't available in this build.</p>
   )}
-  <p class="imn-small">Numbers come from Google Analytics and Google Search Console{stats ? `, updated ${fmt(stats.asOf)}` : ''}. Your dashboard shows your own site and is private to you.</p>
+  <p class="imn-small">Numbers come from our site checks, Google Analytics and Google Search Console{stats ? `, updated ${fmt(stats.asOf)}` : ''}. Your dashboard shows your own site and is private to you. Green: all good. Amber: we're watching it. Red: we need a decision from you.</p>
 </div>
 <ImnCta site={site} heading="Want to see numbers like these for your business?" />

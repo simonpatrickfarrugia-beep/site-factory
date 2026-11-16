@@ -2,8 +2,8 @@
 /** The one call to action: get started. */
 import type { SiteInfo } from '../../../brands/imn/model';
 interface Props { site: SiteInfo; heading?: string }
-const { site, heading = 'Ready for a website that works as hard as you do?' } = Astro.props;
-const setup = site.setup.promo ? `Founding offer: no setup fee for our first ${site.setup.promoSpots} clients.` : `Setup $${site.setup.normal} + GST, once.`;
+const { site, heading = 'Ready to feel on top of your website?' } = Astro.props;
+const setup = site.setup.promo ? `Founding offer: no setup fee for our first ${site.setup.promoSpots} clients.` : site.setup.normal ? `Setup $${site.setup.normal} + GST, once.` : 'No setup fee, no lock-in.';
 ---
 <section class="imn-cta">
   <div class="imn-wrap imn-cta__inner">

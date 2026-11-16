@@ -14,7 +14,8 @@ export interface SiteInfo {
   hero: { kicker: string; title: string; lede: string };
   included: Item[];
   steps: Item[];
-  ai: { title: string; paragraphs: string[] };
+  ai: { title: string; paragraphs: string[]; pair: { who: string; what: string }[] };
+  glance: { title: string; paragraphs: string[] };
   change: string;
   sites: OurSite[];
   faq: Faq[];
@@ -43,4 +44,21 @@ export interface DemoStats {
   daily: { date: string; views: number }[];
   pages: { path: string; views: number }[];
   queries: { query: string; impressions: number }[];
+}
+/** "Confidence at a glance": real status for one of our own sites, read at build time from hq/sitecheck + hq/confidence. */
+export type Light = 'green' | 'amber' | 'red';
+export interface Glance {
+  site: string;
+  url: string;
+  asOf: string;
+  overall: Light;
+  headline: string;
+  sub: string;
+  lights: { label: string; status: Light; value: string; note: string }[];
+  checks: { label: string; grade: string }[];
+  fixed: string[];
+  scoreFrom: number | null;
+  scoreTo: number;
+  since: string;
+  nextCheck: string;
 }

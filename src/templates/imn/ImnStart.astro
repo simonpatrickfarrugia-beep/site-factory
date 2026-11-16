@@ -8,7 +8,7 @@ const { site, page: p } = Astro.props;
   <div class="imn-wrap">
     <h1>{p.title}</h1>
     <p class="imn-lede">{p.lede}</p>
-    {site.setup.promo && <p class="imn-promo"><span>{site.setup.promoLabel}</span> No setup fee for our first {site.setup.promoSpots} clients on a {site.setup.promoTerm}-month plan.</p>}
+    {site.setup.promo ? <p class="imn-promo"><span>{site.setup.promoLabel}</span> No setup fee for our first {site.setup.promoSpots} clients on a {site.setup.promoTerm}-month plan.</p> : <p class="imn-promo"><span>No setup fee</span> No lock-in. You only pay once your site is live and you're happy with it.</p>}
   </div>
 </section>
 <div class="imn-wrap imn-section">

@@ -1,0 +1,43 @@
+---
+/** Confidence at a glance: one overall light, three signals, the checks behind them and what we fixed. Real data only (see glance() in brands/imn/site.ts). */
+import type { Glance } from '../../../brands/imn/model';
+interface Props { g: Glance; compact?: boolean }
+const { g, compact = false } = Astro.props;
+const fmt = (d: string) => (d ? new Date(d + 'T00:00:00').toLocaleDateString('en-AU', { day: 'numeric', month: 'short' }) : '');
+const word = { green: 'Good', amber: 'Watching', red: 'Needs you' } as const;
+---
+<div class={`imn-glance imn-glance--${g.overall}${compact ? ' imn-glance--compact' : ''}`}>
+  <div class="imn-glance__top">
+    <span class={`imn-light imn-light--${g.overall} imn-light--big`} aria-hidden="true"></span>
+    <div>
+      <p class="imn-glance__label">Example: {g.site}, one of our own sites</p>
+      <p class="imn-glance__head">{g.headline}</p>
+      <p class="imn-glance__sub">{g.sub}</p>
+    </div>
+  </div>
+  <ul class="imn-glance__lights">
+    {g.lights.map((l) => (
+      <li>
+        <span class={`imn-light imn-light--${l.status}`} aria-hidden="true"></span>
+        <span class="imn-glance__what">{l.label} <em>{word[l.status]}</em></span>
+        <strong>{l.value}</strong>
+        <span class="imn-glance__note">{l.note}</span>
+      </li>
+    ))}
+  </ul>
+  {!compact && (
+    <div class="imn-glance__more">
+      <div>
+        <h2>The checks behind it</h2>
+        <ul class="imn-glance__checks">{g.checks.map((c) => <li><span>{c.label}</span><span class="imn-grade">{c.grade}</span></li>)}</ul>
+      </div>
+      <div>
+        <h2>What we fixed lately</h2>
+        {g.fixed.length ? <ul class="imn-glance__fixed">{g.fixed.map((f) => <li>✓ {f}</li>)}</ul> : <p class="imn-glance__note">Nothing needed fixing on the last check.</p>}
+        {g.scoreFrom !== null && g.scoreFrom !== g.scoreTo && <p class="imn-glance__note">Site score {g.scoreFrom} → {g.scoreTo} since {fmt(g.since)}.</p>}
+        {g.nextCheck && <p class="imn-glance__note">Next full check: {fmt(g.nextCheck)}.</p>}
+      </div>
+    </div>
+  )}
+  <p class="imn-glance__foot">Checked {fmt(g.asOf)} · Real numbers, updated automatically</p>
+</div>

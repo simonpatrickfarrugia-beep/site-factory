@@ -3,7 +3,7 @@
 import type { SiteInfo } from '../../../brands/imn/model';
 interface Props { site: SiteInfo }
 const { site } = Astro.props;
-const lines = ['Website built for you', 'Hosting + SSL security', 'Google set up + checked monthly', `${site.includedChanges} change rounds a month`, 'Your own dashboard', 'A real person to email'];
+const lines = ['Website built for you', 'Checked every day', 'Confidence dashboard', 'Hosting + SSL security', 'Google set up + kept healthy', `${site.includedChanges} change rounds a month`, 'A real person to email'];
 ---
 <figure class="imn-receipt" aria-label="What the monthly plan covers">
   <figcaption class="imn-receipt__head"><span>Independent Media Network</span><span>Your plan</span></figcaption>
@@ -13,6 +13,6 @@ const lines = ['Website built for you', 'Hosting + SSL security', 'Google set up
   <div class="imn-receipt__total">
     <span>Per month</span><strong>${site.price.monthly}<small> + GST</small></strong>
   </div>
-  <p class="imn-receipt__setup">{site.setup.promo ? <>Setup <strong>$0</strong> for our first {site.setup.promoSpots} clients</> : <>Setup ${site.setup.normal} + GST, once</>}</p>
-  <p class="imn-receipt__foot">Website, hosting, Google, dashboard and changes in one price</p>
+  <p class="imn-receipt__setup">{site.setup.promo ? <>Setup <strong>$0</strong> for our first {site.setup.promoSpots} clients</> : site.setup.normal ? <>Setup ${site.setup.normal} + GST, once</> : <>Setup <strong>$0</strong> · No lock-in</>}</p>
+  <p class="imn-receipt__foot">Build, daily checks, Google, dashboard and changes in one price</p>
 </figure>

@@ -2,9 +2,10 @@
 import ImnReceipt from './ImnReceipt.astro';
 import ImnCta from './ImnCta.astro';
 import ImnFaq from './ImnFaq.astro';
-import type { SiteInfo } from '../../../brands/imn/model';
-interface Props { site: SiteInfo }
-const { site } = Astro.props;
+import ImnGlance from './ImnGlance.astro';
+import type { Glance, SiteInfo } from '../../../brands/imn/model';
+interface Props { site: SiteInfo; glance: Glance | null }
+const { site, glance } = Astro.props;
 ---
 <section class="imn-hero">
   <div class="imn-wrap imn-hero__grid">
@@ -16,11 +17,24 @@ const { site } = Astro.props;
         <a class="imn-btn imn-btn--coin" href="/get-started" data-cta="start_hero">Get started</a>
         <a class="imn-link" href="/pricing">${site.price.monthly} + GST a month</a>
       </p>
-      {site.setup.promo && <p class="imn-promo"><span>{site.setup.promoLabel}</span> No setup fee for our first {site.setup.promoSpots} clients.</p>}
+      {site.setup.promo ? <p class="imn-promo"><span>{site.setup.promoLabel}</span> No setup fee for our first {site.setup.promoSpots} clients.</p> : <p class="imn-promo"><span>No setup fee</span> No lock-in contract. Cancel any month.</p>}
     </div>
     <ImnReceipt site={site} />
   </div>
 </section>
+
+{glance && (
+  <section class="imn-wrap imn-section">
+    <div class="imn-split imn-split--glance">
+      <div>
+        <h2 class="imn-h2">{site.glance.title}</h2>
+        {site.glance.paragraphs.map((p) => <p class="imn-measure">{p}</p>)}
+        <p class="imn-small"><a href="/example-dashboard">See the full example dashboard</a></p>
+      </div>
+      <ImnGlance g={glance} compact />
+    </div>
+  </section>
+)}
 
 <section class="imn-wrap imn-section">
   <h2 class="imn-h2">What you get</h2>
@@ -36,8 +50,7 @@ const { site } = Astro.props;
       {site.ai.paragraphs.map((p) => <p class="imn-measure">{p}</p>)}
     </div>
     <ul class="imn-pair" aria-label="Who does what">
-      <li><span class="imn-pair__who">AI</span> Drafts pages, checks speed and Google basics, makes quick edits</li>
-      <li><span class="imn-pair__who imn-pair__who--human">Human</span> Plans your site with you, checks every page, answers your emails</li>
+      {site.ai.pair.map((x) => <li><span class={`imn-pair__who${x.who === 'Human' ? ' imn-pair__who--human' : ''}`}>{x.who}</span> {x.what}</li>)}
     </ul>
   </div>
 </section>

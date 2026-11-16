@@ -1,5 +1,5 @@
 {
-  "_about": "Independent Media Network (imnetwork.com.au): website subscription for small businesses. Edited by chat. Prices ex-GST (IMN is GST-registered). setup.promo true = founding offer (setup waived for the first setup.promoSpots clients on a 12-month plan); set false to stop. Decided by Simon 16 Nov 2026: $99/mo, $499 setup, first 10 free on 12 months + testimonial, Stripe billing, T&Cs drafted (lawyer review before client #1). Extra pages over 5: $99 + GST each, once (16 Nov).",
+  "_about": "Independent Media Network (imnetwork.com.au): website subscription for small businesses. Edited by chat. Prices ex-GST (IMN is GST-registered). Decided by Simon 16 Nov 2026: $99/mo, Stripe billing, T&Cs drafted. 17 Nov 2026: setup fee scrapped ($0, normal 0, promo off) and no lock-in contract (service first); positioning 'your website, under control': daily checks, confidence-at-a-glance dashboard, the IMN brain (lessons shared across every site). Extra pages over 5: $99 + GST each, once.",
   "email": "hello@imnetwork.com.au",
   "formsEndpoint": "/api",
   "price": {
@@ -7,8 +7,8 @@
     "monthlyIncGst": 108.9
   },
   "setup": {
-    "normal": 499,
-    "promo": true,
+    "normal": 0,
+    "promo": false,
     "promoLabel": "Founding client offer",
     "promoSpots": 10,
     "promoTerm": 12
@@ -17,29 +17,29 @@
   "includedChanges": 2,
   "hero": {
     "kicker": "Websites for Australian small businesses",
-    "title": "Your website, built and looked after. One simple monthly price.",
-    "lede": "We build your site, host it, keep it healthy on Google and make your changes. Human run, AI powered."
+    "title": "Your website and online presence, under control.",
+    "lede": "We build your site, check it every day and show you how it's going at a glance. No setup fee, no lock-in. Human run, AI powered."
   },
   "included": [
     {
-      "t": "A site built for your business",
-      "d": "Up to 5 pages, designed for phones first, written with you. Not a template you fill in yourself."
+      "t": "Confidence at a glance",
+      "d": "Your own dashboard with one green, amber or red light, plus visits, Google searches, enquiries and what we fixed, all in plain English."
     },
     {
-      "t": "Hosting and security, sorted",
-      "d": "Fast pages on Cloudflare's global network, with the padlock (SSL) on. Every version is saved, so any change can be undone."
+      "t": "Checked every day",
+      "d": "Every morning our system checks your site is up and working. Full check-ups for broken links, speed and Google basics run weekly while your site is new."
+    },
+    {
+      "t": "A site built for your business",
+      "d": "Up to 5 pages, designed for phones first, written with you. Fast hosting on Cloudflare with SSL, and every version saved so any change can be undone."
     },
     {
       "t": "Found on Google",
-      "d": "Page titles, descriptions, a sitemap and Google Search Console set up, then checked every month."
+      "d": "Page titles, descriptions, a sitemap and Google Search Console set up, then kept healthy as Google changes."
     },
     {
       "t": "2 change rounds a month",
       "d": "Email us what you want changed: new text, a photo, a price, a new section. Each round is up to 30 minutes of work. We do it, you check it."
-    },
-    {
-      "t": "Your own dashboard",
-      "d": "Visits, Google searches and enquiries in plain English, so you can see what the site is doing for you."
     },
     {
       "t": "A real person",
@@ -53,18 +53,29 @@
     },
     {
       "t": "We build your preview",
-      "d": "We write and design it, then send you a private link to check on your phone. Change what you like before it goes live."
+      "d": "We write and design it, then send you a private link to check on your phone. Change what you like. You don't pay a cent until it's live."
     },
     {
-      "t": "Go live, then we look after it",
-      "d": "We connect your domain, set up Google and keep everything running. You email us when you want a change."
+      "t": "Go live, then relax",
+      "d": "We connect your domain and set up Google. From then on we check your site every day, and you see how it's going on your dashboard. Email us when you want a change."
     }
   ],
   "ai": {
-    "title": "Human run, AI powered",
+    "title": "The IMN brain: every site makes yours better",
     "paragraphs": [
-      "We use AI to do the heavy lifting: drafting pages, checking speed and Google basics, and making changes quickly. That's how we include the build and your changes in one fair monthly price.",
-      "A person runs every job. Simon plans your site with you, checks every page before it goes live and answers your emails himself. Nothing goes live without a human signing it off."
+      "Every site we run, from travel guides to pay calculators to local businesses, feeds what it learns into one system. When a fix works on one site, like a page title that earns more Google clicks or a slow page made fast, we check every client's site for the same win.",
+      "So you get the lessons from every industry we work in, not just your own. We share lessons, never your data: your numbers and your customers' details stay private to you.",
+      "A person runs every job. Simon plans your site with you, signs off every change and answers your emails himself. Nothing goes live without a human checking it."
+    ],
+    "pair": [
+      {
+        "who": "AI",
+        "what": "Checks every site daily, spots what's working, drafts fixes and quick edits"
+      },
+      {
+        "who": "Human",
+        "what": "Plans your site with you, signs off every change, answers your emails"
+      }
     ]
   },
   "change": "A change round is a small update to your site, up to 30 minutes of work: new or edited text, swapping photos, updating prices or opening hours, or adding a section to an existing page. Send your edits together in one email. Unused rounds don't carry over. Extra pages beyond your first 5 are $99 + GST each, once. A redesign is quoted first.",
@@ -103,11 +114,11 @@
   "faq": [
     {
       "q": "What does it cost?",
-      "a": "$99 + GST a month ($108.90 inc GST), charged by card each month. That covers hosting, security, Google upkeep, your dashboard and 2 change rounds a month."
+      "a": "$99 + GST a month ($108.90 inc GST), charged by card each month. That covers building your site, hosting, daily checks, Google upkeep, your dashboard and 2 change rounds a month. No setup fee."
     },
     {
       "q": "Is there a setup fee?",
-      "a": "Setup is $499 + GST, once. Founding client offer: our first 10 clients pay no setup fee when they sign up for 12 months and are happy for us to share a short testimonial."
+      "a": "No. Building your site is part of the plan. You see a private preview first, and your first payment is only taken when your site goes live."
     },
     {
       "q": "What counts as a change?",
@@ -115,7 +126,11 @@
     },
     {
       "q": "Is there a lock-in contract?",
-      "a": "Standard plans are month to month: cancel before your next month starts. The founding offer is a 12-month plan, because we waive the setup fee. Full details are in our terms."
+      "a": "No. It's month to month: cancel by email before your next billing date and you won't be charged again. We'd rather keep you because the service is good than because of a contract. Full details are in our terms."
+    },
+    {
+      "q": "What does the confidence light mean?",
+      "a": "Green: all good, nothing needs you. Amber: we've spotted something and we're on it. Red: we need a quick decision from you, and we'll be in touch with a plan. Underneath you can see exactly why."
     },
     {
       "q": "Who owns the website?",
@@ -127,7 +142,7 @@
     },
     {
       "q": "Do you use AI to build sites?",
-      "a": "Yes, for the heavy lifting. A person plans your site with you, checks every page before it goes live and answers your emails."
+      "a": "Yes, for the heavy lifting: drafting, daily checks and quick edits. Lessons from every site we run make the system smarter for all of them. A person plans your site with you, signs off every change and answers your emails."
     },
     {
       "q": "When do I start paying?",
@@ -139,5 +154,12 @@
     }
   ],
   "changeCapMinutes": 30,
-  "extraPage": 99
+  "extraPage": 99,
+  "glance": {
+    "title": "Know it's all working, at a glance",
+    "paragraphs": [
+      "Most business owners have no idea if their website is helping or quietly broken. Your dashboard answers that in one look: green means all good, amber means we're watching something, red means we need a quick decision from you.",
+      "Underneath sit the checks we run for you: broken pages, speed, Google basics, how often Google shows you and how many people visit. This is the real panel for one of our own sites."
+    ]
+  }
 }
