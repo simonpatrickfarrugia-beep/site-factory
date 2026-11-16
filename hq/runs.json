@@ -2,9 +2,9 @@
  "_about": "Last run of each AI worker (claude.ai scheduled task). Each skill's final step updates only its own entry. Checked daily by scripts/health.py (limits in hq/health.json).",
  "workers": {
   "imn-radar": {
-   "at": "2026-11-15T20:35:02Z",
-   "ok": false,
-   "note": "Cloudflare connector needs reconnecting: no D1 access, so no targets, dedupe or inserts; 0 added"
+   "at": "2026-11-16T06:25:36Z",
+   "ok": true,
+   "note": "Paced (12 drafts waiting): added 1 CHC (Federation TAFE, VCE results 10 Dec); playbook updated"
   },
   "morning-report": {
    "at": "2026-11-16T06:10:59Z",
