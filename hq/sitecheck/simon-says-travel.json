@@ -3,12 +3,12 @@
  "name": "simonsaystravel.com.au",
  "url": "https://simonsaystravel.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-16T00:03:15Z",
+ "scannedAt": "2026-11-16T09:20:01Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
  "nextDue": "2026-11-23",
- "score": 97,
+ "score": 99,
  "grade": "A",
  "areas": {
   "health": {
@@ -22,13 +22,13 @@
    "label": "Tracking & money links"
   },
   "indexing": {
-   "score": 92,
+   "score": 97,
    "grade": "A",
    "label": "Sitemap & indexing"
   },
   "seo": {
-   "score": 83,
-   "grade": "B",
+   "score": 96,
+   "grade": "A",
    "label": "Titles, descriptions & schema"
   },
   "content": {
@@ -57,60 +57,21 @@
   {
    "id": "few-pages-in-google",
    "area": "indexing",
-   "severity": "medium",
-   "title": "Google shows only 2 of 27 pages",
-   "fix": "Cut or merge weak pages (noindex the thinnest), link the best ones from the home page, and earn a few links from other sites.",
+   "severity": "low",
+   "title": "Google shows only 2 of 27 pages (site is 11 days old)",
+   "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 4 pages on 4 Jan 2027, cut or merge weak pages and earn a few links.",
    "pages": [],
    "count": 1,
    "detail": "",
-   "impact": 7.5,
-   "broken": false
-  },
-  {
-   "id": "seo-og",
-   "area": "seo",
-   "severity": "low",
-   "title": "27 page(s) without a share image",
-   "fix": "Add an og:image so shared links show a picture.",
-   "pages": [
-    "/",
-    "/reports",
-    "/reports/2026-11",
-    "/destinations",
-    "/destinations/sydney",
-    "/destinations/melbourne",
-    "/destinations/brisbane",
-    "/destinations/perth"
-   ],
-   "count": 27,
-   "detail": "",
-   "impact": 5,
+   "impact": 3,
    "broken": false
   },
   {
    "id": "seo-words",
    "area": "seo",
    "severity": "low",
-   "title": "5 page(s) under 250 words",
+   "title": "2 page(s) under 250 words",
    "fix": "Fine for tools; for guides add the answer people search for.",
-   "pages": [
-    "/reports",
-    "/destinations",
-    "/about",
-    "/privacy-policy",
-    "/affiliate-disclosure"
-   ],
-   "count": 5,
-   "detail": "",
-   "impact": 1.0,
-   "broken": false
-  },
-  {
-   "id": "schema-missing",
-   "area": "seo",
-   "severity": "low",
-   "title": "2 page(s) have no schema",
-   "fix": "Add WebPage/BreadcrumbList (or the page's own type) so Google understands it.",
    "pages": [
     "/privacy-policy",
     "/affiliate-disclosure"
@@ -152,7 +113,7 @@
   {
    "url": "https://simonsaystravel.com.au/",
    "lite": true,
-   "serverSecs": 0.06,
+   "serverSecs": 0.19,
    "htmlKb": 38,
    "blocking": 1,
    "images": 1,
@@ -163,7 +124,7 @@
   {
    "url": "https://simonsaystravel.com.au/destinations/japan",
    "lite": true,
-   "serverSecs": 0.13,
+   "serverSecs": 0.16,
    "htmlKb": 16,
    "blocking": 1,
    "images": 1,
@@ -173,7 +134,7 @@
   }
  ],
  "quality": {
-  "summary": "27 indexable pages · average 233 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
+  "summary": "27 indexable pages · average 254 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
   "thin": 0,
   "near": 0
  },
@@ -187,11 +148,12 @@
  "secs": 122,
  "change": {
   "first": false,
-  "since": "2026-11-15T18:59:19Z",
-  "score": 1,
+  "since": "2026-11-16T00:03:15Z",
+  "score": 2,
   "newIssues": [],
   "fixed": [
-   "1 title outside 30–65 characters"
+   "27 page(s) without a share image",
+   "2 page(s) have no schema"
   ],
   "impr28": 0,
   "clicks28": 0,
@@ -217,6 +179,13 @@
   {
    "at": "2026-11-15T18:59:19Z",
    "score": 96,
+   "grade": "A",
+   "impr28": 4,
+   "clicks28": 0
+  },
+  {
+   "at": "2026-11-16T00:03:15Z",
+   "score": 97,
    "grade": "A",
    "impr28": 4,
    "clicks28": 0

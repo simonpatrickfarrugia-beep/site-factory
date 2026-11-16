@@ -1,15 +1,13 @@
 # Site check: simonsaystravel.com.au
 
-**A · 97/100** · scanned 2026-11-16 00:03 UTC · 27 pages · next scan 2026-11-23 (no revenue in the last 60 days, every 7 days)
+**A · 99/100** · scanned 2026-11-16 09:20 UTC · 27 pages · next scan 2026-11-23 (no revenue in the last 60 days, every 7 days)
 
-**Since 2026-11-15:** score +1 · Google impressions (28 days) 0 · clicks 0 · visits 0 · fixed 1
+**Since 2026-11-16:** score +2 · Google impressions (28 days) 0 · clicks 0 · visits 0 · fixed 2
 
 ## Top 5 fixes
 
-1. **Google shows only 2 of 27 pages** (medium, impact 7.5). Cut or merge weak pages (noindex the thinnest), link the best ones from the home page, and earn a few links from other sites.
-2. **27 page(s) without a share image** (low, impact 5). Add an og:image so shared links show a picture. Pages: /, /reports, /reports/2026-11, /destinations
-3. **5 page(s) under 250 words** (low, impact 1.0). Fine for tools; for guides add the answer people search for. Pages: /reports, /destinations, /about, /privacy-policy
-4. **2 page(s) have no schema** (low, impact 1.0). Add WebPage/BreadcrumbList (or the page's own type) so Google understands it. Pages: /privacy-policy, /affiliate-disclosure
+1. **Google shows only 2 of 27 pages (site is 11 days old)** (low, impact 3). Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 4 pages on 4 Jan 2027, cut or merge weak pages and earn a few links.
+2. **2 page(s) under 250 words** (low, impact 1.0). Fine for tools; for guides add the answer people search for. Pages: /privacy-policy, /affiliate-disclosure
 
 ## Report card
 
@@ -17,8 +15,8 @@
 |---|---|---:|
 | Broken pages & links | A | 100 |
 | Tracking & money links | A | 100 |
-| Sitemap & indexing | A | 92 |
-| Titles, descriptions & schema | B | 83 |
+| Sitemap & indexing | A | 97 |
+| Titles, descriptions & schema | A | 96 |
 | Thin & duplicate pages | A | 100 |
 | Speed | A | 100 |
 | Google trend | A | 100 |
@@ -30,21 +28,20 @@
 
 ## What changed
 
-- Fixed: 1 title outside 30–65 characters
+- Fixed: 27 page(s) without a share image
+- Fixed: 2 page(s) have no schema
 
 ## Speed (phones)
 
-- /: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.06s, HTML 38 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
-- /destinations/japan: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.13s, HTML 16 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
+- /: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.19s, HTML 38 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
+- /destinations/japan: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.16s, HTML 16 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
 
 ## All findings
 
 | # | Area | Severity | Impact | Finding |
 |---:|---|---|---:|---|
-| 1 | indexing | medium | 7.5 | Google shows only 2 of 27 pages |
-| 2 | seo | low | 5 | 27 page(s) without a share image |
-| 3 | seo | low | 1.0 | 5 page(s) under 250 words |
-| 4 | seo | low | 1.0 | 2 page(s) have no schema |
+| 1 | indexing | low | 3 | Google shows only 2 of 27 pages (site is 11 days old) |
+| 2 | seo | low | 1.0 | 2 page(s) under 250 words |
 
 Links: 28 internal, 59 outside (2 checked; 0 block robots, not counted). Affiliate links tagged correctly: 57. Live Google check cost US$0.000.
 

@@ -251,66 +251,36 @@
    "name": "simonsaystravel.com.au",
    "url": "https://simonsaystravel.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-16T00:03:15Z",
-   "score": 97,
+   "scannedAt": "2026-11-16T09:20:01Z",
+   "score": 99,
    "grade": "A",
-   "change": 1,
+   "change": 2,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
    "nextDue": "2026-11-23",
-   "topFix": "Google shows only 2 of 27 pages",
+   "topFix": "Google shows only 2 of 27 pages (site is 11 days old)",
    "broken": 0,
    "newIssues": 0,
-   "fixed": 1,
+   "fixed": 2,
    "costUsd": 0,
    "top": [
     {
      "id": "few-pages-in-google",
-     "title": "Google shows only 2 of 27 pages",
-     "severity": "medium",
+     "title": "Google shows only 2 of 27 pages (site is 11 days old)",
+     "severity": "low",
      "area": "indexing",
-     "fix": "Cut or merge weak pages (noindex the thinnest), link the best ones from the home page, and earn a few links from other sites.",
+     "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 4 pages on 4 Jan 2027, cut or merge weak pages and earn a few links.",
      "pages": [],
      "detail": "",
      "broken": false
     },
     {
-     "id": "seo-og",
-     "title": "27 page(s) without a share image",
-     "severity": "low",
-     "area": "seo",
-     "fix": "Add an og:image so shared links show a picture.",
-     "pages": [
-      "/",
-      "/reports",
-      "/reports/2026-11",
-      "/destinations"
-     ],
-     "detail": "",
-     "broken": false
-    },
-    {
      "id": "seo-words",
-     "title": "5 page(s) under 250 words",
+     "title": "2 page(s) under 250 words",
      "severity": "low",
      "area": "seo",
      "fix": "Fine for tools; for guides add the answer people search for.",
-     "pages": [
-      "/reports",
-      "/destinations",
-      "/about",
-      "/privacy-policy"
-     ],
-     "detail": "",
-     "broken": false
-    },
-    {
-     "id": "schema-missing",
-     "title": "2 page(s) have no schema",
-     "severity": "low",
-     "area": "seo",
-     "fix": "Add WebPage/BreadcrumbList (or the page's own type) so Google understands it.",
      "pages": [
       "/privacy-policy",
       "/affiliate-disclosure"
@@ -321,11 +291,11 @@
    ]
   }
  },
- "updated": "2026-11-16T08:19:28Z",
+ "updated": "2026-11-16T09:20:01Z",
  "lastRun": {
-  "at": "2026-11-16T08:19:28Z",
+  "at": "2026-11-16T09:20:01Z",
   "scanned": [
-   "vic"
+   "simon-says-travel"
   ]
  }
 }
