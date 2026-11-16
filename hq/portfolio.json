@@ -832,6 +832,57 @@
     "at": "2026-11-16"
    },
    "doneAt": "2026-11-16"
+  },
+  {
+   "id": "opp-hecs-repayment",
+   "kind": "do",
+   "mins": 3,
+   "what": "HECS repayment page: add one line, then reply 'publish hecs-repayment'",
+   "why": "'hecs repayment' and 'hecs repayment threshold' get 3,600 searches a month each; we're at ~position 70 with 0 clicks. Draft adds fortnightly amounts and the 2026 indexation rate.",
+   "link": "https://github.com/simonpatrickfarrugia-beep/site-factory/blob/main/hq/ready/opportunities/2026-11-16-paycalc-hecs-repayment.md",
+   "linkLabel": "Draft",
+   "done": false,
+   "addedAt": "2026-11-16",
+   "ready": {
+    "what": "Draft ready: add your line and reply 'publish <slug>'",
+    "link": "https://github.com/simonpatrickfarrugia-beep/site-factory/blob/main/hq/ready/opportunities/2026-11-16-paycalc-hecs-repayment.md",
+    "at": "2026-11-16"
+   },
+   "brand": "paycalc"
+  },
+  {
+   "id": "opp-mornington-main-street",
+   "kind": "do",
+   "mins": 3,
+   "what": "Mornington Main Street eats: add your pick + one line, then reply 'publish mornington-main-street'",
+   "why": "'mornington main street restaurants' gets 390 searches a month (Mornington food: 14,800); we're at ~position 58 with 0 clicks.",
+   "link": "https://github.com/simonpatrickfarrugia-beep/site-factory/blob/main/hq/ready/opportunities/2026-11-16-vic-mornington-main-street.md",
+   "linkLabel": "Draft",
+   "done": false,
+   "addedAt": "2026-11-16",
+   "ready": {
+    "what": "Draft ready: add your line and reply 'publish <slug>'",
+    "link": "https://github.com/simonpatrickfarrugia-beep/site-factory/blob/main/hq/ready/opportunities/2026-11-16-vic-mornington-main-street.md",
+    "at": "2026-11-16"
+   },
+   "brand": "vic"
+  },
+  {
+   "id": "opp-warrnambool-stay-central",
+   "kind": "do",
+   "mins": 3,
+   "what": "Warrnambool central stays: add one line, then reply 'publish warrnambool-stay-central'",
+   "why": "6,600 searches a month for Warrnambool accommodation; Google shows us for 'near city centre' at ~position 57 with 0 clicks.",
+   "link": "https://github.com/simonpatrickfarrugia-beep/site-factory/blob/main/hq/ready/opportunities/2026-11-16-vic-warrnambool-stay-central.md",
+   "linkLabel": "Draft",
+   "done": false,
+   "addedAt": "2026-11-16",
+   "ready": {
+    "what": "Draft ready: add your line and reply 'publish <slug>'",
+    "link": "https://github.com/simonpatrickfarrugia-beep/site-factory/blob/main/hq/ready/opportunities/2026-11-16-vic-warrnambool-stay-central.md",
+    "at": "2026-11-16"
+   },
+   "brand": "vic"
   }
  ],
  "notes": [
