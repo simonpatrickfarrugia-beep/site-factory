@@ -151,6 +151,14 @@ export async function sendForOrg(env: SendEnv, brands: Brands, id: number, b: Js
     env.DB.prepare('INSERT INTO sends (org_id, brand, to_email, subject, kind, day) VALUES (?, ?, ?, ?, ?, ?)').bind(id, org.brand, to, subject, kind, melbDay()),
     env.DB.prepare(`UPDATE orgs SET next_step = ? WHERE id = ?`).bind(kind === 'first' ? 'Wait for a reply (sent from HQ)' : 'Wait for a reply (follow-up sent)', id),
   ];
+  // A first email sent from HQ moves the card to Sent here, so the 7-day follow-up and the funnel work even when the
+  // mail hub never sees a copy (some brands' sent copies don't reach crm@). If the hub copy does arrive later, it's a no-op.
+  if (kind === 'first' && (org.stage === 'found' || org.stage === 'drafted')) {
+    stmts.push(
+      env.DB.prepare(`UPDATE orgs SET stage = 'sent', stage_at = strftime('%Y-%m-%dT%H:%M:%SZ','now') WHERE id = ? AND stage IN ('found','drafted')`).bind(id),
+      env.DB.prepare(`INSERT INTO touches (org_id, brand, stage, channel, subject, note) VALUES (?, ?, 'sent', 'email', ?, 'Sent from HQ')`).bind(id, org.brand, subject),
+    );
+  }
   const hasContact = await env.DB.prepare('SELECT 1 FROM contacts WHERE org_id = ? AND lower(email) = ?').bind(id, to).first();
   if (!hasContact) stmts.push(env.DB.prepare('INSERT INTO contacts (org_id, email, name) VALUES (?, ?, ?)').bind(id, to, typeof b.contact_name === 'string' ? b.contact_name.slice(0, 200) : null));
   await env.DB.batch(stmts);

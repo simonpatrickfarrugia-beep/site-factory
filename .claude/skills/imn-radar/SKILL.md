@@ -33,6 +33,8 @@ Data: Cloudflare D1 (see `CLAUDE.md`), via the Cloudflare D1 query tool.
   - radar_coaching = [{text, at}]: Simon's standing rules. Treat them as hard rules for choosing, scoring and writing.
 - Queue: `SELECT COUNT(*) FROM orgs WHERE found_by='radar' AND reviewed_at IS NULL AND (snooze_until IS NULL OR snooze_until <= strftime('%Y-%m-%dT%H:%M:%SZ','now'))`
 - Ramp: `SELECT MIN(day) AS first FROM sends` (Melbourne dates; NULL = nothing sent yet)
+- Waiting on Simon: `SELECT COUNT(*) FROM orgs WHERE found_by='radar' AND stage='drafted'` (liked, not yet sent) and follow-ups due:
+  `SELECT COUNT(*) FROM orgs o WHERE o.stage='sent' AND o.stage_at <= strftime('%Y-%m-%dT%H:%M:%SZ','now','-7 days') AND NOT EXISTS (SELECT 1 FROM sends s WHERE s.org_id=o.id AND s.kind='followup')`
 - Dedupe: `SELECT o.id, o.brand, o.name, o.website, c.email, c.opted_out_at FROM orgs o LEFT JOIN contacts c ON c.org_id = o.id`
 - Outcomes: `SELECT o.brand, o.target, o.name, o.type, o.region, o.score, o.review, o.stage, o.signals, o.trigger_date, o.ask, (SELECT group_concat(note, ' | ') FROM touches t WHERE t.org_id = o.id AND t.channel IN ('radar','note','board')) AS notes FROM orgs o WHERE o.found_by='radar' AND (o.reviewed_at IS NOT NULL OR o.stage IN ('sent','replied','linked','won','no'))`
   review = drafted (liked) / not_fit / no_email / already (dropped, reason in notes) / later. Stage replied / linked / won = the real win.
@@ -44,10 +46,17 @@ Compare outcomes by brand, organisation type (target before ':'), region, score 
 `INSERT INTO hq_kv (k, v) VALUES ('radar_playbook', ?) ON CONFLICT (k) DO UPDATE SET v = excluded.v, updated_at = strftime('%Y-%m-%dT%H:%M:%SZ','now')`
 v = JSON {updatedAt, basedOn {found, drafted, dropped, replied, linked}, favour [3-6], avoid [3-6], signals [2-5], summary (2-3 sentences), changes (one line)}.
 Only claim what the data supports; with little data, say so.
+- Judge by what happened after the send, not by whether Simon liked the draft: linked/won > replied > sent > drafted. A segment
+  Simon likes but that never gets replies is not a "favour" yet.
+- Every favour/avoid line states its sample, e.g. "neighbourhood houses: 3 of 5 drafted, 0 of 2 replied". Under 10 at the step
+  the line is about, start it with "Hunch:". Don't move a segment to avoid on fewer than 5 drops.
+- Compare dated triggers with evergreen fits once each has 5+ sends; until then keep both (the first link won was evergreen).
 
 ## Step 3 — Top up the queue
 Queue size follows the warm-up ramp: day = days since `first` + 1 (day 1 if NULL). Days 1-7: 5. Days 8-14: 10. From day 15: 10 per brand
 with `leftThisWeek` > 0, capped at 25. Needed = size − queue count. If Needed <= 0, go to step 4.
+PACE TO SIMON: prospects are only worth something once sent. If 5+ liked drafts are unsent, or 3+ follow-ups are due, cap Needed
+at 2 (only the strongest, dated triggers) and say why in radar_last_run's note, e.g. "paced: 9 drafts waiting to send".
 Pick targets from radar_targets: highest score first, skip brands with leftThisWeek <= 0, max 3 per brand per run before day 15,
 applying playbook and coaching. For each target find ONE real organisation of that type in that region (start from its search phrases
 and the brand's trigger "look" hints; WebSearch, then WebFetch their own pages). Find:
@@ -81,7 +90,8 @@ trigger_date = next date and snooze_until = 6 weeks before it (ISO). Snoozed add
 **Insert** each one:
 1. `INSERT INTO orgs (brand, name, type, website, evidence_url, region, target, stage, found_by, score, why, opener, source_url, notes, draft_subject, draft_body, signals, why_now, trigger_date, gap, proof, ask, widget_url, snooze_until) VALUES (?, ?, ?, ?, ?, ?, ?, 'found', 'radar', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id`
    type = segment label; region = region label; target = target key exactly; why = one specific sentence; opener = the email's first
-   sentence; source_url = page with the email; signals = JSON array of 2-5 chips; why_now = trigger + source; trigger_date = YYYY-MM-DD or
+   sentence; source_url = page with the email; notes = two short lines, "Verified: <facts you saw> (<url>)" and
+   "Assumed: <your inferences>", so Simon can tell evidence from guesswork; signals = JSON array of 2-5 chips; why_now = trigger + source; trigger_date = YYYY-MM-DD or
    'evergreen'; gap = one sentence; proof = one sentence or NULL; ask = 'widget'|'link'; widget_url or NULL; snooze_until or NULL.
 2. `INSERT INTO contacts (org_id, name, role, email, source_url) VALUES (?, ?, ?, ?, ?)` (name/role only if published next to the address)
 3. `INSERT INTO touches (org_id, brand, stage, channel, note) VALUES (?, ?, 'found', 'radar', ?)` note = "Radar: " + why now (+ " · snoozed to <date>")
@@ -94,5 +104,6 @@ Upsert `radar_last_run` the same way with v = JSON {at, added, snoozed, note ("3
 `HQ: imn-radar run [skip ci]`, push. The daily health check flags this worker if the log goes stale.
 
 ## Step 5 — Summary for Simon (3 lines)
-Added and snoozed (by brand), the hottest one (score, why now, gap), the biggest playbook change.
+Added and snoozed (by brand), the hottest one (score, why now, gap), the biggest playbook change. If anything is waiting on Simon,
+lead with it: "First: send the N drafts waiting and the N follow-ups due" (sending beats finding).
 He reviews and sends at https://imn-hq.simonpatrickfarrugia.workers.dev (Today → Review & send).

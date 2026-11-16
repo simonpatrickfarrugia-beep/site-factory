@@ -140,6 +140,11 @@ async function log(
   if (!org || LATE_STAGES.has(org.stage)) return;
   const stage = direction === 'out' ? 'sent' : 'replied';
   if (org.stage === 'replied' && stage === 'sent') return; // a follow-up after a reply doesn't move the card back
+  if (org.stage === 'sent' && stage === 'sent') {
+    // HQ already moved the card to Sent when it sent this; don't log the same send twice.
+    const recent = await env.DB.prepare(`SELECT 1 FROM touches WHERE org_id = ? AND stage = 'sent' AND note = 'Sent from HQ' AND at >= strftime('%Y-%m-%dT%H:%M:%SZ','now','-1 day') LIMIT 1`).bind(orgId).first();
+    if (recent) return;
+  }
 
   await env.DB.batch([
     env.DB.prepare(
