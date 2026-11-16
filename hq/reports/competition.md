@@ -1,6 +1,6 @@
 # Competition check
 
-Updated 2026-11-09. Google top 10 for each niche's best keywords. A slot is **beatable** when a forum (Reddit, Quora, Fandom...) or a small site (under 30k est. search visits/month) holds it. **Openness** 0-100 weights the top 3 positions most. Rough guide: 40+ open, 20-40 possible with a strong angle, under 20 owned by big brands.
+Updated 2026-11-16. Google top 10 for each niche's best keywords. A slot is **beatable** when a forum (Reddit, Quora, Fandom...) or a small site (under 30k est. search visits/month) holds it. **Openness** 0-100 weights the top 3 positions most. Rough guide: 40+ open, 20-40 possible with a strong angle, under 20 owned by big brands.
 
 | Idea | Openness | Keywords checked | Biggest players |
 |---|---:|---:|---|
@@ -34,6 +34,7 @@ Updated 2026-11-09. Google top 10 for each niche's best keywords. A slot is **be
 | US school district enrollment by county | **0** | 1 | google.com (566.1M) |
 | US airport runway and elevation facts | **0** | 2 | google.com (566.1M) |
 | US public library branches by city | **0** | 6 | google.com (566.1M) |
+| Dog walking and boarding rates by city | **0** | 0 | — |
 
 ## AU suburb profiles: prices, rent and demographics (openness 64)
 
@@ -340,3 +341,8 @@ Updated 2026-11-09. Google top 10 for each niche's best keywords. A slot is **be
 | downtown tulsa library | 720 | 0 | — | google.com, google.com, google.com |
 | tulsa library hours | 480 | 0 | — | google.com, google.com, google.com |
 | hardesty library tulsa | 480 | 0 | — | google.com, google.com, google.com |
+
+## Dog walking and boarding rates by city (openness 0)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
