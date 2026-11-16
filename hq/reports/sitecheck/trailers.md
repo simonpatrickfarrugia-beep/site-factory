@@ -1,8 +1,8 @@
 # Site check: movietrailer.channel
 
-**A · 99/100** · scanned 2026-11-16 00:03 UTC · 429 pages · next scan 2026-11-23 (no revenue in the last 60 days, every 7 days)
+**A · 99/100** · scanned 2026-11-16 07:33 UTC · 429 pages · next scan 2026-11-23 (no revenue in the last 60 days, every 7 days)
 
-**Since 2026-11-15:** score 0 · Google impressions (28 days) 0 · clicks 0 · visits 0
+**Since 2026-11-16:** score 0 · Google impressions (28 days) 0 · clicks 0 · visits 0
 
 ## Top 5 fixes
 
@@ -28,8 +28,8 @@
 
 ## Speed (phones)
 
-- /: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.13s, HTML 70 KB, images 358 KB (first 15), 1 blocking files, 0 images without size
-- /browse: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.12s, HTML 194 KB, images 381 KB (first 15), 1 blocking files, 0 images without size
+- /: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.05s, HTML 70 KB, images 358 KB (first 15), 1 blocking files, 0 images without size
+- /browse: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.07s, HTML 194 KB, images 381 KB (first 15), 1 blocking files, 0 images without size
 
 ## All findings
 

@@ -3,7 +3,7 @@
  "name": "movietrailer.channel",
  "url": "https://www.movietrailer.channel",
  "owner": "imn",
- "scannedAt": "2026-11-16T00:03:15Z",
+ "scannedAt": "2026-11-16T07:33:11Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
@@ -344,7 +344,7 @@
   {
    "url": "https://www.movietrailer.channel/",
    "lite": true,
-   "serverSecs": 0.13,
+   "serverSecs": 0.05,
    "htmlKb": 70,
    "blocking": 1,
    "images": 32,
@@ -355,7 +355,7 @@
   {
    "url": "https://www.movietrailer.channel/browse",
    "lite": true,
-   "serverSecs": 0.12,
+   "serverSecs": 0.07,
    "htmlKb": 194,
    "blocking": 1,
    "images": 412,
@@ -376,10 +376,10 @@
   "unsureOutside": 48
  },
  "affiliateOk": 1100,
- "secs": 142,
+ "secs": 135,
  "change": {
   "first": false,
-  "since": "2026-11-15T09:13:18Z",
+  "since": "2026-11-16T00:03:15Z",
   "score": 0,
   "newIssues": [],
   "fixed": [],
@@ -441,6 +441,13 @@
   },
   {
    "at": "2026-11-15T09:13:18Z",
+   "score": 99,
+   "grade": "A",
+   "impr28": 112,
+   "clicks28": 0
+  },
+  {
+   "at": "2026-11-16T00:03:15Z",
    "score": 99,
    "grade": "A",
    "impr28": 112,
