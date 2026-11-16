@@ -1,0 +1,21 @@
+---
+/** The single plan card (pricing page and home). */
+import type { SiteInfo } from '../../../brands/imn/model';
+interface Props { site: SiteInfo }
+const { site } = Astro.props;
+---
+<div class="imn-plan">
+  {site.setup.promo && <p class="imn-plan__flag">{site.setup.promoLabel}: free setup</p>}
+  <h3 class="imn-plan__name">The website plan</h3>
+  <p class="imn-plan__price"><strong>${site.price.perDay}</strong> a day <span>+ GST</span></p>
+  <p class="imn-plan__bill">Billed ${site.price.monthly} + GST (${site.price.monthlyIncGst}) a month. Month to month.</p>
+  <ul class="imn-ticks">
+    {site.included.map((i) => <li>{i.t}</li>)}
+  </ul>
+  <dl class="imn-plan__extras">
+    <div><dt>Setup</dt><dd>{site.setup.promo ? <>Free during our launch offer <span class="imn-muted">(then ${site.setup.normal} + GST, once)</span></> : <>${site.setup.normal} + GST, once</>}</dd></div>
+    <div><dt>Extra changes</dt><dd>${site.extraChange} + GST a round, after your {site.includedChanges} included each month</dd></div>
+    <div><dt>Contract</dt><dd>None. Stop any time before your next month.</dd></div>
+  </dl>
+  <a class="imn-btn imn-btn--coin imn-btn--block" href="/get-started" data-cta="start_plan">Get started</a>
+</div>

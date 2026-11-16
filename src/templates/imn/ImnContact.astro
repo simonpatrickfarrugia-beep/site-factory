@@ -1,0 +1,33 @@
+---
+import ImnFormScript from './ImnFormScript.astro';
+import type { FormPage, SiteInfo } from '../../../brands/imn/model';
+interface Props { site: SiteInfo; page: FormPage }
+const { site, page: p } = Astro.props;
+---
+<section class="imn-pagehead">
+  <div class="imn-wrap">
+    <h1>{p.title}</h1>
+    <p class="imn-lede">{p.lede}</p>
+  </div>
+</section>
+<div class="imn-wrap imn-section imn-split">
+  <form class="imn-form" data-form action={`${site.formsEndpoint}/submit/enquiry`} method="post">
+    <div class="imn-row">
+      <label>Your name<input name="name" autocomplete="name" required /></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required /></label>
+    </div>
+    <label>Your question<textarea name="message" rows="5" required></textarea></label>
+    <input class="imn-hp" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+    <button class="imn-btn imn-btn--coin" type="submit">Send</button>
+    <p class="imn-form__status" role="status" aria-live="polite"></p>
+  </form>
+  <div class="imn-contact">
+    <h2>Email</h2>
+    <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+    <h2>Based in</h2>
+    <p>Melbourne, working with businesses across Australia by email, phone or video call.</p>
+    <h2>Ready to go?</h2>
+    <p><a href="/get-started">Tell us about your business</a> and we'll build your preview.</p>
+  </div>
+</div>
+<ImnFormScript email={site.email} />

@@ -66,6 +66,14 @@ import BwBuild from './bw/BwBuild.astro';
 import BwSpecies from './bw/BwSpecies.astro';
 import BwPage from './bw/BwPage.astro';
 
+import ImnHome from './imn/ImnHome.astro';
+import ImnPricing from './imn/ImnPricing.astro';
+import ImnSites from './imn/ImnSites.astro';
+import ImnDashboard from './imn/ImnDashboard.astro';
+import ImnStart from './imn/ImnStart.astro';
+import ImnContact from './imn/ImnContact.astro';
+import ImnPage from './imn/ImnPage.astro';
+
 export const templates = {
   home: Home,
   originalFilms: OriginalFilms,
@@ -132,4 +140,11 @@ export const templates = {
   bwBuild: BwBuild,
   bwSpecies: BwSpecies,
   bwPage: BwPage,
+  imnHome: ImnHome,
+  imnPricing: ImnPricing,
+  imnSites: ImnSites,
+  imnDashboard: ImnDashboard,
+  imnStart: ImnStart,
+  imnContact: ImnContact,
+  imnPage: ImnPage,
 };

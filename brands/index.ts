@@ -9,6 +9,7 @@ import tradeAdmin from './trade-admin/brand.config';
 import paycalc from './paycalc/brand.config';
 import simonSaysTravel from './simon-says-travel/brand.config';
 import backyardWild from './backyard-wild/brand.config';
+import imn from './imn/brand.config';
 
 export const brands = {
   trailers,
@@ -19,4 +20,5 @@ export const brands = {
   paycalc,
   'simon-says-travel': simonSaysTravel,
   'backyard-wild': backyardWild,
+  imn,
 } as const;

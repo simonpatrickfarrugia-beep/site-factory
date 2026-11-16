@@ -1,0 +1,26 @@
+---
+/** Sends any form[data-form] to /api/submit/<form> and shows the result inline. */
+interface Props { email: string }
+const { email } = Astro.props;
+---
+<script is:inline define:vars={{ email }}>
+  document.querySelectorAll('form[data-form]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var status = form.querySelector('.imn-form__status');
+      var button = form.querySelector('button[type=submit]');
+      button.disabled = true;
+      status.textContent = 'Sending…';
+      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { accept: 'application/json' } })
+        .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+        .then(function (j) {
+          if (j && j.ok === false) throw new Error(j.message || 'failed');
+          form.reset();
+          status.textContent = 'Sent, thanks. We’ll email you back within one business day.';
+          if (window.gtag) window.gtag('event', 'cta_' + form.action.split('/').pop() + '_sent');
+        })
+        .catch(function () { status.textContent = "That didn't send. Please email " + email + ' instead.'; })
+        .finally(function () { button.disabled = false; });
+    });
+  });
+</script>

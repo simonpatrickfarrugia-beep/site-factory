@@ -1,0 +1,9 @@
+---
+import ImnCta from './ImnCta.astro';
+import type { SiteInfo } from '../../../brands/imn/model';
+interface Props { site: SiteInfo; title: string; paragraphs: string[]; showCta?: boolean }
+const { site, title, paragraphs, showCta = true } = Astro.props;
+---
+<section class="imn-pagehead"><div class="imn-wrap"><h1>{title}</h1></div></section>
+<article class="imn-wrap imn-section imn-prose">{paragraphs.map((t) => <p>{t}</p>)}</article>
+{showCta && <ImnCta site={site} />}

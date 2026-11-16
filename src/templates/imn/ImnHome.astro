@@ -1,0 +1,80 @@
+---
+import ImnReceipt from './ImnReceipt.astro';
+import ImnCta from './ImnCta.astro';
+import ImnFaq from './ImnFaq.astro';
+import type { SiteInfo } from '../../../brands/imn/model';
+interface Props { site: SiteInfo }
+const { site } = Astro.props;
+---
+<section class="imn-hero">
+  <div class="imn-wrap imn-hero__grid">
+    <div>
+      <p class="imn-kicker">{site.hero.kicker}</p>
+      <h1>{site.hero.title}</h1>
+      <p class="imn-lede">{site.hero.lede}</p>
+      <p class="imn-actions">
+        <a class="imn-btn imn-btn--coin" href="/get-started" data-cta="start_hero">Get started</a>
+        <a class="imn-link" href="/our-sites">See sites we've built</a>
+      </p>
+      {site.setup.promo && <p class="imn-promo"><span>{site.setup.promoLabel}</span> Setup is free for new sign-ups.</p>}
+    </div>
+    <ImnReceipt site={site} />
+  </div>
+</section>
+
+<section class="imn-wrap imn-section">
+  <h2 class="imn-h2">What you get</h2>
+  <div class="imn-grid">
+    {site.included.map((i) => <div class="imn-card"><h3>{i.t}</h3><p>{i.d}</p></div>)}
+  </div>
+</section>
+
+<section class="imn-band">
+  <div class="imn-wrap imn-section imn-split">
+    <div>
+      <h2 class="imn-h2">{site.ai.title}</h2>
+      {site.ai.paragraphs.map((p) => <p class="imn-measure">{p}</p>)}
+    </div>
+    <ul class="imn-pair" aria-label="Who does what">
+      <li><span class="imn-pair__who">AI</span> Drafts pages, checks speed and Google basics, makes quick edits</li>
+      <li><span class="imn-pair__who imn-pair__who--human">Human</span> Plans your site with you, checks every page, answers your emails</li>
+    </ul>
+  </div>
+</section>
+
+<section class="imn-wrap imn-section">
+  <h2 class="imn-h2">How it works</h2>
+  <ol class="imn-steps">
+    {site.steps.map((s) => <li><h3>{s.t}</h3><p>{s.d}</p></li>)}
+  </ol>
+</section>
+
+<section class="imn-band">
+  <div class="imn-wrap imn-section">
+    <h2 class="imn-h2">Sites we've built and run</h2>
+    <p class="imn-measure">These are our own sites, built on the same system your business gets. Tap one and try it on your phone.</p>
+    <div class="imn-sites">
+      {site.sites.map((s) => (
+        <a class="imn-site" href={s.url} rel="noopener" data-cta="our_site">
+          <span class="imn-site__name">{s.name}</span>
+          <span class="imn-site__what">{s.what}</span>
+          <span class="imn-site__url">{s.url.replace(/^https:\/\/(www\.)?/, '')} ↗</span>
+        </a>
+      ))}
+    </div>
+    <p class="imn-small"><a href="/our-sites">What we built on each one</a> · <a href="/example-dashboard">See the dashboard you get</a></p>
+  </div>
+</section>
+
+<section class="imn-wrap imn-section">
+  <h2 class="imn-h2">What counts as a change?</h2>
+  <p class="imn-measure">{site.change} Extra rounds are ${site.extraChange} + GST.</p>
+</section>
+
+<section class="imn-wrap imn-section imn-section--tight">
+  <h2 class="imn-h2">Questions</h2>
+  <ImnFaq faq={site.faq.slice(0, 5)} />
+  <p class="imn-small"><a href="/pricing">All pricing questions</a></p>
+</section>
+
+<ImnCta site={site} />

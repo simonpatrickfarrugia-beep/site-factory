@@ -11,6 +11,7 @@ import { routes as tradeAdmin } from './trade-admin/site';
 import { routes as paycalc } from './paycalc/site';
 import { routes as simonSaysTravel } from './simon-says-travel/site';
 import { routes as backyardWild } from './backyard-wild/site';
+import { routes as imn } from './imn/site';
 
 export const sites: Record<string, () => Route[]> = {
   trailers,
@@ -21,4 +22,5 @@ export const sites: Record<string, () => Route[]> = {
   paycalc,
   'simon-says-travel': simonSaysTravel,
   'backyard-wild': backyardWild,
+  imn,
 };

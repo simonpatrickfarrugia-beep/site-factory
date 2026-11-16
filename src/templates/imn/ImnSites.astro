@@ -1,0 +1,26 @@
+---
+import ImnCta from './ImnCta.astro';
+import type { SiteInfo } from '../../../brands/imn/model';
+interface Props { site: SiteInfo }
+const { site } = Astro.props;
+---
+<section class="imn-pagehead">
+  <div class="imn-wrap">
+    <h1>Sites we build and run</h1>
+    <p class="imn-lede">Before we built websites for other businesses, we built our own. Each of these runs on the same system your site will: fast, checked every week and easy to change.</p>
+  </div>
+</section>
+<div class="imn-wrap imn-section">
+  <div class="imn-work">
+    {site.sites.map((s) => (
+      <article class="imn-work__item">
+        <h2>{s.name}</h2>
+        <p class="imn-work__what">{s.what}</p>
+        <p>{s.built}</p>
+        <p><a class="imn-link" href={s.url} rel="noopener" data-cta="our_site">Visit {s.url.replace(/^https:\/\/(www\.)?/, '')} ↗</a></p>
+      </article>
+    ))}
+  </div>
+  <p class="imn-small">All five are owned and run by Independent Media Network. Yours would be owned by your business.</p>
+</div>
+<ImnCta site={site} heading="Want one built for your business?" />

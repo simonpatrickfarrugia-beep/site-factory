@@ -1,0 +1,58 @@
+---
+/** Example client dashboard, shown with real numbers from one of our own sites (Vic Tours), read at build time. */
+import ImnCta from './ImnCta.astro';
+import type { DemoStats, SiteInfo } from '../../../brands/imn/model';
+interface Props { site: SiteInfo; stats: DemoStats | null }
+const { site, stats } = Astro.props;
+const n = (v: number) => v.toLocaleString('en-AU');
+const fmt = (d: string) => (d ? new Date(d + 'T00:00:00').toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' }) : '');
+const max = stats ? Math.max(1, ...stats.daily.map((d) => d.views)) : 1;
+const pts = stats && stats.daily.length > 1 ? stats.daily.map((d, i) => `${(i / (stats.daily.length - 1)) * 100},${40 - (d.views / max) * 36}`).join(' ') : '';
+---
+<section class="imn-pagehead">
+  <div class="imn-wrap">
+    <h1>Your dashboard, in plain English</h1>
+    <p class="imn-lede">Every client gets a private page that shows what their website is doing: how many people visit, what they searched on Google to find you, and which pages they read.</p>
+  </div>
+</section>
+<div class="imn-wrap imn-section">
+  {stats ? (
+    <div class="imn-dash">
+      <div class="imn-dash__head">
+        <div>
+          <p class="imn-dash__label">Example: {stats.site}, one of our own sites</p>
+          <p class="imn-dash__period">{fmt(stats.start)} to {fmt(stats.end)}</p>
+        </div>
+        <span class="imn-dash__live">Real numbers</span>
+      </div>
+      <div class="imn-dash__tiles">
+        <div class="imn-tile"><span class="imn-tile__n">{n(stats.views)}</span><span class="imn-tile__l">page views</span></div>
+        <div class="imn-tile"><span class="imn-tile__n">{n(stats.users)}</span><span class="imn-tile__l">visitors</span></div>
+        <div class="imn-tile"><span class="imn-tile__n">{n(stats.gscImpressions)}</span><span class="imn-tile__l">times shown on Google</span></div>
+        <div class="imn-tile"><span class="imn-tile__n">{n(stats.gscClicks)}</span><span class="imn-tile__l">clicks from Google</span></div>
+      </div>
+      {pts && (
+        <figure class="imn-spark">
+          <figcaption>Page views each day</figcaption>
+          <svg viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label={`Daily page views, highest ${max}`}>
+            <polyline points={pts} fill="none" stroke="currentColor" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round" />
+          </svg>
+        </figure>
+      )}
+      <div class="imn-dash__lists">
+        <div>
+          <h2>Most-read pages</h2>
+          <ol>{stats.pages.map((p) => <li><span>{p.path}</span><span>{n(p.views)}</span></li>)}</ol>
+        </div>
+        <div>
+          <h2>Searches that showed the site on Google</h2>
+          <ol>{stats.queries.map((q) => <li><span>{q.query}</span><span>{n(q.impressions)}</span></li>)}</ol>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <p>The example numbers aren't available in this build.</p>
+  )}
+  <p class="imn-small">Numbers come from Google Analytics and Google Search Console{stats ? `, updated ${fmt(stats.asOf)}` : ''}. Your dashboard shows your own site and is private to you.</p>
+</div>
+<ImnCta site={site} heading="Want to see numbers like these for your business?" />

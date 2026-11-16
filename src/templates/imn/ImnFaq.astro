@@ -1,0 +1,8 @@
+---
+import type { Faq } from '../../../brands/imn/model';
+interface Props { faq: Faq[] }
+const { faq } = Astro.props;
+---
+<div class="imn-faq">
+  {faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
+</div>

@@ -4,9 +4,9 @@
 // Test: printf 'data/vic/towns.json\n' | node scripts/ci-plan.mjs
 import { readFileSync } from 'node:fs';
 
-const ALL = ['trailers', 'vic', 'community-help-co', 'shortlisted', 'trade-admin', 'paycalc', 'simon-says-travel', 'backyard-wild'];
+const ALL = ['trailers', 'vic', 'community-help-co', 'shortlisted', 'trade-admin', 'paycalc', 'simon-says-travel', 'backyard-wild', 'imn'];
 const HQ = ['trailers', 'vic'];
-const TEMPLATE = { bw: 'backyard-wild', chc: 'community-help-co', pc: 'paycalc', sl: 'shortlisted', sst: 'simon-says-travel', ta: 'trade-admin', vic: 'vic' };
+const TEMPLATE = { bw: 'backyard-wild', imn: 'imn', chc: 'community-help-co', pc: 'paycalc', sl: 'shortlisted', sst: 'simon-says-travel', ta: 'trade-admin', vic: 'vic' };
 // Files that never change a site build.
 const NONE = [
   /^docs\//, /^reports\//, /^leads\//, /^backups\//, /^\.claude\//, /^workers\//,
@@ -26,6 +26,7 @@ export function plan(files) {
     if ((m = f.match(/^(brands|data)\/([^/]+)\//)) && ALL.includes(m[2])) {
       brands.add(m[2]);
       if (/^data\/[^/]+\/stats\.json$/.test(f)) HQ.forEach((b) => brands.add(b));
+      if (f === 'data/vic/stats.json') brands.add('imn'); // IMN's example dashboard shows Vic Tours' real numbers
     } else if (/^hq\//.test(f)) HQ.forEach((b) => brands.add(b));
     else if ((m = f.match(/^src\/templates\/([^/]+)\//)) && TEMPLATE[m[1]]) brands.add(TEMPLATE[m[1]]);
     else if (/^src\/components\/vic\//.test(f)) brands.add('vic');

@@ -1,0 +1,47 @@
+---
+import ImnFormScript from './ImnFormScript.astro';
+import type { FormPage, SiteInfo } from '../../../brands/imn/model';
+interface Props { site: SiteInfo; page: FormPage }
+const { site, page: p } = Astro.props;
+---
+<section class="imn-pagehead">
+  <div class="imn-wrap">
+    <h1>{p.title}</h1>
+    <p class="imn-lede">{p.lede}</p>
+    {site.setup.promo && <p class="imn-promo"><span>{site.setup.promoLabel}</span> Free setup, then ${site.price.perDay} a day + GST once your site is live.</p>}
+  </div>
+</section>
+<div class="imn-wrap imn-section">
+  <form class="imn-form" data-form action={`${site.formsEndpoint}/submit/start`} method="post">
+    <div class="imn-row">
+      <label>Your name<input name="name" autocomplete="name" required /></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required /></label>
+    </div>
+    <div class="imn-row">
+      <label>Business name<input name="business" autocomplete="organization" required /></label>
+      <label><span>Phone <span class="imn-opt">(optional)</span></span><input name="phone" type="tel" autocomplete="tel" /></label>
+    </div>
+    <label>What does your business do, and where?<input name="what" placeholder="e.g. Mobile dog grooming in Geelong" required /></label>
+    <label><span>Your current website <span class="imn-opt">(if you have one)</span></span><input name="website" type="url" inputmode="url" placeholder="https://" /></label>
+    <fieldset>
+      <legend>What should the site do most?</legend>
+      <label class="imn-choice"><input type="radio" name="goal" value="Get enquiries or quotes" required /> Get enquiries or quote requests</label>
+      <label class="imn-choice"><input type="radio" name="goal" value="Take bookings" /> Take bookings</label>
+      <label class="imn-choice"><input type="radio" name="goal" value="Show what we offer and our prices" /> Show what we offer and our prices</label>
+      <label class="imn-choice"><input type="radio" name="goal" value="Look professional when people check us out" /> Look professional when people check us out</label>
+    </fieldset>
+    <fieldset>
+      <legend>Do you have a domain name?</legend>
+      <label class="imn-choice"><input type="radio" name="domain" value="Yes" required /> Yes</label>
+      <label class="imn-choice"><input type="radio" name="domain" value="No" /> No, help me get one</label>
+      <label class="imn-choice"><input type="radio" name="domain" value="Not sure" /> Not sure</label>
+    </fieldset>
+    <label><span>Anything else we should know? <span class="imn-opt">(optional)</span></span><textarea name="message" rows="4"></textarea></label>
+    <label class="imn-choice"><input type="checkbox" name="consent" value="yes" required /> I'm happy for Independent Media Network to contact me about a website. No obligation.</label>
+    <input class="imn-hp" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+    <button class="imn-btn imn-btn--coin" type="submit">Send</button>
+    <p class="imn-form__status" role="status" aria-live="polite"></p>
+  </form>
+  <p class="imn-small">Nothing is charged until your site is live and you're happy with it. Prefer email? <a href={`mailto:${site.email}?subject=Website`}>{site.email}</a></p>
+</div>
+<ImnFormScript email={site.email} />

@@ -1,0 +1,31 @@
+---
+import ImnPlan from './ImnPlan.astro';
+import ImnFaq from './ImnFaq.astro';
+import ImnCta from './ImnCta.astro';
+import type { SiteInfo } from '../../../brands/imn/model';
+interface Props { site: SiteInfo }
+const { site } = Astro.props;
+---
+<section class="imn-pagehead">
+  <div class="imn-wrap">
+    <h1>One plan. ${site.price.perDay} a day.</h1>
+    <p class="imn-lede">No tiers to compare and no surprise fees. Everything a small business website needs, looked after by a real person.</p>
+  </div>
+</section>
+<div class="imn-wrap imn-section imn-split imn-split--plan">
+  <ImnPlan site={site} />
+  <div>
+    <h2 class="imn-h2">What counts as a change?</h2>
+    <p>{site.change}</p>
+    <h2 class="imn-h2">What you'll pay for separately</h2>
+    <ul class="imn-ticks imn-ticks--plain">
+      <li>Your domain name (about $20 to $30 a year, bought in your business's name)</li>
+      <li>Anything you'd like that isn't a change, like a new page or a redesign: quoted first, nothing done without your OK</li>
+    </ul>
+  </div>
+</div>
+<section class="imn-wrap imn-section imn-section--tight">
+  <h2 class="imn-h2">Pricing questions</h2>
+  <ImnFaq faq={site.faq} />
+</section>
+<ImnCta site={site} />
