@@ -27,8 +27,10 @@ export function plan(files) {
       brands.add(m[2]);
       if (/^data\/[^/]+\/stats\.json$/.test(f)) HQ.forEach((b) => brands.add(b));
       if (f === 'data/vic/stats.json') brands.add('imn'); // IMN's example dashboard shows Vic Tours' real numbers
-      if (f === 'hq/sitecheck/vic.json' || f === 'hq/confidence.json') brands.add('imn'); // and its confidence-at-a-glance panel
-    } else if (/^hq\//.test(f)) HQ.forEach((b) => brands.add(b));
+    } else if (/^hq\//.test(f)) {
+      HQ.forEach((b) => brands.add(b));
+      if (f === 'hq/sitecheck/vic.json' || f === 'hq/confidence.json') brands.add('imn'); // IMN's confidence-at-a-glance panel
+    }
     else if ((m = f.match(/^src\/templates\/([^/]+)\//)) && TEMPLATE[m[1]]) brands.add(TEMPLATE[m[1]]);
     else if (/^src\/components\/vic\//.test(f)) brands.add('vic');
     else if (!NONE.some((r) => r.test(f))) {
