@@ -14,6 +14,7 @@ export default defineBrand({
   fonts: { display: 'Archivo', body: 'Manrope' },
   logo: { src: '/logo-mark.svg', alt: '', width: 30, height: 30 },
   favicon: '/favicon.svg',
+  shareImage: '/share.png', // default og:image (departure board, no dated numbers so it never goes stale)
 
   nav: [
     { label: 'This month', href: '/' },

@@ -72,7 +72,13 @@ export function routes(): Route[] {
   }
 
   // Destinations: one page per place with enough searches to call.
-  const dests = ok.map((t) => ({ slug: t.slug, label: t.label, kind: t.kind, idx: idx(t), yoy: t.yoy, series: t.series }));
+  const dests = ok.map((t) => {
+    const ms = byMonth(t, d.weeks);
+    return {
+      slug: t.slug, label: t.label, kind: t.kind, idx: idx(t), yoy: t.yoy, mom: t.mom, series: t.series,
+      busiest: [...ms].sort((a, b) => b.avg - a.avg)[0].month, quietest: [...ms].sort((a, b) => a.avg - b.avg)[0].month,
+    };
+  });
   out.push({
     path: 'destinations',
     template: 'sstDestinations',
@@ -117,7 +123,7 @@ export function routes(): Route[] {
       template: slug === 'contact' ? 'sstContact' : 'sstPage',
       noindex: slug === 'contact', // a form page with nothing to rank for (quality gate: thin)
       seo: { title: p.seoTitle, description: p.description },
-      schema: slug === 'about' ? [org] : slug === 'how-it-works' ? [crumbs([{ name: 'This month', path: '' }, { name: p.h1, path: slug }])] : [],
+      schema: slug === 'about' ? [org, crumbs([{ name: 'This month', path: '' }, { name: p.h1, path: slug }])] : [crumbs([{ name: 'This month', path: '' }, { name: p.h1, path: slug }])],
       props: { page: p },
     });
   }

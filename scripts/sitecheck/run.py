@@ -92,11 +92,11 @@ def stage_of(site, finance, portfolio, stats):
 
 
 def launch_date(site):
-    """Launch day from hq/portfolio.json (node id = brand, or the site id), else None."""
+    """Launch day from hq/portfolio.json (node id = brand, or the site id), else the site's own `launched` in hq/sitecheck.json, else None."""
     nodes = (rd('hq/portfolio.json', {}) or {}).get('nodes', [])
     node = next((n for n in nodes if n.get('id') in (site.get('brand'), site.get('id'), site.get('portfolio'))), {})
     try:
-        return datetime.strptime(node['launched'], '%Y-%m-%d').date()
+        return datetime.strptime(node.get('launched') or site['launched'], '%Y-%m-%d').date()
     except (KeyError, TypeError, ValueError):
         return None
 

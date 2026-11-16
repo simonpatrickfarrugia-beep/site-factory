@@ -1,11 +1,20 @@
 ---
 import Board from './Board.astro';
-import { dayLabel } from '../../../brands/simon-says-travel/model';
-interface Dest { slug: string; label: string; kind: string; idx: number; yoy: number | null; series: number[] }
+import { dayLabel, listOf, monthLabel, pct } from '../../../brands/simon-says-travel/model';
+interface Dest { slug: string; label: string; kind: string; idx: number; yoy: number | null; mom: number | null; series: number[]; busiest: string; quietest: string }
 interface Props { dests: Dest[]; weeks: string[]; updated: string }
 const { dests, updated } = Astro.props;
 const o = dests.filter((d) => d.kind === 'overseas');
 const h = dests.filter((d) => d.kind === 'domestic');
+const mName = (m: string) => monthLabel(m).split(' ')[0];
+const named = (a: Dest[]) => listOf(a.map((d) => `${d.label} (${pct(d.yoy)})`));
+const climbing = dests.filter((d) => d.yoy != null && d.yoy >= 0.05).sort((a, b) => b.yoy! - a.yoy!);
+const cooling = dests.filter((d) => d.yoy != null && d.yoy <= -0.05).sort((a, b) => a.yoy! - b.yoy!);
+const steady = dests.filter((d) => d.yoy != null && Math.abs(d.yoy) < 0.05);
+// Which calendar month is the busiest for the most destinations: the "everyone searches at once" month.
+const peakCount = new Map<string, number>();
+for (const d of dests) peakCount.set(mName(d.busiest), (peakCount.get(mName(d.busiest)) ?? 0) + 1);
+const [peakMonth, peakN] = [...peakCount.entries()].sort((a, b) => b[1] - a[1])[0] ?? ['', 0];
 ---
 <div class="sst-wrap sst-section">
   <h1 class="sst-h1">Destinations</h1>
@@ -14,5 +23,34 @@ const h = dests.filter((d) => d.kind === 'domestic');
     <Board title="Overseas" rows={o} />
     <Board title="Domestic" rows={h} />
   </div>
+
+  <section aria-labelledby="moves-h">
+    <h2 id="moves-h" class="sst-h2">Climbing and cooling on last year</h2>
+    <ul class="sst-bullets">
+      {climbing.length > 0 && <li><b>Climbing</b> (up 5% or more on this time last year): {named(climbing)}.</li>}
+      {cooling.length > 0 && <li><b>Cooling</b> (down 5% or more): {named(cooling)}.</li>}
+      {steady.length > 0 && <li><b>Steady</b> (within 5% either way): {listOf(steady.map((d) => d.label))}.</li>}
+    </ul>
+  </section>
+
+  <section aria-labelledby="when-h">
+    <h2 id="when-h" class="sst-h2">When Australians search for each destination</h2>
+    <p class="sst-sub">The month each destination got the most and the least flight searches over the last 12 months.{peakN >= 3 && ` ${peakMonth} was the busiest month for ${peakN} of the ${dests.length} destinations.`} Busy search months usually mean busy booking months, so fares and seats can be tighter.</p>
+    <table class="sst-table">
+      <caption class="sst-fine">Busiest and quietest search month per destination, 12 months to {dayLabel(updated)}</caption>
+      <thead><tr><th scope="col">Destination</th><th scope="col">Busiest month</th><th scope="col">Quietest month</th><th scope="col">vs last year</th></tr></thead>
+      <tbody>
+        {dests.map((d) => (
+          <tr><th scope="row"><a href={`/destinations/${d.slug}`}>{d.label}</a></th><td>{mName(d.busiest)}</td><td>{mName(d.quietest)}</td><td>{pct(d.yoy)}</td></tr>
+        ))}
+      </tbody>
+    </table>
+  </section>
+
+  <section aria-labelledby="read-h">
+    <h2 id="read-h" class="sst-h2">How to read this page</h2>
+    <p>Interest is relative, not a count of people: a destination at 50 got about half as much search interest as Bali over the same four weeks. Capital cities rank high partly because people fly there for work and family, not just holidays. Places with too few searches for Google to report reliably are left off the boards until they grow. <a href="/how-it-works">How the numbers are made</a>.</p>
+  </section>
+
   <p class="sst-fine">Missing a place? Some searches are too small for Google to report reliably, so they’re left out. <a href="/contact">Ask for one to be tracked</a>.</p>
 </div>
