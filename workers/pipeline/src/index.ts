@@ -448,13 +448,16 @@ async function ratingsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: b
   const due = [...movies]
     .sort((a, b) => Number(gaps(b)) - Number(gaps(a)) || (a.ratingCheckedAt ?? '').localeCompare(b.ratingCheckedAt ?? ''))
     .slice(0, 40);
-  let filled = 0;
+  let filled = 0, extra = 40;
   let changed = 0, checked = 0;
   const notes: string[] = [];
   for (const m of due) {
     let found;
     try {
-      found = await omdbLookup(env.OMDB_API_KEY, m.name, Number(m.year) || null);
+      // Films with gaps get the fuller search (t= misses many classics); at most 40 extra calls a run.
+      found = gaps(m)
+        ? await omdbFind(env.OMDB_API_KEY, m.name, Number(m.year) || null, sameFilmTitle, () => (extra > 0 ? (extra--, true) : false))
+        : await omdbLookup(env.OMDB_API_KEY, m.name, Number(m.year) || null);
     } catch (e) {
       notes.push(`OMDb failed for "${m.name}": ${(e as Error).message}`);
       if (/limit/i.test((e as Error).message)) break;
