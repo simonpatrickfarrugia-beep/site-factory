@@ -3,13 +3,13 @@
 import type { SiteInfo } from '../../../brands/imn/model';
 interface Props { site: SiteInfo; heading?: string }
 const { site, heading = 'Ready for a website that works as hard as you do?' } = Astro.props;
-const setup = site.setup.promo ? 'Setup is free during our launch offer.' : `Setup is $${site.setup.normal} + GST, once.`;
+const setup = site.setup.promo ? `Founding offer: no setup fee for our first ${site.setup.promoSpots} clients.` : `Setup $${site.setup.normal} + GST, once.`;
 ---
 <section class="imn-cta">
   <div class="imn-wrap imn-cta__inner">
     <div>
       <h2>{heading}</h2>
-      <p>${site.price.perDay} a day + GST, month to month. {setup}</p>
+      <p>${site.price.monthly} + GST a month, everything included. {setup}</p>
     </div>
     <p><a class="imn-btn imn-btn--coin" href="/get-started" data-cta="start_cta">Get started</a></p>
   </div>

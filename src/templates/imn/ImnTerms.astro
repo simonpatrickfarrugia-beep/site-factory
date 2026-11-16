@@ -1,0 +1,9 @@
+---
+import type { TermsPage } from '../../../brands/imn/model';
+interface Props { page: TermsPage }
+const { page: t } = Astro.props;
+---
+<section class="imn-pagehead"><div class="imn-wrap"><h1>{t.title}</h1><p class="imn-small">Last updated {t.updated}</p></div></section>
+<article class="imn-wrap imn-section imn-prose imn-terms">
+  {t.sections.map((s, i) => <section><h2>{i + 1}. {s.h}</h2>{s.p.map((p) => <p>{p}</p>)}</section>)}
+</article>

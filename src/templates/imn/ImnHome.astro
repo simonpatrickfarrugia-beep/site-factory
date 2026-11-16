@@ -14,9 +14,9 @@ const { site } = Astro.props;
       <p class="imn-lede">{site.hero.lede}</p>
       <p class="imn-actions">
         <a class="imn-btn imn-btn--coin" href="/get-started" data-cta="start_hero">Get started</a>
-        <a class="imn-link" href="/our-sites">See sites we've built</a>
+        <a class="imn-link" href="/pricing">${site.price.monthly} + GST a month</a>
       </p>
-      {site.setup.promo && <p class="imn-promo"><span>{site.setup.promoLabel}</span> Setup is free for new sign-ups.</p>}
+      {site.setup.promo && <p class="imn-promo"><span>{site.setup.promoLabel}</span> No setup fee for our first {site.setup.promoSpots} clients.</p>}
     </div>
     <ImnReceipt site={site} />
   </div>

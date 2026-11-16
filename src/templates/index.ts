@@ -73,6 +73,7 @@ import ImnDashboard from './imn/ImnDashboard.astro';
 import ImnStart from './imn/ImnStart.astro';
 import ImnContact from './imn/ImnContact.astro';
 import ImnPage from './imn/ImnPage.astro';
+import ImnTerms from './imn/ImnTerms.astro';
 
 export const templates = {
   home: Home,
@@ -147,4 +148,5 @@ export const templates = {
   imnStart: ImnStart,
   imnContact: ImnContact,
   imnPage: ImnPage,
+  imnTerms: ImnTerms,
 };

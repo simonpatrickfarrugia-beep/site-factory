@@ -1,6 +1,6 @@
 /**
  * Every page on imnetwork.com.au: Independent Media Network's website subscription for small businesses
- * ($1 a day + GST: build, hosting, Google upkeep, a dashboard and 2 changes a month).
+ * ($99 + GST a month: build, hosting, Google upkeep, a dashboard and 2 change rounds a month).
  * Leads: the "Get started" form (form "start") and the contact form (form "enquiry") → D1 via /api/submit/<form>.
  * Content lives in data/imn/*.json (edited by chat). The example dashboard reads one of our own sites' stats at build time.
  */
@@ -80,7 +80,7 @@ export function routes(): Route[] {
   out.push({
     path: '',
     template: 'imnHome',
-    seo: { title: 'Small Business Websites for $1 a Day | Independent Media Network', rawTitle: true, description: 'Your website built, hosted and looked after for $1 a day + GST. Google set up, a dashboard and 2 changes a month. Human run, AI powered. No lock-in.' },
+    seo: { title: 'Small Business Websites, Built and Looked After | IMN', rawTitle: true, description: 'Your website built, hosted and looked after for $99 + GST a month. Google set up, a dashboard and 2 change rounds a month. Human run, AI powered.' },
     schema: [org, service, { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Independent Media Network', url: SITE }],
     props: { ...common },
   });
@@ -88,7 +88,7 @@ export function routes(): Route[] {
   out.push({
     path: 'pricing',
     template: 'imnPricing',
-    seo: { title: 'Pricing: $1 a Day + GST' + SUFFIX, rawTitle: true, description: 'One plan: $30 + GST a month. Build, hosting, Google upkeep, a dashboard and 2 changes a month. Extra changes $50 + GST. Setup free during our launch.' },
+    seo: { title: 'Pricing: $99 a Month + GST' + SUFFIX, rawTitle: true, description: 'One plan: $99 + GST a month for hosting, Google upkeep, a dashboard and 2 change rounds. Setup $499 + GST, free for our first 10 clients.' },
     schema: [service, faqSchema, crumbs([{ name: 'Home', path: '' }, { name: 'Pricing', path: 'pricing' }])],
     props: { ...common },
   });
@@ -125,6 +125,15 @@ export function routes(): Route[] {
     seo: { title: ct.title + SUFFIX, rawTitle: true, description: ct.description },
     schema: [org, crumbs([{ name: 'Home', path: '' }, { name: ct.title, path: 'contact' }])],
     props: { ...common, page: ct },
+  });
+
+  const tm = pages.terms;
+  out.push({
+    path: 'terms',
+    template: 'imnTerms',
+    seo: { title: tm.title + SUFFIX, rawTitle: true, description: tm.description },
+    schema: [crumbs([{ name: 'Home', path: '' }, { name: tm.title, path: 'terms' }])],
+    props: { page: tm },
   });
 
   for (const slug of ['about', 'privacy-policy'] as const) {

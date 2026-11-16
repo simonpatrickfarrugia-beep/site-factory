@@ -1,53 +1,142 @@
 {
-  "_about": "Independent Media Network (imnetwork.com.au): website subscription for small businesses. Edited by chat. Prices are ex-GST; IMN is GST-registered. setup.promo true = launch offer (setup waived); set false to start charging setup.normal.",
+  "_about": "Independent Media Network (imnetwork.com.au): website subscription for small businesses. Edited by chat. Prices ex-GST (IMN is GST-registered). setup.promo true = founding offer (setup waived for the first setup.promoSpots clients on a 12-month plan); set false to stop. Decided by Simon 16 Nov 2026: $99/mo, $499 setup, first 10 free on 12 months + testimonial, Stripe billing, T&Cs drafted (lawyer review before client #1).",
   "email": "hello@imnetwork.com.au",
   "formsEndpoint": "/api",
-  "price": { "perDay": 1, "monthly": 30, "monthlyIncGst": 33 },
-  "setup": { "normal": 199, "promo": true, "promoLabel": "Launch offer" },
+  "price": {
+    "monthly": 99,
+    "monthlyIncGst": 108.9
+  },
+  "setup": {
+    "normal": 499,
+    "promo": true,
+    "promoLabel": "Founding client offer",
+    "promoSpots": 10,
+    "promoTerm": 12
+  },
   "extraChange": 50,
   "includedChanges": 2,
   "hero": {
     "kicker": "Websites for Australian small businesses",
-    "title": "Your website, built and looked after, for $1 a day.",
-    "lede": "We build your site, host it, keep it healthy on Google and make your changes. Human run, AI powered. No lock-in."
+    "title": "Your website, built and looked after. One simple monthly price.",
+    "lede": "We build your site, host it, keep it healthy on Google and make your changes. Human run, AI powered."
   },
   "included": [
-    { "t": "A site built for your business", "d": "Up to 5 pages, designed for phones first, written with you. Not a template you fill in yourself." },
-    { "t": "Hosting and security, sorted", "d": "Fast pages on Cloudflare's global network, with the padlock (SSL) on. Every version is saved, so any change can be undone." },
-    { "t": "Found on Google", "d": "Page titles, descriptions, a sitemap and Google Search Console set up, then checked every month." },
-    { "t": "2 changes a month", "d": "Email us what you want changed: new text, a photo, a price, a new section. We do it, you check it." },
-    { "t": "Your own dashboard", "d": "Visits, Google searches and enquiries in plain English, so you can see what the site is doing for you." },
-    { "t": "A real person", "d": "You email a person, not a ticket system. We reply within one business day." }
+    {
+      "t": "A site built for your business",
+      "d": "Up to 5 pages, designed for phones first, written with you. Not a template you fill in yourself."
+    },
+    {
+      "t": "Hosting and security, sorted",
+      "d": "Fast pages on Cloudflare's global network, with the padlock (SSL) on. Every version is saved, so any change can be undone."
+    },
+    {
+      "t": "Found on Google",
+      "d": "Page titles, descriptions, a sitemap and Google Search Console set up, then checked every month."
+    },
+    {
+      "t": "2 change rounds a month",
+      "d": "Email us what you want changed: new text, a photo, a price, a new section. Each round is up to 30 minutes of work. We do it, you check it."
+    },
+    {
+      "t": "Your own dashboard",
+      "d": "Visits, Google searches and enquiries in plain English, so you can see what the site is doing for you."
+    },
+    {
+      "t": "A real person",
+      "d": "You email a person, not a ticket system. We reply within two business days, usually sooner."
+    }
   ],
   "steps": [
-    { "t": "Tell us about your business", "d": "Two minutes on the form. If you already have a site, send us the link." },
-    { "t": "We build your preview", "d": "We write and design it, then send you a private link to check on your phone. Change what you like before it goes live." },
-    { "t": "Go live, then we look after it", "d": "We connect your domain, set up Google and keep everything running. You email us when you want a change." }
+    {
+      "t": "Tell us about your business",
+      "d": "Two minutes on the form. If you already have a site, send us the link."
+    },
+    {
+      "t": "We build your preview",
+      "d": "We write and design it, then send you a private link to check on your phone. Change what you like before it goes live."
+    },
+    {
+      "t": "Go live, then we look after it",
+      "d": "We connect your domain, set up Google and keep everything running. You email us when you want a change."
+    }
   ],
   "ai": {
     "title": "Human run, AI powered",
     "paragraphs": [
-      "We use AI to do the heavy lifting: drafting pages, checking speed and Google basics, and making changes quickly. That's how we keep the price at $1 a day.",
+      "We use AI to do the heavy lifting: drafting pages, checking speed and Google basics, and making changes quickly. That's how we include the build and your changes in one fair monthly price.",
       "A person runs every job. Simon plans your site with you, checks every page before it goes live and answers your emails himself. Nothing goes live without a human signing it off."
     ]
   },
-  "change": "A change is a small update to your site: new or edited text, swapping photos, updating prices or opening hours, or adding a section to an existing page. Send a few small edits in one email and we count it as one round. A brand-new page or a redesign is quoted first.",
+  "change": "A change round is a small update to your site, up to 30 minutes of work: new or edited text, swapping photos, updating prices or opening hours, or adding a section to an existing page. Send your edits together in one email. Unused rounds don't carry over. A brand-new page or a redesign is quoted first.",
   "sites": [
-    { "name": "Vic Tours", "url": "https://victours.com.au", "what": "A town-by-town Victoria travel guide", "built": "64 town and neighbourhood guides, road trips and a trip builder, all kept up to date automatically." },
-    { "name": "Community Help Co", "url": "https://communityhelp.com.au", "what": "Mentoring and free job tools", "built": "A free resume builder, cover letter builder and job finder, plus enquiry and workshop booking forms." },
-    { "name": "MovieTrailer.Channel", "url": "https://www.movietrailer.channel", "what": "Classic film trailers and where to watch", "built": "400 film pages with trailers and where to stream, added and updated by an automatic pipeline." },
-    { "name": "Trade Admin", "url": "https://tradeadmin.com.au", "what": "Job management software guides for tradies", "built": "Independent software comparisons, a quote builder and a quiz that matches tradies to the right app." },
-    { "name": "MyPayCalc", "url": "https://mypaycalc.com.au", "what": "Australian pay and mortgage calculators", "built": "Take-home pay, HECS and mortgage calculators that follow the ATO's current rates." }
+    {
+      "name": "Vic Tours",
+      "url": "https://victours.com.au",
+      "what": "A town-by-town Victoria travel guide",
+      "built": "64 town and neighbourhood guides, road trips and a trip builder, all kept up to date automatically."
+    },
+    {
+      "name": "Community Help Co",
+      "url": "https://communityhelp.com.au",
+      "what": "Mentoring and free job tools",
+      "built": "A free resume builder, cover letter builder and job finder, plus enquiry and workshop booking forms."
+    },
+    {
+      "name": "MovieTrailer.Channel",
+      "url": "https://www.movietrailer.channel",
+      "what": "Classic film trailers and where to watch",
+      "built": "400 film pages with trailers and where to stream, added and updated by an automatic pipeline."
+    },
+    {
+      "name": "Trade Admin",
+      "url": "https://tradeadmin.com.au",
+      "what": "Job management software guides for tradies",
+      "built": "Independent software comparisons, a quote builder and a quiz that matches tradies to the right app."
+    },
+    {
+      "name": "MyPayCalc",
+      "url": "https://mypaycalc.com.au",
+      "what": "Australian pay and mortgage calculators",
+      "built": "Take-home pay, HECS and mortgage calculators that follow the ATO's current rates."
+    }
   ],
   "faq": [
-    { "q": "Is it really $1 a day?", "a": "Yes. It's billed monthly at $30 + GST ($33). That covers hosting, security, Google upkeep, your dashboard and 2 changes a month." },
-    { "q": "Is there a setup fee?", "a": "Not during our launch offer: setup is free. After the launch it will be $199 + GST, once, for new sign-ups." },
-    { "q": "What counts as a change?", "a": "A small update: new or edited text, swapping photos, updating prices or opening hours, or a new section on an existing page. Several small edits sent together count as one round. Extra changes are $50 + GST a round. A brand-new page or a redesign is quoted first." },
-    { "q": "Is there a lock-in contract?", "a": "No. It's month to month. Tell us before your next month starts and we stop billing." },
-    { "q": "Who owns the website?", "a": "You own your domain name and your content. If you leave, we send you your site files and help you move your domain." },
-    { "q": "Do I need a domain name?", "a": "Yes, your own address like yourbusiness.com.au. Domains are bought in your business's name, usually about $20 to $30 a year from the registrar. We'll help you buy it, or connect the one you have." },
-    { "q": "Do you use AI to build sites?", "a": "Yes, for the heavy lifting, which is how the price stays low. A person plans your site with you, checks every page before it goes live and answers your emails." },
-    { "q": "How do I pay?", "a": "We email a tax invoice each month. Nothing is charged until your site is live and you're happy with it." },
-    { "q": "Where are you based?", "a": "Melbourne. We work with businesses anywhere in Australia, by email, phone or video call." }
-  ]
+    {
+      "q": "What does it cost?",
+      "a": "$99 + GST a month ($108.90 inc GST), charged by card each month. That covers hosting, security, Google upkeep, your dashboard and 2 change rounds a month."
+    },
+    {
+      "q": "Is there a setup fee?",
+      "a": "Setup is $499 + GST, once. Founding client offer: our first 10 clients pay no setup fee when they sign up for 12 months and are happy for us to share a short testimonial."
+    },
+    {
+      "q": "What counts as a change?",
+      "a": "A small update, up to 30 minutes of work: new or edited text, swapping photos, updating prices or opening hours, or a new section on an existing page. Send your edits together in one email. Extra rounds are $50 + GST. A brand-new page or a redesign is quoted first."
+    },
+    {
+      "q": "Is there a lock-in contract?",
+      "a": "Standard plans are month to month: cancel before your next month starts. The founding offer is a 12-month plan, because we waive the setup fee. Full details are in our terms."
+    },
+    {
+      "q": "Who owns the website?",
+      "a": "You own your domain name and your content. If you leave, we send you your site files and help you move your domain."
+    },
+    {
+      "q": "Do I need a domain name?",
+      "a": "Yes, your own address like yourbusiness.com.au. Domains are bought in your business's name, usually about $20 to $30 a year from the registrar. We'll help you buy it, or connect the one you have."
+    },
+    {
+      "q": "Do you use AI to build sites?",
+      "a": "Yes, for the heavy lifting. A person plans your site with you, checks every page before it goes live and answers your emails."
+    },
+    {
+      "q": "When do I start paying?",
+      "a": "Your first monthly payment is taken when your site goes live. You'll see and approve a private preview first."
+    },
+    {
+      "q": "Where are you based?",
+      "a": "Melbourne. We work with businesses anywhere in Australia, by email, phone or video call."
+    }
+  ],
+  "changeCapMinutes": 30
 }

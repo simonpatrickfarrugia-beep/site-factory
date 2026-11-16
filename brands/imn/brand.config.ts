@@ -23,13 +23,14 @@ export default defineBrand({
   footer: [
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
+    { label: 'Terms', href: '/terms' },
     { label: 'Privacy', href: '/privacy-policy' },
   ],
   footerNote: 'Independent Media Network Pty Ltd, Melbourne. Human run, AI powered. Prices exclude GST.',
 
   seo: {
     titleSuffix: ' | Independent Media Network',
-    defaultDescription: 'Websites for Australian small businesses, built and looked after for $1 a day + GST. Hosting, Google, a dashboard and 2 changes a month.',
+    defaultDescription: 'Websites for Australian small businesses, built and looked after for $99 + GST a month. Hosting, Google, a dashboard and 2 change rounds a month.',
   },
 
   data: { source: 'snapshot' },

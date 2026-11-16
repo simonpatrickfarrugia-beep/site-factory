@@ -5,8 +5,9 @@ export interface Faq { q: string; a: string }
 export interface SiteInfo {
   email: string;
   formsEndpoint: string;
-  price: { perDay: number; monthly: number; monthlyIncGst: number };
-  setup: { normal: number; promo: boolean; promoLabel: string };
+  price: { monthly: number; monthlyIncGst: number };
+  setup: { normal: number; promo: boolean; promoLabel: string; promoSpots: number; promoTerm: number };
+  changeCapMinutes: number;
   extraChange: number;
   includedChanges: number;
   hero: { kicker: string; title: string; lede: string };
@@ -19,8 +20,10 @@ export interface SiteInfo {
 }
 export interface TextPage { title: string; description: string; paragraphs: string[] }
 export interface FormPage { title: string; description: string; lede: string }
+export interface TermsPage { title: string; description: string; updated: string; sections: { h: string; p: string[] }[] }
 export interface Pages {
   about: TextPage;
+  terms: TermsPage;
   contact: FormPage;
   'get-started': FormPage;
   'privacy-policy': TextPage;

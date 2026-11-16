@@ -1,18 +1,18 @@
 ---
-/** Signature: the "$1 a day" receipt. Every line is something the plan really includes. */
+/** Signature: the monthly-plan receipt. Every line is something the plan really includes. */
 import type { SiteInfo } from '../../../brands/imn/model';
 interface Props { site: SiteInfo }
 const { site } = Astro.props;
-const lines = ['Website built for you', 'Hosting + SSL security', 'Google set up + checked monthly', `${site.includedChanges} changes a month`, 'Your own dashboard', 'A real person to email'];
+const lines = ['Website built for you', 'Hosting + SSL security', 'Google set up + checked monthly', `${site.includedChanges} change rounds a month`, 'Your own dashboard', 'A real person to email'];
 ---
-<figure class="imn-receipt" aria-label="What $1 a day covers">
+<figure class="imn-receipt" aria-label="What the monthly plan covers">
   <figcaption class="imn-receipt__head"><span>Independent Media Network</span><span>Your plan</span></figcaption>
   <ul class="imn-receipt__lines">
     {lines.map((l) => <li><span>{l}</span><span class="imn-receipt__tick" aria-label="included">✓</span></li>)}
   </ul>
   <div class="imn-receipt__total">
-    <span>Per day</span><strong>${site.price.perDay}<small> + GST</small></strong>
+    <span>Per month</span><strong>${site.price.monthly}<small> + GST</small></strong>
   </div>
-  <p class="imn-receipt__setup">{site.setup.promo ? <>Setup <strong>$0</strong> · {site.setup.promoLabel.toLowerCase()}</> : <>Setup ${site.setup.normal} + GST, once</>}</p>
-  <p class="imn-receipt__foot">Billed ${site.price.monthly} + GST a month · cancel any time</p>
+  <p class="imn-receipt__setup">{site.setup.promo ? <>Setup <strong>$0</strong> for our first {site.setup.promoSpots} clients</> : <>Setup ${site.setup.normal} + GST, once</>}</p>
+  <p class="imn-receipt__foot">Website, hosting, Google, dashboard and changes in one price</p>
 </figure>

@@ -8,7 +8,7 @@ const { site, page: p } = Astro.props;
   <div class="imn-wrap">
     <h1>{p.title}</h1>
     <p class="imn-lede">{p.lede}</p>
-    {site.setup.promo && <p class="imn-promo"><span>{site.setup.promoLabel}</span> Free setup, then ${site.price.perDay} a day + GST once your site is live.</p>}
+    {site.setup.promo && <p class="imn-promo"><span>{site.setup.promoLabel}</span> No setup fee for our first {site.setup.promoSpots} clients on a {site.setup.promoTerm}-month plan.</p>}
   </div>
 </section>
 <div class="imn-wrap imn-section">
@@ -42,6 +42,6 @@ const { site, page: p } = Astro.props;
     <button class="imn-btn imn-btn--coin" type="submit">Send</button>
     <p class="imn-form__status" role="status" aria-live="polite"></p>
   </form>
-  <p class="imn-small">Nothing is charged until your site is live and you're happy with it. Prefer email? <a href={`mailto:${site.email}?subject=Website`}>{site.email}</a></p>
+  <p class="imn-small">No obligation: you see a private preview before anything is charged. <a href="/terms">Our terms</a>. Prefer email? <a href={`mailto:${site.email}?subject=Website`}>{site.email}</a></p>
 </div>
 <ImnFormScript email={site.email} />
