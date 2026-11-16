@@ -142,7 +142,8 @@ export function routes(): Route[] {
     out.push({
       path: slug,
       template: 'pcPage',
-      seo: { title: p.title + SUFFIX, rawTitle: true, description: p.description },
+      // seoTitle (optional) keeps short page names like "Contact" inside the 30–65 character title range (auto-fix, 17 Nov 2026).
+      seo: { title: (p.seoTitle ?? p.title) + SUFFIX, rawTitle: true, description: p.description },
       schema: [crumbs([{ name: 'Pay calculator', path: '' }, { name: p.title, path: slug }])],
       props: { title: p.title, paragraphs: p.paragraphs, sources: slug === 'how-we-calculate' ? rates.sources : null, checked: rates.checked },
     });

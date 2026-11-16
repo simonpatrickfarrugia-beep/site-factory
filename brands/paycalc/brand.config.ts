@@ -14,6 +14,7 @@ export default defineBrand({
   fonts: { display: 'Bricolage Grotesque', body: 'Figtree' },
   logo: { src: '/logo-mark.svg', alt: '', width: 30, height: 30 },
   favicon: '/favicon.svg',
+  shareImage: '/share.png', // default og:image: payslip card in brand colours, no dated figures so it never goes stale (auto-fix, 17 Nov 2026)
 
   nav: [
     { label: 'Calculator', href: '/' },

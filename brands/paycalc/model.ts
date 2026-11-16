@@ -16,7 +16,7 @@ export interface RateFile extends Rates {
 }
 export interface ToolPage { title: string; seoTitle: string; description: string; lede: string; faq: Faq[] }
 export interface GuidePage { title: string; seoTitle: string; description: string; lede: string; how: string[]; faq: Faq[] }
-export interface TextPage { title: string; description: string; paragraphs: string[] }
+export interface TextPage { title: string; seoTitle?: string; description: string; paragraphs: string[] }
 export interface Pages {
   home: ToolPage;
   mortgage: ToolPage & { how: string[] };
