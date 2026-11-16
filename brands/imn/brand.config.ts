@@ -26,7 +26,7 @@ export default defineBrand({
     { label: 'Terms', href: '/terms' },
     { label: 'Privacy', href: '/privacy-policy' },
   ],
-  footerNote: 'Independent Media Network Pty Ltd, Melbourne. Human run, AI powered. Prices exclude GST.',
+  footerNote: 'Independent Media Network Pty Ltd · ABN 89 640 199 935 · Melbourne. Human run, AI powered. Prices exclude GST.',
 
   seo: {
     titleSuffix: ' | Independent Media Network',
