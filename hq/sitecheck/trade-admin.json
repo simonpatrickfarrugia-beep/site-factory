@@ -3,12 +3,12 @@
  "name": "tradeadmin.com.au",
  "url": "https://tradeadmin.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-15T20:08:38Z",
+ "scannedAt": "2026-11-16T00:03:15Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
  "nextDue": "2026-11-23",
- "score": 98,
+ "score": 99,
  "grade": "A",
  "areas": {
   "health": {
@@ -27,7 +27,7 @@
    "label": "Sitemap & indexing"
   },
   "seo": {
-   "score": 86,
+   "score": 88,
    "grade": "B",
    "label": "Titles, descriptions & schema"
   },
@@ -58,16 +58,14 @@
    "id": "seo-title",
    "area": "seo",
    "severity": "medium",
-   "title": "3 title outside 30–65 characters",
+   "title": "1 title outside 30–65 characters",
    "fix": "Rewrite to 30–65 characters with the main search first.",
    "pages": [
-    "/tradify-vs-fergus",
-    "/contact",
     "/privacy-policy"
    ],
-   "count": 3,
+   "count": 1,
    "detail": "",
-   "impact": 2.7,
+   "impact": 2.5,
    "broken": false
   },
   {
@@ -358,7 +356,7 @@
   {
    "url": "https://tradeadmin.com.au/",
    "lite": true,
-   "serverSecs": 0.08,
+   "serverSecs": 0.06,
    "htmlKb": 12,
    "blocking": 1,
    "images": 1,
@@ -369,7 +367,7 @@
   {
    "url": "https://tradeadmin.com.au/tradify-vs-servicem8",
    "lite": true,
-   "serverSecs": 0.21,
+   "serverSecs": 0.1,
    "htmlKb": 18,
    "blocking": 1,
    "images": 1,
@@ -390,22 +388,16 @@
   "unsureOutside": 0
  },
  "affiliateOk": 3,
- "secs": 123,
+ "secs": 124,
  "change": {
   "first": false,
-  "since": "2026-11-14T22:17:22Z",
-  "score": 6,
+  "since": "2026-11-15T20:08:38Z",
+  "score": 1,
   "newIssues": [],
-  "fixed": [
-   "1 of your top 8 pages aren't in Google's index",
-   "\"servicem8 vs\": we're not in the top 10 (Search Console avg 82); fergus.com leads",
-   "\"servicem8 pricing\": we're not in the top 10 (Search Console avg 82); capterra.com.au leads",
-   "\"service mate vs tradify\": we're not in the top 10 (Search Console avg 76); growthlocal.com.au leads",
-   "\"tradesman quote template\": we're not in the top 10 (Search Console avg 80); kr.pinterest.com leads"
-  ],
-  "impr28": 51,
+  "fixed": [],
+  "impr28": 0,
   "clicks28": 0,
-  "views28": 4,
+  "views28": 0,
   "rivals": [],
   "positions": []
  },
@@ -422,6 +414,13 @@
    "score": 92,
    "grade": "A",
    "impr28": 379,
+   "clicks28": 0
+  },
+  {
+   "at": "2026-11-15T20:08:38Z",
+   "score": 98,
+   "grade": "A",
+   "impr28": 430,
    "clicks28": 0
   }
  ],

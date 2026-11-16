@@ -3,16 +3,16 @@
  "name": "victours.com.au",
  "url": "https://victours.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-15T09:53:21Z",
+ "scannedAt": "2026-11-16T00:03:15Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
- "nextDue": "2026-11-22",
- "score": 98,
+ "nextDue": "2026-11-23",
+ "score": 96,
  "grade": "A",
  "areas": {
   "health": {
-   "score": 100,
+   "score": 92,
    "grade": "A",
    "label": "Broken pages & links"
   },
@@ -27,8 +27,8 @@
    "label": "Sitemap & indexing"
   },
   "seo": {
-   "score": 79,
-   "grade": "C",
+   "score": 81,
+   "grade": "B",
    "label": "Titles, descriptions & schema"
   },
   "content": {
@@ -58,22 +58,40 @@
    "id": "seo-title",
    "area": "seo",
    "severity": "medium",
-   "title": "28 title outside 30–65 characters",
+   "title": "11 title outside 30–65 characters",
    "fix": "Rewrite to 30–65 characters with the main search first.",
    "pages": [
-    "/phillip-island/do",
-    "/lakes-entrance/do",
-    "/barwon-heads/do",
-    "/harrietville/do",
-    "/mornington-peninsula",
-    "/mornington-peninsula/stay",
-    "/mornington-peninsula/eat",
-    "/mornington-peninsula/do"
+    "/collections/beaches-and-coast",
+    "/collections/goldfields-towns",
+    "/road-trips/great-ocean-road-3-day-itinerary",
+    "/road-trips/phillip-island-day-trip",
+    "/road-trips/mornington-peninsula-day-trip",
+    "/road-trips/gippsland-road-trip",
+    "/road-trips/murray-and-north-east-road-trip",
+    "/trip-builder"
    ],
-   "count": 28,
+   "count": 11,
    "detail": "",
-   "impact": 3.0,
+   "impact": 2.7,
    "broken": false
+  },
+  {
+   "id": "broken-outside",
+   "area": "health",
+   "severity": "medium",
+   "title": "1 outside link(s) go to a missing page",
+   "fix": "Update or remove the links (often an official website that moved).",
+   "pages": [
+    "/bendigo",
+    "/bendigo/eat",
+    "/weekends/bendigo-by-train",
+    "/weekends/bendigo-family-weekend",
+    "/weekends/bendigo-romantic-weekend"
+   ],
+   "count": 5,
+   "detail": "https://oldgreenbean.com.au/ (no answer)",
+   "impact": 2.6,
+   "broken": true
   },
   {
    "id": "seo-words",
@@ -96,26 +114,6 @@
    "broken": false
   },
   {
-   "id": "schema-missing",
-   "area": "seo",
-   "severity": "low",
-   "title": "7 page(s) have no schema",
-   "fix": "Add WebPage/BreadcrumbList (or the page's own type) so Google understands it.",
-   "pages": [
-    "/towns",
-    "/road-trips",
-    "/about",
-    "/how-we-build-our-guides",
-    "/contact",
-    "/privacy-policy",
-    "/affiliate-disclosure"
-   ],
-   "count": 7,
-   "detail": "",
-   "impact": 1.2,
-   "broken": false
-  },
-  {
    "id": "seo-desc",
    "area": "seo",
    "severity": "low",
@@ -129,6 +127,21 @@
     "/affiliate-disclosure"
    ],
    "count": 5,
+   "detail": "",
+   "impact": 1.0,
+   "broken": false
+  },
+  {
+   "id": "schema-missing",
+   "area": "seo",
+   "severity": "low",
+   "title": "2 page(s) have no schema",
+   "fix": "Add WebPage/BreadcrumbList (or the page's own type) so Google understands it.",
+   "pages": [
+    "/privacy-policy",
+    "/affiliate-disclosure"
+   ],
+   "count": 2,
    "detail": "",
    "impact": 1.0,
    "broken": false
@@ -405,7 +418,7 @@
   {
    "url": "https://victours.com.au/",
    "lite": true,
-   "serverSecs": 0.05,
+   "serverSecs": 0.14,
    "htmlKb": 55,
    "blocking": 1,
    "images": 11,
@@ -416,7 +429,7 @@
   {
    "url": "https://victours.com.au/towns",
    "lite": true,
-   "serverSecs": 0.04,
+   "serverSecs": 0.06,
    "htmlKb": 32,
    "blocking": 1,
    "images": 1,
@@ -432,20 +445,20 @@
  },
  "links": {
   "internal": 364,
-  "outside": 4885,
+  "outside": 4884,
   "checkedOutside": 150,
-  "unsureOutside": 3
+  "unsureOutside": 2
  },
  "affiliateOk": 546,
- "secs": 136,
+ "secs": 144,
  "change": {
   "first": false,
-  "since": "2026-11-15T09:43:32Z",
-  "score": 2,
-  "newIssues": [],
-  "fixed": [
+  "since": "2026-11-15T09:53:21Z",
+  "score": -2,
+  "newIssues": [
    "1 outside link(s) go to a missing page"
   ],
+  "fixed": [],
   "impr28": 0,
   "clicks28": 0,
   "views28": 0,
@@ -487,7 +500,14 @@
    "grade": "A",
    "impr28": 2729,
    "clicks28": 5
+  },
+  {
+   "at": "2026-11-15T09:53:21Z",
+   "score": 98,
+   "grade": "A",
+   "impr28": 2729,
+   "clicks28": 5
   }
  ],
- "issue": "closed"
+ "issue": "open"
 }

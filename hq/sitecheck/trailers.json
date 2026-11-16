@@ -3,11 +3,11 @@
  "name": "movietrailer.channel",
  "url": "https://www.movietrailer.channel",
  "owner": "imn",
- "scannedAt": "2026-11-15T09:13:18Z",
+ "scannedAt": "2026-11-16T00:03:15Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
- "nextDue": "2026-11-22",
+ "nextDue": "2026-11-23",
  "score": 99,
  "grade": "A",
  "areas": {
@@ -52,14 +52,14 @@
    "label": "Competitors"
   }
  },
- "pages": 384,
+ "pages": 429,
  "findings": [
   {
    "id": "few-pages-in-google",
    "area": "indexing",
    "severity": "low",
-   "title": "Google shows only 31 of 384 pages (site is 29 days old)",
-   "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 57 pages on 16 Dec 2026, cut or merge weak pages and earn a few links.",
+   "title": "Google shows only 31 of 429 pages (site is 30 days old)",
+   "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 64 pages on 16 Dec 2026, cut or merge weak pages and earn a few links.",
    "pages": [],
    "count": 1,
    "detail": "",
@@ -70,7 +70,7 @@
    "id": "seo-words",
    "area": "seo",
    "severity": "low",
-   "title": "11 page(s) under 250 words",
+   "title": "12 page(s) under 250 words",
    "fix": "Fine for tools; for guides add the answer people search for.",
    "pages": [
     "/movies/once-upon-a-time-in-hollywood-2016",
@@ -82,7 +82,7 @@
     "/movies/the-evil-dead-1981",
     "/movies/heathers-1988"
    ],
-   "count": 11,
+   "count": 12,
    "detail": "",
    "impact": 1.1,
    "broken": false
@@ -344,47 +344,45 @@
   {
    "url": "https://www.movietrailer.channel/",
    "lite": true,
-   "serverSecs": 0.11,
-   "htmlKb": 64,
+   "serverSecs": 0.13,
+   "htmlKb": 70,
    "blocking": 1,
-   "images": 31,
+   "images": 32,
    "noDims": 0,
-   "imageKb": 362,
+   "imageKb": 358,
    "psiError": "HTTP Error 429: Too Many Requests"
   },
   {
    "url": "https://www.movietrailer.channel/browse",
    "lite": true,
-   "serverSecs": 0.07,
-   "htmlKb": 175,
+   "serverSecs": 0.12,
+   "htmlKb": 194,
    "blocking": 1,
-   "images": 368,
+   "images": 412,
    "noDims": 0,
    "imageKb": 381,
    "psiError": "HTTP Error 429: Too Many Requests"
   }
  ],
  "quality": {
-  "summary": "384 indexable pages · average 250 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
+  "summary": "429 indexable pages · average 248 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
   "thin": 0,
   "near": 0
  },
  "links": {
-  "internal": 417,
-  "outside": 1099,
+  "internal": 462,
+  "outside": 1231,
   "checkedOutside": 150,
   "unsureOutside": 48
  },
- "affiliateOk": 970,
- "secs": 132,
+ "affiliateOk": 1100,
+ "secs": 142,
  "change": {
   "first": false,
-  "since": "2026-11-15T09:04:19Z",
+  "since": "2026-11-15T09:13:18Z",
   "score": 0,
   "newIssues": [],
-  "fixed": [
-   "2 description outside 70–160 characters"
-  ],
+  "fixed": [],
   "impr28": 0,
   "clicks28": 0,
   "views28": 0,
@@ -436,6 +434,13 @@
   },
   {
    "at": "2026-11-15T09:04:19Z",
+   "score": 99,
+   "grade": "A",
+   "impr28": 112,
+   "clicks28": 0
+  },
+  {
+   "at": "2026-11-15T09:13:18Z",
    "score": 99,
    "grade": "A",
    "impr28": 112,

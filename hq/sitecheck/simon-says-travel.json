@@ -3,12 +3,12 @@
  "name": "simonsaystravel.com.au",
  "url": "https://simonsaystravel.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-15T18:59:19Z",
+ "scannedAt": "2026-11-16T00:03:15Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
  "nextDue": "2026-11-23",
- "score": 96,
+ "score": 97,
  "grade": "A",
  "areas": {
   "health": {
@@ -27,8 +27,8 @@
    "label": "Sitemap & indexing"
   },
   "seo": {
-   "score": 74,
-   "grade": "C",
+   "score": 83,
+   "grade": "B",
    "label": "Titles, descriptions & schema"
   },
   "content": {
@@ -54,20 +54,6 @@
  },
  "pages": 27,
  "findings": [
-  {
-   "id": "seo-title",
-   "area": "seo",
-   "severity": "medium",
-   "title": "1 title outside 30–65 characters",
-   "fix": "Rewrite to 30–65 characters with the main search first.",
-   "pages": [
-    "/"
-   ],
-   "count": 1,
-   "detail": "",
-   "impact": 12.3,
-   "broken": false
-  },
   {
    "id": "few-pages-in-google",
    "area": "indexing",
@@ -123,14 +109,13 @@
    "id": "schema-missing",
    "area": "seo",
    "severity": "low",
-   "title": "3 page(s) have no schema",
+   "title": "2 page(s) have no schema",
    "fix": "Add WebPage/BreadcrumbList (or the page's own type) so Google understands it.",
    "pages": [
-    "/how-it-works",
     "/privacy-policy",
     "/affiliate-disclosure"
    ],
-   "count": 3,
+   "count": 2,
    "detail": "",
    "impact": 1.0,
    "broken": false
@@ -167,7 +152,7 @@
   {
    "url": "https://simonsaystravel.com.au/",
    "lite": true,
-   "serverSecs": 0.2,
+   "serverSecs": 0.06,
    "htmlKb": 38,
    "blocking": 1,
    "images": 1,
@@ -178,7 +163,7 @@
   {
    "url": "https://simonsaystravel.com.au/destinations/japan",
    "lite": true,
-   "serverSecs": 0.2,
+   "serverSecs": 0.13,
    "htmlKb": 16,
    "blocking": 1,
    "images": 1,
@@ -199,19 +184,18 @@
   "unsureOutside": 0
  },
  "affiliateOk": 57,
- "secs": 123,
+ "secs": 122,
  "change": {
   "first": false,
-  "since": "2026-11-14T22:17:22Z",
-  "score": 8,
+  "since": "2026-11-15T18:59:19Z",
+  "score": 1,
   "newIssues": [],
   "fixed": [
-   "6 of your top 8 pages aren't in Google's index",
-   "\"when should australians book japan flights in 2026\": we're not in the top 10 (Search Console avg 10); helloroam.com leads"
+   "1 title outside 30–65 characters"
   ],
-  "impr28": 2,
+  "impr28": 0,
   "clicks28": 0,
-  "views28": 2,
+  "views28": 0,
   "rivals": [],
   "positions": []
  },
@@ -228,6 +212,13 @@
    "score": 88,
    "grade": "B",
    "impr28": 2,
+   "clicks28": 0
+  },
+  {
+   "at": "2026-11-15T18:59:19Z",
+   "score": 96,
+   "grade": "A",
+   "impr28": 4,
    "clicks28": 0
   }
  ],

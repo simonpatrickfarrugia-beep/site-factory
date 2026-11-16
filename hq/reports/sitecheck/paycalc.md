@@ -1,16 +1,15 @@
 # Site check: mypaycalc.com.au
 
-**A · 91/100** · scanned 2026-11-14 22:17 UTC · 81 pages · next scan 2026-11-22 (no revenue in the last 60 days, every 7 days)
+**A · 96/100** · scanned 2026-11-16 00:03 UTC · 81 pages · next scan 2026-11-23 (no revenue in the last 60 days, every 7 days)
 
-**Since 2026-11-14:** score 0 · Google impressions (28 days) 0 · clicks 0 · visits 0 · fixed 2
+**Since 2026-11-14:** score +5 · Google impressions (28 days) +309 · clicks 0 · visits +1 · new issues 1 · fixed 6
 
 ## Top 5 fixes
 
-1. **"mypaycalc": we're not in the top 10 (Search Console avg 5); unknown site leads** (medium, impact 10.9). Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages. Pages: /. Top 5: 1. unknown site, 2. apps.microsoft.com, 3. austaxai.com.au, 4. deductit.com.au, 5. fairworkmate.com.au
+1. **Google impressions down 31% week on week** (high, impact 15). Check Search Console → Pages for dropped pages, and whether a recent change touched titles.
 2. **81 page(s) without a share image** (low, impact 5.0). Add an og:image so shared links show a picture. Pages: /, /mortgage-repayment-calculator, /mortgage-repayments/200000, /mortgage-repayments/250000
-3. **"pay calculator": we're not in the top 10 (Search Console avg 86); woholmate.site leads** (low, impact 4.3). Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages. Pages: /. Top 5: 1. woholmate.site, 2. mydailycalc.com, 3. paymecalculator.com.au, 4. toolkitau.com, 5. netpaymate.com.au
-4. **55 title outside 30–65 characters** (medium, impact 3.1). Rewrite to 30–65 characters with the main search first. Pages: /salary, /salary/30000-after-tax, /salary/35000-after-tax, /salary/40000-after-tax
-5. **"australian tax brackets": we're not in the top 10 (Search Console avg 88); data.gov.au leads** (low, impact 1.2). Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages. Pages: /tax-brackets. Top 5: 1. data.gov.au, 2. taxaustralia.com.au, 3. au.talent.com, 4. youtube.com, 5. heed.finance
+3. **5 title outside 30–65 characters** (medium, impact 2.7). Rewrite to 30–65 characters with the main search first. Pages: /how-we-calculate, /about, /contact, /how-we-make-money
+4. **6 page(s) under 250 words** (low, impact 1.1). Fine for tools; for guides add the answer people search for. Pages: /salary, /about, /contact, /how-we-make-money
 
 ## Report card
 
@@ -19,45 +18,41 @@
 | Broken pages & links | A | 100 |
 | Tracking & money links | A | 100 |
 | Sitemap & indexing | A | 100 |
-| Titles, descriptions & schema | D | 61 |
+| Titles, descriptions & schema | C | 77 |
 | Thin & duplicate pages | A | 100 |
 | Speed | A | 100 |
-| Google trend | A | 100 |
-| Competitors | F | 35 |
+| Google trend | B | 84 |
+| Competitors | — | not checked |
 
 ## Google
 
-- Last 7 days: 429 impressions (-47), 2 clicks (0). 28 days: 715 impressions, 4 clicks, 200 visits. Search Console data to 2026-11-11.
-- "mypaycalc" (129 impressions, Search Console avg 5.2): us not in top 10. Top 5: 1. unknown site, 2. apps.microsoft.com, 3. austaxai.com.au, 4. deductit.com.au, 5. fairworkmate.com.au
-- "pay calculator" (21 impressions, Search Console avg 86.2): us not in top 10. Top 5: 1. woholmate.site, 2. mydailycalc.com, 3. paymecalculator.com.au, 4. toolkitau.com, 5. netpaymate.com.au
-- "australian tax brackets" (17 impressions, Search Console avg 88.3): us not in top 10. Top 5: 1. data.gov.au, 2. taxaustralia.com.au, 3. au.talent.com, 4. youtube.com, 5. heed.finance
-- "what tax bracket am i in australia" (16 impressions, Search Console avg 68.9): us not in top 10. Top 5: 1. perthmobiletax.com.au, 2. netactuary.com.au, 3. tmbank.com.au, 4. lemonadebeachaccounting.com.au, 5. unknown site
-- "current tax brackets australia" (10 impressions, Search Console avg 72.8): us not in top 10. Top 5: 1. data.gov.au, 2. parlinfo.aph.gov.au, 3. autaxcalc.com, 4. youtube.com, 5. privacyaustralia.net
+- Last 7 days: 370 impressions (-170), 1 clicks (-2). 28 days: 1,024 impressions, 4 clicks, 201 visits. Search Console data to 2026-11-12.
 
 ## What changed
 
-- Fixed: /: 3 files block the first paint
-- Fixed: /tax-brackets: 3 files block the first paint
+- "pay calculator for australia": position 56 → 62.8
+- New: Google impressions down 31% week on week
+- Fixed: "mypaycalc": we're not in the top 10 (Search Console avg 5); unknown site leads
+- Fixed: "pay calculator": we're not in the top 10 (Search Console avg 86); woholmate.site leads
+- Fixed: "australian tax brackets": we're not in the top 10 (Search Console avg 88); data.gov.au leads
+- Fixed: "what tax bracket am i in australia": we're not in the top 10 (Search Console avg 69); perthmobiletax.com.au leads
+- Fixed: "current tax brackets australia": we're not in the top 10 (Search Console avg 73); data.gov.au leads
+- Fixed: 2 description outside 70–160 characters
 
 ## Speed (phones)
 
-- /: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.08s, HTML 19 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
-- /tax-brackets: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.08s, HTML 12 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
+- /: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.09s, HTML 19 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
+- /tax-brackets: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.2s, HTML 12 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
 
 ## All findings
 
 | # | Area | Severity | Impact | Finding |
 |---:|---|---|---:|---|
-| 1 | rivals | medium | 10.9 | "mypaycalc": we're not in the top 10 (Search Console avg 5); unknown site leads |
+| 1 | google | high | 15 | Google impressions down 31% week on week |
 | 2 | seo | low | 5.0 | 81 page(s) without a share image |
-| 3 | rivals | low | 4.3 | "pay calculator": we're not in the top 10 (Search Console avg 86); woholmate.site leads |
-| 4 | seo | medium | 3.1 | 55 title outside 30–65 characters |
-| 5 | rivals | low | 1.2 | "australian tax brackets": we're not in the top 10 (Search Console avg 88); data.gov.au leads |
-| 6 | rivals | low | 1.2 | "what tax bracket am i in australia": we're not in the top 10 (Search Console avg 69); perthmobiletax.com.au leads |
-| 7 | rivals | low | 1.2 | "current tax brackets australia": we're not in the top 10 (Search Console avg 73); data.gov.au leads |
-| 8 | seo | low | 1.1 | 6 page(s) under 250 words |
-| 9 | seo | low | 1.0 | 2 description outside 70–160 characters |
+| 3 | seo | medium | 2.7 | 5 title outside 30–65 characters |
+| 4 | seo | low | 1.1 | 6 page(s) under 250 words |
 
-Links: 152 internal, 10 outside (10 checked; 5 block robots, not counted). Affiliate links tagged correctly: 0. Live Google check cost US$0.010.
+Links: 152 internal, 10 outside (10 checked; 5 block robots, not counted). Affiliate links tagged correctly: 0. Live Google check cost US$0.000.
 
 _Made by scripts/sitecheck/run.py. Check a page yourself: `scripts/claude/probe.sh "<url>"`. Rules: hq/sitecheck.json._

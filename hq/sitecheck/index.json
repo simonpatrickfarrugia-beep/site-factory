@@ -4,34 +4,49 @@
    "name": "victours.com.au",
    "url": "https://victours.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-15T09:53:21Z",
-   "score": 98,
+   "scannedAt": "2026-11-16T00:03:15Z",
+   "score": 96,
    "grade": "A",
-   "change": 2,
+   "change": -2,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-22",
-   "topFix": "28 title outside 30–65 characters",
-   "broken": 0,
-   "newIssues": 0,
-   "fixed": 1,
+   "nextDue": "2026-11-23",
+   "topFix": "11 title outside 30–65 characters",
+   "broken": 1,
+   "newIssues": 1,
+   "fixed": 0,
    "costUsd": 0,
    "top": [
     {
      "id": "seo-title",
-     "title": "28 title outside 30–65 characters",
+     "title": "11 title outside 30–65 characters",
      "severity": "medium",
      "area": "seo",
      "fix": "Rewrite to 30–65 characters with the main search first.",
      "pages": [
-      "/phillip-island/do",
-      "/lakes-entrance/do",
-      "/barwon-heads/do",
-      "/harrietville/do"
+      "/collections/beaches-and-coast",
+      "/collections/goldfields-towns",
+      "/road-trips/great-ocean-road-3-day-itinerary",
+      "/road-trips/phillip-island-day-trip"
      ],
      "detail": "",
      "broken": false
+    },
+    {
+     "id": "broken-outside",
+     "title": "1 outside link(s) go to a missing page",
+     "severity": "medium",
+     "area": "health",
+     "fix": "Update or remove the links (often an official website that moved).",
+     "pages": [
+      "/bendigo",
+      "/bendigo/eat",
+      "/weekends/bendigo-by-train",
+      "/weekends/bendigo-family-weekend"
+     ],
+     "detail": "https://oldgreenbean.com.au/ (no answer)",
+     "broken": true
     },
     {
      "id": "seo-words",
@@ -44,21 +59,6 @@
       "/metung",
       "/flinders",
       "/about"
-     ],
-     "detail": "",
-     "broken": false
-    },
-    {
-     "id": "schema-missing",
-     "title": "7 page(s) have no schema",
-     "severity": "low",
-     "area": "seo",
-     "fix": "Add WebPage/BreadcrumbList (or the page's own type) so Google understands it.",
-     "pages": [
-      "/towns",
-      "/road-trips",
-      "/about",
-      "/how-we-build-our-guides"
      ],
      "detail": "",
      "broken": false
@@ -77,6 +77,19 @@
      ],
      "detail": "",
      "broken": false
+    },
+    {
+     "id": "schema-missing",
+     "title": "2 page(s) have no schema",
+     "severity": "low",
+     "area": "seo",
+     "fix": "Add WebPage/BreadcrumbList (or the page's own type) so Google understands it.",
+     "pages": [
+      "/privacy-policy",
+      "/affiliate-disclosure"
+     ],
+     "detail": "",
+     "broken": false
     }
    ]
   },
@@ -84,33 +97,33 @@
    "name": "movietrailer.channel",
    "url": "https://www.movietrailer.channel",
    "owner": "imn",
-   "scannedAt": "2026-11-15T09:13:18Z",
+   "scannedAt": "2026-11-16T00:03:15Z",
    "score": 99,
    "grade": "A",
    "change": 0,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-22",
-   "topFix": "Google shows only 31 of 384 pages (site is 29 days old)",
+   "nextDue": "2026-11-23",
+   "topFix": "Google shows only 31 of 429 pages (site is 30 days old)",
    "broken": 0,
    "newIssues": 0,
-   "fixed": 1,
+   "fixed": 0,
    "costUsd": 0,
    "top": [
     {
      "id": "few-pages-in-google",
-     "title": "Google shows only 31 of 384 pages (site is 29 days old)",
+     "title": "Google shows only 31 of 429 pages (site is 30 days old)",
      "severity": "low",
      "area": "indexing",
-     "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 57 pages on 16 Dec 2026, cut or merge weak pages and earn a few links.",
+     "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 64 pages on 16 Dec 2026, cut or merge weak pages and earn a few links.",
      "pages": [],
      "detail": "",
      "broken": false
     },
     {
      "id": "seo-words",
-     "title": "11 page(s) under 250 words",
+     "title": "12 page(s) under 250 words",
      "severity": "low",
      "area": "seo",
      "fix": "Fine for tools; for guides add the answer people search for.",
@@ -129,79 +142,32 @@
    "name": "communityhelp.com.au",
    "url": "https://communityhelp.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-14T22:17:22Z",
-   "score": 94,
+   "scannedAt": "2026-11-16T00:03:15Z",
+   "score": 100,
    "grade": "A",
-   "change": 1,
+   "change": 6,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-21",
-   "topFix": "\"community help\": we're not in the top 10 (Search Console avg 17); goldcoast.qld.gov.au leads",
+   "nextDue": "2026-11-23",
+   "topFix": "3 page(s) under 250 words",
    "broken": 0,
-   "newIssues": 1,
-   "fixed": 2,
-   "costUsd": 0.01,
+   "newIssues": 0,
+   "fixed": 7,
+   "costUsd": 0,
    "top": [
     {
-     "id": "rival-community-help",
-     "title": "\"community help\": we're not in the top 10 (Search Console avg 17); goldcoast.qld.gov.au leads",
-     "severity": "medium",
-     "area": "rivals",
-     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
-     "pages": [
-      "/"
-     ],
-     "detail": "Top 5: 1. goldcoast.qld.gov.au, 2. ntcommunity.org.au, 3. qld.gov.au, 4. findhelptas.org.au, 5. innersydneyvoice.org.au",
-     "broken": false
-    },
-    {
-     "id": "rival-community-services-placement",
-     "title": "\"community services placement\": we're not in the top 10 (Search Console avg 9); facebook.com leads",
-     "severity": "medium",
-     "area": "rivals",
-     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
-     "pages": [
-      "/"
-     ],
-     "detail": "Top 5: 1. facebook.com, 2. au.indeed.com, 3. au.indeed.com, 4. au.indeed.com, 5. au.indeed.com",
-     "broken": false
-    },
-    {
-     "id": "rival-local-community-support",
-     "title": "\"local community support\": we're not in the top 10 (Search Console avg 4); mercycare.com.au leads",
-     "severity": "medium",
-     "area": "rivals",
-     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
-     "pages": [
-      "/"
-     ],
-     "detail": "Top 5: 1. mercycare.com.au, 2. servicedirectory.cesphn.org.au, 3. localkind.org.au, 4. brisbane.qld.gov.au, 5. commsatwork.org",
-     "broken": false
-    },
-    {
-     "id": "seo-title",
-     "title": "2 title outside 30–65 characters",
-     "severity": "medium",
+     "id": "seo-words",
+     "title": "3 page(s) under 250 words",
+     "severity": "low",
      "area": "seo",
-     "fix": "Rewrite to 30–65 characters with the main search first.",
+     "fix": "Fine for tools; for guides add the answer people search for.",
      "pages": [
-      "/job-finder",
-      "/job-catalyst-clinics"
+      "/about",
+      "/privacy-policy",
+      "/affiliate-disclosure"
      ],
      "detail": "",
-     "broken": false
-    },
-    {
-     "id": "rival-simon-farrugia",
-     "title": "\"simon farrugia\": we're not in the top 10 (Search Console avg 8); unknown site leads",
-     "severity": "medium",
-     "area": "rivals",
-     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
-     "pages": [
-      "/about"
-     ],
-     "detail": "Top 5: 1. unknown site, 2. facebook.com, 3. facebook.com, 4. facebook.com, 5. unknown site",
      "broken": false
     }
    ]
@@ -210,29 +176,27 @@
    "name": "tradeadmin.com.au",
    "url": "https://tradeadmin.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-15T20:08:38Z",
-   "score": 98,
+   "scannedAt": "2026-11-16T00:03:15Z",
+   "score": 99,
    "grade": "A",
-   "change": 6,
+   "change": 1,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-22",
-   "topFix": "3 title outside 30–65 characters",
+   "nextDue": "2026-11-23",
+   "topFix": "1 title outside 30–65 characters",
    "broken": 0,
    "newIssues": 0,
-   "fixed": 5,
+   "fixed": 0,
    "costUsd": 0,
    "top": [
     {
      "id": "seo-title",
-     "title": "3 title outside 30–65 characters",
+     "title": "1 title outside 30–65 characters",
      "severity": "medium",
      "area": "seo",
      "fix": "Rewrite to 30–65 characters with the main search first.",
      "pages": [
-      "/tradify-vs-fergus",
-      "/contact",
       "/privacy-policy"
      ],
      "detail": "",
@@ -258,30 +222,28 @@
    "name": "mypaycalc.com.au",
    "url": "https://mypaycalc.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-14T22:17:22Z",
-   "score": 91,
+   "scannedAt": "2026-11-16T00:03:15Z",
+   "score": 96,
    "grade": "A",
-   "change": 0,
+   "change": 5,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-21",
-   "topFix": "\"mypaycalc\": we're not in the top 10 (Search Console avg 5); unknown site leads",
+   "nextDue": "2026-11-23",
+   "topFix": "Google impressions down 31% week on week",
    "broken": 0,
-   "newIssues": 0,
-   "fixed": 2,
-   "costUsd": 0.01,
+   "newIssues": 1,
+   "fixed": 6,
+   "costUsd": 0,
    "top": [
     {
-     "id": "rival-mypaycalc",
-     "title": "\"mypaycalc\": we're not in the top 10 (Search Console avg 5); unknown site leads",
-     "severity": "medium",
-     "area": "rivals",
-     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
-     "pages": [
-      "/"
-     ],
-     "detail": "Top 5: 1. unknown site, 2. apps.microsoft.com, 3. austaxai.com.au, 4. deductit.com.au, 5. fairworkmate.com.au",
+     "id": "impressions-drop",
+     "title": "Google impressions down 31% week on week",
+     "severity": "high",
+     "area": "google",
+     "fix": "Check Search Console → Pages for dropped pages, and whether a recent change touched titles.",
+     "pages": [],
+     "detail": "",
      "broken": false
     },
     {
@@ -300,42 +262,33 @@
      "broken": false
     },
     {
-     "id": "rival-pay-calculator",
-     "title": "\"pay calculator\": we're not in the top 10 (Search Console avg 86); woholmate.site leads",
-     "severity": "low",
-     "area": "rivals",
-     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
-     "pages": [
-      "/"
-     ],
-     "detail": "Top 5: 1. woholmate.site, 2. mydailycalc.com, 3. paymecalculator.com.au, 4. toolkitau.com, 5. netpaymate.com.au",
-     "broken": false
-    },
-    {
      "id": "seo-title",
-     "title": "55 title outside 30–65 characters",
+     "title": "5 title outside 30–65 characters",
      "severity": "medium",
      "area": "seo",
      "fix": "Rewrite to 30–65 characters with the main search first.",
      "pages": [
-      "/salary",
-      "/salary/30000-after-tax",
-      "/salary/35000-after-tax",
-      "/salary/40000-after-tax"
+      "/how-we-calculate",
+      "/about",
+      "/contact",
+      "/how-we-make-money"
      ],
      "detail": "",
      "broken": false
     },
     {
-     "id": "rival-australian-tax-brackets",
-     "title": "\"australian tax brackets\": we're not in the top 10 (Search Console avg 88); data.gov.au leads",
+     "id": "seo-words",
+     "title": "6 page(s) under 250 words",
      "severity": "low",
-     "area": "rivals",
-     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "area": "seo",
+     "fix": "Fine for tools; for guides add the answer people search for.",
      "pages": [
-      "/tax-brackets"
+      "/salary",
+      "/about",
+      "/contact",
+      "/how-we-make-money"
      ],
-     "detail": "Top 5: 1. data.gov.au, 2. taxaustralia.com.au, 3. au.talent.com, 4. youtube.com, 5. heed.finance",
+     "detail": "",
      "broken": false
     }
    ]
@@ -344,32 +297,20 @@
    "name": "simonsaystravel.com.au",
    "url": "https://simonsaystravel.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-15T18:59:19Z",
-   "score": 96,
+   "scannedAt": "2026-11-16T00:03:15Z",
+   "score": 97,
    "grade": "A",
-   "change": 8,
+   "change": 1,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-22",
-   "topFix": "1 title outside 30–65 characters",
+   "nextDue": "2026-11-23",
+   "topFix": "Google shows only 2 of 27 pages",
    "broken": 0,
    "newIssues": 0,
-   "fixed": 2,
+   "fixed": 1,
    "costUsd": 0,
    "top": [
-    {
-     "id": "seo-title",
-     "title": "1 title outside 30–65 characters",
-     "severity": "medium",
-     "area": "seo",
-     "fix": "Rewrite to 30–65 characters with the main search first.",
-     "pages": [
-      "/"
-     ],
-     "detail": "",
-     "broken": false
-    },
     {
      "id": "few-pages-in-google",
      "title": "Google shows only 2 of 27 pages",
@@ -412,12 +353,11 @@
     },
     {
      "id": "schema-missing",
-     "title": "3 page(s) have no schema",
+     "title": "2 page(s) have no schema",
      "severity": "low",
      "area": "seo",
      "fix": "Add WebPage/BreadcrumbList (or the page's own type) so Google understands it.",
      "pages": [
-      "/how-it-works",
       "/privacy-policy",
       "/affiliate-disclosure"
      ],
@@ -427,9 +367,16 @@
    ]
   }
  },
- "updated": "2026-11-15T23:28:58Z",
+ "updated": "2026-11-16T00:03:15Z",
  "lastRun": {
-  "at": "2026-11-15T23:28:58Z",
-  "scanned": []
+  "at": "2026-11-16T00:03:15Z",
+  "scanned": [
+   "trailers",
+   "vic",
+   "community-help-co",
+   "trade-admin",
+   "paycalc",
+   "simon-says-travel"
+  ]
  }
 }
