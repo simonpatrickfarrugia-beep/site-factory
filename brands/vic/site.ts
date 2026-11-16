@@ -23,6 +23,9 @@ function sectionTitle(g: Group, name: string, count: number): string {
 }
 // First option within 65 characters (else the last): long names drop the brand suffix so the title stays in range.
 const within65 = (...o: string[]) => o.find((x) => x.length <= 65) ?? o[o.length - 1];
+// Meta description: the first option that fits 70–160 characters (site check rule); else the last, clipped at a word.
+const clip160 = (x: string) => (x.length <= 160 ? x : x.slice(0, 157).replace(/[\s,;:.]+\S*$/, '') + '…');
+const desc160 = (...o: string[]) => o.find((x) => x.length >= 70 && x.length <= 160) ?? clip160(o[o.length - 1]);
 const GROUPS: Group[] = ['stay', 'eat', 'do'];
 const ON_HUB = 6; // places shown per section on a town page
 const MAX_LIST = 300; // full list pages show the best-documented 300 (keeps big-city pages fast on phones)
@@ -328,7 +331,7 @@ export function routes(): Route[] {
           title: sectionTitle(g, r.name, all.length),
           rawTitle: true,
           image: photoUrl(...r.towns.map((x) => x.slug)),
-          description: `${all.length} ${GROUP_LABEL[g].noun} across the ${r.name} (${r.towns.map((t) => t.name).slice(0, 5).join(', ')}${r.towns.length > 5 ? ' and more' : ''}). Addresses, hours, websites and maps.`,
+          description: desc160(...[5, 4, 3, 2].map((n) => `${all.length} ${GROUP_LABEL[g].noun} across the ${r.name} (${r.towns.map((t) => t.name).slice(0, n).join(', ')}${r.towns.length > n ? ' and more' : ''}). Addresses, hours, websites and maps.`), `${all.length} ${GROUP_LABEL[g].noun} across the ${r.name}. Addresses, hours, websites and maps.`),
         },
         schema: [crumbs([{ name: 'Home', path: '' }, { name: r.name, path: r.slug }, { name: GROUP_LABEL[g].short, path: `${r.slug}/${g}` }])],
         props: { town: { name: r.name, slug: r.slug, km }, group: g, places: all.slice(0, MAX_LIST), total: all.length, townNames, affiliates: content.affiliates ?? null, placePhotos: Object.fromEntries(all.slice(0, MAX_LIST).filter((p) => photos.places[p.id]).map((p) => [p.id, photos.places[p.id]])) },
@@ -347,7 +350,7 @@ export function routes(): Route[] {
     out.push({
       path: `collections/${col.slug}`,
       template: 'vicCollection',
-      seo: { title: col.name + SUFFIX, rawTitle: true, description: `${col.name}: ${col.intro}`.slice(0, 165), image: photoUrl(...col.towns) },
+      seo: { title: within65(...[col.name + SUFFIX, `${col.name} in Victoria` + SUFFIX].filter((x) => x.length >= 30), `${col.name} in Victoria`), rawTitle: true, description: desc160(`${col.name}: ${col.intro}`), image: photoUrl(...col.towns) },
       schema: [
         {
           '@context': 'https://schema.org',
@@ -394,10 +397,13 @@ export function routes(): Route[] {
       path: `road-trips/${l.slug}`,
       template: 'vicLoop',
       seo: {
-        title: `${l.name}: ${l.days.length}-day road trip from Melbourne` + SUFFIX,
+        // Over 65 characters: names that already say "day trip" or "in 3 days" don't repeat it; long names drop the brand suffix first.
+        title: `${l.name}: ${l.days.length}-day road trip from Melbourne${SUFFIX}`.length <= 65 ? `${l.name}: ${l.days.length}-day road trip from Melbourne${SUFFIX}` : /day trip|\d+ days/i.test(l.name)
+          ? within65(`${l.name} from Melbourne: Driving Itinerary` + SUFFIX, `${l.name} from Melbourne: Driving Itinerary`, `${l.name}: Road Trip Itinerary` + SUFFIX, `${l.name} from Melbourne`)
+          : within65(`${l.name}: ${l.days.length}-day road trip from Melbourne` + SUFFIX, `${l.name}: ${l.days.length}-day road trip from Melbourne`, `${l.name}: ${l.days.length}-Day Drive` + SUFFIX, l.name),
         rawTitle: true,
         image: photoUrl(...l.days.flatMap((d) => [...d.stops, ...(d.overnight ? [d.overnight] : [])])),
-        description: `${l.summary} Day-by-day plan with where to stay, eat and what to do.`.slice(0, 165),
+        description: desc160(`${l.summary} Day-by-day plan with where to stay, eat and what to do.`, `${l.summary} Day-by-day plan with stays, food and stops.`, l.summary),
       },
       schema: [
         {
@@ -696,7 +702,7 @@ export function routes(): Route[] {
     out.push({
       path: 'trip-builder',
       template: 'vicTripBuilder',
-      seo: { title: 'Trip Builder: Plan a Day Trip or Weekend Away in Victoria' + SUFFIX, rawTitle: true, description: `Tell us who's coming, how long and how far, and get a ready-made day trip or weekend in Victoria: where to stay, eat and what to do, picked from ${Object.keys(tbTowns).length} towns.` },
+      seo: { title: 'Trip Builder: Plan a Victoria Day Trip or Weekend' + SUFFIX, rawTitle: true, description: `Tell us who's coming, how long and how far, and get a ready-made day trip or weekend in Victoria: where to stay, eat and what to do, picked from ${Object.keys(tbTowns).length} towns.` },
       schema: [
         { '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Vic Tours Trip Builder', url: `${SITE}/trip-builder`, applicationCategory: 'TravelApplication', operatingSystem: 'Any (runs in your web browser)', isAccessibleForFree: true, offers: { '@type': 'Offer', price: '0', priceCurrency: 'AUD' } },
         crumbs([{ name: 'Home', path: '' }, { name: 'Trip Builder', path: 'trip-builder' }]),
@@ -719,7 +725,7 @@ export function routes(): Route[] {
   for (const p of content.pages) {
     // Breadcrumb schema on the guide's own pages; legal pages (privacy, disclosure) are left as they are.
     const legal = ['privacy-policy', 'affiliate-disclosure'].includes(p.slug);
-    out.push({ path: p.slug, template: 'vicPage', seo: { title: p.title + SUFFIX, rawTitle: true, description: p.description }, schema: legal ? [] : [crumbs([{ name: 'Home', path: '' }, { name: p.title, path: p.slug }])], props: { title: p.title, paragraphs: p.paragraphs } });
+    out.push({ path: p.slug, template: 'vicPage', seo: { title: (p.seoTitle ?? p.title) + SUFFIX, rawTitle: true, description: p.description }, schema: legal ? [] : [crumbs([{ name: 'Home', path: '' }, { name: p.title, path: p.slug }])], props: { title: p.title, paragraphs: p.paragraphs } });
   }
   return out;
 }

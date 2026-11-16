@@ -94,7 +94,8 @@ export interface Content {
   regions?: VicRegion[];
   loops?: Loop[];
   affiliates?: Record<'stay' | 'tours', { enabled: boolean; label: string; partner: string; template: string; target?: string }>;
-  pages: { slug: string; title: string; description: string; paragraphs: string[] }[];
+  /** seoTitle (optional) = the <title> before the brand suffix, when the heading alone is too short. */
+  pages: { slug: string; title: string; seoTitle?: string; description: string; paragraphs: string[] }[];
 }
 
 // title = on-page heading. seoTitle (optional) = the <title>, led by the words people search.
