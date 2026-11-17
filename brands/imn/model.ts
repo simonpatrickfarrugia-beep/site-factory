@@ -10,7 +10,7 @@ export interface SiteInfo {
   changeCapMinutes: number;
   extraChange: number;
   /** Stripe payment links (public URLs). plan = the monthly plan. */
-  payLinks?: { plan?: string };
+  payLinks?: { plan?: string; extraPage?: string; extraChange?: string; _note?: string };
   extraPage: number;
   includedChanges: number;
   hero: { kicker: string; title: string; lede: string };
