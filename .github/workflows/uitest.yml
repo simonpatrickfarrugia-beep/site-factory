@@ -13,6 +13,12 @@ on:
       brand:
         description: Optional. Build this brand from the dispatched branch and test it locally (for sites not deployed yet)
         default: ''
+      shot_paths:
+        description: Optional. Space-separated paths for shot-url.mjs
+        default: ''
+      shot_js:
+        description: Optional. JavaScript shot-url.mjs runs on each page before the screenshot
+        default: ''
 jobs:
   test:
     runs-on: ubuntu-24.04  # pinned: ubuntu-latest moved to 26.04 in Oct 2026 and broke the Playwright install
@@ -37,6 +43,8 @@ jobs:
         continue-on-error: true
         env:
           TEST: ${{ inputs.test }}
+          SHOT_PATHS: ${{ inputs.shot_paths }}
+          SHOT_JS: ${{ inputs.shot_js }}
           BASE: ${{ inputs.brand != '' && 'http://localhost:4321' || inputs.base }}
         run: node "scripts/$TEST" "$BASE" 2>&1 | tee out.txt; exit ${PIPESTATUS[0]}
       - name: Report and push screenshots
