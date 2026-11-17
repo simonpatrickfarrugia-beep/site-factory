@@ -1,8 +1,8 @@
 # Site check: tradeadmin.com.au
 
-**A · 100/100** · scanned 2026-11-17 12:18 UTC · 25 pages · next scan 2026-11-24 (no revenue in the last 60 days, every 7 days)
+**A · 100/100** · scanned 2026-11-17 12:23 UTC · 25 pages · next scan 2026-11-24 (no revenue in the last 60 days, every 7 days)
 
-**Since 2026-11-16:** score +1 · Google impressions (28 days) +57 · clicks 0 · visits +6 · fixed 1
+**Since 2026-11-17:** score 0 · Google impressions (28 days) 0 · clicks 0 · visits 0
 
 ## Top 5 fixes
 
@@ -25,14 +25,10 @@
 
 - Last 7 days: 218 impressions (+1), 0 clicks (0). 28 days: 487 impressions, 0 clicks, 39 visits. Search Console data to 2026-11-13.
 
-## What changed
-
-- Fixed: 1 title outside 30–65 characters
-
 ## Speed (phones)
 
-- /: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.11s, HTML 12 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
-- /tradify-vs-servicem8: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.18s, HTML 18 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
+- /: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.07s, HTML 12 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
+- /tradify-vs-servicem8: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.05s, HTML 18 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
 
 ## All findings
 
