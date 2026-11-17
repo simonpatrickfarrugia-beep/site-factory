@@ -9,6 +9,7 @@ const { site, page: p } = Astro.props;
     <h1>{p.title}</h1>
     <p class="imn-lede">{p.lede}</p>
     {site.setup.promo ? <p class="imn-promo"><span>{site.setup.promoLabel}</span> No setup fee for our first {site.setup.promoSpots} clients on a {site.setup.promoTerm}-month plan.</p> : <p class="imn-promo"><span>No setup fee</span> No lock-in. You only pay once you've seen your preview and you're happy with it.</p>}
+    {site.guarantee && <p class="imn-small" style="margin-top:.8rem"><b>Risk-free:</b> {site.guarantee.short}</p>}
     <ol class="imn-flow" aria-label="How it works">
       <li class="is-now"><b>Tell us about your business</b><span>2 minutes, right here</span></li>
       <li><b>See your free preview</b><span>We email you a private link within 2 business days</span></li>

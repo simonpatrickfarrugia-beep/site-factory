@@ -17,5 +17,6 @@ const { site } = Astro.props;
     <div><dt>Change rounds</dt><dd>{site.includedChanges} a month, up to {site.changeCapMinutes} minutes each. Extra rounds ${site.extraChange} + GST.</dd></div>
     <div><dt>Contract</dt><dd>None. Month to month, cancel any time{site.setup.promo && <> ({site.setup.promoTerm} months on the founding offer)</>}. <a href="/terms">Our terms</a>.</dd></div>
   </dl>
+  {site.guarantee && <div class="imn-guar"><b>🛡️ {site.guarantee.title}</b><ul>{site.guarantee.points.map((g) => <li>{g}</li>)}</ul></div>}
   <a class="imn-btn imn-btn--coin imn-btn--block" href="/get-started" data-cta="start_plan">Get started</a>
 </div>

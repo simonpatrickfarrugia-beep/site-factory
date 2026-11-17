@@ -1686,3 +1686,6 @@ main { display: block; }
 .imn-done { max-width: 52rem; padding: 1.4rem 1.5rem; border: 2px solid var(--coin); border-radius: 16px; background: var(--panel); }
 .imn-done h2 { margin: 0.2rem 0 0.2rem; }
 .imn-done .imn-flow { grid-template-columns: 1fr; margin-top: 1rem; }
+.imn-guar { margin: 0 0 1.2rem; padding: 0.8rem 0.9rem; border-radius: 12px; background: color-mix(in srgb, var(--coin) 16%, white); border: 1px solid var(--coin); }
+.imn-guar ul { margin: 0.4rem 0 0; padding-left: 1.1rem; }
+.imn-guar li { margin: 0.2rem 0; font-size: var(--step--1); }

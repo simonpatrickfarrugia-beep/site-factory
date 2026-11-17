@@ -201,7 +201,7 @@ function guaranteeHtml(key?: string): string {
   const G: Record<string, string> = {
     'money-back-30': '<b>30-day money-back guarantee.</b> If you\'re not happy in your first 30 days, tell us and we\'ll refund your first month in full.',
     'live-7': '<b>Live within 7 days of your go-ahead</b> (once we have your details and domain access), or your first month is free.',
-    'both': '<b>Our guarantee:</b> live within 7 days of your go-ahead or your first month is free, and if you\'re not happy in your first 30 days we refund your first month in full.',
+    'both': '<b>Our guarantee:</b> live within 7 days of your go-ahead or your first month is free, and if you\'re not happy in your first 30 days we refund your first month in full. <a class="l" href="https://imnetwork.com.au/terms">Details in our terms</a>.',
   };
   return G[(key ?? '').trim()] ?? '';
 }

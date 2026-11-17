@@ -9,7 +9,7 @@ const setup = site.setup.promo ? `Founding offer: no setup fee for our first ${s
   <div class="imn-wrap imn-cta__inner">
     <div>
       <h2>{heading}</h2>
-      <p>${site.price.monthly} + GST a month, everything included. {setup}</p>
+      <p>${site.price.monthly} + GST a month, everything included. {setup}{site.guarantee && <> Risk-free: live in 7 days or your first month is free, plus a 30-day money-back guarantee.</>}</p>
     </div>
     <p><a class="imn-btn imn-btn--coin" href="/get-started" data-cta="start_cta">Get started</a></p>
   </div>

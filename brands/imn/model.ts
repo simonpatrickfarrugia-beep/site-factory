@@ -21,6 +21,7 @@ export interface SiteInfo {
   change: string;
   sites: OurSite[];
   faq: Faq[];
+  guarantee?: { title: string; short: string; points: string[] };
 }
 export interface TextPage { title: string; description: string; paragraphs: string[] }
 export interface FormPage { title: string; description: string; lede: string }

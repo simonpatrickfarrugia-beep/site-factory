@@ -134,7 +134,7 @@ If it's useful, I can put together a free preview of a simple site for you, buil
 Here's what's included and how it works:
 {page}
 
-If you like it, it's $99 + GST a month with hosting, care and changes included, no setup fee and no lock-in contract. If not, no worries at all.
+If you like it, it's $99 + GST a month with hosting, care and changes included, no setup fee and no lock-in contract. It's risk-free too: if you're not happy in the first 30 days, you get your first month back. If it's not for you, no worries at all.
 
 Would you like me to put one together?
 
