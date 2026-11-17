@@ -30,11 +30,11 @@
    "address": "simon@imnetwork.com.au",
    "steps": {
     "receive": true,
-    "send": false,
-    "sign": false,
-    "track": false
+    "send": true,
+    "sign": true,
+    "track": true
    },
-   "note": "Receiving tested 15 Nov. To do: DKIM Enable, IMN signature + CRM copy rules, send test from HQ. Then outreach switches on."
+   "note": "Live 17 Nov. Receive, send-as, signature, CRM copy all tested. DKIM on. Outreach on."
   },
   {
    "brand": "vic",
