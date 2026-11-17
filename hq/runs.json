@@ -2,9 +2,9 @@
  "_about": "Last run of each AI worker (claude.ai scheduled task). Each skill's final step updates only its own entry. Checked daily by scripts/health.py (limits in hq/health.json).",
  "workers": {
   "imn-radar": {
-   "at": "2026-11-16T20:48:21Z",
+   "at": "2026-11-17T20:54:29Z",
    "ok": true,
-   "note": "Paced to 2 (12 drafts waiting): added 1 trailers (Mount Vic Flicks, NYE 31 Dec, score 75); 3 Vic dead ends, 1 CHC dead end"
+   "note": "Added 2 IMN preview prospects (Tarneit electricians, evergreen); paced to 2: 12 drafts waiting"
   },
   "morning-report": {
    "at": "2026-11-16T21:57:28Z",
