@@ -291,9 +291,10 @@
    "why": "Amazon US needs 3 sales by ~29 Mar 2027; Australian visitors can't buy through amazon.com links",
    "link": "https://analytics.google.com",
    "linkLabel": "GA4",
-   "done": false,
+   "done": true,
    "addedAt": "2026-11-03",
-   "brand": "trailers"
+   "brand": "trailers",
+   "doneAt": "2026-11-17"
   },
   {
    "id": "imn-setup-nov",
@@ -883,6 +884,19 @@
     "at": "2026-11-16"
    },
    "brand": "vic"
+  },
+  {
+   "id": "amazon-au-associates",
+   "kind": "do",
+   "sprint": false,
+   "mins": 10,
+   "what": "Apply to Amazon Associates Australia at https://affiliate-program.amazon.com.au (website: https://www.movietrailer.channel). Then paste the new tracking ID (ends in -22) into the Site Factory chat and Claude sends Australian visitors to amazon.com.au",
+   "why": "GA4, 18 Oct–16 Nov: Australia is 7 of 31 visitors (23%), over the 20% line. Those visitors can't buy through amazon.com links",
+   "link": "https://affiliate-program.amazon.com.au",
+   "linkLabel": "Amazon AU",
+   "done": false,
+   "addedAt": "2026-11-17",
+   "brand": "trailers"
   }
  ],
  "notes": [
