@@ -177,8 +177,9 @@ ${b.about?.length ? `<section class="s-sec"><div class="w"><h2>About ${esc(b.nam
     <p><strong>$99 + GST a month</strong> ($108.90 inc GST). We put this live on your own web address, host it, check it every day and make up to 2 rounds of changes a month. <strong>No setup fee, no lock-in contract</strong>: cancel any time.</p>
     ${guarantee ? `<div class="guar"><span aria-hidden="true">🛡️</span><div>${guarantee}</div></div>` : ''}
     <p>Want changes first? Reply to our email and tell us what to change. No charge for that.</p>
-    <a class="go" href="${IMN.plan}" rel="noopener">Start my plan</a>
-    <p class="small" style="color:#AEB6C5">Payment is handled securely by Stripe. We never ask for card details by email. Prefer to talk first? Email <a class="l" href="mailto:${IMN.email}?subject=${encodeURIComponent(`Website preview: ${b.name}`)}">${IMN.email}</a> and we'll call you.</p>
+    <a class="go" href="${IMN.plan}?client_reference_id=${encodeURIComponent(row.slug)}" rel="noopener">Start my plan</a>
+    <p class="small" style="color:#AEB6C5;margin-top:.5rem">Next: a secure Stripe checkout, then a welcome page with what happens next. We email you within 1 business day to put your site live.</p>
+    <p class="small" style="color:#AEB6C5">Payment is handled by Stripe. We never ask for card details by email. Prefer to talk first? Email <a class="l" href="mailto:${IMN.email}?subject=${encodeURIComponent(`Website preview: ${b.name}`)}">${IMN.email}</a> and we'll call you.</p>
   </div>
 
   <h3>Who we are, and how to check us</h3>

@@ -8,11 +8,16 @@ const { site, page: p } = Astro.props;
   <div class="imn-wrap">
     <h1>{p.title}</h1>
     <p class="imn-lede">{p.lede}</p>
-    {site.setup.promo ? <p class="imn-promo"><span>{site.setup.promoLabel}</span> No setup fee for our first {site.setup.promoSpots} clients on a {site.setup.promoTerm}-month plan.</p> : <p class="imn-promo"><span>No setup fee</span> No lock-in. You only pay once your site is live and you're happy with it.</p>}
+    {site.setup.promo ? <p class="imn-promo"><span>{site.setup.promoLabel}</span> No setup fee for our first {site.setup.promoSpots} clients on a {site.setup.promoTerm}-month plan.</p> : <p class="imn-promo"><span>No setup fee</span> No lock-in. You only pay once you've seen your preview and you're happy with it.</p>}
+    <ol class="imn-flow" aria-label="How it works">
+      <li class="is-now"><b>Tell us about your business</b><span>2 minutes, right here</span></li>
+      <li><b>See your free preview</b><span>We email you a private link within 2 business days</span></li>
+      <li><b>Go live when you're happy</b><span>Start your plan from the preview: $99 + GST a month</span></li>
+    </ol>
   </div>
 </section>
 <div class="imn-wrap imn-section">
-  <form class="imn-form" data-form action={`${site.formsEndpoint}/submit/start`} method="post">
+  <form class="imn-form" data-form data-done="start-done" action={`${site.formsEndpoint}/submit/start`} method="post">
     <div class="imn-row">
       <label>Your name<input name="name" autocomplete="name" required /></label>
       <label>Email<input name="email" type="email" autocomplete="email" required /></label>
@@ -42,13 +47,16 @@ const { site, page: p } = Astro.props;
     <button class="imn-btn imn-btn--coin" type="submit">Send</button>
     <p class="imn-form__status" role="status" aria-live="polite"></p>
   </form>
-  {site.payLinks?.plan && (
-    <div class="imn-paybox" id="start-plan">
-      <h2>Seen your preview and happy with it?</h2>
-      <p>Start your plan: <strong>${site.price.monthly} + GST a month</strong> (${site.price.monthlyIncGst.toFixed(2)} inc GST), paid by card through Stripe. No setup fee, no lock-in, cancel any time.</p>
-      <p><a class="imn-btn imn-btn--coin" href={site.payLinks.plan} rel="noopener" data-cta="pay_plan">Start my plan</a></p>
-    </div>
-  )}
+  <div class="imn-done" id="start-done" hidden tabindex="-1">
+    <p class="imn-kicker">Step 1 done</p>
+    <h2>Thanks. We're on it.</h2>
+    <ol class="imn-flow imn-flow--done">
+      <li class="is-done"><b>Tell us about your business</b><span>Done</span></li>
+      <li class="is-now"><b>We build your free preview</b><span>We'll email a private link from {site.email} within 2 business days. It asks for nothing: no login, no payment details.</span></li>
+      <li><b>Go live when you're happy</b><span>Ask for any changes first. When you're ready, start your plan from the preview.</span></li>
+    </ol>
+    <p class="imn-small">Can't see our email? Check your junk folder, or email <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+  </div>
   <p class="imn-small">No obligation: you see a private preview before anything is charged. <a href="/terms">Our terms</a>. Prefer email? <a href={`mailto:${site.email}?subject=Website`}>{site.email}</a></p>
 </div>
 <ImnFormScript email={site.email} />

@@ -16,7 +16,9 @@ const { email } = Astro.props;
         .then(function (j) {
           if (j && j.ok === false) throw new Error(j.message || 'failed');
           form.reset();
-          status.textContent = 'Sent, thanks. We’ll email you back within two business days.';
+          var done = form.getAttribute('data-done') && document.getElementById(form.getAttribute('data-done'));
+          if (done) { form.hidden = true; done.hidden = false; done.focus(); done.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+          else status.textContent = 'Sent, thanks. We’ll email you back within two business days.';
           if (window.gtag) window.gtag('event', 'cta_' + form.action.split('/').pop() + '_sent');
         })
         .catch(function () { status.textContent = "That didn't send. Please email " + email + ' instead.'; })

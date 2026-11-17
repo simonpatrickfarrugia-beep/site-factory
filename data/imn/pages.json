@@ -128,5 +128,36 @@
         ]
       }
     ]
+  },
+  "welcome": {
+    "title": "You're in. Welcome to IMN",
+    "description": "Thanks for starting your IMN website plan. Here's what happens next and what to have ready.",
+    "lede": "Your plan has started and Stripe has emailed your receipt. Here's what happens next.",
+    "steps": [
+      {
+        "t": "We email you within 1 business day",
+        "d": "From hello@imnetwork.com.au, to confirm your details and any changes you want from your preview."
+      },
+      {
+        "t": "Send us what you have",
+        "d": "Your logo file, a few photos of your work, and anything you'd like reworded. Phone photos are fine."
+      },
+      {
+        "t": "Your web address",
+        "d": "If you already own one, we'll send simple steps to point it at your new site (we never need your password). If you don't, we'll help you get one in your business's name."
+      },
+      {
+        "t": "We put it live",
+        "d": "We switch on your quote form, connect your address and check everything on a phone and a computer. Then you'll get your dashboard link."
+      }
+    ],
+    "ready": [
+      "Your logo (any format you have)",
+      "3 to 10 photos of your own work",
+      "Your licence or registration number, if your trade needs it shown",
+      "Who should get quote requests (email address)",
+      "Who manages your web address now, if you have one"
+    ],
+    "note": "You can cancel any time by emailing us before your next billing date. No lock-in."
   }
 }

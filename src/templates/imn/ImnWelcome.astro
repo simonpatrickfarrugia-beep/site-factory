@@ -1,0 +1,22 @@
+---
+/** After Stripe checkout: Stripe's payment link redirects here (set in Stripe → Payment link → After payment). Noindex. */
+import type { SiteInfo, WelcomePage } from '../../../brands/imn/model';
+interface Props { site: SiteInfo; page: WelcomePage }
+const { site, page: p } = Astro.props;
+---
+<section class="imn-pagehead">
+  <div class="imn-wrap">
+    <p class="imn-kicker">Payment received</p>
+    <h1>{p.title}</h1>
+    <p class="imn-lede">{p.lede}</p>
+  </div>
+</section>
+<div class="imn-wrap imn-section">
+  <ol class="imn-flow imn-flow--done" style="grid-template-columns:1fr;max-width:44rem">
+    {p.steps.map((s, i) => <li class={i === 0 ? 'is-now' : undefined}><b>{s.t}</b><span>{s.d}</span></li>)}
+  </ol>
+  <h2 class="imn-h2" style="margin-top:2.5rem">Handy to have ready</h2>
+  <ul class="imn-ticks imn-ticks--plain">{p.ready.map((r) => <li>{r}</li>)}</ul>
+  <p class="imn-small" style="margin-top:1.5rem">{p.note} Questions? Email <a href={`mailto:${site.email}?subject=New%20IMN%20plan`}>{site.email}</a>.</p>
+</div>
+<script is:inline>if (window.gtag) window.gtag('event', 'cta_plan_paid');</script>

@@ -31,7 +31,9 @@ export interface Pages {
   contact: FormPage;
   'get-started': FormPage;
   'privacy-policy': TextPage;
+  welcome: WelcomePage;
 }
+export interface WelcomePage { title: string; description: string; lede: string; steps: Item[]; ready: string[]; note: string }
 /** Example dashboard numbers, read at build time from one of our own sites' stats (data/vic/stats.json). */
 export interface DemoStats {
   site: string;

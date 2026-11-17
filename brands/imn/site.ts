@@ -184,6 +184,15 @@ export function routes(): Route[] {
     props: { page: tm },
   });
 
+  // After Stripe checkout (payment link redirect). Kept out of Google.
+  out.push({
+    path: 'welcome',
+    template: 'imnWelcome',
+    noindex: true,
+    seo: { title: pages.welcome.title + SUFFIX, rawTitle: true, description: pages.welcome.description },
+    props: { ...common, page: pages.welcome },
+  });
+
   // SEO guides: tradie hub, trade pages and the price guide (data/imn/guides.json).
   const { guides } = getSingleton<Guides>('guides');
   const hub = guides.find((x) => x.slug === 'websites-for-tradies');
