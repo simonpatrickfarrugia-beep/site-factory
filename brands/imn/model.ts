@@ -9,6 +9,8 @@ export interface SiteInfo {
   setup: { normal: number; promo: boolean; promoLabel: string; promoSpots: number; promoTerm: number };
   changeCapMinutes: number;
   extraChange: number;
+  /** Stripe payment links (public URLs). plan = the monthly plan. */
+  payLinks?: { plan?: string };
   extraPage: number;
   includedChanges: number;
   hero: { kicker: string; title: string; lede: string };

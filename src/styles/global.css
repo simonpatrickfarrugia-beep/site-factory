@@ -1466,6 +1466,8 @@ main { display: block; }
 .imn-lede { font-size: clamp(1.12rem, 2.4vw, 1.3rem); max-width: 42ch; }
 .imn-measure { max-width: 62ch; }
 .imn-small { font-size: var(--step--1); color: var(--muted); }
+.imn-paybox { margin: 2.5rem 0 1.5rem; padding: 1.4rem 1.5rem; border: 2px solid var(--coin); border-radius: 14px; }
+.imn-paybox h2 { margin: 0 0 0.5rem; font-size: var(--step-1); }
 .imn-muted { color: var(--muted); }
 .imn-kicker { font: 700 0.85rem var(--font-body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.7rem; }
 [data-theme='network'] .imn-btn { display: inline-block; background: var(--paper); color: #fff; font: 700 1.05rem var(--font-display); padding: 0.85rem 1.5rem; border-radius: 999px; border: 0; text-decoration: none; cursor: pointer; text-align: center; }

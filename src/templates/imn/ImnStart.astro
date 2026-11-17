@@ -42,6 +42,13 @@ const { site, page: p } = Astro.props;
     <button class="imn-btn imn-btn--coin" type="submit">Send</button>
     <p class="imn-form__status" role="status" aria-live="polite"></p>
   </form>
+  {site.payLinks?.plan && (
+    <div class="imn-paybox" id="start-plan">
+      <h2>Seen your preview and happy with it?</h2>
+      <p>Start your plan: <strong>${site.price.monthly} + GST a month</strong> (${site.price.monthlyIncGst.toFixed(2)} inc GST), paid by card through Stripe. No setup fee, no lock-in, cancel any time.</p>
+      <p><a class="imn-btn imn-btn--coin" href={site.payLinks.plan} rel="noopener" data-cta="pay_plan">Start my plan</a></p>
+    </div>
+  )}
   <p class="imn-small">No obligation: you see a private preview before anything is charged. <a href="/terms">Our terms</a>. Prefer email? <a href={`mailto:${site.email}?subject=Website`}>{site.email}</a></p>
 </div>
 <ImnFormScript email={site.email} />
