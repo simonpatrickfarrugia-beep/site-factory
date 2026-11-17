@@ -3,12 +3,12 @@
  "name": "simonsaystravel.com.au",
  "url": "https://simonsaystravel.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-16T09:20:01Z",
+ "scannedAt": "2026-11-17T21:08:31Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
- "nextDue": "2026-11-23",
- "score": 99,
+ "nextDue": "2026-11-25",
+ "score": 100,
  "grade": "A",
  "areas": {
   "health": {
@@ -27,7 +27,7 @@
    "label": "Sitemap & indexing"
   },
   "seo": {
-   "score": 96,
+   "score": 100,
    "grade": "A",
    "label": "Titles, descriptions & schema"
   },
@@ -58,42 +58,27 @@
    "id": "few-pages-in-google",
    "area": "indexing",
    "severity": "low",
-   "title": "Google shows only 2 of 27 pages (site is 11 days old)",
+   "title": "Google shows only 3 of 27 pages (site is 13 days old)",
    "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 4 pages on 4 Jan 2027, cut or merge weak pages and earn a few links.",
    "pages": [],
    "count": 1,
    "detail": "",
    "impact": 3,
    "broken": false
-  },
-  {
-   "id": "seo-words",
-   "area": "seo",
-   "severity": "low",
-   "title": "2 page(s) under 250 words",
-   "fix": "Fine for tools; for guides add the answer people search for.",
-   "pages": [
-    "/privacy-policy",
-    "/affiliate-disclosure"
-   ],
-   "count": 2,
-   "detail": "",
-   "impact": 1.0,
-   "broken": false
   }
  ],
  "google": {
-  "impr7": 4,
+  "impr7": 6,
   "imprPrev7": 0,
   "clicks7": 0,
   "clicksPrev7": 0,
-  "impr28": 4,
+  "impr28": 8,
   "clicks28": 0,
-  "views28": 8,
+  "views28": 9,
   "viewsPrev28": 0,
   "recentViews": 5,
-  "lastGa4Day": "2026-11-14",
-  "gscTo": "2026-11-12"
+  "lastGa4Day": "2026-11-15",
+  "gscTo": "2026-11-13"
  },
  "queries": [
   {
@@ -113,7 +98,7 @@
   {
    "url": "https://simonsaystravel.com.au/",
    "lite": true,
-   "serverSecs": 0.19,
+   "serverSecs": 0.25,
    "htmlKb": 38,
    "blocking": 1,
    "images": 1,
@@ -124,7 +109,7 @@
   {
    "url": "https://simonsaystravel.com.au/destinations/japan",
    "lite": true,
-   "serverSecs": 0.16,
+   "serverSecs": 0.17,
    "htmlKb": 16,
    "blocking": 1,
    "images": 1,
@@ -145,19 +130,18 @@
   "unsureOutside": 0
  },
  "affiliateOk": 57,
- "secs": 122,
+ "secs": 123,
  "change": {
   "first": false,
-  "since": "2026-11-16T00:03:15Z",
-  "score": 2,
+  "since": "2026-11-16T09:20:01Z",
+  "score": 1,
   "newIssues": [],
   "fixed": [
-   "27 page(s) without a share image",
-   "2 page(s) have no schema"
+   "2 page(s) under 250 words"
   ],
-  "impr28": 0,
+  "impr28": 4,
   "clicks28": 0,
-  "views28": 0,
+  "views28": 1,
   "rivals": [],
   "positions": []
  },
@@ -186,6 +170,13 @@
   {
    "at": "2026-11-16T00:03:15Z",
    "score": 97,
+   "grade": "A",
+   "impr28": 4,
+   "clicks28": 0
+  },
+  {
+   "at": "2026-11-16T09:20:01Z",
+   "score": 99,
    "grade": "A",
    "impr28": 4,
    "clicks28": 0
