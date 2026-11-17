@@ -176,23 +176,23 @@
    "name": "mypaycalc.com.au",
    "url": "https://mypaycalc.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-16T04:53:51Z",
-   "score": 96,
+   "scannedAt": "2026-11-17T00:02:26Z",
+   "score": 97,
    "grade": "A",
-   "change": 0,
+   "change": 1,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-23",
-   "topFix": "Google impressions down 31% week on week",
+   "nextDue": "2026-11-24",
+   "topFix": "Google impressions down 40% week on week",
    "broken": 0,
    "newIssues": 0,
-   "fixed": 0,
+   "fixed": 1,
    "costUsd": 0,
    "top": [
     {
      "id": "impressions-drop",
-     "title": "Google impressions down 31% week on week",
+     "title": "Google impressions down 40% week on week",
      "severity": "high",
      "area": "google",
      "fix": "Check Search Console → Pages for dropped pages, and whether a recent change touched titles.",
@@ -201,31 +201,13 @@
      "broken": false
     },
     {
-     "id": "seo-og",
-     "title": "81 page(s) without a share image",
-     "severity": "low",
-     "area": "seo",
-     "fix": "Add an og:image so shared links show a picture.",
-     "pages": [
-      "/",
-      "/mortgage-repayment-calculator",
-      "/mortgage-repayments/200000",
-      "/mortgage-repayments/250000"
-     ],
-     "detail": "",
-     "broken": false
-    },
-    {
      "id": "seo-title",
-     "title": "5 title outside 30–65 characters",
+     "title": "1 title outside 30–65 characters",
      "severity": "medium",
      "area": "seo",
      "fix": "Rewrite to 30–65 characters with the main search first.",
      "pages": [
-      "/how-we-calculate",
-      "/about",
-      "/contact",
-      "/how-we-make-money"
+      "/privacy-policy"
      ],
      "detail": "",
      "broken": false
@@ -291,11 +273,11 @@
    ]
   }
  },
- "updated": "2026-11-16T09:20:01Z",
+ "updated": "2026-11-17T00:02:26Z",
  "lastRun": {
-  "at": "2026-11-16T09:20:01Z",
+  "at": "2026-11-17T00:02:26Z",
   "scanned": [
-   "simon-says-travel"
+   "paycalc"
   ]
  }
 }

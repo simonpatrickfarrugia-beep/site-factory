@@ -3,12 +3,12 @@
  "name": "mypaycalc.com.au",
  "url": "https://mypaycalc.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-16T04:53:51Z",
+ "scannedAt": "2026-11-17T00:02:26Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
- "nextDue": "2026-11-23",
- "score": 96,
+ "nextDue": "2026-11-24",
+ "score": 97,
  "grade": "A",
  "areas": {
   "health": {
@@ -27,8 +27,8 @@
    "label": "Sitemap & indexing"
   },
   "seo": {
-   "score": 77,
-   "grade": "C",
+   "score": 88,
+   "grade": "B",
    "label": "Titles, descriptions & schema"
   },
   "content": {
@@ -58,7 +58,7 @@
    "id": "impressions-drop",
    "area": "google",
    "severity": "high",
-   "title": "Google impressions down 31% week on week",
+   "title": "Google impressions down 40% week on week",
    "fix": "Check Search Console → Pages for dropped pages, and whether a recent change touched titles.",
    "pages": [],
    "count": 1,
@@ -67,42 +67,17 @@
    "broken": false
   },
   {
-   "id": "seo-og",
-   "area": "seo",
-   "severity": "low",
-   "title": "81 page(s) without a share image",
-   "fix": "Add an og:image so shared links show a picture.",
-   "pages": [
-    "/",
-    "/mortgage-repayment-calculator",
-    "/mortgage-repayments/200000",
-    "/mortgage-repayments/250000",
-    "/mortgage-repayments/300000",
-    "/mortgage-repayments/350000",
-    "/mortgage-repayments/400000",
-    "/mortgage-repayments/450000"
-   ],
-   "count": 81,
-   "detail": "",
-   "impact": 5.0,
-   "broken": false
-  },
-  {
    "id": "seo-title",
    "area": "seo",
    "severity": "medium",
-   "title": "5 title outside 30–65 characters",
+   "title": "1 title outside 30–65 characters",
    "fix": "Rewrite to 30–65 characters with the main search first.",
    "pages": [
-    "/how-we-calculate",
-    "/about",
-    "/contact",
-    "/how-we-make-money",
     "/privacy-policy"
    ],
-   "count": 5,
+   "count": 1,
    "detail": "",
-   "impact": 2.7,
+   "impact": 2.5,
    "broken": false
   },
   {
@@ -126,17 +101,17 @@
   }
  ],
  "google": {
-  "impr7": 370,
-  "imprPrev7": 540,
-  "clicks7": 1,
-  "clicksPrev7": 3,
-  "impr28": 1024,
+  "impr7": 333,
+  "imprPrev7": 555,
+  "clicks7": 0,
+  "clicksPrev7": 4,
+  "impr28": 1037,
   "clicks28": 4,
-  "views28": 201,
+  "views28": 202,
   "viewsPrev28": 0,
-  "recentViews": 25,
-  "lastGa4Day": "2026-11-14",
-  "gscTo": "2026-11-12"
+  "recentViews": 3,
+  "lastGa4Day": "2026-11-15",
+  "gscTo": "2026-11-13"
  },
  "queries": [
   {
@@ -152,7 +127,7 @@
   {
    "query": "pay calculator australia",
    "position": 80.7,
-   "impressions": 19
+   "impressions": 20
   },
   {
    "query": "australian tax brackets",
@@ -185,6 +160,11 @@
    "impressions": 11
   },
   {
+   "query": "paycalculator",
+   "position": 86.4,
+   "impressions": 10
+  },
+  {
    "query": "current tax brackets australia",
    "position": 72.8,
    "impressions": 10
@@ -197,11 +177,6 @@
   {
    "query": "pay after tax",
    "position": 78.9,
-   "impressions": 9
-  },
-  {
-   "query": "paycalculator",
-   "position": 86.3,
    "impressions": 9
   },
   {
@@ -245,6 +220,11 @@
    "impressions": 6
   },
   {
+   "query": "calculate my pay",
+   "position": 80.6,
+   "impressions": 5
+  },
+  {
    "query": "paycheck calculator",
    "position": 62.2,
    "impressions": 5
@@ -273,11 +253,6 @@
    "query": "tax threshold 2026",
    "position": 82.2,
    "impressions": 5
-  },
-  {
-   "query": "calculate my pay",
-   "position": 75.8,
-   "impressions": 4
   },
   {
    "query": "salary calculator",
@@ -312,6 +287,11 @@
   {
    "query": "australia pay calculator",
    "position": 73.7,
+   "impressions": 3
+  },
+  {
+   "query": "fortnightly payroll",
+   "position": 91.3,
    "impressions": 3
   },
   {
@@ -383,11 +363,6 @@
    "query": "tax rates 2026",
    "position": 80,
    "impressions": 3
-  },
-  {
-   "query": "adp salary calc",
-   "position": 6,
-   "impressions": 2
   }
  ],
  "live": null,
@@ -396,7 +371,7 @@
   {
    "url": "https://mypaycalc.com.au/",
    "lite": true,
-   "serverSecs": 0.05,
+   "serverSecs": 0.11,
    "htmlKb": 19,
    "blocking": 1,
    "images": 1,
@@ -407,7 +382,7 @@
   {
    "url": "https://mypaycalc.com.au/tax-brackets",
    "lite": true,
-   "serverSecs": 0.13,
+   "serverSecs": 0.18,
    "htmlKb": 12,
    "blocking": 1,
    "images": 1,
@@ -428,18 +403,26 @@
   "unsureOutside": 5
  },
  "affiliateOk": 0,
- "secs": 124,
+ "secs": 126,
  "change": {
   "first": false,
-  "since": "2026-11-16T00:03:15Z",
-  "score": 0,
+  "since": "2026-11-16T04:53:51Z",
+  "score": 1,
   "newIssues": [],
-  "fixed": [],
-  "impr28": 0,
+  "fixed": [
+   "81 page(s) without a share image"
+  ],
+  "impr28": 13,
   "clicks28": 0,
-  "views28": 0,
+  "views28": 1,
   "rivals": [],
-  "positions": []
+  "positions": [
+   {
+    "query": "calculate my pay",
+    "was": 75.8,
+    "now": 80.6
+   }
+  ]
  },
  "history": [
   {
@@ -458,6 +441,13 @@
   },
   {
    "at": "2026-11-16T00:03:15Z",
+   "score": 96,
+   "grade": "A",
+   "impr28": 1024,
+   "clicks28": 4
+  },
+  {
+   "at": "2026-11-16T04:53:51Z",
    "score": 96,
    "grade": "A",
    "impr28": 1024,
