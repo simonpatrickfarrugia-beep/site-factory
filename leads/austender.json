@@ -1,32 +1,68 @@
 {
- "generatedAt": "2026-11-16T00:00:38+00:00",
+ "generatedAt": "2026-11-17T02:58:58+00:00",
  "days": 7,
  "suppliers": [
   {
-   "name": "RAPID-TECH EQUIPMENT PTY LTD",
+   "name": "CUSHMAN & WAKEFIELD PTY LTD",
    "abn": "",
-   "locality": "Knox City Centre",
+   "locality": "Melbourne",
    "state": "VIC",
    "contracts": [
     {
-     "value": 64240.0,
-     "buyer": "Department of Industry, Science and Resources",
+     "value": 103181.76,
+     "buyer": "Department of Home Affairs",
      "buyerState": "ACT",
-     "desc": "Procurement of DC Calibrators for the Low-Frequency Section of the National Measurement Institute's Physical Metrology Branch.",
+     "desc": "NSW Onsite Facilities Coordinator",
      "category": "",
      "start": "2026-11-09",
      "end": "2027-06-29",
-     "id": "CN4288186"
+     "id": "CN4289249"
     }
    ],
-   "total": 64240,
-   "score": 5.0,
+   "total": 103182,
+   "score": 9.0,
    "interstate": true,
    "why": [
-    "based in Knox City Centre VIC, delivering for Department of Industry, Science and Resources (Canberra)",
+    "based in Melbourne VIC, delivering for Department of Home Affairs (Canberra)",
     "work runs 8 months"
    ],
-   "seenBefore": true
+   "seenBefore": false
+  },
+  {
+   "name": "AQUA LUNG AUSTRALIA PTY LTD",
+   "abn": "",
+   "locality": "Heidelberg West",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 485100.0,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Maintenance Service Kits",
+     "category": "",
+     "start": "2026-10-25",
+     "end": "2027-04-29",
+     "id": "CN4288809"
+    },
+    {
+     "value": 56628.0,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Maintenance Servicing Kit",
+     "category": "",
+     "start": "2026-10-25",
+     "end": "2027-04-29",
+     "id": "CN4288810"
+    }
+   ],
+   "total": 541728,
+   "score": 6.0,
+   "interstate": false,
+   "why": [
+    "2 new government contracts in the last 7 days",
+    "work runs 6 months"
+   ],
+   "seenBefore": false
   },
   {
    "name": "ALINEA INTERNATIONAL PTY LTD",
@@ -34,6 +70,16 @@
    "locality": "Melbourne",
    "state": "VIC",
    "contracts": [
+    {
+     "value": 215122.05,
+     "buyer": "Department of Foreign Affairs and Trade - Australian Aid Program",
+     "buyerState": null,
+     "desc": "Kokoda Initiative Partnership Mid-Term Review (Papua New Guinea)",
+     "category": "",
+     "start": "2026-11-09",
+     "end": "2027-02-25",
+     "id": "CN4288671"
+    },
     {
      "value": 269633.1,
      "buyer": "Department of Foreign Affairs and Trade - Australian Aid Program",
@@ -65,21 +111,227 @@
      "id": "CN4288338"
     }
    ],
-   "total": 1984353,
-   "score": 4.0,
+   "total": 2199475,
+   "score": 5.0,
    "interstate": false,
    "why": [
-    "3 new government contracts in the last 7 days",
+    "4 new government contracts in the last 7 days",
     "work runs 9 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "TULLIUS PTY LTD",
+   "abn": "",
+   "locality": "Fyshwick",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 2000000.0,
+     "buyer": "Australian Federal Police",
+     "buyerState": null,
+     "desc": "Provision of commercial advisory services",
+     "category": "",
+     "start": "2026-11-14",
+     "end": "2027-11-13",
+     "id": "CN4288680"
+    }
+   ],
+   "total": 2000000,
+   "score": 5.0,
+   "interstate": false,
+   "why": [
+    "work runs 12 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "THE RAND CORPORATION (AUSTRALIA) PTY LTD",
+   "abn": "",
+   "locality": "Griffith",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 349482.0,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Research Services",
+     "category": "",
+     "start": "2026-10-30",
+     "end": "2027-09-30",
+     "id": "CN4288993"
+    }
+   ],
+   "total": 349482,
+   "score": 5.0,
+   "interstate": false,
+   "why": [
+    "work runs 11 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "G.H. VARLEY PTY LTD",
+   "abn": "",
+   "locality": "Tomago",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 250000.0,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Maintenance Services",
+     "category": "",
+     "start": "2026-11-01",
+     "end": "2027-01-03",
+     "id": "CN4288812"
+    },
+    {
+     "value": 11586.3,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Storage Cases",
+     "category": "",
+     "start": "2026-11-11",
+     "end": "2026-11-25",
+     "id": "CN4288739"
+    }
+   ],
+   "total": 261586,
+   "score": 5.0,
+   "interstate": false,
+   "why": [
+    "2 new government contracts in the last 7 days"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "SolsticeIT Pty Ltd",
+   "abn": "",
+   "locality": "Greenleigh",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 229680.0,
+     "buyer": "Australian Transaction Reports and Analysis Centre",
+     "buyerState": null,
+     "desc": "Implementation and operationalisation of a new cyber security framework (PCS-04625-SOT)",
+     "category": "",
+     "start": "2026-11-29",
+     "end": "2027-06-28",
+     "id": "CN4288711"
+    }
+   ],
+   "total": 229680,
+   "score": 5.0,
+   "interstate": false,
+   "why": [
+    "work runs 7 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "RFD (AUSTRALIA) PTY. LTD. BEAUFORT GROUP AUSTRALIA",
+   "abn": "",
+   "locality": "Dingley",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 132183.48,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Charging Kits",
+     "category": "",
+     "start": "2026-10-27",
+     "end": "2027-03-04",
+     "id": "CN4288773"
+    },
+    {
+     "value": 28961.64,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Watercraft Maintenance",
+     "category": "",
+     "start": "2026-11-04",
+     "end": "2027-01-03",
+     "id": "CN4288136"
+    }
+   ],
+   "total": 161145,
+   "score": 5.0,
+   "interstate": false,
+   "why": [
+    "2 new government contracts in the last 7 days"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "Folk",
+   "abn": "",
+   "locality": "Annandale",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 109675.5,
+     "buyer": "Department of the Treasury",
+     "buyerState": null,
+     "desc": "Market research",
+     "category": "",
+     "start": "2026-10-26",
+     "end": "2027-04-25",
+     "id": "CN4288611"
+    }
+   ],
+   "total": 109676,
+   "score": 5.0,
+   "interstate": false,
+   "why": [
+    "work runs 6 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "RAPID-TECH EQUIPMENT PTY LTD",
+   "abn": "",
+   "locality": "Scoresby",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 64240.0,
+     "buyer": "Department of Industry, Science and Resources",
+     "buyerState": "ACT",
+     "desc": "Procurement of DC Calibrators for the Low-Frequency Section of the National Measurement Institute's Physical Metrology Branch.",
+     "category": "",
+     "start": "2026-11-09",
+     "end": "2027-06-29",
+     "id": "CN4288186"
+    }
+   ],
+   "total": 64240,
+   "score": 5.0,
+   "interstate": true,
+   "why": [
+    "based in Scoresby VIC, delivering for Department of Industry, Science and Resources (Canberra)",
+    "work runs 8 months"
    ],
    "seenBefore": true
   },
   {
    "name": "1 AND ONE PTY LTD",
    "abn": "",
-   "locality": "Parkes",
+   "locality": "Kingston",
    "state": "ACT",
    "contracts": [
+    {
+     "value": 122925.6,
+     "buyer": "Department of Industry, Science and Resources",
+     "buyerState": "ACT",
+     "desc": "Professional Advice on Decommissioning Policy",
+     "category": "",
+     "start": "2026-11-15",
+     "end": "2027-05-30",
+     "id": "CN4289212"
+    },
     {
      "value": 192447.2,
      "buyer": "Australian Naval Nuclear Power Safety Regulator",
@@ -99,19 +351,9 @@
      "start": "2026-11-04",
      "end": "2027-11-03",
      "id": "CN4288200"
-    },
-    {
-     "value": 125000.0,
-     "buyer": "Department of Finance",
-     "buyerState": null,
-     "desc": "Policy Framework Support for AI integration in Procurement",
-     "category": "",
-     "start": "2026-10-06",
-     "end": "2026-12-30",
-     "id": "CN4287923"
     }
    ],
-   "total": 394063,
+   "total": 391989,
    "score": 4.0,
    "interstate": false,
    "why": [
@@ -119,6 +361,29 @@
     "work runs 12 months"
    ],
    "seenBefore": true
+  },
+  {
+   "name": "Global Military Products Inc",
+   "abn": "",
+   "locality": "Tampa",
+   "state": null,
+   "contracts": [
+    {
+     "value": 112799.34,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Training and Maintenance Support",
+     "category": "",
+     "start": "2026-10-26",
+     "end": "2026-11-29",
+     "id": "CN4288784"
+    }
+   ],
+   "total": 112799,
+   "score": 4.0,
+   "interstate": false,
+   "why": [],
+   "seenBefore": false
   },
   {
    "name": "Australian Grape and Wine Incorpora",
@@ -147,223 +412,62 @@
    "seenBefore": true
   },
   {
-   "name": "BIRDON PTY LTD",
+   "name": "Nova Systems Pty Ltd",
    "abn": "",
-   "locality": "Port Macquarie",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 40162.65,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Watercraft Maintenance Support",
-     "category": "",
-     "start": "2026-10-21",
-     "end": "2026-10-28",
-     "id": "CN4287901"
-    },
-    {
-     "value": 450444.25,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Disposal Services",
-     "category": "",
-     "start": "2026-10-27",
-     "end": "2027-06-29",
-     "id": "CN4287785"
-    }
-   ],
-   "total": 490607,
-   "score": 3.0,
-   "interstate": false,
-   "why": [
-    "2 new government contracts in the last 7 days",
-    "work runs 8 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "Royal Australasian College of Surgeons",
-   "abn": "",
-   "locality": "East Melbourne",
-   "state": "VIC",
-   "contracts": [
-    {
-     "value": 245702.6,
-     "buyer": "Department of Health, Disability and Ageing",
-     "buyerState": null,
-     "desc": "Health Technology Assessment",
-     "category": "",
-     "start": "2026-11-04",
-     "end": "2027-04-29",
-     "id": "CN4288087"
-    },
-    {
-     "value": 46137.34,
-     "buyer": "Department of Health, Disability and Ageing",
-     "buyerState": null,
-     "desc": "Health Technology Assessment",
-     "category": "",
-     "start": "2026-09-30",
-     "end": "2027-01-21",
-     "id": "CN4287836"
-    },
-    {
-     "value": 46137.34,
-     "buyer": "Department of Health, Disability and Ageing",
-     "buyerState": null,
-     "desc": "Health Technology Assessment",
-     "category": "",
-     "start": "2026-09-30",
-     "end": "2027-01-21",
-     "id": "CN4287838"
-    }
-   ],
-   "total": 337977,
-   "score": 3.0,
-   "interstate": false,
-   "why": [
-    "3 new government contracts in the last 7 days"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "PFM Advisory Services Pty Ltd",
-   "abn": "",
-   "locality": "Kingston",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 160000.0,
-     "buyer": "Department of Health, Disability and Ageing",
-     "buyerState": null,
-     "desc": "Provision of Audit and Risk Committee Chair Services",
-     "category": "",
-     "start": "2026-12-31",
-     "end": "2028-12-30",
-     "id": "CN4288097"
-    },
-    {
-     "value": 35000.0,
-     "buyer": "Australian Communications and Media Authority",
-     "buyerState": null,
-     "desc": "26ACMA142 - Audit and Risk Committee Member",
-     "category": "",
-     "start": "2026-10-05",
-     "end": "2028-11-04",
-     "id": "CN4287984"
-    }
-   ],
-   "total": 195000,
-   "score": 3.0,
-   "interstate": false,
-   "why": [
-    "2 new government contracts in the last 7 days",
-    "work runs 25 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "R.G.M. MAINTENANCE PTY LTD",
-   "abn": "",
-   "locality": "Stuart",
-   "state": "QLD",
-   "contracts": [
-    {
-     "value": 11975.33,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Air Compressors",
-     "category": "",
-     "start": "2026-11-10",
-     "end": "2026-11-17",
-     "id": "CN4288109"
-    },
-    {
-     "value": 22038.79,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Services and Inspections",
-     "category": "",
-     "start": "2026-11-08",
-     "end": "2026-11-15",
-     "id": "CN4288005"
-    },
-    {
-     "value": 21021.09,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Services and Inspections",
-     "category": "",
-     "start": "2026-11-08",
-     "end": "2026-11-15",
-     "id": "CN4288003"
-    },
-    {
-     "value": 24007.5,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Maintenance and Repair Services",
-     "category": "",
-     "start": "2026-11-08",
-     "end": "2027-01-28",
-     "id": "CN4287998"
-    }
-   ],
-   "total": 79043,
-   "score": 3.0,
-   "interstate": false,
-   "why": [
-    "4 new government contracts in the last 7 days"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "ORYGEN T/A ORYGEN RESEARCH CENTRE",
-   "abn": "",
-   "locality": "Parkville",
-   "state": "VIC",
-   "contracts": [
-    {
-     "value": 2631563.85,
-     "buyer": "Department of Health, Disability and Ageing",
-     "buyerState": null,
-     "desc": "Implementation Guidance for Youth Specialist Care Centres",
-     "category": "",
-     "start": "2026-11-05",
-     "end": "2028-06-29",
-     "id": "CN4287841"
-    }
-   ],
-   "total": 2631564,
-   "score": 2.0,
-   "interstate": false,
-   "why": [
-    "work runs 20 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "GROUND EFFECTS CONSULTING",
-   "abn": "",
-   "locality": "Stirling",
+   "locality": "Adelaide",
    "state": "SA",
    "contracts": [
     {
-     "value": 1679999.99,
+     "value": 80000.0,
      "buyer": "Department of Defence",
      "buyerState": null,
-     "desc": "Logistics and Research Support",
+     "desc": "Research Services",
      "category": "",
-     "start": "2026-10-26",
-     "end": "2027-10-31",
-     "id": "CN4287788"
+     "start": "2026-11-01",
+     "end": "2028-04-27",
+     "id": "CN4288997"
     }
    ],
-   "total": 1680000,
-   "score": 2.0,
+   "total": 80000,
+   "score": 4.0,
    "interstate": false,
    "why": [
+    "work runs 18 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "Horizon One Recruitment Pty Ltd",
+   "abn": "",
+   "locality": "Braddon",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 197876.25,
+     "buyer": "Australian Centre for International Agricultural Research",
+     "buyerState": null,
+     "desc": "Senior Outreach Officer",
+     "category": "",
+     "start": "2026-11-08",
+     "end": "2027-05-06",
+     "id": "CN4289214"
+    },
+    {
+     "value": 341965.8,
+     "buyer": "Department of Foreign Affairs and Trade - Australian Aid Program",
+     "buyerState": null,
+     "desc": "Monitoring Evaluation and Learning Lead (Canberra)",
+     "category": "",
+     "start": "2026-11-13",
+     "end": "2027-11-12",
+     "id": "CN4288360"
+    }
+   ],
+   "total": 539842,
+   "score": 3.0,
+   "interstate": false,
+   "why": [
+    "2 new government contracts in the last 7 days",
     "work runs 12 months"
    ],
    "seenBefore": true
@@ -419,27 +523,37 @@
    "seenBefore": true
   },
   {
-   "name": "MOUNTAINSIDE PTY LTD [963]",
+   "name": "JFD AUSTRALIA PTY LTD",
    "abn": "",
-   "locality": "Dickson",
-   "state": "ACT",
+   "locality": "Kirrawee",
+   "state": "NSW",
    "contracts": [
     {
-     "value": 440000.0,
-     "buyer": "Department of Climate Change, Energy, the Environment and Water",
+     "value": 110000.0,
+     "buyer": "Department of Defence",
      "buyerState": null,
-     "desc": "National Water Grid Branch water infrastructure\u00a0services and advice",
+     "desc": "Corrective Maintenance",
      "category": "",
-     "start": "2026-11-02",
-     "end": "2028-11-02",
-     "id": "CN4287727"
+     "start": "2026-10-22",
+     "end": "2026-12-31",
+     "id": "CN4288833"
+    },
+    {
+     "value": 440000.0,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Corrective Maintenance",
+     "category": "",
+     "start": "2026-10-22",
+     "end": "2027-01-28",
+     "id": "CN4288431"
     }
    ],
-   "total": 440000,
+   "total": 550000,
    "score": 2.0,
    "interstate": false,
    "why": [
-    "work runs 24 months"
+    "2 new government contracts in the last 7 days"
    ],
    "seenBefore": true
   },
@@ -494,73 +608,23 @@
    "seenBefore": true
   },
   {
-   "name": "SWORDFISH COMPUTING PTY LTD",
+   "name": "NOUS GROUP PTY. LTD.",
    "abn": "",
-   "locality": "Adelaide",
-   "state": "SA",
-   "contracts": [
-    {
-     "value": 386100.0,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Research Services",
-     "category": "",
-     "start": "2026-10-18",
-     "end": "2027-06-29",
-     "id": "CN4287887"
-    }
-   ],
-   "total": 386100,
-   "score": 2.0,
-   "interstate": false,
-   "why": [
-    "work runs 8 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "HORIZON ONE RECRUITMENT PTY LTD",
-   "abn": "",
-   "locality": "Braddon",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 341965.8,
-     "buyer": "Department of Foreign Affairs and Trade - Australian Aid Program",
-     "buyerState": null,
-     "desc": "Monitoring Evaluation and Learning Lead (Canberra)",
-     "category": "",
-     "start": "2026-11-13",
-     "end": "2027-11-12",
-     "id": "CN4288360"
-    }
-   ],
-   "total": 341966,
-   "score": 2.0,
-   "interstate": false,
-   "why": [
-    "work runs 12 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "EnergyConsult Pty Ltd",
-   "abn": "",
-   "locality": "Jindivick",
+   "locality": "Melbourne",
    "state": "VIC",
    "contracts": [
     {
-     "value": 275000.0,
-     "buyer": "Department of Climate Change, Energy, the Environment and Water",
+     "value": 264000.0,
+     "buyer": "National Emergency Management Agency",
      "buyerState": null,
-     "desc": "Review of MEPS on air conditioners",
+     "desc": "Audit and Assurance Framework Development",
      "category": "",
-     "start": "2026-11-05",
-     "end": "2027-06-24",
-     "id": "CN4287730"
+     "start": "2026-11-04",
+     "end": "2027-06-29",
+     "id": "CN4288714"
     }
    ],
-   "total": 275000,
+   "total": 264000,
    "score": 2.0,
    "interstate": false,
    "why": [
@@ -619,6 +683,31 @@
    "seenBefore": true
   },
   {
+   "name": "PFM Advisory Services Pty Ltd",
+   "abn": "",
+   "locality": "Kingston",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 160000.0,
+     "buyer": "Department of Health, Disability and Ageing",
+     "buyerState": null,
+     "desc": "Provision of Audit and Risk Committee Chair Services",
+     "category": "",
+     "start": "2026-12-31",
+     "end": "2028-12-30",
+     "id": "CN4288097"
+    }
+   ],
+   "total": 160000,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 24 months"
+   ],
+   "seenBefore": true
+  },
+  {
    "name": "ALS Water and Hydrographics Pty Ltd",
    "abn": "",
    "locality": "Stafford",
@@ -669,121 +758,50 @@
    "seenBefore": true
   },
   {
-   "name": "INLOGIK PTY LTD",
+   "name": "Royal Australasian College of Surgeons",
    "abn": "",
-   "locality": "Hawthorn",
+   "locality": "East Melbourne",
    "state": "VIC",
    "contracts": [
     {
-     "value": 3624024.63,
-     "buyer": "Department of Defence",
+     "value": 245702.6,
+     "buyer": "Department of Health, Disability and Ageing",
      "buyerState": null,
-     "desc": "Maintenance and Support",
+     "desc": "Health Technology Assessment",
      "category": "",
-     "start": "2026-09-30",
-     "end": "2029-10-29",
-     "id": "CN4287793"
+     "start": "2026-11-04",
+     "end": "2027-04-29",
+     "id": "CN4288087"
     }
    ],
-   "total": 3624025,
-   "score": 1.0,
-   "interstate": false,
-   "why": [
-    "work runs 38 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "JFD AUSTRALIA PTY LTD",
-   "abn": "",
-   "locality": "Kirrawee",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 440000.0,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Corrective Maintenance",
-     "category": "",
-     "start": "2026-10-22",
-     "end": "2027-01-28",
-     "id": "CN4288431"
-    }
-   ],
-   "total": 440000,
+   "total": 245703,
    "score": 1.0,
    "interstate": false,
    "why": [],
    "seenBefore": true
   },
   {
-   "name": "ARMICK, INC",
+   "name": "CALLIDA PTY LTD",
    "abn": "",
-   "locality": "Grand Rapids",
-   "state": null,
-   "contracts": [
-    {
-     "value": 257947.3,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Aircraft Inspection Tool",
-     "category": "",
-     "start": "2026-11-02",
-     "end": "2027-02-04",
-     "id": "CN4287777"
-    }
-   ],
-   "total": 257947,
-   "score": 1.0,
-   "interstate": false,
-   "why": [],
-   "seenBefore": true
-  },
-  {
-   "name": "FACE2FACE RECRUITMENT",
-   "abn": "",
-   "locality": "Deakin",
+   "locality": "Griffith",
    "state": "ACT",
    "contracts": [
     {
-     "value": 216264.23,
-     "buyer": "Department of Infrastructure, Transport, Regional Development, Communications, Sport and the Arts",
-     "buyerState": null,
-     "desc": "Engagement of one APS 5 Project Support Officer and two APS 6 Senior Project Officers to support delivery of the Post-Incident Review into the July 2026 National Telstra Major Outa",
+     "value": 84960.51,
+     "buyer": "Department of Home Affairs",
+     "buyerState": "ACT",
+     "desc": "Variable Funding Model Review",
      "category": "",
-     "start": "2026-11-02",
-     "end": "2027-03-01",
-     "id": "CN4287941"
+     "start": "2026-11-10",
+     "end": "2027-05-09",
+     "id": "CN4289247"
     }
    ],
-   "total": 216264,
-   "score": 1.0,
-   "interstate": false,
-   "why": [],
-   "seenBefore": true
-  },
-  {
-   "name": "ROBUST POLICY ANALYSIS PTY LTD",
-   "abn": "",
-   "locality": "Deakin",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 77440.0,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Research Support Services",
-     "category": "",
-     "start": "2026-11-01",
-     "end": "2028-04-27",
-     "id": "CN4288020"
-    }
-   ],
-   "total": 77440,
+   "total": 84961,
    "score": 1.0,
    "interstate": false,
    "why": [
-    "work runs 18 months"
+    "work runs 6 months"
    ],
    "seenBefore": true
   },
@@ -813,52 +831,6 @@
    "seenBefore": true
   },
   {
-   "name": "Integrity Partners Australia Pty Ltd",
-   "abn": "",
-   "locality": "Sutton",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 96000.0,
-     "buyer": "Australian Communications and Media Authority",
-     "buyerState": null,
-     "desc": "27ACMA015 - Employee experience and work environment review",
-     "category": "",
-     "start": "2026-10-14",
-     "end": "2027-01-14",
-     "id": "CN4287980"
-    }
-   ],
-   "total": 96000,
-   "score": 0.0,
-   "interstate": false,
-   "why": [],
-   "seenBefore": true
-  },
-  {
-   "name": "ALLUVIUM CONSULTING AUSTRALIA PTY LTD [039]",
-   "abn": "",
-   "locality": "East Melbourne",
-   "state": "VIC",
-   "contracts": [
-    {
-     "value": 75746.0,
-     "buyer": "Department of Climate Change, Energy, the Environment and Water",
-     "buyerState": null,
-     "desc": "Assessment of risk of WRP non-compliance",
-     "category": "",
-     "start": "2026-11-08",
-     "end": "2027-03-30",
-     "id": "CN4287732"
-    }
-   ],
-   "total": 75746,
-   "score": 0.0,
-   "interstate": false,
-   "why": [],
-   "seenBefore": true
-  },
-  {
    "name": "PEEKAY CONSOLIDATED PTY LTD ATF GK SIMKISS FAMILY TRUST",
    "abn": "",
    "locality": "Ashburton, Melbourne",
@@ -876,29 +848,6 @@
     }
    ],
    "total": 69978,
-   "score": 0.0,
-   "interstate": false,
-   "why": [],
-   "seenBefore": true
-  },
-  {
-   "name": "IRRADIATE SECURITY PTY LTD",
-   "abn": "",
-   "locality": "Canberra",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 58625.0,
-     "buyer": "Digital Transformation Agency",
-     "buyerState": null,
-     "desc": "IDP Security Review",
-     "category": "",
-     "start": "2026-10-25",
-     "end": "2027-01-24",
-     "id": "CN4287764"
-    }
-   ],
-   "total": 58625,
    "score": 0.0,
    "interstate": false,
    "why": [],
