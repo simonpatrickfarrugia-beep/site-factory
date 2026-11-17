@@ -13,6 +13,7 @@ export default defineBrand({
   fonts: { display: 'Bricolage Grotesque', body: 'Figtree' },
   logo: { src: '/logo-mark.svg', alt: '', width: 30, height: 30 },
   favicon: '/logo-mark.svg',
+  wordmark: 'Independent Media Network', // shown as written, not lowercase (Simon, 17 Nov)
 
   nav: [
     { label: 'Pricing', href: '/pricing' },

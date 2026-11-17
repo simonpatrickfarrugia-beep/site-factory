@@ -17,6 +17,8 @@ export const brandSchema = z.object({
   theme: z.enum(['cinematic', 'editorial', 'coastal', 'roadtrip', 'calm', 'shortlist', 'workshop', 'payslip', 'boarding', 'sanctuary', 'network']),
   /** Optional logo mark shown before the name in the header (file in brands/<slug>/public). */
   logo: z.object({ src: z.string(), alt: z.string().default(''), width: z.number(), height: z.number() }).optional(),
+  /** Header text next to the logo. Default: the brand name in lowercase (house style); set to show it as written. */
+  wordmark: z.string().optional(),
   /** Default social share image (1200x630) in brands/<slug>/public, used when a page has none. */
   shareImage: z.string().optional(),
   /** Site-ownership meta tags for affiliate networks etc., as { name: content }. */

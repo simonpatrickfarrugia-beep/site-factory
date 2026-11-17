@@ -7,7 +7,7 @@ const current = Astro.url.pathname;
     {brand.logo ? (
       <a class="wordmark wordmark--logo" href="/" aria-label={`${brand.name} home`}>
         <img src={brand.logo.src} alt="" width={brand.logo.width} height={brand.logo.height} />
-        <span>{brand.name.toLowerCase()}</span>
+        <span>{brand.wordmark ?? brand.name.toLowerCase()}</span>
       </a>
     ) : (
       <a class="wordmark" href="/" aria-label={`${brand.name} home`}>{brand.domain.replace(/^www\./, "")}</a>
