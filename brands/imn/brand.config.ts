@@ -7,7 +7,7 @@ export default defineBrand({
   launched: true, // live 16 Nov 2026 (Simon: "let's go live")
 
   theme: 'network',
-  // Deep ink with one signal colour (amber "$1 coin"). Each page keeps to two colours plus paper.
+  // Deep ink with one signal colour (amber). Mark: IMN lettermark with an amber underline (17 Nov). Each page keeps to two colours plus paper.
   colors: { brand: '#121A2B', accent: '#F2A93B' },
   // Bricolage Grotesque: friendly, confident display face. Figtree: clear, warm body text.
   fonts: { display: 'Bricolage Grotesque', body: 'Figtree' },
