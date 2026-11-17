@@ -15,4 +15,4 @@ jobs:
         with: { sparse-checkout: scripts/imn }
       - run: pip install --quiet pillow
       - env: { URL: "${{ inputs.url }}" }
-        run: python3 -I scripts/imn/brand_grab.py "$URL"
+        run: python3 scripts/imn/brand_grab.py "$URL"
