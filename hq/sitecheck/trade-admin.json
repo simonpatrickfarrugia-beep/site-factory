@@ -3,12 +3,12 @@
  "name": "tradeadmin.com.au",
  "url": "https://tradeadmin.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-16T00:03:15Z",
+ "scannedAt": "2026-11-17T12:18:11Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
- "nextDue": "2026-11-23",
- "score": 99,
+ "nextDue": "2026-11-24",
+ "score": 100,
  "grade": "A",
  "areas": {
   "health": {
@@ -27,8 +27,8 @@
    "label": "Sitemap & indexing"
   },
   "seo": {
-   "score": 88,
-   "grade": "B",
+   "score": 96,
+   "grade": "A",
    "label": "Titles, descriptions & schema"
   },
   "content": {
@@ -55,20 +55,6 @@
  "pages": 25,
  "findings": [
   {
-   "id": "seo-title",
-   "area": "seo",
-   "severity": "medium",
-   "title": "1 title outside 30–65 characters",
-   "fix": "Rewrite to 30–65 characters with the main search first.",
-   "pages": [
-    "/privacy-policy"
-   ],
-   "count": 1,
-   "detail": "",
-   "impact": 2.5,
-   "broken": false
-  },
-  {
    "id": "seo-words",
    "area": "seo",
    "severity": "low",
@@ -86,63 +72,63 @@
   }
  ],
  "google": {
-  "impr7": 192,
-  "imprPrev7": 218,
+  "impr7": 218,
+  "imprPrev7": 217,
   "clicks7": 0,
   "clicksPrev7": 0,
-  "impr28": 430,
+  "impr28": 487,
   "clicks28": 0,
-  "views28": 33,
+  "views28": 39,
   "viewsPrev28": 0,
-  "recentViews": 10,
-  "lastGa4Day": "2026-11-12",
-  "gscTo": "2026-11-12"
+  "recentViews": 11,
+  "lastGa4Day": "2026-11-15",
+  "gscTo": "2026-11-13"
  },
  "queries": [
   {
    "query": "servicem8 tradify comparison",
-   "position": 81.1,
-   "impressions": 47
+   "position": 80.4,
+   "impressions": 53
   },
   {
    "query": "servicem8 vs",
-   "position": 81.9,
-   "impressions": 44
+   "position": 82.4,
+   "impressions": 50
   },
   {
    "query": "servicem8 vs tradify",
-   "position": 61.9,
-   "impressions": 41
+   "position": 62.7,
+   "impressions": 48
   },
   {
    "query": "servicem8 pricing",
-   "position": 82.3,
-   "impressions": 38
+   "position": 81.2,
+   "impressions": 42
   },
   {
    "query": "tradify vs servicem8",
-   "position": 63.3,
-   "impressions": 37
+   "position": 63.2,
+   "impressions": 39
   },
   {
    "query": "service mate vs tradify",
-   "position": 75.8,
-   "impressions": 34
+   "position": 76.2,
+   "impressions": 37
   },
   {
    "query": "tradesman quote template",
-   "position": 79.8,
-   "impressions": 29
+   "position": 79.6,
+   "impressions": 31
   },
   {
    "query": "cleaning invoice examples",
    "position": 69.5,
-   "impressions": 14
+   "impressions": 15
   },
   {
    "query": "fieldhive vs servicem8",
-   "position": 64,
-   "impressions": 12
+   "position": 64.1,
+   "impressions": 13
   },
   {
    "query": "painter invoice template",
@@ -150,9 +136,14 @@
    "impressions": 11
   },
   {
+   "query": "electrical invoice template",
+   "position": 83.2,
+   "impressions": 10
+  },
+  {
    "query": "cleaning invoice template",
    "position": 66.9,
-   "impressions": 8
+   "impressions": 9
   },
   {
    "query": "house cleaning invoice",
@@ -160,28 +151,28 @@
    "impressions": 7
   },
   {
+   "query": "electrician quotes",
+   "position": 95.7,
+   "impressions": 6
+  },
+  {
    "query": "best invoice app for tradesmen",
    "position": 86,
    "impressions": 6
   },
   {
-   "query": "electrical invoice template",
-   "position": 84.2,
-   "impressions": 6
-  },
-  {
-   "query": "electrician quotes",
-   "position": 97,
+   "query": "free carpentry quote",
+   "position": 73.4,
    "impressions": 5
   },
   {
-   "query": "free carpentry quote",
-   "position": 73.3,
-   "impressions": 4
+   "query": "cleaning invoice",
+   "position": 71.6,
+   "impressions": 5
   },
   {
-   "query": "cleaning invoice",
-   "position": 71.5,
+   "query": "builder quote",
+   "position": 94,
    "impressions": 4
   },
   {
@@ -192,11 +183,6 @@
   {
    "query": "progress claim template",
    "position": 81.7,
-   "impressions": 3
-  },
-  {
-   "query": "builder quote",
-   "position": 92.3,
    "impressions": 3
   },
   {
@@ -217,6 +203,16 @@
   {
    "query": "tradesman invoicing software",
    "position": 60.5,
+   "impressions": 2
+  },
+  {
+   "query": "builders quotes",
+   "position": 99.5,
+   "impressions": 2
+  },
+  {
+   "query": "tradesman invoice template",
+   "position": 68.5,
    "impressions": 2
   },
   {
@@ -255,6 +251,11 @@
    "impressions": 2
   },
   {
+   "query": "fergus job management",
+   "position": 75.5,
+   "impressions": 2
+  },
+  {
    "query": "painting quotes",
    "position": 91,
    "impressions": 2
@@ -262,6 +263,36 @@
   {
    "query": "free australian gst invoice template",
    "position": 45,
+   "impressions": 1
+  },
+  {
+   "query": "sole trader invoice template free",
+   "position": 90,
+   "impressions": 1
+  },
+  {
+   "query": "tax invoice generator australia",
+   "position": 76,
+   "impressions": 1
+  },
+  {
+   "query": "tax invoice online",
+   "position": 45,
+   "impressions": 1
+  },
+  {
+   "query": "plumber quotes",
+   "position": 72,
+   "impressions": 1
+  },
+  {
+   "query": "plumbing quote template",
+   "position": 53,
+   "impressions": 1
+  },
+  {
+   "query": "servicem8 setup and training adelaide",
+   "position": 72,
    "impressions": 1
   },
   {
@@ -303,51 +334,6 @@
    "query": "free carpentry invoice template",
    "position": 83,
    "impressions": 1
-  },
-  {
-   "query": "electrical contractor invoice terms and conditions",
-   "position": 97,
-   "impressions": 1
-  },
-  {
-   "query": "electrician invoice template",
-   "position": 91,
-   "impressions": 1
-  },
-  {
-   "query": "commercial painting quotes",
-   "position": 100,
-   "impressions": 1
-  },
-  {
-   "query": "painting quote template",
-   "position": 61,
-   "impressions": 1
-  },
-  {
-   "query": "plumber invoice template",
-   "position": 74,
-   "impressions": 1
-  },
-  {
-   "query": "plumbing invoice sample",
-   "position": 76,
-   "impressions": 1
-  },
-  {
-   "query": "plumbing invoicing",
-   "position": 96,
-   "impressions": 1
-  },
-  {
-   "query": "free quote",
-   "position": 86,
-   "impressions": 1
-  },
-  {
-   "query": "trade quote",
-   "position": 98,
-   "impressions": 1
   }
  ],
  "live": null,
@@ -356,7 +342,7 @@
   {
    "url": "https://tradeadmin.com.au/",
    "lite": true,
-   "serverSecs": 0.06,
+   "serverSecs": 0.11,
    "htmlKb": 12,
    "blocking": 1,
    "images": 1,
@@ -367,7 +353,7 @@
   {
    "url": "https://tradeadmin.com.au/tradify-vs-servicem8",
    "lite": true,
-   "serverSecs": 0.1,
+   "serverSecs": 0.18,
    "htmlKb": 18,
    "blocking": 1,
    "images": 1,
@@ -388,16 +374,18 @@
   "unsureOutside": 0
  },
  "affiliateOk": 3,
- "secs": 124,
+ "secs": 123,
  "change": {
   "first": false,
-  "since": "2026-11-15T20:08:38Z",
+  "since": "2026-11-16T00:03:15Z",
   "score": 1,
   "newIssues": [],
-  "fixed": [],
-  "impr28": 0,
+  "fixed": [
+   "1 title outside 30–65 characters"
+  ],
+  "impr28": 57,
   "clicks28": 0,
-  "views28": 0,
+  "views28": 6,
   "rivals": [],
   "positions": []
  },
@@ -419,6 +407,13 @@
   {
    "at": "2026-11-15T20:08:38Z",
    "score": 98,
+   "grade": "A",
+   "impr28": 430,
+   "clicks28": 0
+  },
+  {
+   "at": "2026-11-16T00:03:15Z",
+   "score": 99,
    "grade": "A",
    "impr28": 430,
    "clicks28": 0

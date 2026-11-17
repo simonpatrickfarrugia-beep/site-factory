@@ -1,13 +1,12 @@
 # Site check: tradeadmin.com.au
 
-**A · 99/100** · scanned 2026-11-16 00:03 UTC · 25 pages · next scan 2026-11-23 (no revenue in the last 60 days, every 7 days)
+**A · 100/100** · scanned 2026-11-17 12:18 UTC · 25 pages · next scan 2026-11-24 (no revenue in the last 60 days, every 7 days)
 
-**Since 2026-11-15:** score +1 · Google impressions (28 days) 0 · clicks 0 · visits 0
+**Since 2026-11-16:** score +1 · Google impressions (28 days) +57 · clicks 0 · visits +6 · fixed 1
 
 ## Top 5 fixes
 
-1. **1 title outside 30–65 characters** (medium, impact 2.5). Rewrite to 30–65 characters with the main search first. Pages: /privacy-policy
-2. **3 page(s) under 250 words** (low, impact 1.5). Fine for tools; for guides add the answer people search for. Pages: /about, /contact, /how-we-make-money
+1. **3 page(s) under 250 words** (low, impact 1.5). Fine for tools; for guides add the answer people search for. Pages: /about, /contact, /how-we-make-money
 
 ## Report card
 
@@ -16,7 +15,7 @@
 | Broken pages & links | A | 100 |
 | Tracking & money links | A | 100 |
 | Sitemap & indexing | A | 100 |
-| Titles, descriptions & schema | B | 88 |
+| Titles, descriptions & schema | A | 96 |
 | Thin & duplicate pages | A | 100 |
 | Speed | A | 100 |
 | Google trend | A | 100 |
@@ -24,19 +23,22 @@
 
 ## Google
 
-- Last 7 days: 192 impressions (-26), 0 clicks (0). 28 days: 430 impressions, 0 clicks, 33 visits. Search Console data to 2026-11-12.
+- Last 7 days: 218 impressions (+1), 0 clicks (0). 28 days: 487 impressions, 0 clicks, 39 visits. Search Console data to 2026-11-13.
+
+## What changed
+
+- Fixed: 1 title outside 30–65 characters
 
 ## Speed (phones)
 
-- /: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.06s, HTML 12 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
-- /tradify-vs-servicem8: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.1s, HTML 18 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
+- /: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.11s, HTML 12 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
+- /tradify-vs-servicem8: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.18s, HTML 18 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
 
 ## All findings
 
 | # | Area | Severity | Impact | Finding |
 |---:|---|---|---:|---|
-| 1 | seo | medium | 2.5 | 1 title outside 30–65 characters |
-| 2 | seo | low | 1.5 | 3 page(s) under 250 words |
+| 1 | seo | low | 1.5 | 3 page(s) under 250 words |
 
 Links: 31 internal, 5 outside (4 checked; 0 block robots, not counted). Affiliate links tagged correctly: 3. Live Google check cost US$0.000.
 
