@@ -15,6 +15,10 @@ def main(path):
     if lic and not (lic.get('label') and lic.get('number')): errs.append('licence needs label and number (or leave it out)')
     for k in ('reviewsUrl', 'facebookUrl'):
         if b.get(k) and not str(b[k]).startswith('https://'): errs.append(f'business.{k} must be https')
+    lg = b.get('logo')
+    if lg and not str(lg.get('src', '')).startswith('https://'): errs.append('business.logo.src must be https (their own file)')
+    if not lg: warns.append('no logo: say "send us your logo" in the reply')
+    if not (d.get('colors') or {}).get('brand'): warns.append('no brand colour: the preview uses neutral navy')
     s = d.get('services') or []
     if len(s) < 2: errs.append('at least 2 services')
     for x in s:

@@ -16,7 +16,14 @@ From their Google listing, their own website, Facebook/Instagram About and direc
 name, trade, phone and email as published, suburbs/areas they say they cover, hours, services in their own words, licence or
 registration number only if they publish it (electricians in Victoria must show their REC number in ads; builders their registration
 number), their Google reviews link, a line or two about them in their own words. Photos: only images on their own site or pages,
-and only if the URL is https. Never invent a service, area, number, review, rating, testimonial or year founded. If a detail isn't
+and only if the URL is https. **Logo and colours are vital** (Simon, 17 Nov): the preview must look like *their* business. If they have a website, run
+`bash scripts/claude/_dispatch.sh brand-grab.yml brand -f "inputs[url]=<their site>"`: it lists logo candidates (with whether the
+logo is mostly light and needs a dark background) and their brand colours. Set `business.logo` {src (https, their own file), alt,
+dark} and `colors.brand` (their main colour, used for the header, headings and footer) and `colors.accent` (their second colour, used
+for buttons; text colour is picked automatically for contrast). No website: take the colours from their Google listing photos,
+van, signage or Facebook cover as described in search results; if you can't see them, use a neutral navy and say in the reply email
+"send us your logo and we'll drop it in". Never use another business's logo or a stock logo.
+Never invent a service, area, number, review, rating, testimonial or year founded. If a detail isn't
 published, leave it out. Note every page you used in `research.sources`.
 
 ## Step 2: The homework (the "calculated" part)
@@ -51,7 +58,7 @@ Subject: Re: <their thread subject>
 
 Hi <first name>,
 
-Thanks for getting back to me. Here's the preview I put together for <business>:
+Thanks for getting back to me. Here's the preview we put together for <business>:
 https://imnetwork.com.au/preview/<slug>
 
 No login, nothing to fill in and no payment details, just have a look. I've added a screenshot of the home page below.

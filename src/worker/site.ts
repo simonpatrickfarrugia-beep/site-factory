@@ -31,6 +31,8 @@ import { preview } from './preview';
 export interface Env {
   /** "1" serves IMN website previews at /preview/<slug> from D1 `previews` (imn only). */
   PREVIEWS?: string;
+  /** Guarantee shown on previews: money-back-30 | live-7 | both | empty (src/worker/preview.ts). */
+  PREVIEW_GUARANTEE?: string;
   ASSETS: Fetcher;
   DB: D1Database;
   /** Brand slug, set per brand in its wrangler.jsonc vars. */
