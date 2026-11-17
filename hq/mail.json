@@ -1,6 +1,6 @@
 {
  "_note": "Brand email connections for IMN HQ. Steps follow the mail hub checklist (claude/MAIL-HUB.md in the Site Factory project). Claude ticks a step when Simon confirms it or a test passes. Outreach on/off comes from mailReady in hq/prospect-targets.json.",
- "updated": "2026-11-14",
+ "updated": "2026-11-17",
  "steps": [
   {
    "key": "receive",
@@ -24,6 +24,18 @@
   }
  ],
  "brands": [
+  {
+   "brand": "imn",
+   "name": "Independent Media Network",
+   "address": "simon@imnetwork.com.au",
+   "steps": {
+    "receive": true,
+    "send": false,
+    "sign": false,
+    "track": false
+   },
+   "note": "Receiving tested 15 Nov. To do: DKIM Enable, IMN signature + CRM copy rules, send test from HQ. Then outreach switches on."
+  },
   {
    "brand": "vic",
    "name": "Vic Tours",

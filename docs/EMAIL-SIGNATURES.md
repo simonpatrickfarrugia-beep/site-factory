@@ -115,3 +115,34 @@ Partnerships Coordinator, Trade Admin
 E simon@tradeadmin.com.au
 W tradeadmin.com.au
 ```
+
+## Independent Media Network
+
+Added 17 Nov 2026 for IMN's sales outreach. Title **Client Services** (junior title, same idea as Partnerships Coordinator). Marker for the rule exception: `imnetwork.com.au`.
+
+```html
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:'Segoe UI',Arial,Helvetica,sans-serif;color:#121A2B;">
+  <tr><td style="padding:0 0 2px 0;font-size:17px;font-weight:bold;line-height:22px;color:#121A2B;">Simon Farrugia</td></tr>
+  <tr><td style="padding:0 0 10px 0;font-size:13px;line-height:18px;color:#5B6470;">Client Services, Independent Media Network</td></tr>
+  <tr><td style="padding:0 0 10px 0;"><table cellpadding="0" cellspacing="0" border="0"><tr><td width="56" height="3" style="background:#F2A93B;font-size:0;line-height:0;">&nbsp;</td></tr></table></td></tr>
+  <tr><td style="font-size:13px;line-height:20px;">
+    <span style="color:#5B6470;">E</span>&nbsp;&nbsp;&nbsp;<a href="mailto:simon@imnetwork.com.au" style="color:#121A2B;text-decoration:none;">simon@imnetwork.com.au</a><br>
+    <span style="color:#5B6470;">W</span>&nbsp;&nbsp;<a href="https://imnetwork.com.au" style="color:#121A2B;text-decoration:none;font-weight:bold;">imnetwork.com.au</a>
+  </td></tr>
+  <tr><td style="padding:14px 0 0 0;"><table cellpadding="0" cellspacing="0" border="0"><tr>
+    <td style="padding:0 10px 0 0;"><a href="https://imnetwork.com.au"><img src="https://imnetwork.com.au/email/signature-mark.png" width="40" height="40" alt="Independent Media Network" style="display:block;border:0;width:40px;height:40px;"></a></td>
+    <td style="font-size:15px;font-weight:bold;color:#121A2B;">Independent Media Network</td>
+  </tr></table></td></tr>
+  <tr><td style="padding:10px 0 0 0;font-size:11px;line-height:16px;color:#8A919C;">Independent Media Network Pty Ltd · ABN 89 640 199 935 · Melbourne</td></tr>
+</table>
+```
+
+Plain text:
+
+```
+Simon Farrugia
+Client Services, Independent Media Network
+E simon@imnetwork.com.au
+W imnetwork.com.au
+Independent Media Network Pty Ltd · ABN 89 640 199 935 · Melbourne
+```

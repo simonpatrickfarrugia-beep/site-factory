@@ -78,6 +78,18 @@ trigger_date = next date and snooze_until = 6 weeks before it (ISO). Snoozed add
   otherwise the best collection `g=<group id>`. widget_url = `https://www.movietrailer.channel/widgets?for=<org, URL-encoded>&title=<short heading, URL-encoded>&items=...` (or `&g=...`)`&id=<org-slug>`.
   Never claim films are in their program unless you saw them on their page.
 - `link`: ask for a link from their evidence page.
+- `preview` (Independent Media Network, brand `imn`, added 17 Nov 2026): **sales outreach, not link building.** Find a real local
+  small business in the target region whose web presence has a gap from IMN's `gaps` list, verified by looking (open the Google
+  listing's Website button, the link, the site at phone width). Offer a free preview of a simple site built from what they already
+  publish; if they like it, $99 + GST a month, no setup fee, no lock-in. Never build the preview before they say yes.
+  - Email: only one the business publishes itself (its own site, Facebook/Instagram About, Google listing, a directory listing it
+    manages). Never a staff member's personal address, never guessed. Skip chains, franchises and businesses with a decent modern site.
+  - Gap wording is kind and factual ("your Google listing doesn't link to a website yet", "the website link on your Google listing
+    goes to a page that no longer works"). Never mock their current site; never promise rankings, leads, calls or revenue.
+  - No website is the point for IMN, so "no website of its own" is NOT a dead end here; no published email is.
+  - evidence_url = the page showing the gap (their Google Maps link or site); source_url = the page with the email; ask = 'preview'.
+  - Template `*` in templates.ts already carries the price line; replace its "noticed..." sentence with the verified gap and lead
+    with the trigger when there is one. Keep the price, "no lock-in contract" and the question at the end.
 
 **The email** (under ~130 words, plain, warm, Australian English, no hype, no exclamation marks, nothing unbacked):
 - Start from `SELECT subject, body FROM templates WHERE brand = ? AND segment = ? ORDER BY version DESC LIMIT 1`; if none, the built-in
@@ -92,7 +104,7 @@ trigger_date = next date and snooze_until = 6 weeks before it (ISO). Snoozed add
    type = segment label; region = region label; target = target key exactly; why = one specific sentence; opener = the email's first
    sentence; source_url = page with the email; notes = two short lines, "Verified: <facts you saw> (<url>)" and
    "Assumed: <your inferences>", so Simon can tell evidence from guesswork; signals = JSON array of 2-5 chips; why_now = trigger + source; trigger_date = YYYY-MM-DD or
-   'evergreen'; gap = one sentence; proof = one sentence or NULL; ask = 'widget'|'link'; widget_url or NULL; snooze_until or NULL.
+   'evergreen'; gap = one sentence; proof = one sentence or NULL; ask = 'widget'|'link'|'preview'; widget_url or NULL; snooze_until or NULL.
 2. `INSERT INTO contacts (org_id, name, role, email, source_url) VALUES (?, ?, ?, ?, ?)` (name/role only if published next to the address)
 3. `INSERT INTO touches (org_id, brand, stage, channel, note) VALUES (?, ?, 'found', 'radar', ?)` note = "Radar: " + why now (+ " · snoozed to <date>")
 

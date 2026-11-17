@@ -120,6 +120,26 @@ Thanks,
 ${OPT_OUT}`,
     },
   },
+  imn: {
+    '*': {
+      subject: 'A free website preview for {organisation}',
+      body: `Hi {first_name},
+
+I'm Simon from Independent Media Network ({site}). We're a Melbourne business that builds and looks after websites for local businesses.
+
+I came across {organisation} while looking at {region} businesses on Google, and noticed you don't have a website people can click through to yet.
+
+If it's useful, I can put together a free preview of a simple site for you, built from what you already publish: your services, area, hours and how to reach you. No cost to look.
+
+If you like it, it's $99 + GST a month with hosting, care and changes included, no setup fee and no lock-in contract. If not, no worries at all.
+
+Would you like me to put one together?
+
+Thanks,
+
+${OPT_OUT}`,
+    },
+  },
   paycalc: {
     '*': {
       subject: 'A free take-home pay calculator for the people you help',

@@ -737,6 +737,221 @@
           "Old calculator linked"
         ]
       }
+    },
+    "imn": {
+      "name": "Independent Media Network",
+      "active": true,
+      "weeklyCap": 50,
+      "perTargetCap": 2,
+      "regions": [
+        {
+          "key": "tarneit",
+          "label": "Tarneit",
+          "weight": 1.0
+        },
+        {
+          "key": "point-cook",
+          "label": "Point Cook",
+          "weight": 1.0
+        },
+        {
+          "key": "werribee",
+          "label": "Werribee",
+          "weight": 1.0
+        },
+        {
+          "key": "craigieburn",
+          "label": "Craigieburn",
+          "weight": 1.0
+        },
+        {
+          "key": "cranbourne",
+          "label": "Cranbourne",
+          "weight": 1.0
+        },
+        {
+          "key": "pakenham",
+          "label": "Pakenham",
+          "weight": 1.0
+        },
+        {
+          "key": "melton",
+          "label": "Melton",
+          "weight": 1.0
+        },
+        {
+          "key": "clyde",
+          "label": "Clyde",
+          "weight": 1.0
+        },
+        {
+          "key": "hoppers-crossing",
+          "label": "Hoppers Crossing",
+          "weight": 0.8
+        },
+        {
+          "key": "sunbury",
+          "label": "Sunbury",
+          "weight": 0.8
+        },
+        {
+          "key": "frankston",
+          "label": "Frankston",
+          "weight": 0.8
+        },
+        {
+          "key": "dandenong",
+          "label": "Dandenong",
+          "weight": 0.8
+        },
+        {
+          "key": "ringwood",
+          "label": "Ringwood",
+          "weight": 0.8
+        },
+        {
+          "key": "footscray",
+          "label": "Footscray",
+          "weight": 0.8
+        },
+        {
+          "key": "geelong",
+          "label": "Geelong",
+          "weight": 0.8
+        }
+      ],
+      "segments": [
+        {
+          "key": "trades",
+          "label": "Local trade business (plumber, electrician, builder, landscaper, cleaner)",
+          "weight": 1.0,
+          "offer": "A free preview of a simple website for their {region} business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+          "evidence": "Google listing or Facebook page with a business email but no working website (or one that is old, not secure or broken on phones).",
+          "search": [
+            "{region} plumber",
+            "{region} electrician",
+            "{region} landscaping",
+            "{region} cleaning service",
+            "{region} handyman"
+          ]
+        },
+        {
+          "key": "personal",
+          "label": "Personal services (hair, beauty, barber, pet grooming, tutoring)",
+          "weight": 0.8,
+          "offer": "A free preview of a simple website with services, prices, hours and a booking link; $99 + GST a month if they want it, no lock-in.",
+          "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly.",
+          "search": [
+            "{region} hair salon",
+            "{region} barber",
+            "{region} beauty salon",
+            "{region} dog grooming",
+            "{region} tutoring"
+          ]
+        },
+        {
+          "key": "wellness",
+          "label": "Small wellness practice (massage, PT, yoga/pilates studio)",
+          "weight": 0.7,
+          "offer": "A free preview of a clean site with services, classes and contact; $99 + GST a month if they want it, no lock-in.",
+          "evidence": "Sole-operator practice with a weak or missing site.",
+          "search": [
+            "{region} remedial massage",
+            "{region} personal trainer",
+            "{region} pilates studio"
+          ]
+        },
+        {
+          "key": "food",
+          "label": "Independent cafe, bakery or caterer",
+          "weight": 0.5,
+          "offer": "A free preview of a simple site with menu, hours and location; $99 + GST a month if they want it, no lock-in.",
+          "evidence": "Menu only on Facebook/Instagram, or no site at all.",
+          "search": [
+            "{region} cafe",
+            "{region} bakery",
+            "{region} catering"
+          ]
+        }
+      ],
+      "site": "https://imnetwork.com.au",
+      "from": "simon@imnetwork.com.au",
+      "mailReady": false,
+      "ask": {
+        "primary": "preview",
+        "fallback": "preview",
+        "pitch": "Sales, not links: offer a free preview of a new website built from what the business already publishes (Google listing, Facebook, current site). If they like it: $99 + GST a month, no setup fee, no lock-in. Build the preview only after they say yes."
+      },
+      "signals": {
+        "triggers": [
+          {
+            "key": "new-business",
+            "label": "Business opened or ABN registered in the last 12 months ('now open' post, ABN Lookup date)",
+            "look": "ABN Lookup (abr.business.gov.au), Facebook/Google posts",
+            "points": 20
+          },
+          {
+            "key": "expanding",
+            "label": "Hiring, new location, new service or service area announced in the last 3 months",
+            "look": "Facebook/Instagram posts, job ads",
+            "points": 15
+          },
+          {
+            "key": "busy-season",
+            "label": "Their busy season is 0-8 weeks away (aircon/cooling before summer, landscaping in spring, Christmas for food and beauty, EOFY)",
+            "look": "Calendar + their trade",
+            "points": 10,
+            "recurs": "yearly"
+          }
+        ],
+        "gaps": [
+          {
+            "key": "no-website",
+            "label": "No website: Google listing or social pages only",
+            "look": "Google listing 'Website' button, Facebook About",
+            "points": 20
+          },
+          {
+            "key": "dead-link",
+            "label": "Website link is dead (e.g. an old business.site page Google shut down in 2024, expired domain)",
+            "look": "Click the website link on their Google listing",
+            "points": 20
+          },
+          {
+            "key": "not-mobile",
+            "label": "Website hard to use on a phone",
+            "look": "Open it on a phone-width screen",
+            "points": 10
+          },
+          {
+            "key": "not-secure",
+            "label": "Website not secure (http only, browser warning)",
+            "look": "Address bar",
+            "points": 10
+          },
+          {
+            "key": "stale",
+            "label": "Site out of date: copyright 2+ years old, old prices or hours, past specials",
+            "look": "Footer, dates on the page",
+            "points": 5
+          }
+        ],
+        "proof": [
+          "Our own live sites: https://imnetwork.com.au/our-sites",
+          "A real client-style dashboard: https://imnetwork.com.au/example-dashboard",
+          "No setup fee, no lock-in contract"
+        ],
+        "chips": [
+          "New business",
+          "Expanding",
+          "Busy season",
+          "No website",
+          "Dead link",
+          "Not mobile",
+          "Not secure",
+          "Out of date"
+        ]
+      }
     }
   },
   "_signals": "Buying signals per brand (7 Nov 2026, Simon: 'like FCBT Radar: buying signal and rationale for engagement, tailored per brand'). Radar reads this file. Every prospect gets: FIT (who they are), TRIGGER (a dated reason to email this week, verified on their own site with its real date), GAP (what's missing or broken on their site that we fix for free), PROOF (our numbers or look-alikes who said yes), chips, a score and an opener that leads with the trigger. Score = fit 0-60 + best trigger (points if 0-8 weeks away, half if 8-10 weeks) + gaps (max 20) + proof (max 10). Triggers preferred, strong evergreen fits allowed with a lower score. Trigger 10+ weeks away or just passed with a known next date: add the prospect but snooze it until ~6 weeks before the next one (re-surfaces by itself). ask.primary 'widget' = lead with the free widget (personalised builder link), link from their resources page as the fallback; 'link' = ask for the link (and give first) until the brand has a widget."

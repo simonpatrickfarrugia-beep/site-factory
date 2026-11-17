@@ -618,7 +618,7 @@ async function openOrg(id) {
         ${o.evidence_url ? `<dt>Links page</dt><dd><a href="${esc(o.evidence_url)}" target="_blank" rel="noopener">${esc(o.evidence_url)}</a></dd>` : ''}
         ${d.target ? `<dt>Target</dt><dd>${esc(d.target.segmentLabel)} · ${esc(d.target.regionLabel)}</dd>` : ''}
         ${o.notes ? `<dt>Notes</dt><dd>${esc(o.notes)}</dd>` : ''}
-        <dt>On our page</dt><dd>${d.featured.length ? d.featured.map((f) => `<a href="${esc(siteOf(o.brand) + f.path)}" target="_blank" rel="noopener">${esc(f.path)}</a>`).join(', ') + ' <button class="btn ghost" id="unfeature" style="padding:2px 10px">Remove</button>' : (o.brand === 'paycalc' ? 'Not available for MyPayCalc yet' : `Not featured <button class="btn ghost" id="feature" style="padding:2px 10px">Feature on ${esc(d.page ? new URL(d.page).pathname : 'our page')}</button>`)}</dd>
+        <dt>On our page</dt><dd>${d.featured.length ? d.featured.map((f) => `<a href="${esc(siteOf(o.brand) + f.path)}" target="_blank" rel="noopener">${esc(f.path)}</a>`).join(', ') + ' <button class="btn ghost" id="unfeature" style="padding:2px 10px">Remove</button>' : (o.brand === 'paycalc' || o.brand === 'imn' ? 'Not used for ' + (o.brand === 'imn' ? 'IMN (sales outreach)' : 'MyPayCalc yet') : `Not featured <button class="btn ghost" id="feature" style="padding:2px 10px">Feature on ${esc(d.page ? new URL(d.page).pathname : 'our page')}</button>`)}</dd>
         ${d.links.length ? `<dt>Links won</dt><dd>${d.links.map((l) => `<a href="${esc(l.page_url)}" target="_blank" rel="noopener">${esc(l.page_url)}</a>`).join('<br>')}</dd>` : ''}
       </dl>
       <div><label>Stage</label><div class="stages" style="margin-top:6px">${state.board.stages.map((s) => `<button data-stage="${s}" aria-pressed="${o.stage === s}">${STAGE_LABEL[s]}</button>`).join('')}</div></div>
@@ -695,7 +695,7 @@ async function openDraft(brand, key, org) {
       <label>Preview</label>
       <div class="preview" id="d-preview"></div>
     </div>
-    ${brand !== 'paycalc' && t.page ? `<label class="fcheck"><input type="checkbox" id="d-feature" checked><span><b>Give first:</b> add them to <a href="${esc(t.page)}" target="_blank" rel="noopener">${esc(new URL(t.page).pathname)}</a> as a useful contact before you send, and say so in the email. Uses the Website field above.</span></label>` : ''}
+    ${brand !== 'paycalc' && brand !== 'imn' && t.page ? `<label class="fcheck"><input type="checkbox" id="d-feature" checked><span><b>Give first:</b> add them to <a href="${esc(t.page)}" target="_blank" rel="noopener">${esc(new URL(t.page).pathname)}</a> as a useful contact before you send, and say so in the email. Uses the Website field above.</span></label>` : ''}
     ${from ? `<div class="from">In Outlook, set From to <span id="d-from">${esc(from)}</span><button class="btn ghost" id="d-copyfrom" style="padding:3px 10px">Copy</button></div>` : ''}
     ${sendLine(brand)}
     <div class="row go-bar">
@@ -924,7 +924,7 @@ function renderToday() {
       ${o.why ? `<p class="rwhy"><b>Why them</b>${esc(o.why)}</p>` : ''}
       ${o.gap ? `<p class="rwhy"><b>Their gap</b>${esc(o.gap)}</p>` : ''}
       <dl class="rkv">
-        ${o.ask ? `<dt>The ask</dt><dd>${o.ask === 'widget' ? 'Free widget' + (o.widget_url ? ` · <a href="${esc(o.widget_url)}" target="_blank" rel="noopener">their preview ↗</a>` : '') + ', link as fallback' : 'Link from their resources page'}</dd>` : ''}
+        ${o.ask ? `<dt>The ask</dt><dd>${o.ask === 'preview' ? 'Free website preview, then $99 + GST a month (no setup, no lock-in)' : o.ask === 'widget' ? 'Free widget' + (o.widget_url ? ` · <a href="${esc(o.widget_url)}" target="_blank" rel="noopener">their preview ↗</a>` : '') + ', link as fallback' : 'Link from their resources page'}</dd>` : ''}
         ${o.proof ? `<dt>Proof</dt><dd>${esc(o.proof)}</dd>` : ''}
         ${o.contact_email ? `<dt>Email</dt><dd>${esc(o.contact_email)}${o.contact_name ? ' · ' + esc(o.contact_name) : ''}${o.contact_role ? ', ' + esc(o.contact_role) : ''}${o.source_url ? ` · <a href="${esc(o.source_url)}" target="_blank" rel="noopener">where it's published ↗</a>` : ''}</dd>` : '<dt>Email</dt><dd>None found yet</dd>'}
         ${o.evidence_url ? `<dt>Links page</dt><dd><a href="${esc(o.evidence_url)}" target="_blank" rel="noopener">${esc(o.evidence_url.replace(/^https?:\/\//, ''))}</a></dd>` : ''}
