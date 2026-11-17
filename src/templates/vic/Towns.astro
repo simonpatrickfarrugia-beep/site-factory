@@ -5,10 +5,13 @@ interface Props {
   comingSoon: number;
 }
 const { groups, comingSoon } = Astro.props;
+const total = groups.reduce((n, g) => n + g.towns.length, 0);
 ---
 <div class="wrap town">
   <h1 class="page-title page-title--big">All towns</h1>
   <p class="town__lede">Grouped by region, nearest to Melbourne first. {comingSoon > 0 && `${comingSoon} more towns and suburbs are on the way.`}</p>
+  <p class="town__body">Vic Tours covers {total} Victorian towns and Melbourne neighbourhoods across {groups.length} regions. Each sign shows how far the town is from Melbourne. Tap one to see where to stay, where to eat and things to do there, with addresses, opening hours, websites and maps, plus ready-made day trips and weekends where we have them. A region name that's a link opens a page that brings the best of that region's towns together.</p>
+  <p class="town__body">Not sure where to go? The <a href="/trip-builder">Trip Builder</a> picks a day trip or weekend for you from who's coming, how long you have and whether you're driving or taking the train. Place listings come from OpenStreetMap, so if something has closed or moved, <a href="/contact">tell us</a> and we'll fix it.</p>
   {groups.map((g) => (
     <section class="town__section">
       <h2>{g.href ? <a href={g.href}>{g.region}</a> : g.region}</h2>

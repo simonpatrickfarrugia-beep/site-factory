@@ -238,6 +238,7 @@ export function routes(): Route[] {
       ],
       props: {
         town: { name: t.name, slug: t.slug, km, region: c.region, intro: c.intro, tips: c.tips ?? [], centre: t.centre ?? null },
+        body: c.body ?? [],
         affiliates: content.affiliates ?? null,
         photo: photos.towns[t.slug] ?? null,
         placePhotos: Object.fromEntries(sections.flatMap((x) => x.places).filter((p) => photos.places[p.id]).map((p) => [p.id, photos.places[p.id]])),
@@ -723,9 +724,11 @@ export function routes(): Route[] {
     props: { price: shoots.price, deposit: shoots.deposit, perDay: shoots.perDay, depositUrl: shoots.depositUrl, weekends: shoots.weekends },
   });
   for (const p of content.pages) {
-    // Breadcrumb schema on the guide's own pages; legal pages (privacy, disclosure) are left as they are.
+    // Breadcrumb schema on every info page; legal pages (privacy, disclosure) also say they are a plain WebPage.
     const legal = ['privacy-policy', 'affiliate-disclosure'].includes(p.slug);
-    out.push({ path: p.slug, template: 'vicPage', seo: { title: (p.seoTitle ?? p.title) + SUFFIX, rawTitle: true, description: p.description }, schema: legal ? [] : [crumbs([{ name: 'Home', path: '' }, { name: p.title, path: p.slug }])], props: { title: p.title, paragraphs: p.paragraphs } });
+    const trail = crumbs([{ name: 'Home', path: '' }, { name: p.title, path: p.slug }]);
+    const webPage = { '@context': 'https://schema.org', '@type': 'WebPage', name: p.title, url: `${SITE}/${p.slug}`, description: p.description, isPartOf: { '@type': 'WebSite', name: 'Vic Tours', url: SITE } };
+    out.push({ path: p.slug, template: 'vicPage', seo: { title: (p.seoTitle ?? p.title) + SUFFIX, rawTitle: true, description: p.description }, schema: legal ? [webPage, trail] : [trail], props: { title: p.title, paragraphs: p.paragraphs } });
   }
   return out;
 }

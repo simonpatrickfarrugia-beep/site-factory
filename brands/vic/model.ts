@@ -32,6 +32,8 @@ export interface TownContent {
   region: string;
   highlights?: string[];
   tips?: string[]; // Simon's own local tips (shown as "Local tip")
+  /** Guide paragraphs under the intro on the town page (verified facts, not Simon's tips). */
+  body?: string[];
   /** Optional short guide shown above a full list page (e.g. sections.do). */
   sections?: Partial<Record<Group, string[]>>;
 }
