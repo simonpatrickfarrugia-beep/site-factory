@@ -25,6 +25,10 @@ def page_facts(u, s, base):
                 words=words, internal=internal, ga4=ga4, ctas=ctas, sponsored=sponsored)
 
 
+# Legal and contact pages are short by design and are never ranking targets: skip the 250-word check for them.
+LEGAL_PAGES = {'privacy', 'privacy-policy', 'terms', 'terms-of-use', 'terms-and-conditions', 'affiliate-disclosure', 'disclosure', 'disclaimer', 'cookie-policy', 'accessibility', 'contact'}
+
+
 def page_issues(f, u):
     """(check, message) pairs for one page. Same rules as the original audit."""
     p, out = f['path'], []
@@ -35,7 +39,7 @@ def page_issues(f, u):
     if f['noindex']: out.append(('noindex', f'{p}: noindex but in sitemap'))
     if f['h1'] != 1: out.append(('h1', f'{p}: {f["h1"]} H1 tags'))
     if not f['og']: out.append(('og', f'{p}: no og:image (plain link previews when shared)'))
-    if f['words'] < 250: out.append(('words', f'{p}: {f["words"]} words of content (thin for ranking)'))
+    if f['words'] < 250 and p.rstrip('/').rsplit('/', 1)[-1] not in LEGAL_PAGES: out.append(('words', f'{p}: {f["words"]} words of content (thin for ranking)'))
     return out
 
 
