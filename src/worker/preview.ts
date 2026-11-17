@@ -94,7 +94,7 @@ a{color:inherit}h1,h2,h3{line-height:1.15;margin:0 0 .5rem}.w{width:min(100% - 2
 .site{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}.site .w{width:min(100% - 2rem,60rem)}
 .s-head{background:var(--b);color:var(--bi)}.s-head .w{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem 0}
 .s-name{font-weight:800;font-size:1.15rem;display:flex;align-items:center;gap:.6rem}.s-logo{max-height:46px;max-width:170px;display:block}.s-logo--dark{background:#121A2B;padding:4px 8px;border-radius:6px}
-.s-call{background:var(--a);color:var(--ai);text-decoration:none;font-weight:800;padding:.55rem 1rem;border-radius:999px;white-space:nowrap}
+.s-call{flex:none;background:var(--a);color:var(--ai);text-decoration:none;font-weight:800;padding:.55rem 1rem;border-radius:999px;white-space:nowrap}.s-call .sm{display:none}@media(max-width:34rem){.s-call .lg{display:none}.s-call .sm{display:inline}.s-logo{max-width:140px;max-height:40px}}
 .s-hero{background:linear-gradient(180deg,color-mix(in srgb,var(--b) 12%,#fff),#fff);padding:2.4rem 0 2rem}
 .s-hero h1{font-size:clamp(1.8rem,5.5vw,2.7rem);max-width:22ch;color:var(--b)}.s-hero p{font-size:1.1rem;max-width:46ch;color:#333}
 .s-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 1.3rem;padding:0;list-style:none}.s-chips li{background:#fff;border:1px solid #e3e3e3;border-radius:999px;padding:.3rem .8rem;font-size:.9rem}
@@ -125,7 +125,7 @@ function render(row: Row, d: PreviewData, guarantee: string): string {
   const brand = hex(d.colors?.brand, '#1F3A5F');
   const accent = hex(d.colors?.accent, '#F2A93B');
   const logo = url(b.logo?.src);
-  const phone = b.phone ? `<a class="s-call" href="tel:${esc(tel(b.phone))}">Call ${esc(b.phone)}</a>` : '';
+  const phone = b.phone ? `<a class="s-call" href="tel:${esc(tel(b.phone))}" aria-label="Call ${esc(b.phone)}"><span class="lg">Call ${esc(b.phone)}</span><span class="sm">📞 Call</span></a>` : '';
   const chips = [b.licence ? `${b.licence.label} ${b.licence.number}` : '', b.hours ?? '', b.areas.length ? `Servicing ${b.areas.slice(0, 3).join(', ')}${b.areas.length > 3 ? ' and more' : ''}` : '']
     .filter(Boolean).map((c) => `<li>${esc(c)}</li>`).join('') + (url(b.reviewsUrl) ? `<li><a href="${esc(url(b.reviewsUrl))}" rel="noopener">★ Our Google reviews</a></li>` : '');
   const addr = b.domain && /^[a-z0-9.-]+\.[a-z]{2,}$/i.test(b.domain) ? b.domain : `${b.name.toLowerCase().replace(/[^a-z0-9]+/g, '').slice(0, 24) || 'yourbusiness'}.com.au`;
