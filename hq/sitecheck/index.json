@@ -4,48 +4,20 @@
    "name": "victours.com.au",
    "url": "https://victours.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-16T08:19:28Z",
-   "score": 99,
+   "scannedAt": "2026-11-17T12:26:47Z",
+   "score": 100,
    "grade": "A",
    "change": 1,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-23",
-   "topFix": "3 page(s) under 250 words",
+   "nextDue": "2026-11-24",
+   "topFix": null,
    "broken": 0,
    "newIssues": 0,
    "fixed": 2,
    "costUsd": 0,
-   "top": [
-    {
-     "id": "seo-words",
-     "title": "3 page(s) under 250 words",
-     "severity": "low",
-     "area": "seo",
-     "fix": "Fine for tools; for guides add the answer people search for.",
-     "pages": [
-      "/towns",
-      "/metung",
-      "/flinders"
-     ],
-     "detail": "",
-     "broken": false
-    },
-    {
-     "id": "schema-missing",
-     "title": "2 page(s) have no schema",
-     "severity": "low",
-     "area": "seo",
-     "fix": "Add WebPage/BreadcrumbList (or the page's own type) so Google understands it.",
-     "pages": [
-      "/privacy-policy",
-      "/affiliate-disclosure"
-     ],
-     "detail": "",
-     "broken": false
-    }
-   ]
+   "top": []
   },
   "trailers": {
    "name": "movietrailer.channel",
@@ -261,11 +233,11 @@
    ]
   }
  },
- "updated": "2026-11-17T12:23:48Z",
+ "updated": "2026-11-17T12:26:47Z",
  "lastRun": {
-  "at": "2026-11-17T12:23:48Z",
+  "at": "2026-11-17T12:26:47Z",
   "scanned": [
-   "trade-admin"
+   "vic"
   ]
  }
 }

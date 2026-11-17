@@ -3,12 +3,12 @@
  "name": "victours.com.au",
  "url": "https://victours.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-16T08:19:28Z",
+ "scannedAt": "2026-11-17T12:26:47Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
- "nextDue": "2026-11-23",
- "score": 99,
+ "nextDue": "2026-11-24",
+ "score": 100,
  "grade": "A",
  "areas": {
   "health": {
@@ -27,7 +27,7 @@
    "label": "Sitemap & indexing"
   },
   "seo": {
-   "score": 94,
+   "score": 100,
    "grade": "A",
    "label": "Titles, descriptions & schema"
   },
@@ -53,51 +53,19 @@
   }
  },
  "pages": 311,
- "findings": [
-  {
-   "id": "seo-words",
-   "area": "seo",
-   "severity": "low",
-   "title": "3 page(s) under 250 words",
-   "fix": "Fine for tools; for guides add the answer people search for.",
-   "pages": [
-    "/towns",
-    "/metung",
-    "/flinders"
-   ],
-   "count": 3,
-   "detail": "",
-   "impact": 1.2,
-   "broken": false
-  },
-  {
-   "id": "schema-missing",
-   "area": "seo",
-   "severity": "low",
-   "title": "2 page(s) have no schema",
-   "fix": "Add WebPage/BreadcrumbList (or the page's own type) so Google understands it.",
-   "pages": [
-    "/privacy-policy",
-    "/affiliate-disclosure"
-   ],
-   "count": 2,
-   "detail": "",
-   "impact": 1.0,
-   "broken": false
-  }
- ],
+ "findings": [],
  "google": {
-  "impr7": 132,
-  "imprPrev7": 106,
+  "impr7": 164,
+  "imprPrev7": 107,
   "clicks7": 0,
   "clicksPrev7": 0,
-  "impr28": 2729,
+  "impr28": 2775,
   "clicks28": 5,
-  "views28": 91,
+  "views28": 92,
   "viewsPrev28": 0,
-  "recentViews": 6,
-  "lastGa4Day": "2026-11-12",
-  "gscTo": "2026-11-12"
+  "recentViews": 5,
+  "lastGa4Day": "2026-11-15",
+  "gscTo": "2026-11-13"
  },
  "queries": [
   {
@@ -123,6 +91,11 @@
   {
    "query": "yarra valley day trip",
    "position": 68.5,
+   "impressions": 18
+  },
+  {
+   "query": "179 day avenue omeo vic 3898",
+   "position": 73,
    "impressions": 18
   },
   {
@@ -168,11 +141,6 @@
   {
    "query": "lorne attractions",
    "position": 73.6,
-   "impressions": 14
-  },
-  {
-   "query": "179 day avenue omeo vic 3898",
-   "position": 72.6,
    "impressions": 14
   },
   {
@@ -256,6 +224,11 @@
    "impressions": 10
   },
   {
+   "query": "rye",
+   "position": 94.3,
+   "impressions": 10
+  },
+  {
    "query": "accommodation in melbourne southbank",
    "position": 80.8,
    "impressions": 10
@@ -291,11 +264,6 @@
    "impressions": 9
   },
   {
-   "query": "rye",
-   "position": 94.4,
-   "impressions": 9
-  },
-  {
    "query": "things to do in st kilda",
    "position": 67.1,
    "impressions": 9
@@ -313,6 +281,11 @@
   {
    "query": "mornington peninsula restaurants",
    "position": 99,
+   "impressions": 8
+  },
+  {
+   "query": "omeo",
+   "position": 75.6,
    "impressions": 8
   },
   {
@@ -344,11 +317,6 @@
    "query": "south bank accommodation melbourne",
    "position": 71.6,
    "impressions": 8
-  },
-  {
-   "query": "bright victoria",
-   "position": 58.6,
-   "impressions": 7
   }
  ],
  "live": null,
@@ -357,7 +325,7 @@
   {
    "url": "https://victours.com.au/",
    "lite": true,
-   "serverSecs": 0.05,
+   "serverSecs": 0.12,
    "htmlKb": 55,
    "blocking": 1,
    "images": 11,
@@ -368,8 +336,8 @@
   {
    "url": "https://victours.com.au/towns",
    "lite": true,
-   "serverSecs": 0.05,
-   "htmlKb": 32,
+   "serverSecs": 0.16,
+   "htmlKb": 33,
    "blocking": 1,
    "images": 1,
    "noDims": 0,
@@ -378,7 +346,7 @@
   }
  ],
  "quality": {
-  "summary": "311 indexable pages · average 414 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
+  "summary": "311 indexable pages · average 415 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
   "thin": 0,
   "near": 0
  },
@@ -389,19 +357,19 @@
   "unsureOutside": 3
  },
  "affiliateOk": 546,
- "secs": 138,
+ "secs": 141,
  "change": {
   "first": false,
-  "since": "2026-11-16T07:21:42Z",
+  "since": "2026-11-16T08:19:28Z",
   "score": 1,
   "newIssues": [],
   "fixed": [
-   "11 title outside 30–65 characters",
-   "5 description outside 70–160 characters"
+   "3 page(s) under 250 words",
+   "2 page(s) have no schema"
   ],
-  "impr28": 0,
+  "impr28": 46,
   "clicks28": 0,
-  "views28": 0,
+  "views28": 1,
   "rivals": [],
   "positions": []
  },
@@ -458,6 +426,13 @@
   {
    "at": "2026-11-16T07:21:42Z",
    "score": 98,
+   "grade": "A",
+   "impr28": 2729,
+   "clicks28": 5
+  },
+  {
+   "at": "2026-11-16T08:19:28Z",
+   "score": 99,
    "grade": "A",
    "impr28": 2729,
    "clicks28": 5
