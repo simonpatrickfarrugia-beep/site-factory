@@ -3,11 +3,11 @@
  "name": "tradeadmin.com.au",
  "url": "https://tradeadmin.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-17T12:23:48Z",
+ "scannedAt": "2026-11-17T20:15:42Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
- "nextDue": "2026-11-24",
+ "nextDue": "2026-11-25",
  "score": 100,
  "grade": "A",
  "areas": {
@@ -27,7 +27,7 @@
    "label": "Sitemap & indexing"
   },
   "seo": {
-   "score": 96,
+   "score": 100,
    "grade": "A",
    "label": "Titles, descriptions & schema"
   },
@@ -53,24 +53,7 @@
   }
  },
  "pages": 25,
- "findings": [
-  {
-   "id": "seo-words",
-   "area": "seo",
-   "severity": "low",
-   "title": "3 page(s) under 250 words",
-   "fix": "Fine for tools; for guides add the answer people search for.",
-   "pages": [
-    "/about",
-    "/contact",
-    "/how-we-make-money"
-   ],
-   "count": 3,
-   "detail": "",
-   "impact": 1.5,
-   "broken": false
-  }
- ],
+ "findings": [],
  "google": {
   "impr7": 218,
   "imprPrev7": 217,
@@ -342,7 +325,7 @@
   {
    "url": "https://tradeadmin.com.au/",
    "lite": true,
-   "serverSecs": 0.07,
+   "serverSecs": 0.32,
    "htmlKb": 12,
    "blocking": 1,
    "images": 1,
@@ -353,7 +336,7 @@
   {
    "url": "https://tradeadmin.com.au/tradify-vs-servicem8",
    "lite": true,
-   "serverSecs": 0.05,
+   "serverSecs": 0.25,
    "htmlKb": 18,
    "blocking": 1,
    "images": 1,
@@ -363,7 +346,7 @@
   }
  ],
  "quality": {
-  "summary": "25 indexable pages · average 435 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
+  "summary": "25 indexable pages · average 444 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
   "thin": 0,
   "near": 0
  },
@@ -374,13 +357,15 @@
   "unsureOutside": 0
  },
  "affiliateOk": 3,
- "secs": 122,
+ "secs": 123,
  "change": {
   "first": false,
-  "since": "2026-11-17T12:18:11Z",
+  "since": "2026-11-17T12:23:48Z",
   "score": 0,
   "newIssues": [],
-  "fixed": [],
+  "fixed": [
+   "3 page(s) under 250 words"
+  ],
   "impr28": 0,
   "clicks28": 0,
   "views28": 0,
@@ -418,6 +403,13 @@
   },
   {
    "at": "2026-11-17T12:18:11Z",
+   "score": 100,
+   "grade": "A",
+   "impr28": 487,
+   "clicks28": 0
+  },
+  {
+   "at": "2026-11-17T12:23:48Z",
    "score": 100,
    "grade": "A",
    "impr28": 487,
