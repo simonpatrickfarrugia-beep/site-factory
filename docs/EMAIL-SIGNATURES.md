@@ -118,7 +118,7 @@ W tradeadmin.com.au
 
 ## Independent Media Network
 
-Added 17 Nov 2026 for IMN's sales outreach. Title **Client Services** (junior title, same idea as Partnerships Coordinator). Marker for the rule exception: `imnetwork.com.au`.
+Added 17 Nov 2026 for IMN's sales outreach. Title **Client Services** (junior title, same idea as Partnerships Coordinator). Exchange rule exception: body already contains `Client Services, Independent Media Network`.
 
 ```html
 <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:'Segoe UI',Arial,Helvetica,sans-serif;color:#121A2B;">
