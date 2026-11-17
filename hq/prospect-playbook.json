@@ -824,7 +824,7 @@
         {
           "key": "trades",
           "label": "Local trade business (plumber, electrician, landscaper, roofer, concreter, builder)",
-          "weight": 1.0,
+          "weight": 0.8,
           "offer": "A free preview of a simple website for their {region} trade business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
           "evidence": "Google listing with reviews but a dead website link (old business.site page) or no website at all; or a site that is not secure or broken on phones.",
           "page": "https://imnetwork.com.au/websites-for-tradies",
@@ -839,7 +839,7 @@
         {
           "key": "trade-adjacent",
           "label": "Home services (cleaner, removalist, pest control, mobile mechanic, handyman)",
-          "weight": 0.9,
+          "weight": 0.8,
           "offer": "A free preview of a simple website for their {region} business; $99 + GST a month if they want it, no setup fee, no lock-in.",
           "evidence": "Google listing with reviews but no working website, or a Facebook page used as the website.",
           "page": "https://imnetwork.com.au/websites-for-tradies",
@@ -854,7 +854,7 @@
         {
           "key": "personal",
           "label": "Personal services (dog grooming, tutoring, personal training, barber)",
-          "weight": 0.7,
+          "weight": 0.8,
           "offer": "A free preview of a simple website with services, prices, hours and a booking link; $99 + GST a month if they want it, no lock-in.",
           "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly. Skip registered health practitioners.",
           "page": "https://imnetwork.com.au/pricing",
@@ -863,6 +863,90 @@
             "{region} tutoring",
             "{region} personal trainer",
             "{region} barber"
+          ]
+        },
+        {
+          "key": "hospitality",
+          "label": "Cafes, restaurants, bakeries and caterers (independent, one or two venues)",
+          "weight": 0.9,
+          "offer": "A free preview of a simple website for their {region} business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+          "evidence": "Google listing with reviews but a dead website link, or a Facebook/Instagram page used as the website; menu only as a photo or PDF.",
+          "page": "https://imnetwork.com.au/pricing",
+          "search": [
+            "{region} cafe",
+            "{region} bakery",
+            "{region} catering",
+            "{region} restaurant"
+          ]
+        },
+        {
+          "key": "beauty",
+          "label": "Hair, beauty and wellness studios (hairdresser, nails, lashes, massage)",
+          "weight": 0.9,
+          "offer": "A free preview of a simple website for their {region} business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+          "evidence": "Booking only through Instagram/Facebook, or no site of their own. Skip registered health practitioners.",
+          "page": "https://imnetwork.com.au/pricing",
+          "search": [
+            "{region} hair salon",
+            "{region} nail salon",
+            "{region} beauty studio",
+            "{region} massage"
+          ]
+        },
+        {
+          "key": "retail",
+          "label": "Independent shops and makers (boutique, florist, gift store, pet shop)",
+          "weight": 0.8,
+          "offer": "A free preview of a simple website for their {region} business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+          "evidence": "Google listing with reviews but no website or a dead link; trading hours and range only on social media.",
+          "page": "https://imnetwork.com.au/pricing",
+          "search": [
+            "{region} florist",
+            "{region} boutique",
+            "{region} gift shop",
+            "{region} pet shop"
+          ]
+        },
+        {
+          "key": "fitness",
+          "label": "Fitness, dance and yoga studios, martial arts schools",
+          "weight": 0.8,
+          "offer": "A free preview of a simple website for their {region} business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+          "evidence": "Timetable and prices only on Facebook/Instagram, or an old site that is not mobile-friendly.",
+          "page": "https://imnetwork.com.au/pricing",
+          "search": [
+            "{region} yoga studio",
+            "{region} martial arts",
+            "{region} dance school",
+            "{region} pilates"
+          ]
+        },
+        {
+          "key": "creative",
+          "label": "Photographers, event and wedding suppliers, celebrants, DJs",
+          "weight": 0.8,
+          "offer": "A free preview of a simple website for their {region} business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+          "evidence": "Portfolio only on Instagram, or a free-builder site with no contact details.",
+          "page": "https://imnetwork.com.au/pricing",
+          "search": [
+            "{region} photographer",
+            "{region} wedding celebrant",
+            "{region} event hire",
+            "{region} wedding florist"
+          ]
+        },
+        {
+          "key": "auto",
+          "label": "Auto services (detailing, tyres, panel beating, driving school)",
+          "weight": 0.8,
+          "offer": "A free preview of a simple website for their {region} business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+          "evidence": "Google listing with reviews but a dead website link or no site.",
+          "page": "https://imnetwork.com.au/pricing",
+          "search": [
+            "{region} car detailing",
+            "{region} tyre shop",
+            "{region} driving school",
+            "{region} panel beater"
           ]
         }
       ],

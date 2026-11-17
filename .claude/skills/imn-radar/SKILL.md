@@ -88,6 +88,9 @@ trigger_date = next date and snooze_until = 6 weeks before it (ISO). Snoozed add
     goes to a page that no longer works"). Never mock their current site; never promise rankings, leads, calls or revenue.
   - No website is the point for IMN, so "no website of its own" is NOT a dead end here; no published email is.
   - evidence_url = the page showing the gap (their Google Maps link or site); source_url = the page with the email; ask = 'preview'.
+  - MIX (18 Nov, Simon: "don't just do tradies"): spread IMN picks across industries. Never more than 1 of any 3 IMN picks from
+    trades/trade-adjacent; rotate through hospitality, beauty, retail, fitness, creative, auto and personal. Non-trade picks use
+    https://imnetwork.com.au/pricing as {page}.
   - Gap priority (17 Nov): a dead website link on their Google listing (old business.site page, switched off by Google in 2024) or
     no website with 20+ Google reviews beat everything else. Check by tapping the listing's Website button.
   - {page}: for plumbers, electricians and landscapers write the trade page instead (https://imnetwork.com.au/plumber-websites,
