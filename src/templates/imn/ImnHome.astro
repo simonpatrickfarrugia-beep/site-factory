@@ -12,6 +12,7 @@ const { site, glance } = Astro.props;
     <div>
       <p class="imn-kicker">{site.hero.kicker}</p>
       <h1>{site.hero.title}</h1>
+      {site.hero.crew && <p class="imn-crew">{site.hero.crew}</p>}
       <p class="imn-lede">{site.hero.lede}</p>
       <p class="imn-actions">
         <a class="imn-btn imn-btn--coin" href="/get-started" data-cta="start_hero">Get started</a>

@@ -13,7 +13,7 @@ export interface SiteInfo {
   payLinks?: { plan?: string; extraPage?: string; extraChange?: string; _note?: string };
   extraPage: number;
   includedChanges: number;
-  hero: { kicker: string; title: string; lede: string };
+  hero: { kicker: string; title: string; lede: string; crew?: string };
   included: Item[];
   steps: Item[];
   ai: { title: string; paragraphs: string[]; pair: { who: string; what: string }[] };

@@ -174,6 +174,7 @@ ${b.about?.length ? `<section class="s-sec"><div class="w"><h2>About ${esc(b.nam
 
   <div class="offer">
     <h3>Want it live?</h3>
+    <p><strong>Your web crew.</strong> You run the business, we run the website.</p>
     <p><strong>$99 + GST a month</strong> ($108.90 inc GST). We put this live on your own web address, host it, check it every day and make up to 2 rounds of changes a month. <strong>No setup fee, no lock-in contract</strong>: cancel any time.</p>
     ${guarantee ? `<div class="guar"><span aria-hidden="true">🛡️</span><div>${guarantee}</div></div>` : ''}
     <p>Want changes first? Reply to our email and tell us what to change. No charge for that.</p>

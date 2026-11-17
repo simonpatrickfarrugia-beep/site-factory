@@ -125,7 +125,7 @@ ${OPT_OUT}`,
       subject: 'A free website preview for {organisation}',
       body: `Hi {first_name},
 
-I'm Simon from Independent Media Network ({site}). We're a Melbourne business that builds and looks after websites for local businesses.
+I'm Simon from Independent Media Network ({site}). We're a Melbourne business that builds and looks after websites for local businesses. Think of us as your web crew: you run the business, we run the website.
 
 I came across {organisation} while looking at {region} businesses on Google, and noticed you don't have a website people can click through to yet.
 
