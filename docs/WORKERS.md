@@ -24,6 +24,7 @@ To change what a worker does, edit its SKILL.md and push. The scheduled task pic
 | Opportunity engine | `opportunity-engine` | Tue 07:47 | Opus | Claude Code Remote | titles in code/data, `hq/opportunities.json`, `hq/ready/opportunities/`, todo, `hq/reports/opportunity-log.md`, `hq/runs.json` |
 | Claude queue | `claude-queue` | hourly 07:03–23:03 | Opus | Cloudflare, Claude Code Remote | whatever the queued job needs (under CLAUDE.md), D1 `claude_jobs` status |
 | Auto-fix | `auto-fix` | daily 10:47 | Opus | Cloudflare, Claude Code Remote | safe site check fixes in code/data, D1 `claude_jobs` log, `hq/runs.json` |
+| IMN preview | `imn-preview` | on demand ("preview for <business>" or queued from HQ) | Opus | Cloudflare, Claude Code Remote | D1 `previews` only |
 
 Claude Code Remote is what lets a scheduled run attach and push to this repo; web search is built in.
 Sonnet for reading and formatting, Opus where the job is research or judgement.

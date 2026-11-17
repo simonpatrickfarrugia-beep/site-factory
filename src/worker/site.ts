@@ -26,7 +26,11 @@
  * Same origin as the site, so no CORS. Signups go to the shared D1 database (site-factory-forms),
  * table `subscribers`, one row per brand + email. Spam: a hidden honeypot field.
  */
+import { preview } from './preview';
+
 export interface Env {
+  /** "1" serves IMN website previews at /preview/<slug> from D1 `previews` (imn only). */
+  PREVIEWS?: string;
   ASSETS: Fetcher;
   DB: D1Database;
   /** Brand slug, set per brand in its wrangler.jsonc vars. */
@@ -386,6 +390,12 @@ export default {
     if (pathname === '/api/jobs' && env.JOBS === '1') {
       if (request.method !== 'GET') return new Response('Method not allowed', { status: 405, headers: { allow: 'GET' } });
       return jobs(request, env);
+    }
+    const pv = pathname.match(/^\/preview\/([^/]{1,100})$/);
+    if (pv && env.PREVIEWS === '1') {
+      // ?notrack=1 lets Simon check a preview without counting a view.
+      try { return await preview(env, pv[1], request.method, new URL(request.url).searchParams.get('notrack') !== '1'); }
+      catch (e) { console.error('preview failed', e); return new Response('Something went wrong', { status: 500 }); }
     }
     const emb = pathname.match(/^\/api\/embed(?:\/([a-z0-9-]{1,60}))?$/);
     if (emb) return embed(request, env, emb[1]);
