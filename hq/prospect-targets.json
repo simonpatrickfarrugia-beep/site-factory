@@ -89,10 +89,9 @@
    "mailReady": true,
    "from": "simon@imnetwork.com.au",
    "segments": {
-    "trades": "Local trade business (plumber, electrician, builder, landscaper, cleaner)",
-    "personal": "Personal services (hair, beauty, barber, pet grooming, tutoring)",
-    "wellness": "Small wellness practice (massage, PT, yoga/pilates studio)",
-    "food": "Independent cafe, bakery or caterer"
+    "trades": "Local trade business (plumber, electrician, landscaper, roofer, concreter, builder)",
+    "trade-adjacent": "Home services (cleaner, removalist, pest control, mobile mechanic, handyman)",
+    "personal": "Personal services (dog grooming, tutoring, personal training, barber)"
    }
   }
  },
@@ -611,159 +610,319 @@
    "brand": "imn",
    "key": "trades:tarneit",
    "segment": "trades",
-   "segmentLabel": "Local trade business (plumber, electrician, builder, landscaper, cleaner)",
+   "segmentLabel": "Local trade business (plumber, electrician, landscaper, roofer, concreter, builder)",
    "region": "tarneit",
    "regionLabel": "Tarneit",
    "base": 100.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple website for their Tarneit business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
-   "evidence": "Google listing or Facebook page with a business email but no working website (or one that is old, not secure or broken on phones).",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Tarneit trade business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but a dead website link (old business.site page) or no website at all; or a site that is not secure or broken on phones.",
    "search": [
     "Tarneit plumber",
     "Tarneit electrician",
     "Tarneit landscaping",
-    "Tarneit cleaning service",
-    "Tarneit handyman"
+    "Tarneit roofing",
+    "Tarneit concreting"
    ]
   },
   {
    "brand": "imn",
    "key": "trades:point-cook",
    "segment": "trades",
-   "segmentLabel": "Local trade business (plumber, electrician, builder, landscaper, cleaner)",
+   "segmentLabel": "Local trade business (plumber, electrician, landscaper, roofer, concreter, builder)",
    "region": "point-cook",
    "regionLabel": "Point Cook",
    "base": 100.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple website for their Point Cook business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
-   "evidence": "Google listing or Facebook page with a business email but no working website (or one that is old, not secure or broken on phones).",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Point Cook trade business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but a dead website link (old business.site page) or no website at all; or a site that is not secure or broken on phones.",
    "search": [
     "Point Cook plumber",
     "Point Cook electrician",
     "Point Cook landscaping",
-    "Point Cook cleaning service",
-    "Point Cook handyman"
+    "Point Cook roofing",
+    "Point Cook concreting"
    ]
   },
   {
    "brand": "imn",
    "key": "trades:werribee",
    "segment": "trades",
-   "segmentLabel": "Local trade business (plumber, electrician, builder, landscaper, cleaner)",
+   "segmentLabel": "Local trade business (plumber, electrician, landscaper, roofer, concreter, builder)",
    "region": "werribee",
    "regionLabel": "Werribee",
    "base": 100.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple website for their Werribee business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
-   "evidence": "Google listing or Facebook page with a business email but no working website (or one that is old, not secure or broken on phones).",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Werribee trade business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but a dead website link (old business.site page) or no website at all; or a site that is not secure or broken on phones.",
    "search": [
     "Werribee plumber",
     "Werribee electrician",
     "Werribee landscaping",
-    "Werribee cleaning service",
-    "Werribee handyman"
+    "Werribee roofing",
+    "Werribee concreting"
    ]
   },
   {
    "brand": "imn",
    "key": "trades:craigieburn",
    "segment": "trades",
-   "segmentLabel": "Local trade business (plumber, electrician, builder, landscaper, cleaner)",
+   "segmentLabel": "Local trade business (plumber, electrician, landscaper, roofer, concreter, builder)",
    "region": "craigieburn",
    "regionLabel": "Craigieburn",
    "base": 100.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple website for their Craigieburn business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
-   "evidence": "Google listing or Facebook page with a business email but no working website (or one that is old, not secure or broken on phones).",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Craigieburn trade business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but a dead website link (old business.site page) or no website at all; or a site that is not secure or broken on phones.",
    "search": [
     "Craigieburn plumber",
     "Craigieburn electrician",
     "Craigieburn landscaping",
-    "Craigieburn cleaning service",
-    "Craigieburn handyman"
+    "Craigieburn roofing",
+    "Craigieburn concreting"
    ]
   },
   {
    "brand": "imn",
    "key": "trades:cranbourne",
    "segment": "trades",
-   "segmentLabel": "Local trade business (plumber, electrician, builder, landscaper, cleaner)",
+   "segmentLabel": "Local trade business (plumber, electrician, landscaper, roofer, concreter, builder)",
    "region": "cranbourne",
    "regionLabel": "Cranbourne",
    "base": 100.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple website for their Cranbourne business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
-   "evidence": "Google listing or Facebook page with a business email but no working website (or one that is old, not secure or broken on phones).",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Cranbourne trade business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but a dead website link (old business.site page) or no website at all; or a site that is not secure or broken on phones.",
    "search": [
     "Cranbourne plumber",
     "Cranbourne electrician",
     "Cranbourne landscaping",
-    "Cranbourne cleaning service",
-    "Cranbourne handyman"
+    "Cranbourne roofing",
+    "Cranbourne concreting"
    ]
   },
   {
    "brand": "imn",
    "key": "trades:pakenham",
    "segment": "trades",
-   "segmentLabel": "Local trade business (plumber, electrician, builder, landscaper, cleaner)",
+   "segmentLabel": "Local trade business (plumber, electrician, landscaper, roofer, concreter, builder)",
    "region": "pakenham",
    "regionLabel": "Pakenham",
    "base": 100.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple website for their Pakenham business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
-   "evidence": "Google listing or Facebook page with a business email but no working website (or one that is old, not secure or broken on phones).",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Pakenham trade business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but a dead website link (old business.site page) or no website at all; or a site that is not secure or broken on phones.",
    "search": [
     "Pakenham plumber",
     "Pakenham electrician",
     "Pakenham landscaping",
-    "Pakenham cleaning service",
-    "Pakenham handyman"
+    "Pakenham roofing",
+    "Pakenham concreting"
    ]
   },
   {
    "brand": "imn",
    "key": "trades:melton",
    "segment": "trades",
-   "segmentLabel": "Local trade business (plumber, electrician, builder, landscaper, cleaner)",
+   "segmentLabel": "Local trade business (plumber, electrician, landscaper, roofer, concreter, builder)",
    "region": "melton",
    "regionLabel": "Melton",
    "base": 100.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple website for their Melton business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
-   "evidence": "Google listing or Facebook page with a business email but no working website (or one that is old, not secure or broken on phones).",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Melton trade business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but a dead website link (old business.site page) or no website at all; or a site that is not secure or broken on phones.",
    "search": [
     "Melton plumber",
     "Melton electrician",
     "Melton landscaping",
-    "Melton cleaning service",
-    "Melton handyman"
+    "Melton roofing",
+    "Melton concreting"
    ]
   },
   {
    "brand": "imn",
    "key": "trades:clyde",
    "segment": "trades",
-   "segmentLabel": "Local trade business (plumber, electrician, builder, landscaper, cleaner)",
+   "segmentLabel": "Local trade business (plumber, electrician, landscaper, roofer, concreter, builder)",
    "region": "clyde",
    "regionLabel": "Clyde",
    "base": 100.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple website for their Clyde business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
-   "evidence": "Google listing or Facebook page with a business email but no working website (or one that is old, not secure or broken on phones).",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Clyde trade business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but a dead website link (old business.site page) or no website at all; or a site that is not secure or broken on phones.",
    "search": [
     "Clyde plumber",
     "Clyde electrician",
     "Clyde landscaping",
+    "Clyde roofing",
+    "Clyde concreting"
+   ]
+  },
+  {
+   "brand": "imn",
+   "key": "trade-adjacent:tarneit",
+   "segment": "trade-adjacent",
+   "segmentLabel": "Home services (cleaner, removalist, pest control, mobile mechanic, handyman)",
+   "region": "tarneit",
+   "regionLabel": "Tarneit",
+   "base": 90.0,
+   "why": "set in playbook",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Tarneit business; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but no working website, or a Facebook page used as the website.",
+   "search": [
+    "Tarneit cleaning service",
+    "Tarneit removalists",
+    "Tarneit pest control",
+    "Tarneit mobile mechanic",
+    "Tarneit handyman"
+   ]
+  },
+  {
+   "brand": "imn",
+   "key": "trade-adjacent:point-cook",
+   "segment": "trade-adjacent",
+   "segmentLabel": "Home services (cleaner, removalist, pest control, mobile mechanic, handyman)",
+   "region": "point-cook",
+   "regionLabel": "Point Cook",
+   "base": 90.0,
+   "why": "set in playbook",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Point Cook business; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but no working website, or a Facebook page used as the website.",
+   "search": [
+    "Point Cook cleaning service",
+    "Point Cook removalists",
+    "Point Cook pest control",
+    "Point Cook mobile mechanic",
+    "Point Cook handyman"
+   ]
+  },
+  {
+   "brand": "imn",
+   "key": "trade-adjacent:werribee",
+   "segment": "trade-adjacent",
+   "segmentLabel": "Home services (cleaner, removalist, pest control, mobile mechanic, handyman)",
+   "region": "werribee",
+   "regionLabel": "Werribee",
+   "base": 90.0,
+   "why": "set in playbook",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Werribee business; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but no working website, or a Facebook page used as the website.",
+   "search": [
+    "Werribee cleaning service",
+    "Werribee removalists",
+    "Werribee pest control",
+    "Werribee mobile mechanic",
+    "Werribee handyman"
+   ]
+  },
+  {
+   "brand": "imn",
+   "key": "trade-adjacent:craigieburn",
+   "segment": "trade-adjacent",
+   "segmentLabel": "Home services (cleaner, removalist, pest control, mobile mechanic, handyman)",
+   "region": "craigieburn",
+   "regionLabel": "Craigieburn",
+   "base": 90.0,
+   "why": "set in playbook",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Craigieburn business; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but no working website, or a Facebook page used as the website.",
+   "search": [
+    "Craigieburn cleaning service",
+    "Craigieburn removalists",
+    "Craigieburn pest control",
+    "Craigieburn mobile mechanic",
+    "Craigieburn handyman"
+   ]
+  },
+  {
+   "brand": "imn",
+   "key": "trade-adjacent:cranbourne",
+   "segment": "trade-adjacent",
+   "segmentLabel": "Home services (cleaner, removalist, pest control, mobile mechanic, handyman)",
+   "region": "cranbourne",
+   "regionLabel": "Cranbourne",
+   "base": 90.0,
+   "why": "set in playbook",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Cranbourne business; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but no working website, or a Facebook page used as the website.",
+   "search": [
+    "Cranbourne cleaning service",
+    "Cranbourne removalists",
+    "Cranbourne pest control",
+    "Cranbourne mobile mechanic",
+    "Cranbourne handyman"
+   ]
+  },
+  {
+   "brand": "imn",
+   "key": "trade-adjacent:pakenham",
+   "segment": "trade-adjacent",
+   "segmentLabel": "Home services (cleaner, removalist, pest control, mobile mechanic, handyman)",
+   "region": "pakenham",
+   "regionLabel": "Pakenham",
+   "base": 90.0,
+   "why": "set in playbook",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Pakenham business; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but no working website, or a Facebook page used as the website.",
+   "search": [
+    "Pakenham cleaning service",
+    "Pakenham removalists",
+    "Pakenham pest control",
+    "Pakenham mobile mechanic",
+    "Pakenham handyman"
+   ]
+  },
+  {
+   "brand": "imn",
+   "key": "trade-adjacent:melton",
+   "segment": "trade-adjacent",
+   "segmentLabel": "Home services (cleaner, removalist, pest control, mobile mechanic, handyman)",
+   "region": "melton",
+   "regionLabel": "Melton",
+   "base": 90.0,
+   "why": "set in playbook",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Melton business; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but no working website, or a Facebook page used as the website.",
+   "search": [
+    "Melton cleaning service",
+    "Melton removalists",
+    "Melton pest control",
+    "Melton mobile mechanic",
+    "Melton handyman"
+   ]
+  },
+  {
+   "brand": "imn",
+   "key": "trade-adjacent:clyde",
+   "segment": "trade-adjacent",
+   "segmentLabel": "Home services (cleaner, removalist, pest control, mobile mechanic, handyman)",
+   "region": "clyde",
+   "regionLabel": "Clyde",
+   "base": 90.0,
+   "why": "set in playbook",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Clyde business; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but no working website, or a Facebook page used as the website.",
+   "search": [
     "Clyde cleaning service",
+    "Clyde removalists",
+    "Clyde pest control",
+    "Clyde mobile mechanic",
     "Clyde handyman"
    ]
   },
@@ -771,139 +930,279 @@
    "brand": "imn",
    "key": "trades:hoppers-crossing",
    "segment": "trades",
-   "segmentLabel": "Local trade business (plumber, electrician, builder, landscaper, cleaner)",
+   "segmentLabel": "Local trade business (plumber, electrician, landscaper, roofer, concreter, builder)",
    "region": "hoppers-crossing",
    "regionLabel": "Hoppers Crossing",
    "base": 80.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple website for their Hoppers Crossing business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
-   "evidence": "Google listing or Facebook page with a business email but no working website (or one that is old, not secure or broken on phones).",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Hoppers Crossing trade business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but a dead website link (old business.site page) or no website at all; or a site that is not secure or broken on phones.",
    "search": [
     "Hoppers Crossing plumber",
     "Hoppers Crossing electrician",
     "Hoppers Crossing landscaping",
-    "Hoppers Crossing cleaning service",
-    "Hoppers Crossing handyman"
+    "Hoppers Crossing roofing",
+    "Hoppers Crossing concreting"
    ]
   },
   {
    "brand": "imn",
    "key": "trades:sunbury",
    "segment": "trades",
-   "segmentLabel": "Local trade business (plumber, electrician, builder, landscaper, cleaner)",
+   "segmentLabel": "Local trade business (plumber, electrician, landscaper, roofer, concreter, builder)",
    "region": "sunbury",
    "regionLabel": "Sunbury",
    "base": 80.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple website for their Sunbury business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
-   "evidence": "Google listing or Facebook page with a business email but no working website (or one that is old, not secure or broken on phones).",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Sunbury trade business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but a dead website link (old business.site page) or no website at all; or a site that is not secure or broken on phones.",
    "search": [
     "Sunbury plumber",
     "Sunbury electrician",
     "Sunbury landscaping",
-    "Sunbury cleaning service",
-    "Sunbury handyman"
+    "Sunbury roofing",
+    "Sunbury concreting"
    ]
   },
   {
    "brand": "imn",
    "key": "trades:frankston",
    "segment": "trades",
-   "segmentLabel": "Local trade business (plumber, electrician, builder, landscaper, cleaner)",
+   "segmentLabel": "Local trade business (plumber, electrician, landscaper, roofer, concreter, builder)",
    "region": "frankston",
    "regionLabel": "Frankston",
    "base": 80.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple website for their Frankston business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
-   "evidence": "Google listing or Facebook page with a business email but no working website (or one that is old, not secure or broken on phones).",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Frankston trade business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but a dead website link (old business.site page) or no website at all; or a site that is not secure or broken on phones.",
    "search": [
     "Frankston plumber",
     "Frankston electrician",
     "Frankston landscaping",
-    "Frankston cleaning service",
-    "Frankston handyman"
+    "Frankston roofing",
+    "Frankston concreting"
    ]
   },
   {
    "brand": "imn",
    "key": "trades:dandenong",
    "segment": "trades",
-   "segmentLabel": "Local trade business (plumber, electrician, builder, landscaper, cleaner)",
+   "segmentLabel": "Local trade business (plumber, electrician, landscaper, roofer, concreter, builder)",
    "region": "dandenong",
    "regionLabel": "Dandenong",
    "base": 80.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple website for their Dandenong business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
-   "evidence": "Google listing or Facebook page with a business email but no working website (or one that is old, not secure or broken on phones).",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Dandenong trade business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but a dead website link (old business.site page) or no website at all; or a site that is not secure or broken on phones.",
    "search": [
     "Dandenong plumber",
     "Dandenong electrician",
     "Dandenong landscaping",
-    "Dandenong cleaning service",
-    "Dandenong handyman"
+    "Dandenong roofing",
+    "Dandenong concreting"
    ]
   },
   {
    "brand": "imn",
    "key": "trades:ringwood",
    "segment": "trades",
-   "segmentLabel": "Local trade business (plumber, electrician, builder, landscaper, cleaner)",
+   "segmentLabel": "Local trade business (plumber, electrician, landscaper, roofer, concreter, builder)",
    "region": "ringwood",
    "regionLabel": "Ringwood",
    "base": 80.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple website for their Ringwood business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
-   "evidence": "Google listing or Facebook page with a business email but no working website (or one that is old, not secure or broken on phones).",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Ringwood trade business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but a dead website link (old business.site page) or no website at all; or a site that is not secure or broken on phones.",
    "search": [
     "Ringwood plumber",
     "Ringwood electrician",
     "Ringwood landscaping",
-    "Ringwood cleaning service",
-    "Ringwood handyman"
+    "Ringwood roofing",
+    "Ringwood concreting"
    ]
   },
   {
    "brand": "imn",
    "key": "trades:footscray",
    "segment": "trades",
-   "segmentLabel": "Local trade business (plumber, electrician, builder, landscaper, cleaner)",
+   "segmentLabel": "Local trade business (plumber, electrician, landscaper, roofer, concreter, builder)",
    "region": "footscray",
    "regionLabel": "Footscray",
    "base": 80.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple website for their Footscray business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
-   "evidence": "Google listing or Facebook page with a business email but no working website (or one that is old, not secure or broken on phones).",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Footscray trade business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but a dead website link (old business.site page) or no website at all; or a site that is not secure or broken on phones.",
    "search": [
     "Footscray plumber",
     "Footscray electrician",
     "Footscray landscaping",
-    "Footscray cleaning service",
-    "Footscray handyman"
+    "Footscray roofing",
+    "Footscray concreting"
    ]
   },
   {
    "brand": "imn",
    "key": "trades:geelong",
    "segment": "trades",
-   "segmentLabel": "Local trade business (plumber, electrician, builder, landscaper, cleaner)",
+   "segmentLabel": "Local trade business (plumber, electrician, landscaper, roofer, concreter, builder)",
    "region": "geelong",
    "regionLabel": "Geelong",
    "base": 80.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple website for their Geelong business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
-   "evidence": "Google listing or Facebook page with a business email but no working website (or one that is old, not secure or broken on phones).",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Geelong trade business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but a dead website link (old business.site page) or no website at all; or a site that is not secure or broken on phones.",
    "search": [
     "Geelong plumber",
     "Geelong electrician",
     "Geelong landscaping",
+    "Geelong roofing",
+    "Geelong concreting"
+   ]
+  },
+  {
+   "brand": "imn",
+   "key": "trade-adjacent:hoppers-crossing",
+   "segment": "trade-adjacent",
+   "segmentLabel": "Home services (cleaner, removalist, pest control, mobile mechanic, handyman)",
+   "region": "hoppers-crossing",
+   "regionLabel": "Hoppers Crossing",
+   "base": 72.0,
+   "why": "set in playbook",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Hoppers Crossing business; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but no working website, or a Facebook page used as the website.",
+   "search": [
+    "Hoppers Crossing cleaning service",
+    "Hoppers Crossing removalists",
+    "Hoppers Crossing pest control",
+    "Hoppers Crossing mobile mechanic",
+    "Hoppers Crossing handyman"
+   ]
+  },
+  {
+   "brand": "imn",
+   "key": "trade-adjacent:sunbury",
+   "segment": "trade-adjacent",
+   "segmentLabel": "Home services (cleaner, removalist, pest control, mobile mechanic, handyman)",
+   "region": "sunbury",
+   "regionLabel": "Sunbury",
+   "base": 72.0,
+   "why": "set in playbook",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Sunbury business; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but no working website, or a Facebook page used as the website.",
+   "search": [
+    "Sunbury cleaning service",
+    "Sunbury removalists",
+    "Sunbury pest control",
+    "Sunbury mobile mechanic",
+    "Sunbury handyman"
+   ]
+  },
+  {
+   "brand": "imn",
+   "key": "trade-adjacent:frankston",
+   "segment": "trade-adjacent",
+   "segmentLabel": "Home services (cleaner, removalist, pest control, mobile mechanic, handyman)",
+   "region": "frankston",
+   "regionLabel": "Frankston",
+   "base": 72.0,
+   "why": "set in playbook",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Frankston business; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but no working website, or a Facebook page used as the website.",
+   "search": [
+    "Frankston cleaning service",
+    "Frankston removalists",
+    "Frankston pest control",
+    "Frankston mobile mechanic",
+    "Frankston handyman"
+   ]
+  },
+  {
+   "brand": "imn",
+   "key": "trade-adjacent:dandenong",
+   "segment": "trade-adjacent",
+   "segmentLabel": "Home services (cleaner, removalist, pest control, mobile mechanic, handyman)",
+   "region": "dandenong",
+   "regionLabel": "Dandenong",
+   "base": 72.0,
+   "why": "set in playbook",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Dandenong business; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but no working website, or a Facebook page used as the website.",
+   "search": [
+    "Dandenong cleaning service",
+    "Dandenong removalists",
+    "Dandenong pest control",
+    "Dandenong mobile mechanic",
+    "Dandenong handyman"
+   ]
+  },
+  {
+   "brand": "imn",
+   "key": "trade-adjacent:ringwood",
+   "segment": "trade-adjacent",
+   "segmentLabel": "Home services (cleaner, removalist, pest control, mobile mechanic, handyman)",
+   "region": "ringwood",
+   "regionLabel": "Ringwood",
+   "base": 72.0,
+   "why": "set in playbook",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Ringwood business; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but no working website, or a Facebook page used as the website.",
+   "search": [
+    "Ringwood cleaning service",
+    "Ringwood removalists",
+    "Ringwood pest control",
+    "Ringwood mobile mechanic",
+    "Ringwood handyman"
+   ]
+  },
+  {
+   "brand": "imn",
+   "key": "trade-adjacent:footscray",
+   "segment": "trade-adjacent",
+   "segmentLabel": "Home services (cleaner, removalist, pest control, mobile mechanic, handyman)",
+   "region": "footscray",
+   "regionLabel": "Footscray",
+   "base": 72.0,
+   "why": "set in playbook",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Footscray business; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but no working website, or a Facebook page used as the website.",
+   "search": [
+    "Footscray cleaning service",
+    "Footscray removalists",
+    "Footscray pest control",
+    "Footscray mobile mechanic",
+    "Footscray handyman"
+   ]
+  },
+  {
+   "brand": "imn",
+   "key": "trade-adjacent:geelong",
+   "segment": "trade-adjacent",
+   "segmentLabel": "Home services (cleaner, removalist, pest control, mobile mechanic, handyman)",
+   "region": "geelong",
+   "regionLabel": "Geelong",
+   "base": 72.0,
+   "why": "set in playbook",
+   "page": "https://imnetwork.com.au/websites-for-tradies",
+   "offer": "A free preview of a simple website for their Geelong business; $99 + GST a month if they want it, no setup fee, no lock-in.",
+   "evidence": "Google listing with reviews but no working website, or a Facebook page used as the website.",
+   "search": [
     "Geelong cleaning service",
+    "Geelong removalists",
+    "Geelong pest control",
+    "Geelong mobile mechanic",
     "Geelong handyman"
    ]
   },
@@ -911,840 +1210,285 @@
    "brand": "imn",
    "key": "personal:tarneit",
    "segment": "personal",
-   "segmentLabel": "Personal services (hair, beauty, barber, pet grooming, tutoring)",
+   "segmentLabel": "Personal services (dog grooming, tutoring, personal training, barber)",
    "region": "tarneit",
    "regionLabel": "Tarneit",
-   "base": 80.0,
+   "base": 70.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
+   "page": "https://imnetwork.com.au/pricing",
    "offer": "A free preview of a simple website with services, prices, hours and a booking link; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly.",
+   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly. Skip registered health practitioners.",
    "search": [
-    "Tarneit hair salon",
-    "Tarneit barber",
-    "Tarneit beauty salon",
     "Tarneit dog grooming",
-    "Tarneit tutoring"
+    "Tarneit tutoring",
+    "Tarneit personal trainer",
+    "Tarneit barber"
    ]
   },
   {
    "brand": "imn",
    "key": "personal:point-cook",
    "segment": "personal",
-   "segmentLabel": "Personal services (hair, beauty, barber, pet grooming, tutoring)",
+   "segmentLabel": "Personal services (dog grooming, tutoring, personal training, barber)",
    "region": "point-cook",
    "regionLabel": "Point Cook",
-   "base": 80.0,
+   "base": 70.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
+   "page": "https://imnetwork.com.au/pricing",
    "offer": "A free preview of a simple website with services, prices, hours and a booking link; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly.",
+   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly. Skip registered health practitioners.",
    "search": [
-    "Point Cook hair salon",
-    "Point Cook barber",
-    "Point Cook beauty salon",
     "Point Cook dog grooming",
-    "Point Cook tutoring"
+    "Point Cook tutoring",
+    "Point Cook personal trainer",
+    "Point Cook barber"
    ]
   },
   {
    "brand": "imn",
    "key": "personal:werribee",
    "segment": "personal",
-   "segmentLabel": "Personal services (hair, beauty, barber, pet grooming, tutoring)",
+   "segmentLabel": "Personal services (dog grooming, tutoring, personal training, barber)",
    "region": "werribee",
    "regionLabel": "Werribee",
-   "base": 80.0,
+   "base": 70.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
+   "page": "https://imnetwork.com.au/pricing",
    "offer": "A free preview of a simple website with services, prices, hours and a booking link; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly.",
+   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly. Skip registered health practitioners.",
    "search": [
-    "Werribee hair salon",
-    "Werribee barber",
-    "Werribee beauty salon",
     "Werribee dog grooming",
-    "Werribee tutoring"
+    "Werribee tutoring",
+    "Werribee personal trainer",
+    "Werribee barber"
    ]
   },
   {
    "brand": "imn",
    "key": "personal:craigieburn",
    "segment": "personal",
-   "segmentLabel": "Personal services (hair, beauty, barber, pet grooming, tutoring)",
+   "segmentLabel": "Personal services (dog grooming, tutoring, personal training, barber)",
    "region": "craigieburn",
    "regionLabel": "Craigieburn",
-   "base": 80.0,
+   "base": 70.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
+   "page": "https://imnetwork.com.au/pricing",
    "offer": "A free preview of a simple website with services, prices, hours and a booking link; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly.",
+   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly. Skip registered health practitioners.",
    "search": [
-    "Craigieburn hair salon",
-    "Craigieburn barber",
-    "Craigieburn beauty salon",
     "Craigieburn dog grooming",
-    "Craigieburn tutoring"
+    "Craigieburn tutoring",
+    "Craigieburn personal trainer",
+    "Craigieburn barber"
    ]
   },
   {
    "brand": "imn",
    "key": "personal:cranbourne",
    "segment": "personal",
-   "segmentLabel": "Personal services (hair, beauty, barber, pet grooming, tutoring)",
+   "segmentLabel": "Personal services (dog grooming, tutoring, personal training, barber)",
    "region": "cranbourne",
    "regionLabel": "Cranbourne",
-   "base": 80.0,
+   "base": 70.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
+   "page": "https://imnetwork.com.au/pricing",
    "offer": "A free preview of a simple website with services, prices, hours and a booking link; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly.",
+   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly. Skip registered health practitioners.",
    "search": [
-    "Cranbourne hair salon",
-    "Cranbourne barber",
-    "Cranbourne beauty salon",
     "Cranbourne dog grooming",
-    "Cranbourne tutoring"
+    "Cranbourne tutoring",
+    "Cranbourne personal trainer",
+    "Cranbourne barber"
    ]
   },
   {
    "brand": "imn",
    "key": "personal:pakenham",
    "segment": "personal",
-   "segmentLabel": "Personal services (hair, beauty, barber, pet grooming, tutoring)",
+   "segmentLabel": "Personal services (dog grooming, tutoring, personal training, barber)",
    "region": "pakenham",
    "regionLabel": "Pakenham",
-   "base": 80.0,
+   "base": 70.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
+   "page": "https://imnetwork.com.au/pricing",
    "offer": "A free preview of a simple website with services, prices, hours and a booking link; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly.",
+   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly. Skip registered health practitioners.",
    "search": [
-    "Pakenham hair salon",
-    "Pakenham barber",
-    "Pakenham beauty salon",
     "Pakenham dog grooming",
-    "Pakenham tutoring"
+    "Pakenham tutoring",
+    "Pakenham personal trainer",
+    "Pakenham barber"
    ]
   },
   {
    "brand": "imn",
    "key": "personal:melton",
    "segment": "personal",
-   "segmentLabel": "Personal services (hair, beauty, barber, pet grooming, tutoring)",
+   "segmentLabel": "Personal services (dog grooming, tutoring, personal training, barber)",
    "region": "melton",
    "regionLabel": "Melton",
-   "base": 80.0,
+   "base": 70.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
+   "page": "https://imnetwork.com.au/pricing",
    "offer": "A free preview of a simple website with services, prices, hours and a booking link; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly.",
+   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly. Skip registered health practitioners.",
    "search": [
-    "Melton hair salon",
-    "Melton barber",
-    "Melton beauty salon",
     "Melton dog grooming",
-    "Melton tutoring"
+    "Melton tutoring",
+    "Melton personal trainer",
+    "Melton barber"
    ]
   },
   {
    "brand": "imn",
    "key": "personal:clyde",
    "segment": "personal",
-   "segmentLabel": "Personal services (hair, beauty, barber, pet grooming, tutoring)",
+   "segmentLabel": "Personal services (dog grooming, tutoring, personal training, barber)",
    "region": "clyde",
    "regionLabel": "Clyde",
-   "base": 80.0,
+   "base": 70.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
+   "page": "https://imnetwork.com.au/pricing",
    "offer": "A free preview of a simple website with services, prices, hours and a booking link; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly.",
+   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly. Skip registered health practitioners.",
    "search": [
-    "Clyde hair salon",
-    "Clyde barber",
-    "Clyde beauty salon",
     "Clyde dog grooming",
-    "Clyde tutoring"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "wellness:tarneit",
-   "segment": "wellness",
-   "segmentLabel": "Small wellness practice (massage, PT, yoga/pilates studio)",
-   "region": "tarneit",
-   "regionLabel": "Tarneit",
-   "base": 70.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a clean site with services, classes and contact; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Sole-operator practice with a weak or missing site.",
-   "search": [
-    "Tarneit remedial massage",
-    "Tarneit personal trainer",
-    "Tarneit pilates studio"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "wellness:point-cook",
-   "segment": "wellness",
-   "segmentLabel": "Small wellness practice (massage, PT, yoga/pilates studio)",
-   "region": "point-cook",
-   "regionLabel": "Point Cook",
-   "base": 70.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a clean site with services, classes and contact; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Sole-operator practice with a weak or missing site.",
-   "search": [
-    "Point Cook remedial massage",
-    "Point Cook personal trainer",
-    "Point Cook pilates studio"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "wellness:werribee",
-   "segment": "wellness",
-   "segmentLabel": "Small wellness practice (massage, PT, yoga/pilates studio)",
-   "region": "werribee",
-   "regionLabel": "Werribee",
-   "base": 70.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a clean site with services, classes and contact; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Sole-operator practice with a weak or missing site.",
-   "search": [
-    "Werribee remedial massage",
-    "Werribee personal trainer",
-    "Werribee pilates studio"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "wellness:craigieburn",
-   "segment": "wellness",
-   "segmentLabel": "Small wellness practice (massage, PT, yoga/pilates studio)",
-   "region": "craigieburn",
-   "regionLabel": "Craigieburn",
-   "base": 70.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a clean site with services, classes and contact; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Sole-operator practice with a weak or missing site.",
-   "search": [
-    "Craigieburn remedial massage",
-    "Craigieburn personal trainer",
-    "Craigieburn pilates studio"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "wellness:cranbourne",
-   "segment": "wellness",
-   "segmentLabel": "Small wellness practice (massage, PT, yoga/pilates studio)",
-   "region": "cranbourne",
-   "regionLabel": "Cranbourne",
-   "base": 70.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a clean site with services, classes and contact; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Sole-operator practice with a weak or missing site.",
-   "search": [
-    "Cranbourne remedial massage",
-    "Cranbourne personal trainer",
-    "Cranbourne pilates studio"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "wellness:pakenham",
-   "segment": "wellness",
-   "segmentLabel": "Small wellness practice (massage, PT, yoga/pilates studio)",
-   "region": "pakenham",
-   "regionLabel": "Pakenham",
-   "base": 70.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a clean site with services, classes and contact; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Sole-operator practice with a weak or missing site.",
-   "search": [
-    "Pakenham remedial massage",
-    "Pakenham personal trainer",
-    "Pakenham pilates studio"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "wellness:melton",
-   "segment": "wellness",
-   "segmentLabel": "Small wellness practice (massage, PT, yoga/pilates studio)",
-   "region": "melton",
-   "regionLabel": "Melton",
-   "base": 70.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a clean site with services, classes and contact; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Sole-operator practice with a weak or missing site.",
-   "search": [
-    "Melton remedial massage",
-    "Melton personal trainer",
-    "Melton pilates studio"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "wellness:clyde",
-   "segment": "wellness",
-   "segmentLabel": "Small wellness practice (massage, PT, yoga/pilates studio)",
-   "region": "clyde",
-   "regionLabel": "Clyde",
-   "base": 70.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a clean site with services, classes and contact; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Sole-operator practice with a weak or missing site.",
-   "search": [
-    "Clyde remedial massage",
+    "Clyde tutoring",
     "Clyde personal trainer",
-    "Clyde pilates studio"
+    "Clyde barber"
    ]
   },
   {
    "brand": "imn",
    "key": "personal:hoppers-crossing",
    "segment": "personal",
-   "segmentLabel": "Personal services (hair, beauty, barber, pet grooming, tutoring)",
+   "segmentLabel": "Personal services (dog grooming, tutoring, personal training, barber)",
    "region": "hoppers-crossing",
    "regionLabel": "Hoppers Crossing",
-   "base": 64.0,
+   "base": 56.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
+   "page": "https://imnetwork.com.au/pricing",
    "offer": "A free preview of a simple website with services, prices, hours and a booking link; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly.",
+   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly. Skip registered health practitioners.",
    "search": [
-    "Hoppers Crossing hair salon",
-    "Hoppers Crossing barber",
-    "Hoppers Crossing beauty salon",
     "Hoppers Crossing dog grooming",
-    "Hoppers Crossing tutoring"
+    "Hoppers Crossing tutoring",
+    "Hoppers Crossing personal trainer",
+    "Hoppers Crossing barber"
    ]
   },
   {
    "brand": "imn",
    "key": "personal:sunbury",
    "segment": "personal",
-   "segmentLabel": "Personal services (hair, beauty, barber, pet grooming, tutoring)",
+   "segmentLabel": "Personal services (dog grooming, tutoring, personal training, barber)",
    "region": "sunbury",
    "regionLabel": "Sunbury",
-   "base": 64.0,
+   "base": 56.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
+   "page": "https://imnetwork.com.au/pricing",
    "offer": "A free preview of a simple website with services, prices, hours and a booking link; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly.",
+   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly. Skip registered health practitioners.",
    "search": [
-    "Sunbury hair salon",
-    "Sunbury barber",
-    "Sunbury beauty salon",
     "Sunbury dog grooming",
-    "Sunbury tutoring"
+    "Sunbury tutoring",
+    "Sunbury personal trainer",
+    "Sunbury barber"
    ]
   },
   {
    "brand": "imn",
    "key": "personal:frankston",
    "segment": "personal",
-   "segmentLabel": "Personal services (hair, beauty, barber, pet grooming, tutoring)",
+   "segmentLabel": "Personal services (dog grooming, tutoring, personal training, barber)",
    "region": "frankston",
    "regionLabel": "Frankston",
-   "base": 64.0,
+   "base": 56.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
+   "page": "https://imnetwork.com.au/pricing",
    "offer": "A free preview of a simple website with services, prices, hours and a booking link; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly.",
+   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly. Skip registered health practitioners.",
    "search": [
-    "Frankston hair salon",
-    "Frankston barber",
-    "Frankston beauty salon",
     "Frankston dog grooming",
-    "Frankston tutoring"
+    "Frankston tutoring",
+    "Frankston personal trainer",
+    "Frankston barber"
    ]
   },
   {
    "brand": "imn",
    "key": "personal:dandenong",
    "segment": "personal",
-   "segmentLabel": "Personal services (hair, beauty, barber, pet grooming, tutoring)",
+   "segmentLabel": "Personal services (dog grooming, tutoring, personal training, barber)",
    "region": "dandenong",
    "regionLabel": "Dandenong",
-   "base": 64.0,
+   "base": 56.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
+   "page": "https://imnetwork.com.au/pricing",
    "offer": "A free preview of a simple website with services, prices, hours and a booking link; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly.",
+   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly. Skip registered health practitioners.",
    "search": [
-    "Dandenong hair salon",
-    "Dandenong barber",
-    "Dandenong beauty salon",
     "Dandenong dog grooming",
-    "Dandenong tutoring"
+    "Dandenong tutoring",
+    "Dandenong personal trainer",
+    "Dandenong barber"
    ]
   },
   {
    "brand": "imn",
    "key": "personal:ringwood",
    "segment": "personal",
-   "segmentLabel": "Personal services (hair, beauty, barber, pet grooming, tutoring)",
+   "segmentLabel": "Personal services (dog grooming, tutoring, personal training, barber)",
    "region": "ringwood",
    "regionLabel": "Ringwood",
-   "base": 64.0,
+   "base": 56.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
+   "page": "https://imnetwork.com.au/pricing",
    "offer": "A free preview of a simple website with services, prices, hours and a booking link; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly.",
+   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly. Skip registered health practitioners.",
    "search": [
-    "Ringwood hair salon",
-    "Ringwood barber",
-    "Ringwood beauty salon",
     "Ringwood dog grooming",
-    "Ringwood tutoring"
+    "Ringwood tutoring",
+    "Ringwood personal trainer",
+    "Ringwood barber"
    ]
   },
   {
    "brand": "imn",
    "key": "personal:footscray",
    "segment": "personal",
-   "segmentLabel": "Personal services (hair, beauty, barber, pet grooming, tutoring)",
+   "segmentLabel": "Personal services (dog grooming, tutoring, personal training, barber)",
    "region": "footscray",
    "regionLabel": "Footscray",
-   "base": 64.0,
+   "base": 56.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
+   "page": "https://imnetwork.com.au/pricing",
    "offer": "A free preview of a simple website with services, prices, hours and a booking link; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly.",
+   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly. Skip registered health practitioners.",
    "search": [
-    "Footscray hair salon",
-    "Footscray barber",
-    "Footscray beauty salon",
     "Footscray dog grooming",
-    "Footscray tutoring"
+    "Footscray tutoring",
+    "Footscray personal trainer",
+    "Footscray barber"
    ]
   },
   {
    "brand": "imn",
    "key": "personal:geelong",
    "segment": "personal",
-   "segmentLabel": "Personal services (hair, beauty, barber, pet grooming, tutoring)",
+   "segmentLabel": "Personal services (dog grooming, tutoring, personal training, barber)",
    "region": "geelong",
    "regionLabel": "Geelong",
-   "base": 64.0,
+   "base": 56.0,
    "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
+   "page": "https://imnetwork.com.au/pricing",
    "offer": "A free preview of a simple website with services, prices, hours and a booking link; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly.",
+   "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly. Skip registered health practitioners.",
    "search": [
-    "Geelong hair salon",
-    "Geelong barber",
-    "Geelong beauty salon",
     "Geelong dog grooming",
-    "Geelong tutoring"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "wellness:hoppers-crossing",
-   "segment": "wellness",
-   "segmentLabel": "Small wellness practice (massage, PT, yoga/pilates studio)",
-   "region": "hoppers-crossing",
-   "regionLabel": "Hoppers Crossing",
-   "base": 56.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a clean site with services, classes and contact; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Sole-operator practice with a weak or missing site.",
-   "search": [
-    "Hoppers Crossing remedial massage",
-    "Hoppers Crossing personal trainer",
-    "Hoppers Crossing pilates studio"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "wellness:sunbury",
-   "segment": "wellness",
-   "segmentLabel": "Small wellness practice (massage, PT, yoga/pilates studio)",
-   "region": "sunbury",
-   "regionLabel": "Sunbury",
-   "base": 56.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a clean site with services, classes and contact; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Sole-operator practice with a weak or missing site.",
-   "search": [
-    "Sunbury remedial massage",
-    "Sunbury personal trainer",
-    "Sunbury pilates studio"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "wellness:frankston",
-   "segment": "wellness",
-   "segmentLabel": "Small wellness practice (massage, PT, yoga/pilates studio)",
-   "region": "frankston",
-   "regionLabel": "Frankston",
-   "base": 56.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a clean site with services, classes and contact; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Sole-operator practice with a weak or missing site.",
-   "search": [
-    "Frankston remedial massage",
-    "Frankston personal trainer",
-    "Frankston pilates studio"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "wellness:dandenong",
-   "segment": "wellness",
-   "segmentLabel": "Small wellness practice (massage, PT, yoga/pilates studio)",
-   "region": "dandenong",
-   "regionLabel": "Dandenong",
-   "base": 56.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a clean site with services, classes and contact; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Sole-operator practice with a weak or missing site.",
-   "search": [
-    "Dandenong remedial massage",
-    "Dandenong personal trainer",
-    "Dandenong pilates studio"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "wellness:ringwood",
-   "segment": "wellness",
-   "segmentLabel": "Small wellness practice (massage, PT, yoga/pilates studio)",
-   "region": "ringwood",
-   "regionLabel": "Ringwood",
-   "base": 56.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a clean site with services, classes and contact; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Sole-operator practice with a weak or missing site.",
-   "search": [
-    "Ringwood remedial massage",
-    "Ringwood personal trainer",
-    "Ringwood pilates studio"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "wellness:footscray",
-   "segment": "wellness",
-   "segmentLabel": "Small wellness practice (massage, PT, yoga/pilates studio)",
-   "region": "footscray",
-   "regionLabel": "Footscray",
-   "base": 56.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a clean site with services, classes and contact; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Sole-operator practice with a weak or missing site.",
-   "search": [
-    "Footscray remedial massage",
-    "Footscray personal trainer",
-    "Footscray pilates studio"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "wellness:geelong",
-   "segment": "wellness",
-   "segmentLabel": "Small wellness practice (massage, PT, yoga/pilates studio)",
-   "region": "geelong",
-   "regionLabel": "Geelong",
-   "base": 56.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a clean site with services, classes and contact; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Sole-operator practice with a weak or missing site.",
-   "search": [
-    "Geelong remedial massage",
+    "Geelong tutoring",
     "Geelong personal trainer",
-    "Geelong pilates studio"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "food:tarneit",
-   "segment": "food",
-   "segmentLabel": "Independent cafe, bakery or caterer",
-   "region": "tarneit",
-   "regionLabel": "Tarneit",
-   "base": 50.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple site with menu, hours and location; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Menu only on Facebook/Instagram, or no site at all.",
-   "search": [
-    "Tarneit cafe",
-    "Tarneit bakery",
-    "Tarneit catering"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "food:point-cook",
-   "segment": "food",
-   "segmentLabel": "Independent cafe, bakery or caterer",
-   "region": "point-cook",
-   "regionLabel": "Point Cook",
-   "base": 50.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple site with menu, hours and location; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Menu only on Facebook/Instagram, or no site at all.",
-   "search": [
-    "Point Cook cafe",
-    "Point Cook bakery",
-    "Point Cook catering"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "food:werribee",
-   "segment": "food",
-   "segmentLabel": "Independent cafe, bakery or caterer",
-   "region": "werribee",
-   "regionLabel": "Werribee",
-   "base": 50.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple site with menu, hours and location; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Menu only on Facebook/Instagram, or no site at all.",
-   "search": [
-    "Werribee cafe",
-    "Werribee bakery",
-    "Werribee catering"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "food:craigieburn",
-   "segment": "food",
-   "segmentLabel": "Independent cafe, bakery or caterer",
-   "region": "craigieburn",
-   "regionLabel": "Craigieburn",
-   "base": 50.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple site with menu, hours and location; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Menu only on Facebook/Instagram, or no site at all.",
-   "search": [
-    "Craigieburn cafe",
-    "Craigieburn bakery",
-    "Craigieburn catering"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "food:cranbourne",
-   "segment": "food",
-   "segmentLabel": "Independent cafe, bakery or caterer",
-   "region": "cranbourne",
-   "regionLabel": "Cranbourne",
-   "base": 50.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple site with menu, hours and location; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Menu only on Facebook/Instagram, or no site at all.",
-   "search": [
-    "Cranbourne cafe",
-    "Cranbourne bakery",
-    "Cranbourne catering"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "food:pakenham",
-   "segment": "food",
-   "segmentLabel": "Independent cafe, bakery or caterer",
-   "region": "pakenham",
-   "regionLabel": "Pakenham",
-   "base": 50.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple site with menu, hours and location; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Menu only on Facebook/Instagram, or no site at all.",
-   "search": [
-    "Pakenham cafe",
-    "Pakenham bakery",
-    "Pakenham catering"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "food:melton",
-   "segment": "food",
-   "segmentLabel": "Independent cafe, bakery or caterer",
-   "region": "melton",
-   "regionLabel": "Melton",
-   "base": 50.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple site with menu, hours and location; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Menu only on Facebook/Instagram, or no site at all.",
-   "search": [
-    "Melton cafe",
-    "Melton bakery",
-    "Melton catering"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "food:clyde",
-   "segment": "food",
-   "segmentLabel": "Independent cafe, bakery or caterer",
-   "region": "clyde",
-   "regionLabel": "Clyde",
-   "base": 50.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple site with menu, hours and location; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Menu only on Facebook/Instagram, or no site at all.",
-   "search": [
-    "Clyde cafe",
-    "Clyde bakery",
-    "Clyde catering"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "food:hoppers-crossing",
-   "segment": "food",
-   "segmentLabel": "Independent cafe, bakery or caterer",
-   "region": "hoppers-crossing",
-   "regionLabel": "Hoppers Crossing",
-   "base": 40.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple site with menu, hours and location; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Menu only on Facebook/Instagram, or no site at all.",
-   "search": [
-    "Hoppers Crossing cafe",
-    "Hoppers Crossing bakery",
-    "Hoppers Crossing catering"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "food:sunbury",
-   "segment": "food",
-   "segmentLabel": "Independent cafe, bakery or caterer",
-   "region": "sunbury",
-   "regionLabel": "Sunbury",
-   "base": 40.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple site with menu, hours and location; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Menu only on Facebook/Instagram, or no site at all.",
-   "search": [
-    "Sunbury cafe",
-    "Sunbury bakery",
-    "Sunbury catering"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "food:frankston",
-   "segment": "food",
-   "segmentLabel": "Independent cafe, bakery or caterer",
-   "region": "frankston",
-   "regionLabel": "Frankston",
-   "base": 40.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple site with menu, hours and location; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Menu only on Facebook/Instagram, or no site at all.",
-   "search": [
-    "Frankston cafe",
-    "Frankston bakery",
-    "Frankston catering"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "food:dandenong",
-   "segment": "food",
-   "segmentLabel": "Independent cafe, bakery or caterer",
-   "region": "dandenong",
-   "regionLabel": "Dandenong",
-   "base": 40.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple site with menu, hours and location; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Menu only on Facebook/Instagram, or no site at all.",
-   "search": [
-    "Dandenong cafe",
-    "Dandenong bakery",
-    "Dandenong catering"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "food:ringwood",
-   "segment": "food",
-   "segmentLabel": "Independent cafe, bakery or caterer",
-   "region": "ringwood",
-   "regionLabel": "Ringwood",
-   "base": 40.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple site with menu, hours and location; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Menu only on Facebook/Instagram, or no site at all.",
-   "search": [
-    "Ringwood cafe",
-    "Ringwood bakery",
-    "Ringwood catering"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "food:footscray",
-   "segment": "food",
-   "segmentLabel": "Independent cafe, bakery or caterer",
-   "region": "footscray",
-   "regionLabel": "Footscray",
-   "base": 40.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple site with menu, hours and location; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Menu only on Facebook/Instagram, or no site at all.",
-   "search": [
-    "Footscray cafe",
-    "Footscray bakery",
-    "Footscray catering"
-   ]
-  },
-  {
-   "brand": "imn",
-   "key": "food:geelong",
-   "segment": "food",
-   "segmentLabel": "Independent cafe, bakery or caterer",
-   "region": "geelong",
-   "regionLabel": "Geelong",
-   "base": 40.0,
-   "why": "set in playbook",
-   "page": "https://imnetwork.com.au",
-   "offer": "A free preview of a simple site with menu, hours and location; $99 + GST a month if they want it, no lock-in.",
-   "evidence": "Menu only on Facebook/Instagram, or no site at all.",
-   "search": [
-    "Geelong cafe",
-    "Geelong bakery",
-    "Geelong catering"
+    "Geelong barber"
    ]
   },
   {

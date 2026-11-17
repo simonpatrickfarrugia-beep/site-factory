@@ -23,6 +23,8 @@ export default defineBrand({
     { label: 'Get started', href: '/get-started' },
   ],
   footer: [
+    { label: 'Websites for tradies', href: '/websites-for-tradies' },
+    { label: 'Website costs', href: '/how-much-does-a-website-cost' },
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
     { label: 'Terms', href: '/terms' },

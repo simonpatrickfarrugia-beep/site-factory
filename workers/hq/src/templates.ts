@@ -131,6 +131,9 @@ I came across {organisation} while looking at {region} businesses on Google, and
 
 If it's useful, I can put together a free preview of a simple site for you, built from what you already publish: your services, area, hours and how to reach you. No cost to look.
 
+Here's what's included and how it works:
+{page}
+
 If you like it, it's $99 + GST a month with hosting, care and changes included, no setup fee and no lock-in contract. If not, no worries at all.
 
 Would you like me to put one together?

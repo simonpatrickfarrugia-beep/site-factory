@@ -64,3 +64,20 @@ export interface Glance {
   since: string;
   nextCheck: string;
 }
+
+/** SEO guide pages (data/imn/guides.json). */
+export interface Guide {
+  slug: string;
+  seoTitle: string;
+  description: string;
+  kicker: string;
+  title: string;
+  lede: string;
+  sections: { h: string; p?: string[]; list?: string[] }[];
+  table?: { caption: string; head: string[]; rows: string[][]; note: string };
+  example?: { label: string; name: string; tagline: string; call: string; bits: string[]; services: string[] };
+  links: { path: string; t: string; d: string }[];
+  faq: Faq[];
+  sources: { t: string; url: string; checked: string }[];
+}
+export interface Guides { guides: Guide[] }

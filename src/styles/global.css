@@ -1643,3 +1643,33 @@ main { display: block; }
 .imn-split--glance { align-items: center; }
 .imn-gap { margin-top: 2.5rem; }
 .imn-terms h2 { font-size: 1.25rem; margin: 1.8rem 0 0.4rem; }
+
+/* IMN guide pages (tradie hub, trade pages, price guide) */
+.imn-guide .imn-prose section + section { margin-top: 2.2rem; }
+.imn-guide .imn-prose h2 { font-size: clamp(1.35rem, 3vw, 1.75rem); margin-bottom: 0.6rem; }
+.imn-guide .imn-ticks { margin: 0.8rem 0 1rem; }
+.imn-guide__links, .imn-guide__faq { margin-top: 3rem; }
+.imn-guide__sources { margin-top: 2.5rem; }
+.imn-guide__sources ul { padding-left: 1.1rem; }
+[data-theme='network'] .imn-card--link { display: block; text-decoration: none; transition: border-color .15s; }
+[data-theme='network'] .imn-card--link:hover { border-color: var(--coin); }
+.imn-tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+.imn-table { width: 100%; border-collapse: collapse; font-size: var(--step--1); min-width: 38rem; }
+.imn-table caption { text-align: left; padding: 0.9rem 1rem 0.3rem; font-weight: 700; }
+.imn-table th, .imn-table td { text-align: left; vertical-align: top; padding: 0.7rem 1rem; border-top: 1px solid var(--line); }
+.imn-table thead th { border-top: 0; color: var(--muted); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.imn-table__us { background: color-mix(in srgb, var(--coin) 18%, white); font-weight: 700; }
+.imn-mock { margin: 1.6rem 0 0.4rem; max-width: 32rem; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--panel); box-shadow: 0 10px 30px rgba(18,26,43,.08); }
+.imn-mock__label { padding: 0.45rem 0.9rem; font: 700 0.75rem var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--line); }
+.imn-mock__bar { display: flex; gap: 6px; padding: 0.5rem 0.9rem; background: #F1ECE4; }
+.imn-mock__bar span { width: 9px; height: 9px; border-radius: 50%; background: #D9D1C4; }
+.imn-mock__body { padding: 1rem 1.1rem 1.2rem; }
+.imn-mock__top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem; }
+.imn-mock__top strong { font: 800 1.15rem var(--font-display); }
+.imn-mock__call { background: var(--paper); color: #fff; font-weight: 700; font-size: 0.85rem; padding: 0.35rem 0.75rem; border-radius: 999px; }
+.imn-mock__tag { margin: 0.5rem 0 0.6rem; font-weight: 600; }
+.imn-mock__bits { list-style: none; padding: 0; margin: 0 0 0.8rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.imn-mock__bits li { font-size: 0.78rem; background: #F4EFE7; border-radius: 999px; padding: 0.2rem 0.6rem; }
+.imn-mock__services { list-style: none; padding: 0; margin: 0 0 0.9rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; }
+.imn-mock__services li { font-size: 0.86rem; border: 1px solid var(--line); border-radius: 8px; padding: 0.45rem 0.6rem; }
+.imn-mock__btn { display: inline-block; background: var(--coin); font-weight: 800; font-size: 0.88rem; padding: 0.45rem 0.9rem; border-radius: 8px; }

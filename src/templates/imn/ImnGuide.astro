@@ -1,0 +1,83 @@
+---
+/** SEO guide pages (data/imn/guides.json): tradie hub, trade pages and the price guide. */
+import ImnCta from './ImnCta.astro';
+import ImnFaq from './ImnFaq.astro';
+import type { Guide, SiteInfo } from '../../../brands/imn/model';
+interface Props { site: SiteInfo; guide: Guide }
+const { site, guide: g } = Astro.props;
+---
+<section class="imn-pagehead">
+  <div class="imn-wrap">
+    <p class="imn-kicker">{g.kicker}</p>
+    <h1>{g.title}</h1>
+    <p class="imn-lede">{g.lede}</p>
+    <div class="imn-actions">
+      <a class="imn-btn imn-btn--coin" href="/get-started" data-cta={`start_guide_${g.slug.replace(/-/g, '_')}`.slice(0, 30)}>Get a free preview</a>
+      <a class="imn-link" href="/pricing">See what's included →</a>
+    </div>
+  </div>
+</section>
+
+{g.table && (
+  <div class="imn-wrap imn-section imn-section--tight">
+    <div class="imn-tablewrap">
+      <table class="imn-table">
+        <caption>{g.table.caption}</caption>
+        <thead><tr>{g.table.head.map((h) => <th scope="col">{h}</th>)}</tr></thead>
+        <tbody>{g.table.rows.map((r) => <tr class={r[0] === 'Independent Media Network' ? 'imn-table__us' : undefined}>{r.map((c, i) => i === 0 ? <th scope="row">{c}</th> : <td>{c}</td>)}</tr>)}</tbody>
+      </table>
+    </div>
+    <p class="imn-small">{g.table.note}</p>
+  </div>
+)}
+
+<div class="imn-wrap imn-section imn-guide">
+  <article class="imn-prose">
+    {g.sections.map((s, i) => (
+      <section>
+        <h2>{s.h}</h2>
+        {!s.list && s.p?.map((t) => <p>{t}</p>)}
+        {s.list && <ul class="imn-ticks imn-ticks--plain">{s.list.map((t) => <li>{t}</li>)}</ul>}
+        {s.list && s.p?.map((t) => <p>{t}</p>)}
+        {i === 1 && g.example && (
+          <figure class="imn-mock" aria-label={g.example.label}>
+            <figcaption class="imn-mock__label">{g.example.label}</figcaption>
+            <div class="imn-mock__bar"><span></span><span></span><span></span></div>
+            <div class="imn-mock__body">
+              <div class="imn-mock__top"><strong>{g.example.name}</strong><span class="imn-mock__call">{g.example.call}</span></div>
+              <p class="imn-mock__tag">{g.example.tagline}</p>
+              <ul class="imn-mock__bits">{g.example.bits.map((b) => <li>{b}</li>)}</ul>
+              <ul class="imn-mock__services">{g.example.services.map((s) => <li>{s}</li>)}</ul>
+              <span class="imn-mock__btn">Request a quote</span>
+            </div>
+          </figure>
+        )}
+      </section>
+    ))}
+  </article>
+
+  {g.links?.length > 0 && (
+    <nav class="imn-guide__links" aria-label="Related pages">
+      <div class="imn-grid">
+        {g.links.map((l) => (
+          <a class="imn-card imn-card--link" href={`/${l.path}`}><h3>{l.t}</h3><p>{l.d}</p></a>
+        ))}
+      </div>
+    </nav>
+  )}
+
+  {g.faq?.length > 0 && (
+    <section class="imn-guide__faq">
+      <h2 class="imn-h2">Questions</h2>
+      <ImnFaq faq={g.faq} />
+    </section>
+  )}
+
+  {g.sources?.length > 0 && (
+    <section class="imn-guide__sources">
+      <h2 class="imn-small">Sources</h2>
+      <ul class="imn-small">{g.sources.map((s) => <li><a href={s.url} rel="noopener">{s.t}</a> (checked {s.checked})</li>)}</ul>
+    </section>
+  )}
+</div>
+<ImnCta site={site} heading="See your new site before you pay a cent" />

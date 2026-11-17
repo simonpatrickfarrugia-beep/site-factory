@@ -823,54 +823,46 @@
       "segments": [
         {
           "key": "trades",
-          "label": "Local trade business (plumber, electrician, builder, landscaper, cleaner)",
+          "label": "Local trade business (plumber, electrician, landscaper, roofer, concreter, builder)",
           "weight": 1.0,
-          "offer": "A free preview of a simple website for their {region} business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
-          "evidence": "Google listing or Facebook page with a business email but no working website (or one that is old, not secure or broken on phones).",
+          "offer": "A free preview of a simple website for their {region} trade business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+          "evidence": "Google listing with reviews but a dead website link (old business.site page) or no website at all; or a site that is not secure or broken on phones.",
+          "page": "https://imnetwork.com.au/websites-for-tradies",
           "search": [
             "{region} plumber",
             "{region} electrician",
             "{region} landscaping",
+            "{region} roofing",
+            "{region} concreting"
+          ]
+        },
+        {
+          "key": "trade-adjacent",
+          "label": "Home services (cleaner, removalist, pest control, mobile mechanic, handyman)",
+          "weight": 0.9,
+          "offer": "A free preview of a simple website for their {region} business; $99 + GST a month if they want it, no setup fee, no lock-in.",
+          "evidence": "Google listing with reviews but no working website, or a Facebook page used as the website.",
+          "page": "https://imnetwork.com.au/websites-for-tradies",
+          "search": [
             "{region} cleaning service",
+            "{region} removalists",
+            "{region} pest control",
+            "{region} mobile mechanic",
             "{region} handyman"
           ]
         },
         {
           "key": "personal",
-          "label": "Personal services (hair, beauty, barber, pet grooming, tutoring)",
-          "weight": 0.8,
-          "offer": "A free preview of a simple website with services, prices, hours and a booking link; $99 + GST a month if they want it, no lock-in.",
-          "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly.",
-          "search": [
-            "{region} hair salon",
-            "{region} barber",
-            "{region} beauty salon",
-            "{region} dog grooming",
-            "{region} tutoring"
-          ]
-        },
-        {
-          "key": "wellness",
-          "label": "Small wellness practice (massage, PT, yoga/pilates studio)",
+          "label": "Personal services (dog grooming, tutoring, personal training, barber)",
           "weight": 0.7,
-          "offer": "A free preview of a clean site with services, classes and contact; $99 + GST a month if they want it, no lock-in.",
-          "evidence": "Sole-operator practice with a weak or missing site.",
+          "offer": "A free preview of a simple website with services, prices, hours and a booking link; $99 + GST a month if they want it, no lock-in.",
+          "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly. Skip registered health practitioners.",
+          "page": "https://imnetwork.com.au/pricing",
           "search": [
-            "{region} remedial massage",
+            "{region} dog grooming",
+            "{region} tutoring",
             "{region} personal trainer",
-            "{region} pilates studio"
-          ]
-        },
-        {
-          "key": "food",
-          "label": "Independent cafe, bakery or caterer",
-          "weight": 0.5,
-          "offer": "A free preview of a simple site with menu, hours and location; $99 + GST a month if they want it, no lock-in.",
-          "evidence": "Menu only on Facebook/Instagram, or no site at all.",
-          "search": [
-            "{region} cafe",
-            "{region} bakery",
-            "{region} catering"
+            "{region} barber"
           ]
         }
       ],
@@ -906,22 +898,16 @@
         ],
         "gaps": [
           {
-            "key": "no-website",
-            "label": "No website: Google listing or social pages only",
-            "look": "Google listing 'Website' button, Facebook About",
-            "points": 20
-          },
-          {
             "key": "dead-link",
-            "label": "Website link is dead (e.g. an old business.site page Google shut down in 2024, expired domain)",
-            "look": "Click the website link on their Google listing",
-            "points": 20
+            "label": "Website link on their Google listing is dead (old business.site page Google switched off in 2024, or an expired domain)",
+            "look": "Tap the Website button on their Google listing",
+            "points": 25
           },
           {
-            "key": "not-mobile",
-            "label": "Website hard to use on a phone",
-            "look": "Open it on a phone-width screen",
-            "points": 10
+            "key": "no-site-reviews",
+            "label": "No website, but 20+ Google reviews (established and busy, invisible beyond Google)",
+            "look": "Google listing: no Website button; count the reviews",
+            "points": 20
           },
           {
             "key": "not-secure",
@@ -930,26 +916,39 @@
             "points": 10
           },
           {
+            "key": "not-mobile",
+            "label": "Website hard to use on a phone",
+            "look": "Open it at phone width",
+            "points": 10
+          },
+          {
+            "key": "builder-subdomain",
+            "label": "Free-builder address (wixsite.com, weebly, square.site) or a Facebook page used as the website",
+            "look": "The website link",
+            "points": 10
+          },
+          {
             "key": "stale",
-            "label": "Site out of date: copyright 2+ years old, old prices or hours, past specials",
+            "label": "Site out of date: copyright 2021 or older, old prices or hours",
             "look": "Footer, dates on the page",
             "points": 5
           }
         ],
         "proof": [
-          "Our own live sites: https://imnetwork.com.au/our-sites",
-          "A real client-style dashboard: https://imnetwork.com.au/example-dashboard",
+          "Our page for their trade: https://imnetwork.com.au/websites-for-tradies (plumbers, electricians, landscapers have their own pages)",
+          "Real dashboard: https://imnetwork.com.au/example-dashboard",
           "No setup fee, no lock-in contract"
         ],
         "chips": [
+          "Dead website link",
+          "No website, 20+ reviews",
+          "Not secure",
+          "Not mobile",
+          "Free-builder site",
+          "Out of date",
           "New business",
           "Expanding",
-          "Busy season",
-          "No website",
-          "Dead link",
-          "Not mobile",
-          "Not secure",
-          "Out of date"
+          "Busy season"
         ]
       }
     }

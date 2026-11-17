@@ -1,0 +1,353 @@
+{
+  "_about": "SEO guide pages for imnetwork.com.au (17 Nov 2026). Chosen from Google Australia search volumes checked 17 Nov 2026 via DataForSEO: 'websites for tradies' 1,600/mo, 'tradie website' 1,600, 'how much does a website cost' 260, 'plumber website' 170, 'electrician website' 110, 'landscaping website' 70. Every figure on these pages comes from the source listed with its date. Example layouts use a placeholder business ('Your Plumbing Co.'), never a real one. Rendered by src/templates/imn/ImnGuide.astro via brands/imn/site.ts.",
+  "guides": [
+    {
+      "slug": "websites-for-tradies",
+      "seoTitle": "Websites for Tradies: $99 a Month, No Setup Fee | IMN",
+      "description": "A simple website for your trade business: click to call, your service area, real job photos and a quote form. $99 + GST a month, no setup fee, no lock-in.",
+      "kicker": "Websites for tradies",
+      "title": "A website that gets you the call, not just the click",
+      "lede": "Plenty of customers look you up before they ring. We build tradies a simple, fast site that answers their questions and puts your number one tap away, then we look after it for $99 + GST a month.",
+      "sections": [
+        {
+          "h": "Why a Google listing isn't enough on its own",
+          "p": [
+            "Your Google listing gets you found. Your website is where people decide. Before they call, many customers want to see what you do, where you work, whether you're licensed and what your work looks like. If your listing has no website, or the link goes nowhere, they move on to the next tradie who does.",
+            "Plenty of trade businesses lost their website without noticing. Google switched off the free websites it made with Business Profiles (the ones ending in business.site) on 5 March 2024, and the temporary redirect stopped on 10 June 2024. If your Google listing still points to one, customers who tap it now hit a dead page."
+          ]
+        },
+        {
+          "h": "What a good tradie website needs",
+          "list": [
+            "Your phone number at the top of every page, tap to call on a phone",
+            "The suburbs and areas you cover, in plain words",
+            "Your services, with a line on each so people know you do their job",
+            "Photos of your own work, not stock images",
+            "Your licence or registration number, so customers can check it",
+            "A short quote request form that comes straight to your inbox",
+            "Your hours, and whether you take after-hours or emergency jobs",
+            "A link to your Google reviews"
+          ],
+          "p": [
+            "That's it. A tradie site doesn't need fancy animation or ten pages of blog posts. It needs to load fast on a phone at a job site and make it easy to contact you."
+          ]
+        },
+        {
+          "h": "What you get for $99 + GST a month",
+          "p": [
+            "We build your site (up to 5 pages), host it, check it every day for broken links, speed and Google basics, and make up to 2 rounds of changes a month, each up to 30 minutes. Want a new photo gallery after a big job, or your Christmas hours added? Send us a message. You also get a simple dashboard that shows at a glance that your site is up and being found on Google.",
+            "There's no setup fee and no lock-in contract. You see a private preview before you pay anything, and you can cancel any time."
+          ]
+        },
+        {
+          "h": "Websites for your trade",
+          "p": [
+            "Each trade gets asked different things before the phone rings. These pages cover what customers look for in your line of work."
+          ]
+        }
+      ],
+      "example": {
+        "label": "Example layout (made-up business)",
+        "name": "Your Plumbing Co.",
+        "tagline": "Blocked drains, hot water and leaks across the western suburbs",
+        "call": "Call 0400 000 000",
+        "bits": ["Licensed plumber · licence no. shown here", "Same-day jobs Mon–Sat", "★ See our Google reviews"],
+        "services": ["Blocked drains", "Hot water systems", "Leaking taps and toilets", "Gas fitting"]
+      },
+      "links": [
+        { "path": "plumber-websites", "t": "Plumber websites", "d": "Emergency calls, hot water, drains and your licence front and centre." },
+        { "path": "electrician-websites", "t": "Electrician websites", "d": "Your REC number on every page, safety switches, solar and EV chargers." },
+        { "path": "landscaping-websites", "t": "Landscaping websites", "d": "Before-and-after galleries that do the selling for you." },
+        { "path": "how-much-does-a-website-cost", "t": "How much does a website cost?", "d": "Honest Australian prices: DIY, agencies and subscriptions compared." }
+      ],
+      "faq": [
+        { "q": "Do I need a website if I get enough work from word of mouth?", "a": "Word-of-mouth customers still look you up before they call. A simple site that shows your work and your licence makes that recommendation stick, and it means the job doesn't go to whoever they find first on Google." },
+        { "q": "Can you use photos from my phone?", "a": "Yes. Real photos of your own jobs work better than stock images. Send them through and we'll resize and place them so they load fast." },
+        { "q": "I already have a Facebook page. Isn't that enough?", "a": "Facebook is good for updates, but not everyone uses it, and posts get buried. A website keeps your services, areas, licence and contact details in one place you control. We can link your Facebook page from your site." },
+        { "q": "What if my Google listing points to an old business.site page?", "a": "Those pages stopped working in June 2024. Once your new site is live, we'll show you how to update the website link on your Google listing so customers land in the right place." }
+      ],
+      "sources": [
+        { "t": "Google Business Profile Help: websites made with Business Profiles turned off", "url": "https://support.google.com/business/answer/7178589", "checked": "17 Nov 2026" }
+      ]
+    },
+    {
+      "slug": "plumber-websites",
+      "seoTitle": "Plumber Websites That Get the Call | IMN",
+      "description": "A plumber website built for emergencies: tap to call, the suburbs you cover, your licence and real job photos. $99 + GST a month, no setup fee, no lock-in.",
+      "kicker": "Plumber websites",
+      "title": "Plumber websites built for the 7am burst pipe",
+      "lede": "When someone has water through the ceiling, they don't read. They look for a number, a suburb they recognise and a sign you're licensed. That's what we put first.",
+      "sections": [
+        {
+          "h": "What people check before they ring a plumber",
+          "p": [
+            "A lot of plumbing calls are urgent or close to it. A customer with a blocked drain or no hot water will tap the first site that makes it clear you cover their area and can come soon. If your phone number is buried or your site is slow on mobile, that job goes to the next plumber on the list.",
+            "For bigger jobs like a hot water replacement or a bathroom renovation, people take longer and compare. That's when photos of your own work, a clear list of what you do and your Google reviews earn the call."
+          ]
+        },
+        {
+          "h": "What goes on a plumber's site",
+          "list": [
+            "Phone number in the header, tap to call, on every page",
+            "Emergency or after-hours availability, stated honestly",
+            "Your service areas by suburb",
+            "Services: blocked drains, hot water, leaks, gas fitting, renovations, whatever you actually do",
+            "Your plumbing licence number, so customers can check it on the Victorian register",
+            "A quick quote form for non-urgent jobs",
+            "Photos of real jobs and a link to your Google reviews"
+          ],
+          "p": [
+            "In Victoria, customers can look up any plumber's licence on the Building and Plumbing Commission (formerly VBA) register. Showing your number up front tells them you've got nothing to hide."
+          ]
+        },
+        {
+          "h": "Why plumbers lose calls on a bad site",
+          "p": [
+            "The common problems we see are simple: the number is an image that can't be tapped, the site isn't secure so the browser shows a warning, the opening hours are years out of date, or the Google listing still links to a free business.site page that Google switched off in 2024. Each one costs calls without you ever knowing."
+          ]
+        },
+        {
+          "h": "How it works with us",
+          "p": [
+            "Tell us about your business in two minutes. We build a private preview from what you already have (your Google listing, photos, services and areas). If you like it, it goes live for $99 + GST a month with hosting, daily checks and 2 change rounds a month included. No setup fee, no lock-in."
+          ]
+        }
+      ],
+      "example": {
+        "label": "Example layout (made-up business)",
+        "name": "Your Plumbing Co.",
+        "tagline": "Burst pipes, blocked drains and hot water across Melbourne's west",
+        "call": "Call 0400 000 000",
+        "bits": ["Licence no. 00000 (check it on the register)", "After-hours call-outs available", "★ Read our Google reviews"],
+        "services": ["Emergency plumbing", "Blocked drains", "Hot water repairs and replacement", "Gas fitting and appliance connections"]
+      },
+      "links": [
+        { "path": "websites-for-tradies", "t": "All tradie websites", "d": "What every trade website needs, and what's included." },
+        { "path": "electrician-websites", "t": "Electrician websites", "d": "Your REC number on every page, safety switches, solar and EV chargers." },
+        { "path": "how-much-does-a-website-cost", "t": "How much does a website cost?", "d": "Honest Australian prices compared." }
+      ],
+      "faq": [
+        { "q": "Can my site show I do emergency call-outs?", "a": "Yes, as long as it's true. We'll put your real availability in the header so people at 7am know whether to call you or wait for business hours." },
+        { "q": "Should I list every suburb I cover?", "a": "List the areas you actually want work in. We'll write them as people say them (for example 'Werribee, Point Cook and Hoppers Crossing'), which also helps Google show you to people nearby." },
+        { "q": "Can you add a page for hot water systems or gas work?", "a": "Yes. The plan includes up to 5 pages, so a page for your biggest money job is a good use of one." }
+      ],
+      "sources": [
+        { "t": "Building and Plumbing Commission (Victoria): plumbing registration and licensing", "url": "https://www.bpc.vic.gov.au/plumbers/registration-and-licensing/which-registration-or-licence-do-i-need", "checked": "17 Nov 2026" },
+        { "t": "Google Business Profile Help: websites made with Business Profiles turned off", "url": "https://support.google.com/business/answer/7178589", "checked": "17 Nov 2026" }
+      ]
+    },
+    {
+      "slug": "electrician-websites",
+      "seoTitle": "Electrician Websites With Your REC Number | IMN",
+      "description": "An electrician website with your REC number on every page, the jobs you do and tap-to-call. $99 + GST a month, no setup fee, no lock-in contract.",
+      "kicker": "Electrician websites",
+      "title": "Electrician websites that show you're the real deal",
+      "lede": "People are rightly careful about who they let near their switchboard. A clean site with your registration number, your services and photos of tidy work tells them you're licensed and professional before they pick up the phone.",
+      "sections": [
+        {
+          "h": "Your REC number belongs on your website",
+          "p": [
+            "In Victoria, Energy Safe Victoria requires Registered Electrical Contractors to put their REC number on all promotional material, including advertisements. Your website is advertising, so we put your REC number in the footer of every page, where customers and inspectors expect to see it.",
+            "It also helps you win work. Customers can look up any REC on Energy Safe Victoria's public register, and a number they can check builds trust fast."
+          ]
+        },
+        {
+          "h": "What goes on an electrician's site",
+          "list": [
+            "Your REC number on every page",
+            "Tap-to-call phone number and a short quote form",
+            "The jobs you want more of: switchboard upgrades, safety switches, lighting, solar, batteries, EV chargers, data cabling",
+            "Residential, commercial or both, said clearly",
+            "Service areas by suburb",
+            "Photos of neat finished work (customers notice a tidy switchboard)",
+            "A link to your Google reviews"
+          ],
+          "p": [
+            "A page each for your two or three most profitable jobs works well. Someone searching for an EV charger installer wants to land on a page about EV chargers, not a general list."
+          ]
+        },
+        {
+          "h": "The jobs people research first",
+          "p": [
+            "Bigger electrical jobs, like solar, batteries and EV chargers, get researched before anyone calls. People want to know you do that work, roughly what's involved and what the next step is. A short, plain page on each job, with a quote form, brings those enquiries to you rather than to a lead-selling site that sells them to five other sparkies."
+          ]
+        },
+        {
+          "h": "How it works with us",
+          "p": [
+            "Send us your details and we build a private preview from what you already have. If you like it, it goes live for $99 + GST a month: hosting, daily checks, a simple dashboard and 2 change rounds a month included. No setup fee, no lock-in contract."
+          ]
+        }
+      ],
+      "example": {
+        "label": "Example layout (made-up business)",
+        "name": "Your Electrical Co.",
+        "tagline": "Switchboards, lighting and EV chargers for homes in Melbourne's south-east",
+        "call": "Call 0400 000 000",
+        "bits": ["REC 00000", "Free quotes for upgrades", "★ Read our Google reviews"],
+        "services": ["Switchboard upgrades", "Safety switches and smoke alarms", "LED lighting", "EV charger installation"]
+      },
+      "links": [
+        { "path": "websites-for-tradies", "t": "All tradie websites", "d": "What every trade website needs, and what's included." },
+        { "path": "plumber-websites", "t": "Plumber websites", "d": "Emergency calls, hot water, drains and your licence front and centre." },
+        { "path": "how-much-does-a-website-cost", "t": "How much does a website cost?", "d": "Honest Australian prices compared." }
+      ],
+      "faq": [
+        { "q": "Where should my REC number go?", "a": "Energy Safe Victoria says it must be on all promotional material, including ads. We put it in the footer of every page and near your contact details, so it's always visible." },
+        { "q": "Can I have separate pages for solar and EV chargers?", "a": "Yes. The plan includes up to 5 pages, and a page for each of your best-paying jobs is the best use of them." },
+        { "q": "I mostly do commercial work. Does that change the site?", "a": "It changes the wording and photos, not the price. Commercial clients look for the same things: proof you're registered, the work you do, and an easy way to get a quote." }
+      ],
+      "sources": [
+        { "t": "Energy Safe Victoria: Registered Electrical Contractor responsibilities", "url": "https://www.energysafe.vic.gov.au/licensing/your-responsibilities/registered-electrical-contractors", "checked": "17 Nov 2026" },
+        { "t": "Energy Safe Victoria: business supervisors (advertising must include the REC number)", "url": "https://www.energysafe.vic.gov.au/licensing/your-responsibilities/business-supervisors", "checked": "17 Nov 2026" }
+      ]
+    },
+    {
+      "slug": "landscaping-websites",
+      "seoTitle": "Landscaping Websites That Show Your Work | IMN",
+      "description": "A landscaping website built around your before-and-after photos, the areas you cover and a quote form. $99 + GST a month, no setup fee, no lock-in.",
+      "kicker": "Landscaping websites",
+      "title": "Landscaping websites where your work does the selling",
+      "lede": "Nobody hires a landscaper from a price list. They hire the one whose last job looks like the backyard they want. Your site should be a gallery first and everything else second.",
+      "sections": [
+        {
+          "h": "Photos win landscaping jobs",
+          "p": [
+            "A landscaping job is a big spend and a visual decision. Customers scroll through your past work to see if your style matches theirs: native gardens, paving, decking, retaining walls, lawns, outdoor living. A site with a proper gallery, sorted by type of job and with before-and-after pairs where you have them, does more selling than any amount of text.",
+            "We build the gallery so it loads fast on a phone and is easy for us to add to. Finished a great job? Send the photos and we add them in your next change round."
+          ]
+        },
+        {
+          "h": "What goes on a landscaper's site",
+          "list": [
+            "A gallery of your own jobs, grouped by type",
+            "Before-and-after photos where you have them",
+            "The services you offer, from design to construction to maintenance",
+            "The areas you work in",
+            "How quoting works (site visit, design fee if any, rough timeframes)",
+            "A quote request form with room for photos of their yard",
+            "Your builder registration number if you do building work that requires one",
+            "A link to your Google reviews"
+          ],
+          "p": [
+            "Explaining how your quoting works saves you time-wasters. If you charge for a design or a site visit, saying so up front means the people who fill in your form are serious."
+          ]
+        },
+        {
+          "h": "Busy seasons and quiet ones",
+          "p": [
+            "Spring and early summer are when people want their backyard done. A site that's up to date with recent work before the rush helps you fill the calendar with the jobs you want, and a maintenance page helps keep work coming through the quieter months."
+          ]
+        },
+        {
+          "h": "How it works with us",
+          "p": [
+            "Send us your photos and details. We build a private preview, and if you like it, it goes live for $99 + GST a month: hosting, daily checks, a dashboard and 2 change rounds a month (perfect for adding new jobs to the gallery). No setup fee, no lock-in."
+          ]
+        }
+      ],
+      "example": {
+        "label": "Example layout (made-up business)",
+        "name": "Your Landscaping Co.",
+        "tagline": "Gardens, paving and decks across Geelong and the Surf Coast",
+        "call": "Call 0400 000 000",
+        "bits": ["See our recent jobs", "Free first site visit", "★ Read our Google reviews"],
+        "services": ["Garden design and planting", "Paving and retaining walls", "Decking and outdoor living", "Lawns and garden maintenance"]
+      },
+      "links": [
+        { "path": "websites-for-tradies", "t": "All tradie websites", "d": "What every trade website needs, and what's included." },
+        { "path": "plumber-websites", "t": "Plumber websites", "d": "Emergency calls, hot water, drains and your licence front and centre." },
+        { "path": "how-much-does-a-website-cost", "t": "How much does a website cost?", "d": "Honest Australian prices compared." }
+      ],
+      "faq": [
+        { "q": "How many photos can I have?", "a": "Plenty. We size every photo so the gallery stays fast on a phone, and adding new jobs fits easily into your 2 monthly change rounds." },
+        { "q": "Can customers send photos of their yard with the quote form?", "a": "Yes. We can add a photo upload so you see the job before you visit." },
+        { "q": "Do I need my builder registration number on the site?", "a": "If you carry out domestic building work that requires registration in Victoria, the regulator requires your name and registration number on advertising. We'll add it wherever it needs to be." }
+      ],
+      "sources": [
+        { "t": "Victorian Building Authority: names and registration numbers required for domestic building advertising", "url": "https://www.vba.vic.gov.au/news/news/2019/names-registration-numbers-required-for-all-advertising-and-offers-relating-to-domestic-building-work", "checked": "17 Nov 2026" }
+      ]
+    },
+    {
+      "slug": "how-much-does-a-website-cost",
+      "seoTitle": "How Much Does a Website Cost in Australia? (2026)",
+      "description": "Real Australian website prices for 2026: DIY builders, freelancers, agencies and monthly plans, with what each includes and the costs people forget.",
+      "kicker": "Price guide · checked 17 Nov 2026",
+      "title": "How much does a website cost in Australia?",
+      "lede": "A small business website in Australia costs anywhere from about $17 a month if you build it yourself to $10,000 or more upfront from an agency, plus ongoing care. Here's what each option really costs, with sources, so you can pick what fits.",
+      "table": {
+        "caption": "Typical Australian prices, as published by each source (checked 17 Nov 2026)",
+        "head": ["Option", "Upfront", "Ongoing", "Who does the work"],
+        "rows": [
+          ["Squarespace (DIY)", "$0", "A$17–A$109 a month paid yearly, or A$24–A$149 month to month", "You"],
+          ["Wix (DIY)", "$0", "Roughly A$20–A$50 a month for most small business plans", "You"],
+          ["Web designer or agency build", "A$2,500–A$10,000 for a brochure site", "Hosting, plus a care plan if you want one", "Them, then usually you"],
+          ["Agency care plan", "—", "From about A$1,250 a month for security and uptime", "Them"],
+          ["Independent Media Network", "$0 setup", "$99 + GST a month, no lock-in", "Us, every month"]
+        ],
+        "note": "Squarespace prices are from Squarespace's own published AUD pricing. Wix range from What's The Damage (updated July 2026). Build range from GoDaddy's 2026 Australian price guide as reported by Creative Baguette (reviewed 27 Sep 2026). Care plan from WP Creative (updated 28 Aug 2026). Some sources quote prices including GST and some don't; check before you compare to the cent."
+      },
+      "sections": [
+        {
+          "h": "The short answer",
+          "p": [
+            "If you only need a simple site for a service business (who you are, what you do, where, and how to contact you), you have three real choices: build it yourself on a builder like Wix or Squarespace, pay a designer or agency to build it once, or pay a monthly plan where someone builds it and looks after it.",
+            "The cheapest option on paper isn't always the cheapest in practice. A DIY site costs little in money but a lot in your time, and an agency build can be money well spent or a site nobody updates for five years. What matters is who keeps it working after launch."
+          ]
+        },
+        {
+          "h": "What you're actually paying for",
+          "list": [
+            "The build: design, writing, photos and setting it all up",
+            "Hosting: keeping the site online and secure",
+            "Your domain name: WP Creative puts this at about $10–$50 a year",
+            "Changes: new hours, new services, new photos, seasonal specials",
+            "Care: updates, security, broken links, speed and making sure Google can read it",
+            "Your own time, if you do any of the above yourself"
+          ],
+          "p": [
+            "Quotes often cover the build and leave the rest out. Ask any provider which of these are included, and what a small change costs after launch."
+          ]
+        },
+        {
+          "h": "The costs people forget",
+          "list": [
+            "Domain renewals every year",
+            "Email hosting for you@yourbusiness.com.au (usually separate from the website)",
+            "Paid add-ons and apps for bookings, forms or galleries",
+            "Paying a designer by the hour for every small change",
+            "Rebuilding from scratch when an old site breaks or can't be edited any more"
+          ],
+          "p": [
+            "The last one is the big one. Many small business sites are built once, never updated, and replaced a few years later at full price."
+          ]
+        },
+        {
+          "h": "Which option fits you",
+          "p": [
+            "Build it yourself if you enjoy it, have the time and are happy to keep it up to date. Squarespace and Wix are good tools and the monthly cost is low.",
+            "Hire an agency if your website is your main sales channel, you need custom features or an online store with lots of products, and you have the budget for both the build and ongoing care.",
+            "Choose a monthly plan if you want a professional site without a big upfront bill and would rather someone else handled the changes and checks. That's what we do: $99 + GST a month, no setup fee, no lock-in, with up to 5 pages, hosting, daily checks, a dashboard and 2 change rounds a month. It isn't the right fit for large online stores or complex booking systems, and we'll tell you if that's what you need."
+          ]
+        }
+      ],
+      "links": [
+        { "path": "pricing", "t": "Our pricing", "d": "Exactly what's included for $99 + GST a month." },
+        { "path": "websites-for-tradies", "t": "Websites for tradies", "d": "What a trade business site needs." },
+        { "path": "example-dashboard", "t": "Example dashboard", "d": "See what clients see each month, with real numbers." }
+      ],
+      "faq": [
+        { "q": "How much does a small business website cost in Australia?", "a": "GoDaddy's 2026 Australian guide (as reported by Creative Baguette) puts a brochure site built by a web designer at $2,500 to $10,000. Building it yourself on Squarespace costs A$17 to A$109 a month paid yearly. Monthly plans like ours start with no upfront cost." },
+        { "q": "How much does it cost to keep a website running?", "a": "WP Creative puts ongoing costs at $50 to $5,000+ a month depending on who looks after it, with hosting and the domain the smaller part. Agency care plans for security and uptime start at about $1,250 a month in their guide." },
+        { "q": "Is a cheap website a false economy?", "a": "Not always. A cheap site that's kept up to date beats an expensive one nobody touches. The false economy is a site that's never updated and has to be rebuilt from scratch every few years." },
+        { "q": "Can I claim my website as a business expense?", "a": "Website costs are generally a business expense, and you can usually claim the GST back if you're registered. How it's treated depends on your situation, so check with your accountant or the ATO." }
+      ],
+      "sources": [
+        { "t": "Squarespace: published pricing (AUD)", "url": "https://squarespace.com/assets/pricing.txt", "checked": "17 Nov 2026" },
+        { "t": "What's The Damage: How much does a Wix website cost in Australia? (updated July 2026)", "url": "https://whatsthedamage.com.au/wix-cost/", "checked": "17 Nov 2026" },
+        { "t": "Creative Baguette: How much does a website cost in Sydney? (reviewed 27 Sep 2026, citing GoDaddy's 2026 guide)", "url": "https://creativebaguette.com/how-much-does-a-website-cost-in-sydney/", "checked": "17 Nov 2026" },
+        { "t": "WP Creative: How much does a website cost in Australia? (updated 28 Aug 2026)", "url": "https://wpcreative.com.au/how-much-does-a-website-cost-in-australia/", "checked": "17 Nov 2026" }
+      ]
+    }
+  ]
+}

@@ -8,7 +8,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { getSingleton } from '../../src/lib/data';
 import type { Route } from '../../src/lib/routes';
-import type { DemoStats, Glance, Light, Pages, SiteInfo } from './model';
+import type { DemoStats, Glance, Guides, Light, Pages, SiteInfo } from './model';
 
 const SITE = 'https://imnetwork.com.au';
 const SUFFIX = ' | Independent Media Network';
@@ -183,6 +183,26 @@ export function routes(): Route[] {
     schema: [crumbs([{ name: 'Home', path: '' }, { name: tm.title, path: 'terms' }])],
     props: { page: tm },
   });
+
+  // SEO guides: tradie hub, trade pages and the price guide (data/imn/guides.json).
+  const { guides } = getSingleton<Guides>('guides');
+  const hub = guides.find((x) => x.slug === 'websites-for-tradies');
+  for (const g of guides) {
+    const trail = [{ name: 'Home', path: '' }];
+    if (hub && g.slug !== hub.slug && g.slug.endsWith('-websites')) trail.push({ name: 'Websites for tradies', path: hub.slug });
+    trail.push({ name: g.kicker.split(' · ')[0], path: g.slug });
+    out.push({
+      path: g.slug,
+      template: 'imnGuide',
+      seo: { title: g.seoTitle, rawTitle: true, description: g.description },
+      schema: [
+        crumbs(trail),
+        { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: g.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+        ...(g.slug.endsWith('-websites') || g.slug === 'websites-for-tradies' ? [{ ...service, name: g.title, serviceType: `Website design and care: ${g.kicker}` }] : []),
+      ],
+      props: { ...common, guide: g },
+    });
+  }
 
   for (const slug of ['about', 'privacy-policy'] as const) {
     const p = pages[slug];
