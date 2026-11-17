@@ -51,15 +51,15 @@
    "name": "movietrailer.channel",
    "url": "https://www.movietrailer.channel",
    "owner": "imn",
-   "scannedAt": "2026-11-16T07:33:11Z",
+   "scannedAt": "2026-11-17T11:22:55Z",
    "score": 99,
    "grade": "A",
    "change": 0,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-23",
-   "topFix": "Google shows only 31 of 429 pages (site is 30 days old)",
+   "nextDue": "2026-11-24",
+   "topFix": "Google shows only 31 of 437 pages (site is 31 days old)",
    "broken": 0,
    "newIssues": 0,
    "fixed": 0,
@@ -67,25 +67,25 @@
    "top": [
     {
      "id": "few-pages-in-google",
-     "title": "Google shows only 31 of 429 pages (site is 30 days old)",
+     "title": "Google shows only 31 of 437 pages (site is 31 days old)",
      "severity": "low",
      "area": "indexing",
-     "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 64 pages on 16 Dec 2026, cut or merge weak pages and earn a few links.",
+     "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 65 pages on 16 Dec 2026, cut or merge weak pages and earn a few links.",
      "pages": [],
      "detail": "",
      "broken": false
     },
     {
      "id": "seo-words",
-     "title": "12 page(s) under 250 words",
+     "title": "4 page(s) under 250 words",
      "severity": "low",
      "area": "seo",
      "fix": "Fine for tools; for guides add the answer people search for.",
      "pages": [
-      "/movies/once-upon-a-time-in-hollywood-2016",
       "/movies/whalefall-2026",
-      "/movies/mad-max-1979",
-      "/movies/its-a-wonderful-life-1946"
+      "/movies/hero-2002",
+      "/contact",
+      "/terms"
      ],
      "detail": "",
      "broken": false
@@ -273,9 +273,11 @@
    ]
   }
  },
- "updated": "2026-11-17T02:34:18Z",
+ "updated": "2026-11-17T11:22:55Z",
  "lastRun": {
-  "at": "2026-11-17T02:34:18Z",
-  "scanned": []
+  "at": "2026-11-17T11:22:55Z",
+  "scanned": [
+   "trailers"
+  ]
  }
 }

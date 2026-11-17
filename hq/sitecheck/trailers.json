@@ -3,11 +3,11 @@
  "name": "movietrailer.channel",
  "url": "https://www.movietrailer.channel",
  "owner": "imn",
- "scannedAt": "2026-11-16T07:33:11Z",
+ "scannedAt": "2026-11-17T11:22:55Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
- "nextDue": "2026-11-23",
+ "nextDue": "2026-11-24",
  "score": 99,
  "grade": "A",
  "areas": {
@@ -52,14 +52,14 @@
    "label": "Competitors"
   }
  },
- "pages": 429,
+ "pages": 437,
  "findings": [
   {
    "id": "few-pages-in-google",
    "area": "indexing",
    "severity": "low",
-   "title": "Google shows only 31 of 429 pages (site is 30 days old)",
-   "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 64 pages on 16 Dec 2026, cut or merge weak pages and earn a few links.",
+   "title": "Google shows only 31 of 437 pages (site is 31 days old)",
+   "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 65 pages on 16 Dec 2026, cut or merge weak pages and earn a few links.",
    "pages": [],
    "count": 1,
    "detail": "",
@@ -70,47 +70,43 @@
    "id": "seo-words",
    "area": "seo",
    "severity": "low",
-   "title": "12 page(s) under 250 words",
+   "title": "4 page(s) under 250 words",
    "fix": "Fine for tools; for guides add the answer people search for.",
    "pages": [
-    "/movies/once-upon-a-time-in-hollywood-2016",
     "/movies/whalefall-2026",
-    "/movies/mad-max-1979",
-    "/movies/its-a-wonderful-life-1946",
-    "/movies/the-deer-hunter-1978",
-    "/movies/the-wicker-man-1973",
-    "/movies/the-evil-dead-1981",
-    "/movies/heathers-1988"
+    "/movies/hero-2002",
+    "/contact",
+    "/terms"
    ],
-   "count": 12,
+   "count": 4,
    "detail": "",
    "impact": 1.1,
    "broken": false
   }
  ],
  "google": {
-  "impr7": 10,
-  "imprPrev7": 9,
+  "impr7": 7,
+  "imprPrev7": 12,
   "clicks7": 0,
   "clicksPrev7": 0,
-  "impr28": 112,
+  "impr28": 105,
   "clicks28": 0,
-  "views28": 74,
-  "viewsPrev28": 259,
-  "recentViews": 3,
-  "lastGa4Day": "2026-11-13",
-  "gscTo": "2026-11-12"
+  "views28": 92,
+  "viewsPrev28": 273,
+  "recentViews": 35,
+  "lastGa4Day": "2026-11-15",
+  "gscTo": "2026-11-13"
  },
  "queries": [
-  {
-   "query": "home alone trailer",
-   "position": 49.2,
-   "impressions": 5
-  },
   {
    "query": "jurassic park film trailer",
    "position": 76.8,
    "impressions": 5
+  },
+  {
+   "query": "home alone trailer",
+   "position": 49.3,
+   "impressions": 4
   },
   {
    "query": "district 9 trailer",
@@ -120,16 +116,6 @@
   {
    "query": "jurassic park trailer",
    "position": 66,
-   "impressions": 3
-  },
-  {
-   "query": "the prestige trailer",
-   "position": 58.3,
-   "impressions": 3
-  },
-  {
-   "query": "the sixth sense trailer",
-   "position": 59.3,
    "impressions": 3
   },
   {
@@ -155,6 +141,16 @@
   {
    "query": "the hateful eight 2015 trailer",
    "position": 73,
+   "impressions": 2
+  },
+  {
+   "query": "the prestige trailer",
+   "position": 60,
+   "impressions": 2
+  },
+  {
+   "query": "the sixth sense trailer",
+   "position": 62,
    "impressions": 2
   },
   {
@@ -195,16 +191,6 @@
   {
    "query": "insomnia trailer",
    "position": 65,
-   "impressions": 1
-  },
-  {
-   "query": "jurassic park movie trailer",
-   "position": 56,
-   "impressions": 1
-  },
-  {
-   "query": "movie trailer jurassic park",
-   "position": 52,
    "impressions": 1
   },
   {
@@ -273,16 +259,6 @@
    "impressions": 1
   },
   {
-   "query": "the prestige film trailer",
-   "position": 52,
-   "impressions": 1
-  },
-  {
-   "query": "the prestige movie trailer",
-   "position": 56,
-   "impressions": 1
-  },
-  {
    "query": "the prestige preview",
    "position": 59,
    "impressions": 1
@@ -318,6 +294,11 @@
    "impressions": 1
   },
   {
+   "query": "captain america the winter soldier 2014 trailer",
+   "position": 94,
+   "impressions": 1
+  },
+  {
    "query": "home alone film trailer",
    "position": 84,
    "impressions": 1
@@ -333,6 +314,11 @@
    "impressions": 1
   },
   {
+   "query": "the prestige",
+   "position": 2,
+   "impressions": 1
+  },
+  {
    "query": "trailer the prestige",
    "position": 65,
    "impressions": 1
@@ -344,48 +330,48 @@
   {
    "url": "https://www.movietrailer.channel/",
    "lite": true,
-   "serverSecs": 0.05,
-   "htmlKb": 70,
+   "serverSecs": 0.19,
+   "htmlKb": 71,
    "blocking": 1,
    "images": 32,
    "noDims": 0,
-   "imageKb": 358,
+   "imageKb": 323,
    "psiError": "HTTP Error 429: Too Many Requests"
   },
   {
    "url": "https://www.movietrailer.channel/browse",
    "lite": true,
-   "serverSecs": 0.07,
-   "htmlKb": 194,
+   "serverSecs": 0.33,
+   "htmlKb": 198,
    "blocking": 1,
-   "images": 412,
+   "images": 420,
    "noDims": 0,
    "imageKb": 381,
    "psiError": "HTTP Error 429: Too Many Requests"
   }
  ],
  "quality": {
-  "summary": "429 indexable pages · average 248 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
+  "summary": "437 indexable pages · average 249 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
   "thin": 0,
   "near": 0
  },
  "links": {
-  "internal": 462,
-  "outside": 1231,
+  "internal": 470,
+  "outside": 1255,
   "checkedOutside": 150,
   "unsureOutside": 48
  },
- "affiliateOk": 1100,
- "secs": 135,
+ "affiliateOk": 1119,
+ "secs": 138,
  "change": {
   "first": false,
-  "since": "2026-11-16T00:03:15Z",
+  "since": "2026-11-16T07:33:11Z",
   "score": 0,
   "newIssues": [],
   "fixed": [],
-  "impr28": 0,
+  "impr28": -7,
   "clicks28": 0,
-  "views28": 0,
+  "views28": 18,
   "rivals": [],
   "positions": []
  },
@@ -448,6 +434,13 @@
   },
   {
    "at": "2026-11-16T00:03:15Z",
+   "score": 99,
+   "grade": "A",
+   "impr28": 112,
+   "clicks28": 0
+  },
+  {
+   "at": "2026-11-16T07:33:11Z",
    "score": 99,
    "grade": "A",
    "impr28": 112,
