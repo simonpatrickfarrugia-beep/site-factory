@@ -23,7 +23,7 @@ published, leave it out. Note every page you used in `research.sources`.
 - **found**: their real gaps, kindly worded, each checked by looking: dead website link on the Google listing (old business.site),
   no website, not secure (http), hard to use on a phone, free-builder address, out-of-date hours/prices/copyright. Link the page.
 - **searches**: 6–12 searches people near them use, e.g. "<trade> <suburb>", "<service> <suburb>", "emergency <trade> <region>".
-  Real Google Australia monthly volumes: `scripts/claude/volumes.sh "a|b|c" 2036` (~US$0.09, say the cost). Drop zero-volume rows.
+  Real Google Australia monthly volumes: `scripts/claude/volumes.sh "a|b|c" 2036` (~US$0.09, say the cost). Drop zero-volume rows, and keep only one of near-identical variants that return the same number ("plumber werribee" / "werribee plumber" / "plumbers werribee" are one search cluster), so the total isn't inflated. Never claim something about competitors or "sites that rank" you didn't check.
 - **competitors**: the top 3 local results for their main search (WebSearch "<trade> <main suburb>"). One fair, factual note each
   (e.g. "a national franchise", "has a website with online booking"). Never disparage; never claim they're worse.
 - **built**: each page or feature on the preview and the reason, tied to a gap or a search ("Hot water page: 'hot water repairs
