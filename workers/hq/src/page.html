@@ -1058,7 +1058,7 @@ async function openAffiliate(id) {
 // prompt and opens the Site Factory project in Claude, so the work happens with full repo access at no extra cost.
 const CLAUDE_PROJECT = 'https://claude.ai/project/01a14468-1a4a-76a0-b9c5-b7ad71e42bd6';
 const REPO = 'simonpatrickfarrugia-beep/site-factory';
-const IMN = { id: 'imn', name: 'IMN', label: 'IMN', url: '', icon: '🏢', owner: 'imn' };
+const IMN = { id: 'imn', name: 'IMN', label: 'All sites', url: '', icon: '🏢', owner: 'imn' };
 const SEV_RANK = { blocker: 0, high: 1, medium: 2, low: 3 };
 function clientsList() { return (state.apps?.clients || []).concat([IMN]); }
 function clientOf(text) {
