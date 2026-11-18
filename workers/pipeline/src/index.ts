@@ -252,7 +252,7 @@ export async function run(job: Job, env: Env, dryRun: boolean) {
       : job === 'collcheck'
       ? [IDEAS]
       : job === 'stats'
-      ? [STATS, MOVIES, COLLECTIONS]
+      ? [] // statsJob only needs the branch sha; reading files cost 3 of the 50 calls (7 sites broke it on 17 Nov)
       :
     job === 'demand' || job === 'collections'
       ? [MOVIES, COLLECTIONS, ...(job === 'collections' ? [IDEAS] : [])]
@@ -533,10 +533,30 @@ async function statsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boo
   } catch {
     /* keep the generic name */
   }
-  const gaToken = await googleAccessToken(env.GSC_SERVICE_ACCOUNT!, 'https://www.googleapis.com/auth/analytics.readonly').catch(() => null);
-  const gscToken = await googleAccessToken(env.GSC_SERVICE_ACCOUNT!, 'https://www.googleapis.com/auth/webmasters.readonly').catch(() => null);
+  // One token for both APIs (scopes are space-separated): saves a call.
+  const token = await googleAccessToken(
+    env.GSC_SERVICE_ACCOUNT!,
+    'https://www.googleapis.com/auth/analytics.readonly https://www.googleapis.com/auth/webmasters.readonly',
+  ).catch(() => null);
+  const gaToken = token;
+  const gscToken = token;
 
-  for (const site of statsSites(env)) {
+  // Call budget: Workers Free allows 50 outbound calls per run. Fixed cost: Google token 1 + branch read 1 + commit 4.
+  // Each site costs 3 GA4 batches + 3 Search Console calls. Sites that don't fit keep yesterday's file and,
+  // because the order rotates daily, go first on a later run.
+  let budget = 50 - 6 - 1; // 1 spare
+  const all = statsSites(env);
+  const start = Math.floor(now.getTime() / 86400000) % all.length;
+  const ordered = [...all.slice(start), ...all.slice(0, start)];
+  const skipped: string[] = [];
+
+  for (const site of ordered) {
+    const cost = ((site.ga4 ?? '').trim() && gaToken ? 3 : 0) + (site.gsc && gscToken ? 3 : 0);
+    if (cost > budget) {
+      skipped.push(site.name);
+      continue;
+    }
+    budget -= cost;
     const notes: string[] = [];
     let ga4: Parameters<typeof buildStats>[0]['ga4'] = null;
     const property = (site.ga4 ?? '').trim();
@@ -607,6 +627,7 @@ async function statsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boo
     changes[site.path] = JSON.stringify(stats, null, 1) + '\n';
     log.unshift(`${site.name}: ${stats.totals.views} views, ${Object.values(stats.totals.cta).reduce((x, y) => x + y, 0)} CTA clicks, ${stats.totals.gscClicks} Google clicks.`);
   }
+  if (skipped.length) log.push(`Skipped (50-call limit, kept yesterday's numbers): ${skipped.join(', ')}. The daily rotation puts them first soon.`);
   const commit = await save(repo, snap.sha, changes, `Pipeline: refresh dashboard stats\n\n${log.join('\n')}`, dryRun, log);
   return { job: 'stats' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report: undefined as string | undefined };
 }
