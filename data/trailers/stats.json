@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-16T19:00:10.177Z",
+ "generatedAt": "2026-11-18T06:22:44.861Z",
  "period": {
-  "start": "2026-10-19",
-  "end": "2026-11-15"
+  "start": "2026-10-21",
+  "end": "2026-11-17"
  },
  "gscPeriod": {
-  "start": "2026-10-17",
-  "end": "2026-11-13"
+  "start": "2026-10-19",
+  "end": "2026-11-15"
  },
  "sources": {
   "ga4": true,
@@ -14,28 +14,18 @@
   "notes": []
  },
  "totals": {
-  "views": 92,
+  "views": 77,
   "prevViews": 273,
-  "users": 49,
+  "users": 42,
   "cta": {
    "films_banner": 2,
    "justwatch": 1,
    "prime": 1
   },
   "gscClicks": 0,
-  "gscImpressions": 105
+  "gscImpressions": 82
  },
  "daily": [
-  {
-   "date": "2026-10-19",
-   "views": 11,
-   "cta": 0
-  },
-  {
-   "date": "2026-10-20",
-   "views": 4,
-   "cta": 0
-  },
   {
    "date": "2026-10-21",
    "views": 4,
@@ -125,9 +115,9 @@
  "pages": [
   {
    "path": "/",
-   "views": 39,
-   "prevViews": 119,
-   "users": 25,
+   "views": 31,
+   "prevViews": 115,
+   "users": 22,
    "cta": {
     "films_banner": 2
    },
@@ -139,22 +129,22 @@
    "allCta": {
     "films_banner": 2
    },
-   "d7": 5,
-   "prev7": 4
+   "d7": 4,
+   "prev7": 3
   },
   {
    "path": "/browse",
-   "views": 33,
-   "prevViews": 7,
+   "views": 30,
+   "prevViews": 10,
    "users": 4,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
+   "gscImpressions": 1,
+   "gscPosition": 75,
+   "topQuery": "trailers free",
    "allViews": 40,
    "d7": 26,
-   "prev7": 2
+   "prev7": 1
   },
   {
    "path": "/original-films",
@@ -168,20 +158,6 @@
    "topQuery": null,
    "allViews": 3,
    "d7": 1,
-   "prev7": 1
-  },
-  {
-   "path": "/discover/marvel-cinematic-universe",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2,
-   "d7": 1,
    "prev7": 0
   },
   {
@@ -194,9 +170,7 @@
    "gscImpressions": 0,
    "gscPosition": null,
    "topQuery": null,
-   "allViews": 2,
-   "prev7": 1,
-   "d7": 0
+   "allViews": 2
   },
   {
    "path": "/movies/weird-science-1985",
@@ -212,6 +186,20 @@
   },
   {
    "path": "/contact",
+   "views": 1,
+   "prevViews": 1,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2,
+   "d7": 1,
+   "prev7": 0
+  },
+  {
+   "path": "/discover/marvel-cinematic-universe",
    "views": 1,
    "prevViews": 1,
    "users": 1,
@@ -247,32 +235,6 @@
    "gscClicks": 0,
    "gscImpressions": 1,
    "gscPosition": 2,
-   "topQuery": null,
-   "allViews": 1,
-   "prev7": 1,
-   "d7": 0
-  },
-  {
-   "path": "/movies/anora-2024",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 1
-  },
-  {
-   "path": "/movies/basic-instinct-1992",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
    "topQuery": null,
    "allViews": 1
   },
@@ -348,18 +310,6 @@
    "d7": 0
   },
   {
-   "path": "/movies/the-sandlot-1993",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 1
-  },
-  {
    "path": "/movies/schindlers-list-1994",
    "views": 0,
    "prevViews": 11,
@@ -408,19 +358,19 @@
    "allViews": 4
   },
   {
-   "path": "/movies/true-lies-1994",
+   "path": "/movies/batman-begins-2005",
    "views": 0,
    "prevViews": 4,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 63,
-   "topQuery": "true lies movie trailer",
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
    "allViews": 4
   },
   {
-   "path": "/movies/batman-begins-2005",
+   "path": "/movies/true-lies-1994",
    "views": 0,
    "prevViews": 4,
    "users": 0,
@@ -434,7 +384,7 @@
   {
    "path": "/movies/independence-day-1996",
    "views": 0,
-   "prevViews": 4,
+   "prevViews": 3,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
@@ -456,18 +406,6 @@
    "allViews": 4
   },
   {
-   "path": "/movies/home-alone-1990",
-   "views": 0,
-   "prevViews": 3,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 11,
-   "gscPosition": 55.9,
-   "topQuery": "home alone trailer",
-   "allViews": 3
-  },
-  {
    "path": "/movies/jurassic-park-1993",
    "views": 0,
    "prevViews": 3,
@@ -477,6 +415,18 @@
    "gscImpressions": 8,
    "gscPosition": 72.8,
    "topQuery": "jurassic park film trailer",
+   "allViews": 3
+  },
+  {
+   "path": "/movies/home-alone-1990",
+   "views": 0,
+   "prevViews": 3,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 7,
+   "gscPosition": 61.1,
+   "topQuery": "home alone trailer",
    "allViews": 3
   },
   {
@@ -534,8 +484,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 6,
-   "gscPosition": 51.3,
+   "gscImpressions": 12,
+   "gscPosition": 51.8,
    "topQuery": "the prestige trailer",
    "allViews": 2
   },
@@ -912,43 +862,55 @@
    "allViews": 2
   },
   {
-   "path": "/movies/the-hateful-eight-2015",
-   "views": 0,
-   "prevViews": 1,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 6,
-   "gscPosition": 76.8,
-   "topQuery": "the hateful eight 2015 trailer",
-   "allViews": 1
-  },
-  {
    "path": "/movies/the-sixth-sense-1999",
    "views": 0,
    "prevViews": 1,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 6,
-   "gscPosition": 49.8,
+   "gscImpressions": 4,
+   "gscPosition": 46.3,
    "topQuery": "the sixth sense trailer",
    "allViews": 1
   },
   {
-   "path": "/movies/platoon-1986",
+   "path": "/movies/the-hateful-eight-2015",
    "views": 0,
    "prevViews": 1,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 58,
-   "topQuery": "platoon film trailer",
+   "gscImpressions": 1,
+   "gscPosition": 74,
+   "topQuery": "the hateful eight 2015 trailer",
    "allViews": 1
   },
   {
    "path": "/movies/aliens-1986",
+   "views": 0,
+   "prevViews": 1,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
+   "path": "/movies/anora-2024",
+   "views": 0,
+   "prevViews": 1,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
+   "path": "/movies/basic-instinct-1992",
    "views": 0,
    "prevViews": 1,
    "users": 0,
@@ -985,18 +947,6 @@
   },
   {
    "path": "/movies/ghost-soldier-2026",
-   "views": 0,
-   "prevViews": 1,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 1
-  },
-  {
-   "path": "/movies/good-will-hunting-1998",
    "views": 0,
    "prevViews": 1,
    "users": 0,
@@ -1056,7 +1006,7 @@
    "allViews": 1
   },
   {
-   "path": "/movies/pocahontas-1995",
+   "path": "/movies/platoon-1986",
    "views": 0,
    "prevViews": 1,
    "users": 0,
@@ -1068,7 +1018,7 @@
    "allViews": 1
   },
   {
-   "path": "/movies/robin-hood-prince-of-thieves-1991",
+   "path": "/movies/pocahontas-1995",
    "views": 0,
    "prevViews": 1,
    "users": 0,
@@ -1188,6 +1138,18 @@
    "allViews": 1
   },
   {
+   "path": "/movies/the-sandlot-1993",
+   "views": 0,
+   "prevViews": 1,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
    "path": "/movies/the-tale-of-the-princess-kaguya-2013",
    "views": 0,
    "prevViews": 1,
@@ -1236,7 +1198,31 @@
    "allViews": 1
   },
   {
+   "path": "/movies/good-will-hunting-1998",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
    "path": "/movies/inception-2010",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
+   "path": "/movies/robin-hood-prince-of-thieves-1991",
    "views": 0,
    "prevViews": 0,
    "users": 0,
@@ -1277,8 +1263,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 8,
-   "gscPosition": 68.5,
+   "gscImpressions": 5,
+   "gscPosition": 69.8,
    "topQuery": "district 9 trailer"
   },
   {
@@ -1293,81 +1279,26 @@
    "topQuery": "insomnia film trailer"
   },
   {
-   "path": "/movies/the-dark-knight-rises-2012",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 55,
-   "topQuery": "the dark knight rises 2012 trailer"
-  },
-  {
-   "path": "/movies/the-blind-side-2009",
+   "path": "/discover/1999-box-office-highlights",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 3,
-   "gscPosition": 69,
-   "topQuery": "the blind side preview"
+   "gscPosition": 61.3,
+   "topQuery": "box office 1999"
   },
   {
-   "path": "/movies/aladdin-1992",
+   "path": "/movies/selma-2014",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 28,
-   "topQuery": "aladdin 1992 trailer"
-  },
-  {
-   "path": "/movies/goldeneye-1995",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 26.5,
-   "topQuery": "goldeneye trailer"
-  },
-  {
-   "path": "/movies/the-silence-of-the-lambs-1991",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 52.5,
-   "topQuery": "silence of the lambs movie trailer"
-  },
-  {
-   "path": "/discover/1980s-action-classics",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 40.5,
-   "topQuery": null
-  },
-  {
-   "path": "/movies/boyhood-2014",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 74,
-   "topQuery": null
+   "gscImpressions": 3,
+   "gscPosition": 94,
+   "topQuery": "selma 2014"
   },
   {
    "path": "/movies/air-force-one-1997",
@@ -1392,17 +1323,6 @@
    "topQuery": "reservoir dogs trailer"
   },
   {
-   "path": "/discover/1999-box-office-highlights",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 49,
-   "topQuery": "box office 1999"
-  },
-  {
    "path": "/movies/captain-america-the-winter-soldier-2014",
    "views": 0,
    "prevViews": 0,
@@ -1412,17 +1332,6 @@
    "gscImpressions": 1,
    "gscPosition": 94,
    "topQuery": "captain america the winter soldier 2014 trailer"
-  },
-  {
-   "path": "/discover/1994-box-office-highlights",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 70,
-   "topQuery": null
   },
   {
    "path": "/movies/the-rock-1996",
@@ -1436,14 +1345,25 @@
    "topQuery": null
   },
   {
-   "path": "/movies/the-secret-world-of-arrietty-2010",
+   "path": "/movies/aladdin-1992",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 1,
-   "gscPosition": 72,
+   "gscPosition": 7,
+   "topQuery": null
+  },
+  {
+   "path": "/movies/goldeneye-1995",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 8,
    "topQuery": null
   },
   {
@@ -1478,18 +1398,11 @@
    "page": "/movies/jurassic-park-1993"
   },
   {
-   "query": "home alone trailer",
+   "query": "the prestige trailer",
    "clicks": 0,
    "impressions": 4,
-   "position": 49.3,
-   "page": "/movies/home-alone-1990"
-  },
-  {
-   "query": "district 9 trailer",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 62.7,
-   "page": "/movies/district-9-2009"
+   "position": 60.3,
+   "page": "/movies/the-prestige-2006"
   },
   {
    "query": "jurassic park trailer",
@@ -1506,10 +1419,17 @@
    "page": "/"
   },
   {
-   "query": "trailer of home alone",
+   "query": "district 9 trailer",
    "clicks": 0,
    "impressions": 2,
-   "position": 47,
+   "position": 61.5,
+   "page": "/movies/district-9-2009"
+  },
+  {
+   "query": "home alone trailer",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 53,
    "page": "/movies/home-alone-1990"
   },
   {
@@ -1527,20 +1447,6 @@
    "page": "/movies/men-in-black-1997"
   },
   {
-   "query": "the hateful eight 2015 trailer",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 73,
-   "page": "/movies/the-hateful-eight-2015"
-  },
-  {
-   "query": "the prestige trailer",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 60,
-   "page": "/movies/the-prestige-2006"
-  },
-  {
    "query": "the sixth sense trailer",
    "clicks": 0,
    "impressions": 2,
@@ -1555,20 +1461,6 @@
    "page": "/movies/air-force-one-1997"
   },
   {
-   "query": "aladdin 1992 trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 49,
-   "page": "/movies/aladdin-1992"
-  },
-  {
-   "query": "district 9 film trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 63,
-   "page": "/movies/district-9-2009"
-  },
-  {
    "query": "district 9 movie trailer",
    "clicks": 0,
    "impressions": 1,
@@ -1576,24 +1468,10 @@
    "page": "/movies/district-9-2009"
   },
   {
-   "query": "trailer for district 9",
+   "query": "trailer of home alone",
    "clicks": 0,
    "impressions": 1,
-   "position": 71,
-   "page": "/movies/district-9-2009"
-  },
-  {
-   "query": "goldeneye trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 45,
-   "page": "/movies/goldeneye-1995"
-  },
-  {
-   "query": "home alone movie trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 52,
+   "position": 50,
    "page": "/movies/home-alone-1990"
   },
   {
@@ -1611,27 +1489,6 @@
    "page": "/movies/men-in-black-1997"
   },
   {
-   "query": "platoon film trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 60,
-   "page": "/movies/platoon-1986"
-  },
-  {
-   "query": "platoon movie trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 59,
-   "page": "/movies/platoon-1986"
-  },
-  {
-   "query": "platoon trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 55,
-   "page": "/movies/platoon-1986"
-  },
-  {
    "query": "reservoir dogs trailer",
    "clicks": 0,
    "impressions": 1,
@@ -1639,59 +1496,10 @@
    "page": "/movies/reservoir-dogs-1992"
   },
   {
-   "query": "the blind side preview",
+   "query": "the hateful eight 2015 trailer",
    "clicks": 0,
    "impressions": 1,
-   "position": 67,
-   "page": "/movies/the-blind-side-2009"
-  },
-  {
-   "query": "trailer for the blind side",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 70,
-   "page": "/movies/the-blind-side-2009"
-  },
-  {
-   "query": "the dark knight rises 2012 trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 50,
-   "page": "/movies/the-dark-knight-rises-2012"
-  },
-  {
-   "query": "the dark knight rises movie trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 58,
-   "page": "/movies/the-dark-knight-rises-2012"
-  },
-  {
-   "query": "the dark knight rises trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 58,
-   "page": "/movies/the-dark-knight-rises-2012"
-  },
-  {
-   "query": "the hateful 8 trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 77,
-   "page": "/movies/the-hateful-eight-2015"
-  },
-  {
-   "query": "the hateful eight movie trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 81,
-   "page": "/movies/the-hateful-eight-2015"
-  },
-  {
-   "query": "the hateful eight trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 81,
+   "position": 74,
    "page": "/movies/the-hateful-eight-2015"
   },
   {
@@ -1702,20 +1510,6 @@
    "page": "/movies/the-prestige-2006"
   },
   {
-   "query": "silence of the lambs movie trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 55,
-   "page": "/movies/the-silence-of-the-lambs-1991"
-  },
-  {
-   "query": "silence of the lambs trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 50,
-   "page": "/movies/the-silence-of-the-lambs-1991"
-  },
-  {
    "query": "sjätte sinnet trailer",
    "clicks": 0,
    "impressions": 1,
@@ -1723,24 +1517,31 @@
    "page": "/movies/the-sixth-sense-1999"
   },
   {
-   "query": "the 6th sense trailer",
+   "query": "trailers free",
    "clicks": 0,
    "impressions": 1,
-   "position": 60,
-   "page": "/movies/the-sixth-sense-1999"
-  },
-  {
-   "query": "true lies movie trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 63,
-   "page": "/movies/true-lies-1994"
+   "position": 75,
+   "page": "/browse"
   },
   {
    "query": "box office 1999",
    "clicks": 0,
    "impressions": 1,
    "position": 49,
+   "page": "/discover/1999-box-office-highlights"
+  },
+  {
+   "query": "number 1 movie in 1999",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 90,
+   "page": "/discover/1999-box-office-highlights"
+  },
+  {
+   "query": "what was the number one movie in 1999",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 45,
    "page": "/discover/1999-box-office-highlights"
   },
   {
@@ -1765,6 +1566,34 @@
    "page": "/movies/home-alone-1990"
   },
   {
+   "query": "selma 2014",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 87,
+   "page": "/movies/selma-2014"
+  },
+  {
+   "query": "selma movie",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 98,
+   "page": "/movies/selma-2014"
+  },
+  {
+   "query": "selma the movie",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 97,
+   "page": "/movies/selma-2014"
+  },
+  {
+   "query": "prestige movie trailer",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 11,
+   "page": "/movies/the-prestige-2006"
+  },
+  {
    "query": "prestige trailer",
    "clicks": 0,
    "impressions": 1,
@@ -1779,6 +1608,27 @@
    "page": "/movies/the-prestige-2006"
   },
   {
+   "query": "the prestige film trailer",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 60,
+   "page": "/movies/the-prestige-2006"
+  },
+  {
+   "query": "the prestige movie trailer",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 60,
+   "page": "/movies/the-prestige-2006"
+  },
+  {
+   "query": "trailer for the prestige",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 62,
+   "page": "/movies/the-prestige-2006"
+  },
+  {
    "query": "trailer the prestige",
    "clicks": 0,
    "impressions": 1,
@@ -1787,16 +1637,6 @@
   }
  ],
  "gscDaily": [
-  {
-   "date": "2026-10-17",
-   "clicks": 0,
-   "impressions": 29
-  },
-  {
-   "date": "2026-10-18",
-   "clicks": 0,
-   "impressions": 6
-  },
   {
    "date": "2026-10-19",
    "clicks": 0,
@@ -1926,6 +1766,16 @@
    "date": "2026-11-13",
    "clicks": 0,
    "impressions": 2
+  },
+  {
+   "date": "2026-11-14",
+   "clicks": 0,
+   "impressions": 1
+  },
+  {
+   "date": "2026-11-15",
+   "clicks": 0,
+   "impressions": 11
   }
  ],
  "allTime": {
@@ -2210,17 +2060,17 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 31
-   },
-   {
-    "source": "google",
-    "medium": "organic",
-    "sessions": 5
+    "sessions": 27
    },
    {
     "source": "chatgpt.com",
     "medium": "ai-assistant",
     "sessions": 4
+   },
+   {
+    "source": "google",
+    "medium": "organic",
+    "sessions": 2
    },
    {
     "source": "dataindex.pro",
@@ -2236,7 +2086,7 @@
   "referrers": [
    {
     "url": "android-app://com.google.android.googlequicksearchbox/",
-    "views": 4
+    "views": 3
    },
    {
     "url": "http://dataindex.pro/",
@@ -2248,18 +2098,6 @@
    }
   ],
   "daily": [
-   {
-    "date": "2026-11-02",
-    "source": "(direct)",
-    "medium": "(none)",
-    "sessions": 1
-   },
-   {
-    "date": "2026-11-03",
-    "source": "(direct)",
-    "medium": "(none)",
-    "sessions": 1
-   },
    {
     "date": "2026-11-04",
     "source": "google",
