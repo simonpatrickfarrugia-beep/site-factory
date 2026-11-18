@@ -38,6 +38,8 @@ final figure is settled at tax time. Link: "Work out yours" → `/?help=1` (the 
   (Department of Education, Study Assist, 7 May 2026: https://www.studyassist.gov.au/node/253).
 - *How much HECS should I be paying?* Use the table above or tick the box in the calculator for your exact pay.
 
+_Checked 18 Nov 2026 (Claude queue job 32): all four table rows re-worked from rates.json and match; 2.8% indexation confirmed on the Study Assist page dated 7 May 2026._
+
 **Facts used:** thresholds and rates from `data/paycalc/rates.json` (sourced to the ATO study loans page); 2025–26 threshold from
 `rates.json` previous year; indexation from Study Assist (gov.au). Fortnightly figures are arithmetic on those numbers.
 

@@ -15,7 +15,7 @@ so it can't answer them.
 
 ## Copy
 
-Australia's resident tax rates have changed three times since 2020: the Stage 3 cuts in July 2024, and the 16% rate dropping to 15%
+Australia's resident tax rates have changed twice since 2020–21: the Stage 3 cuts in July 2024, and the 16% rate dropping to 15%
 in July 2026. Here's every table from 2020–21, straight from the ATO. None include the 2% Medicare levy.
 
 ### 2026–27 (current)
@@ -53,6 +53,8 @@ and the top rate at $190,000 (was $180,000).
 **Links on the page:** current year → /tax-brackets · work out your pay → / (calculator) · a salary → /salary.
 **Build note:** add a "Past years" link on /tax-brackets pointing here, and a `TaxRateTable`-style section per year from a
 `history` array in `data/paycalc/rates.json` (rates verified against the source below on 12 Nov 2026).
+
+_Checked 18 Nov 2026 (Claude queue job 31): every "plus" figure re-worked from the rates and matches; intro fixed to "twice" (two changes, not three)._
 
 Source: ATO, "Tax rates – Australian resident" (last updated 13 August 2026):
 https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents
