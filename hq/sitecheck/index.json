@@ -121,15 +121,15 @@
    "name": "mypaycalc.com.au",
    "url": "https://mypaycalc.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-17T00:02:26Z",
-   "score": 97,
+   "scannedAt": "2026-11-18T22:12:48Z",
+   "score": 98,
    "grade": "A",
    "change": 1,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-24",
-   "topFix": "Google impressions down 40% week on week",
+   "nextDue": "2026-11-26",
+   "topFix": "Google impressions down 61% week on week",
    "broken": 0,
    "newIssues": 0,
    "fixed": 1,
@@ -137,7 +137,7 @@
    "top": [
     {
      "id": "impressions-drop",
-     "title": "Google impressions down 40% week on week",
+     "title": "Google impressions down 61% week on week",
      "severity": "high",
      "area": "google",
      "fix": "Check Search Console → Pages for dropped pages, and whether a recent change touched titles.",
@@ -146,27 +146,14 @@
      "broken": false
     },
     {
-     "id": "seo-title",
-     "title": "1 title outside 30–65 characters",
-     "severity": "medium",
-     "area": "seo",
-     "fix": "Rewrite to 30–65 characters with the main search first.",
-     "pages": [
-      "/privacy-policy"
-     ],
-     "detail": "",
-     "broken": false
-    },
-    {
      "id": "seo-words",
-     "title": "6 page(s) under 250 words",
+     "title": "3 page(s) under 250 words",
      "severity": "low",
      "area": "seo",
      "fix": "Fine for tools; for guides add the answer people search for.",
      "pages": [
       "/salary",
       "/about",
-      "/contact",
       "/how-we-make-money"
      ],
      "detail": "",
@@ -215,7 +202,7 @@
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-26",
+   "nextDue": "2026-11-25",
    "topFix": "Google shows only 0 of 14 pages (site is 3 days old)",
    "broken": 0,
    "newIssues": 1,
@@ -260,11 +247,11 @@
    ]
   }
  },
- "updated": "2026-11-18T21:22:19Z",
+ "updated": "2026-11-18T22:12:48Z",
  "lastRun": {
-  "at": "2026-11-18T21:22:19Z",
+  "at": "2026-11-18T22:12:48Z",
   "scanned": [
-   "imnetwork"
+   "paycalc"
   ]
  }
 }

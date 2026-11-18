@@ -3,12 +3,12 @@
  "name": "mypaycalc.com.au",
  "url": "https://mypaycalc.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-17T00:02:26Z",
+ "scannedAt": "2026-11-18T22:12:48Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
- "nextDue": "2026-11-24",
- "score": 97,
+ "nextDue": "2026-11-26",
+ "score": 98,
  "grade": "A",
  "areas": {
   "health": {
@@ -27,8 +27,8 @@
    "label": "Sitemap & indexing"
   },
   "seo": {
-   "score": 88,
-   "grade": "B",
+   "score": 96,
+   "grade": "A",
    "label": "Titles, descriptions & schema"
   },
   "content": {
@@ -58,7 +58,7 @@
    "id": "impressions-drop",
    "area": "google",
    "severity": "high",
-   "title": "Google impressions down 40% week on week",
+   "title": "Google impressions down 61% week on week",
    "fix": "Check Search Console → Pages for dropped pages, and whether a recent change touched titles.",
    "pages": [],
    "count": 1,
@@ -67,67 +67,50 @@
    "broken": false
   },
   {
-   "id": "seo-title",
-   "area": "seo",
-   "severity": "medium",
-   "title": "1 title outside 30–65 characters",
-   "fix": "Rewrite to 30–65 characters with the main search first.",
-   "pages": [
-    "/privacy-policy"
-   ],
-   "count": 1,
-   "detail": "",
-   "impact": 2.5,
-   "broken": false
-  },
-  {
    "id": "seo-words",
    "area": "seo",
    "severity": "low",
-   "title": "6 page(s) under 250 words",
+   "title": "3 page(s) under 250 words",
    "fix": "Fine for tools; for guides add the answer people search for.",
    "pages": [
     "/salary",
     "/about",
-    "/contact",
-    "/how-we-make-money",
-    "/privacy-policy",
-    "/affiliate-disclosure"
+    "/how-we-make-money"
    ],
-   "count": 6,
+   "count": 3,
    "detail": "",
    "impact": 1.1,
    "broken": false
   }
  ],
  "google": {
-  "impr7": 333,
-  "imprPrev7": 555,
+  "impr7": 219,
+  "imprPrev7": 558,
   "clicks7": 0,
-  "clicksPrev7": 4,
-  "impr28": 1037,
+  "clicksPrev7": 3,
+  "impr28": 1078,
   "clicks28": 4,
-  "views28": 202,
+  "views28": 211,
   "viewsPrev28": 0,
-  "recentViews": 3,
-  "lastGa4Day": "2026-11-15",
-  "gscTo": "2026-11-13"
+  "recentViews": 10,
+  "lastGa4Day": "2026-11-17",
+  "gscTo": "2026-11-15"
  },
  "queries": [
   {
    "query": "mypaycalc",
-   "position": 5.2,
-   "impressions": 133
+   "position": 5.1,
+   "impressions": 135
   },
   {
    "query": "pay calculator",
-   "position": 86.8,
-   "impressions": 22
+   "position": 87.1,
+   "impressions": 25
   },
   {
    "query": "pay calculator australia",
-   "position": 80.7,
-   "impressions": 20
+   "position": 81.3,
+   "impressions": 23
   },
   {
    "query": "australian tax brackets",
@@ -140,13 +123,23 @@
    "impressions": 16
   },
   {
+   "query": "online pay calculator australia",
+   "position": 80.7,
+   "impressions": 13
+  },
+  {
+   "query": "paycalculator",
+   "position": 85.9,
+   "impressions": 12
+  },
+  {
    "query": "australia tax brackets",
    "position": 78.3,
    "impressions": 12
   },
   {
-   "query": "online pay calculator australia",
-   "position": 83.3,
+   "query": "australian pay calculator",
+   "position": 83.5,
    "impressions": 11
   },
   {
@@ -160,19 +153,9 @@
    "impressions": 11
   },
   {
-   "query": "paycalculator",
-   "position": 86.4,
-   "impressions": 10
-  },
-  {
    "query": "current tax brackets australia",
    "position": 72.8,
    "impressions": 10
-  },
-  {
-   "query": "australian pay calculator",
-   "position": 84.1,
-   "impressions": 9
   },
   {
    "query": "pay after tax",
@@ -185,14 +168,14 @@
    "impressions": 9
   },
   {
+   "query": "pay calculator for australia",
+   "position": 67.8,
+   "impressions": 8
+  },
+  {
    "query": "tax brackets 2026",
    "position": 70.9,
    "impressions": 7
-  },
-  {
-   "query": "pay calculator for australia",
-   "position": 62.8,
-   "impressions": 6
   },
   {
    "query": "paycheck estimator calculator",
@@ -230,6 +213,11 @@
    "impressions": 5
   },
   {
+   "query": "salary calculator",
+   "position": 37.8,
+   "impressions": 5
+  },
+  {
    "query": "hecs repayment calculator fortnightly",
    "position": 83.2,
    "impressions": 5
@@ -253,11 +241,6 @@
    "query": "tax threshold 2026",
    "position": 82.2,
    "impressions": 5
-  },
-  {
-   "query": "salary calculator",
-   "position": 32.8,
-   "impressions": 4
   },
   {
    "query": "hecs repayment threshold",
@@ -297,6 +280,21 @@
   {
    "query": "gross pay estimator 2019",
    "position": 45,
+   "impressions": 3
+  },
+  {
+   "query": "pay caliculator",
+   "position": 66.7,
+   "impressions": 3
+  },
+  {
+   "query": "salary calculator australia",
+   "position": 85.3,
+   "impressions": 3
+  },
+  {
+   "query": "target salary calculator",
+   "position": 47.7,
    "impressions": 3
   },
   {
@@ -348,21 +346,6 @@
    "query": "nsw tax brackets",
    "position": 68,
    "impressions": 3
-  },
-  {
-   "query": "tax brackets 2022",
-   "position": 60.7,
-   "impressions": 3
-  },
-  {
-   "query": "tax brackets aus",
-   "position": 80,
-   "impressions": 3
-  },
-  {
-   "query": "tax rates 2026",
-   "position": 80,
-   "impressions": 3
   }
  ],
  "live": null,
@@ -371,7 +354,7 @@
   {
    "url": "https://mypaycalc.com.au/",
    "lite": true,
-   "serverSecs": 0.11,
+   "serverSecs": 0.07,
    "htmlKb": 19,
    "blocking": 1,
    "images": 1,
@@ -382,7 +365,7 @@
   {
    "url": "https://mypaycalc.com.au/tax-brackets",
    "lite": true,
-   "serverSecs": 0.18,
+   "serverSecs": 0.07,
    "htmlKb": 12,
    "blocking": 1,
    "images": 1,
@@ -403,24 +386,29 @@
   "unsureOutside": 5
  },
  "affiliateOk": 0,
- "secs": 126,
+ "secs": 125,
  "change": {
   "first": false,
-  "since": "2026-11-16T04:53:51Z",
+  "since": "2026-11-17T00:02:26Z",
   "score": 1,
   "newIssues": [],
   "fixed": [
-   "81 page(s) without a share image"
+   "1 title outside 30–65 characters"
   ],
-  "impr28": 13,
+  "impr28": 41,
   "clicks28": 0,
-  "views28": 1,
+  "views28": 9,
   "rivals": [],
   "positions": [
    {
-    "query": "calculate my pay",
-    "was": 75.8,
-    "now": 80.6
+    "query": "pay calculator for australia",
+    "was": 62.8,
+    "now": 67.8
+   },
+   {
+    "query": "salary calculator",
+    "was": 32.8,
+    "now": 37.8
    }
   ]
  },
@@ -451,6 +439,13 @@
    "score": 96,
    "grade": "A",
    "impr28": 1024,
+   "clicks28": 4
+  },
+  {
+   "at": "2026-11-17T00:02:26Z",
+   "score": 97,
+   "grade": "A",
+   "impr28": 1037,
    "clicks28": 4
   }
  ],
