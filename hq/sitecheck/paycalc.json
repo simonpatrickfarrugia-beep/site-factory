@@ -3,12 +3,12 @@
  "name": "mypaycalc.com.au",
  "url": "https://mypaycalc.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-18T22:12:48Z",
+ "scannedAt": "2026-11-18T23:21:20Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
  "nextDue": "2026-11-26",
- "score": 98,
+ "score": 99,
  "grade": "A",
  "areas": {
   "health": {
@@ -27,7 +27,7 @@
    "label": "Sitemap & indexing"
   },
   "seo": {
-   "score": 96,
+   "score": 100,
    "grade": "A",
    "label": "Titles, descriptions & schema"
   },
@@ -64,22 +64,6 @@
    "count": 1,
    "detail": "",
    "impact": 15,
-   "broken": false
-  },
-  {
-   "id": "seo-words",
-   "area": "seo",
-   "severity": "low",
-   "title": "3 page(s) under 250 words",
-   "fix": "Fine for tools; for guides add the answer people search for.",
-   "pages": [
-    "/salary",
-    "/about",
-    "/how-we-make-money"
-   ],
-   "count": 3,
-   "detail": "",
-   "impact": 1.1,
    "broken": false
   }
  ],
@@ -354,7 +338,7 @@
   {
    "url": "https://mypaycalc.com.au/",
    "lite": true,
-   "serverSecs": 0.07,
+   "serverSecs": 0.08,
    "htmlKb": 19,
    "blocking": 1,
    "images": 1,
@@ -365,7 +349,7 @@
   {
    "url": "https://mypaycalc.com.au/tax-brackets",
    "lite": true,
-   "serverSecs": 0.07,
+   "serverSecs": 0.08,
    "htmlKb": 12,
    "blocking": 1,
    "images": 1,
@@ -375,7 +359,7 @@
   }
  ],
  "quality": {
-  "summary": "81 indexable pages · average 249 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
+  "summary": "81 indexable pages · average 256 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
   "thin": 0,
   "near": 0
  },
@@ -389,28 +373,17 @@
  "secs": 125,
  "change": {
   "first": false,
-  "since": "2026-11-17T00:02:26Z",
+  "since": "2026-11-18T22:12:48Z",
   "score": 1,
   "newIssues": [],
   "fixed": [
-   "1 title outside 30–65 characters"
+   "3 page(s) under 250 words"
   ],
-  "impr28": 41,
+  "impr28": 0,
   "clicks28": 0,
-  "views28": 9,
+  "views28": 0,
   "rivals": [],
-  "positions": [
-   {
-    "query": "pay calculator for australia",
-    "was": 62.8,
-    "now": 67.8
-   },
-   {
-    "query": "salary calculator",
-    "was": 32.8,
-    "now": 37.8
-   }
-  ]
+  "positions": []
  },
  "history": [
   {
@@ -446,6 +419,13 @@
    "score": 97,
    "grade": "A",
    "impr28": 1037,
+   "clicks28": 4
+  },
+  {
+   "at": "2026-11-18T22:12:48Z",
+   "score": 98,
+   "grade": "A",
+   "impr28": 1078,
    "clicks28": 4
   }
  ],

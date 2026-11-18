@@ -121,14 +121,14 @@
    "name": "mypaycalc.com.au",
    "url": "https://mypaycalc.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-18T22:12:48Z",
-   "score": 98,
+   "scannedAt": "2026-11-18T23:21:20Z",
+   "score": 99,
    "grade": "A",
    "change": 1,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-25",
+   "nextDue": "2026-11-26",
    "topFix": "Google impressions down 61% week on week",
    "broken": 0,
    "newIssues": 0,
@@ -142,20 +142,6 @@
      "area": "google",
      "fix": "Check Search Console → Pages for dropped pages, and whether a recent change touched titles.",
      "pages": [],
-     "detail": "",
-     "broken": false
-    },
-    {
-     "id": "seo-words",
-     "title": "3 page(s) under 250 words",
-     "severity": "low",
-     "area": "seo",
-     "fix": "Fine for tools; for guides add the answer people search for.",
-     "pages": [
-      "/salary",
-      "/about",
-      "/how-we-make-money"
-     ],
      "detail": "",
      "broken": false
     }
@@ -172,7 +158,7 @@
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-26",
+   "nextDue": "2026-11-25",
    "topFix": "Google shows only 3 of 27 pages (site is 14 days old)",
    "broken": 0,
    "newIssues": 0,
@@ -247,11 +233,11 @@
    ]
   }
  },
- "updated": "2026-11-18T22:15:14Z",
+ "updated": "2026-11-18T23:21:20Z",
  "lastRun": {
-  "at": "2026-11-18T22:15:14Z",
+  "at": "2026-11-18T23:21:20Z",
   "scanned": [
-   "simon-says-travel"
+   "paycalc"
   ]
  }
 }
