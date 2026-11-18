@@ -1,12 +1,12 @@
 # Site check: simonsaystravel.com.au
 
-**A · 100/100** · scanned 2026-11-17 21:08 UTC · 27 pages · next scan 2026-11-25 (no revenue in the last 60 days, every 7 days)
+**A · 100/100** · scanned 2026-11-18 22:15 UTC · 27 pages · next scan 2026-11-26 (no revenue in the last 60 days, every 7 days)
 
-**Since 2026-11-16:** score +1 · Google impressions (28 days) +4 · clicks 0 · visits +1 · fixed 1
+**Since 2026-11-17:** score 0 · Google impressions (28 days) +2 · clicks 0 · visits +1
 
 ## Top 5 fixes
 
-1. **Google shows only 3 of 27 pages (site is 13 days old)** (low, impact 3). Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 4 pages on 4 Jan 2027, cut or merge weak pages and earn a few links.
+1. **Google shows only 3 of 27 pages (site is 14 days old)** (low, impact 3). Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 4 pages on 4 Jan 2027, cut or merge weak pages and earn a few links.
 
 ## Report card
 
@@ -23,22 +23,18 @@
 
 ## Google
 
-- Last 7 days: 6 impressions (+6), 0 clicks (0). 28 days: 8 impressions, 0 clicks, 9 visits. Search Console data to 2026-11-13.
-
-## What changed
-
-- Fixed: 2 page(s) under 250 words
+- Last 7 days: 8 impressions (+8), 0 clicks (0). 28 days: 10 impressions, 0 clicks, 10 visits. Search Console data to 2026-11-15.
 
 ## Speed (phones)
 
-- /: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.25s, HTML 38 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
-- /destinations/japan: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.17s, HTML 16 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
+- /: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.26s, HTML 38 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
+- /destinations/japan: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.1s, HTML 16 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
 
 ## All findings
 
 | # | Area | Severity | Impact | Finding |
 |---:|---|---|---:|---|
-| 1 | indexing | low | 3 | Google shows only 3 of 27 pages (site is 13 days old) |
+| 1 | indexing | low | 3 | Google shows only 3 of 27 pages (site is 14 days old) |
 
 Links: 28 internal, 59 outside (2 checked; 0 block robots, not counted). Affiliate links tagged correctly: 57. Live Google check cost US$0.000.
 

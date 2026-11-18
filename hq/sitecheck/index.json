@@ -128,7 +128,7 @@
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-26",
+   "nextDue": "2026-11-25",
    "topFix": "Google impressions down 61% week on week",
    "broken": 0,
    "newIssues": 0,
@@ -165,23 +165,23 @@
    "name": "simonsaystravel.com.au",
    "url": "https://simonsaystravel.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-17T21:08:31Z",
+   "scannedAt": "2026-11-18T22:15:14Z",
    "score": 100,
    "grade": "A",
-   "change": 1,
+   "change": 0,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-24",
-   "topFix": "Google shows only 3 of 27 pages (site is 13 days old)",
+   "nextDue": "2026-11-26",
+   "topFix": "Google shows only 3 of 27 pages (site is 14 days old)",
    "broken": 0,
    "newIssues": 0,
-   "fixed": 1,
+   "fixed": 0,
    "costUsd": 0,
    "top": [
     {
      "id": "few-pages-in-google",
-     "title": "Google shows only 3 of 27 pages (site is 13 days old)",
+     "title": "Google shows only 3 of 27 pages (site is 14 days old)",
      "severity": "low",
      "area": "indexing",
      "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 4 pages on 4 Jan 2027, cut or merge weak pages and earn a few links.",
@@ -247,11 +247,11 @@
    ]
   }
  },
- "updated": "2026-11-18T22:12:48Z",
+ "updated": "2026-11-18T22:15:14Z",
  "lastRun": {
-  "at": "2026-11-18T22:12:48Z",
+  "at": "2026-11-18T22:15:14Z",
   "scanned": [
-   "paycalc"
+   "simon-says-travel"
   ]
  }
 }
