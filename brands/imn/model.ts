@@ -24,7 +24,7 @@ export interface SiteInfo {
   guarantee?: { title: string; short: string; points: string[] };
 }
 export interface TextPage { title: string; description: string; paragraphs: string[] }
-export interface FormPage { title: string; description: string; lede: string }
+export interface FormPage { title: string; description: string; lede: string; sections?: { h: string; p: string[] }[]; faqQs?: string[] }
 export interface TermsPage { title: string; description: string; updated: string; sections: { h: string; p: string[] }[] }
 export interface Pages {
   about: TextPage;

@@ -13,6 +13,7 @@ export default defineBrand({
   fonts: { display: 'Bricolage Grotesque', body: 'Figtree' },
   logo: { src: '/logo-mark.svg', alt: '', width: 30, height: 30 },
   favicon: '/logo-mark.svg',
+  shareImage: '/share.png', // default og:image: lettermark + tagline, no prices or dates so it never goes stale (Claude queue, 18 Nov 2026)
   analytics: { ga4Id: 'G-9Z40K5V8YJ' }, // GA4 property "Independent Media Network" 564847420 (17 Nov 2026)
   wordmark: 'Independent Media Network', // shown as written, not lowercase (Simon, 17 Nov)
 

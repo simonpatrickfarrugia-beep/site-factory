@@ -1,8 +1,10 @@
 ---
 import ImnFormScript from './ImnFormScript.astro';
+import ImnFaq from './ImnFaq.astro';
 import type { FormPage, SiteInfo } from '../../../brands/imn/model';
 interface Props { site: SiteInfo; page: FormPage }
 const { site, page: p } = Astro.props;
+const faq = (p.faqQs ?? []).map((q) => site.faq.find((f) => f.q === q)).filter((f) => f !== undefined);
 ---
 <section class="imn-pagehead">
   <div class="imn-wrap">
@@ -30,4 +32,10 @@ const { site, page: p } = Astro.props;
     <p><a href="/get-started">Tell us about your business</a> and we'll build your preview.</p>
   </div>
 </div>
+{(p.sections?.length || faq.length > 0) && (
+  <div class="imn-wrap imn-section imn-prose">
+    {p.sections?.map((s) => (<><h2>{s.h}</h2>{s.p.map((t) => <p>{t}</p>)}</>))}
+    {faq.length > 0 && (<><h2>Before you write</h2><ImnFaq faq={faq} /></>)}
+  </div>
+)}
 <ImnFormScript email={site.email} />
