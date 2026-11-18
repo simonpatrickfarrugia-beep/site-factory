@@ -9,7 +9,7 @@ import { GROUP_LABEL, type Group, type Place } from '../../../brands/vic/model';
 interface Props {
   town: { name: string; slug: string; km: number; region: string; intro: string; tips: string[]; centre?: [number, number] | null };
   sections: { group: Group; total: number; places: Place[] }[];
-  nearby: { slug: string; name: string; km: number }[];
+  nearby: { slug: string; name: string; km: number; sections?: { href: string; label: string }[] }[];
   collections: { href: string; name: string }[];
   affiliates?: Record<string, any> | null;
   photo?: any;
@@ -98,7 +98,7 @@ const { town, sections, nearby, collections, affiliates = null, photo = null, pl
   {nearby.length > 0 && (
     <section class="town__section">
       <h2>{isRegion ? 'Nearby regions and towns' : 'Nearby on the list'}</h2>
-      <ul class="signpost">{nearby.map((t) => <li><RoadSign name={t.name} km={t.km} href={`/${t.slug}`} /></li>)}</ul>
+      <ul class="signpost">{nearby.map((t) => <li><RoadSign name={t.name} km={t.km} href={`/${t.slug}`} />{t.sections && t.sections.length > 0 && <ul class="inline-list">{t.sections.map((x) => <li><a href={x.href}>{x.label}</a></li>)}</ul>}</li>)}</ul>
     </section>
   )}
 </div>

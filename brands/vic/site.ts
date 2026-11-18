@@ -214,16 +214,26 @@ export function routes(): Route[] {
       .map((o) => ({ o, d: Math.hypot((o.centre![0] - t.centre![0]) * 111, (o.centre![1] - t.centre![1]) * 88) }))
       .sort((a, b) => a.d - b.d)
       .slice(0, 3)
-      .map(({ o }) => info(o));
+      // Each nearby town also links straight to its eat/stay/do lists (country towns only: neighbourhood lists are noindex),
+      // so the section pages Google already shows get links from related towns, not just their own hub.
+      .map(({ o }) => ({
+        ...info(o),
+        sections: isNeighbourhood(o) ? [] : GROUPS.filter((g) => inGroup(o.slug, g).length > ON_HUB).map((g) => ({ href: `/${o.slug}/${g}`, label: GROUP_LABEL[g].title(o.name) })),
+      }));
     const totals = Object.fromEntries(sections.map((s) => [s.group, s.total]));
     out.push({
       path: t.slug,
       template: 'vicTown',
       seo: {
-        title: within65(`${t.name}: Things to Do, Where to Stay & Eat` + SUFFIX, `${t.name}: Things to Do, Where to Stay & Eat`),
+        // Leads with the words people search ("things to do in queenscliff", "activities lorne victoria"); autopilot, 18 Nov 2026.
+        title: within65(`Things to Do in ${t.name}: Where to Stay & Eat` + SUFFIX, `Things to Do in ${t.name}: Where to Stay & Eat`, `${t.name}: Things to Do, Where to Stay & Eat`),
         rawTitle: true,
         image: photoUrl(t.slug),
-        description: `${t.name}, ${km < 3 ? 'in central Melbourne' : `${km} km from Melbourne`}: ${countsLine(totals)}, with addresses, hours and maps.`,
+        description: desc160(
+          `Things to do in ${t.name}, ${km < 3 ? 'in central Melbourne' : `${km} km from Melbourne`}, plus where to stay and eat: ${countsLine(totals)}, with addresses, hours and maps.`,
+          `Things to do in ${t.name}, plus where to stay and eat: ${countsLine(totals)}, with addresses, hours and maps.`,
+          `${t.name}, ${km < 3 ? 'in central Melbourne' : `${km} km from Melbourne`}: ${countsLine(totals)}, with addresses, hours and maps.`,
+        ),
       },
       schema: [
         {
