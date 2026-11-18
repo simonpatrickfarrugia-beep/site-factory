@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-17T04:08:38Z",
- "day": "2026-11-17",
+ "generatedAt": "2026-11-18T03:06:15Z",
+ "day": "2026-11-18",
  "micro": {
   "items": [
    {
     "key": "fixes",
     "label": "Site check fixes cleared",
-    "value": 32,
+    "value": 36,
     "target": 3,
     "status": "green",
     "unit": "",
@@ -16,7 +16,7 @@
    {
     "key": "shipped",
     "label": "Site improvements shipped",
-    "value": 20,
+    "value": 12,
     "target": 3,
     "status": "green",
     "unit": "",
@@ -26,7 +26,7 @@
    {
     "key": "todos",
     "label": "Your to-dos done",
-    "value": 4,
+    "value": 5,
     "target": 3,
     "status": "green",
     "unit": "",
@@ -92,6 +92,10 @@
     "what": "2 page(s) have no schema"
    },
    {
+    "site": "simon-says-travel",
+    "what": "2 page(s) under 250 words"
+   },
+   {
     "site": "paycalc",
     "what": "/: 3 files block the first paint"
    },
@@ -110,54 +114,44 @@
    {
     "site": "paycalc",
     "what": "\"australian tax brackets\": we're not in the top 10 (Search Console avg 88); data.gov.au leads"
-   },
-   {
-    "site": "paycalc",
-    "what": "\"what tax bracket am i in australia\": we're not in the top 10 (Search Console avg 69); perthmobiletax.com.au leads"
    }
   ],
   "shipped": {
+   "vic": [
+    "vic + trade-admin: queue jobs 16-18 (thin pages, legal schema, privacy title)",
+    "vic: fix 11 titles, 5 descriptions, expand 4 thin info pages",
+    "Vic Tours: auto-fix: town and region hub titles within 65 characters; breadcrumb schema on /towns, /road-trips, /about, /how-we-build-our-guides, /contact"
+   ],
+   "trailers": [
+    "Trailers: queue 38 Pattinson + Bond films; add Robert Pattinson and James Bond in order collections",
+    "Trailers: fix wrong genres (Talk-Show/Comedy) on 6 classic film pages",
+    "Trailers: fix wrong film facts on 10 thin pages (director, cast, runtime)"
+   ],
    "paycalc": [
     "MyPayCalc: auto-fix: share image on all 81 pages; How we calculate, About, Contact and How we make money titles to 30–65 characters",
     "MyPayCalc: auto-fix: 49 salary titles and the salaries hub under 65 characters (hub now says $20k to $500k, matching its list); about and how-we-make-money descriptions to 70+"
    ],
    "simon-says-travel": [
     "Simon Says Travel: share image, fuller destinations/reports/about, new-site launch date for site check",
-    "Simon Says Travel: auto-fix: home title to 55 characters; breadcrumb schema on /how-it-works",
-    "Simon Says Travel: make hubs and destination pages worth indexing"
-   ],
-   "vic": [
-    "vic: fix 11 titles, 5 descriptions, expand 4 thin info pages",
-    "Vic Tours: auto-fix: town and region hub titles within 65 characters; breadcrumb schema on /towns, /road-trips, /about, /how-we-build-our-guides, /contact",
-    "Vic: keep town section titles within 65 chars; HQ: sprint deadline 30 Nov, IMN setup progress",
-    "Vic: drop dead Fleur Wolves website link (Geelong)",
-    "Vic: fix 7 dead place websites (link-fixes.json survives OSM refreshes)"
+    "Simon Says Travel: auto-fix: home title to 55 characters; breadcrumb schema on /how-it-works"
    ],
    "trade-admin": [
-    "Trade Admin: auto-fix: Tradify vs Fergus and Contact titles to 30–65 characters",
-    "Trade Admin: make /job-management-software worth indexing"
+    "Trade Admin: auto-fix: Tradify vs Fergus and Contact titles to 30–65 characters"
    ],
    "community-help-co": [
     "Community Help Co: auto-fix: job finder and clinics titles under 65 characters; job finder and about descriptions under 160"
-   ],
-   "trailers": [
-    "Trailers: Christmas Movies collection (featured; 10 films now, 15 more queued); Vic: Sorrento eat guide copy",
-    "Trailers: Terms and Privacy descriptions at 70-160 characters, saying what each page covers",
-    "Trailers: schema on Discover, Original Films (with FAQ) and the static pages",
-    "Trailers: default share image (og:image) for pages without their own picture",
-    "Trailers: fit 5 page titles to 30-65 characters (long film names, Ghibli, Original Films, About)"
    ]
   },
   "note": "Outreach (emails sent vs warm-up, follow-ups) is added live by IMN HQ from D1."
  },
  "macro": {
   "status": "amber",
-  "summary": "3 green, 2 amber, 0 red · trend up on 3, down on 2 of 5 sites",
+  "summary": "2 green, 3 amber, 0 red · trend up on 2, down on 2 of 5 sites",
   "sites": [
    {
     "id": "trailers",
     "name": "movietrailer.channel",
-    "age": 31,
+    "age": 32,
     "status": "amber",
     "trend": "down",
     "views28": 92,
@@ -170,10 +164,10 @@
      "moneyClicks": 30
     },
     "targetConfirmed": true,
-    "pace": 0.15,
+    "pace": 0.14,
     "moneyPace": 0.42,
     "growth": {
-     "views": 0.53,
+     "views": 0.55,
      "impressions": 0.46
     },
     "imprWeeks": [
@@ -188,15 +182,15 @@
     ],
     "gscDays": 29,
     "why": [
-     "92 visits vs 606 expected by day 31 (15% of pace)",
-     "31 days live: too early for red (Google indexing lag)",
+     "92 visits vs 636 expected by day 32 (14% of pace)",
+     "32 days live: too early for red (Google indexing lag)",
      "Google impressions down 54% (last 14 days vs the 14 before, spikes smoothed)"
     ]
    },
    {
     "id": "vic",
     "name": "victours.com.au",
-    "age": 28,
+    "age": 29,
     "status": "amber",
     "trend": "down",
     "views28": 92,
@@ -209,10 +203,10 @@
      "moneyClicks": 20
     },
     "targetConfirmed": true,
-    "pace": 0.53,
+    "pace": 0.5,
     "moneyPace": 1.25,
     "growth": {
-     "views": 0.34,
+     "views": 0.35,
      "impressions": 0.74
     },
     "imprWeeks": [
@@ -227,15 +221,15 @@
     ],
     "gscDays": 26,
     "why": [
-     "92 visits vs 174 expected by day 28 (53% of pace)",
-     "28 days live: too early for red (Google indexing lag)",
+     "92 visits vs 183 expected by day 29 (50% of pace)",
+     "29 days live: too early for red (Google indexing lag)",
      "Google impressions down 26% (last 14 days vs the 14 before, spikes smoothed)"
     ]
    },
    {
     "id": "community-help-co",
     "name": "Community Help Co",
-    "age": 26,
+    "age": 27,
     "status": "green",
     "trend": "up",
     "views28": 94,
@@ -248,7 +242,7 @@
     "pace": null,
     "moneyPace": null,
     "growth": {
-     "views": 6.0,
+     "views": 4.06,
      "impressions": 1.09
     },
     "imprWeeks": [
@@ -270,9 +264,9 @@
    {
     "id": "trade-admin",
     "name": "tradeadmin.com.au",
-    "age": 23,
-    "status": "green",
-    "trend": "up",
+    "age": 24,
+    "status": "amber",
+    "trend": "flat",
     "views28": 39,
     "prev28": 0,
     "impr28": 487,
@@ -283,10 +277,10 @@
      "moneyClicks": 5
     },
     "targetConfirmed": true,
-    "pace": 1.01,
+    "pace": 0.94,
     "moneyPace": 0.0,
     "growth": {
-     "views": 1.09,
+     "views": 0.7,
      "impressions": 11.41
     },
     "imprWeeks": [
@@ -301,15 +295,15 @@
     ],
     "gscDays": 21,
     "why": [
-     "39 visits vs 39 expected by day 23 (101% of pace)",
-     "23 days live: too early for red (Google indexing lag)",
+     "39 visits vs 41 expected by day 24 (94% of pace)",
+     "24 days live: too early for red (Google indexing lag)",
      "Google impressions up 200%+ (last 14 days vs the 14 before, spikes smoothed)"
     ]
    },
    {
     "id": "paycalc",
     "name": "mypaycalc.com.au",
-    "age": 19,
+    "age": 20,
     "status": "green",
     "trend": "up",
     "views28": 202,
@@ -322,10 +316,10 @@
      "moneyClicks": 0
     },
     "targetConfirmed": true,
-    "pace": 1.39,
+    "pace": 1.29,
     "moneyPace": null,
     "growth": {
-     "views": 1.37,
+     "views": 1.04,
      "impressions": 16.33
     },
     "imprWeeks": [
@@ -340,8 +334,8 @@
     ],
     "gscDays": 17,
     "why": [
-     "202 visits vs 145 expected by day 19 (139% of pace)",
-     "19 days live: too early for red (Google indexing lag)",
+     "202 visits vs 157 expected by day 20 (129% of pace)",
+     "20 days live: too early for red (Google indexing lag)",
      "Google impressions up 200%+ (last 14 days vs the 14 before, spikes smoothed)"
     ]
    }
