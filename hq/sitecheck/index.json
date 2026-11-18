@@ -185,7 +185,7 @@
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-25",
+   "nextDue": "2026-11-24",
    "topFix": "Google shows only 3 of 27 pages (site is 13 days old)",
    "broken": 0,
    "newIssues": 0,
@@ -203,13 +203,100 @@
      "broken": false
     }
    ]
+  },
+  "imnetwork": {
+   "name": "imnetwork.com.au",
+   "url": "https://imnetwork.com.au",
+   "owner": "imn",
+   "scannedAt": "2026-11-18T01:48:45Z",
+   "score": 90,
+   "grade": "A",
+   "change": null,
+   "first": true,
+   "stage": "building",
+   "cadenceDays": 7,
+   "nextDue": "2026-11-25",
+   "topFix": "7 of your top 8 pages aren't in Google's index",
+   "broken": 0,
+   "newIssues": 0,
+   "fixed": 0,
+   "costUsd": 0,
+   "top": [
+    {
+     "id": "not-indexed",
+     "title": "7 of your top 8 pages aren't in Google's index",
+     "severity": "high",
+     "area": "indexing",
+     "fix": "Make the page more useful than what ranks, link to it from the home page, then request indexing in Search Console.",
+     "pages": [
+      "/pricing",
+      "/our-sites",
+      "/example-dashboard",
+      "/get-started"
+     ],
+     "detail": "/pricing: Discovered – currently not indexed; /our-sites: Discovered – currently not indexed; /example-dashboard: Discovered – currently not indexed; /get-started: Discovered – currently not indexed; ",
+     "broken": false
+    },
+    {
+     "id": "thin-pages",
+     "title": "1 thin page(s) (under 80 words of their own)",
+     "severity": "medium",
+     "area": "content",
+     "fix": "Add real detail, merge them, or noindex until they grow.",
+     "pages": [
+      "/contact"
+     ],
+     "detail": "",
+     "broken": false
+    },
+    {
+     "id": "seo-og",
+     "title": "14 page(s) without a share image",
+     "severity": "low",
+     "area": "seo",
+     "fix": "Add an og:image so shared links show a picture.",
+     "pages": [
+      "/",
+      "/pricing",
+      "/our-sites",
+      "/example-dashboard"
+     ],
+     "detail": "",
+     "broken": false
+    },
+    {
+     "id": "seo-words",
+     "title": "2 page(s) under 250 words",
+     "severity": "low",
+     "area": "seo",
+     "fix": "Fine for tools; for guides add the answer people search for.",
+     "pages": [
+      "/our-sites",
+      "/about"
+     ],
+     "detail": "",
+     "broken": false
+    },
+    {
+     "id": "seo-desc",
+     "title": "1 description outside 70–160 characters",
+     "severity": "low",
+     "area": "seo",
+     "fix": "Rewrite to 70–160 characters: what the page gives the searcher.",
+     "pages": [
+      "/privacy-policy"
+     ],
+     "detail": "",
+     "broken": false
+    }
+   ]
   }
  },
- "updated": "2026-11-17T21:08:31Z",
+ "updated": "2026-11-18T01:48:45Z",
  "lastRun": {
-  "at": "2026-11-17T21:08:31Z",
+  "at": "2026-11-18T01:48:45Z",
   "scanned": [
-   "simon-says-travel"
+   "imnetwork"
   ]
  }
 }
