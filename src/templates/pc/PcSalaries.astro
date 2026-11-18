@@ -3,6 +3,10 @@ import { aud, type PayResult } from '../../lib/pay-tax';
 import type { RateFile } from '../../../brands/paycalc/model';
 interface Props { page: { title: string; lede: string }; rates: RateFile; salaries: { n: number; href: string; r: PayResult }[] }
 const { page, rates, salaries } = Astro.props;
+// Bracket and assumption sentences come from rates.json, so they stay right when the rates change.
+const b = rates.brackets;
+const pct = (r: number) => `${Math.round(r * 1000) / 10}%`;
+const bands = b.slice(1).map((x, i) => (i + 2 < b.length ? `${pct(x.rate)} from ${aud(x.from + 1)} to ${aud(b[i + 2].from)}` : `${pct(x.rate)} on every dollar over ${aud(x.from)}`));
 ---
 <section class="pc-wrap pc-section">
   <h1 class="pc-h1">{page.title}</h1>
@@ -19,4 +23,11 @@ const { page, rates, salaries } = Astro.props;
     </table>
   </div>
   <p>Your salary isn’t listed, or you’re paid hourly? <a href="/">Use the calculator</a>.</p>
+  <h2 class="pc-h2">How these figures are worked out</h2>
+  <p class="pc-measure">Each row starts from the salary on its own, before super. We work out income tax at the {rates.yearLabel} resident rates, take off the low income tax offset (up to {aud(rates.lito.max)}), then add the Medicare levy at {pct(rates.medicare.rate)}, reduced for low incomes. What’s left is your take-home pay, divided by 12, 26 or 52 for the monthly, fortnightly and weekly columns. Your employer pays {pct(rates.super.rate)} super on top, so it isn’t taken out of these figures.</p>
+  <p class="pc-measure">Your payslip can differ by a few dollars, because employers use the ATO’s withholding tables, which round each pay. The difference is settled when you lodge your tax return.</p>
+  <h2 class="pc-h2">Which tax bracket is my salary in?</h2>
+  <p class="pc-measure">For {rates.yearLabel} there’s no tax on the first {aud(b[1].from)}, then {bands.join(', ')}. Only the part of your salary inside each band is taxed at that rate, so a pay rise never leaves you with less. Full table: <a href="/tax-brackets">{rates.yearLabel} tax brackets</a>.</p>
+  <h2 class="pc-h2">What this table leaves out</h2>
+  <p class="pc-measure">These figures don’t include HECS-HELP or other study loan repayments (see <a href="/hecs-help-repayments">HECS-HELP repayments</a>, or tick it in the calculator), the Medicare levy surcharge, salary sacrifice, deductions, or a second job where you don’t claim the tax-free threshold. They assume you’re an Australian resident for tax. Every rate and its source is on <a href="/how-we-calculate">how we calculate</a>.</p>
 </section>
