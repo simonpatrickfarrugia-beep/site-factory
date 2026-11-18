@@ -190,16 +190,19 @@ export function routes(): Route[] {
 
   const newest = [...movies].sort(byNewest);
   /** Film pages people actually visit (GA4, data/trailers/stats.json), so the home page links Google straight to them. */
+  /** Trailer pages with a short write-up (under 50 words): live for visitors, kept out of Google until enrich gives them more. */
+  const isThin = (m: Movie) => (m.summary ?? '').trim().split(/\s+/).filter(Boolean).length < 50;
   const popularFilms = () => {
-    const pagesSeen = ((getSingleton('stats') as { pages?: { path: string; allViews?: number; views?: number }[] } | null)?.pages ?? [])
+    const pagesSeen = ((getSingleton('stats') as { pages?: { path: string; allViews?: number; views?: number; gscImpressions?: number }[] } | null)?.pages ?? [])
       .filter((p) => p.path.startsWith('/movies/'))
-      .sort((a, b) => (b.views ?? 0) - (a.views ?? 0) || (b.allViews ?? 0) - (a.allViews ?? 0)); // last 28 days first, then all-time
+      // Pages Google already shows first (Search Console impressions), then visits in the last 28 days, then all-time.
+      .sort((a, b) => (b.gscImpressions ?? 0) - (a.gscImpressions ?? 0) || (b.views ?? 0) - (a.views ?? 0) || (b.allViews ?? 0) - (a.allViews ?? 0));
     const inLatest = new Set(newest.slice(0, 10).map((m) => m.slug));
     const picks: Movie[] = [];
     for (const p of pagesSeen) {
       const m = movies.find((x) => `/movies/${x.slug}` === p.path);
-      if (m && !inLatest.has(m.slug) && !picks.includes(m)) picks.push(m);
-      if (picks.length === 10) break;
+      if (m && !inLatest.has(m.slug) && !picks.includes(m) && !isThin(m)) picks.push(m);
+      if (picks.length === 12) break;
     }
     return picks.map(card);
   };
@@ -268,8 +271,8 @@ export function routes(): Route[] {
       : { '@context': 'https://schema.org', '@type': 'Movie', name: m.name, url, dateCreated: m.year, genre: m.genres, director: people(m.director), actor: people(m.cast), duration: `PT${m.runtimeMinutes}M`, description: m.summary };
     if (f) { schema.video = fullFilmVideo(f, url); schema.image = image; }
     out.push({
-      // No write-up yet (only a trailer and facts): live for visitors, kept out of Google until it has one.
-      noindex: !f && !u && !synthetic && (m.summary ?? '').trim().split(/\s+/).filter(Boolean).length < 40,
+      // Short write-up (only a trailer and facts): live for visitors, kept out of Google until it has a proper one.
+      noindex: !f && !u && !synthetic && isThin(m),
       path: `movies/${m.slug}`,
       template: 'movie',
       seo: { ...(f ? freeSeo(m, f) : u ? upcomingSeo(m, u) : movieSeo(m)), rawTitle: true, image },
