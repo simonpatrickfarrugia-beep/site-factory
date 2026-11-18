@@ -208,59 +208,27 @@
    "name": "imnetwork.com.au",
    "url": "https://imnetwork.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-18T01:48:45Z",
-   "score": 90,
+   "scannedAt": "2026-11-18T21:22:19Z",
+   "score": 95,
    "grade": "A",
-   "change": null,
-   "first": true,
+   "change": 5,
+   "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-25",
-   "topFix": "7 of your top 8 pages aren't in Google's index",
+   "nextDue": "2026-11-26",
+   "topFix": "Google shows only 0 of 14 pages (site is 3 days old)",
    "broken": 0,
-   "newIssues": 0,
-   "fixed": 0,
+   "newIssues": 1,
+   "fixed": 3,
    "costUsd": 0,
    "top": [
     {
-     "id": "not-indexed",
-     "title": "7 of your top 8 pages aren't in Google's index",
-     "severity": "high",
-     "area": "indexing",
-     "fix": "Make the page more useful than what ranks, link to it from the home page, then request indexing in Search Console.",
-     "pages": [
-      "/pricing",
-      "/our-sites",
-      "/example-dashboard",
-      "/get-started"
-     ],
-     "detail": "/pricing: Discovered – currently not indexed; /our-sites: Discovered – currently not indexed; /example-dashboard: Discovered – currently not indexed; /get-started: Discovered – currently not indexed; ",
-     "broken": false
-    },
-    {
-     "id": "thin-pages",
-     "title": "1 thin page(s) (under 80 words of their own)",
-     "severity": "medium",
-     "area": "content",
-     "fix": "Add real detail, merge them, or noindex until they grow.",
-     "pages": [
-      "/contact"
-     ],
-     "detail": "",
-     "broken": false
-    },
-    {
-     "id": "seo-og",
-     "title": "14 page(s) without a share image",
+     "id": "few-pages-in-google",
+     "title": "Google shows only 0 of 14 pages (site is 3 days old)",
      "severity": "low",
-     "area": "seo",
-     "fix": "Add an og:image so shared links show a picture.",
-     "pages": [
-      "/",
-      "/pricing",
-      "/our-sites",
-      "/example-dashboard"
-     ],
+     "area": "indexing",
+     "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 2 pages on 15 Jan 2027, cut or merge weak pages and earn a few links.",
+     "pages": [],
      "detail": "",
      "broken": false
     },
@@ -292,9 +260,9 @@
    ]
   }
  },
- "updated": "2026-11-18T01:48:45Z",
+ "updated": "2026-11-18T21:22:19Z",
  "lastRun": {
-  "at": "2026-11-18T01:48:45Z",
+  "at": "2026-11-18T21:22:19Z",
   "scanned": [
    "imnetwork"
   ]

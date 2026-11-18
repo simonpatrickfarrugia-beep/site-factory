@@ -3,12 +3,12 @@
  "name": "imnetwork.com.au",
  "url": "https://imnetwork.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-18T01:48:45Z",
+ "scannedAt": "2026-11-18T21:22:19Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
- "nextDue": "2026-11-25",
- "score": 90,
+ "nextDue": "2026-11-26",
+ "score": 95,
  "grade": "A",
  "areas": {
   "health": {
@@ -22,17 +22,17 @@
    "label": "Tracking & money links"
   },
   "indexing": {
-   "score": 74,
-   "grade": "C",
+   "score": 97,
+   "grade": "A",
    "label": "Sitemap & indexing"
   },
   "seo": {
-   "score": 86,
-   "grade": "B",
+   "score": 93,
+   "grade": "A",
    "label": "Titles, descriptions & schema"
   },
   "content": {
-   "score": 92,
+   "score": 100,
    "grade": "A",
    "label": "Thin & duplicate pages"
   },
@@ -55,58 +55,15 @@
  "pages": 14,
  "findings": [
   {
-   "id": "not-indexed",
+   "id": "few-pages-in-google",
    "area": "indexing",
-   "severity": "high",
-   "title": "7 of your top 8 pages aren't in Google's index",
-   "fix": "Make the page more useful than what ranks, link to it from the home page, then request indexing in Search Console.",
-   "pages": [
-    "/pricing",
-    "/our-sites",
-    "/example-dashboard",
-    "/get-started",
-    "/contact",
-    "/terms",
-    "/websites-for-tradies"
-   ],
-   "count": 7,
-   "detail": "/pricing: Discovered – currently not indexed; /our-sites: Discovered – currently not indexed; /example-dashboard: Discovered – currently not indexed; /get-started: Discovered – currently not indexed; /contact: Discovered – currently not indexed",
-   "impact": 5.0,
-   "broken": false
-  },
-  {
-   "id": "thin-pages",
-   "area": "content",
-   "severity": "medium",
-   "title": "1 thin page(s) (under 80 words of their own)",
-   "fix": "Add real detail, merge them, or noindex until they grow.",
-   "pages": [
-    "/contact"
-   ],
+   "severity": "low",
+   "title": "Google shows only 0 of 14 pages (site is 3 days old)",
+   "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 2 pages on 15 Jan 2027, cut or merge weak pages and earn a few links.",
+   "pages": [],
    "count": 1,
    "detail": "",
-   "impact": 2.5,
-   "broken": false
-  },
-  {
-   "id": "seo-og",
-   "area": "seo",
-   "severity": "low",
-   "title": "14 page(s) without a share image",
-   "fix": "Add an og:image so shared links show a picture.",
-   "pages": [
-    "/",
-    "/pricing",
-    "/our-sites",
-    "/example-dashboard",
-    "/get-started",
-    "/contact",
-    "/terms",
-    "/websites-for-tradies"
-   ],
-   "count": 14,
-   "detail": "",
-   "impact": 1.0,
+   "impact": 3,
    "broken": false
   },
   {
@@ -146,97 +103,20 @@
   "clicksPrev7": 0,
   "impr28": 0,
   "clicks28": 0,
-  "views28": 0,
+  "views28": 2,
   "viewsPrev28": 0,
-  "recentViews": 0,
-  "lastGa4Day": null,
-  "gscTo": null
+  "recentViews": 2,
+  "lastGa4Day": "2026-11-17",
+  "gscTo": "2026-11-15"
  },
  "queries": [],
- "live": {
-  "serps": [],
-  "index": [
-   {
-    "url": "https://imnetwork.com.au/",
-    "verdict": "PASS",
-    "coverage": "Submitted and indexed",
-    "lastCrawl": "2026-11-17T09:41:02Z",
-    "googleCanonical": "https://imnetwork.com.au/",
-    "robots": "ALLOWED",
-    "fetch": "SUCCESSFUL"
-   },
-   {
-    "url": "https://imnetwork.com.au/pricing",
-    "verdict": "NEUTRAL",
-    "coverage": "Discovered – currently not indexed",
-    "lastCrawl": null,
-    "googleCanonical": null,
-    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
-   },
-   {
-    "url": "https://imnetwork.com.au/our-sites",
-    "verdict": "NEUTRAL",
-    "coverage": "Discovered – currently not indexed",
-    "lastCrawl": null,
-    "googleCanonical": null,
-    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
-   },
-   {
-    "url": "https://imnetwork.com.au/example-dashboard",
-    "verdict": "NEUTRAL",
-    "coverage": "Discovered – currently not indexed",
-    "lastCrawl": null,
-    "googleCanonical": null,
-    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
-   },
-   {
-    "url": "https://imnetwork.com.au/get-started",
-    "verdict": "NEUTRAL",
-    "coverage": "Discovered – currently not indexed",
-    "lastCrawl": null,
-    "googleCanonical": null,
-    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
-   },
-   {
-    "url": "https://imnetwork.com.au/contact",
-    "verdict": "NEUTRAL",
-    "coverage": "Discovered – currently not indexed",
-    "lastCrawl": null,
-    "googleCanonical": null,
-    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
-   },
-   {
-    "url": "https://imnetwork.com.au/terms",
-    "verdict": "NEUTRAL",
-    "coverage": "URL is unknown to Google",
-    "lastCrawl": null,
-    "googleCanonical": null,
-    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
-   },
-   {
-    "url": "https://imnetwork.com.au/websites-for-tradies",
-    "verdict": "NEUTRAL",
-    "coverage": "URL is unknown to Google",
-    "lastCrawl": null,
-    "googleCanonical": null,
-    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
-   }
-  ],
-  "error": null
- },
+ "live": null,
  "costUsd": 0,
  "speed": [
   {
    "url": "https://imnetwork.com.au/",
    "lite": true,
-   "serverSecs": 0.1,
+   "serverSecs": 0.2,
    "htmlKb": 18,
    "blocking": 1,
    "images": 1,
@@ -247,7 +127,7 @@
   {
    "url": "https://imnetwork.com.au/pricing",
    "lite": true,
-   "serverSecs": 0.11,
+   "serverSecs": 0.12,
    "htmlKb": 17,
    "blocking": 1,
    "images": 1,
@@ -257,8 +137,8 @@
   }
  ],
  "quality": {
-  "summary": "14 indexable pages · average 556 words of their own per page · 1 thin · 0 near-duplicate pairs · 0 hard fails",
-  "thin": 1,
+  "summary": "14 indexable pages · average 578 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
+  "thin": 0,
   "near": 0
  },
  "links": {
@@ -268,10 +148,33 @@
   "unsureOutside": 2
  },
  "affiliateOk": 0,
- "secs": 138,
+ "secs": 124,
  "change": {
-  "first": true
+  "first": false,
+  "since": "2026-11-18T01:48:45Z",
+  "score": 5,
+  "newIssues": [
+   "Google shows only 0 of 14 pages (site is 3 days old)"
+  ],
+  "fixed": [
+   "7 of your top 8 pages aren't in Google's index",
+   "1 thin page(s) (under 80 words of their own)",
+   "14 page(s) without a share image"
+  ],
+  "impr28": 0,
+  "clicks28": 0,
+  "views28": 2,
+  "rivals": [],
+  "positions": []
  },
- "history": [],
+ "history": [
+  {
+   "at": "2026-11-18T01:48:45Z",
+   "score": 90,
+   "grade": "A",
+   "impr28": 0,
+   "clicks28": 0
+  }
+ ],
  "issue": null
 }
