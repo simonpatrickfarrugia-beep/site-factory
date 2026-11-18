@@ -1,6 +1,6 @@
 {
   "_note": "Outreach funnel snapshot from D1 (orgs + touches + messages), counts only, no names. Refreshed each morning by the morning-report skill (SQL in .claude/skills/morning-report/SKILL.md). Stage counts are 'ever reached': an org that was sent and then replied counts in both.",
-  "asOf": "2026-11-17T22:05:00Z",
+  "asOf": "2026-11-18T22:00:00Z",
   "brands": {
     "vic": {
       "found": 3,
@@ -12,9 +12,9 @@
       "dropped": 1,
       "oldestWaiting": null,
       "lastSent": "2026-11-12T11:26:53Z",
-      "sent7": 1,
       "mailIn": 7,
-      "mailOut": 6
+      "mailOut": 6,
+      "sent7": 1
     },
     "community-help-co": {
       "found": 16,
@@ -26,9 +26,9 @@
       "dropped": 2,
       "oldestWaiting": "2026-11-02T12:22:27Z",
       "lastSent": "2026-11-17T10:33:58Z",
-      "sent7": 2,
       "mailIn": 0,
-      "mailOut": 0
+      "mailOut": 0,
+      "sent7": 2
     },
     "trade-admin": {
       "found": 0,
@@ -40,9 +40,9 @@
       "dropped": 0,
       "oldestWaiting": null,
       "lastSent": null,
-      "sent7": 0,
       "mailIn": 0,
-      "mailOut": 0
+      "mailOut": 0,
+      "sent7": 0
     },
     "trailers": {
       "found": 5,
@@ -54,9 +54,9 @@
       "dropped": 5,
       "oldestWaiting": null,
       "lastSent": "2026-11-08T23:52:45Z",
-      "sent7": 0,
       "mailIn": 1,
-      "mailOut": 1
+      "mailOut": 1,
+      "sent7": 0
     },
     "paycalc": {
       "found": 0,
@@ -68,23 +68,23 @@
       "dropped": 0,
       "oldestWaiting": null,
       "lastSent": null,
-      "sent7": 0,
       "mailIn": 0,
-      "mailOut": 0
+      "mailOut": 0,
+      "sent7": 0
     },
     "imn": {
-      "found": 2,
-      "drafted": 0,
-      "sent": 0,
+      "found": 3,
+      "drafted": 2,
+      "sent": 2,
       "replied": 0,
       "linked": 0,
       "waiting": 0,
       "dropped": 0,
       "oldestWaiting": null,
-      "lastSent": null,
-      "sent7": 0,
-      "mailIn": 9,
-      "mailOut": 1
+      "lastSent": "2026-11-17T22:33:25Z",
+      "mailIn": 10,
+      "mailOut": 3,
+      "sent7": 2
     }
   }
 }
