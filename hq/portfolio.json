@@ -257,6 +257,18 @@
  "_todo": "Simon's to-do list shown at the top of HQ. kind: do | decide. sprint: true = counts toward the current sprint. ready: {what, link?, at} = Claude has already done the prep (drafts, files, exact values to paste), so Simon only approves; set by the weekly autopilot or a chat session, shown first in the morning report. Claude (or the weekly autopilot) sets done: true + doneAt when Simon says 'done' or an approval email arrives. parked = items for paused brands, kept out of the list until the pause lifts. Optional `brand` (site id) puts the item on that app in IMN HQ's home screen; no brand = the IMN app.",
  "todo": [
   {
+   "id": "chc-checkin-import",
+   "kind": "do",
+   "mins": 5,
+   "what": "Switch on Check-in: Cloudflare → Workers & Pages → Create → Import a repository → site-factory. Project name chc-checkin, build command empty, deploy command: npx wrangler deploy --config workers/checkin/wrangler.jsonc. Then open https://checkin.communityhelp.com.au and log in with simon@communityhelp.com.au",
+   "why": "The Check-in app (reminders + goals for CHC clients) is built and its database is ready; it goes live once Cloudflare deploys it.",
+   "link": "https://github.com/simonpatrickfarrugia-beep/site-factory/blob/main/docs/CHECKIN.md",
+   "linkLabel": "Setup notes",
+   "done": false,
+   "addedAt": "2026-11-19",
+   "brand": "community-help-co"
+  },
+  {
    "id": "ta-mail-hub",
    "kind": "do",
    "sprint": true,

@@ -1,0 +1,33 @@
+{
+  // chc-checkin: Community Help Co "Check-in", goal reminders + messages for Simon's clients (docs/CHECKIN.md).
+  // Deploy: npx wrangler deploy --config workers/checkin/wrangler.jsonc
+  // Database setup (once): npx wrangler d1 migrations apply chc-checkin --remote --config workers/checkin/wrangler.jsonc
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "chc-checkin",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-06-01",
+  "workers_dev": false,
+  "preview_urls": false,
+  // Every request runs the Worker first, so every response carries noindex + security headers.
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "not_found_handling": "single-page-application"
+  },
+  // Its own database: client data never sits next to the public sites' form data.
+  "d1_databases": [
+    { "binding": "DB", "database_name": "chc-checkin", "database_id": "39d0e041-9743-4e0d-a9ae-eaef1dea2da4", "migrations_dir": "migrations" }
+  ],
+  // Email (magic links, fallback reminders) goes through IMN HQ's Microsoft 365 sender, so no new secrets.
+  "services": [{ "binding": "MAILER", "service": "imn-hq", "entrypoint": "Mailer" }],
+  "vars": {
+    "APP_URL": "https://checkin.communityhelp.com.au",
+    "ADMIN_EMAILS": "simon@communityhelp.com.au",
+    "VAPID_SUBJECT": "mailto:simon@communityhelp.com.au"
+  },
+  "routes": [{ "pattern": "checkin.communityhelp.com.au", "custom_domain": true }],
+  // Every minute: send reminders that are due. (Workers Free: 5 crons per account; this is the 4th.)
+  "triggers": { "crons": ["* * * * *"] },
+  "observability": { "enabled": true }
+}

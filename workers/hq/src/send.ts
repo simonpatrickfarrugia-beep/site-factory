@@ -164,3 +164,20 @@ export async function sendForOrg(env: SendEnv, brands: Brands, id: number, b: Js
   await env.DB.batch(stmts);
   return { ok: true, status: await sendStatus(env, brands) };
 }
+
+/** For other IMN Workers over a service binding (Mailer entrypoint in index.ts): one transactional email
+ *  from the main mailbox (MS_SENDER), HTML as given. Used by chc-checkin for login links and reminders. */
+export async function sendTransactional(env: SendEnv, msg: { to: string; subject: string; html: string; saveToSentItems?: boolean }) {
+  if (!configured(env)) return { ok: false, error: 'Microsoft app not set up on imn-hq' };
+  if (!EMAIL.test(msg.to) || !msg.subject || !msg.html) return { ok: false, error: 'Bad message' };
+  const r = await fetch(`https://graph.microsoft.com/v1.0/users/${encodeURIComponent(env.MS_SENDER!)}/sendMail`, {
+    method: 'POST',
+    headers: { authorization: 'Bearer ' + (await graphToken(env)), 'content-type': 'application/json' },
+    body: JSON.stringify({
+      message: { subject: msg.subject.slice(0, 200), body: { contentType: 'HTML', content: msg.html }, toRecipients: [{ emailAddress: { address: msg.to } }] },
+      saveToSentItems: msg.saveToSentItems ?? false,
+    }),
+  });
+  if (r.status === 202) return { ok: true };
+  return { ok: false, error: `Microsoft didn't send it (${r.status})` };
+}

@@ -11,7 +11,8 @@ import { radar, review, markDrafted, saveCoaching, kvSet } from './radar';
 import { feature, unfeature, featuredFor, followUpOpened, closeNoReply, markHandled, autoClose, needsReply, FOLLOW_UP_DAYS } from './followthrough';
 import { FOLLOW_UP, FEATURE_LINE } from './templates';
 import { ICON_SVG, ICON_180, ICON_512, MANIFEST } from './app-assets';
-import { sendForOrg, sendStatus } from './send';
+import { sendForOrg, sendStatus, sendTransactional } from './send';
+import { WorkerEntrypoint } from 'cloudflare:workers';
 import { hq } from './funnel';
 import { siteCheckIndex, siteCheckCard } from './sitecheck';
 import { apps } from './apps';
@@ -37,6 +38,14 @@ type Target = {
 };
 type BrandCfg = { name: string; active: boolean; weeklyCap: number; perTargetCap: number; site?: string; from?: string; mailReady?: boolean; segments?: Record<string, string> };
 const T = TARGETS as unknown as { generated: string; brands: Record<string, BrandCfg>; targets: Target[] };
+
+/** Service-binding entrypoint (not reachable from the internet): lets other IMN Workers send email through
+ *  this Worker's Microsoft 365 app. Used by chc-checkin (workers/checkin) for login links and reminder emails. */
+export class Mailer extends WorkerEntrypoint<Env> {
+  async send(msg: { to: string; subject: string; html: string; saveToSentItems?: boolean }) {
+    try { return await sendTransactional(this.env, msg); } catch (e) { return { ok: false, error: (e as Error).message }; }
+  }
+}
 
 export const STAGES = ['found', 'drafted', 'sent', 'replied', 'linked', 'won', 'no'] as const;
 
