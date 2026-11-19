@@ -57,7 +57,8 @@ export async function encryptPayload(sub: PushSub, payload: Bytes) {
   const local = (await crypto.subtle.generateKey({ name: 'ECDH', namedCurve: 'P-256' }, true, ['deriveBits'])) as CryptoKeyPair;
   const asPublic = new Uint8Array((await crypto.subtle.exportKey('raw', local.publicKey)) as ArrayBuffer);
   const uaKey = await crypto.subtle.importKey('raw', uaPublic, { name: 'ECDH', namedCurve: 'P-256' }, false, []);
-  const ecdh = new Uint8Array(await crypto.subtle.deriveBits({ name: 'ECDH', public: uaKey } as EcdhKeyDeriveParams, local.privateKey, 256));
+  const ecdhAlg = { name: 'ECDH', public: uaKey }; // a variable (not a literal) so both DOM and workers-types accept it
+  const ecdh = new Uint8Array(await crypto.subtle.deriveBits(ecdhAlg, local.privateKey, 256));
   const ikm = await hkdf(authSecret, ecdh, concat(te('WebPush: info\0'), uaPublic, asPublic), 32);
   const salt = crypto.getRandomValues(new Uint8Array(16));
   const cek = await hkdf(salt, ikm, te('Content-Encoding: aes128gcm\0'), 16);
