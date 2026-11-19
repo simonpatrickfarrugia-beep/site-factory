@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS previews (
   org_id INTEGER,                   -- orgs.id when it came from outreach, else NULL
   business TEXT NOT NULL,
   data TEXT NOT NULL,               -- JSON, see PreviewData in src/worker/preview.ts
-  status TEXT NOT NULL DEFAULT 'draft',  -- draft | sent | won | lost
+  status TEXT NOT NULL DEFAULT 'draft',  -- draft | sent | free | won | lost (free/won also serve /site/<slug>, 20 Nov 2026)
   created_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now')),
   expires_at TEXT NOT NULL,         -- ISO; after this the page says it has expired (unless status = won)
   views INTEGER NOT NULL DEFAULT 0,

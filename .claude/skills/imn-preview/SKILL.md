@@ -44,7 +44,8 @@ Validate first: `python3 -I scripts/imn/check_preview.py <file.json>` (keep the 
 `INSERT INTO previews (slug, org_id, business, data, status, expires_at) VALUES (?, ?, ?, ?, 'draft', ?)` with params
 (org_id = the IMN HQ org id if it came from outreach, else NULL).
 Rows you may change: `previews` only. Updates: `UPDATE previews SET data = ?, expires_at = ? WHERE slug = ?` (changes or extension),
-`UPDATE previews SET status = ? WHERE slug = ?` (sent / won / lost). Never delete rows; a takedown request = set expires_at to now.
+`UPDATE previews SET status = ? WHERE slug = ?` (sent / free / won / lost). Never delete rows; a takedown request = set expires_at to now
+(and status = 'lost' for a free site, which takes https://imnetwork.com.au/site/<slug> down at once).
 
 ## Step 4: Check it live
 Probe `https://imnetwork.com.au/preview/<slug>?notrack=1` (scripts/claude/probe.sh): HTTP 200, `x-robots-tag: noindex`, the business
@@ -73,6 +74,17 @@ Thanks,
 ```
 Tell Simon to paste a screenshot of the preview's top section into the email (open the link on his phone, screenshot, paste) before
 sending, and to set From = simon@imnetwork.com.au. Then `UPDATE previews SET status = 'sent' WHERE slug = ?` once he confirms.
+
+## Step 6: They said yes to the free website (Simon, 20 Nov 2026: "the website's free, you pay us to run it")
+When Simon says "<business> said yes to the free site" (or they used the preview's "Yes, put my free website live" email):
+1. Apply any changes they asked for (`UPDATE previews SET data = ? WHERE slug = ?`), re-validate.
+2. `UPDATE previews SET status = 'free' WHERE slug = ?`. The site is now live, permanent and on Google at
+   `https://imnetwork.com.au/site/<slug>`: no IMN frame or notes, call/email/Facebook buttons instead of the form, "Website by IMN" badge.
+3. Probe `https://imnetwork.com.au/site/<slug>`: HTTP 200, no noindex, canonical = that URL, business name, badge present.
+4. Draft Simon's reply: the live link; "it's yours, free, for good"; the free version has no changes or support; if they ever want
+   their own web address, a dashboard showing visits and enquiries, daily checks and monthly changes, it's $99 + GST a month, no lock-in
+   (https://imnetwork.com.au/pricing). Suggest they add the link to their Google Business Profile (Edit profile → Website).
+Free sites never expire. Paid ("won") clients keep the /site/ link working until their own domain is live.
 
 ## Reporting
 Give Simon: the link, 3 lines on what you found, the top search and its volume, the DataForSEO cost, and the reply draft.

@@ -1,5 +1,8 @@
 /**
  * IMN website previews (17 Nov 2026): https://imnetwork.com.au/preview/<slug>
+ * Free websites (20 Nov 2026, Simon: "the website's free, you pay us to run it"): once a business says yes, the same row
+ * (status 'free' or 'won') is served as a clean, permanent, indexable site at https://imnetwork.com.au/site/<slug>, with a
+ * "Website by IMN" badge. Free = no changes or support; $99 + GST a month = their own domain, dashboard, checks, changes.
  *
  * A private, not-indexed preview of a prospect's new website, plus a "Built for <business>" panel that shows the homework:
  * the gaps we found, what people nearby search (real monthly numbers), who shows up on Google now, what we built and why,
@@ -71,9 +74,9 @@ const HEADERS = {
   'x-frame-options': 'DENY',
 };
 
-function shell(title: string, body: string, brand = '#1F3A5F', accent = '#F2A93B') {
+function shell(title: string, body: string, brand = '#1F3A5F', accent = '#F2A93B', robots = 'noindex,nofollow,noarchive', head = '') {
   return `<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow,noarchive"><title>${esc(title)}</title><link rel="icon" href="/logo-mark.svg">
+<meta name="robots" content="${robots}"><title>${esc(title)}</title>${head}<link rel="icon" href="/logo-mark.svg">
 <style>
 :root{--b:${brand};--bi:${ink(brand)};--a:${accent};--ai:${ink(accent)};--ink:#121A2B;--mut:#5B6475;--line:#E6DFD3;--paper:#FBF8F3;--coin:#F2A93B}
 *{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--paper)}
@@ -106,6 +109,8 @@ a{color:inherit}h1,h2,h3{line-height:1.15;margin:0 0 .5rem}.w{width:min(100% - 2
 .s-form{display:grid;gap:.6rem;max-width:30rem}.s-form input,.s-form textarea{font:inherit;padding:.6rem .7rem;border:1px solid #ccc;border-radius:8px;background:#fafafa}
 .s-note{font-size:.85rem;color:var(--mut)}.s-foot{background:var(--b);color:var(--bi);padding:1.2rem 0;font-size:.9rem}
 .endframe{text-align:center;font-size:.85rem;color:var(--mut);margin:0 0 2rem}
+.s-badge{background:#fff;text-align:center;font-size:.8rem;padding:.55rem 0}.s-badge a{color:#5B6475;text-decoration:none}.s-badge a:hover{text-decoration:underline}
+body.free{background:#fff}
 /* ---------- IMN notes (below the frame) ---------- */
 .imn{padding:.5rem 0 3rem}.imn h2{font-size:clamp(1.45rem,4vw,1.9rem)}
 .imn h3{font-size:1.12rem;margin-top:1.8rem}.imn .lede{font-size:1.05rem;max-width:58ch}
@@ -119,24 +124,28 @@ a{color:inherit}h1,h2,h3{line-height:1.15;margin:0 0 .5rem}.w{width:min(100% - 2
 </style></head><body>${body}</body></html>`;
 }
 
-function render(row: Row, d: PreviewData, guarantee: string): string {
+/** Their website itself (header to footer). mode 'preview' = inside the IMN frame, form switched off; 'free' = the live free site. */
+function siteHtml(d: PreviewData, mode: 'preview' | 'free', slug: string): string {
   const b = d.business;
-  const r = d.research;
-  const brand = hex(d.colors?.brand, '#1F3A5F');
-  const accent = hex(d.colors?.accent, '#F2A93B');
   const logo = url(b.logo?.src);
   const phone = b.phone ? `<a class="s-call" href="tel:${esc(tel(b.phone))}" aria-label="Call ${esc(b.phone)}"><span class="lg">Call ${esc(b.phone)}</span><span class="sm">📞 Call</span></a>` : '';
   const chips = [b.licence ? `${b.licence.label} ${b.licence.number}` : '', b.hours ?? '', b.areas.length ? `Servicing ${b.areas.slice(0, 3).join(', ')}${b.areas.length > 3 ? ' and more' : ''}` : '']
     .filter(Boolean).map((c) => `<li>${esc(c)}</li>`).join('') + (url(b.reviewsUrl) ? `<li><a href="${esc(url(b.reviewsUrl))}" rel="noopener">★ Our Google reviews</a></li>` : '');
-  const addr = b.domain && /^[a-z0-9.-]+\.[a-z]{2,}$/i.test(b.domain) ? b.domain : `${b.name.toLowerCase().replace(/[^a-z0-9]+/g, '').slice(0, 24) || 'yourbusiness'}.com.au`;
   const brandMark = logo
     ? `<img class="s-logo${b.logo?.dark ? ' s-logo--dark' : ''}" src="${esc(logo)}" alt="${esc(b.logo?.alt || b.name)}" onerror="this.remove();document.getElementById('nm').hidden=false"><span id="nm" hidden>${esc(b.name)}</span>`
     : esc(b.name);
 
-  const site = `
-<div class="frame" role="region" aria-label="Preview of the new ${esc(b.name)} website">
-<div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="addr">🔒 ${esc(addr)}</span><span class="pill">Preview</span></div>
-<div class="site">
+  const contact = mode === 'free'
+    ? `<section class="s-sec" id="quote"><div class="w"><h2>Get a quote</h2>
+  <p>Tell us what you need and where you are, and we'll get back to you.</p>
+  <div class="s-btns">${b.phone ? `<a class="s-btn" href="tel:${esc(tel(b.phone))}">Call ${esc(b.phone)}</a>` : ''}${b.email ? `<a class="s-btn s-btn--o" href="mailto:${esc(b.email)}?subject=${encodeURIComponent('Quote request')}">Email ${esc(b.email)}</a>` : ''}${url(b.facebookUrl) ? `<a class="s-btn s-btn--o" href="${esc(url(b.facebookUrl))}" rel="noopener">Message us on Facebook</a>` : ''}</div>
+</div></section>`
+    : `<section class="s-sec" id="quote"><div class="w"><h2>Get a quote</h2>
+  <div class="s-form" aria-disabled="true"><input disabled placeholder="Your name"><input disabled placeholder="Phone or email"><input disabled placeholder="Suburb"><textarea disabled rows="3" placeholder="What do you need done?"></textarea></div>
+  <p class="s-note">This form switches on when the site goes live. In the preview it doesn't send anything.</p>
+</div></section>`;
+  const badge = `<div class="s-badge"><a href="${IMN.site}/?ref=free-site&amp;site=${encodeURIComponent(slug)}" data-cta="imn_badge">Website by IMN</a></div>`;
+  return `<div class="site">
 <header class="s-head"><div class="w"><span class="s-name">${brandMark}</span>${phone}</div></header>
 <section class="s-hero"><div class="w">
   <h1>${esc(b.tagline)}</h1>
@@ -148,12 +157,24 @@ function render(row: Row, d: PreviewData, guarantee: string): string {
 ${(d.photos ?? []).filter((p) => url(p.src)).length ? `<section class="s-sec"><div class="w"><h2>Recent work</h2><div class="s-photos">${(d.photos ?? []).filter((p) => url(p.src)).map((p) => `<img src="${esc(url(p.src))}" alt="${esc(p.alt)}" loading="lazy">`).join('')}</div></div></section>` : ''}
 ${b.areas.length ? `<section class="s-sec"><div class="w"><h2>Areas we cover</h2><ul class="s-areas">${b.areas.map((a) => `<li>${esc(a)}</li>`).join('')}</ul></div></section>` : ''}
 ${b.about?.length ? `<section class="s-sec"><div class="w"><h2>About ${esc(b.name)}</h2>${b.about.map((p) => `<p>${esc(p)}</p>`).join('')}</div></section>` : ''}
-<section class="s-sec" id="quote"><div class="w"><h2>Get a quote</h2>
-  <div class="s-form" aria-disabled="true"><input disabled placeholder="Your name"><input disabled placeholder="Phone or email"><input disabled placeholder="Suburb"><textarea disabled rows="3" placeholder="What do you need done?"></textarea></div>
-  <p class="s-note">This form switches on when the site goes live. In the preview it doesn't send anything.</p>
-</div></section>
+${contact}
 <footer class="s-foot"><div class="w">${esc(b.name)}${b.licence ? ` · ${esc(b.licence.label)} ${esc(b.licence.number)}` : ''}${b.phone ? ` · ${esc(b.phone)}` : ''}${b.email ? ` · ${esc(b.email)}` : ''}</div></footer>
-</div></div>
+${badge}
+</div>`;
+}
+
+function render(row: Row, d: PreviewData, guarantee: string): string {
+  const b = d.business;
+  const r = d.research;
+  const brand = hex(d.colors?.brand, '#1F3A5F');
+  const accent = hex(d.colors?.accent, '#F2A93B');
+  const logo = url(b.logo?.src);
+  const addr = b.domain && /^[a-z0-9.-]+\.[a-z]{2,}$/i.test(b.domain) ? b.domain : `${b.name.toLowerCase().replace(/[^a-z0-9]+/g, '').slice(0, 24) || 'yourbusiness'}.com.au`;
+  const freeUrl = `${IMN.site}/site/${row.slug}`;
+  const site = `
+<div class="frame" role="region" aria-label="Preview of the new ${esc(b.name)} website">
+<div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="addr">🔒 ${esc(addr)}</span><span class="pill">Preview</span></div>
+${siteHtml(d, 'preview', row.slug)}</div>
 <p class="endframe">▲ End of the website preview</p>`;
 
   const total = r.searches.reduce((n, s) => n + (s.volume || 0), 0);
@@ -173,9 +194,11 @@ ${b.about?.length ? `<section class="s-sec"><div class="w"><h2>About ${esc(b.nam
   ${r.built.length ? `<h3>What we built, and why</h3><div class="box"><ul class="found">${r.built.map((x) => `<li><b>${esc(x.t)}</b>: ${esc(x.why)}</li>`).join('')}</ul></div>` : ''}
 
   <div class="offer">
-    <h3>Want it live?</h3>
-    <p><strong>Your web crew.</strong> You run the business, we run the website.</p>
-    <p><strong>$99 + GST a month</strong> ($108.90 inc GST). We put this live on your own web address, host it, check it every day and make up to 2 rounds of changes a month. <strong>No setup fee, no lock-in contract</strong>: cancel any time.</p>
+    <h3>This website is yours, free</h3>
+    <p><strong>The website's free. You pay us to run it.</strong> Say yes and we put it live at <b>${esc(freeUrl.replace('https://', ''))}</b>, free for good, with a small "Website by IMN" link at the bottom. The free version doesn't include changes or support.</p>
+    <a class="go" href="mailto:${IMN.email}?subject=${encodeURIComponent(`Yes to my free website: ${b.name}`)}&amp;body=${encodeURIComponent(`Hi IMN, yes please, put my free website live. Preview: ${IMN.site}/preview/${row.slug}`)}">Yes, put my free website live</a>
+    <h3 style="margin-top:1.6rem">Want us to run it for you?</h3>
+    <p><strong>$99 + GST a month</strong> ($108.90 inc GST). We put it on your own web address, give you a dashboard showing visits and enquiries, check it every day and make up to 2 rounds of changes a month. <strong>No setup fee, no lock-in contract</strong>: cancel any time.</p>
     ${guarantee ? `<div class="guar"><span aria-hidden="true">🛡️</span><div>${guarantee}</div></div>` : ''}
     <p>Want changes first? Reply to our email and tell us what to change. No charge for that.</p>
     <a class="go" href="${IMN.plan}?client_reference_id=${encodeURIComponent(row.slug)}" rel="noopener">Start my plan</a>
@@ -188,7 +211,7 @@ ${b.about?.length ? `<section class="s-sec"><div class="w"><h2>About ${esc(b.nam
     <li><a href="${IMN.site}" rel="noopener">${IMN.name} (IMN)</a> is a Melbourne company that builds and looks after websites for local businesses. Check our ABN ${IMN.abn} on the <a href="${IMN.abnUrl}" rel="noopener">government's ABN Lookup</a>.</li>
     <li>This preview asks for nothing: no login, no form that sends, no payment details.</li>
     <li>We built it only from information ${esc(b.name)} already publishes${r.sources.length ? ` (${r.sources.map((s) => url(s.url) ? `<a href="${esc(url(s.url))}" rel="noopener">${esc(s.t)}</a>` : esc(s.t)).join(', ')})` : ''}${logo ? ', including your logo and colours' : ''}. Want it taken down? Email ${IMN.email} and it's gone the same day.</li>
-    <li>It isn't on Google and stops working on ${esc(day(row.expires_at))}.</li>
+    <li>This preview isn't on Google and stops working on ${esc(day(row.expires_at))}, unless you say yes to your free website.</li>
   </ul></div>
 </section>`;
 
@@ -226,4 +249,23 @@ export async function preview(env: { DB: D1Database; PREVIEW_GUARANTEE?: string 
     await env.DB.prepare(`UPDATE previews SET views = views + 1, last_viewed_at = strftime('%Y-%m-%dT%H:%M:%fZ','now'), first_viewed_at = COALESCE(first_viewed_at, strftime('%Y-%m-%dT%H:%M:%fZ','now')) WHERE slug = ?`).bind(slug).run();
   }
   return new Response(method === 'HEAD' ? null : render(row, d, guaranteeHtml(env.PREVIEW_GUARANTEE)), { headers: HEADERS });
+}
+
+/** The free website itself: https://imnetwork.com.au/site/<slug>. Served only once the business said yes (status free or won). */
+export async function freeSite(env: { DB: D1Database }, slug: string, method: string): Promise<Response> {
+  if (method !== 'GET' && method !== 'HEAD') return new Response('Method not allowed', { status: 405, headers: { allow: 'GET, HEAD' } });
+  const notFound = () => message('Website not found', `Looking for a business website by IMN? Email <a href="mailto:${IMN.email}">${IMN.email}</a>.`, 404);
+  if (!/^[a-z0-9-]{6,80}$/.test(slug)) return notFound();
+  const row = await env.DB.prepare('SELECT slug, business, data, status, expires_at, views FROM previews WHERE slug = ?').bind(slug).first<Row>();
+  if (!row || (row.status !== 'free' && row.status !== 'won')) return notFound();
+  let d: PreviewData;
+  try { d = JSON.parse(row.data) as PreviewData; } catch { return message('Website unavailable', `Something went wrong on our side. Email <a href="mailto:${IMN.email}">${IMN.email}</a>.`, 500); }
+  if (d.sample) return notFound();
+  const b = d.business;
+  const canonical = `${IMN.site}/site/${row.slug}`;
+  const desc = `${b.trade}${b.areas.length ? ` for ${b.areas.slice(0, 4).join(', ')}` : ''}. ${b.tagline}`;
+  const head = `<link rel="canonical" href="${canonical}"><meta name="description" content="${esc(desc.slice(0, 160))}">`;
+  const html = shell(`${b.name}: ${b.trade}${b.areas[0] ? ` in ${b.areas[0]}` : ''}`, `<main>${siteHtml(d, 'free', row.slug)}</main>`.replace('<main>', '<main class="free-site">'),
+    hex(d.colors?.brand, '#1F3A5F'), hex(d.colors?.accent, '#F2A93B'), 'index,follow', head).replace('<body>', '<body class="free">');
+  return new Response(method === 'HEAD' ? null : html, { headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'public, max-age=300', 'referrer-policy': 'strict-origin-when-cross-origin', 'x-frame-options': 'DENY' } });
 }
