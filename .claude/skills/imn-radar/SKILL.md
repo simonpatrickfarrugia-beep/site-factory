@@ -55,10 +55,14 @@ Only claim what the data supports; with little data, say so.
 ## Step 3 — Top up the queue
 Queue size follows the warm-up ramp: day = days since `first` + 1 (day 1 if NULL). Days 1-7: 5. Days 8-14: 10. From day 15: 10 per brand
 with `leftThisWeek` > 0, capped at 25. Needed = size − queue count. If Needed <= 0, go to step 4.
-PACE TO SIMON: prospects are only worth something once sent. If 5+ liked drafts are unsent, or 3+ follow-ups are due, cap Needed
-at 2 (only the strongest, dated triggers) and say why in radar_last_run's note, e.g. "paced: 9 drafts waiting to send".
-Pick targets from radar_targets: highest score first, skip brands with leftThisWeek <= 0, max 3 per brand per run before day 15,
-applying playbook and coaching. For each target find ONE real organisation of that type in that region (start from its search phrases
+IMN FIRST (Simon, 19 Nov 2026: "prioritise IMN"; target 3 paying IMN clients by 31 Dec): IMN is always filled first. Before day 15,
+IMN may take the WHOLE day's size (no per-brand cap for IMN); other brands only get what IMN leaves. From day 15, IMN gets its full 10
+before any other brand is topped up. If IMN runs out of verified finds (3 dead ends in every region), give the leftover to other brands.
+PACE TO SIMON, PER BRAND: prospects are only worth something once sent. Count unsent liked drafts and due follow-ups for EACH brand.
+A brand with 5+ unsent liked drafts or 3+ follow-ups due gets at most 2 new prospects this run (strongest, dated triggers only);
+other brands are not slowed by it. Say who was paced and why in radar_last_run's note, e.g. "paced CHC: 12 drafts waiting to send".
+Pick targets from radar_targets: IMN first, then highest score first, skip brands with leftThisWeek <= 0, max 3 per non-IMN brand per
+run before day 15, applying playbook and coaching. For each target find ONE real organisation of that type in that region (start from its search phrases
 and the brand's trigger "look" hints; WebSearch, then WebFetch their own pages). Find:
 - FIT, TRIGGER (best dated trigger from the brand's signals, verified; prefer 0-8 weeks away; strong evergreen fits allowed with a lower score),
   GAP (from the brand's gaps list, checked on the page), PROOF (brand's proof list, real numbers only, e.g. Vic `pages[].gscImpressions`
