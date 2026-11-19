@@ -129,7 +129,9 @@ I'm Simon from Independent Media Network ({site}), a Melbourne web crew for loca
 
 I came across {organisation} while looking at {region} businesses on Google, and noticed you don't have a website people can click through to yet.
 
-I'd like to build you a simple website for free, made from what you already publish: your services, area, hours and how to reach you. It's yours to keep, free, for good.
+Our mission is to help local businesses reach more of the people already looking for them. Plenty of customers check a website before they call, so having one might help {organisation} get found.
+
+So I'd like to build you a simple website for free, made from what you already publish: your services, area, hours and how to reach you. It's yours to keep, free, for good.
 
 If you later want us to run it for you (your own web address, a dashboard showing visits and enquiries, daily checks and monthly changes), that's $99 + GST a month, no lock-in. How it works:
 {page}

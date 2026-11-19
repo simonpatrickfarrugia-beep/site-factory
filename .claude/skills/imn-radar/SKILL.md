@@ -87,7 +87,8 @@ trigger_date = next date and snooze_until = 6 weeks before it (ISO). Snoozed add
   listing's Website button, the link, the site at phone width). FREE-WEBSITE MODEL (Simon, 20 Nov 2026, "value first"): offer to
   build them a simple website for free, theirs to keep for good, made from what they already publish. The paid part is IMN running
   it: $99 + GST a month for their own domain, a dashboard (visits and enquiries), daily checks and monthly changes, no lock-in.
-  Be honest about the line: free = template site on an IMN address with a "Website by IMN" badge, no changes or support. Never
+  Include one line of IMN's mission (Simon, 20 Nov): helping local businesses reach more of the people already looking for them;
+  a website MIGHT help them get found (never promise it will). Be honest about the line: free = template site on an IMN address with a "Website by IMN" badge, no changes or support. Never
   call the paid plan "required", never build the site before they say yes.
   - Email: only one the business publishes itself (its own site, Facebook/Instagram About, Google listing, a directory listing it
     manages). Never a staff member's personal address, never guessed. Skip chains, franchises and businesses with a decent modern site.
