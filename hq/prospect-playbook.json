@@ -825,7 +825,7 @@
           "key": "trades",
           "label": "Local trade business (plumber, electrician, landscaper, roofer, concreter, builder)",
           "weight": 0.8,
-          "offer": "A free preview of a simple website for their {region} trade business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+          "offer": "A free simple website for their {region} business, built from what they already publish, theirs to keep; $99 + GST a month only if they want IMN to run it (own domain, dashboard, checks, changes), no lock-in.",
           "evidence": "Google listing with reviews but a dead website link (old business.site page) or no website at all; or a site that is not secure or broken on phones.",
           "page": "https://imnetwork.com.au/websites-for-tradies",
           "search": [
@@ -840,7 +840,7 @@
           "key": "trade-adjacent",
           "label": "Home services (cleaner, removalist, pest control, mobile mechanic, handyman)",
           "weight": 0.8,
-          "offer": "A free preview of a simple website for their {region} business; $99 + GST a month if they want it, no setup fee, no lock-in.",
+          "offer": "A free simple website for their {region} business, built from what they already publish, theirs to keep; $99 + GST a month only if they want IMN to run it (own domain, dashboard, checks, changes), no lock-in.",
           "evidence": "Google listing with reviews but no working website, or a Facebook page used as the website.",
           "page": "https://imnetwork.com.au/websites-for-tradies",
           "search": [
@@ -855,7 +855,7 @@
           "key": "personal",
           "label": "Personal services (dog grooming, tutoring, personal training, barber)",
           "weight": 0.8,
-          "offer": "A free preview of a simple website with services, prices, hours and a booking link; $99 + GST a month if they want it, no lock-in.",
+          "offer": "A free simple website for their {region} business, built from what they already publish, theirs to keep; $99 + GST a month only if they want IMN to run it (own domain, dashboard, checks, changes), no lock-in.",
           "evidence": "Instagram/Facebook-only business, or a site that is old or not mobile-friendly. Skip registered health practitioners.",
           "page": "https://imnetwork.com.au/pricing",
           "search": [
@@ -869,7 +869,7 @@
           "key": "hospitality",
           "label": "Cafes, restaurants, bakeries and caterers (independent, one or two venues)",
           "weight": 0.9,
-          "offer": "A free preview of a simple website for their {region} business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+          "offer": "A free simple website for their {region} business, built from what they already publish, theirs to keep; $99 + GST a month only if they want IMN to run it (own domain, dashboard, checks, changes), no lock-in.",
           "evidence": "Google listing with reviews but a dead website link, or a Facebook/Instagram page used as the website; menu only as a photo or PDF.",
           "page": "https://imnetwork.com.au/pricing",
           "search": [
@@ -883,7 +883,7 @@
           "key": "beauty",
           "label": "Hair, beauty and wellness studios (hairdresser, nails, lashes, massage)",
           "weight": 0.9,
-          "offer": "A free preview of a simple website for their {region} business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+          "offer": "A free simple website for their {region} business, built from what they already publish, theirs to keep; $99 + GST a month only if they want IMN to run it (own domain, dashboard, checks, changes), no lock-in.",
           "evidence": "Booking only through Instagram/Facebook, or no site of their own. Skip registered health practitioners.",
           "page": "https://imnetwork.com.au/pricing",
           "search": [
@@ -897,7 +897,7 @@
           "key": "retail",
           "label": "Independent shops and makers (boutique, florist, gift store, pet shop)",
           "weight": 0.8,
-          "offer": "A free preview of a simple website for their {region} business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+          "offer": "A free simple website for their {region} business, built from what they already publish, theirs to keep; $99 + GST a month only if they want IMN to run it (own domain, dashboard, checks, changes), no lock-in.",
           "evidence": "Google listing with reviews but no website or a dead link; trading hours and range only on social media.",
           "page": "https://imnetwork.com.au/pricing",
           "search": [
@@ -911,7 +911,7 @@
           "key": "fitness",
           "label": "Fitness, dance and yoga studios, martial arts schools",
           "weight": 0.8,
-          "offer": "A free preview of a simple website for their {region} business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+          "offer": "A free simple website for their {region} business, built from what they already publish, theirs to keep; $99 + GST a month only if they want IMN to run it (own domain, dashboard, checks, changes), no lock-in.",
           "evidence": "Timetable and prices only on Facebook/Instagram, or an old site that is not mobile-friendly.",
           "page": "https://imnetwork.com.au/pricing",
           "search": [
@@ -925,7 +925,7 @@
           "key": "creative",
           "label": "Photographers, event and wedding suppliers, celebrants, DJs",
           "weight": 0.8,
-          "offer": "A free preview of a simple website for their {region} business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+          "offer": "A free simple website for their {region} business, built from what they already publish, theirs to keep; $99 + GST a month only if they want IMN to run it (own domain, dashboard, checks, changes), no lock-in.",
           "evidence": "Portfolio only on Instagram, or a free-builder site with no contact details.",
           "page": "https://imnetwork.com.au/pricing",
           "search": [
@@ -939,7 +939,7 @@
           "key": "auto",
           "label": "Auto services (detailing, tyres, panel beating, driving school)",
           "weight": 0.8,
-          "offer": "A free preview of a simple website for their {region} business, built from what they already publish; $99 + GST a month if they want it, no setup fee, no lock-in.",
+          "offer": "A free simple website for their {region} business, built from what they already publish, theirs to keep; $99 + GST a month only if they want IMN to run it (own domain, dashboard, checks, changes), no lock-in.",
           "evidence": "Google listing with reviews but a dead website link or no site.",
           "page": "https://imnetwork.com.au/pricing",
           "search": [
@@ -956,7 +956,7 @@
       "ask": {
         "primary": "preview",
         "fallback": "preview",
-        "pitch": "Sales, not links: offer a free preview of a new website built from what the business already publishes (Google listing, Facebook, current site). If they like it: $99 + GST a month, no setup fee, no lock-in. Build the preview only after they say yes."
+        "pitch": "Sales, not links (free-website model, Simon 20 Nov 2026: 'value first'): offer to build the business a simple website for FREE, theirs to keep, made from what they already publish (Google listing, Facebook, current site). Free = industry template, their logo and colours, an IMN-supplied address, a 'Website by IMN' badge, no changes or support. The paid plan is IMN running it: $99 + GST a month for their own domain, dashboard (visits and enquiries), daily health checks, monthly changes and support; no setup fee, no lock-in. Build only after they say yes."
       },
       "signals": {
         "triggers": [

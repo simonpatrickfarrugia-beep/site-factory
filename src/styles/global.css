@@ -100,6 +100,8 @@ p { margin: 0 0 var(--space-3); }
 .site-footer__name { font-family: var(--font-display); font-weight: 800; font-size: var(--step-1); color: var(--paper); margin: 0; }
 .site-footer__links { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); list-style: none; margin: 0; padding: 0; }
 .site-footer__fine { font-size: var(--step--1); margin: 0; }
+.site-footer__badge a { color: inherit; opacity: .75; }
+.site-footer__badge a:hover { opacity: 1; }
 
 main { display: block; }
 

@@ -122,21 +122,19 @@ ${OPT_OUT}`,
   },
   imn: {
     '*': {
-      subject: 'A free website preview for {organisation}',
+      subject: 'A free website for {organisation}',
       body: `Hi {first_name},
 
-I'm Simon from Independent Media Network ({site}). We're a Melbourne business that builds and looks after websites for local businesses. Think of us as your web crew: you run the business, we run the website.
+I'm Simon from Independent Media Network ({site}), a Melbourne web crew for local businesses: you run the business, we run the website.
 
 I came across {organisation} while looking at {region} businesses on Google, and noticed you don't have a website people can click through to yet.
 
-If it's useful, I can put together a free preview of a simple site for you, built from what you already publish: your services, area, hours and how to reach you. No cost to look.
+I'd like to build you a simple website for free, made from what you already publish: your services, area, hours and how to reach you. It's yours to keep, free, for good.
 
-Here's what's included and how it works:
+If you later want us to run it for you (your own web address, a dashboard showing visits and enquiries, daily checks and monthly changes), that's $99 + GST a month, no lock-in. How it works:
 {page}
 
-If you like it, it's $99 + GST a month with hosting, care and changes included, no setup fee and no lock-in contract. It's risk-free too: if you're not happy in the first 30 days, you get your first month back. If it's not for you, no worries at all.
-
-Would you like me to put one together?
+Would you like me to build yours?
 
 Thanks,
 

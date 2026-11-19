@@ -84,8 +84,11 @@ trigger_date = next date and snooze_until = 6 weeks before it (ISO). Snoozed add
 - `link`: ask for a link from their evidence page.
 - `preview` (Independent Media Network, brand `imn`, added 17 Nov 2026): **sales outreach, not link building.** Find a real local
   small business in the target region whose web presence has a gap from IMN's `gaps` list, verified by looking (open the Google
-  listing's Website button, the link, the site at phone width). Offer a free preview of a simple site built from what they already
-  publish; if they like it, $99 + GST a month, no setup fee, no lock-in. Never build the preview before they say yes.
+  listing's Website button, the link, the site at phone width). FREE-WEBSITE MODEL (Simon, 20 Nov 2026, "value first"): offer to
+  build them a simple website for free, theirs to keep for good, made from what they already publish. The paid part is IMN running
+  it: $99 + GST a month for their own domain, a dashboard (visits and enquiries), daily checks and monthly changes, no lock-in.
+  Be honest about the line: free = template site on an IMN address with a "Website by IMN" badge, no changes or support. Never
+  call the paid plan "required", never build the site before they say yes.
   - Email: only one the business publishes itself (its own site, Facebook/Instagram About, Google listing, a directory listing it
     manages). Never a staff member's personal address, never guessed. Skip chains, franchises and businesses with a decent modern site.
   - Gap wording is kind and factual ("your Google listing doesn't link to a website yet", "the website link on your Google listing

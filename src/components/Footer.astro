@@ -1,6 +1,9 @@
 ---
 import { brand } from '../lib/brand';
 const year = new Date().getFullYear();
+// "Website by IMN" badge on every factory site except IMN's own (Simon, 20 Nov 2026).
+const showBadge = !brand.domain.includes('imnetwork.com.au');
+const badgeHref = `https://imnetwork.com.au/?ref=${encodeURIComponent(brand.domain.replace(/^www\./, ''))}`;
 ---
 <footer class="site-footer">
   <div class="wrap site-footer__inner">
@@ -12,5 +15,6 @@ const year = new Date().getFullYear();
     )}
     {brand.footerNote && <p class="site-footer__fine">{brand.footerNote}</p>}
     <p class="site-footer__fine">© {year} {brand.name}</p>
+    {showBadge && <p class="site-footer__fine site-footer__badge"><a href={badgeHref} data-cta="imn_badge">Website by IMN</a></p>}
   </div>
 </footer>
