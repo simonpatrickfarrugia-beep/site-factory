@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-18T19:00:09.188Z",
+ "generatedAt": "2026-11-19T19:00:09.382Z",
  "period": {
-  "start": "2026-10-21",
-  "end": "2026-11-17"
+  "start": "2026-10-22",
+  "end": "2026-11-18"
  },
  "gscPeriod": {
-  "start": "2026-10-19",
-  "end": "2026-11-15"
+  "start": "2026-10-20",
+  "end": "2026-11-16"
  },
  "sources": {
   "ga4": true,
@@ -14,12 +14,12 @@
   "notes": []
  },
  "totals": {
-  "views": 211,
+  "views": 217,
   "prevViews": 0,
-  "users": 97,
+  "users": 98,
   "cta": {},
   "gscClicks": 4,
-  "gscImpressions": 1078
+  "gscImpressions": 1097
  },
  "daily": [
   {
@@ -111,22 +111,27 @@
    "date": "2026-11-17",
    "views": 4,
    "cta": 0
+  },
+  {
+   "date": "2026-11-18",
+   "views": 6,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 198,
+   "views": 204,
    "prevViews": 0,
-   "users": 85,
+   "users": 86,
    "cta": {},
    "gscClicks": 3,
-   "gscImpressions": 310,
-   "gscPosition": 67,
+   "gscImpressions": 329,
+   "gscPosition": 67.1,
    "topQuery": "mypaycalc",
-   "allViews": 198,
-   "prev7": 83,
-   "d7": 12
+   "allViews": 204,
+   "prev7": 68,
+   "d7": 17
   },
   {
    "path": "/hecs-help-repayments",
@@ -684,15 +689,15 @@
   {
    "query": "mypaycalc",
    "clicks": 4,
-   "impressions": 135,
+   "impressions": 138,
    "position": 5.1,
    "page": "/"
   },
   {
    "query": "pay calculator",
    "clicks": 0,
-   "impressions": 25,
-   "position": 87.1,
+   "impressions": 26,
+   "position": 87,
    "page": "/"
   },
   {
@@ -719,8 +724,8 @@
   {
    "query": "online pay calculator australia",
    "clicks": 0,
-   "impressions": 13,
-   "position": 80.7,
+   "impressions": 14,
+   "position": 80.6,
    "page": "/"
   },
   {
@@ -885,6 +890,13 @@
    "page": "/tax-brackets"
   },
   {
+   "query": "salary calculator australia",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 84.3,
+   "page": "/"
+  },
+  {
    "query": "hecs repayment threshold",
    "clicks": 0,
    "impressions": 4,
@@ -934,6 +946,13 @@
    "page": "/"
   },
   {
+   "query": "free pay calculator australia",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 84.7,
+   "page": "/"
+  },
+  {
    "query": "gross pay estimator 2019",
    "clicks": 0,
    "impressions": 3,
@@ -945,13 +964,6 @@
    "clicks": 0,
    "impressions": 3,
    "position": 66.7,
-   "page": "/"
-  },
-  {
-   "query": "salary calculator australia",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 85.3,
    "page": "/"
   },
   {
@@ -1074,10 +1086,10 @@
    "page": "/"
   },
   {
-   "query": "free pay calculator australia",
+   "query": "fortnightly salary calculator after tax",
    "clicks": 0,
    "impressions": 2,
-   "position": 86,
+   "position": 97,
    "page": "/"
   },
   {
@@ -1095,10 +1107,24 @@
    "page": "/"
   },
   {
+   "query": "pay calculator au",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 91,
+   "page": "/"
+  },
+  {
    "query": "pay calculator aus",
    "clicks": 0,
    "impressions": 2,
    "position": 81,
+   "page": "/"
+  },
+  {
+   "query": "pay stub calculator",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 43,
    "page": "/"
   },
   {
@@ -1113,6 +1139,13 @@
    "clicks": 0,
    "impressions": 2,
    "position": 41.5,
+   "page": "/"
+  },
+  {
+   "query": "salary calculator victoria",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 79,
    "page": "/"
   },
   {
@@ -1352,34 +1385,6 @@
    "impressions": 1,
    "position": 96,
    "page": "/"
-  },
-  {
-   "query": "australia salary calculator",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 99,
-   "page": "/"
-  },
-  {
-   "query": "australia salary pay calculator",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 70,
-   "page": "/"
-  },
-  {
-   "query": "australian paycheck calculator",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 91,
-   "page": "/"
-  },
-  {
-   "query": "average monthly income australia after tax",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 41,
-   "page": "/"
   }
  ],
  "gscDaily": [
@@ -1477,12 +1482,17 @@
    "date": "2026-11-15",
    "clicks": 0,
    "impressions": 21
+  },
+  {
+   "date": "2026-11-16",
+   "clicks": 0,
+   "impressions": 19
   }
  ],
  "allTime": {
   "start": "2026-10-29",
-  "views": 211,
-  "users": 97,
+  "views": 217,
+  "users": 98,
   "cta": {},
   "daily": [
    {
@@ -1574,6 +1584,11 @@
     "date": "2026-11-17",
     "views": 4,
     "cta": 0
+   },
+   {
+    "date": "2026-11-18",
+    "views": 6,
+    "cta": 0
    }
   ]
  },
@@ -1582,12 +1597,12 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 76
+    "sessions": 77
    },
    {
     "source": "bing",
     "medium": "organic",
-    "sessions": 16
+    "sessions": 19
    },
    {
     "source": "google",
@@ -1608,7 +1623,7 @@
   "referrers": [
    {
     "url": "https://www.bing.com/",
-    "views": 16
+    "views": 19
    },
    {
     "url": "https://www.google.com/",
@@ -1632,12 +1647,6 @@
    }
   ],
   "daily": [
-   {
-    "date": "2026-11-04",
-    "source": "(direct)",
-    "medium": "(none)",
-    "sessions": 2
-   },
    {
     "date": "2026-11-05",
     "source": "(direct)",
@@ -1736,6 +1745,18 @@
    },
    {
     "date": "2026-11-17",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-18",
+    "source": "bing",
+    "medium": "organic",
+    "sessions": 3
+   },
+   {
+    "date": "2026-11-18",
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 1

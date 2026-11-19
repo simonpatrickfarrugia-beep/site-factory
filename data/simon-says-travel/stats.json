@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-18T19:00:09.188Z",
+ "generatedAt": "2026-11-19T19:00:09.382Z",
  "period": {
-  "start": "2026-10-21",
-  "end": "2026-11-17"
+  "start": "2026-10-22",
+  "end": "2026-11-18"
  },
  "gscPeriod": {
-  "start": "2026-10-19",
-  "end": "2026-11-15"
+  "start": "2026-10-20",
+  "end": "2026-11-16"
  },
  "sources": {
   "ga4": true,
@@ -14,9 +14,9 @@
   "notes": []
  },
  "totals": {
-  "views": 10,
+  "views": 11,
   "prevViews": 0,
-  "users": 10,
+  "users": 11,
   "cta": {},
   "gscClicks": 0,
   "gscImpressions": 10
@@ -51,21 +51,26 @@
    "date": "2026-11-16",
    "views": 1,
    "cta": 0
+  },
+  {
+   "date": "2026-11-18",
+   "views": 1,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 10,
+   "views": 11,
    "prevViews": 0,
-   "users": 10,
+   "users": 11,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 4,
    "gscPosition": 5,
    "topQuery": null,
-   "allViews": 10,
-   "d7": 7,
+   "allViews": 11,
+   "d7": 8,
    "prev7": 3
   },
   {
@@ -174,12 +179,17 @@
    "date": "2026-11-15",
    "clicks": 0,
    "impressions": 2
+  },
+  {
+   "date": "2026-11-16",
+   "clicks": 0,
+   "impressions": 0
   }
  ],
  "allTime": {
   "start": "2026-11-05",
-  "views": 10,
-  "users": 10,
+  "views": 11,
+  "users": 11,
   "cta": {},
   "daily": [
    {
@@ -211,6 +221,11 @@
     "date": "2026-11-16",
     "views": 1,
     "cta": 0
+   },
+   {
+    "date": "2026-11-18",
+    "views": 1,
+    "cta": 0
    }
   ]
  },
@@ -219,7 +234,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 10
+    "sessions": 11
    }
   ],
   "referrers": [],
@@ -256,6 +271,12 @@
    },
    {
     "date": "2026-11-16",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-18",
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 1
