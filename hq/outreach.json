@@ -1,21 +1,7 @@
 {
   "_note": "Outreach funnel snapshot from D1 (orgs + touches + messages), counts only, no names. Refreshed each morning by the morning-report skill (SQL in .claude/skills/morning-report/SKILL.md). Stage counts are 'ever reached': an org that was sent and then replied counts in both.",
-  "asOf": "2026-11-18T22:00:00Z",
+  "asOf": "2026-11-19T21:57:00Z",
   "brands": {
-    "vic": {
-      "found": 3,
-      "drafted": 3,
-      "sent": 3,
-      "replied": 1,
-      "linked": 1,
-      "waiting": 0,
-      "dropped": 1,
-      "oldestWaiting": null,
-      "lastSent": "2026-11-12T11:26:53Z",
-      "mailIn": 7,
-      "mailOut": 6,
-      "sent7": 1
-    },
     "community-help-co": {
       "found": 16,
       "drafted": 15,
@@ -30,7 +16,21 @@
       "mailOut": 0,
       "sent7": 2
     },
-    "trade-admin": {
+    "imn": {
+      "found": 5,
+      "drafted": 2,
+      "sent": 2,
+      "replied": 0,
+      "linked": 0,
+      "waiting": 0,
+      "dropped": 1,
+      "oldestWaiting": null,
+      "lastSent": "2026-11-17T22:33:25Z",
+      "mailIn": 13,
+      "mailOut": 3,
+      "sent7": 2
+    },
+    "paycalc": {
       "found": 0,
       "drafted": 0,
       "sent": 0,
@@ -58,7 +58,21 @@
       "mailOut": 1,
       "sent7": 0
     },
-    "paycalc": {
+    "vic": {
+      "found": 3,
+      "drafted": 3,
+      "sent": 3,
+      "replied": 1,
+      "linked": 1,
+      "waiting": 0,
+      "dropped": 1,
+      "oldestWaiting": null,
+      "lastSent": "2026-11-12T11:26:53Z",
+      "mailIn": 7,
+      "mailOut": 6,
+      "sent7": 0
+    },
+    "trade-admin": {
       "found": 0,
       "drafted": 0,
       "sent": 0,
@@ -71,20 +85,6 @@
       "mailIn": 0,
       "mailOut": 0,
       "sent7": 0
-    },
-    "imn": {
-      "found": 3,
-      "drafted": 2,
-      "sent": 2,
-      "replied": 0,
-      "linked": 0,
-      "waiting": 0,
-      "dropped": 0,
-      "oldestWaiting": null,
-      "lastSent": "2026-11-17T22:33:25Z",
-      "mailIn": 10,
-      "mailOut": 3,
-      "sent7": 2
     }
   }
 }
