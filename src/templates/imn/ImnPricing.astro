@@ -8,12 +8,26 @@ const { site } = Astro.props;
 ---
 <section class="imn-pagehead">
   <div class="imn-wrap">
-    <h1>One plan. ${site.price.monthly} a month.</h1>
-    <p class="imn-lede">Plus GST. No tiers to compare and no surprise fees. Everything a small business website needs, looked after by a real person.</p>
+    <h1>Your website is free. Pay only if you want us to run it.</h1>
+    <p class="imn-lede">The free site is yours to keep. The plan is ${site.price.monthly} + GST a month for your own domain, a dashboard, daily checks and monthly changes, looked after by a real person. No setup fee, no lock-in.</p>
   </div>
 </section>
 <div class="imn-wrap imn-section imn-split imn-split--plan">
-  <ImnPlan site={site} />
+  <div>
+    <div class="imn-plan" style="margin-bottom:1.5rem">
+      <h3 class="imn-plan__name">The free website</h3>
+      <p class="imn-plan__price"><strong>$0</strong> <span>yours to keep</span></p>
+      <ul class="imn-ticks">
+        <li>A simple site built from what you already publish</li>
+        <li>Your logo and colours, made for phones</li>
+        <li>Hosting and SSL on an IMN address (yourbusiness.imnetwork.com.au)</li>
+        <li>A small "Website by IMN" link at the bottom</li>
+        <li>No changes, support or dashboard</li>
+      </ul>
+      <a class="imn-btn imn-btn--block" href="/get-started" data-cta="start_free">Claim my free website</a>
+    </div>
+    <ImnPlan site={site} />
+  </div>
   <div>
     <h2 class="imn-h2">What counts as a change?</h2>
     <p>{site.change}</p>

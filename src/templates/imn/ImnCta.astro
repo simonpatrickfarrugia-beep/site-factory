@@ -2,15 +2,15 @@
 /** The one call to action: get started. */
 import type { SiteInfo } from '../../../brands/imn/model';
 interface Props { site: SiteInfo; heading?: string }
-const { site, heading = 'Ready to feel on top of your website?' } = Astro.props;
+const { site, heading = 'Claim your free website' } = Astro.props;
 const setup = site.setup.promo ? `Founding offer: no setup fee for our first ${site.setup.promoSpots} clients.` : site.setup.normal ? `Setup $${site.setup.normal} + GST, once.` : 'No setup fee, no lock-in.';
 ---
 <section class="imn-cta">
   <div class="imn-wrap imn-cta__inner">
     <div>
       <h2>{heading}</h2>
-      <p>${site.price.monthly} + GST a month, everything included. {setup}{site.guarantee && <> Risk-free: live in 7 days or your first month is free, plus a 30-day money-back guarantee.</>}</p>
+      <p>Built from what you already publish, in your logo and colours, and yours to keep. Want us to run it on your own domain? ${site.price.monthly} + GST a month. {setup}{site.guarantee && <> Plan is risk-free: live in 7 days or your first month is free, plus a 30-day money-back guarantee.</>}</p>
     </div>
-    <p><a class="imn-btn imn-btn--coin" href="/get-started" data-cta="start_cta">Get started</a></p>
+    <p><a class="imn-btn imn-btn--coin" href="/get-started" data-cta="start_cta">Claim my free website</a></p>
   </div>
 </section>

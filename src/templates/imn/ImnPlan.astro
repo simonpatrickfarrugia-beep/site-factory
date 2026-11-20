@@ -18,5 +18,5 @@ const { site } = Astro.props;
     <div><dt>Contract</dt><dd>None. Month to month, cancel any time{site.setup.promo && <> ({site.setup.promoTerm} months on the founding offer)</>}. <a href="/terms">Our terms</a>.</dd></div>
   </dl>
   {site.guarantee && <div class="imn-guar"><b>🛡️ {site.guarantee.title}</b><ul>{site.guarantee.points.map((g) => <li>{g}</li>)}</ul></div>}
-  <a class="imn-btn imn-btn--coin imn-btn--block" href="/get-started" data-cta="start_plan">Get started</a>
+  <a class="imn-btn imn-btn--coin imn-btn--block" href="/get-started" data-cta="start_plan">Start with a free website</a>
 </div>

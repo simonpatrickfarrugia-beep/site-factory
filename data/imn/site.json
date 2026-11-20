@@ -1,5 +1,5 @@
 {
-  "_about": "Independent Media Network (imnetwork.com.au): website subscription for small businesses. Edited by chat. Prices ex-GST (IMN is GST-registered). Decided by Simon 16 Nov 2026: $99/mo, Stripe billing, T&Cs drafted. 17 Nov 2026: setup fee scrapped ($0, normal 0, promo off) and no lock-in contract (service first); positioning 'your website, under control': daily checks, confidence-at-a-glance dashboard, the IMN brain (lessons shared across every site). Extra pages over 5: $99 + GST each, once.",
+  "_about": "Independent Media Network (imnetwork.com.au): website subscription for small businesses. Edited by chat. Prices ex-GST (IMN is GST-registered). Decided by Simon 16 Nov 2026: $99/mo, Stripe billing, T&Cs drafted. 17 Nov 2026: setup fee scrapped ($0, normal 0, promo off) and no lock-in contract (service first); positioning 'your website, under control': daily checks, confidence-at-a-glance dashboard, the IMN brain (lessons shared across every site). Extra pages over 5: $99 + GST each, once. 20 Nov 2026: value-first model, website free (IMN address, badge, no changes/support); $99 + GST a month to run it.",
   "email": "hello@imnetwork.com.au",
   "formsEndpoint": "/api",
   "price": {
@@ -22,9 +22,9 @@
   "extraChange": 50,
   "includedChanges": 2,
   "hero": {
-    "kicker": "Websites for Australian small businesses",
-    "title": "Your website and online presence, under control.",
-    "lede": "We build your site, check it every day and show you how it's going at a glance. No setup fee, no lock-in. Human run, AI powered.",
+    "kicker": "Free websites for Australian small businesses",
+    "title": "Claim your free website.",
+    "lede": "We build your business a simple website from what you already publish, in your logo and colours. It's yours to keep, free. Want us to run it on your own web address? $99 + GST a month, no lock-in. Human run, AI powered.",
     "crew": "Your web crew. You run the business, we run the website."
   },
   "included": [
@@ -55,16 +55,16 @@
   ],
   "steps": [
     {
-      "t": "Tell us about your business",
-      "d": "Two minutes on the form. If you already have a site, send us the link."
+      "t": "Claim your free website",
+      "d": "Two minutes on the form. Tell us what you do, or send us your Google listing or Facebook page and we'll build from that."
     },
     {
-      "t": "We build your preview",
-      "d": "We write and design it, then send you a private link to check on your phone. Change what you like. You don't pay a cent until it's live."
+      "t": "We build it",
+      "d": "We write and design it in your logo and colours, then email you a private link to check on your phone. No card, no login, nothing to pay."
     },
     {
-      "t": "Go live, then relax",
-      "d": "We connect your domain and set up Google. From then on we check your site every day, and you see how it's going on your dashboard. Email us when you want a change."
+      "t": "It's live, and it's yours",
+      "d": "Your free site goes live on your own IMN address (like yourbusiness.imnetwork.com.au) with a small \"Website by IMN\" link at the bottom. Want your own domain, a dashboard, daily checks and monthly changes? Upgrade to the plan any time."
     }
   ],
   "ai": {
@@ -121,11 +121,11 @@
   "faq": [
     {
       "q": "What does it cost?",
-      "a": "$99 + GST a month ($108.90 inc GST), charged by card each month. That covers building your site, hosting, daily checks, Google upkeep, your dashboard and 2 change rounds a month. No setup fee."
+      "a": "The website is free, and it's yours to keep. If you want us to run it for you (your own domain, a dashboard, daily checks, Google upkeep and 2 change rounds a month), that's $99 + GST a month ($108.90 inc GST), charged by card. No setup fee, no lock-in."
     },
     {
-      "q": "Is there a setup fee?",
-      "a": "No. Building your site is part of the plan. You see a private preview first, and your first payment is only taken when your site goes live."
+      "q": "Is the free website really free? What's the catch?",
+      "a": "No catch. The free site is a simple site built from what you already publish, on an IMN address, with a small \"Website by IMN\" link at the bottom. It doesn't include changes, support or a dashboard. Plenty of owners ask us to run it later. If you don't, that's fine."
     },
     {
       "q": "What's your guarantee?",
@@ -149,7 +149,7 @@
     },
     {
       "q": "Do I need a domain name?",
-      "a": "Yes, your own address like yourbusiness.com.au. Domains are bought in your business's name, usually about $20 to $30 a year from the registrar. We'll help you buy it, or connect the one you have."
+      "a": "Not for the free site: it lives on an IMN address like yourbusiness.imnetwork.com.au. To use your own address like yourbusiness.com.au, choose the plan. Domains are bought in your business's name, usually about $20 to $30 a year from the registrar. We'll help you buy one, or connect the one you have."
     },
     {
       "q": "Do you use AI to build sites?",
@@ -157,7 +157,7 @@
     },
     {
       "q": "When do I start paying?",
-      "a": "Your first monthly payment is taken when your site goes live. You'll see and approve a private preview first."
+      "a": "Only if you choose the plan. The free site is never charged. On the plan, your first monthly payment is taken when your site goes live on your own domain."
     },
     {
       "q": "Where are you based?",
@@ -168,8 +168,8 @@
       "a": "We're Independent Media Network Pty Ltd, a Melbourne company run by Simon Farrugia (ABN 89 640 199 935, which you can check on the government's ABN Lookup). We never ask for passwords or card details by email, payments go through Stripe, there's no lock-in, and every site we run for ourselves is listed on our sites page."
     },
     {
-      "q": "What's in a free preview?",
-      "a": "Your new home page and key pages built from what you already publish, plus a private section showing what we found: gaps in how you show up online, what people near you search for each month, and who Google shows instead. It's private, not on Google, asks for nothing, and switches off after 30 days unless you go ahead."
+      "q": "What's in the free website?",
+      "a": "A home page and key pages built from what you already publish: your services, area, hours and how to reach you, in your logo and colours, made for phones. We also show you privately what we found: gaps in how you show up online and what people near you search for."
     }
   ],
   "changeCapMinutes": 30,
@@ -183,7 +183,7 @@
   },
   "guarantee": {
     "title": "Our risk-free guarantee",
-    "short": "Live within 7 days of your go-ahead or your first month is free, and if you're not happy in your first 30 days we refund your first month in full.",
+    "short": "On the plan: live within 7 days of your go-ahead or your first month is free, and if you're not happy in your first 30 days we refund your first month in full.",
     "points": [
       "Live within 7 days of your go-ahead, or your first month is free.",
       "Not happy in your first 30 days? Tell us and we refund your first month in full.",

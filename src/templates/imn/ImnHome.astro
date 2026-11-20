@@ -15,10 +15,10 @@ const { site, glance } = Astro.props;
       {site.hero.crew && <p class="imn-crew">{site.hero.crew}</p>}
       <p class="imn-lede">{site.hero.lede}</p>
       <p class="imn-actions">
-        <a class="imn-btn imn-btn--coin" href="/get-started" data-cta="start_hero">Get started</a>
-        <a class="imn-link" href="/pricing">${site.price.monthly} + GST a month</a>
+        <a class="imn-btn imn-btn--coin" href="/get-started" data-cta="start_hero">Claim my free website</a>
+        <a class="imn-link" href="/pricing">Or have us run it: ${site.price.monthly} + GST a month</a>
       </p>
-      {site.setup.promo ? <p class="imn-promo"><span>{site.setup.promoLabel}</span> No setup fee for our first {site.setup.promoSpots} clients.</p> : <p class="imn-promo"><span>No setup fee</span> No lock-in contract. Cancel any month.</p>}
+      {site.setup.promo ? <p class="imn-promo"><span>{site.setup.promoLabel}</span> No setup fee for our first {site.setup.promoSpots} clients.</p> : <p class="imn-promo"><span>Free for good</span> No card, no catch. Yours to keep.</p>}
     </div>
     <ImnReceipt site={site} />
   </div>
@@ -38,7 +38,8 @@ const { site, glance } = Astro.props;
 )}
 
 <section class="imn-wrap imn-section">
-  <h2 class="imn-h2">What you get</h2>
+  <h2 class="imn-h2">Want us to run it? The ${site.price.monthly} plan adds</h2>
+  <p class="imn-measure">Your free site is yours either way. On the plan it moves to your own web address and we look after everything.</p>
   <div class="imn-grid">
     {site.included.map((i) => <div class="imn-card"><h3>{i.t}</h3><p>{i.d}</p></div>)}
   </div>

@@ -1,18 +1,18 @@
 ---
-/** Signature: the monthly-plan receipt. Every line is something the plan really includes. */
+/** Signature: the free-website receipt. Every line is something the free site really includes; the plan sits underneath. */
 import type { SiteInfo } from '../../../brands/imn/model';
 interface Props { site: SiteInfo }
 const { site } = Astro.props;
-const lines = ['Website built for you', 'Checked every day', 'Confidence dashboard', 'Hosting + SSL security', 'Google set up + kept healthy', `${site.includedChanges} change rounds a month`, 'A real person to email'];
+const lines = ['Website built for you', 'Your logo and colours', 'Made for phones', 'Hosting + SSL security', 'Your services, area and hours', 'Yours to keep'];
 ---
-<figure class="imn-receipt" aria-label="What the monthly plan covers">
-  <figcaption class="imn-receipt__head"><span>Independent Media Network</span><span>Your plan</span></figcaption>
+<figure class="imn-receipt" aria-label="What the free website includes">
+  <figcaption class="imn-receipt__head"><span>Independent Media Network</span><span>Your free website</span></figcaption>
   <ul class="imn-receipt__lines">
     {lines.map((l) => <li><span>{l}</span><span class="imn-receipt__tick" aria-label="included">✓</span></li>)}
   </ul>
   <div class="imn-receipt__total">
-    <span>Per month</span><strong>${site.price.monthly}<small> + GST</small></strong>
+    <span>You pay</span><strong>$0</strong>
   </div>
-  <p class="imn-receipt__setup">{site.setup.promo ? <>Setup <strong>$0</strong> for our first {site.setup.promoSpots} clients</> : site.setup.normal ? <>Setup ${site.setup.normal} + GST, once</> : <>Setup <strong>$0</strong> · No lock-in</>}</p>
-  <p class="imn-receipt__foot">Build, daily checks, Google, dashboard and changes in one price</p>
+  <p class="imn-receipt__setup">Want us to run it? <strong>${site.price.monthly}</strong> + GST a month</p>
+  <p class="imn-receipt__foot">Plan adds your own domain, dashboard, daily checks and changes</p>
 </figure>

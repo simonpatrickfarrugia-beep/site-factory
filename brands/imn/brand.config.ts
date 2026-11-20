@@ -21,7 +21,7 @@ export default defineBrand({
     { label: 'Pricing', href: '/pricing' },
     { label: 'Our sites', href: '/our-sites' },
     { label: 'Dashboard', href: '/example-dashboard' },
-    { label: 'Get started', href: '/get-started' },
+    { label: 'Free website', href: '/get-started' },
   ],
   footer: [
     { label: 'Websites for tradies', href: '/websites-for-tradies' },
@@ -35,7 +35,7 @@ export default defineBrand({
 
   seo: {
     titleSuffix: ' | Independent Media Network',
-    defaultDescription: 'Websites for Australian small businesses, built and looked after for $99 + GST a month. Hosting, Google, a dashboard and 2 change rounds a month.',
+    defaultDescription: 'Free websites for Australian small businesses, yours to keep. Want us to run it on your own domain? $99 + GST a month, no setup fee, no lock-in.',
   },
 
   data: { source: 'snapshot' },

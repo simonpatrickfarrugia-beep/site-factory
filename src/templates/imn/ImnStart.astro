@@ -8,12 +8,12 @@ const { site, page: p } = Astro.props;
   <div class="imn-wrap">
     <h1>{p.title}</h1>
     <p class="imn-lede">{p.lede}</p>
-    {site.setup.promo ? <p class="imn-promo"><span>{site.setup.promoLabel}</span> No setup fee for our first {site.setup.promoSpots} clients on a {site.setup.promoTerm}-month plan.</p> : <p class="imn-promo"><span>No setup fee</span> No lock-in. You only pay once you've seen your preview and you're happy with it.</p>}
+    {site.setup.promo ? <p class="imn-promo"><span>{site.setup.promoLabel}</span> No setup fee for our first {site.setup.promoSpots} clients on a {site.setup.promoTerm}-month plan.</p> : <p class="imn-promo"><span>Free for good</span> No card, no catch. Upgrade only if you want us to run it.</p>}
     {site.guarantee && <p class="imn-small" style="margin-top:.8rem"><b>Risk-free:</b> {site.guarantee.short}</p>}
     <ol class="imn-flow" aria-label="How it works">
       <li class="is-now"><b>Tell us about your business</b><span>2 minutes, right here</span></li>
-      <li><b>See your free preview</b><span>We email you a private link within 2 business days</span></li>
-      <li><b>Go live when you're happy</b><span>Start your plan from the preview: $99 + GST a month</span></li>
+      <li><b>We build your free website</b><span>We email you a private link within 2 business days</span></li>
+      <li><b>It's live, and it's yours</b><span>Free on your IMN address. Want your own domain and us to run it? ${site.price.monthly} + GST a month</span></li>
     </ol>
   </div>
 </section>
@@ -45,7 +45,7 @@ const { site, page: p } = Astro.props;
     <label><span>Anything else we should know? <span class="imn-opt">(optional)</span></span><textarea name="message" rows="4"></textarea></label>
     <label class="imn-choice"><input type="checkbox" name="consent" value="yes" required /> I'm happy for Independent Media Network to contact me about a website. No obligation.</label>
     <input class="imn-hp" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" />
-    <button class="imn-btn imn-btn--coin" type="submit">Send</button>
+    <button class="imn-btn imn-btn--coin" type="submit">Claim my free website</button>
     <p class="imn-form__status" role="status" aria-live="polite"></p>
   </form>
   <div class="imn-done" id="start-done" hidden tabindex="-1">
@@ -53,11 +53,11 @@ const { site, page: p } = Astro.props;
     <h2>Thanks. We're on it.</h2>
     <ol class="imn-flow imn-flow--done">
       <li class="is-done"><b>Tell us about your business</b><span>Done</span></li>
-      <li class="is-now"><b>We build your free preview</b><span>We'll email a private link from {site.email} within 2 business days. It asks for nothing: no login, no payment details.</span></li>
-      <li><b>Go live when you're happy</b><span>Ask for any changes first. When you're ready, start your plan from the preview.</span></li>
+      <li class="is-now"><b>We build your free website</b><span>We'll email a private link from {site.email} within 2 business days. It asks for nothing: no login, no payment details.</span></li>
+      <li><b>It's live, and it's yours</b><span>Free for good. If you want your own domain, a dashboard and monthly changes, start the plan from your link any time.</span></li>
     </ol>
     <p class="imn-small">Can't see our email? Check your junk folder, or email <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
   </div>
-  <p class="imn-small">No obligation: you see a private preview before anything is charged. <a href="/terms">Our terms</a>. Prefer email? <a href={`mailto:${site.email}?subject=Website`}>{site.email}</a></p>
+  <p class="imn-small">No obligation and no card needed: the free website costs nothing. <a href="/terms">Our terms</a>. Prefer email? <a href={`mailto:${site.email}?subject=Website`}>{site.email}</a></p>
 </div>
 <ImnFormScript email={site.email} />

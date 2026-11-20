@@ -128,7 +128,7 @@ export function routes(): Route[] {
   out.push({
     path: '',
     template: 'imnHome',
-    seo: { title: 'Small Business Websites, Under Control | IMN', rawTitle: true, description: 'Your website built, checked every day and looked after for $99 + GST a month. No setup fee, no lock-in. See how it\'s going at a glance on your dashboard.' },
+    seo: { title: 'Free Website for Your Small Business | IMN', rawTitle: true, description: 'Claim a free website for your small business, built from what you already publish in your logo and colours. Want us to run it? $99 + GST a month.' },
     schema: [org, service, { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Independent Media Network', url: SITE }],
     props: { ...common, glance: glanceData },
   });
@@ -136,7 +136,7 @@ export function routes(): Route[] {
   out.push({
     path: 'pricing',
     template: 'imnPricing',
-    seo: { title: 'Pricing: $99 a Month + GST' + SUFFIX, rawTitle: true, description: 'One plan: $99 + GST a month. Your site built, hosted, checked every day and looked after, with a dashboard and 2 change rounds. No setup fee, no lock-in.' },
+    seo: { title: 'Pricing: Free, or $99 a Month' + SUFFIX, rawTitle: true, description: 'Your website is free to keep. Want your own domain, a dashboard, daily checks and 2 change rounds a month? $99 + GST, no setup fee, no lock-in.' },
     schema: [service, faqSchema, crumbs([{ name: 'Home', path: '' }, { name: 'Pricing', path: 'pricing' }])],
     props: { ...common },
   });
