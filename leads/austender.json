@@ -1,13 +1,23 @@
 {
- "generatedAt": "2026-11-19T01:54:46+00:00",
+ "generatedAt": "2026-11-20T01:48:05+00:00",
  "days": 7,
  "suppliers": [
   {
    "name": "CUSHMAN & WAKEFIELD PTY LTD",
    "abn": "",
-   "locality": "Melbourne",
+   "locality": "Melbourne (Efte)",
    "state": "VIC",
    "contracts": [
+    {
+     "value": 2545613.95,
+     "buyer": "Australian Taxation Office",
+     "buyerState": "NSW",
+     "desc": "Provision of Property Management Services - Adelaide Floor Surrender (PIF265)",
+     "category": "",
+     "start": "2026-10-25",
+     "end": "2027-06-29",
+     "id": "CN4289894"
+    },
     {
      "value": 103181.76,
      "buyer": "Department of Home Affairs",
@@ -19,58 +29,136 @@
      "id": "CN4289249"
     }
    ],
-   "total": 103182,
-   "score": 6.0,
+   "total": 2648796,
+   "score": 7.0,
    "interstate": true,
    "why": [
-    "based in Melbourne VIC, delivering for Department of Home Affairs (Canberra)",
+    "based in Melbourne (Efte) VIC, delivering for Australian Taxation Office (NSW)",
+    "2 new government contracts in the last 7 days",
     "work runs 8 months"
    ],
    "seenBefore": true
   },
   {
-   "name": "1LM Pty Ltd",
+   "name": "MLCOA - VICTORIA MEDHEALTH PTY LTD T/A",
    "abn": "",
-   "locality": "Braddon",
-   "state": "ACT",
+   "locality": "Carlton South (Efte)",
+   "state": "VIC",
    "contracts": [
     {
-     "value": 1361199.5,
-     "buyer": "Director of National Parks",
-     "buyerState": null,
-     "desc": "Financial Accounting Services and Advisory",
+     "value": 935000.0,
+     "buyer": "Australian Taxation Office",
+     "buyerState": "NSW",
+     "desc": "Provision of Occupational Rehabilitation and Associated Medical services (ORAMS)",
      "category": "",
-     "start": "2026-10-13",
-     "end": "2028-11-29",
-     "id": "CN4289431"
+     "start": "2026-10-31",
+     "end": "2028-10-30",
+     "id": "CN4289889"
     }
    ],
-   "total": 1361200,
-   "score": 5.0,
-   "interstate": false,
+   "total": 935000,
+   "score": 7.0,
+   "interstate": true,
    "why": [
-    "work runs 26 months"
+    "based in Carlton South (Efte) VIC, delivering for Australian Taxation Office (NSW)",
+    "work runs 24 months"
    ],
    "seenBefore": false
   },
   {
-   "name": "CAE AUSTRALIA PTY LTD",
+   "name": "UBS AG Australia Branch",
    "abn": "",
-   "locality": "Homebush",
+   "locality": "Sydney",
    "state": "NSW",
    "contracts": [
     {
-     "value": 257663.13,
-     "buyer": "Department of Defence",
-     "buyerState": null,
-     "desc": "Aircraft Maintenance",
+     "value": 1056000.0,
+     "buyer": "Australian Office of Financial Management",
+     "buyerState": "ACT",
+     "desc": "Syndication panel fee of JLM services on issuance of Treasury Bond 21 June 2057",
      "category": "",
-     "start": "2026-11-04",
-     "end": "2027-11-29",
-     "id": "CN4289664"
+     "start": "2026-11-12",
+     "end": "2026-11-26",
+     "id": "CN4289921"
     }
    ],
-   "total": 257663,
+   "total": 1056000,
+   "score": 6.0,
+   "interstate": true,
+   "why": [
+    "based in Sydney NSW, delivering for Australian Office of Financial Management (Canberra)"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "Barrenjoey Markets Pty Limited",
+   "abn": "",
+   "locality": "Sydney",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 1056000.0,
+     "buyer": "Australian Office of Financial Management",
+     "buyerState": "ACT",
+     "desc": "Syndication panel fee of JLM services on issuance of Treasury Bond 21 June 2057",
+     "category": "",
+     "start": "2026-11-12",
+     "end": "2026-11-26",
+     "id": "CN4289864"
+    }
+   ],
+   "total": 1056000,
+   "score": 6.0,
+   "interstate": true,
+   "why": [
+    "based in Sydney NSW, delivering for Australian Office of Financial Management (Canberra)"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "B2W Solutions Pty Ltd",
+   "abn": "",
+   "locality": "Milton (Efte)",
+   "state": "QLD",
+   "contracts": [
+    {
+     "value": 82500.0,
+     "buyer": "Australian Taxation Office",
+     "buyerState": "NSW",
+     "desc": "Provision of Occupational Rehabilitation and Associated Medical services (ORAMS)",
+     "category": "",
+     "start": "2026-10-31",
+     "end": "2028-10-30",
+     "id": "CN4289891"
+    }
+   ],
+   "total": 82500,
+   "score": 6.0,
+   "interstate": true,
+   "why": [
+    "based in Milton (Efte) QLD, delivering for Australian Taxation Office (NSW)",
+    "work runs 24 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "RP Infrastructure Pty Ltd",
+   "abn": "",
+   "locality": "Melbourne",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 425000.0,
+     "buyer": "CSIRO",
+     "buyerState": null,
+     "desc": "Project Management and Contract Administration Support",
+     "category": "",
+     "start": "2026-10-11",
+     "end": "2027-10-30",
+     "id": "CN4289927"
+    }
+   ],
+   "total": 425000,
    "score": 5.0,
    "interstate": false,
    "why": [
@@ -79,27 +167,64 @@
    "seenBefore": false
   },
   {
-   "name": "A E Atherton & Sons Proprietary Lim",
+   "name": "1 AND ONE PTY LTD",
    "abn": "",
-   "locality": "Alphington",
-   "state": "VIC",
+   "locality": "Bundall",
+   "state": "QLD",
    "contracts": [
     {
-     "value": 136318.49,
-     "buyer": "Department of Health, Disability and Ageing",
+     "value": 155780.63,
+     "buyer": "National Environmental Protection Agency",
      "buyerState": null,
-     "desc": "Maintenance Agreement for Autoclaves",
+     "desc": "Laboure Hire",
      "category": "",
-     "start": "2026-11-09",
-     "end": "2029-07-30",
-     "id": "CN4289475"
+     "start": "2026-11-30",
+     "end": "2027-05-31",
+     "id": "CN4289830"
+    },
+    {
+     "value": 122925.6,
+     "buyer": "Department of Industry, Science and Resources",
+     "buyerState": "ACT",
+     "desc": "Professional Advice on Decommissioning Policy",
+     "category": "",
+     "start": "2026-11-15",
+     "end": "2027-05-30",
+     "id": "CN4289212"
     }
    ],
-   "total": 136318,
+   "total": 278706,
+   "score": 5.0,
+   "interstate": true,
+   "why": [
+    "based in Bundall QLD, delivering for Department of Industry, Science and Resources (Canberra)",
+    "2 new government contracts in the last 7 days",
+    "work runs 7 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "BELLBIRD SOLUTIONS PTY LTD",
+   "abn": "",
+   "locality": "Tugggeranong",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 165000.0,
+     "buyer": "Australian Centre for International Agricultural Research",
+     "buyerState": null,
+     "desc": "ACIAR Corporate functions Review",
+     "category": "",
+     "start": "2026-11-01",
+     "end": "2027-11-01",
+     "id": "CN4289931"
+    }
+   ],
+   "total": 165000,
    "score": 5.0,
    "interstate": false,
    "why": [
-    "work runs 33 months"
+    "work runs 12 months"
    ],
    "seenBefore": false
   },
@@ -150,27 +275,126 @@
    "seenBefore": true
   },
   {
-   "name": "Gurugun Pty Ltd",
+   "name": "IPAR REHABILITATION PTY LTD",
    "abn": "",
-   "locality": "Symonston",
+   "locality": "Melbourne (Efte)",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 231000.0,
+     "buyer": "Australian Taxation Office",
+     "buyerState": "NSW",
+     "desc": "Provision of Occupational Rehabilitation and Associated Medical services (ORAMS)",
+     "category": "",
+     "start": "2026-10-31",
+     "end": "2028-10-30",
+     "id": "CN4289890"
+    }
+   ],
+   "total": 231000,
+   "score": 4.0,
+   "interstate": true,
+   "why": [
+    "based in Melbourne (Efte) VIC, delivering for Australian Taxation Office (NSW)",
+    "work runs 24 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "Terrace Services Pty Ltd",
+   "abn": "",
+   "locality": "Barton",
    "state": "ACT",
    "contracts": [
     {
-     "value": 99998.4,
-     "buyer": "Department of Health, Disability and Ageing",
+     "value": 209000.0,
+     "buyer": "Department of Social Services",
      "buyerState": null,
-     "desc": "Monitoring, Evaluation and Learning Plan",
+     "desc": "ICT technical & advisory services",
      "category": "",
-     "start": "2026-11-15",
-     "end": "2027-06-29",
-     "id": "CN4289482"
+     "start": "2026-11-18",
+     "end": "2027-04-18",
+     "id": "CN4289455"
     }
    ],
-   "total": 99998,
+   "total": 209000,
+   "score": 4.0,
+   "interstate": false,
+   "why": [],
+   "seenBefore": false
+  },
+  {
+   "name": "BIOSIS PTY LTD",
+   "abn": "",
+   "locality": "Port Melbourne",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 87998.9,
+     "buyer": "National Environmental Protection Agency",
+     "buyerState": null,
+     "desc": "Environmental Impact Assessment Reports",
+     "category": "",
+     "start": "2026-10-29",
+     "end": "2027-06-29",
+     "id": "CN4289836"
+    }
+   ],
+   "total": 87999,
    "score": 4.0,
    "interstate": false,
    "why": [
     "work runs 8 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "ATHRU SOLUTIONS PTY LTD",
+   "abn": "",
+   "locality": "Queanbeyan",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 73435.0,
+     "buyer": "National Environmental Protection Agency",
+     "buyerState": null,
+     "desc": "Audit Committee Members",
+     "category": "",
+     "start": "2026-10-31",
+     "end": "2028-10-30",
+     "id": "CN4289829"
+    }
+   ],
+   "total": 73435,
+   "score": 4.0,
+   "interstate": false,
+   "why": [
+    "work runs 24 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "Darren Box Pty Ltd",
+   "abn": "",
+   "locality": "Duffy",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 64000.0,
+     "buyer": "National Environmental Protection Agency",
+     "buyerState": null,
+     "desc": "Audit Committee Members",
+     "category": "",
+     "start": "2026-10-31",
+     "end": "2028-10-30",
+     "id": "CN4289828"
+    }
+   ],
+   "total": 64000,
+   "score": 4.0,
+   "interstate": false,
+   "why": [
+    "work runs 24 months"
    ],
    "seenBefore": false
   },
@@ -283,29 +507,6 @@
    "seenBefore": true
   },
   {
-   "name": "CALLIDA CONSULTING CALLIDA PTY LTD",
-   "abn": "",
-   "locality": "Kingston",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 78646.79,
-     "buyer": "Office of the Fair Work Ombudsman",
-     "buyerState": null,
-     "desc": "Financial Review Services",
-     "category": "",
-     "start": "2026-11-16",
-     "end": "2027-02-25",
-     "id": "CN4289451"
-    }
-   ],
-   "total": 78647,
-   "score": 3.0,
-   "interstate": false,
-   "why": [],
-   "seenBefore": false
-  },
-  {
    "name": "TULLIUS PTY LTD",
    "abn": "",
    "locality": "Fyshwick",
@@ -327,6 +528,31 @@
    "interstate": false,
    "why": [
     "work runs 12 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "1LM Pty Ltd",
+   "abn": "",
+   "locality": "Braddon",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 1361199.5,
+     "buyer": "Director of National Parks",
+     "buyerState": null,
+     "desc": "Financial Accounting Services and Advisory",
+     "category": "",
+     "start": "2026-10-13",
+     "end": "2028-11-29",
+     "id": "CN4289431"
+    }
+   ],
+   "total": 1361200,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 26 months"
    ],
    "seenBefore": true
   },
@@ -441,6 +667,31 @@
    "seenBefore": true
   },
   {
+   "name": "CAE AUSTRALIA PTY LTD",
+   "abn": "",
+   "locality": "Homebush",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 257663.13,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Aircraft Maintenance",
+     "category": "",
+     "start": "2026-11-04",
+     "end": "2027-11-29",
+     "id": "CN4289664"
+    }
+   ],
+   "total": 257663,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 13 months"
+   ],
+   "seenBefore": true
+  },
+  {
    "name": "DT GLOBAL ASIA PACIFIC PTY LTD",
    "abn": "",
    "locality": "Melbourne",
@@ -466,6 +717,31 @@
    "seenBefore": true
   },
   {
+   "name": "A E Atherton & Sons Proprietary Lim",
+   "abn": "",
+   "locality": "Alphington",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 136318.49,
+     "buyer": "Department of Health, Disability and Ageing",
+     "buyerState": null,
+     "desc": "Maintenance Agreement for Autoclaves",
+     "category": "",
+     "start": "2026-11-09",
+     "end": "2029-07-30",
+     "id": "CN4289475"
+    }
+   ],
+   "total": 136318,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 33 months"
+   ],
+   "seenBefore": true
+  },
+  {
    "name": "Folk",
    "abn": "",
    "locality": "Annandale",
@@ -487,31 +763,6 @@
    "interstate": false,
    "why": [
     "work runs 6 months"
-   ],
-   "seenBefore": true
-  },
-  {
-   "name": "Norton Rose Fullbright Australia",
-   "abn": "",
-   "locality": "Sydney",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 58000.0,
-     "buyer": "Attorney-General's Department",
-     "buyerState": "ACT",
-     "desc": "Request for legal advice",
-     "category": "",
-     "start": "2026-10-09",
-     "end": "2026-10-29",
-     "id": "CN4288544"
-    }
-   ],
-   "total": 58000,
-   "score": 2.0,
-   "interstate": true,
-   "why": [
-    "based in Sydney NSW, delivering for Attorney-General's Department (Canberra)"
    ],
    "seenBefore": true
   },
@@ -585,6 +836,31 @@
    "seenBefore": true
   },
   {
+   "name": "Gurugun Pty Ltd",
+   "abn": "",
+   "locality": "Symonston",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 99998.4,
+     "buyer": "Department of Health, Disability and Ageing",
+     "buyerState": null,
+     "desc": "Monitoring, Evaluation and Learning Plan",
+     "category": "",
+     "start": "2026-11-15",
+     "end": "2027-06-29",
+     "id": "CN4289482"
+    }
+   ],
+   "total": 99998,
+   "score": 1.0,
+   "interstate": false,
+   "why": [
+    "work runs 8 months"
+   ],
+   "seenBefore": true
+  },
+  {
    "name": "CALLIDA PTY LTD",
    "abn": "",
    "locality": "Griffith",
@@ -632,6 +908,52 @@
    "why": [
     "work runs 18 months"
    ],
+   "seenBefore": true
+  },
+  {
+   "name": "NOUS GROUP PTY LTD",
+   "abn": "",
+   "locality": "Melbourne Law Courts",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 92400.0,
+     "buyer": "Department of Climate Change, Energy, the Environment and Water",
+     "buyerState": null,
+     "desc": "Independent Soft Plastics Value Chain Assessment",
+     "category": "",
+     "start": "2026-11-17",
+     "end": "2026-12-29",
+     "id": "CN4289796"
+    }
+   ],
+   "total": 92400,
+   "score": 0.0,
+   "interstate": false,
+   "why": [],
+   "seenBefore": true
+  },
+  {
+   "name": "CALLIDA CONSULTING CALLIDA PTY LTD",
+   "abn": "",
+   "locality": "Kingston",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 78646.79,
+     "buyer": "Office of the Fair Work Ombudsman",
+     "buyerState": null,
+     "desc": "Financial Review Services",
+     "category": "",
+     "start": "2026-11-16",
+     "end": "2027-02-25",
+     "id": "CN4289451"
+    }
+   ],
+   "total": 78647,
+   "score": 0.0,
+   "interstate": false,
+   "why": [],
    "seenBefore": true
   },
   {
