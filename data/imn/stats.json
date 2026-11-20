@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-19T19:00:09.382Z",
+ "generatedAt": "2026-11-20T19:00:09.452Z",
  "period": {
-  "start": "2026-10-22",
-  "end": "2026-11-18"
+  "start": "2026-10-23",
+  "end": "2026-11-19"
  },
  "gscPeriod": {
-  "start": "2026-10-20",
-  "end": "2026-11-16"
+  "start": "2026-10-21",
+  "end": "2026-11-17"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 7,
+  "views": 8,
   "prevViews": 0,
-  "users": 6,
+  "users": 7,
   "cta": {
    "start_hero": 1,
    "pay_plan": 1,
    "start_plan": 1
   },
   "gscClicks": 0,
-  "gscImpressions": 0
+  "gscImpressions": 1
  },
  "daily": [
   {
@@ -35,26 +35,31 @@
    "date": "2026-11-18",
    "views": 5,
    "cta": 3
+  },
+  {
+   "date": "2026-11-19",
+   "views": 1,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 4,
+   "views": 5,
    "prevViews": 0,
-   "users": 4,
+   "users": 5,
    "cta": {
     "start_hero": 1
    },
    "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 4,
+   "gscImpressions": 1,
+   "gscPosition": 10,
+   "topQuery": "mypaycalc",
+   "allViews": 5,
    "allCta": {
     "start_hero": 1
    },
-   "d7": 4
+   "d7": 5
   },
   {
    "path": "/get-started",
@@ -93,18 +98,31 @@
    "d7": 1
   }
  ],
- "queries": [],
+ "queries": [
+  {
+   "query": "mypaycalc",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 10,
+   "page": "/"
+  }
+ ],
  "gscDaily": [
   {
    "date": "2026-11-16",
    "clicks": 0,
    "impressions": 0
+  },
+  {
+   "date": "2026-11-17",
+   "clicks": 0,
+   "impressions": 1
   }
  ],
  "allTime": {
   "start": "2026-11-17",
-  "views": 7,
-  "users": 6,
+  "views": 8,
+  "users": 7,
   "cta": {
    "start_hero": 1,
    "pay_plan": 1,
@@ -120,6 +138,11 @@
     "date": "2026-11-18",
     "views": 5,
     "cta": 3
+   },
+   {
+    "date": "2026-11-19",
+    "views": 1,
+    "cta": 0
    }
   ]
  },
@@ -128,7 +151,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 4
+    "sessions": 5
    }
   ],
   "referrers": [
@@ -149,6 +172,12 @@
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 2
+   },
+   {
+    "date": "2026-11-19",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
    }
   ]
  }
