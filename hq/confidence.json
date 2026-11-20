@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-11-19T02:45:19Z",
- "day": "2026-11-19",
+ "generatedAt": "2026-11-20T02:31:34Z",
+ "day": "2026-11-20",
  "micro": {
   "items": [
    {
@@ -16,7 +16,7 @@
    {
     "key": "shipped",
     "label": "Site improvements shipped",
-    "value": 11,
+    "value": 10,
     "target": 3,
     "status": "green",
     "unit": "",
@@ -117,6 +117,9 @@
    }
   ],
   "shipped": {
+   "community-help-co": [
+    "Community Help Co Check-in: client reminders + goals PWA (workers/checkin)"
+   ],
    "paycalc": [
     "MyPayCalc: fuller /salary, /about and /how-we-make-money pages (Claude queue job 30)",
     "MyPayCalc: privacy policy title to 61 characters (Claude queue job 29)",
@@ -124,17 +127,13 @@
    ],
    "vic": [
     "Vic Tours: town titles lead with 'Things to Do in <town>'; nearby towns link straight to their eat/stay/do lists",
-    "vic + trade-admin: queue jobs 16-18 (thin pages, legal schema, privacy title)",
-    "vic: fix 11 titles, 5 descriptions, expand 4 thin info pages"
+    "vic + trade-admin: queue jobs 16-18 (thin pages, legal schema, privacy title)"
    ],
    "trailers": [
     "Trailers: keep short write-ups (under 50 words) out of Google; home 'Popular right now' links the films Google already shows",
     "Trailers: queue 38 Pattinson + Bond films; add Robert Pattinson and James Bond in order collections",
     "Trailers: fix wrong genres (Talk-Show/Comedy) on 6 classic film pages",
     "Trailers: fix wrong film facts on 10 thin pages (director, cast, runtime)"
-   ],
-   "simon-says-travel": [
-    "Simon Says Travel: share image, fuller destinations/reports/about, new-site launch date for site check"
    ]
   },
   "note": "Outreach (emails sent vs warm-up, follow-ups) is added live by IMN HQ from D1."
@@ -146,12 +145,12 @@
    {
     "id": "trailers",
     "name": "movietrailer.channel",
-    "age": 33,
+    "age": 34,
     "status": "amber",
     "trend": "down",
-    "views28": 77,
-    "prev28": 273,
-    "impr28": 82,
+    "views28": 73,
+    "prev28": 267,
+    "impr28": 79,
     "clicks28": 0,
     "money28": 1,
     "target": {
@@ -159,38 +158,38 @@
      "moneyClicks": 30
     },
     "targetConfirmed": true,
-    "pace": 0.12,
+    "pace": 0.1,
     "moneyPace": 0.42,
     "growth": {
-     "views": 0.49,
-     "impressions": 0.64
+     "views": 0.54,
+     "impressions": 0.75
     },
     "imprWeeks": [
      0,
      0,
      0,
-     44,
-     32,
-     15,
-     7,
-     19
+     51,
+     31,
+     11,
+     8,
+     20
     ],
-    "gscDays": 31,
+    "gscDays": 32,
     "why": [
-     "77 visits vs 666 expected by day 33 (12% of pace)",
-     "33 days live: too early for red (Google indexing lag)",
-     "Google impressions down 36% (last 14 days vs the 14 before, spikes smoothed)"
+     "73 visits vs 697 expected by day 34 (10% of pace)",
+     "34 days live: too early for red (Google indexing lag)",
+     "Google impressions down 25% (last 14 days vs the 14 before, spikes smoothed)"
     ]
    },
    {
     "id": "vic",
     "name": "victours.com.au",
-    "age": 30,
+    "age": 31,
     "status": "amber",
     "trend": "down",
-    "views28": 92,
-    "prev28": 2,
-    "impr28": 2889,
+    "views28": 83,
+    "prev28": 11,
+    "impr28": 2933,
     "clicks28": 5,
     "money28": 2,
     "target": {
@@ -198,46 +197,46 @@
      "moneyClicks": 20
     },
     "targetConfirmed": true,
-    "pace": 0.48,
+    "pace": 0.41,
     "moneyPace": 1.25,
     "growth": {
-     "views": 0.41,
-     "impressions": 0.88
+     "views": 0.38,
+     "impressions": 0.89
     },
     "imprWeeks": [
      0,
      0,
      0,
      0,
-     2290,
-     127,
+     2342,
+     96,
      133,
-     226
+     249
     ],
-    "gscDays": 28,
+    "gscDays": 29,
     "why": [
-     "92 visits vs 192 expected by day 30 (48% of pace)",
-     "30 days live: too early for red (Google indexing lag)",
-     "Google impressions down 12% (last 14 days vs the 14 before, spikes smoothed)"
+     "83 visits vs 202 expected by day 31 (41% of pace)",
+     "31 days live: too early for red (Google indexing lag)",
+     "Google impressions down 11% (last 14 days vs the 14 before, spikes smoothed)"
     ]
    },
    {
     "id": "community-help-co",
     "name": "Community Help Co",
-    "age": 28,
+    "age": 29,
     "status": "green",
     "trend": "up",
-    "views28": 105,
+    "views28": 116,
     "prev28": 0,
-    "impr28": 556,
-    "clicks28": 13,
+    "impr28": 580,
+    "clicks28": 14,
     "money28": null,
     "target": null,
     "targetConfirmed": false,
     "pace": null,
     "moneyPace": null,
     "growth": {
-     "views": 3.43,
+     "views": 2.9,
      "impressions": 0.9
     },
     "imprWeeks": [
@@ -245,12 +244,12 @@
      0,
      0,
      0,
-     63,
-     165,
-     90,
-     115
+     89,
+     152,
+     89,
+     127
     ],
-    "gscDays": 26,
+    "gscDays": 27,
     "why": [
      "no 90-day target yet: judged on trend only",
      "Google impressions down 10% (last 14 days vs the 14 before, spikes smoothed)"
@@ -259,12 +258,12 @@
    {
     "id": "trade-admin",
     "name": "tradeadmin.com.au",
-    "age": 25,
+    "age": 26,
     "status": "amber",
     "trend": "flat",
-    "views28": 39,
+    "views28": 40,
     "prev28": 0,
-    "impr28": 569,
+    "impr28": 630,
     "clicks28": 1,
     "money28": 0,
     "target": {
@@ -272,11 +271,11 @@
      "moneyClicks": 5
     },
     "targetConfirmed": true,
-    "pace": 0.89,
+    "pace": 0.86,
     "moneyPace": 0.0,
     "growth": {
-     "views": 0.44,
-     "impressions": 3.84
+     "views": 0.47,
+     "impressions": 3.17
     },
     "imprWeeks": [
      0,
@@ -284,26 +283,26 @@
      0,
      0,
      0,
-     105,
-     213,
-     219
+     137,
+     207,
+     249
     ],
-    "gscDays": 23,
+    "gscDays": 24,
     "why": [
-     "39 visits vs 44 expected by day 25 (89% of pace)",
-     "25 days live: too early for red (Google indexing lag)",
+     "40 visits vs 47 expected by day 26 (86% of pace)",
+     "26 days live: too early for red (Google indexing lag)",
      "Google impressions up 200%+ (last 14 days vs the 14 before, spikes smoothed)"
     ]
    },
    {
     "id": "paycalc",
     "name": "mypaycalc.com.au",
-    "age": 21,
+    "age": 22,
     "status": "green",
     "trend": "flat",
-    "views28": 211,
+    "views28": 217,
     "prev28": 0,
-    "impr28": 1078,
+    "impr28": 1097,
     "clicks28": 4,
     "money28": null,
     "target": {
@@ -311,11 +310,11 @@
      "moneyClicks": 0
     },
     "targetConfirmed": true,
-    "pace": 1.25,
+    "pace": 1.2,
     "moneyPace": null,
     "growth": {
-     "views": 0.83,
-     "impressions": 3.8
+     "views": 0.88,
+     "impressions": 2.2
     },
     "imprWeeks": [
      0,
@@ -323,15 +322,15 @@
      0,
      0,
      0,
-     197,
-     558,
-     219
+     307,
+     495,
+     191
     ],
-    "gscDays": 19,
+    "gscDays": 20,
     "why": [
-     "211 visits vs 169 expected by day 21 (125% of pace)",
-     "21 days live: too early for red (Google indexing lag)",
-     "Google impressions up 200%+ (last 14 days vs the 14 before, spikes smoothed)"
+     "217 visits vs 181 expected by day 22 (120% of pace)",
+     "22 days live: too early for red (Google indexing lag)",
+     "Google impressions up 120% (last 14 days vs the 14 before, spikes smoothed)"
     ]
    }
   ]
@@ -346,22 +345,22 @@
     {
      "horizon": "3 months",
      "visits": {
-      "low": 54,
-      "likely": 97,
+      "low": 51,
+      "likely": 91,
       "high": 110
      },
      "money": {
       "low": 0,
       "likely": 0,
-      "high": 1
+      "high": 0
      }
     },
     {
      "horizon": "6 months",
      "visits": {
-      "low": 48,
-      "likely": 110,
-      "high": 150
+      "low": 45,
+      "likely": 100,
+      "high": 140
      },
      "money": {
       "low": 0,
@@ -372,9 +371,9 @@
     {
      "horizon": "12 months",
      "visits": {
-      "low": 45,
-      "likely": 120,
-      "high": 200
+      "low": 42,
+      "likely": 110,
+      "high": 180
      },
      "money": {
       "low": 0,
@@ -388,95 +387,14 @@
   {
    "id": "vic",
    "name": "victours.com.au",
-   "monthlyGrowth": 1.11,
+   "monthlyGrowth": 1.1,
    "measured": 0.85,
    "rows": [
     {
      "horizon": "3 months",
      "visits": {
-      "low": 64,
-      "likely": 120,
-      "high": 140
-     },
-     "money": {
-      "low": 0,
-      "likely": 1,
-      "high": 4
-     }
-    },
-    {
-     "horizon": "6 months",
-     "visits": {
-      "low": 57,
-      "likely": 140,
-      "high": 190
-     },
-     "money": {
-      "low": 0,
-      "likely": 1,
-      "high": 5
-     }
-    },
-    {
-     "horizon": "12 months",
-     "visits": {
-      "low": 53,
-      "likely": 160,
-      "high": 270
-     },
-     "money": {
-      "low": 0,
-      "likely": 2,
-      "high": 7
-     }
-    }
-   ],
-   "moneyRate": "typical 0.3–2.5% of visits (no history yet)"
-  },
-  {
-   "id": "community-help-co",
-   "name": "Community Help Co",
-   "monthlyGrowth": 1.12,
-   "measured": 0.85,
-   "rows": [
-    {
-     "horizon": "3 months",
-     "visits": {
-      "low": 74,
-      "likely": 140,
-      "high": 170
-     }
-    },
-    {
-     "horizon": "6 months",
-     "visits": {
-      "low": 65,
-      "likely": 160,
-      "high": 230
-     }
-    },
-    {
-     "horizon": "12 months",
-     "visits": {
-      "low": 61,
-      "likely": 190,
-      "high": 330
-     }
-    }
-   ],
-   "moneyRate": "typical 0.3–2.5% of visits (no history yet)"
-  },
-  {
-   "id": "trade-admin",
-   "name": "tradeadmin.com.au",
-   "monthlyGrowth": 1.37,
-   "measured": 1.8,
-   "rows": [
-    {
-     "horizon": "3 months",
-     "visits": {
-      "low": 48,
-      "likely": 87,
+      "low": 58,
+      "likely": 110,
       "high": 130
      },
      "money": {
@@ -488,27 +406,108 @@
     {
      "horizon": "6 months",
      "visits": {
-      "low": 52,
-      "likely": 140,
-      "high": 290
+      "low": 51,
+      "likely": 120,
+      "high": 170
      },
      "money": {
       "low": 0,
       "likely": 1,
-      "high": 7
+      "high": 4
      }
     },
     {
      "horizon": "12 months",
      "visits": {
-      "low": 55,
-      "likely": 210,
-      "high": 730
+      "low": 48,
+      "likely": 140,
+      "high": 230
+     },
+     "money": {
+      "low": 0,
+      "likely": 1,
+      "high": 6
+     }
+    }
+   ],
+   "moneyRate": "typical 0.3–2.5% of visits (no history yet)"
+  },
+  {
+   "id": "community-help-co",
+   "name": "Community Help Co",
+   "monthlyGrowth": 1.11,
+   "measured": 0.85,
+   "rows": [
+    {
+     "horizon": "3 months",
+     "visits": {
+      "low": 81,
+      "likely": 150,
+      "high": 180
+     }
+    },
+    {
+     "horizon": "6 months",
+     "visits": {
+      "low": 72,
+      "likely": 180,
+      "high": 250
+     }
+    },
+    {
+     "horizon": "12 months",
+     "visits": {
+      "low": 67,
+      "likely": 200,
+      "high": 350
+     }
+    }
+   ],
+   "moneyRate": "typical 0.3–2.5% of visits (no history yet)"
+  },
+  {
+   "id": "trade-admin",
+   "name": "tradeadmin.com.au",
+   "monthlyGrowth": 1.38,
+   "measured": 1.8,
+   "rows": [
+    {
+     "horizon": "3 months",
+     "visits": {
+      "low": 50,
+      "likely": 90,
+      "high": 130
+     },
+     "money": {
+      "low": 0,
+      "likely": 1,
+      "high": 3
+     }
+    },
+    {
+     "horizon": "6 months",
+     "visits": {
+      "low": 54,
+      "likely": 150,
+      "high": 300
+     },
+     "money": {
+      "low": 0,
+      "likely": 1,
+      "high": 8
+     }
+    },
+    {
+     "horizon": "12 months",
+     "visits": {
+      "low": 56,
+      "likely": 220,
+      "high": 770
      },
      "money": {
       "low": 0,
       "likely": 2,
-      "high": 18
+      "high": 19
      }
     }
    ],
@@ -517,31 +516,31 @@
   {
    "id": "paycalc",
    "name": "mypaycalc.com.au",
-   "monthlyGrowth": 1.35,
+   "monthlyGrowth": 1.36,
    "measured": 1.8,
    "rows": [
     {
      "horizon": "3 months",
      "visits": {
-      "low": 260,
-      "likely": 450,
-      "high": 650
+      "low": 270,
+      "likely": 470,
+      "high": 670
      }
     },
     {
      "horizon": "6 months",
      "visits": {
-      "low": 280,
-      "likely": 700,
-      "high": 1410
+      "low": 290,
+      "likely": 740,
+      "high": 1480
      }
     },
     {
      "horizon": "12 months",
      "visits": {
-      "low": 290,
-      "likely": 1040,
-      "high": 3400
+      "low": 300,
+      "likely": 1100,
+      "high": 3620
      }
     }
    ],
