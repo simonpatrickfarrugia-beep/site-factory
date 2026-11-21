@@ -3,6 +3,14 @@
     {
       "label": "Check a website",
       "path": ""
+    },
+    {
+      "label": "Speed test",
+      "path": "speed-test"
+    },
+    {
+      "label": "SEO checker",
+      "path": "seo-checker"
     }
   ],
   "pages": [
@@ -94,6 +102,150 @@
         {
           "t": "web.dev: Time to First Byte (TTFB)",
           "url": "https://web.dev/articles/ttfb",
+          "checked": "2026-11-22"
+        }
+      ],
+      "links": [
+        {
+          "path": "speed-test",
+          "t": "Website speed test",
+          "d": "Why a slow first response loses customers on phones, and what to ask your host."
+        },
+        {
+          "path": "seo-checker",
+          "t": "SEO checker",
+          "d": "The Google basics a local business site needs: title, description, business details and nothing blocking Google."
+        }
+      ]
+    },
+    {
+      "path": "speed-test",
+      "tool": "website-check",
+      "seoTitle": "Free Website Speed Test for Small Businesses | IMN Labs",
+      "description": "Test how fast your business website starts loading, in seconds and free. See your server response time, page size and what to fix first.",
+      "kicker": "Free tool",
+      "title": "Website speed test for small businesses",
+      "lede": "How long does your website make customers wait before anything appears? Type in your address to see your server's first response time and page size, plus the rest of the check, in about 10 seconds.",
+      "updated": "2026-11-22",
+      "sections": [
+        {
+          "h": "What the speed test measures",
+          "list": [
+            "First response time: how long your server takes to start sending the page. It's the wait before anything appears, and every visitor sits through it.",
+            "Page size: how much code the page sends before images. Page builders often add hundreds of kilobytes that phones then have to download and read.",
+            "Whether the site is set up for phones, since a slow page on a small screen is where most visitors give up."
+          ]
+        },
+        {
+          "h": "What counts as fast",
+          "p": [
+            "Google's web.dev guidance treats a first response of 0.8 seconds or less as good, and anything over 1.8 seconds as poor. We use the same lines: under 0.8 seconds is Good, up to 1.8 seconds Could be better, and slower than that Needs fixing.",
+            "For page size we call 300 KB of HTML or less Good and over 1 MB Needs fixing. Images are extra, so a heavy page plus large photos adds up quickly on mobile data."
+          ]
+        },
+        {
+          "h": "If your site is slow",
+          "list": [
+            "Ask your host whether caching is switched on. It's often a single setting, and it can cut the first response a lot.",
+            "Cheap shared hosting is a common cause. Moving to faster hosting or a content delivery network usually fixes it.",
+            "Remove plugins, sliders and chat widgets you don't use. Each one adds code to every page.",
+            "Resize photos before uploading them. A phone photo straight off the camera can weigh more than the rest of the page."
+          ]
+        },
+        {
+          "h": "How this differs from other speed tests",
+          "p": [
+            "Tools like Google PageSpeed Insights load the whole page in a test phone and score everything, including images and scripts, which is thorough but slower to read. Our test focuses on the first response and page weight, the parts a small business can usually fix with its host, and adds the other basics customers notice: the padlock, tap-to-call and Google listing details."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Why does my speed change each time I test?",
+          "a": "Servers answer faster or slower depending on how busy they are and how far away the request comes from. Results are held for an hour, so test again later for a fresh reading."
+        },
+        {
+          "q": "Is this the same as Google's Core Web Vitals?",
+          "a": "No. Core Web Vitals measure what real visitors experience over time. Our test is a quick snapshot of how fast your server starts answering, which feeds into those numbers."
+        },
+        {
+          "q": "Does a fast site help on Google?",
+          "a": "Google says page experience is one of many things it considers. A fast site mostly helps the people who visit it: fewer of them give up before the page opens."
+        }
+      ],
+      "sources": [
+        {
+          "t": "web.dev: Time to First Byte (TTFB)",
+          "url": "https://web.dev/articles/ttfb",
+          "checked": "2026-11-22"
+        }
+      ]
+    },
+    {
+      "path": "seo-checker",
+      "tool": "website-check",
+      "seoTitle": "Free SEO Checker for Small Business Websites | IMN Labs",
+      "description": "Free SEO check for local business websites: page title, Google description, business details, sitemap and anything blocking Google, in plain English.",
+      "kicker": "Free tool",
+      "title": "SEO checker for small business websites",
+      "lede": "Is your website giving Google what it needs to show you to local customers? Type in your address and see your page title, description, business details and anything that blocks Google, with plain-English fixes.",
+      "updated": "2026-11-22",
+      "sections": [
+        {
+          "h": "The Google basics we check",
+          "list": [
+            "Page title: the blue headline Google shows for your page. About 30 to 60 characters saying what you do and where works best.",
+            "Meta description: the short summary under that headline. Without one, Google picks a random bit of text from your page.",
+            "One clear main heading, so people and Google can see straight away what the page is about.",
+            "Nothing telling Google to skip the page. A leftover \"discourage search engines\" setting from when the site was built is a common reason a business can't be found.",
+            "A sitemap at /sitemap.xml, which helps Google find new and updated pages.",
+            "Business details as structured data (LocalBusiness), which Google can use to show your address, phone and opening hours."
+          ]
+        },
+        {
+          "h": "What this SEO check doesn't cover",
+          "p": [
+            "Real SEO for a local business is also about your Google Business Profile, reviews, other sites linking to you and having a page for each service and area you cover. Those live outside your homepage's code, so a one-page check can't see them. Think of this as the technical starting line: if these basics are missing, nothing else works as well."
+          ]
+        },
+        {
+          "h": "Quick wins for local businesses",
+          "list": [
+            "Put your service and your area in the page title, for example \"Mobile Mechanic in Frankston | Your Business Name\".",
+            "Write a description that answers \"why you\": years in business, areas covered, same-day service, free quotes.",
+            "Make your phone number tap-to-call and match it exactly to your Google Business Profile.",
+            "Give each main service its own page with its own title and description, rather than listing everything on one page."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Will fixing these get me to the top of Google?",
+          "a": "Nobody can promise rankings. These fixes remove the technical reasons Google might skip or misread your site, so your other efforts, like reviews and a complete Google Business Profile, count for more."
+        },
+        {
+          "q": "Can I check a competitor's SEO?",
+          "a": "Yes. Type in their address to see how their basics compare with yours."
+        },
+        {
+          "q": "Do you need access to my website?",
+          "a": "No. We only read the public page, the same as any visitor or search engine."
+        }
+      ],
+      "sources": [
+        {
+          "t": "Google Search Central: Influencing title links in Google Search",
+          "url": "https://developers.google.com/search/docs/appearance/title-link",
+          "checked": "2026-11-22"
+        },
+        {
+          "t": "Google Search Central: How to write meta descriptions",
+          "url": "https://developers.google.com/search/docs/appearance/snippet",
+          "checked": "2026-11-22"
+        },
+        {
+          "t": "Google Search Central: Local business (LocalBusiness) structured data",
+          "url": "https://developers.google.com/search/docs/appearance/structured-data/local-business",
           "checked": "2026-11-22"
         }
       ]
