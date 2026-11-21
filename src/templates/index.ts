@@ -11,6 +11,7 @@ import Dashboard from './Dashboard.astro';
 import Hq from './Hq.astro';
 import HqAnswers from './HqAnswers.astro';
 import HqTraffic from './HqTraffic.astro';
+import HqWallpaper from './HqWallpaper.astro';
 import VicHome from './vic/VicHome.astro';
 import VicTowns from './vic/Towns.astro';
 import VicTown from './vic/Town.astro';
@@ -92,6 +93,7 @@ export const templates = {
   hq: Hq,
   hqAnswers: HqAnswers,
   hqTraffic: HqTraffic,
+  hqWallpaper: HqWallpaper,
   vicHome: VicHome,
   vicTowns: VicTowns,
   vicTown: VicTown,

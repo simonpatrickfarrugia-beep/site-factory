@@ -2,7 +2,7 @@
  * IMN HQ page data, read straight from the repo at build time (works from any brand's build).
  * Sources: hq/portfolio.json, hq/finance.json, hq/niches.json, each site's stats.json and pipeline data.
  */
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const read = <T>(path: string | undefined, fallback: T): T => {
@@ -486,5 +486,104 @@ export function funnelProps() {
     brands,
     crm: HQ_CRM,
     outreachAsOf: outreach.asOf ?? null,
+  };
+}
+
+/**
+ * Live wallpaper (/hq/wallpaper on the trailer site): the whole of IMN on one 16:9 screen, drawn from the repo at build
+ * time, so new sites, labs, workers and schedules appear by themselves. Rebuilt whenever data lands (stats every morning);
+ * the page also reloads itself every 30 minutes and moves a "now" marker along the day's timeline.
+ * Sources: hq/sitecheck.json + hq/sitecheck/index.json (sites + grades), data/<brand>/stats.json, hq/value.json,
+ * hq/finance.json, hq/portfolio.json (goal + to-dos), data/imn/labs.json, docs/WORKERS.md + hq/runs.json (AI workers),
+ * .github/workflows/*.yml crons + the pipeline Worker's slots (code jobs), hq/affiliate-programs.json (money).
+ */
+export function wallpaperProps() {
+  const sum = (xs: number[]) => xs.reduce((a, b) => a + b, 0);
+  const cfg = read<any>('hq/sitecheck.json', { sites: [] });
+  const idx = read<any>('hq/sitecheck/index.json', { sites: {} });
+  const value = read<any>('hq/value.json', { sites: [], total: { low: 0, high: 0 } });
+  const finance = read<any>('hq/finance.json', { revenue: [] });
+  const portfolio = read<any>('hq/portfolio.json', { goal: null, todo: [] });
+  const labsReg = read<any>('data/imn/labs.json', { labs: [] });
+  const runs = read<any>('hq/runs.json', { workers: {} });
+  const progs = read<any>('hq/affiliate-programs.json', { programs: [] });
+  const MODE: Record<string, string> = { trailers: 'autopilot', paycalc: 'autopilot', vic: 'hands-on', 'community-help-co': 'hands-on', 'trade-admin': 'hands-on', imn: 'sales site', 'simon-says-travel': 'built' };
+
+  const sites = (cfg.sites ?? []).filter((s: any) => (s.owner ?? 'imn') === 'imn').map((s: any) => {
+    const st = read<any>(s.stats, null);
+    const card = idx.sites?.[s.id] ?? null;
+    const val = (value.sites ?? []).find((v: any) => v.id === s.id);
+    return {
+      id: s.id, name: s.label ?? s.name, domain: String(s.url ?? '').replace(/^https?:\/\/(www\.)?/, ''), icon: s.icon ?? '🌐',
+      mode: MODE[s.brand ?? s.id] ?? 'live',
+      grade: card?.grade ?? null, score: card?.score ?? null,
+      visits: st?.totals?.views ?? 0, impressions: st?.totals?.gscImpressions ?? 0,
+      daily: ((st?.daily ?? []) as any[]).slice(-14).map((d) => d.views ?? 0),
+      value: val ? val.value : null,
+    };
+  });
+  const clients = (cfg.sites ?? []).filter((s: any) => s.owner === 'client').length;
+  const labs = (labsReg.labs ?? []).filter((l: any) => l.status === 'live' || l.status === 'graduating').map((l: any) => ({ name: l.name, slug: l.slug, launched: l.launched }));
+
+  // AI workers: roster table in docs/WORKERS.md + last run in hq/runs.json.
+  const roster: { name: string; skill: string; when: string }[] = [];
+  const wf = join(process.cwd(), 'docs', 'WORKERS.md');
+  if (existsSync(wf)) {
+    for (const line of readFileSync(wf, 'utf8').split('\n')) {
+      const m = line.match(/^\|\s*([^|]+?)\s*\|\s*`([a-z0-9-]+)`\s*\|\s*([^|]+?)\s*\|/);
+      if (m) roster.push({ name: m[1], skill: m[2], when: m[3].replace(/\s*\(.*\)$/, '') });
+    }
+  }
+  const now = Date.now();
+  const workers = roster.map((w) => {
+    const r = runs.workers?.[w.skill];
+    const age = r?.at ? (now - Date.parse(r.at)) / 86400000 : null;
+    const status = !r ? 'idle' : r.ok === false ? 'fail' : age !== null && age > 8 ? 'stale' : 'ok';
+    return { ...w, status, last: r?.at ?? null, note: String(r?.note ?? '').slice(0, 90) };
+  });
+
+  // Code jobs: GitHub workflow crons (UTC → Melbourne) + the pipeline Worker's time slots (workers/pipeline/src/index.ts jobFor).
+  const mel = (h: number, m: number) => {
+    const d = new Date(Date.UTC(2026, 0, 15, h, m)); // a summer date: AEDT, matches the repo's schedule comments
+    const [hh, mm] = d.toLocaleTimeString('en-AU', { timeZone: 'Australia/Melbourne', hour: '2-digit', minute: '2-digit', hour12: false }).split(':').map(Number);
+    return (hh % 24) * 60 + mm;
+  };
+  const jobs: { name: string; min: number; kind: 'code' | 'ai'; often?: string }[] = [];
+  const LABEL: Record<string, string> = { sitecheck: 'Site check', leads: 'Day-job leads', brief: 'Daily brief + value', health: 'Health check', enquiries: 'Enquiries', 'rates-check': 'ATO rates', 'agoda-check': 'Agoda towns', 'vic-viator': 'Viator tours', 'public-domain': 'Free films' };
+  const wdir = join(process.cwd(), '.github', 'workflows');
+  if (existsSync(wdir)) {
+    for (const f of readdirSync(wdir).filter((x) => x.endsWith('.yml'))) {
+      const id = f.replace(/\.yml$/, '');
+      for (const [, cron] of readFileSync(join(wdir, f), 'utf8').matchAll(/cron:\s*'([^']+)'/g)) {
+        const [mi, hr, dom, , dow] = cron.split(/\s+/);
+        const often = dom !== '*' ? 'monthly' : dow !== '*' ? 'weekly' : '';
+        for (const h of hr.split(',')) if (/^\d+$/.test(h) && /^\d+$/.test(mi)) jobs.push({ name: LABEL[id] ?? id, min: mel(Number(h), Number(mi)), kind: 'code', often });
+      }
+    }
+  }
+  for (const [name, h, m, often] of [['Trailer intake', 0, 0, ''], ['Trailer intake', 12, 0, ''], ['Niche finder', 18, 0, 'weekly'], ['Stats (GA4 + Google)', 19, 0, ''], ['Enrich trailers', 21, 0, '']] as [string, number, number, string][])
+    jobs.push({ name, min: mel(h, m), kind: 'code', often });
+  for (const w of workers) {
+    const t = w.when.match(/(\d{1,2}):(\d{2})/);
+    if (!t || /hourly|demand/i.test(w.when)) continue;
+    jobs.push({ name: w.name, min: Number(t[1]) * 60 + Number(t[2]), kind: 'ai', often: /mon|tue|wed|thu|fri|sat|sun/i.test(w.when) && !/weekdays/i.test(w.when) ? 'weekly' : /decision/i.test(w.when) ? 'RBA days' : '' });
+  }
+  jobs.sort((a, b) => a.min - b.min);
+
+  const approved = (progs.programs ?? []).filter((p: any) => p.status === 'approved');
+  const partnerNames = [...new Set(approved.map((p: any) => String(p.name).replace(/ (Partner Program|Partners|Affiliate|partner programme|referral partner|Group Affiliate).*$/i, '').replace(/^Amazon Associates US.*$/, 'Amazon').replace(/ \/.*$/, '')))] as string[];
+  const revenue = sum((finance.revenue ?? []).map((r: any) => Number(r.amount) || 0));
+  const levels: any[] = portfolio.goal?.levels ?? [];
+  const level = levels.find((l) => revenue < l.target) ?? levels[levels.length - 1] ?? null;
+  const todo = (portfolio.todo ?? []).filter((t: any) => !t.done).length;
+  return {
+    builtAt: new Date().toISOString(),
+    kpis: {
+      revenue, level: level ? `Level ${level.level}: ${level.name}` : '',
+      visits: sum(sites.map((s: any) => s.visits)), impressions: sum(sites.map((s: any) => s.impressions)),
+      value: value.total ?? { low: 0, high: 0 }, labs: labs.length, todo, sites: sites.length, clients,
+      avgScore: sites.filter((s: any) => s.score !== null).length ? Math.round(sum(sites.filter((s: any) => s.score !== null).map((s: any) => s.score)) / sites.filter((s: any) => s.score !== null).length) : null,
+    },
+    sites, labs, workers, jobs, partners: partnerNames,
   };
 }

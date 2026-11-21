@@ -28,5 +28,7 @@ export interface Route {
   private?: boolean;
   /** Header override (IMN Labs pages: the lab's own name and menu plus an "IMN Labs" label). Default: the brand header. */
   chrome?: import('./labs').Chrome;
+  /** Full-screen page with no site header or footer (e.g. /hq/wallpaper). */
+  bare?: boolean;
   props: Record<string, unknown>;
 }

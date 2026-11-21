@@ -1,0 +1,231 @@
+---
+/**
+ * Live wallpaper: the whole of IMN on one 16:9 screen (/hq/wallpaper on the trailer site, private, no header/footer).
+ * Data: wallpaperProps() in src/lib/hq.ts, rebuilt whenever data lands. Reloads itself every 30 minutes; the clock
+ * and the "now" marker on the day timeline move every minute. Set as a desktop wallpaper with Lively Wallpaper (Windows).
+ * Left 7vw stays empty for desktop icons.
+ */
+interface Site { id: string; name: string; domain: string; icon: string; mode: string; grade: string | null; score: number | null; visits: number; impressions: number; daily: number[]; value: { low: number; high: number } | null }
+interface Props {
+  builtAt: string;
+  kpis: { revenue: number; level: string; visits: number; impressions: number; value: { low: number; high: number }; labs: number; todo: number; sites: number; clients: number; avgScore: number | null };
+  sites: Site[];
+  labs: { name: string; slug: string; launched: string }[];
+  workers: { name: string; skill: string; when: string; status: string; last: string | null; note: string }[];
+  jobs: { name: string; min: number; kind: 'code' | 'ai'; often?: string }[];
+  partners: string[];
+}
+const p = Astro.props;
+const n = (v: number) => v.toLocaleString('en-AU');
+const aud = (v: number) => 'A$' + Math.round(v).toLocaleString('en-AU');
+const hhmm = (m: number) => `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
+const spark = (xs: number[]) => {
+  if (xs.length < 2) return '';
+  const max = Math.max(1, ...xs);
+  return xs.map((v, i) => `${((i / (xs.length - 1)) * 100).toFixed(1)},${(22 - (v / max) * 20).toFixed(1)}`).join(' ');
+};
+const codeEngines = [...new Set(p.jobs.filter((j) => j.kind === 'code').map((j) => j.name))];
+// Spread timeline labels over 3 rows so close times don't overlap.
+const lanes = p.jobs.map((j, i) => ({ ...j, lane: i % 3 }));
+---
+<div class="wp" id="wp">
+  <svg class="wp__wires" id="wires" aria-hidden="true"></svg>
+
+  <header class="wp__top">
+    <div class="wp__brand">
+      <span class="wp__mark">IMN</span>
+      <div><strong>Independent Media Network</strong><span>Human run, AI powered · the factory, live</span></div>
+    </div>
+    <div class="wp__clock"><b id="clock">--:--</b><span id="date"></span></div>
+  </header>
+
+  <section class="wp__kpis">
+    <div class="k k--gold"><b>{aud(p.kpis.revenue)}</b><span>revenue to date · {p.kpis.level}</span></div>
+    <div class="k"><b>{n(p.kpis.visits)}</b><span>visits, last 28 days</span></div>
+    <div class="k"><b>{n(p.kpis.impressions)}</b><span>times shown in Google</span></div>
+    <div class="k"><b>{p.kpis.sites}</b><span>sites{p.kpis.clients ? ` + ${p.kpis.clients} client` : ''} · avg {p.kpis.avgScore ?? '–'}/100</span></div>
+    <div class="k"><b>{aud(p.kpis.value.low)}–{aud(p.kpis.value.high)}</b><span>portfolio value (estimate)</span></div>
+    <div class="k"><b>{p.kpis.labs}</b><span>IMN Labs live</span></div>
+    <div class="k"><b>{p.kpis.todo}</b><span>on Simon's list</span></div>
+  </section>
+
+  <div class="wp__flow">
+    <section class="col col--engines" data-node="engines">
+      <h2>Engines</h2>
+      <h3>AI workers</h3>
+      <ul class="workers">
+        {p.workers.map((w) => <li class={`w w--${w.status}`} title={w.note}><i></i><span>{w.name}</span><em>{w.when}</em></li>)}
+      </ul>
+      <h3>Code engines</h3>
+      <ul class="chips">{codeEngines.map((e) => <li>{e}</li>)}</ul>
+    </section>
+
+    <section class="col col--hub">
+      <div class="hub" data-node="hub">
+        <div class="hub__ring"></div>
+        <div class="hub__core"><b>IMN HQ</b><span>Simon + Claude</span></div>
+      </div>
+      <ul class="hub__out">
+        <li data-node="outreach"><b>Outreach</b><span>Radar → drafts → Simon sends</span></li>
+        <li data-node="labs"><b>IMN Labs</b><span>{p.labs.length ? p.labs.map((l) => l.name).join(' · ') : 'none live'}</span></li>
+      </ul>
+    </section>
+
+    <section class="col col--sites">
+      <h2>Sites</h2>
+      <div class="sites">
+        {p.sites.map((s) => (
+          <article class="site" data-node={`site-${s.id}`}>
+            <header><span class="site__ic">{s.icon}</span><b>{s.name}</b>{s.grade && <span class={`g g--${s.grade}`}>{s.grade}</span>}</header>
+            <p class="site__dom">{s.domain} · {s.mode}</p>
+            <div class="site__nums"><span><b>{n(s.visits)}</b> visits</span><span><b>{n(s.impressions)}</b> in Google</span></div>
+            {s.daily.length > 1 && <svg class="site__spark" viewBox="0 0 100 24" preserveAspectRatio="none"><polyline points={spark(s.daily)} /></svg>}
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="col col--money" data-node="money">
+      <h2>Money</h2>
+      <div class="m"><b>Affiliates</b><ul class="chips chips--gold">{p.partners.map((x) => <li>{x}</li>)}</ul></div>
+      <div class="m"><b>Ads</b><ul class="chips chips--gold"><li>AdSense</li></ul></div>
+      <div class="m"><b>IMN websites</b><span>free site → $99 + GST a month</span></div>
+      <div class="m m--goal"><b>Next level</b><span>{p.kpis.level}</span></div>
+    </section>
+  </div>
+
+  <footer class="wp__day">
+    <div class="day__head"><b>A day in the factory</b><span>Melbourne time · gold = AI worker · blue = code job</span></div>
+    <div class="day" id="day">
+      <div class="day__hours">{[0, 3, 6, 9, 12, 15, 18, 21, 24].map((h) => <span style={`left:${(h / 24) * 100}%`}>{String(h % 24).padStart(2, '0')}</span>)}</div>
+      <div class="day__line"></div>
+      {lanes.map((j) => (
+        <div class={`job job--${j.kind} lane-${j.lane}`} style={`left:${(j.min / 1440) * 100}%`} title={`${hhmm(j.min)} ${j.name}`}>
+          <i></i><span>{hhmm(j.min)} {j.name}{j.often ? ` (${j.often})` : ''}</span>
+        </div>
+      ))}
+      <div class="day__now" id="now"><span>now</span></div>
+    </div>
+  </footer>
+  <p class="wp__built">Data as of {new Date(p.builtAt).toLocaleString('en-AU', { timeZone: 'Australia/Melbourne', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}</p>
+</div>
+
+<style>
+  /* Scoped to this template (every template's CSS ships with every brand); only the injected wires and <body> are global. */
+  :global(body:has(.wp)) { margin: 0; overflow: hidden; background: #0B1120; }
+  :global(body:has(.wp) .skip-link) { display: none; }
+  .wp { --ink: #0B1120; --panel: rgba(255,255,255,.045); --line: rgba(255,255,255,.09); --text: #E9ECF4; --muted: #8C96AD; --gold: #F2A93B; --blue: #6FA8FF; --good: #4ADE80; --warn: #FBBF24; --bad: #F87171;
+    position: fixed; inset: 0; display: grid; grid-template-rows: auto auto 1fr auto; gap: 1.6vh; padding: 3.2vh 2.6vw 2.4vh 7vw; box-sizing: border-box;
+    background: radial-gradient(1200px 700px at 55% 45%, rgba(242,169,59,.08), transparent 60%), radial-gradient(900px 600px at 85% 20%, rgba(111,168,255,.07), transparent 60%),
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,.05) 1px, transparent 0) 0 0 / 28px 28px, var(--ink);
+    color: var(--text); font: 400 clamp(11px, .78vw, 16px)/1.35 'Segoe UI', system-ui, -apple-system, sans-serif; overflow: hidden; }
+  .wp * { box-sizing: border-box; }
+  .wp h2 { margin: 0 0 1vh; font-size: 1.05em; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .wp h3 { margin: 1.4vh 0 .6vh; font-size: .82em; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  .wp ul { list-style: none; margin: 0; padding: 0; }
+  .wp__wires { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+  .wp__wires :global(path) { fill: none; stroke: rgba(242,169,59,.35); stroke-width: 1.4; stroke-dasharray: 6 8; animation: flow 3.5s linear infinite; }
+  .wp__wires :global(path.b) { stroke: rgba(111,168,255,.3); }
+  @keyframes flow { to { stroke-dashoffset: -56; } }
+  .wp > :not(.wp__wires) { position: relative; z-index: 1; }
+
+  .wp__top { display: flex; justify-content: space-between; align-items: center; }
+  .wp__brand { display: flex; gap: 1vw; align-items: center; }
+  .wp__mark { font: 800 1.9em/1 'Segoe UI', system-ui; letter-spacing: .02em; padding: .35em .5em .45em; border-radius: 12px; background: #121A2B; border: 1px solid var(--line); box-shadow: inset 0 -3px 0 var(--gold); }
+  .wp__brand strong { display: block; font-size: 1.5em; font-weight: 700; }
+  .wp__brand span { color: var(--muted); }
+  .wp__clock { text-align: right; } .wp__clock b { display: block; font-size: 2.6em; font-weight: 300; letter-spacing: .02em; } .wp__clock span { color: var(--muted); }
+
+  .wp__kpis { display: grid; grid-template-columns: repeat(7, 1fr); gap: .8vw; }
+  .k { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 1.2vh .9vw; backdrop-filter: blur(6px); }
+  .k b { display: block; font-size: 1.55em; font-weight: 700; } .k span { color: var(--muted); font-size: .9em; }
+  .k--gold b { color: var(--gold); }
+
+  .wp__flow { display: grid; grid-template-columns: 1.05fr .8fr 1.9fr .95fr; gap: 2.2vw; min-height: 0; }
+  .col { min-height: 0; }
+  .col--engines, .col--money { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 1.8vh 1vw; overflow: hidden; }
+  .w { display: grid; grid-template-columns: auto 1fr; column-gap: .5vw; padding: .55vh 0; border-bottom: 1px solid var(--line); }
+  .w i { width: .6em; height: .6em; border-radius: 50%; background: var(--muted); margin-top: .35em; grid-row: span 2; }
+  .w--ok i { background: var(--good); box-shadow: 0 0 10px var(--good); } .w--stale i { background: var(--warn); } .w--fail i { background: var(--bad); box-shadow: 0 0 10px var(--bad); }
+  .w span { font-weight: 600; } .w em { font-style: normal; color: var(--muted); font-size: .85em; }
+  .chips { display: flex; flex-wrap: wrap; gap: .35em; }
+  .chips li { padding: .25em .6em; border-radius: 999px; background: rgba(111,168,255,.1); border: 1px solid rgba(111,168,255,.25); font-size: .85em; }
+  .chips--gold li { background: rgba(242,169,59,.1); border-color: rgba(242,169,59,.3); }
+
+  .col--hub { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3vh; }
+  .hub { position: relative; width: 11vw; aspect-ratio: 1; display: grid; place-items: center; }
+  .hub__ring { position: absolute; inset: 0; border-radius: 50%; border: 2px dashed rgba(242,169,59,.5); animation: spin 40s linear infinite; }
+  .hub__ring::after { content: ''; position: absolute; inset: 12%; border-radius: 50%; border: 1px solid rgba(255,255,255,.12); }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .hub__core { width: 70%; aspect-ratio: 1; border-radius: 50%; display: grid; place-content: center; text-align: center; background: radial-gradient(circle at 40% 35%, #26324E, #121A2B); border: 1px solid var(--line); box-shadow: 0 0 60px rgba(242,169,59,.25), inset 0 -4px 0 var(--gold); }
+  .hub__core b { font-size: 1.5em; } .hub__core span { color: var(--muted); font-size: .85em; }
+  .hub__out { display: grid; gap: 1.4vh; width: 100%; }
+  .hub__out li { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 1vh .8vw; text-align: center; }
+  .hub__out b { display: block; } .hub__out span { color: var(--muted); font-size: .85em; }
+
+  .sites { display: grid; grid-template-columns: 1fr 1fr; gap: 1vh .9vw; }
+  .site { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 1.1vh .8vw .6vh; }
+  .site header { display: flex; align-items: center; gap: .45em; } .site header b { flex: 1; font-size: 1.05em; }
+  .site__ic { font-size: 1.1em; }
+  .g { font-weight: 800; padding: .05em .45em; border-radius: 6px; background: rgba(74,222,128,.15); color: var(--good); }
+  .g--C { background: rgba(251,191,36,.15); color: var(--warn); } .g--D, .g--F { background: rgba(248,113,113,.15); color: var(--bad); }
+  .site__dom { margin: .2vh 0 .5vh; color: var(--muted); font-size: .85em; }
+  .site__nums { display: flex; gap: 1vw; font-size: .9em; color: var(--muted); } .site__nums b { color: var(--text); }
+  .site__spark { width: 100%; height: 2.2vh; margin-top: .3vh; } .site__spark polyline { fill: none; stroke: var(--blue); stroke-width: 1.6; vector-effect: non-scaling-stroke; }
+
+  .m { padding: 1vh 0; border-bottom: 1px solid var(--line); } .m > b { display: block; margin-bottom: .5vh; } .m > span { color: var(--muted); font-size: .9em; }
+  .m--goal { border: 0; } .m--goal span { color: var(--gold); font-weight: 700; font-size: 1em; }
+
+  .wp__day { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 1.2vh 1.2vw 1vh; }
+  .day__head { display: flex; gap: 1vw; align-items: baseline; } .day__head span { color: var(--muted); font-size: .85em; }
+  .day { position: relative; height: 10.5vh; margin-top: .6vh; }
+  .day__hours span { position: absolute; bottom: 0; transform: translateX(-50%); color: var(--muted); font-size: .78em; }
+  .day__line { position: absolute; left: 0; right: 0; bottom: 2.2vh; height: 2px; background: linear-gradient(90deg, rgba(111,168,255,.15), rgba(242,169,59,.35), rgba(111,168,255,.15)); }
+  .job { position: absolute; bottom: 2.2vh; transform: translateX(-.3em); }
+  .job i { position: absolute; left: 0; bottom: -.3em; width: .6em; height: .6em; border-radius: 50%; background: var(--blue); }
+  .job--ai i { background: var(--gold); box-shadow: 0 0 8px var(--gold); }
+  .job span { position: absolute; left: -.1em; white-space: nowrap; font-size: .74em; color: var(--muted); border-left: 1px solid rgba(255,255,255,.18); padding-left: .35em; }
+  .lane-0 span { bottom: .6em; } .lane-1 span { bottom: 2.3em; } .lane-2 span { bottom: 4em; }
+  .job--ai span { color: #F6D39A; }
+  .day__now { position: absolute; top: 0; bottom: 1.4vh; width: 2px; background: var(--gold); box-shadow: 0 0 12px var(--gold); }
+  .day__now span { position: absolute; top: -.2em; left: .4em; font-size: .75em; color: var(--gold); font-weight: 700; }
+  .wp .wp__built { position: absolute; right: 2.6vw; bottom: .6vh; margin: 0; font-size: .72em; color: rgba(140,150,173,.7); z-index: 1; }
+</style>
+
+<script is:inline>
+(function () {
+  var TZ = 'Australia/Melbourne';
+  function tick() {
+    var d = new Date();
+    var t = d.toLocaleTimeString('en-AU', { timeZone: TZ, hour: '2-digit', minute: '2-digit', hour12: false });
+    document.getElementById('clock').textContent = t;
+    document.getElementById('date').textContent = d.toLocaleDateString('en-AU', { timeZone: TZ, weekday: 'long', day: 'numeric', month: 'long' });
+    var p = t.split(':'); var mins = Number(p[0]) * 60 + Number(p[1]);
+    document.getElementById('now').style.left = (mins / 1440 * 100) + '%';
+  }
+  // Wires: engines → hub → each site → money, plus hub → outreach / labs.
+  function wires() {
+    var svg = document.getElementById('wires'); var box = document.getElementById('wp').getBoundingClientRect();
+    var r = function (sel) { var e = document.querySelector('[data-node="' + sel + '"]'); return e ? e.getBoundingClientRect() : null; };
+    var path = function (a, b, cls) {
+      var x1 = a.x - box.x, y1 = a.y - box.y, x2 = b.x - box.x, y2 = b.y - box.y, dx = (x2 - x1) * 0.5;
+      return '<path class="' + (cls || '') + '" d="M' + x1 + ',' + y1 + ' C' + (x1 + dx) + ',' + y1 + ' ' + (x2 - dx) + ',' + y2 + ' ' + x2 + ',' + y2 + '"/>';
+    };
+    var out = ''; var hub = r('hub'), eng = r('engines'), money = r('money');
+    if (!hub) return;
+    var hubL = { x: hub.left, y: hub.top + hub.height / 2 }, hubR = { x: hub.right, y: hub.top + hub.height / 2 }, hubB = { x: hub.left + hub.width / 2, y: hub.bottom };
+    if (eng) out += path({ x: eng.right, y: eng.top + eng.height / 2 }, hubL, 'b');
+    document.querySelectorAll('[data-node^="site-"]').forEach(function (s) {
+      var b = s.getBoundingClientRect();
+      out += path(hubR, { x: b.left, y: b.top + b.height / 2 });
+      if (money) out += path({ x: b.right, y: b.top + b.height / 2 }, { x: money.left, y: money.top + money.height / 2 }, 'b');
+    });
+    ['outreach', 'labs'].forEach(function (k) { var b = r(k); if (b) out += path(hubB, { x: b.left + b.width / 2, y: b.top }, 'b'); });
+    svg.innerHTML = out;
+  }
+  tick(); setInterval(tick, 30000);
+  window.addEventListener('load', wires); window.addEventListener('resize', wires); setTimeout(wires, 300);
+  // Pick up new builds (sites, data, schedules) every 30 minutes.
+  setTimeout(function () { location.reload(); }, 30 * 60 * 1000);
+})();
+</script>

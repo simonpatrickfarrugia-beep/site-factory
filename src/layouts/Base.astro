@@ -18,9 +18,11 @@ interface Props {
   noindex?: boolean;
   /** Header override (IMN Labs pages). */
   chrome?: Chrome;
+  /** No site header or footer (full-screen pages like /hq/wallpaper). */
+  bare?: boolean;
 }
 
-const { title, rawTitle = false, description = brand.seo.defaultDescription, image, schema = [], private: isPrivate = false, noindex = false, chrome } = Astro.props;
+const { title, rawTitle = false, description = brand.seo.defaultDescription, image, schema = [], private: isPrivate = false, noindex = false, chrome, bare = false } = Astro.props;
 const fullTitle = !title ? brand.name : rawTitle ? title : `${title}${brand.seo.titleSuffix}`;
 // AdSense loads only on launched, public pages that aren't excluded (brand.ads.exclude).
 const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/') || '/';
@@ -134,7 +136,7 @@ const featuredHeading = brand.launched && !isPrivate ? FEATURED_HEADINGS[__BRAND
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <Header chrome={chrome} />
+    {!bare && <Header chrome={chrome} />}
     <main id="main">
       <slot />
       {featuredHeading && (
@@ -144,7 +146,7 @@ const featuredHeading = brand.launched && !isPrivate ? FEATURED_HEADINGS[__BRAND
         </aside>
       )}
     </main>
-    <Footer />
+    {!bare && <Footer />}
       <script is:inline>
       // Spam trap for our forms: stamp each /api form with the time the page loaded. The site Worker quietly drops
       // posts with no stamp or sent within 3 seconds (bots post straight to the endpoint or fill forms instantly).
