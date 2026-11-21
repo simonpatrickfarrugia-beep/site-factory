@@ -1,0 +1,97 @@
+{
+  "nav": [
+    {
+      "label": "Guide",
+      "path": ""
+    },
+    {
+      "label": "Beds",
+      "path": "beds"
+    }
+  ],
+  "pages": [
+    {
+      "path": "",
+      "seoTitle": "CI Fixture Lab Home Page for Testing",
+      "description": "Temporary fixture page used to test the IMN Labs template in the build check.",
+      "kicker": "Test",
+      "title": "CI fixture lab",
+      "lede": "This page exists only to test the IMN Labs template in the build check. It has enough words to pass the quality gate, a table, a list, questions and sources, so every part of the template is rendered at least once before a real lab uses it.",
+      "updated": "2026-11-21",
+      "sections": [
+        {
+          "h": "A section",
+          "p": [
+            "This page exists only to test the IMN Labs template in the build check. It has enough words to pass the quality gate, a table, a list, questions and sources, so every part of the template is rendered at least once before a real lab uses it."
+          ]
+        },
+        {
+          "h": "A table",
+          "table": {
+            "caption": "Example",
+            "head": [
+              "A",
+              "B"
+            ],
+            "rows": [
+              [
+                "1",
+                "2"
+              ]
+            ],
+            "note": "note"
+          }
+        },
+        {
+          "h": "A list",
+          "list": [
+            "one",
+            "two"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "path": "beds",
+          "t": "Beds",
+          "d": "Sub page"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is this real?",
+          "a": "No, it is a test page for the build check."
+        }
+      ],
+      "sources": [
+        {
+          "t": "Example source",
+          "url": "https://example.com",
+          "checked": "2026-11-21"
+        }
+      ]
+    },
+    {
+      "path": "beds",
+      "seoTitle": "CI Fixture Lab Beds Sub Page for Testing",
+      "description": "Second temporary fixture page used to test lab sub pages and breadcrumbs.",
+      "title": "Beds",
+      "lede": "A different lede for the sub page so the content is not identical.",
+      "sections": [
+        {
+          "h": "Sub",
+          "p": [
+            "Sub page text that differs from the home page, with a few more words for the gate and the test to read properly across the build."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "path": "",
+          "t": "Back",
+          "d": "Home"
+        }
+      ]
+    }
+  ]
+}

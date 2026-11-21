@@ -1,5 +1,33 @@
 {
   "_note": "IMN Labs registry (DECISIONS.md 21 Nov 2026, docs/LABS.md). One entry per lab; its pages live in data/imn/lab-<slug>.json. status: live | graduating | graduated | closed. Set target (metric gsc_impressions | gsc_clicks | visits | money_clicks, per 28 days by day 90) BEFORE launch. At most maxLive live labs (CI). Close or graduate with scripts/imn/lab.mjs.",
   "maxLive": 4,
-  "labs": []
+  "labs": [
+    {
+      "slug": "ci-fixture",
+      "name": "CI fixture lab",
+      "status": "live",
+      "summary": "Temporary test lab for the build check, never pushed to main.",
+      "launched": "2026-11-21",
+      "target": {
+        "metric": "gsc_impressions",
+        "number": 1000
+      },
+      "domain": "",
+      "moneyKeys": [
+        "shop"
+      ]
+    },
+    {
+      "slug": "old-test",
+      "name": "Old test",
+      "status": "closed",
+      "summary": "x",
+      "launched": "2026-01-01",
+      "target": {
+        "metric": "visits",
+        "number": 5
+      },
+      "domain": ""
+    }
+  ]
 }
