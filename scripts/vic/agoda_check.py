@@ -30,9 +30,10 @@ def exists(agoda, name):
         return None
     if 'pagenotfound' in final or '/city/' not in final:
         return False
-    # Must be OUR town: same-named places exist in other states (Richmond, Brighton…), so the page must say Victoria.
+    # Must be OUR town: same-named places exist in other states (Richmond, Williamstown…). Agoda's breadcrumb links the
+    # state's region page, so a Victorian town's page contains /region/victoria-state-au.html.
     low = body.lower()
-    return name.split()[0].lower() in low and re.search(r'victoria|\bvic\b', low) is not None
+    return name.split()[0].lower() in low and '/region/victoria-state-au.html' in low
 
 
 def main():
