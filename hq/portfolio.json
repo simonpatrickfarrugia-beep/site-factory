@@ -259,14 +259,13 @@
   {
    "id": "always-https",
    "kind": "do",
-   "mins": 10,
-   "what": "Turn on Always Use HTTPS for each site: Cloudflare dashboard → pick the domain → SSL/TLS → Edge Certificates → Always Use HTTPS → On. Do it for victours.com.au, communityhelp.com.au, tradeadmin.com.au, mypaycalc.com.au, movietrailer.channel, simonsaystravel.com.au and imnetwork.com.au.",
-   "why": "Our new free website check found that http://victours.com.au and http://communityhelp.com.au load without the padlock instead of forwarding to https://. Browsers show 'Not secure' on those links, and it's the top fix on our own report cards. Free, 1 minute per domain, undo any time.",
+   "mins": 5,
+   "what": "Turn on Always Use HTTPS for the 5 domains still missing it (victours.com.au and communityhelp.com.au are done ✓): Cloudflare dashboard → pick the domain → SSL/TLS → Edge Certificates → Always Use HTTPS → On. Domains: tradeadmin.com.au, mypaycalc.com.au, movietrailer.channel, simonsaystravel.com.au, imnetwork.com.au.",
+   "why": "Checked 22 Nov 07:55: http:// still loads without the padlock on those 5 (Vic and CHC now forward correctly). Free, 1 minute per domain, undo any time.",
    "link": "https://imnetwork.com.au/labs/website-check",
    "linkLabel": "Re-check after",
-   "done": true,
-   "addedAt": "2026-11-22",
-   "doneAt": "2026-11-22"
+   "done": false,
+   "addedAt": "2026-11-22"
   },
   {
    "id": "chc-checkin-import",
