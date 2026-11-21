@@ -1,0 +1,5 @@
+{
+  "_note": "IMN Labs registry (DECISIONS.md 21 Nov 2026, docs/LABS.md). One entry per lab; its pages live in data/imn/lab-<slug>.json. status: live | graduating | graduated | closed. Set target (metric gsc_impressions | gsc_clicks | visits | money_clicks, per 28 days by day 90) BEFORE launch. At most maxLive live labs (CI). Close or graduate with scripts/imn/lab.mjs.",
+  "maxLive": 4,
+  "labs": []
+}

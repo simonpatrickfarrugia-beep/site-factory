@@ -1,0 +1,331 @@
+{
+ "_about": "Written by scripts/hq/value.py (daily, brief workflow). Estimates, not offers. Settings and benchmarks: hq/value-config.json.",
+ "generatedAt": "2026-11-21T06:03:35Z",
+ "month": "2026-11",
+ "worthSelling": null,
+ "multiple": {
+  "low": 25,
+  "high": 45
+ },
+ "note": "Estimates, not offers. Value = average monthly net profit × 25–45, moved within that band for age, income sources, traffic mix, email list, links and hands-off running. Buyers and brokers decide the real price.",
+ "total": {
+  "low": 0,
+  "high": 0,
+  "profitMonthly": -36.72
+ },
+ "sites": [
+  {
+   "id": "imnetwork",
+   "name": "imnetwork.com.au",
+   "url": "https://imnetwork.com.au",
+   "kind": "site",
+   "window": [
+    "2026-11",
+    "2026-11"
+   ],
+   "months": 1,
+   "ageMonths": 1,
+   "revenue12": 0.0,
+   "costs12": 0.86,
+   "profitMonthly": -0.86,
+   "sources": [],
+   "multiple": {
+    "low": 22.0,
+    "high": 27.0,
+    "why": [
+     "1 month old: low end until it has a 12-month record",
+     "no income yet"
+    ]
+   },
+   "value": {
+    "low": 0,
+    "high": 0
+   },
+   "series": [
+    {
+     "month": "2026-11",
+     "revenue": 0.0,
+     "costs": 0.86,
+     "profit": -0.86
+    }
+   ],
+   "trend": null,
+   "flags": []
+  },
+  {
+   "id": "simon-says-travel",
+   "name": "simonsaystravel.com.au",
+   "url": "https://simonsaystravel.com.au",
+   "kind": "site",
+   "window": [
+    "2026-11",
+    "2026-11"
+   ],
+   "months": 1,
+   "ageMonths": 1,
+   "revenue12": 0.0,
+   "costs12": 0.86,
+   "profitMonthly": -0.86,
+   "sources": [],
+   "multiple": {
+    "low": 22.0,
+    "high": 27.0,
+    "why": [
+     "1 month old: low end until it has a 12-month record",
+     "no income yet"
+    ]
+   },
+   "value": {
+    "low": 0,
+    "high": 0
+   },
+   "series": [
+    {
+     "month": "2026-11",
+     "revenue": 0.0,
+     "costs": 0.86,
+     "profit": -0.86
+    }
+   ],
+   "trend": null,
+   "flags": []
+  },
+  {
+   "id": "community-help-co",
+   "name": "communityhelp.com.au",
+   "url": "https://communityhelp.com.au",
+   "kind": "site",
+   "window": [
+    "2026-10",
+    "2026-11"
+   ],
+   "months": 2,
+   "ageMonths": 2,
+   "revenue12": 0.0,
+   "costs12": 14.0,
+   "profitMonthly": -7.0,
+   "sources": [],
+   "multiple": {
+    "low": 22.0,
+    "high": 27.0,
+    "why": [
+     "2 months old: low end until it has a 12-month record",
+     "no income yet"
+    ]
+   },
+   "value": {
+    "low": 0,
+    "high": 0
+   },
+   "series": [
+    {
+     "month": "2026-10",
+     "revenue": 0.0,
+     "costs": 13.14,
+     "profit": -13.14
+    },
+    {
+     "month": "2026-11",
+     "revenue": 0.0,
+     "costs": 0.86,
+     "profit": -0.86
+    }
+   ],
+   "trend": {
+    "change": 0,
+    "dir": "flat"
+   },
+   "flags": []
+  },
+  {
+   "id": "trailers",
+   "name": "movietrailer.channel",
+   "url": "https://www.movietrailer.channel",
+   "kind": "site",
+   "window": [
+    "2026-10",
+    "2026-11"
+   ],
+   "months": 2,
+   "ageMonths": 2,
+   "revenue12": 0.0,
+   "costs12": 14.0,
+   "profitMonthly": -7.0,
+   "sources": [],
+   "multiple": {
+    "low": 24.0,
+    "high": 29.0,
+    "why": [
+     "2 months old: low end until it has a 12-month record",
+     "no income yet",
+     "runs hands-off"
+    ]
+   },
+   "value": {
+    "low": 0,
+    "high": 0
+   },
+   "series": [
+    {
+     "month": "2026-10",
+     "revenue": 0.0,
+     "costs": 13.14,
+     "profit": -13.14
+    },
+    {
+     "month": "2026-11",
+     "revenue": 0.0,
+     "costs": 0.86,
+     "profit": -0.86
+    }
+   ],
+   "trend": {
+    "change": 0,
+    "dir": "flat"
+   },
+   "flags": []
+  },
+  {
+   "id": "paycalc",
+   "name": "mypaycalc.com.au",
+   "url": "https://mypaycalc.com.au",
+   "kind": "site",
+   "window": [
+    "2026-10",
+    "2026-11"
+   ],
+   "months": 2,
+   "ageMonths": 2,
+   "revenue12": 0.0,
+   "costs12": 14.0,
+   "profitMonthly": -7.0,
+   "sources": [],
+   "multiple": {
+    "low": 24.0,
+    "high": 29.0,
+    "why": [
+     "2 months old: low end until it has a 12-month record",
+     "no income yet",
+     "runs hands-off"
+    ]
+   },
+   "value": {
+    "low": 0,
+    "high": 0
+   },
+   "series": [
+    {
+     "month": "2026-10",
+     "revenue": 0.0,
+     "costs": 13.14,
+     "profit": -13.14
+    },
+    {
+     "month": "2026-11",
+     "revenue": 0.0,
+     "costs": 0.86,
+     "profit": -0.86
+    }
+   ],
+   "trend": {
+    "change": 0,
+    "dir": "flat"
+   },
+   "flags": []
+  },
+  {
+   "id": "trade-admin",
+   "name": "tradeadmin.com.au",
+   "url": "https://tradeadmin.com.au",
+   "kind": "site",
+   "window": [
+    "2026-10",
+    "2026-11"
+   ],
+   "months": 2,
+   "ageMonths": 2,
+   "revenue12": 0.0,
+   "costs12": 14.0,
+   "profitMonthly": -7.0,
+   "sources": [],
+   "multiple": {
+    "low": 22.0,
+    "high": 27.0,
+    "why": [
+     "2 months old: low end until it has a 12-month record",
+     "no income yet"
+    ]
+   },
+   "value": {
+    "low": 0,
+    "high": 0
+   },
+   "series": [
+    {
+     "month": "2026-10",
+     "revenue": 0.0,
+     "costs": 13.14,
+     "profit": -13.14
+    },
+    {
+     "month": "2026-11",
+     "revenue": 0.0,
+     "costs": 0.86,
+     "profit": -0.86
+    }
+   ],
+   "trend": {
+    "change": 0,
+    "dir": "flat"
+   },
+   "flags": []
+  },
+  {
+   "id": "vic",
+   "name": "victours.com.au",
+   "url": "https://victours.com.au",
+   "kind": "site",
+   "window": [
+    "2026-10",
+    "2026-11"
+   ],
+   "months": 2,
+   "ageMonths": 2,
+   "revenue12": 0.0,
+   "costs12": 14.0,
+   "profitMonthly": -7.0,
+   "sources": [],
+   "multiple": {
+    "low": 22.0,
+    "high": 27.0,
+    "why": [
+     "2 months old: low end until it has a 12-month record",
+     "no income yet"
+    ]
+   },
+   "value": {
+    "low": 0,
+    "high": 0
+   },
+   "series": [
+    {
+     "month": "2026-10",
+     "revenue": 0.0,
+     "costs": 13.14,
+     "profit": -13.14
+    },
+    {
+     "month": "2026-11",
+     "revenue": 0.0,
+     "costs": 0.86,
+     "profit": -0.86
+    }
+   ],
+   "trend": {
+    "change": 0,
+    "dir": "flat"
+   },
+   "flags": []
+  }
+ ]
+}

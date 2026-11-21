@@ -26,6 +26,7 @@ export function plan(files) {
     if ((m = f.match(/^(brands|data)\/([^/]+)\//)) && ALL.includes(m[2])) {
       brands.add(m[2]);
       if (/^data\/[^/]+\/stats\.json$/.test(f)) HQ.forEach((b) => brands.add(b));
+      if (f === 'data/imn/labs.json') HQ.forEach((b) => brands.add(b)); // lab rows on /hq/traffic
       if (f === 'data/vic/stats.json') brands.add('imn'); // IMN's example dashboard shows Vic Tours' real numbers
     } else if (/^hq\//.test(f)) {
       HQ.forEach((b) => brands.add(b));

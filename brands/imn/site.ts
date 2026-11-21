@@ -8,6 +8,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { getSingleton } from '../../src/lib/data';
 import type { Route } from '../../src/lib/routes';
+import { labRoutes, type LabContent, type LabRegistry } from '../../src/lib/labs';
 import type { DemoStats, Glance, Guides, Light, Pages, SiteInfo } from './model';
 
 const SITE = 'https://imnetwork.com.au';
@@ -213,15 +214,34 @@ export function routes(): Route[] {
     });
   }
 
-  for (const slug of ['about', 'privacy-policy'] as const) {
+  for (const slug of ['about', 'privacy-policy', 'affiliate-disclosure'] as const) {
     const p = pages[slug];
     out.push({
       path: slug,
       template: 'imnPage',
       seo: { title: p.title + SUFFIX, rawTitle: true, description: p.description },
       schema: [crumbs([{ name: 'Home', path: '' }, { name: p.title, path: slug }])],
-      props: { ...common, title: p.title, paragraphs: p.paragraphs, showCta: slug !== 'privacy-policy' },
+      props: { ...common, title: p.title, paragraphs: p.paragraphs, showCta: slug === 'about' },
     });
+  }
+
+  // IMN Labs (data/imn/labs.json, src/lib/labs.ts): ideas tested at /labs/<slug> before they get a domain.
+  // Kept out of the main menu and sales pages; linked from the footer only. Closed labs build nothing (the Worker
+  // answers 410), graduated labs build nothing (the Worker 301s them to their domain).
+  const registry = getSingleton<LabRegistry>('labs');
+  const live = registry.labs.filter((l) => l.status === 'live' || l.status === 'graduating');
+  const graduated = registry.labs.filter((l) => l.status === 'graduated' && l.domain);
+  out.push({
+    path: 'labs',
+    template: 'labIndex',
+    // Nothing to show Google until a lab is running.
+    noindex: live.length === 0,
+    seo: { title: 'IMN Labs: Ideas We Are Testing' + SUFFIX, rawTitle: true, description: "IMN Labs: small, useful guides we're testing on our own platform before they get their own website." },
+    schema: [crumbs([{ name: 'Home', path: '' }, { name: 'IMN Labs', path: 'labs' }])],
+    props: { live, graduated },
+  });
+  for (const lab of live) {
+    out.push(...labRoutes(lab, getSingleton<LabContent>(`lab-${lab.slug}`), { base: `labs/${lab.slug}`, site: SITE, inLab: true }));
   }
   return out;
 }

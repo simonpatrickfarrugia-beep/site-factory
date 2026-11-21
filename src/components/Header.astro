@@ -1,7 +1,29 @@
 ---
 import { brand } from '../lib/brand';
-const current = Astro.url.pathname;
+import type { Chrome } from '../lib/labs';
+interface Props { chrome?: Chrome }
+const { chrome } = Astro.props;
+const current = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---
+{chrome ? (
+<header class="site-header lab-header">
+  <div class="wrap site-header__inner">
+    <div class="lab-header__id">
+      <a class="lab-header__label" href={chrome.labelHref}>{chrome.label}</a>
+      <a class="wordmark lab-header__name" href={chrome.home}>{chrome.name}</a>
+    </div>
+    {chrome.nav.length > 0 && (
+      <nav aria-label={`${chrome.name} menu`}>
+        <ul class="site-nav">
+          {chrome.nav.map((item) => (
+            <li><a href={item.href} aria-current={(item.href === chrome.home ? current === chrome.home : current.startsWith(item.href)) ? 'page' : undefined}>{item.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+    )}
+  </div>
+</header>
+) : (
 <header class="site-header">
   <div class="wrap site-header__inner">
     {brand.logo ? (
@@ -25,3 +47,4 @@ const current = Astro.url.pathname;
     )}
   </div>
 </header>
+)}

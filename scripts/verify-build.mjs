@@ -2,6 +2,7 @@
 // and every page has a title, description and canonical. Exits non-zero on failure.
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+import { checkLabs } from './imn/labs-check.mjs';
 
 const brand = process.env.BRAND;
 if (!brand) { console.error('BRAND is not set'); process.exit(1); }
@@ -85,6 +86,13 @@ for (const file of pages) {
 }
 if (amazonTags.size > 1) problems.push(`More than one Amazon tag in use: ${[...amazonTags.keys()].join(', ')}`);
 if (amazonLinks) notice(`Checked ${amazonLinks} Amazon links (tag: ${[...amazonTags.keys()].join(', ')})`);
+
+// IMN Labs: cap on live labs, 90-day targets, closed/graduated labs build no pages (scripts/imn/labs-check.mjs).
+if (brand === 'imn') {
+  const labs = checkLabs({ dist });
+  problems.push(...labs.problems);
+  notice(`IMN Labs: ${labs.live} live of ${labs.total}`);
+}
 
 const sitemap = join(dist, 'sitemap.xml');
 if (existsSync(sitemap)) {

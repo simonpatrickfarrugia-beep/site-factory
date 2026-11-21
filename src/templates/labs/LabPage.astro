@@ -1,0 +1,62 @@
+---
+/**
+ * One IMN Labs page (src/lib/labs.ts). Brand-agnostic: same template on imnetwork.com.au/labs/<slug>
+ * and on the lab's own domain after it graduates. Uses only the shared CSS tokens.
+ */
+import type { LabPage } from '../../lib/labs';
+interface Props { page: LabPage; lab: { name: string; slug: string }; inLab: boolean }
+const { page: p, inLab } = Astro.props;
+const fmt = (iso?: string) => (iso ? new Date(iso + 'T00:00:00Z').toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }) : '');
+---
+<article class="lab wrap">
+  <header class="lab__head">
+    {inLab && <p class="lab__badge"><a href="/labs">IMN Labs</a> · an idea we're testing</p>}
+    {p.kicker && <p class="lab__kicker">{p.kicker}</p>}
+    <h1>{p.title}</h1>
+    <p class="lab__lede">{p.lede}</p>
+    {p.updated && <p class="lab__small">Facts checked {fmt(p.updated)}.</p>}
+  </header>
+
+  {p.sections.map((s) => (
+    <section class="lab__section">
+      <h2>{s.h}</h2>
+      {s.p?.map((t) => <p>{t}</p>)}
+      {s.list && <ul>{s.list.map((t) => <li>{t}</li>)}</ul>}
+      {s.table && (
+        <div class="lab__tablewrap">
+          <table class="lab__table">
+            <caption>{s.table.caption}</caption>
+            <thead><tr>{s.table.head.map((h) => <th scope="col">{h}</th>)}</tr></thead>
+            <tbody>{s.table.rows.map((r) => <tr>{r.map((c, i) => (i === 0 ? <th scope="row">{c}</th> : <td>{c}</td>))}</tr>)}</tbody>
+          </table>
+          {s.table.note && <p class="lab__small">{s.table.note}</p>}
+        </div>
+      )}
+    </section>
+  ))}
+
+  {p.links && p.links.length > 0 && (
+    <nav class="lab__links" aria-label="More in this guide">
+      {p.links.map((l) => <a class="lab__card" href={l.path}><strong>{l.t}</strong><span>{l.d}</span></a>)}
+    </nav>
+  )}
+
+  {p.faq && p.faq.length > 0 && (
+    <section class="lab__section">
+      <h2>Questions</h2>
+      {p.faq.map((f) => <details class="lab__faq"><summary>{f.q}</summary><p>{f.a}</p></details>)}
+    </section>
+  )}
+
+  {p.sources && p.sources.length > 0 && (
+    <section class="lab__section lab__sources">
+      <h2>Sources</h2>
+      <ul>{p.sources.map((s) => <li><a href={s.url} rel="noopener">{s.t}</a> <span class="lab__small">(checked {fmt(s.checked)})</span></li>)}</ul>
+    </section>
+  )}
+
+  <p class="lab__small lab__note">
+    {inLab ? 'IMN Labs pages are ideas Independent Media Network is testing on its own platform. ' : ''}
+    Some links on this site may earn us a commission at no cost to you. <a href="/affiliate-disclosure">How we make money</a>.
+  </p>
+</article>

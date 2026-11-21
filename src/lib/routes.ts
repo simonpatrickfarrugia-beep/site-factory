@@ -26,5 +26,7 @@ export interface Route {
   noindex?: boolean;
   /** Private page: noindex, no analytics, never in the sitemap (e.g. /hq/stats). */
   private?: boolean;
+  /** Header override (IMN Labs pages: the lab's own name and menu plus an "IMN Labs" label). Default: the brand header. */
+  chrome?: import('./labs').Chrome;
   props: Record<string, unknown>;
 }

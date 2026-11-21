@@ -2,10 +2,11 @@
 // Read live from the repo (it's public) so a new card shows without redeploying HQ. Cached 10 minutes at the edge.
 // Client-site cards will live in the private repo; this reads only IMN's own cards.
 
-const RAW = 'https://raw.githubusercontent.com/simonpatrickfarrugia-beep/site-factory/main/hq/sitecheck/';
+const HQ_RAW = 'https://raw.githubusercontent.com/simonpatrickfarrugia-beep/site-factory/main/hq/';
+const RAW = HQ_RAW + 'sitecheck/';
 
-async function raw(file: string): Promise<unknown> {
-  const url = RAW + file;
+async function raw(file: string, base = RAW): Promise<unknown> {
+  const url = base + file;
   const cache = caches.default;
   const key = new Request(url);
   const hit = await cache.match(key);
@@ -25,4 +26,9 @@ export async function siteCheckIndex() {
 export async function siteCheckCard(id: string) {
   if (!/^[a-z0-9-]{1,60}$/.test(id)) throw new Error('Bad site id');
   return (await raw(`${id}.json`)) ?? { error: 'No card yet' };
+}
+
+// Value tab: what each site (and IMN Labs lab) could sell for. scripts/hq/value.py writes hq/value.json daily (brief workflow).
+export async function siteValue() {
+  return (await raw('value.json', HQ_RAW)) ?? { sites: [], note: 'No value data yet: it is written each morning by the brief workflow.' };
 }

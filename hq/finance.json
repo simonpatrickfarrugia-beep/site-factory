@@ -1,5 +1,5 @@
 {
- "_note": "A$ unless noted. Revenue is entered by Claude when Simon reports payouts (affiliate networks don't offer free automatic feeds at this size).",
+ "_note": "A$ unless noted. Revenue is entered by Claude when Simon reports payouts (affiliate networks don't offer free automatic feeds at this size). Revenue rows: { month: YYYY-MM, amount, site: <hq/sitecheck.json id or brand, or lab:<slug>>, source: adsense | affiliate:<programme> | … }. Costs tagged with site belong to that site; untagged costs are shared (site value checker, docs/LABS.md).",
  "revenue": [],
  "costs": [
   {

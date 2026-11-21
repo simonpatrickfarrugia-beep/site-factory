@@ -27,6 +27,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: python3 scripts/hq/confidence.py
+      - name: Site value checker (IMN HQ → Value; scripts/hq/value.py)
+        continue-on-error: true
+        run: python3 scripts/hq/value.py
       - name: Write brief
         env:
           RUN_KEY: ${{ secrets.PIPELINE_RUN_KEY }}
@@ -38,7 +41,7 @@ jobs:
       - name: Commit
         run: |
           git config user.name "Site Factory brief" && git config user.email "brief@movietrailer.channel"
-          git add hq/brief.md hq/prospect-targets.json hq/confidence.json hq/confidence-history.json hq/forecasts.json
+          git add hq/brief.md hq/value.json hq/prospect-targets.json hq/confidence.json hq/confidence-history.json hq/forecasts.json
           git diff --cached --quiet && exit 0
           git commit -m "HQ: daily brief [skip ci]"
           for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done

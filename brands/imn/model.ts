@@ -32,6 +32,7 @@ export interface Pages {
   contact: FormPage;
   'get-started': FormPage;
   'privacy-policy': TextPage;
+  'affiliate-disclosure': TextPage;
   welcome: WelcomePage;
 }
 export interface WelcomePage { title: string; description: string; lede: string; steps: Item[]; ready: string[]; note: string }
