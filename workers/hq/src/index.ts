@@ -4,7 +4,7 @@
 
 import PAGE from './page.html';
 import TARGETS from '../../../hq/prospect-targets.json';
-import { defaultTemplate } from './templates';
+import { defaultTemplate, IMN_CHECK } from './templates';
 import { pipeline, daily } from './pipeline';
 import { listAffiliates, affiliateDetail, saveAffiliate } from './affiliates';
 import { radar, review, markDrafted, saveCoaching, kvSet } from './radar';
@@ -91,6 +91,11 @@ export default {
       }
       if (url.pathname === '/api/sitecheck' && req.method === 'GET') return json(await siteCheckIndex());
       if (url.pathname === '/api/value' && req.method === 'GET') return json(await siteValue());
+      // Free website check for a prospect's site (proxies imnetwork.com.au/api/webcheck, which has no CORS).
+      if (url.pathname === '/api/webcheck' && req.method === 'GET') {
+        const r = await fetch('https://imnetwork.com.au/api/webcheck?url=' + encodeURIComponent(url.searchParams.get('url') ?? ''), { headers: { accept: 'application/json', 'user-agent': 'imn-hq' } });
+        return json(await r.json().catch(() => ({ ok: false, message: `Website check failed (HTTP ${r.status})` })));
+      }
       const sc = url.pathname.match(/^\/api\/sitecheck\/([a-z0-9-]{1,60})$/);
       if (sc && req.method === 'GET') return json(await siteCheckCard(sc[1]));
       if (url.pathname === '/api/prospects' && req.method === 'GET') return json(await prospects(env));
@@ -455,6 +460,8 @@ async function templates(env: Env, brand: string, segment: string) {
   return {
     brand: { key: brand, name: T.brands[brand].name, from: T.brands[brand].from ?? null, site: T.brands[brand].site ?? null },
     versions: versions.map((v) => ({ ...v, perf: perf.find((p) => p.tid === (v.id ?? 0)) ?? { sent: 0, replied: 0, linked: 0 } })),
+    // IMN only: the "we checked your website" email, used once a website check has run in the Draft sheet.
+    check: brand === 'imn' ? IMN_CHECK : null,
   };
 }
 

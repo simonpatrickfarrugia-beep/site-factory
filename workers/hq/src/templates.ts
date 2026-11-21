@@ -160,6 +160,28 @@ ${OPT_OUT}`,
   },
 };
 
+// IMN, for businesses that already have a website: opens with their own free website check
+// (imnetwork.com.au/labs/website-check). {check} = their top fixes with the plain-English impact of each,
+// {checklink} = their full report. Filled by "Run website check" in the Draft email sheet. Never promise rankings or leads.
+export const IMN_CHECK: Template = {
+  subject: 'We checked the {organisation} website',
+  body: `Hi {first_name},
+
+I'm Simon from Independent Media Network ({site}), a Melbourne web crew for local businesses.
+
+We ran your website through our free site checker. It's in good shape in places, and these fixes would make the biggest difference:
+
+{check}
+
+Your full report (free, no sign-up): {checklink}
+
+Happy to fix these for you, or send a plain-English plan your web person can follow. Want me to?
+
+Thanks,
+
+${OPT_OUT}`,
+};
+
 export function defaultTemplate(brand: string, segment: string): Template {
   const b = T[brand] ?? T.vic;
   return b[segment] ?? b['*'];

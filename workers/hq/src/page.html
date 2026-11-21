@@ -659,7 +659,31 @@ const fill = (text, v) => text
   .replaceAll('{region}', v.region || '')
   .replaceAll('{page}', v.page || v.site || '')
   .replaceAll('{site}', (v.site || '').replace(/^https?:\/\//, ''))
-  .replaceAll('{widget}', v.widget || v.page || v.site || '');
+  .replaceAll('{widget}', v.widget || v.page || v.site || '')
+  .replaceAll('{checklink}', v.checklink || 'https://imnetwork.com.au/labs/website-check')
+  .replaceAll('{check}', v.check || '(run the website check first)');
+
+// Free website check → plain-English impact of each fix, for the IMN "we checked your website" email.
+const CHECK_IMPACT = {
+  https: 'browsers stop showing "Not secure" next to your address, so visitors trust it',
+  speed: 'pages start loading faster on phones, so fewer people give up before it opens',
+  weight: 'a lighter page loads faster on mobile data',
+  mobile: 'the site fits phone screens, where most local searches happen',
+  title: 'Google shows a clear name for your business in search results',
+  description: 'your Google listing gets a summary that gives people a reason to click',
+  h1: 'visitors and Google see straight away what you do',
+  indexable: 'Google is allowed to list your site (right now it is told to skip it)',
+  sitemap: 'Google finds new and updated pages faster',
+  contact: 'customers on their phones can call you in one tap',
+  schema: 'Google can show your hours, address and phone with your listing',
+  share: 'links to your site look professional when shared on Facebook or in messages',
+  analytics: 'you can see how many people visit and what they look at',
+  fresh: "the site looks current, so visitors don't wonder if you're still trading",
+};
+function checkText(r) {
+  if (!r.fixes.length) return `It scored ${r.grade} (${r.score}/100) and nothing is urgent, which is rare. Nice work.`;
+  return r.fixes.map((f) => `• ${f.label}: ${CHECK_IMPACT[f.id] || f.fix}`).join('\n');
+}
 
 async function openDraft(brand, key, org) {
   const pb = state.prospects.brands.find((b) => b.key === brand);
@@ -676,7 +700,8 @@ async function openDraft(brand, key, org) {
   const d = { ver: 0, subject: tpl.versions[0].subject, body: tpl.versions[0].body, id: tpl.versions[0].id, edited: false };
   const written = org && org.draft_body ? { subject: org.draft_subject || tpl.versions[0].subject, body: org.draft_body } : null;
   const from = tpl.brand.from || '';
-  const vals = () => ({ first: ($('#d-contact').value.trim().split(/\s+/)[0] || ''), org: $('#d-org').value.trim(), region: t.regionLabel, page: t.page || tpl.brand.site, site: tpl.brand.site, widget: (org && org.widget_url) || '' });
+  const chk = { text: '', link: '' };
+  const vals = () => ({ first: ($('#d-contact').value.trim().split(/\s+/)[0] || ''), org: $('#d-org').value.trim(), region: t.regionLabel, page: t.page || tpl.brand.site, site: tpl.brand.site, widget: (org && org.widget_url) || '', check: chk.text, checklink: chk.link });
   body.innerHTML = `
     <header><div><h2 id="sheet-title">Draft email</h2><span class="pill" style="margin-top:6px">${esc(tpl.brand.name)} · ${esc(t.segmentLabel)} · ${esc(t.regionLabel)}</span></div><button class="close" id="close">Close</button></header>
     <p class="empty" id="d-pre" hidden style="padding:0"><b>Radar wrote this email for them.</b> Read it, edit anything, then send.</p>
@@ -697,13 +722,14 @@ async function openDraft(brand, key, org) {
       <div class="field"><label for="d-contact">Contact name (optional)</label><input id="d-contact" type="text" placeholder="First name used in the greeting"></div>
       <div class="field"><label for="d-role">Their role (optional)</label><input id="d-role" type="text"></div>
       <div class="field"><label for="d-web">Website</label><input id="d-web" type="text" placeholder="https://…"></div>
+      ${tpl.check ? `<div class="field"><label>Free website check</label><div class="row"><button class="btn ghost" id="d-check" type="button">Run website check</button><span class="meta" id="d-check-status">Checks the Website field, then switches to the "we checked your website" email</span></div></div>` : ''}
       <div class="field"><label for="d-evidence">Page where they link to guides</label><input id="d-evidence" type="text" placeholder="https://… (checked daily for your link)"></div>
     </div>
     <div class="mail">
       <label>Template</label>
       <div class="vers desk-only" id="d-vers">${tpl.versions.map((v, i) => `<button data-ver="${i}" aria-pressed="${i === 0}">v${v.version}${v.perf.sent ? ` · ${v.perf.replied}/${v.perf.sent} replied` : ''}</button>`).join('')}</div>
       <div class="field"><label for="d-subject">Subject</label><input id="d-subject" type="text"></div>
-      <div class="field"><label for="d-body">Email (placeholders: {first_name} {organisation} {region} {page} {site})</label><textarea id="d-body"></textarea></div>
+      <div class="field"><label for="d-body">Email (placeholders: {first_name} {organisation} {region} {page} {site}${tpl.check ? ' {check} {checklink}' : ''})</label><textarea id="d-body"></textarea></div>
       <div class="row desk-only"><input id="d-note" type="text" placeholder="What did you change? (for the saved version)" style="flex:1;min-width:180px"><button class="btn ghost" id="d-save">Save as new version</button></div>
       <label>Preview</label>
       <div class="preview" id="d-preview"></div>
@@ -746,6 +772,24 @@ async function openDraft(brand, key, org) {
   if ($('#d-feature')) $('#d-feature').onchange = preview;
   setVer(0);
   if (written) { $('#d-subject').value = written.subject; $('#d-body').value = written.body; preview(); }
+  if (tpl.check && $('#d-check')) $('#d-check').onclick = async () => {
+    const site = $('#d-web').value.trim();
+    const st = $('#d-check-status');
+    if (!site) { st.textContent = 'Add their website above first.'; return; }
+    st.textContent = 'Checking ' + site + '…'; $('#d-check').disabled = true;
+    try {
+      const r = await api('/api/webcheck?url=' + encodeURIComponent(site));
+      if (!r.ok) { st.textContent = r.message || 'Check failed.'; return; }
+      chk.text = checkText(r);
+      chk.link = 'https://imnetwork.com.au/labs/website-check?url=' + encodeURIComponent(r.host);
+      st.innerHTML = `<b>${esc(r.grade)} · ${r.score}/100</b> · ${r.fixes.length} fix${r.fixes.length === 1 ? '' : 'es'} · <a href="${esc(chk.link)}" target="_blank" rel="noopener">their report ↗</a>`;
+      if (!d.edited || confirm('Replace your edited email with the "we checked your website" email?')) {
+        $('#d-subject').value = tpl.check.subject; $('#d-body').value = tpl.check.body; d.id = null; d.edited = false;
+      }
+      preview();
+    } catch (e) { st.textContent = e.message; }
+    finally { $('#d-check').disabled = false; }
+  };
   if (org && org.opener && $('#d-opener')) $('#d-opener').onclick = () => {
     const b = $('#d-body').value; const i = b.indexOf('\n\n');
     $('#d-body').value = i > -1 ? b.slice(0, i + 2) + org.opener + '\n\n' + b.slice(i + 2) : org.opener + '\n\n' + b;
