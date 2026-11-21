@@ -23,6 +23,7 @@
  *   GET  /api/submit/status?since=<ISO time>  how many submissions arrived since then: a count only, never any details.
  *                            The `enquiries` GitHub workflow polls it and opens an issue (emailed to Simon) when it's above 0.
  *
+ *   GET  /api/webcheck?url=  free website check for IMN Labs (WEBCHECK="1"; src/worker/webcheck.ts).
  *   /labs/<slug>/*           IMN Labs (imn only, LABS="1"; rules from data/imn/labs.json, bundled at deploy): a closed lab
  *                            answers 410 Gone, a graduated lab 301s to the same path on its own domain; anything else is
  *                            served from the built files.
@@ -32,6 +33,7 @@
  */
 import { preview, freeSite } from './preview';
 import LAB_REGISTRY from '../../data/imn/labs.json';
+import { webcheck } from './webcheck';
 
 export interface Env {
   /** "1" serves IMN website previews at /preview/<slug> from D1 `previews` (imn only). */
@@ -54,6 +56,8 @@ export interface Env {
   RESEND_API_KEY?: string;
   /** From address for plan emails, e.g. "Vic Tours <plans@victours.com.au>". */
   MAIL_FROM?: string;
+  /** "1" turns on GET /api/webcheck?url= (IMN Labs free website check, src/worker/webcheck.ts). */
+  WEBCHECK?: string;
   /** "1" applies the IMN Labs rules (410 for closed labs, 301 for graduated ones) on /labs/* (imn only). */
   LABS?: string;
   /** R2 bucket with the free classic movies (trailers brand only). */
@@ -432,6 +436,10 @@ export default {
     if (fs && env.PREVIEWS === '1') {
       try { return await freeSite(env, fs[1], request.method); }
       catch (e) { console.error('free site failed', e); return new Response('Something went wrong', { status: 500 }); }
+    }
+    if (pathname === '/api/webcheck' && env.WEBCHECK === '1') {
+      try { return await webcheck(request); }
+      catch (e) { console.error('webcheck failed', e); return Response.json({ ok: false, message: 'Something went wrong. Please try again.' }, { status: 500 }); }
     }
     const emb = pathname.match(/^\/api\/embed(?:\/([a-z0-9-]{1,60}))?$/);
     if (emb) return embed(request, env, emb[1]);

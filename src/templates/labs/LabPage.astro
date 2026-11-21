@@ -4,8 +4,12 @@
  * and on the lab's own domain after it graduates. Uses only the shared CSS tokens.
  */
 import type { LabPage } from '../../lib/labs';
+import WebsiteCheck from './tools/WebsiteCheck.astro';
+// Interactive tools a lab page can embed (LabPage.tool). Add new ones here.
+const TOOLS = { 'website-check': WebsiteCheck } as const;
 interface Props { page: LabPage; lab: { name: string; slug: string }; inLab: boolean }
 const { page: p, inLab } = Astro.props;
+const Tool = p.tool ? TOOLS[p.tool as keyof typeof TOOLS] : null;
 const fmt = (iso?: string) => (iso ? new Date(iso + 'T00:00:00Z').toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }) : '');
 ---
 <article class="lab wrap">
@@ -16,6 +20,8 @@ const fmt = (iso?: string) => (iso ? new Date(iso + 'T00:00:00Z').toLocaleDateSt
     <p class="lab__lede">{p.lede}</p>
     {p.updated && <p class="lab__small">Facts checked {fmt(p.updated)}.</p>}
   </header>
+
+  {Tool && <Tool />}
 
   {p.sections.map((s) => (
     <section class="lab__section">

@@ -56,6 +56,8 @@ export interface LabPage {
   lede: string;
   /** YYYY-MM-DD the facts on this page were last checked. */
   updated?: string;
+  /** Interactive tool shown under the heading (src/templates/labs/LabPage.astro → TOOLS), e.g. "website-check". */
+  tool?: string;
   sections: LabSection[];
   links?: { path: string; t: string; d: string }[];
   faq?: { q: string; a: string }[];

@@ -1,0 +1,105 @@
+---
+/**
+ * IMN Labs tool: free website check (GET /api/webcheck on the IMN Worker, src/worker/webcheck.ts).
+ * After a check, an optional "plan to fix these" form posts to /api/submit/check (D1 submissions → enquiries alert, IMN HQ).
+ * GA4: cta_check_run (a check ran), cta_check_lead (form sent), cta_check_free (no-website → free website link).
+ */
+---
+<section class="wc" id="check" aria-labelledby="wc-h">
+  <h2 id="wc-h" class="wc__h">Check a website</h2>
+  <form class="wc__form" id="wc-form" novalidate>
+    <label for="wc-url" class="wc__label">Your website address</label>
+    <div class="wc__row">
+      <input id="wc-url" name="url" type="text" inputmode="url" autocomplete="url" placeholder="yourbusiness.com.au" required maxlength="300" />
+      <button type="submit" class="wc__btn">Check it free</button>
+    </div>
+    <p class="lab__small">Takes about 10 seconds. We look at the page the way a visitor and Google would. Nothing is saved unless you send us the form afterwards.</p>
+  </form>
+  <p class="wc__status" id="wc-status" role="status" aria-live="polite"></p>
+
+  <div class="wc__result" id="wc-result" hidden>
+    <div class="wc__score">
+      <span class="wc__grade" id="wc-grade"></span>
+      <div><strong id="wc-host"></strong><span class="lab__small" id="wc-sum"></span></div>
+    </div>
+    <h3>Fix these first</h3>
+    <ol class="wc__fixes" id="wc-fixes"></ol>
+    <h3>Every check</h3>
+    <ul class="wc__checks" id="wc-checks"></ul>
+
+    <div class="wc__lead" id="wc-lead">
+      <h3>Want a hand fixing them?</h3>
+      <p>Send us your report and a person will reply with a plain-English plan to fix it, free and with no obligation. Do it yourself, hand it to your web person, or have us look after it.</p>
+      <form id="wc-lead-form" action="/api/submit/check" method="post">
+        <input type="hidden" name="site" id="wc-l-site" />
+        <input type="hidden" name="score" id="wc-l-score" />
+        <input type="hidden" name="issues" id="wc-l-issues" />
+        <div class="wc__hp" aria-hidden="true"><label>Leave this empty <input name="company_website" tabindex="-1" autocomplete="off" /></label></div>
+        <label>Your name <input name="name" required maxlength="100" autocomplete="name" /></label>
+        <label>Email <input name="email" type="email" required maxlength="200" autocomplete="email" /></label>
+        <label>Business name <input name="business" maxlength="150" autocomplete="organization" /></label>
+        <label>Phone (optional) <input name="phone" type="tel" maxlength="40" autocomplete="tel" /></label>
+        <label class="wc__tick"><input type="checkbox" name="consent" value="yes" required /> Independent Media Network can email me about this report.</label>
+        <button type="submit" class="wc__btn">Send me a plan</button>
+        <p class="wc__status" id="wc-lead-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <p class="wc__nosite">No website yet? <a href="/get-started" data-cta="check_free">Claim a free one, yours to keep →</a></p>
+</section>
+
+<script is:inline>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var ev = function (name) { try { if (window.gtag) window.gtag('event', 'cta_' + name, { cta: name, transport_type: 'beacon' }); } catch (e) {} };
+  var esc = function (s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+  var icon = { pass: '✓', warn: '!', fail: '✗' };
+  var word = { pass: 'Good', warn: 'Could be better', fail: 'Needs fixing' };
+  var form = $('wc-form'), status = $('wc-status'), result = $('wc-result');
+  var pre = new URLSearchParams(location.search).get('url');
+  if (pre) $('wc-url').value = pre;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var url = $('wc-url').value.trim();
+    if (!url) { status.textContent = 'Type your website address first, like yourbusiness.com.au'; return; }
+    status.textContent = 'Checking ' + url + '…';
+    result.hidden = true;
+    form.querySelector('button').disabled = true;
+    fetch('/api/webcheck?url=' + encodeURIComponent(url), { headers: { accept: 'application/json' } })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (!d.ok) { status.textContent = d.message || 'Something went wrong. Please try again.'; return; }
+        ev('check_run');
+        status.textContent = '';
+        var g = $('wc-grade'); g.textContent = d.grade; g.setAttribute('data-g', d.grade);
+        $('wc-host').textContent = d.host;
+        var fails = d.checks.filter(function (c) { return c.status === 'fail'; }).length;
+        var warns = d.checks.filter(function (c) { return c.status === 'warn'; }).length;
+        $('wc-sum').textContent = ' ' + d.score + '/100 · ' + fails + ' to fix, ' + warns + ' could be better';
+        $('wc-fixes').innerHTML = d.fixes.length ? d.fixes.map(function (f) { return '<li><strong>' + esc(f.label) + '</strong><br>' + esc(f.fix) + '</li>'; }).join('') : '<li>Nothing urgent. Nice work.</li>';
+        $('wc-checks').innerHTML = d.checks.map(function (c) { return '<li class="wc__c wc__c--' + c.status + '"><span class="wc__i" aria-hidden="true">' + icon[c.status] + '</span><div><strong>' + esc(c.label) + '</strong> <span class="lab__small">' + word[c.status] + '</span><br>' + esc(c.detail) + '</div></li>'; }).join('');
+        $('wc-l-site').value = d.finalUrl;
+        $('wc-l-score').value = d.grade + ' ' + d.score + '/100';
+        $('wc-l-issues').value = d.checks.filter(function (c) { return c.status !== 'pass'; }).map(function (c) { return c.label + ' (' + c.status + ')'; }).join('; ');
+        result.hidden = false;
+        result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      })
+      .catch(function () { status.textContent = 'Something went wrong. Please try again.'; })
+      .finally(function () { form.querySelector('button').disabled = false; });
+  });
+  var lead = $('wc-lead-form'), ls = $('wc-lead-status');
+  lead.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!lead.reportValidity()) return;
+    ls.textContent = 'Sending…';
+    fetch(lead.action, { method: 'POST', body: new FormData(lead), headers: { accept: 'application/json' } })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d.ok) { ev('check_lead'); $('wc-lead').innerHTML = '<h3>Thanks, it’s on its way to us.</h3><p>A person will read your report and reply by email, usually within one business day.</p>'; }
+        else ls.textContent = d.message || 'Something went wrong. Please try again.';
+      })
+      .catch(function () { ls.textContent = 'Something went wrong. Please try again.'; });
+  });
+})();
+</script>
