@@ -54,7 +54,7 @@ async function grab(url: string, opts: { manual?: boolean; ms?: number } = {}) {
       const all = new Uint8Array(n);
       let off = 0;
       for (const c of chunks) { all.set(c.subarray(0, Math.min(c.byteLength, n - off)), off); off += c.byteLength; if (off >= n) break; }
-      body = new TextDecoder('utf-8', { fatal: false }).decode(all);
+      body = new TextDecoder('utf-8').decode(all);
       return { ok: true as const, status: r.status, url: r.url || url, headers: r.headers, ms, body, bytes: n };
     }
     return { ok: true as const, status: r.status, url: r.url || url, headers: r.headers, ms, body, bytes: 0 };
