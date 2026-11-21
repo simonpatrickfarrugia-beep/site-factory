@@ -60,6 +60,11 @@ const crumbs = (items: { name: string; path: string }[]) => ({
 
 export function routes(): Route[] {
   const content = getSingleton<Content>('content');
+  // "Compare on Agoda" only for towns with their own Agoda city page (data/vic/agoda.json, scripts/vic/agoda_check.py).
+  const stayAlt = (content.affiliates as { stay?: { alt?: { template?: string; places?: Record<string, string> } } } | undefined)?.stay?.alt;
+  if (stayAlt?.template?.includes('{agoda}')) {
+    try { stayAlt.places = getSingleton<{ places: Record<string, string> }>('agoda').places ?? {}; } catch { stayAlt.places = {}; }
+  }
   const towns = getCollection<Town>('towns').filter((t) => t.published && t.centre && content.towns[t.slug]);
   const places = getCollection<Place>('places');
   const photos = getSingleton<{ towns: Record<string, unknown>; places: Record<string, unknown> }>('photos');

@@ -3,7 +3,7 @@
  * Affiliate button (Booking.com, Viator, ...). Renders nothing until the programme is switched on
  * in data/vic/content.json -> affiliates.<kind> (enabled + template). Always rel="sponsored" with a disclosure.
  */
-interface Aff { enabled: boolean; label: string; partner: string; template: string; target?: string; alt?: { partner: string; label: string; template: string } }
+interface Aff { enabled: boolean; label: string; partner: string; template: string; target?: string; alt?: { partner: string; label: string; template: string; places?: Record<string, string> } }
 interface Props { aff?: Aff | null; place: string; kind: 'stay' | 'tours' | 'cars' }
 const { aff, place, kind } = Astro.props;
 let href: string | null = null;
@@ -15,7 +15,9 @@ if (aff?.enabled && aff.template) {
   const c = 'victours-' + place.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   href = aff.template.replace('{q}', q).replace('{url}', encodeURIComponent(target)).replace('{c}', c);
   // Optional second partner (e.g. GetYourGuide next to Viator): a small text link, not a second big button.
-  if (aff.alt?.template) altHref = aff.alt.template.replace('{q}', encodeURIComponent(`${place}, Victoria`)).replace('{c}', c);
+  // alt.places (e.g. Agoda city pages): only towns listed there get the link, with {agoda} = that town's page slug.
+  if (aff.alt?.template && (!aff.alt.places || aff.alt.places[place]))
+    altHref = aff.alt.template.replace('{q}', encodeURIComponent(`${place}, Victoria`)).replace('{c}', c).replace('{agoda}', aff.alt.places?.[place] ?? '');
 }
 ---
 {href && (

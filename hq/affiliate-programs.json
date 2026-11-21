@@ -686,6 +686,31 @@
    "source": "https://impact.com",
    "verified": "2026-10-28",
    "note": "Simon applied 28 Oct with Vic Tours; site verified by meta tag, in review"
+  },
+  {
+   "id": "agoda",
+   "name": "Agoda Partners",
+   "network": "Agoda (direct)",
+   "categories": [
+    "travel-stays"
+   ],
+   "markets": [
+    "Global",
+    "AU"
+   ],
+   "commission": "~4–7% on completed stays",
+   "cookie": "",
+   "approval": "moderate",
+   "requirements": "Travel content site",
+   "source": "https://track360.io/blog/agoda-affiliate-program-operator-teardown-2026",
+   "verified": "2026-11-22",
+   "note": "",
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "ids": {
+    "cid": "1979204"
+   },
+   "wired": "Vic Tours: 'Compare on Agoda' next to the Wotif hotel button, only for towns with an Agoda city page (data/vic/agoda.json, agoda-check workflow)"
   }
  ],
  "adNetworks": [

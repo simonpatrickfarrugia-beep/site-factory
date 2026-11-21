@@ -1,0 +1,22 @@
+# Vic Tours: which towns have their own Agoda city page (for the "Compare on Agoda" link). Monthly + on demand.
+name: agoda-check
+on:
+  schedule:
+    - cron: '23 20 9 * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - run: python3 scripts/vic/agoda_check.py
+      - name: Commit (rebuilds Vic Tours)
+        run: |
+          git config user.name "Vic Tours agoda check" && git config user.email "pipeline@victours.com.au"
+          git add data/vic/agoda.json
+          git diff --cached --quiet && exit 0
+          git commit -qm "Vic Tours: Agoda city pages"
+          for i in 1 2 3; do git pull -q --rebase && git push -q && exit 0; sleep 5; done; exit 1

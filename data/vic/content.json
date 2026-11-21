@@ -1187,7 +1187,12 @@
    "label": "Check hotel prices",
    "partner": "Wotif",
    "template": "https://www.wotif.com/affiliate?landingPage={url}&camref=1011l6uMgR&creativeref=1100l86817&adref=PZpZVoSteG",
-   "target": "https://www.wotif.com/Hotel-Search?destination={q}"
+   "target": "https://www.wotif.com/Hotel-Search?destination={q}",
+   "alt": {
+    "partner": "Agoda",
+    "label": "Compare on Agoda",
+    "template": "https://www.agoda.com/city/{agoda}.html?cid=1979204"
+   }
   },
   "tours": {
    "enabled": true,
