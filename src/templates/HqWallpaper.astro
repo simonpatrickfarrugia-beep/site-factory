@@ -25,18 +25,27 @@ const spark = (xs: number[]) => {
   return xs.map((v, i) => `${((i / (xs.length - 1)) * 100).toFixed(1)},${(22 - (v / max) * 20).toFixed(1)}`).join(' ');
 };
 const codeEngines = [...new Set(p.jobs.filter((j) => j.kind === 'code').map((j) => j.name))];
-// Timeline labels: each goes in the lowest row where it won't overlap the previous label (width estimated from its text).
-const LANES = 6;
+// Timeline: daily jobs only (weekly/monthly ones are listed under it). Jobs within 16 minutes share one marker with
+// their names stacked; each marker's label goes in the lowest row where it won't overlap the previous one.
+const daily = p.jobs.filter((j) => !j.often);
+const rare = p.jobs.filter((j) => j.often);
+const groups: { min: number; kind: 'code' | 'ai'; lines: string[] }[] = [];
+for (const j of daily) {
+  const g = groups[groups.length - 1];
+  if (g && j.min - g.min <= 16) { g.lines.push(`${hhmm(j.min)} ${j.name}`); if (j.kind === 'ai') g.kind = 'ai'; }
+  else groups.push({ min: j.min, kind: j.kind, lines: [`${hhmm(j.min)} ${j.name}`] });
+}
+const LANES = 3;
 const ends: number[] = Array(LANES).fill(-1);
-const lanes = p.jobs.map((j) => {
-  const label = `${hhmm(j.min)} ${j.name}${j.often ? ` (${j.often})` : ''}`;
-  const start = (j.min / 1440) * 100;
-  const width = label.length * 0.42 + 0.8; // % of the timeline at 16:9
+const lanes = groups.map((g) => {
+  const start = (g.min / 1440) * 100;
+  const width = Math.max(...g.lines.map((l) => l.length)) * 0.5 + 1;
   let lane = ends.findIndex((e) => e < start);
   if (lane === -1) lane = ends.indexOf(Math.min(...ends));
   ends[lane] = start + width;
-  return { ...j, label, lane };
+  return { ...g, lane };
 });
+const rareText = [...new Map(rare.map((j) => [j.name, `${j.name} (${j.often})`])).values()].join(' · ');
 ---
 <div class="wp" id="wp">
   <svg class="wp__wires" id="wires" aria-hidden="true"></svg>
@@ -105,17 +114,18 @@ const lanes = p.jobs.map((j) => {
   </div>
 
   <footer class="wp__day">
-    <div class="day__head"><b>A day in the factory</b><span>Melbourne time · gold = AI worker · blue = code job</span></div>
+    <div class="day__head"><b>A day in the factory</b><span>Melbourne time · gold = AI worker · blue = code job · Claude queue runs hourly 7am–11pm</span></div>
     <div class="day" id="day">
       <div class="day__hours">{[0, 3, 6, 9, 12, 15, 18, 21, 24].map((h) => <span style={`left:${(h / 24) * 100}%`}>{String(h % 24).padStart(2, '0')}</span>)}</div>
       <div class="day__line"></div>
-      {lanes.map((j) => (
-        <div class={`job job--${j.kind}`} style={`left:${(j.min / 1440) * 100}%`} title={`${hhmm(j.min)} ${j.name}`}>
-          <i></i><span style={`bottom:${0.6 + j.lane * 1.55}em`}>{j.label}</span>
+      {lanes.map((g) => (
+        <div class={`job job--${g.kind}`} style={`left:${(g.min / 1440) * 100}%`}>
+          <i></i><span style={`bottom:${0.7 + g.lane * 3.4}em`}>{g.lines.map((l, i) => <>{i > 0 && <br />}{l}</>)}</span>
         </div>
       ))}
       <div class="day__now" id="now"><span>now</span></div>
     </div>
+    {rareText && <p class="day__rare">Also: {rareText}</p>}
   </footer>
   <p class="wp__built">Data as of {new Date(p.builtAt).toLocaleString('en-AU', { timeZone: 'Australia/Melbourne', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}</p>
 </div>
@@ -194,8 +204,9 @@ const lanes = p.jobs.map((j) => {
   .job { position: absolute; bottom: 2.2vh; transform: translateX(-.3em); }
   .job i { position: absolute; left: 0; bottom: -.3em; width: .6em; height: .6em; border-radius: 50%; background: var(--blue); }
   .job--ai i { background: var(--gold); box-shadow: 0 0 8px var(--gold); }
-  .job span { position: absolute; left: -.1em; white-space: nowrap; font-size: .74em; color: var(--muted); border-left: 1px solid rgba(255,255,255,.18); padding-left: .35em; }
+  .job span { position: absolute; left: -.1em; white-space: nowrap; font-size: .74em; line-height: 1.15; color: var(--muted); border-left: 1px solid rgba(255,255,255,.18); padding-left: .35em; }
   .job--ai span { color: #F6D39A; }
+  .day__rare { margin: .5vh 0 0; font-size: .74em; color: var(--muted); }
   .day__now { position: absolute; top: 0; bottom: 1.4vh; width: 2px; background: var(--gold); box-shadow: 0 0 12px var(--gold); }
   .day__now span { position: absolute; top: -.2em; left: .4em; font-size: .75em; color: var(--gold); font-weight: 700; }
   .wp .wp__built { position: absolute; right: 2.6vw; bottom: .6vh; margin: 0; font-size: .72em; color: rgba(140,150,173,.7); z-index: 1; }
