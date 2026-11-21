@@ -51,7 +51,9 @@ trade-admin `tradify_offer_sent` + `partner_fergus` + `quiz_trial_fergus`. Other
 
 ## Where things live
 - `hq/portfolio.json` — sites, goal/levels, Simon's `todo` (open = `done: false`), Claude's `actions`
-- `hq/finance.json` (revenue), `hq/milestones.json` (`hit` = firsts already celebrated)
+- `hq/finance.json` (revenue: `{ month, amount, site, source }`), `hq/milestones.json` (`hit` = firsts already celebrated)
+- `hq/value.json` — site value checker (estimates, not offers; `scripts/hq/value.py`, settings `hq/value-config.json`)
+- `data/imn/labs.json` — IMN Labs registry (ideas tested at imnetwork.com.au/labs/<slug>); how-to: `docs/LABS.md`
 - `data/<brand>/stats.json` — GA4 + Search Console, refreshed daily ~06:00 Melbourne
 - `hq/reports/` — brief, weekly briefs, autopilot log, niches, priority, competition
 - `docs/` — how things work (deploy, forms, pipeline, workers)

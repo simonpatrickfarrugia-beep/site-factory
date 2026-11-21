@@ -1,0 +1,48 @@
+---
+/** imnetwork.com.au/labs: the IMN Labs index (data/imn/labs.json). Only live and graduated labs are listed. */
+import type { Lab } from '../../lib/labs';
+interface Props { live: Lab[]; graduated: Lab[] }
+const { live, graduated } = Astro.props;
+const fmt = (iso: string) => new Date(iso + 'T00:00:00Z').toLocaleDateString('en-AU', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+---
+<article class="lab wrap">
+  <header class="lab__head">
+    <p class="lab__kicker">IMN Labs</p>
+    <h1>Ideas we're testing, built on our own platform</h1>
+    <p class="lab__lede">
+      Before we give a new idea its own website, we try it here first. Each lab is a small, useful guide built on real data,
+      run on the same system that builds and looks after our clients' websites. If people find it useful, it moves to its own
+      domain. If they don't, we take it down.
+    </p>
+  </header>
+
+  <section class="lab__section">
+    <h2>Running now</h2>
+    {live.length === 0 ? (
+      <p>No labs are running right now. The next one is in the works.</p>
+    ) : (
+      <div class="lab__links">
+        {live.map((l) => <a class="lab__card" href={`/labs/${l.slug}`}><strong>{l.name}</strong><span>{l.summary}</span><span class="lab__small">Started {fmt(l.launched)}</span></a>)}
+      </div>
+    )}
+  </section>
+
+  {graduated.length > 0 && (
+    <section class="lab__section">
+      <h2>Graduated to their own sites</h2>
+      <div class="lab__links">
+        {graduated.map((l) => <a class="lab__card" href={`https://${l.domain}`}><strong>{l.name}</strong><span>{l.summary}</span><span class="lab__small">Now at {l.domain}</span></a>)}
+      </div>
+    </section>
+  )}
+
+  <section class="lab__section">
+    <h2>How a lab works</h2>
+    <ul>
+      <li>Every lab gets a clear goal for its first 90 days before it starts, such as how often Google shows it.</li>
+      <li>Hit the goal and it graduates to its own website. Miss it and the pages come down. Nothing is left half-finished.</li>
+      <li>Labs pass the same quality checks as every site we build: real data, dated sources, no filler pages.</li>
+    </ul>
+    <p>Want a website built on the same platform? <a href="/">See what Independent Media Network does</a>.</p>
+  </section>
+</article>

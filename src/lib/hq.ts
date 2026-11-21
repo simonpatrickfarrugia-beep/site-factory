@@ -139,6 +139,54 @@ const TRAFFIC_SITES: { id: string; name: string; url: string; stats: string; mon
   { id: 'trailers', name: 'Movie Trailer Channel', url: 'https://www.movietrailer.channel', stats: 'data/trailers/stats.json', money: ['prime', 'disc'] },
 ];
 
+/** Metric names for lab targets (data/imn/labs.json → target.metric). */
+const LAB_METRIC: Record<string, string> = { gsc_impressions: 'Google impressions', gsc_clicks: 'Google clicks', visits: 'visits', money_clicks: 'money clicks' };
+
+/**
+ * IMN Labs as their own rows: GA4 + Search Console from data/imn/stats.json, filtered to /labs/<slug>/ (28 days),
+ * against each lab's 90-day target. Live, graduating and (until removed) graduated labs; closed labs are left out.
+ */
+export function labRows() {
+  const reg = read<any>('data/imn/labs.json', { labs: [] });
+  const s = read<any>('data/imn/stats.json', null);
+  const pages: any[] = s?.pages ?? [];
+  const queries: any[] = s?.queries ?? [];
+  const sum = (xs: number[]) => xs.reduce((a, b) => a + b, 0);
+  return (reg.labs ?? [])
+    .filter((l: any) => l.status !== 'closed')
+    .map((l: any) => {
+      const base = `/labs/${l.slug}`;
+      const mine = (path: string) => path === base || path.startsWith(base + '/');
+      const ps = pages.filter((p) => mine(String(p.path ?? '')));
+      const qs = queries.filter((q) => mine(String(q.page ?? ''))).sort((a, b) => b.impressions - a.impressions);
+      const money = sum(ps.map((p) => sum((l.moneyKeys ?? []).map((k: string) => p.cta?.[k] ?? 0))));
+      const nums = {
+        visits: sum(ps.map((p) => p.views || 0)),
+        prevVisits: sum(ps.map((p) => p.prevViews || 0)),
+        d7: sum(ps.map((p) => p.d7 || 0)),
+        gsc_clicks: sum(ps.map((p) => p.gscClicks || 0)),
+        gsc_impressions: sum(ps.map((p) => p.gscImpressions || 0)),
+        money_clicks: money,
+      };
+      const day = l.launched ? Math.max(0, Math.floor((Date.now() - Date.parse(l.launched + 'T00:00:00+11:00')) / 86400000)) : null;
+      const have = (nums as Record<string, number>)[l.target?.metric] ?? 0;
+      const goal = Number(l.target?.number) || 0;
+      return {
+        slug: l.slug as string,
+        name: l.name as string,
+        status: l.status as string,
+        url: `https://imnetwork.com.au${base}`,
+        domain: (l.domain || '') as string,
+        day,
+        pages: ps.length,
+        ...nums,
+        target: goal ? { metric: LAB_METRIC[l.target.metric] ?? l.target.metric, have, goal, pct: Math.min(100, Math.round((have / goal) * 100)) } : null,
+        queries: qs.slice(0, 3).map((q) => ({ query: q.query as string, impressions: q.impressions as number, clicks: q.clicks as number, position: q.position as number | null })),
+      };
+    });
+}
+export type LabRow = ReturnType<typeof labRows>[number];
+
 export function trafficProps() {
   const dayList = (start: string, end: string) => {
     const out: string[] = [];
@@ -238,6 +286,7 @@ export function trafficProps() {
   const gens = sites.map((s) => s.generatedAt).filter(Boolean).sort();
   return {
     sites: sites.map(({ allQueries: _q, ...rest }) => rest),
+    labs: labRows(),
     progress: progressProps(sites),
     allQueries,
     topPages,

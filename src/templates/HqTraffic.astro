@@ -1,4 +1,5 @@
 ---
+import type { LabRow } from '../lib/hq';
 /**
  * Morning traffic: every site's visits and Google searches on one private page (/hq/traffic on the trailer site).
  * Data: each site's stats.json, refreshed by the pipeline at 06:00 Melbourne; the commit rebuilds this page.
@@ -19,6 +20,7 @@ interface Project {
 }
 interface Props {
   sites: Site[];
+  labs: LabRow[];
   allQueries: { query: string; clicks: number; impressions: number; position: number | null; page: string; site: string; url: string }[];
   topPages: { path: string; views: number; site: string; url: string }[];
   total: number[]; totalDays: string[]; updated: string | null; builtAt: string;
@@ -204,6 +206,30 @@ const spark = (xs: number[], w = 120, h = 28) => {
         );
       })}
     </div>
+  </section>
+
+  <section class="panel" aria-labelledby="labs-h">
+    <h2 id="labs-h">IMN Labs <small>imnetwork.com.au/labs, 28 days</small></h2>
+    {p.labs.length === 0 ? (
+      <p class="tr__meta">No labs running yet. Each lab gets its own row here (visits and Google for /labs/&lt;idea&gt;/ only) against its 90-day target.</p>
+    ) : (
+      <div class="scroll">
+        <table>
+          <thead><tr><th scope="col">Lab</th><th scope="col">Day</th><th scope="col">Visits</th><th scope="col">Google shown</th><th scope="col">Clicks</th><th scope="col">Money</th><th scope="col">90-day target</th></tr></thead>
+          <tbody>
+            {p.labs.map((l) => (
+              <tr>
+                <th scope="row"><a href={l.url}>{l.name}</a>{l.status !== 'live' && <em> {l.status}{l.domain ? ` → ${l.domain}` : ''}</em>}{l.queries[0] && <small><br />top search: {l.queries[0].query}</small>}</th>
+                <td>{l.day ?? '—'}</td>
+                <td>{n(l.visits)}{change(l.visits, l.prevVisits).text && <em class={change(l.visits, l.prevVisits).cls}> {change(l.visits, l.prevVisits).text}</em>}</td>
+                <td>{n(l.gsc_impressions)}</td><td>{n(l.gsc_clicks)}</td><td>{n(l.money_clicks)}</td>
+                <td>{l.target ? `${n(l.target.have)} of ${n(l.target.goal)} ${l.target.metric} (${l.target.pct}%)` : 'not set'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )}
   </section>
 
   <section class="panel" aria-labelledby="q-h">

@@ -23,10 +23,15 @@
  *   GET  /api/submit/status?since=<ISO time>  how many submissions arrived since then: a count only, never any details.
  *                            The `enquiries` GitHub workflow polls it and opens an issue (emailed to Simon) when it's above 0.
  *
+ *   /labs/<slug>/*           IMN Labs (imn only, LABS="1"; rules from data/imn/labs.json, bundled at deploy): a closed lab
+ *                            answers 410 Gone, a graduated lab 301s to the same path on its own domain; anything else is
+ *                            served from the built files.
+ *
  * Same origin as the site, so no CORS. Signups go to the shared D1 database (site-factory-forms),
  * table `subscribers`, one row per brand + email. Spam: a hidden honeypot field.
  */
 import { preview, freeSite } from './preview';
+import LAB_REGISTRY from '../../data/imn/labs.json';
 
 export interface Env {
   /** "1" serves IMN website previews at /preview/<slug> from D1 `previews` (imn only). */
@@ -49,8 +54,29 @@ export interface Env {
   RESEND_API_KEY?: string;
   /** From address for plan emails, e.g. "Vic Tours <plans@victours.com.au>". */
   MAIL_FROM?: string;
+  /** "1" applies the IMN Labs rules (410 for closed labs, 301 for graduated ones) on /labs/* (imn only). */
+  LABS?: string;
   /** R2 bucket with the free classic movies (trailers brand only). */
   FILMS?: R2Bucket;
+}
+
+type LabRule = { slug: string; status: string; domain?: string };
+
+/** IMN Labs: 410 Gone for closed labs (no zombies), 301 to the new domain for graduated ones. null = serve normally. */
+function labGate(url: URL, env: Env): Response | null {
+  if (env.LABS !== '1') return null;
+  const m = url.pathname.match(/^\/labs\/([a-z0-9-]{1,60})(\/.*)?$/);
+  if (!m) return null;
+  const lab = ((LAB_REGISTRY as { labs: LabRule[] }).labs ?? []).find((l) => l.slug === m[1]);
+  if (!lab) return null;
+  if (lab.status === 'closed') {
+    const body = '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>This lab has closed | IMN Labs</title><body style="font-family:system-ui,sans-serif;max-width:40rem;margin:4rem auto;padding:0 1rem;line-height:1.6"><h1>This lab has closed</h1><p>This was an idea Independent Media Network tested in IMN Labs. It has finished and the pages have been taken down.</p><p><a href="/labs">See what we are testing now</a> or <a href="/">visit Independent Media Network</a>.</p></body></html>';
+    return new Response(body, { status: 410, headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'public, max-age=3600' } });
+  }
+  if (lab.status === 'graduated' && lab.domain && /^[a-z0-9.-]+\.[a-z]{2,}$/.test(lab.domain)) {
+    return Response.redirect(`https://${lab.domain}${m[2] && m[2] !== '/' ? m[2].replace(/\/$/, '') : '/'}${url.search}`, 301);
+  }
+  return null;
 }
 
 const EMAIL = /^[^@\s<>"']{1,64}@[^@\s<>"']{1,190}\.[a-z]{2,24}$/i;
@@ -342,7 +368,10 @@ async function embed(request: Request, env: Env, widget?: string): Promise<Respo
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
-    const { pathname } = new URL(request.url);
+    const reqUrl = new URL(request.url);
+    const { pathname } = reqUrl;
+    const gate = labGate(reqUrl, env);
+    if (gate) return gate;
     const media = pathname.match(/^\/media\/([a-z0-9-]{3,100}\.mp4)$/);
     if (media) return film(request, env, media[1]);
     const subs = pathname.match(/^\/media\/([a-z0-9-]{3,100}\.[a-z]{2}\.vtt)$/);

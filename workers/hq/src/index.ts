@@ -14,7 +14,7 @@ import { ICON_SVG, ICON_180, ICON_512, MANIFEST } from './app-assets';
 import { sendForOrg, sendStatus, sendTransactional } from './send';
 import { WorkerEntrypoint } from 'cloudflare:workers';
 import { hq } from './funnel';
-import { siteCheckIndex, siteCheckCard } from './sitecheck';
+import { siteCheckIndex, siteCheckCard, siteValue } from './sitecheck';
 import { apps } from './apps';
 import { confidence } from './confidence';
 import { listJobs, queueJob, cancelJob } from './jobs';
@@ -90,6 +90,7 @@ export default {
         }));
       }
       if (url.pathname === '/api/sitecheck' && req.method === 'GET') return json(await siteCheckIndex());
+      if (url.pathname === '/api/value' && req.method === 'GET') return json(await siteValue());
       const sc = url.pathname.match(/^\/api\/sitecheck\/([a-z0-9-]{1,60})$/);
       if (sc && req.method === 'GET') return json(await siteCheckCard(sc[1]));
       if (url.pathname === '/api/prospects' && req.method === 'GET') return json(await prospects(env));

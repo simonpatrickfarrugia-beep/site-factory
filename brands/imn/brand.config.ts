@@ -26,6 +26,7 @@ export default defineBrand({
   footer: [
     { label: 'Websites for tradies', href: '/websites-for-tradies' },
     { label: 'Website costs', href: '/how-much-does-a-website-cost' },
+    { label: 'IMN Labs', href: '/labs' },
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
     { label: 'Terms', href: '/terms' },

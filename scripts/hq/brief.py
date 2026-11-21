@@ -94,6 +94,14 @@ try:
                *[f"- {c['name']}: top fix: {c['topFix']} (next scan {c['nextDue']})" for c in sorted(sc.values(), key=lambda c: c['score']) if c.get('topFix')], '']
 except FileNotFoundError:
     pass
+# Site value checker (hq/value.json, scripts/hq/value.py): estimates, not offers
+try:
+    val = json.load(open('hq/value.json'))
+    flagged = [f"{x['name']}: {f['text']}" for x in val.get('sites', []) for f in x.get('flags', [])]
+    md += ['## Site value (estimates, not offers)', '', f"Portfolio A${val['total']['low']:,}–{val['total']['high']:,} · profit A${val['total']['profitMonthly']:,.2f}/month (12-month average) · IMN HQ → Value", '',
+           *[f'- ⚑ {t}' for t in flagged], '']
+except (FileNotFoundError, KeyError, ValueError):
+    pass
 md += ['## Health', '']
 if os.path.exists('health.md'):
     h = open('health.md').read()

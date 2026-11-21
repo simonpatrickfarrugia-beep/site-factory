@@ -385,6 +385,7 @@ body.on-home .chips,body.on-home .strip{display:none}
 .chk__head{display:flex;gap:14px;align-items:center}
 .chk__fixes,.chk__list{margin:6px 0 0;padding-left:18px;display:grid;gap:8px}
 .chk__list{list-style:disc}
+.vscroll{overflow-x:auto}.vt{width:100%;border-collapse:collapse;font-size:14px}.vt th,.vt td{text-align:left;vertical-align:top;padding:8px 6px;border-bottom:1px solid var(--line)}.vt thead th{font-size:12px;color:var(--muted)}
 .chk__areas{list-style:none;padding:0;margin:6px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px}
 .chk__areas .grade{font-size:1rem;min-width:56px}
 .sev-blocker{background:var(--bad);color:#fff}.sev-high{background:var(--due-bg);color:var(--due)}
@@ -405,12 +406,13 @@ body.on-home .chips,body.on-home .strip{display:none}
       <button class="mob-only" id="more-btn" aria-haspopup="true" aria-expanded="false">More</button>
       <button role="tab" id="tab-affiliates" aria-selected="false" data-desk data-view="affiliates">Affiliates</button>
       <button role="tab" id="tab-checks" aria-selected="false" data-desk data-view="checks">Site check</button>
+      <button role="tab" id="tab-value" aria-selected="false" data-desk data-view="value">Value</button>
     </div>
   </div>
   <div class="chips" id="chips" aria-label="Filter by brand"></div>
 </div></div>
 
-<div class="more-menu" id="more-menu" hidden><button data-view="hq">Funnel</button><button data-view="replies">Replies</button><button data-view="prospect">Prospect</button><button data-view="pipeline">Pipeline</button><button data-view="affiliates">Affiliates</button><button data-view="checks">Site check</button></div>
+<div class="more-menu" id="more-menu" hidden><button data-view="hq">Funnel</button><button data-view="replies">Replies</button><button data-view="prospect">Prospect</button><button data-view="pipeline">Pipeline</button><button data-view="affiliates">Affiliates</button><button data-view="checks">Site check</button><button data-view="value">Value</button></div>
 <main class="wrap">
   <section class="strip" id="strip" aria-label="This week"></section>
   <section id="view"></section>
@@ -463,8 +465,8 @@ async function load() {
     const [board, summary, prospects, replies, pipeline, affiliates, radar, needs] = await Promise.all([api('/api/board'), api('/api/summary'), api('/api/prospects'), api('/api/replies'), api('/api/pipeline'), api('/api/affiliates'), api('/api/radar'), api('/api/needs')]);
     const send = await api('/api/send/status').catch(() => null);
     const hq = await api('/api/hq').catch(() => null);
-    const [checks, apps, conf, jobs] = await Promise.all([api('/api/sitecheck').catch(() => null), api('/api/apps').catch(() => null), api('/api/confidence').catch(() => null), api('/api/jobs').catch(() => null)]);
-    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar, needs, send, hq, checks, apps, conf, jobs: jobs?.jobs || [] });
+    const [checks, apps, conf, jobs, value] = await Promise.all([api('/api/sitecheck').catch(() => null), api('/api/apps').catch(() => null), api('/api/confidence').catch(() => null), api('/api/jobs').catch(() => null), api('/api/value').catch(() => null)]);
+    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar, needs, send, hq, checks, apps, conf, value, jobs: jobs?.jobs || [] });
     $('#updated').textContent = 'Targets scored ' + new Date(prospects.generated).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
     render();
     const deep = location.hash.match(/^#app=([a-z0-9-]+)$/); // e.g. …/#app=vic opens that app (links from the morning report)
@@ -475,7 +477,7 @@ async function load() {
 }
 
 function render() {
-  document.querySelectorAll('.tabs button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.view === state.view || (b.id === 'more-btn' && ['hq', 'replies', 'prospect', 'pipeline', 'affiliates', 'checks'].includes(state.view)))));
+  document.querySelectorAll('.tabs button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.view === state.view || (b.id === 'more-btn' && ['hq', 'replies', 'prospect', 'pipeline', 'affiliates', 'checks', 'value'].includes(state.view)))));
   document.body.classList.toggle('on-home', state.view === 'home');
   renderChips(); renderStrip();
   if (state.view === 'home') renderHome();
@@ -486,6 +488,7 @@ function render() {
   else if (state.view === 'pipeline') renderPipeline();
   else if (state.view === 'affiliates') renderAffiliates();
   else if (state.view === 'checks') renderChecks();
+  else if (state.view === 'value') renderValue();
   else renderReplies();
 }
 
@@ -501,6 +504,16 @@ function inBrand(b) { return state.brand === 'all' || state.brand === b; }
 
 function renderStrip() {
   if (state.view === 'home') { $('#strip').innerHTML = ''; return; }
+  if (state.view === 'value') {
+    const v = state.value || {}; const t = v.total || { low: 0, high: 0, profitMonthly: 0 };
+    const flags = (v.sites || []).reduce((a, x) => a + (x.flags || []).length, 0);
+    $('#strip').innerHTML = `
+      <div class="stat"><b>${aud(t.low)}–${aud(t.high)}</b><span>Portfolio value (estimate)</span></div>
+      <div class="stat"><b>${aud(t.profitMonthly, 2)}</b><span>Profit a month, 12-month average</span></div>
+      <div class="stat"><b>${v.worthSelling ? aud(v.worthSelling) : 'not set'}</b><span>Your "worth selling" number</span></div>
+      <div class="stat${flags ? ' due' : ''}"><b>${flags}</b><span>Flags</span></div>`;
+    return;
+  }
   if (state.view === 'checks') {
     const list = checkList();
     const avg = list.length ? Math.round(list.reduce((a, c) => a + c.score, 0) / list.length) : '–';
@@ -1278,10 +1291,33 @@ async function openCheck(id) {
     <div><label>Top 5 fixes (biggest impact first)</label><ol class="chk__fixes">${fixes || '<li>Nothing to fix 🎉</li>'}</ol></div>
     <div><label>Report card</label><ul class="chk__areas">${areas}</ul></div>
     <div><label>Google (last 7 days)</label><p>${(g.impr7 || 0).toLocaleString()} impressions (${signed((g.impr7 || 0) - (g.imprPrev7 || 0))}) · ${g.clicks7 || 0} clicks · data to ${esc(g.gscTo || '–')}</p></div>
+    ${c.labs ? `<div><label>IMN Labs (/labs/&lt;idea&gt;/ only, 28 days)</label>${c.labs.length ? `<ul class="chk__list">${c.labs.map((l) => `<li><b>${esc(l.name)}</b> · ${esc(l.status)}${l.day !== null ? ', day ' + l.day : ''}<br><span class="meta">${l.visits} visits · ${l.gsc_impressions} shown in Google · ${l.gsc_clicks} clicks · ${l.money_clicks} money clicks${l.target ? ` · target ${l.target.have} of ${l.target.goal} ${esc(l.target.metric)} (${l.target.pct}%)` : ' · no target set'}</span></li>`).join('')}</ul>` : '<p class="meta">No labs running.</p>'}</div>` : ''}
     ${serps ? `<div><label>Who's on top for your top searches</label><ul class="chk__list">${serps}</ul></div>` : ''}
     ${moved.length ? `<div><label>What changed</label><ul class="chk__list">${moved.map((x) => `<li>${x}</li>`).join('')}</ul></div>` : ''}
     <div class="row"><a class="btn ghost" style="text-decoration:none" href="https://github.com/simonpatrickfarrugia-beep/site-factory/blob/main/hq/reports/sitecheck/${encodeURIComponent(c.id)}.md" target="_blank" rel="noopener">Full report ↗</a></div>`;
   $('#close').onclick = () => dlg.close();
+}
+
+// ---------- Value (scripts/hq/value.py → hq/value.json) ----------
+function aud(n, dp = 0) { return 'A$' + Number(n || 0).toLocaleString('en-AU', { minimumFractionDigits: dp, maximumFractionDigits: dp }); }
+function renderValue() {
+  const v = state.value;
+  if (!v || !(v.sites || []).length) { $('#view').innerHTML = '<p class="empty">No value data yet. It is worked out each morning (brief workflow).</p>'; return; }
+  const rows = v.sites.filter((x) => x.kind === 'lab' || inBrand(x.id));
+  $('#view').innerHTML = `<div class="today-head"><h2>What each site could sell for</h2><span class="meta">Updated ${esc(ago(v.generatedAt))} · ${esc(v.note || '')}</span></div>
+    <div class="hint"><strong>Estimates, not offers.</strong> Value = average monthly net profit over the last 12 months × ${v.multiple.low}–${v.multiple.high}. Most sites are near A$0 profit for now, so values start near $0 and grow with revenue.</div>
+    <div class="vscroll"><table class="vt">
+      <thead><tr><th scope="col">Site</th><th scope="col">Profit 12m</th><th scope="col">A month</th><th scope="col">Value (low–high)</th><th scope="col">vs last month</th><th scope="col">Flags</th></tr></thead>
+      <tbody>${rows.map((x) => `<tr>
+        <th scope="row"><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name)}</a><br><span class="meta">×${x.multiple.low}–${x.multiple.high}${x.multiple.why.length ? ': ' + x.multiple.why.map(esc).join('; ') : ''}</span></th>
+        <td>${aud(x.revenue12 - x.costs12, 2)}<br><span class="meta">${aud(x.revenue12, 2)} in, ${aud(x.costs12, 2)} costs, ${x.months} month${x.months === 1 ? '' : 's'}</span></td>
+        <td>${aud(x.profitMonthly, 2)}</td>
+        <td><b>${aud(x.value.low)}–${aud(x.value.high)}</b></td>
+        <td>${x.trend ? `<span class="delta ${x.trend.dir === 'up' ? 'up' : x.trend.dir === 'down' ? 'down' : ''}">${x.trend.change > 0 ? '+' : ''}${aud(x.trend.change)}</span>` : '<span class="meta">new</span>'}</td>
+        <td>${(x.flags || []).length ? x.flags.map((f) => `<span class="pill ${f.kind === 'worth-selling' ? 'good' : 'due'}">${esc(f.text)}</span>`).join(' ') : '<span class="meta">–</span>'}</td>
+      </tr>`).join('')}</tbody>
+    </table></div>
+    <p class="meta">How the multiple moves: under 12 months old → low end; one income source or mostly-Google traffic → lower; several income sources, an email list, links from other sites, hands-off running → higher. Revenue and costs: hq/finance.json. Settings and your "worth selling" number: hq/value-config.json (ask Claude to set it).</p>`;
 }
 
 // ---------- Pipeline ----------

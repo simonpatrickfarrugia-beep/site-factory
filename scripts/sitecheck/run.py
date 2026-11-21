@@ -19,6 +19,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 from seo_audit import page_facts, page_issues  # noqa: E402
 from probe import fetch  # noqa: E402
+sys.path.insert(0, os.path.join(ROOT, 'scripts', 'hq'))
+from labstats import lab_rows  # noqa: E402
 
 UA = 'Mozilla/5.0 (site-factory-sitecheck; +https://github.com/simonpatrickfarrugia-beep/site-factory)'
 WORKER = 'https://trailer-pipeline.simonpatrickfarrugia.workers.dev/sitecheck'
@@ -557,6 +559,13 @@ def card_md(card):
               (f'us {m["ours"][0] or "—"} → {m["ours"][1] or "—"}') if m['ours'] else ''] if x) for m in d['rivals']]
         L += [f'- "{m["query"]}": position {m["was"]} → {m["now"]}' for m in d['positions']]
         L += [f'- New: {t}' for t in d['newIssues'][:6]] + [f'- Fixed: {t}' for t in d['fixed'][:6]]
+    if 'labs' in card:
+        L += ['', '## IMN Labs', '']
+        if not card['labs']: L.append('No labs running.')
+        for lb in card['labs']:
+            tg = lb['target']
+            L.append(f'- **{lb["name"]}** ({lb["status"]}, day {lb["day"] if lb["day"] is not None else "—"}): {lb["visits"]:,} visits, {lb["gsc_impressions"]:,} Google impressions, {lb["gsc_clicks"]} clicks, {lb["money_clicks"]} money clicks (28 days)'
+                     + (f'. Target: {tg["have"]:,} of {tg["goal"]:,} {tg["metric"]} ({tg["pct"]}%)' if tg else '. No target set'))
     sp = [s for s in card['speed'] if not s.get('error')]
     if sp: L += ['', '## Speed (phones)', ''] + [(f'- {urllib.parse.urlsplit(s["url"]).path or "/"}: PageSpeed unavailable ({s.get("psiError", "")[:40]}), own check: arrived in {s["serverSecs"]}s, HTML {s["htmlKb"]} KB, '
                                                   f'images {s["imageKb"]:,} KB (first 15), {s["blocking"]} blocking files, {s["noDims"]} images without size') if s.get('lite') else
@@ -642,6 +651,8 @@ def scan(site, cfg, args, prev, stage, why, days):
                 costUsd=(live or {}).get('costUsd', 0) or 0, speed=speed, quality=dict(summary=quality['summary'], thin=quality.get('thin', 0), near=quality.get('near', 0)),
                 links=dict(internal=links['internal'], outside=links['outside'], checkedOutside=links['checked_out'], unsureOutside=len(links['unsure_outside'])),
                 affiliateOk=aff_ok, secs=round(time.time() - t0))
+    if site.get('brand') == 'imn':  # IMN Labs: each lab's own rows (/labs/<slug>/ only), against its 90-day target
+        card['labs'] = lab_rows(ROOT, TODAY)
     card['change'] = diff(card, prev)
     hist = (prev or {}).get('history', []) + ([dict(at=prev['scannedAt'], score=prev['score'], grade=prev['grade'], impr28=prev['google']['impr28'], clicks28=prev['google']['clicks28'])] if prev else [])
     card['history'] = hist[-12:]
