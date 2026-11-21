@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-20T19:00:09.452Z",
+ "generatedAt": "2026-11-21T19:00:09.571Z",
  "period": {
-  "start": "2026-10-23",
-  "end": "2026-11-19"
+  "start": "2026-10-24",
+  "end": "2026-11-20"
  },
  "gscPeriod": {
-  "start": "2026-10-21",
-  "end": "2026-11-17"
+  "start": "2026-10-22",
+  "end": "2026-11-18"
  },
  "sources": {
   "ga4": true,
@@ -14,14 +14,14 @@
   "notes": []
  },
  "totals": {
-  "views": 40,
+  "views": 41,
   "prevViews": 0,
-  "users": 32,
+  "users": 33,
   "cta": {
    "admin_help": 1
   },
   "gscClicks": 1,
-  "gscImpressions": 689
+  "gscImpressions": 735
  },
  "daily": [
   {
@@ -68,14 +68,19 @@
    "date": "2026-11-18",
    "views": 1,
    "cta": 0
+  },
+  {
+   "date": "2026-11-20",
+   "views": 1,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 19,
+   "views": 20,
    "prevViews": 0,
-   "users": 13,
+   "users": 14,
    "cta": {
     "admin_help": 1
    },
@@ -83,11 +88,11 @@
    "gscImpressions": 12,
    "gscPosition": 58.8,
    "topQuery": "best invoice app for tradesmen",
-   "allViews": 19,
+   "allViews": 20,
    "allCta": {
     "admin_help": 1
    },
-   "d7": 4,
+   "d7": 5,
    "prev7": 0
   },
   {
@@ -125,8 +130,8 @@
    "users": 3,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 25,
-   "gscPosition": 79.8,
+   "gscImpressions": 26,
+   "gscPosition": 79.5,
    "topQuery": "tradesman quote template",
    "allViews": 3
   },
@@ -137,8 +142,8 @@
    "users": 1,
    "cta": {},
    "gscClicks": 1,
-   "gscImpressions": 367,
-   "gscPosition": 73.8,
+   "gscImpressions": 369,
+   "gscPosition": 73.7,
    "topQuery": "servicem8 tradify comparison",
    "allViews": 1,
    "d7": 1,
@@ -151,9 +156,9 @@
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 24,
-   "gscPosition": 72.5,
-   "topQuery": "job management app australia",
+   "gscImpressions": 29,
+   "gscPosition": 76,
+   "topQuery": "job management app",
    "allViews": 1,
    "prev7": 1,
    "d7": 0
@@ -165,8 +170,8 @@
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 18,
-   "gscPosition": 69.1,
+   "gscImpressions": 22,
+   "gscPosition": 67,
    "topQuery": "free invoice template australia",
    "allViews": 1
   },
@@ -177,8 +182,8 @@
    "users": 1,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 11,
-   "gscPosition": 50.6,
+   "gscImpressions": 15,
+   "gscPosition": 44.7,
    "topQuery": "fergus job management",
    "allViews": 1,
    "prev7": 1,
@@ -241,8 +246,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 53,
-   "gscPosition": 60.4,
+   "gscImpressions": 57,
+   "gscPosition": 59.1,
    "topQuery": "cleaning invoice examples"
   },
   {
@@ -252,9 +257,20 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 38,
-   "gscPosition": 77.4,
+   "gscImpressions": 50,
+   "gscPosition": 76.4,
    "topQuery": "tradesman quote template"
+  },
+  {
+   "path": "/servicem8-pricing",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 34,
+   "gscPosition": 59.8,
+   "topQuery": "servicem8 pricing"
   },
   {
    "path": "/electrician-invoice-template",
@@ -266,17 +282,6 @@
    "gscImpressions": 31,
    "gscPosition": 68.8,
    "topQuery": "electrical invoice template"
-  },
-  {
-   "path": "/servicem8-pricing",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 25,
-   "gscPosition": 58.6,
-   "topQuery": "servicem8 pricing"
   },
   {
    "path": "/painter-invoice-template",
@@ -307,9 +312,20 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 10,
-   "gscPosition": 82,
+   "gscImpressions": 11,
+   "gscPosition": 77.1,
    "topQuery": "electrician quotes"
+  },
+  {
+   "path": "/builder-invoice-template",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 10,
+   "gscPosition": 50.5,
+   "topQuery": "progress claim template"
   },
   {
    "path": "/painting-quote-template",
@@ -321,17 +337,6 @@
    "gscImpressions": 10,
    "gscPosition": 81,
    "topQuery": "painting quotes"
-  },
-  {
-   "path": "/builder-invoice-template",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 7,
-   "gscPosition": 40.1,
-   "topQuery": "progress claim template"
   },
   {
    "path": "/carpenter-invoice-template",
@@ -351,8 +356,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 59,
+   "gscImpressions": 4,
+   "gscPosition": 63,
    "topQuery": "plumber quotes"
   },
   {
@@ -381,17 +386,17 @@
  ],
  "queries": [
   {
+   "query": "servicem8 vs",
+   "clicks": 0,
+   "impressions": 70,
+   "position": 81.1,
+   "page": "/tradify-vs-servicem8"
+  },
+  {
    "query": "servicem8 tradify comparison",
    "clicks": 0,
    "impressions": 69,
    "position": 78,
-   "page": "/tradify-vs-servicem8"
-  },
-  {
-   "query": "servicem8 vs",
-   "clicks": 0,
-   "impressions": 69,
-   "position": 81.3,
    "page": "/tradify-vs-servicem8"
   },
   {
@@ -404,8 +409,8 @@
   {
    "query": "servicem8 pricing",
    "clicks": 0,
-   "impressions": 55,
-   "position": 78.4,
+   "impressions": 58,
+   "position": 76.8,
    "page": "/tradify-vs-servicem8"
   },
   {
@@ -425,15 +430,15 @@
   {
    "query": "tradesman quote template",
    "clicks": 0,
-   "impressions": 39,
-   "position": 78.1,
+   "impressions": 41,
+   "position": 77.3,
    "page": "/builder-quote-template"
   },
   {
    "query": "fieldhive vs servicem8",
    "clicks": 0,
-   "impressions": 16,
-   "position": 63.3,
+   "impressions": 17,
+   "position": 62.9,
    "page": "/tradify-vs-servicem8"
   },
   {
@@ -446,8 +451,8 @@
   {
    "query": "cleaning invoice template",
    "clicks": 0,
-   "impressions": 12,
-   "position": 66.6,
+   "impressions": 14,
+   "position": 67.3,
    "page": "/cleaning-invoice-template"
   },
   {
@@ -465,6 +470,13 @@
    "page": "/painter-invoice-template"
   },
   {
+   "query": "fergus job management",
+   "clicks": 0,
+   "impressions": 11,
+   "position": 70.2,
+   "page": "/fergus-pricing"
+  },
+  {
    "query": "cleaning invoice",
    "clicks": 0,
    "impressions": 10,
@@ -472,11 +484,11 @@
    "page": "/cleaning-invoice-template"
   },
   {
-   "query": "fergus job management",
+   "query": "builder quote",
    "clicks": 0,
-   "impressions": 10,
-   "position": 70.5,
-   "page": "/fergus-pricing"
+   "impressions": 9,
+   "position": 78.1,
+   "page": "/builder-quote-template"
   },
   {
    "query": "house cleaning invoice",
@@ -484,6 +496,13 @@
    "impressions": 8,
    "position": 72.4,
    "page": "/cleaning-invoice-template"
+  },
+  {
+   "query": "progress claim template",
+   "clicks": 0,
+   "impressions": 6,
+   "position": 78.2,
+   "page": "/builder-invoice-template"
   },
   {
    "query": "electrician quotes",
@@ -500,6 +519,13 @@
    "page": "/plumber-invoice-template"
   },
   {
+   "query": "servicem8",
+   "clicks": 0,
+   "impressions": 6,
+   "position": 63.8,
+   "page": "/servicem8-pricing"
+  },
+  {
    "query": "best invoice app for tradesmen",
    "clicks": 0,
    "impressions": 6,
@@ -507,31 +533,38 @@
    "page": "/"
   },
   {
-   "query": "free carpentry quote",
+   "query": "builder quotes",
    "clicks": 0,
    "impressions": 5,
-   "position": 73.4,
+   "position": 87.2,
    "page": "/builder-quote-template"
   },
   {
    "query": "servicem8 setup and training adelaide",
    "clicks": 0,
-   "impressions": 4,
+   "impressions": 5,
    "position": 71.8,
    "page": "/servicem8-pricing"
   },
   {
-   "query": "job management app australia",
+   "query": "job management app",
    "clicks": 0,
-   "impressions": 4,
-   "position": 62.5,
+   "impressions": 5,
+   "position": 93.6,
    "page": "/which-job-app"
   },
   {
-   "query": "builder quote",
+   "query": "job management app australia",
    "clicks": 0,
-   "impressions": 4,
-   "position": 94,
+   "impressions": 5,
+   "position": 69.4,
+   "page": "/which-job-app"
+  },
+  {
+   "query": "free carpentry quote",
+   "clicks": 0,
+   "impressions": 5,
+   "position": 73.4,
    "page": "/builder-quote-template"
   },
   {
@@ -563,11 +596,11 @@
    "page": "/invoice-builder"
   },
   {
-   "query": "servicem8",
+   "query": "sole trader invoice template free",
    "clicks": 0,
    "impressions": 3,
-   "position": 60.7,
-   "page": "/servicem8-pricing"
+   "position": 77.7,
+   "page": "/invoice-builder"
   },
   {
    "query": "tradify pricing",
@@ -584,10 +617,10 @@
    "page": "/which-job-app"
   },
   {
-   "query": "job management app",
+   "query": "best job management app",
    "clicks": 0,
    "impressions": 3,
-   "position": 92.3,
+   "position": 94.3,
    "page": "/which-job-app"
   },
   {
@@ -596,13 +629,6 @@
    "impressions": 3,
    "position": 61.3,
    "page": "/which-job-app"
-  },
-  {
-   "query": "progress claim template",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 81.7,
-   "page": "/builder-invoice-template"
   },
   {
    "query": "electrical invoice",
@@ -647,6 +673,13 @@
    "page": "/builder-quote-template"
   },
   {
+   "query": "quoting templates for builders",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 70,
+   "page": "/builder-quote-template"
+  },
+  {
    "query": "free carpentry invoice template",
    "clicks": 0,
    "impressions": 2,
@@ -658,13 +691,6 @@
    "clicks": 0,
    "impressions": 2,
    "position": 52.5,
-   "page": "/invoice-builder"
-  },
-  {
-   "query": "sole trader invoice template free",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 80.5,
    "page": "/invoice-builder"
   },
   {
@@ -689,11 +715,18 @@
    "page": "/plumber-invoice-template"
   },
   {
-   "query": "best job management app",
+   "query": "plumber quotes",
    "clicks": 0,
    "impressions": 2,
-   "position": 94.5,
-   "page": "/which-job-app"
+   "position": 73.5,
+   "page": "/plumbing-quote-template"
+  },
+  {
+   "query": "service m 8",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 61.5,
+   "page": "/servicem8-pricing"
   },
   {
    "query": "service industry app",
@@ -773,6 +806,20 @@
    "page": "/carpenter-invoice-template"
   },
   {
+   "query": "electrical invoice template free",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 28,
+   "page": "/electrician-quote-template"
+  },
+  {
+   "query": "fergus software",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 32,
+   "page": "/fergus-pricing"
+  },
+  {
    "query": "create tax invoice",
    "clicks": 0,
    "impressions": 1,
@@ -784,6 +831,13 @@
    "clicks": 0,
    "impressions": 1,
    "position": 73,
+   "page": "/invoice-builder"
+  },
+  {
+   "query": "free tax invoice template australia",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 53,
    "page": "/invoice-builder"
   },
   {
@@ -801,6 +855,13 @@
    "page": "/invoice-builder"
   },
   {
+   "query": "sole trader invoice template",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 78,
+   "page": "/invoice-builder"
+  },
+  {
    "query": "tax invoice online",
    "clicks": 0,
    "impressions": 1,
@@ -812,6 +873,13 @@
    "clicks": 0,
    "impressions": 1,
    "position": 71,
+   "page": "/invoice-builder"
+  },
+  {
+   "query": "trade invoice template",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 28,
    "page": "/invoice-builder"
   },
   {
@@ -829,25 +897,11 @@
    "page": "/plumber-invoice-template"
   },
   {
-   "query": "plumber quotes",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 72,
-   "page": "/plumbing-quote-template"
-  },
-  {
    "query": "plumbing quote template",
    "clicks": 0,
    "impressions": 1,
    "position": 53,
    "page": "/plumbing-quote-template"
-  },
-  {
-   "query": "service m 8",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 61,
-   "page": "/servicem8-pricing"
   },
   {
    "query": "service m8",
@@ -862,6 +916,13 @@
    "impressions": 1,
    "position": 66,
    "page": "/tradify-vs-servicem8"
+  },
+  {
+   "query": "best apps for tradesmen",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 82,
+   "page": "/which-job-app"
   },
   {
    "query": "best job management software",
@@ -913,13 +974,6 @@
    "page": "/admin-help"
   },
   {
-   "query": "builder quotes",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 84,
-   "page": "/builder-quote-template"
-  },
-  {
    "query": "building quote template",
    "clicks": 0,
    "impressions": 1,
@@ -966,6 +1020,13 @@
    "clicks": 0,
    "impressions": 1,
    "position": 6,
+   "page": "/fergus-pricing"
+  },
+  {
+   "query": "fergus pricing",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 9,
    "page": "/fergus-pricing"
   },
   {
@@ -1018,18 +1079,11 @@
    "page": "/quote-builder"
   },
   {
-   "query": "servicem8 phone",
+   "query": "servicem8 discount",
    "clicks": 0,
    "impressions": 1,
-   "position": 64,
+   "position": 90,
    "page": "/servicem8-pricing"
-  },
-  {
-   "query": "servicem8 cost",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 58,
-   "page": "/tradify-vs-servicem8"
   }
  ],
  "gscDaily": [
@@ -1157,12 +1211,17 @@
    "date": "2026-11-17",
    "clicks": 0,
    "impressions": 56
+  },
+  {
+   "date": "2026-11-18",
+   "clicks": 0,
+   "impressions": 45
   }
  ],
  "allTime": {
   "start": "2026-10-28",
-  "views": 40,
-  "users": 32,
+  "views": 41,
+  "users": 33,
   "cta": {
    "admin_help": 1
   },
@@ -1211,6 +1270,11 @@
     "date": "2026-11-18",
     "views": 1,
     "cta": 0
+   },
+   {
+    "date": "2026-11-20",
+    "views": 1,
+    "cta": 0
    }
   ]
  },
@@ -1222,14 +1286,14 @@
     "sessions": 22
    },
    {
+    "source": "google",
+    "medium": "organic",
+    "sessions": 3
+   },
+   {
     "source": "(not set)",
     "medium": "(not set)",
     "sessions": 2
-   },
-   {
-    "source": "google",
-    "medium": "organic",
-    "sessions": 1
    },
    {
     "source": "movietrailer.channel",
@@ -1239,11 +1303,11 @@
   ],
   "referrers": [
    {
-    "url": "android-app://com.google.android.googlequicksearchbox/",
-    "views": 1
+    "url": "https://www.google.com/",
+    "views": 2
    },
    {
-    "url": "https://www.google.com/",
+    "url": "android-app://com.google.android.googlequicksearchbox/",
     "views": 1
    },
    {
@@ -1287,6 +1351,12 @@
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 1
+   },
+   {
+    "date": "2026-11-20",
+    "source": "google",
+    "medium": "organic",
+    "sessions": 2
    }
   ]
  }

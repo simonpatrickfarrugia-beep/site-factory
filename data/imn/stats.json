@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-20T19:00:09.452Z",
+ "generatedAt": "2026-11-21T19:00:09.571Z",
  "period": {
-  "start": "2026-10-23",
-  "end": "2026-11-19"
+  "start": "2026-10-24",
+  "end": "2026-11-20"
  },
  "gscPeriod": {
-  "start": "2026-10-21",
-  "end": "2026-11-17"
+  "start": "2026-10-22",
+  "end": "2026-11-18"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 8,
+  "views": 11,
   "prevViews": 0,
-  "users": 7,
+  "users": 10,
   "cta": {
    "start_hero": 1,
    "pay_plan": 1,
    "start_plan": 1
   },
   "gscClicks": 0,
-  "gscImpressions": 1
+  "gscImpressions": 4
  },
  "daily": [
   {
@@ -40,26 +40,31 @@
    "date": "2026-11-19",
    "views": 1,
    "cta": 0
+  },
+  {
+   "date": "2026-11-20",
+   "views": 3,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 5,
+   "views": 8,
    "prevViews": 0,
-   "users": 5,
+   "users": 8,
    "cta": {
     "start_hero": 1
    },
    "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 10,
-   "topQuery": "mypaycalc",
-   "allViews": 5,
+   "gscImpressions": 4,
+   "gscPosition": 8.5,
+   "topQuery": "imn",
+   "allViews": 8,
    "allCta": {
     "start_hero": 1
    },
-   "d7": 5
+   "d7": 8
   },
   {
    "path": "/get-started",
@@ -100,10 +105,17 @@
  ],
  "queries": [
   {
+   "query": "imn",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 7.5,
+   "page": "/"
+  },
+  {
    "query": "mypaycalc",
    "clicks": 0,
-   "impressions": 1,
-   "position": 10,
+   "impressions": 2,
+   "position": 9.5,
    "page": "/"
   }
  ],
@@ -117,12 +129,17 @@
    "date": "2026-11-17",
    "clicks": 0,
    "impressions": 1
+  },
+  {
+   "date": "2026-11-18",
+   "clicks": 0,
+   "impressions": 3
   }
  ],
  "allTime": {
   "start": "2026-11-17",
-  "views": 8,
-  "users": 7,
+  "views": 11,
+  "users": 10,
   "cta": {
    "start_hero": 1,
    "pay_plan": 1,
@@ -143,6 +160,11 @@
     "date": "2026-11-19",
     "views": 1,
     "cta": 0
+   },
+   {
+    "date": "2026-11-20",
+    "views": 3,
+    "cta": 0
    }
   ]
  },
@@ -151,7 +173,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 5
+    "sessions": 8
    }
   ],
   "referrers": [
@@ -178,6 +200,12 @@
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 1
+   },
+   {
+    "date": "2026-11-20",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 3
    }
   ]
  }
