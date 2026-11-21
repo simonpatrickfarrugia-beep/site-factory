@@ -30,8 +30,9 @@ def exists(agoda, name):
         return None
     if 'pagenotfound' in final or '/city/' not in final:
         return False
-    first = name.split()[0]
-    return first.lower() in body.lower()
+    # Must be OUR town: same-named places exist in other states (Richmond, Brighton…), so the page must say Victoria.
+    low = body.lower()
+    return name.split()[0].lower() in low and re.search(r'victoria|\bvic\b', low) is not None
 
 
 def main():
