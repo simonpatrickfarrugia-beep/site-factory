@@ -25,8 +25,18 @@ const spark = (xs: number[]) => {
   return xs.map((v, i) => `${((i / (xs.length - 1)) * 100).toFixed(1)},${(22 - (v / max) * 20).toFixed(1)}`).join(' ');
 };
 const codeEngines = [...new Set(p.jobs.filter((j) => j.kind === 'code').map((j) => j.name))];
-// Spread timeline labels over 3 rows so close times don't overlap.
-const lanes = p.jobs.map((j, i) => ({ ...j, lane: i % 3 }));
+// Timeline labels: each goes in the lowest row where it won't overlap the previous label (width estimated from its text).
+const LANES = 6;
+const ends: number[] = Array(LANES).fill(-1);
+const lanes = p.jobs.map((j) => {
+  const label = `${hhmm(j.min)} ${j.name}${j.often ? ` (${j.often})` : ''}`;
+  const start = (j.min / 1440) * 100;
+  const width = label.length * 0.42 + 0.8; // % of the timeline at 16:9
+  let lane = ends.findIndex((e) => e < start);
+  if (lane === -1) lane = ends.indexOf(Math.min(...ends));
+  ends[lane] = start + width;
+  return { ...j, label, lane };
+});
 ---
 <div class="wp" id="wp">
   <svg class="wp__wires" id="wires" aria-hidden="true"></svg>
@@ -100,8 +110,8 @@ const lanes = p.jobs.map((j, i) => ({ ...j, lane: i % 3 }));
       <div class="day__hours">{[0, 3, 6, 9, 12, 15, 18, 21, 24].map((h) => <span style={`left:${(h / 24) * 100}%`}>{String(h % 24).padStart(2, '0')}</span>)}</div>
       <div class="day__line"></div>
       {lanes.map((j) => (
-        <div class={`job job--${j.kind} lane-${j.lane}`} style={`left:${(j.min / 1440) * 100}%`} title={`${hhmm(j.min)} ${j.name}`}>
-          <i></i><span>{hhmm(j.min)} {j.name}{j.often ? ` (${j.often})` : ''}</span>
+        <div class={`job job--${j.kind}`} style={`left:${(j.min / 1440) * 100}%`} title={`${hhmm(j.min)} ${j.name}`}>
+          <i></i><span style={`bottom:${0.6 + j.lane * 1.55}em`}>{j.label}</span>
         </div>
       ))}
       <div class="day__now" id="now"><span>now</span></div>
@@ -114,7 +124,7 @@ const lanes = p.jobs.map((j, i) => ({ ...j, lane: i % 3 }));
   /* Scoped to this template (every template's CSS ships with every brand); only the injected wires and <body> are global. */
   :global(body:has(.wp)) { margin: 0; overflow: hidden; background: #0B1120; }
   :global(body:has(.wp) .skip-link) { display: none; }
-  .wp { --ink: #0B1120; --panel: rgba(255,255,255,.045); --line: rgba(255,255,255,.09); --text: #E9ECF4; --muted: #8C96AD; --gold: #F2A93B; --blue: #6FA8FF; --good: #4ADE80; --warn: #FBBF24; --bad: #F87171;
+  .wp { --ink: #0B1120; --panel: #131A2B; --line: rgba(255,255,255,.09); --text: #E9ECF4; --muted: #8C96AD; --gold: #F2A93B; --blue: #6FA8FF; --good: #4ADE80; --warn: #FBBF24; --bad: #F87171;
     position: fixed; inset: 0; display: grid; grid-template-rows: auto auto 1fr auto; gap: 1.6vh; padding: 3.2vh 2.6vw 2.4vh 7vw; box-sizing: border-box;
     background: radial-gradient(1200px 700px at 55% 45%, rgba(242,169,59,.08), transparent 60%), radial-gradient(900px 600px at 85% 20%, rgba(111,168,255,.07), transparent 60%),
       radial-gradient(circle at 1px 1px, rgba(255,255,255,.05) 1px, transparent 0) 0 0 / 28px 28px, var(--ink);
@@ -124,7 +134,7 @@ const lanes = p.jobs.map((j, i) => ({ ...j, lane: i % 3 }));
   .wp h3 { margin: 1.4vh 0 .6vh; font-size: .82em; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
   .wp ul { list-style: none; margin: 0; padding: 0; }
   .wp__wires { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
-  .wp__wires :global(path) { fill: none; stroke: rgba(242,169,59,.35); stroke-width: 1.4; stroke-dasharray: 6 8; animation: flow 3.5s linear infinite; }
+  .wp__wires :global(path) { fill: none; stroke: rgba(242,169,59,.45); stroke-width: 1.4; stroke-dasharray: 6 8; animation: flow 3.5s linear infinite; }
   .wp__wires :global(path.b) { stroke: rgba(111,168,255,.3); }
   @keyframes flow { to { stroke-dashoffset: -56; } }
   .wp > :not(.wp__wires) { position: relative; z-index: 1; }
@@ -178,14 +188,13 @@ const lanes = p.jobs.map((j, i) => ({ ...j, lane: i % 3 }));
 
   .wp__day { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 1.2vh 1.2vw 1vh; }
   .day__head { display: flex; gap: 1vw; align-items: baseline; } .day__head span { color: var(--muted); font-size: .85em; }
-  .day { position: relative; height: 10.5vh; margin-top: .6vh; }
+  .day { position: relative; height: 13.5vh; margin-top: .6vh; }
   .day__hours span { position: absolute; bottom: 0; transform: translateX(-50%); color: var(--muted); font-size: .78em; }
   .day__line { position: absolute; left: 0; right: 0; bottom: 2.2vh; height: 2px; background: linear-gradient(90deg, rgba(111,168,255,.15), rgba(242,169,59,.35), rgba(111,168,255,.15)); }
   .job { position: absolute; bottom: 2.2vh; transform: translateX(-.3em); }
   .job i { position: absolute; left: 0; bottom: -.3em; width: .6em; height: .6em; border-radius: 50%; background: var(--blue); }
   .job--ai i { background: var(--gold); box-shadow: 0 0 8px var(--gold); }
   .job span { position: absolute; left: -.1em; white-space: nowrap; font-size: .74em; color: var(--muted); border-left: 1px solid rgba(255,255,255,.18); padding-left: .35em; }
-  .lane-0 span { bottom: .6em; } .lane-1 span { bottom: 2.3em; } .lane-2 span { bottom: 4em; }
   .job--ai span { color: #F6D39A; }
   .day__now { position: absolute; top: 0; bottom: 1.4vh; width: 2px; background: var(--gold); box-shadow: 0 0 12px var(--gold); }
   .day__now span { position: absolute; top: -.2em; left: .4em; font-size: .75em; color: var(--gold); font-weight: 700; }
