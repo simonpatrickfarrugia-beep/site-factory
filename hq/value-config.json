@@ -1,8 +1,8 @@
 {
   "_about": "Site value checker settings (scripts/hq/value.py → hq/value.json, shown in IMN HQ → Value). Estimates, not offers. Benchmarks checked 21 Nov 2026: Flippa's commonly cited 30–45x monthly profit; Flippa H1 2026 actual average 2.32x annual profit (~28x monthly), top quartile 4.68x annual (~56x monthly). We use 25–45x monthly profit and move within it per site. Revenue and costs come from hq/finance.json: revenue[] entries need month (YYYY-MM), amount (A$), site (a site id from hq/sitecheck.json, its brand, or lab:<slug>) and source (adsense, affiliate:<programme>, sponsor…).",
   "multiple": { "low": 25, "high": 45 },
-  "worthSelling": null,
-  "_worthSelling": "Simon's 'worth selling' number (A$, the low end of the value range). null = not set yet; the flag stays off until he sets it.",
+  "worthSelling": 50000,
+  "_worthSelling": "Simon's 'worth selling' number (A$): the flag fires when a site's LOW estimate reaches it. Set to 50000 by Simon, 21 Nov 2026.",
   "handsOff": ["trailers", "paycalc"],
   "_handsOff": "Sites that run on autopilot (CLAUDE.md). Buyers pay more for hands-off running.",
   "emailList": {},
