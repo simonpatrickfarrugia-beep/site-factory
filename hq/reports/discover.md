@@ -1,6 +1,6 @@
 # Niche discovery (weekly)
 
-Updated 2026-11-14. Every Sunday Claude proposes new site ideas that can earn per sale or signup (ads-only ideas are skipped), and each is screened for **lots of searches with little competition**: related Google searches that contain the topic's own words, with 100+ a month **and** SEO difficulty 25 or less. 0 ideas screened this week for about US$0.00.
+Updated 2026-11-21. Every Sunday Claude proposes new site ideas that can earn per sale or signup (ads-only ideas are skipped), and each is screened for **lots of searches with little competition**: related Google searches that contain the topic's own words, with 100+ a month **and** SEO difficulty 25 or less. 0 ideas screened this week for about US$0.00.
 
 - **Easy searches**: how many related searches pass that bar (a site needs many pages, so breadth matters).
 - **Opportunity**: easy volume, weighted by money (CPC) and breadth. Use it to rank, not as a forecast.
