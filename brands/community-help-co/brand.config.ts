@@ -35,7 +35,7 @@ export default defineBrand({
     { label: 'Privacy policy', href: '/privacy-policy' },
     { label: 'Affiliate disclosure', href: '/affiliate-disclosure' },
   ],
-  footerNote: 'ABN 89 640 199 935. Private clients welcome. For NDIS, we are an unregistered provider working with self-managed and plan-managed participants. Based in Melbourne, with sessions online across Australia.',
+  footerNote: 'Private clients welcome. For NDIS, we are an unregistered provider working with self-managed and plan-managed participants. Based in Melbourne, with sessions online across Australia.',
 
   seo: {
     titleSuffix: ' | Community Help Co',

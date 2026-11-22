@@ -1,13 +1,17 @@
 [
  {
   "slug": "about",
-  "title": "About movietrailer.channel",
-  "seoTitle": "About MovieTrailer.Channel: Who Runs It and Why",
-  "description": "Who runs MovieTrailer.Channel, how we choose the films we cover, and how the site pays for itself.",
+  "title": "About MovieTrailer.Channel",
+  "seoTitle": "About MovieTrailer.Channel: Made by Trailer Lovers, for Trailer Lovers",
+  "description": "MovieTrailer.Channel is an independent site for people who love movie trailers and classic films: who runs it, how films are chosen and how it pays for itself.",
   "blocks": [
    {
     "type": "p",
-    "text": "MovieTrailer.Channel is a guide to films worth watching again, and where to watch them tonight. Each film page has the official trailer, a short write-up, the facts that help you decide (length, US rating, how it was received) and where to rent, buy or stream it in the US."
+    "text": "MovieTrailer.Channel started with a simple habit: watching one trailer, then another, then another, until it was too late to start a film. If that sounds like you, this site is for you. It's a home for movie trailers and the films behind them, built so you can go from \"I love that trailer\" to watching the film tonight."
+   },
+   {
+    "type": "p",
+    "text": "Every film page has the official trailer, a short write-up, the facts that help you decide (how long it is, the US rating, how it was received) and where to rent, buy or stream it in the US. The 24/7 trailer channel on the home page just keeps playing, the way a good trailer reel should."
    },
    {
     "type": "h2",
@@ -15,7 +19,7 @@
    },
    {
     "type": "p",
-    "text": "The site is run by Simon Farrugia in Melbourne, Australia, and published by Independent Media Network Pty Ltd. It's independent: no studio, streaming service or retailer owns it or decides what we cover."
+    "html": "MovieTrailer.Channel is run by Simon Farrugia in Melbourne, Australia, and published by <a href=\"https://imnetwork.com.au\">Independent Media Network Pty Ltd</a> (ABN <a href=\"https://abr.business.gov.au/ABN/View?abn=89640199935\" rel=\"noopener\" target=\"_blank\">89 640 199 935</a>), a small Melbourne company that builds and runs its own websites. It's independent: no studio, streaming service or retailer owns it or decides what we cover."
    },
    {
     "type": "h2",
@@ -23,7 +27,7 @@
    },
    {
     "type": "p",
-    "text": "We focus on older films people still go looking for, rather than this week's releases. A film earns a page when people are actively searching for where to watch it, and when it can actually be rented, bought or streamed. Collections are built the same way: one idea (a director, a decade, a genre night) and the films that best fit it."
+    "text": "We focus on older films people still go looking for, rather than this week's releases. A film earns a page when people are actively searching for where to watch it, and when it can actually be rented, bought or streamed. Collections are built the same way: one idea (a director, an actor, a decade, a genre night) and the films that best fit it."
    },
    {
     "type": "p",
@@ -51,7 +55,7 @@
    },
    {
     "type": "p",
-    "html": "Corrections, trailer submissions and questions: <a href=\"/contact\">contact us</a>."
+    "html": "Corrections, trailer submissions and questions: <a href=\"/contact\">contact us</a> or email <a href=\"mailto:hello@movietrailer.channel\">hello@movietrailer.channel</a>."
    }
   ]
  },

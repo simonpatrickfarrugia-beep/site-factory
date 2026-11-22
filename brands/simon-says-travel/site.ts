@@ -4,6 +4,7 @@
  * Copy: data/simon-says-travel/content.json.
  */
 import { getSingleton } from '../../src/lib/data';
+import { imnRef } from '../../src/lib/imn';
 import type { Route } from '../../src/lib/routes';
 import type { ArchiveMonth, Content, Trends } from './model';
 import { byMonth, dayLabel, headlines, indexer, monthLabel, pct, places } from './model';
@@ -22,7 +23,7 @@ export function routes(): Route[] {
   const org = {
     '@context': 'https://schema.org', '@type': 'Organization', '@id': `${SITE}/#org`, name: brandConfig.name, url: SITE,
     founder: { '@type': 'Person', name: 'Simon Farrugia' },
-    parentOrganization: { '@type': 'Organization', name: 'Independent Media Network Pty Ltd' }, areaServed: { '@type': 'Country', name: 'Australia' },
+    parentOrganization: imnRef, areaServed: { '@type': 'Country', name: 'Australia' },
   };
   const crumbs = (items: { name: string; path: string }[]) => ({
     '@context': 'https://schema.org', '@type': 'BreadcrumbList',

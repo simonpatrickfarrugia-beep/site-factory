@@ -3,6 +3,7 @@
  * Data: data/backyard-wild/*.json (see model.ts). Species get their own page only once the camera has caught them.
  */
 import { getCollection, getSingleton } from '../../src/lib/data';
+import { imnRef } from '../../src/lib/imn';
 import type { Route } from '../../src/lib/routes';
 import type { BuildStep, Content, Species, Visit } from './model';
 import { sortVisits, tally } from './model';
@@ -22,7 +23,7 @@ export function routes(): Route[] {
   const org = {
     '@context': 'https://schema.org', '@type': 'Organization', '@id': `${SITE}/#org`, name: brandConfig.name, url: SITE,
     founder: { '@type': 'Person', name: 'Simon Farrugia' },
-    parentOrganization: { '@type': 'Organization', name: 'Independent Media Network Pty Ltd' },
+    parentOrganization: imnRef,
   };
   const crumbs = (items: { name: string; path: string }[]) => ({
     '@context': 'https://schema.org', '@type': 'BreadcrumbList',
