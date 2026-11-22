@@ -943,6 +943,17 @@
     "what": "Recommendation: not yet. Google shows only 31 of 437 pages, so new pages should go to film pages first. Reply 'not yet' and I'll ask again once Google shows 65+ pages.",
     "at": "2026-11-23"
    }
+  },
+  {
+   "id": "trailers-request-indexing",
+   "kind": "do",
+   "mins": 10,
+   "what": "At the computer: Search Console → paste each URL into the top bar → Request indexing (10 a day): https://www.movietrailer.channel/discover/christmas-movies https://www.movietrailer.channel/discover/james-bond-movies-in-order https://www.movietrailer.channel/discover/christopher-nolan-feature-films https://www.movietrailer.channel/movies/the-prestige-2006 https://www.movietrailer.channel/movies/jurassic-park-1993 https://www.movietrailer.channel/movies/home-alone-1990 https://www.movietrailer.channel/movies/selma-2014 https://www.movietrailer.channel/movies/insomnia-2002 https://www.movietrailer.channel/movies/schindlers-list-1994 https://www.movietrailer.channel/movies/star-wars-episode-v---the-empire-strikes-back-1980",
+   "why": "Google shows only 31 of 489 pages; these already get Google impressions or visits, and Christmas movies peaks in December",
+   "link": "https://search.google.com/search-console?resource_id=sc-domain:movietrailer.channel",
+   "linkLabel": "Search Console",
+   "done": false,
+   "addedAt": "2026-11-23"
   }
  ],
  "notes": [
