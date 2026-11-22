@@ -31,6 +31,8 @@ IMN HQ's Growth funnel, Bottlenecks and Brand pipeline read `hq/outreach.json`. 
   `WITH t AS (SELECT id oid, stage s FROM orgs UNION ALL SELECT org_id, stage FROM touches), r AS (SELECT o.id, o.brand, o.stage, o.stage_at, MAX(CASE t.s WHEN 'drafted' THEN 1 WHEN 'sent' THEN 2 WHEN 'replied' THEN 3 WHEN 'linked' THEN 4 WHEN 'won' THEN 5 ELSE 0 END) best FROM orgs o JOIN t ON t.oid = o.id GROUP BY o.id) SELECT brand, COUNT(*) found, SUM(best>=1) drafted, SUM(best>=2) sent, SUM(best>=3) replied, SUM(best>=4) linked, SUM(stage='drafted') waiting, SUM(stage='dropped') dropped, MIN(CASE WHEN stage='drafted' THEN stage_at END) oldest_waiting, (SELECT MAX(at) FROM touches x WHERE x.brand=r.brand AND x.stage='sent') last_sent, (SELECT COUNT(*) FROM messages m WHERE m.brand=r.brand AND m.direction='in') mail_in, (SELECT COUNT(*) FROM messages m WHERE m.brand=r.brand AND m.direction='out') mail_out FROM r GROUP BY brand`
 - Sent in the last 7 days: `SELECT brand, COUNT(DISTINCT org_id) n FROM touches WHERE stage='sent' AND at > ? GROUP BY brand` (param: now minus 7 days).
 Map columns to keys: found, drafted, sent, replied, linked, waiting, dropped, oldestWaiting, lastSent, sent7, mailIn, mailOut.
+- IMN previews (top-level `imnPreviews`, read by the wallpaper's First client funnel):
+  `SELECT COUNT(*) made, SUM(status IN ('sent','free','won','lost')) sent, SUM(views > 0) viewed, SUM(status='free') free, SUM(status='won') won FROM previews` → `{ made, sent, viewed, free, won }` (zeros for NULL).
 Commit with the milestone/log commit (`[skip ci]` is NOT used for this file: HQ must rebuild to show it), message `HQ: outreach snapshot`.
 
 ## Report

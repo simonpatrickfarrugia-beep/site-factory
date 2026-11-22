@@ -576,6 +576,98 @@ export function wallpaperProps() {
   const levels: any[] = portfolio.goal?.levels ?? [];
   const level = levels.find((l) => revenue < l.target) ?? levels[levels.length - 1] ?? null;
   const todo = (portfolio.todo ?? []).filter((t: any) => !t.done).length;
+
+  // --- Wallpaper v2 (22 Nov 2026): first-client funnel, 90-day pace, one thing, affiliate status, health, value line, XP.
+  const outreach = read<any>('hq/outreach.json', { brands: {} });
+  const conf = read<any>('hq/confidence.json', { macro: { sites: [] } });
+  const milestones = read<any>('hq/milestones.json', { hit: [] });
+  const ob: Record<string, any> = outreach.brands ?? {};
+  const imn = ob.imn ?? {};
+  const pv = outreach.imnPreviews ?? null; // { made, sent, viewed, free, won } from D1 previews (morning-report refresh)
+  const WEEK_GOAL = 25; // IMN: 5 emails a weekday (OUTREACH.md: 5–10 a day per brand)
+  const funnel = {
+    found: imn.found ?? 0, sent: imn.sent ?? 0, replied: imn.replied ?? 0,
+    previews: pv ? (pv.made ?? 0) : null, viewed: pv ? (pv.viewed ?? 0) : null,
+    paid: Math.max(clients, pv?.won ?? 0),
+    sent7: imn.sent7 ?? 0, weekGoal: WEEK_GOAL, waiting: imn.waiting ?? 0,
+    sent7All: sum(Object.values(ob).map((b: any) => b.sent7 ?? 0)),
+    asOf: outreach.asOf ?? null,
+  };
+
+  // 90-day pace per site (hq/confidence.json, which applies the new-site ramp).
+  const paceById: Record<string, any> = {};
+  for (const m of conf.macro?.sites ?? []) if (m.target) paceById[m.id] = { age: m.age, views: m.views28, viewsTarget: m.target.views, pace: m.pace, money: m.money28 ?? 0, moneyTarget: m.target.moneyClicks, moneyPace: m.moneyPace };
+
+  // Today's one thing: same rule as the morning report (first open item with `ready`, decide items first; else first open).
+  const open = (portfolio.todo ?? []).filter((t: any) => !t.done);
+  const byDecide = (xs: any[]) => [...xs.filter((t) => t.kind === 'decide'), ...xs.filter((t) => t.kind !== 'decide')];
+  const pick = byDecide(open.filter((t: any) => t.ready))[0] ?? byDecide(open)[0] ?? null;
+  const short = (t: string) => { const x = String(t).split(/:\s|\s\(| — /)[0].trim(); return x.length > 80 ? x.slice(0, 78) + '…' : x; };
+  const oneThing = pick ? { what: short(pick.what), mins: pick.mins ?? null, ready: !!pick.ready } : null;
+  // Biggest opportunity: the site Google shows most with the worst click-through (titles/descriptions to fix).
+  const opp = sites.map((s: any) => {
+    const st = read<any>((cfg.sites ?? []).find((c: any) => c.id === s.id)?.stats, null);
+    const clicks = st?.totals?.gscClicks ?? 0;
+    return { name: s.name, impressions: s.impressions, clicks, ctr: s.impressions ? clicks / s.impressions : 1 };
+  }).filter((o: any) => o.impressions >= 300 && o.ctr < 0.01).sort((a: any, b: any) => b.impressions - a.impressions)[0] ?? null;
+
+  // Money clicks by channel, last 28 days (keys from CLAUDE.md).
+  const ctaOf = (b: string) => read<any>(`data/${b}/stats.json`, null)?.totals?.cta ?? {};
+  const allCtaOf = (b: string) => read<any>(`data/${b}/stats.json`, null)?.allTime?.cta ?? {};
+  const CH: [string, string, string[]][] = [['Amazon', 'trailers', ['prime', 'disc']], ['Stays', 'vic', ['book_stay']], ['Tours', 'vic', ['book_tour']], ['Cars', 'vic', ['book_car']], ['Tradify', 'trade-admin', ['tradify_offer_sent']], ['Fergus', 'trade-admin', ['partner_fergus', 'quiz_trial_fergus']]];
+  const moneyClicks = CH.map(([name, b, keys]) => ({ name, n: sum(keys.map((k) => Number(ctaOf(b)[k]) || 0)) }));
+  const moneyAllTime = sum(CH.map(([, b, keys]) => sum(keys.map((k) => Number(allCtaOf(b)[k]) || 0))));
+
+  // Affiliates with status: approved bright, applying dim, declined struck through.
+  const clean = (x: string) => String(x).replace(/ (Partner Program|Partners|Affiliate|partner programme|referral partner|Group Affiliate|Affiliate Partner).*$/i, '').replace(/^Amazon Associates US.*$/, 'Amazon').replace(/ \(.*$/, '').replace(/ \/.*$/, '');
+  const ORDER: Record<string, number> = { approved: 0, applying: 1, declined: 2 };
+  const pmap = new Map<string, string>();
+  for (const pr of progs.programs ?? []) {
+    if (!(pr.status in ORDER)) continue;
+    const k = clean(pr.name); const cur = pmap.get(k);
+    if (!cur || ORDER[pr.status] < ORDER[cur]) pmap.set(k, pr.status);
+  }
+  const affiliates = [...pmap.entries()].map(([name, status]) => ({ name, status })).sort((a, b) => ORDER[a.status] - ORDER[b.status]);
+
+  // Health: the daily brief's Health section (scripts/hq/brief.py) + its pipeline job ticks.
+  let health = { ok: true, problems: [] as string[], jobsOk: 0, jobsBad: [] as string[] };
+  const bf = join(process.cwd(), 'hq', 'brief.md');
+  if (existsSync(bf)) {
+    const b = readFileSync(bf, 'utf8');
+    const sec = (h: string) => (b.split(`## ${h}`)[1] ?? '').split('\n## ')[0];
+    const hs = sec('Health');
+    const probs = hs.split('\n').filter((l) => l.startsWith('- ')).map((l) => l.slice(2).replace(/\*\*/g, '').slice(0, 70));
+    health.ok = /All checks passing/.test(hs) || (!probs.length && !/not run/.test(hs));
+    health.problems = health.ok ? [] : probs.slice(0, 3);
+    for (const l of sec('Pipeline jobs').split('\n')) {
+      const m = l.match(/^- (\S+) `([^`]+)`/);
+      if (!m) continue;
+      if (m[1] === '✅') health.jobsOk++; else health.jobsBad.push(m[2]);
+    }
+  }
+
+  // Value: honest pre-revenue line. The low estimate reaches the sell line at worthSelling / low multiple a month profit.
+  const worth = value.worthSelling ?? 50000;
+  const lowMult = value.multiple?.low ?? 25;
+  const valueLine = { low: value.total?.low ?? 0, high: value.total?.high ?? 0, profitMonthly: value.total?.profitMonthly ?? 0, worth, profitNeeded: Math.round(worth / lowMult) };
+
+  // XP: points for the things that move IMN (shown next to the money level, which only moves with real dollars).
+  const done = (portfolio.todo ?? []).filter((t: any) => t.done).length;
+  const xpParts = [
+    { what: 'emails sent', n: sum(Object.values(ob).map((b: any) => b.sent ?? 0)), each: 10 },
+    { what: 'replies', n: sum(Object.values(ob).map((b: any) => b.replied ?? 0)), each: 25 },
+    { what: 'links / yeses', n: sum(Object.values(ob).map((b: any) => b.linked ?? 0)), each: 50 },
+    { what: 'money clicks', n: moneyAllTime, each: 20 },
+    { what: 'milestones', n: (milestones.hit ?? []).length, each: 50 },
+    { what: 'to-dos done', n: done, each: 15 },
+    { what: 'paying clients', n: funnel.paid, each: 500 },
+  ];
+  const xpTotal = sum(xpParts.map((p) => p.n * p.each));
+  const RANKS: [number, string][] = [[0, 'Rookie'], [500, 'Hustler'], [1500, 'Operator'], [3000, 'Builder'], [5000, 'Dealmaker'], [8000, 'Mogul'], [12000, 'Media baron']];
+  let ri = 0; for (let i = 0; i < RANKS.length; i++) if (xpTotal >= RANKS[i][0]) ri = i;
+  const nextR = RANKS[ri + 1] ?? null;
+  const xp = { total: xpTotal, rank: RANKS[ri][1], next: nextR ? nextR[1] : null, from: RANKS[ri][0], to: nextR ? nextR[0] : xpTotal, parts: xpParts };
+
   return {
     builtAt: new Date().toISOString(),
     kpis: {
@@ -584,6 +676,7 @@ export function wallpaperProps() {
       value: value.total ?? { low: 0, high: 0 }, labs: labs.length, todo, sites: sites.length, clients,
       avgScore: sites.filter((s: any) => s.score !== null).length ? Math.round(sum(sites.filter((s: any) => s.score !== null).map((s: any) => s.score)) / sites.filter((s: any) => s.score !== null).length) : null,
     },
-    sites, labs, workers, jobs, partners: partnerNames,
+    sites: sites.map((x: any) => ({ ...x, pace: paceById[x.id] ?? null })), labs, workers, jobs, partners: partnerNames,
+    funnel, oneThing, opp, moneyClicks, affiliates, health, valueLine, xp, todoOpen: open.length, todoReady: open.filter((t: any) => t.ready).length,
   };
 }

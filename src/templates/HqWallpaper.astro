@@ -3,9 +3,11 @@
  * Live wallpaper: the whole of IMN on one 16:9 screen (/hq/wallpaper on the trailer site, private, no header/footer).
  * Data: wallpaperProps() in src/lib/hq.ts, rebuilt whenever data lands. Reloads itself every 30 minutes; the clock
  * and the "now" marker on the day timeline move every minute. Set as a desktop wallpaper with Lively Wallpaper (Windows).
- * Left 7vw stays empty for desktop icons.
+ * Left 7vw stays empty for desktop icons. v2 (22 Nov 2026): one thing + biggest opportunity, First client funnel (hq/outreach.json),
+ * 90-day pace bars (hq/confidence.json), affiliate status + money clicks, health light, worker last-run, pre-revenue value line, XP.
  */
-interface Site { id: string; name: string; domain: string; icon: string; mode: string; grade: string | null; score: number | null; visits: number; impressions: number; daily: number[]; value: { low: number; high: number } | null }
+interface Pace { age: number; views: number; viewsTarget: number; pace: number | null; money: number; moneyTarget: number; moneyPace: number | null }
+interface Site { id: string; name: string; domain: string; icon: string; mode: string; grade: string | null; score: number | null; visits: number; impressions: number; daily: number[]; value: { low: number; high: number } | null; pace: Pace | null }
 interface Props {
   builtAt: string;
   kpis: { revenue: number; level: string; visits: number; impressions: number; value: { low: number; high: number }; labs: number; todo: number; sites: number; clients: number; avgScore: number | null };
@@ -14,6 +16,15 @@ interface Props {
   workers: { name: string; skill: string; when: string; status: string; last: string | null; note: string }[];
   jobs: { name: string; min: number; kind: 'code' | 'ai'; often?: string }[];
   partners: string[];
+  funnel: { found: number; sent: number; replied: number; previews: number | null; viewed: number | null; paid: number; sent7: number; weekGoal: number; waiting: number; sent7All: number; asOf: string | null };
+  oneThing: { what: string; mins: number | null; ready: boolean } | null;
+  opp: { name: string; impressions: number; clicks: number; ctr: number } | null;
+  moneyClicks: { name: string; n: number }[];
+  affiliates: { name: string; status: string }[];
+  health: { ok: boolean; problems: string[]; jobsOk: number; jobsBad: string[] };
+  valueLine: { low: number; high: number; profitMonthly: number; worth: number; profitNeeded: number };
+  xp: { total: number; rank: string; next: string | null; from: number; to: number; parts: { what: string; n: number; each: number }[] };
+  todoOpen: number; todoReady: number;
 }
 const p = Astro.props;
 const n = (v: number) => v.toLocaleString('en-AU');
@@ -24,6 +35,17 @@ const spark = (xs: number[]) => {
   const max = Math.max(1, ...xs);
   return xs.map((v, i) => `${((i / (xs.length - 1)) * 100).toFixed(1)},${(22 - (v / max) * 20).toFixed(1)}`).join(' ');
 };
+const pct = (v: number | null) => (v === null ? '–' : Math.round(v * 100) + '%');
+const paceCls = (v: number | null) => (v === null ? '' : v >= 1 ? 'ok' : v >= 0.6 ? 'warn' : 'bad');
+const bar = (have: number, goal: number) => Math.min(100, goal ? (have / goal) * 100 : 0).toFixed(1);
+const f = p.funnel;
+const fmax = Math.max(1, f.found);
+const stages = [
+  { k: 'Found', v: f.found }, { k: 'Emailed', v: f.sent }, { k: 'Replied', v: f.replied },
+  { k: 'Previews', v: f.previews }, { k: 'Paid', v: f.paid },
+];
+const xpPct = p.xp.next ? (((p.xp.total - p.xp.from) / Math.max(1, p.xp.to - p.xp.from)) * 100).toFixed(1) : '100';
+const moneyTotal = p.moneyClicks.reduce((a, b) => a + b.n, 0);
 const codeEngines = [...new Set(p.jobs.filter((j) => j.kind === 'code').map((j) => j.name))];
 // Timeline: daily jobs only (weekly/monthly ones are listed under it). Jobs within 16 minutes share one marker with
 // their names stacked; each marker's label goes in the lowest row where it won't overlap the previous one.
@@ -55,25 +77,34 @@ const rareText = [...new Map(rare.map((j) => [j.name, `${j.name} (${j.often})`])
       <span class="wp__mark">IMN</span>
       <div><strong>Independent Media Network</strong><span>Human run, AI powered · the factory, live</span></div>
     </div>
+    <div class="wp__focus">
+      {p.oneThing && <div class="focus focus--do"><em>Today's one thing</em><b>{p.oneThing.what}</b>{!!p.oneThing.mins && <span>{p.oneThing.mins} min{p.oneThing.ready ? ' · ready to approve' : ''}</span>}</div>}
+      {p.opp && <div class="focus focus--opp"><em>Biggest opportunity</em><b>{p.opp.name}: shown {n(p.opp.impressions)}× in Google, {p.opp.clicks} click{p.opp.clicks === 1 ? '' : 's'}</b><span>{(p.opp.ctr * 100).toFixed(1)}% click rate · sharper titles = more visits</span></div>}
+    </div>
     <div class="wp__clock"><b id="clock">--:--</b><span id="date"></span></div>
   </header>
 
   <section class="wp__kpis">
-    <div class="k k--gold"><b>{aud(p.kpis.revenue)}</b><span>revenue to date · {p.kpis.level}</span></div>
+    <div class="k k--gold k--xp"><b>{aud(p.kpis.revenue)}</b><span>revenue to date · {p.kpis.level}</span>
+      <div class="xp" title={p.xp.parts.map((x) => `${x.n} ${x.what} × ${x.each}`).join(' · ')}><div class="xp__bar"><i style={`width:${xpPct}%`}></i></div><small><b>{n(p.xp.total)} XP</b> · {p.xp.rank}{p.xp.next ? ` · ${n(p.xp.to - p.xp.total)} to ${p.xp.next}` : ''}</small></div>
+    </div>
     <div class="k"><b>{n(p.kpis.visits)}</b><span>visits, last 28 days</span></div>
     <div class="k"><b>{n(p.kpis.impressions)}</b><span>times shown in Google</span></div>
     <div class="k"><b>{p.kpis.sites}</b><span>sites{p.kpis.clients ? ` + ${p.kpis.clients} client` : ''} · avg {p.kpis.avgScore ?? '–'}/100</span></div>
-    <div class="k"><b>{aud(p.kpis.value.low)}–{aud(p.kpis.value.high)}</b><span>portfolio value (estimate)</span></div>
+    {p.valueLine.high > 0
+      ? <div class="k"><b>{aud(p.valueLine.low)}–{aud(p.valueLine.high)}</b><span>portfolio value (estimate) · sell line {aud(p.valueLine.worth)}</span></div>
+      : <div class="k"><b>Pre-revenue</b><span>value starts with profit · sell line {aud(p.valueLine.worth)} ≈ {aud(p.valueLine.profitNeeded)}/mo profit</span></div>}
     <div class="k"><b>{p.kpis.labs}</b><span>IMN Labs live</span></div>
-    <div class="k"><b>{p.kpis.todo}</b><span>on Simon's list</span></div>
+    <div class="k"><b>{p.kpis.todo}</b><span>on Simon's list{p.todoReady ? ` · ${p.todoReady} ready to approve` : ''}</span></div>
   </section>
 
   <div class="wp__flow">
     <section class="col col--engines" data-node="engines">
-      <h2>Engines</h2>
+      <h2>Engines <span class={`hl hl--${p.health.ok && !p.health.jobsBad.length ? 'ok' : 'bad'}`}>{p.health.ok && !p.health.jobsBad.length ? `all healthy · ${p.health.jobsOk} jobs ✓` : `${p.health.problems.length + p.health.jobsBad.length} problem${p.health.problems.length + p.health.jobsBad.length === 1 ? '' : 's'}`}</span></h2>
+      {(!p.health.ok || p.health.jobsBad.length > 0) && <ul class="probs">{[...p.health.problems, ...p.health.jobsBad.map((j) => `job ${j} failed`)].slice(0, 3).map((x) => <li>{x}</li>)}</ul>}
       <h3>AI workers</h3>
       <ul class="workers">
-        {p.workers.map((w) => <li class={`w w--${w.status}`} title={w.note}><i></i><span>{w.name}</span><em>{w.when}</em></li>)}
+        {p.workers.map((w) => <li class={`w w--${w.status}`} title={w.note}><i></i><span>{w.name}</span><em>{w.when}{w.last ? <> · <time data-ago={w.last} data-st={w.status}></time></> : <> · {/demand|decision/i.test(w.when) ? 'waits for a trigger' : 'no run logged'}</>}</em></li>)}
       </ul>
       <h3>Code engines</h3>
       <ul class="chips">{codeEngines.map((e) => <li>{e}</li>)}</ul>
@@ -85,7 +116,15 @@ const rareText = [...new Map(rare.map((j) => [j.name, `${j.name} (${j.often})`])
         <div class="hub__core"><b>IMN HQ</b><span>Simon + Claude</span></div>
       </div>
       <ul class="hub__out">
-        <li data-node="outreach"><b>Outreach</b><span>Radar → drafts → Simon sends</span></li>
+        <li data-node="outreach" class="fn">
+          <b>First client</b>
+          <div class="fn__rows">
+            {stages.map((st) => <div class="fn__row"><span>{st.k}</span><div class="fn__bar"><i style={`width:${st.v === null ? 0 : Math.max(st.v ? 4 : 0, (st.v / fmax) * 100)}%`}></i></div><b>{st.v === null ? '–' : st.v}</b></div>)}
+          </div>
+          <div class={`fn__week fn__week--${f.sent7 >= f.weekGoal ? 'ok' : f.sent7 >= f.weekGoal * 0.6 ? 'warn' : 'bad'}`}><span>IMN emails this week</span><b>{f.sent7} / {f.weekGoal}</b></div>
+          <div class="fn__bar fn__bar--wk"><i style={`width:${bar(f.sent7, f.weekGoal)}%`}></i></div>
+          <span class="fn__note">{f.waiting ? `${f.waiting} draft${f.waiting === 1 ? '' : 's'} waiting · ` : ''}all brands {f.sent7All} sent this week</span>
+        </li>
         <li data-node="labs"><b>IMN Labs</b><span>{p.labs.length ? p.labs.map((l) => l.name).join(' · ') : 'none live'}</span></li>
       </ul>
     </section>
@@ -95,10 +134,16 @@ const rareText = [...new Map(rare.map((j) => [j.name, `${j.name} (${j.often})`])
       <div class="sites">
         {p.sites.map((s) => (
           <article class="site" data-node={`site-${s.id}`}>
-            <header><span class="site__ic">{s.icon}</span><b>{s.name}</b>{s.grade && <span class={`g g--${s.grade}`}>{s.grade}</span>}</header>
+            <header><span class="site__ic">{s.icon}</span><b>{s.name}</b>{s.grade && s.grade !== 'A' && <span class={`g g--${s.grade}`}>{s.grade}</span>}{s.pace && <span class={`pc pc--${paceCls(s.pace.pace)}`}>{pct(s.pace.pace)} of pace</span>}</header>
             <p class="site__dom">{s.domain} · {s.mode}</p>
             <div class="site__nums"><span><b>{n(s.visits)}</b> visits</span><span><b>{n(s.impressions)}</b> in Google</span></div>
-            {s.daily.length > 1 && <svg class="site__spark" viewBox="0 0 100 24" preserveAspectRatio="none"><polyline points={spark(s.daily)} /></svg>}
+            {s.pace
+              ? <div class="tg">
+                  <div class="tg__row"><span>Visits</span><div class="tg__bar"><i class={paceCls(s.pace.pace)} style={`width:${bar(s.pace.views, s.pace.viewsTarget)}%`}></i></div><em>{n(s.pace.views)} / {n(s.pace.viewsTarget)}</em></div>
+                  <div class="tg__row"><span>Money</span><div class="tg__bar"><i class={paceCls(s.pace.moneyPace)} style={`width:${bar(s.pace.money, s.pace.moneyTarget)}%`}></i></div><em>{s.pace.money} / {s.pace.moneyTarget}</em></div>
+                </div>
+              : null}
+            {!s.pace && s.daily.length > 1 && <svg class="site__spark" viewBox="0 0 100 24" preserveAspectRatio="none"><polyline points={spark(s.daily)} /></svg>}
           </article>
         ))}
       </div>
@@ -106,7 +151,8 @@ const rareText = [...new Map(rare.map((j) => [j.name, `${j.name} (${j.often})`])
 
     <section class="col col--money" data-node="money">
       <h2>Money</h2>
-      <div class="m"><b>Affiliates</b><ul class="chips chips--gold">{p.partners.map((x) => <li>{x}</li>)}</ul></div>
+      <div class="m"><b>Money clicks <small>28 days · {moneyTotal}</small></b><ul class="mc">{p.moneyClicks.map((c) => <li class={c.n ? 'on' : ''}><span>{c.name}</span><b>{c.n}</b></li>)}</ul></div>
+      <div class="m"><b>Affiliates <small>{p.affiliates.filter((a) => a.status === 'approved').length} approved</small></b><ul class="chips chips--gold">{p.affiliates.map((a) => <li class={`af af--${a.status}`} title={a.status}>{a.name}{a.status === 'applying' ? ' · pending' : ''}</li>)}</ul></div>
       <div class="m"><b>Ads</b><ul class="chips chips--gold"><li>AdSense</li></ul></div>
       <div class="m"><b>IMN websites</b><span>free site → $99 + GST a month</span></div>
       <div class="m m--goal"><b>Next level</b><span>{p.kpis.level}</span></div>
@@ -160,6 +206,42 @@ const rareText = [...new Map(rare.map((j) => [j.name, `${j.name} (${j.often})`])
   .k { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 1.2vh .9vw; backdrop-filter: blur(6px); }
   .k b { display: block; font-size: 1.55em; font-weight: 700; } .k span { color: var(--muted); font-size: .9em; }
   .k--gold b { color: var(--gold); }
+  .xp { margin-top: .6vh; } .xp__bar { height: .45em; border-radius: 99px; background: rgba(255,255,255,.08); overflow: hidden; }
+  .xp__bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--gold), #FFD58A); box-shadow: 0 0 8px var(--gold); }
+  .xp small { display: block; margin-top: .3vh; color: var(--muted); font-size: .82em; } .xp small b { display: inline; font-size: 1em; color: #FFD58A; }
+  .wp__focus { flex: 1; display: flex; gap: .8vw; justify-content: center; margin: 0 2vw; }
+  .focus { max-width: 30vw; padding: .9vh .9vw; border-radius: 12px; border: 1px solid var(--line); background: var(--panel); }
+  .focus em { display: block; font-style: normal; font-size: .75em; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; }
+  .focus b { display: block; font-size: 1.05em; margin: .2vh 0; } .focus span { color: var(--muted); font-size: .85em; }
+  .focus--do { border-color: rgba(242,169,59,.5); box-shadow: 0 0 24px rgba(242,169,59,.15); } .focus--do em { color: var(--gold); }
+  .focus--opp em { color: var(--blue); }
+  .hl { margin-left: .5em; font-size: .78em; letter-spacing: .04em; text-transform: none; padding: .1em .5em; border-radius: 99px; }
+  .hl--ok { color: var(--good); background: rgba(74,222,128,.1); } .hl--bad { color: var(--bad); background: rgba(248,113,113,.15); animation: pulse 1.6s ease-in-out infinite; }
+  @keyframes pulse { 50% { box-shadow: 0 0 14px var(--bad); } }
+  .probs li { color: var(--bad); font-size: .82em; padding: .2vh 0; }
+  .w :global(time.fail) { color: var(--bad); font-weight: 700; } .w :global(time.stale) { color: var(--warn); }
+  .w--fail span { color: var(--bad); }
+  .fn { text-align: left !important; } .fn > b { text-align: center; margin-bottom: .6vh; color: var(--gold); }
+  .fn__row { display: grid; grid-template-columns: 4.6em 1fr 2em; align-items: center; gap: .4em; font-size: .85em; padding: .15vh 0; }
+  .fn__row span { color: var(--muted); } .fn__row b { text-align: right; }
+  .fn__bar { height: .5em; border-radius: 99px; background: rgba(255,255,255,.07); overflow: hidden; }
+  .fn__bar i { display: block; height: 100%; background: linear-gradient(90deg, rgba(242,169,59,.6), var(--gold)); }
+  .fn__week { display: flex; justify-content: space-between; margin-top: .9vh; font-size: .85em; } .fn__week span { color: var(--muted); }
+  .fn__week--ok b { color: var(--good); } .fn__week--warn b { color: var(--warn); } .fn__week--bad b { color: var(--bad); }
+  .fn__bar--wk { margin-top: .3vh; } .fn__bar--wk i { background: linear-gradient(90deg, var(--blue), #A9CBFF); }
+  .fn__note { display: block; margin-top: .5vh; font-size: .78em !important; text-align: center; }
+  .pc { font-size: .78em; font-weight: 700; padding: .05em .45em; border-radius: 6px; }
+  .pc--ok { color: var(--good); background: rgba(74,222,128,.12); } .pc--warn { color: var(--warn); background: rgba(251,191,36,.12); } .pc--bad { color: var(--bad); background: rgba(248,113,113,.12); }
+  .tg { margin-top: .5vh; display: grid; gap: .25vh; }
+  .tg__row { display: grid; grid-template-columns: 3.4em 1fr 5.4em; align-items: center; gap: .4em; font-size: .8em; }
+  .tg__row span { color: var(--muted); } .tg__row em { font-style: normal; text-align: right; color: var(--muted); }
+  .tg__bar { height: .45em; border-radius: 99px; background: rgba(255,255,255,.07); overflow: hidden; }
+  .tg__bar i { display: block; height: 100%; background: var(--blue); } .tg__bar i.ok { background: var(--good); } .tg__bar i.warn { background: var(--warn); } .tg__bar i.bad { background: var(--bad); }
+  .tg__none { margin: .5vh 0 0; font-size: .8em; color: rgba(140,150,173,.7); }
+  .m small { font-weight: 400; color: var(--muted); font-size: .85em; margin-left: .3em; }
+  .mc { display: grid; grid-template-columns: 1fr 1fr; gap: .25vh .6vw; } .mc li { display: flex; justify-content: space-between; font-size: .85em; color: var(--muted); }
+  .mc li.on { color: var(--text); } .mc li.on b { color: var(--gold); }
+  .af--applying { opacity: .5; border-style: dashed !important; } .af--declined { opacity: .35; text-decoration: line-through; }
 
   .wp__flow { display: grid; grid-template-columns: 1.05fr .8fr 1.9fr .95fr; gap: 2.2vw; min-height: 0; }
   .col { min-height: 0; }
@@ -191,7 +273,7 @@ const rareText = [...new Map(rare.map((j) => [j.name, `${j.name} (${j.often})`])
   .g--C { background: rgba(251,191,36,.15); color: var(--warn); } .g--D, .g--F { background: rgba(248,113,113,.15); color: var(--bad); }
   .site__dom { margin: .2vh 0 .5vh; color: var(--muted); font-size: .85em; }
   .site__nums { display: flex; gap: 1vw; font-size: .9em; color: var(--muted); } .site__nums b { color: var(--text); }
-  .site__spark { width: 100%; height: 2.2vh; margin-top: .3vh; } .site__spark polyline { fill: none; stroke: var(--blue); stroke-width: 1.6; vector-effect: non-scaling-stroke; }
+  .site__spark { width: 100%; height: 1.6vh; margin-top: .3vh; } .site__spark polyline { fill: none; stroke: var(--blue); stroke-width: 1.6; vector-effect: non-scaling-stroke; }
 
   .m { padding: 1vh 0; border-bottom: 1px solid var(--line); } .m > b { display: block; margin-bottom: .5vh; } .m > span { color: var(--muted); font-size: .9em; }
   .m--goal { border: 0; } .m--goal span { color: var(--gold); font-weight: 700; font-size: 1em; }
@@ -243,7 +325,15 @@ const rareText = [...new Map(rare.map((j) => [j.name, `${j.name} (${j.often})`])
     ['outreach', 'labs'].forEach(function (k) { var b = r(k); if (b) out += path(hubB, { x: b.left + b.width / 2, y: b.top }, 'b'); });
     svg.innerHTML = out;
   }
-  tick(); setInterval(tick, 30000);
+  function agos() {
+    document.querySelectorAll('time[data-ago]').forEach(function (t) {
+      var h = (Date.now() - Date.parse(t.getAttribute('data-ago'))) / 3600000;
+      var txt = h < 1 ? Math.max(1, Math.round(h * 60)) + 'm ago' : h < 48 ? Math.round(h) + 'h ago' : Math.round(h / 24) + 'd ago';
+      var st = t.getAttribute('data-st');
+      t.textContent = (st === 'fail' ? 'failed ' : 'ran ') + txt; t.className = st;
+    });
+  }
+  tick(); agos(); setInterval(function () { tick(); agos(); }, 30000);
   window.addEventListener('load', wires); window.addEventListener('resize', wires); setTimeout(wires, 300);
   // Pick up new builds (sites, data, schedules) every 30 minutes.
   setTimeout(function () { location.reload(); }, 30 * 60 * 1000);
