@@ -14,13 +14,6 @@ export const TEXT_TEMPLATE =
   `{organisation} has great Google reviews but no website yet, and I'd love to build you a simple one for free, yours to keep. ` +
   `Could I give you a quick 5-min call? Weeknights or Saturday suit me. Reply STOP to opt out.`;
 
-// Keep it short (about 2 SMS), honest, and about booking a call at a time that suits them.
-// {organisation} is filled in by HQ. Simon can edit before sending.
-export const TEXT_TEMPLATE =
-  `Hi, it's Simon from Independent Media Network Pty Ltd (imnetwork.com.au), a Melbourne web crew. ` +
-  `{organisation} has great Google reviews but no website yet, so I'd love to build you a simple one for free, yours to keep. ` +
-  `Could I give you a quick 5-minute call to explain? Weeknights or Saturday suit me, or tell me what works for you. ` +
-  `Reply STOP and I won't contact you again.`;
 
 export async function listTexts(db: D1Database) {
   const rows = (await db.prepare(`
