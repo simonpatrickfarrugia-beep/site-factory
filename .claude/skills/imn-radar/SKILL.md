@@ -22,8 +22,8 @@ Data: Cloudflare D1 (see `CLAUDE.md`), via the Cloudflare D1 query tool.
 - Real organisations checked on their own website (exists, right place, still operating). Never invent anything.
 - Every trigger verified on the source page with its real date. Listing/archive pages often show TODAY's date in the header; that
   is not the event date. Past events don't count as "why now" (see re-surfacing).
-- Skip anyone already in the database (compare name, website domain and email loosely across ALL brands), any email in contacts with
-  `opted_out_at`, and organisations whose page already links to the brand's domain.
+- Skip anyone already in the database (compare name, website domain, email and phone loosely across ALL brands), any email in contacts with
+  `opted_out_at`, any org with `sms_opted_out_at`, and organisations whose page already links to the brand's domain.
 - Only INSERT into orgs, contacts, touches; and upsert hq_kv keys `radar_playbook` and `radar_last_run`. Never UPDATE or DELETE anything else. In the repo, only `hq/runs.json` (run log).
 
 ## Step 1 — Read
@@ -94,7 +94,14 @@ trigger_date = next date and snooze_until = 6 weeks before it (ISO). Snoozed add
     manages). Never a staff member's personal address, never guessed. Skip chains, franchises and businesses with a decent modern site.
   - Gap wording is kind and factual ("your Google listing doesn't link to a website yet", "the website link on your Google listing
     goes to a page that no longer works"). Never mock their current site; never promise rankings, leads, calls or revenue.
-  - No website is the point for IMN, so "no website of its own" is NOT a dead end here; no published email is.
+  - No website is the point for IMN, so "no website of its own" is NOT a dead end here.
+  - PHONE-ONLY (22 Nov 2026, Simon works full time and texts to book calls): if the business publishes no email but does publish a
+    business phone number (its Google listing, its own Facebook/Instagram), don't drop it. Insert it with ask = 'text', phone = the
+    number exactly as published, phone_source = the page showing it, no contacts row, draft_subject/draft_body NULL, and `why` written
+    as the call angle (one specific, kind reason to talk). It shows in IMN HQ → Today → "Text to book a call", where Simon texts from
+    his own phone. Skip if the listing or page says no marketing/sales calls or texts, or if orgs.sms_opted_out_at is set for that
+    business anywhere. At most 3 phone-only adds per run, and they don't count toward Needed (email finds come first).
+    Insert: add `phone, phone_source` to the column list of the orgs INSERT (values via params, like everything else).
   - evidence_url = the page showing the gap (their Google Maps link or site); source_url = the page with the email; ask = 'preview'.
   - MIX (18 Nov, Simon: "don't just do tradies"): spread IMN picks across industries. Never more than 1 of any 3 IMN picks from
     trades/trade-adjacent; rotate through hospitality, beauty, retail, fitness, creative, auto and personal. Non-trade picks use

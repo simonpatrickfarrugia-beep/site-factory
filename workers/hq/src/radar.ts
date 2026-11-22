@@ -27,9 +27,10 @@ export async function radar(db: D1Database, targetLabel: (brand: string, key: st
       c.name AS contact_name, c.role AS contact_role, c.email AS contact_email
     FROM orgs o LEFT JOIN contacts c ON c.id = (SELECT id FROM contacts WHERE org_id = o.id ORDER BY id LIMIT 1)
     WHERE o.found_by = 'radar' AND o.reviewed_at IS NULL AND (o.snooze_until IS NULL OR o.snooze_until <= ?)
+      AND COALESCE(o.ask, '') != 'text' -- phone-only finds live in Today → Text to book a call (texts.ts)
     ORDER BY o.score DESC, o.created_at
   `).bind(now).all()).results.map((o) => ({ ...o, targetLabel: targetLabel(String(o.brand), (o.target as string) ?? null) }));
-  const later = (await db.prepare(`SELECT COUNT(*) AS n FROM orgs WHERE found_by = 'radar' AND reviewed_at IS NULL AND snooze_until > ?`).bind(now).first<{ n: number }>())?.n ?? 0;
+  const later = (await db.prepare(`SELECT COUNT(*) AS n FROM orgs WHERE found_by = 'radar' AND reviewed_at IS NULL AND snooze_until > ? AND COALESCE(ask, '') != 'text'`).bind(now).first<{ n: number }>())?.n ?? 0;
   const reviews = (await db.prepare(`
     SELECT brand, COALESCE(review, 'later') AS review, COUNT(*) AS n FROM orgs
     WHERE found_by = 'radar' AND (reviewed_at IS NOT NULL OR snooze_until IS NOT NULL) GROUP BY brand, review

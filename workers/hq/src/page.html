@@ -465,8 +465,9 @@ async function load() {
     const [board, summary, prospects, replies, pipeline, affiliates, radar, needs] = await Promise.all([api('/api/board'), api('/api/summary'), api('/api/prospects'), api('/api/replies'), api('/api/pipeline'), api('/api/affiliates'), api('/api/radar'), api('/api/needs')]);
     const send = await api('/api/send/status').catch(() => null);
     const hq = await api('/api/hq').catch(() => null);
+    const texts = await api('/api/texts').catch(() => null);
     const [checks, apps, conf, jobs, value] = await Promise.all([api('/api/sitecheck').catch(() => null), api('/api/apps').catch(() => null), api('/api/confidence').catch(() => null), api('/api/jobs').catch(() => null), api('/api/value').catch(() => null)]);
-    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar, needs, send, hq, checks, apps, conf, value, jobs: jobs?.jobs || [] });
+    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar, needs, send, hq, texts, checks, apps, conf, value, jobs: jobs?.jobs || [] });
     $('#updated').textContent = 'Targets scored ' + new Date(prospects.generated).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
     render();
     const deep = location.hash.match(/^#app=([a-z0-9-]+)$/); // e.g. …/#app=vic opens that app (links from the morning report)
@@ -1010,6 +1011,7 @@ function renderToday() {
   const segHtml = seg.length ? `<div class="tbl"><table><thead><tr><th>Brand · type</th><th class="num">Found</th><th class="num">Drafted</th><th class="num">Dropped</th><th class="num">Replied</th><th class="num">Linked</th></tr></thead><tbody>${seg.map((x) => `<tr><td>${esc(brandName(x.brand))} · ${esc((state.prospects.brands.find((b) => b.key === x.brand)?.top.find((t) => t.segment === x.segment) || {}).segmentLabel || x.segment)}</td><td class="num">${x.found}</td><td class="num">${x.drafted}</td><td class="num">${x.dropped}</td><td class="num">${x.replied}</td><td class="num">${x.linked}</td></tr>`).join('')}</tbody></table></div>` : '';
   $('#view').innerHTML = `<div class="pgrid">
     ${renderFollowThrough()}
+    ${renderTexts()}
     <div class="today-head"><h2>Today's prospects</h2><span class="meta">${q.length} to review${r.later ? ' · ' + r.later + ' saved for later' : ''}</span></div>
     ${q.length ? `<div class="rlist2">${cards}</div>` : empty}
     ${learned}${coach}
@@ -1019,6 +1021,67 @@ function renderToday() {
   $('#coach-add').onclick = addRule;
   $('#coach-in').onkeydown = (e) => { if (e.key === 'Enter') { e.preventDefault(); addRule(); } };
 }
+// ---------- Text to book a call (phone-only prospects; texts.ts) ----------
+// Simon sends each text from his own phone: on a phone the button opens Messages with the text filled in;
+// on a computer he copies the number and text. HQ only records what he marks.
+const smsNumber = (p) => { const d = String(p || '').replace(/[^\d+]/g, ''); return d.startsWith('0') ? '+61' + d.slice(1) : d; };
+const textBody = (o) => ((state.texts && state.texts.template) || '').replace(/\{organisation\}/g, o.name);
+function renderTexts() {
+  const items = ((state.texts && state.texts.items) || []).filter((o) => inBrand(o.brand));
+  if (!items.length) return '';
+  const fresh = items.filter((o) => !o.texted_at && o.stage === 'found');
+  const out = items.filter((o) => o.texted_at || o.stage === 'replied');
+  const card = (o) => `
+    <article class="rcard" style="--c:${color(o.brand)}">
+      <div class="rtop">
+        <div class="rscore">${esc(o.score ?? '–')}<small>FIT</small></div>
+        <div><h3>${esc(o.name)}</h3><div class="meta">${esc(o.region || '')} · ${esc(o.phone)}${o.texted_at ? ' · texted ' + esc(ago(o.texted_at)) : ''}${o.stage === 'replied' ? ' · <b>texted back</b>' : ''}</div></div>
+      </div>
+      ${o.gap ? `<p class="rwhy"><b>Their gap</b>${esc(o.gap)}</p>` : ''}
+      ${o.why ? `<p class="rwhy"><b>Call angle</b>${esc(o.why)}</p>` : ''}
+      ${o.phone_source ? `<p class="meta" style="margin:0"><a href="${esc(o.phone_source)}" target="_blank" rel="noopener">Where the number is published ↗</a></p>` : ''}
+      <div class="ractions">
+        ${o.texted_at ? `<button class="btn" data-tx="${o.id}">Text again</button>` : `<button class="btn" data-tx="${o.id}">Text to book a call</button>`}
+        ${o.texted_at || o.stage === 'replied' ? `<button class="btn ghost" data-txemail="${o.id}">Got their email</button>
+        ${o.stage !== 'replied' ? `<button class="btn ghost" data-txreplied="${o.id}">They texted back</button>` : ''}
+        <button class="btn ghost" data-txstop="${o.id}">STOP / no</button>` : `<button class="btn ghost" data-txlater="${o.id}">Later</button>`}
+      </div>
+    </article>`;
+  return `<div class="today-head"><h2>Text to book a call</h2><span class="meta">${fresh.length} to text${out.length ? ' · ' + out.length + ' waiting' : ''}</span></div>
+    <p class="empty" style="padding:0 0 8px">No email online, just a phone number. Text from your phone to book a call at a time that suits you both. Every text names IMN and has "Reply STOP". If they reply STOP, tap STOP straight away.</p>
+    <div class="rlist2">${fresh.slice(0, 5).map(card).join('')}${out.map(card).join('')}</div>`;
+}
+function openText(o) {
+  const dlg = $('#sheet'); const body = $('#sheet-body');
+  const num = smsNumber(o.phone); const msg = textBody(o);
+  body.innerHTML = `
+    <header><div><h2 id="sheet-title">Text ${esc(o.name)}</h2><span class="pill" style="margin-top:6px">${esc(o.phone)}</span></div><button class="close" id="close">Close</button></header>
+    <div class="mail">
+      <div class="field"><label for="t-body">Text (edit if you like)</label><textarea id="t-body" style="min-height:170px">${esc(msg)}</textarea></div>
+      <p class="meta" id="t-len" style="margin:0"></p>
+    </div>
+    <div class="row go-bar">
+      <a class="btn" id="t-open" href="#">Open in Messages</a>
+      <button class="btn ghost" id="t-copy">Copy text</button>
+      <button class="btn ghost" id="t-num">Copy number</button>
+    </div>
+    <div class="row" style="margin-top:10px"><button class="btn" id="t-sent">I sent it</button></div>
+    <p class="empty" style="padding:0">Keep "Independent Media Network" and "Reply STOP" in the text: the Spam Act needs the sender named and a working opt-out. Text at a sensible hour. On a computer, copy the number and text into your phone.</p>`;
+  const upd = () => { const t = $('#t-body').value; $('#t-len').textContent = t.length + ' characters (about ' + Math.max(1, Math.ceil(t.length / 153)) + ' SMS)' + (/reply stop/i.test(t) ? '' : ' · ⚠ add "Reply STOP"'); $('#t-open').href = 'sms:' + num + '?&body=' + encodeURIComponent(t); };
+  upd(); $('#t-body').oninput = upd;
+  if (!dlg.open) dlg.showModal();
+  $('#close').onclick = () => dlg.close();
+  $('#t-copy').onclick = async () => { try { await navigator.clipboard.writeText($('#t-body').value); toast('Text copied'); } catch (e) { toast('Copy failed: select the text and copy it'); } };
+  $('#t-num').onclick = async () => { try { await navigator.clipboard.writeText(num); toast('Number copied'); } catch (e) { toast(num); } };
+  $('#t-sent').onclick = async () => {
+    if (!/reply stop/i.test($('#t-body').value)) { toast('Add "Reply STOP" first'); return; }
+    try { await api('/api/orgs/' + o.id + '/text', { action: 'sent' }); toast('Marked as texted'); dlg.close(); load(); } catch (e) { toast(e.message); }
+  };
+}
+async function textMark(id, action, extra) {
+  try { await api('/api/orgs/' + id + '/text', Object.assign({ action }, extra || {})); toast({ replied: 'Marked: texted back', email: 'Email saved. Next: "preview for <business>" in chat', stop: 'Opted out. Never contacted again', later: 'Hidden for 3 weeks' }[action] || 'Saved'); load(); } catch (e) { toast(e.message); }
+}
+
 async function radarReview(id, review, reason) {
   try { await api('/api/radar/' + id + '/review', { review, reason }); toast(review === 'later' ? 'Saved for next week' : 'Dropped. Radar will learn from it'); await load(); } catch (e) { toast(e.message); }
 }
@@ -1526,6 +1589,11 @@ document.addEventListener('click', (e) => {
   else if (t.dataset.rdraft) { const o = state.radar.queue.find((x) => String(x.id) === t.dataset.rdraft); if (o) openDraft(o.brand, o.target, o); }
   else if (t.dataset.rdrop) radarReview(t.dataset.rdrop, $('#rdrop-' + t.dataset.rdrop).value, $('#rwhy-' + t.dataset.rdrop).value);
   else if (t.dataset.rlater) radarReview(t.dataset.rlater, 'later');
+  else if (t.dataset.tx) { const o = (state.texts?.items || []).find((x) => String(x.id) === t.dataset.tx); if (o) openText(o); }
+  else if (t.dataset.txreplied) { const n = prompt('What did they say? (e.g. "call Tue 7pm")', ''); if (n !== null) textMark(t.dataset.txreplied, 'replied', { note: n }); }
+  else if (t.dataset.txemail) { const em = prompt('Their email address', ''); if (em) textMark(t.dataset.txemail, 'email', { email: em }); }
+  else if (t.dataset.txstop) { if (confirm('They replied STOP or said no? They will never be contacted again.')) textMark(t.dataset.txstop, 'stop'); }
+  else if (t.dataset.txlater) textMark(t.dataset.txlater, 'later');
   else if (t.dataset.uncoach !== undefined) { const i = Number(t.dataset.uncoach); api('/api/radar/coaching', { rules: state.radar.coaching.filter((_, j) => j !== i) }).then((res) => { state.radar.coaching = res.rules; toast('Rule removed'); renderToday(); }).catch((e) => toast(e.message)); }
   else if (t.dataset.nexpand) { state.open['n' + t.dataset.nexpand] = !state.open['n' + t.dataset.nexpand]; renderToday(); }
   else if (t.dataset.nreply) {
