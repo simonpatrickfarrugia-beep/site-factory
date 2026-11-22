@@ -6,6 +6,7 @@ import { getCollection, getSingleton } from '../../src/lib/data';
 import { hqAnswersProps, hqProps, trafficProps, wallpaperProps } from '../../src/lib/hq';
 import type { Route } from '../../src/lib/routes';
 import { matchesRule, thumb, type Movie, type MovieCollection, type StaticPage } from './model';
+import { faqSchema, movieFaq } from './faq';
 import { archiveEmbed, archiveThumb, freeFilmsToPublish, sameTitle, upcomingFreeFilms, type FreeFilm } from './public-domain';
 
 const SITE = 'https://www.movietrailer.channel'; // www is canonical (matches Webflow + Search Console)
@@ -188,6 +189,74 @@ export function routes(): Route[] {
   };
   const card = (m: Movie) => ({ slug: m.slug, name: m.name, year: m.year, youtubeId: m.youtubeId });
 
+  // Actors (22 Nov 2026). Cast names on film pages link to the actor's collection if there is one (e.g. /discover/tom-hanks-movies),
+  // else to /actors/{slug} once they have ACTOR_MIN_FILMS films here. Actor pages are built only from our own film data and
+  // stay noindex (follow) for now: they help Google find film pages without adding more thin pages to its index.
+  const ACTOR_MIN_FILMS = 4;
+  const slugify = (s: string) => s.normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const filmsByActor = new Map<string, Movie[]>();
+  for (const m of movies) for (const a of m.cast) { if (!filmsByActor.has(a)) filmsByActor.set(a, []); filmsByActor.get(a)!.push(m); }
+  const actorCollection = new Map<string, MovieCollection>();
+  for (const c of collections) if (!MERGED[c.slug] && c.rule?.actors?.length === 1 && !c.rule.genres?.length && !c.rule.decades?.length && !c.rule.directors?.length) actorCollection.set(c.rule.actors[0], c);
+  const actorPaths = new Map<string, string>();
+  const usedActorSlugs = new Set<string>();
+  for (const [name, list] of [...filmsByActor].sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]))) {
+    const c = actorCollection.get(name);
+    if (c) { actorPaths.set(name, `/discover/${c.slug}`); continue; }
+    if (list.length < ACTOR_MIN_FILMS) continue;
+    const slug = slugify(name);
+    if (!slug || usedActorSlugs.has(slug)) continue;
+    usedActorSlugs.add(slug);
+    actorPaths.set(name, `/actors/${slug}`);
+  }
+  const castLinksFor = (m: Movie) => m.cast.map((name) => ({ name, href: actorPaths.get(name) ?? null }));
+
+  // "You might also like": scored on what really links two films (same director, shared stars, shared genres, same decade,
+  // same collection), instead of "newest films in the first genre" (which filled comedy pages with Christmas films).
+  const decadeOf = (m: Movie) => (m.year ? Number(m.year.slice(0, 3)) : null);
+  const collectionsOf = new Map<string, Set<string>>();
+  for (const c of collections) for (const m of moviesIn(c)) { if (!collectionsOf.has(m.slug)) collectionsOf.set(m.slug, new Set()); collectionsOf.get(m.slug)!.add(c.slug); }
+  const relatedFor = (m: Movie, skip: Set<string>) => {
+    const dirs = splitNames(m.director);
+    const myColls = collectionsOf.get(m.slug) ?? new Set<string>();
+    const d = decadeOf(m);
+    const scored = movies
+      .filter((o) => o.slug !== m.slug && !skip.has(o.slug))
+      .map((o) => {
+        let score = 0;
+        if (dirs.length && splitNames(o.director).some((x) => dirs.includes(x))) score += 4;
+        score += 2 * o.cast.filter((a) => m.cast.includes(a)).length;
+        const shared = o.genres.filter((g) => m.genres.includes(g)).length;
+        score += 2 * shared;
+        if (o.genres[0] && o.genres[0] === m.genres[0]) score += 1;
+        if (d !== null && decadeOf(o) === d) score += 2;
+        else if (d !== null && decadeOf(o) !== null && Math.abs(decadeOf(o)! - d) === 1) score += 1;
+        score += 2 * [...(collectionsOf.get(o.slug) ?? [])].filter((c) => myColls.has(c)).length;
+        if (!isThin(o)) score += 0.5; // pages Google can index
+        if (typeof o.imdbRating === 'number') score += o.imdbRating / 20; // tie-break towards well-liked films
+        return { o, score, shared };
+      })
+      .filter((x) => x.shared > 0 || x.score >= 4)
+      .sort((a, b) => b.score - a.score || a.o.name.localeCompare(b.o.name));
+    return scored.slice(0, 10).map((x) => card(x.o));
+  };
+
+  /** Newest films, at most 2 from any one collection or director, so one batch (e.g. every Bond film) can't fill the row. */
+  const recentMix = (n: number) => {
+    const picks: Movie[] = [];
+    const perGroup = new Map<string, number>();
+    const groups = (m: Movie) => [...(collectionsOf.get(m.slug) ?? [])].map((c) => `c:${c}`).concat(splitNames(m.director).map((x) => `d:${x}`));
+    for (const m of newest) {
+      if (picks.length === n) break;
+      const g = groups(m);
+      if (g.some((k) => (perGroup.get(k) ?? 0) >= 2)) continue;
+      picks.push(m);
+      for (const k of g) perGroup.set(k, (perGroup.get(k) ?? 0) + 1);
+    }
+    for (const m of newest) { if (picks.length === n) break; if (!picks.includes(m)) picks.push(m); }
+    return picks;
+  };
+
   const newest = [...movies].sort(byNewest);
   /** Film pages people actually visit (GA4, data/trailers/stats.json), so the home page links Google straight to them. */
   /** Trailer pages with a short write-up (under 50 words): live for visitors, kept out of Google until enrich gives them more. */
@@ -197,7 +266,7 @@ export function routes(): Route[] {
       .filter((p) => p.path.startsWith('/movies/'))
       // Pages Google already shows first (Search Console impressions), then visits in the last 28 days, then all-time.
       .sort((a, b) => (b.gscImpressions ?? 0) - (a.gscImpressions ?? 0) || (b.views ?? 0) - (a.views ?? 0) || (b.allViews ?? 0) - (a.allViews ?? 0));
-    const inLatest = new Set(newest.slice(0, 10).map((m) => m.slug));
+    const inLatest = new Set(recentMix(10).map((m) => m.slug));
     const picks: Movie[] = [];
     for (const p of pagesSeen) {
       const m = movies.find((x) => `/movies/${x.slug}` === p.path);
@@ -235,7 +304,7 @@ export function routes(): Route[] {
     ],
     props: {
       stream: movies.map((m) => ({ slug: m.slug, name: m.name, youtubeId: m.youtubeId })),
-      latest: newest.slice(0, 10).map(card),
+      latest: recentMix(10).map(card),
       popular: popularFilms(),
       freeNow: free.slice(0, 5).map((f) => ({ ...freeCard(f), youtubeId: '', badge: 'Watch free' })),
       freeTotal: free.length,
@@ -261,9 +330,8 @@ export function routes(): Route[] {
     const byDirector = directors.length
       ? movies.filter((o) => o.slug !== m.slug && splitNames(o.director).some((d) => directors.includes(d))).sort(byYear).slice(0, 6).map(card)
       : [];
-    const related = firstGenre
-      ? movies.filter((o) => o.slug !== m.slug && o.genres.includes(firstGenre)).sort(byNewest).slice(0, 10).map(card)
-      : [];
+    const related = m.genres.length ? relatedFor(m, new Set(byDirector.map((x) => x.slug))) : [];
+    const faq = movieFaq(m, f, u ? { freeOn: u.freeOn } : null).items;
     // Images: the trailer thumbnail, or a still from a free film. Never a still from a film that isn't free yet.
     const image = m.youtubeId ? thumb(m.youtubeId) : f ? archiveThumb(f.archiveId) : undefined;
     const schema: Record<string, unknown> = m.youtubeId
@@ -278,6 +346,7 @@ export function routes(): Route[] {
       seo: { ...(f ? freeSeo(m, f) : u ? upcomingSeo(m, u) : movieSeo(m)), rawTitle: true, image },
       schema: [
         schema,
+        ...(faqSchema(faq) ? [faqSchema(faq)!] : []),
         breadcrumbs([
           { name: 'Home', path: '' },
           f || u ? { name: 'Free classic movies', path: 'free-classic-movies' } : { name: 'Browse', path: 'browse' },
@@ -287,6 +356,7 @@ export function routes(): Route[] {
       lastmod: f ? [m.updated, f.audit.checkedOn].sort().pop() : m.updated,
       props: {
         movie: m, inCollections, related, byDirector, genre: firstGenre ?? null, amazonTag: AMAZON_TAG,
+        castLinks: castLinksFor(m), relatedHeading: related.length ? `If you like ${m.name}` : undefined,
         free: f, upcoming: u ? { freeOn: u.freeOn } : null, original: f || u ? null : originalFor(m),
         moreFree: f ? moreFreeFor(f) : u ? free.slice(0, 6).map(freeCard) : [],
       },
@@ -343,6 +413,49 @@ export function routes(): Route[] {
       ],
       lastmod: c.updated,
       props: { heading: c.name, tagline: c.tagline, introHtml: c.introHtml, movies: list, backTo: { href: '/discover', label: 'All collections' }, amazonTag: AMAZON_TAG },
+    });
+  }
+
+  // Actor pages: /actors/{slug} (see ACTOR_MIN_FILMS above). Facts only from our catalogue; noindex until Google indexes more of the site.
+  const esc = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const listNames = (xs: string[]) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs[xs.length - 1]}`);
+  for (const [name, path] of actorPaths) {
+    if (!path.startsWith('/actors/')) continue;
+    const list = [...(filmsByActor.get(name) ?? [])].sort(byYear);
+    const years = list.map((m) => m.year).filter(Boolean) as string[];
+    const genreCount = new Map<string, number>();
+    for (const m of list) for (const g of m.genres) genreCount.set(g, (genreCount.get(g) ?? 0) + 1);
+    const topGenres = [...genreCount].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 3).map(([g]) => g.toLowerCase());
+    const rated = list.filter((m) => typeof m.imdbRating === 'number').sort((a, b) => b.imdbRating! - a.imdbRating!);
+    const dirCount = new Map<string, number>();
+    for (const m of list) for (const d of splitNames(m.director)) dirCount.set(d, (dirCount.get(d) ?? 0) + 1);
+    const repeatDirs = [...dirCount].filter(([, n]) => n >= 2).sort((a, b) => b[1] - a[1]).slice(0, 3);
+    const coStars = new Map<string, number>();
+    for (const m of list) for (const a of m.cast) if (a !== name) coStars.set(a, (coStars.get(a) ?? 0) + 1);
+    const repeatStars = [...coStars].filter(([, n]) => n >= 2).sort((a, b) => b[1] - a[1]).slice(0, 3);
+    const link = (m: Movie) => `<a href="/movies/${m.slug}">${esc(m.name)}</a>${m.year ? ` (${m.year})` : ''}`;
+    const paras = [
+      `We have ${list.length} films starring ${esc(name)}${years.length ? `, from ${link(list[0])} to ${link(list[list.length - 1])}` : ''}. Each one has the official trailer and where to rent, buy or stream it in the US.`,
+      topGenres.length ? `Most of them are ${esc(listNames(topGenres))} films.${rated.length ? ` The best rated on IMDb is ${link(rated[0])} at ${rated[0].imdbRating}/10${rated.length > 1 ? `, followed by ${link(rated[1])} at ${rated[1].imdbRating}/10` : ''}.` : ''}` : '',
+      repeatDirs.length ? `${esc(name)} worked more than once with ${esc(listNames(repeatDirs.map(([d, n]) => `${d} (${n} films)`)))}.` : '',
+      repeatStars.length ? `Often on screen with ${listNames(repeatStars.map(([a, n]) => `${actorPaths.has(a) ? `<a href="${actorPaths.get(a)}">${esc(a)}</a>` : esc(a)} (${n})`))}.` : '',
+    ].filter(Boolean);
+    out.push({
+      noindex: true,
+      path: path.slice(1),
+      template: 'collection',
+      seo: {
+        title: fitTitle(`${name} Movies: Where to Watch Each One` + SUFFIX, `${name} Movies: Where to Watch Each One`, `${name} Movies: Where to Watch`, `${name} Movies`),
+        rawTitle: true,
+        description: clip(`${list.length} ${name} movies with trailers, and where to stream, rent or buy each one in the US: ${list.slice(0, 3).map((m) => m.name).join(', ')} and more.`),
+        image: list[0] ? thumb(list[0].youtubeId) : undefined,
+      },
+      schema: [
+        itemList(list),
+        breadcrumbs([{ name: 'Home', path: '' }, { name: 'Browse', path: 'browse' }, { name: `${name} movies`, path: path.slice(1) }]),
+      ],
+      lastmod: list.map((m) => m.updated).sort().pop(),
+      props: { heading: `${name} Movies`, tagline: `Every ${name} film on MovieTrailer.Channel, oldest first, with the trailer and where to watch it.`, introHtml: paras.map((t) => `<p>${t}</p>`).join(''), movies: list, backTo: { href: '/browse', label: 'Browse all trailers' }, amazonTag: AMAZON_TAG },
     });
   }
 

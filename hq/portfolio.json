@@ -923,6 +923,17 @@
    "done": false,
    "addedAt": "2026-11-17",
    "brand": "trailers"
+  },
+  {
+   "id": "trailers-actor-pages-index",
+   "kind": "decide",
+   "mins": 1,
+   "what": "Trailers: let Google index the 42 new actor pages (e.g. /actors/arnold-schwarzenegger)? Reply 'index actors' in the Site Factory chat. Suggest waiting until Google shows 65+ pages",
+   "why": "Actor searches are big (Tom Hanks movies ~305k/mo) but Google only shows 31 of 437 pages now, so the pages start hidden (noindex) and just help Google find film pages",
+   "link": "https://www.movietrailer.channel/actors/arnold-schwarzenegger",
+   "linkLabel": "Example",
+   "done": false,
+   "addedAt": "2026-11-22"
   }
  ],
  "notes": [
