@@ -1,6 +1,6 @@
 {
  "_about": "Written by scripts/hq/value.py (daily, brief workflow). Estimates, not offers. Settings and benchmarks: hq/value-config.json.",
- "generatedAt": "2026-11-21T06:21:25Z",
+ "generatedAt": "2026-11-22T01:31:51Z",
  "month": "2026-11",
  "worthSelling": 50000,
  "multiple": {
@@ -14,6 +14,44 @@
   "profitMonthly": -36.72
  },
  "sites": [
+  {
+   "id": "lab:website-check",
+   "name": "Free website check (IMN Labs)",
+   "url": "https://imnetwork.com.au/labs/website-check",
+   "kind": "lab",
+   "window": [
+    "2026-11",
+    "2026-11"
+   ],
+   "months": 1,
+   "ageMonths": 1,
+   "revenue12": 0.0,
+   "costs12": 0.0,
+   "profitMonthly": 0.0,
+   "sources": [],
+   "multiple": {
+    "low": 22.0,
+    "high": 27.0,
+    "why": [
+     "1 month old: low end until it has a 12-month record",
+     "no income yet"
+    ]
+   },
+   "value": {
+    "low": 0,
+    "high": 0
+   },
+   "series": [
+    {
+     "month": "2026-11",
+     "revenue": 0.0,
+     "costs": 0.0,
+     "profit": 0.0
+    }
+   ],
+   "trend": null,
+   "flags": []
+  },
   {
    "id": "imnetwork",
    "name": "imnetwork.com.au",
