@@ -1,6 +1,6 @@
 # Niche finder
 
-Updated 2026-11-15. Google searches in the United States unless an idea says otherwise (Market column). Score = 30% demand + 25% money (CPC) + 25% ease (SEO difficulty) + 20% fit (Claude: data source, automation, monetisation, risk).
+Updated 2026-11-22. Google searches in the United States unless an idea says otherwise (Market column). Score = 30% demand + 25% money (CPC) + 25% ease (SEO difficulty) + 20% fit (Claude: data source, automation, monetisation, risk).
 
 Add ideas by chat: "score these niches: …". Rules: launch at most one new site a month, only while the last one is on track.
 
@@ -1687,34 +1687,34 @@ _Seeds: dog boarding cost in portland oregon, dog daycare prices near seattle, h
 
 Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits × affiliate clicks × conversion × payout (average of the top 3 matching programmes), plus display ads. These numbers rank ideas against each other; they are not forecasts. They get replaced by our own measured rates as our sites earn.
 
-**Model:** Calibrated from 501 page views, 3 affiliate clicks and 0 reported sales (trailers, vic, community-help-co, trade-admin, paycalc, simon-says-travel): click rate 4.1% (assumed 5.0%), conversion 4.9% (assumed 5.0%). The assumption weighs as much as 2,000 views / 200 clicks, so real data takes over as it grows.
+**Model:** Calibrated from 567 page views, 3 affiliate clicks and 0 reported sales (trailers, vic, community-help-co, trade-admin, paycalc, simon-says-travel, imn): click rate 4.0% (assumed 5.0%), conversion 4.9% (assumed 5.0%). The assumption weighs as much as 2,000 views / 200 clicks, so real data takes over as it grows.
 
 | Idea | Market | Visits/mo (mid) | Est. revenue/mo (low · mid · high) | Avg payout per sale | Score |
 |---|---|---:|---|---:|---:|
-| Dog breeds | United States | 274,520 | $1,422 · **$13,153** · $63,313 | $18.33 | 75 |
-| US national parks and hiking trails | United States | 89,156 | $299 · **$2,576** · $11,892 | $9 | 74 |
-| US take-home pay by salary and state | United States | 58,948 | $316 · **$2,491** · $10,816 | $9 | 77 |
-| Anime: where to watch and watch order | United States | 102,419 | $195 · **$1,427** · $5,834 | $1.7 | 70 |
-| TV shows: where to watch | United States | 27,719 | $109 · **$761** · $2,984 | $1.7 | 73 |
-| Video games: release dates and trailers | United States | 70,520 | $58 · **$449** · $1,912 | $1.17 | 62 |
-| AU pay and tax calculators (take-home pay by salary) | Australia | 8,647 | $46 · **$365** · $1,587 | $9 | 76 |
-| US cost of living by city | United States | 6,358 | $35 · **$319** · $1,520 | $18.33 | 66 |
-| Book series in reading order | United States | 24,564 | $22 · **$170** · $734 | $1.43 | 53 |
-| Victoria: where to stay by town | Australia | 3,903 | $16 · **$137** · $636 | $11.33 | 66 |
-| AU electric car running costs vs petrol by model | Australia | 2,312 | $12 · **$96** · $435 | $11.5 | 69 |
-| Movie soundtracks and film music | United States | 11,888 | $10 · **$82** · $355 | $1.43 | 53 |
-| Car rental cost by airport and car type | United States | 1,815 | $10 · **$82** · $358 | $10.33 | 69 |
-| AU stamp duty and home buying costs by state | Australia | 2,985 | $11 · **$78** · $300 | $1 | 64 |
-| Board games | United States | 11,226 | $10 · **$77** · $332 | $1.4 | 61 |
-| Victoria: things to do by town | Australia | 1,769 | $5 · **$50** · $242 | $11.33 | 60 |
-| Retro game finder: where to play classic games today (US) | United States | 6,967 | $5 · **$40** · $167 | $0.87 | 58 |
-| AU electricity prices by postcode and retailer | Australia | 604 | $3 · **$21** · $86 | $5 | 61 |
-| AU solar and home battery payback by postcode | Australia | 624 | $3 · **$19** · $79 | $3.5 | 66 |
-| Victoria: where to eat by town | Australia | 779 | $2 · **$17** · $84 | $9 | 51 |
-| Australian clothing brands directory (beason.com.au) | Australia | 949 | $2 · **$15** · $66 | $3.5 | 50 |
+| Dog breeds | United States | 274,520 | $1,396 · **$12,891** · $61,969 | $18.33 | 75 |
+| US national parks and hiking trails | United States | 89,156 | $295 · **$2,535** · $11,678 | $9 | 74 |
+| US take-home pay by salary and state | United States | 58,948 | $313 · **$2,463** · $10,674 | $9 | 77 |
+| Anime: where to watch and watch order | United States | 102,419 | $194 · **$1,417** · $5,787 | $1.7 | 70 |
+| TV shows: where to watch | United States | 27,719 | $109 · **$758** · $2,972 | $1.7 | 73 |
+| Video games: release dates and trailers | United States | 70,520 | $58 · **$445** · $1,890 | $1.17 | 62 |
+| AU pay and tax calculators (take-home pay by salary) | Australia | 8,647 | $46 · **$361** · $1,566 | $9 | 76 |
+| US cost of living by city | United States | 6,358 | $34 · **$313** · $1,489 | $18.33 | 66 |
+| Book series in reading order | United States | 24,564 | $21 · **$168** · $725 | $1.43 | 53 |
+| Victoria: where to stay by town | Australia | 3,903 | $15 · **$135** · $625 | $11.33 | 66 |
+| AU electric car running costs vs petrol by model | Australia | 2,312 | $11 · **$95** · $428 | $11.5 | 69 |
+| Movie soundtracks and film music | United States | 11,888 | $10 · **$81** · $351 | $1.43 | 53 |
+| Car rental cost by airport and car type | United States | 1,815 | $10 · **$81** · $353 | $10.33 | 69 |
+| AU stamp duty and home buying costs by state | Australia | 2,985 | $11 · **$78** · $299 | $1 | 64 |
+| Board games | United States | 11,226 | $10 · **$76** · $327 | $1.4 | 61 |
+| Victoria: things to do by town | Australia | 1,769 | $5 · **$49** · $236 | $11.33 | 60 |
+| Retro game finder: where to play classic games today (US) | United States | 6,967 | $5 · **$40** · $166 | $0.87 | 58 |
+| AU electricity prices by postcode and retailer | Australia | 604 | $3 · **$20** · $85 | $5 | 61 |
+| AU solar and home battery payback by postcode | Australia | 624 | $3 · **$19** · $78 | $3.5 | 66 |
+| Victoria: where to eat by town | Australia | 779 | $2 · **$17** · $83 | $9 | 51 |
+| Australian clothing brands directory (beason.com.au) | Australia | 949 | $2 · **$15** · $65 | $3.5 | 50 |
 | AU suburb profiles: prices, rent and demographics | Australia | 134 | $1 · **$5** · $22 | $9 | 55 |
 | Retro game finder: where to play classic games today (AU) | Australia | 423 | $0 · **$3** · $11 | $1 | 42 |
-| Australian winter wear: beanies, jackets and knitwear | Australia | 122 | $0 · **$3** · $15 | $9 | 50 |
+| Australian winter wear: beanies, jackets and knitwear | Australia | 122 | $0 · **$3** · $14 | $9 | 50 |
 | Dog-friendly hotels by city | United States | 55 | $0 · **$3** · $15 | $18.33 | 54 |
 | US public library branches by city | United States | 226 | $0 · **$2** · $9 | $1.43 | 46 |
 | Mattress and sleep product buyer guides by size and firmness | United States | 46 | $0 · **$2** · $8 | $9 | 54 |
@@ -1764,6 +1764,7 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
 | Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
 | Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
+| Agoda Partners | ~4–7% on completed stays | moderate | Travel content site | approved |
 
 ### Anime: where to watch and watch order
 
@@ -1799,8 +1800,9 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
 | Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
 | Travel insurance (World Nomads, SafetyWing, Allianz) | ~10–40% | moderate | check | not applied |
-| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | applying |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | declined |
 | Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
+| Agoda Partners | ~4–7% on completed stays | moderate | Travel content site | approved |
 
 ### US cost of living by city
 
@@ -1835,7 +1837,7 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Viator Partner Program | ~8% of booking value | easy | Website with travel content | approved |
 | GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | approved |
 | Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | approved |
-| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | applying |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | declined |
 
 ### AU electric car running costs vs petrol by model
 
@@ -1888,7 +1890,7 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Viator Partner Program | ~8% of booking value | easy | Website with travel content | approved |
 | GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | approved |
 | Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | approved |
-| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | applying |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | declined |
 
 ### Retro game finder: where to play classic games today (US)
 
@@ -1905,7 +1907,7 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Travel insurance (World Nomads, SafetyWing, Allianz) | ~10–40% | moderate | check | not applied |
 | Ruffwear (dog gear) | ~8% | easy | check | not applied |
 | Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
-| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | applying |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | declined |
 | Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
 
 ### AU solar and home battery payback by postcode
@@ -1914,7 +1916,7 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 |---|---|---|---|---|
 | Ruffwear (dog gear) | ~8% | easy | check | not applied |
 | Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
-| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | applying |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | declined |
 
 ### Victoria: where to eat by town
 
@@ -1926,7 +1928,7 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Viator Partner Program | ~8% of booking value | easy | Website with travel content | approved |
 | GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | approved |
 | Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | approved |
-| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | applying |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | declined |
 | Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
 
 ### Australian clothing brands directory (beason.com.au)
@@ -1935,7 +1937,7 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 |---|---|---|---|---|
 | Ruffwear (dog gear) | ~8% | easy | check | not applied |
 | Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
-| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | applying |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | declined |
 
 ### AU suburb profiles: prices, rent and demographics
 
@@ -1946,8 +1948,9 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
 | Ruffwear (dog gear) | ~8% | easy | check | not applied |
 | Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
-| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | applying |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | declined |
 | Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
+| Agoda Partners | ~4–7% on completed stays | moderate | Travel content site | approved |
 
 ### Retro game finder: where to play classic games today (AU)
 
@@ -1966,8 +1969,9 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
 | Ruffwear (dog gear) | ~8% | easy | check | not applied |
 | Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
-| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | applying |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | declined |
 | Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
+| Agoda Partners | ~4–7% on completed stays | moderate | Travel content site | approved |
 
 ### Dog-friendly hotels by city
 
@@ -2002,6 +2006,7 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | REI | 5% per sale | moderate | Apply via AvantLink with site + audience details; $50 payout threshold | not applied |
 | Amazon Associates US: sports and outdoors | 3% | easy | Same Associates account | approved |
 | Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
+| Agoda Partners | ~4–7% on completed stays | moderate | Travel content site | approved |
 
 ### Australian loungewear and comfortwear brands
 
@@ -2011,8 +2016,9 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
 | Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
 | Amazon Associates Australia | By category (third-party table, 2021): 9% pet, outdoors, home; 5.5% books; 5% electronics; 3.5% DVD/Blu-ray; 2% digital video; 4% other | easy | Separate amazon.com.au account; 3 qualifying sales within 180 days or the account closes | not applied |
-| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | applying |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | declined |
 | Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
+| Agoda Partners | ~4–7% on completed stays | moderate | Travel content site | approved |
 
 ### Hurricane history by coastal state
 
@@ -2048,7 +2054,7 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Viator Partner Program | ~8% of booking value | easy | Website with travel content | approved |
 | GetYourGuide Partner Program | ~8% baseline, tiered up for volume | easy | Website with travel content | approved |
 | Klook Affiliate | 2–5% per booking | easy | Application via CJ with site + audience details; $50 payout threshold | approved |
-| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | applying |
+| Commission Factory (Australian network) | varies by brand | easy | Sign up as an Affiliate; ABN + GST status; at least one live, finished website; email on the site's own domain helps; clear promotion plan; AU$5 card pre-authorisation (refunded); review within 3 business days. Then apply to each brand inside the network. | declined |
 
 ### US school district enrollment by county
 
@@ -2060,6 +2066,7 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Bookshop.org affiliates *(check)* | check (commonly quoted ~10%) | easy | check | not applied |
 | Amazon Associates US: physical books | 4.5% | easy | Same Associates account | approved |
 | Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
+| Agoda Partners | ~4–7% on completed stays | moderate | Travel content site | approved |
 
 ### US airport runway and elevation facts
 
@@ -2070,6 +2077,7 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Hotel groups (Marriott, Hilton, IHG) | ~3–7% | moderate | check | not applied |
 | Expedia Group Affiliate | ~2–6% by product | moderate | Travel content site | approved |
 | Impact (affiliate network) | varies by brand | moderate | Publisher account; verify site by meta tag; then apply to each brand | applying |
+| Agoda Partners | ~4–7% on completed stays | moderate | Travel content site | approved |
 
 ### Pet insurance quotes by breed and state
 
@@ -2115,4 +2123,4 @@ Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits �
 | Mediavine | 50,000 sessions | Strong in lifestyle; check Journey (smaller-site tier) terms |
 | Ezoic | 250,000 users (raised Feb 2026) |  |
 
-_Catalogue: hq/affiliate-programs.json (32 programmes, updated 2026-11-07). "(check)" = terms not yet verified from a current source._
+_Catalogue: hq/affiliate-programs.json (33 programmes, updated 2026-11-07). "(check)" = terms not yet verified from a current source._
