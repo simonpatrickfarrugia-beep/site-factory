@@ -74,6 +74,20 @@ export function routes(): Route[] {
     props: { ...common, title: how.title, lede: how.lede, steps: how.steps, sections: (how as any).sections ?? [] },
   });
 
+  // Guides (Steps template with linked sources + FAQ). First: community services placement (22 Nov 2026, Google already shows
+  // the home page for "community service(s) placement" at ~position 9-11 with no page about it).
+  for (const slug of ['community-services-placement']) {
+    const g = (pages as unknown as Record<string, any>)[slug];
+    if (!g) continue;
+    out.push({
+      path: slug,
+      template: 'chcSteps',
+      seo: { title: g.seoTitle + SUFFIX, rawTitle: true, description: g.description },
+      schema: [faqSchema(g.faqs ?? []), crumbs([{ name: 'Home', path: '' }, { name: g.title, path: slug }])],
+      props: { ...common, title: g.title, lede: g.lede, steps: g.steps, sections: g.sections ?? [], faqs: g.faqs ?? [], checked: g.checked },
+    });
+  }
+
   for (const slug of ['about', 'privacy-policy', 'affiliate-disclosure'] as const) {
     const p = pages[slug];
     out.push({

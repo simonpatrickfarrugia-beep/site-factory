@@ -1,7 +1,8 @@
 ---
 import BookCta from './BookCta.astro';
-interface Props { book: string; title: string; lede: string; steps: { t: string; d: string }[]; sections?: { h: string; p: string[] }[] }
-const { book, title, lede, steps, sections = [] } = Astro.props;
+interface Props { book: string; title: string; lede: string; steps: { t: string; d: string }[]; sections?: { h: string; p: string[]; links?: { label: string; href: string }[] }[]; faqs?: { q: string; a: string }[]; checked?: string }
+const { book, title, lede, steps, sections = [], faqs = [], checked } = Astro.props;
+const ext = (h: string) => /^https?:/.test(h);
 ---
 <section class="chc-pagehead">
   <div class="chc-wrap">
@@ -14,7 +15,14 @@ const { book, title, lede, steps, sections = [] } = Astro.props;
 </section>
 {sections.length > 0 && (
   <section class="chc-wrap chc-section chc-section--tight chc-prose">
-    {sections.map((sec) => <><h2 class="chc-h2">{sec.h}</h2>{sec.p.map((para) => <p>{para}</p>)}</>)}
+    {sections.map((sec) => <><h2 class="chc-h2">{sec.h}</h2>{sec.p.map((para) => <p>{para}</p>)}{sec.links && sec.links.length > 0 && <ul class="chc-links">{sec.links.map((l) => <li><a class="chc-link" href={l.href} {...(ext(l.href) ? { rel: 'noopener', target: '_blank' } : {})}>{l.label}</a></li>)}</ul>}</>)}
+    {checked && <p class="chc-small">Checked against the linked pages on {new Date(checked + 'T00:00:00').toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}. Requirements change, so confirm with your provider.</p>}
+  </section>
+)}
+{faqs.length > 0 && (
+  <section class="chc-wrap chc-section chc-section--tight">
+    <h2 class="chc-h2">Common questions</h2>
+    <div class="chc-faq">{faqs.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}</div>
   </section>
 )}
 <BookCta book={book} />

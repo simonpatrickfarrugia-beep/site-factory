@@ -27,6 +27,7 @@ export default defineBrand({
     { label: 'How it works', href: '/how-it-works' },
     { label: 'Clinics for organisations', href: '/job-catalyst-clinics' },
     { label: 'Cover letter builder', href: '/cover-letter-builder' },
+    { label: 'Community services placements', href: '/community-services-placement' },
     { label: 'Advocacy support', href: '/advocacy-support' },
     { label: 'About Simon', href: '/about' },
     { label: 'FAQ', href: '/faq' },
