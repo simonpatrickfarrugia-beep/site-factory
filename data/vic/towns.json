@@ -2277,7 +2277,7 @@
   "volume": 3790,
   "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
   "probe": {
-   "at": "2026-11-15T21:56:49+00:00",
+   "at": "2026-11-22T22:07:40+00:00",
    "error": "Overpass unavailable"
   }
  },
@@ -2688,20 +2688,20 @@
   "volume": 2580,
   "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
   "probe": {
-   "at": "2026-11-15T22:08:59+00:00",
+   "at": "2026-11-22T22:13:19+00:00",
    "radiusM": 3000,
    "centre": [
-    -37.2658785,
-    142.9797325
+    -37.2834165,
+    142.9319447
    ],
    "counts": {
-    "stay": 1,
-    "eat": 0,
-    "do": 4
+    "stay": 8,
+    "eat": 13,
+    "do": 19
    },
-   "withWebsite": 1,
-   "withHours": 0,
-   "total": 5
+   "withWebsite": 7,
+   "withHours": 2,
+   "total": 40
   }
  },
  {
@@ -2934,7 +2934,23 @@
    "eat": 1600
   },
   "volume": 2310,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-22T21:07:14+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -37.486723,
+    144.5904237
+   ],
+   "counts": {
+    "stay": 1,
+    "eat": 5,
+    "do": 11
+   },
+   "withWebsite": 4,
+   "withHours": 3,
+   "total": 17
+  }
  },
  {
   "name": "Dinner Plain",
@@ -2946,7 +2962,23 @@
    "eat": 320
   },
   "volume": 2310,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-22T21:57:16+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -37.0235844,
+    147.2389786
+   ],
+   "counts": {
+    "stay": 3,
+    "eat": 3,
+    "do": 8
+   },
+   "withWebsite": 3,
+   "withHours": 2,
+   "total": 14
+  }
  },
  {
   "name": "Colac",
@@ -2958,7 +2990,11 @@
    "eat": 1000
   },
   "volume": 2270,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-22T21:16:55+00:00",
+   "error": "Overpass unavailable"
+  }
  },
  {
   "name": "Heathcote",
@@ -2970,7 +3006,11 @@
    "eat": 880
   },
   "volume": 2090,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-22T21:26:35+00:00",
+   "error": "Overpass unavailable"
+  }
  },
  {
   "name": "Wonthaggi",
@@ -2982,7 +3022,23 @@
    "eat": 880
   },
   "volume": 2080,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-22T21:27:55+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -38.6043664,
+    145.5913433
+   ],
+   "counts": {
+    "stay": 5,
+    "eat": 14,
+    "do": 34
+   },
+   "withWebsite": 5,
+   "withHours": 6,
+   "total": 53
+  }
  },
  {
   "name": "Paynesville",
@@ -2994,7 +3050,23 @@
    "eat": 720
   },
   "volume": 2040,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-22T21:29:19+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -37.9111097,
+    147.7201233
+   ],
+   "counts": {
+    "stay": 4,
+    "eat": 11,
+    "do": 8
+   },
+   "withWebsite": 3,
+   "withHours": 8,
+   "total": 23
+  }
  },
  {
   "name": "Walhalla",
@@ -3204,7 +3276,23 @@
    "eat": 480
   },
   "volume": 1800,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-22T21:30:55+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -37.0586869,
+    142.7745476
+   ],
+   "counts": {
+    "stay": 6,
+    "eat": 4,
+    "do": 26
+   },
+   "withWebsite": 5,
+   "withHours": 1,
+   "total": 36
+  }
  },
  {
   "name": "San Remo",
@@ -3255,7 +3343,23 @@
    "eat": 110
   },
   "volume": 1580,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-22T21:31:57+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -36.7424253,
+    147.1698681
+   ],
+   "counts": {
+    "stay": 6,
+    "eat": 5,
+    "do": 10
+   },
+   "withWebsite": 2,
+   "withHours": 1,
+   "total": 21
+  }
  },
  {
   "name": "Point Lonsdale",
@@ -3357,7 +3461,23 @@
    "eat": 590
   },
   "volume": 1280,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-22T21:37:38+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -38.2754676,
+    145.0307737
+   ],
+   "counts": {
+    "stay": 3,
+    "eat": 7,
+    "do": 33
+   },
+   "withWebsite": 3,
+   "withHours": 3,
+   "total": 43
+  }
  },
  {
   "name": "Wilsons Promontory",
@@ -3397,7 +3517,23 @@
    "eat": 210
   },
   "volume": 1250,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-22T21:39:19+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -38.6905512,
+    145.8088946
+   ],
+   "counts": {
+    "stay": 1,
+    "eat": 2,
+    "do": 10
+   },
+   "withWebsite": 0,
+   "withHours": 0,
+   "total": 13
+  }
  },
  {
   "name": "Blairgowrie",
@@ -3409,7 +3545,23 @@
    "eat": 720
   },
   "volume": 1180,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-22T21:44:36+00:00",
+   "radiusM": 3000,
+   "centre": [
+    -38.3687445,
+    144.7722682
+   ],
+   "counts": {
+    "stay": 2,
+    "eat": 1,
+    "do": 20
+   },
+   "withWebsite": 0,
+   "withHours": 0,
+   "total": 23
+  }
  },
  {
   "name": "Macedon Ranges",
@@ -3557,7 +3709,11 @@
    "eat": 140
   },
   "volume": 880,
-  "volumeCheckedAt": "2026-11-15T21:18:26.356Z"
+  "volumeCheckedAt": "2026-11-15T21:18:26.356Z",
+  "probe": {
+   "at": "2026-11-22T21:55:00+00:00",
+   "error": "Overpass unavailable"
+  }
  },
  {
   "name": "Lake Eildon",

@@ -1,0 +1,520 @@
+{
+ "town": "Mount Martha",
+ "slug": "mount-martha",
+ "centre": [
+  -38.2754676,
+  145.0307737
+ ],
+ "radiusM": 3000,
+ "fetchedAt": "2026-11-22T21:37:38+00:00",
+ "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
+ "places": [
+  {
+   "id": "n1399402342",
+   "name": "Puddleduck Cottage",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -38.2807736,
+   "lon": 145.0025559,
+   "tags": {
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "n1710026802",
+   "name": "Wetland Viewpoint",
+   "group": "do",
+   "type": "attraction",
+   "lat": -38.268168,
+   "lon": 145.0493401,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "n3315603070",
+   "name": "Wok on Bay",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -38.2670471,
+   "lon": 145.0141221,
+   "tags": {
+    "cuisine": "chinese",
+    "addr:housenumber": "2",
+    "addr:street": "Watsons Road",
+    "addr:suburb": "Mount Martha",
+    "addr:postcode": "3934",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n4460241189",
+   "name": "Milkbar&co",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.2671352,
+   "lon": 145.0136625,
+   "tags": {
+    "opening_hours": "Mo-Su 05:30-16:00",
+    "description": "milkbarco",
+    "addr:housenumber": "42",
+    "addr:street": "Lochiel Avenue",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n5253933021",
+   "name": "Mount Martha Beach House",
+   "group": "stay",
+   "type": "guest_house",
+   "lat": -38.2656336,
+   "lon": 145.0154484,
+   "tags": {
+    "tourism": "guest_house"
+   }
+  },
+  {
+   "id": "n5302929947",
+   "name": "Hydroponic Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.256797,
+   "lon": 145.0372924,
+   "tags": {
+    "phone": "+61 438 585 146",
+    "opening_hours": "Mo-Su 07:00-17:00",
+    "cuisine": "coffee_shop;italian",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "80",
+    "addr:street": "Craigie Road",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n7086695985",
+   "name": "Higher Ground",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.268087,
+   "lon": 145.0133761,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n7821549839",
+   "name": "Via Battisti",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.2674527,
+   "lon": 145.0132717,
+   "tags": {
+    "website": "https://www.viabattisti.com/",
+    "phone": "+61 3 5974 4999",
+    "opening_hours": "Mo-Su 07:00-15:00",
+    "cuisine": "coffee_shop",
+    "outdoor_seating": "yes",
+    "addr:housenumber": "26",
+    "addr:street": "Lochiel Avenue",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n7834534819",
+   "name": "Angus and Rose",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.2685954,
+   "lon": 145.0424392,
+   "tags": {
+    "cuisine": "coffee",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n12675545360",
+   "name": "Mount Martha Fine Foods",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -38.267141,
+   "lon": 145.0135921,
+   "tags": {
+    "website": "https://www.facebook.com/mtmarthafinefoods/",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w25586632",
+   "name": "Mount Martha Public Golf Course",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -38.2855148,
+   "lon": 145.0241206,
+   "tags": {
+    "leisure": "golf_course"
+   }
+  },
+  {
+   "id": "w142654427",
+   "name": "Joseph Harris (Bay Park) Scout Camp",
+   "group": "stay",
+   "type": "camp_site",
+   "lat": -38.2908503,
+   "lon": 145.0048041,
+   "tags": {
+    "website": "http://www.vicscouts.com.au/bay-park/contact",
+    "phone": "+61 3 5974 2555",
+    "addr:street": "Hearn Road",
+    "tourism": "camp_site"
+   }
+  },
+  {
+   "id": "w142655081",
+   "name": "Fairbairn Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.2840292,
+   "lon": 145.0106525,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w142656392",
+   "name": "Hopetoun Norfolk Flora and Fauna Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.2789036,
+   "lon": 145.025402,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w142656475",
+   "name": "Citation Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.262861,
+   "lon": 145.0332899,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w468562665",
+   "name": "Greenlaw Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2750822,
+   "lon": 145.0240218,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w468562698",
+   "name": "Walara Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2771845,
+   "lon": 145.0194259,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w591299386",
+   "name": "Ferrero Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.2671858,
+   "lon": 145.0245019,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w666192413",
+   "name": "Mount Martha Nature Conservation Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.2947036,
+   "lon": 145.0027776,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w666391497",
+   "name": "Tubbarubba Creek Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.2972254,
+   "lon": 145.0430963,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w1189955002",
+   "name": "The Briars Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2699249,
+   "lon": 145.0459626,
+   "tags": {
+    "wikidata": "Q66768087",
+    "wikipedia": "en:The Briars (Mt Martha)",
+    "addr:housenumber": "450",
+    "addr:street": "Nepean Highway",
+    "addr:suburb": "Mount Martha",
+    "addr:postcode": "3934",
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1273590753",
+   "name": "Tolhurst Osborne Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2507544,
+   "lon": 145.0341533,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1322098839",
+   "name": "Craigie Road Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.257707,
+   "lon": 145.0468714,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1322098840",
+   "name": "Hyperno Way Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2559739,
+   "lon": 145.0469777,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1322113120",
+   "name": "Clarkes Avenue Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2536677,
+   "lon": 145.0291509,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1428929949",
+   "name": "Harrap Creek Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2526214,
+   "lon": 145.0476324,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1536755442",
+   "name": "Sunshine Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.2829547,
+   "lon": 145.0017896,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w1536755443",
+   "name": "Panorama Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.2880655,
+   "lon": 145.0109501,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w1536755456",
+   "name": "Eco Park",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2760499,
+   "lon": 145.0133588,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1536755460",
+   "name": "Hearn Creek Upper / Hove Road Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.2836868,
+   "lon": 145.0175476,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w1536755462",
+   "name": "Dorset Road Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2805471,
+   "lon": 145.0198519,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1536755464",
+   "name": "Somerset Drive Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2814346,
+   "lon": 145.02171,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1536755468",
+   "name": "Ramsay Court Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2734965,
+   "lon": 145.014069,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1536755469",
+   "name": "James Court Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2720964,
+   "lon": 145.0199299,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1536848227",
+   "name": "J E Dowdle Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2723459,
+   "lon": 145.0026838,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1536848236",
+   "name": "Osborne Park",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.2628613,
+   "lon": 145.0202106,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w1536848244",
+   "name": "Balcombe Creek Water Frontage",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.26478,
+   "lon": 145.0315732,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w1536848245",
+   "name": "Seppelt Park Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.2647599,
+   "lon": 145.0288435,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w1536848246",
+   "name": "Balcombe Estuary Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.2653113,
+   "lon": 145.0356913,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w1536848250",
+   "name": "Craigie Road / Reginald Way Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2604296,
+   "lon": 145.0457888,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1536870745",
+   "name": "J R Anderson Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -38.2587278,
+   "lon": 145.0359826,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "r9261158",
+   "name": "Balcombe Creek Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.2648803,
+   "lon": 145.0212614,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "r9278055",
+   "name": "Port Phillip Bay Coastal Reserve (COM)",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -38.1755989,
+   "lon": 144.6997687,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  }
+ ]
+}

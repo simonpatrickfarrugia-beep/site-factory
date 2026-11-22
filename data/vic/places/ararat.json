@@ -2,13 +2,303 @@
  "town": "Ararat",
  "slug": "ararat",
  "centre": [
-  -37.2658785,
-  142.9797325
+  -37.2834165,
+  142.9319447
  ],
  "radiusM": 3000,
- "fetchedAt": "2026-11-15T22:08:59+00:00",
+ "fetchedAt": "2026-11-22T22:13:19+00:00",
  "attribution": "Data © OpenStreetMap contributors, ODbL (openstreetmap.org/copyright)",
  "places": [
+  {
+   "id": "n330382739",
+   "name": "Langi Morgala Museum",
+   "group": "do",
+   "type": "museum",
+   "lat": -37.2835373,
+   "lon": 142.9344785,
+   "tags": {
+    "website": "https://cv.vic.gov.au/organisations/3594/langi-morgala-museum/",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "n330382743",
+   "name": "Ararat Railway Museum",
+   "group": "do",
+   "type": "museum",
+   "lat": -37.2825726,
+   "lon": 142.9372359,
+   "tags": {
+    "opening_hours": "Mo,Su 13:00-16:00; PH off",
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "n330382763",
+   "name": "Ararat Orchid City Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.2833037,
+   "lon": 142.9371635,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n332192771",
+   "name": "Gum San Chinese Heritage Museum",
+   "group": "do",
+   "type": "museum",
+   "lat": -37.2792693,
+   "lon": 142.9253757,
+   "tags": {
+    "tourism": "museum"
+   }
+  },
+  {
+   "id": "n332197630",
+   "name": "Ararat Gallery TAMA",
+   "group": "do",
+   "type": "gallery",
+   "lat": -37.2830939,
+   "lon": 142.9321971,
+   "tags": {
+    "website": "https://www.araratgallerytama.com.au/",
+    "addr:housenumber": "82",
+    "addr:street": "Vincent Street",
+    "addr:suburb": "Ararat",
+    "addr:postcode": "3377",
+    "tourism": "gallery",
+    "amenity": "townhall"
+   }
+  },
+  {
+   "id": "n332209886",
+   "name": "Blue Duck Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.2839429,
+   "lon": 142.9358413,
+   "tags": {
+    "website": "theblueduckhotelararat.com.au",
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n332209887",
+   "name": "Ararat Central Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.2839257,
+   "lon": 142.935192,
+   "tags": {
+    "website": "https://www.araratcentralmotel.com",
+    "phone": "+61 3 5352 4444",
+    "addr:housenumber": "249",
+    "addr:street": "Barkly Street",
+    "addr:suburb": "Ararat",
+    "addr:postcode": "3377",
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "n332209896",
+   "name": "Leopold Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.2834789,
+   "lon": 142.9314553,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "n332209908",
+   "name": "Sicilians Cafe & Bar",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.284438,
+   "lon": 142.9287227,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n5401052022",
+   "name": "Indian Cuisine",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.2838004,
+   "lon": 142.9321695,
+   "tags": {
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n9985471462",
+   "name": "Pie Face",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.2861823,
+   "lon": 142.9493328,
+   "tags": {
+    "cuisine": "coffee_shop",
+    "brand": "Pie Face",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11093072570",
+   "name": "Bricks & Roses",
+   "group": "stay",
+   "type": "chalet",
+   "lat": -37.2872208,
+   "lon": 142.9306333,
+   "tags": {
+    "addr:housenumber": "6",
+    "addr:street": "McGibbony Street",
+    "addr:suburb": "Ararat",
+    "addr:postcode": "3377",
+    "tourism": "chalet"
+   }
+  },
+  {
+   "id": "n11813855437",
+   "name": "Ararat Noodle Bar",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.2835047,
+   "lon": 142.9304002,
+   "tags": {
+    "cuisine": "noodle",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11813855453",
+   "name": "Desi Swag",
+   "group": "eat",
+   "type": "restaurant",
+   "lat": -37.2838961,
+   "lon": 142.9321014,
+   "tags": {
+    "cuisine": "indian",
+    "amenity": "restaurant"
+   }
+  },
+  {
+   "id": "n11815806670",
+   "name": "Sede Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.284426,
+   "lon": 142.9285853,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n11815806676",
+   "name": "Vines",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.2845208,
+   "lon": 142.9277973,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "n13204054058",
+   "name": "Foragers Cafe",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.2829448,
+   "lon": 142.9320486,
+   "tags": {
+    "opening_hours": "Tu-Sa 09:00-15:00",
+    "outdoor_seating": "yes",
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "w21264692",
+   "name": "Ararat Community College Nature Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.2887993,
+   "lon": 142.9187221,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w21522362",
+   "name": "Edith Cavell Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.2848901,
+   "lon": 142.9264924,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w28380076",
+   "name": "Grump's Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.2801535,
+   "lon": 142.9238863,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w92029138",
+   "name": "J Ward",
+   "group": "do",
+   "type": "attraction",
+   "lat": -37.2783907,
+   "lon": 142.9304691,
+   "tags": {
+    "tourism": "attraction"
+   }
+  },
+  {
+   "id": "w92034412",
+   "name": "Acacia Caravan Park",
+   "group": "stay",
+   "type": "caravan_site",
+   "lat": -37.2763183,
+   "lon": 142.9255653,
+   "tags": {
+    "tourism": "caravan_site"
+   }
+  },
+  {
+   "id": "w112676015",
+   "name": "Statesman Motor Inn",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.2746769,
+   "lon": 142.922844,
+   "tags": {
+    "tourism": "motel"
+   }
+  },
+  {
+   "id": "w112676019",
+   "name": "Ararat Colonial Lodge Motel",
+   "group": "stay",
+   "type": "motel",
+   "lat": -37.2828107,
+   "lon": 142.928522,
+   "tags": {
+    "website": "http://bookings.goldenchain.com.au/VIC/Ararat/Ararat-Colonial-Lodge-Motel",
+    "tourism": "motel"
+   }
+  },
   {
    "id": "w168840838",
    "name": "Aradale Golf Club",
@@ -45,14 +335,139 @@
    }
   },
   {
-   "id": "w666624928",
-   "name": "Noahs Ark Dam Natural Features Reserve",
+   "id": "w542349184",
+   "name": "Smith Street Reserve",
+   "group": "do",
+   "type": "park",
+   "lat": -37.2754145,
+   "lon": 142.9452624,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w542584738",
+   "name": "Gordon Street Oval",
+   "group": "do",
+   "type": "park",
+   "lat": -37.2900992,
+   "lon": 142.9447699,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w666623212",
+   "name": "Ararat (Heath St) Bushland Reserve",
    "group": "do",
    "type": "nature_reserve",
-   "lat": -37.2506863,
-   "lon": 142.9554072,
+   "lat": -37.2919344,
+   "lon": 142.9555827,
    "tags": {
     "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w666624908",
+   "name": "Ararat (McLean St) Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.2743574,
+   "lon": 142.92676,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w666736590",
+   "name": "Bridal Hill Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.2596777,
+   "lon": 142.9151747,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w666847584",
+   "name": "Montara Bushland Reserve",
+   "group": "do",
+   "type": "nature_reserve",
+   "lat": -37.3084875,
+   "lon": 142.9298836,
+   "tags": {
+    "leisure": "nature_reserve"
+   }
+  },
+  {
+   "id": "w888364988",
+   "name": "Central Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.2837235,
+   "lon": 142.9295479,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w952999283",
+   "name": "Emu Park",
+   "group": "do",
+   "type": "park",
+   "lat": -37.2895797,
+   "lon": 142.9275192,
+   "tags": {
+    "leisure": "park"
+   }
+  },
+  {
+   "id": "w1093348826",
+   "name": "Mess and Barracks",
+   "group": "stay",
+   "type": "hotel",
+   "lat": -37.2846165,
+   "lon": 142.928109,
+   "tags": {
+    "tourism": "hotel"
+   }
+  },
+  {
+   "id": "w1182400699",
+   "name": "Ararat Hotel",
+   "group": "eat",
+   "type": "pub",
+   "lat": -37.2841619,
+   "lon": 142.9297451,
+   "tags": {
+    "amenity": "pub"
+   }
+  },
+  {
+   "id": "w1229720569",
+   "name": "Fred & Bet's",
+   "group": "eat",
+   "type": "cafe",
+   "lat": -37.2839565,
+   "lon": 142.9287162,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "id": "r4180935",
+   "name": "Chalambar Golf Club",
+   "group": "do",
+   "type": "golf_course",
+   "lat": -37.2672008,
+   "lon": 142.9097292,
+   "tags": {
+    "website": "https://www.araratchalambargolf.com.au/",
+    "phone": "+61 3 5352 4297",
+    "description": "18 hole Par 70",
+    "addr:street": "Golf Links Road",
+    "leisure": "golf_course"
    }
   },
   {
