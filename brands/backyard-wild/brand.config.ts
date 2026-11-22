@@ -26,7 +26,7 @@ export default defineBrand({
     { label: 'Privacy', href: '/privacy' },
     { label: 'YouTube', href: 'https://www.youtube.com/@BackyardWildAU' },
   ],
-  footerNote: 'Backyard Wild is run by Independent Media Network Pty Ltd, Melbourne. The camera points at the bird bath only, never at people, the street or the neighbours.',
+  footerNote: 'The camera points at the bird bath only, never at people, the street or the neighbours.',
 
   seo: {
     titleSuffix: ' | Backyard Wild',

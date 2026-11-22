@@ -4,6 +4,7 @@
  * Content lives in data/shortlisted/*.json (edited by chat).
  */
 import { getSingleton } from '../../src/lib/data';
+import { imnRef } from '../../src/lib/imn';
 import type { Route } from '../../src/lib/routes';
 import type { Pages, SiteInfo } from './model';
 
@@ -20,7 +21,7 @@ export function routes(): Route[] {
     name: 'Shortlisted',
     url: SITE,
     email: site.email,
-    parentOrganization: { '@type': 'Organization', name: 'Independent Media Network Pty Ltd' },
+    parentOrganization: imnRef,
     areaServed: { '@type': 'Country', name: 'Australia' },
   };
   const crumbs = (items: { name: string; path: string }[]) => ({

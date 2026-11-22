@@ -1,5 +1,6 @@
 ---
 import { brand } from '../lib/brand';
+import { imnOrganization } from '../lib/imn';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
@@ -84,6 +85,8 @@ const featuredHeading = brand.launched && !isPrivate ? FEATURED_HEADINGS[__BRAND
     <style is:inline set:html={tokenCss}></style>
 
     {schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+    {/* The publisher behind every IMN site (src/lib/imn.ts). IMN's own site already describes itself. */}
+    {!isPrivate && !brand.domain.includes('imnetwork.com.au') && <script type="application/ld+json" set:html={JSON.stringify(imnOrganization)} />}
 
     {brand.analytics.ga4Id && !isPrivate && (
       <>

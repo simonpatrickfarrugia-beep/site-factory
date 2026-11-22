@@ -4,6 +4,7 @@
  * Rates: data/paycalc/rates.json (sourced, dated). Copy: data/paycalc/pages.json.
  */
 import { getSingleton } from '../../src/lib/data';
+import { imnRef } from '../../src/lib/imn';
 import type { Route } from '../../src/lib/routes';
 import { calculate, aud } from '../../src/lib/pay-tax';
 import { monthlyRepayment } from '../../src/lib/mortgage';
@@ -31,7 +32,7 @@ export function routes(): Route[] {
   const Y = rates.yearLabel;
   const org = {
     '@context': 'https://schema.org', '@type': 'Organization', '@id': `${SITE}/#org`, name: brandConfig.name, url: SITE,
-    parentOrganization: { '@type': 'Organization', name: 'Independent Media Network Pty Ltd' }, areaServed: { '@type': 'Country', name: 'Australia' },
+    parentOrganization: imnRef, areaServed: { '@type': 'Country', name: 'Australia' },
   };
   const crumbs = (items: { name: string; path: string }[]) => ({
     '@context': 'https://schema.org', '@type': 'BreadcrumbList',

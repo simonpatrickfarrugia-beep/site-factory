@@ -4,6 +4,7 @@
  * Content lives in data/trade-admin/*.json (edited by chat).
  */
 import { getSingleton } from '../../src/lib/data';
+import { imnRef } from '../../src/lib/imn';
 import type { Route } from '../../src/lib/routes';
 import type { Apps, Pages, Trades } from './model';
 
@@ -17,7 +18,7 @@ export function routes(): Route[] {
   const tradeLinks = (mode: 'quote' | 'invoice') => trades.filter((t) => t.mode === mode).map((t) => ({ href: `/${t.slug}`, label: t.trade }));
   const org = {
     '@context': 'https://schema.org', '@type': 'Organization', '@id': `${SITE}/#org`, name: 'Trade Admin', url: SITE,
-    email: 'hello@tradeadmin.com.au', parentOrganization: { '@type': 'Organization', name: 'Independent Media Network Pty Ltd' },
+    email: 'hello@tradeadmin.com.au', parentOrganization: imnRef,
     areaServed: { '@type': 'Country', name: 'Australia' },
   };
   const crumbs = (items: { name: string; path: string }[]) => ({

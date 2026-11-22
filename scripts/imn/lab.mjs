@@ -115,7 +115,7 @@ ${nav}
     { label: 'How we make money', href: '/affiliate-disclosure' },
     { label: 'Privacy', href: '/privacy-policy' },
   ],
-  footerNote: 'Independent Media Network Pty Ltd · ABN 89 640 199 935 · Melbourne. Some links are affiliate links: we may earn a commission at no cost to you.',
+  footerNote: 'Some links are affiliate links: we may earn a commission at no cost to you.',
 
   seo: {
     titleSuffix: ${JSON.stringify(' | ' + lab.name)},

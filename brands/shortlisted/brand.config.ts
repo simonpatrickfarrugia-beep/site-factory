@@ -25,7 +25,7 @@ export default defineBrand({
     { label: 'How we make money', href: '/how-we-make-money' },
     { label: 'Privacy', href: '/privacy-policy' },
   ],
-  footerNote: 'Shortlisted is run by Independent Media Network Pty Ltd, Melbourne. Free for businesses. We tell you whenever a provider we suggest pays us.',
+  footerNote: 'Free for businesses. We tell you whenever a provider we suggest pays us.',
 
   seo: {
     titleSuffix: ' | Shortlisted',

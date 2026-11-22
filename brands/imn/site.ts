@@ -93,6 +93,7 @@ export function routes(): Route[] {
     '@id': `${SITE}/#org`,
     name: 'Independent Media Network',
     legalName: 'Independent Media Network Pty Ltd',
+    taxID: '89640199935',
     url: SITE,
     email: site.email,
     address: { '@type': 'PostalAddress', addressLocality: 'Melbourne', addressRegion: 'VIC', addressCountry: 'AU' },
