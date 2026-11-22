@@ -1687,26 +1687,26 @@ _Seeds: dog boarding cost in portland oregon, dog daycare prices near seattle, h
 
 Per month, once a site ranks (usually 6–18 months). Low / mid / high: visits × affiliate clicks × conversion × payout (average of the top 3 matching programmes), plus display ads. These numbers rank ideas against each other; they are not forecasts. They get replaced by our own measured rates as our sites earn.
 
-**Model:** Calibrated from 567 page views, 3 affiliate clicks and 0 reported sales (trailers, vic, community-help-co, trade-admin, paycalc, simon-says-travel, imn): click rate 4.0% (assumed 5.0%), conversion 4.9% (assumed 5.0%). The assumption weighs as much as 2,000 views / 200 clicks, so real data takes over as it grows.
+**Model:** Calibrated from 551 page views, 2 affiliate clicks and 0 reported sales (trailers, vic, community-help-co, trade-admin, paycalc, simon-says-travel, imn): click rate 4.0% (assumed 5.0%), conversion 5.0% (assumed 5.0%). The assumption weighs as much as 2,000 views / 200 clicks, so real data takes over as it grows.
 
 | Idea | Market | Visits/mo (mid) | Est. revenue/mo (low · mid · high) | Avg payout per sale | Score |
 |---|---|---:|---|---:|---:|
-| Dog breeds | United States | 274,520 | $1,396 · **$12,891** · $61,969 | $18.33 | 75 |
-| US national parks and hiking trails | United States | 89,156 | $295 · **$2,535** · $11,678 | $9 | 74 |
-| US take-home pay by salary and state | United States | 58,948 | $313 · **$2,463** · $10,674 | $9 | 77 |
-| Anime: where to watch and watch order | United States | 102,419 | $194 · **$1,417** · $5,787 | $1.7 | 70 |
-| TV shows: where to watch | United States | 27,719 | $109 · **$758** · $2,972 | $1.7 | 73 |
-| Video games: release dates and trailers | United States | 70,520 | $58 · **$445** · $1,890 | $1.17 | 62 |
-| AU pay and tax calculators (take-home pay by salary) | Australia | 8,647 | $46 · **$361** · $1,566 | $9 | 76 |
-| US cost of living by city | United States | 6,358 | $34 · **$313** · $1,489 | $18.33 | 66 |
+| Dog breeds | United States | 274,520 | $1,398 · **$12,905** · $62,042 | $18.33 | 75 |
+| US national parks and hiking trails | United States | 89,156 | $295 · **$2,537** · $11,689 | $9 | 74 |
+| US take-home pay by salary and state | United States | 58,948 | $313 · **$2,465** · $10,682 | $9 | 77 |
+| Anime: where to watch and watch order | United States | 102,419 | $194 · **$1,418** · $5,790 | $1.7 | 70 |
+| TV shows: where to watch | United States | 27,719 | $109 · **$759** · $2,972 | $1.7 | 73 |
+| Video games: release dates and trailers | United States | 70,520 | $58 · **$445** · $1,892 | $1.17 | 62 |
+| AU pay and tax calculators (take-home pay by salary) | Australia | 8,647 | $46 · **$362** · $1,567 | $9 | 76 |
+| US cost of living by city | United States | 6,358 | $35 · **$313** · $1,490 | $18.33 | 66 |
 | Book series in reading order | United States | 24,564 | $21 · **$168** · $725 | $1.43 | 53 |
 | Victoria: where to stay by town | Australia | 3,903 | $15 · **$135** · $625 | $11.33 | 66 |
 | AU electric car running costs vs petrol by model | Australia | 2,312 | $11 · **$95** · $428 | $11.5 | 69 |
 | Movie soundtracks and film music | United States | 11,888 | $10 · **$81** · $351 | $1.43 | 53 |
 | Car rental cost by airport and car type | United States | 1,815 | $10 · **$81** · $353 | $10.33 | 69 |
 | AU stamp duty and home buying costs by state | Australia | 2,985 | $11 · **$78** · $299 | $1 | 64 |
-| Board games | United States | 11,226 | $10 · **$76** · $327 | $1.4 | 61 |
-| Victoria: things to do by town | Australia | 1,769 | $5 · **$49** · $236 | $11.33 | 60 |
+| Board games | United States | 11,226 | $10 · **$76** · $328 | $1.4 | 61 |
+| Victoria: things to do by town | Australia | 1,769 | $5 · **$49** · $237 | $11.33 | 60 |
 | Retro game finder: where to play classic games today (US) | United States | 6,967 | $5 · **$40** · $166 | $0.87 | 58 |
 | AU electricity prices by postcode and retailer | Australia | 604 | $3 · **$20** · $85 | $5 | 61 |
 | AU solar and home battery payback by postcode | Australia | 624 | $3 · **$19** · $78 | $3.5 | 66 |
