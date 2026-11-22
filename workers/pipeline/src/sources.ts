@@ -170,7 +170,8 @@ export async function writeCopy(apiKey: string, model: string, m: OmdbMovie): Pr
     '',
     'Write copy for a movie trailer website:',
     '1. A tagline of at most 10 words. No quotation marks.',
-    '2. An original summary of 2–3 sentences. Do not copy the plot outline wording, and no spoilers beyond the setup.',
+    // 4–5 sentences: film pages with under 50 words of write-up are kept out of Google (brands/trailers/site.ts isThin).
+    '2. An original summary of 4–5 sentences (70–90 words): the setup, who stars and directs, and what kind of night it suits. Do not copy the plot outline wording, no spoilers beyond the setup, and no facts that are not given above or widely known about the film.',
     '',
     'Reply with JSON only: {"tagline": "...", "summary": "..."}',
   ].join('\n');
