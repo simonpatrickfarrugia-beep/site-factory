@@ -1,8 +1,8 @@
 # Trailer channel catalogue candidates
 
-Updated 2026-11-15. Monthly Google searches in United States for "<film> movie" + "<film> trailer". Any year; films still in cinemas wait until they can be rented or streamed.
+Updated 2026-11-22. Monthly Google searches in United States for "<film> movie" + "<film> trailer". Any year; films still in cinemas wait until they can be rented or streamed.
 
-26 waiting · 200 sent to the pipeline · 1 already on the site · 0 skipped.
+56 waiting · 230 sent to the pipeline · 1 already on the site · 0 skipped.
 
 Add films by chat: "add candidates: <theme or list>". The weekly run queues the most-searched ones.
 
@@ -10,16 +10,18 @@ Add films by chat: "add candidates: <theme or list>". The weekly run queues the 
 
 | Theme | Films | Searches/mo |
 |---|---:|---:|
-| Classic Hollywood | 20 | 2,137,500 |
-| 2000s crowd-pleasers | 21 | 1,786,970 |
-| Family classics | 12 | 1,487,640 |
-| 90s comedy | 13 | 1,446,720 |
-| 80s comedy | 17 | 1,405,410 |
-| 80s sci-fi & fantasy | 16 | 1,200,140 |
-| 90s thrillers | 10 | 1,196,180 |
-| 70s New Hollywood | 16 | 1,160,220 |
+| 2000s crowd-pleasers | 27 | 2,653,740 |
+| Classic Hollywood | 26 | 2,333,160 |
+| Family classics | 18 | 2,222,840 |
+| 80s comedy | 23 | 1,889,510 |
+| 90s comedy | 19 | 1,815,610 |
+| Romantic comedies | 7 | 1,431,530 |
+| 90s thrillers | 15 | 1,306,290 |
+| 80s sci-fi & fantasy | 21 | 1,305,740 |
+| 70s New Hollywood | 21 | 1,296,320 |
 | 70s horror | 10 | 960,910 |
 | 90s favourites | 8 | 932,310 |
+| Sports dramas | 8 | 927,720 |
 | Cult classics | 13 | 846,940 |
 | 80s action | 14 | 762,340 |
 | Westerns | 9 | 680,440 |
@@ -31,6 +33,34 @@ Add films by chat: "add candidates: <theme or list>". The weekly run queues the 
 
 | Film | Searches/mo | Theme |
 |---|---:|---|
+| Sweet Home Alabama (2002) | 27,980 | Romantic comedies |
+| Rudy (1993) | 27,690 | Sports dramas |
+| Knocked Up (2007) | 27,490 | 2000s crowd-pleasers |
+| The Last Starfighter (1984) | 27,420 | 80s sci-fi & fantasy |
+| The Pelican Brief (1993) | 27,240 | 90s thrillers |
+| The Philadelphia Story (1940) | 27,190 | Classic Hollywood |
+| The Maltese Falcon (1941) | 27,150 | Classic Hollywood |
+| Cocoon (1985) | 22,920 | 80s sci-fi & fantasy |
+| The Parent Trap (1998) | 22,790 | Family classics |
+| Krull (1983) | 22,520 | 80s sci-fi & fantasy |
+| Enemy Mine (1985) | 22,520 | 80s sci-fi & fantasy |
+| Stripes (1981) | 22,460 | 80s comedy |
+| The Negotiator (1998) | 22,370 | 90s thrillers |
+| The Conversation (1974) | 22,370 | 70s New Hollywood |
+| Mr. Smith Goes to Washington (1939) | 22,270 | Classic Hollywood |
+| Homeward Bound: The Incredible Journey (1993) | 19,700 | Family classics |
+| Crazy Rich Asians (2018) | 18,690 | Romantic comedies |
+| Five Easy Pieces (1970) | 18,270 | 70s New Hollywood |
+| The African Queen (1951) | 18,120 | Classic Hollywood |
+| Freaky Friday (1976) | 16,100 | Family classics |
+| A Perfect Murder (1998) | 14,870 | 90s thrillers |
+| Police Academy (1984) | 12,310 | 80s comedy |
+| Copycat (1995) | 12,210 | 90s thrillers |
+| Big Daddy (1999) | 10,900 | 90s comedy |
+| Ben-Hur (1959) | 10,290 | Classic Hollywood |
+| Starman (1984) | 10,220 | 80s sci-fi & fantasy |
+| The Wedding Singer (1998) | 5,610 | 90s comedy |
+| Paper Moon (1973) | 4,660 | 70s New Hollywood |
 | Crocodile Dundee (1986) | 4,000 | Australian classics |
 | Suspiria (1977) | 3,990 | 70s horror |
 | Fright Night (1985) | 3,860 | 80s horror |
@@ -57,3 +87,5 @@ Add films by chat: "add candidates: <theme or list>". The weekly run queues the 
 | Children of Men (2006) | — | 2000s crowd-pleasers |
 | Butch Cassidy and the Sundance Kid (1969) | — | Westerns |
 | Honey, I Shrunk the Kids (1989) | — | Family classics |
+| Old School (2003) | — | 2000s crowd-pleasers |
+| Tommy Boy (1995) | — | 90s comedy |
