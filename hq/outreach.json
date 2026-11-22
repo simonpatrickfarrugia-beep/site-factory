@@ -94,5 +94,12 @@
     "free": 0,
     "won": 0
   },
-  "_previewsNote": "imnPreviews: IMN website previews from D1 previews (made, sent = status sent/free/won/lost, viewed = views > 0, free, won). Refreshed with the funnel by the morning-report skill."
+  "_previewsNote": "imnPreviews: IMN website previews from D1 previews (made, sent = status sent/free/won/lost, viewed = views > 0, free, won). Refreshed with the funnel by the morning-report skill.",
+  "imnDays": [
+    {
+      "d": "2026-11-18",
+      "n": 2
+    }
+  ],
+  "_daysNote": "imnDays: IMN emails sent per Melbourne day, last 21 days (days with 0 omitted). Feeds the send streak (weekdays with 5+ IMN sends in a row) on the wallpaper and in the morning report."
 }

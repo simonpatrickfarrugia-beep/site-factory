@@ -16,7 +16,7 @@ interface Props {
   workers: { name: string; skill: string; when: string; status: string; last: string | null; note: string }[];
   jobs: { name: string; min: number; kind: 'code' | 'ai'; often?: string }[];
   partners: string[];
-  funnel: { found: number; sent: number; replied: number; previews: number | null; viewed: number | null; paid: number; sent7: number; weekGoal: number; waiting: number; sent7All: number; asOf: string | null };
+  funnel: { found: number; sent: number; replied: number; previews: number | null; viewed: number | null; paid: number; sent7: number; weekGoal: number; waiting: number; sent7All: number; streak: number; asOf: string | null };
   oneThing: { what: string; mins: number | null; ready: boolean } | null;
   opp: { name: string; impressions: number; clicks: number; ctr: number } | null;
   moneyClicks: { name: string; n: number }[];
@@ -123,7 +123,7 @@ const rareText = [...new Map(rare.map((j) => [j.name, `${j.name} (${j.often})`])
           </div>
           <div class={`fn__week fn__week--${f.sent7 >= f.weekGoal ? 'ok' : f.sent7 >= f.weekGoal * 0.6 ? 'warn' : 'bad'}`}><span>IMN emails this week</span><b>{f.sent7} / {f.weekGoal}</b></div>
           <div class="fn__bar fn__bar--wk"><i style={`width:${bar(f.sent7, f.weekGoal)}%`}></i></div>
-          <span class="fn__note">{f.waiting ? `${f.waiting} draft${f.waiting === 1 ? '' : 's'} waiting · ` : ''}all brands {f.sent7All} sent this week</span>
+          <span class="fn__note">{f.streak > 0 ? `🔥 ${f.streak}-day streak · ` : ''}{f.waiting ? `${f.waiting} draft${f.waiting === 1 ? '' : 's'} waiting · ` : ''}all brands {f.sent7All} sent this week</span>
         </li>
         <li data-node="labs"><b>IMN Labs</b><span>{p.labs.length ? p.labs.map((l) => l.name).join(' · ') : 'none live'}</span></li>
       </ul>

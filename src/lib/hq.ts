@@ -591,6 +591,18 @@ export function wallpaperProps() {
     paid: Math.max(clients, pv?.won ?? 0),
     sent7: imn.sent7 ?? 0, weekGoal: WEEK_GOAL, waiting: imn.waiting ?? 0,
     sent7All: sum(Object.values(ob).map((b: any) => b.sent7 ?? 0)),
+    streak: (() => { // weekdays in a row with 5+ IMN sends, ending today (if already hit) or the last weekday before it
+      const days: Record<string, number> = {}; for (const x of outreach.imnDays ?? []) days[x.d] = x.n;
+      const melDay = (t: number) => new Date(t).toLocaleDateString('en-CA', { timeZone: 'Australia/Melbourne' });
+      let t = Date.now(), n = 0;
+      if ((days[melDay(t)] ?? 0) < 5) t -= 86400000;
+      for (let i = 0; i < 60; i++, t -= 86400000) {
+        const wd = new Date(melDay(t) + 'T12:00:00Z').getUTCDay();
+        if (wd === 0 || wd === 6) continue;
+        if ((days[melDay(t)] ?? 0) >= 5) n++; else break;
+      }
+      return n;
+    })(),
     asOf: outreach.asOf ?? null,
   };
 

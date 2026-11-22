@@ -33,6 +33,8 @@ IMN HQ's Growth funnel, Bottlenecks and Brand pipeline read `hq/outreach.json`. 
 Map columns to keys: found, drafted, sent, replied, linked, waiting, dropped, oldestWaiting, lastSent, sent7, mailIn, mailOut.
 - IMN previews (top-level `imnPreviews`, read by the wallpaper's First client funnel):
   `SELECT COUNT(*) made, SUM(status IN ('sent','free','won','lost')) sent, SUM(views > 0) viewed, SUM(status='free') free, SUM(status='won') won FROM previews` → `{ made, sent, viewed, free, won }` (zeros for NULL).
+- IMN sends per day (top-level `imnDays`, last 21 days, for the send streak): `SELECT date(at, ?) d, COUNT(DISTINCT org_id) n FROM touches
+  WHERE stage='sent' AND brand='imn' AND at > ? GROUP BY d ORDER BY d DESC` (params: '+11 hours' in AEDT Oct–Apr, '+10 hours' otherwise; now minus 21 days) → `[{ d, n }]`.
 Commit with the milestone/log commit (`[skip ci]` is NOT used for this file: HQ must rebuild to show it), message `HQ: outreach snapshot`.
 
 ## Report
@@ -41,6 +43,10 @@ Commit with the milestone/log commit (`[skip ci]` is NOT used for this file: HQ 
    first revenue, first Tradify trial request, first Fergus trial click. Append `{"date","site","what"}` to `hit`, commit
    `HQ: milestone <what> [skip ci]`, push.
 1. **🔔 Needs you** (only if something is waiting): Tradify trial requests ("set up in the Partner Portal"), CHC enquiries, outreach replies (who, which brand).
+1b. **📨 IMN sends** (always, Simon's #1 number until the first IMN client pays): "IMN emails this week: N / 25 · streak: S weekday(s) at 5+"
+   (N = `brands.imn.sent7`; S = consecutive weekdays, Mon–Fri, ending yesterday, each with n >= 5 in `imnDays`; weekends skipped, not breaking).
+   Then the nudge: under 5 sent yesterday on a weekday → "Today: send 5 (X ready in IMN HQ → Today → Review & send)" with X = IMN drafts waiting.
+   Streak 3+ → one line of praise, no more.
 2. **🛠️ Trade Admin push** (5 Nov – 5 Dec 2026; drop after 5 Dec): "Day X of 30 · trials requested N · Fergus trial clicks N (28 days) · boss fight: first trial through your link by 5 Dec".
    If both are 0 after day 10, one short nudge (e.g. "Traffic is the blocker: review the Radar picks today").
 3. **📨 Radar**: N prospects waiting (by brand) + the top one in a few words. https://imn-hq.simonpatrickfarrugia.workers.dev
