@@ -198,6 +198,11 @@ async function process(state: State, svc: Services, limit: number, which: QueueI
       continue;
     }
 
+    // A hand-checked imdbId pins the film: OMDb's Year sometimes follows a re-release (Ip Man → 2025), so keep the
+    // queue item's year when the id and title both match.
+    if (found && item.imdbId && found.imdbID === item.imdbId && item.year && sameFilmTitle(item.title, found.Title)) {
+      found = { ...found, Year: String(item.year) };
+    }
     const why = found ? mismatch(item, found) : 'no OMDb match';
     if (found && !why && newest !== null && Number(yearOf(found)) > newest) {
       r.log.push(`Skipped "${found.Title}" (${yearOf(found)}): newer than the ${svc.minAgeYears}-year cutoff.`);
