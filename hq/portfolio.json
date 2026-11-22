@@ -184,7 +184,7 @@
  "actions": [
   {
    "who": "Claude",
-   "what": "Publish the next Vic towns: 30 new towns volume-checked 16 Nov, top 12 probed; publish those with 25+ places",
+   "what": "Vic towns: 9 published 23 Nov (73 live). 14 more probing (Gisborne, Colac, Heathcote, Wonthaggi…); publish those with 25+ places next Monday",
    "site": "vic"
   },
   {
@@ -194,7 +194,7 @@
   },
   {
    "who": "Claude",
-   "what": "Trailers: 16 classics (Casablanca, Se7en…) still stuck after the 11 Nov OMDb fix; budget guard fixed and re-queued 16 Nov. Check they publish",
+   "what": "Trailers: classics stuck in review. 23 Nov: a pinned imdbId now keeps the trailer's year, so Ip Man, Hard Boiled, Picnic at Hanging Rock, Drunken Master II and Seven are back in the queue. Check they publish; High Life has a wrong imdbId",
    "site": "trailers"
   },
   {
@@ -915,14 +915,19 @@
    "id": "amazon-au-associates",
    "kind": "do",
    "sprint": false,
-   "mins": 10,
+   "mins": 8,
    "what": "Apply to Amazon Associates Australia at https://affiliate-program.amazon.com.au (website: https://www.movietrailer.channel). Then paste the new tracking ID (ends in -22) into the Site Factory chat and Claude sends Australian visitors to amazon.com.au",
    "why": "GA4, 18 Oct–16 Nov: Australia is 7 of 31 visitors (23%), over the 20% line. Those visitors can't buy through amazon.com links",
    "link": "https://affiliate-program.amazon.com.au",
    "linkLabel": "Amazon AU",
    "done": false,
    "addedAt": "2026-11-17",
-   "brand": "trailers"
+   "brand": "trailers",
+   "ready": {
+    "what": "Values to paste, in order. Website: https://www.movietrailer.channel. Apps: none. Preferred store ID: movietrailerc. Website description: 'Movie Trailer Channel is an Australian-run film guide: official trailers, cast, ratings and where to watch for 400+ classic and recent films, with themed collections (Christmas movies, 90s romance, Marvel). Visitors use it to pick a film, then rent or buy it.' Topics: Movies & TV. Items to list: DVD, Blu-ray and digital movies. Website type: content/niche. How you drive traffic: SEO (Google Search). How you use the site to earn: affiliate links next to each film. Monthly visitors: under 500. Then paste the tracking ID (ends in -22) in the Site Factory chat.",
+    "link": "https://affiliate-program.amazon.com.au",
+    "at": "2026-11-23"
+   }
   },
   {
    "id": "trailers-actor-pages-index",
@@ -933,7 +938,11 @@
    "link": "https://www.movietrailer.channel/actors/arnold-schwarzenegger",
    "linkLabel": "Example",
    "done": false,
-   "addedAt": "2026-11-22"
+   "addedAt": "2026-11-22",
+   "ready": {
+    "what": "Recommendation: not yet. Google shows only 31 of 437 pages, so new pages should go to film pages first. Reply 'not yet' and I'll ask again once Google shows 65+ pages.",
+    "at": "2026-11-23"
+   }
   }
  ],
  "notes": [
