@@ -43,6 +43,7 @@ Then add one `todo` item per draft to `hq/portfolio.json`: `mins` 3, `why` (the 
 {what: "Draft ready: add your line and reply 'publish <slug>'", link: GitHub link to the draft, at}. Keep the list under ~10 open.
 
 ## 4. Publish (when Simon replies "publish <slug>" with his line)
+"publish <slug> with A" (or B / C) = use that suggested line from the draft's "Suggested lines" block as SIMON'S LINE, word for word unless he edits it.
 Put the copy into the site's data (Vic: `data/vic/content.json` town `intro`/`tips`, or the page's data file; MyPayCalc:
 `data/paycalc/pages.json`), Simon's line in his voice where it fits best, then wait for "Check build" to pass, run
 `scripts/claude/probe.sh` on the live URL and ping IndexNow (`indexnow` workflow). Tick the todo.

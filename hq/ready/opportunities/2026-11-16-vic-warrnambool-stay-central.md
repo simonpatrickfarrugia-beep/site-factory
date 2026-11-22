@@ -34,3 +34,10 @@ can be seen from the Logans Beach platform, a short drive east.
 _(empty — your words go here)_
 
 **Question to prompt it:** Staying in Warrnambool, would you pick the centre or the beach end, and why?
+
+**Suggested lines (Claude, 22 Nov — general tips, not personal claims; pick one, tweak it, or write your own):**
+- **A:** Staying central means you can walk to dinner and still be a short drive from Lady Bay and Logans Beach.
+- **B:** Winter is whale season at Logans Beach, so book a central stay early if you're coming between June and September.
+- **C:** Warrnambool works as the western end of a Great Ocean Road trip, so a central stay suits a one or two night stop.
+
+To use one: reply `publish warrnambool-stay-central with A` (or B / C). Your own words always beat these.

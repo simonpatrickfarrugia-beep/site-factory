@@ -66,3 +66,10 @@ https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents
 _(empty — your words go here, one or two sentences)_
 
 **Question to prompt it:** When the tax cut landed in your own pay, what did you actually notice or do with it?
+
+**Suggested lines (Claude, 22 Nov — general tips, not personal claims; pick one, tweak it, or write your own):**
+- **A:** Worth a look before you check your payslip: the same salary can take home a noticeably different amount from one year to the next, purely because the brackets moved.
+- **B:** If your pay hasn't changed but your take-home has, the brackets are usually why. This page shows exactly which year moved what.
+- **C:** Keep this page handy at tax time: it's the quickest way to see which year's rates applied to a past job or a back-pay amount.
+
+To use one: reply `publish tax-brackets-history with A` (or B / C). Your own words always beat these.

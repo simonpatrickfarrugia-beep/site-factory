@@ -36,3 +36,10 @@ Wednesday market from `data/vic/content.json`. "All you can eat" left out: no da
 _(empty — your words go here)_
 
 **Question to prompt it:** If a mate had one meal on Main Street, Mornington, where would you send them and what should they order?
+
+**Suggested lines (Claude, 22 Nov — general tips, not personal claims; pick one, tweak it, or write your own):**
+- **A:** Main Street is easiest on foot: park near the pier end, walk up for a meal and finish with a stroll to Mothers Beach.
+- **B:** On a weekend, book ahead or eat early. Main Street fills fast once the day-trippers arrive.
+- **C:** Make a day of it: lunch on Main Street, then the Red Hill wineries are a short drive away.
+
+To use one: reply `publish mornington-main-street with A` (or B / C). Your own words always beat these.

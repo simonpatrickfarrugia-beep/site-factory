@@ -50,3 +50,10 @@ _Checked 18 Nov 2026 (Claude queue job 32): all four table rows re-worked from r
 _(empty — your words go here)_
 
 **Question to prompt it:** When your own study loan started coming out of your pay, what surprised you? One sentence.
+
+**Suggested lines (Claude, 22 Nov — general tips, not personal claims; pick one, tweak it, or write your own):**
+- **A:** Tip: check your first payslip after you pass the threshold. If nothing's coming out for HECS, the study loan box on your TFN declaration probably wasn't ticked.
+- **B:** The fortnightly number is the one to budget around. The yearly figure only settles at tax time.
+- **C:** No interest, but indexation each June still grows the balance, so even small extra payments before 1 June do some work.
+
+To use one: reply `publish hecs-repayment with A` (or B / C). Your own words always beat these.

@@ -40,3 +40,10 @@ intro context from `data/vic/content.json`. Nothing invented: anything marked _(
 _(empty — your words go here)_
 
 **Question to prompt it:** Where do you actually eat in Sorrento, and what do you order? One or two sentences, and fill the three picks above if you know them.
+
+**Suggested lines (Claude, 22 Nov — general tips, not personal claims; pick one, tweak it, or write your own):**
+- **A:** Sorrento gets busy on summer weekends, so book ahead for dinner, or go early and walk the foreshore while you wait.
+- **B:** Pair a meal here with the ferry to Queenscliff and you've got one of the easiest day trips on the Peninsula.
+- **C:** Ocean Beach Road is where most of the eating happens, so park once and wander rather than driving between places.
+
+To use one: reply `publish sorrento-restaurants with A` (or B / C). Your own words always beat these.
