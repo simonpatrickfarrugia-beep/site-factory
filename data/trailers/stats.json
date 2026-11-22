@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-21T19:00:09.571Z",
+ "generatedAt": "2026-11-22T19:00:09.556Z",
  "period": {
-  "start": "2026-10-24",
-  "end": "2026-11-20"
+  "start": "2026-10-25",
+  "end": "2026-11-21"
  },
  "gscPeriod": {
-  "start": "2026-10-22",
-  "end": "2026-11-18"
+  "start": "2026-10-23",
+  "end": "2026-11-19"
  },
  "sources": {
   "ga4": true,
@@ -14,23 +14,18 @@
   "notes": []
  },
  "totals": {
-  "views": 69,
+  "views": 68,
   "prevViews": 249,
-  "users": 39,
+  "users": 38,
   "cta": {
    "films_banner": 2,
    "justwatch": 1,
    "prime": 1
   },
   "gscClicks": 0,
-  "gscImpressions": 80
+  "gscImpressions": 78
  },
  "daily": [
-  {
-   "date": "2026-10-24",
-   "views": 1,
-   "cta": 0
-  },
   {
    "date": "2026-10-26",
    "views": 7,
@@ -119,9 +114,9 @@
   },
   {
    "path": "/",
-   "views": 24,
+   "views": 23,
    "prevViews": 101,
-   "users": 20,
+   "users": 19,
    "cta": {
     "films_banner": 2
    },
@@ -472,8 +467,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 54,
+   "gscImpressions": 1,
+   "gscPosition": 52,
    "topQuery": "men and black trailer",
    "allViews": 2
   },
@@ -844,9 +839,9 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 36.5,
-   "topQuery": "the sixth sense trailer",
+   "gscImpressions": 1,
+   "gscPosition": 9,
+   "topQuery": null,
    "allViews": 1
   },
   {
@@ -1480,20 +1475,6 @@
    "page": "/movies/men-in-black-1997"
   },
   {
-   "query": "men in black trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 56,
-   "page": "/movies/men-in-black-1997"
-  },
-  {
-   "query": "the sixth sense trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 64,
-   "page": "/movies/the-sixth-sense-1999"
-  },
-  {
    "query": "free movie trailers",
    "clicks": 0,
    "impressions": 1,
@@ -1600,11 +1581,6 @@
   }
  ],
  "gscDaily": [
-  {
-   "date": "2026-10-22",
-   "clicks": 0,
-   "impressions": 2
-  },
   {
    "date": "2026-10-23",
    "clicks": 0,
@@ -1739,6 +1715,11 @@
    "date": "2026-11-18",
    "clicks": 0,
    "impressions": 3
+  },
+  {
+   "date": "2026-11-19",
+   "clicks": 0,
+   "impressions": 0
   }
  ],
  "allTime": {
@@ -2028,7 +2009,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 23
+    "sessions": 22
    },
    {
     "source": "chatgpt.com",

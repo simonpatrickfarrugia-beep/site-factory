@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-21T19:00:09.571Z",
+ "generatedAt": "2026-11-22T19:00:09.556Z",
  "period": {
-  "start": "2026-10-24",
-  "end": "2026-11-20"
+  "start": "2026-10-25",
+  "end": "2026-11-21"
  },
  "gscPeriod": {
-  "start": "2026-10-22",
-  "end": "2026-11-18"
+  "start": "2026-10-23",
+  "end": "2026-11-19"
  },
  "sources": {
   "ga4": true,
@@ -23,7 +23,7 @@
    "start_plan": 1
   },
   "gscClicks": 0,
-  "gscImpressions": 4
+  "gscImpressions": 21
  },
  "daily": [
   {
@@ -57,8 +57,8 @@
     "start_hero": 1
    },
    "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 8.5,
+   "gscImpressions": 10,
+   "gscPosition": 8,
    "topQuery": "imn",
    "allViews": 8,
    "allCta": {
@@ -101,14 +101,36 @@
     "start_plan": 1
    },
    "d7": 1
+  },
+  {
+   "path": "/how-much-does-a-website-cost",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 10,
+   "gscPosition": 66.4,
+   "topQuery": "how much does a website cost for small business"
+  },
+  {
+   "path": "/websites-for-tradies",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 89,
+   "topQuery": "tradie website"
   }
  ],
  "queries": [
   {
    "query": "imn",
    "clicks": 0,
-   "impressions": 2,
-   "position": 7.5,
+   "impressions": 8,
+   "position": 7.6,
    "page": "/"
   },
   {
@@ -117,6 +139,83 @@
    "impressions": 2,
    "position": 9.5,
    "page": "/"
+  },
+  {
+   "query": "how much does a website cost for small business",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 55,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "how much does web hosting cost australia",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 15,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "how much does website cost",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 64,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "website cost australia",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 95,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "website design cost",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 70,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "website design cost australia",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 73,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "website development cost in australia",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 97,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "website management pricing",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 65,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "website management services prices",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 67,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "website pricing",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 63,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "tradie website",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 89,
+   "page": "/websites-for-tradies"
   }
  ],
  "gscDaily": [
@@ -134,6 +233,11 @@
    "date": "2026-11-18",
    "clicks": 0,
    "impressions": 3
+  },
+  {
+   "date": "2026-11-19",
+   "clicks": 0,
+   "impressions": 17
   }
  ],
  "allTime": {

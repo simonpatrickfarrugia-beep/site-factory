@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-21T19:00:09.571Z",
+ "generatedAt": "2026-11-22T19:00:09.556Z",
  "period": {
-  "start": "2026-10-24",
-  "end": "2026-11-20"
+  "start": "2026-10-25",
+  "end": "2026-11-21"
  },
  "gscPeriod": {
-  "start": "2026-10-22",
-  "end": "2026-11-18"
+  "start": "2026-10-23",
+  "end": "2026-11-19"
  },
  "sources": {
   "ga4": true,
@@ -14,9 +14,9 @@
   "notes": []
  },
  "totals": {
-  "views": 14,
+  "views": 15,
   "prevViews": 0,
-  "users": 14,
+  "users": 15,
   "cta": {},
   "gscClicks": 0,
   "gscImpressions": 11
@@ -61,22 +61,27 @@
    "date": "2026-11-19",
    "views": 4,
    "cta": 0
+  },
+  {
+   "date": "2026-11-21",
+   "views": 1,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 14,
+   "views": 15,
    "prevViews": 0,
-   "users": 14,
+   "users": 15,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 4,
    "gscPosition": 5,
    "topQuery": null,
-   "allViews": 14,
+   "allViews": 15,
    "d7": 7,
-   "prev7": 4
+   "prev7": 5
   },
   {
    "path": "/destinations/japan",
@@ -199,12 +204,17 @@
    "date": "2026-11-18",
    "clicks": 0,
    "impressions": 1
+  },
+  {
+   "date": "2026-11-19",
+   "clicks": 0,
+   "impressions": 0
   }
  ],
  "allTime": {
   "start": "2026-11-05",
-  "views": 14,
-  "users": 14,
+  "views": 15,
+  "users": 15,
   "cta": {},
   "daily": [
    {
@@ -246,6 +256,11 @@
     "date": "2026-11-19",
     "views": 4,
     "cta": 0
+   },
+   {
+    "date": "2026-11-21",
+    "views": 1,
+    "cta": 0
    }
   ]
  },
@@ -254,7 +269,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 14
+    "sessions": 15
    },
    {
     "source": "movietrailer.channel",
@@ -315,6 +330,12 @@
     "date": "2026-11-19",
     "source": "movietrailer.channel",
     "medium": "referral",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-21",
+    "source": "(direct)",
+    "medium": "(none)",
     "sessions": 1
    }
   ]
