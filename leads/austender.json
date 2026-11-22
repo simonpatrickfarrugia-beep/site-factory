@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-21T01:36:18+00:00",
+ "generatedAt": "2026-11-22T00:27:38+00:00",
  "days": 7,
  "suppliers": [
   {
@@ -97,31 +97,6 @@
    "seenBefore": true
   },
   {
-   "name": "Cordelta Pty. Ltd.",
-   "abn": "",
-   "locality": "Phillip",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 1000000.0,
-     "buyer": "Australian Federal Police",
-     "buyerState": null,
-     "desc": "Provision of commercial advisory services",
-     "category": "",
-     "start": "2026-11-27",
-     "end": "2027-11-26",
-     "id": "CN4290052"
-    }
-   ],
-   "total": 1000000,
-   "score": 5.0,
-   "interstate": false,
-   "why": [
-    "work runs 12 months"
-   ],
-   "seenBefore": false
-  },
-  {
    "name": "1 AND ONE PTY LTD",
    "abn": "",
    "locality": "Bundall",
@@ -157,31 +132,6 @@
     "work runs 7 months"
    ],
    "seenBefore": true
-  },
-  {
-   "name": "INFO-TECH RESEARCH GROUP PTY LTD",
-   "abn": "",
-   "locality": "Sydney",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 161304.0,
-     "buyer": "Department of Employment and Workplace Relations",
-     "buyerState": null,
-     "desc": "PCS-03946 ICT Research and Advisory Services FY2026-27",
-     "category": "",
-     "start": "2026-10-29",
-     "end": "2027-10-28",
-     "id": "CN4290038"
-    }
-   ],
-   "total": 161304,
-   "score": 5.0,
-   "interstate": false,
-   "why": [
-    "work runs 12 months"
-   ],
-   "seenBefore": false
   },
   {
    "name": "MLCOA - VICTORIA MEDHEALTH PTY LTD T/A",
@@ -326,41 +276,6 @@
     "work runs 24 months"
    ],
    "seenBefore": true
-  },
-  {
-   "name": "Forsyths Business Services",
-   "abn": "",
-   "locality": "Armidale",
-   "state": "NSW",
-   "contracts": [
-    {
-     "value": 32945.0,
-     "buyer": "Clean Energy Regulator",
-     "buyerState": null,
-     "desc": "CER Greenhouse and Energy Audit Program 2026-27",
-     "category": "",
-     "start": "2026-11-02",
-     "end": "2027-03-11",
-     "id": "CN4289976"
-    },
-    {
-     "value": 32945.0,
-     "buyer": "Clean Energy Regulator",
-     "buyerState": null,
-     "desc": "CER Greenhouse and Energy Audit Program 2026-27",
-     "category": "",
-     "start": "2026-11-02",
-     "end": "2027-03-11",
-     "id": "CN4289975"
-    }
-   ],
-   "total": 65890,
-   "score": 4.0,
-   "interstate": false,
-   "why": [
-    "2 new government contracts in the last 7 days"
-   ],
-   "seenBefore": false
   },
   {
    "name": "UBS AG Australia Branch",
@@ -597,6 +512,31 @@
    "seenBefore": true
   },
   {
+   "name": "Cordelta Pty. Ltd.",
+   "abn": "",
+   "locality": "Phillip",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 1000000.0,
+     "buyer": "Australian Federal Police",
+     "buyerState": null,
+     "desc": "Provision of commercial advisory services",
+     "category": "",
+     "start": "2026-11-27",
+     "end": "2027-11-26",
+     "id": "CN4290052"
+    }
+   ],
+   "total": 1000000,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 12 months"
+   ],
+   "seenBefore": true
+  },
+  {
    "name": "Terrace Services Pty Ltd",
    "abn": "",
    "locality": "Barton",
@@ -809,6 +749,31 @@
     }
    ],
    "total": 165000,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 12 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "INFO-TECH RESEARCH GROUP PTY LTD",
+   "abn": "",
+   "locality": "Sydney",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 161304.0,
+     "buyer": "Department of Employment and Workplace Relations",
+     "buyerState": null,
+     "desc": "PCS-03946 ICT Research and Advisory Services FY2026-27",
+     "category": "",
+     "start": "2026-10-29",
+     "end": "2027-10-28",
+     "id": "CN4290038"
+    }
+   ],
+   "total": 161304,
    "score": 2.0,
    "interstate": false,
    "why": [
@@ -1082,6 +1047,41 @@
    "interstate": false,
    "why": [
     "work runs 24 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "Forsyths Business Services",
+   "abn": "",
+   "locality": "Armidale",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 32945.0,
+     "buyer": "Clean Energy Regulator",
+     "buyerState": null,
+     "desc": "CER Greenhouse and Energy Audit Program 2026-27",
+     "category": "",
+     "start": "2026-11-02",
+     "end": "2027-03-11",
+     "id": "CN4289976"
+    },
+    {
+     "value": 32945.0,
+     "buyer": "Clean Energy Regulator",
+     "buyerState": null,
+     "desc": "CER Greenhouse and Energy Audit Program 2026-27",
+     "category": "",
+     "start": "2026-11-02",
+     "end": "2027-03-11",
+     "id": "CN4289975"
+    }
+   ],
+   "total": 65890,
+   "score": 1.0,
+   "interstate": false,
+   "why": [
+    "2 new government contracts in the last 7 days"
    ],
    "seenBefore": true
   },
