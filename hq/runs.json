@@ -2,9 +2,9 @@
  "_about": "Last run of each AI worker (claude.ai scheduled task). Each skill's final step updates only its own entry. Checked daily by scripts/health.py (limits in hq/health.json).",
  "workers": {
   "imn-radar": {
-   "at": "2026-11-22T02:55:30Z",
+   "at": "2026-11-22T11:15:22Z",
    "ok": true,
-   "note": "Manual Sunday run: 2 IMN added (Northern Dog Grooming Craigieburn, Crown & Grace Barbers Melton); IMN queue 4; 2 dead ends (no email)"
+   "note": "Manual run 2: +2 IMN (Glitz Nails Tarneit, That Bakery Clyde); IMN queue 6; 5 phone-only saved to call list"
   },
   "morning-report": {
    "at": "2026-11-21T21:57:56Z",
