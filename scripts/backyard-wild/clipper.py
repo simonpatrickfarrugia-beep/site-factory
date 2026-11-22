@@ -8,7 +8,10 @@ in it, and then:
   - person / nothing -> deletes the clip (people are never kept)
 
 Needs: Python 3.10+, `py -m pip install opencv-python obsws-python`,
-OBS WebSocket server on, OBS Replay Buffer on (30 s), ANTHROPIC_API_KEY set.
+OBS WebSocket server on, OBS Replay Buffer on (30 s).
+Free mode: with no ANTHROPIC_API_KEY set, nothing is sent to Claude. Every movement clip is kept in
+the "untagged" subfolder and listed in untagged.jsonl (stays on this PC, never published, since people
+aren't filtered out). Set the key later to switch on bird checks.
 Run:   py clipper.py        Stop: Ctrl+C
 """
 import base64, datetime as dt, json, os, re, sys, threading, time, urllib.request
@@ -103,7 +106,22 @@ def identify(images):
     return json.loads(m.group(0)) if m else {}
 
 
+def keep_untagged(path, at):
+    dest = FOLDER / "untagged"
+    dest.mkdir(exist_ok=True)
+    try:
+        path = path.replace(dest / path.name)
+    except OSError:
+        pass  # leave it where OBS saved it
+    with (FOLDER / "untagged.jsonl").open("a", encoding="utf-8") as f:
+        f.write(json.dumps({"at": at.isoformat(timespec="seconds"), "clip": path.name}) + "\n")
+    say(f"  saved (free mode, not checked): {path.name}")
+
+
 def handle(path, at):
+    if not API_KEY:
+        keep_untagged(path, at)
+        return
     try:
         imgs = stills(path)
         res = identify(imgs) if imgs else {}
@@ -161,7 +179,7 @@ def open_feed():
 
 def main():
     if not API_KEY:
-        sys.exit("Set ANTHROPIC_API_KEY first (see README).")
+        say("free mode: no ANTHROPIC_API_KEY, so clips are saved without bird checks")
     obs = obs_client()
     cap = open_feed()
     bg = cv2.createBackgroundSubtractorMOG2(history=600, varThreshold=40, detectShadows=False)
