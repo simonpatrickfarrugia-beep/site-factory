@@ -30,6 +30,7 @@ const { stream, latest, popular = [], freeNow = [], freeTotal = 0, featured, tot
         <input id="home-search" type="search" name="q" placeholder={`Search ${totals.movies} trailers`} autocomplete="off" />
         <button class="button" type="submit">Search</button>
       </form>
+      <a class="button spotlight__swipe" href="/watch" data-cta="watch_feed">▶ Swipe trailers</a>
     </div>
     <div class="spotlight__screen">
       <ChannelStream items={stream} poster={latest[0] ?? stream[0]} />

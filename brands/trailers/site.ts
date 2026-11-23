@@ -314,6 +314,48 @@ export function routes(): Route[] {
     },
   });
 
+  // Swipe feed: /watch (23 Nov 2026). One trailer per full-screen card, official YouTube embeds only (never re-hosted).
+  // Order: newest pipeline additions interleaved with films from the featured collections (round-robin), no repeats.
+  // Only the first 4 cards are in the HTML; the rest load 3 ahead of the viewer. Kept out of Google: it's a JS feed.
+  {
+    const tagAmazon = (url: string) => {
+      try { const u = new URL(url); if (/(^|\.)amazon\./i.test(u.hostname)) u.searchParams.set('tag', AMAZON_TAG); return u.toString(); } catch { return url; }
+    };
+    const primeUrlFor = (m: Movie) => m.rentBuyUrl ? tagAmazon(m.rentBuyUrl)
+      : `https://www.amazon.com/s?k=${encodeURIComponent(`${m.name} ${m.year ?? ''}`.trim())}&i=instant-video&tag=${AMAZON_TAG}`;
+    const firstSentence = (t: string) => (t.match(/^.+?[.!?](?=\s|$)/)?.[0] ?? t);
+    const lineFor = (m: Movie) => m.tagline?.trim() || (m.synopsis ? clip(firstSentence(m.synopsis), 110) : '');
+    const fromNew = recentMix(30);
+    const lists = [...featured].sort((a, b) => moviesIn(b).length - moviesIn(a).length).map((c) => moviesIn(c));
+    const fromCollections: Movie[] = [];
+    for (let i = 0; lists.some((l) => i < l.length); i++) for (const l of lists) if (l[i]) fromCollections.push(l[i]);
+    const seen = new Set<string>();
+    const feed: Movie[] = [];
+    const take = (m?: Movie) => { if (m && m.youtubeId && !seen.has(m.slug)) { seen.add(m.slug); feed.push(m); } };
+    for (let i = 0, j = 0; feed.length < 60 && (i < fromNew.length || j < fromCollections.length);) {
+      take(fromNew[i++]);
+      // skip collection films already shown, so each step adds one of each where possible
+      while (j < fromCollections.length && seen.has(fromCollections[j].slug)) j++;
+      take(fromCollections[j++]);
+    }
+    out.push({
+      path: 'watch',
+      template: 'watch',
+      bare: true,
+      noindex: true,
+      noSitemap: true,
+      seo: {
+        title: 'Swipe Movie Trailers' + SUFFIX,
+        rawTitle: true,
+        description: 'Swipe through classic movie trailers, one film at a time. Like one? Rent it on Prime Video or see where to watch it.',
+        image: feed[0] ? thumb(feed[0].youtubeId) : undefined,
+      },
+      props: {
+        cards: feed.map((m) => ({ slug: m.slug, name: m.name, year: m.year, line: lineFor(m), youtubeId: m.youtubeId, shortsId: m.shortsId ?? null, primeUrl: primeUrlFor(m) })),
+      },
+    });
+  }
+
   // Movie pages: /movies/{slug}. Trailer pages, plus pages for free films we have no trailer for. A free film plays
   // in full on its page; an upcoming one says when it will.
   type MoviePage = { m: Movie; free: FreeFilm | null; upcoming: (typeof upcoming)[number] | null; synthetic: boolean };

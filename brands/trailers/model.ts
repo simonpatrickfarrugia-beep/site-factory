@@ -17,6 +17,8 @@ export interface Movie {
   summary: string | null;
   youtubeId: string;
   trailerTitle: string | null;
+  /** Optional: the studio's own vertical YouTube Short for this film. The /watch feed plays it full-height instead of the trailer. */
+  shortsId?: string | null;
   rentBuyUrl: string | null;
   airtableId: string | null;
   created: string;

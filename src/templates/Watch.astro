@@ -1,0 +1,404 @@
+---
+/**
+ * /watch — vertical swipe feed of trailers (23 Nov 2026). One film per full-screen 9:16 card, CSS scroll-snap.
+ * Official YouTube embeds through the IFrame API only: nothing is downloaded or re-hosted. A film with a studio
+ * YouTube Short (movies.json `shortsId`) plays the Short full-height; otherwise the 16:9 trailer sits centred over
+ * a blurred poster. Plays muted while in view, pauses out of view. Only the first 4 cards are in the HTML; the rest
+ * are added 3 ahead of the viewer, and only the current and next card get a player.
+ * Like, reaction and watchlist are saved on the viewer's own device (localStorage): no accounts, no public counts.
+ * GA4 events: card_view, watch_3s, sound_on, rent_click (plus cta_prime from Base), like, react, watchlist_add, share.
+ */
+import { thumb } from '../../brands/trailers/model';
+
+type Card = { slug: string; name: string; year: string | null; line: string; youtubeId: string; shortsId: string | null; primeUrl: string };
+interface Props { cards: Card[] }
+const { cards } = Astro.props;
+const FIRST = 4;
+const first = cards.slice(0, FIRST);
+const rest = JSON.stringify(cards.slice(FIRST)).replace(/</g, '\\u003c');
+const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
+---
+<div class="watch" id="watch">
+  <header class="wtop">
+    <a class="wtop__home" href="/" aria-label="MovieTrailer.Channel home">MovieTrailer<span>.Channel</span></a>
+    <button class="wtop__sound" id="wsound" type="button" aria-pressed="false">🔇 Tap for sound</button>
+    <button class="wtop__list" id="wlistbtn" type="button" aria-haspopup="dialog">My list <span id="wlistn">0</span></button>
+  </header>
+
+  <div class="wfeed" id="wfeed">
+    {first.map((c, i) => (
+      <section class="wc" data-i={i} data-slug={c.slug} data-name={c.name} data-year={c.year ?? ''} data-v={c.youtubeId} data-short={c.shortsId ?? ''} aria-label={`${c.name}${c.year ? ` (${c.year})` : ''}`}>
+        <div class="wc__bg" style={`background-image:url(${thumb(c.youtubeId)})`}></div>
+        <div class="wc__frame">
+          <div class:list={['wc__player', c.shortsId && 'wc__player--short']}>
+            <div class="wc__yt"></div>
+            <img class="wc__poster" src={thumb(c.shortsId ?? c.youtubeId)} alt="" loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />
+          </div>
+          <button class="wc__tap" type="button" aria-label="Tap for sound, tap again to pause"></button>
+          <span class="wc__state" aria-hidden="true">▶</span>
+          <div class="wc__rail">
+            <button type="button" class="wc__act" data-act="like" aria-pressed="false" aria-label="Like">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 3 4.5 6.7 4.5c2.1 0 3.6 1.2 4.3 2.4.7-1.2 2.2-2.4 4.3-2.4 3.7 0 5.8 3.8 4.3 7.2C19.5 16.4 12 21 12 21z"/></svg>
+              <span>Like</span>
+            </button>
+            <div class="wc__reactwrap">
+              <button type="button" class="wc__act" data-act="react" aria-expanded="false" aria-label="React">
+                <b class="wc__emoji">😀</b><span>React</span>
+              </button>
+              <div class="wc__reacts" role="group" aria-label="Pick a reaction" hidden>
+                {REACTIONS.map((r) => <button type="button" data-react={r}>{r}</button>)}
+              </div>
+            </div>
+            <button type="button" class="wc__act" data-act="list" aria-pressed="false" aria-label="Add to my list">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path class="wc__plus" d="M12 5v14M5 12h14"/><path class="wc__tick" d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+              <span>My list</span>
+            </button>
+            <button type="button" class="wc__act" data-act="share" aria-label="Share">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3m0 0L7.5 7.5M12 3l4.5 4.5M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
+              <span>Share</span>
+            </button>
+          </div>
+          <div class="wc__info">
+            <h2 class="wc__title"><span class="wc__name">{c.name}</span> <span class="wc__year">{c.year}</span></h2>
+            <p class="wc__line" hidden={!c.line}>{c.line}</p>
+            <div class="wc__cta">
+              <a class="button wc__rent" href={c.primeUrl} rel="sponsored noopener" target="_blank" data-cta="prime" data-rent>Rent on Prime Video</a>
+              <a class="button button--quiet wc__more" href={`/movies/${c.slug}`} data-cta="watch_more">More</a>
+            </div>
+          </div>
+          {i === 0 && <p class="wc__hint" aria-hidden="true">Swipe up for the next film</p>}
+        </div>
+      </section>
+    ))}
+
+    <footer class="wend" id="wend">
+      <div>
+        <p class="wend__big">That's the lot for now.</p>
+        <p>New trailers join the feed as we add them.</p>
+        <p class="wend__links"><a href="/browse">Browse all trailers</a> · <a href="/discover">Collections</a> · <a href="/">Home</a></p>
+        <p class="wend__fine">As an Amazon Associate, movietrailer.channel earns from qualifying purchases. Trailers play from YouTube.</p>
+        <p class="wend__fine"><a href="/privacy-policy">Privacy Policy</a> · <a href="/terms">Terms of Service</a></p>
+      </div>
+    </footer>
+  </div>
+
+  <dialog class="wsheet" id="wsheet" aria-labelledby="wsheet-h">
+    <div class="wsheet__head"><h2 id="wsheet-h">My list</h2><button type="button" id="wsheet-x" aria-label="Close">✕</button></div>
+    <p class="wsheet__empty" id="wsheet-empty">Tap <b>+ My list</b> on any film to save it here. Your list stays on this device.</p>
+    <ul id="wsheet-ul"></ul>
+  </dialog>
+  <p class="wtoast" id="wtoast" role="status" aria-live="polite"></p>
+</div>
+
+<script id="wdata" type="application/json" set:html={rest}></script>
+
+<style is:global>
+  body:has(#watch) { overflow: hidden; background: #000; }
+  .watch { position: fixed; inset: 0; background: #000; color: #fff; }
+  .wfeed { height: 100%; overflow-y: auto; scroll-snap-type: y mandatory; overscroll-behavior: contain; scrollbar-width: none; }
+  .wfeed::-webkit-scrollbar { display: none; }
+  .wc, .wend { position: relative; height: 100%; scroll-snap-align: start; scroll-snap-stop: always; overflow: hidden; display: grid; place-items: center; }
+  .wc__bg { position: absolute; inset: -48px; background: #111 center / cover no-repeat; filter: blur(30px) brightness(0.5) saturate(1.2); }
+  .wc__frame { position: relative; height: 100%; aspect-ratio: 9 / 16; max-width: 100%; overflow: hidden; }
+  .wc__player { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); aspect-ratio: 16 / 9; background: #000; box-shadow: 0 10px 40px rgb(0 0 0 / 0.6); }
+  .wc__player--short { top: 0; bottom: 0; transform: none; aspect-ratio: auto; }
+  .wc__yt, .wc__yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .wc__poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.4s; pointer-events: none; }
+  .wc.is-playing .wc__poster { opacity: 0; }
+  .wc__tap { position: absolute; inset: 0; z-index: 2; background: transparent; border: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .wc__state { position: absolute; top: 50%; left: 50%; translate: -50% -50%; z-index: 2; font-size: 2.4rem; width: 4.5rem; height: 4.5rem; display: grid; place-items: center; padding-left: 0.3rem;
+    border-radius: 50%; background: rgb(0 0 0 / 0.55); opacity: 0; transition: opacity 0.2s; pointer-events: none; }
+  .wc.is-paused .wc__state { opacity: 1; }
+
+  .wc__info { position: absolute; left: 0; right: 4.75rem; bottom: 0; z-index: 3; padding: 3rem 1rem calc(1.25rem + env(safe-area-inset-bottom)); }
+  .wc__frame::after { content: ''; position: absolute; inset: auto 0 0 0; height: 45%; z-index: 1; pointer-events: none; background: linear-gradient(transparent, rgb(0 0 0 / 0.88)); }
+  .wc__title { font-family: var(--font-display); font-size: clamp(1.6rem, 7vw, 2.2rem); line-height: 1.05; margin: 0 0 0.35rem; text-shadow: 0 2px 8px rgb(0 0 0 / 0.6); }
+  .wc__year { color: var(--color-accent); font-size: 0.7em; }
+  .wc__line { margin: 0 0 0.9rem; font-size: 0.95rem; line-height: 1.35; color: rgb(255 255 255 / 0.88); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .wc__cta { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .wc__cta .button { padding-block: 0.6rem; }
+  .wc__more { color: #fff; border-color: rgb(255 255 255 / 0.5); }
+
+  .wc__rail { position: absolute; right: 0.5rem; bottom: calc(1.25rem + env(safe-area-inset-bottom)); z-index: 3; display: flex; flex-direction: column; gap: 0.9rem; align-items: center; }
+  .wc__act { display: grid; justify-items: center; gap: 0.2rem; background: none; border: 0; color: #fff; font: 600 0.7rem var(--font-body); cursor: pointer; padding: 0; text-shadow: 0 1px 4px rgb(0 0 0 / 0.7); }
+  .wc__act svg, .wc__emoji { width: 2.9rem; height: 2.9rem; padding: 0.65rem; border-radius: 50%; background: rgb(0 0 0 / 0.45); backdrop-filter: blur(6px);
+    fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.15s, background 0.15s; }
+  .wc__emoji { display: grid; place-items: center; padding: 0; font-size: 1.4rem; font-weight: 400; filter: grayscale(1); }
+  .wc__act:active svg, .wc__act:active .wc__emoji { transform: scale(0.88); }
+  .wc__act[data-act='like'][aria-pressed='true'] svg { fill: #ff3b5c; stroke: #ff3b5c; }
+  .wc__act[data-act='list'] .wc__tick { display: none; }
+  .wc__act[data-act='list'][aria-pressed='true'] svg { background: var(--color-accent); stroke: #12162b; }
+  .wc__act[data-act='list'][aria-pressed='true'] .wc__plus { display: none; }
+  .wc__act[data-act='list'][aria-pressed='true'] .wc__tick { display: inline; }
+  .wc__act.has-react .wc__emoji { filter: none; }
+  .wc__reactwrap { position: relative; }
+  .wc__reacts { position: absolute; right: 3.4rem; top: 50%; translate: 0 -50%; display: flex; gap: 0.15rem; padding: 0.3rem; border-radius: 2rem; background: rgb(20 20 30 / 0.92); }
+  .wc__reacts[hidden] { display: none; }
+  .wc__reacts button { font-size: 1.5rem; width: 2.6rem; height: 2.6rem; border: 0; background: none; border-radius: 50%; cursor: pointer; }
+  .wc__reacts button[aria-pressed='true'] { background: rgb(255 255 255 / 0.18); }
+
+  .wc__hint { position: absolute; left: 0; right: 0; top: 4.2rem; z-index: 3; text-align: center; font-size: 0.85rem; margin: 0; opacity: 0.85; animation: whint 1.6s ease-in-out infinite; pointer-events: none; }
+  .wc__hint::before { content: '⌃'; display: block; font-size: 1.4rem; line-height: 0.8; }
+  .watch.is-moved .wc__hint { display: none; }
+  @keyframes whint { 50% { transform: translateY(-6px); } }
+
+  .wtop { position: absolute; top: 0; left: 0; right: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+    padding: calc(0.6rem + env(safe-area-inset-top)) 0.75rem 0.6rem; pointer-events: none; background: linear-gradient(rgb(0 0 0 / 0.55), transparent); }
+  .wtop > * { pointer-events: auto; }
+  .wtop__home { font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; color: #fff; text-decoration: none; letter-spacing: 0.02em; }
+  .wtop__home span { color: var(--color-accent); }
+  .wtop__sound, .wtop__list { font: 600 0.8rem var(--font-body); color: #fff; background: rgb(0 0 0 / 0.5); border: 1px solid rgb(255 255 255 / 0.35); border-radius: 2rem; padding: 0.45rem 0.8rem; cursor: pointer; white-space: nowrap; }
+  .wtop__sound[aria-pressed='true'] { background: rgb(255 255 255 / 0.15); }
+  .wtop__list span { display: inline-block; min-width: 1.3em; margin-left: 0.2rem; padding: 0 0.3em; border-radius: 1em; background: var(--color-accent); color: #12162b; }
+  @media (max-width: 22rem) { .wtop__home span { display: none; } }
+
+  .wend { background: #0b0d18; text-align: center; padding: 2rem; }
+  .wend > div { max-width: 26rem; }
+  .wend__big { font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.5rem; }
+  .wend a { color: var(--color-accent); }
+  .wend__links { margin-top: 1.5rem; }
+  .wend__fine { font-size: 0.8rem; opacity: 0.75; margin-top: 1.25rem; }
+
+  .wsheet { width: min(100%, 28rem); max-height: 75vh; margin: auto auto 0; padding: 0 1rem calc(1rem + env(safe-area-inset-bottom)); border: 0; border-radius: 1rem 1rem 0 0; background: #151933; color: #fff; }
+  .wsheet::backdrop { background: rgb(0 0 0 / 0.6); }
+  .wsheet__head { position: sticky; top: 0; display: flex; justify-content: space-between; align-items: center; padding: 1rem 0 0.5rem; background: #151933; }
+  .wsheet__head h2 { margin: 0; }
+  .wsheet__head button { background: none; border: 0; color: #fff; font-size: 1.2rem; cursor: pointer; }
+  .wsheet ul { list-style: none; margin: 0; padding: 0; }
+  .wsheet li { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding: 0.7rem 0; border-top: 1px solid rgb(255 255 255 / 0.12); }
+  .wsheet li a { color: #fff; font-weight: 600; }
+  .wsheet li button { background: none; border: 1px solid rgb(255 255 255 / 0.3); color: #fff; border-radius: 2rem; padding: 0.25rem 0.7rem; font-size: 0.8rem; cursor: pointer; }
+  .wsheet__empty { opacity: 0.8; }
+  .wtoast { position: absolute; left: 50%; bottom: 40%; translate: -50% 0; z-index: 6; margin: 0; padding: 0.6rem 1rem; border-radius: 2rem; background: rgb(0 0 0 / 0.85); font-size: 0.9rem; opacity: 0; transition: opacity 0.2s; pointer-events: none; }
+  .wtoast.is-on { opacity: 1; }
+</style>
+
+<script is:inline>
+(function () {
+  var root = document.getElementById('watch');
+  var feed = document.getElementById('wfeed');
+  var endCard = document.getElementById('wend');
+  var soundBtn = document.getElementById('wsound');
+  var rest = [];
+  try { rest = JSON.parse(document.getElementById('wdata').textContent) || []; } catch (e) {}
+  var proto = feed.querySelector('.wc');
+  if (!proto) return;
+  proto = proto.cloneNode(true);
+  var hint = proto.querySelector('.wc__hint'); if (hint) hint.remove();
+  var total = feed.querySelectorAll('.wc').length + rest.length;
+
+  // ---- saved on this device ----
+  function load(k, d) { try { var v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch (e) { return d; } }
+  function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  var likes = load('mtc_likes', {}), reacts = load('mtc_reacts', {}), list = load('mtc_watchlist', []);
+  function inList(slug) { return list.some(function (x) { return x.slug === slug; }); }
+  function track(name, params) { if (typeof window.gtag === 'function') window.gtag('event', name, params || {}); }
+  function cardsAll() { return feed.querySelectorAll('.wc'); }
+  function cardAt(i) { return feed.querySelector('.wc[data-i="' + i + '"]'); }
+  function film(c) { return { film: c.dataset.slug, position: Number(c.dataset.i) + 1 }; }
+
+  var toastEl = document.getElementById('wtoast'), toastT;
+  function toast(t) { toastEl.textContent = t; toastEl.classList.add('is-on'); clearTimeout(toastT); toastT = setTimeout(function () { toastEl.classList.remove('is-on'); }, 1600); }
+
+  function paint(c) {
+    var s = c.dataset.slug;
+    c.querySelector('[data-act="like"]').setAttribute('aria-pressed', likes[s] ? 'true' : 'false');
+    var l = c.querySelector('[data-act="list"]'); l.setAttribute('aria-pressed', inList(s) ? 'true' : 'false');
+    l.querySelector('span').textContent = inList(s) ? 'Saved' : 'My list';
+    var r = c.querySelector('[data-act="react"]'); r.classList.toggle('has-react', !!reacts[s]);
+    r.querySelector('.wc__emoji').textContent = reacts[s] || '😀';
+    c.querySelectorAll('[data-react]').forEach(function (b) { b.setAttribute('aria-pressed', reacts[s] === b.dataset.react ? 'true' : 'false'); });
+  }
+  function paintList() {
+    document.getElementById('wlistn').textContent = list.length;
+    var ul = document.getElementById('wsheet-ul'); ul.textContent = '';
+    document.getElementById('wsheet-empty').hidden = list.length > 0;
+    list.forEach(function (x) {
+      var li = document.createElement('li'), a = document.createElement('a'), b = document.createElement('button');
+      a.href = '/movies/' + x.slug; a.textContent = x.name + (x.year ? ' (' + x.year + ')' : '');
+      b.type = 'button'; b.textContent = 'Remove'; b.dataset.remove = x.slug;
+      li.appendChild(a); li.appendChild(b); ul.appendChild(li);
+    });
+  }
+
+  // ---- cards: 3 ahead of the viewer ----
+  var thumb = function (id) { return 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg'; };
+  function build(d, i) {
+    var c = proto.cloneNode(true);
+    c.dataset.i = i; c.dataset.slug = d.slug; c.dataset.name = d.name; c.dataset.year = d.year || '';
+    c.dataset.v = d.youtubeId; c.dataset.short = d.shortsId || '';
+    c.setAttribute('aria-label', d.name + (d.year ? ' (' + d.year + ')' : ''));
+    c.classList.remove('is-playing', 'is-paused');
+    c.querySelector('.wc__bg').style.backgroundImage = 'url(' + thumb(d.youtubeId) + ')';
+    c.querySelector('.wc__player').classList.toggle('wc__player--short', !!d.shortsId);
+    var img = c.querySelector('.wc__poster'); img.src = thumb(d.shortsId || d.youtubeId); img.loading = 'lazy';
+    c.querySelector('.wc__name').textContent = d.name;
+    c.querySelector('.wc__year').textContent = d.year || '';
+    var line = c.querySelector('.wc__line'); line.textContent = d.line || ''; line.hidden = !d.line;
+    c.querySelector('.wc__rent').href = d.primeUrl;
+    c.querySelector('.wc__more').href = '/movies/' + d.slug;
+    c.querySelector('.wc__reacts').hidden = true;
+    c.querySelector('.wc__yt').textContent = '';
+    return c;
+  }
+  function ensureAhead(i) {
+    while (cardsAll().length < Math.min(total, i + 4) && rest.length) {
+      var c = build(rest.shift(), cardsAll().length);
+      feed.insertBefore(c, endCard); paint(c); io.observe(c);
+    }
+  }
+
+  // ---- players (current + next only) ----
+  var players = {}, active = -1, soundOn = false, viewed = {}, apiReady = false, waiting = [];
+  window.onYouTubeIframeAPIReady = function () { apiReady = true; waiting.splice(0).forEach(function (f) { f(); }); };
+  var s = document.createElement('script'); s.src = 'https://www.youtube.com/iframe_api'; s.async = true; document.head.appendChild(s);
+
+  function ensurePlayer(i) {
+    var c = cardAt(i);
+    if (!c || players[i]) return;
+    var ent = players[i] = { p: null, ready: false, want: false, t: null, watched: false };
+    function make() {
+      if (players[i] !== ent) return;
+      var el = document.createElement('div'); c.querySelector('.wc__yt').appendChild(el);
+      var id = c.dataset.short || c.dataset.v;
+      ent.p = new YT.Player(el, {
+        videoId: id,
+        playerVars: { autoplay: 0, mute: 1, playsinline: 1, controls: 0, rel: 0, iv_load_policy: 3, modestbranding: 1, loop: 1, playlist: id, fs: 0, disablekb: 1 },
+        events: {
+          onReady: function () { ent.ready = true; ent.p.mute(); if (ent.want) play(i); },
+          onStateChange: function (e) {
+            var playing = e.data === 1;
+            if (playing) c.classList.add('is-playing');
+            c.classList.toggle('is-paused', e.data === 2 && i === active);
+            clearTimeout(ent.t);
+            if (playing && !ent.watched) ent.t = setTimeout(function () { ent.watched = true; track('watch_3s', film(c)); }, 3000);
+          },
+        },
+      });
+    }
+    if (apiReady) make(); else waiting.push(make);
+  }
+  function dropPlayer(i) {
+    var ent = players[i]; if (!ent) return;
+    clearTimeout(ent.t);
+    try { ent.p && ent.p.destroy(); } catch (e) {}
+    delete players[i];
+    var c = cardAt(i); if (c) { c.classList.remove('is-playing', 'is-paused'); c.querySelector('.wc__yt').textContent = ''; }
+  }
+  function play(i) {
+    var ent = players[i]; if (!ent) return;
+    if (!ent.ready) { ent.want = true; return; }
+    if (soundOn) ent.p.unMute(); else ent.p.mute();
+    ent.p.playVideo();
+    if (soundOn) setTimeout(function () {
+      // Some phones block sound until the viewer taps again: fall back to muted so the film still plays.
+      if (players[i] === ent && i === active && ent.p.getPlayerState && ent.p.getPlayerState() !== 1) { ent.p.mute(); ent.p.playVideo(); setSound(false); }
+    }, 1500);
+  }
+  function pause(i) { var ent = players[i]; if (!ent) return; ent.want = false; if (ent.ready) ent.p.pauseVideo(); }
+
+  function activate(i) {
+    if (i === active) return;
+    if (active >= 0) { pause(active); var old = cardAt(active); if (old) old.classList.remove('is-paused'); }
+    active = i;
+    if (i > 0) root.classList.add('is-moved');
+    var c = cardAt(i);
+    if (!viewed[i]) { viewed[i] = true; track('card_view', film(c)); }
+    ensureAhead(i);
+    ensurePlayer(i); play(i);
+    ensurePlayer(i + 1);
+    Object.keys(players).forEach(function (k) { if (Math.abs(k - i) > 1) dropPlayer(Number(k)); });
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting && e.intersectionRatio >= 0.6) activate(Number(e.target.dataset.i)); });
+  }, { root: feed, threshold: [0.6] });
+  var endIo = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting && e.intersectionRatio >= 0.6 && active >= 0) { pause(active); } });
+  }, { root: feed, threshold: [0.6] });
+  cardsAll().forEach(function (c) { paint(c); io.observe(c); });
+  endIo.observe(endCard);
+  paintList();
+
+  // ---- sound ----
+  function setSound(on) {
+    soundOn = on;
+    soundBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    soundBtn.textContent = on ? '🔊 Sound on' : '🔇 Tap for sound';
+  }
+  function soundUp() {
+    setSound(true);
+    var ent = players[active]; if (ent && ent.ready) { ent.p.unMute(); ent.p.playVideo(); }
+    track('sound_on', cardAt(active) ? film(cardAt(active)) : {});
+  }
+  soundBtn.addEventListener('click', function () {
+    if (soundOn) { setSound(false); var ent = players[active]; if (ent && ent.ready) ent.p.mute(); }
+    else soundUp();
+  });
+
+  // ---- taps on a card ----
+  function closeReacts(except) { feed.querySelectorAll('.wc__reacts').forEach(function (r) { if (r !== except) { r.hidden = true; r.previousElementSibling.setAttribute('aria-expanded', 'false'); } }); }
+  feed.addEventListener('click', function (e) {
+    var t = e.target instanceof Element ? e.target : null; if (!t) return;
+    var c = t.closest('.wc'); if (!c) return;
+    var slug = c.dataset.slug;
+    if (t.closest('[data-rent]')) { track('rent_click', film(c)); return; }
+    if (t.closest('.wc__tap')) {
+      closeReacts();
+      var ent = players[Number(c.dataset.i)];
+      if (!soundOn) { soundUp(); return; }
+      if (ent && ent.ready) { if (ent.p.getPlayerState() === 1) ent.p.pauseVideo(); else ent.p.playVideo(); }
+      return;
+    }
+    var pick = t.closest('[data-react]');
+    if (pick) {
+      var r = pick.dataset.react;
+      if (reacts[slug] === r) delete reacts[slug]; else { reacts[slug] = r; track('react', Object.assign(film(c), { reaction: r })); }
+      save('mtc_reacts', reacts); paint(c); closeReacts();
+      return;
+    }
+    var act = t.closest('[data-act]'); if (!act) return;
+    var kind = act.dataset.act;
+    if (kind === 'like') {
+      if (likes[slug]) delete likes[slug]; else { likes[slug] = 1; track('like', film(c)); }
+      save('mtc_likes', likes); paint(c);
+    } else if (kind === 'react') {
+      var box = act.nextElementSibling; closeReacts(box);
+      box.hidden = !box.hidden; act.setAttribute('aria-expanded', box.hidden ? 'false' : 'true');
+    } else if (kind === 'list') {
+      if (inList(slug)) { list = list.filter(function (x) { return x.slug !== slug; }); toast('Removed from your list'); }
+      else { list.unshift({ slug: slug, name: c.dataset.name, year: c.dataset.year }); track('watchlist_add', film(c)); toast('Saved to your list'); }
+      save('mtc_watchlist', list); paint(c); paintList();
+    } else if (kind === 'share') {
+      var url = location.origin + '/movies/' + slug;
+      var title = c.dataset.name + (c.dataset.year ? ' (' + c.dataset.year + ')' : '');
+      if (navigator.share) {
+        navigator.share({ title: title + ' trailer', text: 'Watch the trailer for ' + title, url: url })
+          .then(function () { track('share', { method: 'native', content_type: 'movie', item_id: slug }); }).catch(function () {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(function () { toast('Link copied'); track('share', { method: 'copy', content_type: 'movie', item_id: slug }); }).catch(function () {});
+      }
+    }
+  });
+
+  // ---- my list sheet ----
+  var sheet = document.getElementById('wsheet');
+  document.getElementById('wlistbtn').addEventListener('click', function () { paintList(); if (sheet.showModal) sheet.showModal(); else sheet.setAttribute('open', ''); });
+  document.getElementById('wsheet-x').addEventListener('click', function () { sheet.close ? sheet.close() : sheet.removeAttribute('open'); });
+  sheet.addEventListener('click', function (e) {
+    if (e.target === sheet) { sheet.close(); return; }
+    var b = e.target instanceof Element ? e.target.closest('[data-remove]') : null; if (!b) return;
+    list = list.filter(function (x) { return x.slug !== b.dataset.remove; }); save('mtc_watchlist', list); paintList();
+    cardsAll().forEach(function (c) { if (c.dataset.slug === b.dataset.remove) paint(c); });
+  });
+
+  // ---- keyboard (desktop) and leaving the tab ----
+  document.addEventListener('keydown', function (e) {
+    if (sheet.open) return;
+    if (e.key === 'ArrowDown' || e.key === 'j' || e.key === 'PageDown') { e.preventDefault(); feed.scrollBy({ top: feed.clientHeight, behavior: 'smooth' }); }
+    else if (e.key === 'ArrowUp' || e.key === 'k' || e.key === 'PageUp') { e.preventDefault(); feed.scrollBy({ top: -feed.clientHeight, behavior: 'smooth' }); }
+    else if (e.key === 'm') soundBtn.click();
+  });
+  document.addEventListener('visibilitychange', function () { if (active < 0) return; if (document.hidden) pause(active); else play(active); });
+})();
+</script>

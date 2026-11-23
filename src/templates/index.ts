@@ -6,6 +6,7 @@ import FreeFilms from './FreeFilms.astro';
 import Collection from './Collection.astro';
 import Discover from './Discover.astro';
 import Browse from './Browse.astro';
+import Watch from './Watch.astro';
 import Page from './Page.astro';
 import Dashboard from './Dashboard.astro';
 import Hq from './Hq.astro';
@@ -88,6 +89,7 @@ export const templates = {
   collection: Collection,
   discover: Discover,
   browse: Browse,
+  watch: Watch,
   page: Page,
   dashboard: Dashboard,
   hq: Hq,
