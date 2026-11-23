@@ -314,6 +314,10 @@ export function routes(): Route[] {
     },
   });
 
+  // Collections with 4+ trailers get a "Swipe this collection" button (/watch?c=<slug>).
+  const swipeable = collections.filter((c) => !MERGED[c.slug] && moviesIn(c).filter((m) => m.youtubeId).length >= 4);
+  const swipeSet = new Set(swipeable.map((c) => c.slug));
+
   // Swipe feed: /watch (23 Nov 2026). One trailer per full-screen card, official YouTube embeds only (never re-hosted).
   // Order: newest pipeline additions interleaved with films from the featured collections (round-robin), no repeats.
   // Only the first 4 cards are in the HTML; the rest load 3 ahead of the viewer. Kept out of Google: it's a JS feed.
@@ -325,6 +329,7 @@ export function routes(): Route[] {
       : `https://www.amazon.com/s?k=${encodeURIComponent(`${m.name} ${m.year ?? ''}`.trim())}&i=instant-video&tag=${AMAZON_TAG}`;
     const firstSentence = (t: string) => (t.match(/^.+?[.!?](?=\s|$)/)?.[0] ?? t);
     const lineFor = (m: Movie) => m.tagline?.trim() || (m.synopsis ? clip(firstSentence(m.synopsis), 110) : '');
+    const feedCard = (m: Movie) => ({ slug: m.slug, name: m.name, year: m.year, line: lineFor(m), youtubeId: m.youtubeId, shortsId: m.shortsId ?? null, primeUrl: primeUrlFor(m) });
     const fromNew = recentMix(30);
     const lists = [...featured].sort((a, b) => moviesIn(b).length - moviesIn(a).length).map((c) => moviesIn(c));
     const fromCollections: Movie[] = [];
@@ -351,7 +356,20 @@ export function routes(): Route[] {
         image: feed[0] ? thumb(feed[0].youtubeId) : undefined,
       },
       props: {
-        cards: feed.map((m) => ({ slug: m.slug, name: m.name, year: m.year, line: lineFor(m), youtubeId: m.youtubeId, shortsId: m.shortsId ?? null, primeUrl: primeUrlFor(m) })),
+        cards: feed.map(feedCard),
+        // Everything /watch?film=<slug> and /watch?c=<collection> need, served as /watch-feed.json (src/pages/watch-feed.json.ts)
+        // and loaded only when the feed is opened from a film, a collection or a shared link.
+        catalog: {
+          films: Object.fromEntries(movies.filter((m) => m.youtubeId).map((m) => [m.slug, feedCard(m)])),
+          related: Object.fromEntries(movies.filter((m) => m.youtubeId).map((m) => {
+            const dirs = splitNames(m.director);
+            const sameDir = dirs.length ? movies.filter((o) => o.slug !== m.slug && o.youtubeId && splitNames(o.director).some((d) => dirs.includes(d))).sort(byYear).slice(0, 4) : [];
+            const rel = m.genres.length ? relatedFor(m, new Set(sameDir.map((x) => x.slug))).map((x) => x.slug) : [];
+            return [m.slug, [...sameDir.map((x) => x.slug), ...rel].filter((x) => movieBySlug.get(x)?.youtubeId)];
+          })),
+          collections: Object.fromEntries(swipeable.map((c) => [c.slug, { name: c.name, films: moviesIn(c).filter((m) => m.youtubeId).map((m) => m.slug) }])),
+          order: feed.map((m) => m.slug),
+        },
       },
     });
   }
@@ -401,6 +419,7 @@ export function routes(): Route[] {
         castLinks: castLinksFor(m), relatedHeading: related.length ? `If you like ${m.name}` : undefined,
         free: f, upcoming: u ? { freeOn: u.freeOn } : null, original: f || u ? null : originalFor(m),
         moreFree: f ? moreFreeFor(f) : u ? free.slice(0, 6).map(freeCard) : [],
+        swipe: m.youtubeId && !synthetic ? `/watch?film=${m.slug}` : null,
       },
     });
   }
@@ -454,7 +473,7 @@ export function routes(): Route[] {
         ]),
       ],
       lastmod: c.updated,
-      props: { heading: c.name, tagline: c.tagline, introHtml: c.introHtml, movies: list, backTo: { href: '/discover', label: 'All collections' }, amazonTag: AMAZON_TAG },
+      props: { heading: c.name, tagline: c.tagline, introHtml: c.introHtml, movies: list, backTo: { href: '/discover', label: 'All collections' }, amazonTag: AMAZON_TAG, swipe: swipeSet.has(c.slug) ? `/watch?c=${c.slug}` : null },
     });
   }
 

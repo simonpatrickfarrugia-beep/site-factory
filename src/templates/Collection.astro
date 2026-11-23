@@ -9,8 +9,10 @@ interface Props {
   movies: Movie[];
   backTo?: { href: string; label: string };
   amazonTag?: string;
+  /** /watch?c=<slug> for collections with 4+ trailers. */
+  swipe?: string | null;
 }
-const { heading, tagline, introHtml, movies, backTo, amazonTag } = Astro.props;
+const { heading, tagline, introHtml, movies, backTo, amazonTag, swipe = null } = Astro.props;
 // Where to watch, right on the list: Prime Video rental link per film (same rules as the movie page).
 const primeUrl = (m: Movie) => {
   if (!amazonTag) return null;
@@ -27,6 +29,7 @@ const primeUrl = (m: Movie) => {
     {tagline && <p class="page-head__lede">{tagline}</p>}
     {introHtml && <div class="prose page-head__intro" set:html={introHtml} />}
     <p class="page-head__meta">{movies.length} {movies.length === 1 ? 'trailer' : 'trailers'}</p>
+    {swipe && <p><a class="button" href={swipe} data-cta="swipe_collection">▶ Swipe this collection</a></p>}
   </header>
 
   <ol class="lineup">

@@ -248,6 +248,7 @@ main { display: block; }
 .spotlight__screen { order: -1; }
 .spotlight__kicker { color: var(--color-accent); font-weight: 600; margin-bottom: var(--space-2); }
 .spotlight__blurb { font-size: var(--step-1); max-width: 40ch; margin-top: var(--space-3); }
+.movie__swipe { margin-top: var(--space-3); }
 /* /watch swipe feed link: phones only (the feed is built for portrait screens). */
 .spotlight__swipe { margin-top: var(--space-3); width: 100%; justify-content: center; }
 @media (min-width: 60rem) {

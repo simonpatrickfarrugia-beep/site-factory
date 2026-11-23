@@ -5,12 +5,12 @@
   "$schema": "../../node_modules/wrangler/config-schema.json",
   "name": "site-factory", // must match the Worker name in Cloudflare
   "compatibility_date": "2026-06-01",
-  // Only /api/* and /media/* run Worker code (filmmaker pitches and the "original films" updates signup); everything else is the built files.
+  // Only /api/*, /media/* and /watch run Worker code (filmmaker pitches and the "original films" updates signup); everything else is the built files.
   "main": "../../src/worker/site.ts",
   "assets": {
     "directory": "../../dist",
     "binding": "ASSETS",
-    "run_worker_first": ["/api/*", "/media/*"],
+    "run_worker_first": ["/api/*", "/media/*", "/watch"], // /watch: film link previews for shared links (src/worker/social.ts)
     "html_handling": "drop-trailing-slash",
     "not_found_handling": "404-page"
   },

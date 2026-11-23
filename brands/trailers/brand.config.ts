@@ -13,6 +13,7 @@ export default defineBrand({
   fonts: { display: 'Big Shoulders Display', body: 'Instrument Sans' },
 
   nav: [
+    { label: '▶ Swipe', href: '/watch' },
     { label: 'Browse', href: '/browse' },
     { label: 'Discover', href: '/discover' },
     { label: 'Free movies', href: '/free-classic-movies' },

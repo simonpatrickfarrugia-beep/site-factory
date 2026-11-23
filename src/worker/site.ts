@@ -36,7 +36,7 @@
 import { preview, freeSite } from './preview';
 import LAB_REGISTRY from '../../data/imn/labs.json';
 import { webcheck } from './webcheck';
-import { social } from './social';
+import { social, watchPage } from './social';
 
 export interface Env {
   /** "1" serves IMN website previews at /preview/<slug> from D1 `previews` (imn only). */
@@ -446,6 +446,7 @@ export default {
       try { return await webcheck(request); }
       catch (e) { console.error('webcheck failed', e); return Response.json({ ok: false, message: 'Something went wrong. Please try again.' }, { status: 500 }); }
     }
+    if (env.SOCIAL === '1' && pathname === '/watch' && request.method === 'GET') return watchPage(request, env);
     if (env.SOCIAL === '1' && (pathname === '/api/social' || pathname === '/api/social/vote' || pathname === '/api/comments')) return social(request, env, pathname);
     const emb = pathname.match(/^\/api\/embed(?:\/([a-z0-9-]{1,60}))?$/);
     if (emb) return embed(request, env, emb[1]);

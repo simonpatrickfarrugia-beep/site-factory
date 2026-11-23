@@ -382,8 +382,28 @@ const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
   var endIo = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) { if (e.isIntersecting && e.intersectionRatio >= 0.6 && active >= 0) { pause(active); } });
   }, { root: feed, threshold: [0.6] });
-  cardsAll().forEach(function (c) { paint(c); io.observe(c); });
-  fetchCounts([].map.call(cardsAll(), function (c) { return c.dataset.slug; }));
+  function boot() {
+    cardsAll().forEach(function (c) { paint(c); io.observe(c); });
+    fetchCounts([].map.call(cardsAll(), function (c) { return c.dataset.slug; }));
+  }
+  // Opened from a film (/watch?film=<slug>: that film, then more like it, then the usual mix) or a collection
+  // (/watch?c=<slug>: just that collection). The full list comes from /watch-feed.json, loaded only here.
+  var params = new URLSearchParams(location.search), startFilm = params.get('film'), startColl = params.get('c');
+  if ((startFilm || startColl) && window.fetch) {
+    feed.style.visibility = 'hidden';
+    fetch('/watch-feed.json').then(function (r) { return r.json(); }).then(function (cat) {
+      var order = [], seen = {}, films = cat.films || {};
+      var add = function (x) { if (x && films[x] && !seen[x]) { seen[x] = 1; order.push(x); } };
+      var coll = startColl && cat.collections ? cat.collections[startColl] : null;
+      if (coll) { add(startFilm); coll.films.forEach(add); }
+      else { add(startFilm); ((cat.related || {})[startFilm] || []).forEach(add); (cat.order || []).forEach(add); }
+      if (!order.length) throw new Error('nothing to show');
+      [].slice.call(cardsAll()).forEach(function (c) { c.remove(); });
+      rest = order.map(function (x) { return films[x]; }); total = rest.length;
+      ensureAhead(0);
+      if (coll) toast(coll.name + ' · ' + order.length + ' films');
+    }).catch(function () { boot(); }).then(function () { feed.style.visibility = ''; feed.scrollTop = 0; });
+  } else boot();
   endIo.observe(endCard);
   paintList();
 
@@ -442,7 +462,7 @@ const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
     } else if (kind === 'comment') {
       openComments(c);
     } else if (kind === 'share') {
-      var url = location.origin + '/movies/' + slug;
+      var url = location.origin + '/watch?film=' + encodeURIComponent(slug); // opens the feed on this film; link previews show it (site Worker)
       var title = c.dataset.name + (c.dataset.year ? ' (' + c.dataset.year + ')' : '');
       if (navigator.share) {
         navigator.share({ title: title + ' trailer', text: 'Watch the trailer for ' + title, url: url })

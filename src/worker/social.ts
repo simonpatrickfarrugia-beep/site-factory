@@ -6,6 +6,8 @@
  *   POST /api/social/vote                { film, kind: like|list|react, on, value?, voter } → that film's counts
  *   GET  /api/comments?film=slug         the film's live comments, newest first (max 50)
  *   POST /api/comments                   { film, name, body, voter, _t, website } → { ok, status: live|held, message, comment? }
+ *   GET  /watch?film=<slug> | ?c=<slug>  the feed page with that film's (or collection's) title and image in its link
+ *                                        preview tags, so links shared on socials show the film, not a generic card.
  *
  * Every count is COUNT(*) of real rows: nothing is seeded or rounded up. No accounts, no cookies. `voter` is a random id
  * the browser keeps; `net` is a short hash of the visitor's network (IPv4 /24, IPv6 /48) used only for rate limits.
@@ -133,4 +135,35 @@ export async function social(request: Request, env: SocialEnv, path: string): Pr
     console.error('social failed', e);
     return json({ ok: false, message: 'Something went wrong. Please try again.' }, 500);
   }
+}
+
+type Catalog = { films?: Record<string, { name: string; year: string | null; line: string; youtubeId: string }>; collections?: Record<string, { name: string; films: string[] }> };
+
+/** /watch with ?film= or ?c=: same page, but the title and link-preview tags describe that film or collection. */
+export async function watchPage(request: Request, env: SocialEnv): Promise<Response> {
+  const url = new URL(request.url);
+  const page = await env.ASSETS.fetch(request);
+  const film = url.searchParams.get('film') ?? '', coll = url.searchParams.get('c') ?? '';
+  if ((!FILM.test(film) && !FILM.test(coll)) || !page.ok || !(page.headers.get('content-type') ?? '').includes('text/html')) return page;
+  let cat: Catalog = {};
+  try { cat = (await (await env.ASSETS.fetch(new Request(new URL('/watch-feed.json', url.origin)))).json()) as Catalog; } catch { return page; }
+  const f = cat.films?.[film], c = cat.collections?.[coll];
+  const lead = f ?? (c ? cat.films?.[c.films[0]] : undefined);
+  if (!lead) return page;
+  const title = c ? `${c.name}: Swipe the Trailers | MovieTrailer.Channel` : `${f!.name}${f!.year ? ` (${f!.year})` : ''} Trailer: Swipe for More | MovieTrailer.Channel`;
+  const desc = c ? `Swipe through ${c.films.length} trailers: ${c.name}. Like one? Rent it on Prime Video.` : (f!.line || `Watch the ${f!.name} trailer, then swipe for more films like it.`);
+  const image = `https://i.ytimg.com/vi/${lead.youtubeId}/hqdefault.jpg`;
+  const share = `${url.origin}/watch?${c ? `c=${coll}` : `film=${film}`}`;
+  const set = (v: string) => ({ element(e: Element) { e.setAttribute('content', v); } });
+  const res = new HTMLRewriter()
+    .on('title', { element(e) { e.setInnerContent(title); } })
+    .on('meta[property="og:title"]', set(title))
+    .on('meta[name="description"]', set(desc))
+    .on('meta[property="og:description"]', set(desc))
+    .on('meta[property="og:image"]', set(image))
+    .on('meta[property="og:url"]', set(share))
+    .transform(page);
+  const out = new Response(res.body, res);
+  out.headers.set('cache-control', 'public, max-age=300');
+  return out;
 }
