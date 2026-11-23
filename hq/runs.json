@@ -2,9 +2,9 @@
  "_about": "Last run of each AI worker (claude.ai scheduled task). Each skill's final step updates only its own entry. Checked daily by scripts/health.py (limits in hq/health.json).",
  "workers": {
   "imn-radar": {
-   "at": "2026-11-22T20:42:31Z",
+   "at": "2026-11-23T20:47:40Z",
    "ok": true,
-   "note": "4 added: 3 Vic (Mildura City Heart, Queenscliffe Museum, Lorne Historical Society), 1 CHC (Brimbank Learning Futures); IMN full; CHC paced; trailers held"
+   "note": "2 Vic added (Bright, Castlemaine historical societies); IMN full, CHC paced, trailers held; queue 17, nothing reviewed since 19 Nov"
   },
   "morning-report": {
    "at": "2026-11-22T21:57:43Z",
