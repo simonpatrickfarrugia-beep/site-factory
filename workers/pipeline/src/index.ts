@@ -857,8 +857,8 @@ async function travelJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: bo
 
 /**
  * Index check (manual): asks Search Console's URL Inspection API whether pages are in Google's index, and why not.
- *   Vic Tours: the first 24 pages of the live sitemap (home, hubs, then towns most-searched first) → reports/vic/index-status.md
- *   Trailers (24 Nov 2026): every non-film page plus an even spread of film pages, 150 in all, with a summary by page type
+ *   Trailers (24 Nov 2026): 10 non-film pages plus 24 film pages spread across the sitemap (a different spread each day),
+ *   with a summary by page type. (Vic Tours was checked by this job until 24 Nov: reports/vic/index-status.md.)
  *   → reports/trailers/index-status.md. "Discovered - not indexed" = Google hasn't spent the crawl yet (links, authority);
  *   "Crawled - not indexed" = Google read it and passed (quality, duplication).
  * Free; quota 2,000 a day per property. 8 at a time, 20 s each at most (the run workflow allows 4 minutes).
@@ -876,17 +876,17 @@ async function inspectAll(token: string, site: string, urls: string[], log: stri
 }
 const pageType = (path: string) => (path.startsWith('/movies/') ? 'Film pages' : path.startsWith('/discover/') ? 'Collections' : 'Other pages');
 async function indexCheckJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean) {
+  // Cloudflare's free plan allows 50 outside calls per run (inspections + sitemap + GitHub), so one site per run:
+  // the trailer site (34 pages: 10 non-film pages + 24 film pages, a different spread each day). Vic's last report stays.
+  const dayNo = Math.floor(now.getTime() / 86400000);
   const targets: IndexTarget[] = [
-    { label: 'Vic Tours', site: 'sc-domain:victours.com.au', host: 'https://victours.com.au', sitemap: 'https://victours.com.au/sitemap.xml', report: 'reports/vic/index-status.md', pick: (u) => u.slice(0, 24) },
     {
       label: 'MovieTrailer.Channel', site: env.GSC_SITE, host: 'https://www.movietrailer.channel', sitemap: 'https://www.movietrailer.channel/sitemap.xml', report: 'reports/trailers/index-status.md',
       pick: (u) => {
-        const other = u.filter((x) => !x.includes('/movies/'));
+        const other = u.filter((x) => !x.includes('/movies/')).slice(0, 10);
         const films = u.filter((x) => x.includes('/movies/'));
-        const room = Math.max(0, 150 - other.length);
-        const step = films.length / Math.max(1, Math.min(room, films.length));
-        const spread = Array.from({ length: Math.min(room, films.length) }, (_, i) => films[Math.floor(i * step)]);
-        return [...other.slice(0, 150), ...spread].slice(0, 150);
+        const n = Math.min(24, films.length), step = films.length / Math.max(1, n), shift = dayNo % Math.max(1, Math.floor(step));
+        return [...other, ...Array.from({ length: n }, (_, i) => films[(Math.floor(i * step) + shift) % films.length])];
       },
     },
   ];
@@ -906,7 +906,7 @@ async function indexCheckJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun
     log.push(`${t.label}: ${rows.length} of ${urls.length} pages inspected. ${summary}`);
     const types = [...new Set(rows.map((r) => pageType(r.url.replace(t.host, ''))))];
     const states = [...counts.keys()];
-    const byType = t.label === 'Vic Tours' ? [] : [
+    const byType = [
       '## By page type', '',
       `| Page type | ${states.join(' | ')} |`, `|---|${states.map(() => '---:').join('|')}|`,
       ...types.map((ty) => `| ${ty} | ${states.map((st) => rows.filter((r) => pageType(r.url.replace(t.host, '')) === ty && r.coverage === st).length).join(' | ')} |`), '',
@@ -923,7 +923,7 @@ async function indexCheckJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun
     log.push(...errs.slice(0, 3));
   }
   const commit = await save(repo, snap.sha, files, `Index check [skip ci]\n\n${log.join('\n')}`, dryRun, log);
-  return { job: 'indexcheck' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report: Object.values(files)[1] ?? Object.values(files)[0] };
+  return { job: 'indexcheck' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report: Object.values(files)[0] };
 }
 
 async function keywordsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean) {
