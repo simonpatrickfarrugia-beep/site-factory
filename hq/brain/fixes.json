@@ -1,0 +1,41 @@
+{
+ "_about": "IMN brain: every site check fix and what it did to Google traffic. Written by scripts/brain/brain.py.",
+ "fixes": [
+  {
+   "site": "community-help-co",
+   "owner": "imn",
+   "name": "communityhelp.com.au",
+   "findingId": "broken-outside",
+   "area": "health",
+   "title": "2 outside link(s) go to a missing page",
+   "pages": [
+    "/community-services-placement"
+   ],
+   "scope": "pages",
+   "fixedBy": "2026-11-23",
+   "seenFixedAfter": "2026-11-23",
+   "baseline": {
+    "target": {
+     "impr": 0,
+     "clicks": 0,
+     "views": 1,
+     "pos": null,
+     "window": "2026-11-20",
+     "pages": [
+      "/community-services-placement"
+     ]
+    },
+    "site": {
+     "impr": 601,
+     "clicks": 14,
+     "views": 132,
+     "pos": null,
+     "window": "2026-11-20"
+    }
+   },
+   "status": "measuring",
+   "measureFrom": "2026-12-29"
+  }
+ ],
+ "updated": "2026-11-24"
+}
