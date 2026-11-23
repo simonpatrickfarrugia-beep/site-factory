@@ -5,7 +5,7 @@ Builds the Vic Tours site snapshot from the probe data:
                         with a usefulness score for ordering.
 Run after the probe (vic-probe.yml does it) or by hand: python3 scripts/vic/build_data.py
 """
-import json, math, os
+import json, math, os, re
 
 TOWNS = 'data/vic/towns.json'
 MELB = (-37.8136, 144.9631)
@@ -24,6 +24,11 @@ PRIORITY = {  # what's most useful to show first within each group
     'do': {'attraction': 4, 'museum': 4, 'gallery': 3, 'zoo': 4, 'theme_park': 4, 'aquarium': 4, 'winery': 4, 'brewery': 3, 'distillery': 3,
            'viewpoint': 3, 'nature_reserve': 2, 'beach_resort': 2, 'water_park': 3, 'golf_course': 1, 'park': 1},
 }
+
+
+# Mapping notes and places nobody can visit, not things to do (opportunity engine, 24 Nov 2026:
+# "Potential planting site" and "Resident tree planting" were listed as things to do in Daylesford).
+NOT_A_PLACE = re.compile(r'^unnamed\b|\b(potential|proposed)\b|\btree planting\b|\bcar park\b', re.I)
 
 
 def score(p):
@@ -47,7 +52,7 @@ def main():
     for slug, d in docs.items():
         for p in d['places']:
             here = (p['lat'], p['lon'])
-            if p['lat'] is None:
+            if p['lat'] is None or NOT_A_PLACE.search(p['name']):
                 continue
             nearest = min(centres, key=lambda s: km(centres[s], here))
             if nearest != slug:
