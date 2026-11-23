@@ -68,33 +68,79 @@
    "name": "communityhelp.com.au",
    "url": "https://communityhelp.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-16T00:03:15Z",
-   "score": 100,
+   "scannedAt": "2026-11-23T00:25:39Z",
+   "score": 92,
    "grade": "A",
-   "change": 6,
+   "change": -8,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-23",
-   "topFix": "3 page(s) under 250 words",
-   "broken": 0,
-   "newIssues": 0,
-   "fixed": 7,
-   "costUsd": 0,
+   "nextDue": "2026-11-30",
+   "topFix": "\"community help\": we're not in the top 10 (Search Console avg 14); directory.wayahead.org.au leads",
+   "broken": 1,
+   "newIssues": 8,
+   "fixed": 0,
+   "costUsd": 0.01,
    "top": [
     {
-     "id": "seo-words",
-     "title": "3 page(s) under 250 words",
-     "severity": "low",
-     "area": "seo",
-     "fix": "Fine for tools; for guides add the answer people search for.",
+     "id": "rival-community-help",
+     "title": "\"community help\": we're not in the top 10 (Search Console avg 14); directory.wayahead.org.au leads",
+     "severity": "medium",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
      "pages": [
-      "/about",
-      "/privacy-policy",
-      "/affiliate-disclosure"
+      "/"
      ],
-     "detail": "",
+     "detail": "Top 5: 1. directory.wayahead.org.au, 2. qld.gov.au, 3. sacommunity.org, 4. unknown site, 5. unknown site",
      "broken": false
+    },
+    {
+     "id": "rival-community-service-placement",
+     "title": "\"community service placement\": we're not in the top 10 (Search Console avg 11); cisvic.org.au leads",
+     "severity": "medium",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/"
+     ],
+     "detail": "Top 5: 1. cisvic.org.au, 2. au.indeed.com, 3. au.indeed.com, 4. unknown site, 5. au.indeed.com",
+     "broken": false
+    },
+    {
+     "id": "rival-local-community-support",
+     "title": "\"local community support\": we're not in the top 10 (Search Console avg 4); mycommunitydirectory.com.au leads",
+     "severity": "medium",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/"
+     ],
+     "detail": "Top 5: 1. mycommunitydirectory.com.au, 2. vic.gov.au, 3. mycommunitydirectory.com.au, 4. mycommunitydirectory.com.au, 5. goldcoast.qld.gov.au",
+     "broken": false
+    },
+    {
+     "id": "rival-simon-support",
+     "title": "\"simon support\": we're not in the top 10 (Search Console avg 7); facebook.com leads",
+     "severity": "medium",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/contact"
+     ],
+     "detail": "Top 5: 1. facebook.com, 2. play.google.com, 3. play.google.com, 4. facebook.com, 5. my306685-simon-s.contact.page",
+     "broken": false
+    },
+    {
+     "id": "broken-outside",
+     "title": "2 outside link(s) go to a missing page",
+     "severity": "medium",
+     "area": "health",
+     "fix": "Update or remove the links (often an official website that moved).",
+     "pages": [
+      "/community-services-placement"
+     ],
+     "detail": "https://careers.jewishcare.org.au/jobs/student-placements (404); https://inclusionmelbourne.org.au/?p=131 (404)",
+     "broken": true
     }
    ]
   },
@@ -233,9 +279,11 @@
    ]
   }
  },
- "updated": "2026-11-21T23:52:39Z",
+ "updated": "2026-11-23T00:25:39Z",
  "lastRun": {
-  "at": "2026-11-21T23:52:39Z",
-  "scanned": []
+  "at": "2026-11-23T00:25:39Z",
+  "scanned": [
+   "community-help-co"
+  ]
  }
 }

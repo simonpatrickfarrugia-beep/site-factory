@@ -3,16 +3,16 @@
  "name": "communityhelp.com.au",
  "url": "https://communityhelp.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-16T00:03:15Z",
+ "scannedAt": "2026-11-23T00:25:39Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
- "nextDue": "2026-11-23",
- "score": 100,
+ "nextDue": "2026-11-30",
+ "score": 92,
  "grade": "A",
  "areas": {
   "health": {
-   "score": 100,
+   "score": 92,
    "grade": "A",
    "label": "Broken pages & links"
   },
@@ -27,8 +27,8 @@
    "label": "Sitemap & indexing"
   },
   "seo": {
-   "score": 96,
-   "grade": "A",
+   "score": 85,
+   "grade": "B",
    "label": "Titles, descriptions & schema"
   },
   "content": {
@@ -47,63 +47,173 @@
    "label": "Google trend"
   },
   "rivals": {
-   "score": null,
-   "grade": null,
+   "score": 35,
+   "grade": "F",
    "label": "Competitors"
   }
  },
- "pages": 15,
+ "pages": 16,
  "findings": [
+  {
+   "id": "rival-community-help",
+   "area": "rivals",
+   "severity": "medium",
+   "title": "\"community help\": we're not in the top 10 (Search Console avg 14); directory.wayahead.org.au leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. directory.wayahead.org.au, 2. qld.gov.au, 3. sacommunity.org, 4. unknown site, 5. unknown site",
+   "impact": 6.6,
+   "broken": false
+  },
+  {
+   "id": "rival-community-service-placement",
+   "area": "rivals",
+   "severity": "medium",
+   "title": "\"community service placement\": we're not in the top 10 (Search Console avg 11); cisvic.org.au leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. cisvic.org.au, 2. au.indeed.com, 3. au.indeed.com, 4. unknown site, 5. au.indeed.com",
+   "impact": 6.6,
+   "broken": false
+  },
+  {
+   "id": "rival-local-community-support",
+   "area": "rivals",
+   "severity": "medium",
+   "title": "\"local community support\": we're not in the top 10 (Search Console avg 4); mycommunitydirectory.com.au leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. mycommunitydirectory.com.au, 2. vic.gov.au, 3. mycommunitydirectory.com.au, 4. mycommunitydirectory.com.au, 5. goldcoast.qld.gov.au",
+   "impact": 6.6,
+   "broken": false
+  },
+  {
+   "id": "rival-simon-support",
+   "area": "rivals",
+   "severity": "medium",
+   "title": "\"simon support\": we're not in the top 10 (Search Console avg 7); facebook.com leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/contact"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. facebook.com, 2. play.google.com, 3. play.google.com, 4. facebook.com, 5. my306685-simon-s.contact.page",
+   "impact": 3.3,
+   "broken": false
+  },
+  {
+   "id": "broken-outside",
+   "area": "health",
+   "severity": "medium",
+   "title": "2 outside link(s) go to a missing page",
+   "fix": "Update or remove the links (often an official website that moved).",
+   "pages": [
+    "/community-services-placement"
+   ],
+   "count": 1,
+   "detail": "https://careers.jewishcare.org.au/jobs/student-placements (404); https://inclusionmelbourne.org.au/?p=131 (404)",
+   "impact": 2.5,
+   "broken": true
+  },
+  {
+   "id": "seo-title",
+   "area": "seo",
+   "severity": "medium",
+   "title": "1 title outside 30–65 characters",
+   "fix": "Rewrite to 30–65 characters with the main search first.",
+   "pages": [
+    "/community-services-placement"
+   ],
+   "count": 1,
+   "detail": "",
+   "impact": 2.5,
+   "broken": false
+  },
   {
    "id": "seo-words",
    "area": "seo",
    "severity": "low",
-   "title": "3 page(s) under 250 words",
+   "title": "1 page(s) under 250 words",
    "fix": "Fine for tools; for guides add the answer people search for.",
    "pages": [
-    "/about",
-    "/privacy-policy",
-    "/affiliate-disclosure"
+    "/about"
    ],
-   "count": 3,
+   "count": 1,
    "detail": "",
-   "impact": 1.3,
+   "impact": 1.1,
+   "broken": false
+  },
+  {
+   "id": "seo-desc",
+   "area": "seo",
+   "severity": "low",
+   "title": "1 description outside 70–160 characters",
+   "fix": "Rewrite to 70–160 characters: what the page gives the searcher.",
+   "pages": [
+    "/community-services-placement"
+   ],
+   "count": 1,
+   "detail": "",
+   "impact": 1.0,
+   "broken": false
+  },
+  {
+   "id": "rival-hr-support-ringwood",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"hr support ringwood\": we're not in the top 10 (Search Console avg 39); careerhub.com leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/find-staff"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. careerhub.com, 2. jobs.careers.vic.gov.au, 3. dlook.com.au, 4. premier.vic.gov.au, 5. dlook.com.au",
+   "impact": 1.0,
    "broken": false
   }
  ],
  "google": {
-  "impr7": 108,
-  "imprPrev7": 95,
-  "clicks7": 5,
-  "clicksPrev7": 1,
-  "impr28": 492,
-  "clicks28": 12,
-  "views28": 94,
+  "impr7": 125,
+  "imprPrev7": 108,
+  "clicks7": 4,
+  "clicksPrev7": 5,
+  "impr28": 611,
+  "clicks28": 15,
+  "views28": 130,
   "viewsPrev28": 0,
   "recentViews": 25,
-  "lastGa4Day": "2026-11-14",
-  "gscTo": "2026-11-12"
+  "lastGa4Day": "2026-11-20",
+  "gscTo": "2026-11-19"
  },
  "queries": [
   {
    "query": "community help",
-   "position": 16.6,
-   "impressions": 39
-  },
-  {
-   "query": "community services placement",
-   "position": 8.7,
-   "impressions": 29
+   "position": 13.8,
+   "impressions": 46
   },
   {
    "query": "community service placement",
-   "position": 11.9,
-   "impressions": 28
+   "position": 11.4,
+   "impressions": 37
+  },
+  {
+   "query": "community services placement",
+   "position": 8.9,
+   "impressions": 34
   },
   {
    "query": "local community support",
-   "position": 3.9,
-   "impressions": 18
+   "position": 3.7,
+   "impressions": 25
   },
   {
    "query": "hr support ringwood",
@@ -111,9 +221,14 @@
    "impressions": 12
   },
   {
-   "query": "help community",
-   "position": 22.2,
-   "impressions": 6
+   "query": "simon support",
+   "position": 7.1,
+   "impressions": 8
+  },
+  {
+   "query": "part time jobs in australia",
+   "position": 34.3,
+   "impressions": 7
   },
   {
    "query": "simon farrugia",
@@ -122,13 +237,13 @@
   },
   {
    "query": "help support",
-   "position": 14.5,
-   "impressions": 4
+   "position": 16,
+   "impressions": 6
   },
   {
-   "query": "simon support",
-   "position": 7.3,
-   "impressions": 4
+   "query": "help community",
+   "position": 17,
+   "impressions": 5
   },
   {
    "query": "community services recruitment agencies",
@@ -141,13 +256,13 @@
    "impressions": 3
   },
   {
-   "query": "job community services",
-   "position": 6.7,
+   "query": "free cover letter",
+   "position": 56.7,
    "impressions": 3
   },
   {
-   "query": "free cover letter",
-   "position": 56.7,
+   "query": "how to get part time jobs in australia",
+   "position": 28.3,
    "impressions": 3
   },
   {
@@ -156,13 +271,33 @@
    "impressions": 2
   },
   {
+   "query": "community helping",
+   "position": 13,
+   "impressions": 2
+  },
+  {
    "query": "community service job",
    "position": 6.5,
    "impressions": 2
   },
   {
+   "query": "community services recruitment agencies melbourne",
+   "position": 2,
+   "impressions": 2
+  },
+  {
+   "query": "community services work placement",
+   "position": 13,
+   "impressions": 2
+  },
+  {
    "query": "work in community services",
    "position": 8.5,
+   "impressions": 2
+  },
+  {
+   "query": "online help chat free",
+   "position": 52,
    "impressions": 2
   },
   {
@@ -173,16 +308,6 @@
   {
    "query": "back to you journal pdf free download",
    "position": 6,
-   "impressions": 2
-  },
-  {
-   "query": "how to get part time jobs in australia",
-   "position": 31,
-   "impressions": 2
-  },
-  {
-   "query": "part time jobs in australia",
-   "position": 62,
    "impressions": 2
   },
   {
@@ -201,11 +326,6 @@
    "impressions": 2
   },
   {
-   "query": "assistance with social economic and community participation",
-   "position": 1,
-   "impressions": 1
-  },
-  {
    "query": "community consultants",
    "position": 5,
    "impressions": 1
@@ -221,8 +341,13 @@
    "impressions": 1
   },
   {
-   "query": "community job",
-   "position": 11,
+   "query": "community link support services",
+   "position": 30,
+   "impressions": 1
+  },
+  {
+   "query": "community services job",
+   "position": 7,
    "impressions": 1
   },
   {
@@ -231,13 +356,23 @@
    "impressions": 1
   },
   {
-   "query": "community services recruitment agencies melbourne",
-   "position": 2,
+   "query": "community support work",
+   "position": 4,
+   "impressions": 1
+  },
+  {
+   "query": "help for over 50s to find work",
+   "position": 8,
    "impressions": 1
   },
   {
    "query": "i need help with work",
    "position": 6,
+   "impressions": 1
+  },
+  {
+   "query": "job community services",
+   "position": 7,
    "impressions": 1
   },
   {
@@ -261,11 +396,6 @@
    "impressions": 1
   },
   {
-   "query": "community helping",
-   "position": 14,
-   "impressions": 1
-  },
-  {
    "query": "community helps",
    "position": 2,
    "impressions": 1
@@ -286,13 +416,13 @@
    "impressions": 1
   },
   {
-   "query": "community number",
-   "position": 43,
+   "query": "comm help",
+   "position": 11,
    "impressions": 1
   },
   {
-   "query": "online help chat free",
-   "position": 93,
+   "query": "community number",
+   "position": 43,
    "impressions": 1
   },
   {
@@ -306,44 +436,417 @@
    "impressions": 1
   },
   {
+   "query": "best website to find part time jobs",
+   "position": 24,
+   "impressions": 1
+  },
+  {
    "query": "how to apply for part time",
    "position": 17,
    "impressions": 1
-  },
-  {
-   "query": "part time job australia",
-   "position": 93,
-   "impressions": 1
-  },
-  {
-   "query": "product information support",
-   "position": 31,
-   "impressions": 1
-  },
-  {
-   "query": "create a resume for free",
-   "position": 30,
-   "impressions": 1
-  },
-  {
-   "query": "free resume builder australia",
-   "position": 25,
-   "impressions": 1
-  },
-  {
-   "query": "free resume writing services",
-   "position": 82,
-   "impressions": 1
   }
  ],
- "live": null,
- "costUsd": 0,
+ "live": {
+  "serps": [
+   {
+    "keyword": "community help",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "directory.wayahead.org.au",
+      "url": "https://google.com/goto?url=CAESbAHEIkXX1dBzKTIenPZp79Hj5xOAPZQThqidddR1IVdHQqcEK2tScWaGzB3-W0t7YDOMsmhYvVMnUMDacQ0c7w1igtJSA2OK6lC48pZ2LXAnQJnx86281ugoid4MJzwasX-8UaiKBNPCj1Jaiw&gsessionid=nSZ8-FKUBjmKPNO1JWAMVuPn3PFpgO7o1PaWaps8__vZ4wdQJppDlg",
+      "title": "Sydney Community Services"
+     },
+     {
+      "rank": 2,
+      "domain": "qld.gov.au",
+      "url": "https://google.com/goto?url=CAESiQEBxCJF1yRNOpfl-bZ6sVSZXOG8TbUvjnkl9vdyLjaOz-UfzO7cnaOqBWMX3LkAY8EObDi0XL1KtwwW8ExeWQ4ts0CCEJmLgvbxORTdxZCjF6AWms00qxjxZR3CIfLwleiKHnAiY3d-v0IhM3kHf80a9RFXGdQy5wMBDU7BqrBD_LT1olKk-Tip4Q&gsessionid=nSZ8-FKUBjmKPNO1JWAMVuPn3PFpgO7o1PaWaps8__vZ4wdQJppDlg",
+      "title": "Community Support Contacts List - Gold Coast District"
+     },
+     {
+      "rank": 3,
+      "domain": "sacommunity.org",
+      "url": "https://google.com/goto?url=CAEShAEBxCJF1zVZii1OOD1LK7yj_hCjWFqwgQsii3AHYGNahlNufD4tEfLTL-zgzeGIS-IRydFdL6aDU5vUCUMyDDliFdq2oe0kUMMKb72hMDSP1py-ZNiuvHczOLgkevPY474tLuUwQbagrWTMhGJmzwAuSTvM5Ar5uWrEHbcDEEMbzrqmzYk&gsessionid=nSZ8-FKUBjmKPNO1JWAMVuPn3PFpgO7o1PaWaps8__vZ4wdQJppDlg",
+      "title": "Community Groups & Services - Adelaide"
+     },
+     {
+      "rank": 4,
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAESbgHEIkXXnA6smjHh6ZBmIr9lbrZWb_DS6X3MgIsAEEiYnKMNJ4sLd_COTKYjKv4r5ZEXhUoluxFl3e1s6j_ByoOJOsBR7G2JDq3rvYPXFasGKA8SlP2_zme2IumBfu5U4RqefIeBu-Y0pWcRdM3w&gsessionid=nSZ8-FKUBjmKPNO1JWAMVuPn3PFpgO7o1PaWaps8__vZ4wdQJppDlg",
+      "title": "Community Services Sector Perth"
+     },
+     {
+      "rank": 5,
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAES0QEBxCJF12ilgyG7wMS0xKbnpWvo2lr2g2a3rUpX0jdKMhum_plutFPwMYo0EgpSabBRS8iajjL8AnovTtKOX2cfN94pKR3jLbMTv981y1ZhWEuUvDG2UGW4X2YzeKVSHzKR3Hw8aD3M5kTqe7U7BTSJ_NCpZTiGCrkkNQXO4XEX9hTSS7xOh65jhsJ1BzRAMP-UiSsrQ30sov8oM0lpn4d_UgmMs2PcjSB-2LyN5rqZ954QU52Y9aAAKrGFO_J3efPRYWVjsyI1zUJOwrc1AwdfCQ&gsessionid=nSZ8-FKUBjmKPNO1JWAMVuPn3PFpgO7o1PaWaps8__vZ4wdQJppDlg",
+      "title": "Crisis support services in Canberra"
+     },
+     {
+      "rank": 6,
+      "domain": "clickability.com.au",
+      "url": "https://google.com/goto?url=CAESewHEIkXXCwSaaynlXyJUyPDD4ctozDyr3l_Vr9xp2TjK_cGv-DZSH0A3J7PG_ZCxbTqZE8_USNGkQcr9KAssA1ervXmE086EA2HH1fHCv2CnD-_4mTsj8t97S9S1k8lfeP2usmCi8opfIWkUZnEguE7hYm6-aQJprOoK8g&gsessionid=nSZ8-FKUBjmKPNO1JWAMVuPn3PFpgO7o1PaWaps8__vZ4wdQJppDlg",
+      "title": "Community Support Pty Ltd"
+     },
+     {
+      "rank": 7,
+      "domain": "communityoptions.com.au",
+      "url": "https://google.com/goto?url=CAESeAHEIkXXzEqy71sJntklyubQYld_-S3KYNRMUntl-MRQO2Tn6TNzCkUa435tx-NLpB2eJXqNuOQMje4Su8bCaOvmLub02ZnJHEzmMHqT_dxLpKn5ZHNuTOO8-tQJE-IGkY351AuOm1OzfwErLvTDADxcfoHmUCzEqA&gsessionid=nSZ8-FKUBjmKPNO1JWAMVuPn3PFpgO7o1PaWaps8__vZ4wdQJppDlg",
+      "title": "Community Options to close as Canberra's flexible support ..."
+     },
+     {
+      "rank": 8,
+      "domain": "crosslinks.org.au",
+      "url": "https://google.com/goto?url=CAEShgEBxCJF14Ioy--sUEdlmn2cGWq6HAaA5fSsJLA0NyeNgZVROzlk6p8nglHCYUYjiMYl2QperpngJdjnGsscx1X-LAz-ZpkzPW4kL1Fr3zWqkkec5uaKJOXBlGFbwuUftOXWTUI87B_GfjehtOG8CviBTR9zMf7hN28sU-fbcIesNsCz8QRS8A&gsessionid=nSZ8-FKUBjmKPNO1JWAMVuPn3PFpgO7o1PaWaps8__vZ4wdQJppDlg",
+      "title": "NDIS Community Support Perth - Disability Support- Crosslinks"
+     }
+    ],
+    "impressions": 46,
+    "gscPosition": 13.8,
+    "ourPage": "/",
+    "ourRank": null
+   },
+   {
+    "keyword": "community service placement",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "cisvic.org.au",
+      "url": "https://google.com/goto?url=CAESZgHEIkXX6AHChpsJYhBsnapSwwHUEp_w-EXvmAFeKYINUe9MOSa4Sutt8Cn2o1PGGRuOHEstIlunHlo0XGgbIHbVfI3-Ijh0hK6emAqN5cFJh1RGTRaEGhvSTaQvdG9bZ9IlEaYL8Q&gsessionid=DRccaHFt-NfQMpoABdliQjAtkyeeOpVcwUN-xgTaUXO6az9pp5kgtg",
+      "title": "Student Placements in Community Services | CISVic"
+     },
+     {
+      "rank": 2,
+      "domain": "au.indeed.com",
+      "url": "https://google.com/goto?url=CAESmgEBxCJF19kEbnZm-9dZNwNBl_mhsCaRsZTSZnqy190BoMWdAtxFHyNz57iH5EZb4vVYqcUbU--Wlw7UCdU5fjNi38h6sYIQ8OP4UOmsRpK_IfqibrpxfqxzW7mHu7YqL-1j9uOise654CEUzVm0gA_axadDzPlv5a-NWXphv-dNNf_VgnEJElB8MK27UekssLfu-wNX7pejkZAn&gsessionid=DRccaHFt-NfQMpoABdliQjAtkyeeOpVcwUN-xgTaUXO6az9pp5kgtg",
+      "title": "Student placement community services jobs in Springvale ..."
+     },
+     {
+      "rank": 3,
+      "domain": "au.indeed.com",
+      "url": "https://google.com/goto?url=CAESiwEBxCJF1w0VpxI5bb2ix4PrNbMSqPtGIpmk1AYRLnKd5oS3ShPhZJ9OxL9lWh6Knus8DOyJke-3Xo6UH1UcuyVobXtsad3R_ihjBFDIY6zyry52iqizaVUQVZPypbqXvd5XFB-Ix28GkEubyLiEHckmPPTsJvbgEzevxY7Nz5-uflOamFTp7krlevJX&gsessionid=DRccaHFt-NfQMpoABdliQjAtkyeeOpVcwUN-xgTaUXO6az9pp5kgtg",
+      "title": "Community services placement jobs in O'Connor WA"
+     },
+     {
+      "rank": 4,
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAEShQEBxCJF1xNPMQ9721WCossYmrqkLnpRAuXdsGm5m4Sl7twZOAZyo_Ui3TyRwRwAmPx6UKG6U5TKoqx8Dj5ei_Qqygym6IJn0_-aplhf77u8Wl3wROyGHQhuI1OuMWVw3F13UE4gbU8-ytFZP3--mj1udjdSFane-y03Nz12bJHFBgBgq1AX&gsessionid=DRccaHFt-NfQMpoABdliQjAtkyeeOpVcwUN-xgTaUXO6az9pp5kgtg",
+      "title": "Seeking Community Services Placement Opportunity"
+     },
+     {
+      "rank": 5,
+      "domain": "au.indeed.com",
+      "url": "https://google.com/goto?url=CAESkgEBxCJF1xYl9yRU1v5ddCS6XrykTd2AbK0mnSKtxXWge056OdUL-iHAGmn7o1n5ENphbxRe0c7oHy57Xr3c1E-tGCbogB3TV0dQH_HPVfS0HWfZzC2IgswgtLlPueOgKF2ceW5HoksOLkds7f5a_gceQsahcHow53Z3_NEAY45cKodmg_f1YcdMrMz_hNCvF4bmgA&gsessionid=DRccaHFt-NfQMpoABdliQjAtkyeeOpVcwUN-xgTaUXO6az9pp5kgtg",
+      "title": "Student placement, community services jobs in Nerrina VIC"
+     },
+     {
+      "rank": 6,
+      "domain": "au.indeed.com",
+      "url": "https://google.com/goto?url=CAESjwEBxCJF1yBOvfrDxZRnDOt8qdJg8jh4vNaCOxgYggIo1Dgbk2q4u54uj4hhzQMEZEbvQ2pc0N8V-p2vdhJDFdBooSaY5rioJ7E8ZrOXOCxQRiqRGQWY10PtsYZ_HrHG6UdBBD-T6wGGkEwETSP8xpJJIw4o-LoPXyJMUCAtTIfrO04ce_I6LSrfznEgQEEnkA&gsessionid=DRccaHFt-NfQMpoABdliQjAtkyeeOpVcwUN-xgTaUXO6az9pp5kgtg",
+      "title": "Community services placement jobs in Ashgrove East QLD"
+     },
+     {
+      "rank": 7,
+      "domain": "au.indeed.com",
+      "url": "https://google.com/goto?url=CAESkAEBxCJF1xorNNSQQ79DdgwEwVnGIh6Orkw7F1PRS4Mb1NouwIXFumzscOwu_TunlyXCsRMoqvbgatB30xZjjz3NL8AMJfYAF6tUD8AjRBBjdQX42kNUrzNU8BzYD8xNCr9baz3mPU7v3lVt_XZG37w8hvrlztPI-CTYPZ7ZzNEGGK62Qid_S-oLlfLRhdQzdjA&gsessionid=DRccaHFt-NfQMpoABdliQjAtkyeeOpVcwUN-xgTaUXO6az9pp5kgtg",
+      "title": "Community services placement jobs in Rottnest Island WA"
+     },
+     {
+      "rank": 8,
+      "domain": "au.indeed.com",
+      "url": "https://google.com/goto?url=CAESiwEBxCJF15HcESPrv8uM59bmmdbogcGq_VkqDwhxhWDRfbFzM5JP6bMhyUyOwnvdFerNOf8LL_DiHeDn14Ta5Ubc6UCVGs34PlBIHJRw9LyzQGHjuoPq2k734AiRfbsUxfMOEy8pcWL4SJPC0robuGqZN-WxdLpZikjTKdbCBjpLy0qd9hiHX7C-SbOl&gsessionid=DRccaHFt-NfQMpoABdliQjAtkyeeOpVcwUN-xgTaUXO6az9pp5kgtg",
+      "title": "Community services placement jobs in Ingleburn NSW"
+     },
+     {
+      "rank": 9,
+      "domain": "au.indeed.com",
+      "url": "https://google.com/goto?url=CAESiQEBxCJF10Xxhg-RagyS3HWDOeD3zZVn4q3gmTGMzYm8cMjD6N6yQ0LRuZFWvKX7lSGRyA7Dmrw5qJVxQK6bKKvTlHbD71zDPCUGb0CwlefB2eJ7Cw8rNW8tj12H2yvn8_TLM3MqhOQK3eDKMicoahqin5oOPajNFMuvJHng90HhJL8VbGuXWA6t5Q&gsessionid=DRccaHFt-NfQMpoABdliQjAtkyeeOpVcwUN-xgTaUXO6az9pp5kgtg",
+      "title": "Community services placement jobs in Rosedale SA"
+     }
+    ],
+    "impressions": 37,
+    "gscPosition": 11.4,
+    "ourPage": "/",
+    "ourRank": null
+   },
+   {
+    "keyword": "local community support",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "mycommunitydirectory.com.au",
+      "url": "https://google.com/goto?url=CAESlQEBxCJF1-CbMMzk7a1JOiagGQUaGxQyC3KKUDmV7EYu5jvlnb-l-7IP-73Gq82wFuAVtWmRak_slo1O1tsIg80cabpVvx655MqJZSx42Cml_JmIfMSxQJLXGnqZbGLy3xV1t74pyRQDhi-j67PT9rW0ComHVcGVNC-AGbbumULnQ7JK7Lh91kMooA0u7oBroTN7awHvLQ&gsessionid=3_9bYq6hNq2v4LS8rT8W0m2TtHFS9yEgbElrQKpZHq6Htuuy1mJ9nQ",
+      "title": "Canberra (ACT) - self help"
+     },
+     {
+      "rank": 2,
+      "domain": "vic.gov.au",
+      "url": "https://google.com/goto?url=CAESeAHEIkXX5oi8KMSpLHtAlbB6sB5xP7UZoxdiq4cVv3IN1UQj3Wi34vtyzXmARfgSx5RBbr9_wmVRPFYW1RGmSSROBZiJGFhN9F_nYZ5XL-h5g8kSnTxQB2dB-jKHtmixGB7lWqicBN7u-ldQSuLID8IAojwqX7FKcw&gsessionid=3_9bYq6hNq2v4LS8rT8W0m2TtHFS9yEgbElrQKpZHq6Htuuy1mJ9nQ",
+      "title": "Community-led Recovery Support Grants"
+     },
+     {
+      "rank": 3,
+      "domain": "mycommunitydirectory.com.au",
+      "url": "https://google.com/goto?url=CAESoAEBxCJF16GmBvpFmYdgMfgf3sO7uKqwdjZxGbeu1wpfZ-ZggynHGchUXXEOkIxM6K4WOMVB50r5vM1yTgNscW1jfLZ92_VfJBwvYHEIK76G88zs2E5RygZSSvzDQncpkz9hiokQ3ow3Dt1cTNeqF8STZC2kbbvT17dIvLa0KPm5XxU1sjqlo2crJjCvIyikpl-CHYmfxc29Kf5n0Hclz3tb&gsessionid=3_9bYq6hNq2v4LS8rT8W0m2TtHFS9yEgbElrQKpZHq6Htuuy1mJ9nQ",
+      "title": "Community Information Support Services - Perth"
+     },
+     {
+      "rank": 4,
+      "domain": "mycommunitydirectory.com.au",
+      "url": "https://google.com/goto?url=CAESmgEBxCJF1yvCtKY7-nGoNksqmiZUp98wU6Wf5pou7WJMvACO-haY9De0z6BAoUmc-73Iv2JM7q9LEL6pfWw7jHXHZSf-2Yev73cBfHi449kL1MU5HLBf_ZajYWyY_nYa0R8edMMsZ2j-V_ztI6DX8vQ5Tzbg9bRdq1NRs5S53F8oaDSZ9GwcJv_ui_9_mBLNnYXxu6nXLcVnqJLR&gsessionid=3_9bYq6hNq2v4LS8rT8W0m2TtHFS9yEgbElrQKpZHq6Htuuy1mJ9nQ",
+      "title": "Adelaide - Welfare Assistance & Services"
+     },
+     {
+      "rank": 5,
+      "domain": "goldcoast.qld.gov.au",
+      "url": "https://google.com/goto?url=CAESzwEBxCJF179-ehskLe_EnLuafiNWH-yHtBl08UEBR0gi0AstmHJkXm5kHKYdGlZC_p_xqBLjN_OGsWYFPVefLEH6Ve_gCeGneqWzHnC5T9qYpr-BVBX0N8YWEh9585LkBIe4xYLrTGnZ-nalpAWu3JGEiDowaQy7QNKTfVMfecp19gM2OHDdy3DJdWn2KoreyGAdFD9Amh1a8KvanhT6JEHtDxhdIdTawhsvO0bg67bP-S_gM05yzTa9nUfXCgaPfo0OlOEftaNkZ7ErEHonzm0&gsessionid=3_9bYq6hNq2v4LS8rT8W0m2TtHFS9yEgbElrQKpZHq6Htuuy1mJ9nQ",
+      "title": "Gold Coast Community Fund"
+     },
+     {
+      "rank": 6,
+      "domain": "dhs.sa.gov.au",
+      "url": "https://google.com/goto?url=CAESpQEBxCJF1wxDzAoKK_FqzGb--0KGZ4IalSy6898cAilMwA8GNskCoa_Qn1xT767owOFXlSz4ciE3VvYwYRwdhlRbNeF73sBlm9I0bgKmT30emGpi69ydXyPUvOkHLKKIBRd_pLyknR1nS5SRbrRXZ_s3snAI2jYYydq0E2GPK7JALXULPa78m-l3BclQkITtcNO5PGUH54dGpy3SythZla8bV2zgRNk&gsessionid=3_9bYq6hNq2v4LS8rT8W0m2TtHFS9yEgbElrQKpZHq6Htuuy1mJ9nQ",
+      "title": "Access the Community Connections Program - DHS"
+     },
+     {
+      "rank": 7,
+      "domain": "mycommunitydirectory.com.au",
+      "url": "https://google.com/goto?url=CAESuAEBxCJF10McYNH51KRKioQTGkXBY5DRfHChG99jwwtkfs000nNoyLFDIZXu1VdH-TgXOk6GFIy7xvkt9O4zjpJ11G_ngdO5LJo85nRYdHENQIHTMugo29B7NrOZzUM0ovIJxh7KpRm2yKP5_9RvGK57ATw5wx7MgQumq53d6zWZBLLvSDf2u-h7XDbf0jkGMrzQuEsIufRmPB27JDWtyBXFh8VSoBT8B68UQLG0Exzc4LuyluFAandQ&gsessionid=3_9bYq6hNq2v4LS8rT8W0m2TtHFS9yEgbElrQKpZHq6Htuuy1mJ9nQ",
+      "title": "General Welfare & Support Services in Brisbane"
+     },
+     {
+      "rank": 8,
+      "domain": "localsearch.com.au",
+      "url": "https://google.com/goto?url=CAESfQHEIkXXQC8X0f0A36UPZrJU7la1tz8Zm5I7of6mMSoawbBmY2vWoHQcS2EQC_Ae4BGGNNPid0BctVBln9HIGte5sHzUvU3S8FFsM6l9U7Mi3CWjNWqIIdv4YLdKwHnoRBxgS5rAGtU34p_xEdZvWESySM0VCkbYBFiKDYr8&gsessionid=3_9bYq6hNq2v4LS8rT8W0m2TtHFS9yEgbElrQKpZHq6Htuuy1mJ9nQ",
+      "title": "10 BEST Community Services in Sydney NSW | Localsearch"
+     },
+     {
+      "rank": 9,
+      "domain": "mycommunitydirectory.com.au",
+      "url": "https://google.com/goto?url=CAESnAEBxCJF16NDFuTBCoYk2N-IH_6yPeWLWXQU1fz-HSP03WDtXgZDQdOpA5EgsSAsEzJJVdv6lFPeW9cypOlv4Ue1hNI48zxrZhnNG9EniaO89kBNr38jAOMvfiCe8ZaRCzCp7ai_7C4fSwQUBHd_SCA9CFex8zYVCNtMmV2Cd_q7xs4B90ZGZUJmw0GMMVhEXNAH7deQpo1VdTS8xkw&gsessionid=3_9bYq6hNq2v4LS8rT8W0m2TtHFS9yEgbElrQKpZHq6Htuuy1mJ9nQ",
+      "title": "Welfare Assistance & Services in Wollongong"
+     }
+    ],
+    "impressions": 25,
+    "gscPosition": 3.7,
+    "ourPage": "/",
+    "ourRank": null
+   },
+   {
+    "keyword": "hr support ringwood",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "careerhub.com",
+      "url": "https://google.com/goto?url=CAEScgHEIkXXkj5w7Yp41fOHYMtiBOE0HGom7IGKEUbmeWyUaBdfyfsVxt3lK5jrCpogC6Lxyt25hWlcnJfWdcVisMJIIQhjdFIleBIG8qczlNph4_UeXUJit7H1bN9IIYoOZO_6gIlRtyPR60yn5kAgUv0Xvg&gsessionid=9KJMP70NK2ba3ygMqw3Fbo3HSChuiy_v_zuAKK60jlsbpuQqOlw7iw",
+      "title": "CareerHub"
+     },
+     {
+      "rank": 2,
+      "domain": "jobs.careers.vic.gov.au",
+      "url": "https://google.com/goto?url=CAES_gEBxCJF19ZPcr6aUswu0nn0grz5m9oAumOX4fb6xqQAslOo2P2b6BF86bk864NcEm7r2S7h2qr9feVja0fOE2uD0tMESZozf2KzVgnyao9x0acLhAzyDLoDh6uP-WdYetDsRvgn-X50pw1b1nfVnIKfaCIp-TnzBuCfSMhZwPj5pZOkUkO5dvkXYuH18zyaAcbFZcN-f2PlfJlfPduN8M6W62j_1fyQOnYwgroimuwpUdsUkx731pqmBOE5sKxHJjeyMvFMPGhBUQURtmkSMS7DCuAgI77E9L1F27kZ0di2xcTovNUdiW-X6EjWeZM2vDOLnX8dfJUiMbRUBI7qYw&gsessionid=9KJMP70NK2ba3ygMqw3Fbo3HSChuiy_v_zuAKK60jlsbpuQqOlw7iw",
+      "title": "https://jobs.careers.vic.gov.au/jobtools/b_fileupl..."
+     },
+     {
+      "rank": 3,
+      "domain": "dlook.com.au",
+      "url": "https://google.com/goto?url=CAESkgEBxCJF13Tz4EUBXKGa2u9NyKbQVzdrQRHBvuSqegd-RAMIk4dswn0tjdWMq8sA1vri-3-WghsaKlrifX8fYY32QQhuJp9l-GfCoNgSdWDkYx-QcmhvedFlQ8rgOButHpLdNIA46TSNw2X7ujbDlO_vVNhDvG3Y8Rb1urG_XYQDwOIHo3EGDdg1x2MqfGg3GCw0Tw&gsessionid=9KJMP70NK2ba3ygMqw3Fbo3HSChuiy_v_zuAKK60jlsbpuQqOlw7iw",
+      "title": "Ringwood North's Best Community services organisations ..."
+     },
+     {
+      "rank": 4,
+      "domain": "premier.vic.gov.au",
+      "url": "https://google.com/goto?url=CAESsAEBxCJF16Mlo3kv7LY1QiNbGWXjz5ZyqeO4jBbreObP7I0CAxr0P8gXyKFgJ2KNXpvfUJ5NnDfd8hzOQlDumWadMFOCHFGoBRpOgUzf4peawS9vQH-55yAOOV8rORX2iQ-53AGpCs5eUl0XxCKBMhA6QQMPAS18NMSxptlbo-UROsV3c6gnQEiV480fTu1uGy2VJ4xnB2Tpgj9OGe8dkoe03_0JCQiG3h1m-5GnsFXJjA&gsessionid=9KJMP70NK2ba3ygMqw3Fbo3HSChuiy_v_zuAKK60jlsbpuQqOlw7iw",
+      "title": "260421-New-Employment-Hub-Helping-Seymour-To- ..."
+     },
+     {
+      "rank": 5,
+      "domain": "dlook.com.au",
+      "url": "https://google.com/goto?url=CAESkQEBxCJF184ZhtYn3fW1Oa1DDlvzahnCvwuW9c1OenzT0Ari3KsIvok27bPIIrgUEPPXgAiEx6ycQdogNua5NDKp7tEfvkFRunQ-66wLUgkDhrEZgsJCc096buNwYLiYYxXKZ9dHoGy1aV83d27H0GVJO-88CDM2Xx6JlAL3vjUm4VXcpNUBvHLOGpeqoYSfjHP0&gsessionid=9KJMP70NK2ba3ygMqw3Fbo3HSChuiy_v_zuAKK60jlsbpuQqOlw7iw",
+      "title": "Ringwood East's Best Community services organisations ..."
+     },
+     {
+      "rank": 6,
+      "domain": "yellowpages-is.cybo.com",
+      "url": "https://google.com/goto?url=CAESegHEIkXXxjxt8LEItR1gfM4vuiOz_ah3tla81HEqSLdZGa9uV-xh2Pt5IZ41BBP7xcA3mwsl8T2hGqP4Em2dswSy9BZ5NH57Y15P7dMQdMJjqRWtwfVfpy0vTRFIfonPe2ptK6KkUNRo_5o5O5axRZkz2zEHj78BrFZy&gsessionid=9KJMP70NK2ba3ygMqw3Fbo3HSChuiy_v_zuAKK60jlsbpuQqOlw7iw",
+      "title": "Employment Center Viðskipti í Ringwood"
+     },
+     {
+      "rank": 7,
+      "domain": "mapquest.com",
+      "url": "https://google.com/goto?url=CAESjAEBxCJF1w58deHFlGP158oUBMTAVjeqpsmgEeBSPqNed67jSZsYJtfwbnqUFErjapbEE0NT5pM8yIVF7ZIsK7lqOOyOL6dfNudft7l8o522_Uz5Am7tn-BwKHY5sus8jQALqKTSXRL6CMngYcw1lfrkGXTZqmx9HvIzO6lN0Xh7QDlAvih1voP6N0v9jA&gsessionid=9KJMP70NK2ba3ygMqw3Fbo3HSChuiy_v_zuAKK60jlsbpuQqOlw7iw",
+      "title": "Mission Australia - DMS Employment, 41-43 Ringwood St ..."
+     },
+     {
+      "rank": 8,
+      "domain": "careers.communitybridgingservices.org.au",
+      "url": "https://google.com/goto?url=CAESlwEBxCJF13P1sjgABdj6N2fSieAzDg7BBfNTx39G9zDtH6zqGKhv_W9KoB4CCPIxq0q0LbBSEHoC_RdbBjESELG8-9KI6UQHkXLXs_wG-M3qQfHG8M1B508xRDJBO-zuF3cEIrrhxO6HI3EaBVEHjUs8zEo8xEiB4-uHGkPZRPcmbiQuw78NLLZTbIxOHHMvh7NCvZoraI1p&gsessionid=9KJMP70NK2ba3ygMqw3Fbo3HSChuiy_v_zuAKK60jlsbpuQqOlw7iw",
+      "title": "CBS"
+     },
+     {
+      "rank": 9,
+      "domain": "mapquest.com",
+      "url": "https://google.com/goto?url=CAESeAHEIkXXNw84VpC02eYnH5bPFPrQGm-QE_ZIZ3wQKrJfBNcYPE4JZyHeMMjuwSOJo-wTXMdnOHF8p_cVTZmf47cTmyWXhhFeKYnxVq4_n8_brbQYtpeyizFxPBgzJrKNvhZTkLnUEflNxjtO2KZz7eOEG1qR-jhcEg&gsessionid=9KJMP70NK2ba3ygMqw3Fbo3HSChuiy_v_zuAKK60jlsbpuQqOlw7iw",
+      "title": "Two Heads HR, 67 Bay Rd, Sandringham, VIC 3191, AU"
+     }
+    ],
+    "impressions": 12,
+    "gscPosition": 38.8,
+    "ourPage": "/find-staff",
+    "ourRank": null
+   },
+   {
+    "keyword": "simon support",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "facebook.com",
+      "url": "https://google.com/goto?url=CAESZwHEIkXXFCokAOfy5J3_vDKwDwsAEi-TXu6jwR5Wx4nwjlHQNbOdNL0QuGOwnAs_APaZ_6Q6r7pTjPWSoun8P1_Isv6G7TeD2m-wQ_YeqA4U-1d-9222aMd6QpMcJw78pXwSC2sDs90&gsessionid=XN6WQtv5l6v-2Sl3Vx3qO3HSxIzRcX4_GGkGM7Y3BT2JfbJdZcw95g",
+      "title": "Simo's Phone Repairs | Tenterfield NSW"
+     },
+     {
+      "rank": 2,
+      "domain": "play.google.com",
+      "url": "https://play.google.com/store/apps/details?id=au.com.simon.app&hl=cs",
+      "title": "Simon App – Aplikace na Google Play"
+     },
+     {
+      "rank": 3,
+      "domain": "play.google.com",
+      "url": "https://play.google.com/store/apps/details?id=au.com.simon.app&hl=sl",
+      "title": "Simon App – Aplikacije v Googlu Play"
+     },
+     {
+      "rank": 4,
+      "domain": "facebook.com",
+      "url": "https://google.com/goto?url=CAESdgHEIkXXEiTJ1rO8N1eC0TcN9G6t08zXagtpa4fPrZ3TeBcMElC9keTMm5JQ_VzSp3FZvbE7mnGd-e-R5pR8ya0QT40KO_Dulf4_lvvzP7WfQ8SZJogG4yYplHyC1gN2dYk8xogsctySYEZ5_9OzqkZYKVAbfN0&gsessionid=XN6WQtv5l6v-2Sl3Vx3qO3HSxIzRcX4_GGkGM7Y3BT2JfbJdZcw95g",
+      "title": "Simon ministry"
+     },
+     {
+      "rank": 5,
+      "domain": "my306685-simon-s.contact.page",
+      "url": "https://google.com/goto?url=CAEScgHEIkXXew-YIQWeeI8KlL2Wcc2hcvIeOQ7kuGo3X5F7fRBYcxi1Zeux9FGEdoLz2ihMHKr3-x2PRpHM95QRVm79znXOHK0X8Q5xDmGOo5wMnx9f5hFPAiRe2GJ_L3S8Rr5zK4zzN0v6ggmVItBaYDbCJQ&gsessionid=XN6WQtv5l6v-2Sl3Vx3qO3HSxIzRcX4_GGkGM7Y3BT2JfbJdZcw95g",
+      "title": "Simon's Contact Details"
+     },
+     {
+      "rank": 6,
+      "domain": "employ.exphub.com.au",
+      "url": "https://google.com/goto?url=CAESbwHEIkXXZ-dMUbykzee6mhAjbM_8SwDIZglkR38QQB1Ido0SowOmbTj6XnSjq9F41b_rybyh7DFsAJdc3r1pbJI2w7ReqtnElb5I5m-VZgbZ8KF9XX-OUKrc7easI-gxR3mwROVque-281A_1oLCow&gsessionid=XN6WQtv5l6v-2Sl3Vx3qO3HSxIzRcX4_GGkGM7Y3BT2JfbJdZcw95g",
+      "title": "Simon | Employee"
+     },
+     {
+      "rank": 7,
+      "domain": "my656753-simon.contact.page",
+      "url": "https://google.com/goto?url=CAEScAHEIkXXXtOO9Rqa4J0d9pjkKoq39FUp4KnySG6gV_sq1QwRfmKFWfT5mzRS2ufg-bOr9954H5hkvI9jlR-kmQdMXaPg4zRuBFWb2SZDpG0OfkzD31O6wnP_tvMuDFgbKLQF9kAzKuRHOsq7sbVuDmY&gsessionid=XN6WQtv5l6v-2Sl3Vx3qO3HSxIzRcX4_GGkGM7Y3BT2JfbJdZcw95g",
+      "title": "SIMON Contact Details"
+     },
+     {
+      "rank": 8,
+      "domain": "northcott.exphub.com.au",
+      "url": "https://google.com/goto?url=CAEScgHEIkXXyYa6W3Q-itK1DbPdprvQB1U_q24tym2PwPcn8ImwrjpSs_8IPAL-bsKSmAy7u-NIS0Lun8tULgPRGgQDTy612hsRTKIoDub54S9d58ee4SxlG7AdgUyNTEYtdu8XDO98WU-SsJwUCiLAa2nB0w&gsessionid=XN6WQtv5l6v-2Sl3Vx3qO3HSxIzRcX4_GGkGM7Y3BT2JfbJdZcw95g",
+      "title": "Simon | Employee"
+     },
+     {
+      "rank": 9,
+      "domain": "mswatalenthub.exphub.com.au",
+      "url": "https://google.com/goto?url=CAESdgHEIkXXRNcocl81MKEoU5q8x7Q_Y-2HqGv4PzcLMTcSeMA7xY-5f0SenCsJxfY54wyW83IaxZ2mTlXJ8657w8jmVTccOjvTkBPImwMWkb4rmsJMgxdkk2JF_va2E8sX9sngCUGpoNvJukHJgugW-MN63ALNamw&gsessionid=XN6WQtv5l6v-2Sl3Vx3qO3HSxIzRcX4_GGkGM7Y3BT2JfbJdZcw95g",
+      "title": "Employee - Simon"
+     },
+     {
+      "rank": 10,
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAESZgHEIkXXdrJEuC4UuNfghV_dQy9D-qn1wtgy9VSa9JTsR3OafPOAS591dVJpKk2EQFM6r1drRbKTRTE4U0XIoi-AZVVmw7-kIKyG0IsXNbMEcl-zFCYhTXhiLaXMK4EMt8tMCY5lng&gsessionid=XN6WQtv5l6v-2Sl3Vx3qO3HSxIzRcX4_GGkGM7Y3BT2JfbJdZcw95g",
+      "title": "Register - SIMON"
+     }
+    ],
+    "impressions": 8,
+    "gscPosition": 7.1,
+    "ourPage": "/contact",
+    "ourRank": null
+   }
+  ],
+  "index": [
+   {
+    "url": "https://communityhelp.com.au/",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-22T14:17:51Z",
+    "googleCanonical": "https://communityhelp.com.au/",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://communityhelp.com.au/free-daily-journal",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-13T09:34:38Z",
+    "googleCanonical": "https://communityhelp.com.au/free-daily-journal",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://communityhelp.com.au/resume-builder",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-10-23T23:08:04Z",
+    "googleCanonical": "https://communityhelp.com.au/resume-builder",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://communityhelp.com.au/job-finder",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-10-30T21:34:45Z",
+    "googleCanonical": "https://communityhelp.com.au/job-finder",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://communityhelp.com.au/contact",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-22T23:34:04Z",
+    "googleCanonical": "https://communityhelp.com.au/contact",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://communityhelp.com.au/about",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-10-22T07:47:00Z",
+    "googleCanonical": "https://communityhelp.com.au/about",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://communityhelp.com.au/cover-letter-builder",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-10-23T23:41:06Z",
+    "googleCanonical": "https://communityhelp.com.au/cover-letter-builder",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://communityhelp.com.au/life-goals-mentoring",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-14T02:21:55Z",
+    "googleCanonical": "https://communityhelp.com.au/life-goals-mentoring",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   }
+  ],
+  "error": null
+ },
+ "costUsd": 0.01,
  "speed": [
   {
    "url": "https://communityhelp.com.au/",
    "lite": true,
-   "serverSecs": 0.12,
-   "htmlKb": 15,
+   "serverSecs": 0.14,
+   "htmlKb": 17,
    "blocking": 1,
    "images": 2,
    "noDims": 0,
@@ -351,53 +854,64 @@
    "psiError": "HTTP Error 429: Too Many Requests"
   },
   {
-   "url": "https://communityhelp.com.au/resume-builder",
+   "url": "https://communityhelp.com.au/free-daily-journal",
    "lite": true,
    "serverSecs": 0.2,
-   "htmlKb": 24,
+   "htmlKb": 14,
    "blocking": 1,
-   "images": 1,
+   "images": 2,
    "noDims": 0,
    "imageKb": 0,
    "psiError": "HTTP Error 429: Too Many Requests"
   }
  ],
  "quality": {
-  "summary": "15 indexable pages · average 399 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
+  "summary": "16 indexable pages · average 425 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
   "thin": 0,
   "near": 0
  },
  "links": {
-  "internal": 17,
-  "outside": 2,
-  "checkedOutside": 2,
-  "unsureOutside": 1
+  "internal": 18,
+  "outside": 13,
+  "checkedOutside": 13,
+  "unsureOutside": 2
  },
  "affiliateOk": 0,
- "secs": 122,
+ "secs": 146,
  "change": {
   "first": false,
-  "since": "2026-11-14T22:17:22Z",
-  "score": 6,
-  "newIssues": [],
-  "fixed": [
-   "\"community help\": we're not in the top 10 (Search Console avg 17); goldcoast.qld.gov.au leads",
-   "\"community services placement\": we're not in the top 10 (Search Console avg 9); facebook.com leads",
-   "\"local community support\": we're not in the top 10 (Search Console avg 4); mercycare.com.au leads",
-   "2 title outside 30–65 characters",
-   "\"simon farrugia\": we're not in the top 10 (Search Console avg 8); unknown site leads",
-   "2 description outside 70–160 characters",
+  "since": "2026-11-16T00:03:15Z",
+  "score": -8,
+  "newIssues": [
+   "\"community help\": we're not in the top 10 (Search Console avg 14); directory.wayahead.org.au leads",
+   "\"community service placement\": we're not in the top 10 (Search Console avg 11); cisvic.org.au leads",
+   "\"local community support\": we're not in the top 10 (Search Console avg 4); mycommunitydirectory.com.au leads",
+   "\"simon support\": we're not in the top 10 (Search Console avg 7); facebook.com leads",
+   "2 outside link(s) go to a missing page",
+   "1 title outside 30–65 characters",
+   "1 description outside 70–160 characters",
    "\"hr support ringwood\": we're not in the top 10 (Search Console avg 39); careerhub.com leads"
   ],
-  "impr28": 294,
-  "clicks28": 10,
-  "views28": 19,
+  "fixed": [],
+  "impr28": 119,
+  "clicks28": 3,
+  "views28": 36,
   "rivals": [],
   "positions": [
    {
+    "query": "online help chat free",
+    "was": 93,
+    "now": 52
+   },
+   {
     "query": "part time jobs in australia",
-    "was": 30,
-    "now": 62
+    "was": 62,
+    "now": 34.3
+   },
+   {
+    "query": "help community",
+    "was": 22.2,
+    "now": 17
    }
   ]
  },
@@ -415,7 +929,14 @@
    "grade": "A",
    "impr28": 198,
    "clicks28": 2
+  },
+  {
+   "at": "2026-11-16T00:03:15Z",
+   "score": 100,
+   "grade": "A",
+   "impr28": 492,
+   "clicks28": 12
   }
  ],
- "issue": null
+ "issue": "open"
 }
