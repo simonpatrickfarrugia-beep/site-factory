@@ -257,6 +257,19 @@
  "_todo": "Simon's to-do list shown at the top of HQ. kind: do | decide. sprint: true = counts toward the current sprint. ready: {what, link?, at} = Claude has already done the prep (drafts, files, exact values to paste), so Simon only approves; set by the weekly autopilot or a chat session, shown first in the morning report. Claude (or the weekly autopilot) sets done: true + doneAt when Simon says 'done' or an approval email arrives. parked = items for paused brands, kept out of the list until the pause lifts. Optional `brand` (site id) puts the item on that app in IMN HQ's home screen; no brand = the IMN app.",
  "todo": [
   {
+   "id": "mtc-gsc-reindex",
+   "kind": "do",
+   "sprint": true,
+   "mins": 5,
+   "what": "Search Console for movietrailer.channel: (1) URL Inspection → https://www.movietrailer.channel/ → Request indexing. (2) Sitemaps → submit https://www.movietrailer.channel/sitemap.xml again. (3) Request indexing for 5 big films: /movies/jaws-1975, /movies/rocky-1976, /movies/the-usual-suspects-1995, /movies/twister-1996, /movies/armageddon-1998",
+   "why": "Index check 24 Nov (reports/trailers/index-status.md): Google last read the home page on 11 Oct, still thinks it redirects, and hasn't crawled 22 of 24 sampled film pages at all (0 rejected for quality). The home page is where Google finds every other page. Needs your Google sign-in; the API can't request indexing.",
+   "link": "https://search.google.com/search-console?resource_id=https%3A%2F%2Fwww.movietrailer.channel%2F",
+   "linkLabel": "Search Console",
+   "done": false,
+   "addedAt": "2026-11-24",
+   "brand": "trailers"
+  },
+  {
    "id": "always-https",
    "kind": "do",
    "mins": 5,
