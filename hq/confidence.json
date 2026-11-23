@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-22T01:31:50Z",
- "day": "2026-11-22",
+ "generatedAt": "2026-11-23T01:56:00Z",
+ "day": "2026-11-23",
  "micro": {
   "items": [
    {
     "key": "fixes",
     "label": "Site check fixes cleared",
-    "value": 36,
+    "value": 13,
     "target": 3,
     "status": "green",
     "unit": "",
@@ -16,7 +16,7 @@
    {
     "key": "shipped",
     "label": "Site improvements shipped",
-    "value": 7,
+    "value": 11,
     "target": 3,
     "status": "green",
     "unit": "",
@@ -26,55 +26,15 @@
    {
     "key": "todos",
     "label": "Your to-dos done",
-    "value": 7,
+    "value": 6,
     "target": 3,
     "status": "green",
     "unit": "",
-    "fix": "Knock off your quickest open to-do: Paste the 2 best Google reviews (text + first name) into the Site Factory chat; Claude add",
+    "fix": "Knock off your quickest open to-do: Trailers: let Google index the 42 new actor pages (e.g. /actors/arnold-schwarzenegger)? Re",
     "weight": 1
    }
   ],
   "fixed": [
-   {
-    "site": "community-help-co",
-    "what": "\"community help\": we're not in the top 10 (Search Console avg 17); goldcoast.qld.gov.au leads"
-   },
-   {
-    "site": "community-help-co",
-    "what": "\"community services placement\": we're not in the top 10 (Search Console avg 9); facebook.com leads"
-   },
-   {
-    "site": "community-help-co",
-    "what": "\"local community support\": we're not in the top 10 (Search Console avg 4); mercycare.com.au leads"
-   },
-   {
-    "site": "community-help-co",
-    "what": "2 title outside 30–65 characters"
-   },
-   {
-    "site": "community-help-co",
-    "what": "\"simon farrugia\": we're not in the top 10 (Search Console avg 8); unknown site leads"
-   },
-   {
-    "site": "community-help-co",
-    "what": "2 description outside 70–160 characters"
-   },
-   {
-    "site": "community-help-co",
-    "what": "\"hr support ringwood\": we're not in the top 10 (Search Console avg 39); careerhub.com leads"
-   },
-   {
-    "site": "simon-says-travel",
-    "what": "6 of your top 8 pages aren't in Google's index"
-   },
-   {
-    "site": "simon-says-travel",
-    "what": "\"when should australians book japan flights in 2026\": we're not in the top 10 (Search Console avg 10); helloroam.com leads"
-   },
-   {
-    "site": "simon-says-travel",
-    "what": "1 title outside 30–65 characters"
-   },
    {
     "site": "simon-says-travel",
     "what": "27 page(s) without a share image"
@@ -89,48 +49,64 @@
    },
    {
     "site": "paycalc",
-    "what": "\"mypaycalc\": we're not in the top 10 (Search Console avg 5); unknown site leads"
-   },
-   {
-    "site": "paycalc",
-    "what": "\"pay calculator\": we're not in the top 10 (Search Console avg 86); woholmate.site leads"
-   },
-   {
-    "site": "paycalc",
-    "what": "\"australian tax brackets\": we're not in the top 10 (Search Console avg 88); data.gov.au leads"
-   },
-   {
-    "site": "paycalc",
-    "what": "\"what tax bracket am i in australia\": we're not in the top 10 (Search Console avg 69); perthmobiletax.com.au leads"
-   },
-   {
-    "site": "paycalc",
-    "what": "\"current tax brackets australia\": we're not in the top 10 (Search Console avg 73); data.gov.au leads"
-   },
-   {
-    "site": "paycalc",
-    "what": "2 description outside 70–160 characters"
-   },
-   {
-    "site": "paycalc",
     "what": "81 page(s) without a share image"
+   },
+   {
+    "site": "paycalc",
+    "what": "3 page(s) under 250 words"
+   },
+   {
+    "site": "vic",
+    "what": "11 title outside 30–65 characters"
+   },
+   {
+    "site": "vic",
+    "what": "5 description outside 70–160 characters"
+   },
+   {
+    "site": "vic",
+    "what": "3 page(s) under 250 words"
+   },
+   {
+    "site": "vic",
+    "what": "2 page(s) have no schema"
+   },
+   {
+    "site": "trade-admin",
+    "what": "3 page(s) under 250 words"
+   },
+   {
+    "site": "imnetwork",
+    "what": "7 of your top 8 pages aren't in Google's index"
+   },
+   {
+    "site": "imnetwork",
+    "what": "1 thin page(s) (under 80 words of their own)"
+   },
+   {
+    "site": "imnetwork",
+    "what": "14 page(s) without a share image"
    }
   ],
   "shipped": {
    "vic": [
-    "Vic Tours: 'Compare on Agoda' (CID 1979204) for towns with an Agoda city page + monthly agoda-check workflow",
-    "Vic Tours: town titles lead with 'Things to Do in <town>'; nearby towns link straight to their eat/stay/do lists",
-    "vic + trade-admin: queue jobs 16-18 (thin pages, legal schema, privacy title)"
+    "Vic: deeper Bright and Red Hill guides, Simon named on About",
+    "Vic Tours: publish 9 towns (Traralgon, Frankston, Warragul, Yarrawonga, Hamilton, Portland, Maryborough, Sale, Benalla); hold Emerald",
+    "Vic Tours: 'Compare on Agoda' (CID 1979204) for towns with an Agoda city page + monthly agoda-check workflow"
+   ],
+   "trailers": [
+    "Trailers About: shorter title",
+    "Trailers: reject 9 promos/box sets in review; pinned imdbId keeps the trailer's year (Ip Man, Hard Boiled, Picnic at Hanging Rock, Drunken Master II back to new); Se7en → Seven",
+    "Trailers: full write-ups for the 82 thin film pages, fix Hero (2002) data, longer pipeline summaries",
+    "Trailers: smarter related films, actor pages, mixed Recently added, breadcrumbs + FAQ schema"
    ],
    "community-help-co": [
+    "CHC: community services placement guide (hours, Victorian checks, who takes students, how to apply, FAQ) + links from home and footer",
     "Community Help Co Check-in: client reminders + goals PWA (workers/checkin)"
    ],
    "paycalc": [
     "MyPayCalc: fuller /salary, /about and /how-we-make-money pages (Claude queue job 30)",
     "MyPayCalc: privacy policy title to 61 characters (Claude queue job 29)"
-   ],
-   "trailers": [
-    "Trailers: keep short write-ups (under 50 words) out of Google; home 'Popular right now' links the films Google already shows"
    ]
   },
   "note": "Outreach (emails sent vs warm-up, follow-ups) is added live by IMN HQ from D1."
@@ -142,12 +118,12 @@
    {
     "id": "trailers",
     "name": "movietrailer.channel",
-    "age": 36,
+    "age": 37,
     "status": "amber",
     "trend": "flat",
-    "views28": 69,
+    "views28": 68,
     "prev28": 249,
-    "impr28": 80,
+    "impr28": 78,
     "clicks28": 0,
     "money28": 1,
     "target": {
@@ -158,74 +134,74 @@
     "pace": 0.09,
     "moneyPace": 0.42,
     "growth": {
-     "views": 0.71,
-     "impressions": 1.23
+     "views": 0.66,
+     "impressions": 1.3
     },
     "imprWeeks": [
      0,
      0,
      0,
-     64,
-     20,
+     66,
+     18,
      9,
      10,
      32
     ],
-    "gscDays": 34,
+    "gscDays": 35,
     "why": [
-     "69 visits vs 759 expected by day 36 (9% of pace)",
-     "36 days live: too early for red (Google indexing lag)",
-     "Google impressions up 23% (last 14 days vs the 14 before, spikes smoothed)"
+     "68 visits vs 791 expected by day 37 (9% of pace)",
+     "37 days live: too early for red (Google indexing lag)",
+     "Google impressions up 30% (last 14 days vs the 14 before, spikes smoothed)"
     ]
    },
    {
     "id": "vic",
     "name": "victours.com.au",
-    "age": 33,
+    "age": 34,
     "status": "amber",
     "trend": "flat",
-    "views28": 83,
-    "prev28": 14,
-    "impr28": 2985,
-    "clicks28": 5,
-    "money28": 2,
+    "views28": 57,
+    "prev28": 42,
+    "impr28": 2848,
+    "clicks28": 4,
+    "money28": 1,
     "target": {
      "views": 1000,
      "moneyClicks": 20
     },
     "targetConfirmed": true,
-    "pace": 0.37,
-    "moneyPace": 1.25,
+    "pace": 0.25,
+    "moneyPace": 0.62,
     "growth": {
-     "views": 0.4,
-     "impressions": 1.02
+     "views": 0.45,
+     "impressions": 1.28
     },
     "imprWeeks": [
      0,
      0,
      0,
-     42,
-     2321,
-     110,
-     131,
-     311
+     240,
+     2138,
+     106,
+     132,
+     368
     ],
-    "gscDays": 31,
+    "gscDays": 32,
     "why": [
-     "83 visits vs 222 expected by day 33 (37% of pace)",
-     "33 days live: too early for red (Google indexing lag)",
-     "Google impressions flat (last 14 days vs the 14 before, spikes smoothed)"
+     "57 visits vs 232 expected by day 34 (25% of pace)",
+     "34 days live: too early for red (Google indexing lag)",
+     "Google impressions up 28% (last 14 days vs the 14 before, spikes smoothed)"
     ]
    },
    {
     "id": "community-help-co",
     "name": "Community Help Co",
-    "age": 31,
+    "age": 32,
     "status": "green",
     "trend": "up",
     "views28": 130,
     "prev28": 0,
-    "impr28": 607,
+    "impr28": 611,
     "clicks28": 15,
     "money28": null,
     "target": null,
@@ -233,20 +209,20 @@
     "pace": null,
     "moneyPace": null,
     "growth": {
-     "views": 1.95,
+     "views": 1.76,
      "impressions": 0.93
     },
     "imprWeeks": [
      0,
      0,
      0,
-     13,
-     144,
+     24,
+     156,
+     95,
      108,
-     100,
-     133
+     125
     ],
-    "gscDays": 29,
+    "gscDays": 30,
     "why": [
      "no 90-day target yet: judged on trend only",
      "Google impressions down 7% (last 14 days vs the 14 before, spikes smoothed)"
@@ -255,51 +231,51 @@
    {
     "id": "trade-admin",
     "name": "tradeadmin.com.au",
-    "age": 28,
+    "age": 29,
     "status": "amber",
     "trend": "flat",
-    "views28": 41,
+    "views28": 50,
     "prev28": 0,
-    "impr28": 735,
-    "clicks28": 1,
+    "impr28": 779,
+    "clicks28": 2,
     "money28": 0,
     "target": {
      "views": 300,
      "moneyClicks": 5
     },
     "targetConfirmed": true,
-    "pace": 0.79,
+    "pace": 0.91,
     "moneyPace": 0.0,
     "growth": {
-     "views": 0.5,
-     "impressions": 2.38
+     "views": 0.78,
+     "impressions": 2.31
     },
     "imprWeeks": [
      0,
      0,
      0,
      0,
-     0,
-     201,
-     184,
-     309
+     1,
+     218,
+     192,
+     326
     ],
-    "gscDays": 26,
+    "gscDays": 27,
     "why": [
-     "41 visits vs 52 expected by day 28 (79% of pace)",
-     "28 days live: too early for red (Google indexing lag)",
-     "Google impressions up 138% (last 14 days vs the 14 before, spikes smoothed)"
+     "50 visits vs 55 expected by day 29 (91% of pace)",
+     "29 days live: too early for red (Google indexing lag)",
+     "Google impressions up 131% (last 14 days vs the 14 before, spikes smoothed)"
     ]
    },
    {
     "id": "paycalc",
     "name": "mypaycalc.com.au",
-    "age": 24,
+    "age": 25,
     "status": "green",
     "trend": "flat",
-    "views28": 219,
+    "views28": 220,
     "prev28": 0,
-    "impr28": 1168,
+    "impr28": 1189,
     "clicks28": 4,
     "money28": null,
     "target": {
@@ -307,27 +283,27 @@
      "moneyClicks": 0
     },
     "targetConfirmed": true,
-    "pace": 1.06,
+    "pace": 1.0,
     "moneyPace": null,
     "growth": {
-     "views": 0.41,
-     "impressions": 1.23
+     "views": 0.43,
+     "impressions": 0.97
     },
     "imprWeeks": [
      0,
      0,
      0,
      0,
-     0,
-     476,
-     429,
-     159
+     10,
+     540,
+     370,
+     165
     ],
-    "gscDays": 22,
+    "gscDays": 23,
     "why": [
-     "219 visits vs 207 expected by day 24 (106% of pace)",
-     "24 days live: too early for red (Google indexing lag)",
-     "Google impressions up 23% (last 14 days vs the 14 before, spikes smoothed)"
+     "220 visits vs 220 expected by day 25 (100% of pace)",
+     "25 days live: too early for red (Google indexing lag)",
+     "Google impressions flat (last 14 days vs the 14 before, spikes smoothed)"
     ]
    }
   ]
@@ -336,15 +312,15 @@
   {
    "id": "trailers",
    "name": "movietrailer.channel",
-   "monthlyGrowth": 1.34,
-   "measured": 1.51,
+   "monthlyGrowth": 1.41,
+   "measured": 1.69,
    "rows": [
     {
      "horizon": "3 months",
      "visits": {
-      "low": 84,
-      "likely": 150,
-      "high": 210
+      "low": 86,
+      "likely": 160,
+      "high": 240
      },
      "money": {
       "low": 0,
@@ -355,27 +331,27 @@
     {
      "horizon": "6 months",
      "visits": {
-      "low": 90,
-      "likely": 230,
-      "high": 450
+      "low": 95,
+      "likely": 270,
+      "high": 570
      },
      "money": {
       "low": 0,
       "likely": 1,
-      "high": 2
+      "high": 3
      }
     },
     {
      "horizon": "12 months",
      "visits": {
-      "low": 94,
-      "likely": 330,
-      "high": 1060
+      "low": 99,
+      "likely": 420,
+      "high": 1570
      },
      "money": {
       "low": 0,
       "likely": 1,
-      "high": 5
+      "high": 7
      }
     }
    ],
@@ -384,46 +360,46 @@
   {
    "id": "vic",
    "name": "victours.com.au",
-   "monthlyGrowth": 1.17,
-   "measured": 1.04,
+   "monthlyGrowth": 1.38,
+   "measured": 1.64,
    "rows": [
     {
      "horizon": "3 months",
      "visits": {
-      "low": 89,
-      "likely": 120,
-      "high": 160
+      "low": 71,
+      "likely": 130,
+      "high": 190
      },
      "money": {
       "low": 0,
       "likely": 1,
-      "high": 4
+      "high": 5
      }
     },
     {
      "horizon": "6 months",
      "visits": {
-      "low": 91,
-      "likely": 160,
-      "high": 240
+      "low": 77,
+      "likely": 210,
+      "high": 430
      },
      "money": {
       "low": 0,
       "likely": 2,
-      "high": 6
+      "high": 11
      }
     },
     {
      "horizon": "12 months",
      "visits": {
-      "low": 92,
-      "likely": 190,
-      "high": 390
+      "low": 80,
+      "likely": 310,
+      "high": 1090
      },
      "money": {
       "low": 0,
-      "likely": 2,
-      "high": 10
+      "likely": 3,
+      "high": 27
      }
     }
    ],
@@ -447,7 +423,7 @@
      "horizon": "6 months",
      "visits": {
       "low": 84,
-      "likely": 200,
+      "likely": 190,
       "high": 270
      }
     },
@@ -456,7 +432,7 @@
      "visits": {
       "low": 80,
       "likely": 220,
-      "high": 380
+      "high": 370
      }
     }
    ],
@@ -471,40 +447,40 @@
     {
      "horizon": "3 months",
      "visits": {
-      "low": 51,
-      "likely": 95,
-      "high": 140
+      "low": 63,
+      "likely": 120,
+      "high": 170
      },
      "money": {
       "low": 0,
       "likely": 1,
-      "high": 3
+      "high": 4
      }
     },
     {
      "horizon": "6 months",
      "visits": {
-      "low": 56,
-      "likely": 150,
-      "high": 320
+      "low": 69,
+      "likely": 190,
+      "high": 400
      },
      "money": {
       "low": 0,
       "likely": 2,
-      "high": 8
+      "high": 10
      }
     },
     {
      "horizon": "12 months",
      "visits": {
-      "low": 59,
-      "likely": 240,
-      "high": 850
+      "low": 72,
+      "likely": 300,
+      "high": 1070
      },
      "money": {
       "low": 0,
-      "likely": 2,
-      "high": 21
+      "likely": 3,
+      "high": 27
      }
     }
    ],
@@ -513,31 +489,31 @@
   {
    "id": "paycalc",
    "name": "mypaycalc.com.au",
-   "monthlyGrowth": 1.31,
-   "measured": 1.51,
+   "monthlyGrowth": 1.16,
+   "measured": 0.94,
    "rows": [
     {
      "horizon": "3 months",
      "visits": {
-      "low": 260,
-      "likely": 430,
-      "high": 610
+      "low": 190,
+      "likely": 320,
+      "high": 400
      }
     },
     {
      "horizon": "6 months",
      "visits": {
-      "low": 280,
-      "likely": 640,
-      "high": 1220
+      "low": 180,
+      "likely": 400,
+      "high": 610
      }
     },
     {
      "horizon": "12 months",
      "visits": {
-      "low": 290,
-      "likely": 910,
-      "high": 2700
+      "low": 180,
+      "likely": 480,
+      "high": 960
      }
     }
    ],
@@ -549,7 +525,7 @@
   "hits": 0,
   "hitRate": null,
   "calibration": 1.0,
-  "logged": 20,
+  "logged": 40,
   "firstCheck": "2026-12-14"
  },
  "rules": {
