@@ -1,6 +1,6 @@
 // Live check of /watch likes and comments (uitest workflow: test=test-social.mjs, base=https://www.movietrailer.channel).
 // Likes the first film then un-likes it (leaves no vote behind), and posts one comment WITH A LINK so the spam filter must
-// hold it for IMN HQ (it never goes public). Hide that test comment in HQ afterwards.
+// hold it for IMN HQ (it never goes public). Hide that test comment in HQ afterwards (the bot post is filed as spam).
 import { mkdir } from 'node:fs/promises';
 import { chromium } from 'playwright';
 await mkdir('shots', { recursive: true });
@@ -11,8 +11,9 @@ page.on('dialog', (d) => d.dismiss());
 let fails = 0;
 const check = (label, pass, extra = '') => { if (!pass) fails++; console.log(`${pass ? 'ok  ' : 'FAIL'} ${label}${extra ? ': ' + extra : ''}`); };
 
+const countsP = page.waitForResponse((r) => r.url().includes('/api/social?films='), { timeout: 30000 }).catch(() => null);
 await page.goto(BASE + '/watch?notrack=1', { waitUntil: 'load', timeout: 60000 });
-const counts = await page.waitForResponse((r) => r.url().includes('/api/social?films='), { timeout: 15000 }).catch(() => null);
+const counts = await countsP;
 check('counts load', !!counts && counts.ok(), counts ? String(counts.status()) : 'no request');
 const card = page.locator('.wc').first();
 const like = card.locator('[data-act="like"]');
