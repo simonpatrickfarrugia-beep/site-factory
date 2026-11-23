@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-22T19:00:09.556Z",
+ "generatedAt": "2026-11-23T19:00:10.528Z",
  "period": {
-  "start": "2026-10-25",
-  "end": "2026-11-21"
+  "start": "2026-10-26",
+  "end": "2026-11-22"
  },
  "gscPeriod": {
-  "start": "2026-10-23",
-  "end": "2026-11-19"
+  "start": "2026-10-24",
+  "end": "2026-11-20"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 68,
-  "prevViews": 249,
-  "users": 38,
+  "views": 77,
+  "prevViews": 239,
+  "users": 47,
   "cta": {
    "films_banner": 2,
    "justwatch": 1,
    "prime": 1
   },
   "gscClicks": 0,
-  "gscImpressions": 78
+  "gscImpressions": 76
  },
  "daily": [
   {
@@ -95,6 +95,11 @@
    "date": "2026-11-20",
    "views": 3,
    "cta": 0
+  },
+  {
+   "date": "2026-11-22",
+   "views": 9,
+   "cta": 0
   }
  ],
  "pages": [
@@ -109,14 +114,14 @@
    "gscPosition": 63.8,
    "topQuery": "trailers free",
    "allViews": 40,
-   "d7": 26,
-   "prev7": 0
+   "prev7": 26,
+   "d7": 0
   },
   {
    "path": "/",
-   "views": 23,
-   "prevViews": 101,
-   "users": 19,
+   "views": 28,
+   "prevViews": 98,
+   "users": 24,
    "cta": {
     "films_banner": 2
    },
@@ -124,15 +129,29 @@
    "gscImpressions": 5,
    "gscPosition": 26.2,
    "topQuery": "movietr",
-   "allViews": 191,
+   "allViews": 196,
    "allCta": {
     "films_banner": 2
    },
-   "d7": 6,
-   "prev7": 3
+   "d7": 8,
+   "prev7": 5
   },
   {
    "path": "/original-films",
+   "views": 5,
+   "prevViews": 0,
+   "users": 5,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 5,
+   "d7": 2,
+   "prev7": 1
+  },
+  {
+   "path": "/free-classic-movies",
    "views": 3,
    "prevViews": 0,
    "users": 3,
@@ -146,28 +165,18 @@
    "prev7": 0
   },
   {
-   "path": "/free-classic-movies",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
    "path": "/movies/weird-science-1985",
-   "views": 2,
+   "views": 3,
    "prevViews": 0,
-   "users": 2,
+   "users": 3,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 0,
    "gscPosition": null,
    "topQuery": null,
-   "allViews": 2
+   "allViews": 3,
+   "d7": 1,
+   "prev7": 0
   },
   {
    "path": "/contact",
@@ -180,8 +189,8 @@
    "gscPosition": null,
    "topQuery": null,
    "allViews": 2,
-   "d7": 1,
-   "prev7": 0
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/discover/marvel-cinematic-universe",
@@ -194,8 +203,8 @@
    "gscPosition": null,
    "topQuery": null,
    "allViews": 2,
-   "d7": 1,
-   "prev7": 0
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/movies/the-imitation-game-2014",
@@ -234,8 +243,8 @@
    "gscPosition": null,
    "topQuery": null,
    "allViews": 1,
-   "d7": 1,
-   "prev7": 0
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/movies/his-girl-friday-1940",
@@ -283,7 +292,7 @@
   {
    "path": "/movies/schindlers-list-1994",
    "views": 0,
-   "prevViews": 11,
+   "prevViews": 9,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
@@ -323,8 +332,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 2,
-   "gscPosition": 7,
+   "gscImpressions": 1,
+   "gscPosition": 4,
    "topQuery": null,
    "allViews": 4
   },
@@ -379,7 +388,7 @@
   {
    "path": "/movies/jurassic-park-1993",
    "views": 0,
-   "prevViews": 3,
+   "prevViews": 2,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
@@ -797,18 +806,6 @@
    "allViews": 2
   },
   {
-   "path": "/movies/when-marnie-was-there-2014",
-   "views": 0,
-   "prevViews": 1,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
    "path": "/movies/avengers-doomsday-2026",
    "views": 0,
    "prevViews": 0,
@@ -822,6 +819,18 @@
   },
   {
    "path": "/movies/toy-story-2-1999",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/when-marnie-was-there-2014",
    "views": 0,
    "prevViews": 0,
    "users": 0,
@@ -941,18 +950,6 @@
    "allViews": 1
   },
   {
-   "path": "/movies/oppenheimer-2023",
-   "views": 0,
-   "prevViews": 1,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 1
-  },
-  {
    "path": "/movies/raiders-of-the-lost-ark-1981",
    "views": 0,
    "prevViews": 1,
@@ -966,18 +963,6 @@
   },
   {
    "path": "/movies/seabiscuit-2003",
-   "views": 0,
-   "prevViews": 1,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 1
-  },
-  {
-   "path": "/movies/the-dark-knight-2008",
    "views": 0,
    "prevViews": 1,
    "users": 0,
@@ -1050,18 +1035,6 @@
   },
   {
    "path": "/movies/the-lord-of-the-rings-the-return-of-the-king-2003",
-   "views": 0,
-   "prevViews": 1,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 1
-  },
-  {
-   "path": "/movies/the-making-of-kill-bill-volume-2-2004",
    "views": 0,
    "prevViews": 1,
    "users": 0,
@@ -1169,6 +1142,18 @@
    "allViews": 1
   },
   {
+   "path": "/movies/oppenheimer-2023",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
    "path": "/movies/platoon-1986",
    "views": 0,
    "prevViews": 0,
@@ -1217,6 +1202,30 @@
    "allViews": 1
   },
   {
+   "path": "/movies/the-dark-knight-2008",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
+   "path": "/movies/the-making-of-kill-bill-volume-2-2004",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
    "path": "/movies/the-punisher-lundgren",
    "views": 0,
    "prevViews": 0,
@@ -1240,6 +1249,28 @@
    "topQuery": null
   },
   {
+   "path": "/movies/insomnia-2002",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 54.3,
+   "topQuery": "insomnia film trailer"
+  },
+  {
+   "path": "/discover/1999-box-office-highlights",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 71.2,
+   "topQuery": "box office 1999"
+  },
+  {
    "path": "/movies/selma-2014",
    "views": 0,
    "prevViews": 0,
@@ -1251,48 +1282,15 @@
    "topQuery": "martin luther king film 2014"
   },
   {
-   "path": "/movies/insomnia-2002",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 51.4,
-   "topQuery": "insomnia film trailer"
-  },
-  {
-   "path": "/discover/1999-box-office-highlights",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 69.2,
-   "topQuery": "box office 1999"
-  },
-  {
    "path": "/movies/district-9-2009",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 75.3,
-   "topQuery": "district 9 movie trailer"
-  },
-  {
-   "path": "/movies/air-force-one-1997",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
    "gscImpressions": 1,
-   "gscPosition": 84,
-   "topQuery": "air force one movie"
+   "gscPosition": 66,
+   "topQuery": "district 9 movie trailer"
   },
   {
    "path": "/movies/captain-america-the-winter-soldier-2014",
@@ -1398,6 +1396,13 @@
    "page": "/movies/insomnia-2002"
   },
   {
+   "query": "insomnia trailer",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 67,
+   "page": "/movies/insomnia-2002"
+  },
+  {
    "query": "trailers free",
    "clicks": 0,
    "impressions": 2,
@@ -1440,25 +1445,11 @@
    "page": "/movies/the-prestige-2006"
   },
   {
-   "query": "air force one movie",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 84,
-   "page": "/movies/air-force-one-1997"
-  },
-  {
    "query": "district 9 movie trailer",
    "clicks": 0,
    "impressions": 1,
    "position": 66,
    "page": "/movies/district-9-2009"
-  },
-  {
-   "query": "insomnia trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 65,
-   "page": "/movies/insomnia-2002"
   },
   {
    "query": "insomnio trailer",
@@ -1581,11 +1572,6 @@
   }
  ],
  "gscDaily": [
-  {
-   "date": "2026-10-23",
-   "clicks": 0,
-   "impressions": 4
-  },
   {
    "date": "2026-10-24",
    "clicks": 0,
@@ -1720,12 +1706,17 @@
    "date": "2026-11-19",
    "clicks": 0,
    "impressions": 0
+  },
+  {
+   "date": "2026-11-20",
+   "clicks": 0,
+   "impressions": 2
   }
  ],
  "allTime": {
   "start": "2026-09-13",
-  "views": 410,
-  "users": 245,
+  "views": 419,
+  "users": 254,
   "cta": {
    "films_banner": 2,
    "justwatch": 1,
@@ -2001,6 +1992,11 @@
     "date": "2026-11-20",
     "views": 3,
     "cta": 0
+   },
+   {
+    "date": "2026-11-22",
+    "views": 9,
+    "cta": 0
    }
   ]
  },
@@ -2009,7 +2005,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 22
+    "sessions": 31
    },
    {
     "source": "chatgpt.com",
@@ -2039,12 +2035,6 @@
   ],
   "daily": [
    {
-    "date": "2026-11-08",
-    "source": "(direct)",
-    "medium": "(none)",
-    "sessions": 1
-   },
-   {
     "date": "2026-11-09",
     "source": "(direct)",
     "medium": "(none)",
@@ -2073,6 +2063,12 @@
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 3
+   },
+   {
+    "date": "2026-11-22",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 9
    }
   ]
  }

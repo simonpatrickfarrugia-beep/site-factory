@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-22T19:00:09.556Z",
+ "generatedAt": "2026-11-23T19:00:10.528Z",
  "period": {
-  "start": "2026-10-25",
-  "end": "2026-11-21"
+  "start": "2026-10-26",
+  "end": "2026-11-22"
  },
  "gscPeriod": {
-  "start": "2026-10-23",
-  "end": "2026-11-19"
+  "start": "2026-10-24",
+  "end": "2026-11-20"
  },
  "sources": {
   "ga4": true,
@@ -14,12 +14,12 @@
   "notes": []
  },
  "totals": {
-  "views": 220,
+  "views": 222,
   "prevViews": 0,
-  "users": 101,
+  "users": 103,
   "cta": {},
   "gscClicks": 4,
-  "gscImpressions": 1189
+  "gscImpressions": 1207
  },
  "daily": [
   {
@@ -126,20 +126,25 @@
    "date": "2026-11-21",
    "views": 1,
    "cta": 0
+  },
+  {
+   "date": "2026-11-22",
+   "views": 2,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 206,
+   "views": 207,
    "prevViews": 0,
-   "users": 88,
+   "users": 89,
    "cta": {},
    "gscClicks": 3,
-   "gscImpressions": 419,
-   "gscPosition": 67.4,
+   "gscImpressions": 437,
+   "gscPosition": 67.5,
    "topQuery": "mypaycalc",
-   "allViews": 206,
+   "allViews": 207,
    "prev7": 31,
    "d7": 18
   },
@@ -156,6 +161,20 @@
    "allViews": 4,
    "prev7": 2,
    "d7": 0
+  },
+  {
+   "path": "/salary",
+   "views": 2,
+   "prevViews": 0,
+   "users": 2,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 34,
+   "gscPosition": 11.8,
+   "topQuery": "mypaycalc",
+   "allViews": 2,
+   "d7": 1,
+   "prev7": 1
   },
   {
    "path": "/contact",
@@ -179,20 +198,6 @@
    "gscImpressions": 296,
    "gscPosition": 71.8,
    "topQuery": "australian tax brackets",
-   "allViews": 1,
-   "prev7": 1,
-   "d7": 0
-  },
-  {
-   "path": "/salary",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 34,
-   "gscPosition": 11.8,
-   "topQuery": "mypaycalc",
    "allViews": 1,
    "prev7": 1,
    "d7": 0
@@ -703,7 +708,7 @@
   {
    "query": "pay calculator",
    "clicks": 0,
-   "impressions": 31,
+   "impressions": 33,
    "position": 85.2,
    "page": "/"
   },
@@ -717,7 +722,7 @@
   {
    "query": "online pay calculator australia",
    "clicks": 0,
-   "impressions": 18,
+   "impressions": 19,
    "position": 78.9,
    "page": "/"
   },
@@ -738,8 +743,8 @@
   {
    "query": "australian pay calculator",
    "clicks": 0,
-   "impressions": 14,
-   "position": 80.9,
+   "impressions": 15,
+   "position": 80.7,
    "page": "/"
   },
   {
@@ -757,6 +762,13 @@
    "page": "/tax-brackets"
   },
   {
+   "query": "pay calculator for australia",
+   "clicks": 0,
+   "impressions": 11,
+   "position": 70.9,
+   "page": "/"
+  },
+  {
    "query": "tax brackets",
    "clicks": 0,
    "impressions": 11,
@@ -771,18 +783,18 @@
    "page": "/tax-brackets"
   },
   {
-   "query": "pay calculator for australia",
-   "clicks": 0,
-   "impressions": 10,
-   "position": 70,
-   "page": "/"
-  },
-  {
    "query": "current tax brackets australia",
    "clicks": 0,
    "impressions": 10,
    "position": 72.8,
    "page": "/tax-brackets"
+  },
+  {
+   "query": "free pay calculator australia",
+   "clicks": 0,
+   "impressions": 9,
+   "position": 78.6,
+   "page": "/"
   },
   {
    "query": "pay after tax",
@@ -792,25 +804,18 @@
    "page": "/"
   },
   {
+   "query": "salary and pay calculator",
+   "clicks": 0,
+   "impressions": 9,
+   "position": 89.2,
+   "page": "/"
+  },
+  {
    "query": "tax brackets 2021",
    "clicks": 0,
    "impressions": 9,
    "position": 55.7,
    "page": "/tax-brackets"
-  },
-  {
-   "query": "free pay calculator australia",
-   "clicks": 0,
-   "impressions": 8,
-   "position": 78.5,
-   "page": "/"
-  },
-  {
-   "query": "salary and pay calculator",
-   "clicks": 0,
-   "impressions": 8,
-   "position": 90.5,
-   "page": "/"
   },
   {
    "query": "paycheck calculator",
@@ -827,6 +832,13 @@
    "page": "/"
   },
   {
+   "query": "salary calculator australia",
+   "clicks": 0,
+   "impressions": 7,
+   "position": 74.4,
+   "page": "/"
+  },
+  {
    "query": "tax brackets 2026",
    "clicks": 0,
    "impressions": 7,
@@ -838,13 +850,6 @@
    "clicks": 0,
    "impressions": 6,
    "position": 41.3,
-   "page": "/"
-  },
-  {
-   "query": "salary calculator australia",
-   "clicks": 0,
-   "impressions": 6,
-   "position": 78.5,
    "page": "/"
   },
   {
@@ -873,6 +878,13 @@
    "clicks": 0,
    "impressions": 5,
    "position": 80.6,
+   "page": "/"
+  },
+  {
+   "query": "pay calculator for australian workers",
+   "clicks": 0,
+   "impressions": 5,
+   "position": 64.2,
    "page": "/"
   },
   {
@@ -925,17 +937,17 @@
    "page": "/"
   },
   {
+   "query": "fortnightly payroll",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 86,
+   "page": "/"
+  },
+  {
    "query": "pay and salary calculator australia",
    "clicks": 0,
    "impressions": 4,
    "position": 62,
-   "page": "/"
-  },
-  {
-   "query": "pay calculator for australian workers",
-   "clicks": 0,
-   "impressions": 4,
-   "position": 67,
    "page": "/"
   },
   {
@@ -978,13 +990,6 @@
    "clicks": 0,
    "impressions": 3,
    "position": 83.7,
-   "page": "/"
-  },
-  {
-   "query": "fortnightly payroll",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 91.3,
    "page": "/"
   },
   {
@@ -1254,6 +1259,13 @@
    "page": "/"
   },
   {
+   "query": "take home pay calculator brisbane",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 68.5,
+   "page": "/"
+  },
+  {
    "query": "wage calculator australia",
    "clicks": 0,
    "impressions": 2,
@@ -1385,13 +1397,6 @@
    "impressions": 2,
    "position": 78,
    "page": "/tax-brackets"
-  },
-  {
-   "query": "australia tax bracket",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 80.5,
-   "page": "/tax-brackets"
   }
  ],
  "gscDaily": [
@@ -1509,12 +1514,17 @@
    "date": "2026-11-19",
    "clicks": 0,
    "impressions": 21
+  },
+  {
+   "date": "2026-11-20",
+   "clicks": 0,
+   "impressions": 18
   }
  ],
  "allTime": {
   "start": "2026-10-29",
-  "views": 220,
-  "users": 101,
+  "views": 222,
+  "users": 103,
   "cta": {},
   "daily": [
    {
@@ -1621,6 +1631,11 @@
     "date": "2026-11-21",
     "views": 1,
     "cta": 0
+   },
+   {
+    "date": "2026-11-22",
+    "views": 2,
+    "cta": 0
    }
   ]
  },
@@ -1629,12 +1644,12 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 77
+    "sessions": 78
    },
    {
     "source": "bing",
     "medium": "organic",
-    "sessions": 20
+    "sessions": 21
    },
    {
     "source": "google",
@@ -1660,7 +1675,7 @@
   "referrers": [
    {
     "url": "https://www.bing.com/",
-    "views": 20
+    "views": 21
    },
    {
     "url": "https://duckduckgo.com/",
@@ -1688,12 +1703,6 @@
    }
   ],
   "daily": [
-   {
-    "date": "2026-11-08",
-    "source": "(direct)",
-    "medium": "(none)",
-    "sessions": 1
-   },
    {
     "date": "2026-11-09",
     "source": "(direct)",
@@ -1775,6 +1784,18 @@
    {
     "date": "2026-11-21",
     "source": "duckduckgo",
+    "medium": "organic",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-22",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-22",
+    "source": "bing",
     "medium": "organic",
     "sessions": 1
    }

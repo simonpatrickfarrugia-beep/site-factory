@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-22T19:00:09.556Z",
+ "generatedAt": "2026-11-23T19:00:10.528Z",
  "period": {
-  "start": "2026-10-25",
-  "end": "2026-11-21"
+  "start": "2026-10-26",
+  "end": "2026-11-22"
  },
  "gscPeriod": {
-  "start": "2026-10-23",
-  "end": "2026-11-19"
+  "start": "2026-10-24",
+  "end": "2026-11-20"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 11,
+  "views": 16,
   "prevViews": 0,
-  "users": 10,
+  "users": 15,
   "cta": {
    "start_hero": 1,
    "pay_plan": 1,
    "start_plan": 1
   },
   "gscClicks": 0,
-  "gscImpressions": 21
+  "gscImpressions": 41
  },
  "daily": [
   {
@@ -45,26 +45,31 @@
    "date": "2026-11-20",
    "views": 3,
    "cta": 0
+  },
+  {
+   "date": "2026-11-22",
+   "views": 5,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 8,
+   "views": 11,
    "prevViews": 0,
-   "users": 8,
+   "users": 11,
    "cta": {
     "start_hero": 1
    },
    "gscClicks": 0,
-   "gscImpressions": 10,
-   "gscPosition": 8,
+   "gscImpressions": 12,
+   "gscPosition": 8.3,
    "topQuery": "imn",
-   "allViews": 8,
+   "allViews": 11,
    "allCta": {
     "start_hero": 1
    },
-   "d7": 8
+   "d7": 11
   },
   {
    "path": "/get-started",
@@ -83,6 +88,32 @@
     "pay_plan": 1
    },
    "d7": 2
+  },
+  {
+   "path": "/affiliate-disclosure",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1,
+   "d7": 1
+  },
+  {
+   "path": "/labs/website-check",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1,
+   "d7": 1
   },
   {
    "path": "/pricing",
@@ -109,9 +140,9 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 10,
-   "gscPosition": 66.4,
-   "topQuery": "how much does a website cost for small business"
+   "gscImpressions": 26,
+   "gscPosition": 77.1,
+   "topQuery": "cost of not having a website"
   },
   {
    "path": "/websites-for-tradies",
@@ -120,18 +151,43 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 89,
+   "gscImpressions": 2,
+   "gscPosition": 90.5,
    "topQuery": "tradie website"
+  },
+  {
+   "path": "/electrician-websites",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 96,
+   "topQuery": "websites for electrician"
   }
  ],
  "queries": [
   {
    "query": "imn",
    "clicks": 0,
-   "impressions": 8,
-   "position": 7.6,
+   "impressions": 10,
+   "position": 8,
    "page": "/"
+  },
+  {
+   "query": "cost of not having a website",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 88.7,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "how much does a website cost for small business",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 83.7,
+   "page": "/how-much-does-a-website-cost"
   },
   {
    "query": "mypaycalc",
@@ -141,10 +197,38 @@
    "page": "/"
   },
   {
-   "query": "how much does a website cost for small business",
+   "query": "website design cost australia",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 85.5,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "tradie website",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 90.5,
+   "page": "/websites-for-tradies"
+  },
+  {
+   "query": "websites for electrician",
    "clicks": 0,
    "impressions": 1,
-   "position": 55,
+   "position": 96,
+   "page": "/electrician-websites"
+  },
+  {
+   "query": "how much does a small business website cost",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 93,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "how much does a website cost australia",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 84,
    "page": "/how-much-does-a-website-cost"
   },
   {
@@ -162,6 +246,20 @@
    "page": "/how-much-does-a-website-cost"
   },
   {
+   "query": "how much to build a website australia",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 71,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "web hosting fees",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 81,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
    "query": "website cost australia",
    "clicks": 0,
    "impressions": 1,
@@ -176,17 +274,31 @@
    "page": "/how-much-does-a-website-cost"
   },
   {
-   "query": "website design cost australia",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 73,
-   "page": "/how-much-does-a-website-cost"
-  },
-  {
    "query": "website development cost in australia",
    "clicks": 0,
    "impressions": 1,
    "position": 97,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "website hosting cost",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 78,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "website hosting costs australia",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 86,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "website hosting fees",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 76,
    "page": "/how-much-does-a-website-cost"
   },
   {
@@ -211,11 +323,18 @@
    "page": "/how-much-does-a-website-cost"
   },
   {
-   "query": "tradie website",
+   "query": "websites prices",
    "clicks": 0,
    "impressions": 1,
-   "position": 89,
-   "page": "/websites-for-tradies"
+   "position": 60,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "what are the ongoing costs of running a website",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 94,
+   "page": "/how-much-does-a-website-cost"
   }
  ],
  "gscDaily": [
@@ -238,12 +357,17 @@
    "date": "2026-11-19",
    "clicks": 0,
    "impressions": 17
+  },
+  {
+   "date": "2026-11-20",
+   "clicks": 0,
+   "impressions": 20
   }
  ],
  "allTime": {
   "start": "2026-11-17",
-  "views": 11,
-  "users": 10,
+  "views": 16,
+  "users": 15,
   "cta": {
    "start_hero": 1,
    "pay_plan": 1,
@@ -269,6 +393,11 @@
     "date": "2026-11-20",
     "views": 3,
     "cta": 0
+   },
+   {
+    "date": "2026-11-22",
+    "views": 5,
+    "cta": 0
    }
   ]
  },
@@ -277,7 +406,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 8
+    "sessions": 12
    }
   ],
   "referrers": [
@@ -310,6 +439,12 @@
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 3
+   },
+   {
+    "date": "2026-11-22",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 4
    }
   ]
  }
