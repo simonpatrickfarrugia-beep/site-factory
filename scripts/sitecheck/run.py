@@ -687,6 +687,16 @@ def main():
     for site, prev, stage, why, days, due, last in plan:
         print(f'{site["id"]:20} {stage:10} every {days:2}d  last {last or "never"}  {"DUE" if due else ""}  {"→ scanning" if any(t[0] is site for t in todo) else ""}')
     if args.plan: return
+    brain, all_stats = None, {}
+    if args.out == 'hq/sitecheck':  # IMN brain: learn from fixes across every site (scripts/brain/brain.py); never blocks the check
+        try:
+            sys.path.insert(0, os.path.join(ROOT, 'scripts/brain'))
+            from brain import Brain
+            brain = Brain(TODAY)
+            all_stats = {s_['id']: rd(s_['stats']) for s_ in cfg['sites'] if s_.get('stats')}
+            brain.playbook()
+        except Exception as e:
+            print('brain unavailable:', e); brain = None
     done = []
     for site, prev, stage, why, days, due, last in todo:
         try:
@@ -695,6 +705,14 @@ def main():
             print(f'!! {site["id"]} failed: {e}')
             import traceback; traceback.print_exc()
             continue
+        if brain:
+            try:
+                new = brain.observe(site, card, prev, all_stats.get(site['id']))
+                brain.stamp_portfolio(new, all_stats)
+                hits = brain.annotate(card)
+                if new or hits: print(f'   brain: {len(new)} fix(es) recorded, {hits} finding(s) boosted by proven lessons', flush=True)
+            except Exception as e:
+                print('   brain observe failed:', e)
         card['issue'] = issue_sync(card, not args.no_issues and site.get('owner') != 'client')
         wr(os.path.join(out_dir, f'{site["id"]}.json'), card)
         md_path = os.path.join(out_dir, 'reports', f'{site["id"]}.md') if site.get('owner') == 'client' else os.path.join(ROOT, 'hq/reports/sitecheck', f'{site["id"]}.md')
@@ -712,6 +730,13 @@ def main():
         if e and not any(d['id'] == site['id'] for d in done):
             e['stage'], e['cadenceDays'] = stage, days
             e['nextDue'] = (date.fromisoformat(e['scannedAt'][:10]) + timedelta(days=days)).isoformat()
+    if brain:
+        try:
+            measured = brain.measure(all_stats)
+            brain.playbook(); brain.save()
+            if measured: print('brain: measured ' + ', '.join(f'{x["name"]} {x["findingId"]} → {x["status"]}' for x in measured))
+        except Exception as e:
+            print('brain save failed:', e)
     index['updated'] = NOW.strftime('%Y-%m-%dT%H:%M:%SZ')
     index['lastRun'] = dict(at=index['updated'], scanned=[d['id'] for d in done])
     wr(os.path.join(out_dir, 'index.json'), index)
