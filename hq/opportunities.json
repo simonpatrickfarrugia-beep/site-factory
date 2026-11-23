@@ -1,15 +1,15 @@
 {
- "generatedAt": "2026-11-16T20:48:51Z",
+ "generatedAt": "2026-11-23T20:49:42Z",
  "sites": {
   "vic": {
    "brand": "vic",
    "site": {
-    "start": "2026-10-19",
-    "end": "2026-11-15"
+    "start": "2026-10-26",
+    "end": "2026-11-22"
    },
    "gscPeriod": {
-    "start": "2026-10-17",
-    "end": "2026-11-13"
+    "start": "2026-10-24",
+    "end": "2026-11-20"
    },
    "opportunities": [
     {
@@ -19,37 +19,24 @@
      ],
      "page": "/mornington/eat",
      "kind": "strengthen",
-     "impressions28": 18,
+     "impressions28": 13,
      "clicks28": 0,
-     "position": 57.9,
+     "position": 60.5,
      "volume": 14800,
      "score": 161320.0
     },
     {
-     "search": "mornington peninsula restaurants",
+     "search": "main street mornington restaurants",
      "variants": [
-      "restaurants mornington main street",
-      "main st mornington restaurants",
-      "mornington peninsula restaurants with a view"
+      "main st mornington restaurants"
      ],
      "page": "/mornington-peninsula/eat",
      "kind": "strengthen",
-     "impressions28": 39,
+     "impressions28": 13,
      "clicks28": 0,
-     "position": 74.3,
+     "position": 52.7,
      "volume": 14800,
      "score": 161320.0
-    },
-    {
-     "search": "things to do in ballarat",
-     "variants": [],
-     "page": "/ballarat/do",
-     "kind": "strengthen",
-     "impressions28": 5,
-     "clicks28": 0,
-     "position": 66.8,
-     "volume": 8100,
-     "score": 88290.0
     },
     {
      "search": "coffee daylesford",
@@ -65,37 +52,13 @@
      "score": 88290.0
     },
     {
-     "search": "the ballarat",
-     "variants": [],
-     "page": "/ballarat",
-     "kind": "strengthen",
-     "impressions28": 4,
-     "clicks28": 0,
-     "position": 47.5,
-     "volume": 8100,
-     "score": 86670.0
-    },
-    {
-     "search": "sorrento restaurants",
-     "variants": [
-      "pubs in sorrento"
-     ],
-     "page": "/sorrento/eat",
-     "kind": "strengthen",
-     "impressions28": 66,
-     "clicks28": 0,
-     "position": 90.0,
-     "volume": 6600,
-     "score": 71940.0
-    },
-    {
      "search": "warrnambool accommodation near city centre",
      "variants": [],
      "page": "/warrnambool/stay",
      "kind": "strengthen",
-     "impressions28": 6,
+     "impressions28": 5,
      "clicks28": 0,
-     "position": 56.5,
+     "position": 57.4,
      "volume": 6600,
      "score": 71940.0
     },
@@ -117,35 +80,55 @@
      ],
      "page": "/daylesford/do",
      "kind": "strengthen",
-     "impressions28": 19,
+     "impressions28": 17,
      "clicks28": 0,
-     "position": 49.1,
+     "position": 50.2,
      "volume": 4400,
-     "score": 47080.0
+     "score": 47960.0
+    },
+    {
+     "search": "mornington victoria",
+     "variants": [],
+     "page": "/mornington",
+     "kind": "strengthen",
+     "impressions28": 4,
+     "clicks28": 0,
+     "position": 67.3,
+     "volume": 3600,
+     "score": 39240.0
     },
     {
      "search": "mornington",
      "variants": [],
      "page": "/mornington/do",
      "kind": "strengthen",
-     "impressions28": 12,
+     "impressions28": 10,
      "clicks28": 0,
-     "position": 40.3,
+     "position": 30.4,
      "volume": 3600,
      "score": 38520.0
     },
     {
-     "search": "bright things to do",
+     "search": "bright victoria",
      "variants": [
-      "visit bright",
-      "bright victoria",
-      "bright attractions"
+      "visit bright"
      ],
      "page": "/bright",
      "kind": "strengthen",
-     "impressions28": 34,
+     "impressions28": 13,
      "clicks28": 0,
-     "position": 54.3,
+     "position": 68.8,
+     "volume": 2900,
+     "score": 31610.0
+    },
+    {
+     "search": "bright things to do",
+     "variants": [],
+     "page": "/bright/do",
+     "kind": "strengthen",
+     "impressions28": 7,
+     "clicks28": 0,
+     "position": 55.1,
      "volume": 2900,
      "score": 31610.0
     },
@@ -154,31 +137,77 @@
      "variants": [],
      "page": "/lakes-entrance/do",
      "kind": "strengthen",
-     "impressions28": 10,
+     "impressions28": 7,
      "clicks28": 0,
-     "position": 54.6,
+     "position": 56.9,
      "volume": 2900,
      "score": 31610.0
     },
     {
-     "search": "things to do in castlemaine",
+     "search": "lake entrance vic",
      "variants": [],
-     "page": "/castlemaine/do",
+     "page": "/lakes-entrance",
      "kind": "strengthen",
      "impressions28": 6,
      "clicks28": 0,
-     "position": 80.7,
-     "volume": 1900,
-     "score": 20710.0
+     "position": 82.5,
+     "volume": 2900,
+     "score": 31610.0
+    },
+    {
+     "search": "mildura tours",
+     "variants": [],
+     "page": "/mildura",
+     "kind": "strengthen",
+     "impressions28": 4,
+     "clicks28": 0,
+     "position": 68.5,
+     "volume": 2900,
+     "score": 31610.0
+    },
+    {
+     "search": "melbourne day trips",
+     "variants": [],
+     "page": "/day-trips",
+     "kind": "strengthen",
+     "impressions28": 11,
+     "clicks28": 0,
+     "position": 76.6,
+     "volume": 2400,
+     "score": 26160.0
     },
     {
      "search": "beechworth",
      "variants": [],
      "page": "/beechworth",
      "kind": "strengthen",
+     "impressions28": 10,
+     "clicks28": 0,
+     "position": 97.1,
+     "volume": 1900,
+     "score": 20710.0
+    },
+    {
+     "search": "things to do in castlemaine",
+     "variants": [
+      "things to do in castlemaine with kids"
+     ],
+     "page": "/castlemaine",
+     "kind": "strengthen",
+     "impressions28": 9,
+     "clicks28": 0,
+     "position": 79.4,
+     "volume": 1900,
+     "score": 20710.0
+    },
+    {
+     "search": "torquay",
+     "variants": [],
+     "page": "/torquay",
+     "kind": "strengthen",
      "impressions28": 5,
      "clicks28": 0,
-     "position": 97.4,
+     "position": 88.6,
      "volume": 1900,
      "score": 20710.0
     },
@@ -187,9 +216,9 @@
      "variants": [],
      "page": "/shepparton/do",
      "kind": "strengthen",
-     "impressions28": 5,
+     "impressions28": 4,
      "clicks28": 0,
-     "position": 32.4,
+     "position": 33.0,
      "volume": 1900,
      "score": 20330.0
     },
@@ -198,13 +227,14 @@
      "variants": [
       "lorne attractions",
       "things to do lorne",
-      "group activities lorne"
+      "group activities lorne",
+      "lorne victoria"
      ],
      "page": "/lorne",
      "kind": "strengthen",
-     "impressions28": 52,
+     "impressions28": 36,
      "clicks28": 0,
-     "position": 71.2,
+     "position": 73.0,
      "volume": 1600,
      "score": 17440.0
     },
@@ -213,9 +243,20 @@
      "variants": [],
      "page": "/apollo-bay",
      "kind": "strengthen",
-     "impressions28": 10,
+     "impressions28": 5,
      "clicks28": 0,
-     "position": 76.2,
+     "position": 81.2,
+     "volume": 1600,
+     "score": 17440.0
+    },
+    {
+     "search": "things to do in st kilda",
+     "variants": [],
+     "page": "/st-kilda",
+     "kind": "strengthen",
+     "impressions28": 4,
+     "clicks28": 0,
+     "position": 70.5,
      "volume": 1600,
      "score": 17440.0
     },
@@ -224,11 +265,22 @@
      "variants": [],
      "page": "/sorrento",
      "kind": "strengthen",
-     "impressions28": 5,
+     "impressions28": 4,
      "clicks28": 0,
-     "position": 47.2,
+     "position": 56.8,
      "volume": 1300,
-     "score": 13910.0
+     "score": 14170.0
+    },
+    {
+     "search": "swan hill attractions",
+     "variants": [],
+     "page": "/swan-hill",
+     "kind": "strengthen",
+     "impressions28": 4,
+     "clicks28": 0,
+     "position": 50.3,
+     "volume": 1300,
+     "score": 14170.0
     },
     {
      "search": "great ocean road",
@@ -237,9 +289,9 @@
      ],
      "page": "/great-ocean-road",
      "kind": "strengthen",
-     "impressions28": 15,
+     "impressions28": 18,
      "clicks28": 0,
-     "position": 66.4,
+     "position": 68.1,
      "volume": 1000,
      "score": 10900.0
     },
@@ -248,33 +300,42 @@
      "variants": [],
      "page": "/queenscliff",
      "kind": "strengthen",
-     "impressions28": 23,
+     "impressions28": 26,
      "clicks28": 0,
-     "position": 67.9,
+     "position": 68.9,
      "volume": 880,
      "score": 9592.0
     },
     {
-     "search": "bairnsdale",
-     "variants": [
-      "things to do in bairnsdale"
-     ],
-     "page": "/bairnsdale",
+     "search": "geelong to anglesea",
+     "variants": [],
+     "page": "/anglesea",
      "kind": "strengthen",
-     "impressions28": 8,
+     "impressions28": 3,
      "clicks28": 0,
-     "position": 46.8,
+     "position": 64.0,
      "volume": 720,
-     "score": 7704.0
+     "score": 7848.0
     },
     {
      "search": "rye",
      "variants": [],
      "page": "/rye",
      "kind": "strengthen",
-     "impressions28": 10,
+     "impressions28": 11,
      "clicks28": 0,
-     "position": 94.3,
+     "position": 92.0,
+     "volume": 590,
+     "score": 6431.0
+    },
+    {
+     "search": "kyneton",
+     "variants": [],
+     "page": "/kyneton",
+     "kind": "strengthen",
+     "impressions28": 14,
+     "clicks28": 0,
+     "position": 89.4,
      "volume": 590,
      "score": 6431.0
     },
@@ -291,61 +352,141 @@
     },
     {
      "search": "marysville",
-     "variants": [
-      "things to do in marysville"
-     ],
-     "page": "/marysville/do",
-     "kind": "strengthen",
-     "impressions28": 16,
-     "clicks28": 0,
-     "position": 48.3,
-     "volume": 590,
-     "score": 6313.0
-    },
-    {
-     "search": "kyneton",
      "variants": [],
-     "page": "/kyneton/do",
+     "page": "/marysville/do",
      "kind": "strengthen",
      "impressions28": 6,
      "clicks28": 0,
-     "position": 42.7,
+     "position": 50.8,
      "volume": 590,
-     "score": 6313.0
+     "score": 6431.0
+    },
+    {
+     "search": "marysville holiday park",
+     "variants": [
+      "things to do in marysville"
+     ],
+     "page": "/marysville",
+     "kind": "strengthen",
+     "impressions28": 8,
+     "clicks28": 0,
+     "position": 50.5,
+     "volume": 590,
+     "score": 6431.0
+    },
+    {
+     "search": "port campbell",
+     "variants": [],
+     "page": "/port-campbell",
+     "kind": "strengthen",
+     "impressions28": 6,
+     "clicks28": 0,
+     "position": 94.8,
+     "volume": 480,
+     "score": 5232.0
     },
     {
      "search": "williamstown",
      "variants": [],
      "page": "/williamstown",
      "kind": "strengthen",
-     "impressions28": 5,
+     "impressions28": 8,
      "clicks28": 0,
-     "position": 53.4,
+     "position": 69.6,
      "volume": 390,
      "score": 4251.0
     },
     {
-     "search": "yarra glen",
+     "search": "rutherglen victoria",
      "variants": [],
-     "page": "/yarra-glen/do",
+     "page": "/rutherglen",
+     "kind": "strengthen",
+     "impressions28": 3,
+     "clicks28": 0,
+     "position": 84.0,
+     "volume": 390,
+     "score": 4251.0
+    },
+    {
+     "search": "myrtleford",
+     "variants": [],
+     "page": "/myrtleford",
      "kind": "strengthen",
      "impressions28": 6,
      "clicks28": 0,
-     "position": 54.0,
+     "position": 58.7,
+     "volume": 320,
+     "score": 3488.0
+    },
+    {
+     "search": "mornington peninsula day tour",
+     "variants": [],
+     "page": "/road-trips/mornington-peninsula-day-trip",
+     "kind": "strengthen",
+     "impressions28": 5,
+     "clicks28": 0,
+     "position": 71.8,
      "volume": 260,
      "score": 2834.0
     },
     {
-     "search": "polperro bistro red hill",
+     "search": "mornington peninsula day trip",
+     "variants": [],
+     "page": "/day-trips/dromana",
+     "kind": "strengthen",
+     "impressions28": 4,
+     "clicks28": 0,
+     "position": 70.5,
+     "volume": 260,
+     "score": 2834.0
+    },
+    {
+     "search": "footscray",
+     "variants": [],
+     "page": "/footscray",
+     "kind": "strengthen",
+     "impressions28": 4,
+     "clicks28": 0,
+     "position": 70.8,
+     "volume": 260,
+     "score": 2834.0
+    },
+    {
+     "search": "yarra valley day trip",
      "variants": [
-      "red hill brewery",
+      "yarra valley day tour"
+     ],
+     "page": "/road-trips/yarra-valley-day-trip",
+     "kind": "strengthen",
+     "impressions28": 21,
+     "clicks28": 0,
+     "position": 71.9,
+     "volume": 210,
+     "score": 2289.0
+    },
+    {
+     "search": "red hill brewery",
+     "variants": [
       "red hill accommodation"
      ],
      "page": "/red-hill",
      "kind": "strengthen",
-     "impressions28": 19,
+     "impressions28": 15,
      "clicks28": 0,
-     "position": 63.3,
+     "position": 79.1,
+     "volume": 210,
+     "score": 2289.0
+    },
+    {
+     "search": "dromana",
+     "variants": [
+      "dromana holiday village"
+     ],
+     "page": "/dromana",
+     "kind": "strengthen",
+     "impressions28": 9,
+     "clicks28": 0,
+     "position": 81.4,
      "volume": 210,
      "score": 2289.0
     },
@@ -378,9 +519,9 @@
      "variants": [],
      "page": "/omeo",
      "kind": "strengthen",
-     "impressions28": 8,
+     "impressions28": 10,
      "clicks28": 0,
-     "position": 75.6,
+     "position": 88.2,
      "volume": 140,
      "score": 1526.0
     },
@@ -396,131 +537,73 @@
      "score": 763.0
     },
     {
-     "search": "mount hotham",
-     "variants": [],
+     "search": "hotham vic",
+     "variants": [
+      "mt hotham"
+     ],
      "page": "/mount-hotham",
      "kind": "strengthen",
-     "impressions28": 5,
+     "impressions28": 9,
      "clicks28": 0,
-     "position": 84.8,
+     "position": 73.8,
      "volume": 70,
      "score": 763.0
     },
     {
-     "search": "yarra valley day trip",
-     "variants": [
-      "yarra valley day tour"
-     ],
-     "page": "/road-trips/yarra-valley-day-trip",
-     "kind": "strengthen",
-     "impressions28": 23,
-     "clicks28": 0,
-     "position": 70.2,
-     "volume": null,
-     "score": 250.7
-    },
-    {
-     "search": "melbourne day trips",
-     "variants": [
-      "day tours from melbourne",
-      "daylesford day tours from melbourne"
-     ],
-     "page": "/collections/day-trips-from-melbourne",
-     "kind": "strengthen",
-     "impressions28": 17,
-     "clicks28": 0,
-     "position": 71.9,
-     "volume": null,
-     "score": 185.3
-    },
-    {
-     "search": "mornington peninsula day tour",
+     "search": "murray river road trip",
      "variants": [],
-     "page": "/road-trips/mornington-peninsula-day-trip",
-     "kind": "strengthen",
-     "impressions28": 7,
-     "clicks28": 0,
-     "position": 73.0,
-     "volume": null,
-     "score": 76.3
-    },
-    {
-     "search": "weekend getaways victoria",
-     "variants": [],
-     "page": "/collections/weekend-getaways",
-     "kind": "strengthen",
-     "impressions28": 6,
-     "clicks28": 0,
-     "position": 73.2,
-     "volume": null,
-     "score": 65.4
-    },
-    {
-     "search": "romantic getaways victoria for couples",
-     "variants": [],
-     "page": "/collections/romantic-getaways",
+     "page": "/road-trips/murray-and-north-east-road-trip",
      "kind": "strengthen",
      "impressions28": 4,
      "clicks28": 0,
-     "position": 80.8,
-     "volume": null,
-     "score": 43.6
-    },
-    {
-     "search": "mornington peninsula day trip",
-     "variants": [],
-     "page": "/day-trips/dromana",
-     "kind": "strengthen",
-     "impressions28": 4,
-     "clicks28": 0,
-     "position": 70.5,
-     "volume": null,
-     "score": 43.6
+     "position": 89.3,
+     "volume": 50,
+     "score": 545.0
     }
    ]
   },
   "paycalc": {
    "brand": "paycalc",
    "site": {
-    "start": "2026-10-19",
-    "end": "2026-11-15"
+    "start": "2026-10-26",
+    "end": "2026-11-22"
    },
    "gscPeriod": {
-    "start": "2026-10-17",
-    "end": "2026-11-13"
+    "start": "2026-10-24",
+    "end": "2026-11-20"
    },
    "opportunities": [
     {
      "search": "pay calculator",
      "variants": [
       "online pay calculator australia",
-      "pay after tax",
+      "salary calculator australia",
       "salary and pay calculator",
-      "paycheck calculator",
-      "paycheck estimator calculator"
+      "free pay calculator australia",
+      "pay after tax"
      ],
      "page": "/",
      "kind": "strengthen",
-     "impressions28": 149,
+     "impressions28": 266,
      "clicks28": 0,
-     "position": 77.3,
+     "position": 75.2,
      "volume": 301000,
      "score": 3280900.0
     },
     {
      "search": "australian tax brackets",
      "variants": [
-      "tax brackets 2026",
       "aus tax brackets",
+      "tax brackets 2026",
       "income tax brackets australia",
       "tax threshold 2026",
       "tax brackets qld"
      ],
      "page": "/tax-brackets",
      "kind": "strengthen",
-     "impressions28": 150,
+     "impressions28": 130,
      "clicks28": 0,
-     "position": 79.2,
+     "position": 79.0,
      "volume": 74000,
      "score": 806600.0
     },
@@ -572,19 +655,6 @@
      "position": 92.6,
      "volume": null,
      "score": 54.5
-    },
-    {
-     "search": "tax bracket australia 2023",
-     "variants": [
-      "tax brackets 2023"
-     ],
-     "page": "/tax-brackets",
-     "kind": "new-page",
-     "impressions28": 4,
-     "clicks28": 0,
-     "position": 55.5,
-     "volume": null,
-     "score": 43.6
     },
     {
      "search": "tax on 300k",
@@ -682,50 +752,6 @@
      "impressions28": 2,
      "clicks28": 0,
      "position": 89.0,
-     "volume": null,
-     "score": 21.8
-    },
-    {
-     "search": "tax brackets 2020",
-     "variants": [],
-     "page": "/tax-brackets",
-     "kind": "new-page",
-     "impressions28": 2,
-     "clicks28": 0,
-     "position": 71.0,
-     "volume": null,
-     "score": 21.8
-    },
-    {
-     "search": "tax rates 2025-26",
-     "variants": [],
-     "page": "/tax-brackets",
-     "kind": "new-page",
-     "impressions28": 2,
-     "clicks28": 0,
-     "position": 83.0,
-     "volume": null,
-     "score": 21.8
-    },
-    {
-     "search": "tax threshold 2021",
-     "variants": [],
-     "page": "/tax-brackets",
-     "kind": "new-page",
-     "impressions28": 2,
-     "clicks28": 0,
-     "position": 60.0,
-     "volume": null,
-     "score": 21.8
-    },
-    {
-     "search": "tax threshold 2022",
-     "variants": [],
-     "page": "/tax-brackets",
-     "kind": "new-page",
-     "impressions28": 2,
-     "clicks28": 0,
-     "position": 59.5,
      "volume": null,
      "score": 21.8
     },

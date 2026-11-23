@@ -35,3 +35,26 @@ shipped on 12 Nov; too soon to touch again. Sorrento and tax-brackets-by-year sk
 "all you can eat mornington" (no data to answer it).
 
 **Re-checks:** 12 Nov changes due 2026-12-10 (only 4 days live, no read yet). Each draft above gets a re-check 4 weeks after it's published.
+
+## 2026-11-24 (scheduled run)
+
+Data: Search Console 24 Oct–20 Nov 2026. DataForSEO: one AU volume lookup, 10 searches (~US$0.09), saved to `hq/opportunity-volumes.json`.
+
+**Fixed (live after "Check build"):**
+- Vic Tours, all towns: mapping notes and unvisitable places no longer show as things to do. `scripts/vic/build_data.py` now drops
+  names like "Potential planting site", "Resident tree planting", "Unnamed … Private Nature Reserve", "Proposed …" and "… Car Park".
+  6 entries removed across 5 towns (Daylesford 2, Apollo Bay, Phillip Island, Swan Hill, Traralgon). Found while drafting Daylesford.
+
+**Drafted for Simon:**
+- Vic things to do in Daylesford (strengthen /daylesford/do, position 50.2): "things to do in daylesford" 4,400/mo. 14 places from OSM data.
+- Vic things to do in Lorne (strengthen /lorne hub, position 73.0): "things to do lorne" 1,600/mo + "lorne attractions" 1,600/mo;
+  36 impressions, the most of any Vic town search. 20 places from OSM data, Live Wire Park for "group activities".
+
+**Skipped:** Phillip Island things to do (1,300/mo) and Melbourne day trips (2,400/mo, a generated hub needing a code change): held back
+because Simon's list already has 12+ open items and 4 opportunity drafts unpublished. First in line next week.
+MyPayCalc: nothing new. Every candidate is a head term ("pay calculator") or on a page drafted in the last 4 weeks (tax brackets, HECS;
+the HECS draft already covers this week's new variants: "when do you start paying hecs", "hecs interest rate 2026", thresholds).
+No new fix-snippets: "tax on 300k" (9.4) and "tax on 25000" (10.5) were fixed 12 Nov.
+
+**Re-checks:** none due yet. 12 Nov title fixes due 2026-12-10; Sorrento restaurants (published 16 Nov) due 2026-12-14.
+Junk-place filter: re-check /daylesford/do position for "things to do in daylesford" on 2026-12-22.
