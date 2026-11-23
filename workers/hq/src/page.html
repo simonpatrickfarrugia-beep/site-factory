@@ -466,8 +466,9 @@ async function load() {
     const send = await api('/api/send/status').catch(() => null);
     const hq = await api('/api/hq').catch(() => null);
     const texts = await api('/api/texts').catch(() => null);
+    const comments = await api('/api/comments').catch(() => null);
     const [checks, apps, conf, jobs, value] = await Promise.all([api('/api/sitecheck').catch(() => null), api('/api/apps').catch(() => null), api('/api/confidence').catch(() => null), api('/api/jobs').catch(() => null), api('/api/value').catch(() => null)]);
-    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar, needs, send, hq, texts, checks, apps, conf, value, jobs: jobs?.jobs || [] });
+    Object.assign(state, { board, summary, prospects, replies, pipeline, affiliates, radar, needs, send, hq, texts, comments, checks, apps, conf, value, jobs: jobs?.jobs || [] });
     $('#updated').textContent = 'Targets scored ' + new Date(prospects.generated).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
     render();
     const deep = location.hash.match(/^#app=([a-z0-9-]+)$/); // e.g. …/#app=vic opens that app (links from the morning report)
@@ -1011,6 +1012,7 @@ function renderToday() {
   const segHtml = seg.length ? `<div class="tbl"><table><thead><tr><th>Brand · type</th><th class="num">Found</th><th class="num">Drafted</th><th class="num">Dropped</th><th class="num">Replied</th><th class="num">Linked</th></tr></thead><tbody>${seg.map((x) => `<tr><td>${esc(brandName(x.brand))} · ${esc((state.prospects.brands.find((b) => b.key === x.brand)?.top.find((t) => t.segment === x.segment) || {}).segmentLabel || x.segment)}</td><td class="num">${x.found}</td><td class="num">${x.drafted}</td><td class="num">${x.dropped}</td><td class="num">${x.replied}</td><td class="num">${x.linked}</td></tr>`).join('')}</tbody></table></div>` : '';
   $('#view').innerHTML = `<div class="pgrid">
     ${renderFollowThrough()}
+    ${renderComments()}
     ${renderTexts()}
     <div class="today-head"><h2>Today's prospects</h2><span class="meta">${q.length} to review${r.later ? ' · ' + r.later + ' saved for later' : ''}</span></div>
     ${q.length ? `<div class="rlist2">${cards}</div>` : empty}
@@ -1020,6 +1022,37 @@ function renderToday() {
   const addRule = async () => { const t = $('#coach-in').value.trim(); if (!t) return; try { const res = await api('/api/radar/coaching', { rules: r.coaching.concat([{ text: t }]) }); r.coaching = res.rules; toast('Rule added. Radar uses it from the next run'); renderToday(); } catch (e) { toast(e.message); } };
   $('#coach-add').onclick = addRule;
   $('#coach-in').onkeydown = (e) => { if (e.key === 'Enter') { e.preventDefault(); addRule(); } };
+}
+// ---------- Comments to check (trailers /watch; comments.ts) ----------
+// The spam filter publishes clean comments and holds doubtful ones here. Approve shows it; Hide/Spam keeps it off the site.
+const filmUrl = (c) => 'https://www.movietrailer.channel/movies/' + encodeURIComponent(c.film);
+function renderComments() {
+  const c = state.comments; if (!c || !inBrand('trailers')) return '';
+  const held = c.held || [], live = c.live || [], w = c.week || {};
+  if (!held.length && !live.length) return '';
+  const card = (x, isHeld) => `
+    <article class="rcard" style="--c:${color(x.brand)}">
+      <div><h3>${esc(x.name)}</h3><div class="meta"><a href="${esc(filmUrl(x))}" target="_blank" rel="noopener">${esc(x.film)}</a> · ${esc(ago(x.created_at))}</div></div>
+      <p style="margin:6px 0;white-space:pre-wrap">${esc(x.body)}</p>
+      ${isHeld && x.reasons ? `<p class="rwhy"><b>Held because</b>${esc(x.reasons)}</p>` : ''}
+      <div class="ractions">
+        ${isHeld ? `<button class="btn" data-cmod="${x.id}|approve">Approve</button>` : ''}
+        <button class="btn ghost" data-cmod="${x.id}|hide">Hide</button>
+        <button class="btn ghost" data-cmod="${x.id}|spam">Spam</button>
+      </div>
+    </article>`;
+  return `<div class="today-head"><h2>Comments to check</h2><span class="meta">${held.length} waiting · last 7 days: ${w.live || 0} live, ${w.spam || 0} spam blocked</span></div>
+    <p class="empty" style="padding:0 0 8px">From the swipe feed on movietrailer.channel. Clean comments go live by themselves; these were held for a look. Approve to show, Hide to keep off the site.</p>
+    ${held.length ? `<div class="rlist2">${held.map((x) => card(x, true)).join('')}</div>` : '<p class="empty" style="padding:0">Nothing waiting.</p>'}
+    ${live.length ? `<details style="margin:8px 0 16px"><summary>Latest live comments (${live.length})</summary><div class="rlist2">${live.map((x) => card(x, false)).join('')}</div></details>` : ''}`;
+}
+async function moderate(id, action) {
+  try {
+    await api('/api/comments/' + id, { action });
+    state.comments = await api('/api/comments').catch(() => state.comments);
+    toast(action === 'approve' ? 'Approved: it’s live' : action === 'hide' ? 'Hidden' : 'Marked as spam');
+    renderToday();
+  } catch (e) { toast(e.message); }
 }
 // ---------- Text to book a call (phone-only prospects; texts.ts) ----------
 // Simon sends each text from his own phone: on a phone the button opens Messages with the text filled in;
@@ -1589,6 +1622,7 @@ document.addEventListener('click', (e) => {
   else if (t.dataset.rdraft) { const o = state.radar.queue.find((x) => String(x.id) === t.dataset.rdraft); if (o) openDraft(o.brand, o.target, o); }
   else if (t.dataset.rdrop) radarReview(t.dataset.rdrop, $('#rdrop-' + t.dataset.rdrop).value, $('#rwhy-' + t.dataset.rdrop).value);
   else if (t.dataset.rlater) radarReview(t.dataset.rlater, 'later');
+  else if (t.dataset.cmod) { const [id, a] = t.dataset.cmod.split('|'); moderate(id, a); }
   else if (t.dataset.tx) { const o = (state.texts?.items || []).find((x) => String(x.id) === t.dataset.tx); if (o) openText(o); }
   else if (t.dataset.txreplied) { const n = prompt('What did they say? (e.g. "call Tue 7pm")', ''); if (n !== null) textMark(t.dataset.txreplied, 'replied', { note: n }); }
   else if (t.dataset.txemail) { const em = prompt('Their email address', ''); if (em) textMark(t.dataset.txemail, 'email', { email: em }); }

@@ -16,7 +16,8 @@
   },
   // FORMS: filmmaker pitches → table submissions (form "pitch"); the enquiries workflow alerts Simon.
   // Updates signups use /api/subscribe → table subscribers (brand trailers, interests "films"). No emails are sent yet.
-  "vars": { "BRAND": "trailers", "FORMS": "pitch" },
+  // SOCIAL: public likes, reactions, saves and comments on /watch (src/worker/social.ts), moderated in IMN HQ.
+  "vars": { "BRAND": "trailers", "FORMS": "pitch", "SOCIAL": "1" },
   // Free classic movies (public domain in the US), served at /media/<film>.mp4 to US visitors only.
   "r2_buckets": [{ "binding": "FILMS", "bucket_name": "trailer-films" }],
   "d1_databases": [

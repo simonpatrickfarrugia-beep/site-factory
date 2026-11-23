@@ -11,6 +11,7 @@ import { radar, review, markDrafted, saveCoaching, kvSet } from './radar';
 import { feature, unfeature, featuredFor, followUpOpened, closeNoReply, markHandled, autoClose, needsReply, FOLLOW_UP_DAYS } from './followthrough';
 import { FOLLOW_UP, FEATURE_LINE } from './templates';
 import { listTexts, textAction } from './texts';
+import { listComments, moderateComment } from './comments';
 import { ICON_SVG, ICON_180, ICON_512, MANIFEST } from './app-assets';
 import { sendForOrg, sendStatus, sendTransactional } from './send';
 import { WorkerEntrypoint } from 'cloudflare:workers';
@@ -102,6 +103,9 @@ export default {
       if (url.pathname === '/api/prospects' && req.method === 'GET') return json(await prospects(env));
       if (url.pathname === '/api/replies' && req.method === 'GET') return json(await replies(env));
       if (url.pathname === '/api/texts' && req.method === 'GET') return json(await listTexts(env.DB));
+      if (url.pathname === '/api/comments' && req.method === 'GET') return json(await listComments(env.DB));
+      const cm = url.pathname.match(/^\/api\/comments\/(\d+)$/);
+      if (cm && req.method === 'POST') return json(await moderateComment(env.DB, Number(cm[1]), String(((await req.json().catch(() => ({}))) as Record<string, unknown>).action ?? '')));
       const tx = url.pathname.match(/^\/api\/orgs\/(\d+)\/text$/);
       if (tx && req.method === 'POST') return json(await textAction(env.DB, Number(tx[1]), (await req.json().catch(() => ({}))) as Record<string, unknown>));
       if (url.pathname === '/api/needs' && req.method === 'GET') return json({ messages: await needsReply(env.DB), followUp: FOLLOW_UP, featureLine: FEATURE_LINE });

@@ -5,8 +5,10 @@
  * YouTube Short (movies.json `shortsId`) plays the Short full-height; otherwise the 16:9 trailer sits centred over
  * a blurred poster. Plays muted while in view, pauses out of view. Only the first 4 cards are in the HTML; the rest
  * are added 3 ahead of the viewer, and only the current and next card get a player.
- * Like, reaction and watchlist are saved on the viewer's own device (localStorage): no accounts, no public counts.
- * GA4 events: card_view, watch_3s, sound_on, rent_click (plus cta_prime from Base), like, react, watchlist_add, share.
+ * Like, reaction, My list and comments are public counts (24 Nov 2026): real rows in D1 via the site Worker (src/worker/social.ts),
+ * one per anonymous viewer id kept in localStorage. Comments pass the spam filter (src/worker/spam.ts); doubtful ones wait
+ * for Simon in IMN HQ. Which buttons this viewer pressed is also kept on the device so the page paints instantly.
+ * GA4 events: card_view, watch_3s, sound_on, rent_click (plus cta_prime from Base), like, react, watchlist_add, share, comment_post.
  */
 import { thumb } from '../../brands/trailers/model';
 
@@ -49,6 +51,10 @@ const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
                 {REACTIONS.map((r) => <button type="button" data-react={r}>{r}</button>)}
               </div>
             </div>
+            <button type="button" class="wc__act" data-act="comment" aria-haspopup="dialog" aria-label="Comments">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 01-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1121 12z"/></svg>
+              <span>Comment</span>
+            </button>
             <button type="button" class="wc__act" data-act="list" aria-pressed="false" aria-label="Add to my list">
               <svg class="wc__plus" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><svg class="wc__tick" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
               <span>My list</span>
@@ -86,6 +92,19 @@ const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
     <div class="wsheet__head"><h2 id="wsheet-h">My list</h2><button type="button" id="wsheet-x" aria-label="Close">✕</button></div>
     <p class="wsheet__empty" id="wsheet-empty">Tap <b>+ My list</b> on any film to save it here. Your list stays on this device.</p>
     <ul id="wsheet-ul"></ul>
+  </dialog>
+  <dialog class="wsheet wcom" id="wcom" aria-labelledby="wcom-h">
+    <div class="wsheet__head"><h2 id="wcom-h">Comments</h2><button type="button" id="wcom-x" aria-label="Close">✕</button></div>
+    <ul class="wcom__list" id="wcom-ul"></ul>
+    <p class="wsheet__empty" id="wcom-empty">No comments yet. Be the first!</p>
+    <form class="wcom__form" id="wcom-form" action="/api/comments" method="post">
+      <label class="visually-hidden" for="wcom-name">Your name</label>
+      <input id="wcom-name" name="name" maxlength="40" autocomplete="nickname" placeholder="Your name (optional)" />
+      <label class="visually-hidden" for="wcom-body">Your comment</label>
+      <textarea id="wcom-body" name="body" maxlength="500" rows="3" required placeholder="What did you think of it?"></textarea>
+      <div class="wcom__trap" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off" /></label></div>
+      <div class="wcom__row"><p class="wcom__note" id="wcom-note">Comments are public. Please keep it kind; no links.</p><button class="button" type="submit">Post</button></div>
+    </form>
   </dialog>
   <p class="wtoast" id="wtoast" role="status" aria-live="polite"></p>
 </div>
@@ -166,6 +185,16 @@ const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
   .wsheet li a { color: #fff; font-weight: 600; }
   .wsheet li button { background: none; border: 1px solid rgb(255 255 255 / 0.3); color: #fff; border-radius: 2rem; padding: 0.25rem 0.7rem; font-size: 0.8rem; cursor: pointer; }
   .wsheet__empty { opacity: 0.8; }
+  .wcom__list { list-style: none; margin: 0; padding: 0; }
+  .wcom__list li { padding: 0.7rem 0; border-top: 1px solid rgb(255 255 255 / 0.12); }
+  .wcom__list b { font-weight: 700; }
+  .wcom__list time, .wcom__wait { font-size: 0.75rem; opacity: 0.65; margin-left: 0.4rem; }
+  .wcom__list p { margin: 0.2rem 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .wcom__form { position: sticky; bottom: 0; display: grid; gap: 0.5rem; padding: 0.75rem 0 0; background: #151933; }
+  .wcom__form input, .wcom__form textarea { width: 100%; font: inherit; color: #fff; background: rgb(255 255 255 / 0.08); border: 1px solid rgb(255 255 255 / 0.25); border-radius: 0.6rem; padding: 0.55rem 0.7rem; }
+  .wcom__trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .wcom__row { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+  .wcom__note { margin: 0; font-size: 0.8rem; opacity: 0.75; }
   .wtoast { position: absolute; left: 50%; bottom: 40%; translate: -50% 0; z-index: 6; margin: 0; padding: 0.6rem 1rem; border-radius: 2rem; background: rgb(0 0 0 / 0.85); font-size: 0.9rem; opacity: 0; transition: opacity 0.2s; pointer-events: none; }
   .wtoast.is-on { opacity: 1; }
 </style>
@@ -189,6 +218,38 @@ const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
   function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
   var likes = load('mtc_likes', {}), reacts = load('mtc_reacts', {}), list = load('mtc_watchlist', []);
   function inList(slug) { return list.some(function (x) { return x.slug === slug; }); }
+  // Anonymous viewer id: random, kept on this device, only used so one person counts once per film.
+  var voter = load('mtc_voter', '');
+  if (!/^[A-Za-z0-9_-]{16,40}$/.test(voter)) {
+    var rnd = new Uint8Array(16); (window.crypto || window.msCrypto).getRandomValues(rnd);
+    voter = btoa(String.fromCharCode.apply(null, rnd)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    save('mtc_voter', voter);
+  }
+  var counts = {}; // slug -> { like, list, react: {emoji: n}, comments } from /api/social
+  var compact = function (n) { return n >= 1e6 ? (n / 1e6).toFixed(1).replace(/\.0$/, '') + 'M' : n >= 1e3 ? (n / 1e3).toFixed(1).replace(/\.0$/, '') + 'K' : String(n); };
+  function fetchCounts(slugs) {
+    slugs = slugs.filter(function (x, i) { return x && slugs.indexOf(x) === i; }).slice(0, 12);
+    if (!slugs.length || !window.fetch) return;
+    fetch('/api/social?films=' + slugs.map(encodeURIComponent).join(',')).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (!d || !d.counts) return;
+      Object.keys(d.counts).forEach(function (k) { counts[k] = d.counts[k]; });
+      cardsAll().forEach(function (c) { if (d.counts[c.dataset.slug]) paint(c); });
+    }).catch(function () {});
+  }
+  function repaintSlug(slug) { cardsAll().forEach(function (c) { if (c.dataset.slug === slug) paint(c); }); }
+  function vote(slug, kind, on, value) {
+    // Show the change straight away, then take the real counts from the server.
+    var n = counts[slug] || (counts[slug] = { like: 0, list: 0, react: {}, comments: 0 });
+    if (kind === 'react') {
+      var prev = reacts[slug + '|prev'];
+      if (prev && n.react[prev]) n.react[prev]--;
+      if (on) n.react[value] = (n.react[value] || 0) + 1;
+    } else n[kind] = Math.max(0, (n[kind] || 0) + (on ? 1 : -1));
+    repaintSlug(slug);
+    if (!window.fetch) return;
+    fetch('/api/social/vote', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ film: slug, kind: kind, on: on, value: value || '', voter: voter }) })
+      .then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.counts) { counts[slug] = d.counts; repaintSlug(slug); } }).catch(function () {});
+  }
   function track(name, params) { if (typeof window.gtag === 'function') window.gtag('event', name, params || {}); }
   function cardsAll() { return feed.querySelectorAll('.wc'); }
   function cardAt(i) { return feed.querySelector('.wc[data-i="' + i + '"]'); }
@@ -198,13 +259,18 @@ const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
   function toast(t) { toastEl.textContent = t; toastEl.classList.add('is-on'); clearTimeout(toastT); toastT = setTimeout(function () { toastEl.classList.remove('is-on'); }, 1600); }
 
   function paint(c) {
-    var s = c.dataset.slug;
-    c.querySelector('[data-act="like"]').setAttribute('aria-pressed', likes[s] ? 'true' : 'false');
+    var s = c.dataset.slug, n = counts[s] || { like: 0, list: 0, react: {}, comments: 0 };
+    var lk = c.querySelector('[data-act="like"]'); lk.setAttribute('aria-pressed', likes[s] ? 'true' : 'false');
+    lk.querySelector('span').textContent = n.like ? compact(n.like) : 'Like';
     var l = c.querySelector('[data-act="list"]'); l.setAttribute('aria-pressed', inList(s) ? 'true' : 'false');
-    l.querySelector('span').textContent = inList(s) ? 'Saved' : 'My list';
+    l.querySelector('span').textContent = n.list ? compact(n.list) : inList(s) ? 'Saved' : 'My list';
     l.querySelector('.wc__plus').hidden = inList(s); l.querySelector('.wc__tick').hidden = !inList(s);
+    c.querySelector('[data-act="comment"] span').textContent = n.comments ? compact(n.comments) : 'Comment';
     var r = c.querySelector('[data-act="react"]'); r.classList.toggle('has-react', !!reacts[s]);
-    r.querySelector('.wc__emoji').textContent = reacts[s] || '😀';
+    var rt = 0, top = '', topN = 0;
+    Object.keys(n.react || {}).forEach(function (e) { rt += n.react[e]; if (n.react[e] > topN) { topN = n.react[e]; top = e; } });
+    r.querySelector('.wc__emoji').textContent = reacts[s] || top || '😀';
+    r.querySelector('span').textContent = rt ? compact(rt) : 'React';
     c.querySelectorAll('[data-react]').forEach(function (b) { b.setAttribute('aria-pressed', reacts[s] === b.dataset.react ? 'true' : 'false'); });
   }
   function paintList() {
@@ -240,10 +306,12 @@ const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
     return c;
   }
   function ensureAhead(i) {
+    var added = [];
     while (cardsAll().length < Math.min(total, i + 4) && rest.length) {
       var c = build(rest.shift(), cardsAll().length);
-      feed.insertBefore(c, endCard); paint(c); io.observe(c);
+      feed.insertBefore(c, endCard); paint(c); io.observe(c); added.push(c.dataset.slug);
     }
+    fetchCounts(added);
   }
 
   // ---- players (current + next only) ----
@@ -315,6 +383,7 @@ const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
     entries.forEach(function (e) { if (e.isIntersecting && e.intersectionRatio >= 0.6 && active >= 0) { pause(active); } });
   }, { root: feed, threshold: [0.6] });
   cardsAll().forEach(function (c) { paint(c); io.observe(c); });
+  fetchCounts([].map.call(cardsAll(), function (c) { return c.dataset.slug; }));
   endIo.observe(endCard);
   paintList();
 
@@ -351,22 +420,27 @@ const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
     var pick = t.closest('[data-react]');
     if (pick) {
       var r = pick.dataset.react;
-      if (reacts[slug] === r) delete reacts[slug]; else { reacts[slug] = r; track('react', Object.assign(film(c), { reaction: r })); }
+      reacts[slug + '|prev'] = reacts[slug] || '';
+      if (reacts[slug] === r) { delete reacts[slug]; vote(slug, 'react', false); }
+      else { reacts[slug] = r; vote(slug, 'react', true, r); track('react', Object.assign(film(c), { reaction: r })); }
+      delete reacts[slug + '|prev'];
       save('mtc_reacts', reacts); paint(c); closeReacts();
       return;
     }
     var act = t.closest('[data-act]'); if (!act) return;
     var kind = act.dataset.act;
     if (kind === 'like') {
-      if (likes[slug]) delete likes[slug]; else { likes[slug] = 1; track('like', film(c)); }
+      if (likes[slug]) { delete likes[slug]; vote(slug, 'like', false); } else { likes[slug] = 1; vote(slug, 'like', true); track('like', film(c)); }
       save('mtc_likes', likes); paint(c);
     } else if (kind === 'react') {
       var box = act.nextElementSibling; closeReacts(box);
       box.hidden = !box.hidden; act.setAttribute('aria-expanded', box.hidden ? 'false' : 'true');
     } else if (kind === 'list') {
-      if (inList(slug)) { list = list.filter(function (x) { return x.slug !== slug; }); toast('Removed from your list'); }
-      else { list.unshift({ slug: slug, name: c.dataset.name, year: c.dataset.year }); track('watchlist_add', film(c)); toast('Saved to your list'); }
+      if (inList(slug)) { list = list.filter(function (x) { return x.slug !== slug; }); vote(slug, 'list', false); toast('Removed from your list'); }
+      else { list.unshift({ slug: slug, name: c.dataset.name, year: c.dataset.year }); vote(slug, 'list', true); track('watchlist_add', film(c)); toast('Saved to your list'); }
       save('mtc_watchlist', list); paint(c); paintList();
+    } else if (kind === 'comment') {
+      openComments(c);
     } else if (kind === 'share') {
       var url = location.origin + '/movies/' + slug;
       var title = c.dataset.name + (c.dataset.year ? ' (' + c.dataset.year + ')' : '');
@@ -386,13 +460,71 @@ const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
   sheet.addEventListener('click', function (e) {
     if (e.target === sheet) { sheet.close(); return; }
     var b = e.target instanceof Element ? e.target.closest('[data-remove]') : null; if (!b) return;
-    list = list.filter(function (x) { return x.slug !== b.dataset.remove; }); save('mtc_watchlist', list); paintList();
+    list = list.filter(function (x) { return x.slug !== b.dataset.remove; }); vote(b.dataset.remove, 'list', false); save('mtc_watchlist', list); paintList();
     cardsAll().forEach(function (c) { if (c.dataset.slug === b.dataset.remove) paint(c); });
+  });
+
+  // ---- comments ----
+  var com = document.getElementById('wcom'), comUl = document.getElementById('wcom-ul'), comForm = document.getElementById('wcom-form');
+  var comNote = document.getElementById('wcom-note'), comFilm = null;
+  var mine = load('mtc_mycomments', {}); // this device's comments still waiting for a check: { slug: [{ name, body, at }] }
+  comForm.elements.name.value = load('mtc_name', '');
+  function when(iso) {
+    var s = (Date.now() - new Date(iso).getTime()) / 1000;
+    return s < 90 ? 'just now' : s < 5400 ? Math.round(s / 60) + 'm' : s < 129600 ? Math.round(s / 3600) + 'h' : s < 1209600 ? Math.round(s / 86400) + 'd' : new Date(iso).toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+  function commentLi(x, waiting) {
+    var li = document.createElement('li'), b = document.createElement('b'), t = document.createElement(waiting ? 'span' : 'time'), p = document.createElement('p');
+    b.textContent = x.name; t.className = waiting ? 'wcom__wait' : ''; t.textContent = waiting ? 'Waiting for a quick check' : when(x.at);
+    if (!waiting) t.setAttribute('datetime', x.at);
+    p.textContent = x.body; li.appendChild(b); li.appendChild(t); li.appendChild(p); return li;
+  }
+  function showComments(items) {
+    comUl.textContent = '';
+    (mine[comFilm] || []).forEach(function (x) { comUl.appendChild(commentLi(x, true)); });
+    items.forEach(function (x) { comUl.appendChild(commentLi(x, false)); });
+    document.getElementById('wcom-empty').hidden = comUl.children.length > 0;
+  }
+  function openComments(c) {
+    comFilm = c.dataset.slug;
+    document.getElementById('wcom-h').textContent = 'Comments · ' + c.dataset.name;
+    comNote.textContent = 'Comments are public. Please keep it kind; no links.';
+    showComments([]);
+    if (com.showModal) com.showModal(); else com.setAttribute('open', '');
+    fetch('/api/comments?film=' + encodeURIComponent(comFilm)).then(function (r) { return r.ok ? r.json() : { comments: [] }; })
+      .then(function (d) { if (com.open) showComments(d.comments || []); }).catch(function () {});
+  }
+  document.getElementById('wcom-x').addEventListener('click', function () { com.close ? com.close() : com.removeAttribute('open'); });
+  com.addEventListener('click', function (e) { if (e.target === com) com.close(); });
+  comForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = comForm.elements, btn = comForm.querySelector('button[type=submit]'), slug = comFilm;
+    var text = f.body.value.trim(); if (!text || !slug) return;
+    btn.disabled = true; comNote.textContent = 'Posting…';
+    save('mtc_name', f.name.value.trim());
+    fetch('/api/comments', { method: 'POST', headers: { 'content-type': 'application/json', accept: 'application/json' },
+      body: JSON.stringify({ film: slug, name: f.name.value, body: text, voter: voter, website: f.website.value, _t: f._t ? f._t.value : '' }) })
+      .then(function (r) { return r.json().catch(function () { return { ok: false, message: 'Something went wrong. Please try again.' }; }); })
+      .then(function (d) {
+        btn.disabled = false; comNote.textContent = d.message || '';
+        if (!d.ok) return;
+        f.body.value = '';
+        track('comment_post', { film: slug, status: d.status });
+        if (d.status === 'live') {
+          var n = counts[slug] || (counts[slug] = { like: 0, list: 0, react: {}, comments: 0 });
+          n.comments++; repaintSlug(slug);
+          if (comFilm === slug) { var firstLive = [].filter.call(comUl.children, function (li) { return !li.querySelector('.wcom__wait'); })[0] || null; comUl.insertBefore(commentLi(d.comment, false), firstLive); document.getElementById('wcom-empty').hidden = true; }
+        } else {
+          (mine[slug] = mine[slug] || []).unshift({ name: d.comment.name, body: d.comment.body, at: d.comment.at });
+          mine[slug] = mine[slug].slice(0, 5); save('mtc_mycomments', mine);
+          if (comFilm === slug) { comUl.insertBefore(commentLi(d.comment, true), comUl.firstChild); document.getElementById('wcom-empty').hidden = true; }
+        }
+      }).catch(function () { btn.disabled = false; comNote.textContent = 'That didn’t send. Check your connection and try again.'; });
   });
 
   // ---- keyboard (desktop) and leaving the tab ----
   document.addEventListener('keydown', function (e) {
-    if (sheet.open) return;
+    if (sheet.open || com.open) return;
     if (e.key === 'ArrowDown' || e.key === 'j' || e.key === 'PageDown') { e.preventDefault(); feed.scrollBy({ top: feed.clientHeight, behavior: 'smooth' }); }
     else if (e.key === 'ArrowUp' || e.key === 'k' || e.key === 'PageUp') { e.preventDefault(); feed.scrollBy({ top: -feed.clientHeight, behavior: 'smooth' }); }
     else if (e.key === 'm') soundBtn.click();

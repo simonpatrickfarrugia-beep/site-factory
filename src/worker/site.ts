@@ -23,6 +23,8 @@
  *   GET  /api/submit/status?since=<ISO time>  how many submissions arrived since then: a count only, never any details.
  *                            The `enquiries` GitHub workflow polls it and opens an issue (emailed to Simon) when it's above 0.
  *
+ *   GET/POST /api/social, /api/social/vote, /api/comments  public likes, reactions, saves and comments (SOCIAL="1";
+ *                            src/worker/social.ts, spam filter src/worker/spam.ts, moderated in IMN HQ).
  *   GET  /api/webcheck?url=  free website check for IMN Labs (WEBCHECK="1"; src/worker/webcheck.ts).
  *   /labs/<slug>/*           IMN Labs (imn only, LABS="1"; rules from data/imn/labs.json, bundled at deploy): a closed lab
  *                            answers 410 Gone, a graduated lab 301s to the same path on its own domain; anything else is
@@ -34,6 +36,7 @@
 import { preview, freeSite } from './preview';
 import LAB_REGISTRY from '../../data/imn/labs.json';
 import { webcheck } from './webcheck';
+import { social } from './social';
 
 export interface Env {
   /** "1" serves IMN website previews at /preview/<slug> from D1 `previews` (imn only). */
@@ -60,6 +63,8 @@ export interface Env {
   WEBCHECK?: string;
   /** "1" applies the IMN Labs rules (410 for closed labs, 301 for graduated ones) on /labs/* (imn only). */
   LABS?: string;
+  /** "1" turns on public likes, reactions, saves and comments (src/worker/social.ts; trailers /watch). */
+  SOCIAL?: string;
   /** R2 bucket with the free classic movies (trailers brand only). */
   FILMS?: R2Bucket;
 }
@@ -441,6 +446,7 @@ export default {
       try { return await webcheck(request); }
       catch (e) { console.error('webcheck failed', e); return Response.json({ ok: false, message: 'Something went wrong. Please try again.' }, { status: 500 }); }
     }
+    if (env.SOCIAL === '1' && (pathname === '/api/social' || pathname === '/api/social/vote' || pathname === '/api/comments')) return social(request, env, pathname);
     const emb = pathname.match(/^\/api\/embed(?:\/([a-z0-9-]{1,60}))?$/);
     if (emb) return embed(request, env, emb[1]);
     if (pathname.startsWith('/api/')) return new Response('Not found', { status: 404 });
