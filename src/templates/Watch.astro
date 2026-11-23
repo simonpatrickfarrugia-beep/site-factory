@@ -50,7 +50,7 @@ const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
               </div>
             </div>
             <button type="button" class="wc__act" data-act="list" aria-pressed="false" aria-label="Add to my list">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path class="wc__plus" d="M12 5v14M5 12h14"/><path class="wc__tick" d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+              <svg class="wc__plus" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><svg class="wc__tick" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
               <span>My list</span>
             </button>
             <button type="button" class="wc__act" data-act="share" aria-label="Share">
@@ -126,10 +126,7 @@ const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
   .wc__emoji { display: grid; place-items: center; padding: 0; font-size: 1.4rem; font-weight: 400; filter: grayscale(1); }
   .wc__act:active svg, .wc__act:active .wc__emoji { transform: scale(0.88); }
   .wc__act[data-act='like'][aria-pressed='true'] svg { fill: #ff3b5c; stroke: #ff3b5c; }
-  .wc__act[data-act='list'] .wc__tick { display: none; }
   .wc__act[data-act='list'][aria-pressed='true'] svg { background: var(--color-accent); stroke: #12162b; }
-  .wc__act[data-act='list'][aria-pressed='true'] .wc__plus { display: none; }
-  .wc__act[data-act='list'][aria-pressed='true'] .wc__tick { display: inline; }
   .wc__act.has-react .wc__emoji { filter: none; }
   .wc__reactwrap { position: relative; }
   .wc__reacts { position: absolute; right: 3.4rem; top: 50%; translate: 0 -50%; display: flex; gap: 0.15rem; padding: 0.3rem; border-radius: 2rem; background: rgb(20 20 30 / 0.92); }
@@ -205,6 +202,7 @@ const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
     c.querySelector('[data-act="like"]').setAttribute('aria-pressed', likes[s] ? 'true' : 'false');
     var l = c.querySelector('[data-act="list"]'); l.setAttribute('aria-pressed', inList(s) ? 'true' : 'false');
     l.querySelector('span').textContent = inList(s) ? 'Saved' : 'My list';
+    l.querySelector('.wc__plus').hidden = inList(s); l.querySelector('.wc__tick').hidden = !inList(s);
     var r = c.querySelector('[data-act="react"]'); r.classList.toggle('has-react', !!reacts[s]);
     r.querySelector('.wc__emoji').textContent = reacts[s] || '😀';
     c.querySelectorAll('[data-react]').forEach(function (b) { b.setAttribute('aria-pressed', reacts[s] === b.dataset.react ? 'true' : 'false'); });
