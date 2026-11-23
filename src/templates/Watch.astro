@@ -178,7 +178,7 @@ const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
   .wsheet { width: min(100%, 28rem); max-height: 75vh; margin: auto auto 0; padding: 0 1rem calc(1rem + env(safe-area-inset-bottom)); border: 0; border-radius: 1rem 1rem 0 0; background: #151933; color: #fff; }
   .wsheet::backdrop { background: rgb(0 0 0 / 0.6); }
   .wsheet__head { position: sticky; top: 0; display: flex; justify-content: space-between; align-items: center; padding: 1rem 0 0.5rem; background: #151933; }
-  .wsheet__head h2 { margin: 0; }
+  .wsheet__head h2 { margin: 0; font-size: 1.3rem; line-height: 1.2; }
   .wsheet__head button { background: none; border: 0; color: #fff; font-size: 1.2rem; cursor: pointer; }
   .wsheet ul { list-style: none; margin: 0; padding: 0; }
   .wsheet li { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding: 0.7rem 0; border-top: 1px solid rgb(255 255 255 / 0.12); }
@@ -186,7 +186,7 @@ const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
   .wsheet li button { background: none; border: 1px solid rgb(255 255 255 / 0.3); color: #fff; border-radius: 2rem; padding: 0.25rem 0.7rem; font-size: 0.8rem; cursor: pointer; }
   .wsheet__empty { opacity: 0.8; }
   .wcom__list { list-style: none; margin: 0; padding: 0; }
-  .wcom__list li { padding: 0.7rem 0; border-top: 1px solid rgb(255 255 255 / 0.12); }
+  .wsheet .wcom__list li { display: block; padding: 0.7rem 0; border-top: 1px solid rgb(255 255 255 / 0.12); }
   .wcom__list b { font-weight: 700; }
   .wcom__list time, .wcom__wait { font-size: 0.75rem; opacity: 0.65; margin-left: 0.4rem; }
   .wcom__list p { margin: 0.2rem 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
