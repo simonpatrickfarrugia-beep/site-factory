@@ -1,6 +1,6 @@
 # Competition check
 
-Updated 2026-11-16. Google top 10 for each niche's best keywords. A slot is **beatable** when a forum (Reddit, Quora, Fandom...) or a small site (under 30k est. search visits/month) holds it. **Openness** 0-100 weights the top 3 positions most. Rough guide: 40+ open, 20-40 possible with a strong angle, under 20 owned by big brands.
+Updated 2026-11-23. Google top 10 for each niche's best keywords. A slot is **beatable** when a forum (Reddit, Quora, Fandom...) or a small site (under 30k est. search visits/month) holds it. **Openness** 0-100 weights the top 3 positions most. Rough guide: 40+ open, 20-40 possible with a strong angle, under 20 owned by big brands.
 
 | Idea | Openness | Keywords checked | Biggest players |
 |---|---:|---:|---|
@@ -15,6 +15,7 @@ Updated 2026-11-16. Google top 10 for each niche's best keywords. A slot is **be
 | AU electricity prices by postcode and retailer | **47** | 6 | google.com (33.2M), agl.com.au (252k), canstar.com.au (453k), aer.gov.au (37k) |
 | Victoria: where to stay by town | **47** | 6 | instagram.com (61.7M), tripadvisor.com.au (19.3M), tripadvisor.com (2.0M), visitvictoria.com (598k) |
 | Australian loungewear and comfortwear brands | **45** | 6 | amazon.com.au (7.6M), lululemon.com.au (306k), uniqlo.com (740k), brasnthings.com (164k) |
+| Dog-friendly hotels by city | **45** | 6 | tripadvisor.com (100.8M), instagram.com (462.9M), yelp.com (304.6M), marriott.com (12.7M) |
 | AU pay and tax calculators (take-home pay by salary) | **43** | 6 | ato.gov.au (2.3M), moneysmart.gov.au (688k), paycalculator.com.au (358k), infochoice.com.au (73k) |
 | Hurricane history by coastal state | **40** | 3 | wikipedia.org (1937.8M), youtube.com (625.8M), weather.gov (54.0M), noaa.gov (11.7M) |
 | Book series in reading order | **37** | 6 | goodreads.com (10.5M), scholastic.com (657k), amazon.com (251.6M), nytimes.com (54.6M) |
@@ -156,6 +157,17 @@ Updated 2026-11-16. Google top 10 for each niche's best keywords. A slot is **be
 | loungewear underwear australia | 480 | 32 | #2 aus.loungeunderwear.com, #4 loungewearrepublic.com.au, #8 intimo.com.au | aus.lounge.com, aus.loungeunderwear.com, uniqlo.com |
 | womens track pants australia | 260 | 53 | #2 motionlifestyle.com.au, #3 echt.com.au, #6 russellathletic.com.au, #8 goondiwindicotton.com.au, #10 macronnsw.com.au | underarmour.com.au, motionlifestyle.com.au, echt.com.au |
 | ladies track pants australia | 260 | 21 | #1 russellathletic.com.au, #8 millers.com.au | russellathletic.com.au, lululemon.com.au, sussan.com.au |
+
+## Dog-friendly hotels by city (openness 45)
+
+| Keyword | /mo | Openness | Beatable slots | Top 3 |
+|---|---:|---:|---|---|
+| pet friendly hotels in austin | 1,600 | 37 | #3 hotelviata.com, #5 citydogaustin.com, #6 austintexas-hotels.com | choicehotels.com, lastminute.com, hotelviata.com |
+| hotels in austin that allow pets | 1,600 | 63 | #1 tripvento.com, #2 austinhoteldirectory.com, #4 usserviceanimals.org, #5 petfriendly.com, #8 facebook.com (forum), #9 austinrvpark.com | tripvento.com, austinhoteldirectory.com, instagram.com |
+| dog friendly hotels austin | 880 | 21 | #3 seejanewalkdogs.com, #7 hotelviata.com | marriott.com, hilton.com, seejanewalkdogs.com |
+| hotels in austin that allow dogs | 880 | 53 | #2 hotelviata.com, #3 beyondthedogtraining.com, #5 citydogaustin.com, #6 facebook.com (forum) | choicehotels.com, hotelviata.com, beyondthedogtraining.com |
+| hotel for dogs austin | 140 | 26 | #3 seejanewalkdogs.com, #6 hotelviata.com | marriott.com, bringfido.com, seejanewalkdogs.com |
+| bring fido austin | 40 | 37 | #4 animalfair.com, #6 petfriendlyaustin.com, #7 alexatxrealtor.com, #8 facebook.com (forum), #9 austindogkennel.com | lb-1.net.adoptapet.com, lb-1.net.adoptapet.com, yelp.com |
 
 ## AU pay and tax calculators (take-home pay by salary) (openness 43)
 
