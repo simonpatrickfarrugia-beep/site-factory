@@ -1,4 +1,5 @@
 // Phone + desktop screenshots of live pages (uitest workflow: test=shot-url.mjs, base=https://site, SHOT_PATHS env or default below).
+// /watch waits for load only: pages that never go network-idle (e.g. /watch with live YouTube players).
 // Used to eyeball pages Claude can't open from chat, e.g. IMN previews (?notrack=1 keeps view counts clean).
 import { mkdir } from 'node:fs/promises';
 import { chromium } from 'playwright';
@@ -10,7 +11,7 @@ for (const p of paths) {
   const name = p.replace(/[?#].*$/, '').replace(/^\//, '').replace(/\//g, '-') || 'home';
   for (const [tag, viewport] of [['phone', { width: 390, height: 844 }], ['desktop', { width: 1280, height: 900 }]]) {
     const page = await browser.newPage({ viewport, deviceScaleFactor: tag === 'phone' ? 2 : 1 });
-    const r = await page.goto(BASE + p, { waitUntil: 'networkidle' });
+    const r = await page.goto(BASE + p, { waitUntil: p.startsWith('/watch') ? 'load' : 'networkidle', timeout: 60000 });
     if (process.env.SHOT_JS) await page.evaluate(process.env.SHOT_JS); // e.g. reveal a success panel without submitting
     await page.screenshot({ path: `shots/${name}-${tag}.png`, fullPage: true });
     console.log(`${tag} ${p}: HTTP ${r?.status()}`);
