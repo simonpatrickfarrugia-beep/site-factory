@@ -264,7 +264,8 @@ const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
     lk.querySelector('span').textContent = n.like ? compact(n.like) : 'Like';
     var l = c.querySelector('[data-act="list"]'); l.setAttribute('aria-pressed', inList(s) ? 'true' : 'false');
     l.querySelector('span').textContent = n.list ? compact(n.list) : inList(s) ? 'Saved' : 'My list';
-    l.querySelector('.wc__plus').hidden = inList(s); l.querySelector('.wc__tick').hidden = !inList(s);
+    // SVG elements have no .hidden property: set the attribute itself.
+    l.querySelector('.wc__plus').toggleAttribute('hidden', inList(s)); l.querySelector('.wc__tick').toggleAttribute('hidden', !inList(s));
     c.querySelector('[data-act="comment"] span').textContent = n.comments ? compact(n.comments) : 'Comment';
     var r = c.querySelector('[data-act="react"]'); r.classList.toggle('has-react', !!reacts[s]);
     var rt = 0, top = '', topN = 0;
