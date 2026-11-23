@@ -18,7 +18,7 @@ const first = cards.slice(0, FIRST);
 const rest = JSON.stringify(cards.slice(FIRST)).replace(/</g, '\\u003c');
 const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
 ---
-<div class="watch" id="watch">
+<div class="swipe" id="watch">
   <header class="wtop">
     <a class="wtop__home" href="/" aria-label="MovieTrailer.Channel home">MovieTrailer<span>.Channel</span></a>
     <button class="wtop__sound" id="wsound" type="button" aria-pressed="false">🔇 Tap for sound</button>
@@ -94,12 +94,12 @@ const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
 
 <style is:global>
   body:has(#watch) { overflow: hidden; background: #000; }
-  .watch { position: fixed; inset: 0; background: #000; color: #fff; }
+  .swipe { position: fixed; inset: 0; background: #000; color: #fff; }
   .wfeed { height: 100%; overflow-y: auto; scroll-snap-type: y mandatory; overscroll-behavior: contain; scrollbar-width: none; }
   .wfeed::-webkit-scrollbar { display: none; }
-  .wc, .wend { position: relative; height: 100%; scroll-snap-align: start; scroll-snap-stop: always; overflow: hidden; display: grid; place-items: center; }
+  .wc, .wend { position: relative; height: 100%; scroll-snap-align: start; scroll-snap-stop: always; overflow: hidden; display: flex; justify-content: center; align-items: center; }
   .wc__bg { position: absolute; inset: -48px; background: #111 center / cover no-repeat; filter: blur(30px) brightness(0.5) saturate(1.2); }
-  .wc__frame { position: relative; height: 100%; aspect-ratio: 9 / 16; max-width: 100%; overflow: hidden; }
+  .wc__frame { position: relative; height: 100%; width: min(100%, 56.25vh); width: min(100%, 56.25dvh); overflow: hidden; }
   .wc__player { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); aspect-ratio: 16 / 9; background: #000; box-shadow: 0 10px 40px rgb(0 0 0 / 0.6); }
   .wc__player--short { top: 0; bottom: 0; transform: none; aspect-ratio: auto; }
   .wc__yt, .wc__yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
@@ -116,7 +116,7 @@ const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
   .wc__year { color: var(--color-accent); font-size: 0.7em; }
   .wc__line { margin: 0 0 0.9rem; font-size: 0.95rem; line-height: 1.35; color: rgb(255 255 255 / 0.88); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
   .wc__cta { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-  .wc__cta .button { padding-block: 0.6rem; }
+  .wc__cta .button { padding-block: 0.6rem; white-space: nowrap; }
   .wc__more { color: #fff; border-color: rgb(255 255 255 / 0.5); }
 
   .wc__rail { position: absolute; right: 0.5rem; bottom: calc(1.25rem + env(safe-area-inset-bottom)); z-index: 3; display: flex; flex-direction: column; gap: 0.9rem; align-items: center; }
@@ -139,7 +139,7 @@ const REACTIONS = ['🍿', '😂', '😱', '😍', '🤯'];
 
   .wc__hint { position: absolute; left: 0; right: 0; top: 4.2rem; z-index: 3; text-align: center; font-size: 0.85rem; margin: 0; opacity: 0.85; animation: whint 1.6s ease-in-out infinite; pointer-events: none; }
   .wc__hint::before { content: '⌃'; display: block; font-size: 1.4rem; line-height: 0.8; }
-  .watch.is-moved .wc__hint { display: none; }
+  .swipe.is-moved .wc__hint { display: none; }
   @keyframes whint { 50% { transform: translateY(-6px); } }
 
   .wtop { position: absolute; top: 0; left: 0; right: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
