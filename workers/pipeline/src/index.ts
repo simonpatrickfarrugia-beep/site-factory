@@ -856,17 +856,15 @@ async function travelJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: bo
 }
 
 /**
- * Index check (manual, Vic Tours): asks Search Console's URL Inspection API whether the first pages in the live sitemap
- * (home, hubs, then towns most-searched first) are in Google's index, and why not. Writes reports/vic/index-status.md.
- * Free; 24 pages per run, 8 at a time, 20 s each at most (the run workflow allows 4 minutes).
+ * Index check (manual): asks Search Console's URL Inspection API whether pages are in Google's index, and why not.
+ *   Vic Tours: the first 24 pages of the live sitemap (home, hubs, then towns most-searched first) → reports/vic/index-status.md
+ *   Trailers (24 Nov 2026): every non-film page plus an even spread of film pages, 150 in all, with a summary by page type
+ *   → reports/trailers/index-status.md. "Discovered - not indexed" = Google hasn't spent the crawl yet (links, authority);
+ *   "Crawled - not indexed" = Google read it and passed (quality, duplication).
+ * Free; quota 2,000 a day per property. 8 at a time, 20 s each at most (the run workflow allows 4 minutes).
  */
-const INDEX_REPORT = 'reports/vic/index-status.md';
-async function indexCheckJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean) {
-  const site = 'sc-domain:victours.com.au';
-  const log: string[] = [];
-  const xml = await (await fetch('https://victours.com.au/sitemap.xml')).text();
-  const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]).slice(0, 24);
-  const token = await googleAccessToken(env.GSC_SERVICE_ACCOUNT!, 'https://www.googleapis.com/auth/webmasters.readonly');
+type IndexTarget = { label: string; site: string; host: string; sitemap: string; report: string; pick: (urls: string[]) => string[] };
+async function inspectAll(token: string, site: string, urls: string[], log: string[]) {
   const rows: UrlInspection[] = [];
   // 8 at a time: one by one takes longer than the 4-minute run limit; Google allows 600 inspections a minute.
   for (let i = 0; i < urls.length; i += 8) {
@@ -874,21 +872,58 @@ async function indexCheckJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun
     for (const b of batch) b.status === 'fulfilled' ? rows.push(b.value) : log.push((b.reason as Error).message);
     if (log.some((l) => /HTTP 403|HTTP 429/.test(l))) break;
   }
-  const counts = new Map<string, number>();
-  for (const r of rows) counts.set(r.coverage, (counts.get(r.coverage) ?? 0) + 1);
-  const summary = [...counts].sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}: ${v}`).join(' · ');
-  log.unshift(`Index check: ${rows.length} of ${urls.length} Vic pages inspected. ${summary}`);
+  return rows;
+}
+const pageType = (path: string) => (path.startsWith('/movies/') ? 'Film pages' : path.startsWith('/discover/') ? 'Collections' : 'Other pages');
+async function indexCheckJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean) {
+  const targets: IndexTarget[] = [
+    { label: 'Vic Tours', site: 'sc-domain:victours.com.au', host: 'https://victours.com.au', sitemap: 'https://victours.com.au/sitemap.xml', report: 'reports/vic/index-status.md', pick: (u) => u.slice(0, 24) },
+    {
+      label: 'MovieTrailer.Channel', site: env.GSC_SITE, host: 'https://www.movietrailer.channel', sitemap: 'https://www.movietrailer.channel/sitemap.xml', report: 'reports/trailers/index-status.md',
+      pick: (u) => {
+        const other = u.filter((x) => !x.includes('/movies/'));
+        const films = u.filter((x) => x.includes('/movies/'));
+        const room = Math.max(0, 150 - other.length);
+        const step = films.length / Math.max(1, Math.min(room, films.length));
+        const spread = Array.from({ length: Math.min(room, films.length) }, (_, i) => films[Math.floor(i * step)]);
+        return [...other.slice(0, 150), ...spread].slice(0, 150);
+      },
+    },
+  ];
+  const token = await googleAccessToken(env.GSC_SERVICE_ACCOUNT!, 'https://www.googleapis.com/auth/webmasters.readonly');
+  const log: string[] = [];
+  const files: Record<string, string> = {};
   const day = (iso: string | null) => (iso ? iso.slice(0, 10) : '—');
-  const md = [
-    '# Vic Tours: is Google indexing the pages?', '',
-    `Checked ${now.toISOString().slice(0, 10)} with the Search Console URL Inspection API: the first ${rows.length} pages of the live sitemap (home, hubs, then towns, most-searched first).`, '',
-    `**${summary || 'no results'}**`, '',
-    '| Page | Google says | Last crawled | Fetch | Google\'s canonical |', '|---|---|---|---|---|',
-    ...rows.map((r) => `| ${r.url.replace('https://victours.com.au', '') || '/'} | ${r.coverage} | ${day(r.lastCrawl)} | ${r.fetch ?? '—'} | ${r.googleCanonical && r.googleCanonical !== r.url ? r.googleCanonical : 'same'} |`),
-    '', ...(log.length > 1 ? ['## Errors', '', ...log.slice(1).map((l) => `- ${l}`), ''] : []),
-  ].join('\n');
-  const commit = await save(repo, snap.sha, { [INDEX_REPORT]: md }, `Vic Tours: index check [skip ci]\n\n${log[0]}`, dryRun, log);
-  return { job: 'indexcheck' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report: md as string | undefined };
+  for (const t of targets) {
+    const errs: string[] = [];
+    let urls: string[] = [];
+    try { urls = t.pick([...(await (await fetch(t.sitemap)).text()).matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1])); }
+    catch (e) { log.push(`${t.label}: sitemap failed: ${(e as Error).message}`); continue; }
+    const rows = await inspectAll(token, t.site, urls, errs);
+    const counts = new Map<string, number>();
+    for (const r of rows) counts.set(r.coverage, (counts.get(r.coverage) ?? 0) + 1);
+    const summary = [...counts].sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}: ${v}`).join(' · ');
+    log.push(`${t.label}: ${rows.length} of ${urls.length} pages inspected. ${summary}`);
+    const types = [...new Set(rows.map((r) => pageType(r.url.replace(t.host, ''))))];
+    const states = [...counts.keys()];
+    const byType = t.label === 'Vic Tours' ? [] : [
+      '## By page type', '',
+      `| Page type | ${states.join(' | ')} |`, `|---|${states.map(() => '---:').join('|')}|`,
+      ...types.map((ty) => `| ${ty} | ${states.map((st) => rows.filter((r) => pageType(r.url.replace(t.host, '')) === ty && r.coverage === st).length).join(' | ')} |`), '',
+    ];
+    files[t.report] = [
+      `# ${t.label}: is Google indexing the pages?`, '',
+      `Checked ${now.toISOString().slice(0, 10)} with the Search Console URL Inspection API: ${rows.length} pages from the live sitemap.`, '',
+      `**${summary || 'no results'}**`, '',
+      ...byType,
+      '| Page | Google says | Last crawled | Fetch | Google\'s canonical |', '|---|---|---|---|---|',
+      ...rows.map((r) => `| ${r.url.replace(t.host, '') || '/'} | ${r.coverage} | ${day(r.lastCrawl)} | ${r.fetch ?? '—'} | ${r.googleCanonical && r.googleCanonical !== r.url ? r.googleCanonical : 'same'} |`),
+      '', ...(errs.length ? ['## Errors', '', ...errs.slice(0, 10).map((l) => `- ${l}`), ''] : []),
+    ].join('\n');
+    log.push(...errs.slice(0, 3));
+  }
+  const commit = await save(repo, snap.sha, files, `Index check [skip ci]\n\n${log.join('\n')}`, dryRun, log);
+  return { job: 'indexcheck' as const, dryRun, commit, log, added: [] as string[], queued: [] as string[], moviesChanged: false, queueChanged: false, callsLeft: null, report: Object.values(files)[1] ?? Object.values(files)[0] };
 }
 
 async function keywordsJob(env: Env, repo: Repo, snap: Snap, now: Date, dryRun: boolean) {
