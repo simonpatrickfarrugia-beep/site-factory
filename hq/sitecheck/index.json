@@ -4,60 +4,158 @@
    "name": "victours.com.au",
    "url": "https://victours.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-17T12:26:47Z",
-   "score": 100,
+   "scannedAt": "2026-11-24T04:23:10Z",
+   "score": 95,
    "grade": "A",
-   "change": 1,
+   "change": -5,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-24",
-   "topFix": null,
+   "nextDue": "2026-12-01",
+   "topFix": "\"melbourne accomodation southbank\": we're not in the top 10 (Search Console avg 72); booking.com leads",
    "broken": 0,
-   "newIssues": 0,
-   "fixed": 2,
-   "costUsd": 0,
-   "top": []
+   "newIssues": 5,
+   "fixed": 0,
+   "costUsd": 0.01,
+   "top": [
+    {
+     "id": "rival-melbourne-accomodation-southbank",
+     "title": "\"melbourne accomodation southbank\": we're not in the top 10 (Search Console avg 72); booking.com leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/southbank/stay"
+     ],
+     "detail": "Top 5: 1. booking.com, 2. mantrasouthbankmelbourne.com.au, 3. trivago.com.au, 4. mercuremelbournesouthbank.com.au, 5. adinahotels.com",
+     "broken": false
+    },
+    {
+     "id": "rival-accommodation-melbourne-southbank",
+     "title": "\"accommodation melbourne southbank\": we're not in the top 10 (Search Console avg 82); booking.com leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/southbank/stay"
+     ],
+     "detail": "Top 5: 1. booking.com, 2. mantrasouthbankmelbourne.com.au, 3. trivago.com.au, 4. mercuremelbournesouthbank.com.au, 5. wotif.com",
+     "broken": false
+    },
+    {
+     "id": "rival-yarra-valley-day-trip",
+     "title": "\"yarra valley day trip\": we're not in the top 10 (Search Console avg 71); iyuetravel.com.au leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/road-trips/yarra-valley-day-trip"
+     ],
+     "detail": "Top 5: 1. iyuetravel.com.au, 2. pack-lightly.com, 3. tripadvisor.in, 4. bookme.com.au, 5. travellarksgetaways.com.au",
+     "broken": false
+    },
+    {
+     "id": "rival-things-to-do-in-queenscliff",
+     "title": "\"things to do in queenscliff\": we're not in the top 10 (Search Console avg 68); instagram.com leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/queenscliff"
+     ],
+     "detail": "Top 5: 1. instagram.com, 2. travelobiz.com, 3. tripadvisor.com.au, 4. banksatqueenscliffe.com.au, 5. instagram.com",
+     "broken": false
+    },
+    {
+     "id": "rival-melbourne-day-trips",
+     "title": "\"melbourne day trips\": we're not in the top 10 (Search Console avg 77); viator.com leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/day-trips"
+     ],
+     "detail": "Top 5: 1. viator.com, 2. lowcostselfdrive.com.au, 3. touropia.com, 4. easternmelburnian.com.au, 5. australia.com",
+     "broken": false
+    }
+   ]
   },
   "trailers": {
    "name": "movietrailer.channel",
    "url": "https://www.movietrailer.channel",
    "owner": "imn",
-   "scannedAt": "2026-11-17T11:22:55Z",
-   "score": 99,
+   "scannedAt": "2026-11-24T04:23:10Z",
+   "score": 92,
    "grade": "A",
-   "change": 0,
+   "change": -7,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-24",
-   "topFix": "Google shows only 31 of 437 pages (site is 31 days old)",
+   "nextDue": "2026-12-01",
+   "topFix": "4 of your top 8 pages aren't in Google's index",
    "broken": 0,
-   "newIssues": 0,
+   "newIssues": 6,
    "fixed": 0,
-   "costUsd": 0,
+   "costUsd": 0.01,
    "top": [
     {
+     "id": "not-indexed",
+     "title": "4 of your top 8 pages aren't in Google's index",
+     "severity": "high",
+     "area": "indexing",
+     "fix": "Make the page more useful than what ranks, link to it from the home page, then request indexing in Search Console.",
+     "pages": [
+      "/movies/weird-science-1985",
+      "/free-classic-movies",
+      "/movies/interstellar-2014",
+      "/movies/the-imitation-game-2014"
+     ],
+     "detail": "/movies/weird-science-1985: Discovered – currently not indexed; /free-classic-movies: Discovered – currently not indexed; /movies/interstellar-2014: Discovered – currently not indexed; /movies/the-imi",
+     "broken": false
+    },
+    {
      "id": "few-pages-in-google",
-     "title": "Google shows only 31 of 437 pages (site is 31 days old)",
+     "title": "Google shows only 20 of 511 pages (site is 38 days old)",
      "severity": "low",
      "area": "indexing",
-     "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 65 pages on 16 Dec 2026, cut or merge weak pages and earn a few links.",
+     "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 76 pages on 16 Dec 2026, cut or merge weak pages and earn a few links.",
      "pages": [],
      "detail": "",
      "broken": false
     },
     {
+     "id": "rival-trailers-free",
+     "title": "\"trailers free\": we're not in the top 10 (Search Console avg 78); unknown site leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/browse"
+     ],
+     "detail": "Top 5: 1. unknown site, 2. unknown site, 3. facebook.com, 4. videezy.com, 5. unknown site",
+     "broken": false
+    },
+    {
+     "id": "rival-movietr",
+     "title": "\"movietr\": we're not in the top 10 (Search Console avg 58); movietr.com leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/"
+     ],
+     "detail": "Top 5: 1. movietr.com, 2. unknown site, 3. apps.apple.com, 4. apps.apple.com, 5. unknown site",
+     "broken": false
+    },
+    {
      "id": "seo-words",
-     "title": "4 page(s) under 250 words",
+     "title": "2 page(s) under 250 words",
      "severity": "low",
      "area": "seo",
      "fix": "Fine for tools; for guides add the answer people search for.",
      "pages": [
-      "/movies/whalefall-2026",
-      "/movies/hero-2002",
-      "/contact",
-      "/terms"
+      "/movies/mr-irrelevant",
+      "/movies/whalefall-2026"
      ],
      "detail": "",
      "broken": false
@@ -75,7 +173,7 @@
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-12-01",
+   "nextDue": "2026-11-30",
    "topFix": "1 title outside 30–65 characters",
    "broken": 0,
    "newIssues": 0,
@@ -124,20 +222,81 @@
    "name": "tradeadmin.com.au",
    "url": "https://tradeadmin.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-17T20:15:42Z",
-   "score": 100,
+   "scannedAt": "2026-11-24T04:23:10Z",
+   "score": 93,
    "grade": "A",
-   "change": 0,
+   "change": -7,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-24",
-   "topFix": null,
+   "nextDue": "2026-12-01",
+   "topFix": "1 of your top 8 pages aren't in Google's index",
    "broken": 0,
-   "newIssues": 0,
-   "fixed": 1,
-   "costUsd": 0,
-   "top": []
+   "newIssues": 6,
+   "fixed": 0,
+   "costUsd": 0.01,
+   "top": [
+    {
+     "id": "not-indexed",
+     "title": "1 of your top 8 pages aren't in Google's index",
+     "severity": "high",
+     "area": "indexing",
+     "fix": "Make the page more useful than what ranks, link to it from the home page, then request indexing in Search Console.",
+     "pages": [
+      "/job-management-software"
+     ],
+     "detail": "/job-management-software: Discovered – currently not indexed",
+     "broken": false
+    },
+    {
+     "id": "rival-servicem8-vs",
+     "title": "\"servicem8 vs\": we're not in the top 10 (Search Console avg 80); tpstech.au leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/tradify-vs-servicem8"
+     ],
+     "detail": "Top 5: 1. tpstech.au, 2. softwareworld.co, 3. reverbico.com, 4. softwareworld.co, 5. sourceforge.net",
+     "broken": false
+    },
+    {
+     "id": "rival-servicem8-tradify-comparison",
+     "title": "\"servicem8 tradify comparison\": we're not in the top 10 (Search Console avg 78); trackyatradie.com leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/tradify-vs-servicem8"
+     ],
+     "detail": "Top 5: 1. trackyatradie.com, 2. kindraai.dev, 3. tradieautomate.com, 4. gladstonedigital.com.au, 5. sourceforge.net",
+     "broken": false
+    },
+    {
+     "id": "rival-servicem8-pricing",
+     "title": "\"servicem8 pricing\": we're not in the top 10 (Search Console avg 75); itqlick.com leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/tradify-vs-servicem8"
+     ],
+     "detail": "Top 5: 1. itqlick.com, 2. itqlick.com, 3. cdn.prod.website-files.com, 4. itqlick.com, 5. itqlick.com",
+     "broken": false
+    },
+    {
+     "id": "rival-service-mate-vs-tradify",
+     "title": "\"service mate vs tradify\": we're not in the top 10 (Search Console avg 77); 6sense.com leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/tradify-vs-servicem8"
+     ],
+     "detail": "Top 5: 1. 6sense.com, 2. unknown site, 3. tradieautomate.com, 4. gladstonedigital.com.au, 5. tradifyhq.com",
+     "broken": false
+    }
+   ]
   },
   "paycalc": {
    "name": "mypaycalc.com.au",
@@ -255,11 +414,13 @@
    ]
   }
  },
- "updated": "2026-11-23T23:56:16Z",
+ "updated": "2026-11-24T04:23:10Z",
  "lastRun": {
-  "at": "2026-11-23T23:56:16Z",
+  "at": "2026-11-24T04:23:10Z",
   "scanned": [
-   "community-help-co"
+   "trailers",
+   "vic",
+   "trade-admin"
   ]
  }
 }

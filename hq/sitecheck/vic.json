@@ -3,12 +3,12 @@
  "name": "victours.com.au",
  "url": "https://victours.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-17T12:26:47Z",
+ "scannedAt": "2026-11-24T04:23:10Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
- "nextDue": "2026-11-24",
- "score": 100,
+ "nextDue": "2026-12-01",
+ "score": 95,
  "grade": "A",
  "areas": {
   "health": {
@@ -47,41 +47,102 @@
    "label": "Google trend"
   },
   "rivals": {
-   "score": null,
-   "grade": null,
+   "score": 35,
+   "grade": "F",
    "label": "Competitors"
   }
  },
- "pages": 311,
- "findings": [],
+ "pages": 340,
+ "findings": [
+  {
+   "id": "rival-melbourne-accomodation-southbank",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"melbourne accomodation southbank\": we're not in the top 10 (Search Console avg 72); booking.com leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/southbank/stay"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. booking.com, 2. mantrasouthbankmelbourne.com.au, 3. trivago.com.au, 4. mercuremelbournesouthbank.com.au, 5. adinahotels.com",
+   "impact": 1.2,
+   "broken": false
+  },
+  {
+   "id": "rival-accommodation-melbourne-southbank",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"accommodation melbourne southbank\": we're not in the top 10 (Search Console avg 82); booking.com leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/southbank/stay"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. booking.com, 2. mantrasouthbankmelbourne.com.au, 3. trivago.com.au, 4. mercuremelbournesouthbank.com.au, 5. wotif.com",
+   "impact": 1.2,
+   "broken": false
+  },
+  {
+   "id": "rival-yarra-valley-day-trip",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"yarra valley day trip\": we're not in the top 10 (Search Console avg 71); iyuetravel.com.au leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/road-trips/yarra-valley-day-trip"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. iyuetravel.com.au, 2. pack-lightly.com, 3. tripadvisor.in, 4. bookme.com.au, 5. travellarksgetaways.com.au",
+   "impact": 1.1,
+   "broken": false
+  },
+  {
+   "id": "rival-things-to-do-in-queenscliff",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"things to do in queenscliff\": we're not in the top 10 (Search Console avg 68); instagram.com leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/queenscliff"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. instagram.com, 2. travelobiz.com, 3. tripadvisor.com.au, 4. banksatqueenscliffe.com.au, 5. instagram.com",
+   "impact": 1.0,
+   "broken": false
+  },
+  {
+   "id": "rival-melbourne-day-trips",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"melbourne day trips\": we're not in the top 10 (Search Console avg 77); viator.com leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/day-trips"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. viator.com, 2. lowcostselfdrive.com.au, 3. touropia.com, 4. easternmelburnian.com.au, 5. australia.com",
+   "impact": 1.0,
+   "broken": false
+  }
+ ],
  "google": {
-  "impr7": 164,
-  "imprPrev7": 107,
+  "impr7": 387,
+  "imprPrev7": 164,
   "clicks7": 0,
   "clicksPrev7": 0,
-  "impr28": 2775,
-  "clicks28": 5,
-  "views28": 92,
-  "viewsPrev28": 0,
-  "recentViews": 5,
-  "lastGa4Day": "2026-11-15",
-  "gscTo": "2026-11-13"
+  "impr28": 2329,
+  "clicks28": 3,
+  "views28": 50,
+  "viewsPrev28": 49,
+  "recentViews": 6,
+  "lastGa4Day": "2026-11-21",
+  "gscTo": "2026-11-20"
  },
  "queries": [
   {
-   "query": "sorrento restaurants",
-   "position": 85.8,
-   "impressions": 30
-  },
-  {
-   "query": "1004 mornington-flinders road red hill vic 3937",
-   "position": 35.6,
-   "impressions": 28
-  },
-  {
    "query": "110 metung road metung vic 3904",
-   "position": 73.9,
-   "impressions": 24
+   "position": 74.3,
+   "impressions": 28
   },
   {
    "query": "melbourne accomodation southbank",
@@ -89,23 +150,23 @@
    "impressions": 23
   },
   {
-   "query": "yarra valley day trip",
-   "position": 68.5,
-   "impressions": 18
-  },
-  {
    "query": "179 day avenue omeo vic 3898",
-   "position": 73,
-   "impressions": 18
-  },
-  {
-   "query": "activities lorne victoria",
-   "position": 66,
-   "impressions": 17
+   "position": 73.3,
+   "impressions": 21
   },
   {
    "query": "110 metung road metung",
-   "position": 78.7,
+   "position": 80.1,
+   "impressions": 20
+  },
+  {
+   "query": "things to do in queenscliff",
+   "position": 67.6,
+   "impressions": 17
+  },
+  {
+   "query": "1004 mornington-flinders road red hill vic 3937",
+   "position": 48.9,
    "impressions": 17
   },
   {
@@ -114,14 +175,14 @@
    "impressions": 17
   },
   {
-   "query": "southbank melbourne accomodation",
-   "position": 83.4,
+   "query": "yarra valley day trip",
+   "position": 70.6,
    "impressions": 16
   },
   {
-   "query": "bright things to do",
-   "position": 48.9,
-   "impressions": 15
+   "query": "southbank melbourne accomodation",
+   "position": 83.4,
+   "impressions": 16
   },
   {
    "query": "accommodation melbourne southbank",
@@ -132,36 +193,6 @@
    "query": "melbourne southbank accomodation",
    "position": 74.9,
    "impressions": 15
-  },
-  {
-   "query": "things to do in queenscliff",
-   "position": 65.6,
-   "impressions": 14
-  },
-  {
-   "query": "lorne attractions",
-   "position": 73.6,
-   "impressions": 14
-  },
-  {
-   "query": "restaurants in sorrento",
-   "position": 95.9,
-   "impressions": 14
-  },
-  {
-   "query": "victours",
-   "position": 4.1,
-   "impressions": 13
-  },
-  {
-   "query": "things to do lorne",
-   "position": 80.2,
-   "impressions": 13
-  },
-  {
-   "query": "614 tongio gap road omeo",
-   "position": 64.8,
-   "impressions": 13
   },
   {
    "query": "accommodation melbourne southbank area",
@@ -184,23 +215,23 @@
    "impressions": 13
   },
   {
-   "query": "mornington",
-   "position": 40.3,
-   "impressions": 12
-  },
-  {
-   "query": "486 omeo valley road omeo",
-   "position": 62.5,
-   "impressions": 12
-  },
-  {
-   "query": "marysville",
-   "position": 48.4,
+   "query": "melbourne day trips",
+   "position": 76.6,
    "impressions": 11
   },
   {
-   "query": "apollo bay",
-   "position": 76.2,
+   "query": "rye",
+   "position": 92,
+   "impressions": 11
+  },
+  {
+   "query": "beechworth",
+   "position": 97.1,
+   "impressions": 10
+  },
+  {
+   "query": "mornington",
+   "position": 30.4,
    "impressions": 10
   },
   {
@@ -209,23 +240,23 @@
    "impressions": 10
   },
   {
-   "query": "lakes entrance",
-   "position": 54.6,
+   "query": "kyneton",
+   "position": 89.7,
    "impressions": 10
   },
   {
-   "query": "614 tongio gap road omeo vic 3898",
-   "position": 68.4,
+   "query": "activities lorne victoria",
+   "position": 65.2,
    "impressions": 10
   },
   {
-   "query": "1004 mornington-flinders road red hill",
-   "position": 24.3,
+   "query": "omeo",
+   "position": 88.2,
    "impressions": 10
   },
   {
-   "query": "rye",
-   "position": 94.3,
+   "query": "486 omeo valley road omeo",
+   "position": 69.2,
    "impressions": 10
   },
   {
@@ -239,23 +270,8 @@
    "impressions": 10
   },
   {
-   "query": "melbourne day trips",
-   "position": 75.9,
-   "impressions": 9
-  },
-  {
-   "query": "things to do in daylesford",
-   "position": 50.2,
-   "impressions": 9
-  },
-  {
-   "query": "all you can eat mornington",
-   "position": 59.6,
-   "impressions": 9
-  },
-  {
-   "query": "mornington main street restaurants",
-   "position": 56.2,
+   "query": "bright victoria",
+   "position": 67.9,
    "impressions": 9
   },
   {
@@ -264,48 +280,28 @@
    "impressions": 9
   },
   {
-   "query": "things to do in st kilda",
-   "position": 67.1,
-   "impressions": 9
-  },
-  {
-   "query": "visit bright",
-   "position": 64,
+   "query": "lorne attractions",
+   "position": 72.3,
    "impressions": 8
   },
   {
-   "query": "group activities lorne",
-   "position": 63.1,
+   "query": "things to do lorne",
+   "position": 80.9,
    "impressions": 8
   },
   {
-   "query": "mornington peninsula restaurants",
-   "position": 99,
+   "query": "614 tongio gap road omeo",
+   "position": 70.9,
    "impressions": 8
   },
   {
-   "query": "omeo",
-   "position": 75.6,
+   "query": "red hill brewery",
+   "position": 82.5,
    "impressions": 8
   },
   {
    "query": "brunch in richmond",
    "position": 93.5,
-   "impressions": 8
-  },
-  {
-   "query": "best restaurants sorrento",
-   "position": 95.6,
-   "impressions": 8
-  },
-  {
-   "query": "pubs in sorrento",
-   "position": 87.8,
-   "impressions": 8
-  },
-  {
-   "query": "south yarra restaurants",
-   "position": 51,
    "impressions": 8
   },
   {
@@ -317,16 +313,490 @@
    "query": "south bank accommodation melbourne",
    "position": 71.6,
    "impressions": 8
+  },
+  {
+   "query": "williamstown",
+   "position": 69.6,
+   "impressions": 8
+  },
+  {
+   "query": "victours",
+   "position": 4.1,
+   "impressions": 7
+  },
+  {
+   "query": "bright things to do",
+   "position": 55.1,
+   "impressions": 7
+  },
+  {
+   "query": "things to do in daylesford",
+   "position": 53,
+   "impressions": 7
+  },
+  {
+   "query": "lakes entrance",
+   "position": 56.9,
+   "impressions": 7
+  },
+  {
+   "query": "all you can eat mornington",
+   "position": 62.4,
+   "impressions": 7
+  },
+  {
+   "query": "614 tongio gap road omeo vic 3898",
+   "position": 70,
+   "impressions": 7
+  },
+  {
+   "query": "red hill accommodation",
+   "position": 75.3,
+   "impressions": 7
+  },
+  {
+   "query": "south yarra restaurants",
+   "position": 50.6,
+   "impressions": 7
+  },
+  {
+   "query": "southbank melbourne accommodation",
+   "position": 80.7,
+   "impressions": 7
+  },
+  {
+   "query": "great ocean road",
+   "position": 80.2,
+   "impressions": 6
+  },
+  {
+   "query": "bellarine peninsula",
+   "position": 87.5,
+   "impressions": 6
+  },
+  {
+   "query": "dunkeld racecourse",
+   "position": 58.7,
+   "impressions": 6
+  },
+  {
+   "query": "lake entrance vic",
+   "position": 82.5,
+   "impressions": 6
+  },
+  {
+   "query": "group activities lorne",
+   "position": 63.2,
+   "impressions": 6
   }
  ],
- "live": null,
- "costUsd": 0,
+ "live": {
+  "serps": [
+   {
+    "keyword": "melbourne accomodation southbank",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "booking.com",
+      "url": "https://google.com/goto?url=CAESeQHEIkXXG0jdLsQ135JKbXPjVeAE266mBQiSPCDJiQIHoqXC-z2KpX5asdu_hQgV6INXZ56Oc6pwkiqSIJEF0sIW-jrj8jsd-GbpRDBC5areCSLpqAd754-QHUdjx6d495PfKQ2jPiiFfB8UHfoSCi9Hw6UsjFpLGKo&gsessionid=t5nMUq7N6EJjXrIZQY7MB67iR0RGBDpdk9WLnz93hNEvZfQ50lQQYw",
+      "title": "The best hotels in Southbank, Melbourne, Australia"
+     },
+     {
+      "rank": 2,
+      "domain": "mantrasouthbankmelbourne.com.au",
+      "url": "https://google.com/goto?url=CAESaQHEIkXXUKqHjkNRUnkxVwBhbojyVGbhVNwstc_Be6v2XPAjWr-OyqTOY9Nkw0ovaLIsnru_T4Zp6xLbq1SRCsZX8Hg5JjSzJxQEJNoeryMZAx83cLlOnCGjNUX8N6l-qZGSOAn0Q8FtvQ&gsessionid=t5nMUq7N6EJjXrIZQY7MB67iR0RGBDpdk9WLnz93hNEvZfQ50lQQYw",
+      "title": "Mantra Southbank Melbourne"
+     },
+     {
+      "rank": 3,
+      "domain": "trivago.com.au",
+      "url": "https://google.com/goto?url=CAESigEBxCJF1z0x8T41bzg7UVjZk5p9LE1pLfIu4kWwugYCAd8rvxkBuOhi7bZ0Haw-eyCWoFRvT8S0D8mhJtoSykmLOc1Y96qPwZQ7827TsCVse-_S1OGoKQ9-Zqc4pqDG2KC6DLxbxTSkZD0ePzHA9YR2xWycV4ogAltqa524MEgxqgJ0WKLMAdEPyTE&gsessionid=t5nMUq7N6EJjXrIZQY7MB67iR0RGBDpdk9WLnz93hNEvZfQ50lQQYw",
+      "title": "Hotels near Southbank in Melbourne, Australia"
+     },
+     {
+      "rank": 4,
+      "domain": "mercuremelbournesouthbank.com.au",
+      "url": "https://google.com/goto?url=CAESagHEIkXX0btM-cFJkbttCOFXAP8VjUZXw2Qh39B3k7UkjO1MZ_mfSgoGxpPpqNYShwgZzSYnAyo5JscrcidDe3trGEi1xDNpV7DpwlLuLzAHzrZyDrHlwK9pUdzSi93kXKPHCsZJWgZOn8o&gsessionid=t5nMUq7N6EJjXrIZQY7MB67iR0RGBDpdk9WLnz93hNEvZfQ50lQQYw",
+      "title": "Mercure Melbourne Southbank | 4-Star Hotel Melbourne"
+     },
+     {
+      "rank": 5,
+      "domain": "adinahotels.com",
+      "url": "https://google.com/goto?url=CAESdwHEIkXXf1LvMLtDTF0IBPxun9f_BAv67hf486bTa9SZZYu_Nr3GKwaSbOtF447Y5HacgxG0EPXNa4cmWFg4Hq7grq2QhxLoIy7_9GXBdyhxaMjDaszg35_1sYn0IUg5d6HVUDzOjw3SY6sss_ztKZDowDBNwbk8&gsessionid=t5nMUq7N6EJjXrIZQY7MB67iR0RGBDpdk9WLnz93hNEvZfQ50lQQYw",
+      "title": "Adina Melbourne Southbank | Apartment Hotel with Kitchen"
+     },
+     {
+      "rank": 6,
+      "domain": "hotelscombined.com.au",
+      "url": "https://google.com/goto?url=CAEScgHEIkXXonzSs7DeSqIhVnllfGDl8xoOa1GRcuaAfxA44cc-JKoHsmuE6kysYlJwn5RgGds63Lz68JF_f881lnnEXLbse8WWEfwkrVVS1DXJQhJUdSSQ0K_InvS3G_bdIX0HUlLFwMwgz3tP8CA-G4C9LA&gsessionid=t5nMUq7N6EJjXrIZQY7MB67iR0RGBDpdk9WLnz93hNEvZfQ50lQQYw",
+      "title": "Hotels in Southbank, Melbourne"
+     },
+     {
+      "rank": 7,
+      "domain": "wotif.com",
+      "url": "https://google.com/goto?url=CAESlAEBxCJF14pyZUx1OjHfB-OJgtJTZGiqAzMwSZQRlbe3gsEtA1HnLSVNlrp0cpgkYgyYASDxEzKOOx2DtEYDkyjWGjX8xbwBpC4pmDWmyywY3asoj-PKDzbFFT06n_5iSm-FUuNH32yJnRwmVRuJ--EcePa2SsLJwPPRGJGLu_gILXYP2J2J5TL9gkb_K3Gk7UqUflwZ&gsessionid=t5nMUq7N6EJjXrIZQY7MB67iR0RGBDpdk9WLnz93hNEvZfQ50lQQYw",
+      "title": "Best Hotels in Southbank from AU$110"
+     },
+     {
+      "rank": 8,
+      "domain": "all.accor.com",
+      "url": "https://google.com/goto?url=CAEShgEBxCJF13th6I8HC8Mv_WjEqsVnkhv10fFUCFtkX99WuXAjBIKMIZcQS6_ela9RXc8-J-C4HaspYKZx8qXxqeslFC9WZqJPXdj6IRGMr2S6Eh8TpGyuHjvC2Bz7MWttn8aKjwfcW5NXT6zX1S8Yirfp-DEQ9FVVde9oXoXWGSfceJve7CethA&gsessionid=t5nMUq7N6EJjXrIZQY7MB67iR0RGBDpdk9WLnz93hNEvZfQ50lQQYw",
+      "title": "Southbank : Our Best Hotels | Book Online Now - Accor"
+     },
+     {
+      "rank": 9,
+      "domain": "expedia.com.au",
+      "url": "https://google.com/goto?url=CAESmQEBxCJF15L3NFil3tBTVnEdpePK0ug-mmGwp7aq0lmfv7f0UUn4kucEsoj9lcOV8bcqDHXJQGFRpgi48CdFLqjOZFAmmEiriIeiZw8aRNOvZJuaC6rnisBzalrGXyYXZswTTAIuW4b-wVYWQkzfqSruIrrx6hBdNwSdIpc12X7M3lmTDOW0vwaSsbdgl2zCOrDsTrpzhuEFdPI&gsessionid=t5nMUq7N6EJjXrIZQY7MB67iR0RGBDpdk9WLnz93hNEvZfQ50lQQYw",
+      "title": "Cheap Accommodation in Southbank - Hotels"
+     }
+    ],
+    "impressions": 23,
+    "gscPosition": 72,
+    "ourPage": "/southbank/stay",
+    "ourRank": null
+   },
+   {
+    "keyword": "things to do in queenscliff",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "instagram.com",
+      "url": "https://google.com/goto?url=CAESfQHEIkXXgMmi5yv2QEBfKpQwYuMBZ7wMZP0sA3H0mCFzFKg1LNGBXsAQaViK72OfChtU_SG6dynocu6B2tfG2Z9BH8DH4ExWBjn7nupQN0VjMdkRU6Zb00mmPtUAKiwhp6qt_ov1jjZhKFkYj8vIIB52bOMIvHqvkCwxhRkY&gsessionid=hFjYOz4HigVbjgrj6dns3mTn9U1oDGzy1OpxRNu8mnUy4HdUtQty0g",
+      "title": "Queenscliff Day Trip Itinerary"
+     },
+     {
+      "rank": 2,
+      "domain": "travelobiz.com",
+      "url": "https://google.com/goto?url=CAESmAEBxCJF13KyRA70sbMkJcn5dJoon49ovD8wnkKkXVHKf3VnixtjNzRERqjuFuEa4bB5jL9yTN6R3oeV7rMO_ZVTANQ4UWOFHdmywOnQ4ORa5rOlua8JNKzCpVu9SpKddsYxQKHlSkWfgTYY-gn9LPaVCugi1SvdhO9635xyWRqeS-sq3fqO9-2cZOgsdJo1vGpPZMkvakctdg&gsessionid=hFjYOz4HigVbjgrj6dns3mTn9U1oDGzy1OpxRNu8mnUy4HdUtQty0g",
+      "title": "Discover Queenscliff, Victoria: Your Essential Coastal ..."
+     },
+     {
+      "rank": 3,
+      "domain": "tripadvisor.com.au",
+      "url": "https://google.com/goto?url=CAESlwEBxCJF1x2CrR4g6c9Vx5T0UnK-QgzcKx4xh5nxFGM-mXOnaqc4-wvpuEyrtc_4p1KSXOcDcvyA0swEza0mfUZchHWB_H6dU8kfRyz-ZiSsjx5iNQnfND-eSrzBT1_KfTneaO3zW2FALuyjBUKDt2a83kn9MFh1oMjDYHM-94ozurMnCjIjMk6V6b40tLbo3eyjt8W4bI92&gsessionid=hFjYOz4HigVbjgrj6dns3mTn9U1oDGzy1OpxRNu8mnUy4HdUtQty0g",
+      "title": "THE 5 BEST Queenscliff Sights & Landmarks 2026"
+     },
+     {
+      "rank": 4,
+      "domain": "banksatqueenscliffe.com.au",
+      "url": "https://google.com/goto?url=CAEScAHEIkXXhAGozyuWhTqdMDj-YM5zwKMSIZgBriRj8fiqt3zhkl-ea3FNdzAbgiwchuH330GeotlQzhRTpFDsUP09hA9dRkfCkCAH4TIuzHvd93pgKN5QGNuD4bCXVlZyjykuuDrXj-dz-7n4iZ-c4ZQ&gsessionid=hFjYOz4HigVbjgrj6dns3mTn9U1oDGzy1OpxRNu8mnUy4HdUtQty0g",
+      "title": "Queenscliffe is full of delights . . make the most of them"
+     },
+     {
+      "rank": 5,
+      "domain": "instagram.com",
+      "url": "https://google.com/goto?url=CAEShAEBxCJF1-2Rgq2KAodq0t4NHWbu3hHB3-194WZt3P07GSyM7foCJKaJu7UbAVYRyDeB5GYs3NpC8_3X6kfxKwZ8ClfGo_1FUAfjchjMGCVvZqGg6Oim5JYqnhkGjoK7qosgPw2tbK8Io1ToAnYo-t3NoIIMd6YMhwhC35u8h1-_v9vhVA4&gsessionid=hFjYOz4HigVbjgrj6dns3mTn9U1oDGzy1OpxRNu8mnUy4HdUtQty0g",
+      "title": "Things To Do In Queenscliffe"
+     },
+     {
+      "rank": 6,
+      "domain": "intown.com.au",
+      "url": "https://google.com/goto?url=CAESfwHEIkXXSnEMYXXKCBnohWrWCAfSCOHHHu2w4ZCa4-iAaOtJzgZjZZLk0KO-HN8r_q4cezGGKiFLLhvJWRVx_3mvD_Qd3a5qb5WiPrM_BX1GboaoRb0_7jw_6BsxSEdpLK1A9NHLHWVeiCaKmiZ6YHK7WooNzxR19i3HaHRr2do&gsessionid=hFjYOz4HigVbjgrj6dns3mTn9U1oDGzy1OpxRNu8mnUy4HdUtQty0g",
+      "title": "Queenscliff Highlights"
+     },
+     {
+      "rank": 7,
+      "domain": "wanderlog.com",
+      "url": "https://google.com/goto?url=CAESgwEBxCJF1z54N-b88A1rltkbXXZp-_ofafnxy3uK6P-2jLhtJuG-oDscDVpXuQ61l2JdkE2kD24WOEsElcJafqWpM7coghsdPtbH6x_ixVLbWcMZI36F8-g0k9YCv2SxqdlYfYteNsU1QGYn8vjqrSZvIgyQlfQ0EKOWidpLe18q_Wkh2w&gsessionid=hFjYOz4HigVbjgrj6dns3mTn9U1oDGzy1OpxRNu8mnUy4HdUtQty0g",
+      "title": "2-Day Queenscliff Itinerary"
+     },
+     {
+      "rank": 8,
+      "domain": "ipv6.queenscliffe.vic.gov.au",
+      "url": "https://google.com/goto?url=CAESlwEBxCJF18qB4QtS3a_4p_hEdBtvRQgo5Nhcj0EyQRML6fWBSWgIqb21qBTr_qCwgRHJnqbpxK-l3OlaqWo-bfl5GOybG82vIilKWGTezlIksh1GdrHXuKIVeXq64fp1BYLjUZluwDt1yEDqP0kfVLXIXJVeXa8Dd5M-cgnx7l2EOe9EhUrLBaxfkmaO1zFNZ03Fe6tIu4JX&gsessionid=hFjYOz4HigVbjgrj6dns3mTn9U1oDGzy1OpxRNu8mnUy4HdUtQty0g",
+      "title": "Exploring the Bellarine Peninsula and beyond"
+     },
+     {
+      "rank": 9,
+      "domain": "wildlifetours.com.au",
+      "url": "https://google.com/goto?url=CAESxAEBxCJF1wzQyHWHFsdUu0DMl0td2fUcs9fB1MDuifZ2o4BzXXNl7BJCnX4k-JqJ6d6Lf6oUwqPlP-h0VazvYxSZ1ilRfOD9IPzQq0iYLwSxpOgyohbK6qPRsLH9Plk1E7osOXggW6-bbMJXWatupaGccEr6P0iCsg8RN_gpY5cfs0yTquxsnpoA_q4fh9dqw8FVvO2StxN9l8BO-CDAr7OHAz0kB5tjBuIdZSRE2JGYawds5Qyr-_prgLF3IDpSe09xdTTW&gsessionid=hFjYOz4HigVbjgrj6dns3mTn9U1oDGzy1OpxRNu8mnUy4HdUtQty0g",
+      "title": "Visit Queenscliffe"
+     },
+     {
+      "rank": 10,
+      "domain": "thequeenscliffhotel.com.au",
+      "url": "https://google.com/goto?url=CAEScwHEIkXXFV8dcw6Y1sj0yDDLe8PRjPmP1Jley3nj1W4dnYkZXJZw5dz3oyM5zVf-IOQ8AS6Q1mYWXyHIXbVn4CUaR_WPpnMaahl7Q5L3H_8lovt9GDWYKV98IGOPOnvK8neFMYKvZIoxbVVD_G4gsIQ9mCQ&gsessionid=hFjYOz4HigVbjgrj6dns3mTn9U1oDGzy1OpxRNu8mnUy4HdUtQty0g",
+      "title": "Your Guide to Local Tours"
+     }
+    ],
+    "impressions": 17,
+    "gscPosition": 67.6,
+    "ourPage": "/queenscliff",
+    "ourRank": null
+   },
+   {
+    "keyword": "yarra valley day trip",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "iyuetravel.com.au",
+      "url": "https://google.com/goto?url=CAEScwHEIkXXZmAKRaEX1nEneZj2jS5wad91BbYwCflGzT3Af_aPhqjGwzlD5EESU1pNl_eG3vBdW5BKLyeJuuwUgD5tt50bkcaO5LFvzDxyyKEBYk5bBUtE01NxDFiLFSt78aeVNjgYmV4KlIJJXdy9N1U5duc&gsessionid=WR3eyIPmcUD18uzjEG8Tk28vL38zAJePvY0b1vpOEdE-zkN6AowCJQ",
+      "title": "Explore the Yarra Valley: Wine, Food and Nature"
+     },
+     {
+      "rank": 2,
+      "domain": "pack-lightly.com",
+      "url": "https://google.com/goto?url=CAESbgHEIkXXIsVUguZuLzfP_xn2qLXDb3PBU3liWzyflEgXFbp1L2IcmlFIQljbioWtGL7qFtj4F9nzHa-aCHdoqYw1nfNHWR5X83AlEezeIOYEkpVQOLr1eyWtPp-LTGLYBpyMipuPqlm0UhB577vG&gsessionid=WR3eyIPmcUD18uzjEG8Tk28vL38zAJePvY0b1vpOEdE-zkN6AowCJQ",
+      "title": "6 Things to do in Yarra Valley: Cool-Climate Wine Region ..."
+     },
+     {
+      "rank": 3,
+      "domain": "tripadvisor.in",
+      "url": "https://google.com/goto?url=CAESyQEBxCJF13HFzdOJ_smdUwnfCzEH-743saxn3JnggqvYT6ZR-JdcOY0ekmtwmhJPu791h9HKj5gEer-QCb46IZSxP7o5mOQyCjfvbuKRBYm6z1W5wsSGDn0qZRdErOuMsfxtgOAumVaKaBD058iear9MY0mF9RhIzZdgZ5xC8XIqQO4pljCrDU6Le00YEpCTsRpN8Cvy-_9Zi-M8FwwWwn24HByL_M5amzquo650vn0JkiEYbYgZgsutbEbywEsrFPZLXmxfxLDaiek&gsessionid=WR3eyIPmcUD18uzjEG8Tk28vL38zAJePvY0b1vpOEdE-zkN6AowCJQ",
+      "title": "Full Day Yarra Valley Experience in Australia (with Reviews)"
+     },
+     {
+      "rank": 4,
+      "domain": "bookme.com.au",
+      "url": "https://google.com/goto?url=CAESkgEBxCJF123O8DeEJcEJWnYluKS1GPqow8nhVNF--0lhymUm70n5nUYItEMOCgZGpPBvH0FGKyXBRCD6FFMhEdOFfU8i4cfQu24UOaO_Dawj7RlJ1Yh07cBSn6EFC2hKLm7khvxzcQW8ckIFsTTFj3vJrxPSAL9hXXzWBcnSrm1-YFgANI6warEdag6fLjlvAvF1rQ&gsessionid=WR3eyIPmcUD18uzjEG8Tk28vL38zAJePvY0b1vpOEdE-zkN6AowCJQ",
+      "title": "Yarra Valley"
+     },
+     {
+      "rank": 5,
+      "domain": "travellarksgetaways.com.au",
+      "url": "https://google.com/goto?url=CAESfgHEIkXXxhnV37Tv38hscWMa8HnE1X13N14rgLv5uiAT3xpVkJpOnsqhErMUkHyqt2dnB80JFiGfl9HeF7WabqIpA1TJacIwg3JiYOGr6C5lLqYq8IAkVAp3nQG9dR6Y15XkkXK4PJsbfYK19wx1q93kduRV-tmTC7gcoPb68g&gsessionid=WR3eyIPmcUD18uzjEG8Tk28vL38zAJePvY0b1vpOEdE-zkN6AowCJQ",
+      "title": "Roadtrip around Yarra Valley, VIC – Scenic 3-Day Itinerary"
+     },
+     {
+      "rank": 6,
+      "domain": "tripadvisor.co.za",
+      "url": "https://google.com/goto?url=CAESkQEBxCJF1xZAMJnt6dVZTCzxDsDVH6a5rL0DlVYNM1D5Rr6YQXLHKp5L6FnBubPLa_RTZjivlZ5KoyrS7tSnzmuIa_1R9jz14XA_T84Pa6kNMgLTiVJfA-zcchzSmmz2M8sbnwl_BqAdXWDpfgAeOYnMF5jTxDfhplCpUPJq56U8UbGNLHn9DiKsYAGGKWOhYMDo&gsessionid=WR3eyIPmcUD18uzjEG8Tk28vL38zAJePvY0b1vpOEdE-zkN6AowCJQ",
+      "title": "Yarra Valley: All You Need to Know Before You Go (2026)"
+     },
+     {
+      "rank": 7,
+      "domain": "viator.com",
+      "url": "https://google.com/goto?url=CAESpAEBxCJF18oGs9MsZAUvx8sagezwUNAsSfsO7I_50vuYyxa6BGWwc8WPRCKcw9bzxbjRL7ePMbF9Sa4Dm023xeD-_P9Q6q0AyT-Pwme12XajBw-9JdTnE-f97G3LV6f2_thEc68ddAdhK-lzhNMveiH0Lux3M-J-KLEtShBaygpcgOJz0iOiCWdYM-gsUACP34hOM8mUHbXEGEGFJEFhZP4r1Rm5nw&gsessionid=WR3eyIPmcUD18uzjEG8Tk28vL38zAJePvY0b1vpOEdE-zkN6AowCJQ",
+      "title": "Private Yarra Valley Day Trip from Melbourne"
+     },
+     {
+      "rank": 8,
+      "domain": "sg.trip.com",
+      "url": "https://google.com/goto?url=CAESnwEBxCJF18TeG-S6he4QSKu_sFihAEV5rn3EyWauLdhcbQwqlq0YJbp4WvrvjWdyxUMJNna7uUaqZp-FaGzxsIu4D5VSHM9sqX4om_9wiDV24X8yv7qugko6qh74y3d2FuE_xhR6InnA9LRjnPYpr79eAOZu6goQau8R_7qzSG6Zq4CcAd3VC6aIJ1PN6hBvtrU-g3TVFd_HXq-WOlGK9eA&gsessionid=WR3eyIPmcUD18uzjEG8Tk28vL38zAJePvY0b1vpOEdE-zkN6AowCJQ",
+      "title": "2026 Recommended Day tours in Yarra Valley & ..."
+     },
+     {
+      "rank": 9,
+      "domain": "yarravalleywinerytoursmelbourne.com.au",
+      "url": "https://google.com/goto?url=CAESigEBxCJF17-r_0C1i3_WP7ebIf1WZ1YflJPxVmu4-IkfkBj2I8akKZgHm1uIf6Q91ADQKjNQzp7318fDlJ60RmQGHTesgnid7AT0_hTj6X-hdesqbpJJnPprW5DHK8Lr4IH_MjTZ-0JacDd3aK5bdzUW7_hyhO0PCHaDPXatTB_cWywXpmkgmYVza9c&gsessionid=WR3eyIPmcUD18uzjEG8Tk28vL38zAJePvY0b1vpOEdE-zkN6AowCJQ",
+      "title": "Things to do in Yarra Valley"
+     }
+    ],
+    "impressions": 16,
+    "gscPosition": 70.6,
+    "ourPage": "/road-trips/yarra-valley-day-trip",
+    "ourRank": null
+   },
+   {
+    "keyword": "accommodation melbourne southbank",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "booking.com",
+      "url": "https://google.com/goto?url=CAESeQHEIkXXySTRHCGexs7PVU7-2pwb362I5zi0SNs4zTHRZKSRUkAplzYwRYr4SIsPQNlLSfZk3lujoGl_eTgsPNtnycqPisCa4jlfQQbVgDJ5-jpEWqFgj7zQaynLD8GxmNXY2vuJ9VTcycmKTcoPSkSJRdBwzMs1Q9w&gsessionid=HrM4HSUl6gviwiDCWlsYEWA-AqKDChZVxCbk1SjGcTtowBeXeE04aw",
+      "title": "The best hotels in Southbank, Melbourne, Australia"
+     },
+     {
+      "rank": 2,
+      "domain": "mantrasouthbankmelbourne.com.au",
+      "url": "https://google.com/goto?url=CAESaQHEIkXXxQw-t9U6Lrqx4rUjcEJsM4VVBcfk6ah8IsKys5pLbCySTpRsQYnEq7p-Bk9y3w1IMb1geP3IUamT7EP2ljvNpyFtHgNZEbkE-8ArBaGRVXJMF1oi1UWLr7c2OUA0Aduamwc-6A&gsessionid=HrM4HSUl6gviwiDCWlsYEWA-AqKDChZVxCbk1SjGcTtowBeXeE04aw",
+      "title": "Mantra Southbank Melbourne"
+     },
+     {
+      "rank": 3,
+      "domain": "trivago.com.au",
+      "url": "https://google.com/goto?url=CAESigEBxCJF1w1PgY48YZPJV7FdTH1LBwOWabqWdGFG-5oIFlbpJ0loQO7E8fO9qxd91KvSO_iDoTF9AbBeB7bUBZoQTiBGu3iZCWQF8Uf9cKd0Iv2cmKLbb9V9i9NZpoXhcqtQamnl0Lg04altcvbOUnHExZ3LIRjmPuVvzmYWAqeO2IEhqitUrUpfYUQ&gsessionid=HrM4HSUl6gviwiDCWlsYEWA-AqKDChZVxCbk1SjGcTtowBeXeE04aw",
+      "title": "Hotels near Southbank in Melbourne, Australia"
+     },
+     {
+      "rank": 4,
+      "domain": "mercuremelbournesouthbank.com.au",
+      "url": "https://google.com/goto?url=CAESagHEIkXXm4hfQKn0uq8X_SMG7YgcPtjPtQJlLvouDiO0MjHm4TAN5sxr5EBaheXe3UZLP80FHHaWu0Ej9_zEaoB4Xd0nQIVFI3rZbO0MZQlSWx4aM0r8sLbiZuQHJGreXJYesU3PTzI2i_s&gsessionid=HrM4HSUl6gviwiDCWlsYEWA-AqKDChZVxCbk1SjGcTtowBeXeE04aw",
+      "title": "Mercure Melbourne Southbank | 4-Star Hotel Melbourne"
+     },
+     {
+      "rank": 5,
+      "domain": "wotif.com",
+      "url": "https://google.com/goto?url=CAESlAEBxCJF12bQh_UOeAAUa2EuxrKjfu1-mFX7RI2IT89WhlsqsdKfQB4WM9hLaralAJQqAGfFT5NIKJCMGyQrSuSHPvaf9l2Cc7KS2MOmLlRX9g0X_70zMYTpWIjIr8Xm_dREPKHiEynDb1ggEDCj0AwpA02BhWcIgSDaW3Pg7NbSwK1TVFxjPGrVPdq4BmfO9lsRalPM&gsessionid=HrM4HSUl6gviwiDCWlsYEWA-AqKDChZVxCbk1SjGcTtowBeXeE04aw",
+      "title": "Best Hotels in Southbank from AU$110"
+     },
+     {
+      "rank": 6,
+      "domain": "hotelscombined.com.au",
+      "url": "https://google.com/goto?url=CAEScgHEIkXXzMRV6aS1jj3OU51neoktlm3jCnFVNy_YGSXSBCNE1_PvbRrayCdmcBTynH63YkbrdUoy_-SNyJyLZ3CEDIpeHASYFda6FzWOlocKBwJycbnu0h84J1j00WZAi-IagXhny_-b8kTwQq_ZCFIWvw&gsessionid=HrM4HSUl6gviwiDCWlsYEWA-AqKDChZVxCbk1SjGcTtowBeXeE04aw",
+      "title": "Hotels in Southbank, Melbourne"
+     },
+     {
+      "rank": 7,
+      "domain": "adinahotels.com",
+      "url": "https://google.com/goto?url=CAESdwHEIkXXjD-BveCtvyMNzTjiEC9XP0im_C8raETLAs6Mtx94UshIM01Dxn3bU9ARRCHEkb8qEiZsWQeHue7zxHec94q-09SVzf_7dJapCstYs7gS38UM7d8D3bmwfkQ3zRYwpjR9SElrK6DM66y2AHoEg6MubhDW&gsessionid=HrM4HSUl6gviwiDCWlsYEWA-AqKDChZVxCbk1SjGcTtowBeXeE04aw",
+      "title": "Adina Melbourne Southbank | Apartment Hotel with Kitchen"
+     },
+     {
+      "rank": 8,
+      "domain": "all.accor.com",
+      "url": "https://google.com/goto?url=CAEShgEBxCJF1-xlTjIa5tk6FobZXY6fh_8hoW2QfiXCPIbIBoNspg8QX8SCiDGeeAUyeQgtML150g4qX2qUpK-aERNDqHdpNiaR1qtEzHM_ZuWgyZyj-jmF0SeD27rH0C2taP3pBn2NejxfBhxVxDcqOk0sfqw_-GsgCjAkT4Sp03UEm8uMfW5YjQ&gsessionid=HrM4HSUl6gviwiDCWlsYEWA-AqKDChZVxCbk1SjGcTtowBeXeE04aw",
+      "title": "Southbank : Our Best Hotels | Book Online Now - Accor"
+     },
+     {
+      "rank": 9,
+      "domain": "expedia.com.au",
+      "url": "https://google.com/goto?url=CAESmQEBxCJF1za1kc5lDt7__gzZp0b6GaQIRMF7wjkl3ZVJk3x_j0I5by1hHAWrB6nDUKbvyIokQuU1ShQGEXen0lus_icW8Urr6gxDGcgCcdnaT-qHBjcprjBe78L2abS_GTWXpO_V14MASFfQSd9lob8UyPEZVR139Gm6VnFETFxCaRJxdwbVL9PqoDRmRqV1SwuhCW6LLM9D6H8&gsessionid=HrM4HSUl6gviwiDCWlsYEWA-AqKDChZVxCbk1SjGcTtowBeXeE04aw",
+      "title": "Cheap Accommodation in Southbank - Hotels"
+     }
+    ],
+    "impressions": 15,
+    "gscPosition": 81.5,
+    "ourPage": "/southbank/stay",
+    "ourRank": null
+   },
+   {
+    "keyword": "melbourne day trips",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "viator.com",
+      "url": "https://google.com/goto?url=CAEShAEBxCJF19Qc_8U1nqyOMDHi69yfG8pIMcPY_cAgvLA8h1nAhVFept1V7jeyjsOT0uCfdbHH0oeF3B0g1ngA1Avqy-wr_xMZu0OeNsmu_eUrMe4FMSU7BEuRlnkBRSMbA0BS7bI9dEoQKw695q9ESMcH42teHwIYBF9pii0U8VaIybSfaYg&gsessionid=DOjjBc6oMSg_gkeclByUpmLXUTTCe6WxxY6ZM-wYLcag1ScwPBLnWg",
+      "title": "THE BEST Day Trips from Melbourne to Australia in 2026"
+     },
+     {
+      "rank": 2,
+      "domain": "lowcostselfdrive.com.au",
+      "url": "https://google.com/goto?url=CAESngEBxCJF17YPHQJHaZx6Jm3xUZAcFyruQ39DXC8PMXRGI-nffk-2yaOJBoOUeiOHZodCXaUN1vr6FWuOBMhI2mp6mHL4TYj6o70YCkKFVjKvbk4eOeSEF1k2Irdpcr-bNWZGWqkPFCNgnczTtBuHRmuj3m-Odz9H0vTSAq3ijFHJmNAeWvKt2-hOy739zHczfxt0wCZEW6vsfjKJ5xfC2w&gsessionid=DOjjBc6oMSg_gkeclByUpmLXUTTCe6WxxY6ZM-wYLcag1ScwPBLnWg",
+      "title": "Day Trip Points Near Melbourne to Rejuvenate Your Soul"
+     },
+     {
+      "rank": 3,
+      "domain": "touropia.com",
+      "url": "https://google.com/goto?url=CAESdAHEIkXXb-8aUKBJRivnGoUyhkLipMxyfxdZ6GOVfkMsyg84cj4crwM-2P9zGfGs4mFx8GS0gae0d3ThNZSrb-FjNGz5RuXq9Ml7bQnn2W4vwxOR0wHFo2o3UbTnb4evgtU8ATsrEn0cHM13gP1AGpYOg0xr&gsessionid=DOjjBc6oMSg_gkeclByUpmLXUTTCe6WxxY6ZM-wYLcag1ScwPBLnWg",
+      "title": "6 Incredible Day Trips from Melbourne"
+     },
+     {
+      "rank": 4,
+      "domain": "easternmelburnian.com.au",
+      "url": "https://google.com/goto?url=CAEShwEBxCJF13I4xHHvjwmh-WmCezFN1WMpGpkTwVn23ipyllI5pGseSFCV1BLJlM720Um36zo_hED3t2E9-Kvp_0cu1jrGmnvyD_1sTJme5feKWrmy3RDZ8tivbEmUkFUiEslX_QCQUZVHC5GGAw9IhBw2xSzlCG0Cjy02nenbmngzV9FI5ODhJng&gsessionid=DOjjBc6oMSg_gkeclByUpmLXUTTCe6WxxY6ZM-wYLcag1ScwPBLnWg",
+      "title": "The best excursions a short drive from Melbourne's east"
+     },
+     {
+      "rank": 5,
+      "domain": "australia.com",
+      "url": "https://google.com/goto?url=CAESjAEBxCJF14kAEoUKugJWLL6ebHr1qhSk2FUajXsMRWUpMDpZszqjZBQZbAHakzkZDJHBGMAfhhOUpLqarIlELbzdm-ifLDa6unIruybAcmK6I-4TsuU4Yo7_aVRrmid33zM9l1M_yIT8IpF8fI4aSAj2mBK-WXZuvIKadMlyBOjUhCBQI5tya3J_9xYmaQ&gsessionid=DOjjBc6oMSg_gkeclByUpmLXUTTCe6WxxY6ZM-wYLcag1ScwPBLnWg",
+      "title": "https://www.australia.com/na/places/melbourne-and-..."
+     },
+     {
+      "rank": 6,
+      "domain": "hayleyonholiday.com",
+      "url": "https://google.com/goto?url=CAEScwHEIkXXw7JyDLdKtyJf55KPkj-U1lTTqqRBUNCvS8fQTjoMnHAQSdTwOzn-tC1wpoBxX-PB9V-UMLG2ix2sgshL4_8rus2zYznmiGKYQHuKE6nBj91k5ZdLL8H_1I_8pV5RT3oiuFq7pYlnkU8w2fbO2CY&gsessionid=DOjjBc6oMSg_gkeclByUpmLXUTTCe6WxxY6ZM-wYLcag1ScwPBLnWg",
+      "title": "9 Day Trips from Melbourne You Need To Do"
+     },
+     {
+      "rank": 7,
+      "domain": "amazingdaysout.au",
+      "url": "https://google.com/goto?url=CAESmAEBxCJF1-6w-gJcVUsKUTE3Ulo9wvm-rEhIDBw4zwSnEdo4tTBpBV3RHSZiWefFPeKWEl6H67ji3HbC4sym5gqOnEvfESKDMP9uqb6X73otGj2ZKY1TAbn7s39ioz3S0UqctgTeQjWPKnDV8vzJXkzEfbwCAHviCrpc5NNfillmCuCJhaBk0l9_HK4KmT2ucUY7T_ChC04PiA&gsessionid=DOjjBc6oMSg_gkeclByUpmLXUTTCe6WxxY6ZM-wYLcag1ScwPBLnWg",
+      "title": "Day Trip Points Near Melbourne to Rejuvenate Your Soul"
+     },
+     {
+      "rank": 8,
+      "domain": "tripadvisor.ie",
+      "url": "https://google.com/goto?url=CAESkgEBxCJF1-tU15faDMAkKxp4uMfjboxA6f81gHOOrlEwyO9SLY4LYT_ltVicvNMuDXcygMzinN-_2Qm-pJQ0ekC-ctqKxVRHswa0ssz0eGTIc-j6Bn8LQkZZT33n6d5tvmAczKw622g9pdcxqmoVhRxALDiHo7rQtHCvbYOm5o5ut50xV2b8_rZoML0XQ6-s4qdHGQ&gsessionid=DOjjBc6oMSg_gkeclByUpmLXUTTCe6WxxY6ZM-wYLcag1ScwPBLnWg",
+      "title": "THE 10 BEST Day Trips from Melbourne (UPDATED 2026)"
+     },
+     {
+      "rank": 9,
+      "domain": "soledrift.com",
+      "url": "https://google.com/goto?url=CAESfQHEIkXXSIGYRlW51E5N71SZ3Lco3xZV1mbD-fmenVY1vBKTNKOMtqbYUL53vGtZoaRnDMjw7Y3DspHTqzdwf1DzLUQNBqgMowy6kJtdmZ2lYoDrpF-pB8KAAQ4lAn8YL1C-OK4dPnU373lBcbWycv_WCRylXErRaFTbM4W3&gsessionid=DOjjBc6oMSg_gkeclByUpmLXUTTCe6WxxY6ZM-wYLcag1ScwPBLnWg",
+      "title": "6 Best Day Trips From Melbourne (By Car and Train)"
+     }
+    ],
+    "impressions": 11,
+    "gscPosition": 76.6,
+    "ourPage": "/day-trips",
+    "ourRank": null
+   }
+  ],
+  "index": [
+   {
+    "url": "https://victours.com.au/",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-15T21:35:28Z",
+    "googleCanonical": "https://victours.com.au/",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://victours.com.au/red-hill",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-20T02:51:27Z",
+    "googleCanonical": "https://victours.com.au/red-hill",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://victours.com.au/lorne",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-08T23:39:40Z",
+    "googleCanonical": "https://victours.com.au/lorne",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://victours.com.au/metung",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-18T14:01:49Z",
+    "googleCanonical": "https://victours.com.au/metung",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://victours.com.au/day-trips/torquay",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-10-23T23:00:10Z",
+    "googleCanonical": "https://victours.com.au/day-trips/torquay",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://victours.com.au/port-campbell",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-17T01:22:21Z",
+    "googleCanonical": "https://victours.com.au/port-campbell",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://victours.com.au/daylesford",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-22T22:36:40Z",
+    "googleCanonical": "https://victours.com.au/daylesford",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://victours.com.au/lakes-entrance",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-19T02:35:32Z",
+    "googleCanonical": "https://victours.com.au/lakes-entrance",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   }
+  ],
+  "error": null
+ },
+ "costUsd": 0.01,
  "speed": [
   {
    "url": "https://victours.com.au/",
    "lite": true,
-   "serverSecs": 0.12,
-   "htmlKb": 55,
+   "serverSecs": 0.11,
+   "htmlKb": 59,
    "blocking": 1,
    "images": 11,
    "noDims": 0,
@@ -334,44 +804,78 @@
    "psiError": "HTTP Error 429: Too Many Requests"
   },
   {
-   "url": "https://victours.com.au/towns",
+   "url": "https://victours.com.au/red-hill",
    "lite": true,
-   "serverSecs": 0.16,
-   "htmlKb": 33,
+   "serverSecs": 0.07,
+   "htmlKb": 32,
    "blocking": 1,
-   "images": 1,
+   "images": 2,
    "noDims": 0,
-   "imageKb": 0,
+   "imageKb": 116,
    "psiError": "HTTP Error 429: Too Many Requests"
   }
  ],
  "quality": {
-  "summary": "311 indexable pages · average 415 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
+  "summary": "340 indexable pages · average 423 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
   "thin": 0,
   "near": 0
  },
  "links": {
-  "internal": 364,
-  "outside": 4884,
+  "internal": 395,
+  "outside": 5556,
   "checkedOutside": 150,
-  "unsureOutside": 3
+  "unsureOutside": 2
  },
- "affiliateOk": 546,
- "secs": 141,
+ "affiliateOk": 593,
+ "secs": 169,
  "change": {
   "first": false,
-  "since": "2026-11-16T08:19:28Z",
-  "score": 1,
-  "newIssues": [],
-  "fixed": [
-   "3 page(s) under 250 words",
-   "2 page(s) have no schema"
+  "since": "2026-11-17T12:26:47Z",
+  "score": -5,
+  "newIssues": [
+   "\"melbourne accomodation southbank\": we're not in the top 10 (Search Console avg 72); booking.com leads",
+   "\"accommodation melbourne southbank\": we're not in the top 10 (Search Console avg 82); booking.com leads",
+   "\"yarra valley day trip\": we're not in the top 10 (Search Console avg 71); iyuetravel.com.au leads",
+   "\"things to do in queenscliff\": we're not in the top 10 (Search Console avg 68); instagram.com leads",
+   "\"melbourne day trips\": we're not in the top 10 (Search Console avg 77); viator.com leads"
   ],
-  "impr28": 46,
-  "clicks28": 0,
-  "views28": 1,
+  "fixed": [],
+  "impr28": -446,
+  "clicks28": -2,
+  "views28": -42,
   "rivals": [],
-  "positions": []
+  "positions": [
+   {
+    "query": "mornington",
+    "was": 40.3,
+    "now": 30.4
+   },
+   {
+    "query": "614 tongio gap road omeo",
+    "was": 64.8,
+    "now": 70.9
+   },
+   {
+    "query": "bright things to do",
+    "was": 48.9,
+    "now": 55.1
+   },
+   {
+    "query": "486 omeo valley road omeo",
+    "was": 62.5,
+    "now": 69.2
+   },
+   {
+    "query": "omeo",
+    "was": 75.6,
+    "now": 88.2
+   },
+   {
+    "query": "1004 mornington-flinders road red hill vic 3937",
+    "was": 35.6,
+    "now": 48.9
+   }
+  ]
  },
  "history": [
   {
@@ -435,6 +939,13 @@
    "score": 99,
    "grade": "A",
    "impr28": 2729,
+   "clicks28": 5
+  },
+  {
+   "at": "2026-11-17T12:26:47Z",
+   "score": 100,
+   "grade": "A",
+   "impr28": 2775,
    "clicks28": 5
   }
  ],
