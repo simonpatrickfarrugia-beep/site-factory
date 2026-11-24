@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-23T19:00:10.528Z",
+ "generatedAt": "2026-11-24T19:00:09.876Z",
  "period": {
-  "start": "2026-10-26",
-  "end": "2026-11-22"
+  "start": "2026-10-27",
+  "end": "2026-11-23"
  },
  "gscPeriod": {
-  "start": "2026-10-24",
-  "end": "2026-11-20"
+  "start": "2026-10-25",
+  "end": "2026-11-21"
  },
  "sources": {
   "ga4": true,
@@ -14,23 +14,18 @@
   "notes": []
  },
  "totals": {
-  "views": 77,
-  "prevViews": 239,
-  "users": 47,
+  "views": 70,
+  "prevViews": 245,
+  "users": 41,
   "cta": {
    "films_banner": 2,
    "justwatch": 1,
    "prime": 1
   },
   "gscClicks": 0,
-  "gscImpressions": 76
+  "gscImpressions": 78
  },
  "daily": [
-  {
-   "date": "2026-10-26",
-   "views": 7,
-   "cta": 0
-  },
   {
    "date": "2026-10-28",
    "views": 3,
@@ -105,13 +100,13 @@
  "pages": [
   {
    "path": "/browse",
-   "views": 30,
-   "prevViews": 10,
-   "users": 4,
+   "views": 28,
+   "prevViews": 12,
+   "users": 3,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 63.8,
+   "gscImpressions": 5,
+   "gscPosition": 65.4,
    "topQuery": "trailers free",
    "allViews": 40,
    "prev7": 26,
@@ -119,9 +114,9 @@
   },
   {
    "path": "/",
-   "views": 28,
-   "prevViews": 98,
-   "users": 24,
+   "views": 23,
+   "prevViews": 103,
+   "users": 19,
    "cta": {
     "films_banner": 2
    },
@@ -134,7 +129,7 @@
     "films_banner": 2
    },
    "d7": 8,
-   "prev7": 5
+   "prev7": 4
   },
   {
    "path": "/original-films",
@@ -292,7 +287,7 @@
   {
    "path": "/movies/schindlers-list-1994",
    "views": 0,
-   "prevViews": 9,
+   "prevViews": 8,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
@@ -465,20 +460,8 @@
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 17,
-   "gscPosition": 55.8,
+   "gscPosition": 55.7,
    "topQuery": "the prestige trailer",
-   "allViews": 2
-  },
-  {
-   "path": "/movies/men-in-black-1997",
-   "views": 0,
-   "prevViews": 2,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 52,
-   "topQuery": "men and black trailer",
    "allViews": 2
   },
   {
@@ -567,6 +550,18 @@
   },
   {
    "path": "/movies/master-and-commander-the-far-side-of-the-world-2003",
+   "views": 0,
+   "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/men-in-black-1997",
    "views": 0,
    "prevViews": 2,
    "users": 0,
@@ -1255,8 +1250,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 6,
-   "gscPosition": 54.3,
+   "gscImpressions": 7,
+   "gscPosition": 56,
    "topQuery": "insomnia film trailer"
   },
   {
@@ -1302,6 +1297,17 @@
    "gscImpressions": 1,
    "gscPosition": 94,
    "topQuery": "captain america the winter soldier 2014 trailer"
+  },
+  {
+   "path": "/movies/the-darjeeling-limited-2007",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 70,
+   "topQuery": "darjeeling limited trailer"
   },
   {
    "path": "/movies/the-rock-1996",
@@ -1363,8 +1369,8 @@
   {
    "query": "the prestige trailer",
    "clicks": 0,
-   "impressions": 6,
-   "position": 61.8,
+   "impressions": 7,
+   "position": 62.1,
    "page": "/movies/the-prestige-2006"
   },
   {
@@ -1400,6 +1406,13 @@
    "clicks": 0,
    "impressions": 2,
    "position": 67,
+   "page": "/movies/insomnia-2002"
+  },
+  {
+   "query": "insomnio trailer",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 66,
    "page": "/movies/insomnia-2002"
   },
   {
@@ -1452,24 +1465,17 @@
    "page": "/movies/district-9-2009"
   },
   {
-   "query": "insomnio trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 66,
-   "page": "/movies/insomnia-2002"
-  },
-  {
-   "query": "men and black trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 52,
-   "page": "/movies/men-in-black-1997"
-  },
-  {
    "query": "free movie trailers",
    "clicks": 0,
    "impressions": 1,
    "position": 57,
+   "page": "/browse"
+  },
+  {
+   "query": "free trailer",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 72,
    "page": "/browse"
   },
   {
@@ -1543,6 +1549,13 @@
    "page": "/movies/selma-2014"
   },
   {
+   "query": "darjeeling limited trailer",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 70,
+   "page": "/movies/the-darjeeling-limited-2007"
+  },
+  {
    "query": "prestige movie trailer",
    "clicks": 0,
    "impressions": 1,
@@ -1562,21 +1575,9 @@
    "impressions": 1,
    "position": 2,
    "page": "/movies/the-prestige-2006"
-  },
-  {
-   "query": "trailer the prestige",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 65,
-   "page": "/movies/the-prestige-2006"
   }
  ],
  "gscDaily": [
-  {
-   "date": "2026-10-24",
-   "clicks": 0,
-   "impressions": 2
-  },
   {
    "date": "2026-10-25",
    "clicks": 0,
@@ -1711,6 +1712,11 @@
    "date": "2026-11-20",
    "clicks": 0,
    "impressions": 2
+  },
+  {
+   "date": "2026-11-21",
+   "clicks": 0,
+   "impressions": 4
   }
  ],
  "allTime": {
@@ -2005,12 +2011,12 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 31
+    "sessions": 27
    },
    {
     "source": "chatgpt.com",
     "medium": "ai-assistant",
-    "sessions": 4
+    "sessions": 3
    },
    {
     "source": "google",
@@ -2026,7 +2032,7 @@
   "referrers": [
    {
     "url": "android-app://com.google.android.googlequicksearchbox/",
-    "views": 2
+    "views": 1
    },
    {
     "url": "https://yandex.com/",
@@ -2034,12 +2040,6 @@
    }
   ],
   "daily": [
-   {
-    "date": "2026-11-09",
-    "source": "(direct)",
-    "medium": "(none)",
-    "sessions": 1
-   },
    {
     "date": "2026-11-12",
     "source": "(direct)",

@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-23T19:00:10.528Z",
+ "generatedAt": "2026-11-24T19:00:09.876Z",
  "period": {
-  "start": "2026-10-26",
-  "end": "2026-11-22"
+  "start": "2026-10-27",
+  "end": "2026-11-23"
  },
  "gscPeriod": {
-  "start": "2026-10-24",
-  "end": "2026-11-20"
+  "start": "2026-10-25",
+  "end": "2026-11-21"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 132,
+  "views": 143,
   "prevViews": 0,
-  "users": 107,
+  "users": 117,
   "cta": {
    "journal_90": 9,
    "google_reviews": 3,
    "email_chat": 1
   },
   "gscClicks": 14,
-  "gscImpressions": 601
+  "gscImpressions": 594
  },
  "daily": [
   {
@@ -135,35 +135,40 @@
    "date": "2026-11-22",
    "views": 2,
    "cta": 0
+  },
+  {
+   "date": "2026-11-23",
+   "views": 11,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 50,
+   "views": 52,
    "prevViews": 0,
-   "users": 37,
+   "users": 39,
    "cta": {
     "google_reviews": 3,
     "email_chat": 1
    },
    "gscClicks": 9,
-   "gscImpressions": 322,
-   "gscPosition": 7.8,
+   "gscImpressions": 318,
+   "gscPosition": 7.7,
    "topQuery": "community service placement",
-   "allViews": 50,
+   "allViews": 52,
    "allCta": {
     "google_reviews": 3,
     "email_chat": 1
    },
    "prev7": 16,
-   "d7": 14
+   "d7": 13
   },
   {
    "path": "/free-daily-journal",
-   "views": 17,
+   "views": 18,
    "prevViews": 0,
-   "users": 15,
+   "users": 16,
    "cta": {
     "journal_90": 9
    },
@@ -171,54 +176,82 @@
    "gscImpressions": 40,
    "gscPosition": 5.5,
    "topQuery": "back to you journal pdf free download",
-   "allViews": 17,
+   "allViews": 18,
    "allCta": {
     "journal_90": 9
    },
-   "d7": 8,
-   "prev7": 6
+   "d7": 7,
+   "prev7": 5
   },
   {
    "path": "/resume-builder",
-   "views": 13,
+   "views": 14,
    "prevViews": 0,
-   "users": 10,
+   "users": 11,
    "cta": {},
    "gscClicks": 1,
-   "gscImpressions": 32,
-   "gscPosition": 21.3,
+   "gscImpressions": 31,
+   "gscPosition": 21.6,
    "topQuery": "free resume",
-   "allViews": 13,
-   "prev7": 9,
-   "d7": 3
+   "allViews": 14,
+   "d7": 4,
+   "prev7": 3
   },
   {
    "path": "/job-finder",
-   "views": 12,
+   "views": 13,
    "prevViews": 0,
-   "users": 10,
+   "users": 11,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 29,
    "gscPosition": 24.1,
    "topQuery": "part time jobs in australia",
-   "allViews": 12,
-   "prev7": 6,
-   "d7": 3
+   "allViews": 13,
+   "d7": 4,
+   "prev7": 3
   },
   {
    "path": "/contact",
-   "views": 10,
+   "views": 11,
    "prevViews": 0,
-   "users": 7,
+   "users": 8,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 48,
+   "gscImpressions": 47,
    "gscPosition": 13.2,
    "topQuery": "simon support",
-   "allViews": 10,
-   "prev7": 4,
-   "d7": 2
+   "allViews": 11,
+   "d7": 2,
+   "prev7": 1
+  },
+  {
+   "path": "/life-goals-mentoring",
+   "views": 5,
+   "prevViews": 0,
+   "users": 4,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 5,
+   "gscPosition": 7,
+   "topQuery": null,
+   "allViews": 5,
+   "d7": 2,
+   "prev7": 0
+  },
+  {
+   "path": "/affiliate-disclosure",
+   "views": 5,
+   "prevViews": 0,
+   "users": 3,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 4,
+   "gscPosition": 11.3,
+   "topQuery": null,
+   "allViews": 5,
+   "prev7": 2,
+   "d7": 1
   },
   {
    "path": "/about",
@@ -227,40 +260,40 @@
    "users": 4,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 27,
-   "gscPosition": 5.7,
+   "gscImpressions": 28,
+   "gscPosition": 5.9,
    "topQuery": "simon farrugia",
    "allViews": 4,
    "d7": 1,
    "prev7": 0
   },
   {
-   "path": "/life-goals-mentoring",
+   "path": "/how-it-works",
    "views": 4,
    "prevViews": 0,
-   "users": 3,
+   "users": 4,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 5,
-   "gscPosition": 7,
+   "gscPosition": 7.6,
    "topQuery": null,
    "allViews": 4,
    "prev7": 2,
    "d7": 1
   },
   {
-   "path": "/affiliate-disclosure",
+   "path": "/job-catalyst",
    "views": 4,
    "prevViews": 0,
-   "users": 3,
+   "users": 4,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 4,
-   "gscPosition": 11.3,
+   "gscImpressions": 5,
+   "gscPosition": 4.8,
    "topQuery": null,
    "allViews": 4,
-   "prev7": 2,
-   "d7": 0
+   "d7": 2,
+   "prev7": 0
   },
   {
    "path": "/cover-letter-builder",
@@ -269,9 +302,23 @@
    "users": 3,
    "cta": {},
    "gscClicks": 1,
-   "gscImpressions": 43,
-   "gscPosition": 11.5,
+   "gscImpressions": 42,
+   "gscPosition": 11.7,
    "topQuery": "free cover letter",
+   "allViews": 3,
+   "d7": 1,
+   "prev7": 0
+  },
+  {
+   "path": "/advocacy-support",
+   "views": 3,
+   "prevViews": 0,
+   "users": 3,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 8,
+   "gscPosition": 4.1,
+   "topQuery": null,
    "allViews": 3,
    "d7": 1,
    "prev7": 0
@@ -287,48 +334,8 @@
    "gscPosition": 4.6,
    "topQuery": null,
    "allViews": 3,
-   "prev7": 2,
+   "prev7": 1,
    "d7": 0
-  },
-  {
-   "path": "/how-it-works",
-   "views": 3,
-   "prevViews": 0,
-   "users": 3,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 7.6,
-   "topQuery": null,
-   "allViews": 3,
-   "prev7": 2,
-   "d7": 1
-  },
-  {
-   "path": "/job-catalyst",
-   "views": 3,
-   "prevViews": 0,
-   "users": 3,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 4.8,
-   "topQuery": null,
-   "allViews": 3,
-   "d7": 1,
-   "prev7": 1
-  },
-  {
-   "path": "/advocacy-support",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 8,
-   "gscPosition": 4.1,
-   "topQuery": null,
-   "allViews": 2
   },
   {
    "path": "/Y292ZXItbG",
@@ -390,8 +397,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 6,
-   "gscPosition": 14,
+   "gscImpressions": 5,
+   "gscPosition": 10.2,
    "topQuery": "product information support"
   },
   {
@@ -410,22 +417,22 @@
   {
    "query": "community help",
    "clicks": 2,
-   "impressions": 44,
-   "position": 13,
+   "impressions": 43,
+   "position": 12.2,
    "page": "/"
   },
   {
    "query": "community service placement",
    "clicks": 0,
-   "impressions": 36,
-   "position": 11.4,
+   "impressions": 35,
+   "position": 11.3,
    "page": "/"
   },
   {
    "query": "community services placement",
    "clicks": 0,
-   "impressions": 34,
-   "position": 8.9,
+   "impressions": 33,
+   "position": 9.1,
    "page": "/"
   },
   {
@@ -485,6 +492,13 @@
    "page": "/"
   },
   {
+   "query": "community services work placement",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 13,
+   "page": "/"
+  },
+  {
    "query": "community support worker",
    "clicks": 0,
    "impressions": 3,
@@ -538,13 +552,6 @@
    "clicks": 0,
    "impressions": 2,
    "position": 2,
-   "page": "/"
-  },
-  {
-   "query": "community services work placement",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 13,
    "page": "/"
   },
   {
@@ -823,11 +830,6 @@
  ],
  "gscDaily": [
   {
-   "date": "2026-10-24",
-   "clicks": 0,
-   "impressions": 11
-  },
-  {
    "date": "2026-10-25",
    "clicks": 1,
    "impressions": 14
@@ -961,12 +963,17 @@
    "date": "2026-11-20",
    "clicks": 0,
    "impressions": 9
+  },
+  {
+   "date": "2026-11-21",
+   "clicks": 0,
+   "impressions": 6
   }
  ],
  "allTime": {
   "start": "2026-10-27",
-  "views": 132,
-  "users": 107,
+  "views": 143,
+  "users": 117,
   "cta": {
    "journal_90": 9,
    "google_reviews": 3,
@@ -1082,6 +1089,11 @@
     "date": "2026-11-22",
     "views": 2,
     "cta": 0
+   },
+   {
+    "date": "2026-11-23",
+    "views": 11,
+    "cta": 0
    }
   ]
  },
@@ -1090,12 +1102,12 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 50
+    "sessions": 60
    },
    {
     "source": "google",
     "medium": "organic",
-    "sessions": 11
+    "sessions": 12
    },
    {
     "source": "chatgpt.com",
@@ -1116,7 +1128,7 @@
   "referrers": [
    {
     "url": "https://www.google.com/",
-    "views": 9
+    "views": 10
    },
    {
     "url": "android-app://com.google.android.gm/",
@@ -1136,24 +1148,6 @@
    }
   ],
   "daily": [
-   {
-    "date": "2026-11-09",
-    "source": "(direct)",
-    "medium": "(none)",
-    "sessions": 3
-   },
-   {
-    "date": "2026-11-09",
-    "source": "google",
-    "medium": "organic",
-    "sessions": 3
-   },
-   {
-    "date": "2026-11-09",
-    "source": "chatgpt.com",
-    "medium": "ai-assistant",
-    "sessions": 1
-   },
    {
     "date": "2026-11-10",
     "source": "(direct)",
@@ -1285,6 +1279,18 @@
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 2
+   },
+   {
+    "date": "2026-11-23",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 10
+   },
+   {
+    "date": "2026-11-23",
+    "source": "google",
+    "medium": "organic",
+    "sessions": 1
    }
   ]
  }
