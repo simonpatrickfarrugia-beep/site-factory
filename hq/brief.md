@@ -1,48 +1,50 @@
-# Site Factory brief — Mon 23 Nov 2026 (generated 01:56 UTC)
+# Site Factory brief — Tue 24 Nov 2026 (generated 05:28 UTC)
 
 _Auto-written daily by scripts/hq/brief.py. Read this first in any new chat. Refresh: scripts/claude/brief.sh_
 
 ## Headline
 
-Revenue to date **A$0.00** · sprint "First $1" ends in 7 days · Simon has **11** open items (~113 min)
+Revenue to date **A$0.00** · sprint "First $1" ends in 6 days · Simon has **14** open items (~124 min)
 
 ## Traffic (last 28 days)
 
 | Site | Station | Views (prev) | Last 7 days | CTA clicks | Google clicks / impressions |
 |---|---|---|---|---|---|
-| movietrailer.channel | Measure | 68 (249) | 3 1 1 1 1 33 3 | films_banner 2, justwatch 1, prime 1 | 0 / 78 |
-| victours.com.au | Launch | 57 (42) | 2 2 1 1 1 3 2 | book_tour 1 | 4 / 2848 |
-| Community Help Co | Launch | 130 (0) | 6 4 7 4 11 9 5 | journal_90 9, google_reviews 3, email_chat 1 | 15 / 611 |
-| tradeadmin.com.au | Launch | 50 (0) | 5 1 4 6 1 1 9 | admin_help 1 | 2 / 779 |
+| movietrailer.channel | Measure | 77 (239) | 1 1 1 1 33 3 9 | films_banner 2, justwatch 1, prime 1 | 0 / 76 |
+| victours.com.au | Launch | 50 (49) | 2 2 1 1 1 3 2 | 0 | 3 / 2329 |
+| Community Help Co | Launch | 132 (0) | 4 7 4 11 9 5 2 | journal_90 9, google_reviews 3, email_chat 1 | 14 / 601 |
+| tradeadmin.com.au | Launch | 51 (0) | 1 4 6 1 1 9 1 | admin_help 1 | 2 / 823 |
 
-- **movietrailer.channel** (stats 7h ago) — top pages: /browse 30, / 23, /original-films 3, /free-classic-movies 2, /movies/weird-science-1985 2
-  - Google: "the prestige trailer" 17 impr, pos 55.8; "/about" 9 impr, pos 4.2; "jurassic park film trailer" 7 impr, pos 75.3; "martin luther king film 2014" 6 impr, pos 88.2; "movietr" 5 impr, pos 26.2
-- **victours.com.au** (stats 7h ago) — top pages: / 38, /day-trips/torquay 3, /daylesford 1, /road-trips/yarra-valley-day-trip 1, /richmond 1
-  - Google: "melbourne accomodation southbank" 193 impr, pos 77.2; "1004 mornington-flinders road red hill vic 3937" 87 impr, pos 60.4; "sorrento restaurants" 73 impr, pos 87; "activities lorne victoria" 69 impr, pos 73.1; "110 metung road metung vic 3904" 63 impr, pos 73.3
-- **Community Help Co** (stats 7h ago) — top pages: / 49, /free-daily-journal 17, /resume-builder 13, /job-finder 12, /contact 10
-  - Google: "community service placement" 328 impr, pos 7.9; "simon support" 48 impr, pos 13.2; "free cover letter" 43 impr, pos 11.5; "back to you journal pdf free download" 41 impr, pos 5.5; "free resume" 32 impr, pos 21.3
-- **tradeadmin.com.au** (stats 7h ago) — top pages: / 20, /how-we-make-money 5, /job-management-software 5, /quote-builder 3, /tradify-vs-servicem8 2
-  - Google: "servicem8 tradify comparison" 379 impr, pos 73.4; "cleaning invoice examples" 60 impr, pos 58.7; "tradesman quote template" 52 impr, pos 75.7; "job management app" 42 impr, pos 73.5; "servicem8 pricing" 41 impr, pos 59.3
+- **movietrailer.channel** (stats 10h ago) — top pages: /browse 30, / 28, /original-films 5, /free-classic-movies 3, /movies/weird-science-1985 3
+  - Google: "the prestige trailer" 17 impr, pos 55.8; "/about" 9 impr, pos 4.2; "jurassic park film trailer" 7 impr, pos 75.3; "insomnia film trailer" 6 impr, pos 54.3; "box office 1999" 6 impr, pos 71.2
+- **victours.com.au** (stats 10h ago) — top pages: / 34, /day-trips/torquay 3, /daylesford 1, /road-trips/yarra-valley-day-trip 1, /richmond 1
+  - Google: "melbourne accomodation southbank" 192 impr, pos 77.5; "1004 mornington-flinders road red hill vic 3937" 80 impr, pos 63.9; "110 metung road metung vic 3904" 64 impr, pos 75; "lake entrance vic" 53 impr, pos 75.4; "activities lorne victoria" 49 impr, pos 73.1
+- **Community Help Co** (stats 10h ago) — top pages: / 50, /free-daily-journal 17, /resume-builder 13, /job-finder 12, /contact 10
+  - Google: "community service placement" 322 impr, pos 7.8; "simon support" 48 impr, pos 13.2; "free cover letter" 43 impr, pos 11.5; "back to you journal pdf free download" 40 impr, pos 5.5; "free resume" 32 impr, pos 21.3
+- **tradeadmin.com.au** (stats 10h ago) — top pages: / 21, /how-we-make-money 5, /job-management-software 5, /quote-builder 3, /tradify-vs-servicem8 2
+  - Google: "servicem8 tradify comparison" 388 impr, pos 73.2; "job management app" 65 impr, pos 76.7; "cleaning invoice examples" 64 impr, pos 59.7; "tradesman quote template" 53 impr, pos 75.5; "servicem8 pricing" 43 impr, pos 58.2
 
 Latest milestones: 2026-11-08 community-help-co: First Google clicks (6 in 28 days, Search Console daily data); 2026-11-11 community-help-co: Daily visits crossed 10 and best day ever: 24 visits (9 Nov); 2026-11-19 trade-admin: First Google click (1 in 28 days, Search Console daily data)
 
 ## Confidence
 
-90 days: **amber** (2 green, 3 amber, 0 red · trend up on 1, down on 0 of 5 sites). This week (repo work): site check fixes cleared 13/3 green, site improvements shipped 11/3 green, your to-dos done 6/3 green. Outreach and the top line: IMN HQ Home.
+90 days: **amber** (1 green, 4 amber, 0 red · trend up on 1, down on 1 of 5 sites). This week (repo work): site check fixes cleared 14/3 green, site improvements shipped 17/3 green, your to-dos done 4/3 green. Outreach and the top line: IMN HQ Home.
 
-- movietrailer.channel: amber, trend flat — 68 visits vs 791 expected by day 37 (9% of pace)
-- victours.com.au: amber, trend flat — 57 visits vs 232 expected by day 34 (25% of pace)
-- Community Help Co: green, trend up — no 90-day target yet: judged on trend only
-- tradeadmin.com.au: amber, trend flat — 50 visits vs 55 expected by day 29 (91% of pace)
-- mypaycalc.com.au: green, trend flat — 220 visits vs 220 expected by day 25 (100% of pace)
+- movietrailer.channel: green, trend up — 77 visits vs 823 expected by day 38 (9% of pace)
+- victours.com.au: amber, trend flat — 50 visits vs 243 expected by day 35 (21% of pace)
+- Community Help Co: amber, trend flat — no 90-day target yet: judged on trend only
+- tradeadmin.com.au: amber, trend flat — 51 visits vs 58 expected by day 30 (88% of pace)
+- mypaycalc.com.au: amber, trend down — 222 visits vs 233 expected by day 26 (95% of pace)
 
 ## Site check
 
-communityhelp.com.au **A 92** (-8), 1 broken · imnetwork.com.au **A 95** (+5) · movietrailer.channel **A 99** (+0) · mypaycalc.com.au **A 99** (+1) · victours.com.au **A 100** (+1) · tradeadmin.com.au **A 100** (+0) · simonsaystravel.com.au **A 100** (+0)
+movietrailer.channel **A 92** (-7) · tradeadmin.com.au **A 93** (-7) · victours.com.au **A 95** (-5) · imnetwork.com.au **A 95** (+5) · communityhelp.com.au **A 98** (+6) · mypaycalc.com.au **A 99** (+1) · simonsaystravel.com.au **A 100** (+0)
 
-- communityhelp.com.au: top fix: "community help": we're not in the top 10 (Search Console avg 14); directory.wayahead.org.au leads (next scan 2026-11-30)
+- movietrailer.channel: top fix: 4 of your top 8 pages aren't in Google's index (next scan 2026-12-01)
+- tradeadmin.com.au: top fix: 1 of your top 8 pages aren't in Google's index (next scan 2026-12-01)
+- victours.com.au: top fix: "melbourne accomodation southbank": we're not in the top 10 (Search Console avg 72); booking.com leads (next scan 2026-12-01)
 - imnetwork.com.au: top fix: Google shows only 0 of 14 pages (site is 3 days old) (next scan 2026-11-25)
-- movietrailer.channel: top fix: Google shows only 31 of 437 pages (site is 31 days old) (next scan 2026-11-24)
+- communityhelp.com.au: top fix: 1 title outside 30–65 characters (next scan 2026-11-30)
 - mypaycalc.com.au: top fix: Google impressions down 61% week on week (next scan 2026-11-25)
 - simonsaystravel.com.au: top fix: Google shows only 3 of 27 pages (site is 14 days old) (next scan 2026-11-25)
 
@@ -57,38 +59,41 @@ All checks passing ✅ (sites up, pipeline jobs fresh, live builds current, no f
 
 ## Pipeline jobs (last run)
 
-- ✅ `intake` 2h ago: Intake: 0 new trailer(s) queued.
-- ✅ `niches` 5h ago: Niches: scored 0 of 0. | Calibrated from 551 page views, 2 affiliate clicks and 0 reported sales (trailers, vic, community-help-co, trade-ad
-- ✅ `enrich` 5h ago: Enrich: looked at 15, published 10 (10 Things I Hate About You (1999) → /movies/10-things-i-hate-about-you-1999; Napoleon Dynamite (2004) → 
-- ✅ `catalogue` 6h ago: Catalogue: queued 30 film(s): 10 Things I Hate About You (1999): 551900/mo, Napoleon Dynamite (2004): 451300/mo, Hocus Pocus (1993): 369000/
-- ✅ `stats` 7h ago: community-help-co: 130 views, 13 CTA clicks, 15 Google clicks. | vic: 57 views, 1 CTA clicks, 4 Google clicks. | trailers: 68 views, 4 CTA c
-- ✅ `discover` 32h ago: Discover: screened 0 new ideas for US$0.00; 0 promoted to scoring. | Claude proposed 0; dropped 0 ads-only and 0 incomplete. Reply: {"ideas"
-- ✅ `competition` 6d ago: Competition: checked 4; 7 still to check (run again). | Rail travel times between NSW stations: openness 0/100; big players none (US$0). | D
-- ✅ `ratings` 7d ago: Ratings: checked 40, updated 0, facts added to 0; 42 never checked.
-- ✅ `towns` 7d ago: Towns: top 5 by searches: Melbourne CBD 97,200, Geelong 38,400, Southbank 36,880, Ballarat 32,800, Mornington Peninsula 23,800. | Looked up 
-- ✅ `indexcheck` 12d ago: Index check: 24 of 24 Vic pages inspected. Submitted and indexed: 24
-- ✅ `travel` 17d ago: 36 searches, 9 calls, US$0.099. Top now: Sydney 36.5, Melbourne 34, Travel insurance 33.3, Brisbane 24.3, Perth 20.9.
-- ✅ `collections` 19d ago: Collections: created 3: 90s Romance Movies (13 films, 3920/mo) → /discover/90s-romance-movies; 2000s Action Movies (18 films, 3900/mo) → /di
-- ✅ `collcheck` 20d ago: Collection check: 0 idea(s) checked (US$0.000). Most winnable: Tom Hanks Movies 305400/mo × 21%; Christian Bale Movies 166600/mo × 16%; 90s 
-- ✅ `demand` 20d ago: Demand: 212 searches analysed; 0 film ideas, 0 new collection ideas. Saved to reports/trailers/demand-2026-10.md.
-- ✅ `recheck` 21d ago: Recheck: looked at 1, published 0. Queue: 1 waiting for OMDb, 15 need review.
-- ✅ `keywords` 33d ago: Victorian road trips and itineraries: day trips from melbourne 2900, great alpine road 1900, weekend getaways from melbourne 1900, romantic 
+- ✅ `intake` 5h ago: Intake: 2 new trailer(s) queued: Severin Black Friday 2026: Oddity, Severin Black Friday 2026: The Goodbye Kiss.
+- ✅ `enrich` 8h ago: Enrich: looked at 15, published 12 (Seven (1995) → /movies/seven-1995; Picnic at Hanging Rock (1975) → /movies/picnic-at-hanging-rock-1975; 
+- ✅ `indexcheck` 9h ago: MovieTrailer.Channel: 34 of 34 pages inspected. Discovered – currently not indexed: 16 · URL is unknown to Google: 10 · Submitted and indexe
+- ✅ `stats` 10h ago: trade-admin: 51 views, 1 CTA clicks, 2 Google clicks. | community-help-co: 132 views, 13 CTA clicks, 14 Google clicks. | vic: 50 views, 0 CT
+- ✅ `competition` 11h ago: Competition: checked 4; 6 still to check (run again). | Rail travel times between NSW stations: openness 0/100; big players none (US$0). | D
+- ✅ `niches` 32h ago: Niches: scored 0 of 0. | Calibrated from 551 page views, 2 affiliate clicks and 0 reported sales (trailers, vic, community-help-co, trade-ad
+- ✅ `catalogue` 33h ago: Catalogue: queued 30 film(s): 10 Things I Hate About You (1999): 551900/mo, Napoleon Dynamite (2004): 451300/mo, Hocus Pocus (1993): 369000/
+- ✅ `discover` 2d ago: Discover: screened 0 new ideas for US$0.00; 0 promoted to scoring. | Claude proposed 0; dropped 0 ads-only and 0 incomplete. Reply: {"ideas"
+- ✅ `ratings` 8d ago: Ratings: checked 40, updated 0, facts added to 0; 42 never checked.
+- ✅ `towns` 8d ago: Towns: top 5 by searches: Melbourne CBD 97,200, Geelong 38,400, Southbank 36,880, Ballarat 32,800, Mornington Peninsula 23,800. | Looked up 
+- ✅ `travel` 18d ago: 36 searches, 9 calls, US$0.099. Top now: Sydney 36.5, Melbourne 34, Travel insurance 33.3, Brisbane 24.3, Perth 20.9.
+- ✅ `collections` 20d ago: Collections: created 3: 90s Romance Movies (13 films, 3920/mo) → /discover/90s-romance-movies; 2000s Action Movies (18 films, 3900/mo) → /di
+- ✅ `collcheck` 21d ago: Collection check: 0 idea(s) checked (US$0.000). Most winnable: Tom Hanks Movies 305400/mo × 21%; Christian Bale Movies 166600/mo × 16%; 90s 
+- ✅ `demand` 21d ago: Demand: 212 searches analysed; 0 film ideas, 0 new collection ideas. Saved to reports/trailers/demand-2026-10.md.
+- ✅ `recheck` 22d ago: Recheck: looked at 1, published 0. Queue: 1 waiting for OMDb, 15 need review.
+- ✅ `keywords` 34d ago: Victorian road trips and itineraries: day trips from melbourne 2900, great alpine road 1900, weekend getaways from melbourne 1900, romantic 
 
 ## Simon's list (open)
 
+- ⚡ [do, 5 min] Search Console for movietrailer.channel: (1) URL Inspection → https://www.movietrailer.channel/ → Request indexing. (2) Sitemaps → submit https://www.movietrailer.channel/sitemap.xml again. (3) Request indexing for 5 big films: /movies/jaws-1975, /movies/rocky-1976, /movies/the-usual-suspects-1995, /movies/twister-1996, /movies/armageddon-1998 (`mtc-gsc-reindex`)
 - ⚡ [do, 15 min] Trade Admin mail hub setup with Claude in the Site Factory chat (checklist in claude/MAIL-HUB.md). Then Claude switches Trade Admin on in IMN HQ outreach (`ta-mail-hub`)
 - · [do, 2 min] Paste the 2 best Google reviews (text + first name) into the Site Factory chat; Claude adds them to the CHC home page as quotes linked to Google (`chc-review-quotes`)
 - · [do, 3 min] Tax brackets by year page (2020–21 to 2026–27): add one line, then reply 'publish tax-brackets-history' (`opp-tax-brackets-history`)
 - · [do, 3 min] HECS repayment page: add one line, then reply 'publish hecs-repayment' (`opp-hecs-repayment`)
 - · [do, 3 min] Mornington Main Street eats: add your pick + one line, then reply 'publish mornington-main-street' (`opp-mornington-main-street`)
 - · [do, 3 min] Warrnambool central stays: add one line, then reply 'publish warrnambool-stay-central' (`opp-warrnambool-stay-central`)
+- · [do, 3 min] Things to do in Daylesford: add one line, then reply 'publish daylesford-things-to-do' (`opp-daylesford-things-to-do`)
+- · [do, 3 min] Things to do in Lorne: add one line, then reply 'publish lorne-things-to-do' (`opp-lorne-things-to-do`)
 - · [do, 5 min] Share communityhelp.com.au/resume-builder with 3 job services, schools or community groups you know (`chc-share-resume`)
 - · [do, 8 min] Apply to Amazon Associates Australia at https://affiliate-program.amazon.com.au (website: https://www.movietrailer.channel). Then paste the new tracking ID (ends in -22) into the Site Factory chat and Claude sends Australian visitors to amazon.com.au (`amazon-au-associates`)
 - · [do, 10 min] At the computer: Search Console → paste each URL into the top bar → Request indexing (10 a day): https://www.movietrailer.channel/discover/christmas-movies https://www.movietrailer.channel/discover/james-bond-movies-in-order https://www.movietrailer.channel/discover/christopher-nolan-feature-films https://www.movietrailer.channel/movies/the-prestige-2006 https://www.movietrailer.channel/movies/jurassic-park-1993 https://www.movietrailer.channel/movies/home-alone-1990 https://www.movietrailer.channel/movies/selma-2014 https://www.movietrailer.channel/movies/insomnia-2002 https://www.movietrailer.channel/movies/schindlers-list-1994 https://www.movietrailer.channel/movies/star-wars-episode-v---the-empire-strikes-back-1980 (`trailers-request-indexing`)
 - · [do, 60 min] IMN company sitting (November, when cash allows): buy imnetwork.com.au, set up IMN email, then move GitHub, Cloudflare, domains and Google accounts into Independent Media Network Pty Ltd's name (`imn-setup-nov`)
 - · [decide, 1 min] Trailers: let Google index the 42 new actor pages (e.g. /actors/arnold-schwarzenegger)? Reply 'index actors' in the Site Factory chat. Suggest waiting until Google shows 65+ pages (`trailers-actor-pages-index`)
 
-Done in the last 7 days: Turn on Always Use HTTPS for the 5 domains still missing it ; Switch on Check-in: Cloudflare → Workers & Pages → Create → ; Monthly (1st): GA4 → movietrailer.channel property → Reports; Apply to Agoda Partners (direct). Same Vic standard answers; Sorrento restaurants page: add your 3 picks + one line, then; Vic Tours has published every town on its list (64 live). OK
+Done in the last 7 days: Turn on Always Use HTTPS for the 5 domains still missing it ; Switch on Check-in: Cloudflare → Workers & Pages → Create → ; Monthly (1st): GA4 → movietrailer.channel property → Reports; Apply to Agoda Partners (direct). Same Vic standard answers
 
 ## Claude is on
 
@@ -99,37 +104,37 @@ Done in the last 7 days: Turn on Always Use HTTPS for the 5 domains still missin
 
 ## Open GitHub issues
 
-- #13 Site check: communityhelp.com.au has something broken [sitecheck]
+- none
 
 ## Changes in the last 7 days
 
-100 commits (22 automated data updates). Hand-made changes:
+100 commits (20 automated data updates). Hand-made changes:
 
+- 2026-11-24 Leads: daily call list [skip ci]
+- 2026-11-24 Site check: movietrailer.channel A 92 (-7) · victours.com.au A 95 (-5) · tradeadmin.com.au A 93 (-7) [skip ci]
+- 2026-11-23 HQ: auto-fix run [skip ci]
+- 2026-11-23 Site check: communityhelp.com.au A 98 (+6) [skip ci]
+- 2026-11-23 Community Help Co: auto-fix: remove 2 dead placement links on /community-services-placement
+- 2026-11-23 HQ: morning-report run [skip ci]
+- 2026-11-23 HQ: outreach snapshot
+- 2026-11-23 HQ: opportunity-engine run [skip ci]
+- 2026-11-23 Vic: drop mapping notes and unvisitable places from listings
+- 2026-11-23 HQ: imn-radar run [skip ci]
+- 2026-11-23 HQ: to-do for Simon: Search Console reindex for movietrailer.channel [skip ci]
+- 2026-11-23 Pipeline index check: trailers only, 34 pages per run (free-plan 50-call limit)
+- 2026-11-23 Pipeline: index check covers movietrailer.channel (150 pages, summary by page type)
+- 2026-11-23 Trailers /watch: My list icon toggles via the hidden attribute (SVG has no .hidden property)
+- 2026-11-23 Trailers: ways into the swipe feed
+- 2026-11-23 Trailers /watch: comment rows stack (name, time, text); smaller sheet heading
+- 2026-11-23 test-social: listen for the counts request before the page loads
+- 2026-11-23 Live check for /watch likes and comments (uitest)
+- 2026-11-23 Trailers /watch: public likes, reactions, saves and comments with spam filter; HQ comment moderation
+- 2026-11-23 Trailers /watch: separate plus/tick icons for My list
+- 2026-11-23 Trailers /watch: rename root class (clashed with movie page .watch panel), full-height 9:16 frame
+- 2026-11-23 shot-url: /watch never goes network-idle (live YouTube players), wait for load
+- 2026-11-23 Trailers: /watch vertical swipe feed (scroll-snap, YouTube IFrame API, like/react/list/share, GA4 events) + mo
+- 2026-11-23 IMN brain v1: record every site check fix, measure its Google lift vs a control, share proven fixes across sit
 - 2026-11-23 Leads: daily call list [skip ci]
-- 2026-11-23 Site check: communityhelp.com.au A 92 (-8) [skip ci]
-- 2026-11-23 Vic Tours: Viator products refreshed
-- 2026-11-22 HQ: auto-fix run [skip ci]
-- 2026-11-22 HQ: morning-report run [skip ci]
-- 2026-11-22 HQ: outreach snapshot
-- 2026-11-22 Vic: deeper Bright and Red Hill guides, Simon named on About
-- 2026-11-22 HQ: Simon to-do, request indexing for 10 trailer pages [skip ci]
-- 2026-11-22 HQ: weekly-autopilot run [skip ci]
-- 2026-11-22 HQ: money model refresh (niches + priority) [skip ci]
-- 2026-11-22 Trailers About: shorter title
-- 2026-11-22 All sites: one IMN publisher line (ABN, contact) in every footer + Organization schema; trailers About for tra
-- 2026-11-22 Trailers: reject 9 promos/box sets in review; pinned imdbId keeps the trailer's year (Ip Man, Hard Boiled, Pic
-- 2026-11-22 Vic Tours: photos from Wikimedia Commons
-- 2026-11-22 Vic Tours: publish 9 towns (Traralgon, Frankston, Warragul, Yarrawonga, Hamilton, Portland, Maryborough, Sale,
-- 2026-11-22 Trailers: full write-ups for the 82 thin film pages, fix Hero (2002) data, longer pipeline summaries
-- 2026-11-22 HQ: imn-radar run [skip ci]
-- 2026-11-22 Trailers: smarter related films, actor pages, mixed Recently added, breadcrumbs + FAQ schema
-- 2026-11-22 HQ texts: remove duplicate template
-- 2026-11-22 IMN HQ: Text to book a call (phone-only prospects): Today section, prefilled SMS that Simon sends from his pho
-- 2026-11-22 HQ: imn-radar run [skip ci]
-- 2026-11-22 HQ: imn-radar run [skip ci]
-- 2026-11-22 CHC: community services placement guide (hours, Victorian checks, who takes students, how to apply, FAQ) + lin
-- 2026-11-22 Ready drafts: suggested lines (A/B/C) so publishing is a one-word reply [skip ci]
-- 2026-11-22 IMN send streak: morning report line + wallpaper (imnDays in hq/outreach.json)
 
 ## Where things live
 
