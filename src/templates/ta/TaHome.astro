@@ -59,7 +59,7 @@ const { page, compareLinks, checked, tradeLinks = [] } = Astro.props;
 
 <section class="ta-wrap ta-section">
   <h2 class="ta-h2">Outgrowing templates?</h2>
-  <p class="ta-measure">Once you're chasing unpaid invoices, juggling a team's schedule or re-typing jobs into Xero, a job management app usually pays for itself. We compare the main ones on their own published prices (checked {new Date(checked).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}), with a calculator for your team.</p>
+  <p class="ta-measure">Once you're chasing unpaid invoices, juggling a team's schedule or re-typing jobs into Xero, a job management app usually pays for itself. We compare the main ones on their own published prices (checked {new Date(checked).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}), with a <a href="/job-management-software">job app price calculator</a> for your team.</p>
   <ul class="ta-links">{compareLinks.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
 </section>
 
