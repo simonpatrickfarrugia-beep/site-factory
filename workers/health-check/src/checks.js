@@ -26,7 +26,7 @@ async function timedFetch(url, opts = {}, ms = 10000) {
   const t = setTimeout(() => ctrl.abort(), ms);
   const start = Date.now();
   try {
-    const res = await fetch(url, { ...opts, signal: ctrl.signal, headers: { 'user-agent': 'Mozilla/5.0 (compatible; IMN-HealthCheck/1.0; +https://imnetwork.com.au)', accept: 'text/html,*/*', ...(opts.headers || {}) } });
+    const res = await fetch(url, { ...opts, signal: ctrl.signal, headers: { 'user-agent': 'Mozilla/5.0 (compatible; IMN-HealthCheck/1.0; +https://imnetwork.com.au)', accept: 'text/html,*/*', 'accept-encoding': 'br, gzip', ...(opts.headers || {}) } });
     return { res, ms: Date.now() - start };
   } finally { clearTimeout(t); }
 }
@@ -116,7 +116,8 @@ export function analyseHtml(html, baseUrl) {
   f.favicon = /<link[^>]+rel=["'][^"']*icon/i.test(html);
   const imgs = html.match(/<img\b[^>]*>/gi) || [];
   f.images = imgs.length;
-  f.imagesWithAlt = imgs.filter(i => /\balt=["'][^"']+["']/i.test(i)).length;
+  // alt="" is the correct markup for decorative images, so any alt attribute counts; only a missing one is flagged.
+  f.imagesWithAlt = imgs.filter(i => /\balt\s*=/i.test(i)).length;
   f.lazyImages = imgs.filter(i => /loading=["']lazy/i.test(i)).length;
   f.scripts = (html.match(/<script\b[^>]*\bsrc=/gi) || []).length;
   f.mixedContent = (html.match(/<(?:img|script|iframe|link)\b[^>]+(?:src|href)=["']http:\/\/[^"']+/gi) || []).filter(t => !/rel=["'](?:canonical|alternate)/i.test(t)).length;
