@@ -3,12 +3,12 @@
  "name": "mypaycalc.com.au",
  "url": "https://mypaycalc.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-18T23:21:20Z",
+ "scannedAt": "2026-11-25T03:07:37Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
- "nextDue": "2026-11-26",
- "score": 99,
+ "nextDue": "2026-12-02",
+ "score": 94,
  "grade": "A",
  "areas": {
   "health": {
@@ -47,8 +47,8 @@
    "label": "Google trend"
   },
   "rivals": {
-   "score": null,
-   "grade": null,
+   "score": 35,
+   "grade": "F",
    "label": "Competitors"
   }
  },
@@ -58,43 +58,123 @@
    "id": "impressions-drop",
    "area": "google",
    "severity": "high",
-   "title": "Google impressions down 61% week on week",
+   "title": "Google impressions down 30% week on week",
    "fix": "Check Search Console → Pages for dropped pages, and whether a recent change touched titles.",
    "pages": [],
    "count": 1,
    "detail": "",
    "impact": 15,
    "broken": false
+  },
+  {
+   "id": "rival-mypaycalc",
+   "area": "rivals",
+   "severity": "medium",
+   "title": "\"mypaycalc\": we're not in the top 10 (Search Console avg 5); pcbcalculator.my leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. pcbcalculator.my, 2. au.talent.com, 3. paycheckcalculate.com, 4. salary-calc-au.com, 5. slicemypay.com",
+   "impact": 10.6,
+   "broken": false
+  },
+  {
+   "id": "rival-pay-calculator",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"pay calculator\": we're not in the top 10 (Search Console avg 85); toolkitau.com leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. toolkitau.com, 2. mydailycalc.com, 3. paymecalculator.com.au, 4. netpaymate.com.au, 5. salary-calc-au.com",
+   "impact": 4.2,
+   "broken": false
+  },
+  {
+   "id": "rival-paycalculator",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"paycalculator\": we're not in the top 10 (Search Console avg 84); paycalculator.com.au leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. paycalculator.com.au, 2. calculate.fairwork.gov.au, 3. wagecalculator.com.au, 4. calculate.fairwork.gov.au, 5. emumoney.com.au",
+   "impact": 4.2,
+   "broken": false
+  },
+  {
+   "id": "rival-australian-tax-brackets",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"australian tax brackets\": we're not in the top 10 (Search Console avg 88); data.gov.au leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/tax-brackets"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. data.gov.au, 2. au.talent.com, 3. bookings.hants.gov.uk, 4. youtube.com, 5. instafiling.com",
+   "impact": 1.2,
+   "broken": false
+  },
+  {
+   "id": "rival-what-tax-bracket-am-i-in-australia",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"what tax bracket am i in australia\": we're not in the top 10 (Search Console avg 69); data.gov.au leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/tax-brackets"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. data.gov.au, 2. au.talent.com, 3. auscalcs.com.au, 4. community.ato.gov.au, 5. personalfinancialofficer.com.au",
+   "impact": 1.2,
+   "broken": false
   }
  ],
  "google": {
-  "impr7": 219,
-  "imprPrev7": 558,
+  "impr7": 199,
+  "imprPrev7": 286,
   "clicks7": 0,
-  "clicksPrev7": 3,
-  "impr28": 1078,
+  "clicksPrev7": 0,
+  "impr28": 1256,
   "clicks28": 4,
-  "views28": 211,
+  "views28": 223,
   "viewsPrev28": 0,
-  "recentViews": 10,
-  "lastGa4Day": "2026-11-17",
-  "gscTo": "2026-11-15"
+  "recentViews": 4,
+  "lastGa4Day": "2026-11-23",
+  "gscTo": "2026-11-21"
  },
  "queries": [
   {
    "query": "mypaycalc",
    "position": 5.1,
-   "impressions": 135
+   "impressions": 140
   },
   {
    "query": "pay calculator",
-   "position": 87.1,
-   "impressions": 25
+   "position": 84.8,
+   "impressions": 34
   },
   {
    "query": "pay calculator australia",
-   "position": 81.3,
-   "impressions": 23
+   "position": 80.1,
+   "impressions": 29
+  },
+  {
+   "query": "online pay calculator australia",
+   "position": 78.7,
+   "impressions": 20
+  },
+  {
+   "query": "australian pay calculator",
+   "position": 76.2,
+   "impressions": 18
   },
   {
    "query": "australian tax brackets",
@@ -107,24 +187,19 @@
    "impressions": 16
   },
   {
-   "query": "online pay calculator australia",
-   "position": 80.7,
+   "query": "paycalculator",
+   "position": 83.9,
    "impressions": 13
   },
   {
-   "query": "paycalculator",
-   "position": 85.9,
+   "query": "pay calculator for australia",
+   "position": 71.3,
    "impressions": 12
   },
   {
    "query": "australia tax brackets",
    "position": 78.3,
    "impressions": 12
-  },
-  {
-   "query": "australian pay calculator",
-   "position": 83.5,
-   "impressions": 11
   },
   {
    "query": "tax brackets",
@@ -137,6 +212,16 @@
    "impressions": 11
   },
   {
+   "query": "free pay calculator australia",
+   "position": 78.7,
+   "impressions": 10
+  },
+  {
+   "query": "salary and pay calculator",
+   "position": 83.8,
+   "impressions": 10
+  },
+  {
    "query": "current tax brackets australia",
    "position": 72.8,
    "impressions": 10
@@ -147,14 +232,34 @@
    "impressions": 9
   },
   {
+   "query": "salary calculator australia",
+   "position": 72.8,
+   "impressions": 9
+  },
+  {
    "query": "tax brackets 2021",
    "position": 55.7,
    "impressions": 9
   },
   {
-   "query": "pay calculator for australia",
-   "position": 67.8,
-   "impressions": 8
+   "query": "paycheck calculator",
+   "position": 60.3,
+   "impressions": 7
+  },
+  {
+   "query": "paycheck estimator",
+   "position": 54.6,
+   "impressions": 7
+  },
+  {
+   "query": "paycheck estimator calculator",
+   "position": 47,
+   "impressions": 7
+  },
+  {
+   "query": "salary calculator",
+   "position": 44.4,
+   "impressions": 7
   },
   {
    "query": "tax brackets 2026",
@@ -162,13 +267,8 @@
    "impressions": 7
   },
   {
-   "query": "paycheck estimator calculator",
-   "position": 46.7,
-   "impressions": 6
-  },
-  {
-   "query": "salary and pay calculator",
-   "position": 94.5,
+   "query": "pay calculator for australian workers",
+   "position": 63.2,
    "impressions": 6
   },
   {
@@ -187,18 +287,23 @@
    "impressions": 6
   },
   {
+   "query": "aus pay calculator",
+   "position": 83.6,
+   "impressions": 5
+  },
+  {
+   "query": "australia pay calculator",
+   "position": 74.6,
+   "impressions": 5
+  },
+  {
    "query": "calculate my pay",
    "position": 80.6,
    "impressions": 5
   },
   {
-   "query": "paycheck calculator",
-   "position": 62.2,
-   "impressions": 5
-  },
-  {
-   "query": "salary calculator",
-   "position": 37.8,
+   "query": "pay and salary calculator australia",
+   "position": 65.2,
    "impressions": 5
   },
   {
@@ -227,6 +332,21 @@
    "impressions": 5
   },
   {
+   "query": "contractor pay calculator",
+   "position": 67.5,
+   "impressions": 4
+  },
+  {
+   "query": "fortnightly payroll",
+   "position": 86,
+   "impressions": 4
+  },
+  {
+   "query": "minimum wage australia after tax",
+   "position": 73,
+   "impressions": 4
+  },
+  {
    "query": "hecs repayment threshold",
    "position": 52,
    "impressions": 4
@@ -247,18 +367,18 @@
    "impressions": 4
   },
   {
-   "query": "aus pay calculator",
-   "position": 84,
+   "query": "au pay calculator",
+   "position": 86.3,
    "impressions": 3
   },
   {
-   "query": "australia pay calculator",
-   "position": 73.7,
+   "query": "calculator wage",
+   "position": 83.7,
    "impressions": 3
   },
   {
-   "query": "fortnightly payroll",
-   "position": 91.3,
+   "query": "free pay calculator",
+   "position": 64.7,
    "impressions": 3
   },
   {
@@ -267,79 +387,416 @@
    "impressions": 3
   },
   {
-   "query": "pay caliculator",
-   "position": 66.7,
+   "query": "pay calc",
+   "position": 85.7,
    "impressions": 3
   },
   {
-   "query": "salary calculator australia",
-   "position": 85.3,
-   "impressions": 3
-  },
-  {
-   "query": "target salary calculator",
-   "position": 47.7,
-   "impressions": 3
-  },
-  {
-   "query": "2026 help compulsory repayment credit",
-   "position": 94.7,
-   "impressions": 3
-  },
-  {
-   "query": "hecs repayment threshold 2026",
-   "position": 60.7,
-   "impressions": 3
-  },
-  {
-   "query": "how much hecs should i be paying",
+   "query": "pay calculator aus",
    "position": 82,
    "impressions": 3
   },
   {
-   "query": "when do you start paying hecs",
-   "position": 88,
-   "impressions": 3
-  },
-  {
-   "query": "280000",
-   "position": 9.7,
-   "impressions": 3
-  },
-  {
-   "query": "65000 plus super",
-   "position": 7.3,
-   "impressions": 3
-  },
-  {
-   "query": "australia income tax brackets 2026",
-   "position": 80.3,
-   "impressions": 3
-  },
-  {
-   "query": "australia income tax rates 2026 australia",
-   "position": 89.7,
-   "impressions": 3
-  },
-  {
-   "query": "marginal tax rates australia",
-   "position": 84.3,
-   "impressions": 3
-  },
-  {
-   "query": "nsw tax brackets",
-   "position": 68,
+   "query": "pay caliculator",
+   "position": 66.7,
    "impressions": 3
   }
  ],
- "live": null,
- "costUsd": 0,
+ "live": {
+  "serps": [
+   {
+    "keyword": "mypaycalc",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "pcbcalculator.my",
+      "url": "https://google.com/goto?url=CAESVgHEIkXXOhZa7e9i897i2rGDFiWmMqkxyWHwXRYv19acaIMHuF5ljIytiMv_L9pUErL4MwN1_2qHRT3WZbI49JW67rj1PSyBk0It-KKtZE7FFpLBXnrr&gsessionid=SGj25M5SwM5Gq7fzrUBQTvCwN-_m6V0lAmQaJDzmzeO6oNToq3kuig",
+      "title": "Malaysia Salary, PCB and Payroll Calculator 2026"
+     },
+     {
+      "rank": 2,
+      "domain": "au.talent.com",
+      "url": "https://google.com/goto?url=CAEScAHEIkXXyc2mP2D6nUAWg4HtgWvJVCCfsEYbpaCeKOZfokoQp7dxqOmDm4sHSL5tWHyOa1QL_g-eHdWSN97XWA732QlK7vv9PfxR-3PZEiPupd2--bam1glVtrMZKL95Mrxq8gUu3HIIaHoQE9WYH1A&gsessionid=SGj25M5SwM5Gq7fzrUBQTvCwN-_m6V0lAmQaJDzmzeO6oNToq3kuig",
+      "title": "$8000 income tax calculator 2026 - Australia - salary after tax"
+     },
+     {
+      "rank": 3,
+      "domain": "paycheckcalculate.com",
+      "url": "https://google.com/goto?url=CAESiQEBxCJF146_qxQouva2EiLLaU3pTc_XPYJ1aUlx5cVUyPof8_p6wRyk8rbCemdPeiBy8BUfvS_3EQecstjg4neAybNsed32ovRq1-TuSM-jHwJvcVyQ6ojVTas3i5HXhV1NCuefVTDPbHJKGox-R0mLUVDgLBIDKUh9A8IWrEfg7v4CvKQyFHDgrw&gsessionid=SGj25M5SwM5Gq7fzrUBQTvCwN-_m6V0lAmQaJDzmzeO6oNToq3kuig",
+      "title": "Sydney Paycheck Calculator - Accurate Net Salary Estimation"
+     },
+     {
+      "rank": 4,
+      "domain": "salary-calc-au.com",
+      "url": "https://google.com/goto?url=CAESWAHEIkXXSraEawJsbw1yL6YctLF3lEgCLShNwiZEgOPQN2t72jpje5Ac3cZ-iybN0-iDu0YsdA-NLuRlffjhjQ-Tu2-QbFBht0bMWqDRwoEyDYbqHDRx5zI&gsessionid=SGj25M5SwM5Gq7fzrUBQTvCwN-_m6V0lAmQaJDzmzeO6oNToq3kuig",
+      "title": "Australian Salary Calculator 2024-25 – Free Take-Home Pay ..."
+     },
+     {
+      "rank": 5,
+      "domain": "slicemypay.com",
+      "url": "https://google.com/goto?url=CAESXQHEIkXXgQFHVG6VZTf1yK-XJGFwsIiB-Hdl7fSTBaprQd4efTlQetCw20V6SKfKFHpNwMjnORpD5N2MnGubluFA5DYvGNG9vjebx6ekxiIr4VfWTWOEAzt14_XtFw&gsessionid=SGj25M5SwM5Gq7fzrUBQTvCwN-_m6V0lAmQaJDzmzeO6oNToq3kuig",
+      "title": "Australia Paycheck Calculator 2025/26 · All States - SliceMyPay"
+     },
+     {
+      "rank": 6,
+      "domain": "realpay.au",
+      "url": "https://google.com/goto?url=CAESaQHEIkXXAbuGQlYDJNbq2AOQYZ3vAxwgrK5Ob3hCyfOozCH0sRx4KCwx1VnSjnXFfBqTdU48sTwXG1AoqP8w4aTqk9rStcoribtw0dVL9aiRu-sfTpBrSPaDZ5zZtTins8hIpkzbIWX5Uw&gsessionid=SGj25M5SwM5Gq7fzrUBQTvCwN-_m6V0lAmQaJDzmzeO6oNToq3kuig",
+      "title": "Weekly Pay Calculator Australia 2025-26 | RealPay"
+     },
+     {
+      "rank": 7,
+      "domain": "whatismypay.com.au",
+      "url": "https://google.com/goto?url=CAESVwHEIkXXzG-7xjz9moKEi9VdwtHw7OvviFmvRZQP3jFUVwagWcydkQ2qoo2oVYKp9ajJzH-oeFhYmA03JEvj8X7NjQeXfCxLnOjvQzlxGo0DpqkwP9VyQg&gsessionid=SGj25M5SwM5Gq7fzrUBQTvCwN-_m6V0lAmQaJDzmzeO6oNToq3kuig",
+      "title": "Australian Income Tax Calculator"
+     },
+     {
+      "rank": 8,
+      "domain": "play.google.com",
+      "url": "https://play.google.com/store/apps/details?id=au.softwarehouse.paycalculatoraustralia&hl=es_CL",
+      "title": "Pay Calculator Australia - Apps en Google Play"
+     },
+     {
+      "rank": 9,
+      "domain": "fairworkmate.com.au",
+      "url": "https://google.com/goto?url=CAESbwHEIkXXpQ0FSqqHMu9dMRoyrvTURRQ0J-l-JHw7SZ6MqfFkd2sZSDAyyptTBcXlKKCnaiZazGkagopgJDyXU2KdxH6cXI9t4phX6cPDn4NfKY62Bwu-Ig07k5Tcp-t7eQzEF4jjMnOZrCHHgF7vow&gsessionid=SGj25M5SwM5Gq7fzrUBQTvCwN-_m6V0lAmQaJDzmzeO6oNToq3kuig",
+      "title": "Salary to Hourly Rate Calculator - FairWorkMate"
+     }
+    ],
+    "impressions": 140,
+    "gscPosition": 5.1,
+    "ourPage": "/",
+    "ourRank": null
+   },
+   {
+    "keyword": "pay calculator",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "toolkitau.com",
+      "url": "https://google.com/goto?url=CAESWAHEIkXXnlvYFRJjvNEidsE4yoLergtEcX32DxMzTDUsnTxH1srYyLetH29cmAFSQICk1VpIHiBK6UZtDzjz6-rUgUeha-sENfqRFXBj3ivjZx0kniiI1_s&gsessionid=jlGVyuD3ZkBQUf9bAwV1c0srUVlVlkvHjkDeft4aYZcdpRqognZbcQ",
+      "title": "Free Australian Calculators and Tools | ToolkitAU"
+     },
+     {
+      "rank": 2,
+      "domain": "mydailycalc.com",
+      "url": "https://google.com/goto?url=CAESVAHEIkXXRDSkHIzZSKMCv2jZeavez6xWjOzwcUR4bOQVO75t3O5sN9ONiZqzz4H_Y9k6wu7AOFpCgldCfCAp1iReWNTRowNSJUWLI8Yt-kQUY4ahAA&gsessionid=jlGVyuD3ZkBQUf9bAwV1c0srUVlVlkvHjkDeft4aYZcdpRqognZbcQ",
+      "title": "Australian Salary & Tax Calculator 2026–27 – Take-Home Pay"
+     },
+     {
+      "rank": 3,
+      "domain": "paymecalculator.com.au",
+      "url": "https://google.com/goto?url=CAESWwHEIkXXfEQNdg4u3aqoRFba8YiA0gznEeFuoFtoBLkAi_-IwDiiYGeBos51vNyRbMaglHXY4-YOFcFINLbjgsvKgLMxsrvtDFZgUYHii68pT00w4XdoVW0fKQ8&gsessionid=jlGVyuD3ZkBQUf9bAwV1c0srUVlVlkvHjkDeft4aYZcdpRqognZbcQ",
+      "title": "Untitled"
+     },
+     {
+      "rank": 4,
+      "domain": "netpaymate.com.au",
+      "url": "https://google.com/goto?url=CAESWgHEIkXXhU-5c5c1df20mVSph83w4pgIsAkO_XdUCfqw-ZOjRkoQTk__beWsJuZkUuqpjo3244hSVIGvjzGe_2kBKkNtBKPVlGXyAsqDVo5exJ4tFV3a4DpOZg&gsessionid=jlGVyuD3ZkBQUf9bAwV1c0srUVlVlkvHjkDeft4aYZcdpRqognZbcQ",
+      "title": "Australian Tax & Salary Calculators | NetPayMate"
+     },
+     {
+      "rank": 5,
+      "domain": "salary-calc-au.com",
+      "url": "https://google.com/goto?url=CAESVwHEIkXXd_1xD_k_DZEoeVRf4BsMmwlA-F0AR3Lj2O7GzYKeaN0Dj1uyAdN1GW7C_s-XejRb-rAPUNAR-9t1Cp3FHCrCW5fYk4m8tV3gH6D8hDBChWBNdA&gsessionid=jlGVyuD3ZkBQUf9bAwV1c0srUVlVlkvHjkDeft4aYZcdpRqognZbcQ",
+      "title": "Australian Salary Calculator 2024-25 – Free Take-Home Pay ..."
+     },
+     {
+      "rank": 6,
+      "domain": "paycalculator.net.au",
+      "url": "https://google.com/goto?url=CAESWAHEIkXX-Lg0Pv3Q7Xm9GowXBeMULjG1xbbZDT3u5cz3eJTVPGVwj5e01DqJMzU_LAVAsg6f3byGn9ggIO7eJOU1A6-CqD7zQaYTJ8p8uy50-FeQ9azCppw&gsessionid=jlGVyuD3ZkBQUf9bAwV1c0srUVlVlkvHjkDeft4aYZcdpRqognZbcQ",
+      "title": "paycalculator.net.au"
+     },
+     {
+      "rank": 7,
+      "domain": "salarycalculators.com.au",
+      "url": "https://google.com/goto?url=CAESaQHEIkXXpRUHrun1UAtvOhqevbTKVRYHc6EwFsam0OdOUbfHr0LlWJhsgCMDP6EJiRA1SE3nDyWkW4vF0MMMsSst9YbA3pOAfTx-9XCMVPZh8ShC8ezjyaBxejBMiqEihjsSNGjgHYNtFQ&gsessionid=jlGVyuD3ZkBQUf9bAwV1c0srUVlVlkvHjkDeft4aYZcdpRqognZbcQ",
+      "title": "Salary & Pay Calculators Australia 2026–27 | Free Tools"
+     },
+     {
+      "rank": 8,
+      "domain": "aftertaxaustralia.com",
+      "url": "https://google.com/goto?url=CAESgwEBxCJF1533OK6rs2TWKxvqpeX5xstIna9XlbnwLsfc5IbZAMULwvIXbNqU8YC-Icmw8H2Q4NChiIr-NtuhU1a1t4KwihHkjfkIXLdBa3NfsKYxVi0WJI9O7uPq1MCzPecW7NAZHbaGsEY3eqz9QSLe7cjhLCrGUtllXm0hbzLGKs5OGw&gsessionid=jlGVyuD3ZkBQUf9bAwV1c0srUVlVlkvHjkDeft4aYZcdpRqognZbcQ",
+      "title": "Hourly to Salary Calculator Australia - AfterTax Australia"
+     },
+     {
+      "rank": 9,
+      "domain": "tools.valtou.com",
+      "url": "https://google.com/goto?url=CAESZAHEIkXXhbpE46NqjhVfUn5sqxRKemRj8v8TJOoxyFoDaK_5CEJsiBoHUwmfTPgovc_86r6bG1Napd1srHzx8v4bkUBGmHTfRzq5WfrRVBzqWkmGYna_3IC3xJ71ANPsH358qyg&gsessionid=jlGVyuD3ZkBQUf9bAwV1c0srUVlVlkvHjkDeft4aYZcdpRqognZbcQ",
+      "title": "Pay Calculator Australia 2026–27 – Take-Home Pay After Tax"
+     }
+    ],
+    "impressions": 34,
+    "gscPosition": 84.8,
+    "ourPage": "/",
+    "ourRank": null
+   },
+   {
+    "keyword": "australian tax brackets",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "data.gov.au",
+      "url": "https://google.com/goto?url=CAEStgEBxCJF19bJszVhwVIgiuLTL-Fnzqj9q6_klHsUbCTgQFy1uAwi2Sp5QgCOOXJRLuKjaY2GbPsvfqYPB8-wM9H-VP5vyuapYGqpd52_TtA0vIWSNDisPstTh6t9_uoeKWHkZe2wAaS6U6IBQY52UwqqQIdOCELDboML3YdXE6AcaeC8XIpUakorw6H9t36m3IxfEm3K0aTYxtg68tfU80evgV_P6YpBWtKWjjg32UYWCx6c4c8nEw&gsessionid=QFydRiE6gcx1D_jP1wMhHvPa_SP7LtQYhZH5uQHCTQgiOPyp1zupqQ",
+      "title": "https://data.gov.au/data/dataset/taxation-statisti..."
+     },
+     {
+      "rank": 2,
+      "domain": "au.talent.com",
+      "url": "https://google.com/goto?url=CAEScAHEIkXX-RRwWnmIkd7jtBtvwUwpmNGS0WQwwvtQwbt9QJl-hv19JFFPTvwopP41Bk3BaQd4NFXtwDlJ4Tr7WUkOvOs5fDg6TF9WLuo8Clq1Shof_rnGZjoYrfYRgwdO8lIkwiSdICP86yJ1dctAYDY&gsessionid=QFydRiE6gcx1D_jP1wMhHvPa_SP7LtQYhZH5uQHCTQgiOPyp1zupqQ",
+      "title": "https://au.talent.com/tax-calculator/Australia-74161"
+     },
+     {
+      "rank": 3,
+      "domain": "bookings.hants.gov.uk",
+      "url": "https://google.com/goto?url=CAESqgEBxCJF14r0Mvzr4jvtMNXUmmjaj4i9WCulm-6XSNZWWHpWWT1W0pcOZJmQ4RGrJGkykJAKv1A-DrIuB65ia9ZyUshQpOHfbzo8_xeb4LQU4zzRZ_FxhtQxOg42ZYhI6sCKYF3ianJJgE3kX5oMDP0Al2Urbg19mqg4os7Sad0Rganihh9_ZJVIV-5J-HwbAVh2vyRm0yRzuVzlWcWnV1D0R0t5ncJSGTFYTg&gsessionid=QFydRiE6gcx1D_jP1wMhHvPa_SP7LtQYhZH5uQHCTQgiOPyp1zupqQ",
+      "title": "How Much Tax Do You Pay in Australia? A Complete ..."
+     },
+     {
+      "rank": 4,
+      "domain": "youtube.com",
+      "url": "https://google.com/goto?url=CAESZwHEIkXX9vBOwFt1cLWu5mVdvl_TjAzNsQIG2db_504NGHsDfL2V_-JFSgILwukmq3ssYSMVSmgzZOmi0K1gSQE-kUvvHQuHbLcMHzGxwcxOLE0zITlvjE0hSt9jTXIQqkLrCsBk-Ss&gsessionid=QFydRiE6gcx1D_jP1wMhHvPa_SP7LtQYhZH5uQHCTQgiOPyp1zupqQ",
+      "title": "Australian Tax Brackets in 2024 - Tax Basics for Beginners"
+     },
+     {
+      "rank": 5,
+      "domain": "instafiling.com",
+      "url": "https://google.com/goto?url=CAEScAHEIkXXFMTl6cy5Fe9Kfn0TLYVQm_kTBMqjBiOQAc7JSmCrMWG2fe7PfHQIFKYwOUdS52Ghjm2QSYwI9H5ZvUD0mcKJS9y7y3dtHSFuvqfNbElITD4sVw5gKCVk3e9M96_BReazWPylmnU3IIMTMAk&gsessionid=QFydRiE6gcx1D_jP1wMhHvPa_SP7LtQYhZH5uQHCTQgiOPyp1zupqQ",
+      "title": "Australian Income Tax Rates (Complete Information)"
+     },
+     {
+      "rank": 6,
+      "domain": "moneymag.com.au",
+      "url": "https://google.com/goto?url=CAESaQHEIkXXCdhAmf2n5UrFcBDE2--x_PwjmqJCqX4CgjoP0NC9nnSSvfsWq2CFPQrTsFKp3eedlBckF_Jsb9WNpVcJrEASFHYGaYR0q2VotQ1o-4ukgnKSTv0Lmmi5TNkAjHkqw4CTNNzVNg&gsessionid=QFydRiE6gcx1D_jP1wMhHvPa_SP7LtQYhZH5uQHCTQgiOPyp1zupqQ",
+      "title": "Tax brackets 2024-2025 | Money magazine"
+     },
+     {
+      "rank": 7,
+      "domain": "ledgermedics.com",
+      "url": "https://google.com/goto?url=CAESagHEIkXXVkDuRkO0UaLI8LsjnjdkJ_coC6dkrHBB-dogCrRIAAT_nkqY7AOHtXhbb-779CxtxXb0CMsNa-a8j2S7PSUe-krT5Z7-q-cz5qjAOz1FJJPHGVeKZzJGVJ5wYi6FZZvDiiRcsd0&gsessionid=QFydRiE6gcx1D_jP1wMhHvPa_SP7LtQYhZH5uQHCTQgiOPyp1zupqQ",
+      "title": "Aus Tax Brackets: How They Work for Your Salary (2026)"
+     },
+     {
+      "rank": 8,
+      "domain": "salarycalculators.com.au",
+      "url": "https://google.com/goto?url=CAESeQHEIkXXa9Hm3u3_9NYa9EFenGm5-pJLLB7O7DVhDSCOCBriTxf2OCgny2xroPcdo_3gFESBJUkAtuzCYKomdm6y4kuy-gIJMzpKlPEersIvW-CMqI2hpIpqEhxSUnZtr8rW8k9HirMn77e82H7Nq_KWjhfvTUgV29Y&gsessionid=QFydRiE6gcx1D_jP1wMhHvPa_SP7LtQYhZH5uQHCTQgiOPyp1zupqQ",
+      "title": "Tax Brackets Australia 2025–26 | Rates, Thresholds & Examples"
+     }
+    ],
+    "impressions": 17,
+    "gscPosition": 88.3,
+    "ourPage": "/tax-brackets",
+    "ourRank": null
+   },
+   {
+    "keyword": "what tax bracket am i in australia",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "data.gov.au",
+      "url": "https://google.com/goto?url=CAEStwEBxCJF1xc7b6ZzsedrpkLdiNQONipDytKuc1GBHay-oy0f-tDCfNUTytHTO_mS1ec8hbxR-Y5qXN-3DKJTeGzb-YJDiAl-MR-kOlreQNP5FpwFi8ZrDpfQlCZrPF8t25MEMfBE_1av-TEQ8yYGSpKqbdnftWEncvW36o3allYt7hT_1iQ9KLwv-OZeg_G44ZJ8ld4gEV5RJcBTj-EE0cxjSPRgWJL1kvTrEa6I8sNMFITWry9CJSA&gsessionid=fx2ceRTJ0gKr0hrOvg-kHofap_-6ddWoFy4Cmm61zNoE2ry4B0Oyaw",
+      "title": "https://data.gov.au/data/dataset/taxation-statisti..."
+     },
+     {
+      "rank": 2,
+      "domain": "au.talent.com",
+      "url": "https://google.com/goto?url=CAEScQHEIkXXSeOtyPZUTOKJ-NG4Hl3Dy0XRJ2g8tTsIX5W34puD_l5cKwSDTxz9UH9SmR0k_X676S2NJ1DWCkd59ysZXz2mLmzhWsn3E6qXx14pfTvcDG4zlz7MSSYohDc-Xo15Z5iLffQrMoJfDJl0AHyi&gsessionid=fx2ceRTJ0gKr0hrOvg-kHofap_-6ddWoFy4Cmm61zNoE2ry4B0Oyaw",
+      "title": "https://au.talent.com/tax-calculator/Australia-33638"
+     },
+     {
+      "rank": 3,
+      "domain": "auscalcs.com.au",
+      "url": "https://google.com/goto?url=CAESXAHEIkXXWszFsJDs-wZhX7h1HJUZ68Dmh491H9XPDWldVLM0Xc4BbWf5zFLFplvj2mL7By9Ik_sz2lKnXDmDRxD2TJVeRJf6cu4D5zYQ5aaItTpkRVF3hSU-gvvz&gsessionid=fx2ceRTJ0gKr0hrOvg-kHofap_-6ddWoFy4Cmm61zNoE2ry4B0Oyaw",
+      "title": "The Brief — Money Explained Plainly - AusCalcs"
+     },
+     {
+      "rank": 4,
+      "domain": "community.ato.gov.au",
+      "url": "https://google.com/goto?url=CAESdAHEIkXXgqGdHlDj1o7L_ePbEjbVfh8Z_Op-izlFMGUk4sD23CcYRIJYamaDBzEMVl4epVByQuhlO3_Y0-y7zCMImlCjcmkLCRt5_6pkY4-NVXwWvXhKUDoMCYDmSbH93HdQRI3zVyzH8B_5n-9HaiMVBveY&gsessionid=fx2ceRTJ0gKr0hrOvg-kHofap_-6ddWoFy4Cmm61zNoE2ry4B0Oyaw",
+      "title": "https://community.ato.gov.au/s/topic/a0N9s000000Da..."
+     },
+     {
+      "rank": 5,
+      "domain": "personalfinancialofficer.com.au",
+      "url": "https://google.com/goto?url=CAESawHEIkXX4OW8WnRZCOOqWCIYCjz4jD1NwIsFMsIBjR7Q0eWGLfbgRCFHeVY7zyEUolxTDXMvWQYucOuDF2NDvVuv0IkhoHJaO3C7DlH1hVKD85Cdr_McscUwo2OO-6JinyvS_YMOQQogShNc&gsessionid=fx2ceRTJ0gKr0hrOvg-kHofap_-6ddWoFy4Cmm61zNoE2ry4B0Oyaw",
+      "title": "Money guides for Australians"
+     },
+     {
+      "rank": 6,
+      "domain": "youtube.com",
+      "url": "https://google.com/goto?url=CAESaAHEIkXXwMDIzk1w5s-Abar2xy38rwcvrkw355_8sux8YFo_Kpg-tNrZO-lDx7u55xfOPj3PxU1zRbW0z2wUfdbboGqmiCffIxS05tnDSDlZ8UG2jy6r5IPfC7Ldr8iZWKjvaWdSLGvt&gsessionid=fx2ceRTJ0gKr0hrOvg-kHofap_-6ddWoFy4Cmm61zNoE2ry4B0Oyaw",
+      "title": "How Australian Tax Brackets Actually Work (2026–27)"
+     },
+     {
+      "rank": 7,
+      "domain": "autaxcalc.com",
+      "url": "https://google.com/goto?url=CAESVwHEIkXXFBUUx_XeCnyP47v3qP_xP8KgMnf70FO_2ismPrAXNBTBnIP9Tykia49X4-W7GaMczFksGkRdkXxFa5k62xLegAHc6bkj-DVusv3RcX9v9QqHWQ&gsessionid=fx2ceRTJ0gKr0hrOvg-kHofap_-6ddWoFy4Cmm61zNoE2ry4B0Oyaw",
+      "title": "Tax, Property & Money Guides for Australians | AU Tax Calc"
+     },
+     {
+      "rank": 8,
+      "domain": "amoura.com.au",
+      "url": "https://google.com/goto?url=CAESiAEBxCJF14yeWeKXLELS-KTYX4doH-Rsavs4hzlVcGSdPkJO81Wvq-z7tGycb3by56Ifqo8ojk8sMweXkPzCHEjj2ajYB1gmT8FJMF0vWMIaebxWpi3TcxmKz60xICGBbqPRiCrOvuOIxFcRvYvsvN7JyV8joMq-g_2ia_tMnyeuxEM7y4cTPmWv&gsessionid=fx2ceRTJ0gKr0hrOvg-kHofap_-6ddWoFy4Cmm61zNoE2ry4B0Oyaw",
+      "title": "Australian Income Tax Rates: Understanding Tax Brackets"
+     },
+     {
+      "rank": 9,
+      "domain": "aussiesalary.com",
+      "url": "https://google.com/goto?url=CAESVgHEIkXXYKtxErdrD8nOldGYfjqxxxFWiVMzWFQ_kuVKz1uABmq7_pfbypY3BMPQvBOeZrMgZVs_-3DLi901EfCl0oWfQ25e3pXiv3-VtjgVR4CI-RMA&gsessionid=fx2ceRTJ0gKr0hrOvg-kHofap_-6ddWoFy4Cmm61zNoE2ry4B0Oyaw",
+      "title": "AussieSalary – Australian Pay, Superannuation & Civil ..."
+     }
+    ],
+    "impressions": 16,
+    "gscPosition": 68.9,
+    "ourPage": "/tax-brackets",
+    "ourRank": null
+   },
+   {
+    "keyword": "paycalculator",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "paycalculator.com.au",
+      "url": "https://google.com/goto?url=CAESWQHEIkXXphFkEFpYeh-YCT_Fd_Ij4KxY3j52IgrsyDWPJ47MdH5Y4I3aPfuNQkf334bpXYLHsv2Zzgb6P45Wu4L1eFljWx3CSH7KaPtyc_hXNzgnIPuZy88P&gsessionid=SUYiBJVUKfyLZu6WLXd-gdgnFwtva7sLuHTaQ1btRhH6xBeEpN-Fvg",
+      "title": "pay calculator"
+     },
+     {
+      "rank": 2,
+      "domain": "calculate.fairwork.gov.au",
+      "url": "https://google.com/goto?url=CAESawHEIkXXNPNYf98i9vL_MA10JIIMJGTHWP4hZO1HQGx5wqAgik2cnHIKVVoF8vVxmXbERX7MBu9H-HThAo7uraL5VhdmdMN89oSTQeyye2-fZAS9NRs8NgjTyXkFATYzILdIGZlrtxc4j_Ia&gsessionid=SUYiBJVUKfyLZu6WLXd-gdgnFwtva7sLuHTaQ1btRhH6xBeEpN-Fvg",
+      "title": "P.A.C.T Pay Calculator - Find your award"
+     },
+     {
+      "rank": 3,
+      "domain": "wagecalculator.com.au",
+      "url": "https://google.com/goto?url=CAESXgHEIkXXx0Ogr1hLdKIR-4TZ-0Y8jf6l7sBROoRDs3wIjRybKwlnoiJDK6ZLZ5DfjDh3m3iTu6boAyo8cPRpIcJ_MxXRgd932VLb4xMXm2W9IDZSn_gkHSy1WkWpBKc&gsessionid=SUYiBJVUKfyLZu6WLXd-gdgnFwtva7sLuHTaQ1btRhH6xBeEpN-Fvg",
+      "title": "Pay Calculator | Wage, Salary & Take-Home Pay After Tax"
+     },
+     {
+      "rank": 4,
+      "domain": "calculate.fairwork.gov.au",
+      "url": "https://google.com/goto?url=CAESXgHEIkXXkyFfJt6skc4-loKj6E0CONn0spSbqcPXy3K4-L2GsIeB8sByrbXecV4ZbE0WYb79TszngSsuEgPvlUDQKT9KVSFG5kQk3t4KDGwCjRjyvkKJRTJlK7TpzYo&gsessionid=SUYiBJVUKfyLZu6WLXd-gdgnFwtva7sLuHTaQ1btRhH6xBeEpN-Fvg",
+      "title": "Pay Calculator - Fair Work Ombudsman"
+     },
+     {
+      "rank": 5,
+      "domain": "emumoney.com.au",
+      "url": "https://google.com/goto?url=CAESbgHEIkXX54M3CnazfxBCBwCb5ANU9nBPTU1yzgHg-IZhcOrLQ96lvHYVoFTij5xSaP3Qq8LxVRef69PkzP-UK-rpDn6feN_wDFfwr8LgzK86ao8T7yMsLZvkqfFjpCQl9hzJ4vKbwqWd6RVHMFZs&gsessionid=SUYiBJVUKfyLZu6WLXd-gdgnFwtva7sLuHTaQ1btRhH6xBeEpN-Fvg",
+      "title": "Pay Calculator Australia 2026-27"
+     },
+     {
+      "rank": 6,
+      "domain": "au.seek.com",
+      "url": "https://google.com/goto?url=CAESdAHEIkXXIjIVJPc5-9qCLXAf0fWGoNCAZkpYFUxrP-DhC-SFseBhgrsVrVH6gROrNhRy4kmeMALu39FD2pxKEBAqf1WcDqBeeWkiRtldtDTjPAdbIcCXmg7COzAmUFdniy1SzTX3wMN-7IbvYlHoLk41gwSN&gsessionid=SUYiBJVUKfyLZu6WLXd-gdgnFwtva7sLuHTaQ1btRhH6xBeEpN-Fvg",
+      "title": "SEEK Pay Calculator - Find Out Your Take Home Pay and Taxes"
+     },
+     {
+      "rank": 7,
+      "domain": "moneysmart.gov.au",
+      "url": "https://google.com/goto?url=CAESeAHEIkXXLkepc7AEeT6iUqRjGeCSWjUVol8DnQJX62R4a20WlQHlXv5tBJPSSV9avsJTkBODkTMB9UUJGbenpCDI_Wss7tNqW1ncHm5OXIj2hhWj1xQMkSvorkC25NeHNuS6aejv8H-LMR8Fak6IpyfNMPqh7a32Wg&gsessionid=SUYiBJVUKfyLZu6WLXd-gdgnFwtva7sLuHTaQ1btRhH6xBeEpN-Fvg",
+      "title": "Income tax calculator - Moneysmart.gov.au"
+     },
+     {
+      "rank": 8,
+      "domain": "calculator.accesspay.com.au",
+      "url": "https://google.com/goto?url=CAESewHEIkXXaRbOcb83Nth-6Pgtgv5sTLZDBDG4YMxHnpw9NmMXavw-5B8dqLeNCaMyjqLJpxWiN2DRyK7KdHel2plAxNVAtczkrwUtFZwpcnB1IJdYyRVQuo8ZGy7Pxe9lbwnUBqHX07X4hEigtYq93t_kvapAhOv826AJIQ&gsessionid=SUYiBJVUKfyLZu6WLXd-gdgnFwtva7sLuHTaQ1btRhH6xBeEpN-Fvg",
+      "title": "Salary Packaging Calculator | Accesspay"
+     },
+     {
+      "rank": 9,
+      "domain": "bcu.com.au",
+      "url": "https://google.com/goto?url=CAESdQHEIkXXpm0BwJSgmI-88gGsjUheBEUeKGfyezQfxovCs5LN9wJV00rS-5_Ihzwnhh8igtfYJ1lNp5bqi-jBirFwN4YX6N393jdu1sTIdRy3AFWvUD3nkimmsPCPY06_2YxddRy3FRKegWrFyO4gWOOnUhAyeA&gsessionid=SUYiBJVUKfyLZu6WLXd-gdgnFwtva7sLuHTaQ1btRhH6xBeEpN-Fvg",
+      "title": "Income tax calculator - salary after tax"
+     }
+    ],
+    "impressions": 13,
+    "gscPosition": 83.9,
+    "ourPage": "/",
+    "ourRank": null
+   }
+  ],
+  "index": [
+   {
+    "url": "https://mypaycalc.com.au/",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-22T21:48:42Z",
+    "googleCanonical": "https://mypaycalc.com.au/",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://mypaycalc.com.au/tax-brackets",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-20T10:31:10Z",
+    "googleCanonical": "https://mypaycalc.com.au/tax-brackets",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://mypaycalc.com.au/hecs-help-repayments",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-10-29T16:23:59Z",
+    "googleCanonical": "https://mypaycalc.com.au/hecs-help-repayments",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://mypaycalc.com.au/salary",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-19T10:09:13Z",
+    "googleCanonical": "https://mypaycalc.com.au/salary",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://mypaycalc.com.au/contact",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-20T06:57:16Z",
+    "googleCanonical": "https://mypaycalc.com.au/contact",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://mypaycalc.com.au/about",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-22T23:03:43Z",
+    "googleCanonical": "https://mypaycalc.com.au/about",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://mypaycalc.com.au/salary/300000-after-tax",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-10-29T20:07:18Z",
+    "googleCanonical": "https://mypaycalc.com.au/salary/300000-after-tax",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://mypaycalc.com.au/how-we-calculate",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-22T12:03:35Z",
+    "googleCanonical": "https://mypaycalc.com.au/how-we-calculate",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   }
+  ],
+  "error": null
+ },
+ "costUsd": 0.01,
  "speed": [
   {
    "url": "https://mypaycalc.com.au/",
    "lite": true,
-   "serverSecs": 0.08,
-   "htmlKb": 19,
+   "serverSecs": 0.06,
+   "htmlKb": 20,
    "blocking": 1,
    "images": 1,
    "noDims": 0,
@@ -349,8 +806,8 @@
   {
    "url": "https://mypaycalc.com.au/tax-brackets",
    "lite": true,
-   "serverSecs": 0.08,
-   "htmlKb": 12,
+   "serverSecs": 0.1,
+   "htmlKb": 13,
    "blocking": 1,
    "images": 1,
    "noDims": 0,
@@ -365,25 +822,60 @@
  },
  "links": {
   "internal": 152,
-  "outside": 10,
-  "checkedOutside": 10,
+  "outside": 13,
+  "checkedOutside": 13,
   "unsureOutside": 5
  },
  "affiliateOk": 0,
- "secs": 125,
+ "secs": 150,
  "change": {
   "first": false,
-  "since": "2026-11-18T22:12:48Z",
-  "score": 1,
-  "newIssues": [],
-  "fixed": [
-   "3 page(s) under 250 words"
+  "since": "2026-11-18T23:21:20Z",
+  "score": -5,
+  "newIssues": [
+   "\"mypaycalc\": we're not in the top 10 (Search Console avg 5); pcbcalculator.my leads",
+   "\"pay calculator\": we're not in the top 10 (Search Console avg 85); toolkitau.com leads",
+   "\"paycalculator\": we're not in the top 10 (Search Console avg 84); paycalculator.com.au leads",
+   "\"australian tax brackets\": we're not in the top 10 (Search Console avg 88); data.gov.au leads",
+   "\"what tax bracket am i in australia\": we're not in the top 10 (Search Console avg 69); data.gov.au leads"
   ],
-  "impr28": 0,
+  "fixed": [],
+  "impr28": 178,
   "clicks28": 0,
-  "views28": 0,
+  "views28": 12,
   "rivals": [],
-  "positions": []
+  "positions": [
+   {
+    "query": "salary calculator australia",
+    "was": 85.3,
+    "now": 72.8
+   },
+   {
+    "query": "salary and pay calculator",
+    "was": 94.5,
+    "now": 83.8
+   },
+   {
+    "query": "australian pay calculator",
+    "was": 83.5,
+    "now": 76.2
+   },
+   {
+    "query": "fortnightly payroll",
+    "was": 91.3,
+    "now": 86
+   },
+   {
+    "query": "pay calculator for australia",
+    "was": 67.8,
+    "now": 71.3
+   },
+   {
+    "query": "salary calculator",
+    "was": 37.8,
+    "now": 44.4
+   }
+  ]
  },
  "history": [
   {
@@ -424,6 +916,13 @@
   {
    "at": "2026-11-18T22:12:48Z",
    "score": 98,
+   "grade": "A",
+   "impr28": 1078,
+   "clicks28": 4
+  },
+  {
+   "at": "2026-11-18T23:21:20Z",
+   "score": 99,
    "grade": "A",
    "impr28": 1078,
    "clicks28": 4

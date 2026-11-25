@@ -3,11 +3,11 @@
  "name": "imnetwork.com.au",
  "url": "https://imnetwork.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-18T21:22:19Z",
+ "scannedAt": "2026-11-25T03:07:37Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
- "nextDue": "2026-11-26",
+ "nextDue": "2026-12-02",
  "score": 95,
  "grade": "A",
  "areas": {
@@ -22,7 +22,7 @@
    "label": "Tracking & money links"
   },
   "indexing": {
-   "score": 97,
+   "score": 100,
    "grade": "A",
    "label": "Sitemap & indexing"
   },
@@ -42,28 +42,72 @@
    "label": "Speed"
   },
   "google": {
-   "score": 55,
-   "grade": "D",
+   "score": 100,
+   "grade": "A",
    "label": "Google trend"
   },
   "rivals": {
-   "score": null,
-   "grade": null,
+   "score": 35,
+   "grade": "F",
    "label": "Competitors"
   }
  },
- "pages": 14,
+ "pages": 19,
  "findings": [
   {
-   "id": "few-pages-in-google",
-   "area": "indexing",
-   "severity": "low",
-   "title": "Google shows only 0 of 14 pages (site is 3 days old)",
-   "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 2 pages on 15 Jan 2027, cut or merge weak pages and earn a few links.",
-   "pages": [],
+   "id": "rival-imn",
+   "area": "rivals",
+   "severity": "medium",
+   "title": "\"imn\": we're not in the top 10 (Search Console avg 8); app.debelegger.nl leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/"
+   ],
    "count": 1,
-   "detail": "",
-   "impact": 3,
+   "detail": "Top 5: 1. app.debelegger.nl, 2. unknown site, 3. instagram.com, 4. debelegger.nl, 5. gurufocus.com",
+   "impact": 8.6,
+   "broken": false
+  },
+  {
+   "id": "rival-how-much-does-a-website-cost-for-small-business",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"how much does a website cost for small business\": we're not in the top 10 (Search Console avg 88); unknown site leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/how-much-does-a-website-cost"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. unknown site, 2. organikweb.com.au, 3. 10amdigital.com.au, 4. rocksolidmarketing.com.au, 5. websiteboss.com.au",
+   "impact": 1.4,
+   "broken": false
+  },
+  {
+   "id": "rival-website-design-cost-australia",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"website design cost australia\": we're not in the top 10 (Search Console avg 92); websitedesignerperth.com.au leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/how-much-does-a-website-cost"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. websitedesignerperth.com.au, 2. cisin.com, 3. foundlab.com.au, 4. multidice.com.au, 5. youtube.com",
+   "impact": 1.4,
+   "broken": false
+  },
+  {
+   "id": "rival-cost-of-not-having-a-website",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"cost of not having a website\": we're not in the top 10 (Search Console avg 89); nexalab.io leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/how-much-does-a-website-cost"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. nexalab.io, 2. appsalon.com.au, 3. youtube.com, 4. sitemile.com, 5. heightsdigitalmedia.com",
+   "impact": 1.4,
    "broken": false
   },
   {
@@ -73,8 +117,8 @@
    "title": "2 page(s) under 250 words",
    "fix": "Fine for tools; for guides add the answer people search for.",
    "pages": [
-    "/our-sites",
-    "/about"
+    "/about",
+    "/labs"
    ],
    "count": 2,
    "detail": "",
@@ -94,30 +138,560 @@
    "detail": "",
    "impact": 1.0,
    "broken": false
+  },
+  {
+   "id": "rival-tradie-website",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"tradie website\": we're not in the top 10 (Search Console avg 79); websitesfortradie.com.au leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/websites-for-tradies"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. websitesfortradie.com.au, 2. freetradiewebsites.com.au, 3. mikadigital.com.au, 4. unknown site, 5. unknown site",
+   "impact": 1.0,
+   "broken": false
   }
  ],
  "google": {
-  "impr7": 0,
+  "impr7": 58,
   "imprPrev7": 0,
   "clicks7": 0,
   "clicksPrev7": 0,
-  "impr28": 0,
+  "impr28": 58,
   "clicks28": 0,
-  "views28": 2,
+  "views28": 16,
   "viewsPrev28": 0,
-  "recentViews": 2,
-  "lastGa4Day": "2026-11-17",
-  "gscTo": "2026-11-15"
+  "recentViews": 9,
+  "lastGa4Day": "2026-11-22",
+  "gscTo": "2026-11-21"
  },
- "queries": [],
- "live": null,
- "costUsd": 0,
+ "queries": [
+  {
+   "query": "imn",
+   "position": 8,
+   "impressions": 10
+  },
+  {
+   "query": "how much does a website cost for small business",
+   "position": 87.5,
+   "impressions": 4
+  },
+  {
+   "query": "website design cost australia",
+   "position": 92.5,
+   "impressions": 4
+  },
+  {
+   "query": "tradie website",
+   "position": 79,
+   "impressions": 4
+  },
+  {
+   "query": "cost of not having a website",
+   "position": 88.7,
+   "impressions": 3
+  },
+  {
+   "query": "website cost australia",
+   "position": 92.7,
+   "impressions": 3
+  },
+  {
+   "query": "mypaycalc",
+   "position": 9.5,
+   "impressions": 2
+  },
+  {
+   "query": "websites for electrician",
+   "position": 96.5,
+   "impressions": 2
+  },
+  {
+   "query": "how much does a small business website cost",
+   "position": 92.5,
+   "impressions": 2
+  },
+  {
+   "query": "how much to build a website australia",
+   "position": 83.5,
+   "impressions": 2
+  },
+  {
+   "query": "website development cost in australia",
+   "position": 98,
+   "impressions": 2
+  },
+  {
+   "query": "what are the ongoing costs of running a website",
+   "position": 93,
+   "impressions": 2
+  },
+  {
+   "query": "inurl elect",
+   "position": 64,
+   "impressions": 1
+  },
+  {
+   "query": "how much does a business website cost",
+   "position": 100,
+   "impressions": 1
+  },
+  {
+   "query": "how much does a website cost australia",
+   "position": 84,
+   "impressions": 1
+  },
+  {
+   "query": "how much does web hosting cost australia",
+   "position": 15,
+   "impressions": 1
+  },
+  {
+   "query": "how much does website cost",
+   "position": 64,
+   "impressions": 1
+  },
+  {
+   "query": "web hosting fees",
+   "position": 81,
+   "impressions": 1
+  },
+  {
+   "query": "website design australia price",
+   "position": 100,
+   "impressions": 1
+  },
+  {
+   "query": "website design cost",
+   "position": 70,
+   "impressions": 1
+  },
+  {
+   "query": "website hosting cost",
+   "position": 78,
+   "impressions": 1
+  },
+  {
+   "query": "website hosting costs australia",
+   "position": 86,
+   "impressions": 1
+  },
+  {
+   "query": "website hosting fees",
+   "position": 76,
+   "impressions": 1
+  },
+  {
+   "query": "website management pricing",
+   "position": 65,
+   "impressions": 1
+  },
+  {
+   "query": "website management services prices",
+   "position": 67,
+   "impressions": 1
+  },
+  {
+   "query": "website pricing",
+   "position": 63,
+   "impressions": 1
+  },
+  {
+   "query": "websites prices",
+   "position": 60,
+   "impressions": 1
+  },
+  {
+   "query": "check my seo online",
+   "position": 93,
+   "impressions": 1
+  }
+ ],
+ "live": {
+  "serps": [
+   {
+    "keyword": "imn",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "app.debelegger.nl",
+      "url": "https://google.com/goto?url=CAESYwHEIkXXk-DitwMbt5Hfg2jQWwqXMrjCcj7-QJ9Lq0mO2WXzq5LRsM67Fb8PMW0bxdm-2U4S5DXVg0wcR8E6a9Ij0829GNBlldmfXq2PwwLm8dhFx8eIzGwOa1V2kVwhObKi_Q&gsessionid=3jfWJWzgKQSQ-XRGS7R4w4gIb0H0OcWOAdlte7A6hD_cdcOWMkYEeA",
+      "title": "Intelligent Monitoring Group koers · Australië — De Belegger"
+     },
+     {
+      "rank": 2,
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAESXgHEIkXXaefjVp3VSzRhXUjIL2F1bKap3z3IykZaX7OiGWHtIdETfmwqBqPd5WHjj5rNBt4ecety2xJbetnhX_kNuEHNVhzCMGPmyaVeVHBLPDb-CSk_3cYlRsJfZrk&gsessionid=3jfWJWzgKQSQ-XRGS7R4w4gIb0H0OcWOAdlte7A6hD_cdcOWMkYEeA",
+      "title": "Imin (@imminn) • Instagram photos and videos"
+     },
+     {
+      "rank": 3,
+      "domain": "instagram.com",
+      "url": "https://google.com/goto?url=CAESXQHEIkXXPRBl7HtPfiXkGOD3K93QyHoQwdPARy0FyP2pBhyb6uEe_1FP37IXvgbQ_S_Zi6xv27xvkDi_JBzCM9OIFdDwR6tbm7R5wUuVx6wRmeCw53wgCF4dnhIO9A&gsessionid=3jfWJWzgKQSQ-XRGS7R4w4gIb0H0OcWOAdlte7A6hD_cdcOWMkYEeA",
+      "title": "(@imnnn) • Instagram photos and videos"
+     },
+     {
+      "rank": 4,
+      "domain": "debelegger.nl",
+      "url": "https://google.com/goto?url=CAESYwHEIkXXRKKnCmkp0XkS-h4YDsN-e_819CYA6wJ2FzlaRwUc_2fG4YavxI57WcQDGO1qc-WDxR28-TagHpcy98cZ8uioDuoCmk9uirqLbJfpv1BZZtBgz-nFMBAvS-NOGNRgQQ&gsessionid=3jfWJWzgKQSQ-XRGS7R4w4gIb0H0OcWOAdlte7A6hD_cdcOWMkYEeA",
+      "title": "Intelligent Monitoring (IMB) koers · Australië — De Belegger"
+     },
+     {
+      "rank": 5,
+      "domain": "gurufocus.com",
+      "url": "https://google.com/goto?url=CAESbAHEIkXXU96BrYUKjVdLRzj2pDdBT6DPqyc8KKNrqKg1Vip1mCsSjKF_PmkkKJZNLYkBnxB2cyLt4jEAHVN__ZZwkUgkg2g9RDF9p4dhl5sBg3ssxh2tdxOi-i_1Z_yFjjSTgSKne24g0UZa0Q&gsessionid=3jfWJWzgKQSQ-XRGS7R4w4gIb0H0OcWOAdlte7A6hD_cdcOWMkYEeA",
+      "title": "Intelligent Monitoring Group Ltd (ASX:IMB) Stock Price, ..."
+     },
+     {
+      "rank": 6,
+      "domain": "barchart.com",
+      "url": "https://google.com/goto?url=CAESaAHEIkXXpCjUVZC0KTUIP3dSSRGuUyO0dh-jC6zXDrlCqgpO9sy5jpnTSYCkWLGj5uC4fC8SO3SVWEaTu-H0v7BpMMuXFSXr4GpkANbzuG1ItVFaEybybTfQdE76wLgUP9BD7Hh6kweq&gsessionid=3jfWJWzgKQSQ-XRGS7R4w4gIb0H0OcWOAdlte7A6hD_cdcOWMkYEeA",
+      "title": "Inmune Bio Inc (INMB) - Stocks"
+     },
+     {
+      "rank": 7,
+      "domain": "msn.com",
+      "url": "https://google.com/goto?url=CAESlQEBxCJF1wb_mZ1xGg7BOB_lQepnNA5NscU1D6zMCZvLHyu675GMpfYwM2PpHIjLf2ZGpYrP8YZelcYgo3TH9mcPSibd-FXvv9Fd4hcaD6V-vKC1F3VUjh_6N3rdbQSnNHJmwx1sCSHc6q5p00nXHI7_7hPXRYV3p6iOJILbiYCrrl3CvqAC84pqqI0nJRrPd0WycD_p1w&gsessionid=3jfWJWzgKQSQ-XRGS7R4w4gIb0H0OcWOAdlte7A6hD_cdcOWMkYEeA",
+      "title": "IMMUTEP LIMITED (IMM) Stock, Price, News, Quotes, ..."
+     },
+     {
+      "rank": 8,
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAESXAHEIkXX-_zrTwo5cH1p6MTmlVGFRAw3YGoTuOByyP5tQwKRR1DM7GiNpVsZMIL136L9WkuhzqgWWSncepGMVriLu9-0xv_DZ8G_dmfjKuOvE8H79Chzxd6j9CUZ&gsessionid=3jfWJWzgKQSQ-XRGS7R4w4gIb0H0OcWOAdlte7A6hD_cdcOWMkYEeA",
+      "title": ". (@iimn) • Instagram photos and videos"
+     }
+    ],
+    "impressions": 10,
+    "gscPosition": 8,
+    "ourPage": "/",
+    "ourRank": null
+   },
+   {
+    "keyword": "how much does a website cost for small business",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAESjwEBxCJF1zwMcVki2xrVfZSROw-7nJKoUVPhL-lVA28Tgx8p_Sjom4A_WwM6lPE7ykVyglQwhLcGkP79bIGQi3IYmrFKI100es3DTKKU8wjVsZKffsYXViA-avBoUzwkqfcsytjYxS347a9mJwY8cK3DSnsb9_K-KyxfKpVvalPCBUyFXIDU5EorijiRBhL4sA&gsessionid=dcxVBXe-hvMQKU5GwOfMlIShYaPHVI7ca_hEN70CvYZDVwnHcPvaQg",
+      "title": "Website and socials pricing : r/ausbusiness"
+     },
+     {
+      "rank": 2,
+      "domain": "organikweb.com.au",
+      "url": "https://google.com/goto?url=CAESegHEIkXXfXNZJ2J8PbiJ3Y0v-c5mphrtWSvmWcA37thUks600yB1XeTnZg4vQy7Cl6PldT-sY0z9oEVvdV5zEcHfSmh6dxfScWM10xTSQr_Kk9D_BwRC_CnvgdzCb1WlzTmpYxZK4DC_OPQo-cGuRw6--XAHo7I5evHj&gsessionid=dcxVBXe-hvMQKU5GwOfMlIShYaPHVI7ca_hEN70CvYZDVwnHcPvaQg",
+      "title": "How Much Does a Website Cost in Australia?"
+     },
+     {
+      "rank": 3,
+      "domain": "10amdigital.com.au",
+      "url": "https://google.com/goto?url=CAEScQHEIkXXSD216toxt5HXDGShZ7iLCVdXZ3nh1Pdclge7nmV5RG-0z-CYm3o1trk0hE9o3lBtXMb8Owy8maQDRyxNsOYOA8JIoeUJo5e0apEgSa_8BZti6cqEyXueIVlcUINCxvX1w7pnPMqEaykhSO_L&gsessionid=dcxVBXe-hvMQKU5GwOfMlIShYaPHVI7ca_hEN70CvYZDVwnHcPvaQg",
+      "title": "Website Development Cost [2025]"
+     },
+     {
+      "rank": 4,
+      "domain": "rocksolidmarketing.com.au",
+      "url": "https://google.com/goto?url=CAESfAHEIkXXThPIxUjn1ZXkLx96_WJE8lIjve1L_HKDm7tOMqh7Nh7TkXgzHDCnS6KXXsYqEaoR-5DRyuyI1ERmkTSoNU5qLNfGURuOR_4Gpe3P4pIwW1Tg6_sTOqHl90fOibezhu2__FWKYYb0415bW2iECasnQVykBwwaFE8&gsessionid=dcxVBXe-hvMQKU5GwOfMlIShYaPHVI7ca_hEN70CvYZDVwnHcPvaQg",
+      "title": "How Much Does a Website Cost in Australia?"
+     },
+     {
+      "rank": 5,
+      "domain": "websiteboss.com.au",
+      "url": "https://google.com/goto?url=CAESeQHEIkXXzYhT5wBlBOXdZNTMHeZie6WpXncBTUh-bhTZVDYxnA0hFBGyLCSm22pPyAIZ5pcy_YDxFFKxMKeFePLWkNvMF79ObkAXxy7IfgQh3KYIvbDF8unCzNXo1cnij3kgXikpQFszoBexj1Ii30ciP6k2orFLAZE&gsessionid=dcxVBXe-hvMQKU5GwOfMlIShYaPHVI7ca_hEN70CvYZDVwnHcPvaQg",
+      "title": "How Much Does a Website Cost?"
+     },
+     {
+      "rank": 6,
+      "domain": "onpointcreative.au",
+      "url": "https://google.com/goto?url=CAESdQHEIkXXBPCOHzeMgzwWaMtj0K9AmhdBIevtrbEjZp-eBrI_Ossw95NIsQg3wPlqDTFGMOxYY8SOitVvyH0AJJBaR-UD2Cm5k1UYUdf4TakZL7zYHUzGPid0VLSzJl_4iRkiVtZnjCyORMa5IH1okiCh3qU74g&gsessionid=dcxVBXe-hvMQKU5GwOfMlIShYaPHVI7ca_hEN70CvYZDVwnHcPvaQg",
+      "title": "How Much Does a Website Cost in Australia?"
+     },
+     {
+      "rank": 7,
+      "domain": "letsgodigital.agency",
+      "url": "https://google.com/goto?url=CAESeAHEIkXXTUMBH4gUqfC-i8me0vptCUGJ60N-LPx8A3sGK3bwuZnFOhDaRX91ttPpGysZYaH5Fu0-LpB_qJIO1LL4IFn9rQgDH6lpLFvQFyfaWlSbV7mXMho4J8-3TUR0yVXEfIm-BeFSQ7eRhETznPFGYaUn8lM4AQ&gsessionid=dcxVBXe-hvMQKU5GwOfMlIShYaPHVI7ca_hEN70CvYZDVwnHcPvaQg",
+      "title": "Website Design Costs in Australia: A Small Business Guide"
+     },
+     {
+      "rank": 8,
+      "domain": "infolex.com.au",
+      "url": "https://google.com/goto?url=CAESagHEIkXXMY6LAqoVjqm3lqnJ-95e1vBblN1Eot6wXCSr1EgXhk9rNcnSsMK1BZbBJq0XPVxS8prOqZOmgX22zh9Jbo-sokUMray8VRUAYHOp3vlTf9pC4kSk1so1y55mn1u_Dl_xeXV9AJ4&gsessionid=dcxVBXe-hvMQKU5GwOfMlIShYaPHVI7ca_hEN70CvYZDVwnHcPvaQg",
+      "title": "Website Cost Melbourne: 2026 Small Business Guide - Infolex"
+     },
+     {
+      "rank": 9,
+      "domain": "psos.net.au",
+      "url": "https://google.com/goto?url=CAESbQHEIkXXtMsYgGUvTYTOzmpar4L-0AszhpCcK4oz1ddvMu4831vF0Mn_cQsifVVuX4_P7GzrW408aTYWZgsSvySMUvP4sBNI7Uo7zYAln_215qV8PvRMcv4Ck0JVQ4gKGbu3PVIrrDLOy00seBk&gsessionid=dcxVBXe-hvMQKU5GwOfMlIShYaPHVI7ca_hEN70CvYZDVwnHcPvaQg",
+      "title": "How Much Should a Website Really Cost in Perth?"
+     }
+    ],
+    "impressions": 4,
+    "gscPosition": 87.5,
+    "ourPage": "/how-much-does-a-website-cost",
+    "ourRank": null
+   },
+   {
+    "keyword": "website design cost australia",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "websitedesignerperth.com.au",
+      "url": "https://google.com/goto?url=CAESbAHEIkXXvJi8aLv2NXTC1qCxtX2KF9LobtO6oPRB2cOl6SkBZkNijFSi1DsgKIbVhRg40dDuKih9p0sny9LQKwpu7sPD3UUyha9t8_eBXpfJ_-5sXDlkCRaBzhR5JKIXYcb9zqCWFtJqseJ8JQ&gsessionid=Yn_wNpe0GZhWDoxDxpYG7dSI866AFhl1LblrPSnSjnrVzQMNYCoM8Q",
+      "title": "Web Design Pricing & Packages - Website Designer Perth"
+     },
+     {
+      "rank": 2,
+      "domain": "cisin.com",
+      "url": "https://google.com/goto?url=CAESjwEBxCJF12Vorxz-ylk7WiLvTCXAwc1glTD-k2vFq9oeYDQl1aXiOaz27Q2dSnV7-K_hnRgK8je88HFWMmZSD8wG_iKzR9277yrQUXsFtaLIU5bdL52tdIB41E1IeiERVps1UAvAHtF3UJlXtHJMJ4M0xdcJxmznkLfCNVoCAW8Szq-pMzsbvha2MrlT5LopyA&gsessionid=Yn_wNpe0GZhWDoxDxpYG7dSI866AFhl1LblrPSnSjnrVzQMNYCoM8Q",
+      "title": "How Much Does Web Design Cost in Melbourne? 2026 ..."
+     },
+     {
+      "rank": 3,
+      "domain": "foundlab.com.au",
+      "url": "https://google.com/goto?url=CAESZQHEIkXX_Pgpva6GZrN1It3aVfx8f1XZ5JPrEH0vYcpuVNLRRR26WHjPay_3FaJzZwBy8PymMBGsyXOQZiKExrHWUZ_O3GCCR1tU86QeewYtNlDAlLdZnMzYTKTxArOQ3EH0l08N&gsessionid=Yn_wNpe0GZhWDoxDxpYG7dSI866AFhl1LblrPSnSjnrVzQMNYCoM8Q",
+      "title": "Website Design Packages and Prices Australia - Foundlab"
+     },
+     {
+      "rank": 4,
+      "domain": "multidice.com.au",
+      "url": "https://google.com/goto?url=CAESgwEBxCJF128x5HFAI9Z8HonkNsKcrTBdu0CjJsMx0QT5d2JUy_xw0eic0zhKBSOF9lHz4FYCEP1wNupGwmfqMtSGYA8oFcmF8vb2WqJGFm_JdF1OdKOng6AVCLXt7FrFJ03f6-waqts0E7ykSxCFKctWu_WVgBFjY64VPxNt7MclA1V-8w&gsessionid=Yn_wNpe0GZhWDoxDxpYG7dSI866AFhl1LblrPSnSjnrVzQMNYCoM8Q",
+      "title": "How Much Does A Website Cost in Australia? - Multidice"
+     },
+     {
+      "rank": 5,
+      "domain": "youtube.com",
+      "url": "https://google.com/goto?url=CAESaAHEIkXXVXJV2-yZ0nz4em3Q4TSInHzFcz_Um3ZKpmXFyx2ol8J7qntnlFmVdN7gJXLR-tNuX1X1FA5VzazJWIIPGnDlxJ4bhr3cAA7W0lkXU8ZqNjS4hwOcTSjybCG7UHxDMEYt4ai7&gsessionid=Yn_wNpe0GZhWDoxDxpYG7dSI866AFhl1LblrPSnSjnrVzQMNYCoM8Q",
+      "title": "Understanding Website Development Costs for Small ..."
+     },
+     {
+      "rank": 6,
+      "domain": "nexalab.io",
+      "url": "https://google.com/goto?url=CAESgAEBxCJF14gx1m2crAgph_vkx5QC9qo4WGlr1F1cpUP8d14kdQZTbnb9FcRwBhPcVIijGnDALVJJ0Sj9Sr08FQQt7yaRst4ZXBwpyFD4XxYrbWikGY6pjNNM0gjIc7LADQKpy8n-1G38BFMm2utKwPcBVsgT2OU2e2N-jjRPFEmabQ&gsessionid=Yn_wNpe0GZhWDoxDxpYG7dSI866AFhl1LblrPSnSjnrVzQMNYCoM8Q",
+      "title": "How Much Does It Cost To Develop A Website In Australia ..."
+     },
+     {
+      "rank": 7,
+      "domain": "dankdesigns.com.au",
+      "url": "https://google.com/goto?url=CAESmQEBxCJF10Dxf-ux2ec5enlI2ac3b6G1PwyddSGPgpPJgPngT8BNXqE_GbHA09oFpdv7zRJ-1sWZ5djVgJLlUUARceMCKybFGNVQOZlndIP3icLUCDrBHn6BNBaH8U61emDI6_YKeUJjApSZw-ZXK5swyUauIUqMPeacNFRfyXgQTHFLy60WgnAxqTdiNgt3xs6FAYADD3pR9fs&gsessionid=Yn_wNpe0GZhWDoxDxpYG7dSI866AFhl1LblrPSnSjnrVzQMNYCoM8Q",
+      "title": "Website Cost Australia 2026: What You Need To Know"
+     },
+     {
+      "rank": 8,
+      "domain": "wbyd.com.au",
+      "url": "https://google.com/goto?url=CAESbwHEIkXXDJkznUAuKokzqF59ExXyL2wmwcGD1hI_Ag5C3Ruylcu-4oR6ODmdIZL-ngY5WjawAWA-tBMrdTOJADsWFxzq58RB1z9Y7w9wovAcEaMg0wi2pHCPgH4qInLmANo7uP_N_0PpaD43a0uQ8w&gsessionid=Yn_wNpe0GZhWDoxDxpYG7dSI866AFhl1LblrPSnSjnrVzQMNYCoM8Q",
+      "title": "Website Design Cost Melbourne: 2026 Guide - WBYD."
+     }
+    ],
+    "impressions": 4,
+    "gscPosition": 92.5,
+    "ourPage": "/how-much-does-a-website-cost",
+    "ourRank": null
+   },
+   {
+    "keyword": "tradie website",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "websitesfortradie.com.au",
+      "url": "https://google.com/goto?url=CAESmAEBxCJF13vATzcyOpuTRVRib6huUAiASSOCOX1fyYZLET-QA7nzKI4igLDly4ZJUyRlfcxq70Z0TY-44GvZbofC6vgZf-FLi_JzolvqTgemwj6WEUjLQI_OXSQ_Tvuihyx416xY26M4jq1Th-8RyPRipv8LqYi-zYUEA238_ZQfDDfGBOjOk_u-DgYpREj2hUB2PuN0VehP2w&gsessionid=Y7Qx70Z82sD4i6WiV6nPICmv8J4UG2ObxACpXkD0HccNWwe7JddhJA",
+      "title": "7 Tradie Website Examples That Help You Win More Work"
+     },
+     {
+      "rank": 2,
+      "domain": "freetradiewebsites.com.au",
+      "url": "https://google.com/goto?url=CAESawHEIkXXtid5_uHb0w7tHzvRXIfp55JLso6qOBFhi9zMeCO67fA70Efgto_P5amHM58_Ak2xdFFs-R2UxIjqLdu7PsOGUNDZgDe-Xs59vwFC5Sv64xbAwci3qZ3mbWe-O8Ja4lrTL152MuNa&gsessionid=Y7Qx70Z82sD4i6WiV6nPICmv8J4UG2ObxACpXkD0HccNWwe7JddhJA",
+      "title": "Tradie Website Design Case Studies"
+     },
+     {
+      "rank": 3,
+      "domain": "mikadigital.com.au",
+      "url": "https://google.com/goto?url=CAESjAEBxCJF1xhux5YgCtZ7IwD3B7o7w6Qa-9z_0XKUmUkQHfPT7jo_HZzBe8GjYaJvFo4ngXBnKu0wddNL0MQgVDnlFCSNegB-cU-rgk412s6YBFB1u5Zg5WP94Pzn8QPiy5drxVCPB3RRy80ahq1IMUlPe2QtkVe3WiKLiZFP6031I_VZNP5wVmtl3mzBpQ&gsessionid=Y7Qx70Z82sD4i6WiV6nPICmv8J4UG2ObxACpXkD0HccNWwe7JddhJA",
+      "title": "Best Website for Tradies: What Actually Works - Mika Digital"
+     },
+     {
+      "rank": 4,
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAESqgEBxCJF121mFuAWNMe2weHKgUiQSQ6PEPA6GAiSqt745XRM1oEFjg9s1_E7iPlUVNWckjJepUYrzF5cFRf0wtuF_GP4LqbRuonj90d2tkp96QlbbLEIBdvZKIre8rrGDsoaoVtZQClKBKuRX8s8xhHihn5Y4ZGYyG0aT-ZaaD-baSgkoKAKgQQWuXZ1F-rXhXflD_vg48Pyw3awWmjLhvDjg2pHjsLnI0EK_Q&gsessionid=Y7Qx70Z82sD4i6WiV6nPICmv8J4UG2ObxACpXkD0HccNWwe7JddhJA",
+      "title": "What is the best website to find trusted local tradies or ..."
+     },
+     {
+      "rank": 5,
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAESawHEIkXXeexssoXerJLZYksOCSeVEkaRQ84IC1W8f0RoMMrdrh-rC8CQKE1NojjFWyOHBBaYzxLe7Kkq6leOuG1qxAKlSapVE9nSt3LBrvDo-dwiP-cA5Y0Oqfzm8UuTMfYFsbHBAdNUkcIL&gsessionid=Y7Qx70Z82sD4i6WiV6nPICmv8J4UG2ObxACpXkD0HccNWwe7JddhJA",
+      "title": "Websites For Tradies (@websites_for_tradies)"
+     },
+     {
+      "rank": 6,
+      "domain": "hackproofwp.com",
+      "url": "https://google.com/goto?url=CAESbQHEIkXX2RcSzKDSuhFXcB8GyGtiDpSQzjNwv9tEQnbndCfJ28aKBVc64UpyF3WXAPoWUNlyZur6N6KL47IQBNDSnASmF4XvumNe5FT5TDeDpOShiTV_blnWgIpFtOhsWIIXL1iU7I_otuiu6V8&gsessionid=Y7Qx70Z82sD4i6WiV6nPICmv8J4UG2ObxACpXkD0HccNWwe7JddhJA",
+      "title": "Websites for Tradies: What Yours Needs | HackProof Studio"
+     },
+     {
+      "rank": 7,
+      "domain": "emc2online.com.au",
+      "url": "https://google.com/goto?url=CAESeQHEIkXXT_yjB0b8t5NxoiH1LDzcpcKBIeueKkbweyHhrUnAZPf2H0tx2xerRycJ0UyfeXONd6ARRR-XMZ6lbECATvSFjTeawUtJGIY-VJ1fnCz73Par8q8MYrCBQPunDfEsYryn8a8KxTrFuiiCHwYdiKKBKVQPfFc&gsessionid=Y7Qx70Z82sD4i6WiV6nPICmv8J4UG2ObxACpXkD0HccNWwe7JddhJA",
+      "title": "Websites for tradies in Australia: what wins calls | EMC2 Online"
+     },
+     {
+      "rank": 8,
+      "domain": "onsitewebsites.com.au",
+      "url": "https://google.com/goto?url=CAESWgHEIkXX4s__iKIOLsLLIrza7XYFLobwAIPsBWQDD2j0MD8NlnwivThr8KtfZj4ZAxXyDkJuyRpdn0wd62q4JJF0b2fTXxHCSBy7ieGvqkMD4RoZodzHM18ukQ&gsessionid=Y7Qx70Z82sD4i6WiV6nPICmv8J4UG2ObxACpXkD0HccNWwe7JddhJA",
+      "title": "OnSite Websites | Web Design for Tradies Australia"
+     },
+     {
+      "rank": 9,
+      "domain": "kmhdigitalmarketing.com.au",
+      "url": "https://google.com/goto?url=CAESegHEIkXXbyAqVF_KmqVYG4FGm6JHYlnKqWLQ3ti6MFRY4YpXHw2bnVwqbtEiRuWkZLZGemDbDvRLf_lzvsbLWH2XJwQgfS395cADTgh7lI9sFLhPkEJHBffL-1YtbndvLXyHzo1dg5aKjv6nCQamalsZ27DHCPP8zw_i&gsessionid=Y7Qx70Z82sD4i6WiV6nPICmv8J4UG2ObxACpXkD0HccNWwe7JddhJA",
+      "title": "Sydney Tradie Website Study 2026: 133 Sites Checked"
+     }
+    ],
+    "impressions": 4,
+    "gscPosition": 79,
+    "ourPage": "/websites-for-tradies",
+    "ourRank": null
+   },
+   {
+    "keyword": "cost of not having a website",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "nexalab.io",
+      "url": "https://google.com/goto?url=CAESgAEBxCJF19hLLWXOKDCBv3iPoQBn2tjBmsFpH94qNh3vAeeLgphpF9eX8OlYb-NyJCzJQ83lSOLxGCxYhU3KKDBNrS5j7HZY8OxsrzWsV44a997YvjIye-g8NIkc5amfqrAc_Z0YZgWvwED8JHKlDNqU9wUQNmmM_0N9u5JSH7JyUw&gsessionid=Ex97xOSm9h6bvDrU2UF5-sP1Npwf-bUdhstcKTqtOuyrPcHQWdRCIA",
+      "title": "How Much Does It Cost To Develop A Website In Australia ..."
+     },
+     {
+      "rank": 2,
+      "domain": "appsalon.com.au",
+      "url": "https://google.com/goto?url=CAEShwEBxCJF14gJL3aCwYxvdryJVuozLYGTmUJqwjPf4yX3tlOkt1p0Ot4OZ3ZDVXpsxXIV2roO-7ypT78CU1FZEbopgcbPm-Y6t9py73pTWurZsu91fGMop9Rq-Xr5I7ltfKonzEYHiNMPtHO5Ow14Y-hNwu_H4CXn2UiXLOjHyA67Ib5FS1gqJ1k&gsessionid=Ex97xOSm9h6bvDrU2UF5-sP1Npwf-bUdhstcKTqtOuyrPcHQWdRCIA",
+      "title": "Understanding the Average Cost of Website Design for Small ..."
+     },
+     {
+      "rank": 3,
+      "domain": "youtube.com",
+      "url": "https://google.com/goto?url=CAESaAHEIkXXGEaO7Uczd7Zyq_Go18xpZXjZl4RqsrN70L2MQesyACH6AIZ3r1Gkt-4miPuCPXVnh5yj2VRfc9wLCa2Hu53QxkN8g_ObqBoo6Em2HWSQ7LSZIjs2i2DKKmu2zlb9XgfWN-zJ&gsessionid=Ex97xOSm9h6bvDrU2UF5-sP1Npwf-bUdhstcKTqtOuyrPcHQWdRCIA",
+      "title": "How Much Does a Small Business Website Really Cost ..."
+     },
+     {
+      "rank": 4,
+      "domain": "sitemile.com",
+      "url": "https://google.com/goto?url=CAESiQEBxCJF1z0bc5NrQ1s2lARcxjbUqDO3ufXthFdLjx7WnXHEVOvNam0ls2HMRGj1V4Lhx8I9bKSOrxKhx8qywgXQkdWRD_e_HP00SKRaGNU1G1kCTYpqmdbxcTZQnhDaXgsWEp39-j3rlrur0hXZ8E-S6K3u3dT7RSrks5LNHemUYqZ5C72z1ZxDAQ&gsessionid=Ex97xOSm9h6bvDrU2UF5-sP1Npwf-bUdhstcKTqtOuyrPcHQWdRCIA",
+      "title": "Do you have to pay to make a website for your business?"
+     },
+     {
+      "rank": 5,
+      "domain": "heightsdigitalmedia.com",
+      "url": "https://google.com/goto?url=CAESlQEBxCJF1_MAp2xJImNftcWxfOweobBeDtE0IgIx8vNd-5d8mGqbkP9NtKl0UThnJdKdcP0N_9now-5suSN6LCbFB4AaTR0A2iAECN4u0oAUpDdu9MK0zl8oBHR0CnoCCdA66OPpdIPoQijSQDhXWMGG_PjoORKJUpyLH3ntThwxqIXRoypv1cqp4QgqQIxAdhFL6uzmmg&gsessionid=Ex97xOSm9h6bvDrU2UF5-sP1Npwf-bUdhstcKTqtOuyrPcHQWdRCIA",
+      "title": "What website and marketing costs should a small business ..."
+     },
+     {
+      "rank": 6,
+      "domain": "wazile.com",
+      "url": "https://google.com/goto?url=CAEScwHEIkXXb0Bckj1QI6EKO6a8YRChT1Ad_3TZUmAFeNOgyaZekDwEUdy8yAVHW-NqAQDN0LEOhn8iMWiC_VPB1AQMz5tRE_7nvLBi-OFZoxgoDHKiE-_OBb0lC_g1-PsfgDxEBXx8NzbyM8b95050_4No_IU&gsessionid=Ex97xOSm9h6bvDrU2UF5-sP1Npwf-bUdhstcKTqtOuyrPcHQWdRCIA",
+      "title": "How Much Does a Website Cost in Australia? 2026 Pricing ..."
+     },
+     {
+      "rank": 7,
+      "domain": "skolmarketing.com",
+      "url": "https://google.com/goto?url=CAESmgEBxCJF1z_f4R0IK2IyP6lteqW91fTloces3FWRb22fVdB2BVLXuEN9a_98_m9ZZQ3gXR9z-TkNde12vmHPACt4eEhgW5ss85Xo3BnbI25nOMKpTUGrXPL1g18LBTAHwCjz43NrGipnfBtKo2imSely-GHzZBpq5nBfFiyMsx1A0Q5waXOtBzWGJP0iGXp74k8aBXRM5qxmwtlD&gsessionid=Ex97xOSm9h6bvDrU2UF5-sP1Npwf-bUdhstcKTqtOuyrPcHQWdRCIA",
+      "title": "The Hidden Cost of a Bad Website (And How to Avoid It)"
+     },
+     {
+      "rank": 8,
+      "domain": "luccabarroso.com.br",
+      "url": "https://google.com/goto?url=CAESqwEBxCJF12aG8Cc6kXnIMn-SemBkC2xo_U1blCn06-6f_lpN8byo7c2eypOgYQIskxyE8PthwfeIV0XcEmRBN7w5uXfRbsYa6D35spTJ_HJh606gR8u901xSt-qK9k1BKtUmTHgH9DFFSMJKRP_YZdduu8goJchi6G62L4qtr0nRtkmqHjk5Fr7w5oqBsF9C_A2-GHSSzhdmLXI8ZJp9ySa5zfwZXNRe_-nDivc&gsessionid=Ex97xOSm9h6bvDrU2UF5-sP1Npwf-bUdhstcKTqtOuyrPcHQWdRCIA",
+      "title": "How Much Does Not Having a Website Cost? Silent Losses ..."
+     }
+    ],
+    "impressions": 3,
+    "gscPosition": 88.7,
+    "ourPage": "/how-much-does-a-website-cost",
+    "ourRank": null
+   }
+  ],
+  "index": [
+   {
+    "url": "https://imnetwork.com.au/",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-24T01:34:53Z",
+    "googleCanonical": "https://imnetwork.com.au/",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://imnetwork.com.au/get-started",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-20T06:45:50Z",
+    "googleCanonical": "https://imnetwork.com.au/get-started",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://imnetwork.com.au/how-much-does-a-website-cost",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-20T12:19:05Z",
+    "googleCanonical": "https://imnetwork.com.au/how-much-does-a-website-cost",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://imnetwork.com.au/pricing",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-19T10:31:44Z",
+    "googleCanonical": "https://imnetwork.com.au/pricing",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://imnetwork.com.au/affiliate-disclosure",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-22T00:41:25Z",
+    "googleCanonical": "https://imnetwork.com.au/affiliate-disclosure",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://imnetwork.com.au/labs/website-check",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-21T22:19:12Z",
+    "googleCanonical": "https://imnetwork.com.au/labs/website-check",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://imnetwork.com.au/websites-for-tradies",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-24T07:49:58Z",
+    "googleCanonical": "https://imnetwork.com.au/websites-for-tradies",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://imnetwork.com.au/electrician-websites",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-20T04:49:00Z",
+    "googleCanonical": "https://imnetwork.com.au/electrician-websites",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   }
+  ],
+  "error": null
+ },
+ "costUsd": 0.01,
  "speed": [
   {
    "url": "https://imnetwork.com.au/",
    "lite": true,
-   "serverSecs": 0.2,
-   "htmlKb": 18,
+   "serverSecs": 0.05,
+   "htmlKb": 19,
    "blocking": 1,
    "images": 1,
    "noDims": 0,
@@ -125,10 +699,10 @@
    "psiError": "HTTP Error 429: Too Many Requests"
   },
   {
-   "url": "https://imnetwork.com.au/pricing",
+   "url": "https://imnetwork.com.au/get-started",
    "lite": true,
-   "serverSecs": 0.12,
-   "htmlKb": 17,
+   "serverSecs": 0.08,
+   "htmlKb": 12,
    "blocking": 1,
    "images": 1,
    "noDims": 0,
@@ -137,33 +711,66 @@
   }
  ],
  "quality": {
-  "summary": "14 indexable pages · average 578 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
+  "summary": "19 indexable pages · average 577 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
   "thin": 0,
   "near": 0
  },
  "links": {
-  "internal": 14,
-  "outside": 14,
-  "checkedOutside": 14,
+  "internal": 19,
+  "outside": 19,
+  "checkedOutside": 19,
   "unsureOutside": 2
  },
  "affiliateOk": 0,
- "secs": 124,
+ "secs": 148,
+ "labs": [
+  {
+   "slug": "website-check",
+   "name": "Free website check",
+   "status": "live",
+   "domain": "",
+   "url": "https://imnetwork.com.au/labs/website-check",
+   "launched": "2026-11-22",
+   "day": 3,
+   "pages": 2,
+   "visits": 1,
+   "prevVisits": 0,
+   "gsc_clicks": 0,
+   "gsc_impressions": 1,
+   "money_clicks": 0,
+   "target": {
+    "metric": "money clicks",
+    "have": 0,
+    "goal": 5,
+    "pct": 0
+   },
+   "topQueries": [
+    {
+     "query": "check my seo online",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 93
+    }
+   ]
+  }
+ ],
  "change": {
   "first": false,
-  "since": "2026-11-18T01:48:45Z",
-  "score": 5,
+  "since": "2026-11-18T21:22:19Z",
+  "score": 0,
   "newIssues": [
-   "Google shows only 0 of 14 pages (site is 3 days old)"
+   "\"imn\": we're not in the top 10 (Search Console avg 8); app.debelegger.nl leads",
+   "\"how much does a website cost for small business\": we're not in the top 10 (Search Console avg 88); unknown site leads",
+   "\"website design cost australia\": we're not in the top 10 (Search Console avg 92); websitedesignerperth.com.au leads",
+   "\"cost of not having a website\": we're not in the top 10 (Search Console avg 89); nexalab.io leads",
+   "\"tradie website\": we're not in the top 10 (Search Console avg 79); websitesfortradie.com.au leads"
   ],
   "fixed": [
-   "7 of your top 8 pages aren't in Google's index",
-   "1 thin page(s) (under 80 words of their own)",
-   "14 page(s) without a share image"
+   "Google shows only 0 of 14 pages (site is 3 days old)"
   ],
-  "impr28": 0,
+  "impr28": 58,
   "clicks28": 0,
-  "views28": 2,
+  "views28": 14,
   "rivals": [],
   "positions": []
  },
@@ -171,6 +778,13 @@
   {
    "at": "2026-11-18T01:48:45Z",
    "score": 90,
+   "grade": "A",
+   "impr28": 0,
+   "clicks28": 0
+  },
+  {
+   "at": "2026-11-18T21:22:19Z",
+   "score": 95,
    "grade": "A",
    "impr28": 0,
    "clicks28": 0

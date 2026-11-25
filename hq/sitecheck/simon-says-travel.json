@@ -3,12 +3,12 @@
  "name": "simonsaystravel.com.au",
  "url": "https://simonsaystravel.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-18T22:15:14Z",
+ "scannedAt": "2026-11-25T03:07:37Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
- "nextDue": "2026-11-26",
- "score": 100,
+ "nextDue": "2026-12-02",
+ "score": 92,
  "grade": "A",
  "areas": {
   "health": {
@@ -22,8 +22,8 @@
    "label": "Tracking & money links"
   },
   "indexing": {
-   "score": 97,
-   "grade": "A",
+   "score": 76,
+   "grade": "C",
    "label": "Sitemap & indexing"
   },
   "seo": {
@@ -47,38 +47,69 @@
    "label": "Google trend"
   },
   "rivals": {
-   "score": null,
-   "grade": null,
+   "score": 35,
+   "grade": "F",
    "label": "Competitors"
   }
  },
  "pages": 27,
  "findings": [
   {
+   "id": "not-indexed",
+   "area": "indexing",
+   "severity": "high",
+   "title": "4 of your top 8 pages aren't in Google's index",
+   "fix": "Make the page more useful than what ranks, link to it from the home page, then request indexing in Search Console.",
+   "pages": [
+    "/reports",
+    "/reports/2026-11",
+    "/destinations",
+    "/destinations/sydney"
+   ],
+   "count": 4,
+   "detail": "/reports: Discovered – currently not indexed; /reports/2026-11: Discovered – currently not indexed; /destinations: Discovered – currently not indexed; /destinations/sydney: URL is unknown to Google",
+   "impact": 5.0,
+   "broken": false
+  },
+  {
    "id": "few-pages-in-google",
    "area": "indexing",
    "severity": "low",
-   "title": "Google shows only 3 of 27 pages (site is 14 days old)",
+   "title": "Google shows only 3 of 27 pages (site is 20 days old)",
    "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 4 pages on 4 Jan 2027, cut or merge weak pages and earn a few links.",
    "pages": [],
    "count": 1,
    "detail": "",
    "impact": 3,
    "broken": false
+  },
+  {
+   "id": "rival-flights-to-japan-2027",
+   "area": "rivals",
+   "severity": "low",
+   "title": "\"flights to japan 2027\": we're not in the top 10 (Search Console avg 94); au.trip.com leads",
+   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+   "pages": [
+    "/destinations/japan"
+   ],
+   "count": 1,
+   "detail": "Top 5: 1. au.trip.com, 2. unknown site, 3. flightlist.io, 4. momondo.com.au, 5. au.trip.com",
+   "impact": 1.1,
+   "broken": false
   }
  ],
  "google": {
-  "impr7": 8,
-  "imprPrev7": 0,
+  "impr7": 3,
+  "imprPrev7": 6,
   "clicks7": 0,
   "clicksPrev7": 0,
-  "impr28": 10,
+  "impr28": 11,
   "clicks28": 0,
-  "views28": 10,
+  "views28": 16,
   "viewsPrev28": 0,
   "recentViews": 3,
-  "lastGa4Day": "2026-11-16",
-  "gscTo": "2026-11-15"
+  "lastGa4Day": "2026-11-23",
+  "gscTo": "2026-11-21"
  },
  "queries": [
   {
@@ -97,14 +128,163 @@
    "impressions": 1
   }
  ],
- "live": null,
- "costUsd": 0,
+ "live": {
+  "serps": [
+   {
+    "keyword": "when should australians book japan flights in 2026",
+    "error": "DataForSEO serp/google/organic/live/regular: Internal SE Server Error.",
+    "impressions": 2,
+    "gscPosition": 10.5,
+    "ourPage": "/destinations/japan",
+    "ourRank": null
+   },
+   {
+    "keyword": "flights to japan 2027",
+    "top": [
+     {
+      "rank": 1,
+      "domain": "au.trip.com",
+      "url": "https://google.com/goto?url=CAESfAHEIkXXaeVG815JQRFgyYgvv48iyFcpGu4ArC8Z8bPVPuKx_79hT2h81ym4k_7FC4mcEb8fe7K3jrRl3HCBcaD7-z1zq6-K-IwykhZ0kZUsRZ7S-W8Jv88K5ueVgUy7Qn2e3QJfW85rgC-bNnj0pWV0j7dHuDHzmAkvoAU&gsessionid=fQeU5IRMvEA-mTIpmp2It7az8BKYY1_YHonw3Sr93lSERzlWQh-j2Q",
+      "title": "Cheap Flights From Sydney to Japan From AU ..."
+     },
+     {
+      "rank": 2,
+      "domain": "unknown site",
+      "url": "https://google.com/goto?url=CAESgQEBxCJF194V1vn0wYSIgEsnF_L0WpgjS9mTuTWEMGVtlY819dxQY0vaN4l34DDAlOKAP2SA34DVRjCiN-qhf0N99SYNE0dSoGMLlRHaFU7FEMv_CB610_ya4L1rBuN0vDOl56LbXP2IqrXZxGwGnz3JtKkvlOX1M7B9_uobJHVLgbs&gsessionid=fQeU5IRMvEA-mTIpmp2It7az8BKYY1_YHonw3Sr93lSERzlWQh-j2Q",
+      "title": "Will Kansai to Brisbane flights go on sale in January ..."
+     },
+     {
+      "rank": 3,
+      "domain": "flightlist.io",
+      "url": "https://google.com/goto?url=CAESdwHEIkXX3SgYK9btboEJTFgxwSyRa1rISk701uKgJtcjPNC1vmYfkPFUCdNkxt8LF2yygmHIIWmdWASSF_wvo1LtiDq9GETsZOMTSM-ulARLSISaqrLoOtifVBcmACI85E8IJRcvmjkrQfcGSk3yBZSAleFDJf0-&gsessionid=fQeU5IRMvEA-mTIpmp2It7az8BKYY1_YHonw3Sr93lSERzlWQh-j2Q",
+      "title": "Cheap flights from Australia to Japan"
+     },
+     {
+      "rank": 4,
+      "domain": "momondo.com.au",
+      "url": "https://google.com/goto?url=CAESbgHEIkXX8ekmfz0v-5JDGhk6LDXUb30DsvkBOxXqOfy9nsn9FTu6jKHWkApXE1NuHeA9nw6OD0Bq9Dl_HNDbyckCAjkAwSNo1urDHY5au5APxlSozR80MXN-Hq79r9u2zco6JXAwo5DHP11y9-fE&gsessionid=fQeU5IRMvEA-mTIpmp2It7az8BKYY1_YHonw3Sr93lSERzlWQh-j2Q",
+      "title": "Cheap flights from Australia to Tokyo from ... - momondo"
+     },
+     {
+      "rank": 5,
+      "domain": "au.trip.com",
+      "url": "https://google.com/goto?url=CAESfgHEIkXXmT1Nf6J4GuTsh5jjqDZQ7sHT0P2n7LYfEpPGiesTAWXEDzs-YmCFxrDBqY9YwwkI9FL6OVD_LZr8rZCxrtHmX6y-6FPRe058mjefHjnjuuDb1fqmagKmOdzjaRAhsbuwIUGuyfbFGJmTQg4Um12Ke8Y9Pen5wo1MJQ&gsessionid=fQeU5IRMvEA-mTIpmp2It7az8BKYY1_YHonw3Sr93lSERzlWQh-j2Q",
+      "title": "Flying From United States to Japan"
+     },
+     {
+      "rank": 6,
+      "domain": "au.wego.com",
+      "url": "https://google.com/goto?url=CAESdwHEIkXXRwm1_7E-h_XgP3dqxlOhxYLcN9faXQ9-y-8NQDu_p2mPYhk8qLNI00K57o9u7BH32rum5rrt84EeZPYGx2fzthNbZYn9SaxSSQcBMFvedl8_SwjZSxcg6jzqP8GllhuT6_kurjIiGyQTFWOw9LofXTT1&gsessionid=fQeU5IRMvEA-mTIpmp2It7az8BKYY1_YHonw3Sr93lSERzlWQh-j2Q",
+      "title": "Airlines Flying to Japan | au.wego.com"
+     },
+     {
+      "rank": 7,
+      "domain": "webjet.com.au",
+      "url": "https://google.com/goto?url=CAESrwEBxCJF15klFnQJbKrYE0dyw-ueGkV_x0h5lMvI3kRsD3dw41F270QrwCtDaSHz8VtpCXfNRR7ambVbO4r052PiUE41xKROSGNockC8HlPMqXXlLJ3HHfCR27K1ddC_CzvgNEmwaTJxy8LAPbC-IvbRLAElVLxJuI5ArwbIrzSiAh-N9RsAb3DvTvkW-Bnb5nqZT6TPtWvZSShH5Drx5P8ecZ-OKiqTVzO1Uv6zFkQQ&gsessionid=fQeU5IRMvEA-mTIpmp2It7az8BKYY1_YHonw3Sr93lSERzlWQh-j2Q",
+      "title": "Japan Airlines | Cheap International Flights, Business ..."
+     },
+     {
+      "rank": 8,
+      "domain": "momondo.com.au",
+      "url": "https://google.com/goto?url=CAESagHEIkXXfbqoTSoFhpgfmBCsGbQrtZEUdI0K3tqu7Mcp0RhdJLSFYqzq8D9wNducHh7z2uo0tAIgRK49ZvkykqAzp_jdAAyxpO-stOMn3j2EuUkMsaqCJTlC1AWj1LbJuwwUgkdsLDvcxlo&gsessionid=fQeU5IRMvEA-mTIpmp2It7az8BKYY1_YHonw3Sr93lSERzlWQh-j2Q",
+      "title": "$345 Cheap Flights to Tokyo Prefecture in 2026/27"
+     },
+     {
+      "rank": 9,
+      "domain": "bookmytrip.com.au",
+      "url": "https://google.com/goto?url=CAESjQEBxCJF1yi0YxDCxFEsi_L5uaxSG2Xamc5S9Q3ZTkMnE77H2ZuaGeYhpP4GT-L_w73pH-KL9vf8tf8HZ2h0CWkgKvH6CthD2JvSCcyQx8FDrF1ytzYGJtKpPq0CKZIbmR2EEkYZeno_0AtmSghWxEJ9ksyb1MlwuSPGM8_astfVgjcbLG-jD683UpL4Q2E&gsessionid=fQeU5IRMvEA-mTIpmp2It7az8BKYY1_YHonw3Sr93lSERzlWQh-j2Q",
+      "title": "Flights from Australia to Japan: Find Affordable Deals Today"
+     }
+    ],
+    "impressions": 1,
+    "gscPosition": 94,
+    "ourPage": "/destinations/japan",
+    "ourRank": null
+   }
+  ],
+  "index": [
+   {
+    "url": "https://simonsaystravel.com.au/",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-17T12:38:03Z",
+    "googleCanonical": "https://simonsaystravel.com.au/",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://simonsaystravel.com.au/destinations/japan",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-06T07:12:15Z",
+    "googleCanonical": "https://simonsaystravel.com.au/destinations/japan",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://simonsaystravel.com.au/destinations/europe",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-06T08:14:37Z",
+    "googleCanonical": "https://simonsaystravel.com.au/destinations/europe",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   },
+   {
+    "url": "https://simonsaystravel.com.au/reports",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered – currently not indexed",
+    "lastCrawl": null,
+    "googleCanonical": null,
+    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+   },
+   {
+    "url": "https://simonsaystravel.com.au/reports/2026-11",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered – currently not indexed",
+    "lastCrawl": null,
+    "googleCanonical": null,
+    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+   },
+   {
+    "url": "https://simonsaystravel.com.au/destinations",
+    "verdict": "NEUTRAL",
+    "coverage": "Discovered – currently not indexed",
+    "lastCrawl": null,
+    "googleCanonical": null,
+    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+   },
+   {
+    "url": "https://simonsaystravel.com.au/destinations/sydney",
+    "verdict": "NEUTRAL",
+    "coverage": "URL is unknown to Google",
+    "lastCrawl": null,
+    "googleCanonical": null,
+    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+   },
+   {
+    "url": "https://simonsaystravel.com.au/destinations/melbourne",
+    "verdict": "PASS",
+    "coverage": "Submitted and indexed",
+    "lastCrawl": "2026-11-17T17:37:53Z",
+    "googleCanonical": "https://simonsaystravel.com.au/destinations/melbourne",
+    "robots": "ALLOWED",
+    "fetch": "SUCCESSFUL"
+   }
+  ],
+  "error": null
+ },
+ "costUsd": 0.002,
  "speed": [
   {
    "url": "https://simonsaystravel.com.au/",
    "lite": true,
-   "serverSecs": 0.26,
-   "htmlKb": 38,
+   "serverSecs": 0.09,
+   "htmlKb": 39,
    "blocking": 1,
    "images": 1,
    "noDims": 0,
@@ -114,8 +294,8 @@
   {
    "url": "https://simonsaystravel.com.au/destinations/japan",
    "lite": true,
-   "serverSecs": 0.1,
-   "htmlKb": 16,
+   "serverSecs": 0.26,
+   "htmlKb": 17,
    "blocking": 1,
    "images": 1,
    "noDims": 0,
@@ -130,21 +310,24 @@
  },
  "links": {
   "internal": 28,
-  "outside": 59,
-  "checkedOutside": 2,
+  "outside": 62,
+  "checkedOutside": 5,
   "unsureOutside": 0
  },
  "affiliateOk": 57,
- "secs": 126,
+ "secs": 154,
  "change": {
   "first": false,
-  "since": "2026-11-17T21:08:31Z",
-  "score": 0,
-  "newIssues": [],
+  "since": "2026-11-18T22:15:14Z",
+  "score": -8,
+  "newIssues": [
+   "4 of your top 8 pages aren't in Google's index",
+   "\"flights to japan 2027\": we're not in the top 10 (Search Console avg 94); au.trip.com leads"
+  ],
   "fixed": [],
-  "impr28": 2,
+  "impr28": 1,
   "clicks28": 0,
-  "views28": 1,
+  "views28": 6,
   "rivals": [],
   "positions": []
  },
@@ -189,6 +372,13 @@
    "score": 100,
    "grade": "A",
    "impr28": 8,
+   "clicks28": 0
+  },
+  {
+   "at": "2026-11-18T22:15:14Z",
+   "score": 100,
+   "grade": "A",
+   "impr28": 10,
    "clicks28": 0
   }
  ],

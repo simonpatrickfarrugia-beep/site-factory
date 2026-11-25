@@ -241,28 +241,76 @@
    "name": "mypaycalc.com.au",
    "url": "https://mypaycalc.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-18T23:21:20Z",
-   "score": 99,
+   "scannedAt": "2026-11-25T03:07:37Z",
+   "score": 94,
    "grade": "A",
-   "change": 1,
+   "change": -5,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-25",
-   "topFix": "Google impressions down 61% week on week",
+   "nextDue": "2026-12-02",
+   "topFix": "Google impressions down 30% week on week",
    "broken": 0,
-   "newIssues": 0,
-   "fixed": 1,
-   "costUsd": 0,
+   "newIssues": 5,
+   "fixed": 0,
+   "costUsd": 0.01,
    "top": [
     {
      "id": "impressions-drop",
-     "title": "Google impressions down 61% week on week",
+     "title": "Google impressions down 30% week on week",
      "severity": "high",
      "area": "google",
      "fix": "Check Search Console → Pages for dropped pages, and whether a recent change touched titles.",
      "pages": [],
      "detail": "",
+     "broken": false
+    },
+    {
+     "id": "rival-mypaycalc",
+     "title": "\"mypaycalc\": we're not in the top 10 (Search Console avg 5); pcbcalculator.my leads",
+     "severity": "medium",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/"
+     ],
+     "detail": "Top 5: 1. pcbcalculator.my, 2. au.talent.com, 3. paycheckcalculate.com, 4. salary-calc-au.com, 5. slicemypay.com",
+     "broken": false
+    },
+    {
+     "id": "rival-pay-calculator",
+     "title": "\"pay calculator\": we're not in the top 10 (Search Console avg 85); toolkitau.com leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/"
+     ],
+     "detail": "Top 5: 1. toolkitau.com, 2. mydailycalc.com, 3. paymecalculator.com.au, 4. netpaymate.com.au, 5. salary-calc-au.com",
+     "broken": false
+    },
+    {
+     "id": "rival-paycalculator",
+     "title": "\"paycalculator\": we're not in the top 10 (Search Console avg 84); paycalculator.com.au leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/"
+     ],
+     "detail": "Top 5: 1. paycalculator.com.au, 2. calculate.fairwork.gov.au, 3. wagecalculator.com.au, 4. calculate.fairwork.gov.au, 5. emumoney.com.au",
+     "broken": false
+    },
+    {
+     "id": "rival-australian-tax-brackets",
+     "title": "\"australian tax brackets\": we're not in the top 10 (Search Console avg 88); data.gov.au leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/tax-brackets"
+     ],
+     "detail": "Top 5: 1. data.gov.au, 2. au.talent.com, 3. bookings.hants.gov.uk, 4. youtube.com, 5. instafiling.com",
      "broken": false
     }
    ]
@@ -271,28 +319,55 @@
    "name": "simonsaystravel.com.au",
    "url": "https://simonsaystravel.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-18T22:15:14Z",
-   "score": 100,
+   "scannedAt": "2026-11-25T03:07:37Z",
+   "score": 92,
    "grade": "A",
-   "change": 0,
+   "change": -8,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-25",
-   "topFix": "Google shows only 3 of 27 pages (site is 14 days old)",
+   "nextDue": "2026-12-02",
+   "topFix": "4 of your top 8 pages aren't in Google's index",
    "broken": 0,
-   "newIssues": 0,
+   "newIssues": 2,
    "fixed": 0,
-   "costUsd": 0,
+   "costUsd": 0.002,
    "top": [
     {
+     "id": "not-indexed",
+     "title": "4 of your top 8 pages aren't in Google's index",
+     "severity": "high",
+     "area": "indexing",
+     "fix": "Make the page more useful than what ranks, link to it from the home page, then request indexing in Search Console.",
+     "pages": [
+      "/reports",
+      "/reports/2026-11",
+      "/destinations",
+      "/destinations/sydney"
+     ],
+     "detail": "/reports: Discovered – currently not indexed; /reports/2026-11: Discovered – currently not indexed; /destinations: Discovered – currently not indexed; /destinations/sydney: URL is unknown to Google",
+     "broken": false
+    },
+    {
      "id": "few-pages-in-google",
-     "title": "Google shows only 3 of 27 pages (site is 14 days old)",
+     "title": "Google shows only 3 of 27 pages (site is 20 days old)",
      "severity": "low",
      "area": "indexing",
      "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 4 pages on 4 Jan 2027, cut or merge weak pages and earn a few links.",
      "pages": [],
      "detail": "",
+     "broken": false
+    },
+    {
+     "id": "rival-flights-to-japan-2027",
+     "title": "\"flights to japan 2027\": we're not in the top 10 (Search Console avg 94); au.trip.com leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/destinations/japan"
+     ],
+     "detail": "Top 5: 1. au.trip.com, 2. unknown site, 3. flightlist.io, 4. momondo.com.au, 5. au.trip.com",
      "broken": false
     }
    ]
@@ -301,28 +376,66 @@
    "name": "imnetwork.com.au",
    "url": "https://imnetwork.com.au",
    "owner": "imn",
-   "scannedAt": "2026-11-18T21:22:19Z",
+   "scannedAt": "2026-11-25T03:07:37Z",
    "score": 95,
    "grade": "A",
-   "change": 5,
+   "change": 0,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-11-25",
-   "topFix": "Google shows only 0 of 14 pages (site is 3 days old)",
+   "nextDue": "2026-12-02",
+   "topFix": "\"imn\": we're not in the top 10 (Search Console avg 8); app.debelegger.nl leads",
    "broken": 0,
-   "newIssues": 1,
-   "fixed": 3,
-   "costUsd": 0,
+   "newIssues": 5,
+   "fixed": 1,
+   "costUsd": 0.01,
    "top": [
     {
-     "id": "few-pages-in-google",
-     "title": "Google shows only 0 of 14 pages (site is 3 days old)",
+     "id": "rival-imn",
+     "title": "\"imn\": we're not in the top 10 (Search Console avg 8); app.debelegger.nl leads",
+     "severity": "medium",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/"
+     ],
+     "detail": "Top 5: 1. app.debelegger.nl, 2. unknown site, 3. instagram.com, 4. debelegger.nl, 5. gurufocus.com",
+     "broken": false
+    },
+    {
+     "id": "rival-how-much-does-a-website-cost-for-small-business",
+     "title": "\"how much does a website cost for small business\": we're not in the top 10 (Search Console avg 88); unknown site leads",
      "severity": "low",
-     "area": "indexing",
-     "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 2 pages on 15 Jan 2027, cut or merge weak pages and earn a few links.",
-     "pages": [],
-     "detail": "",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/how-much-does-a-website-cost"
+     ],
+     "detail": "Top 5: 1. unknown site, 2. organikweb.com.au, 3. 10amdigital.com.au, 4. rocksolidmarketing.com.au, 5. websiteboss.com.au",
+     "broken": false
+    },
+    {
+     "id": "rival-website-design-cost-australia",
+     "title": "\"website design cost australia\": we're not in the top 10 (Search Console avg 92); websitedesignerperth.com.au leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/how-much-does-a-website-cost"
+     ],
+     "detail": "Top 5: 1. websitedesignerperth.com.au, 2. cisin.com, 3. foundlab.com.au, 4. multidice.com.au, 5. youtube.com",
+     "broken": false
+    },
+    {
+     "id": "rival-cost-of-not-having-a-website",
+     "title": "\"cost of not having a website\": we're not in the top 10 (Search Console avg 89); nexalab.io leads",
+     "severity": "low",
+     "area": "rivals",
+     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
+     "pages": [
+      "/how-much-does-a-website-cost"
+     ],
+     "detail": "Top 5: 1. nexalab.io, 2. appsalon.com.au, 3. youtube.com, 4. sitemile.com, 5. heightsdigitalmedia.com",
      "broken": false
     },
     {
@@ -332,20 +445,8 @@
      "area": "seo",
      "fix": "Fine for tools; for guides add the answer people search for.",
      "pages": [
-      "/our-sites",
-      "/about"
-     ],
-     "detail": "",
-     "broken": false
-    },
-    {
-     "id": "seo-desc",
-     "title": "1 description outside 70–160 characters",
-     "severity": "low",
-     "area": "seo",
-     "fix": "Rewrite to 70–160 characters: what the page gives the searcher.",
-     "pages": [
-      "/privacy-policy"
+      "/about",
+      "/labs"
      ],
      "detail": "",
      "broken": false
@@ -353,11 +454,13 @@
    ]
   }
  },
- "updated": "2026-11-25T00:01:26Z",
+ "updated": "2026-11-25T03:07:37Z",
  "lastRun": {
-  "at": "2026-11-25T00:01:26Z",
+  "at": "2026-11-25T03:07:37Z",
   "scanned": [
-   "trade-admin"
+   "paycalc",
+   "simon-says-travel",
+   "imnetwork"
   ]
  }
 }
