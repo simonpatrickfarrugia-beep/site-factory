@@ -70,7 +70,48 @@
    },
    "status": "measuring",
    "measureFrom": "2026-12-30"
+  },
+  {
+   "site": "trailers",
+   "owner": "imn",
+   "name": "movietrailer.channel",
+   "findingId": "not-indexed",
+   "area": "indexing",
+   "title": "4 of your top 8 pages aren't in Google's index",
+   "pages": [
+    "/movies/weird-science-1985",
+    "/free-classic-movies",
+    "/movies/interstellar-2014",
+    "/movies/the-imitation-game-2014"
+   ],
+   "scope": "pages",
+   "fixedBy": "2026-11-25",
+   "seenFixedAfter": "2026-11-24",
+   "baseline": {
+    "target": {
+     "impr": 0,
+     "clicks": 0,
+     "views": 8,
+     "pos": null,
+     "window": "2026-11-22",
+     "pages": [
+      "/free-classic-movies",
+      "/movies/interstellar-2014",
+      "/movies/the-imitation-game-2014",
+      "/movies/weird-science-1985"
+     ]
+    },
+    "site": {
+     "impr": 76,
+     "clicks": 0,
+     "views": 71,
+     "pos": null,
+     "window": "2026-11-22"
+    }
+   },
+   "status": "measuring",
+   "measureFrom": "2026-12-31"
   }
  ],
- "updated": "2026-11-25"
+ "updated": "2026-11-26"
 }

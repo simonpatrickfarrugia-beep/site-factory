@@ -3,12 +3,12 @@
  "name": "movietrailer.channel",
  "url": "https://www.movietrailer.channel",
  "owner": "imn",
- "scannedAt": "2026-11-24T04:23:10Z",
+ "scannedAt": "2026-11-25T23:54:45Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
- "nextDue": "2026-12-01",
- "score": 92,
+ "nextDue": "2026-12-03",
+ "score": 99,
  "grade": "A",
  "areas": {
   "health": {
@@ -22,8 +22,8 @@
    "label": "Tracking & money links"
   },
   "indexing": {
-   "score": 81,
-   "grade": "B",
+   "score": 97,
+   "grade": "A",
    "label": "Sitemap & indexing"
   },
   "seo": {
@@ -47,68 +47,23 @@
    "label": "Google trend"
   },
   "rivals": {
-   "score": 35,
-   "grade": "F",
+   "score": null,
+   "grade": null,
    "label": "Competitors"
   }
  },
- "pages": 511,
+ "pages": 521,
  "findings": [
-  {
-   "id": "not-indexed",
-   "area": "indexing",
-   "severity": "high",
-   "title": "4 of your top 8 pages aren't in Google's index",
-   "fix": "Make the page more useful than what ranks, link to it from the home page, then request indexing in Search Console.",
-   "pages": [
-    "/movies/weird-science-1985",
-    "/free-classic-movies",
-    "/movies/interstellar-2014",
-    "/movies/the-imitation-game-2014"
-   ],
-   "count": 4,
-   "detail": "/movies/weird-science-1985: Discovered – currently not indexed; /free-classic-movies: Discovered – currently not indexed; /movies/interstellar-2014: Discovered – currently not indexed; /movies/the-imitation-game-2014: Crawled - currently not indexed",
-   "impact": 7.0,
-   "broken": false
-  },
   {
    "id": "few-pages-in-google",
    "area": "indexing",
    "severity": "low",
-   "title": "Google shows only 20 of 511 pages (site is 38 days old)",
-   "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 76 pages on 16 Dec 2026, cut or merge weak pages and earn a few links.",
+   "title": "Google shows only 19 of 521 pages (site is 40 days old)",
+   "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 78 pages on 16 Dec 2026, cut or merge weak pages and earn a few links.",
    "pages": [],
    "count": 1,
    "detail": "",
    "impact": 3,
-   "broken": false
-  },
-  {
-   "id": "rival-trailers-free",
-   "area": "rivals",
-   "severity": "low",
-   "title": "\"trailers free\": we're not in the top 10 (Search Console avg 78); unknown site leads",
-   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
-   "pages": [
-    "/browse"
-   ],
-   "count": 1,
-   "detail": "Top 5: 1. unknown site, 2. unknown site, 3. facebook.com, 4. videezy.com, 5. unknown site",
-   "impact": 2.5,
-   "broken": false
-  },
-  {
-   "id": "rival-movietr",
-   "area": "rivals",
-   "severity": "low",
-   "title": "\"movietr\": we're not in the top 10 (Search Console avg 58); movietr.com leads",
-   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
-   "pages": [
-    "/"
-   ],
-   "count": 1,
-   "detail": "Top 5: 1. movietr.com, 2. unknown site, 3. apps.apple.com, 4. apps.apple.com, 5. unknown site",
-   "impact": 2.4,
    "broken": false
   },
   {
@@ -125,68 +80,26 @@
    "detail": "",
    "impact": 1.0,
    "broken": false
-  },
-  {
-   "id": "rival-the-prestige-trailer",
-   "area": "rivals",
-   "severity": "low",
-   "title": "\"the prestige trailer\": we're not in the top 10 (Search Console avg 62); imdb.com leads",
-   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
-   "pages": [
-    "/movies/the-prestige-2006"
-   ],
-   "count": 1,
-   "detail": "Top 5: 1. imdb.com, 2. unknown site, 3. unknown site, 4. imdb.com, 5. unknown site",
-   "impact": 1.0,
-   "broken": false
-  },
-  {
-   "id": "rival-jurassic-park-film-trailer",
-   "area": "rivals",
-   "severity": "low",
-   "title": "\"jurassic park film trailer\": we're not in the top 10 (Search Console avg 77); hollywoodreporter.com leads",
-   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
-   "pages": [
-    "/movies/jurassic-park-1993"
-   ],
-   "count": 1,
-   "detail": "Top 5: 1. hollywoodreporter.com, 2. unknown site, 3. unknown site, 4. player.one, 5. trailer-transcripts.fandom.com",
-   "impact": 1.0,
-   "broken": false
-  },
-  {
-   "id": "rival-insomnia-film-trailer",
-   "area": "rivals",
-   "severity": "low",
-   "title": "\"insomnia film trailer\": we're not in the top 10 (Search Console avg 60); imdb.com leads",
-   "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
-   "pages": [
-    "/movies/insomnia-2002"
-   ],
-   "count": 1,
-   "detail": "Top 5: 1. imdb.com, 2. screenrant.com, 3. unknown site, 4. tv.apple.com, 5. cineamo.com",
-   "impact": 1.0,
-   "broken": false
   }
  ],
  "google": {
-  "impr7": 32,
-  "imprPrev7": 7,
+  "impr7": 26,
+  "imprPrev7": 19,
   "clicks7": 0,
   "clicksPrev7": 0,
   "impr28": 76,
   "clicks28": 0,
-  "views28": 77,
-  "viewsPrev28": 239,
-  "recentViews": 45,
-  "lastGa4Day": "2026-11-22",
-  "gscTo": "2026-11-20"
+  "views28": 71,
+  "viewsPrev28": 244,
+  "recentViews": 13,
+  "lastGa4Day": "2026-11-24",
+  "gscTo": "2026-11-22"
  },
  "queries": [
   {
    "query": "the prestige trailer",
-   "position": 61.8,
-   "impressions": 6
+   "position": 62.1,
+   "impressions": 7
   },
   {
    "query": "jurassic park film trailer",
@@ -205,12 +118,17 @@
   },
   {
    "query": "insomnia film trailer",
-   "position": 60,
+   "position": 62,
    "impressions": 2
   },
   {
    "query": "insomnia trailer",
    "position": 67,
+   "impressions": 2
+  },
+  {
+   "query": "insomnio trailer",
+   "position": 66,
    "impressions": 2
   },
   {
@@ -234,6 +152,11 @@
    "impressions": 2
   },
   {
+   "query": "darjeeling limited trailer",
+   "position": 68,
+   "impressions": 2
+  },
+  {
    "query": "the prestige film trailer",
    "position": 61,
    "impressions": 2
@@ -244,23 +167,13 @@
    "impressions": 2
   },
   {
-   "query": "district 9 movie trailer",
-   "position": 66,
-   "impressions": 1
-  },
-  {
-   "query": "insomnio trailer",
-   "position": 66,
-   "impressions": 1
-  },
-  {
-   "query": "men and black trailer",
-   "position": 52,
-   "impressions": 1
-  },
-  {
    "query": "free movie trailers",
    "position": 57,
+   "impressions": 1
+  },
+  {
+   "query": "free trailer",
+   "position": 72,
    "impressions": 1
   },
   {
@@ -289,18 +202,8 @@
    "impressions": 1
   },
   {
-   "query": "home alone film trailer",
-   "position": 84,
-   "impressions": 1
-  },
-  {
    "query": "home alone trailer",
    "position": 58,
-   "impressions": 1
-  },
-  {
-   "query": "home alone trailer 1990",
-   "position": 59,
    "impressions": 1
   },
   {
@@ -327,420 +230,53 @@
    "query": "the prestige",
    "position": 2,
    "impressions": 1
-  },
-  {
-   "query": "trailer the prestige",
-   "position": 65,
-   "impressions": 1
   }
  ],
- "live": {
-  "serps": [
-   {
-    "keyword": "the prestige trailer",
-    "top": [
-     {
-      "rank": 1,
-      "domain": "imdb.com",
-      "url": "https://google.com/goto?url=CAESZQHEIkXXIRklZMmCVRNY0wr5pKZf9oT-VODbKA96OBAgCmTYH08GuMlRoarGS-LDBkuf7zP0A5RhAoCT_Tvlyu0YrzvphlQ6QTKhqfJqm46T93bK6FoQcaNMaF9GccH78Lmf-ylj&gsessionid=tDNwz9aOEwZdaifPZwW4FPlt3qp-4ka3-DQvGPu2Mx7V1IIbUk54uQ",
-      "title": "The Prestige"
-     },
-     {
-      "rank": 2,
-      "domain": "unknown site",
-      "url": "https://google.com/goto?url=CAESaAHEIkXXLz9hpKhGZ9Lrv-kdDO1njI5UiGLuv_9R64_lIhJ86BznpApnslxmI8QhHpancI1x4K-RBemhFgt0igv8hjgxNErxrxOtLu22YEQGN1NYRqSYw4zSNFlch7Me4-NsRkDyrMtx&gsessionid=tDNwz9aOEwZdaifPZwW4FPlt3qp-4ka3-DQvGPu2Mx7V1IIbUk54uQ",
-      "title": "The Prestige (2006) - Movie Trailer"
-     },
-     {
-      "rank": 3,
-      "domain": "unknown site",
-      "url": "https://google.com/goto?url=CAESaAHEIkXXbPaWgIcE-JLAmKxw3UoHNR3ISG66MmuWdtg43UBx5OL4uBXgIVCcTvsOTBhuwafyY9mLwqnrUtqElgO6YpFs_D08x7SRcdOdNj_HrX6QobZYtOeaqs96Fj7bxc_Ie8--SuJ2&gsessionid=tDNwz9aOEwZdaifPZwW4FPlt3qp-4ka3-DQvGPu2Mx7V1IIbUk54uQ",
-      "title": "Italian trailer for Christopher Nolan's film starring Christian Bale"
-     },
-     {
-      "rank": 4,
-      "domain": "imdb.com",
-      "url": "https://google.com/goto?url=CAESZQHEIkXXJBW_Cc542PMYFgp2njMFWpx-ADKWygYA_wTbPr5PmLtI5tZeARR5wNic4aMbQXDhyVAO9m0Op0Wy6v0BBrEUuETkmvDM4QKv3oTHzQvgw6qIKjy8inO2HQm7YgGtve4w&gsessionid=tDNwz9aOEwZdaifPZwW4FPlt3qp-4ka3-DQvGPu2Mx7V1IIbUk54uQ",
-      "title": "The Prestige"
-     },
-     {
-      "rank": 5,
-      "domain": "unknown site",
-      "url": "https://google.com/goto?url=CAESpAEBxCJF17JIIfNW2rUSYTnFc8EjZsUd5SIulKpIMPjb12xgbLsroTF90AMvwNXTLGvPyHkVHQvee9Mxu9KGyw8eqdo4E4AGGHmeBWuIQEFyUrksEzxr6MIl_AeV7nztxAkepP9B4fwBg7iSAw-hyKg1F-xsKs2dZvQ-ue19GumqTUmcSSioOujiyK1z4BPPaLULVfCptEGBBEtbs13p_Ja938tBCg&gsessionid=tDNwz9aOEwZdaifPZwW4FPlt3qp-4ka3-DQvGPu2Mx7V1IIbUk54uQ",
-      "title": "The Prestige (2006) All Trailers and TV Spots"
-     },
-     {
-      "rank": 6,
-      "domain": "amctheatres.com",
-      "url": "https://google.com/goto?url=CAESeQHEIkXXDftI9HDlKEfS-gSWx4gIjORugZ5Gx0GDQPniUES11v30HOIXiYvsPUEhaxdal3fAV0BiHCP0-Eeha0GgO8OUw4EgYRBxb44TimiWLmc7a_QKtyKDLmeFGGwL5BjH2N4Tuk3l77weWsaBMq2AghPIHI8m6Z8&gsessionid=tDNwz9aOEwZdaifPZwW4FPlt3qp-4ka3-DQvGPu2Mx7V1IIbUk54uQ",
-      "title": "Trailers and Videos for The Prestige"
-     },
-     {
-      "rank": 7,
-      "domain": "tiktok.com",
-      "url": "https://google.com/goto?url=CAEScQHEIkXXz60A7IIuZT_GMP6Rn6cRnJTS0ip5tKte7YJ9sayLU50PwqhQO7O2fMc9A4ySTLFdtJoyN5mqURNrmWr-LXIPLjhHIsIrbK9dNYDjK2Dsu89G3lLttrPm0H80OBYIlxeozVsB87jX0j16WvFR&gsessionid=tDNwz9aOEwZdaifPZwW4FPlt3qp-4ka3-DQvGPu2Mx7V1IIbUk54uQ",
-      "title": "The Prestige Trailer"
-     },
-     {
-      "rank": 8,
-      "domain": "cineamo.com",
-      "url": "https://google.com/goto?url=CAESbgHEIkXXmmL7uQhCscYdKIro_xgcTsouRJCXVwrgOygvSuLzS_aESMkaavD3sC5l4vkUJfZW81yGM0F6rwmV4lHg6OnRozm6CCrGReoKC35FR2HFIyz6Lui4C4dYY2yQ_i2cDf03GIIv7tsR5pGy&gsessionid=tDNwz9aOEwZdaifPZwW4FPlt3qp-4ka3-DQvGPu2Mx7V1IIbUk54uQ",
-      "title": "The Prestige (2006) – Movie, Trailer & Showtimes"
-     }
-    ],
-    "impressions": 6,
-    "gscPosition": 61.8,
-    "ourPage": "/movies/the-prestige-2006",
-    "ourRank": null
-   },
-   {
-    "keyword": "jurassic park film trailer",
-    "top": [
-     {
-      "rank": 1,
-      "domain": "hollywoodreporter.com",
-      "url": "https://google.com/goto?url=CAESggEBxCJF1_l_dKw8IaTZwdcfnrdN_IUV3rBf_Ieq6ysG5egU-DBOgtgsvOzP-ep9Tls06OjSvN0T1D_GXREDD-pU7xJSikGXW44UfOZKbTCGda6XZtMt_qBZaAtVSs08JANzh8UVHxnzocSwEadYA8BhhCZIKbs_QV0b12DSePaAWjkh&gsessionid=Brnsh_2RLV8FuGPgrds1mqx3fQgMQrOiJbhYIwA2EqyIkCSSHc1gEQ",
-      "title": "'Jurassic Park' Trailer"
-     },
-     {
-      "rank": 2,
-      "domain": "unknown site",
-      "url": "https://google.com/goto?url=CAESZwHEIkXXazMbI9qpzxXZvh6Y1A8RhD61ATy7Sc46f12PZhTr_BI5RVVbSH5ndzJT-_MpLfQ3pyBfdkwnpYswLlGmb9pRxQCP9PGi6XPfmS4Kz1F8VvSxyYZ1FFSzgn5aTCE5-Gf8b8M&gsessionid=Brnsh_2RLV8FuGPgrds1mqx3fQgMQrOiJbhYIwA2EqyIkCSSHc1gEQ",
-      "title": "Jurassic Park Trailer HD"
-     },
-     {
-      "rank": 3,
-      "domain": "unknown site",
-      "url": "https://google.com/goto?url=CAESZwHEIkXX5iI74uVYp3SAzMoKy8WTnXMu6s52y9Hwppuokv80OWELavvpNmSLlwjaGOY4oBXLayLxMdOmmIga_K31HcRP4vD-V45r0HLFQjI--a5vK-DAkQIhzlmt3w8heu9XTu8uE9s&gsessionid=Brnsh_2RLV8FuGPgrds1mqx3fQgMQrOiJbhYIwA2EqyIkCSSHc1gEQ",
-      "title": "Jurassic Park | Official Trailer (Oppenheimer Style)"
-     },
-     {
-      "rank": 4,
-      "domain": "player.one",
-      "url": "https://google.com/goto?url=CAESqgEBxCJF189ZnLpPcynJD2OnY2VfLhafnlf4s3fADRQ_sPLBhjLHNGJiiNfHpEFrGvYzLDf6tGq5NtNoCRrrde1DjLvRam1xqHCCAnMqK214EwV7ggdT-jgLrkms2VV-zwwPsQzBcPW4IZ3KHbdXu0ZS3DngQAAdWcJt3t_P-UUjWDOaH0kWtZAXOQ0OwdFxLn2hqe8t5R7uFNAWZ9uXX5r33HW7UKP7llY1dA&gsessionid=Brnsh_2RLV8FuGPgrds1mqx3fQgMQrOiJbhYIwA2EqyIkCSSHc1gEQ",
-      "title": "New 'Jurassic Park' Trailer Puts a Horrifying Modern Twist ..."
-     },
-     {
-      "rank": 5,
-      "domain": "trailer-transcripts.fandom.com",
-      "url": "https://google.com/goto?url=CAESfgHEIkXXX3Ti_WjsBrexLolkah9TRCKv0A6oQOHtBvicaLdxsVwHpMeA4ZX0thL2UwO9FwswZhxiGNNlyucLsRl9VXEc8aTp3FAMiY-2B538UAUY8NCgM37QzqquDSOt3ghdZhx7dhQvq4uPsb-cbkcuj4HW5OpbuJoZIX0mIw&gsessionid=Brnsh_2RLV8FuGPgrds1mqx3fQgMQrOiJbhYIwA2EqyIkCSSHc1gEQ",
-      "title": "Jurassic Park Trailers | Trailer Transcripts Wiki - Fandom"
-     },
-     {
-      "rank": 6,
-      "domain": "mubi.com",
-      "url": "https://google.com/goto?url=CAESawHEIkXXPFNBwLr3IAZl-XXplsuOWCtlGgfT4jyMt2JDgNA2bGjiQgN03DBpNHjAfVjqi7nfHoE0muSlj5RZ_6T9eAR7B9Whbx1b3KIXYD1VzVX_hmwJqSQZj_mMrxebOnQmcf_IjHX3GLKP&gsessionid=Brnsh_2RLV8FuGPgrds1mqx3fQgMQrOiJbhYIwA2EqyIkCSSHc1gEQ",
-      "title": "TRAILER - Jurassic Park (1993)"
-     },
-     {
-      "rank": 7,
-      "domain": "unknown site",
-      "url": "https://google.com/goto?url=CAESZwHEIkXXIDpB7pLwSCH9p6kh_gInxCUxtay_quRat3LT7HRbg7mQsC0oP9Z8iZMEvhMX69MDtdCYP8daGIeziaZl0Bk_UF8hZ4S0T9saebEc-E2L5GTY2hxC7roC_jkqRrVKZhjA5Qk&gsessionid=Brnsh_2RLV8FuGPgrds1mqx3fQgMQrOiJbhYIwA2EqyIkCSSHc1gEQ",
-      "title": "Jurassic Park 3D Blu-Ray - Official® Trailer [HD]"
-     },
-     {
-      "rank": 8,
-      "domain": "tv.apple.com",
-      "url": "https://google.com/goto?url=CAESxQEBxCJF17oojBPy7ZSTqQJHd4UvYCt-mf_XN0Ts3t_XXWnl2lJvSe9r1sHQeYGaDyg_52-4moJJZtZZm6OyWgwfz6t1B78oxvasrg0_qQrVHGiDPIR_GrPeUXGzavHt_BjuSMXrEWH9gc6ti0EvtYFeJXVInROEqyS7ha8f8Dmb3yra9c2ZL-mJiyE8c0zNTKso-LFmRYpBod1r02IhtNuOKS0febbWfFGUr4Jwh8Q2_xF6__TFcHVFgkbgMo8svM-JElpRkg&gsessionid=Brnsh_2RLV8FuGPgrds1mqx3fQgMQrOiJbhYIwA2EqyIkCSSHc1gEQ",
-      "title": "Jurassic Park - Official Trailer"
-     }
-    ],
-    "impressions": 5,
-    "gscPosition": 76.8,
-    "ourPage": "/movies/jurassic-park-1993",
-    "ourRank": null
-   },
-   {
-    "keyword": "movietr",
-    "top": [
-     {
-      "rank": 1,
-      "domain": "movietr.com",
-      "url": "https://google.com/goto?url=CAESVAHEIkXXQ0aglr6Yu7dSFTfBQCGK-U-5kl0fNMgte8U_lxaiZEB6JA5a4tfbn91UrZCs-RPjX8WkfshfuCJJrnDdEAiIUCdhrop4910fm7SLMWnOMg&gsessionid=5D3Nbfr-V-I0zQBXW707ebHtVYt8dw6WlVayK_R-K6BOW2oIFjR_ow",
-      "title": "movietr.com - This website is for sale! - movietr Resources and ..."
-     },
-     {
-      "rank": 2,
-      "domain": "unknown site",
-      "url": "https://google.com/goto?url=CAESdQHEIkXXcroP7FO91ezIFjXNILGdbWG6MO87DeKiYqz9JWUjflIojW5G6p9_WETdf8-VuTOhm4BEVHzLgIB2QtJoNpagou64f9e6kh50llBs4UX3xGlG4pgrZqqrT7p0v95PGD8RNDMt8jKFXzN6e1uGWDnEbg&gsessionid=5D3Nbfr-V-I0zQBXW707ebHtVYt8dw6WlVayK_R-K6BOW2oIFjR_ow",
-      "title": "Movie Trailers"
-     },
-     {
-      "rank": 3,
-      "domain": "apps.apple.com",
-      "url": "https://google.com/goto?url=CAESdAHEIkXX-QMziAfG_tIk_lueosuG2IQgKfIlcKOddVo2rofdH3u-KVQHSAG1txVtU-qCF6s3u18dM0nuFl9C_OOzpb64vF7bRgNE7ldefXkrueb4GE48LqfAhVhRzLvZt9RPRXak-34Yj4-gHJ3wiAlHEyng&gsessionid=5D3Nbfr-V-I0zQBXW707ebHtVYt8dw6WlVayK_R-K6BOW2oIFjR_ow",
-      "title": "MovieTrailer - App Store - Apple"
-     },
-     {
-      "rank": 4,
-      "domain": "apps.apple.com",
-      "url": "https://google.com/goto?url=CAESfAHEIkXXDpWRpr38-Btf4L3pmezZKPpd9aAlUmS83a56sxcO3RWkQb6JBADG7UtxSs2xo1uXD9HcsEeKJRXZpAt4K_iTjUt18bs5eifAk4LkuOAyZ0854AKhBjjSYpgXsVB2lNM-5TuzE_deIL2ocIkYEDNyW63Y67DQqbk&gsessionid=5D3Nbfr-V-I0zQBXW707ebHtVYt8dw6WlVayK_R-K6BOW2oIFjR_ow",
-      "title": "MovieTrailer - App Store - Apple"
-     },
-     {
-      "rank": 5,
-      "domain": "unknown site",
-      "url": "https://google.com/goto?url=CAESZwHEIkXXpjDYY7TwBXTzWtKRgyKc1_AA8oCSiF0fZikHdoRnFPpwh4_RgTznFPdBIls1qdNAMigijZdPJZ05WDqdqlZxRzVmhUja5a8d58HkbLJtvRZvFtCtdJsWEsKLkv6VSRX-OV0&gsessionid=5D3Nbfr-V-I0zQBXW707ebHtVYt8dw6WlVayK_R-K6BOW2oIFjR_ow",
-      "title": "MOVIE TRAILERS"
-     },
-     {
-      "rank": 6,
-      "domain": "unknown site",
-      "url": "https://google.com/goto?url=CAESoQEBxCJF1z9hc0eoIKg0h77BfbPclDSbwDwdW-ploRJKjQsLHYCmuXp9uxAZosZXXgk7mXc7Nuj3LCg4gsRUt6wlre7bzFBYPr2GUv8PZTPSNTiTjc5zg8cPltibUjI-EfGDoyBlbDFv6XebFjRpMHWWekyNsIiXtxvfZSJzn9EyrMp73BsICIgKVmXxhksBDbAHjOcyXGweY02aTQogIvP0Aw&gsessionid=5D3Nbfr-V-I0zQBXW707ebHtVYt8dw6WlVayK_R-K6BOW2oIFjR_ow",
-      "title": "Movier - a Windows 10 app let you keep track of movies ..."
-     },
-     {
-      "rank": 7,
-      "domain": "apps.apple.com",
-      "url": "https://google.com/goto?url=CAESewHEIkXXUhy1pqEy2WSR4w2Td-wDFudkjiAdr-RF3esjO0VX2giEzFVzPDowcaW1R-2NfKBT6irfhWFJw3uMoL3sL1A0ft--q7mb00Z9Guz9sPU0D4InzIqWPFURnAAbfmwZGJuF_aSfVqtn9PyMBPGKKrFNQmQAsaMfPA&gsessionid=5D3Nbfr-V-I0zQBXW707ebHtVYt8dw6WlVayK_R-K6BOW2oIFjR_ow",
-      "title": "Movier: Movie Finder - App Store - Apple"
-     },
-     {
-      "rank": 8,
-      "domain": "unknown site",
-      "url": "https://google.com/goto?url=CAESZgHEIkXXYP7NmNKy-fQxUbPeX8KBSrMQFxmdrhd5leyeZvWJv9RI6znnIMYDUq4xjuOosR1OcZaxJfpqb0lbUGSj4HlfzqTJRtPks8wCiD8Pp8k5LVu8I9GEQdAlB0qA-rmasDkR4Q&gsessionid=5D3Nbfr-V-I0zQBXW707ebHtVYt8dw6WlVayK_R-K6BOW2oIFjR_ow",
-      "title": "Movie & Trailers (@movietrailersss)"
-     },
-     {
-      "rank": 9,
-      "domain": "apps.apple.com",
-      "url": "https://google.com/goto?url=CAESgwEBxCJF16shdHB-8O8ULVRUxOMEf3r03VC8ASQOHj-iussLixncaqXscpfT-ZOZ9FYaGmv1NeFuXomocknelSz1NtevgdS0Wxs8weMArSIdQ1LoKY7YbJOIyAv-2PdLRfLSMXU7OLi0GracNLI8Gng1t7o7EI7jERkrNgbAK08oYu3DTw&gsessionid=5D3Nbfr-V-I0zQBXW707ebHtVYt8dw6WlVayK_R-K6BOW2oIFjR_ow",
-      "title": "Movier: Movie Finder - App Store - Apple"
-     }
-    ],
-    "impressions": 2,
-    "gscPosition": 57.5,
-    "ourPage": "/",
-    "ourRank": null
-   },
-   {
-    "keyword": "insomnia film trailer",
-    "top": [
-     {
-      "rank": 1,
-      "domain": "imdb.com",
-      "url": "https://google.com/goto?url=CAESZQHEIkXXwcFAeOhf5l6nSBYJ0GAsPBSVr7raOkgvHafOlL9NjO8jp-KQ4FM4ZzBrLnnvLXQRFuR9tp8BZkB2TCoER3b8CTTUL_iBHh3Bwy7UHgk6-vESE__WRk5FzjLogmIwOYpK&gsessionid=Ywe4tSvlkwSKkeBWiv9P8_hwhVHSzKaJqk0sTnpinMf2izdfpesW3w",
-      "title": "INSOMNIA TRAILER (2:43)"
-     },
-     {
-      "rank": 2,
-      "domain": "screenrant.com",
-      "url": "https://google.com/goto?url=CAESZgHEIkXXMR9CoSuWvSM9yY1GnnYY5zh9ZP-QReC10Vac37XayhGs3XByqln4R68XmTBQ3tJEd86vfDCKJsbO5bP3KJcYoQcBQHizNqQfxEElYoXibJHl7TBlM56-z09Xv84xjsLkOw&gsessionid=Ywe4tSvlkwSKkeBWiv9P8_hwhVHSzKaJqk0sTnpinMf2izdfpesW3w",
-      "title": "Insomnia Summary, Trailer, Cast, Where to Watch and More"
-     },
-     {
-      "rank": 3,
-      "domain": "unknown site",
-      "url": "https://google.com/goto?url=CAESaAHEIkXXFb-v9XDrpO8xzUI-ySbfq4n9C1i6Tv39PMfXhpdF65w4zvv71_Z6tpkrMU_O_qwc9CV_7RC9HwamVOsVMza2UEZLmGZpD0CvuTFITS3SUsFdTu8a6TmNZAny8Qmg7dvlFX3c&gsessionid=Ywe4tSvlkwSKkeBWiv9P8_hwhVHSzKaJqk0sTnpinMf2izdfpesW3w",
-      "title": "Insomnia. Official Trailer"
-     },
-     {
-      "rank": 4,
-      "domain": "tv.apple.com",
-      "url": "https://google.com/goto?url=CAESwQEBxCJF1zdEe8xhAwqlg_RVJR2bbujxdWNOezyHeD9iu0T4fBw2FqkgwrVG88txfssjGIVed1JqNb50S70Y8hXQdyOOOMsXldalLCHjT9ryXxqhQjR-xNAanzJ7leRztl-u7a6ycIWewMaDmeeE6pHNjPZMsRmtEt-b8QqNgIwBaX7FLiyJa2eE1Tr2wmhhEwQHARoWw_qVWR6zijPC4CzRZV9aP1dd43USEa04JZw23mmJOk7u4K84S3g1rRfEygKo&gsessionid=Ywe4tSvlkwSKkeBWiv9P8_hwhVHSzKaJqk0sTnpinMf2izdfpesW3w",
-      "title": "Insomnia – Official Trailer"
-     },
-     {
-      "rank": 5,
-      "domain": "cineamo.com",
-      "url": "https://google.com/goto?url=CAESagHEIkXXVVF2-5aen3X4Q9_koYZYuV2kDlygjB8H9a_uEXQHApucxI10ydiJwzg_DBTiry5Ozd8TmiAXsams1-YjVzBw_c4ldkk4mLSl3M301R3jpKQXifHLkXLsWYrJZhifC6IoZaqinxo&gsessionid=Ywe4tSvlkwSKkeBWiv9P8_hwhVHSzKaJqk0sTnpinMf2izdfpesW3w",
-      "title": "Insomnia (2002) – Movie, Trailer & Showtimes"
-     },
-     {
-      "rank": 6,
-      "domain": "unknown site",
-      "url": "https://google.com/goto?url=CAESaAHEIkXXlxmkPj_Nw6_FgYrhreAB2nvJQEnVtfKJX6DFygzFwZNm2RFoWt_n7wRNr6qVX1GAaMsc_aunyx0Hxqd7DKWjwaAKdh4BmHFallq22TP_7_xevXE5JmR9UlSLm2fMKpEzpcwo&gsessionid=Ywe4tSvlkwSKkeBWiv9P8_hwhVHSzKaJqk0sTnpinMf2izdfpesW3w",
-      "title": "Insomnia magyar trailer"
-     },
-     {
-      "rank": 7,
-      "domain": "unknown site",
-      "url": "https://google.com/goto?url=CAESaAHEIkXXA1-TqRP6bgpIJ_QU45y45n9p8JFkI4Y7rstfjJDziEBz068aK84Ze5O3pn3Ea2S7t1YblxzrCTMjSs6M1yk334y7emFHraPKnctAjxeV8ZwI8RTBwuieLRwjR5NntPLEqoCz&gsessionid=Ywe4tSvlkwSKkeBWiv9P8_hwhVHSzKaJqk0sTnpinMf2izdfpesW3w",
-      "title": "Insomnia [Trailer] 1997, Norway"
-     }
-    ],
-    "impressions": 2,
-    "gscPosition": 60,
-    "ourPage": "/movies/insomnia-2002",
-    "ourRank": null
-   },
-   {
-    "keyword": "trailers free",
-    "top": [
-     {
-      "rank": 1,
-      "domain": "unknown site",
-      "url": "https://google.com/goto?url=CAESZwHEIkXX--6oR9J4jLo0jmTu9I5D2GzBmPXwfqy5j2EtqaELO3SCpD6xYATrN2ux4l86rvU66_rvjPmoqBxSaYjnMqpsyVvCoc5SEJ5j0PAPJf7XNwrGygy7f4oi-cEAA2-ka7z2xHA&gsessionid=0q4dutCdwRp83CTgKNzqY506_WkspGN6bO3my1C4cvHqfOSma4bONg",
-      "title": "Get a FREE Trailer!"
-     },
-     {
-      "rank": 2,
-      "domain": "unknown site",
-      "url": "https://google.com/goto?url=CAEShQEBxCJF1_XTQbtPLrOLRPttulGCkzwAboRtCrqMbUxvDKkzgRwTYBedN3fjYl16sDjGKW7SUt_b3q_T7_TAIkZ-Z4YcSSvW1yR8e_sV7gOHBjgvO4LqVF6p8TbOfJhqGPKLxS4x3pvxJVnW6UVOMBNr1pIzXBnwG-8ueTqnDC8V7otRM8tX&gsessionid=0q4dutCdwRp83CTgKNzqY506_WkspGN6bO3my1C4cvHqfOSma4bONg",
-      "title": "Trailer Reviews"
-     },
-     {
-      "rank": 3,
-      "domain": "facebook.com",
-      "url": "https://google.com/goto?url=CAESjAEBxCJF1_Mz2HWRv2WEzB8mJ0rb2CgPb5pAgejy7APKeQJXhTSsQpUllTCWlUq-MQmQUFRkvXHjLJ1BaSuL7dcw06ISfQdwXPWodPKPxtC7ZYT5CtQyzCJhQmLY4JV_ELi-ab3DcGS46bFkKhBBoT_Ibsc5hup1GrQqaVJAFIacH4YPsy2cGH1ygMBLQw&gsessionid=0q4dutCdwRp83CTgKNzqY506_WkspGN6bO3my1C4cvHqfOSma4bONg",
-      "title": "New and used Free Trailer for sale - Marketplace"
-     },
-     {
-      "rank": 4,
-      "domain": "videezy.com",
-      "url": "https://google.com/goto?url=CAESaAHEIkXXJXriYJFSN4ZAn8HvPT28nXpTE5HefPdN-b7AyTif3uDej8F75b5fgOCC80GTONjF5kvQTYJ_U1HwU_CXSlnNK0lnOGLDW7g_yVXn-WT0nP422QjSY4SpzqTZldEY8yybGyYH&gsessionid=0q4dutCdwRp83CTgKNzqY506_WkspGN6bO3my1C4cvHqfOSma4bONg",
-      "title": "Free Trailers Stock Video Footage - (58 Free Downloads)"
-     },
-     {
-      "rank": 5,
-      "domain": "unknown site",
-      "url": "https://google.com/goto?url=CAESnQEBxCJF1-Trjx5UbECcjGlBcCgrsMdavKMcHGglujQVDTvIKggwVwJPsDJUp4MZghvVW_Uo8-n_PIT1ERzlEmubhecROa2Gm9eXlJ1J81KHL00bhtyREL1NHE4MNrNUyxl9sOM0kuxoU5u9pLr1Am0DSmbuDRVRBMi23gumWBrciMrb-QNz1Gb18R3-Jc3Anc4tXY9R-OyeUEPpudj2&gsessionid=0q4dutCdwRp83CTgKNzqY506_WkspGN6bO3my1C4cvHqfOSma4bONg",
-      "title": "Get a brand-new utility trailer for $0. Claim yours FREE today"
-     },
-     {
-      "rank": 6,
-      "domain": "facebook.com",
-      "url": "https://google.com/goto?url=CAESeAHEIkXXBLd7ayqNvBDuPLOznxnS0rvN4Ju7O1U98w7NJQcuNZ5mRoOF5YENEeQobxad9huLFB0FpLYRcjyb_MgN9G7jCRFZimVkLF-qi9fSBMlFGLYDCPjhrWikbVGlA15QIkgfgTLUsxPz28eWyhNN7_fWjgBwbQ&gsessionid=0q4dutCdwRp83CTgKNzqY506_WkspGN6bO3my1C4cvHqfOSma4bONg",
-      "title": "Free Trailer - Utility Trailers - Sacramento, California"
-     },
-     {
-      "rank": 7,
-      "domain": "cinemablend.com",
-      "url": "https://google.com/goto?url=CAESuwEBxCJF1zSk99ZWQEusLJEyKo8lBVcSv8h-Fwk0NJyAE6C6JxKtL3zNj5qhtL47l2U_if6DOMmcmk6xE6uXIaiCpYmR9G26CdFzuvoapmyKSszfXBug4zrnCHh6Fid97EI7fNs-ovAc6sks7PA_LDh_uxgAj-G3lKa70w0Mbo2QYhDZ0RKrjo1pkQkF2gj_ai6pp84zOtIB62PAdAXd5HM82CKjqA1dbWmkniAyRLC3xztu9LrmboXV5QxI&gsessionid=0q4dutCdwRp83CTgKNzqY506_WkspGN6bO3my1C4cvHqfOSma4bONg",
-      "title": "New Free Guy Trailer Features Ryan Reynolds Repeatedly ..."
-     },
-     {
-      "rank": 8,
-      "domain": "facebook.com",
-      "url": "https://google.com/goto?url=CAESeQHEIkXXPdmT0Uy8P1r0sJA8W0l82eJ8U2ySStI211akuyawnGbpEMT5rXmHjj7qXSzIaOC8ftuw39H_euabSWnjbrTM7KPihtbmnGL-8HCqVYvnG2Hjqsigoxr_7rNt6IyDESfaJbs-50hjewvOfz8PqBi7rUbkd7M&gsessionid=0q4dutCdwRp83CTgKNzqY506_WkspGN6bO3my1C4cvHqfOSma4bONg",
-      "title": "Free Utility Trailer Project - Marketplace"
-     }
-    ],
-    "impressions": 2,
-    "gscPosition": 78,
-    "ourPage": "/browse",
-    "ourRank": null
-   }
-  ],
-  "index": [
-   {
-    "url": "https://www.movietrailer.channel/",
-    "verdict": "NEUTRAL",
-    "coverage": "Page with redirect",
-    "lastCrawl": "2026-10-11T09:54:44Z",
-    "googleCanonical": "https://movietrailer.channel/",
-    "robots": "ALLOWED",
-    "fetch": "SUCCESSFUL"
-   },
-   {
-    "url": "https://www.movietrailer.channel/browse",
-    "verdict": "PASS",
-    "coverage": "Submitted and indexed",
-    "lastCrawl": "2026-11-15T08:17:35Z",
-    "googleCanonical": "https://www.movietrailer.channel/browse",
-    "robots": "ALLOWED",
-    "fetch": "SUCCESSFUL"
-   },
-   {
-    "url": "https://www.movietrailer.channel/original-films",
-    "verdict": "PASS",
-    "coverage": "Submitted and indexed",
-    "lastCrawl": "2026-10-31T10:50:37Z",
-    "googleCanonical": "https://www.movietrailer.channel/original-films",
-    "robots": "ALLOWED",
-    "fetch": "SUCCESSFUL"
-   },
-   {
-    "url": "https://www.movietrailer.channel/movies/weird-science-1985",
-    "verdict": "NEUTRAL",
-    "coverage": "Discovered – currently not indexed",
-    "lastCrawl": null,
-    "googleCanonical": null,
-    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
-   },
-   {
-    "url": "https://www.movietrailer.channel/free-classic-movies",
-    "verdict": "NEUTRAL",
-    "coverage": "Discovered – currently not indexed",
-    "lastCrawl": null,
-    "googleCanonical": null,
-    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
-   },
-   {
-    "url": "https://www.movietrailer.channel/discover",
-    "verdict": "PASS",
-    "coverage": "Submitted and indexed",
-    "lastCrawl": "2026-11-20T08:58:21Z",
-    "googleCanonical": "https://www.movietrailer.channel/discover",
-    "robots": "ALLOWED",
-    "fetch": "SUCCESSFUL"
-   },
-   {
-    "url": "https://www.movietrailer.channel/movies/interstellar-2014",
-    "verdict": "NEUTRAL",
-    "coverage": "Discovered – currently not indexed",
-    "lastCrawl": null,
-    "googleCanonical": null,
-    "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
-    "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
-   },
-   {
-    "url": "https://www.movietrailer.channel/movies/the-imitation-game-2014",
-    "verdict": "NEUTRAL",
-    "coverage": "Crawled - currently not indexed",
-    "lastCrawl": "2026-10-28T08:26:39Z",
-    "googleCanonical": "https://www.movietrailer.channel/movies/the-imitation-game-2014",
-    "robots": "ALLOWED",
-    "fetch": "SUCCESSFUL"
-   }
-  ],
-  "error": null
- },
- "costUsd": 0.01,
+ "live": null,
+ "costUsd": 0,
  "speed": [
   {
    "url": "https://www.movietrailer.channel/",
    "lite": true,
-   "serverSecs": 0.14,
-   "htmlKb": 80,
+   "serverSecs": 0.07,
+   "htmlKb": 81,
    "blocking": 1,
    "images": 36,
    "noDims": 0,
-   "imageKb": 378,
+   "imageKb": 300,
    "psiError": "HTTP Error 429: Too Many Requests"
   },
   {
    "url": "https://www.movietrailer.channel/browse",
    "lite": true,
-   "serverSecs": 0.33,
-   "htmlKb": 223,
+   "serverSecs": 0.17,
+   "htmlKb": 228,
    "blocking": 1,
-   "images": 477,
+   "images": 487,
    "noDims": 0,
    "imageKb": 381,
    "psiError": "HTTP Error 429: Too Many Requests"
   }
  ],
  "quality": {
-  "summary": "511 indexable pages · average 267 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
+  "summary": "521 indexable pages · average 266 words of their own per page · 0 thin · 0 near-duplicate pairs · 0 hard fails",
   "thin": 0,
   "near": 0
  },
  "links": {
-  "internal": 1064,
-  "outside": 1468,
+  "internal": 1088,
+  "outside": 1498,
   "checkedOutside": 150,
-  "unsureOutside": 0
+  "unsureOutside": 45
  },
- "affiliateOk": 1320,
- "secs": 167,
+ "affiliateOk": 1346,
+ "secs": 141,
  "change": {
   "first": false,
-  "since": "2026-11-17T11:22:55Z",
-  "score": -7,
-  "newIssues": [
+  "since": "2026-11-24T04:23:10Z",
+  "score": 7,
+  "newIssues": [],
+  "fixed": [
    "4 of your top 8 pages aren't in Google's index",
    "\"trailers free\": we're not in the top 10 (Search Console avg 78); unknown site leads",
    "\"movietr\": we're not in the top 10 (Search Console avg 58); movietr.com leads",
@@ -748,23 +284,11 @@
    "\"jurassic park film trailer\": we're not in the top 10 (Search Console avg 77); hollywoodreporter.com leads",
    "\"insomnia film trailer\": we're not in the top 10 (Search Console avg 60); imdb.com leads"
   ],
-  "fixed": [],
-  "impr28": -29,
+  "impr28": 0,
   "clicks28": 0,
-  "views28": -15,
+  "views28": -6,
   "rivals": [],
-  "positions": [
-   {
-    "query": "jurassic park trailer",
-    "was": 66,
-    "now": 71.5
-   },
-   {
-    "query": "home alone trailer",
-    "was": 49.3,
-    "now": 58
-   }
-  ]
+  "positions": []
  },
  "history": [
   {
@@ -842,6 +366,13 @@
    "score": 99,
    "grade": "A",
    "impr28": 105,
+   "clicks28": 0
+  },
+  {
+   "at": "2026-11-24T04:23:10Z",
+   "score": 92,
+   "grade": "A",
+   "impr28": 76,
    "clicks28": 0
   }
  ],

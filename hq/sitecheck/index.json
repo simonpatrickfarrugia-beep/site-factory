@@ -84,67 +84,28 @@
    "name": "movietrailer.channel",
    "url": "https://www.movietrailer.channel",
    "owner": "imn",
-   "scannedAt": "2026-11-24T04:23:10Z",
-   "score": 92,
+   "scannedAt": "2026-11-25T23:54:45Z",
+   "score": 99,
    "grade": "A",
-   "change": -7,
+   "change": 7,
    "first": false,
    "stage": "building",
    "cadenceDays": 7,
-   "nextDue": "2026-12-01",
-   "topFix": "4 of your top 8 pages aren't in Google's index",
+   "nextDue": "2026-12-03",
+   "topFix": "Google shows only 19 of 521 pages (site is 40 days old)",
    "broken": 0,
-   "newIssues": 6,
-   "fixed": 0,
-   "costUsd": 0.01,
+   "newIssues": 0,
+   "fixed": 6,
+   "costUsd": 0,
    "top": [
     {
-     "id": "not-indexed",
-     "title": "4 of your top 8 pages aren't in Google's index",
-     "severity": "high",
-     "area": "indexing",
-     "fix": "Make the page more useful than what ranks, link to it from the home page, then request indexing in Search Console.",
-     "pages": [
-      "/movies/weird-science-1985",
-      "/free-classic-movies",
-      "/movies/interstellar-2014",
-      "/movies/the-imitation-game-2014"
-     ],
-     "detail": "/movies/weird-science-1985: Discovered – currently not indexed; /free-classic-movies: Discovered – currently not indexed; /movies/interstellar-2014: Discovered – currently not indexed; /movies/the-imi",
-     "broken": false
-    },
-    {
      "id": "few-pages-in-google",
-     "title": "Google shows only 20 of 511 pages (site is 38 days old)",
+     "title": "Google shows only 19 of 521 pages (site is 40 days old)",
      "severity": "low",
      "area": "indexing",
-     "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 76 pages on 16 Dec 2026, cut or merge weak pages and earn a few links.",
+     "fix": "Nothing to do yet: new sites take about 2 months to show in Google. If it is still under 78 pages on 16 Dec 2026, cut or merge weak pages and earn a few links.",
      "pages": [],
      "detail": "",
-     "broken": false
-    },
-    {
-     "id": "rival-trailers-free",
-     "title": "\"trailers free\": we're not in the top 10 (Search Console avg 78); unknown site leads",
-     "severity": "low",
-     "area": "rivals",
-     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
-     "pages": [
-      "/browse"
-     ],
-     "detail": "Top 5: 1. unknown site, 2. unknown site, 3. facebook.com, 4. videezy.com, 5. unknown site",
-     "broken": false
-    },
-    {
-     "id": "rival-movietr",
-     "title": "\"movietr\": we're not in the top 10 (Search Console avg 58); movietr.com leads",
-     "severity": "low",
-     "area": "rivals",
-     "fix": "Compare our page with the top 3: answer the search in the first screen, add what they lack (data, plan, tool), link to it from busy pages.",
-     "pages": [
-      "/"
-     ],
-     "detail": "Top 5: 1. movietr.com, 2. unknown site, 3. apps.apple.com, 4. apps.apple.com, 5. unknown site",
      "broken": false
     },
     {
@@ -454,13 +415,11 @@
    ]
   }
  },
- "updated": "2026-11-25T03:07:37Z",
+ "updated": "2026-11-25T23:54:45Z",
  "lastRun": {
-  "at": "2026-11-25T03:07:37Z",
+  "at": "2026-11-25T23:54:45Z",
   "scanned": [
-   "paycalc",
-   "simon-says-travel",
-   "imnetwork"
+   "trailers"
   ]
  }
 }
