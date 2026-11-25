@@ -2,9 +2,9 @@
  "_about": "Last run of each AI worker (claude.ai scheduled task). Each skill's final step updates only its own entry. Checked daily by scripts/health.py (limits in hq/health.json).",
  "workers": {
   "imn-radar": {
-   "at": "2026-11-24T20:44:10Z",
+   "at": "2026-11-25T20:44:29Z",
    "ok": true,
-   "note": "Added 2 (1 Vic Port Fairy Historical Society, 1 CHC South West TAFE SJC); IMN full; CHC paced; queue 19"
+   "note": "1 added (CHC: RMIT Skills and Jobs Centre); IMN full, CHC paced, trailers held, Vic 5 dead ends; queue 20"
   },
   "morning-report": {
    "at": "2026-11-24T21:57:34Z",
