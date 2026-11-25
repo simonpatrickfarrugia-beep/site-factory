@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-24T19:00:09.876Z",
+ "generatedAt": "2026-11-25T19:00:08.977Z",
  "period": {
-  "start": "2026-10-27",
-  "end": "2026-11-23"
+  "start": "2026-10-28",
+  "end": "2026-11-24"
  },
  "gscPeriod": {
-  "start": "2026-10-25",
-  "end": "2026-11-21"
+  "start": "2026-10-26",
+  "end": "2026-11-22"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 70,
-  "prevViews": 245,
-  "users": 41,
+  "views": 71,
+  "prevViews": 244,
+  "users": 42,
   "cta": {
    "films_banner": 2,
    "justwatch": 1,
    "prime": 1
   },
   "gscClicks": 0,
-  "gscImpressions": 78
+  "gscImpressions": 76
  },
  "daily": [
   {
@@ -95,6 +95,11 @@
    "date": "2026-11-22",
    "views": 9,
    "cta": 0
+  },
+  {
+   "date": "2026-11-24",
+   "views": 1,
+   "cta": 0
   }
  ],
  "pages": [
@@ -114,9 +119,9 @@
   },
   {
    "path": "/",
-   "views": 23,
+   "views": 24,
    "prevViews": 103,
-   "users": 19,
+   "users": 20,
    "cta": {
     "films_banner": 2
    },
@@ -124,11 +129,11 @@
    "gscImpressions": 5,
    "gscPosition": 26.2,
    "topQuery": "movietr",
-   "allViews": 196,
+   "allViews": 197,
    "allCta": {
     "films_banner": 2
    },
-   "d7": 8,
+   "d7": 9,
    "prev7": 4
   },
   {
@@ -399,9 +404,9 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 66,
-   "topQuery": "home alone film trailer",
+   "gscImpressions": 3,
+   "gscPosition": 62.3,
+   "topQuery": "home alone trailer",
    "allViews": 3
   },
   {
@@ -478,18 +483,6 @@
   },
   {
    "path": "/movies/die-hard-1988",
-   "views": 0,
-   "prevViews": 2,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
-   "path": "/movies/ghost-soldier-2006",
    "views": 0,
    "prevViews": 2,
    "users": 0,
@@ -780,6 +773,18 @@
    "path": "/movies/total-recall-1990",
    "views": 0,
    "prevViews": 2,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/ghost-soldier-2006",
+   "views": 0,
+   "prevViews": 1,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
@@ -1251,7 +1256,7 @@
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 7,
-   "gscPosition": 56,
+   "gscPosition": 56.6,
    "topQuery": "insomnia film trailer"
   },
   {
@@ -1277,15 +1282,15 @@
    "topQuery": "martin luther king film 2014"
   },
   {
-   "path": "/movies/district-9-2009",
+   "path": "/movies/the-darjeeling-limited-2007",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 66,
-   "topQuery": "district 9 movie trailer"
+   "gscImpressions": 2,
+   "gscPosition": 68,
+   "topQuery": "darjeeling limited trailer"
   },
   {
    "path": "/movies/captain-america-the-winter-soldier-2014",
@@ -1297,17 +1302,6 @@
    "gscImpressions": 1,
    "gscPosition": 94,
    "topQuery": "captain america the winter soldier 2014 trailer"
-  },
-  {
-   "path": "/movies/the-darjeeling-limited-2007",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 70,
-   "topQuery": "darjeeling limited trailer"
   },
   {
    "path": "/movies/the-rock-1996",
@@ -1398,7 +1392,7 @@
    "query": "insomnia film trailer",
    "clicks": 0,
    "impressions": 2,
-   "position": 60,
+   "position": 62,
    "page": "/movies/insomnia-2002"
   },
   {
@@ -1444,6 +1438,13 @@
    "page": "/movies/selma-2014"
   },
   {
+   "query": "darjeeling limited trailer",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 68,
+   "page": "/movies/the-darjeeling-limited-2007"
+  },
+  {
    "query": "the prestige film trailer",
    "clicks": 0,
    "impressions": 2,
@@ -1456,13 +1457,6 @@
    "impressions": 2,
    "position": 64,
    "page": "/movies/the-prestige-2006"
-  },
-  {
-   "query": "district 9 movie trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 66,
-   "page": "/movies/district-9-2009"
   },
   {
    "query": "free movie trailers",
@@ -1514,24 +1508,10 @@
    "page": "/movies/captain-america-the-winter-soldier-2014"
   },
   {
-   "query": "home alone film trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 84,
-   "page": "/movies/home-alone-1990"
-  },
-  {
    "query": "home alone trailer",
    "clicks": 0,
    "impressions": 1,
    "position": 58,
-   "page": "/movies/home-alone-1990"
-  },
-  {
-   "query": "home alone trailer 1990",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 59,
    "page": "/movies/home-alone-1990"
   },
   {
@@ -1547,13 +1527,6 @@
    "impressions": 1,
    "position": 97,
    "page": "/movies/selma-2014"
-  },
-  {
-   "query": "darjeeling limited trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 70,
-   "page": "/movies/the-darjeeling-limited-2007"
   },
   {
    "query": "prestige movie trailer",
@@ -1578,11 +1551,6 @@
   }
  ],
  "gscDaily": [
-  {
-   "date": "2026-10-25",
-   "clicks": 0,
-   "impressions": 4
-  },
   {
    "date": "2026-10-26",
    "clicks": 0,
@@ -1717,12 +1685,17 @@
    "date": "2026-11-21",
    "clicks": 0,
    "impressions": 4
+  },
+  {
+   "date": "2026-11-22",
+   "clicks": 0,
+   "impressions": 2
   }
  ],
  "allTime": {
   "start": "2026-09-13",
-  "views": 419,
-  "users": 254,
+  "views": 420,
+  "users": 255,
   "cta": {
    "films_banner": 2,
    "justwatch": 1,
@@ -2003,6 +1976,11 @@
     "date": "2026-11-22",
     "views": 9,
     "cta": 0
+   },
+   {
+    "date": "2026-11-24",
+    "views": 1,
+    "cta": 0
    }
   ]
  },
@@ -2011,7 +1989,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 27
+    "sessions": 28
    },
    {
     "source": "chatgpt.com",
@@ -2069,6 +2047,12 @@
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 9
+   },
+   {
+    "date": "2026-11-24",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 1
    }
   ]
  }

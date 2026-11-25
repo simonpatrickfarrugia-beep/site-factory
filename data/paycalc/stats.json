@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-24T19:00:09.876Z",
+ "generatedAt": "2026-11-25T19:00:08.977Z",
  "period": {
-  "start": "2026-10-27",
-  "end": "2026-11-23"
+  "start": "2026-10-28",
+  "end": "2026-11-24"
  },
  "gscPeriod": {
-  "start": "2026-10-25",
-  "end": "2026-11-21"
+  "start": "2026-10-26",
+  "end": "2026-11-22"
  },
  "sources": {
   "ga4": true,
@@ -14,12 +14,14 @@
   "notes": []
  },
  "totals": {
-  "views": 223,
+  "views": 234,
   "prevViews": 0,
-  "users": 104,
-  "cta": {},
+  "users": 106,
+  "cta": {
+   "salary_to_calc": 1
+  },
   "gscClicks": 4,
-  "gscImpressions": 1256
+  "gscImpressions": 1269
  },
  "daily": [
   {
@@ -136,22 +138,27 @@
    "date": "2026-11-23",
    "views": 1,
    "cta": 0
+  },
+  {
+   "date": "2026-11-24",
+   "views": 11,
+   "cta": 1
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 207,
+   "views": 217,
    "prevViews": 0,
-   "users": 89,
+   "users": 90,
    "cta": {},
    "gscClicks": 3,
-   "gscImpressions": 486,
-   "gscPosition": 67.5,
+   "gscImpressions": 499,
+   "gscPosition": 66.9,
    "topQuery": "mypaycalc",
-   "allViews": 207,
-   "prev7": 31,
-   "d7": 13
+   "allViews": 217,
+   "d7": 19,
+   "prev7": 12
   },
   {
    "path": "/hecs-help-repayments",
@@ -202,6 +209,25 @@
    "gscPosition": 71.8,
    "topQuery": "australian tax brackets",
    "allViews": 1
+  },
+  {
+   "path": "/salary/120000-after-tax",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {
+    "salary_to_calc": 1
+   },
+   "gscClicks": 0,
+   "gscImpressions": 8,
+   "gscPosition": 47.5,
+   "topQuery": "120000 after tax australia",
+   "allViews": 1,
+   "allCta": {
+    "salary_to_calc": 1
+   },
+   "d7": 1,
+   "prev7": 0
   },
   {
    "path": "/salary/150000-after-tax",
@@ -397,17 +423,6 @@
    "gscImpressions": 8,
    "gscPosition": 29.4,
    "topQuery": "1100000"
-  },
-  {
-   "path": "/salary/120000-after-tax",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 8,
-   "gscPosition": 47.5,
-   "topQuery": "120000 after tax australia"
   },
   {
    "path": "/salary/20000-after-tax",
@@ -700,15 +715,15 @@
   {
    "query": "mypaycalc",
    "clicks": 4,
-   "impressions": 140,
-   "position": 5.1,
+   "impressions": 145,
+   "position": 5,
    "page": "/"
   },
   {
    "query": "pay calculator",
    "clicks": 0,
-   "impressions": 34,
-   "position": 84.8,
+   "impressions": 35,
+   "position": 84.6,
    "page": "/"
   },
   {
@@ -964,6 +979,13 @@
    "page": "/"
   },
   {
+   "query": "gross pay estimator 2019",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 47.8,
+   "page": "/"
+  },
+  {
    "query": "minimum wage australia after tax",
    "clicks": 0,
    "impressions": 4,
@@ -1017,13 +1039,6 @@
    "clicks": 0,
    "impressions": 3,
    "position": 64.7,
-   "page": "/"
-  },
-  {
-   "query": "gross pay estimator 2019",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 45,
    "page": "/"
   },
   {
@@ -1265,6 +1280,13 @@
    "page": "/"
   },
   {
+   "query": "paycalculaor",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 73.5,
+   "page": "/"
+  },
+  {
    "query": "paycalculor",
    "clicks": 0,
    "impressions": 2,
@@ -1389,13 +1411,6 @@
    "impressions": 2,
    "position": 65.5,
    "page": "/salary/140000-after-tax"
-  },
-  {
-   "query": "tax on 150k",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 85.5,
-   "page": "/salary/150000-after-tax"
   }
  ],
  "gscDaily": [
@@ -1523,13 +1538,20 @@
    "date": "2026-11-21",
    "clicks": 0,
    "impressions": 49
+  },
+  {
+   "date": "2026-11-22",
+   "clicks": 0,
+   "impressions": 13
   }
  ],
  "allTime": {
   "start": "2026-10-29",
-  "views": 223,
-  "users": 104,
-  "cta": {},
+  "views": 234,
+  "users": 106,
+  "cta": {
+   "salary_to_calc": 1
+  },
   "daily": [
    {
     "date": "2026-10-29",
@@ -1645,6 +1667,11 @@
     "date": "2026-11-23",
     "views": 1,
     "cta": 0
+   },
+   {
+    "date": "2026-11-24",
+    "views": 11,
+    "cta": 1
    }
   ]
  },
@@ -1658,7 +1685,7 @@
    {
     "source": "bing",
     "medium": "organic",
-    "sessions": 21
+    "sessions": 23
    },
    {
     "source": "google",
@@ -1689,7 +1716,7 @@
   "referrers": [
    {
     "url": "https://www.bing.com/",
-    "views": 21
+    "views": 22
    },
    {
     "url": "https://duckduckgo.com/",
@@ -1721,12 +1748,6 @@
    }
   ],
   "daily": [
-   {
-    "date": "2026-11-10",
-    "source": "(direct)",
-    "medium": "(none)",
-    "sessions": 2
-   },
    {
     "date": "2026-11-11",
     "source": "bing",
@@ -1810,6 +1831,12 @@
     "source": "au.search.yahoo.com",
     "medium": "referral",
     "sessions": 1
+   },
+   {
+    "date": "2026-11-24",
+    "source": "bing",
+    "medium": "organic",
+    "sessions": 2
    }
   ]
  }
