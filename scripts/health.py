@@ -1,5 +1,5 @@
 """Daily health check. Writes health.md (job summary / issue body) and exits 1 if anything is wrong."""
-import json, os, subprocess, sys, urllib.request
+import json, os, re, subprocess, sys, urllib.request
 from datetime import datetime, timezone
 
 cfg = json.load(open('hq/health.json'))
@@ -49,11 +49,35 @@ try:
     commits = [l.split('\t') for l in out.strip().splitlines()]
     shas = [c[0] for c in commits]
     expected = next((c for c in commits if '[skip ci]' not in c[2] and age_days(c[1]) * 24 * 60 >= 30), None)
+    # Since 25 Nov 2026 check.yml deploys only the brands a commit touches (scripts/ci-plan.mjs), so a site is
+    # only stale if a deployable commit newer than its live build touched that brand.
+    host_brand = {}
+    for b in os.listdir('brands'):
+        try:
+            for host in re.findall(r'"pattern":\s*"([^"/<>]+)"', open(f'brands/{b}/wrangler.jsonc').read()):
+                host_brand[host.removeprefix('www.')] = b
+        except OSError:
+            pass
+    plan_cache = {}
+    def touches(sha, brand):
+        if sha not in plan_cache:
+            fl = subprocess.run(['gh', 'api', f"repos/{os.environ['GITHUB_REPOSITORY']}/commits/{sha}", '--jq', '.files[].filename'], capture_output=True, text=True, check=True).stdout
+            out = subprocess.run(['node', 'scripts/ci-plan.mjs'], input=fl.strip() or '*', capture_output=True, text=True, check=True).stdout
+            plan_cache[sha] = json.loads(out)['brands']
+        return brand in plan_cache[sha]
     for site in cfg.get('versionSites', []):
         _, body = get(site + '/version.txt')
         live = body.decode().split()[0]
-        if expected and live != expected[0] and (live not in shas or shas.index(live) > shas.index(expected[0])):
-            problems.append(f"{site} is serving an older build ({live[:7]}); expected {expected[0][:7]} \"{expected[2][:60]}\". Workers Builds may have skipped a deploy: push an empty commit.")
+        brand = host_brand.get(site.split('//')[1].removeprefix('www.'))
+        stale = None
+        if expected and live != expected[0]:
+            if live not in shas:
+                stale = expected
+            elif shas.index(live) > shas.index(expected[0]):
+                newer = [c for c in commits[shas.index(expected[0]):shas.index(live)] if '[skip ci]' not in c[2] and age_days(c[1]) * 24 * 60 >= 30]
+                stale = next((c for c in newer if not brand or touches(c[0], brand)), None)
+        if stale:
+            problems.append(f"{site} is serving an older build ({live[:7]}); expected {stale[0][:7]} \"{stale[2][:60]}\". The deploy step in Check build (check.yml) may have failed: see that commit's checks.")
         else:
             ok.append(f"{site} serves {live[:7]}")
 except Exception as e:

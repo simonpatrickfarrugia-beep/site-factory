@@ -1001,6 +1001,18 @@
     "at": "2026-11-24"
    },
    "brand": "vic"
+  },
+  {
+   "id": "cf-disconnect-workers-builds",
+   "kind": "do",
+   "mins": 5,
+   "what": "Optional tidy-up: Cloudflare → Workers & Pages → each Worker (site-factory, victours, community-help-co, trade-admin, paycalc, simon-says-travel, imn, backyard-wild, imn-hq, imn-mail, trailer-pipeline, chc-checkin) → Settings → Build → Disconnect. GitHub now deploys everything, so this just stops 12 failed Workers Builds checks on every commit.",
+   "why": "Workers Builds has failed on every build since 25 Nov 2026; GitHub Actions took over all deploys the same night (docs/DEPLOY.md). Leaving it connected is harmless, just noisy.",
+   "link": "https://dash.cloudflare.com/bd71912d12f39531b15f3686dfc10512/workers-and-pages",
+   "linkLabel": "Workers & Pages",
+   "done": false,
+   "addedAt": "2026-11-25",
+   "brand": "imn"
   }
  ],
  "notes": [
