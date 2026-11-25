@@ -26,3 +26,17 @@ Takes effect in seconds. Then fix forward in the repo.
 ## If a build fails
 
 The build log is under the brand's Deployments tab. Config mistakes fail with a message naming the exact field, e.g. `colors.accent: Use a 6-digit hex colour`.
+
+## Standalone Workers (GitHub Actions, not Workers Builds)
+
+`mail-tracker`, `health-check` and `chc-checkin` deploy from **`.github/workflows/deploy-workers.yml`**
+(script: `scripts/deploy-worker.sh`). A push to `main` that touches `workers/mail-tracker/`, `workers/health-check/`
+or `workers/checkin/` deploys that Worker; changing the workflow file deploys all three. Or run it by hand: Actions → Deploy Workers.
+
+- **Repo secrets:** `CLOUDFLARE_API_TOKEN` (Edit Cloudflare Workers template + D1 Edit), `CLOUDFLARE_ACCOUNT_ID`,
+  `MAIL_TRACKER_ADMIN_KEY`, `HEALTH_CHECK_ADMIN_KEY`.
+- **Worker secrets it sets:** mail-tracker `ADMIN_KEY`; health-check `ADMIN_KEY` and `MT_KEY` (= Mail Tracker's key).
+  Add one: give the job an env line `SECRET_<NAME>: ${{ secrets.<GITHUB_SECRET> }}`.
+- **Order:** mail-tracker, then health-check (its `MAIL_TRACKER` service binding needs mail-tracker to exist).
+- **D1:** mail-tracker and health-check apply their `migrations/*.sql` before deploying (`APPLY_MIGRATIONS`).
+- **Skips cleanly** while a Worker's code (`src/index.js`) isn't in the repo yet. Results show as annotations titled `deploy <name>`.

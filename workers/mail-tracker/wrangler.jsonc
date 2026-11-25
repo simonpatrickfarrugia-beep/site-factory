@@ -1,0 +1,16 @@
+{
+  // mail-tracker: email open/click tracker (pixel + tracked links) for emails Simon sends from Outlook.
+  // Deployed by .github/workflows/deploy-workers.yml (not Workers Builds). ADMIN_KEY comes from GitHub secret MAIL_TRACKER_ADMIN_KEY.
+  // Code goes in src/index.js. Database setup: put SQL in migrations/0001_*.sql and the workflow applies it.
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "mail-tracker",
+  "main": "src/index.js",
+  "compatibility_date": "2026-06-01",
+  "workers_dev": true,
+  "preview_urls": false,
+  "d1_databases": [
+    { "binding": "DB", "database_name": "mail-tracker", "database_id": "43226c94-a44b-4428-afc0-af2ae214aa2c", "migrations_dir": "migrations" }
+  ],
+  "observability": { "enabled": true }
+  // Secrets (set by the deploy workflow, never here): ADMIN_KEY
+}

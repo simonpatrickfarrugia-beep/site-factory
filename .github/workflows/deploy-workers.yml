@@ -1,0 +1,113 @@
+# Deploys the standalone Workers with wrangler and sets their secrets from GitHub secrets.
+# Covers Workers that are NOT on Cloudflare Workers Builds (mail-tracker, health-check) plus chc-checkin.
+# Runs on a push to main that touches a Worker's folder (or this file = deploy all), or by hand (Actions → Deploy Workers).
+# Each Worker is skipped cleanly if its folder or code isn't in the repo yet.
+# GitHub secrets used: CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID, MAIL_TRACKER_ADMIN_KEY, HEALTH_CHECK_ADMIN_KEY.
+# Each SECRET_<NAME> env var becomes Worker secret <NAME> (scripts/deploy-worker.sh). Values are never echoed:
+# they go into a temp JSON file for `wrangler secret bulk`, deleted straight after.
+name: Deploy Workers
+permissions:
+  contents: read
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'workers/mail-tracker/**'
+      - 'workers/health-check/**'
+      - 'workers/checkin/**'
+      - '.github/workflows/deploy-workers.yml'
+  workflow_dispatch:
+    inputs:
+      worker:
+        description: Which Worker to deploy
+        type: choice
+        options: [all, mail-tracker, health-check, chc-checkin]
+        default: all
+concurrency:
+  group: deploy-workers
+  cancel-in-progress: false
+env:
+  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+  CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+  WRANGLER_SEND_METRICS: 'false'
+
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 2
+    outputs:
+      mail-tracker: ${{ steps.p.outputs.mail-tracker }}
+      health-check: ${{ steps.p.outputs.health-check }}
+      chc-checkin: ${{ steps.p.outputs.chc-checkin }}
+    steps:
+      - id: p
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PICK: ${{ github.event.inputs.worker }}
+          BASE: ${{ github.event.before }}
+        run: |
+          set -u
+          all=false; files=""
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            [ "$PICK" = "all" ] && all=true
+          elif [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ]; then
+            all=true
+          elif ! files=$(gh api "repos/$GITHUB_REPOSITORY/compare/$BASE...$GITHUB_SHA" --jq '.files[].filename' 2>/dev/null); then
+            all=true
+          fi
+          echo "$files" | grep -q '^\.github/workflows/deploy-workers\.yml$' && all=true
+          for pair in mail-tracker:workers/mail-tracker/ health-check:workers/health-check/ chc-checkin:workers/checkin/; do
+            name=${pair%%:*}; dir=${pair#*:}; go=false
+            if [ "$all" = true ] || [ "${PICK:-}" = "$name" ] || echo "$files" | grep -q "^$dir"; then go=true; fi
+            echo "$name=$go" >> "$GITHUB_OUTPUT"
+          done
+          cat "$GITHUB_OUTPUT"
+
+  mail-tracker:
+    needs: plan
+    if: needs.plan.outputs.mail-tracker == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with: { node-version: 22 }
+      - name: Deploy mail-tracker
+        env:
+          DIR: workers/mail-tracker
+          APPLY_MIGRATIONS: 'true'
+          SECRET_ADMIN_KEY: ${{ secrets.MAIL_TRACKER_ADMIN_KEY }}
+        run: bash scripts/deploy-worker.sh
+
+  health-check:
+    # After mail-tracker, because its MAIL_TRACKER service binding needs mail-tracker to exist.
+    needs: [plan, mail-tracker]
+    if: always() && needs.plan.outputs.health-check == 'true' && needs.mail-tracker.result != 'failure'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with: { node-version: 22 }
+      - name: Deploy health-check
+        env:
+          DIR: workers/health-check
+          APPLY_MIGRATIONS: 'true'
+          # MT_KEY is the same value as Mail Tracker's ADMIN_KEY (that's how the two tools connect).
+          SECRET_ADMIN_KEY: ${{ secrets.HEALTH_CHECK_ADMIN_KEY }}
+          SECRET_MT_KEY: ${{ secrets.MAIL_TRACKER_ADMIN_KEY }}
+        run: bash scripts/deploy-worker.sh
+
+  chc-checkin:
+    needs: plan
+    if: needs.plan.outputs.chc-checkin == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with: { node-version: 22 }
+      - name: Deploy chc-checkin
+        env:
+          DIR: workers/checkin
+        run: bash scripts/deploy-worker.sh

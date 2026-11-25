@@ -13,6 +13,7 @@ const NONE = [
   /^[^/]+\.md$/, /^\.gitignore$/,
   /^\.github\/workflows\/(?!check\.yml$)/,
   /^scripts\/(hq|leads|vic|trailers|paycalc|backyard-wild|claude)\//,
+  /^scripts\/deploy-worker\.sh$/,
   /^scripts\/(probe|health|review|seo_audit|domain_check|webflow-to-snapshot)\.py$/,
   /^scripts\/(test-(?!pay-tax|public-domain)[\w-]+\.(mjs|ts)|shot-traffic\.mjs|snapshot\.mjs|ci-plan\.mjs)$/,
 ];
