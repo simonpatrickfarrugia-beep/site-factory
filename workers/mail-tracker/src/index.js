@@ -119,7 +119,8 @@ async function route(request, env, ctx) {
       .filter(l => /^https?:\/\/[^\s]+$/i.test(l.url)).slice(0, 20);
     const id = randomId(10);
     const row = {
-      id, created_at: Date.now(),
+      // no_grace: emails sent by IMN HQ (Simon never renders the pixel), so an instant open by the recipient still counts.
+      id, created_at: b.no_grace ? Date.now() - GRACE_MS - 1000 : Date.now(),
       workspace: b.workspace === 'work' ? 'work' : 'imn',
       recipient: clip(b.recipient, 120), email: clip(b.email, 160), company: clip(b.company, 120),
       subject: clip(b.subject, 200), notes: clip(b.notes, 1000), links: JSON.stringify(links),

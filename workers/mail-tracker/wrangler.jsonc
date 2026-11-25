@@ -8,6 +8,9 @@
   "compatibility_date": "2026-11-01",
   "workers_dev": true,
   "preview_urls": false,
+  // go.imnetwork.com.au: tracked links + pixel for IMN emails (link domain matches the sender, better for delivery).
+  // The workers.dev address keeps working for the dashboard and any snippets made there.
+  "routes": [{ "pattern": "go.imnetwork.com.au", "custom_domain": true }],
   "d1_databases": [
     { "binding": "DB", "database_name": "mail-tracker", "database_id": "43226c94-a44b-4428-afc0-af2ae214aa2c", "migrations_dir": "migrations" }
   ],

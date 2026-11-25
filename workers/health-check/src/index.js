@@ -40,32 +40,51 @@ async function route(request, env, ctx) {
   const B = brand(env);
   let mt;
 
-  if (p === '/' && m === 'GET') return html(landingPage(B, url.searchParams.get('url') || ''));
+  const pub = (env.PUBLIC_URL || url.origin).replace(/\/$/, '');
 
-  if (p === '/api/scan' && m === 'POST') {
+  // One free website check (merged 26 Nov 2026): the public front door is the IMN Labs page, which runs on this engine.
+  if (p === '/' && m === 'GET') {
+    const q = url.searchParams.get('url');
+    return Response.redirect(LAB_URL + (q ? '?url=' + encodeURIComponent(q) : ''), 302);
+  }
+
+  // Engine for imnetwork.com.au/labs/website-check (the imn site Worker calls it over a service binding, passing the
+  // visitor's cf-connecting-ip). Stores an open (ungated) report so the result has a shareable full report.
+  if (p === '/api/check' && m === 'GET') {
     const admin = await isAuthed(request, env);
-    const body = await request.json().catch(() => ({}));
     let target;
-    try { target = normaliseUrl(body.url); } catch (e) { return json({ error: e.message }, 400); }
+    try { target = normaliseUrl(url.searchParams.get('url')); } catch (e) { return json({ ok: false, message: e.message }, 400); }
     const host = new URL(target).hostname;
+    const recent = await env.DB.prepare('SELECT id, data FROM reports WHERE host=?1 AND created_at>?2 AND gated=0 ORDER BY created_at DESC LIMIT 1').bind(host, Date.now() - 1800e3).first();
+    if (recent) return json(labShape(JSON.parse(recent.data), pub + '/r/' + recent.id, recent.id));
     if (!admin) {
-      const hourAgo = Date.now() - 3600e3;
-      const c = await env.DB.prepare('SELECT COUNT(*) AS n FROM scans_by_ip WHERE ip=?1 AND at>?2').bind(ip, hourAgo).first();
-      if (c && c.n >= PUBLIC_LIMIT_PER_HOUR) return json({ error: "You've run a lot of checks. Please try again in an hour." }, 429);
-      // Reuse a recent public report for the same site (last 30 min)
-      const recent = await env.DB.prepare('SELECT id FROM reports WHERE host=?1 AND created_at>?2 ORDER BY created_at DESC LIMIT 1').bind(host, Date.now() - 1800e3).first();
-      if (recent) return json({ id: recent.id, cached: true });
+      const c = await env.DB.prepare('SELECT COUNT(*) AS n FROM scans_by_ip WHERE ip=?1 AND at>?2').bind(ip, Date.now() - 3600e3).first();
+      if (c && c.n >= PUBLIC_LIMIT_PER_HOUR) return json({ ok: false, message: "You've run a lot of checks. Please try again in an hour." }, 429);
       ctx.waitUntil(env.DB.batch([
         env.DB.prepare('INSERT INTO scans_by_ip (ip, at) VALUES (?1, ?2)').bind(ip, Date.now()),
         env.DB.prepare('DELETE FROM scans_by_ip WHERE at<?1').bind(Date.now() - 86400e3),
       ]));
     }
     let scan;
+    try { scan = await runScan(target); } catch (e) { return json({ ok: false, message: e.message || 'Something went wrong. Please try again.' }); }
+    const id = randomId(8);
+    await env.DB.prepare('INSERT INTO reports (id, created_at, url, host, total, grade, data, gated, source, ip) VALUES (?1,?2,?3,?4,?5,?6,?7,0,?8,?9)')
+      .bind(id, Date.now(), scan.url, scan.host, scan.result.total, scan.result.grade, JSON.stringify(scan), admin ? 'outreach' : 'lab', '').run();
+    return json(labShape(scan, pub + '/r/' + id, id));
+  }
+
+  if (p === '/api/scan' && m === 'POST') {
+    const admin = await isAuthed(request, env);
+    if (!admin) return json({ error: 'The free website check is at ' + LAB_URL }, 410);
+    const body = await request.json().catch(() => ({}));
+    let target;
+    try { target = normaliseUrl(body.url); } catch (e) { return json({ error: e.message }, 400); }
+    let scan;
     try { scan = await runScan(target); } catch (e) { return json({ error: e.message || 'Scan failed' }, 422); }
     const id = randomId(8);
     await env.DB.prepare('INSERT INTO reports (id, created_at, url, host, total, grade, data, gated, source, ip) VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10)')
-      .bind(id, Date.now(), scan.url, scan.host, scan.result.total, scan.result.grade, JSON.stringify(scan), admin && !body.gated ? 0 : 1, admin ? 'outreach' : 'public', ip).run();
-    return json({ id, total: scan.result.total, grade: scan.result.grade, host: scan.host, link: url.origin + '/r/' + id });
+      .bind(id, Date.now(), scan.url, scan.host, scan.result.total, scan.result.grade, JSON.stringify(scan), body.gated ? 1 : 0, 'outreach', ip).run();
+    return json({ id, total: scan.result.total, grade: scan.result.grade, host: scan.host, link: pub + '/r/' + id });
   }
 
   if ((mt = p.match(/^\/r\/([A-Za-z0-9]{6,16})$/)) && m === 'GET') {
@@ -111,7 +130,7 @@ async function route(request, env, ctx) {
   if (p === '/api/admin' && m === 'GET') {
     const reports = await env.DB.prepare('SELECT id, created_at, url, host, total, grade, gated, source, views, last_view FROM reports ORDER BY created_at DESC LIMIT 300').all();
     const leads = await env.DB.prepare('SELECT * FROM leads ORDER BY created_at DESC LIMIT 300').all();
-    return json({ reports: reports.results, leads: leads.results, origin: url.origin, tracker: trackerOn(env) });
+    return json({ reports: reports.results, leads: leads.results, origin: pub, tracker: trackerOn(env) });
   }
   if (p === '/api/outreach' && m === 'POST') {
     const b = await request.json().catch(() => ({}));
@@ -122,24 +141,43 @@ async function route(request, env, ctx) {
     const id = randomId(8);
     await env.DB.prepare('INSERT INTO reports (id, created_at, url, host, total, grade, data, gated, source, ip) VALUES (?1,?2,?3,?4,?5,?6,?7,0,?8,?9)')
       .bind(id, Date.now(), scan.url, scan.host, scan.result.total, scan.result.grade, JSON.stringify(scan), 'outreach', ip).run();
-    const reportLink = url.origin + '/r/' + id;
+    const reportLink = pub + '/r/' + id;
     const o = { name: clip(b.name, 100), business: clip(b.business, 120), email: clip(b.email, 160), host: scan.host, total: scan.result.total, fixes: scan.result.fixes.length, urgent: scan.result.fixes.filter(f => f.max - f.pts >= 5).length };
     const subject = `Quick one about ${o.business || o.host}'s website`;
     let link = reportLink, pixel = '', optout = '', trackerId = null, trackerError = null;
-    if (trackerOn(env)) {
+    if (b.track !== false && trackerOn(env)) {
       try {
         const t = await trackerCall(env, '/api/emails', { workspace: 'imn', recipient: o.name, company: o.business || o.host, email: o.email, subject: `Health check: ${o.host} ${o.total}/100`, notes: `Outreach via health check. ${o.fixes} issues, ${o.urgent} urgent.`, links: [{ label: 'Website report', url: reportLink }] });
         const base = (env.MT_PUBLIC_URL || '').replace(/\/$/, '');
         trackerId = t.id; link = `${base}/l/${t.id}/0`; pixel = `${base}/o/${t.id}.gif`; optout = `${base}/x/${t.id}`;
       } catch (e) { trackerError = 'Mail Tracker not reachable, so this email is untracked: ' + e.message; }
     }
-    return json({ id, ...o, reportLink, trackedLink: link, trackerId, trackerError, subject, ...composeEmail(o, link, pixel, optout, env.SENDER_FIRST || 'Simon') });
+    return json({ id, ...o, reportLink, trackedLink: link, trackerId, trackerError, subject, ...composeEmail(o, link, pixel, optout, env.SENDER_FIRST || 'Simon'), check: labShape(scan, reportLink, id) });
   }
   if ((mt = p.match(/^\/api\/reports\/([A-Za-z0-9]{6,16})$/)) && m === 'DELETE') {
     await env.DB.prepare('DELETE FROM reports WHERE id=?1').bind(mt[1]).run();
     return json({ ok: true });
   }
   return new Response('Not found', { status: 404 });
+}
+
+const LAB_URL = 'https://imnetwork.com.au/labs/website-check';
+
+/** A scan in the shape the IMN Labs page and IMN HQ use: checks with pass/warn/fail, top 3 fixes, plus the full report link. */
+function labShape(scan, link, id) {
+  const R = scan.result, f = scan.facts;
+  const status = (i) => (i.ok ? 'pass' : i.pts > 0 ? 'warn' : 'fail');
+  const rank = { fail: 0, warn: 1, pass: 2 };
+  const fixes = R.items.filter((i) => !i.ok)
+    .sort((a, b) => rank[status(a)] - rank[status(b)] || (b.max - b.pts) - (a.max - a.pts))
+    .slice(0, 3).map((i) => ({ id: i.id, label: i.title, fix: i.fix }));
+  return {
+    ok: true, url: scan.url, finalUrl: scan.finalUrl || scan.url, host: scan.host, checkedAt: new Date(scan.fetchedAt).toISOString(),
+    score: R.total, grade: R.grade, ms: f.ttfb, kb: f.htmlKb,
+    checks: R.items.map((i) => ({ id: i.id, label: i.title, status: status(i), detail: i.why, fix: i.fix })),
+    fixes, issues: R.fixes.length, cats: R.cats.map((c) => ({ key: c.key, label: c.label, score: c.score })),
+    report: link, reportId: id,
+  };
 }
 
 // ---------- outreach + Mail Tracker link ----------

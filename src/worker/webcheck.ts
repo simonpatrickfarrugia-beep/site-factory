@@ -1,7 +1,9 @@
 /**
  * Free website check (IMN Labs: imnetwork.com.au/labs/website-check). Enabled per brand with WEBCHECK="1".
  *
- *   GET /api/webcheck?url=example.com.au   → { ok, url, finalUrl, score, grade, ms, kb, checks: [...], fixes: [...] }
+ *   GET /api/webcheck?url=example.com.au   → { ok, url, finalUrl, score, grade, ms, kb, checks: [...], fixes: [...], report? }
+ *
+ * Engine: the health-check Worker (workers/health-check, service binding HEALTH_CHECK) when bound; this file's own checks otherwise.
  *
  * Fetches ONE public page (plus its http:// redirect and /sitemap.xml) and checks what a small
  * business owner can act on: loads, HTTPS, speed, mobile, Google basics, one-tap contact, business details for Google,
@@ -72,11 +74,24 @@ const meta = (html: string, name: string) => {
 };
 const decode = (s: string) => s.replace(/&amp;/g, '&').replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/\s+/g, ' ').trim();
 
-export async function webcheck(request: Request): Promise<Response> {
+export async function webcheck(request: Request, hc?: Fetcher): Promise<Response> {
   const json = (body: unknown, status = 200, cache = 'no-store') => Response.json(body, { status, headers: { 'cache-control': cache } });
   if (request.method !== 'GET') return new Response('Method not allowed', { status: 405, headers: { allow: 'GET' } });
   const target = normalise(new URL(request.url).searchParams.get('url') ?? '');
   if (!target) return json({ ok: false, message: 'Type a website address like yourbusiness.com.au' }, 400);
+
+  // One free website check (26 Nov 2026): when the imn Worker is bound to the health-check Worker, that engine runs the
+  // check, stores the full report (check.imnetwork.com.au/r/<id>) and returns this same JSON shape plus `report`.
+  // The checks below are the fallback if the binding is missing or the engine errors.
+  if (hc) {
+    try {
+      const r = await hc.fetch(new Request('https://check.imnetwork.com.au/api/check?url=' + encodeURIComponent(target.toString()), {
+        headers: { accept: 'application/json', 'cf-connecting-ip': request.headers.get('cf-connecting-ip') ?? '' },
+      }));
+      if (r.status < 500 && (r.headers.get('content-type') ?? '').includes('application/json')) return new Response(r.body, { status: r.status, headers: { 'content-type': 'application/json', 'cache-control': 'no-store' } });
+      console.error('health-check engine answered', r.status);
+    } catch (e) { console.error('health-check engine failed', e); }
+  }
 
   // One result per address per hour, shared across visitors.
   const cacheKey = new Request(`https://webcheck.cache/${encodeURIComponent(target.toString())}`);

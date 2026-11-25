@@ -1,6 +1,6 @@
 ---
 /**
- * IMN Labs tool: free website check (GET /api/webcheck on the IMN Worker, src/worker/webcheck.ts).
+ * IMN Labs tool: free website check (GET /api/webcheck on the IMN Worker, src/worker/webcheck.ts, engine = health-check Worker).
  * After a check, an optional "plan to fix these" form posts to /api/submit/check (D1 submissions → enquiries alert, IMN HQ).
  * GA4: cta_check_run (a check ran), cta_check_lead (form sent), cta_check_free (no-website → free website link).
  */
@@ -13,7 +13,7 @@
       <input id="wc-url" name="url" type="text" inputmode="url" autocomplete="url" placeholder="yourbusiness.com.au" required maxlength="300" />
       <button type="submit" class="wc__btn">Check it free</button>
     </div>
-    <p class="lab__small">Takes about 10 seconds. We look at the page the way a visitor and Google would. Nothing is saved unless you send us the form afterwards.</p>
+    <p class="lab__small">Takes about 20 seconds. We look at the page the way a visitor and Google would, and save the report so you can share it. Your name and email are only saved if you send us the form afterwards.</p>
   </form>
   <p class="wc__status" id="wc-status" role="status" aria-live="polite"></p>
 
@@ -24,6 +24,7 @@
     </div>
     <h3>Fix these first</h3>
     <ol class="wc__fixes" id="wc-fixes"></ol>
+    <p class="wc__report" id="wc-report" hidden><a id="wc-report-a" href="#" target="_blank" rel="noopener" data-cta="check_report">Open your full report (a page you can share with your web person) →</a></p>
     <h3>Every check</h3>
     <ul class="wc__checks" id="wc-checks"></ul>
 
@@ -34,6 +35,7 @@
         <input type="hidden" name="site" id="wc-l-site" />
         <input type="hidden" name="score" id="wc-l-score" />
         <input type="hidden" name="issues" id="wc-l-issues" />
+        <input type="hidden" name="report" id="wc-l-report" />
         <div class="wc__hp" aria-hidden="true"><label>Leave this empty <input name="company_website" tabindex="-1" autocomplete="off" /></label></div>
         <label>Your name <input name="name" required maxlength="100" autocomplete="name" /></label>
         <label>Email <input name="email" type="email" required maxlength="200" autocomplete="email" /></label>
@@ -79,6 +81,7 @@
         $('wc-sum').textContent = ' ' + d.score + '/100 · ' + fails + ' to fix, ' + warns + ' could be better';
         $('wc-fixes').innerHTML = d.fixes.length ? d.fixes.map(function (f) { return '<li><strong>' + esc(f.label) + '</strong><br>' + esc(f.fix) + '</li>'; }).join('') : '<li>Nothing urgent. Nice work.</li>';
         $('wc-checks').innerHTML = d.checks.map(function (c) { return '<li class="wc__c wc__c--' + c.status + '"><span class="wc__i" aria-hidden="true">' + icon[c.status] + '</span><div><strong>' + esc(c.label) + '</strong> <span class="lab__small">' + word[c.status] + '</span><br>' + esc(c.detail) + '</div></li>'; }).join('');
+        if (d.report) { $('wc-report-a').href = d.report; $('wc-report').hidden = false; $('wc-l-report').value = d.report; } else { $('wc-report').hidden = true; }
         $('wc-l-site').value = d.finalUrl;
         $('wc-l-score').value = d.grade + ' ' + d.score + '/100';
         $('wc-l-issues').value = d.checks.filter(function (c) { return c.status !== 'pass'; }).map(function (c) { return c.label + ' (' + c.status + ')'; }).join('; ');

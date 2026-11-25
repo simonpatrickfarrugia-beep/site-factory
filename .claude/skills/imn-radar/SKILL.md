@@ -112,13 +112,20 @@ trigger_date = next date and snooze_until = 6 weeks before it (ISO). Snoozed add
     /electrician-websites, /landscaping-websites); other trades keep /websites-for-tradies. Skip registered health practitioners.
   - Template `*` in templates.ts already carries the price line; replace its "noticed..." sentence with the verified gap and lead
     with the trigger when there is one. Keep the price, "no lock-in contract" and the question at the end.
+  - WEBSITE CHECK (26 Nov 2026, Simon: "attach a tracked Health Check report"): when the business HAS a website that loads and
+    its gap is about that site (not mobile-friendly, not secure, slow, out of date, hidden from Google), write the email around
+    their own free report instead of the "noticed..." sentence: one kind line that we ran their site through our free website
+    check, then `{check}` on its own line, then `Your full report (free, no sign-up): {checklink}`. Put the website in `website`.
+    HQ runs the check when Simon opens the draft (Health Check engine) and fills both; on Send now the report link and the
+    email's open are tracked in Mail Tracker. Never write scores, grades or fixes yourself (only HQ's check fills them), and
+    don't use {check} for businesses with no website or a dead website link (those keep the free-website email).
 
 **The email** (under ~130 words, plain, warm, Australian English, no hype, no exclamation marks, nothing unbacked):
 - Start from `SELECT subject, body FROM templates WHERE brand = ? AND segment = ? ORDER BY version DESC LIMIT 1`; if none, the built-in
   one in `workers/hq/src/templates.ts` (T: brand → segment key, or '*').
 - Open with the trigger in one natural sentence, name the gap gently, then the offer. Widget: "I've made you a free trailer reel for
   <season/page> — here's a preview: {widget}", one line of code, updates itself, no cost; then one line offering a simple link instead.
-- KEEP placeholders exactly ({first_name} {organisation} {region} {page} {site} {widget}). Keep "Thanks," and
+- KEEP placeholders exactly ({first_name} {organisation} {region} {page} {site} {widget}, and for IMN website checks {check} {checklink}). Keep "Thanks," and
   `Reply "no thanks" and I won't contact you again.` exactly. No name, signature or Give-first sentence (HQ adds them).
 
 **Insert** each one:

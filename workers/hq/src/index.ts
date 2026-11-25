@@ -32,6 +32,14 @@ interface Env {
   MS_CLIENT_SECRET?: string;
   MS_SENDER?: string;
   MS_SENDERS?: string;
+  // Website check + email tracking (26 Nov 2026): service bindings to health-check and mail-tracker, their admin keys
+  // (secrets HC_KEY, MT_KEY, set by .github/workflows/deploy-workers.yml), the tracker's public address and the brands to track.
+  HEALTH_CHECK?: Fetcher;
+  MAIL_TRACKER?: Fetcher;
+  HC_KEY?: string;
+  MT_KEY?: string;
+  MT_PUBLIC_URL?: string;
+  TRACK_BRANDS?: string;
 }
 
 type Target = {
@@ -93,8 +101,15 @@ export default {
       }
       if (url.pathname === '/api/sitecheck' && req.method === 'GET') return json(await siteCheckIndex());
       if (url.pathname === '/api/value' && req.method === 'GET') return json(await siteValue());
-      // Free website check for a prospect's site (proxies imnetwork.com.au/api/webcheck, which has no CORS).
+      // Free website check for a prospect's site. Engine: the health-check Worker (admin key, so no rate limit), which
+      // stores their report at check.imnetwork.com.au/r/<id> and returns it as `report`. Falls back to imnetwork.com.au's.
       if (url.pathname === '/api/webcheck' && req.method === 'GET') {
+        if (env.HEALTH_CHECK && env.HC_KEY) {
+          try {
+            const hr = await env.HEALTH_CHECK.fetch(new Request('https://check.imnetwork.com.au/api/check?url=' + encodeURIComponent(url.searchParams.get('url') ?? ''), { headers: { accept: 'application/json', authorization: 'Bearer ' + env.HC_KEY } }));
+            if (hr.status < 500 && (hr.headers.get('content-type') ?? '').includes('application/json')) return json(await hr.json());
+          } catch (e) { console.error('health-check failed', e); }
+        }
         const r = await fetch('https://imnetwork.com.au/api/webcheck?url=' + encodeURIComponent(url.searchParams.get('url') ?? ''), { headers: { accept: 'application/json', 'user-agent': 'imn-hq' } });
         return json(await r.json().catch(() => ({ ok: false, message: `Website check failed (HTTP ${r.status})` })));
       }

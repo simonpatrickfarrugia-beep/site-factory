@@ -61,6 +61,8 @@ export interface Env {
   MAIL_FROM?: string;
   /** "1" turns on GET /api/webcheck?url= (IMN Labs free website check, src/worker/webcheck.ts). */
   WEBCHECK?: string;
+  /** Service binding to the health-check Worker: the engine behind /api/webcheck (imn only). */
+  HEALTH_CHECK?: Fetcher;
   /** "1" applies the IMN Labs rules (410 for closed labs, 301 for graduated ones) on /labs/* (imn only). */
   LABS?: string;
   /** "1" turns on public likes, reactions, saves and comments (src/worker/social.ts; trailers /watch). */
@@ -443,7 +445,7 @@ export default {
       catch (e) { console.error('free site failed', e); return new Response('Something went wrong', { status: 500 }); }
     }
     if (pathname === '/api/webcheck' && env.WEBCHECK === '1') {
-      try { return await webcheck(request); }
+      try { return await webcheck(request, env.HEALTH_CHECK); }
       catch (e) { console.error('webcheck failed', e); return Response.json({ ok: false, message: 'Something went wrong. Please try again.' }, { status: 500 }); }
     }
     if (env.SOCIAL === '1' && pathname === '/watch' && request.method === 'GET') return watchPage(request, env);

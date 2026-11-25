@@ -42,8 +42,11 @@ The build log is under the brand's Deployments tab. Config mistakes fail with a 
 
 - **Repo secrets:** `CLOUDFLARE_API_TOKEN` (Edit Cloudflare Workers template + D1 Edit), `CLOUDFLARE_ACCOUNT_ID`,
   `MAIL_TRACKER_ADMIN_KEY`, `HEALTH_CHECK_ADMIN_KEY`.
-- **Worker secrets it sets:** mail-tracker `ADMIN_KEY`; health-check `ADMIN_KEY` and `MT_KEY` (= Mail Tracker's key).
+- **Worker secrets it sets:** mail-tracker `ADMIN_KEY`; health-check `ADMIN_KEY` and `MT_KEY` (= Mail Tracker's key);
+  imn-hq `HC_KEY` and `MT_KEY` (website check + email tracking).
   Add one: give the job an env line `SECRET_<NAME>: ${{ secrets.<GITHUB_SECRET> }}`.
-- **Order:** mail-tracker, then health-check (its `MAIL_TRACKER` service binding needs mail-tracker to exist).
+- **Order:** mail-tracker → health-check → imn-hq (service bindings need the target to exist).
+- **Domains:** health-check is check.imnetwork.com.au (reports), mail-tracker is go.imnetwork.com.au (tracked links, pixel) and
+  keeps its workers.dev address for the dashboard.
 - **D1:** mail-tracker and health-check apply their `migrations/*.sql` before deploying (`APPLY_MIGRATIONS`).
 - **Skips cleanly** while a Worker's code (`src/index.js`) isn't in the repo yet. Results show as annotations titled `deploy <name>`.

@@ -655,6 +655,8 @@ async function openOrg(id) {
 }
 
 // ---------- Draft email from a prospect target ----------
+// An email must never go out with a placeholder still in it (e.g. {check} when the website check hasn't run).
+const unfilled = (t) => /\(run the website check first\)|\{(first_name|organisation|region|page|site|widget|check|checklink)\}/.test(t);
 const fill = (text, v) => text
   .replaceAll('{first_name}', v.first || 'there')
   .replaceAll('{organisation}', v.org || 'your organisation')
@@ -774,24 +776,31 @@ async function openDraft(brand, key, org) {
   if ($('#d-feature')) $('#d-feature').onchange = preview;
   setVer(0);
   if (written) { $('#d-subject').value = written.subject; $('#d-body').value = written.body; preview(); }
-  if (tpl.check && $('#d-check')) $('#d-check').onclick = async () => {
+  // Free website check (engine: the health-check Worker). Fills {check} and {checklink} with their own report at
+  // check.imnetwork.com.au/r/<id>; on Send now, HQ tracks that link (and the email's open) through Mail Tracker.
+  const runCheck = async (auto) => {
     const site = $('#d-web').value.trim();
     const st = $('#d-check-status');
     if (!site) { st.textContent = 'Add their website above first.'; return; }
     st.textContent = 'Checking ' + site + '…'; $('#d-check').disabled = true;
     try {
       const r = await api('/api/webcheck?url=' + encodeURIComponent(site));
-      if (!r.ok) { st.textContent = r.message || 'Check failed.'; return; }
+      if (!r.ok) { st.textContent = (r.message || 'Check failed.') + (auto ? ' Edit {check} out of the email, or try again.' : ''); return; }
       chk.text = checkText(r);
-      chk.link = 'https://imnetwork.com.au/labs/website-check?url=' + encodeURIComponent(r.host);
-      st.innerHTML = `<b>${esc(r.grade)} · ${r.score}/100</b> · ${r.fixes.length} fix${r.fixes.length === 1 ? '' : 'es'} · <a href="${esc(chk.link)}" target="_blank" rel="noopener">their report ↗</a>`;
-      if (!d.edited || confirm('Replace your edited email with the "we checked your website" email?')) {
+      chk.link = r.report || ('https://imnetwork.com.au/labs/website-check?url=' + encodeURIComponent(r.host));
+      st.innerHTML = `<b>${esc(r.grade)} · ${r.score}/100</b> · ${r.issues ?? r.fixes.length} to fix · <a href="${esc(chk.link)}" target="_blank" rel="noopener">their report ↗</a>`;
+      if (!auto && (!d.edited || confirm('Replace your edited email with the "we checked your website" email?'))) {
         $('#d-subject').value = tpl.check.subject; $('#d-body').value = tpl.check.body; d.id = null; d.edited = false;
       }
       preview();
     } catch (e) { st.textContent = e.message; }
     finally { $('#d-check').disabled = false; }
   };
+  if (tpl.check && $('#d-check')) {
+    $('#d-check').onclick = () => runCheck(false);
+    // Radar's IMN emails carry {check}/{checklink} for businesses with a working website: run it as the sheet opens.
+    if ($('#d-web').value.trim() && /\{check(link)?\}/.test($('#d-body').value)) runCheck(true);
+  }
   if (org && org.opener && $('#d-opener')) $('#d-opener').onclick = () => {
     const b = $('#d-body').value; const i = b.indexOf('\n\n');
     $('#d-body').value = i > -1 ? b.slice(0, i + 2) + org.opener + '\n\n' + b.slice(i + 2) : org.opener + '\n\n' + b;
@@ -819,6 +828,7 @@ async function openDraft(brand, key, org) {
   };
   $('#d-go').onclick = async () => {
     const v = vals();
+    if (unfilled(fill($('#d-subject').value, v) + fill(mailBody(), v))) { toast('Run the website check first (or take {check} out of the email)'); return; }
     if (giveFirst() && !$('#d-web').value.trim()) { toast('Add their website for Give first (or untick it)'); $('#d-web').focus(); return; }
     // Open the tab inside the click (pop-up blockers allow that), then point it at Outlook once the board is updated.
     const w = isPhone() ? null : window.open('about:blank', '_blank');
@@ -846,6 +856,7 @@ async function openDraft(brand, key, org) {
     const v = vals(); const btn = $('#d-send');
     if (giveFirst() && !$('#d-web').value.trim()) { toast('Add their website for Give first (or untick it)'); $('#d-web').focus(); return; }
     const to = $('#d-email').value.trim(), subj = fill($('#d-subject').value, v), bod = fill(mailBody(), v);
+    if (unfilled(subj + bod)) { toast('Run the website check first (or take {check} out of the email)'); return; }
     if (!confirm('Send to ' + to + ' from ' + from + '?')) return;
     btn.disabled = true; btn.textContent = 'Sending…';
     try {
@@ -857,7 +868,7 @@ async function openDraft(brand, key, org) {
         catch (e) { toast('Not sent: featuring failed (' + e.message + '). Fix it on the card, then send.'); load(); btn.disabled = false; return; }
       }
       const r = await api('/api/orgs/' + orgId + '/send', { kind: 'first', to, subject: subj, body: bod, contact_name: $('#d-contact').value });
-      state.send = r.status; toast('Sent ✓'); dlg.close(); load();
+      state.send = r.status; toast(r.tracked ? 'Sent ✓ (tracked: opens and clicks show in Mail Tracker)' : 'Sent ✓'); dlg.close(); load();
     } catch (e) { toast(e.message); btn.disabled = false; btn.textContent = 'Send now from ' + from; load(); }
   };
 }

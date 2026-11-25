@@ -124,17 +124,23 @@ jobs:
         run: bash scripts/deploy-worker.sh
 
   imn-hq:
-    needs: plan
-    if: needs.plan.outputs.imn-hq == 'true'
+    # After health-check (and so mail-tracker): HQ's HEALTH_CHECK and MAIL_TRACKER service bindings need them.
+    needs: [plan, health-check]
+    if: always() && needs.plan.outputs.imn-hq == 'true' && needs.health-check.result != 'failure'
     runs-on: ubuntu-24.04
     timeout-minutes: 6
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with: { node-version: 22 }
+      - name: Tests (email tracking)
+        run: npx --yes tsx@4 workers/hq/test/track.mjs
       - name: Deploy imn-hq
         env:
           DIR: workers/hq
+          # Keys for the website check (health-check) and email tracking (mail-tracker). Other HQ secrets are kept.
+          SECRET_HC_KEY: ${{ secrets.HEALTH_CHECK_ADMIN_KEY }}
+          SECRET_MT_KEY: ${{ secrets.MAIL_TRACKER_ADMIN_KEY }}
         run: bash scripts/deploy-worker.sh
 
   imn-mail:

@@ -49,6 +49,7 @@ export async function runScan(inputUrl) {
   f.status = main.res.status;
   f.ttfb = main.ms;
   finalUrl = main.res.url || url;
+  out.finalUrl = finalUrl;
   f.finalHttps = finalUrl.startsWith('https://');
   if (!f.finalHttps) f.https = false;
   html = await main.res.text();
@@ -56,6 +57,7 @@ export async function runScan(inputUrl) {
   const h = main.res.headers;
   f.compressed = /gzip|br|zstd|deflate/i.test(h.get('content-encoding') || '') || f.htmlKb < 15;
   f.hsts = !!h.get('strict-transport-security');
+  f.noindexHeader = /noindex/i.test(h.get('x-robots-tag') || '');
   f.secHeaders = ['x-content-type-options', 'content-security-policy', 'x-frame-options', 'referrer-policy'].filter(k => h.get(k)).length;
 
   // HTTP -> HTTPS redirect
@@ -107,6 +109,7 @@ export function analyseHtml(html, baseUrl) {
   f.viewport = /<meta[^>]+name=["']viewport["'][^>]*width=device-width/i.test(html);
   f.lang = /<html[^>]+lang=["'][a-z]/i.test(html);
   f.canonical = /<link[^>]+rel=["']canonical["']/i.test(html);
+  f.noindex = /noindex/i.test(meta('robots') || '');
   f.jsonLd = /<script[^>]+application\/ld\+json/i.test(html);
   f.ogTitle = !!meta('og:title');
   f.ogImage = !!meta('og:image');
@@ -143,73 +146,76 @@ export function analyseHtml(html, baseUrl) {
 
 export function score(f) {
   const items = [];
-  const add = (cat, pts, max, ok, title, fix, why) => items.push({ cat, pts: Math.max(0, Math.min(max, pts)), max, ok, title, fix, why });
+  const add = (id, cat, pts, max, ok, title, fix, why) => items.push({ id, cat, pts: Math.max(0, Math.min(max, pts)), max, ok, title, fix, why });
   const nowYear = new Date().getFullYear();
 
   // Speed (25)
-  add('speed', f.ttfb < 600 ? 8 : f.ttfb < 1500 ? 4 : 0, 8, f.ttfb < 600, `Server response: ${(f.ttfb / 1000).toFixed(1)}s`,
-    'Move to faster hosting or add caching so the page starts loading in under 0.6s.', 'Slow sites lose about half their visitors before the page even appears.');
-  add('speed', f.htmlKb < 100 ? 5 : f.htmlKb < 300 ? 2 : 0, 5, f.htmlKb < 100, `Page weight: ${f.htmlKb} KB of code`,
+  add('speed', 'speed', f.ttfb <= 800 ? 8 : f.ttfb <= 1800 ? 4 : 0, 8, f.ttfb <= 800, `Server response: ${(f.ttfb / 1000).toFixed(1)}s`,
+    'Move to faster hosting or add caching so the page starts loading in 0.8 seconds or less (Google\'s line for good).', 'Slow sites lose about half their visitors before the page even appears.');
+  add('weight', 'speed', f.htmlKb < 100 ? 5 : f.htmlKb < 300 ? 2 : 0, 5, f.htmlKb < 100, `Page weight: ${f.htmlKb} KB of code`,
     'Trim unused page-builder code and plugins.', 'Heavy pages load slowly on mobile data.');
-  add('speed', f.compressed ? 4 : 0, 4, f.compressed, f.compressed ? 'Compression turned on' : 'Compression is off',
+  add('compression', 'speed', f.compressed ? 4 : 0, 4, f.compressed, f.compressed ? 'Compression turned on' : 'Compression is off',
     'Turn on gzip or Brotli compression at your host or CDN.', 'Compression makes pages 3 to 5 times smaller to download.');
-  add('speed', f.scripts <= 15 ? 4 : f.scripts <= 30 ? 2 : 0, 4, f.scripts <= 15, `${f.scripts} script files loaded`,
+  add('scripts', 'speed', f.scripts <= 15 ? 4 : f.scripts <= 30 ? 2 : 0, 4, f.scripts <= 15, `${f.scripts} script files loaded`,
     'Remove unused plugins, chat widgets and tracking scripts.', 'Every script slows the page down.');
-  add('speed', f.images <= 6 || f.lazyImages >= f.images * 0.5 ? 4 : 1, 4, f.images <= 6 || f.lazyImages >= f.images * 0.5, `${f.images} images, ${f.lazyImages} lazy-loaded`,
+  add('images', 'speed', f.images <= 6 || f.lazyImages >= f.images * 0.5 ? 4 : 1, 4, f.images <= 6 || f.lazyImages >= f.images * 0.5, `${f.images} images, ${f.lazyImages} lazy-loaded`,
     'Lazy-load images below the fold and serve them as WebP.', 'Images are usually the biggest part of a page.');
 
   // SEO (25)
   const tl = (f.title || '').length;
-  add('seo', tl >= 30 && tl <= 65 ? 5 : tl > 0 ? 2 : 0, 5, tl >= 30 && tl <= 65, tl ? `Page title (${tl} characters)` : 'No page title',
+  add('title', 'seo', tl >= 30 && tl <= 65 ? 5 : tl > 0 ? 2 : 0, 5, tl >= 30 && tl <= 65, tl ? `Page title (${tl} characters)` : 'No page title',
     'Write a 30 to 65 character title with your main service and suburb, e.g. "Emergency Plumber Brunswick | Smith Plumbing".', 'The title is the blue headline people click on in Google.');
   const dl = (f.description || '').length;
-  add('seo', dl >= 70 && dl <= 160 ? 5 : dl > 0 ? 2 : 0, 5, dl >= 70 && dl <= 160, dl ? `Google description (${dl} characters)` : 'No Google description',
+  add('description', 'seo', dl >= 70 && dl <= 160 ? 5 : dl > 0 ? 2 : 0, 5, dl >= 70 && dl <= 160, dl ? `Google description (${dl} characters)` : 'No Google description',
     'Add a 70 to 160 character description that sells the click, with a call to action.', 'Without one, Google picks random text from your page.');
-  add('seo', f.h1Count === 1 ? 4 : f.h1Count > 1 ? 2 : 0, 4, f.h1Count === 1, f.h1Count === 1 ? 'One main heading' : f.h1Count ? `${f.h1Count} main headings (should be 1)` : 'No main heading',
+  add('h1', 'seo', f.h1Count === 1 ? 4 : f.h1Count > 1 ? 2 : 0, 4, f.h1Count === 1, f.h1Count === 1 ? 'One main heading' : f.h1Count ? `${f.h1Count} main headings (should be 1)` : 'No main heading',
     'Use one clear H1 heading that says what you do and where.', 'Google uses the main heading to work out what the page is about.');
-  add('seo', f.sitemap ? 3 : 0, 3, f.sitemap, f.sitemap ? 'Sitemap found' : 'No sitemap',
+  add('sitemap', 'seo', f.sitemap ? 3 : 0, 3, f.sitemap, f.sitemap ? 'Sitemap found' : 'No sitemap',
     'Create a sitemap.xml and submit it in Google Search Console.', 'Sitemaps help Google find all your pages.');
-  add('seo', f.robots && !f.robotsBlocksAll ? 3 : f.robotsBlocksAll ? 0 : 1, 3, f.robots && !f.robotsBlocksAll, f.robotsBlocksAll ? 'robots.txt is BLOCKING Google' : f.robots ? 'robots.txt in place' : 'No robots.txt',
-    f.robotsBlocksAll ? 'Urgent: your robots.txt tells Google not to index the site. Remove "Disallow: /".' : 'Add a robots.txt that points to your sitemap.', 'This file tells search engines what they may read.');
-  add('seo', f.jsonLd ? 3 : 0, 3, f.jsonLd, f.jsonLd ? 'Business details marked up for Google' : 'No business markup (schema)',
+  const blocked = f.robotsBlocksAll || f.noindex || f.noindexHeader;
+  add('indexable', 'seo', blocked ? 0 : f.robots ? 3 : 1, 3, f.robots && !blocked,
+    f.noindex || f.noindexHeader ? 'Page tells Google NOT to list it (noindex)' : f.robotsBlocksAll ? 'robots.txt is BLOCKING Google' : f.robots ? 'robots.txt in place' : 'No robots.txt',
+    f.noindex || f.noindexHeader ? 'Urgent: remove the "noindex" setting (often a leftover "discourage search engines" tick from when the site was built).' : f.robotsBlocksAll ? 'Urgent: your robots.txt tells Google not to index the site. Remove "Disallow: /".' : 'Add a robots.txt that points to your sitemap.',
+    blocked ? "Right now the site can't show up in Google search at all." : 'This file tells search engines what they may read.');
+  add('schema', 'seo', f.jsonLd ? 3 : 0, 3, f.jsonLd, f.jsonLd ? 'Business details marked up for Google' : 'No business markup (schema)',
     'Add LocalBusiness schema with your name, address, phone and hours.', 'Schema helps you show up in Google Maps and rich results.');
-  add('seo', f.canonical ? 2 : 0, 2, f.canonical, f.canonical ? 'Canonical tag set' : 'No canonical tag',
+  add('canonical', 'seo', f.canonical ? 2 : 0, 2, f.canonical, f.canonical ? 'Canonical tag set' : 'No canonical tag',
     'Add a canonical tag so Google knows the main version of each page.', 'This prevents duplicate-page penalties.');
 
   // Mobile (15)
-  add('mobile', f.viewport ? 8 : 0, 8, f.viewport, f.viewport ? 'Built for mobile screens' : 'Not set up for mobile',
+  add('mobile', 'mobile', f.viewport ? 8 : 0, 8, f.viewport, f.viewport ? 'Built for mobile screens' : 'Not set up for mobile',
     'Add a responsive viewport and mobile layout. Most of your visitors are on phones.', 'Google ranks sites by their mobile version.');
   const altPct = f.images ? f.imagesWithAlt / f.images : 1;
-  add('mobile', altPct >= 0.8 ? 5 : altPct >= 0.4 ? 2 : 0, 5, altPct >= 0.8, f.images ? `${Math.round(altPct * 100)}% of images have descriptions` : 'No images to check',
+  add('alt', 'mobile', altPct >= 0.8 ? 5 : altPct >= 0.4 ? 2 : 0, 5, altPct >= 0.8, f.images ? `${Math.round(altPct * 100)}% of images have descriptions` : 'No images to check',
     'Add short alt text describing each image.', 'Alt text helps accessibility and image search.');
-  add('mobile', f.lang ? 2 : 0, 2, f.lang, f.lang ? 'Language set' : 'Page language not set',
+  add('lang', 'mobile', f.lang ? 2 : 0, 2, f.lang, f.lang ? 'Language set' : 'Page language not set',
     'Add lang="en-AU" to the page.', 'This helps screen readers and translation.');
 
   // Security (15)
-  add('security', f.https ? 6 : 0, 6, f.https, f.https ? 'Secure connection (HTTPS)' : 'NOT SECURE: no HTTPS',
+  add('https', 'security', f.https ? 6 : 0, 6, f.https, f.https ? 'Secure connection (HTTPS)' : 'NOT SECURE: no HTTPS',
     'Install an SSL certificate. Browsers show "Not secure" on your site right now.', 'Visitors leave when they see a security warning.');
-  add('security', f.httpRedirects ? 4 : 0, 4, f.httpRedirects, f.httpRedirects ? 'Insecure visits redirected to secure' : 'Insecure version still reachable',
+  add('redirect', 'security', f.httpRedirects ? 4 : 0, 4, f.httpRedirects, f.httpRedirects ? 'Insecure visits redirected to secure' : 'Insecure version still reachable',
     'Redirect every http:// visit to https://.', 'Otherwise some visitors land on the unsafe version.');
-  add('security', (f.hsts ? 2 : 0) + (f.secHeaders >= 2 ? 1 : 0), 3, f.hsts && f.secHeaders >= 2, `${(f.hsts ? 1 : 0) + f.secHeaders} of 5 security headers`,
+  add('headers', 'security', (f.hsts ? 2 : 0) + (f.secHeaders >= 2 ? 1 : 0), 3, f.hsts && f.secHeaders >= 2, `${(f.hsts ? 1 : 0) + f.secHeaders} of 5 security headers`,
     'Turn on HSTS and basic security headers at your host or CDN.', 'These block common attacks.');
-  add('security', f.mixedContent === 0 ? 2 : 0, 2, f.mixedContent === 0, f.mixedContent ? `${f.mixedContent} insecure files on a secure page` : 'No insecure files',
+  add('mixed', 'security', f.mixedContent === 0 ? 2 : 0, 2, f.mixedContent === 0, f.mixedContent ? `${f.mixedContent} insecure files on a secure page` : 'No insecure files',
     'Update image and script links from http:// to https://.', 'Mixed content triggers browser warnings.');
 
   // Leads (20)
-  add('leads', f.telLink ? 5 : 0, 5, f.telLink, f.telLink ? 'Tap-to-call phone link' : 'No tap-to-call button',
+  add('contact', 'leads', f.telLink ? 5 : 0, 5, f.telLink, f.telLink ? 'Tap-to-call phone link' : 'No tap-to-call button',
     'Make your phone number a tap-to-call link in the header.', 'On mobile, calls are the number one way locals get in touch.');
-  add('leads', f.form || f.mailto ? 4 : 0, 4, f.form || f.mailto, f.form ? 'Enquiry form found' : f.mailto ? 'Email link only (no form)' : 'No way to enquire online',
+  add('form', 'leads', f.form || f.mailto ? 4 : 0, 4, f.form || f.mailto, f.form ? 'Enquiry form found' : f.mailto ? 'Email link only (no form)' : 'No way to enquire online',
     'Add a short quote/enquiry form above the fold.', 'People who are ready to buy want a fast way to ask.');
-  add('leads', (f.ogTitle ? 1.5 : 0) + (f.ogImage ? 1.5 : 0), 3, f.ogTitle && f.ogImage, f.ogImage ? 'Looks good when shared' : 'Shares badly on Facebook/LinkedIn',
+  add('share', 'leads', (f.ogTitle ? 1.5 : 0) + (f.ogImage ? 1.5 : 0), 3, f.ogTitle && f.ogImage, f.ogImage ? 'Looks good when shared' : 'Shares badly on Facebook/LinkedIn',
     'Add social share tags (og:title, og:image).', 'Links shared without an image get far fewer clicks.');
-  add('leads', f.analytics ? 3 : 0, 3, f.analytics, f.analytics ? 'Visitor tracking installed' : 'No visitor tracking',
+  add('analytics', 'leads', f.analytics ? 3 : 0, 3, f.analytics, f.analytics ? 'Visitor tracking installed' : 'No visitor tracking',
     'Install Google Analytics or similar so you know where enquiries come from.', "You can't improve what you can't measure.");
   const stale = f.copyrightYear && f.copyrightYear < nowYear - 1;
-  add('leads', stale ? 0 : 2, 2, !stale, stale ? `Footer says © ${f.copyrightYear}, so the site looks abandoned` : 'Site looks current',
+  add('fresh', 'leads', stale ? 0 : 2, 2, !stale, stale ? `Footer says © ${f.copyrightYear}, so the site looks abandoned` : 'Site looks current',
     'Update the copyright year and any old content.', 'An old date makes visitors wonder if you are still trading.');
-  add('leads', f.favicon ? 1 : 0, 1, f.favicon, f.favicon ? 'Browser icon set' : 'No browser icon',
+  add('favicon', 'leads', f.favicon ? 1 : 0, 1, f.favicon, f.favicon ? 'Browser icon set' : 'No browser icon',
     'Add your logo as the favicon.', 'A small detail that builds trust.');
-  add('leads', f.brokenLinks.length === 0 ? 2 : 0, 2, f.brokenLinks.length === 0, f.brokenLinks.length ? `${f.brokenLinks.length} broken link${f.brokenLinks.length > 1 ? 's' : ''} found` : `No broken links (${f.linksChecked} checked)`,
+  add('links', 'leads', f.brokenLinks.length === 0 ? 2 : 0, 2, f.brokenLinks.length === 0, f.brokenLinks.length ? `${f.brokenLinks.length} broken link${f.brokenLinks.length > 1 ? 's' : ''} found` : `No broken links (${f.linksChecked} checked)`,
     'Fix or remove the broken links.', 'Broken links frustrate visitors and hurt rankings.');
 
   const cats = CATEGORIES.map(c => {
@@ -219,5 +225,5 @@ export function score(f) {
   });
   const total = Math.round(items.reduce((a, i) => a + i.pts, 0));
   const fixes = items.filter(i => !i.ok).sort((a, b) => (b.max - b.pts) - (a.max - a.pts));
-  return { total, grade: total >= 85 ? 'A' : total >= 70 ? 'B' : total >= 55 ? 'C' : total >= 40 ? 'D' : 'F', cats, items, fixes };
+  return { total, grade: total >= 90 ? 'A' : total >= 75 ? 'B' : total >= 60 ? 'C' : total >= 45 ? 'D' : 'F', cats, items, fixes };
 }

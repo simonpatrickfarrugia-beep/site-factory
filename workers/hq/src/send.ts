@@ -18,6 +18,10 @@ export interface SendEnv {
   MS_CLIENT_SECRET?: string;
   MS_SENDER?: string;
   MS_SENDERS?: string;
+  MAIL_TRACKER?: Fetcher;
+  MT_KEY?: string;
+  MT_PUBLIC_URL?: string;
+  TRACK_BRANDS?: string;
 }
 
 type Json = Record<string, unknown>;
@@ -94,7 +98,29 @@ function toHtml(text: string) {
   return `<div style="font-family:Aptos,Calibri,Arial,sans-serif;font-size:11pt;color:#222">${paras.join('')}</div>`;
 }
 
-async function graphSend(env: SendEnv, brand: string, from: string, to: string, subject: string, body: string) {
+const URL_RE = /https?:\/\/[^\s<]+[^\s<.,;:!?)"']/g;
+
+/** Email tracking (26 Nov 2026) for brands in TRACK_BRANDS (IMN): every link in the email goes through Mail Tracker
+ *  (go.imnetwork.com.au/l/<id>/<n> → the real page) and a 1×1 image records opens. Never blocks a send: if Mail Tracker
+ *  is unreachable the email goes out untracked. Opens/clicks show in Mail Tracker (and report views in Health Check). */
+async function track(env: SendEnv, brand: string, m: { org: string; to: string; name?: string; subject: string; body: string; kind: string }) {
+  const on = (env.TRACK_BRANDS ?? '').split(',').map((x) => x.trim()).includes(brand);
+  if (!on || !env.MAIL_TRACKER || !env.MT_KEY || !env.MT_PUBLIC_URL) return null;
+  const urls = [...new Set(m.body.match(URL_RE) ?? [])].slice(0, 20);
+  const label = (u: string) => { try { const x = new URL(u); return x.hostname === 'check.imnetwork.com.au' ? 'Website report' : (x.hostname.replace(/^www\./, '') + x.pathname).replace(/\/$/, ''); } catch { return u; } };
+  const r = await env.MAIL_TRACKER.fetch(new Request('https://mail-tracker/api/emails', {
+    method: 'POST',
+    headers: { authorization: 'Bearer ' + env.MT_KEY, 'content-type': 'application/json' },
+    body: JSON.stringify({ workspace: 'imn', recipient: m.name || null, company: m.org, email: m.to, subject: m.subject, notes: `Sent from IMN HQ (${m.kind === 'followup' ? 'follow-up' : 'first email'})`, links: urls.map((u) => ({ label: label(u), url: u })), no_grace: true }),
+  }));
+  if (!r.ok) throw new Error('Mail Tracker answered ' + r.status);
+  const t = (await r.json()) as { id: string };
+  const base = env.MT_PUBLIC_URL.replace(/\/$/, '');
+  const body = m.body.replace(URL_RE, (u) => { const i = urls.indexOf(u); return i > -1 ? `${base}/l/${t.id}/${i}` : u; });
+  return { id: t.id, body, pixel: `<img src="${base}/o/${t.id}.gif" width="1" height="1" alt="" style="display:block;width:1px;height:1px;border:0">` };
+}
+
+async function graphSend(env: SendEnv, brand: string, from: string, to: string, subject: string, body: string, pixel = '') {
   const mailbox = senderFor(env, brand);
   const r = await fetch(`https://graph.microsoft.com/v1.0/users/${encodeURIComponent(mailbox)}/sendMail`, {
     method: 'POST',
@@ -104,7 +130,7 @@ async function graphSend(env: SendEnv, brand: string, from: string, to: string, 
         subject,
         // HTML, not plain text: Exchange's signature rule only adds the full designed (HTML) brand signature
         // to HTML emails; on plain-text emails it falls back to a text-only version.
-        body: { contentType: 'HTML', content: toHtml(body) },
+        body: { contentType: 'HTML', content: toHtml(body) + pixel },
         from: { emailAddress: { address: from } },
         toRecipients: [{ emailAddress: { address: to } }],
       },
@@ -145,7 +171,12 @@ export async function sendForOrg(env: SendEnv, brands: Brands, id: number, b: Js
     if (f) return { error: 'They\'ve already had the one follow-up.' };
   }
 
-  await graphSend(env, org.brand, cfg.from, to, subject, body);
+  let tracked: Awaited<ReturnType<typeof track>> = null, trackError = '';
+  try {
+    const name = await env.DB.prepare('SELECT name FROM orgs WHERE id = ?').bind(id).first<{ name: string }>();
+    tracked = await track(env, org.brand, { org: name?.name ?? '', to, name: typeof b.contact_name === 'string' ? b.contact_name : '', subject, body, kind });
+  } catch (e) { trackError = (e as Error).message; console.error('tracking failed, sending untracked', e); }
+  await graphSend(env, org.brand, cfg.from, to, subject, tracked ? tracked.body : body, tracked ? tracked.pixel : '');
 
   const stmts = [
     env.DB.prepare('INSERT INTO sends (org_id, brand, to_email, subject, kind, day) VALUES (?, ?, ?, ?, ?, ?)').bind(id, org.brand, to, subject, kind, melbDay()),
@@ -156,13 +187,13 @@ export async function sendForOrg(env: SendEnv, brands: Brands, id: number, b: Js
   if (kind === 'first' && (org.stage === 'found' || org.stage === 'drafted')) {
     stmts.push(
       env.DB.prepare(`UPDATE orgs SET stage = 'sent', stage_at = strftime('%Y-%m-%dT%H:%M:%SZ','now') WHERE id = ? AND stage IN ('found','drafted')`).bind(id),
-      env.DB.prepare(`INSERT INTO touches (org_id, brand, stage, channel, subject, note) VALUES (?, ?, 'sent', 'email', ?, 'Sent from HQ')`).bind(id, org.brand, subject),
+      env.DB.prepare(`INSERT INTO touches (org_id, brand, stage, channel, subject, note) VALUES (?, ?, 'sent', 'email', ?, ?)`).bind(id, org.brand, subject, tracked ? `Sent from HQ (tracked ${tracked.id})` : 'Sent from HQ'),
     );
   }
   const hasContact = await env.DB.prepare('SELECT 1 FROM contacts WHERE org_id = ? AND lower(email) = ?').bind(id, to).first();
   if (!hasContact) stmts.push(env.DB.prepare('INSERT INTO contacts (org_id, email, name) VALUES (?, ?, ?)').bind(id, to, typeof b.contact_name === 'string' ? b.contact_name.slice(0, 200) : null));
   await env.DB.batch(stmts);
-  return { ok: true, status: await sendStatus(env, brands) };
+  return { ok: true, tracked: !!tracked, trackerId: tracked?.id ?? null, trackError: trackError || undefined, status: await sendStatus(env, brands) };
 }
 
 /** For other IMN Workers over a service binding (Mailer entrypoint in index.ts): one transactional email

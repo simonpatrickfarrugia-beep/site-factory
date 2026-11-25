@@ -18,30 +18,32 @@
       "path": "",
       "tool": "website-check",
       "seoTitle": "Free Website Check for Small Businesses | IMN Labs",
-      "description": "Check your small business website free in 10 seconds: speed, phones, Google basics and tap-to-call, with the top 3 fixes in plain English.",
+      "description": "Check your small business website free in about 20 seconds: speed, phones, Google basics, security and tap-to-call, with the top 3 fixes in plain English.",
       "kicker": "Free tool",
       "title": "Free website check for small businesses",
       "lede": "Type in your website and see what a customer on a phone, and Google, see. You get a grade, the three fixes that matter most, and a plain-English reason for each. Free, no sign-up.",
-      "updated": "2026-11-22",
+      "updated": "2026-11-26",
       "sections": [
         {
           "h": "What we check",
           "list": [
             "Secure connection: whether the site loads with the padlock (HTTPS) and forwards the old http:// address to it.",
             "First response speed: how long the server takes to start answering. Google's guidance counts 0.8 seconds or less as good and over 1.8 seconds as poor.",
-            "Page size: how heavy the page's code is before images, which matters on mobile data.",
-            "Set up for phones: whether the page tells phones to fit it to the screen.",
+            "Page size and load: how heavy the page's code is, compression, how many scripts it loads and whether images load lazily, which all matter on mobile data.",
+            "Set up for phones: whether the page tells phones to fit it to the screen, plus image descriptions and the page language.",
             "Page title and description: what Google shows as your name and summary in search results.",
-            "Main heading, sitemap and whether anything blocks Google from listing the page.",
-            "One-tap contact: whether a customer can tap your phone number to call you.",
+            "Main heading, sitemap, canonical tag and whether anything (a noindex setting or robots.txt) blocks Google from listing the site.",
+            "One-tap contact: whether a customer can tap your phone number to call you, and whether there's an enquiry form or email link.",
             "Business details for Google: structured data with your name, address and hours.",
-            "Share preview, visitor counting and whether the footer year makes the site look abandoned."
+            "Security basics: insecure files on a secure page and standard security headers.",
+            "Broken links: up to 10 links on the page, opened to see if they still work.",
+            "Share preview, visitor counting, a browser icon and whether the footer year makes the site look abandoned."
           ]
         },
         {
           "h": "How to read your grade",
           "p": [
-            "Each check is Good, Could be better or Needs fixing. The ones that cost you customers (no padlock, slow to respond, not set up for phones, hidden from Google, no tap-to-call) count for more. A is 90 or more out of 100, B is 75 or more, C is 60 or more. A low grade usually means a handful of quick fixes, not a rebuild."
+            "Each check is Good, Could be better or Needs fixing. The ones that cost you customers (no padlock, slow to respond, not set up for phones, hidden from Google, no tap-to-call) count for more. A is 90 or more out of 100, B is 75 or more, C is 60 or more, D is 45 or more. A low grade usually means a handful of quick fixes, not a rebuild."
           ]
         },
         {
@@ -57,18 +59,18 @@
         {
           "h": "What this check can't tell you",
           "p": [
-            "It looks at one page, the one you type in, not your whole site. Speed is measured from our checker's server, so it shows how quickly your host answers rather than exactly what every visitor sees. It doesn't measure where you rank, your reviews or your Google Business Profile, which also decide how many local customers find you. Treat it as a quick health check, not a full audit."
+            "It looks at one page, the one you type in, plus a sample of its links, not your whole site. Speed is measured from our checker's server, so it shows how quickly your host answers rather than exactly what every visitor sees. It doesn't measure where you rank, your reviews or your Google Business Profile, which also decide how many local customers find you. Treat it as a quick health check, not a full audit."
           ]
         }
       ],
       "faq": [
         {
           "q": "Is it really free?",
-          "a": "Yes. There's no sign-up and no limit on checks. If you want help, you can send us your report, and that's optional."
+          "a": "Yes. There's no sign-up. To stop misuse, each person can run up to 8 checks an hour. If you want help, you can send us your report, and that's optional."
         },
         {
           "q": "Do you keep the address I check?",
-          "a": "No. The address is only kept if you choose to send us the form after your report, so we can reply about it. Results are held for an hour so checking the same site again is instant."
+          "a": "We save each report (the website address and its results) so you get a link you can share, for example with your web person. We don't save your name or email unless you send us the form. Your internet address is kept for a day, only to stop misuse. A repeat check of the same site within 30 minutes shows the saved report."
         },
         {
           "q": "Can I check a competitor's website?",
@@ -125,8 +127,8 @@
       "description": "Test how fast your business website starts loading, in seconds and free. See your server response time, page size and what to fix first.",
       "kicker": "Free tool",
       "title": "Website speed test for small businesses",
-      "lede": "How long does your website make customers wait before anything appears? Type in your address to see your server's first response time and page size, plus the rest of the check, in about 10 seconds.",
-      "updated": "2026-11-22",
+      "lede": "How long does your website make customers wait before anything appears? Type in your address to see your server's first response time and page size, plus the rest of the check, in about 20 seconds.",
+      "updated": "2026-11-26",
       "sections": [
         {
           "h": "What the speed test measures",
@@ -189,7 +191,7 @@
       "kicker": "Free tool",
       "title": "SEO checker for small business websites",
       "lede": "Is your website giving Google what it needs to show you to local customers? Type in your address and see your page title, description, business details and anything that blocks Google, with plain-English fixes.",
-      "updated": "2026-11-22",
+      "updated": "2026-11-26",
       "sections": [
         {
           "h": "The Google basics we check",
