@@ -35,6 +35,41 @@
    },
    "status": "measuring",
    "measureFrom": "2026-12-29"
+  },
+  {
+   "site": "trade-admin",
+   "owner": "imn",
+   "name": "tradeadmin.com.au",
+   "findingId": "not-indexed",
+   "area": "indexing",
+   "title": "1 of your top 8 pages aren't in Google's index",
+   "pages": [
+    "/job-management-software"
+   ],
+   "scope": "pages",
+   "fixedBy": "2026-11-25",
+   "seenFixedAfter": "2026-11-24",
+   "baseline": {
+    "target": {
+     "impr": 0,
+     "clicks": 0,
+     "views": 7,
+     "pos": null,
+     "window": "2026-11-21",
+     "pages": [
+      "/job-management-software"
+     ]
+    },
+    "site": {
+     "impr": 874,
+     "clicks": 2,
+     "views": 56,
+     "pos": null,
+     "window": "2026-11-21"
+    }
+   },
+   "status": "measuring",
+   "measureFrom": "2026-12-30"
   }
  ],
  "updated": "2026-11-25"
