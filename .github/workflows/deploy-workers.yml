@@ -1,5 +1,6 @@
 # Deploys the standalone Workers with wrangler and sets their secrets from GitHub secrets.
-# Covers Workers that are NOT on Cloudflare Workers Builds (mail-tracker, health-check) plus chc-checkin.
+# Covers every standalone Worker: mail-tracker, health-check, chc-checkin, imn-hq, imn-mail, trailer-pipeline
+# (the last four replaced Cloudflare Workers Builds on 25 Nov 2026). Secrets set in the dashboard are kept.
 # Runs on a push to main that touches a Worker's folder (or this file = deploy all), or by hand (Actions → Deploy Workers).
 # Each Worker is skipped cleanly if its folder or code isn't in the repo yet.
 # GitHub secrets used: CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID, MAIL_TRACKER_ADMIN_KEY, HEALTH_CHECK_ADMIN_KEY.
@@ -15,13 +16,16 @@ on:
       - 'workers/mail-tracker/**'
       - 'workers/health-check/**'
       - 'workers/checkin/**'
+      - 'workers/hq/**'
+      - 'workers/mail/**'
+      - 'workers/pipeline/**'
       - '.github/workflows/deploy-workers.yml'
   workflow_dispatch:
     inputs:
       worker:
         description: Which Worker to deploy
         type: choice
-        options: [all, mail-tracker, health-check, chc-checkin]
+        options: [all, mail-tracker, health-check, chc-checkin, imn-hq, imn-mail, trailer-pipeline]
         default: all
 concurrency:
   group: deploy-workers
@@ -39,6 +43,9 @@ jobs:
       mail-tracker: ${{ steps.p.outputs.mail-tracker }}
       health-check: ${{ steps.p.outputs.health-check }}
       chc-checkin: ${{ steps.p.outputs.chc-checkin }}
+      imn-hq: ${{ steps.p.outputs.imn-hq }}
+      imn-mail: ${{ steps.p.outputs.imn-mail }}
+      trailer-pipeline: ${{ steps.p.outputs.trailer-pipeline }}
     steps:
       - id: p
         env:
@@ -56,7 +63,7 @@ jobs:
             all=true
           fi
           echo "$files" | grep -q '^\.github/workflows/deploy-workers\.yml$' && all=true
-          for pair in mail-tracker:workers/mail-tracker/ health-check:workers/health-check/ chc-checkin:workers/checkin/; do
+          for pair in mail-tracker:workers/mail-tracker/ health-check:workers/health-check/ chc-checkin:workers/checkin/ imn-hq:workers/hq/ imn-mail:workers/mail/ trailer-pipeline:workers/pipeline/; do
             name=${pair%%:*}; dir=${pair#*:}; go=false
             if [ "$all" = true ] || [ "${PICK:-}" = "$name" ] || echo "$files" | grep -q "^$dir"; then go=true; fi
             echo "$name=$go" >> "$GITHUB_OUTPUT"
@@ -114,4 +121,46 @@ jobs:
       - name: Deploy chc-checkin
         env:
           DIR: workers/checkin
+        run: bash scripts/deploy-worker.sh
+
+  imn-hq:
+    needs: plan
+    if: needs.plan.outputs.imn-hq == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with: { node-version: 22 }
+      - name: Deploy imn-hq
+        env:
+          DIR: workers/hq
+        run: bash scripts/deploy-worker.sh
+
+  imn-mail:
+    needs: plan
+    if: needs.plan.outputs.imn-mail == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with: { node-version: 22 }
+      - name: Deploy imn-mail
+        env:
+          DIR: workers/mail
+        run: bash scripts/deploy-worker.sh
+
+  trailer-pipeline:
+    needs: plan
+    if: needs.plan.outputs.trailer-pipeline == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with: { node-version: 22 }
+      - name: Deploy trailer-pipeline
+        env:
+          DIR: workers/pipeline
         run: bash scripts/deploy-worker.sh

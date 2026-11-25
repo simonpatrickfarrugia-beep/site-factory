@@ -1,7 +1,14 @@
 # Deploy, preview and roll back
 
-Each brand is its own Cloudflare Worker, connected to this GitHub repo with **Workers Builds**.
-Pushing to `main` deploys every brand. Pushing any other branch creates preview URLs.
+Each brand is its own Cloudflare Worker. **Since 25 Nov 2026 GitHub Actions deploys everything** (Workers Builds started
+failing on every build that day):
+- **Sites:** `check.yml` builds each affected brand, runs every check (verify, wrangler dry run, quality gate), then
+  deploys it with `npx wrangler deploy --config brands/<slug>/wrangler.jsonc`. Annotation: `Deployed (<brand>)`.
+- **Standalone Workers** (imn-hq, imn-mail, trailer-pipeline, chc-checkin, mail-tracker, health-check): `deploy-workers.yml`, see below.
+- `[skip ci]` commits deploy nothing (same as before). Secrets set in the Cloudflare dashboard are kept on every deploy.
+- Workers Builds may still be connected in the dashboard; if it comes back it just deploys the same commit twice (harmless).
+
+The original Workers Builds setup is kept below for reference.
 
 ## One-time setup per brand (Cloudflare dashboard)
 
@@ -29,9 +36,9 @@ The build log is under the brand's Deployments tab. Config mistakes fail with a 
 
 ## Standalone Workers (GitHub Actions, not Workers Builds)
 
-`mail-tracker`, `health-check` and `chc-checkin` deploy from **`.github/workflows/deploy-workers.yml`**
+`mail-tracker`, `health-check`, `chc-checkin`, `imn-hq`, `imn-mail` and `trailer-pipeline` deploy from **`.github/workflows/deploy-workers.yml`**
 (script: `scripts/deploy-worker.sh`). A push to `main` that touches `workers/mail-tracker/`, `workers/health-check/`
-or `workers/checkin/` deploys that Worker; changing the workflow file deploys all three. Or run it by hand: Actions → Deploy Workers.
+`workers/checkin/`, `workers/hq/`, `workers/mail/` or `workers/pipeline/` deploys that Worker; changing the workflow file deploys them all. Or run it by hand: Actions → Deploy Workers.
 
 - **Repo secrets:** `CLOUDFLARE_API_TOKEN` (Edit Cloudflare Workers template + D1 Edit), `CLOUDFLARE_ACCOUNT_ID`,
   `MAIL_TRACKER_ADMIN_KEY`, `HEALTH_CHECK_ADMIN_KEY`.

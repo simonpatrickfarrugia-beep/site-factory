@@ -1,5 +1,5 @@
 # Builds every brand and verifies the output on each push.
-# Cloudflare does the real deploys; this is the safety net.
+# On main it also deploys each built site to Cloudflare (replaced Workers Builds on 25 Nov 2026).
 # Results are written as annotations so they're readable without the raw logs.
 name: Check build
 permissions:
@@ -91,6 +91,10 @@ jobs:
     if: needs.plan.outputs.brands != '[]'
     runs-on: ubuntu-24.04  # pinned: ubuntu-latest moved to 26.04 in Oct 2026 and broke the Playwright install
     timeout-minutes: 10
+    # One run per brand at a time, so deploys can't land out of order.
+    concurrency:
+      group: site-${{ matrix.brand }}-${{ github.ref }}
+      cancel-in-progress: false
     strategy:
       fail-fast: false
       matrix:
@@ -149,6 +153,23 @@ jobs:
           python3 scripts/quality.py dist; rc=$?
           cat quality.md >> "$GITHUB_STEP_SUMMARY"
           exit $rc
+      - name: Deploy to Cloudflare (main only, after every check above passed)
+        # Replaces Cloudflare Workers Builds for the sites (it started failing on every build on 25 Nov 2026).
+        # Same build, same wrangler config; existing Worker secrets are kept. shortlisted is parked (no Worker).
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push' && matrix.brand != 'shortlisted'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          WRANGLER_SEND_METRICS: 'false'
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then echo "::warning title=Deploy ($BRAND)::No CLOUDFLARE_API_TOKEN secret, not deployed"; exit 0; fi
+          set -o pipefail
+          if ! npx wrangler deploy --config brands/$BRAND/wrangler.jsonc 2>&1 | tee deploy.log; then
+            node -e "const l=require('fs').readFileSync('deploy.log','utf8').trim().split('\n').slice(-30).join('\n');console.log('::error title=Deploy failed ('+process.env.BRAND+')::'+l.replace(/%/g,'%25').replace(/\r?\n/g,'%0A'))"
+            exit 1
+          fi
+          v=$(grep -oE 'Current Version ID: [0-9a-f-]+' deploy.log | sed 's/.*: //' | head -1)
+          echo "::notice title=Deployed ($BRAND)::live · version ${v:-?} · commit ${GITHUB_SHA::7}"
       - name: Screenshots (main and preview/* branches)
         timeout-minutes: 6
         if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/preview/')
