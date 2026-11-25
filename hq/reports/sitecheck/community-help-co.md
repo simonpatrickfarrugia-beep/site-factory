@@ -1,8 +1,8 @@
 # Site check: communityhelp.com.au
 
-**A · 98/100** · scanned 2026-11-23 23:56 UTC · 16 pages · next scan 2026-12-01 (no revenue in the last 60 days, every 7 days)
+**A · 98/100** · scanned 2026-11-24 23:58 UTC · 16 pages · next scan 2026-12-02 (no revenue in the last 60 days, every 7 days)
 
-**Since 2026-11-23:** score +6 · Google impressions (28 days) -10 · clicks -1 · visits +2 · fixed 6
+**Since 2026-11-23:** score 0 · Google impressions (28 days) -7 · clicks 0 · visits +11
 
 ## Top 5 fixes
 
@@ -25,21 +25,12 @@
 
 ## Google
 
-- Last 7 days: 117 impressions (+2), 3 clicks (-3). 28 days: 601 impressions, 14 clicks, 132 visits. Search Console data to 2026-11-20.
-
-## What changed
-
-- Fixed: "community help": we're not in the top 10 (Search Console avg 14); directory.wayahead.org.au leads
-- Fixed: "community service placement": we're not in the top 10 (Search Console avg 11); cisvic.org.au leads
-- Fixed: "local community support": we're not in the top 10 (Search Console avg 4); mycommunitydirectory.com.au leads
-- Fixed: "simon support": we're not in the top 10 (Search Console avg 7); facebook.com leads
-- Fixed: 2 outside link(s) go to a missing page
-- Fixed: "hr support ringwood": we're not in the top 10 (Search Console avg 39); careerhub.com leads
+- Last 7 days: 107 impressions (-10), 3 clicks (-1). 28 days: 594 impressions, 14 clicks, 143 visits. Search Console data to 2026-11-21.
 
 ## Speed (phones)
 
-- /: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.07s, HTML 17 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
-- /free-daily-journal: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.2s, HTML 14 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
+- /: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.16s, HTML 17 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
+- /free-daily-journal: PageSpeed unavailable (HTTP Error 429: Too Many Requests), own check: arrived in 0.05s, HTML 14 KB, images 0 KB (first 15), 1 blocking files, 0 images without size
 
 ## All findings
 

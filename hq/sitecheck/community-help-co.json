@@ -3,11 +3,11 @@
  "name": "communityhelp.com.au",
  "url": "https://communityhelp.com.au",
  "owner": "imn",
- "scannedAt": "2026-11-23T23:56:16Z",
+ "scannedAt": "2026-11-24T23:58:54Z",
  "stage": "building",
  "stageWhy": "no revenue in the last 60 days",
  "cadenceDays": 7,
- "nextDue": "2026-12-01",
+ "nextDue": "2026-12-02",
  "score": 98,
  "grade": "A",
  "areas": {
@@ -98,33 +98,33 @@
   }
  ],
  "google": {
-  "impr7": 117,
-  "imprPrev7": 115,
+  "impr7": 107,
+  "imprPrev7": 117,
   "clicks7": 3,
-  "clicksPrev7": 6,
-  "impr28": 601,
+  "clicksPrev7": 4,
+  "impr28": 594,
   "clicks28": 14,
-  "views28": 132,
+  "views28": 143,
   "viewsPrev28": 0,
-  "recentViews": 16,
-  "lastGa4Day": "2026-11-22",
-  "gscTo": "2026-11-20"
+  "recentViews": 18,
+  "lastGa4Day": "2026-11-23",
+  "gscTo": "2026-11-21"
  },
  "queries": [
   {
    "query": "community help",
-   "position": 13,
-   "impressions": 44
+   "position": 12.2,
+   "impressions": 43
   },
   {
    "query": "community service placement",
-   "position": 11.4,
-   "impressions": 36
+   "position": 11.3,
+   "impressions": 35
   },
   {
    "query": "community services placement",
-   "position": 8.9,
-   "impressions": 34
+   "position": 9.1,
+   "impressions": 33
   },
   {
    "query": "local community support",
@@ -167,6 +167,11 @@
    "impressions": 3
   },
   {
+   "query": "community services work placement",
+   "position": 13,
+   "impressions": 3
+  },
+  {
    "query": "community support worker",
    "position": 4,
    "impressions": 3
@@ -204,11 +209,6 @@
   {
    "query": "community services recruitment agencies melbourne",
    "position": 2,
-   "impressions": 2
-  },
-  {
-   "query": "community services work placement",
-   "position": 13,
    "impressions": 2
   },
   {
@@ -368,7 +368,7 @@
   {
    "url": "https://communityhelp.com.au/",
    "lite": true,
-   "serverSecs": 0.07,
+   "serverSecs": 0.16,
    "htmlKb": 17,
    "blocking": 1,
    "images": 2,
@@ -379,7 +379,7 @@
   {
    "url": "https://communityhelp.com.au/free-daily-journal",
    "lite": true,
-   "serverSecs": 0.2,
+   "serverSecs": 0.05,
    "htmlKb": 14,
    "blocking": 1,
    "images": 2,
@@ -400,23 +400,16 @@
   "unsureOutside": 2
  },
  "affiliateOk": 0,
- "secs": 124,
+ "secs": 126,
  "change": {
   "first": false,
-  "since": "2026-11-23T00:25:39Z",
-  "score": 6,
+  "since": "2026-11-23T23:56:16Z",
+  "score": 0,
   "newIssues": [],
-  "fixed": [
-   "\"community help\": we're not in the top 10 (Search Console avg 14); directory.wayahead.org.au leads",
-   "\"community service placement\": we're not in the top 10 (Search Console avg 11); cisvic.org.au leads",
-   "\"local community support\": we're not in the top 10 (Search Console avg 4); mycommunitydirectory.com.au leads",
-   "\"simon support\": we're not in the top 10 (Search Console avg 7); facebook.com leads",
-   "2 outside link(s) go to a missing page",
-   "\"hr support ringwood\": we're not in the top 10 (Search Console avg 39); careerhub.com leads"
-  ],
-  "impr28": -10,
-  "clicks28": -1,
-  "views28": 2,
+  "fixed": [],
+  "impr28": -7,
+  "clicks28": 0,
+  "views28": 11,
   "rivals": [],
   "positions": []
  },
@@ -448,7 +441,14 @@
    "grade": "A",
    "impr28": 611,
    "clicks28": 15
+  },
+  {
+   "at": "2026-11-23T23:56:16Z",
+   "score": 98,
+   "grade": "A",
+   "impr28": 601,
+   "clicks28": 14
   }
  ],
- "issue": "closed"
+ "issue": null
 }
