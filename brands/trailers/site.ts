@@ -264,8 +264,9 @@ export function routes(): Route[] {
   const popularFilms = () => {
     const pagesSeen = ((getSingleton('stats') as { pages?: { path: string; allViews?: number; views?: number; gscImpressions?: number }[] } | null)?.pages ?? [])
       .filter((p) => p.path.startsWith('/movies/'))
-      // Pages Google already shows first (Search Console impressions), then visits in the last 28 days, then all-time.
-      .sort((a, b) => (b.gscImpressions ?? 0) - (a.gscImpressions ?? 0) || (b.views ?? 0) - (a.views ?? 0) || (b.allViews ?? 0) - (a.allViews ?? 0));
+      // Pages people visited in the last 28 days first (often not in Google's index yet, so a home link helps it find them),
+      // then pages Google already shows (Search Console impressions), then all-time visits.
+      .sort((a, b) => (b.views ?? 0) - (a.views ?? 0) || (b.gscImpressions ?? 0) - (a.gscImpressions ?? 0) || (b.allViews ?? 0) - (a.allViews ?? 0));
     const inLatest = new Set(recentMix(10).map((m) => m.slug));
     const picks: Movie[] = [];
     for (const p of pagesSeen) {
