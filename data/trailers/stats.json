@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-25T19:00:08.977Z",
+ "generatedAt": "2026-11-26T19:00:08.680Z",
  "period": {
-  "start": "2026-10-28",
-  "end": "2026-11-24"
+  "start": "2026-10-29",
+  "end": "2026-11-25"
  },
  "gscPeriod": {
-  "start": "2026-10-26",
-  "end": "2026-11-22"
+  "start": "2026-10-27",
+  "end": "2026-11-23"
  },
  "sources": {
   "ga4": true,
@@ -14,8 +14,8 @@
   "notes": []
  },
  "totals": {
-  "views": 71,
-  "prevViews": 244,
+  "views": 70,
+  "prevViews": 229,
   "users": 42,
   "cta": {
    "films_banner": 2,
@@ -23,14 +23,9 @@
    "prime": 1
   },
   "gscClicks": 0,
-  "gscImpressions": 76
+  "gscImpressions": 75
  },
  "daily": [
-  {
-   "date": "2026-10-28",
-   "views": 3,
-   "cta": 0
-  },
   {
    "date": "2026-10-30",
    "views": 4,
@@ -100,27 +95,32 @@
    "date": "2026-11-24",
    "views": 1,
    "cta": 0
+  },
+  {
+   "date": "2026-11-25",
+   "views": 2,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/browse",
-   "views": 28,
+   "views": 29,
    "prevViews": 12,
-   "users": 3,
+   "users": 4,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 5,
    "gscPosition": 65.4,
    "topQuery": "trailers free",
-   "allViews": 40,
+   "allViews": 41,
    "prev7": 26,
-   "d7": 0
+   "d7": 1
   },
   {
    "path": "/",
-   "views": 24,
-   "prevViews": 103,
+   "views": 23,
+   "prevViews": 88,
    "users": 20,
    "cta": {
     "films_banner": 2
@@ -129,11 +129,11 @@
    "gscImpressions": 5,
    "gscPosition": 26.2,
    "topQuery": "movietr",
-   "allViews": 197,
+   "allViews": 198,
    "allCta": {
     "films_banner": 2
    },
-   "d7": 9,
+   "d7": 10,
    "prev7": 4
   },
   {
@@ -248,18 +248,6 @@
   },
   {
    "path": "/movies/his-girl-friday-1940",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 1
-  },
-  {
-   "path": "/movies/interstellar-2014",
    "views": 1,
    "prevViews": 0,
    "users": 1,
@@ -464,8 +452,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 17,
-   "gscPosition": 55.7,
+   "gscImpressions": 18,
+   "gscPosition": 56.3,
    "topQuery": "the prestige trailer",
    "allViews": 2
   },
@@ -878,18 +866,6 @@
    "allViews": 1
   },
   {
-   "path": "/movies/castle-in-the-sky-1986",
-   "views": 0,
-   "prevViews": 1,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 1
-  },
-  {
    "path": "/movies/django-unchained-2012",
    "views": 0,
    "prevViews": 1,
@@ -915,6 +891,18 @@
   },
   {
    "path": "/movies/inglourious-basterds-2009",
+   "views": 0,
+   "prevViews": 1,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
+   "path": "/movies/interstellar-2014",
    "views": 0,
    "prevViews": 1,
    "users": 0,
@@ -1094,6 +1082,18 @@
    "allViews": 1
   },
   {
+   "path": "/movies/castle-in-the-sky-1986",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1
+  },
+  {
    "path": "/movies/clayface-2017",
    "views": 0,
    "prevViews": 0,
@@ -1238,25 +1238,14 @@
    "allViews": 1
   },
   {
-   "path": "/about",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 9,
-   "gscPosition": 4.2,
-   "topQuery": null
-  },
-  {
    "path": "/movies/insomnia-2002",
    "views": 0,
    "prevViews": 0,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 7,
-   "gscPosition": 56.6,
+   "gscImpressions": 10,
+   "gscPosition": 63.6,
    "topQuery": "insomnia film trailer"
   },
   {
@@ -1282,6 +1271,17 @@
    "topQuery": "martin luther king film 2014"
   },
   {
+   "path": "/about",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 6.7,
+   "topQuery": null
+  },
+  {
    "path": "/movies/the-darjeeling-limited-2007",
    "views": 0,
    "prevViews": 0,
@@ -1302,6 +1302,17 @@
    "gscImpressions": 1,
    "gscPosition": 94,
    "topQuery": "captain america the winter soldier 2014 trailer"
+  },
+  {
+   "path": "/movies/the-phoenician-scheme-2025",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 75,
+   "topQuery": "the phoenician scheme 2025 movie"
   },
   {
    "path": "/movies/the-rock-1996",
@@ -1363,9 +1374,16 @@
   {
    "query": "the prestige trailer",
    "clicks": 0,
-   "impressions": 7,
-   "position": 62.1,
+   "impressions": 8,
+   "position": 62.6,
    "page": "/movies/the-prestige-2006"
+  },
+  {
+   "query": "insomnia film trailer",
+   "clicks": 0,
+   "impressions": 5,
+   "position": 72.8,
+   "page": "/movies/insomnia-2002"
   },
   {
    "query": "jurassic park film trailer",
@@ -1387,13 +1405,6 @@
    "impressions": 2,
    "position": 57.5,
    "page": "/"
-  },
-  {
-   "query": "insomnia film trailer",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 62,
-   "page": "/movies/insomnia-2002"
   },
   {
    "query": "insomnia trailer",
@@ -1529,6 +1540,13 @@
    "page": "/movies/selma-2014"
   },
   {
+   "query": "the phoenician scheme 2025 movie",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 75,
+   "page": "/movies/the-phoenician-scheme-2025"
+  },
+  {
    "query": "prestige movie trailer",
    "clicks": 0,
    "impressions": 1,
@@ -1551,11 +1569,6 @@
   }
  ],
  "gscDaily": [
-  {
-   "date": "2026-10-26",
-   "clicks": 0,
-   "impressions": 6
-  },
   {
    "date": "2026-10-27",
    "clicks": 0,
@@ -1690,12 +1703,17 @@
    "date": "2026-11-22",
    "clicks": 0,
    "impressions": 2
+  },
+  {
+   "date": "2026-11-23",
+   "clicks": 0,
+   "impressions": 5
   }
  ],
  "allTime": {
   "start": "2026-09-13",
-  "views": 420,
-  "users": 255,
+  "views": 422,
+  "users": 257,
   "cta": {
    "films_banner": 2,
    "justwatch": 1,
@@ -1981,6 +1999,11 @@
     "date": "2026-11-24",
     "views": 1,
     "cta": 0
+   },
+   {
+    "date": "2026-11-25",
+    "views": 2,
+    "cta": 0
    }
   ]
  },
@@ -2053,6 +2076,12 @@
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 1
+   },
+   {
+    "date": "2026-11-25",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 2
    }
   ]
  }

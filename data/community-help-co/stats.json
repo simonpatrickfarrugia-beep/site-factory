@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-25T19:00:08.977Z",
+ "generatedAt": "2026-11-26T19:00:08.680Z",
  "period": {
-  "start": "2026-10-28",
-  "end": "2026-11-24"
+  "start": "2026-10-29",
+  "end": "2026-11-25"
  },
  "gscPeriod": {
-  "start": "2026-10-26",
-  "end": "2026-11-22"
+  "start": "2026-10-27",
+  "end": "2026-11-23"
  },
  "sources": {
   "ga4": true,
@@ -15,22 +15,17 @@
  },
  "totals": {
   "views": 142,
-  "prevViews": 1,
+  "prevViews": 2,
   "users": 116,
   "cta": {
    "journal_90": 9,
    "google_reviews": 3,
    "email_chat": 1
   },
-  "gscClicks": 14,
-  "gscImpressions": 607
+  "gscClicks": 11,
+  "gscImpressions": 586
  },
  "daily": [
-  {
-   "date": "2026-10-28",
-   "views": 1,
-   "cta": 0
-  },
   {
    "date": "2026-10-29",
    "views": 7,
@@ -135,6 +130,11 @@
    "date": "2026-11-23",
    "views": 11,
    "cta": 0
+  },
+  {
+   "date": "2026-11-25",
+   "views": 1,
+   "cta": 0
   }
  ],
  "pages": [
@@ -147,36 +147,36 @@
     "google_reviews": 3,
     "email_chat": 1
    },
-   "gscClicks": 10,
-   "gscImpressions": 325,
-   "gscPosition": 7.4,
+   "gscClicks": 7,
+   "gscImpressions": 318,
+   "gscPosition": 6.7,
    "topQuery": "community service placement",
    "allViews": 52,
    "allCta": {
     "google_reviews": 3,
     "email_chat": 1
    },
-   "prev7": 16,
-   "d7": 12
+   "prev7": 18,
+   "d7": 9
   },
   {
    "path": "/free-daily-journal",
-   "views": 18,
+   "views": 19,
    "prevViews": 0,
-   "users": 16,
+   "users": 17,
    "cta": {
     "journal_90": 9
    },
    "gscClicks": 2,
-   "gscImpressions": 38,
-   "gscPosition": 5.7,
+   "gscImpressions": 39,
+   "gscPosition": 5.6,
    "topQuery": "back to you journal pdf free download",
-   "allViews": 18,
+   "allViews": 19,
    "allCta": {
     "journal_90": 9
    },
-   "d7": 7,
-   "prev7": 5
+   "prev7": 7,
+   "d7": 6
   },
   {
    "path": "/resume-builder",
@@ -185,12 +185,12 @@
    "users": 11,
    "cta": {},
    "gscClicks": 1,
-   "gscImpressions": 30,
-   "gscPosition": 19.6,
+   "gscImpressions": 28,
+   "gscPosition": 20.6,
    "topQuery": "free resume",
    "allViews": 14,
-   "prev7": 4,
-   "d7": 3
+   "prev7": 5,
+   "d7": 2
   },
   {
    "path": "/job-finder",
@@ -199,26 +199,26 @@
    "users": 11,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 32,
-   "gscPosition": 22.1,
+   "gscImpressions": 34,
+   "gscPosition": 21.5,
    "topQuery": "part time jobs in australia",
    "allViews": 13,
-   "prev7": 4,
-   "d7": 3
+   "prev7": 5,
+   "d7": 2
   },
   {
    "path": "/contact",
-   "views": 11,
-   "prevViews": 0,
-   "users": 8,
+   "views": 10,
+   "prevViews": 1,
+   "users": 7,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 49,
-   "gscPosition": 13.4,
+   "gscImpressions": 44,
+   "gscPosition": 11.7,
    "topQuery": "simon support",
    "allViews": 11,
-   "d7": 2,
-   "prev7": 1
+   "prev7": 2,
+   "d7": 1
   },
   {
    "path": "/life-goals-mentoring",
@@ -231,8 +231,8 @@
    "gscPosition": 6.2,
    "topQuery": null,
    "allViews": 5,
-   "d7": 2,
-   "prev7": 0
+   "d7": 1,
+   "prev7": 1
   },
   {
    "path": "/affiliate-disclosure",
@@ -255,26 +255,12 @@
    "users": 4,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 29,
-   "gscPosition": 5.8,
+   "gscImpressions": 26,
+   "gscPosition": 6.1,
    "topQuery": "simon farrugia",
    "allViews": 4,
-   "d7": 1,
-   "prev7": 0
-  },
-  {
-   "path": "/how-it-works",
-   "views": 4,
-   "prevViews": 0,
-   "users": 4,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 7.6,
-   "topQuery": null,
-   "allViews": 4,
-   "prev7": 2,
-   "d7": 1
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/job-catalyst",
@@ -287,8 +273,22 @@
    "gscPosition": 4.8,
    "topQuery": null,
    "allViews": 4,
-   "d7": 2,
-   "prev7": 0
+   "d7": 1,
+   "prev7": 1
+  },
+  {
+   "path": "/how-it-works",
+   "views": 4,
+   "prevViews": 0,
+   "users": 4,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 7.7,
+   "topQuery": null,
+   "allViews": 4,
+   "prev7": 2,
+   "d7": 1
   },
   {
    "path": "/cover-letter-builder",
@@ -297,9 +297,9 @@
    "users": 3,
    "cta": {},
    "gscClicks": 1,
-   "gscImpressions": 42,
-   "gscPosition": 11.7,
-   "topQuery": "free cover letter",
+   "gscImpressions": 38,
+   "gscPosition": 9.1,
+   "topQuery": "free cover letter builder",
    "allViews": 3,
    "d7": 1,
    "prev7": 0
@@ -325,8 +325,8 @@
    "users": 3,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 8,
-   "gscPosition": 4.8,
+   "gscImpressions": 7,
+   "gscPosition": 5.3,
    "topQuery": null,
    "allViews": 3,
    "prev7": 1,
@@ -412,22 +412,22 @@
   {
    "query": "community help",
    "clicks": 2,
-   "impressions": 43,
-   "position": 11.1,
+   "impressions": 39,
+   "position": 7.9,
    "page": "/"
   },
   {
    "query": "community service placement",
    "clicks": 0,
-   "impressions": 36,
-   "position": 11.4,
+   "impressions": 37,
+   "position": 11.3,
    "page": "/"
   },
   {
    "query": "community services placement",
    "clicks": 0,
    "impressions": 34,
-   "position": 8.8,
+   "position": 8.9,
    "page": "/"
   },
   {
@@ -447,8 +447,8 @@
   {
    "query": "simon support",
    "clicks": 0,
-   "impressions": 8,
-   "position": 7.1,
+   "impressions": 7,
+   "position": 7.3,
    "page": "/contact"
   },
   {
@@ -473,13 +473,6 @@
    "page": "/contact"
   },
   {
-   "query": "help community",
-   "clicks": 0,
-   "impressions": 5,
-   "position": 17,
-   "page": "/"
-  },
-  {
    "query": "community services work placement",
    "clicks": 0,
    "impressions": 4,
@@ -487,11 +480,18 @@
    "page": "/"
   },
   {
-   "query": "community services recruitment agencies",
+   "query": "help community",
    "clicks": 0,
-   "impressions": 3,
-   "position": 2.7,
+   "impressions": 4,
+   "position": 2,
    "page": "/"
+  },
+  {
+   "query": "how to get part time jobs in australia",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 27.3,
+   "page": "/job-finder"
   },
   {
    "query": "community support worker",
@@ -499,20 +499,6 @@
    "impressions": 3,
    "position": 4,
    "page": "/"
-  },
-  {
-   "query": "free cover letter",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 56.7,
-   "page": "/cover-letter-builder"
-  },
-  {
-   "query": "how to get part time jobs in australia",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 28.3,
-   "page": "/job-finder"
   },
   {
    "query": "community co",
@@ -571,13 +557,6 @@
    "page": "/resume-builder"
   },
   {
-   "query": "resume builder help",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 5.5,
-   "page": "/resume-builder"
-  },
-  {
    "query": "community consultants",
    "clicks": 0,
    "impressions": 1,
@@ -607,6 +586,13 @@
   },
   {
    "query": "community services jobs",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 2,
+   "page": "/"
+  },
+  {
+   "query": "community services recruitment agencies",
    "clicks": 0,
    "impressions": 1,
    "position": 2,
@@ -711,10 +697,10 @@
    "page": "/contact"
   },
   {
-   "query": "community number",
+   "query": "is there anyone i can talk to for free?",
    "clicks": 0,
    "impressions": 1,
-   "position": 43,
+   "position": 1,
    "page": "/contact"
   },
   {
@@ -739,6 +725,13 @@
    "page": "/cover-letter-builder"
   },
   {
+   "query": "free cover letter",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 43,
+   "page": "/cover-letter-builder"
+  },
+  {
    "query": "best website to find part time jobs",
    "clicks": 0,
    "impressions": 1,
@@ -750,6 +743,13 @@
    "clicks": 0,
    "impressions": 1,
    "position": 17,
+   "page": "/job-finder"
+  },
+  {
+   "query": "part time help",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 1,
    "page": "/job-finder"
   },
   {
@@ -823,6 +823,13 @@
    "page": "/resume-builder"
   },
   {
+   "query": "resume builder help",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 10,
+   "page": "/resume-builder"
+  },
+  {
    "query": "find local staff",
    "clicks": 0,
    "impressions": 1,
@@ -831,11 +838,6 @@
   }
  ],
  "gscDaily": [
-  {
-   "date": "2026-10-26",
-   "clicks": 3,
-   "impressions": 26
-  },
   {
    "date": "2026-10-27",
    "clicks": 0,
@@ -970,12 +972,17 @@
    "date": "2026-11-22",
    "clicks": 1,
    "impressions": 20
+  },
+  {
+   "date": "2026-11-23",
+   "clicks": 0,
+   "impressions": 15
   }
  ],
  "allTime": {
   "start": "2026-10-27",
-  "views": 143,
-  "users": 117,
+  "views": 144,
+  "users": 118,
   "cta": {
    "journal_90": 9,
    "google_reviews": 3,
@@ -1096,6 +1103,11 @@
     "date": "2026-11-23",
     "views": 11,
     "cta": 0
+   },
+   {
+    "date": "2026-11-25",
+    "views": 1,
+    "cta": 0
    }
   ]
  },
@@ -1104,7 +1116,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 59
+    "sessions": 58
    },
    {
     "source": "google",
@@ -1114,7 +1126,7 @@
    {
     "source": "chatgpt.com",
     "medium": "ai-assistant",
-    "sessions": 10
+    "sessions": 11
    },
    {
     "source": "bing",
@@ -1150,12 +1162,6 @@
    }
   ],
   "daily": [
-   {
-    "date": "2026-11-11",
-    "source": "(direct)",
-    "medium": "(none)",
-    "sessions": 1
-   },
    {
     "date": "2026-11-12",
     "source": "(direct)",
@@ -1286,6 +1292,12 @@
     "date": "2026-11-23",
     "source": "google",
     "medium": "organic",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-25",
+    "source": "chatgpt.com",
+    "medium": "ai-assistant",
     "sessions": 1
    }
   ]

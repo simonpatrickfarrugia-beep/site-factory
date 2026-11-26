@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-25T19:00:08.977Z",
+ "generatedAt": "2026-11-26T19:00:08.680Z",
  "period": {
-  "start": "2026-10-28",
-  "end": "2026-11-24"
+  "start": "2026-10-29",
+  "end": "2026-11-25"
  },
  "gscPeriod": {
-  "start": "2026-10-26",
-  "end": "2026-11-22"
+  "start": "2026-10-27",
+  "end": "2026-11-23"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 17,
+  "views": 20,
   "prevViews": 0,
-  "users": 15,
+  "users": 18,
   "cta": {
-   "start_hero": 1,
+   "start_hero": 2,
    "pay_plan": 1,
    "start_plan": 1
   },
   "gscClicks": 0,
-  "gscImpressions": 101
+  "gscImpressions": 153
  },
  "daily": [
   {
@@ -55,27 +55,51 @@
    "date": "2026-11-24",
    "views": 1,
    "cta": 0
+  },
+  {
+   "date": "2026-11-25",
+   "views": 3,
+   "cta": 1
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 11,
+   "views": 13,
    "prevViews": 0,
-   "users": 11,
+   "users": 13,
    "cta": {
-    "start_hero": 1
+    "start_hero": 2
    },
    "gscClicks": 0,
-   "gscImpressions": 13,
-   "gscPosition": 8.4,
+   "gscImpressions": 27,
+   "gscPosition": 8.2,
    "topQuery": "imn",
-   "allViews": 11,
+   "allViews": 13,
    "allCta": {
-    "start_hero": 1
+    "start_hero": 2
    },
    "d7": 9,
-   "prev7": 2
+   "prev7": 4
+  },
+  {
+   "path": "/get-started",
+   "views": 3,
+   "prevViews": 0,
+   "users": 2,
+   "cta": {
+    "pay_plan": 1
+   },
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 3,
+   "allCta": {
+    "pay_plan": 1
+   },
+   "prev7": 2,
+   "d7": 1
   },
   {
    "path": "/labs/website-check",
@@ -88,25 +112,6 @@
    "gscPosition": 96,
    "topQuery": "check my website",
    "allViews": 2,
-   "d7": 2,
-   "prev7": 0
-  },
-  {
-   "path": "/get-started",
-   "views": 2,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {
-    "pay_plan": 1
-   },
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2,
-   "allCta": {
-    "pay_plan": 1
-   },
    "d7": 2,
    "prev7": 0
   },
@@ -126,8 +131,8 @@
    "allCta": {
     "start_plan": 1
    },
-   "d7": 1,
-   "prev7": 0
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/affiliate-disclosure",
@@ -150,8 +155,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 57,
-   "gscPosition": 85.3,
+   "gscImpressions": 72,
+   "gscPosition": 86.8,
    "topQuery": "website development cost in australia"
   },
   {
@@ -161,8 +166,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 15,
-   "gscPosition": 79,
+   "gscImpressions": 28,
+   "gscPosition": 78.9,
    "topQuery": "tradie website"
   },
   {
@@ -172,8 +177,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 8,
-   "gscPosition": 62.4,
+   "gscImpressions": 14,
+   "gscPosition": 53,
    "topQuery": "websites for electrician"
   },
   {
@@ -183,8 +188,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 8.2,
+   "gscImpressions": 7,
+   "gscPosition": 8.1,
    "topQuery": "mypaycalc"
   },
   {
@@ -194,52 +199,77 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 1,
-   "gscPosition": 93,
+   "gscImpressions": 2,
+   "gscPosition": 91.5,
    "topQuery": "check my seo online"
+  },
+  {
+   "path": "/plumber-websites",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 1,
+   "gscPosition": 71,
+   "topQuery": "my plumbing services"
   }
  ],
  "queries": [
   {
    "query": "imn",
    "clicks": 0,
-   "impressions": 10,
-   "position": 8,
+   "impressions": 19,
+   "position": 5.5,
    "page": "/"
+  },
+  {
+   "query": "tradie website",
+   "clicks": 0,
+   "impressions": 14,
+   "position": 82.4,
+   "page": "/websites-for-tradies"
   },
   {
    "query": "mypaycalc",
    "clicks": 0,
-   "impressions": 8,
+   "impressions": 12,
    "position": 8.8,
    "page": "/our-sites"
   },
   {
    "query": "website development cost in australia",
    "clicks": 0,
-   "impressions": 6,
-   "position": 98.3,
+   "impressions": 8,
+   "position": 98.1,
    "page": "/how-much-does-a-website-cost"
-  },
-  {
-   "query": "tradie website",
-   "clicks": 0,
-   "impressions": 6,
-   "position": 81,
-   "page": "/websites-for-tradies"
   },
   {
    "query": "how much does a website cost for small business",
    "clicks": 0,
-   "impressions": 5,
-   "position": 89.6,
+   "impressions": 7,
+   "position": 92.1,
    "page": "/how-much-does-a-website-cost"
   },
   {
    "query": "how much does a website cost in australia",
    "clicks": 0,
+   "impressions": 6,
+   "position": 97.3,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "websites for electrician",
+   "clicks": 0,
    "impressions": 4,
-   "position": 97.8,
+   "position": 97,
+   "page": "/electrician-websites"
+  },
+  {
+   "query": "how much does a small business website cost",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 92,
    "page": "/how-much-does-a-website-cost"
   },
   {
@@ -257,13 +287,6 @@
    "page": "/how-much-does-a-website-cost"
   },
   {
-   "query": "websites for electrician",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 97,
-   "page": "/electrician-websites"
-  },
-  {
    "query": "cost of not having a website",
    "clicks": 0,
    "impressions": 3,
@@ -271,10 +294,17 @@
    "page": "/how-much-does-a-website-cost"
   },
   {
-   "query": "how much does a small business website cost",
+   "query": "how much does a business website cost",
    "clicks": 0,
    "impressions": 3,
-   "position": 92,
+   "position": 99.3,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "how much does a website cost australia",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 94.3,
    "page": "/how-much-does-a-website-cost"
   },
   {
@@ -285,10 +315,17 @@
    "page": "/how-much-does-a-website-cost"
   },
   {
-   "query": "how much does a business website cost",
+   "query": "rec number",
    "clicks": 0,
    "impressions": 2,
-   "position": 100,
+   "position": 8,
+   "page": "/electrician-websites"
+  },
+  {
+   "query": "web design cost australia",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 95.5,
    "page": "/how-much-does-a-website-cost"
   },
   {
@@ -306,10 +343,24 @@
    "page": "/how-much-does-a-website-cost"
   },
   {
+   "query": "australia online tradies",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 78,
+   "page": "/websites-for-tradies"
+  },
+  {
    "query": "websites for tradesmen",
    "clicks": 0,
    "impressions": 2,
    "position": 87.5,
+   "page": "/websites-for-tradies"
+  },
+  {
+   "query": "websites for tradespeople",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 65.5,
    "page": "/websites-for-tradies"
   },
   {
@@ -318,6 +369,27 @@
    "impressions": 2,
    "position": 70,
    "page": "/websites-for-tradies"
+  },
+  {
+   "query": "imend",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 63,
+   "page": "/"
+  },
+  {
+   "query": "imn network",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 2,
+   "page": "/"
+  },
+  {
+   "query": "imn?",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 4,
+   "page": "/"
   },
   {
    "query": "electrician website",
@@ -334,10 +406,17 @@
    "page": "/electrician-websites"
   },
   {
-   "query": "rec number",
+   "query": "inurl:elect",
    "clicks": 0,
    "impressions": 1,
-   "position": 9,
+   "position": 63,
+   "page": "/electrician-websites"
+  },
+  {
+   "query": "rec check",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 11,
    "page": "/electrician-websites"
   },
   {
@@ -345,6 +424,13 @@
    "clicks": 0,
    "impressions": 1,
    "position": 60,
+   "page": "/electrician-websites"
+  },
+  {
+   "query": "websites for electricians",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 56,
    "page": "/electrician-websites"
   },
   {
@@ -362,13 +448,6 @@
    "page": "/how-much-does-a-website-cost"
   },
   {
-   "query": "how much does a website cost australia",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 84,
-   "page": "/how-much-does-a-website-cost"
-  },
-  {
    "query": "how much does web hosting cost australia",
    "clicks": 0,
    "impressions": 1,
@@ -380,6 +459,20 @@
    "clicks": 0,
    "impressions": 1,
    "position": 64,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "how much for a website australia",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 95,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "make a website cost",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 99,
    "page": "/how-much-does-a-website-cost"
   },
   {
@@ -401,6 +494,13 @@
    "clicks": 0,
    "impressions": 1,
    "position": 81,
+   "page": "/how-much-does-a-website-cost"
+  },
+  {
+   "query": "website cost perth",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 28,
    "page": "/how-much-does-a-website-cost"
   },
   {
@@ -481,7 +581,28 @@
    "page": "/labs/website-check/seo-checker"
   },
   {
+   "query": "checkawebsitesseo",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 90,
+   "page": "/labs/website-check/seo-checker"
+  },
+  {
+   "query": "my plumbing services",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 71,
+   "page": "/plumber-websites"
+  },
+  {
    "query": "'tradie website'",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 68,
+   "page": "/websites-for-tradies"
+  },
+  {
+   "query": "online tradies australia",
    "clicks": 0,
    "impressions": 1,
    "position": 68,
@@ -551,14 +672,19 @@
    "date": "2026-11-22",
    "clicks": 0,
    "impressions": 42
+  },
+  {
+   "date": "2026-11-23",
+   "clicks": 0,
+   "impressions": 50
   }
  ],
  "allTime": {
   "start": "2026-11-17",
-  "views": 17,
-  "users": 15,
+  "views": 20,
+  "users": 18,
   "cta": {
-   "start_hero": 1,
+   "start_hero": 2,
    "pay_plan": 1,
    "start_plan": 1
   },
@@ -592,6 +718,11 @@
     "date": "2026-11-24",
     "views": 1,
     "cta": 0
+   },
+   {
+    "date": "2026-11-25",
+    "views": 3,
+    "cta": 1
    }
   ]
  },
@@ -600,7 +731,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 12
+    "sessions": 14
    },
    {
     "source": "movietrailer.channel",
@@ -654,6 +785,12 @@
     "source": "movietrailer.channel",
     "medium": "referral",
     "sessions": 1
+   },
+   {
+    "date": "2026-11-25",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 2
    }
   ]
  }

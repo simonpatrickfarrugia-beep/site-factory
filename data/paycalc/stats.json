@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-25T19:00:08.977Z",
+ "generatedAt": "2026-11-26T19:00:08.680Z",
  "period": {
-  "start": "2026-10-28",
-  "end": "2026-11-24"
+  "start": "2026-10-29",
+  "end": "2026-11-25"
  },
  "gscPeriod": {
-  "start": "2026-10-26",
-  "end": "2026-11-22"
+  "start": "2026-10-27",
+  "end": "2026-11-23"
  },
  "sources": {
   "ga4": true,
@@ -14,14 +14,14 @@
   "notes": []
  },
  "totals": {
-  "views": 234,
+  "views": 236,
   "prevViews": 0,
-  "users": 106,
+  "users": 108,
   "cta": {
    "salary_to_calc": 1
   },
   "gscClicks": 4,
-  "gscImpressions": 1269
+  "gscImpressions": 1275
  },
  "daily": [
   {
@@ -143,6 +143,11 @@
    "date": "2026-11-24",
    "views": 11,
    "cta": 1
+  },
+  {
+   "date": "2026-11-25",
+   "views": 2,
+   "cta": 0
   }
  ],
  "pages": [
@@ -153,12 +158,12 @@
    "users": 90,
    "cta": {},
    "gscClicks": 3,
-   "gscImpressions": 499,
-   "gscPosition": 66.9,
+   "gscImpressions": 505,
+   "gscPosition": 66.6,
    "topQuery": "mypaycalc",
    "allViews": 217,
-   "d7": 19,
-   "prev7": 12
+   "prev7": 17,
+   "d7": 13
   },
   {
    "path": "/hecs-help-repayments",
@@ -174,16 +179,16 @@
   },
   {
    "path": "/salary",
-   "views": 3,
+   "views": 4,
    "prevViews": 0,
-   "users": 3,
+   "users": 4,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 34,
    "gscPosition": 11.8,
    "topQuery": "mypaycalc",
-   "allViews": 3,
-   "d7": 2,
+   "allViews": 4,
+   "d7": 3,
    "prev7": 0
   },
   {
@@ -302,6 +307,20 @@
    "gscPosition": null,
    "topQuery": null,
    "allViews": 1
+  },
+  {
+   "path": "/salary/455000-after-tax",
+   "views": 1,
+   "prevViews": 0,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 1,
+   "d7": 1,
+   "prev7": 0
   },
   {
    "path": "/about",
@@ -715,7 +734,7 @@
   {
    "query": "mypaycalc",
    "clicks": 4,
-   "impressions": 145,
+   "impressions": 147,
    "position": 5,
    "page": "/"
   },
@@ -1028,6 +1047,13 @@
    "page": "/"
   },
   {
+   "query": "australia salary calculator",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 76.3,
+   "page": "/"
+  },
+  {
    "query": "calculator wage",
    "clicks": 0,
    "impressions": 3,
@@ -1046,6 +1072,13 @@
    "clicks": 0,
    "impressions": 3,
    "position": 85.7,
+   "page": "/"
+  },
+  {
+   "query": "pay calculator au",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 77.7,
    "page": "/"
   },
   {
@@ -1189,13 +1222,6 @@
    "page": "/"
   },
   {
-   "query": "australia salary calculator",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 87,
-   "page": "/"
-  },
-  {
    "query": "calculate fortnightly pay",
    "clicks": 0,
    "impressions": 2,
@@ -1249,13 +1275,6 @@
    "clicks": 0,
    "impressions": 2,
    "position": 86.5,
-   "page": "/"
-  },
-  {
-   "query": "pay calculator au",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 91,
    "page": "/"
   },
   {
@@ -1543,12 +1562,17 @@
    "date": "2026-11-22",
    "clicks": 0,
    "impressions": 13
+  },
+  {
+   "date": "2026-11-23",
+   "clicks": 0,
+   "impressions": 6
   }
  ],
  "allTime": {
   "start": "2026-10-29",
-  "views": 234,
-  "users": 106,
+  "views": 236,
+  "users": 108,
   "cta": {
    "salary_to_calc": 1
   },
@@ -1672,6 +1696,11 @@
     "date": "2026-11-24",
     "views": 11,
     "cta": 1
+   },
+   {
+    "date": "2026-11-25",
+    "views": 2,
+    "cta": 0
    }
   ]
  },
@@ -1680,7 +1709,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 78
+    "sessions": 80
    },
    {
     "source": "bing",
@@ -1748,12 +1777,6 @@
    }
   ],
   "daily": [
-   {
-    "date": "2026-11-11",
-    "source": "bing",
-    "medium": "organic",
-    "sessions": 1
-   },
    {
     "date": "2026-11-14",
     "source": "(direct)",
@@ -1836,6 +1859,12 @@
     "date": "2026-11-24",
     "source": "bing",
     "medium": "organic",
+    "sessions": 2
+   },
+   {
+    "date": "2026-11-25",
+    "source": "(direct)",
+    "medium": "(none)",
     "sessions": 2
    }
   ]
