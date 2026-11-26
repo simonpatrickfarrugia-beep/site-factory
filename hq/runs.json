@@ -2,9 +2,9 @@
  "_about": "Last run of each AI worker (claude.ai scheduled task). Each skill's final step updates only its own entry. Checked daily by scripts/health.py (limits in hq/health.json).",
  "workers": {
   "imn-radar": {
-   "at": "2026-11-25T20:44:29Z",
+   "at": "2026-11-26T20:44:03Z",
    "ok": true,
-   "note": "1 added (CHC: RMIT Skills and Jobs Centre); IMN full, CHC paced, trailers held, Vic 5 dead ends; queue 20"
+   "note": "1 Vic (Commerce Torquay, score 70); IMN full; CHC paced, no dated find; 4 Vic dead ends; 12 drafts + 3 follow-ups waiting on Simon"
   },
   "morning-report": {
    "at": "2026-11-25T21:58:15Z",
