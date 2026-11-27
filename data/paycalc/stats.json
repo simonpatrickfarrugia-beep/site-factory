@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-26T19:00:08.680Z",
+ "generatedAt": "2026-11-27T19:00:09.179Z",
  "period": {
-  "start": "2026-10-29",
-  "end": "2026-11-25"
+  "start": "2026-10-30",
+  "end": "2026-11-26"
  },
  "gscPeriod": {
-  "start": "2026-10-27",
-  "end": "2026-11-23"
+  "start": "2026-10-28",
+  "end": "2026-11-24"
  },
  "sources": {
   "ga4": true,
@@ -14,21 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 236,
-  "prevViews": 0,
-  "users": 108,
+  "views": 209,
+  "prevViews": 29,
+  "users": 79,
   "cta": {
    "salary_to_calc": 1
   },
   "gscClicks": 4,
-  "gscImpressions": 1275
+  "gscImpressions": 1287
  },
  "daily": [
-  {
-   "date": "2026-10-29",
-   "views": 29,
-   "cta": 0
-  },
   {
    "date": "2026-10-30",
    "views": 8,
@@ -148,22 +143,27 @@
    "date": "2026-11-25",
    "views": 2,
    "cta": 0
+  },
+  {
+   "date": "2026-11-26",
+   "views": 2,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 217,
-   "prevViews": 0,
-   "users": 90,
+   "views": 190,
+   "prevViews": 29,
+   "users": 61,
    "cta": {},
    "gscClicks": 3,
-   "gscImpressions": 505,
-   "gscPosition": 66.6,
+   "gscImpressions": 517,
+   "gscPosition": 66.2,
    "topQuery": "mypaycalc",
-   "allViews": 217,
+   "allViews": 219,
    "prev7": 17,
-   "d7": 13
+   "d7": 15
   },
   {
    "path": "/hecs-help-repayments",
@@ -734,7 +734,7 @@
   {
    "query": "mypaycalc",
    "clicks": 4,
-   "impressions": 147,
+   "impressions": 150,
    "position": 5,
    "page": "/"
   },
@@ -802,6 +802,13 @@
    "page": "/tax-brackets"
   },
   {
+   "query": "salary calculator australia",
+   "clicks": 0,
+   "impressions": 11,
+   "position": 71,
+   "page": "/"
+  },
+  {
    "query": "tax brackets",
    "clicks": 0,
    "impressions": 11,
@@ -844,13 +851,6 @@
    "page": "/"
   },
   {
-   "query": "salary calculator australia",
-   "clicks": 0,
-   "impressions": 9,
-   "position": 72.8,
-   "page": "/"
-  },
-  {
    "query": "tax brackets 2021",
    "clicks": 0,
    "impressions": 9,
@@ -858,24 +858,24 @@
    "page": "/tax-brackets"
   },
   {
-   "query": "paycheck calculator",
-   "clicks": 0,
-   "impressions": 7,
-   "position": 60.3,
-   "page": "/"
-  },
-  {
    "query": "paycheck estimator",
    "clicks": 0,
-   "impressions": 7,
-   "position": 54.6,
+   "impressions": 8,
+   "position": 55.4,
    "page": "/"
   },
   {
    "query": "paycheck estimator calculator",
    "clicks": 0,
+   "impressions": 8,
+   "position": 48,
+   "page": "/"
+  },
+  {
+   "query": "paycheck calculator",
+   "clicks": 0,
    "impressions": 7,
-   "position": 47,
+   "position": 60.3,
    "page": "/"
   },
   {
@@ -1110,6 +1110,13 @@
    "page": "/"
   },
   {
+   "query": "wage calculator australia",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 70.3,
+   "page": "/"
+  },
+  {
    "query": "2026 help compulsory repayment credit",
    "clicks": 0,
    "impressions": 3,
@@ -1243,6 +1250,13 @@
    "page": "/"
   },
   {
+   "query": "casual pay calculator",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 56.5,
+   "page": "/"
+  },
+  {
    "query": "contractor pay calculator australia",
    "clicks": 0,
    "impressions": 2,
@@ -1341,13 +1355,6 @@
    "page": "/"
   },
   {
-   "query": "wage calculator australia",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 68,
-   "page": "/"
-  },
-  {
    "query": "weekly net pay calculator australia",
    "clicks": 0,
    "impressions": 2,
@@ -1422,13 +1429,6 @@
    "clicks": 0,
    "impressions": 2,
    "position": 91.5,
-   "page": "/salary/140000-after-tax"
-  },
-  {
-   "query": "tax on 140000",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 65.5,
    "page": "/salary/140000-after-tax"
   }
  ],
@@ -1567,11 +1567,16 @@
    "date": "2026-11-23",
    "clicks": 0,
    "impressions": 6
+  },
+  {
+   "date": "2026-11-24",
+   "clicks": 0,
+   "impressions": 12
   }
  ],
  "allTime": {
   "start": "2026-10-29",
-  "views": 236,
+  "views": 238,
   "users": 108,
   "cta": {
    "salary_to_calc": 1
@@ -1701,6 +1706,11 @@
     "date": "2026-11-25",
     "views": 2,
     "cta": 0
+   },
+   {
+    "date": "2026-11-26",
+    "views": 2,
+    "cta": 0
    }
   ]
  },
@@ -1709,12 +1719,12 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 80
+    "sessions": 51
    },
    {
     "source": "bing",
     "medium": "organic",
-    "sessions": 23
+    "sessions": 24
    },
    {
     "source": "google",
@@ -1745,7 +1755,7 @@
   "referrers": [
    {
     "url": "https://www.bing.com/",
-    "views": 22
+    "views": 23
    },
    {
     "url": "https://duckduckgo.com/",
@@ -1758,10 +1768,6 @@
    {
     "url": "https://www.movietrailer.channel/",
     "views": 2
-   },
-   {
-    "url": "android-app://com.google.android.googlequicksearchbox/",
-    "views": 1
    },
    {
     "url": "https://au.search.yahoo.com/",
@@ -1866,6 +1872,12 @@
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 2
+   },
+   {
+    "date": "2026-11-26",
+    "source": "bing",
+    "medium": "organic",
+    "sessions": 1
    }
   ]
  }

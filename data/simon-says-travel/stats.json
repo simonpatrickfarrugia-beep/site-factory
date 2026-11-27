@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-26T19:00:08.680Z",
+ "generatedAt": "2026-11-27T19:00:09.179Z",
  "period": {
-  "start": "2026-10-29",
-  "end": "2026-11-25"
+  "start": "2026-10-30",
+  "end": "2026-11-26"
  },
  "gscPeriod": {
-  "start": "2026-10-27",
-  "end": "2026-11-23"
+  "start": "2026-10-28",
+  "end": "2026-11-24"
  },
  "sources": {
   "ga4": true,
@@ -14,12 +14,12 @@
   "notes": []
  },
  "totals": {
-  "views": 16,
+  "views": 19,
   "prevViews": 0,
-  "users": 16,
+  "users": 18,
   "cta": {},
   "gscClicks": 0,
-  "gscImpressions": 11
+  "gscImpressions": 12
  },
  "daily": [
   {
@@ -76,21 +76,26 @@
    "date": "2026-11-23",
    "views": 1,
    "cta": 0
+  },
+  {
+   "date": "2026-11-26",
+   "views": 3,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 16,
+   "views": 19,
    "prevViews": 0,
-   "users": 16,
+   "users": 18,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 4,
    "gscPosition": 5,
    "topQuery": null,
-   "allViews": 16,
-   "prev7": 8,
+   "allViews": 19,
+   "prev7": 10,
    "d7": 5
   },
   {
@@ -100,8 +105,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 6,
-   "gscPosition": 22.8,
+   "gscImpressions": 7,
+   "gscPosition": 21.4,
    "topQuery": "when should australians book japan flights in 2026"
   },
   {
@@ -129,6 +134,13 @@
    "clicks": 0,
    "impressions": 1,
    "position": 94,
+   "page": "/destinations/japan"
+  },
+  {
+   "query": "january flights to japan",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 13,
    "page": "/destinations/japan"
   },
   {
@@ -239,12 +251,17 @@
    "date": "2026-11-23",
    "clicks": 0,
    "impressions": 0
+  },
+  {
+   "date": "2026-11-24",
+   "clicks": 0,
+   "impressions": 1
   }
  ],
  "allTime": {
   "start": "2026-11-05",
-  "views": 16,
-  "users": 16,
+  "views": 19,
+  "users": 18,
   "cta": {},
   "daily": [
    {
@@ -301,6 +318,11 @@
     "date": "2026-11-23",
     "views": 1,
     "cta": 0
+   },
+   {
+    "date": "2026-11-26",
+    "views": 3,
+    "cta": 0
    }
   ]
  },
@@ -309,7 +331,7 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 16
+    "sessions": 18
    },
    {
     "source": "movietrailer.channel",
@@ -324,12 +346,6 @@
    }
   ],
   "daily": [
-   {
-    "date": "2026-11-12",
-    "source": "(direct)",
-    "medium": "(none)",
-    "sessions": 1
-   },
    {
     "date": "2026-11-13",
     "source": "(direct)",
@@ -389,6 +405,12 @@
     "source": "movietrailer.channel",
     "medium": "referral",
     "sessions": 1
+   },
+   {
+    "date": "2026-11-26",
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 2
    }
   ]
  }

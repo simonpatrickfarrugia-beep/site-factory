@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-26T19:00:08.680Z",
+ "generatedAt": "2026-11-27T19:00:09.179Z",
  "period": {
-  "start": "2026-10-29",
-  "end": "2026-11-25"
+  "start": "2026-10-30",
+  "end": "2026-11-26"
  },
  "gscPeriod": {
-  "start": "2026-10-27",
-  "end": "2026-11-23"
+  "start": "2026-10-28",
+  "end": "2026-11-24"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 70,
-  "prevViews": 229,
-  "users": 42,
+  "views": 71,
+  "prevViews": 221,
+  "users": 43,
   "cta": {
    "films_banner": 2,
    "justwatch": 1,
    "prime": 1
   },
   "gscClicks": 0,
-  "gscImpressions": 75
+  "gscImpressions": 82
  },
  "daily": [
   {
@@ -100,6 +100,11 @@
    "date": "2026-11-25",
    "views": 2,
    "cta": 0
+  },
+  {
+   "date": "2026-11-26",
+   "views": 1,
+   "cta": 0
   }
  ],
  "pages": [
@@ -110,9 +115,9 @@
    "users": 4,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 65.4,
-   "topQuery": "trailers free",
+   "gscImpressions": 6,
+   "gscPosition": 67,
+   "topQuery": "free trailer",
    "allViews": 41,
    "prev7": 26,
    "d7": 1
@@ -120,7 +125,7 @@
   {
    "path": "/",
    "views": 23,
-   "prevViews": 88,
+   "prevViews": 83,
    "users": 20,
    "cta": {
     "films_banner": 2
@@ -179,6 +184,20 @@
    "prev7": 0
   },
   {
+   "path": "/movies/home-alone-1990",
+   "views": 1,
+   "prevViews": 3,
+   "users": 1,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 62.3,
+   "topQuery": "home alone trailer",
+   "allViews": 4,
+   "d7": 1,
+   "prev7": 0
+  },
+  {
    "path": "/contact",
    "views": 1,
    "prevViews": 1,
@@ -216,9 +235,7 @@
    "gscImpressions": 0,
    "gscPosition": null,
    "topQuery": null,
-   "allViews": 2,
-   "prev7": 1,
-   "d7": 0
+   "allViews": 2
   },
   {
    "path": "/discover",
@@ -280,7 +297,7 @@
   {
    "path": "/movies/schindlers-list-1994",
    "views": 0,
-   "prevViews": 8,
+   "prevViews": 6,
    "users": 0,
    "cta": {},
    "gscClicks": 0,
@@ -386,18 +403,6 @@
    "allViews": 3
   },
   {
-   "path": "/movies/home-alone-1990",
-   "views": 0,
-   "prevViews": 3,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 62.3,
-   "topQuery": "home alone trailer",
-   "allViews": 3
-  },
-  {
    "path": "/movies/star-wars-episode-viii---the-last-jedi-2017",
    "views": 0,
    "prevViews": 3,
@@ -452,8 +457,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 18,
-   "gscPosition": 56.3,
+   "gscImpressions": 22,
+   "gscPosition": 58,
    "topQuery": "the prestige trailer",
    "allViews": 2
   },
@@ -770,18 +775,6 @@
    "allViews": 2
   },
   {
-   "path": "/movies/ghost-soldier-2006",
-   "views": 0,
-   "prevViews": 1,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 0,
-   "gscPosition": null,
-   "topQuery": null,
-   "allViews": 2
-  },
-  {
    "path": "/movies/speed-1994",
    "views": 0,
    "prevViews": 1,
@@ -795,6 +788,18 @@
   },
   {
    "path": "/movies/avengers-doomsday-2026",
+   "views": 0,
+   "prevViews": 0,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 0,
+   "gscPosition": null,
+   "topQuery": null,
+   "allViews": 2
+  },
+  {
+   "path": "/movies/ghost-soldier-2006",
    "views": 0,
    "prevViews": 0,
    "users": 0,
@@ -1255,9 +1260,9 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 6,
-   "gscPosition": 71.2,
-   "topQuery": "box office 1999"
+   "gscImpressions": 8,
+   "gscPosition": 71.4,
+   "topQuery": "number 1 movie in 1999"
   },
   {
    "path": "/movies/selma-2014",
@@ -1374,8 +1379,8 @@
   {
    "query": "the prestige trailer",
    "clicks": 0,
-   "impressions": 8,
-   "position": 62.6,
+   "impressions": 10,
+   "position": 62.3,
    "page": "/movies/the-prestige-2006"
   },
   {
@@ -1421,11 +1426,25 @@
    "page": "/movies/insomnia-2002"
   },
   {
+   "query": "free trailer",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 73.5,
+   "page": "/browse"
+  },
+  {
    "query": "trailers free",
    "clicks": 0,
    "impressions": 2,
    "position": 78,
    "page": "/browse"
+  },
+  {
+   "query": "number 1 movie in 1999",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 88,
+   "page": "/discover/1999-box-office-highlights"
   },
   {
    "query": "jurassic park trailer",
@@ -1470,17 +1489,17 @@
    "page": "/movies/the-prestige-2006"
   },
   {
+   "query": "trailer prestige",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 70.5,
+   "page": "/movies/the-prestige-2006"
+  },
+  {
    "query": "free movie trailers",
    "clicks": 0,
    "impressions": 1,
    "position": 57,
-   "page": "/browse"
-  },
-  {
-   "query": "free trailer",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 72,
    "page": "/browse"
   },
   {
@@ -1491,17 +1510,17 @@
    "page": "/discover/1999-box-office-highlights"
   },
   {
+   "query": "highest grossing film 1999",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 58,
+   "page": "/discover/1999-box-office-highlights"
+  },
+  {
    "query": "number 1 movie 1999",
    "clicks": 0,
    "impressions": 1,
    "position": 89,
-   "page": "/discover/1999-box-office-highlights"
-  },
-  {
-   "query": "number 1 movie in 1999",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 90,
    "page": "/discover/1999-box-office-highlights"
   },
   {
@@ -1569,11 +1588,6 @@
   }
  ],
  "gscDaily": [
-  {
-   "date": "2026-10-27",
-   "clicks": 0,
-   "impressions": 0
-  },
   {
    "date": "2026-10-28",
    "clicks": 0,
@@ -1708,12 +1722,17 @@
    "date": "2026-11-23",
    "clicks": 0,
    "impressions": 5
+  },
+  {
+   "date": "2026-11-24",
+   "clicks": 0,
+   "impressions": 7
   }
  ],
  "allTime": {
   "start": "2026-09-13",
-  "views": 422,
-  "users": 257,
+  "views": 423,
+  "users": 258,
   "cta": {
    "films_banner": 2,
    "justwatch": 1,
@@ -2004,6 +2023,11 @@
     "date": "2026-11-25",
     "views": 2,
     "cta": 0
+   },
+   {
+    "date": "2026-11-26",
+    "views": 1,
+    "cta": 0
    }
   ]
  },
@@ -2028,6 +2052,11 @@
     "source": "yandex",
     "medium": "organic",
     "sessions": 1
+   },
+   {
+    "source": "yandex.ru",
+    "medium": "referral",
+    "sessions": 1
    }
   ],
   "referrers": [
@@ -2038,15 +2067,13 @@
    {
     "url": "https://yandex.com/",
     "views": 1
+   },
+   {
+    "url": "https://yandex.ru/",
+    "views": 1
    }
   ],
   "daily": [
-   {
-    "date": "2026-11-12",
-    "source": "(direct)",
-    "medium": "(none)",
-    "sessions": 1
-   },
    {
     "date": "2026-11-13",
     "source": "(direct)",
@@ -2082,6 +2109,12 @@
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 2
+   },
+   {
+    "date": "2026-11-26",
+    "source": "yandex.ru",
+    "medium": "referral",
+    "sessions": 1
    }
   ]
  }
