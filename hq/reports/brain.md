@@ -1,6 +1,6 @@
 # IMN brain
 
-Updated 2026-11-26. Every site check fix is recorded, then measured 35 days later against a control (rest of the site, or rest of the portfolio for site-wide fixes). Proven fix types climb the top-5 on every other site.
+Updated 2026-11-27. Every site check fix is recorded, then measured 35 days later against a control (rest of the site, or rest of the portfolio for site-wide fixes). Proven fix types climb the top-5 on every other site.
 
 **3 fixes recorded** · 3 measuring · 0 wins · 0 flat · 0 worse · 0 too little data
 
