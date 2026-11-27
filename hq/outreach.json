@@ -1,6 +1,6 @@
 {
  "_note": "Outreach funnel snapshot from D1 (orgs + touches + messages), counts only, no names. Refreshed each morning by the morning-report skill (SQL in .claude/skills/morning-report/SKILL.md). Stage counts are 'ever reached': an org that was sent and then replied counts in both.",
- "asOf": "2026-11-26T21:58:00Z",
+ "asOf": "2026-11-27T21:58:00Z",
  "brands": {
   "vic": {
    "found": 10,
@@ -82,7 +82,7 @@
    "dropped": 3,
    "oldestWaiting": null,
    "lastSent": "2026-11-17T22:33:25Z",
-   "mailIn": 26,
+   "mailIn": 31,
    "mailOut": 3,
    "sent7": 0
   }
