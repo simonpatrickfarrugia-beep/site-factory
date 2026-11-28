@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-27T02:56:52+00:00",
+ "generatedAt": "2026-11-28T02:48:02+00:00",
  "days": 7,
  "suppliers": [
   {
@@ -107,6 +107,32 @@
    "seenBefore": true
   },
   {
+   "name": "CHUBB FIRE & SECURITY PTY LTD",
+   "abn": "",
+   "locality": "Dingley",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 128700.0,
+     "buyer": "Australian Securities and Investments Commission",
+     "buyerState": "NSW",
+     "desc": "Interim Maintenance Support",
+     "category": "",
+     "start": "2026-12-29",
+     "end": "2027-06-29",
+     "id": "CN4290213"
+    }
+   ],
+   "total": 128700,
+   "score": 6.0,
+   "interstate": true,
+   "why": [
+    "based in Dingley VIC, delivering for Australian Securities and Investments Commission (NSW)",
+    "work runs 6 months"
+   ],
+   "seenBefore": true
+  },
+  {
    "name": "MEDIABRANDS AUSTRALIA PTY LTD",
    "abn": "",
    "locality": "Surry Hills",
@@ -154,52 +180,123 @@
    "seenBefore": true
   },
   {
-   "name": "C4I SOLUTIONS PTY LTD",
+   "name": "GARDNER DENVER INDUSTRIES PTY LTD",
    "abn": "",
-   "locality": "Penrith,",
-   "state": "NSW",
+   "locality": "Dandenong Sth",
+   "state": "VIC",
    "contracts": [
     {
-     "value": 321819.91,
+     "value": 17694.95,
      "buyer": "Department of Defence",
      "buyerState": null,
-     "desc": "Maintenance Laptops",
+     "desc": "Maintenance Kits",
      "category": "",
-     "start": "2026-11-11",
-     "end": "2028-06-29",
-     "id": "CN4291113"
+     "start": "2026-11-16",
+     "end": "2027-02-08",
+     "id": "CN4291608"
+    },
+    {
+     "value": 189993.57,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Compressor Repair",
+     "category": "",
+     "start": "2026-11-25",
+     "end": "2027-04-29",
+     "id": "CN4291377"
     }
    ],
-   "total": 321820,
+   "total": 207689,
    "score": 5.0,
    "interstate": false,
    "why": [
-    "work runs 20 months"
+    "2 new government contracts in the last 7 days"
    ],
    "seenBefore": false
   },
   {
-   "name": "TOWERS GROUP PTY LTD",
+   "name": "FRANMARINE UNDERWATER SERVICES",
    "abn": "",
-   "locality": "South Melbourne,",
-   "state": "VIC",
+   "locality": "Henderson",
+   "state": "WA",
    "contracts": [
     {
-     "value": 206840.0,
+     "value": 189768.16,
      "buyer": "Department of Defence",
      "buyerState": null,
-     "desc": "Project Management Support",
+     "desc": "Watercraft Maintenance",
      "category": "",
      "start": "2026-11-30",
      "end": "2027-06-29",
-     "id": "CN4291303"
+     "id": "CN4291602"
     }
    ],
-   "total": 206840,
+   "total": 189768,
    "score": 5.0,
    "interstate": false,
    "why": [
     "work runs 7 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "Elekta Pty.Ltd.",
+   "abn": "",
+   "locality": "North Sydney",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 47543.1,
+     "buyer": "Australian Radiation Protection and Nuclear Safety Agency",
+     "buyerState": null,
+     "desc": "Service contract for maintenance of the ARPANSA Elekta Versa",
+     "category": "",
+     "start": "2026-12-13",
+     "end": "2027-12-12",
+     "id": "CN4291691"
+    },
+    {
+     "value": 47543.1,
+     "buyer": "Australian Radiation Protection and Nuclear Safety Agency",
+     "buyerState": null,
+     "desc": "Service contract for maintenance of the ARPANSA Elekta Versa",
+     "category": "",
+     "start": "2026-08-29",
+     "end": "2027-08-28",
+     "id": "CN4291688"
+    }
+   ],
+   "total": 95086,
+   "score": 5.0,
+   "interstate": false,
+   "why": [
+    "2 new government contracts in the last 7 days",
+    "work runs 12 months"
+   ],
+   "seenBefore": false
+  },
+  {
+   "name": "Services Australia",
+   "abn": "",
+   "locality": "Burnie",
+   "state": "TAS",
+   "contracts": [
+    {
+     "value": 4685000.0,
+     "buyer": "Department of Health, Disability and Ageing",
+     "buyerState": null,
+     "desc": "System Expansion to Facilitate National Consistent Payments",
+     "category": "",
+     "start": "2026-12-31",
+     "end": "2030-06-29",
+     "id": "CN4291444"
+    }
+   ],
+   "total": 4685000,
+   "score": 4.0,
+   "interstate": false,
+   "why": [
+    "work runs 43 months"
    ],
    "seenBefore": false
   },
@@ -348,33 +445,102 @@
    "seenBefore": true
   },
   {
-   "name": "Zephyr Environmental Pty Ltd",
+   "name": "CRIB POINT ENGINEERING PTY LTD",
    "abn": "",
-   "locality": "Rozelle",
-   "state": "NSW",
+   "locality": "Hastings",
+   "state": "VIC",
    "contracts": [
     {
-     "value": 43997.0,
-     "buyer": "Clean Energy Regulator",
+     "value": 123674.1,
+     "buyer": "Department of Defence",
      "buyerState": null,
-     "desc": "CER Greenhouse and Energy Audit Program 2026-27",
+     "desc": "Watercraft Maintenance",
      "category": "",
-     "start": "2026-11-09",
-     "end": "2027-04-22",
-     "id": "CN4291392"
-    },
-    {
-     "value": 44979.0,
-     "buyer": "Clean Energy Regulator",
-     "buyerState": null,
-     "desc": "CER Greenhouse and Energy Audit Program 2026-27",
-     "category": "",
-     "start": "2026-11-09",
-     "end": "2027-04-22",
-     "id": "CN4291391"
+     "start": "2026-11-15",
+     "end": "2027-02-27",
+     "id": "CN4291632"
     }
    ],
-   "total": 88976,
+   "total": 123674,
+   "score": 4.0,
+   "interstate": false,
+   "why": [],
+   "seenBefore": false
+  },
+  {
+   "name": "KARI SANN, TRADING AS EVOLVEMEL",
+   "abn": "",
+   "locality": "Frankston South",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 118373.2,
+     "buyer": "Department of Foreign Affairs and Trade - Australian Aid Program",
+     "buyerState": null,
+     "desc": "DART Program Review (Canberra)",
+     "category": "",
+     "start": "2026-11-25",
+     "end": "2027-03-14",
+     "id": "CN4291406"
+    }
+   ],
+   "total": 118373,
+   "score": 4.0,
+   "interstate": false,
+   "why": [],
+   "seenBefore": false
+  },
+  {
+   "name": "CRENELLATE PTY LTD",
+   "abn": "",
+   "locality": "Kingston",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 110330.36,
+     "buyer": "Department of Employment and Workplace Relations",
+     "buyerState": null,
+     "desc": "Independent review of business continuity and resilience arrangements.",
+     "category": "",
+     "start": "2026-10-18",
+     "end": "2027-01-18",
+     "id": "CN4291497"
+    }
+   ],
+   "total": 110330,
+   "score": 4.0,
+   "interstate": false,
+   "why": [],
+   "seenBefore": false
+  },
+  {
+   "name": "ULTRA ELECTRONICS AVALON SYSTEMS PTY LTD",
+   "abn": "",
+   "locality": "Mawson Lakes",
+   "state": "SA",
+   "contracts": [
+    {
+     "value": 41938.23,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Watercraft Maintenance",
+     "category": "",
+     "start": "2026-11-15",
+     "end": "2026-12-16",
+     "id": "CN4291630"
+    },
+    {
+     "value": 55871.97,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Watercraft Maintenance",
+     "category": "",
+     "start": "2026-11-15",
+     "end": "2026-12-24",
+     "id": "CN4291625"
+    }
+   ],
+   "total": 97810,
    "score": 4.0,
    "interstate": false,
    "why": [
@@ -383,77 +549,27 @@
    "seenBefore": false
   },
   {
-   "name": "Knuckey Family Trust t/a McBeath Pty Ltd",
+   "name": "KASEYA AUSTRALIA PTY LTD",
    "abn": "",
-   "locality": "Kambah",
-   "state": "ACT",
+   "locality": "Sydney",
+   "state": "NSW",
    "contracts": [
     {
-     "value": 70000.0,
-     "buyer": "Australian Federal Police",
+     "value": 55207.27,
+     "buyer": "Fair Work Commission",
      "buyerState": null,
-     "desc": "Provision of audit and risk committee chair",
-     "category": "",
-     "start": "2026-11-30",
-     "end": "2028-11-29",
-     "id": "CN4291263"
-    }
-   ],
-   "total": 70000,
-   "score": 4.0,
-   "interstate": false,
-   "why": [
-    "work runs 24 months"
-   ],
-   "seenBefore": false
-  },
-  {
-   "name": "REKAB FISH PTY LIMITED",
-   "abn": "",
-   "locality": "Gowrie",
-   "state": "ACT",
-   "contracts": [
-    {
-     "value": 68000.0,
-     "buyer": "Australian Federal Police",
-     "buyerState": null,
-     "desc": "Provision of audit and risk committee members",
+     "desc": "Maintenance and support",
      "category": "",
      "start": "2026-12-31",
-     "end": "2029-12-30",
-     "id": "CN4291264"
+     "end": "2027-12-30",
+     "id": "CN4291698"
     }
    ],
-   "total": 68000,
+   "total": 55207,
    "score": 4.0,
    "interstate": false,
    "why": [
-    "work runs 36 months"
-   ],
-   "seenBefore": false
-  },
-  {
-   "name": "HUMANS MEET DIGITAL PTY LTD [511]",
-   "abn": "",
-   "locality": "Middle Park",
-   "state": "VIC",
-   "contracts": [
-    {
-     "value": 60500.0,
-     "buyer": "National Environmental Protection Agency",
-     "buyerState": null,
-     "desc": "Audit Committee Members",
-     "category": "",
-     "start": "2026-10-31",
-     "end": "2028-10-30",
-     "id": "CN4291389"
-    }
-   ],
-   "total": 60500,
-   "score": 4.0,
-   "interstate": false,
-   "why": [
-    "work runs 24 months"
+    "work runs 12 months"
    ],
    "seenBefore": false
   },
@@ -570,6 +686,29 @@
     "work runs 7 months"
    ],
    "seenBefore": true
+  },
+  {
+   "name": "QINETIQ PTY LTD",
+   "abn": "",
+   "locality": "Port Melbourne",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 52932.0,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Test and Evaluation Support",
+     "category": "",
+     "start": "2026-11-17",
+     "end": "2027-03-30",
+     "id": "CN4291591"
+    }
+   ],
+   "total": 52932,
+   "score": 3.0,
+   "interstate": false,
+   "why": [],
+   "seenBefore": false
   },
   {
    "name": "Society of Precision Agriculture Australia",
@@ -797,6 +936,31 @@
    "seenBefore": true
   },
   {
+   "name": "C4I SOLUTIONS PTY LTD",
+   "abn": "",
+   "locality": "Penrith,",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 321819.91,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Maintenance Laptops",
+     "category": "",
+     "start": "2026-11-11",
+     "end": "2028-06-29",
+     "id": "CN4291113"
+    }
+   ],
+   "total": 321820,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 20 months"
+   ],
+   "seenBefore": true
+  },
+  {
    "name": "JFD AUSTRALIA PTY LTD",
    "abn": "",
    "locality": "Kirrawee",
@@ -818,6 +982,31 @@
    "interstate": false,
    "why": [
     "work runs 8 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "TOWERS GROUP PTY LTD",
+   "abn": "",
+   "locality": "South Melbourne,",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 206840.0,
+     "buyer": "Department of Defence",
+     "buyerState": null,
+     "desc": "Project Management Support",
+     "category": "",
+     "start": "2026-11-30",
+     "end": "2027-06-29",
+     "id": "CN4291303"
+    }
+   ],
+   "total": 206840,
+   "score": 2.0,
+   "interstate": false,
+   "why": [
+    "work runs 7 months"
    ],
    "seenBefore": true
   },
@@ -872,27 +1061,27 @@
    "seenBefore": true
   },
   {
-   "name": "CHUBB FIRE & SECURITY PTY LTD",
+   "name": "Painted Dog Research Pty Ltd",
    "abn": "",
-   "locality": "Rydalmere",
-   "state": "NSW",
+   "locality": "Leederville",
+   "state": "WA",
    "contracts": [
     {
-     "value": 128700.0,
-     "buyer": "Australian Securities and Investments Commission",
-     "buyerState": "NSW",
-     "desc": "Interim Maintenance Support",
+     "value": 158350.5,
+     "buyer": "Department of Health, Disability and Ageing",
+     "buyerState": null,
+     "desc": "Campaign Evaluation for Stream 1 Campaign",
      "category": "",
-     "start": "2026-12-29",
+     "start": "2026-11-19",
      "end": "2027-06-29",
-     "id": "CN4290213"
+     "id": "CN4291436"
     }
    ],
-   "total": 128700,
+   "total": 158350,
    "score": 2.0,
    "interstate": false,
    "why": [
-    "work runs 6 months"
+    "work runs 7 months"
    ],
    "seenBefore": true
   },
@@ -1004,6 +1193,41 @@
    "seenBefore": true
   },
   {
+   "name": "Zephyr Environmental Pty Ltd",
+   "abn": "",
+   "locality": "Rozelle",
+   "state": "NSW",
+   "contracts": [
+    {
+     "value": 43997.0,
+     "buyer": "Clean Energy Regulator",
+     "buyerState": null,
+     "desc": "CER Greenhouse and Energy Audit Program 2026-27",
+     "category": "",
+     "start": "2026-11-09",
+     "end": "2027-04-22",
+     "id": "CN4291392"
+    },
+    {
+     "value": 44979.0,
+     "buyer": "Clean Energy Regulator",
+     "buyerState": null,
+     "desc": "CER Greenhouse and Energy Audit Program 2026-27",
+     "category": "",
+     "start": "2026-11-09",
+     "end": "2027-04-22",
+     "id": "CN4291391"
+    }
+   ],
+   "total": 88976,
+   "score": 1.0,
+   "interstate": false,
+   "why": [
+    "2 new government contracts in the last 7 days"
+   ],
+   "seenBefore": true
+  },
+  {
    "name": "RESOLVE ADVISORY PTY LTD",
    "abn": "",
    "locality": "Barton",
@@ -1025,6 +1249,81 @@
    "interstate": false,
    "why": [
     "work runs 7 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "Knuckey Family Trust t/a McBeath Pty Ltd",
+   "abn": "",
+   "locality": "Kambah",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 70000.0,
+     "buyer": "Australian Federal Police",
+     "buyerState": null,
+     "desc": "Provision of audit and risk committee chair",
+     "category": "",
+     "start": "2026-11-30",
+     "end": "2028-11-29",
+     "id": "CN4291263"
+    }
+   ],
+   "total": 70000,
+   "score": 1.0,
+   "interstate": false,
+   "why": [
+    "work runs 24 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "REKAB FISH PTY LIMITED",
+   "abn": "",
+   "locality": "Gowrie",
+   "state": "ACT",
+   "contracts": [
+    {
+     "value": 68000.0,
+     "buyer": "Australian Federal Police",
+     "buyerState": null,
+     "desc": "Provision of audit and risk committee members",
+     "category": "",
+     "start": "2026-12-31",
+     "end": "2029-12-30",
+     "id": "CN4291264"
+    }
+   ],
+   "total": 68000,
+   "score": 1.0,
+   "interstate": false,
+   "why": [
+    "work runs 36 months"
+   ],
+   "seenBefore": true
+  },
+  {
+   "name": "HUMANS MEET DIGITAL PTY LTD [511]",
+   "abn": "",
+   "locality": "Middle Park",
+   "state": "VIC",
+   "contracts": [
+    {
+     "value": 60500.0,
+     "buyer": "National Environmental Protection Agency",
+     "buyerState": null,
+     "desc": "Audit Committee Members",
+     "category": "",
+     "start": "2026-10-31",
+     "end": "2028-10-30",
+     "id": "CN4291389"
+    }
+   ],
+   "total": 60500,
+   "score": 1.0,
+   "interstate": false,
+   "why": [
+    "work runs 24 months"
    ],
    "seenBefore": true
   }
