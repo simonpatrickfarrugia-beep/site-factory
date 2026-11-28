@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-27T19:00:09.179Z",
+ "generatedAt": "2026-11-28T19:00:08.580Z",
  "period": {
-  "start": "2026-10-30",
-  "end": "2026-11-26"
+  "start": "2026-10-31",
+  "end": "2026-11-27"
  },
  "gscPeriod": {
-  "start": "2026-10-28",
-  "end": "2026-11-24"
+  "start": "2026-10-29",
+  "end": "2026-11-25"
  },
  "sources": {
   "ga4": true,
@@ -14,16 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 137,
+  "views": 138,
   "prevViews": 9,
-  "users": 110,
+  "users": 111,
   "cta": {
    "journal_90": 9,
    "google_reviews": 3,
    "email_chat": 1
   },
   "gscClicks": 11,
-  "gscImpressions": 562
+  "gscImpressions": 512
  },
  "daily": [
   {
@@ -135,6 +135,11 @@
    "date": "2026-11-26",
    "views": 2,
    "cta": 0
+  },
+  {
+   "date": "2026-11-27",
+   "views": 1,
+   "cta": 0
   }
  ],
  "pages": [
@@ -148,35 +153,35 @@
     "email_chat": 1
    },
    "gscClicks": 7,
-   "gscImpressions": 317,
-   "gscPosition": 6.7,
+   "gscImpressions": 312,
+   "gscPosition": 6.8,
    "topQuery": "community service placement",
    "allViews": 53,
    "allCta": {
     "google_reviews": 3,
     "email_chat": 1
    },
-   "prev7": 17,
-   "d7": 6
+   "prev7": 15,
+   "d7": 4
   },
   {
    "path": "/free-daily-journal",
-   "views": 19,
+   "views": 20,
    "prevViews": 0,
-   "users": 17,
+   "users": 18,
    "cta": {
     "journal_90": 9
    },
    "gscClicks": 2,
-   "gscImpressions": 38,
-   "gscPosition": 5.2,
+   "gscImpressions": 35,
+   "gscPosition": 5.3,
    "topQuery": "back to you journal pdf free download",
-   "allViews": 19,
+   "allViews": 20,
    "allCta": {
     "journal_90": 9
    },
-   "prev7": 8,
-   "d7": 4
+   "prev7": 9,
+   "d7": 3
   },
   {
    "path": "/resume-builder",
@@ -185,12 +190,12 @@
    "users": 11,
    "cta": {},
    "gscClicks": 1,
-   "gscImpressions": 21,
-   "gscPosition": 23.7,
+   "gscImpressions": 17,
+   "gscPosition": 28.5,
    "topQuery": "free resume",
    "allViews": 14,
-   "d7": 2,
-   "prev7": 2
+   "prev7": 3,
+   "d7": 1
   },
   {
    "path": "/job-finder",
@@ -232,7 +237,7 @@
    "topQuery": null,
    "allViews": 6,
    "d7": 2,
-   "prev7": 1
+   "prev7": 0
   },
   {
    "path": "/life-goals-mentoring",
@@ -241,8 +246,8 @@
    "users": 4,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 6,
-   "gscPosition": 6.2,
+   "gscImpressions": 3,
+   "gscPosition": 5.7,
    "topQuery": null,
    "allViews": 5,
    "d7": 1,
@@ -255,8 +260,8 @@
    "users": 4,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 5,
-   "gscPosition": 4.8,
+   "gscImpressions": 2,
+   "gscPosition": 7.5,
    "topQuery": null,
    "allViews": 4,
    "d7": 1,
@@ -269,8 +274,8 @@
    "users": 4,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 7.7,
+   "gscImpressions": 0,
+   "gscPosition": null,
    "topQuery": null,
    "allViews": 4,
    "d7": 1,
@@ -283,40 +288,12 @@
    "users": 3,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 27,
-   "gscPosition": 6.1,
+   "gscImpressions": 26,
+   "gscPosition": 6.3,
    "topQuery": "simon farrugia",
    "allViews": 4,
    "prev7": 1,
    "d7": 0
-  },
-  {
-   "path": "/cover-letter-builder",
-   "views": 3,
-   "prevViews": 0,
-   "users": 3,
-   "cta": {},
-   "gscClicks": 1,
-   "gscImpressions": 22,
-   "gscPosition": 11.2,
-   "topQuery": "free cover letter builder",
-   "allViews": 3,
-   "prev7": 1,
-   "d7": 0
-  },
-  {
-   "path": "/advocacy-support",
-   "views": 3,
-   "prevViews": 0,
-   "users": 3,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 9,
-   "gscPosition": 4.4,
-   "topQuery": null,
-   "allViews": 3,
-   "d7": 1,
-   "prev7": 0
   },
   {
    "path": "/faq",
@@ -329,6 +306,34 @@
    "gscPosition": 5.3,
    "topQuery": null,
    "allViews": 3
+  },
+  {
+   "path": "/advocacy-support",
+   "views": 3,
+   "prevViews": 0,
+   "users": 3,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 5.7,
+   "topQuery": null,
+   "allViews": 3,
+   "d7": 1,
+   "prev7": 0
+  },
+  {
+   "path": "/cover-letter-builder",
+   "views": 3,
+   "prevViews": 0,
+   "users": 3,
+   "cta": {},
+   "gscClicks": 1,
+   "gscImpressions": 6,
+   "gscPosition": 15.3,
+   "topQuery": "cover letter builder free",
+   "allViews": 3,
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/Y292ZXItbG",
@@ -379,20 +384,9 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 17,
-   "gscPosition": 31.4,
+   "gscImpressions": 13,
+   "gscPosition": 35.5,
    "topQuery": "hr support ringwood"
-  },
-  {
-   "path": "/downloads/daily-journal-1-day.pdf",
-   "views": 0,
-   "prevViews": 0,
-   "users": 0,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 9.7,
-   "topQuery": null
   },
   {
    "path": "/privacy-policy",
@@ -401,8 +395,8 @@
    "users": 0,
    "cta": {},
    "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 5.7,
+   "gscImpressions": 1,
+   "gscPosition": 9,
    "topQuery": null
   }
  ],
@@ -417,15 +411,15 @@
   {
    "query": "community service placement",
    "clicks": 0,
-   "impressions": 37,
-   "position": 11.3,
+   "impressions": 36,
+   "position": 11.2,
    "page": "/"
   },
   {
    "query": "community services placement",
    "clicks": 0,
    "impressions": 35,
-   "position": 8.9,
+   "position": 8.8,
    "page": "/"
   },
   {
@@ -438,8 +432,8 @@
   {
    "query": "hr support ringwood",
    "clicks": 0,
-   "impressions": 12,
-   "position": 38.8,
+   "impressions": 11,
+   "position": 38.3,
    "page": "/find-staff"
   },
   {
@@ -534,20 +528,6 @@
    "page": "/contact"
   },
   {
-   "query": "free cover letter builder",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 29,
-   "page": "/cover-letter-builder"
-  },
-  {
-   "query": "back to you journal pdf free download",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 6,
-   "page": "/free-daily-journal"
-  },
-  {
    "query": "part time job australia",
    "clicks": 0,
    "impressions": 2,
@@ -560,13 +540,6 @@
    "impressions": 2,
    "position": 71.5,
    "page": "/resume-builder"
-  },
-  {
-   "query": "community consultants",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 5,
-   "page": "/"
   },
   {
    "query": "community help near me",
@@ -625,13 +598,6 @@
    "page": "/"
   },
   {
-   "query": "i need help with work",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 6,
-   "page": "/"
-  },
-  {
    "query": "jobs in community services",
    "clicks": 0,
    "impressions": 1,
@@ -667,14 +633,14 @@
    "page": "/"
   },
   {
-   "query": "community helps",
+   "query": "co help",
    "clicks": 0,
    "impressions": 1,
-   "position": 2,
+   "position": 8,
    "page": "/"
   },
   {
-   "query": "help co",
+   "query": "community helps",
    "clicks": 0,
    "impressions": 1,
    "position": 2,
@@ -709,13 +675,6 @@
    "page": "/contact"
   },
   {
-   "query": "cover letter builder",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 21,
-   "page": "/cover-letter-builder"
-  },
-  {
    "query": "cover letter builder free",
    "clicks": 0,
    "impressions": 1,
@@ -728,6 +687,13 @@
    "impressions": 1,
    "position": 43,
    "page": "/cover-letter-builder"
+  },
+  {
+   "query": "back to you journal pdf free download",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 11,
+   "page": "/free-daily-journal"
   },
   {
    "query": "best website to find part time jobs",
@@ -807,13 +773,6 @@
    "page": "/resume-builder"
   },
   {
-   "query": "resume builder help",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 10,
-   "page": "/resume-builder"
-  },
-  {
    "query": "find local staff",
    "clicks": 0,
    "impressions": 1,
@@ -822,11 +781,6 @@
   }
  ],
  "gscDaily": [
-  {
-   "date": "2026-10-28",
-   "clicks": 0,
-   "impressions": 35
-  },
   {
    "date": "2026-10-29",
    "clicks": 0,
@@ -961,12 +915,17 @@
    "date": "2026-11-24",
    "clicks": 0,
    "impressions": 15
+  },
+  {
+   "date": "2026-11-25",
+   "clicks": 0,
+   "impressions": 13
   }
  ],
  "allTime": {
   "start": "2026-10-27",
-  "views": 146,
-  "users": 119,
+  "views": 147,
+  "users": 120,
   "cta": {
    "journal_90": 9,
    "google_reviews": 3,
@@ -1097,6 +1056,11 @@
     "date": "2026-11-26",
     "views": 2,
     "cta": 0
+   },
+   {
+    "date": "2026-11-27",
+    "views": 1,
+    "cta": 0
    }
   ]
  },
@@ -1108,14 +1072,14 @@
     "sessions": 57
    },
    {
-    "source": "google",
-    "medium": "organic",
+    "source": "chatgpt.com",
+    "medium": "ai-assistant",
     "sessions": 12
    },
    {
-    "source": "chatgpt.com",
-    "medium": "ai-assistant",
-    "sessions": 11
+    "source": "google",
+    "medium": "organic",
+    "sessions": 12
    },
    {
     "source": "bing",
@@ -1147,30 +1111,6 @@
    }
   ],
   "daily": [
-   {
-    "date": "2026-11-13",
-    "source": "(direct)",
-    "medium": "(none)",
-    "sessions": 3
-   },
-   {
-    "date": "2026-11-13",
-    "source": "bing",
-    "medium": "organic",
-    "sessions": 1
-   },
-   {
-    "date": "2026-11-13",
-    "source": "chatgpt.com",
-    "medium": "ai-assistant",
-    "sessions": 1
-   },
-   {
-    "date": "2026-11-13",
-    "source": "google",
-    "medium": "organic",
-    "sessions": 1
-   },
    {
     "date": "2026-11-14",
     "source": "(direct)",
@@ -1278,6 +1218,12 @@
     "source": "(direct)",
     "medium": "(none)",
     "sessions": 2
+   },
+   {
+    "date": "2026-11-27",
+    "source": "chatgpt.com",
+    "medium": "ai-assistant",
+    "sessions": 1
    }
   ]
  }

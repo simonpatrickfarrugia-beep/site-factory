@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-11-27T19:00:09.179Z",
+ "generatedAt": "2026-11-28T19:00:08.580Z",
  "period": {
-  "start": "2026-10-30",
-  "end": "2026-11-26"
+  "start": "2026-10-31",
+  "end": "2026-11-27"
  },
  "gscPeriod": {
-  "start": "2026-10-28",
-  "end": "2026-11-24"
+  "start": "2026-10-29",
+  "end": "2026-11-25"
  },
  "sources": {
   "ga4": true,
@@ -14,21 +14,16 @@
   "notes": []
  },
  "totals": {
-  "views": 209,
-  "prevViews": 29,
-  "users": 79,
+  "views": 202,
+  "prevViews": 37,
+  "users": 72,
   "cta": {
    "salary_to_calc": 1
   },
   "gscClicks": 4,
-  "gscImpressions": 1287
+  "gscImpressions": 1298
  },
  "daily": [
-  {
-   "date": "2026-10-30",
-   "views": 8,
-   "cta": 0
-  },
   {
    "date": "2026-10-31",
    "views": 1,
@@ -148,21 +143,26 @@
    "date": "2026-11-26",
    "views": 2,
    "cta": 0
+  },
+  {
+   "date": "2026-11-27",
+   "views": 1,
+   "cta": 0
   }
  ],
  "pages": [
   {
    "path": "/",
-   "views": 190,
-   "prevViews": 29,
-   "users": 61,
+   "views": 186,
+   "prevViews": 34,
+   "users": 57,
    "cta": {},
    "gscClicks": 3,
-   "gscImpressions": 517,
-   "gscPosition": 66.2,
+   "gscImpressions": 528,
+   "gscPosition": 66.1,
    "topQuery": "mypaycalc",
-   "allViews": 219,
-   "prev7": 17,
+   "allViews": 220,
+   "prev7": 18,
    "d7": 15
   },
   {
@@ -193,9 +193,9 @@
   },
   {
    "path": "/contact",
-   "views": 2,
-   "prevViews": 0,
-   "users": 2,
+   "views": 1,
+   "prevViews": 1,
+   "users": 1,
    "cta": {},
    "gscClicks": 0,
    "gscImpressions": 3,
@@ -235,30 +235,6 @@
    "prev7": 0
   },
   {
-   "path": "/salary/150000-after-tax",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 6,
-   "gscPosition": 33.8,
-   "topQuery": "tax on 150k",
-   "allViews": 1
-  },
-  {
-   "path": "/salary/50000-after-tax",
-   "views": 1,
-   "prevViews": 0,
-   "users": 1,
-   "cta": {},
-   "gscClicks": 0,
-   "gscImpressions": 3,
-   "gscPosition": 9.7,
-   "topQuery": null,
-   "allViews": 1
-  },
-  {
    "path": "/salary/125000-after-tax",
    "views": 1,
    "prevViews": 0,
@@ -269,8 +245,8 @@
    "gscPosition": 10.5,
    "topQuery": null,
    "allViews": 1,
-   "d7": 1,
-   "prev7": 0
+   "prev7": 1,
+   "d7": 0
   },
   {
    "path": "/hecs-help-repayments&ct=ga&cd=CAEYCSoUMTQ1MzE0MTk1MDg1NjUwMTMyODkyGmNhNzgzYWZjMjViYTgyMzc6Y29tOmVuOlVT&usg=AOvVaw2zUjzrBeXTX0jRJtzwFeJQ",
@@ -321,6 +297,30 @@
    "allViews": 1,
    "d7": 1,
    "prev7": 0
+  },
+  {
+   "path": "/salary/150000-after-tax",
+   "views": 0,
+   "prevViews": 1,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 6,
+   "gscPosition": 33.8,
+   "topQuery": "tax on 150k",
+   "allViews": 1
+  },
+  {
+   "path": "/salary/50000-after-tax",
+   "views": 0,
+   "prevViews": 1,
+   "users": 0,
+   "cta": {},
+   "gscClicks": 0,
+   "gscImpressions": 3,
+   "gscPosition": 9.7,
+   "topQuery": null,
+   "allViews": 1
   },
   {
    "path": "/about",
@@ -734,7 +734,7 @@
   {
    "query": "mypaycalc",
    "clicks": 4,
-   "impressions": 150,
+   "impressions": 151,
    "position": 5,
    "page": "/"
   },
@@ -762,8 +762,8 @@
   {
    "query": "australian pay calculator",
    "clicks": 0,
-   "impressions": 18,
-   "position": 76.2,
+   "impressions": 19,
+   "position": 76.1,
    "page": "/"
   },
   {
@@ -795,6 +795,13 @@
    "page": "/"
   },
   {
+   "query": "salary calculator australia",
+   "clicks": 0,
+   "impressions": 12,
+   "position": 71.2,
+   "page": "/"
+  },
+  {
    "query": "australia tax brackets",
    "clicks": 0,
    "impressions": 12,
@@ -802,10 +809,10 @@
    "page": "/tax-brackets"
   },
   {
-   "query": "salary calculator australia",
+   "query": "free pay calculator australia",
    "clicks": 0,
    "impressions": 11,
-   "position": 71,
+   "position": 76.9,
    "page": "/"
   },
   {
@@ -821,13 +828,6 @@
    "impressions": 11,
    "position": 71.4,
    "page": "/tax-brackets"
-  },
-  {
-   "query": "free pay calculator australia",
-   "clicks": 0,
-   "impressions": 10,
-   "position": 78.7,
-   "page": "/"
   },
   {
    "query": "salary and pay calculator",
@@ -872,6 +872,13 @@
    "page": "/"
   },
   {
+   "query": "pay calculator for australian workers",
+   "clicks": 0,
+   "impressions": 7,
+   "position": 62,
+   "page": "/"
+  },
+  {
    "query": "paycheck calculator",
    "clicks": 0,
    "impressions": 7,
@@ -893,10 +900,10 @@
    "page": "/tax-brackets"
   },
   {
-   "query": "pay calculator for australian workers",
+   "query": "pay and salary calculator australia",
    "clicks": 0,
    "impressions": 6,
-   "position": 63.2,
+   "position": 66.5,
    "page": "/"
   },
   {
@@ -939,13 +946,6 @@
    "clicks": 0,
    "impressions": 5,
    "position": 80.6,
-   "page": "/"
-  },
-  {
-   "query": "pay and salary calculator australia",
-   "clicks": 0,
-   "impressions": 5,
-   "position": 65.2,
    "page": "/"
   },
   {
@@ -1096,6 +1096,13 @@
    "page": "/"
   },
   {
+   "query": "salary calculator calculator",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 64.7,
+   "page": "/"
+  },
+  {
    "query": "take home pay calculator brisbane",
    "clicks": 0,
    "impressions": 3,
@@ -1229,6 +1236,13 @@
    "page": "/"
   },
   {
+   "query": "australian salary calculator",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 73,
+   "page": "/"
+  },
+  {
    "query": "calculate fortnightly pay",
    "clicks": 0,
    "impressions": 2,
@@ -1247,6 +1261,13 @@
    "clicks": 0,
    "impressions": 2,
    "position": 72,
+   "page": "/"
+  },
+  {
+   "query": "calculate weekly pay",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 73,
    "page": "/"
   },
   {
@@ -1334,13 +1355,6 @@
    "page": "/"
   },
   {
-   "query": "salary calculator calculator",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 59,
-   "page": "/"
-  },
-  {
    "query": "salary calculator salary",
    "clicks": 0,
    "impressions": 2,
@@ -1416,28 +1430,9 @@
    "impressions": 2,
    "position": 90.5,
    "page": "/salary/120000-after-tax"
-  },
-  {
-   "query": "120k after tax australia",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 79,
-   "page": "/salary/120000-after-tax"
-  },
-  {
-   "query": "140 000 after tax australia",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 91.5,
-   "page": "/salary/140000-after-tax"
   }
  ],
  "gscDaily": [
-  {
-   "date": "2026-10-28",
-   "clicks": 0,
-   "impressions": 0
-  },
   {
    "date": "2026-10-29",
    "clicks": 0,
@@ -1572,12 +1567,17 @@
    "date": "2026-11-24",
    "clicks": 0,
    "impressions": 12
+  },
+  {
+   "date": "2026-11-25",
+   "clicks": 0,
+   "impressions": 11
   }
  ],
  "allTime": {
   "start": "2026-10-29",
-  "views": 238,
-  "users": 108,
+  "views": 239,
+  "users": 109,
   "cta": {
    "salary_to_calc": 1
   },
@@ -1711,6 +1711,11 @@
     "date": "2026-11-26",
     "views": 2,
     "cta": 0
+   },
+   {
+    "date": "2026-11-27",
+    "views": 1,
+    "cta": 0
    }
   ]
  },
@@ -1719,12 +1724,12 @@
    {
     "source": "(direct)",
     "medium": "(none)",
-    "sessions": 51
+    "sessions": 43
    },
    {
     "source": "bing",
     "medium": "organic",
-    "sessions": 24
+    "sessions": 25
    },
    {
     "source": "google",
@@ -1755,7 +1760,7 @@
   "referrers": [
    {
     "url": "https://www.bing.com/",
-    "views": 23
+    "views": 24
    },
    {
     "url": "https://duckduckgo.com/",
@@ -1875,6 +1880,12 @@
    },
    {
     "date": "2026-11-26",
+    "source": "bing",
+    "medium": "organic",
+    "sessions": 1
+   },
+   {
+    "date": "2026-11-27",
     "source": "bing",
     "medium": "organic",
     "sessions": 1
