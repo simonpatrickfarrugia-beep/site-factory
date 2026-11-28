@@ -29,6 +29,8 @@ export function plan(files) {
       if (/^data\/[^/]+\/stats\.json$/.test(f)) HQ.forEach((b) => brands.add(b));
       if (f === 'data/imn/labs.json') HQ.forEach((b) => brands.add(b)); // lab rows on /hq/traffic
       if (f === 'data/vic/stats.json') brands.add('imn'); // IMN's example dashboard shows Vic Tours' real numbers
+    } else if (f === 'hq/backyard-wild.json') {
+      brands.add('trailers'); // bird-cam status, pushed from the bird-cam PC: only the wallpaper (/hq/wallpaper) reads it
     } else if (/^hq\//.test(f)) {
       HQ.forEach((b) => brands.add(b));
       if (f === 'hq/sitecheck/vic.json' || f === 'hq/confidence.json') brands.add('imn'); // IMN's confidence-at-a-glance panel

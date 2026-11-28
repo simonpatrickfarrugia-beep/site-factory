@@ -25,6 +25,7 @@ interface Props {
   valueLine: { low: number; high: number; profitMonthly: number; worth: number; profitNeeded: number };
   xp: { total: number; rank: string; next: string | null; from: number; to: number; parts: { what: string; n: number; each: number }[] };
   todoOpen: number; todoReady: number;
+  backyardWild: { asOf: string | null; live: boolean | null; highlightsLive: boolean | null; subs: number | null; views: number | null; birdsToday: number; clipsToday: number; birds7: number; shortsScheduled: number; shortsPublished: number; nextShort: string | null; waiting: number; loopMinutes: number | null } | null;
 }
 const p = Astro.props;
 const n = (v: number) => v.toLocaleString('en-AU');
@@ -67,6 +68,8 @@ const lanes = groups.map((g) => {
   ends[lane] = start + width;
   return { ...g, lane };
 });
+const bw = p.backyardWild;
+const melTime = (iso: string | null) => iso ? new Date(iso).toLocaleString('en-AU', { timeZone: 'Australia/Melbourne', weekday: 'short', hour: 'numeric', minute: '2-digit' }) : '';
 const rareText = [...new Map(rare.map((j) => [j.name, `${j.name} (${j.often})`])).values()].join(' · ');
 ---
 <div class="wp" id="wp">
@@ -124,6 +127,17 @@ const rareText = [...new Map(rare.map((j) => [j.name, `${j.name} (${j.often})`])
           <div class={`fn__week fn__week--${f.sent7 >= f.weekGoal ? 'ok' : f.sent7 >= f.weekGoal * 0.6 ? 'warn' : 'bad'}`}><span>IMN emails this week</span><b>{f.sent7} / {f.weekGoal}</b></div>
           <div class="fn__bar fn__bar--wk"><i style={`width:${bar(f.sent7, f.weekGoal)}%`}></i></div>
           <span class="fn__note">{f.streak > 0 ? `🔥 ${f.streak}-day streak · ` : ''}{f.waiting ? `${f.waiting} draft${f.waiting === 1 ? '' : 's'} waiting · ` : ''}all brands {f.sent7All} sent this week</span>
+        </li>
+        <li data-node="bw" class="bw">
+          <b>🐦 Backyard Wild</b>
+          {bw
+            ? <>
+                <div class="bw__lights"><span class={`bw__l bw__l--${bw.live === null ? 'unk' : bw.live ? 'on' : 'off'}`}>{bw.live === false ? 'live cam OFF' : 'live cam'}</span><span class={`bw__l bw__l--${bw.highlightsLive === null ? 'unk' : bw.highlightsLive ? 'on' : 'off'}`}>24/7 highlights</span></div>
+                <div class="bw__nums"><span><b>{bw.birdsToday}</b> birds today</span><span><b>{bw.shortsScheduled}</b> Shorts queued</span>{bw.subs !== null && <span><b>{n(bw.subs)}</b> subs</span>}</div>
+                <span>{bw.shortsPublished} Shorts out{bw.nextShort ? ` · next ${melTime(bw.nextShort)}` : ''}{bw.waiting ? ` · ${bw.waiting} clips waiting` : ''}{bw.views !== null ? ` · ${n(bw.views)} views` : ''}</span>
+                {bw.asOf && <time class="bw__asof" data-label="updated " data-ago={bw.asOf} data-st={(Date.now() - Date.parse(bw.asOf)) / 3600000 > 6 ? 'stale' : 'ok'}></time>}
+              </>
+            : <span>bird cam status not connected yet</span>}
         </li>
         <li data-node="labs"><b>IMN Labs</b><span>{p.labs.length ? p.labs.map((l) => l.name).join(' · ') : 'none live'}</span></li>
       </ul>
@@ -275,6 +289,13 @@ const rareText = [...new Map(rare.map((j) => [j.name, `${j.name} (${j.often})`])
   .site__nums { display: flex; gap: 1vw; font-size: .9em; color: var(--muted); } .site__nums b { color: var(--text); }
   .site__spark { width: 100%; height: 1.6vh; margin-top: .3vh; } .site__spark polyline { fill: none; stroke: var(--blue); stroke-width: 1.6; vector-effect: non-scaling-stroke; }
 
+  .bw__lights { display: flex; justify-content: center; gap: .4em; margin: .4vh 0; }
+  .bw__l { font-size: .78em; padding: .1em .55em; border-radius: 99px; border: 1px solid var(--line); color: var(--muted) !important; }
+  .bw__l::before { content: '●'; margin-right: .3em; }
+  .bw__l--on { color: var(--good) !important; border-color: rgba(74,222,128,.35); } .bw__l--off { color: var(--bad) !important; border-color: rgba(248,113,113,.4); animation: pulse 1.6s ease-in-out infinite; }
+  .bw__nums { display: flex; justify-content: center; gap: .8em; font-size: .85em; color: var(--muted); } .bw__nums b { display: inline !important; color: var(--text); }
+  .bw__asof { display: block; font-size: .72em; color: var(--muted); margin-top: .3vh; }
+  .bw__asof :global(.stale), .bw__asof.stale { color: var(--warn); }
   .m { padding: 1vh 0; border-bottom: 1px solid var(--line); } .m > b { display: block; margin-bottom: .5vh; } .m > span { color: var(--muted); font-size: .9em; }
   .m--goal { border: 0; } .m--goal span { color: var(--gold); font-weight: 700; font-size: 1em; }
 
@@ -322,7 +343,7 @@ const rareText = [...new Map(rare.map((j) => [j.name, `${j.name} (${j.often})`])
       out += path(hubR, { x: b.left, y: b.top + b.height / 2 });
       if (money) out += path({ x: b.right, y: b.top + b.height / 2 }, { x: money.left, y: money.top + money.height / 2 }, 'b');
     });
-    ['outreach', 'labs'].forEach(function (k) { var b = r(k); if (b) out += path(hubB, { x: b.left + b.width / 2, y: b.top }, 'b'); });
+    ['outreach', 'bw', 'labs'].forEach(function (k) { var b = r(k); if (b) out += path(hubB, { x: b.left + b.width / 2, y: b.top }, 'b'); });
     svg.innerHTML = out;
   }
   function agos() {
@@ -330,7 +351,8 @@ const rareText = [...new Map(rare.map((j) => [j.name, `${j.name} (${j.often})`])
       var h = (Date.now() - Date.parse(t.getAttribute('data-ago'))) / 3600000;
       var txt = h < 1 ? Math.max(1, Math.round(h * 60)) + 'm ago' : h < 48 ? Math.round(h) + 'h ago' : Math.round(h / 24) + 'd ago';
       var st = t.getAttribute('data-st');
-      t.textContent = (st === 'fail' ? 'failed ' : 'ran ') + txt; t.className = st;
+      t.textContent = (st === 'fail' ? 'failed ' : (t.getAttribute('data-label') || 'ran ')) + txt;
+      t.classList.remove('ok', 'stale', 'fail', 'idle'); t.classList.add(st);
     });
   }
   tick(); agos(); setInterval(function () { tick(); agos(); }, 30000);

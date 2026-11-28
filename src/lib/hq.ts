@@ -680,8 +680,19 @@ export function wallpaperProps() {
   const nextR = RANKS[ri + 1] ?? null;
   const xp = { total: xpTotal, rank: RANKS[ri][1], next: nextR ? nextR[1] : null, from: RANKS[ri][0], to: nextR ? nextR[0] : xpTotal, parts: xpParts };
 
+  // Backyard Wild: status pushed from the bird-cam PC (C:\BackyardWild\bw_status.py) a few times a day.
+  const bwRaw = read<any>('hq/backyard-wild.json', null);
+  const backyardWild = bwRaw ? {
+    asOf: bwRaw.asOf ?? null, live: bwRaw.live ?? null, highlightsLive: bwRaw.highlightsLive ?? null,
+    subs: bwRaw.subs ?? null, views: bwRaw.views ?? null,
+    birdsToday: bwRaw.birdsToday ?? 0, clipsToday: bwRaw.clipsToday ?? 0, birds7: bwRaw.birds7 ?? 0,
+    shortsScheduled: bwRaw.shortsScheduled ?? 0, shortsPublished: bwRaw.shortsPublished ?? 0, nextShort: bwRaw.nextShort ?? null,
+    waiting: bwRaw.waiting ?? 0, loopMinutes: bwRaw.loopMinutes ?? null,
+  } : null;
+
   return {
     builtAt: new Date().toISOString(),
+    backyardWild,
     kpis: {
       revenue, level: level ? `Level ${level.level}: ${level.name}` : '',
       visits: sum(sites.map((s: any) => s.visits)), impressions: sum(sites.map((s: any) => s.impressions)),
